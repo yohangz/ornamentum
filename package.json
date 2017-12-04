@@ -1,0 +1,34 @@
+{
+  "name": "@conquiztador/ng-grid",
+  "version": "0.0.1",
+  "description": "Angular 2+ grid (Dev Inprogress)",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conquiztador/ng-grid.git"
+  },
+  "keywords": [
+    "Angular 2+",
+    "grid"
+  ],
+  "contributors": [
+    {
+      "name" : "Yohan Gomez",
+      "email" : "yohan.gz@gmail.com",
+      "url" : "https://github.com/yohangz"
+    },
+    {
+      "name" : "Lahiru Jayamanna",
+      "email": "lsampath999@gmail.com",
+      "url" : "https://github.com/lahiruz"
+    }
+  ],
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/conquiztador/ng-grid/issues"
+  },
+  "homepage": "https://github.com/conquiztador/ng-grid#readme"
+}
