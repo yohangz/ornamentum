@@ -35,3 +35,7 @@ Thumbs.db
 # Temporary files
 /docs
 /.tmp
+
+# Build artifacts
+dist
+lib
