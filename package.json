@@ -2,9 +2,14 @@
   "name": "@conquiztador/ng-grid",
   "version": "0.0.1",
   "description": "Angular 2+ grid (Dev Inprogress)",
-  "main": "index.js",
+  "main": "./lib/index.umd.js",
+  "module": "./lib/index.js",
+  "typings": "./lib/index.d.ts",
   "scripts": {
-    "test": "npm run test"
+    "ng": "ng",
+    "test": "ng test",
+    "test:ci": "ng test --single-run",
+    "e2e": "ng e2e"
   },
   "repository": {
     "type": "git",
@@ -30,5 +35,60 @@
   "bugs": {
     "url": "https://github.com/conquiztador/ng-grid/issues"
   },
-  "homepage": "https://github.com/conquiztador/ng-grid#readme"
+  "homepage": "https://github.com/conquiztador/ng-grid#readme",
+  "peerDependencies": {
+    "@angular/common": "^5.0.0",
+    "@angular/core": "^5.0.0"
+  },
+  "devDependencies": {
+    "@angular/animations": "^5.0.0",
+    "@angular/cli": "1.5.2",
+    "@angular/common": "^5.0.0",
+    "@angular/compiler": "^5.0.0",
+    "@angular/compiler-cli": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "@angular/forms": "^5.0.0",
+    "@angular/http": "^5.0.0",
+    "@angular/language-service": "^5.0.0",
+    "@angular/platform-browser": "^5.0.0",
+    "@angular/platform-browser-dynamic": "^5.0.0",
+    "@angular/router": "^5.0.0",
+    "@types/jasmine": "~2.5.53",
+    "@types/jasminewd2": "~2.0.2",
+    "@types/node": "~6.0.60",
+    "angular2-template-loader": "^0.6.2",
+    "awesome-typescript-loader": "^3.4.0",
+    "codelyzer": "~3.2.0",
+    "compodoc": "0.0.41",
+    "core-js": "^2.4.1",
+    "css-loader": "^0.28.7",
+    "gh-pages": "^1.1.0",
+    "gulp": "^3.9.1",
+    "gulp-inline-ng2-template": "^4.0.0",
+    "jasmine-core": "~2.6.2",
+    "jasmine-spec-reporter": "~4.1.0",
+    "json-loader": "^0.5.7",
+    "karma": "~1.7.0",
+    "karma-chrome-launcher": "~2.1.1",
+    "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "node-sass": "^4.7.1",
+    "protractor": "~5.1.2",
+    "raw-loader": "^0.5.1",
+    "rimraf": "^2.6.2",
+    "rxjs": "^5.5.2",
+    "sass-lint": "^1.12.1",
+    "sass-loader": "^6.0.6",
+    "source-map-explorer": "^1.5.0",
+    "to-string-loader": "^1.1.5",
+    "ts-node": "~3.2.0",
+    "tslint": "~5.7.0",
+    "typescript": "~2.4.2",
+    "webpack": "^3.8.1",
+    "webpack-angular-externals": "^1.0.2",
+    "webpack-rxjs-externals": "^1.1.0",
+    "zone.js": "^0.8.14"
+  }
 }
