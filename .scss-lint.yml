@@ -1,0 +1,14 @@
+#########################
+## Sass Lint File
+#########################
+# Linter Options
+
+files:
+  include: 'src/**/*.scss'
+  ignore: 'node_modules/**/*'
+
+rules:
+
+  nesting-depth:
+    - 1
+    - max-depth: 5
