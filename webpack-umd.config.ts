@@ -15,7 +15,7 @@ export default {
     path: path.join(__dirname, 'lib'),
     filename: '[name].js',
     libraryTarget: 'umd',
-    library: 'grid-view'
+    library: 'ng-grid'
   },
   resolve: {
     extensions: [ '.ts', '.js', '.json' ]
@@ -78,7 +78,7 @@ export default {
 /**
  * ${pkg.name} - ${pkg.description}
  * @version v${pkg.version}
- * @author ${pkg.author.name}
+ * @contributors ${pkg.contributors.map(contributor => contributor.name).join()}
  * @link ${pkg.homepage}
  * @license ${pkg.license}
  */
