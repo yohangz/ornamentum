@@ -72,6 +72,7 @@
     "@types/jasmine": "~2.5.53",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
+    "@types/webpack": "^3.8.1",
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^3.4.0",
     "codelyzer": "~3.2.0",
