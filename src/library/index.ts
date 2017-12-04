@@ -1,2 +1,2 @@
-export { GridViewComponent } from './grid-view/components/grid-view/grid-view.component';
-export { GridViewModule } from './grid-view/grid-view.module';
+export { GridComponent } from './grid/components/grid/grid.component';
+export { GridModule } from './grid/ng-grid.module';

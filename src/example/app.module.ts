@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { GridViewModule } from "../library/grid-view/grid-view.module";
+import { GridModule } from "../library/grid/ng-grid.module";
 
 import { AppComponent } from './app.component';
 
@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    GridViewModule
+    GridModule
   ],
   providers: [],
   bootstrap: [AppComponent]
