@@ -1,16 +1,28 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GridComponent } from "./components/grid/grid.component";
+import { GridComponent } from './components/grid/grid.component';
+import { GridConfig } from './services/grid-config.service';
+
+const COMPONENTS = [
+  GridComponent
+];
 
 @NgModule({
   imports: [
     CommonModule
   ],
   declarations: [
-    GridComponent
+    ...COMPONENTS
   ],
   exports: [
     GridComponent
   ]
 })
-export class GridModule { }
+export class GridModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: GridModule,
+      providers: [GridConfig]
+    };
+  }
+}
