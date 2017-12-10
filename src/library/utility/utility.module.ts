@@ -1,8 +1,8 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { UtilityConfigService } from './services/utility-config.service';
 
-const COMPONENTS = [
-];
+const COMPONENTS = [];
 
 /***
  * Module representing utility components.
@@ -14,14 +14,13 @@ const COMPONENTS = [
   declarations: [
     ...COMPONENTS
   ],
-  exports: [
-  ]
+  exports: []
 })
 export class UtilityModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: UtilityModule,
-      providers: []
+      providers: [UtilityConfigService]
     };
   }
 }
