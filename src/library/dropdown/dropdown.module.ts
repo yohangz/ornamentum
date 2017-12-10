@@ -1,5 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DropdownConfigService } from './services/dropdown-config.service';
 
 const COMPONENTS = [
 ];
@@ -21,7 +22,7 @@ export class DropdownModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: DropdownModule,
-      providers: []
+      providers: [DropdownConfigService]
     };
   }
 }

@@ -1,7 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GridComponent } from './components/grid/grid.component';
-import { GridConfig } from './services/grid-config.service';
+import { GridConfigService } from './services/grid-config.service';
 
 const COMPONENTS = [
   GridComponent
@@ -25,7 +25,7 @@ export class GridModule {
   static forRoot(): ModuleWithProviders {
     return {
       ngModule: GridModule,
-      providers: [GridConfig]
+      providers: [GridConfigService]
     };
   }
 }
