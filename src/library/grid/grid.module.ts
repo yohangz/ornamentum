@@ -7,6 +7,9 @@ const COMPONENTS = [
   GridComponent
 ];
 
+/***
+ * Module representing grid component.
+ */
 @NgModule({
   imports: [
     CommonModule

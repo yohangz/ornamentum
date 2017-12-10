@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    GridModule
+    GridModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
