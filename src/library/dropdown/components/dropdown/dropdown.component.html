@@ -1,0 +1,77 @@
+<div class="multi-select-dropdown dropdown" [class.open]="isOpen" (clickOutside)="closeDropdown()">
+
+  <button type="button" class="dropdown-toggle" (click)="toggleDropdown($event)" [disabled]="disabled">
+    <ng-container *ngIf="multiSelectable">
+      <ng-container *ngIf="!showAllSelectedItemLabels">
+         <span class="selected-value" *ngFor="let option of _selectedOptions">
+          {{option.text}} <i class="zmdi zmdi-close-circle" *ngIf="showSelectedOptionRemove" (click)="onSelectOptionClose($event, option)"></i>
+        </span>
+      </ng-container>
+      <span *ngIf="showAllSelectedItemLabels">
+        {{selectedItemsMessage}}
+      </span>
+      <ng-container *ngIf="!_selectedOptions.length">
+        {{ translations.title }}
+      </ng-container>
+      <span class="caret"></span>
+    </ng-container>
+    <ng-container *ngIf="!multiSelectable">
+      {{ _selectedOption ? _selectedOption.text : translations.title }}<span class="caret"></span>
+    </ng-container>
+  </button>
+
+  <ul *ngIf="isOpen" class="dropdown-menu" [style.width]="dropdownWidth | px">
+    <ul *ngIf="filterable">
+      <li class="search">
+        <div class="input-group input-group-sm">
+          <span class="input-group-addon" id="sizing-addon3">
+            <i class="zmdi zmdi-search"></i>
+          </span>
+          <input type="text" class="form-control" placeholder="{{ translations.searchPlaceholder }}" aria-describedby="sizing-addon3" (keyup)="filterKeyUp()" autofocus [(ngModel)]="filterText">
+          <span class="input-group-btn button-container" *ngIf="filterText">
+            <button class="btn btn-default btn-secondary action-button delete-button" type="button" (click)="clearSearch()">
+              <i class="zmdi zmdi-close-circle"></i>
+            </button>
+          </span>
+        </div>
+      </li>
+      <li class="dropdown-divider divider"></li>
+    </ul>
+
+    <ul *ngIf="showSelectAll && multiSelectable && !loadOnScroll">
+      <li class="dropdown-item check-control check-control-check" (click)="toggleAllSelected()">
+        <input type="checkbox" class="checkbox-input" [(ngModel)]="allSelected" />
+        <span>{{ translations.selectAll }}</span>
+      </li>
+      <li class="dropdown-divider divider"></li>
+    </ul>
+
+    <ul class="dropdown-item-container" (scroll)="loadOnScroll ? checkScrollPosition($event) : null" >
+      <li *ngIf="!currentItemCount" class="dropdown-item empty">{{translations.searchEmptyResult}}</li>
+      <ng-container *ngIf="groupByField">
+        <ng-container *ngFor="let groupedItem of _groupedItems">
+          <li *ngIf="hasVisibleItems(groupedItem.items)">{{groupedItem.groupName}}</li>
+          <ng-container *ngFor="let option of groupedItem.items">
+            <li (click)="setSelected(option)" *ngIf="option.filter" [class.disabled]="option.disabled">
+              <a role="menuitem">
+                <input type="checkbox" class="checkbox-input" [checked]="isSelected(option)" [disabled]="option.disabled" *ngIf="multiSelectable"/>
+                <span>{{option.text}}</span>
+              </a>
+            </li>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+      <ng-container *ngIf="!groupByField">
+        <ng-container *ngFor="let option of _items">
+          <li (click)="setSelected(option)" *ngIf="option.filter">
+            <a role="menuitem">
+              <input type="checkbox" class="checkbox-input" [checked]="isSelected(option)" [disabled]="option.disabled" *ngIf="multiSelectable"/>
+              <span>{{option.text}}{{option.disabled}}</span>
+            </a>
+          </li>
+        </ng-container>
+      </ng-container>
+      <li *ngIf="this.isLoading">Loading...</li>
+    </ul>
+  </ul>
+</div>
