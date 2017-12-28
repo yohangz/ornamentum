@@ -1,0 +1,17 @@
+$primary-text-color: #444;
+$secondary-text-color: #fff;
+$primary-background-color: #3b78e7;
+$alert-error-color: red;
+
+$multi-select-dropdown-toggle-background: lighten($primary-background-color, 100%);
+$multi-select-dropdown-toggle-border: lighten($primary-text-color, 60%);
+$multi-select-dropdown-toggle-color: $primary-text-color;
+$multi-select-dropdown-link-color: $primary-background-color;
+$multi-select-dropdown-link-color-hover: lighten($primary-text-color, 20%);
+$multi-select-dropdown-icon-background: $primary-background-color;
+$multi-select-dropdown-icon-color: lighten($primary-background-color, 100%);
+
+$generated-context-background:  lighten($primary-text-color, 65%);
+$generated-context-color:  $primary-text-color;
+
+
