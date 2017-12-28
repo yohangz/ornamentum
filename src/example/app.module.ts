@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
-import { GridModule } from "../library/grid/grid.module";
+import { GridModule, DropdownModule } from '../library';
+
 
 import { AppComponent } from './app.component';
 
@@ -11,9 +13,12 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    GridModule.forRoot()
+    FormsModule,
+    GridModule.forRoot(),
+    DropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
