@@ -78,6 +78,7 @@
     "angular2-template-loader": "^0.6.2",
     "awesome-typescript-loader": "^3.4.0",
     "codelyzer": "^4.0.1",
+    "compass-mixins": "^0.12.10",
     "core-js": "^2.4.1",
     "css-loader": "^0.28.7",
     "gh-pages": "^1.1.0",
