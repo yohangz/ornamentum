@@ -1,8 +1,16 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UtilityConfigService } from './services/utility-config.service';
+import { ClickOutsideDirective } from './directives/click-outside.directive';
 
-const COMPONENTS = [];
+const DIRECTIVES = [
+  ClickOutsideDirective
+];
+
+const PIPES = [
+
+];
+
 
 /***
  * Module representing utility components.
@@ -12,9 +20,13 @@ const COMPONENTS = [];
     CommonModule
   ],
   declarations: [
-    ...COMPONENTS
+    ...DIRECTIVES,
+    ...PIPES
   ],
-  exports: []
+  exports: [
+    ...DIRECTIVES,
+    ...PIPES
+  ]
 })
 export class UtilityModule {
   static forRoot(): ModuleWithProviders {
