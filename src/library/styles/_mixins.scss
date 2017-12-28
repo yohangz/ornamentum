@@ -1,0 +1,9 @@
+@import '~compass-mixins/lib/compass';
+
+// font-size use em as a unit and px as a fallback
+@mixin font-size($size: 1.6, $line: $size * 1.5) {
+  font-size: ($size * 10) + px;
+  font-size: $size + rem;
+  line-height: ($line * 10) + px;
+  line-height: $line + rem;
+}
