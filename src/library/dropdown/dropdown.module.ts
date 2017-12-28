@@ -1,8 +1,15 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+
+import { UtilityModule } from '../utility/utility.module';
+
 import { DropdownConfigService } from './services/dropdown-config.service';
 
+import { DropdownComponent } from './components/dropdown/dropdown.component'
+
 const COMPONENTS = [
+  DropdownComponent
 ];
 
 /***
@@ -10,12 +17,15 @@ const COMPONENTS = [
  */
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule,
+    UtilityModule.forRoot()
   ],
   declarations: [
     ...COMPONENTS
   ],
   exports: [
+    DropdownComponent
   ]
 })
 export class DropdownModule {
