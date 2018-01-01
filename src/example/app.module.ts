@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { GridModule, DropdownModule } from '../library';
+import { DataTableModule, DropdownModule } from '../library';
 
 
 import { AppComponent } from './app.component';
@@ -14,7 +14,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     FormsModule,
-    GridModule.forRoot(),
+    DataTableModule.forRoot(),
     DropdownModule.forRoot()
   ],
   providers: [],
