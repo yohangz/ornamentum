@@ -32,7 +32,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   public _groupedItems: DropdownItemGroup[] = [];
 
   public disabled = false;
-  private id;
 
   private _translations: SearchDropdownTranslations;
   private _allSelected = false;
@@ -342,7 +341,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   constructor() {
     this._translations = this.defaultTranslations;
-    this.id = Date.now();
   }
 
   /**

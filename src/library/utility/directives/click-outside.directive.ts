@@ -14,7 +14,7 @@ import {
   }
 })
 export class ClickOutsideDirective {
-  private localEvent = null;
+  private localEvent: Event = null;
 
   /**
    * Click outside event emitter.
