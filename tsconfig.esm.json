@@ -15,7 +15,14 @@
     "stripInternal": true,
     "skipLibCheck": true,
     "outDir": "lib",
-    "rootDir": "./.tmp/src-inlined"
+    "rootDir": "./.tmp/src-inlined",
+    "typeRoots" : [
+      "./node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ]
   },
   "files": [
     "./.tmp/src-inlined/index.ts"
