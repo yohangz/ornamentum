@@ -55,7 +55,8 @@
   "dependencies": {},
   "peerDependencies": {
     "@angular/common": "^5.0.0",
-    "@angular/core": "^5.0.0"
+    "@angular/core": "^5.0.0",
+    "rxjs": "^5.5.2"
   },
   "devDependencies": {
     "@angular/animations": "^5.0.0",
@@ -97,7 +98,6 @@
     "protractor": "~5.2.1",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.6.2",
-    "rxjs": "^5.5.2",
     "sass-lint": "^1.12.1",
     "sass-loader": "^6.0.6",
     "source-map-explorer": "^1.5.0",
