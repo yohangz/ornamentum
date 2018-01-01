@@ -1,0 +1,84 @@
+<div class="data-table-wrapper" [ngClass]="{ 'scrollable': !!contentHeight }">
+  <app-data-table-header *ngIf="showHeader"></app-data-table-header>
+  <div class="data-table-inner-wrapper">
+    <div class="data-table-header-wrapper">
+      <div class="data-table-header" [scrollElement]="scrollPosition">
+        <table class="table table-condensed data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
+          <colgroup appDataTableColGroup></colgroup>
+          <thead>
+          <tr>
+            <th *ngIf="expandColumnVisible" class="expand-column-header">
+            </th>
+            <th *ngIf="indexColumnVisible" class="index-column-header">
+              <span [textContent]="indexColumnTitle"></span>
+            </th>
+            <th *ngIf="selectColumnVisible" class="select-column-header">
+              <input [hidden]="!multiRowSelectable" class="checkbox-input" [disabled]="reloading" type="checkbox" [(ngModel)]="selectAllCheckbox"/>
+            </th>
+            <ng-container *ngFor="let column of columns">
+              <th #th *ngIf="column.visible" (click)="headerClicked(column, $event)" (elementWidth)="onElementWidthInit($event, column)"
+                  [class.sortable]="column.sortable" [class.resizable]="column.resizable" [ngClass]="column.styleClass" class="column-header" >
+                <span *ngIf="!column.headerTemplate" [textContent]="column.title"></span>
+                <span *ngIf="column.headerTemplate" [ngTemplateOutlet]="column.headerTemplate" [ngTemplateOutletContext]="{column: column}"></span>
+                <span class="column-sort-icon" [hidden]="!column.sortable">
+                  <i class="zmdi zmdi-format-line-spacing" [hidden]="column.sortColumn"></i>
+                  <i class="zmdi" [hidden]="!column.sortColumn" [ngClass]="getSortIconClass(column)"></i>
+                </span>
+                <span *ngIf="column.resizable"  class="column-resize-handle float-right" (mousedown)="resizeColumnStart($event, column, th)"></span>
+              </th>
+            </ng-container>
+          </tr>
+          <tr>
+            <th *ngIf="expandColumnVisible" class="expand-column-header">
+            </th>
+            <th *ngIf="indexColumnVisible" class="index-column-header">
+            </th>
+            <th *ngIf="selectColumnVisible" class="select-column-header">
+            </th>
+            <ng-container *ngFor="let column of columns">
+              <th #th *ngIf="column.visible">
+                <ng-container *ngIf="!column.enableMultiSelectFilter">
+                  <span *ngIf="column.filterTemplate" [ngTemplateOutlet]="column.filterTemplate" [ngTemplateOutletContext]="{ column: column, onFilter: customFilterEventEmitter }"></span>
+                  <input type="text" #filterTextBox *ngIf="column.filterable && !column.filterTemplate" [(ngModel)]="column.filter" (keyup)="filterData($event)" [placeholder]="column.filterPlaceholder"/>
+                </ng-container>
+                <ng-container *ngIf="column.enableMultiSelectFilter">
+                  <ng-dropdown
+                    [items]="column.filterOptions"
+                    [totalItemCount]="column.filterOptions.length"
+                    [(ngModel)]="column.filter"
+                    [filterable]="true"
+                    [multiSelectable]="true"
+                    [showSelectedOptionRemove]="false"
+                    [showSelectAll]="true"
+                    [triggerSelectChangeOnInit]="false"
+                    [displaySelectedLimit]="column.displaySelectedLimit"
+                    (onSelectChange)="filterData()">
+                  </ng-dropdown>
+                </ng-container>
+              </th>
+            </ng-container>
+          </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+    <div class="data-table-content" (scrollPosition)="onScrollPositionChange($event)" [style.height]="contentHeight | px" [style.minHeight]="minHeight | px">
+      <div class="loading-cover" *ngIf="showLoadingSpinner && reloading">
+        <div class="loading-animation"></div>
+      </div>
+      <table class="table table-condensed data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
+        <colgroup appDataTableColGroup></colgroup>
+        <tbody appDataTableBody [dataRows]="dataRows">
+        </tbody>
+      </table>
+      <ng-container *ngIf="showNoDataOverlay">
+        <div class="no-records-message" *ngIf="translations.noDataMessageHeader && translations.noDataMessageBody">
+          <h1>{{translations.noDataMessageHeader}}</h1>
+          <h2>{{translations.noDataMessageBody}}</h2>
+        </div>
+        <ng-template *ngIf="noRecordsTemplate" [ngTemplateOutlet]="noRecordsTemplate"></ng-template>
+      </ng-container>
+    </div>
+  </div>
+  <app-data-table-pagination *ngIf="pageable && itemCount"></app-data-table-pagination>
+</div>

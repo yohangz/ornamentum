@@ -1,0 +1,355 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+:host-context {
+
+  .data-table-wrapper {
+    background: $data-table-header-secondary-background;
+    border: .05rem solid $data-table-header-border;
+    overflow: hidden;
+
+    &.scrollable {
+      .data-table-header-wrapper {
+        border-color: $data-table-header-border;
+        border-right: .05rem solid;
+        //overflow: scroll;
+        //overflow-x: hidden;
+        //position: relative;
+        //margin-right: 15px;
+      }
+
+      .data-table-content {
+        //overflow: auto;
+        //overflow-x: auto;
+        //overflow-y: scroll;
+      }
+    }
+
+    ::ng-deep {
+      .multi-select-dropdown {
+        .dropdown-toggle {
+          @include font-size(.7, 1.1);
+          margin: .2rem 0;
+          padding: .26rem .5rem;
+          text-align: left;
+          width: 100%;
+
+          .selected-value {
+            background: none;
+          }
+
+          &::after {
+            position: absolute;
+            right: .5rem;
+            top: .7rem;
+          }
+        }
+      }
+    }
+  }
+
+  .data-table-inner-wrapper {
+    background: $data-table-header-secondary-background;
+    border-color: $data-table-header-border;
+    overflow-y: auto;
+  }
+
+  .data-table-header-wrapper {
+    background: $data-table-header-secondary-background;
+    border: 0;
+
+    .data-table-header {
+      position: relative;
+      width: 100%;
+
+      .data-table {
+        border: 0;
+       // overflow: hidden;
+      }
+    }
+  }
+
+  .data-table-content {
+    overflow: initial;
+    position: relative;
+    width: 100%;
+
+    .data-table {
+      border-bottom: 0;
+      border-right: .05rem solid transparent;
+      overflow: hidden;
+    }
+
+    .loading-cover {
+      background: $data-table-header-background;
+      border-color: $data-table-header-border;
+      border-top: .05rem solid transparent;
+      height: 100%;
+      opacity: .8;
+      pointer-events: none;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+
+      .loading-animation {
+        background-color: $toggle-active-button-background;
+        animation: loader 1s infinite ease-in-out;
+        border-radius: 100%;
+        content: '';
+        display: block;
+        height: 40px;
+        left: 50%;
+        margin: 0 auto;
+        position: absolute;
+        top: 45%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+      }
+    }
+
+    .no-records-message {
+      padding: 5rem;
+      text-align: center;
+
+      h1 {
+        @include font-size(1.2, 1.4);
+        color: $action-text;
+      }
+
+      h2 {
+        @include font-size(.8, 1.4);
+      }
+    }
+
+  }
+
+  .data-table {
+    border: .05rem solid $data-table-border;
+    border-left: 0;
+    margin-bottom: 0;
+    table-layout: fixed;
+
+    thead {
+      //display: block;
+      > tr {
+        > th {
+          @include font-size(.7, 1.6);
+          background: $data-table-header-secondary-background;
+          color: $data-table-header-text;
+          border: .05rem solid $data-table-header-border;
+          border-right: 0;
+          border-top: 0;
+          padding: 0 .5rem;
+          position: relative;
+          word-break: break-all;
+
+          .checkbox-input {
+            margin: 0;
+          }
+
+
+          .column-resize-handle {
+            bottom: 0;
+            cursor: col-resize;
+            display: block;
+            height: 100%;
+            position: absolute;
+            right: -.5rem;
+            width: 1rem;
+            z-index: 10001;
+
+          }
+
+          .column-sort-icon {
+            float: right;
+          }
+
+          &:first-child {
+            border-left: 0;
+          }
+
+          &:last-child {
+            border-right: 0;
+          }
+        }
+
+        [hidden] {
+          animation: rotating 1s ease;
+        }
+
+
+        &:last-child {
+          th {
+            background: $data-table-header-secondary-background;
+            border: 0;
+            border-right: .05rem solid $data-table-header-border;
+
+            input {
+              border: .05rem solid $data-table-header-border;
+              margin: .2rem 0;
+              outline: 0;
+              padding: 0 .5rem;
+              width: 100%;
+            }
+
+            &:last-child {
+              border-right: 0;
+            }
+          }
+        }
+      }
+    }
+
+    ::ng-deep {
+
+      tbody {
+        //display: block;
+        //height: 100px;
+        // overflow: scroll;
+
+        .loading-spinner {
+          &::before {
+            background: $data-table-row-background;
+            bottom: 0;
+            height: 100%;
+            opacity: .3;
+            position: absolute;
+            width: 100%;
+          }
+        }
+
+        > tr {
+
+          cursor: pointer;
+
+          > td {
+            @include font-size(.7, 1.4);
+
+            background: $data-table-row-background;
+            border-color: $data-table-border;
+            color: $data-table-header-text;
+            border-left: 0;
+            border-right: .05rem solid;
+            font-weight: 400;
+            padding: .2rem .5rem;
+            vertical-align: top;
+            word-break: break-all;
+
+            .checkbox-input {
+              margin: 0;
+            }
+
+
+            &:last-child {
+              border-right: 0;
+            }
+
+            .button-container {
+              .action-button {
+                display: inline-block;
+                padding: 0 .5rem;
+
+                i {
+                  @include font-size(.9, 1);
+                  padding-right: 0;
+                }
+              }
+            }
+
+            //&.when-column,
+            //&.what-column {
+            //  .table-expander {
+            //    -webkit-box-orient: vertical;
+            //    -webkit-line-clamp: 5; // number of rows to show
+            //    display: block; // Fallback for non-webkit
+            //    display: -webkit-box;
+            //    margin: 0;
+            //    max-width: 100%;
+            //    position: relative;
+            //    overflow: hidden;
+            //    text-overflow: ellipsis;
+            //
+            //    div {
+            //      padding: 0;
+            //    }
+            //
+            //    .expression-view-condition {
+            //      margin-bottom: 0;
+            //    }
+            //  }
+            //}
+
+            .state-active {
+              color: $state-active-color;
+            }
+
+            .state-expired {
+              color: $state-expired-color;
+            }
+
+            .state-deactivated {
+              color: $state-deactivated-color;
+            }
+
+            .state-upcoming {
+              color: $state-upcoming-color;
+            }
+
+          }
+
+          &.row-odd {
+            td {
+              background: $data-table-odd-row-background;
+            }
+
+            &:hover {
+              td {
+                background: $data-table-hover-background;
+              }
+
+              + .row-odd {
+
+                td {
+                  background: $data-table-hover-background;
+                }
+              }
+            }
+          }
+
+          &.row-even {
+            td {
+              background: $data-table-even-row-background;
+            }
+
+            &:hover {
+              td {
+                background: $data-table-hover-background;
+              }
+
+              + .row-even {
+
+                td {
+                  background: $data-table-hover-background;
+                }
+              }
+            }
+          }
+
+          &.selected {
+            td {
+              background: $data-table-selected-row-background;
+            }
+          }
+        }
+
+        [hidden] {
+          animation: rotating 2s linear infinite;
+        }
+
+        + tbody {
+          border-top: .05rem solid $data-table-border;
+        }
+      }
+    }
+  }
+}
