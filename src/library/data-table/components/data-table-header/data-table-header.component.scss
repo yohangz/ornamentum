@@ -1,0 +1,62 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+:host-context {
+  .data-table-title-header {
+    @include display-flex;
+    @include justify-content(space-between);
+    @include font-size(.8, 1.4);
+
+    border-color: $data-table-header-border;
+    border-bottom: .05rem solid;
+    min-height: 2rem;
+    padding: 0 .5rem 0 1rem;
+
+    .title {
+      @include font-size(1, 1.8);
+      font-weight: 700;
+      margin: .4rem 0 0;
+    }
+
+    .button-panel {
+      margin: .2rem;
+
+      button {
+        margin-right: 0;
+      }
+    }
+
+    .column-selector-wrapper {
+      position: relative;
+    }
+
+    .column-selector-box {
+      @include box-shadow(1px 1px 2px $box-shadow-color);
+      @include font-size(.8, 1.4);
+
+      background: $data-table-dropdown-background;
+      padding: 1.5rem;
+      position: absolute;
+      right: 0;
+      top: .1rem;
+      width: 10rem;
+      z-index: 1060;
+
+      .checkbox {
+        @include font-size(.8, 1.4);
+
+        &:last-child {
+
+          label {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .column-selector-fixed-column {
+    font-style: italic;
+    font-weight: 600;
+  }
+}
