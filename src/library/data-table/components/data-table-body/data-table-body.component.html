@@ -1,0 +1,48 @@
+<ng-container *ngFor="let row of dataRows">
+  <ng-container *ngIf="dataTable.extractGroupRowDetails(row) as groupDetail">
+    <ng-container *ngFor="let _ignore of groupDetail.groupHolder; let holderIndex = index">
+        <tr class="data-table-row"
+            [title]="getTooltip(row)"
+            [style.background-color]="dataTable.getRowColor(row)"
+            [class.row-odd]="isOddRow(row)"
+            [class.row-even]="isEvenRow(row)"
+            [class.selected]="row.selected"
+            [class.clickable]="dataTable.selectOnRowClick"
+            (dblclick)="dataTable.rowDoubleClicked(row, $event)"
+            (click)="dataTable.rowClicked(row, $event)">
+          <td *ngIf="dataTable.expandColumnVisible && holderIndex === 0" (click)="onRowExpand($event, row)" class="row-expand-button" [attr.rowspan]="groupDetail.rowCount">
+            <span class="zmdi zmdi-caret-right-circle zmdi-hc-lg" *ngIf="!row.expanded"></span>
+            <span class="zmdi zmdi-caret-down-circle zmdi-hc-lg" *ngIf="row.expanded"></span>
+          </td>
+          <td *ngIf="dataTable.indexColumnVisible && holderIndex === 0" class="index-column" [textContent]="getDisplayIndex(row)" [attr.rowspan]="groupDetail.rowCount"></td>
+          <td *ngIf="dataTable.selectColumnVisible && holderIndex === 0" class="select-column" [attr.rowspan]="groupDetail.rowCount">
+            <input class="checkbox-input" type="checkbox" [(ngModel)]="row.selected" (change)="dataTable.onRowSelectChanged(row)" (click)="$event.stopPropagation()"/>
+          </td>
+          <ng-container *ngFor="let column of dataTable.columns">
+            <ng-container *ngIf="column.visible">
+              <td *ngIf="!column.cellTemplate && holderIndex === 0" [ngClass]="column.styleClass" class="data-column" [attr.rowspan]="groupDetail.rowCount"
+                  [style.background-color]="column.getCellColor(row)" (click)="dataTable.cellClicked(column, row, $event)">
+                <span>{{row.item[column.field]}}</span>
+              </td>
+              <ng-container *ngIf="column.cellTemplate" [ngTemplateOutlet]="column.cellTemplate" [ngTemplateOutletContext]="{ column: column, row: row, groupDetail: groupDetail , index: holderIndex }"></ng-container>
+            </ng-container>
+          </ng-container>
+        </tr>
+    </ng-container>
+  </ng-container>
+  <tr *ngIf="dataTable.expandableRows" [hidden]="!row.expanded" class="row-expansion">
+    <td [attr.colspan]="dataTable.columnTotalCount">
+      <div [ngTemplateOutlet]="dataTable.expandTemplate" [ngTemplateOutletContext]="{row: row}"></div>
+    </td>
+  </tr>
+</ng-container>
+<ng-container *ngIf="dataTable.showSubstituteRows && !dataTable.showNoDataOverlay">
+  <tr *ngFor="let substituteItem of dataTable.substituteItems, let index = index"  [class.row-odd]="isOddSubstituteRow(index)" [class.row-even]="isEvenSubstituteRow(index)">
+    <td *ngIf="dataTable.expandColumnVisible">&nbsp;</td>
+    <td *ngIf="dataTable.indexColumnVisible">&nbsp;</td>
+    <td *ngIf="dataTable.selectColumnVisible">&nbsp;</td>
+    <ng-container *ngFor="let column of dataTable.columns">
+      <td *ngIf="column.visible">&nbsp;</td>
+    </ng-container>
+  </tr>
+</ng-container>
