@@ -1,0 +1,6 @@
+<col *ngIf="dataTable.expandColumnVisible" [style.width]="dataTable.expanderColumnWidth | px">
+<col *ngIf="dataTable.indexColumnVisible" [style.width]="dataTable.indexColumnWidth | px">
+<col *ngIf="dataTable.selectColumnVisible" [style.width]="dataTable.selectionColumnWidth | px">
+<ng-container *ngFor="let column of dataTable.columns">
+  <col [style.width]="column.width | px" *ngIf="column.visible">
+</ng-container>
