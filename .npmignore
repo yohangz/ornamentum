@@ -19,10 +19,21 @@ Desktop.ini
 .DS_Store
 
 # Temporary files
-coverage
-demo
-docs
 .tmp
 
 # Library files
 src/
+
+.angular-cli.json
+.editorconfig
+.scss-lint.yml
+gulpfile
+karma.conf
+protractor.conf
+tsconfig.doc.json
+tsconfig.esm.json
+tsconfig.json
+tslint.json
+webpack-umd.config
+yarn.lock
+dist
