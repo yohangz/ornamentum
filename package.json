@@ -10,7 +10,7 @@
     "test": "ng test",
     "test:ci": "ng test --single-run",
     "e2e": "ng e2e",
-    "docs": "rimraf docs && compodoc -p tsconfig.doc.json -d docs --disableCoverage --disablePrivateOrInternalSupport",
+    "docs": "rimraf docs && compodoc -p tsconfig.doc.json -d docs --disableCoverage --disablePrivate --disableInternal --disableProtected",
     "lint:src": "ng lint",
     "lint:scss": "sass-lint --config .scss-lint.yml --no-exit --verbose",
     "lint": "npm run lint:src && npm run lint:scss",
