@@ -1,6 +1,6 @@
 {
   "name": "@conquiztador/ng-grid",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Angular 2+ grid (Dev Inprogress)",
   "main": "./lib/index.umd.js",
   "module": "./lib/index.js",
