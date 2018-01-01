@@ -1,0 +1,86 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+:host-context {
+
+  %form-styles {
+    @include font-size(.7, .8);
+    padding: .25rem;
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .pagination-box {
+    @include display-flex;
+    @include font-size(.7, 1.4);
+    @include justify-content(space-between);
+
+    background: $data-table-dropdown-background;
+    border-color: $data-table-header-border;
+    border-bottom: 0;
+    border-top: .05rem solid;
+    margin-bottom: -.05rem;
+    padding: .5rem;
+
+
+  }
+
+  .pagination-range {
+    @include display-flex;
+    @include align-items(center);
+
+    span {
+      color: $data-table-pagination-results;
+      padding: 0 .5rem;
+
+    }
+  }
+
+  .pagination-controllers {
+    @include display-flex;
+    @include font-size(.7, 1.4);
+    @include justify-content(space-between);
+
+    .pagination-limit {
+      margin-right: 2.5rem;
+
+      .input-group {
+        height: 1.4rem;
+      }
+
+      .form-control {
+        @extend %form-styles;
+        max-width: 2rem;
+      }
+    }
+
+    .form-control {
+      @extend %form-styles;
+      min-width: 2.5rem;
+    }
+
+    .input-group-addon {
+      @extend %form-styles;
+    }
+
+    .pagination-pages {
+      @include display-flex;
+      @include justify-content(space-between);
+
+      .input-group {
+        height: 1.4rem;
+      }
+
+      .action-button {
+        @include font-size(.7, .8);
+        height: 1.4rem;
+      }
+
+      .pagination-page {
+        margin-right: .5rem;
+      }
+    }
+  }
+}
