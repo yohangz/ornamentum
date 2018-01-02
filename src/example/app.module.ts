@@ -6,10 +6,18 @@ import { DataTableModule, DropdownModule } from '../library';
 
 
 import { AppComponent } from './app.component';
+import { DataTableExampleComponent } from './components/data-table-example/data-table-example.component';
+import { DropdownExampleComponent } from './components/dropdown-example/dropdown-example.component';
+
+const COMPONENTS = [
+  AppComponent,
+  DataTableExampleComponent,
+  DropdownExampleComponent
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    ...COMPONENTS
   ],
   imports: [
     BrowserModule,
