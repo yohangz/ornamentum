@@ -1,6 +1,64 @@
 import { SortOrder } from '../models/data-table-sort-order.enum';
 import {DataTableParams, FilterOption} from '../models/data-table.model';
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
+import { FilterColumn, SortColumn } from '../';
+
+function predicate() {
+  var fields = [],
+    n_fields = arguments.length,
+    field, name, reverse, cmp;
+
+  var default_cmp = function (a, b) {
+      if (a === b) return 0;
+      return a < b ? -1 : 1;
+    },
+    getCmpFunc = function (primer, reverse, comparator) {
+      var dfc = comparator || default_cmp,
+        // closer in scope
+        cmp = comparator || default_cmp;
+      if (primer) {
+        cmp = function (a, b) {
+          return dfc(primer(a), primer(b));
+        };
+      }
+      if (reverse) {
+        return function (a, b) {
+          return -1 * cmp(a, b);
+        };
+      }
+      return cmp;
+    };
+
+  // preprocess sorting options
+  for (var i = 0; i < n_fields; i++) {
+    field = arguments[i];
+    if (typeof field === 'string') {
+      name = field;
+      cmp = default_cmp;
+    } else {
+      name = field.name;
+      cmp = getCmpFunc(field.primer, field.reverse, field.comparator);
+    }
+    fields.push({
+      name: name,
+      cmp: cmp
+    });
+  }
+
+  // final comparison function
+  return function (A, B) {
+    var a, b, name, result;
+    for (var i = 0; i < n_fields; i++) {
+      result = 0;
+      field = fields[i];
+      name = field.name;
+
+      result = field.cmp(A[name], B[name]);
+      if (result !== 0) break;
+    }
+    return result;
+  };
+}
 
 /**
  * Data table resource service
@@ -45,51 +103,45 @@ export class DataTableResource<T> {
 
       if (params.filterColumns.length) {
         result = items.filter((item) => {
-          return params.filterColumns.every((filterColumn: DataTableColumnComponent) => {
+          return params.filterColumns.every((filterColumn: FilterColumn) => {
             if (filterColumn.filterExpression) {
-              return filterColumn.filterExpression(item, filterColumn);
+              return filterColumn.filterExpression(item, filterColumn.field, filterColumn.filterValue);
             }
 
-            if (filterColumn.filter === undefined || filterColumn.filter === '') {
+            if (filterColumn.filterValue === undefined || filterColumn.filterValue === '') {
               return true;
             }
 
-            const column = filterColumn.filterField ? item[filterColumn.filterField] : item[filterColumn.field];
+            const column = filterColumn.field ? item[filterColumn.field] : item[filterColumn.field];
             if (column === undefined) {
               return true;
             }
 
-            if (Array.isArray(filterColumn.filter)) {
-              return filterColumn.filter.length === 0 || filterColumn.filter.some((option: FilterOption) => {
+            if (Array.isArray(filterColumn.filterValue)) {
+              return filterColumn.filterValue.length === 0 || filterColumn.filterValue.some((option: FilterOption) => {
                 return column === option.key;
               });
             }
 
             const value = String(column).toLowerCase();
-            const filter = String(filterColumn.filter).toLowerCase();
+            const filter = String(filterColumn.filterValue).toLowerCase();
             return value.includes(filter);
           });
         });
       }
 
-      if (params.sortColumn) {
-        if (params.sortColumn.sortOrder === SortOrder.ASC || params.sortColumn.sortOrder === SortOrder.DESC) {
-          if (params.sortColumn.sortExpression) {
-            result.sort(params.sortColumn.sortExpression);
-          } else {
-            result.sort((a, b) => {
-              if (typeof a[params.sortColumn.field] === 'string') {
-                return a[params.sortColumn.field].localeCompare(b[params.sortColumn.field]);
-              } else {
-                return a[params.sortColumn.field] - b[params.sortColumn.field];
-              }
-            });
+      if (params.sortColumns.length) {
+        const sortExpressions = params.sortColumns.filter((column: SortColumn) => {
+          return column.sortOrder !== SortOrder.NONE;
+        }).map((column: SortColumn) => {
+          return {
+            name: column.field,
+            reverse: column.sortOrder === SortOrder.DESC,
+            comparator: column.comparator
           }
-        }
+        });
 
-        if (params.sortColumn.sortOrder === SortOrder.DESC) {
-          result.reverse();
-        }
+        result.sort(predicate.apply(this, sortExpressions));
       }
 
       if (params.offset !== undefined) {
