@@ -1,85 +1,13 @@
-<app-data-table
-  [title]="'Algorithms grid'"
-  [autoFetch]="true"
-  [indexColumnTitle]="'#'"
-  [itemCount]="itemCount"
-  [items]="items"
-  [limit]="30"
-  [multiRowSelectable]="false"
-  [pageable]="true"
-  [rowSelectable]="false"
-  [selectOnRowClick]="false"
-  [showHeader]="true"
-  [showIndexColumn]="true"
-  [showLoadingSpinner]="true"
-  [showSubstituteRows]="true"
-  [selectTrackBy]="'algorithmID'"
-  [contentHeight]="600"
-  [onFilterValueExtract]="tableResource.extractFilterOptions.bind(tableResource)"
+<a routerLink="/grid">
+  <button class="main-btn">ng-grid</button>
+</a>
+<a routerLink="/dropdown">
+  <button class="main-btn">ng-dropdown</button>
+</a>
 
-  (onRefresh)="onRefresh($event)"
-  (onDataLoad)="onDataLoad($event)">
+<br/><br/>
 
-  <app-data-table-column
-    [field]="'algorithmID'"
-    [title]="'ID'"
-    [sortable]="true"
-    [filterable]="true">
-  </app-data-table-column>
-  <app-data-table-column
-    [field]="'algorithmName'"
-    [title]="'Name'"
-    [sortable]="true"
-    [sortColumn]="true"
-    [filterable]="true">
-  </app-data-table-column>
-  <app-data-table-column
-    [field]="'defaultText'"
-    [title]="'Default display text'"
-    [sortable]="true"
-    [filterable]="true">
-  </app-data-table-column>
-  <app-data-table-column
-    [field]="'customText'"
-    [title]="'Custom display text'"
-    [sortable]="true"
-    [filterable]="true">
-  </app-data-table-column>
-  <app-data-table-column
-    [field]="'description'"
-    [title]="'Description'"
-    [sortable]="true"
-    [filterable]="true">
-  </app-data-table-column>
-  <app-data-table-column
-    [field]="'algorithmType'"
-    [title]="'Type'"
-    [sortable]="true"
-    [filterable]="true"
-    [enableMultiSelectFilter]="true">
-  </app-data-table-column>
-  <app-data-table-column
-    [title]="'Action'">
-    <ng-template #appDataTableCell let-row="row">
-      <td>
-        <button (click)="openEditModal(row.item)">Edit</button>
-      </td>
-    </ng-template>
-  </app-data-table-column>
-</app-data-table>
+<div>
+  <router-outlet></router-outlet>
+</div>
 
-
-
-<!--<ng-dropdown-->
-  <!--[items]="items"-->
-  <!--[totalItemCount]="count"-->
-  <!--[groupByField]="'group'"-->
-  <!--[multiSelectable]="true"-->
-  <!--[showSelectAll]="true"-->
-  <!--[filterable]="true"-->
-  <!--(onSelectChange)="onSelectChange($event)"-->
-  <!--[loadViewDistance]="0"-->
-  <!--[(ngModel)]="selected">-->
-<!--</ng-dropdown>-->
-
-<!--value - {{selected | json}}-->
