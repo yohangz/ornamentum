@@ -35,12 +35,15 @@ import {
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
 import { DragAndDropService } from '../../../utility';
+import { DataTableStateService } from '../../services/data-table-state.service';
+import { StorageMode } from '../../models/data-table-storage-mode.enum';
 
 /**
  * Data table component.
  * @class DataTableComponent
  */
 @Component({
+  providers: [DataTableStateService],
   selector: 'app-data-table',
   styleUrls: ['./data-table.component.scss'],
   templateUrl: './data-table.component.html'
@@ -70,8 +73,6 @@ export class DataTableComponent implements OnInit, OnDestroy {
   public indexColumnVisible: boolean;
   public selectColumnVisible: boolean;
   public expandColumnVisible: boolean;
-
-  private dragAndDropService: DragAndDropService;
 
   private columnFilterStream = new Subject();
   private dataFetchStream = new Subject();
@@ -193,6 +194,27 @@ export class DataTableComponent implements OnInit, OnDestroy {
   public onRefresh = new EventEmitter<DataTableParams>();
 
   // Input parameters
+
+  /**
+   * Data table identifier. Required if persist table state is enabled.
+   */
+  @Input()
+  public id: string;
+
+  /**
+   * Persist table state if true.
+   * @type {boolean}
+   */
+  @Input()
+  public persistTableState: boolean = false;
+
+  /**
+   * Storage more to persist table state.
+   */
+  @Input()
+  public set storageMode(value: StorageMode) {
+    this.dataTableStateService.storageMode = value;
+  }
 
   /**
    * Enable multi column sorting support if true.
@@ -560,11 +582,8 @@ export class DataTableComponent implements OnInit, OnDestroy {
     return Math.ceil(this.itemCount / this.limit);
   }
 
-  public state: DataTableParams;
-
-  constructor(dragAndDropService: DragAndDropService) {
-    this.dragAndDropService = dragAndDropService;
-    this.state = JSON.parse(localStorage.getItem('data-table-state'));
+  constructor(private dragAndDropService: DragAndDropService, private dataTableStateService: DataTableStateService) {
+    this.dataTableStateService.storageMode = StorageMode.SESSION;
   }
 
   /**
@@ -683,7 +702,10 @@ export class DataTableComponent implements OnInit, OnDestroy {
   public dataBind(hardRefresh: boolean): void {
     this.reloading = true;
     const dataTableParams = this.getDataTableParams(hardRefresh);
-    localStorage.setItem('data-table-state', JSON.stringify(dataTableParams));
+
+    if (this.persistTableState) {
+      this.dataTableStateService.setState(this.id, dataTableParams);
+    }
 
     if (hardRefresh) {
       this.selectedRows = [];
@@ -741,6 +763,34 @@ export class DataTableComponent implements OnInit, OnDestroy {
     });
   }
 
+  private initDataTableState(): void {
+    if (this.persistTableState) {
+      const dataTableState = this.dataTableStateService.getState(this.id);
+      if (dataTableState) {
+        this.columns.forEach((column) => {
+          const filterColumn = dataTableState.filterColumns.find((col) => {
+            return col.field === column.field
+          });
+
+          const sortColumn = dataTableState.sortColumns.find((col) => {
+            return col.field === column.field
+          });
+
+          if (filterColumn) {
+            column.filter = filterColumn.filterValue;
+          }
+
+          if (sortColumn) {
+            column.sortOrder = sortColumn.sortOrder
+          }
+        });
+
+        this._limit = dataTableState.limit;
+        this._offset = dataTableState.offset;
+      }
+    }
+  }
+
   /**
    * Lifecycle hook that is called after data-bound properties of a directive are initialized.
    */
@@ -756,28 +806,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
     this.initRowSelectionEvent();
 
     setTimeout(() => {
-      if (this.state) {
-        this.columns.forEach((column) => {
-          const filterColumn = this.state.filterColumns.find((col) => {
-            return col.field === column.field
-          });
-
-          const sortColumn = this.state.sortColumns.find((col) => {
-            return col.field === column.field
-          });
-
-          if (filterColumn) {
-            column.filter = filterColumn.filterValue;
-          }
-
-          if (sortColumn) {
-            column.sortOrder = sortColumn.sortOrder
-          }
-        });
-
-        this._limit = this.state.limit;
-        this._offset = this.state.offset;
-      }
+      this.initDataTableState();
 
       this.dataFetchStream.debounceTime(20).subscribe((hardRefresh: boolean) => {
         this.dataBind(hardRefresh);
