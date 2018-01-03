@@ -1,0 +1,83 @@
+[
+  {
+    "userID": null,
+    "algorithmID": 824,
+    "algorithmName": "Top Trending Deals Inspired By Your Preferences",
+    "customText": "-",
+    "defaultText": "Top Trending Deals Inspired By Your Preferences",
+    "description": "-",
+    "algorithmType": "DEAL"
+  },
+  {
+    "userID": null,
+    "algorithmID": 826,
+    "algorithmName": "Top Trending Deals Inspired By Your Preferences By Percentage Range",
+    "customText": "-",
+    "defaultText": "Top Trending Deals Inspired By Your Preferences By Percentage Range",
+    "description": "-",
+    "algorithmType": "DEAL"
+  },
+  {
+    "userID": null,
+    "algorithmID": 825,
+    "algorithmName": "Top Trending Deals Inspired By Your Preferences By Price Range",
+    "customText": "-",
+    "defaultText": "Top Trending Deals Inspired By Your Preferences By Price Range",
+    "description": "-",
+    "algorithmType": "DEAL"
+  },
+  {
+    "userID": null,
+    "algorithmID": 5001,
+    "algorithmName": "Top Trending Decay",
+    "customText": "-",
+    "defaultText": "Top Trending Decay",
+    "description": "-",
+    "algorithmType": "FLAT"
+  },
+  {
+    "userID": null,
+    "algorithmID": 5002,
+    "algorithmName": "Top Trending Inspired By Your Preferences5002",
+    "customText": "-",
+    "defaultText": "Top Trending Inspired By Your Preferences",
+    "description": "-",
+    "algorithmType": "FLAT"
+  },
+  {
+    "userID": null,
+    "algorithmID": 5003,
+    "algorithmName": "Top Trending Decay5003",
+    "customText": "-",
+    "defaultText": "Top Trending Decay",
+    "description": "-",
+    "algorithmType": "FLAT"
+  },
+  {
+    "userID": null,
+    "algorithmID": 5004,
+    "algorithmName": "Top Trending Decay5004",
+    "customText": "-",
+    "defaultText": "Top Trending Decay",
+    "description": "-",
+    "algorithmType": "FLAT"
+  },
+  {
+    "userID": null,
+    "algorithmID": 5005,
+    "algorithmName": "Top Trending Decay5005",
+    "customText": "-",
+    "defaultText": "Top Trending Decay",
+    "description": "-",
+    "algorithmType": "FLAT"
+  },
+  {
+    "userID": null,
+    "algorithmID": 5006,
+    "algorithmName": "Top Trending Decay5006",
+    "customText": "-",
+    "defaultText": "Top Trending Decay",
+    "description": "-",
+    "algorithmType": "FLAT"
+  }
+]
