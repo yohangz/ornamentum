@@ -2,7 +2,7 @@ import { ContentChild, Directive, Input, OnInit, TemplateRef } from '@angular/co
 
 import {
   CellCallback, FilterFieldMapperCallback, DataRow, FilterExpressionCallback, FilterValueFormatterCallback,
-  SortExpressionCallback,
+  SortComparatorCallback,
   FilterOption
 } from '../../models/data-table.model';
 import { SortOrder } from '../../models/data-table-sort-order.enum';
@@ -15,6 +15,9 @@ import { SortOrder } from '../../models/data-table-sort-order.enum';
   selector: 'app-data-table-column'
 })
 export class DataTableColumnComponent implements OnInit {
+
+  private _sortOrder: SortOrder = SortOrder.NONE;
+  private _baseSortOrder: SortOrder;
 
   // Content Child Properties
 
@@ -45,16 +48,28 @@ export class DataTableColumnComponent implements OnInit {
   @Input()
   public sortable: boolean = false;
 
+  /**
+   * Set Data sort oder.
+   * @type SortOrder
+   */
   @Input()
-  public sortOrder: SortOrder;
+  public set sortOrder(value: SortOrder) {
+    this._sortOrder = value;
+    this._baseSortOrder = value;
+  }
 
-  @Input()
-  public sortColumn: boolean = false;
+  /**
+   * Get data sort order.
+   * @returns {SortOrder}
+   */
+  public get sortOrder(): SortOrder {
+    return this._sortOrder;
+  }
 
   /**
    * Filterable state.
    * @default false
-   * @type {boolean}
+   * @type boolean
    */
   @Input()
   public filterable: boolean = false;
@@ -95,10 +110,10 @@ export class DataTableColumnComponent implements OnInit {
   /**
    * Sort expression callback function.
    * @default undefined
-   * @type SortExpressionCallback
+   * @type SortComparatorCallback
    */
   @Input()
-  public sortExpression: SortExpressionCallback;
+  public sortComparatorExpression: SortComparatorCallback;
 
   /**
    * Custom filter field mapper.
@@ -206,10 +221,15 @@ export class DataTableColumnComponent implements OnInit {
     }
   }
 
+
+  public resetSortOrder(): void {
+    this._sortOrder = this._baseSortOrder;
+  }
+
   /**
    * Lifecycle hook that is called after data-bound properties of a directive are initialized.
    */
-  ngOnInit() {
+  public ngOnInit(): void {
     if (!this.styleClass && this.field) {
       if (/^[a-zA-Z0-9_]+$/.test(this.field)) {
         this.styleClass = 'column-' + this.field;
