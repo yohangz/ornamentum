@@ -3,31 +3,30 @@
 
 :host-context {
 
-  .data-table-wrapper {
+  .ng-data-table-wrapper {
     background: $data-table-header-secondary-background;
     border: .05rem solid $data-table-header-border;
     overflow: hidden;
 
     &.scrollable {
-      .data-table-header-wrapper {
-        border-color: $data-table-header-border;
-        border-right: .05rem solid;
+      .ng-data-table-header-wrapper {
+
         //overflow: scroll;
-        //overflow-x: hidden;
-        //position: relative;
-        //margin-right: 15px;
+       // overflow-x: hidden;
+        position: relative;
+        padding-right: 15px;
       }
 
-      .data-table-content {
-        //overflow: auto;
-        //overflow-x: auto;
-        //overflow-y: scroll;
+      .ng-data-table-content {
+        overflow: auto;
+        overflow-x: auto;
+        overflow-y: scroll;
       }
     }
 
     ::ng-deep {
       .multi-select-dropdown {
-        .dropdown-toggle {
+        .multi-select-dropdown-toggle {
           @include font-size(.7, 1.1);
           margin: .2rem 0;
           padding: .26rem .5rem;
@@ -48,33 +47,35 @@
     }
   }
 
-  .data-table-inner-wrapper {
+  .ng-data-table-inner-wrapper {
     background: $data-table-header-secondary-background;
     border-color: $data-table-header-border;
     overflow-y: auto;
   }
 
-  .data-table-header-wrapper {
+  .ng-data-table-header-wrapper {
     background: $data-table-header-secondary-background;
     border: 0;
 
-    .data-table-header {
+    .ng-data-table-header {
+      border-right: .05rem solid $data-table-header-border;
+      overflow: hidden;
       position: relative;
       width: 100%;
 
-      .data-table {
+      .ng-data-table {
         border: 0;
-       // overflow: hidden;
+        // overflow: hidden;
       }
     }
   }
 
-  .data-table-content {
+  .ng-data-table-content {
     overflow: initial;
     position: relative;
     width: 100%;
 
-    .data-table {
+    .ng-data-table {
       border-bottom: 0;
       border-right: .05rem solid transparent;
       overflow: hidden;
@@ -123,11 +124,14 @@
 
   }
 
-  .data-table {
+  .ng-data-table {
     border: .05rem solid $data-table-border;
+    border-collapse: collapse;
     border-left: 0;
     margin-bottom: 0;
+    max-width: 100%;
     table-layout: fixed;
+    width: 100%;
 
     thead {
       //display: block;
@@ -141,6 +145,7 @@
           border-top: 0;
           padding: 0 .5rem;
           position: relative;
+          vertical-align: bottom;
           word-break: break-all;
 
           .checkbox-input {
@@ -186,6 +191,10 @@
 
             input {
               border: .05rem solid $data-table-header-border;
+              box-sizing: border-box;
+              font-family: inherit;
+              font-size: inherit;
+              line-height: inherit;
               margin: .2rem 0;
               outline: 0;
               padding: 0 .5rem;
@@ -226,10 +235,10 @@
             @include font-size(.7, 1.4);
 
             background: $data-table-row-background;
-            border-color: $data-table-border;
             color: $data-table-header-text;
             border-left: 0;
-            border-right: .05rem solid;
+            border-right: .05rem solid  $data-table-border;
+            border-top: .05rem solid $data-table-border;
             font-weight: 400;
             padding: .2rem .5rem;
             vertical-align: top;
@@ -246,6 +255,7 @@
 
             .button-container {
               .action-button {
+                cursor: pointer;
                 display: inline-block;
                 padding: 0 .5rem;
 

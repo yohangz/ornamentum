@@ -1,6 +1,6 @@
-<div class="multi-select-dropdown dropdown" [class.open]="isOpen" (clickOutside)="closeDropdown()">
+<div class="multi-select-dropdown" [class.open]="isOpen" (clickOutside)="closeDropdown()">
 
-  <button type="button" class="dropdown-toggle" (click)="toggleDropdown($event)" [disabled]="disabled">
+  <button type="button" class="multi-select-dropdown-toggle" (click)="toggleDropdown($event)" [disabled]="disabled">
     <ng-container *ngIf="multiSelectable">
       <ng-container *ngIf="!showAllSelectedItemLabels">
          <span class="selected-value" *ngFor="let option of _selectedOptions">
@@ -20,15 +20,15 @@
     </ng-container>
   </button>
 
-  <ul *ngIf="isOpen" class="dropdown-menu" [style.width]="dropdownWidth | px">
+  <ul *ngIf="isOpen" class="multi-select-dropdown-menu" [style.width]="dropdownWidth | px">
     <ul *ngIf="filterable">
       <li class="search">
-        <div class="input-group input-group-sm">
-          <span class="input-group-addon" id="sizing-addon3">
+        <div class="multi-select-dropdown-input-group">
+          <span class="multi-select-dropdown-input-group-addon" id="sizing-addon3">
             <i class="zmdi zmdi-search"></i>
           </span>
-          <input type="text" class="form-control" placeholder="{{ translations.searchPlaceholder }}" aria-describedby="sizing-addon3" (keyup)="filterKeyUp()" autofocus [(ngModel)]="filterText">
-          <span class="input-group-btn button-container" *ngIf="filterText">
+          <input type="text" class="multi-select-dropdown-input" placeholder="{{ translations.searchPlaceholder }}" aria-describedby="sizing-addon3" (keyup)="filterKeyUp()" autofocus [(ngModel)]="filterText">
+          <span class="multi-select-dropdown-input-group-btn button-container" *ngIf="filterText">
             <button class="btn btn-default btn-secondary action-button delete-button" type="button" (click)="clearSearch()">
               <i class="zmdi zmdi-close-circle"></i>
             </button>

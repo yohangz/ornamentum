@@ -5,6 +5,7 @@
 
   ::ng-deep {
     .multi-select-dropdown {
+      position: relative;
 
       .search {
         list-style: none;
@@ -14,17 +15,29 @@
           padding: 0;
         }
 
-        .input-group-addon {
+        .multi-select-dropdown-input-group-addon {
           background: $multi-select-dropdown-icon-background;
           color: $multi-select-dropdown-toggle-color;
           border: 0;
+          padding: 0.25rem 0.5rem;
+          margin-bottom: 0;
+          font-size: 0.875rem;
+          line-height: 1.5;
+          text-align: center;
+          white-space: nowrap;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center;
 
           i {
             color: $multi-select-dropdown-icon-color;
           }
         }
 
-        .input-group-btn {
+        .multi-select-dropdown-input-group-btn {
           margin-left: .01rem;
 
           .delete-button {
@@ -34,7 +47,7 @@
         }
       }
 
-      .dropdown-toggle {
+      .multi-select-dropdown-toggle {
         background: $multi-select-dropdown-toggle-background;
         color: $multi-select-dropdown-toggle-color;
 
@@ -75,14 +88,70 @@
           position: absolute;
           right: .5rem;
           top: .8rem;
+
+          display: inline-block;
+          width: 0;
+          height: 0;
+          margin-left: .255em;
+          vertical-align: .255em;
+          content: "";
+          border-top: .3em solid;
+          border-right: .3em solid transparent;
+          border-bottom: 0;
+          border-left: .3em solid transparent;
         }
       }
 
-      .dropdown-menu  {
+      .multi-select-dropdown-menu  {
         display: block;
         min-width: 20rem;
         padding: 1rem;
         z-index: 10001;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        float: left;
+        margin: .125rem 0 0;
+        font-size: 1rem;
+        color: #212529;
+        text-align: left;
+        list-style: none;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: .05rem solid rgba(0,0,0,.15);
+        border-radius: 0;
+
+        .multi-select-dropdown-input-group {
+          position: relative;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -webkit-box-align: stretch;
+          -ms-flex-align: stretch;
+          align-items: stretch;
+          width: 100%;
+
+          .multi-select-dropdown-input {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+            -webkit-box-flex: 1;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            width: 1%;
+            margin-bottom: 0;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.875rem;
+            line-height: 1.5;
+          }
+        }
 
         ul {
           padding: 0;
@@ -106,6 +175,13 @@
           &.disabled {
             pointer-events: none;
             opacity:0.6;
+          }
+
+          &.dropdown-divider {
+            height: 0;
+            margin: 0.5rem 0;
+            overflow: hidden;
+            border-top: 1px solid #e9ecef;
           }
         }
 
