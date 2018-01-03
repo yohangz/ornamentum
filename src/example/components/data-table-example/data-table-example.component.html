@@ -16,6 +16,11 @@
     <ng-container *ngIf="!showIndexColumn">Show Index Column: <b>OFF</b></ng-container>
   </button>
 
+  <button (click)="multiColumnSortable = !multiColumnSortable">
+    <ng-container *ngIf="multiColumnSortable">Multi Column Sorting: <b>ON</b></ng-container>
+    <ng-container *ngIf="!multiColumnSortable">Multi Column Sorting: <b>OFF</b></ng-container>
+  </button>
+
   <button (click)="expandableRows = !expandableRows">
     <ng-container *ngIf="expandableRows">Expandable Rows: <b>ON</b></ng-container>
     <ng-container *ngIf="!expandableRows">Expandable Rows: <b>OFF</b></ng-container>
@@ -97,6 +102,7 @@
   [items]="items"
   [limit]="limit"
   [multiRowSelectable]="multiRowSelectable"
+  [multiColumnSortable]="multiColumnSortable"
   [page]="page"
   [pageable]="pageable"
   [rowSelectable]="rowSelectable"
@@ -123,7 +129,6 @@
     [field]="'algorithmName'"
     [title]="'Name'"
     [sortable]="true"
-    [sortColumn]="true"
     [filterable]="true">
   </app-data-table-column>
   <app-data-table-column

@@ -26,6 +26,7 @@ export class DataTableExampleComponent {
   selectOnRowClick: boolean;
   showHeader: boolean;
   showIndexColumn: boolean;
+  multiColumnSortable: boolean;
   showLoadingSpinner: boolean;
   showSubstituteRows: boolean;
   filterDebounceTime: number;
@@ -50,6 +51,7 @@ export class DataTableExampleComponent {
     this.selectOnRowClick = true;
     this.showHeader = true;
     this.showIndexColumn = true;
+    this.multiColumnSortable = false;
     this.showLoadingSpinner = true;
     this.showSubstituteRows = true;
     this.filterDebounceTime = 500;
