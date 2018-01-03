@@ -1,10 +1,11 @@
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
+import { SortOrder } from './data-table-sort-order.enum';
 
 export type CellCallback = (row: DataRow, column: DataTableColumnComponent) => string;
 
-export type FilterExpressionCallback = (item: any, filterColumn: DataTableColumnComponent) => boolean;
+export type FilterExpressionCallback = (item: any, field: string, filterValue: any) => boolean;
 
-export type SortExpressionCallback = (previousItem: any, nextItem: any) => number;
+export type SortComparatorCallback = (previousItem: any, nextItem: any) => number;
 
 /**
  * Row colour change event handler.
@@ -55,8 +56,8 @@ export interface DataTableTranslations {
 export interface DataTableParams {
   offset?: number;
   limit?: number;
-  sortColumn?: DataTableColumnComponent;
-  filterColumns?: DataTableColumnComponent[];
+  sortColumns?: SortColumn[];
+  filterColumns?: FilterColumn[];
 }
 
 /**
@@ -145,4 +146,16 @@ export interface GroupDetail {
   rowCount: number;
   groups: any[][];
   groupHolder: any[];
+}
+
+export interface SortColumn {
+  field: string;
+  sortOrder: SortOrder;
+  comparator: SortComparatorCallback;
+}
+
+export interface FilterColumn {
+  field: string;
+  filterValue: any;
+  filterExpression: FilterExpressionCallback;
 }
