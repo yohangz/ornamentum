@@ -1,15 +1,11 @@
 import { Component } from '@angular/core';
 
-import { DataTableColumnComponent } from '../../../library/data-table/components/data-table-column/data-table-column.component';
-
-import { SortOrder } from '../../../library/data-table/models/data-table-sort-order.enum';
 import { DataTableParams, DataTableTranslations } from '../../../library/data-table/models/data-table.model';
 
 import { DataTableResource } from '../../../library/data-table/services/data-table-resource';
 
 declare function require(url: string);
-
-const data = require('../../data/data.json');
+const data = require('../../data/grid-data.json');
 
 @Component({
   selector: 'app-data-table-example-component',
