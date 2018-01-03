@@ -195,6 +195,13 @@ export class DataTableComponent implements OnInit, OnDestroy {
   // Input parameters
 
   /**
+   * Enable multi column sorting support if true.
+   * @type {boolean}
+   */
+  @Input()
+  public multiColumnSortable: boolean = false;
+
+  /**
    * Show header if true.
    * @default true
    * @type {boolean}
@@ -553,8 +560,11 @@ export class DataTableComponent implements OnInit, OnDestroy {
     return Math.ceil(this.itemCount / this.limit);
   }
 
+  public state: DataTableParams;
+
   constructor(dragAndDropService: DragAndDropService) {
     this.dragAndDropService = dragAndDropService;
+    this.state = JSON.parse(localStorage.getItem('data-table-state'));
   }
 
   /**
@@ -642,17 +652,26 @@ export class DataTableComponent implements OnInit, OnDestroy {
       this._offset = 0;
     }
 
-    const sortColumn = this.getSortColumn();
-    if (sortColumn) {
-      params.sortColumn = sortColumn;
-    }
+    params.sortColumns = this.getSortColumns().map((column: DataTableColumnComponent) => {
+      return {
+        field: column.field,
+        sortOrder: column.sortOrder,
+        comparator: column.sortComparatorExpression
+      }
+    });
 
     if (this.pageable) {
       params.offset = this.offset;
       params.limit = this.limit;
     }
 
-    params.filterColumns = this.getColumnFilters();
+    params.filterColumns = this.getColumnFilterColumns().map((column: DataTableColumnComponent) => {
+      return {
+        field: column.field,
+        filterValue: column.filter,
+        filterExpression: column.filterExpression
+      }
+    });
 
     return params;
   }
@@ -664,11 +683,13 @@ export class DataTableComponent implements OnInit, OnDestroy {
   public dataBind(hardRefresh: boolean): void {
     this.reloading = true;
     const dataTableParams = this.getDataTableParams(hardRefresh);
+    localStorage.setItem('data-table-state', JSON.stringify(dataTableParams));
+
     if (hardRefresh) {
       this.selectedRows = [];
       this.selectedRow = undefined;
       this.clearColumnFilters();
-      this.clearColumnSortState();
+      this.resetColumnSortState();
       this.isHeardReload = true;
       this.onRefresh.emit(dataTableParams);
     } else {
@@ -733,16 +754,41 @@ export class DataTableComponent implements OnInit, OnDestroy {
 
     this.initCustomFilterEvent();
     this.initRowSelectionEvent();
-    this.fetchFilterOptions();
 
-    this.dataFetchStream.debounceTime(20).subscribe((hardRefresh: boolean) => {
-      this.dataBind(hardRefresh);
+    setTimeout(() => {
+      if (this.state) {
+        this.columns.forEach((column) => {
+          const filterColumn = this.state.filterColumns.find((col) => {
+            return col.field === column.field
+          });
+
+          const sortColumn = this.state.sortColumns.find((col) => {
+            return col.field === column.field
+          });
+
+          if (filterColumn) {
+            column.filter = filterColumn.filterValue;
+          }
+
+          if (sortColumn) {
+            column.sortOrder = sortColumn.sortOrder
+          }
+        });
+
+        this._limit = this.state.limit;
+        this._offset = this.state.offset;
+      }
+
+      this.dataFetchStream.debounceTime(20).subscribe((hardRefresh: boolean) => {
+        this.dataBind(hardRefresh);
+      });
+
+      if (this.autoFetch) {
+        this.dataFetchStream.next(false);
+      }
     });
 
-    if (this.autoFetch) {
-      this.dataFetchStream.next(false);
-    }
-
+    this.fetchFilterOptions();
     this.onInit.emit(this);
   }
 
@@ -846,18 +892,20 @@ export class DataTableComponent implements OnInit, OnDestroy {
    */
   private sortData(column: DataTableColumnComponent): void {
     if (column.sortable) {
-      if (column.sortColumn) {
+      if (column.sortOrder) {
         column.sortOrder = this.getNewSortOrder(column);
       } else {
-        const currentSortColumn = this.getSortColumn();
-        if (currentSortColumn) {
-          currentSortColumn.sortColumn = false;
+        if (!this.multiColumnSortable) {
+          const sortColumns = this.getSortColumns();
+          sortColumns.forEach((sortColumn: DataTableColumnComponent) => {
+            if (sortColumn !== column) {
+              sortColumn.sortOrder = SortOrder.NONE;
+            }
+          });
         }
 
         column.sortOrder = SortOrder.ASC;
       }
-
-      column.sortColumn = true;
 
       this.dataFetchStream.next(false);
     }
@@ -973,19 +1021,26 @@ export class DataTableComponent implements OnInit, OnDestroy {
     });
   }
 
-  private getSortColumn(): DataTableColumnComponent {
+  /**
+   * Get sort columns.
+   * @returns {DataTableColumnComponent[]}
+   */
+  private getSortColumns(): DataTableColumnComponent[] {
     if (this.columns) {
-      return this.columns.find((column: DataTableColumnComponent) => {
-        return column.sortable && column.sortColumn;
+      return this.columns.filter((column: DataTableColumnComponent) => {
+        return column.sortable;
       });
     }
 
-    return null;
+    return [];
   }
 
-  private clearColumnSortState(): void {
+  /**
+   * Reset column sort state.
+   */
+  private resetColumnSortState(): void {
     this.columns.forEach((column: DataTableColumnComponent) => {
-      column.sortColumn = false;
+      column.resetSortOrder();
     });
   }
 
@@ -994,7 +1049,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * Get column filters collection.
    * @return {DataTableColumnComponent[]} Column filters.
    */
-  private getColumnFilters(): DataTableColumnComponent[] {
+  private getColumnFilterColumns(): DataTableColumnComponent[] {
     if (this.columns) {
       return this.columns.filter((column: DataTableColumnComponent) => {
         return column.filterable;
@@ -1126,7 +1181,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
     return {
       'zmdi-sort-amount-asc': column.sortOrder === SortOrder.ASC,
       'zmdi-sort-amount-desc': column.sortOrder === SortOrder.DESC,
-      'zmdi-format-line-spacing': column.sortOrder === SortOrder.NONE
+      'zmdi-format-line-spacing':  column.sortOrder === undefined || column.sortOrder === SortOrder.NONE
     }
   }
 }

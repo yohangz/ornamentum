@@ -21,8 +21,7 @@
                 <span *ngIf="!column.headerTemplate" [textContent]="column.title"></span>
                 <span *ngIf="column.headerTemplate" [ngTemplateOutlet]="column.headerTemplate" [ngTemplateOutletContext]="{column: column}"></span>
                 <span class="column-sort-icon" [hidden]="!column.sortable">
-                  <i class="zmdi zmdi-format-line-spacing" [hidden]="column.sortColumn"></i>
-                  <i class="zmdi" [hidden]="!column.sortColumn" [ngClass]="getSortIconClass(column)"></i>
+                  <i class="zmdi" [ngClass]="getSortIconClass(column)"></i>
                 </span>
                 <span *ngIf="column.resizable"  class="column-resize-handle float-right" (mousedown)="resizeColumnStart($event, column, th)"></span>
               </th>
