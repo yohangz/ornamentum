@@ -1,7 +1,11 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { UtilityConfigService } from './services/utility-config.service';
+import { DragAndDropService } from './services/drag-and-drop.service';
+
 import { ClickOutsideDirective } from './directives/click-outside.directive';
+
 import { PixelConverterPipe } from './pipes/pixel-converter.pipe';
 
 const DIRECTIVES = [
@@ -10,6 +14,10 @@ const DIRECTIVES = [
 
 const PIPES = [
   PixelConverterPipe
+];
+
+const PROVIDERS = [
+  DragAndDropService
 ];
 
 
@@ -23,6 +31,9 @@ const PIPES = [
   declarations: [
     ...DIRECTIVES,
     ...PIPES
+  ],
+  providers: [
+    ...PROVIDERS
   ],
   exports: [
     ...DIRECTIVES,

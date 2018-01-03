@@ -6,6 +6,7 @@ import { DataTableColumnComponent } from '../components/data-table-column/data-t
  * Data table resource service
  * @class DataTableResource<T>
  */
+
 export class DataTableResource<T> {
   private itemsPromise: Promise<T[]>;
   private resolve: Function;

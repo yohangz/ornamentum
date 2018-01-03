@@ -19,24 +19,28 @@ import {
   CellClickEventArgs,
   DataRow,
   DataTableParams,
-  DataTableTranslations, DoubleClickEventArgs, FilterEventArgs, FilterValueExtractCallback, GroupDetail,
+  DataTableTranslations,
+  DoubleClickEventArgs,
+  FilterEventArgs,
+  FilterValueExtractCallback,
+  GroupDetail,
   GroupFieldExtractorCallback,
   HeaderClickEventArgs,
   RowClickEventArgs,
-  RowColourChangeCallback, RowSelectEventArgs,
+  RowColourChangeCallback,
+  RowSelectEventArgs,
   RowTooltipCallback
 } from '../../models/data-table.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
-import { DragAndDropService } from '../../services/drag-and-drop.service';
+import { DragAndDropService } from '../../../utility';
 
 /**
  * Data table component.
  * @class DataTableComponent
  */
 @Component({
-  providers: [DragAndDropService],
   selector: 'app-data-table',
   styleUrls: ['./data-table.component.scss'],
   templateUrl: './data-table.component.html'
