@@ -8,6 +8,7 @@ import {
 } from '../../../library/data-table';
 
 declare function require(url: string);
+
 const data = require('../../data/grid-data.json');
 
 @Component({
@@ -86,6 +87,24 @@ export class DataTableExampleComponent {
   }
 
   /**
+   * On data table init event callback.
+   * @param {DataTableComponent} dataTableComponent Data table reference.
+   */
+  public onInit(dataTableComponent: DataTableComponent): void {
+    this.dataTableComponent = dataTableComponent;
+  }
+
+  /**
+   * On edit functionality.
+   * @param item
+   * @param event
+   */
+  public onEdit(item: any, event: any): void {
+    event.stopPropagation();
+    console.log(item);
+  }
+
+  /**
    * Fetch algorithms data and bind to the data table source.
    */
   private fetchAlgorithmsData(): void {
@@ -93,14 +112,6 @@ export class DataTableExampleComponent {
     this.tableResource.items = data.stationBeanList;
 
     this.tableResource.count().then((count) => this.itemCount = count);
-  }
-
-  /**
-   * On data table init event callback.
-   * @param {DataTableComponent} dataTableComponent Data table reference.
-   */
-  public onInit(dataTableComponent: DataTableComponent): void {
-    this.dataTableComponent = dataTableComponent;
   }
 }
 
