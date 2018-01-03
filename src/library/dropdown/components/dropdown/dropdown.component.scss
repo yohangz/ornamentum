@@ -4,10 +4,11 @@
 :host-context {
 
   ::ng-deep {
-    .multi-select-dropdown {
+
+    .ng-dropdown {
       position: relative;
 
-      .search {
+      .ng-dropdown-search {
         list-style: none;
 
         i {
@@ -15,7 +16,7 @@
           padding: 0;
         }
 
-        .multi-select-dropdown-input-group-addon {
+        .ng-dropdown-input-group-addon {
           @include display-flex;
           @include align-items(center);
           @include font-size(.875, 1.5);
@@ -32,17 +33,17 @@
           }
         }
 
-        .multi-select-dropdown-input-group-btn {
+        .ng-dropdown-input-group-btn {
           margin-left: .01rem;
 
-          .delete-button {
+          .ng-dropdown-delete-button {
             @include font-size(.7, .7);
             margin: 0;
           }
         }
       }
 
-      .multi-select-dropdown-toggle {
+      .ng-dropdown-toggle {
         @include border-radius(0);
         @include font-size(.8, 1);
         background: $multi-select-dropdown-toggle-background;
@@ -55,7 +56,7 @@
         text-align: left;
         width: 100%;
 
-        .selected-value {
+        .ng-dropdown-selected-value {
           background: $generated-context-background;
           color: $generated-context-color;
           margin-right: .5rem;
@@ -93,7 +94,7 @@
         }
       }
 
-      .multi-select-dropdown-menu  {
+      .ng-dropdown-menu  {
         background-color: #fff;
         background-clip: padding-box;
         border: .05rem solid rgba(0,0,0,.15);
@@ -112,14 +113,14 @@
         top: 100%;
         z-index: 10001;
 
-        .multi-select-dropdown-input-group {
+        .ng-dropdown-input-group {
           @include display-flex;
           @include flex-wrap(wrap);
           @include align-items(stretch);
           position: relative;
           width: 100%;
 
-          .multi-select-dropdown-input {
+          .ng-dropdown-input {
             @include display-flex;
             @include flex(1 1 auto);
             @include align-items(center);
@@ -136,7 +137,7 @@
         ul {
           padding: 0;
 
-          &.dropdown-item-container {
+          &.ng-dropdown-item-container {
             border: .05rem solid $multi-select-dropdown-toggle-border;
             height: 7rem;
             overflow-y: auto;
@@ -157,7 +158,7 @@
             opacity:0.6;
           }
 
-          &.dropdown-divider {
+          &.ng-dropdown-divider {
             height: 0;
             margin: 0.5rem 0;
             overflow: hidden;
@@ -165,7 +166,7 @@
           }
         }
 
-        .show-more {
+        .ng-dropdown-show-more {
           text-align: center;
           width: 100%;
 

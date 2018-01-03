@@ -22,15 +22,15 @@
     }
 
     ::ng-deep {
-      .multi-select-dropdown {
-        .multi-select-dropdown-toggle {
+      .ng-dropdown {
+        .ng-dropdown-toggle {
           @include font-size(.7, 1.1);
           margin: .2rem 0;
           padding: .26rem .5rem;
           text-align: left;
           width: 100%;
 
-          .selected-value {
+          .ng-dropdown-selected-value {
             background: none;
           }
 
