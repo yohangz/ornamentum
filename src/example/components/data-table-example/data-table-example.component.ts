@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
 
-import { DataTableParams, DataTableTranslations } from '../../../library/data-table/models/data-table.model';
-
-import { DataTableResource } from '../../../library/data-table/services/data-table-resource';
+import {
+  DataTableParams,
+  DataTableTranslations,
+  DataTableResource,
+  DataTableComponent
+} from '../../../library/data-table';
 
 declare function require(url: string);
 const data = require('../../data/grid-data.json');
@@ -34,6 +37,7 @@ export class DataTableExampleComponent {
   page: number;
   tableResource: DataTableResource<any>;
   translations: DataTableTranslations;
+  dataTableComponent: DataTableComponent;
 
   constructor() {
     this.gridTitle = 'Algorithms Grid';
@@ -87,6 +91,14 @@ export class DataTableExampleComponent {
     this.tableResource.items = data;
 
     this.tableResource.count().then((count) => this.itemCount = count);
+  }
+
+  /**
+   * On data table init event callback.
+   * @param {DataTableComponent} dataTableComponent Data table reference.
+   */
+  public onInit(dataTableComponent: DataTableComponent): void {
+    this.dataTableComponent = dataTableComponent;
   }
 }
 

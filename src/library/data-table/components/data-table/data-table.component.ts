@@ -134,6 +134,13 @@ export class DataTableComponent implements OnInit, OnDestroy {
   };
 
   /**
+   * On data table init event handler.
+   * @type {EventEmitter<DataTableComponent>}
+   */
+  @Output()
+  public onInit = new EventEmitter<DataTableComponent>();
+
+  /**
    * On row selected state change event handler.
    * @default undefined
    * @type {EventEmitter<any>}
@@ -651,10 +658,10 @@ export class DataTableComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Reload data table.
+   * Trigger table data bind.
    * @param {boolean} hardRefresh Hard refresh if true.
    */
-  private reloadItems(hardRefresh: boolean): void {
+  public dataBind(hardRefresh: boolean): void {
     this.reloading = true;
     const dataTableParams = this.getDataTableParams(hardRefresh);
     if (hardRefresh) {
@@ -729,12 +736,14 @@ export class DataTableComponent implements OnInit, OnDestroy {
     this.fetchFilterOptions();
 
     this.dataFetchStream.debounceTime(20).subscribe((hardRefresh: boolean) => {
-      this.reloadItems(hardRefresh);
+      this.dataBind(hardRefresh);
     });
 
     if (this.autoFetch) {
       this.dataFetchStream.next(false);
     }
+
+    this.onInit.emit(this);
   }
 
   /**

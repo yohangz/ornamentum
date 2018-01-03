@@ -21,6 +21,14 @@
     <ng-container *ngIf="!expandableRows">Expandable Rows: <b>OFF</b></ng-container>
   </button>
 
+  <button (click)="dataTableComponent.dataBind()">
+    Reload Data
+  </button>
+
+  <button (click)="dataTableComponent.dataBind(true)">
+    Hard Reload Data
+  </button>
+
   Content Height:<input placeholder="Enter Content Height" [(ngModel)]="contentHeight"
                         [ngModelOptions]="{standalone: true}">
 </div>
@@ -102,7 +110,8 @@
   [onFilterValueExtract]="tableResource.extractFilterOptions.bind(tableResource)"
 
   (onRefresh)="onRefresh($event)"
-  (onDataLoad)="onDataLoad($event)">
+  (onDataLoad)="onDataLoad($event)"
+  (onInit)="onInit($event)">
 
   <app-data-table-column
     [field]="'algorithmID'"
