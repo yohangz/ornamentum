@@ -5,16 +5,13 @@
 
   .ng-data-table-wrapper {
     background: $data-table-header-secondary-background;
-    border: .05rem solid $data-table-header-border;
+    border: .07rem solid $data-table-header-border;
     overflow: hidden;
 
     &.scrollable {
       .ng-data-table-header-wrapper {
-
-        //overflow: scroll;
-       // overflow-x: hidden;
-        position: relative;
         padding-right: 15px;
+        position: relative;
       }
 
       .ng-data-table-content {
@@ -65,7 +62,6 @@
 
       .ng-data-table {
         border: 0;
-        // overflow: hidden;
       }
     }
   }
@@ -93,8 +89,8 @@
       z-index: 1;
 
       .loading-animation {
-        background-color: $toggle-active-button-background;
         animation: loader 1s infinite ease-in-out;
+        background-color: $toggle-active-button-background;
         border-radius: 100%;
         content: '';
         display: block;
@@ -139,10 +135,10 @@
         > th {
           @include font-size(.7, 1.6);
           background: $data-table-header-secondary-background;
-          color: $data-table-header-text;
           border: .05rem solid $data-table-header-border;
           border-right: 0;
           border-top: 0;
+          color: $data-table-header-text;
           padding: 0 .5rem;
           position: relative;
           vertical-align: bottom;
@@ -212,9 +208,6 @@
     ::ng-deep {
 
       tbody {
-        //display: block;
-        //height: 100px;
-        // overflow: scroll;
 
         .loading-spinner {
           &::before {
@@ -233,12 +226,11 @@
 
           > td {
             @include font-size(.7, 1.4);
-
             background: $data-table-row-background;
-            color: $data-table-header-text;
             border-left: 0;
             border-right: .05rem solid  $data-table-border;
             border-top: .05rem solid $data-table-border;
+            color: $data-table-header-text;
             font-weight: 400;
             padding: .2rem .5rem;
             vertical-align: top;
@@ -265,29 +257,6 @@
                 }
               }
             }
-
-            //&.when-column,
-            //&.what-column {
-            //  .table-expander {
-            //    -webkit-box-orient: vertical;
-            //    -webkit-line-clamp: 5; // number of rows to show
-            //    display: block; // Fallback for non-webkit
-            //    display: -webkit-box;
-            //    margin: 0;
-            //    max-width: 100%;
-            //    position: relative;
-            //    overflow: hidden;
-            //    text-overflow: ellipsis;
-            //
-            //    div {
-            //      padding: 0;
-            //    }
-            //
-            //    .expression-view-condition {
-            //      margin-bottom: 0;
-            //    }
-            //  }
-            //}
 
             .state-active {
               color: $state-active-color;

@@ -25,7 +25,12 @@
         border: 0;
         cursor: pointer;
         margin-right: 0;
+        outline: none;
         padding: .2rem .5rem;
+
+        i {
+          @include font-size(1.1, 1.5);
+        }
       }
     }
 

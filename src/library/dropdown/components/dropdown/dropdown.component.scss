@@ -16,21 +16,16 @@
         }
 
         .multi-select-dropdown-input-group-addon {
+          @include display-flex;
+          @include align-items(center);
+          @include font-size(.875, 1.5);
           background: $multi-select-dropdown-icon-background;
-          color: $multi-select-dropdown-toggle-color;
           border: 0;
-          padding: 0.25rem 0.5rem;
+          color: $multi-select-dropdown-toggle-color;
           margin-bottom: 0;
-          font-size: 0.875rem;
-          line-height: 1.5;
+          padding: 0.25rem 0.5rem;
           text-align: center;
           white-space: nowrap;
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
-          align-items: center;
 
           i {
             color: $multi-select-dropdown-icon-color;
@@ -48,12 +43,11 @@
       }
 
       .multi-select-dropdown-toggle {
-        background: $multi-select-dropdown-toggle-background;
-        color: $multi-select-dropdown-toggle-color;
-
         @include border-radius(0);
         @include font-size(.8, 1);
+        background: $multi-select-dropdown-toggle-background;
         border: .05rem solid $multi-select-dropdown-toggle-border;
+        color: $multi-select-dropdown-toggle-color;
         cursor: pointer;
         outline: 0;
         padding: .5rem;
@@ -64,17 +58,15 @@
         .selected-value {
           background: $generated-context-background;
           color: $generated-context-color;
-
           margin-right: .5rem;
           padding: .2rem 1.5rem .2rem .5rem;
           position: relative;
 
 
           i {
+            @include font-size(1.1, 1.4);
             background: $generated-context-background;
             color: $alert-error-color;
-
-            @include font-size(1.1, 1.4);
             cursor: pointer;
             height: 1.3rem;
             position: absolute;
@@ -85,71 +77,59 @@
         }
 
         &::after {
+          content: "";
+          display: inline-block;
+          height: 0;
+          margin-left: .255em;
           position: absolute;
           right: .5rem;
           top: .8rem;
-
-          display: inline-block;
-          width: 0;
-          height: 0;
-          margin-left: .255em;
           vertical-align: .255em;
-          content: "";
-          border-top: .3em solid;
-          border-right: .3em solid transparent;
+          width: 0;
           border-bottom: 0;
           border-left: .3em solid transparent;
+          border-right: .3em solid transparent;
+          border-top: .3em solid;
         }
       }
 
       .multi-select-dropdown-menu  {
-        display: block;
-        min-width: 20rem;
-        padding: 1rem;
-        z-index: 10001;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        float: left;
-        margin: .125rem 0 0;
-        font-size: 1rem;
-        color: #212529;
-        text-align: left;
-        list-style: none;
         background-color: #fff;
         background-clip: padding-box;
         border: .05rem solid rgba(0,0,0,.15);
         border-radius: 0;
+        color: #212529;
+        display: block;
+        font-size: 1rem;
+        float: left;
+        left: 0;
+        list-style: none;
+        margin: .125rem 0 0;
+        min-width: 20rem;
+        padding: 1rem;
+        position: absolute;
+        text-align: left;
+        top: 100%;
+        z-index: 10001;
 
         .multi-select-dropdown-input-group {
+          @include display-flex;
+          @include flex-wrap(wrap);
+          @include align-items(stretch);
           position: relative;
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-          -webkit-box-align: stretch;
-          -ms-flex-align: stretch;
-          align-items: stretch;
           width: 100%;
 
           .multi-select-dropdown-input {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-            -webkit-box-flex: 1;
-            -ms-flex: 1 1 auto;
-            flex: 1 1 auto;
-            width: 1%;
-            margin-bottom: 0;
-            padding: 0.25rem 0.5rem;
+            @include display-flex;
+            @include flex(1 1 auto);
+            @include align-items(center);
             font-size: 0.875rem;
             line-height: 1.5;
+            margin-bottom: 0;
+            padding: 0.25rem 0.5rem;
+            position: relative;
+            width: 1%;
+            z-index: 2;
           }
         }
 

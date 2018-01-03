@@ -1,7 +1,7 @@
 $primary-text-color: #444;
 $secondary-text-color: #fff;
 $primary-background-color: #3b78e7;
-$alert-error-color: red;
+$alert-error-color: #f00;
 $secondary-background-color: #d32f2f;
 $success-color: #40b30d;
 $info-color: #47c5ff;
@@ -40,7 +40,7 @@ $state-expired-color:  lighten($primary-text-color, 50%);
 $state-deactivated-color: $secondary-background-color;
 $state-upcoming-color: $info-color;
 
-$data-table-row-background: gray;
+$data-table-row-background: #808080;
 
 $toggle-active-button-background: $primary-background-color;
 $action-text: $primary-background-color;
