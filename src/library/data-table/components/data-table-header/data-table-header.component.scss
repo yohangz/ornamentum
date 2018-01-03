@@ -2,35 +2,38 @@
 @import '../../../styles/mixins';
 
 :host-context {
-  .data-table-title-header {
+  .ng-data-table-top-header {
     @include display-flex;
     @include justify-content(space-between);
     @include font-size(.8, 1.4);
-
-    border-color: $data-table-header-border;
-    border-bottom: .05rem solid;
+    border-bottom: .05rem solid $data-table-header-border;
     min-height: 2rem;
     padding: 0 .5rem 0 1rem;
 
-    .title {
+    .ng-data-table-title {
       @include font-size(1, 1.8);
       font-weight: 700;
       margin: .4rem 0 0;
     }
 
-    .button-panel {
+    .ng-data-table-action-button-container {
       margin: .2rem;
 
-      button {
+      .ng-data-table-action-button {
+        @include border-radius(0);
+        background: none;
+        border: 0;
+        cursor: pointer;
         margin-right: 0;
+        padding: .2rem .5rem;
       }
     }
 
-    .column-selector-wrapper {
+    .ng-data-table-column-selector-wrapper {
       position: relative;
     }
 
-    .column-selector-box {
+    .ng-data-table-column-selector-box {
       @include box-shadow(1px 1px 2px $box-shadow-color);
       @include font-size(.8, 1.4);
 
@@ -55,7 +58,7 @@
     }
   }
 
-  .column-selector-fixed-column {
+  .ng-data-table-column-selector-fixed-column {
     font-style: italic;
     font-weight: 600;
   }

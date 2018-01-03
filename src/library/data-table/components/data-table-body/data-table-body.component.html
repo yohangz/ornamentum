@@ -1,7 +1,7 @@
 <ng-container *ngFor="let row of dataRows">
   <ng-container *ngIf="dataTable.extractGroupRowDetails(row) as groupDetail">
     <ng-container *ngFor="let _ignore of groupDetail.groupHolder; let holderIndex = index">
-        <tr class="data-table-row"
+        <tr class="ng-data-table-row"
             [title]="getTooltip(row)"
             [style.background-color]="dataTable.getRowColor(row)"
             [class.row-odd]="isOddRow(row)"

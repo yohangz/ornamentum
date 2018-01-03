@@ -1,9 +1,9 @@
-<div class="data-table-wrapper" [ngClass]="{ 'scrollable': !!contentHeight }">
+<div class="ng-data-table-wrapper" [ngClass]="{ 'scrollable': !!contentHeight }">
   <app-data-table-header *ngIf="showHeader"></app-data-table-header>
-  <div class="data-table-inner-wrapper">
-    <div class="data-table-header-wrapper">
-      <div class="data-table-header" [scrollElement]="scrollPosition">
-        <table class="table table-condensed data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
+  <div class="ng-data-table-inner-wrapper">
+    <div class="ng-data-table-header-wrapper">
+      <div class="ng-data-table-header" [scrollElement]="scrollPosition">
+        <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
           <colgroup appDataTableColGroup></colgroup>
           <thead>
           <tr>
@@ -42,16 +42,16 @@
                 </ng-container>
                 <ng-container *ngIf="column.enableMultiSelectFilter">
                   <ng-dropdown
-                    [items]="column.filterOptions"
-                    [totalItemCount]="column.filterOptions.length"
-                    [(ngModel)]="column.filter"
-                    [filterable]="true"
-                    [multiSelectable]="true"
-                    [showSelectedOptionRemove]="false"
-                    [showSelectAll]="true"
-                    [triggerSelectChangeOnInit]="false"
-                    [displaySelectedLimit]="column.displaySelectedLimit"
-                    (onSelectChange)="filterData()">
+                      [items]="column.filterOptions"
+                      [totalItemCount]="column.filterOptions.length"
+                      [(ngModel)]="column.filter"
+                      [filterable]="true"
+                      [multiSelectable]="true"
+                      [showSelectedOptionRemove]="false"
+                      [showSelectAll]="true"
+                      [triggerSelectChangeOnInit]="false"
+                      [displaySelectedLimit]="column.displaySelectedLimit"
+                      (onSelectChange)="filterData()">
                   </ng-dropdown>
                 </ng-container>
               </th>
@@ -61,11 +61,11 @@
         </table>
       </div>
     </div>
-    <div class="data-table-content" (scrollPosition)="onScrollPositionChange($event)" [style.height]="contentHeight | px" [style.minHeight]="minHeight | px">
+    <div class="ng-data-table-content" (scrollPosition)="onScrollPositionChange($event)" [style.height]="contentHeight | px" [style.minHeight]="minHeight | px">
       <div class="loading-cover" *ngIf="showLoadingSpinner && reloading">
         <div class="loading-animation"></div>
       </div>
-      <table class="table table-condensed data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
+      <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
         <colgroup appDataTableColGroup></colgroup>
         <tbody appDataTableBody [dataRows]="dataRows">
         </tbody>
