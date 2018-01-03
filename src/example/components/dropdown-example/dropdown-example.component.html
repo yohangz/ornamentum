@@ -1,13 +1,13 @@
-<!--<ng-dropdown-->
-<!--[items]="items"-->
-<!--[totalItemCount]="count"-->
-<!--[groupByField]="'group'"-->
-<!--[multiSelectable]="true"-->
-<!--[showSelectAll]="true"-->
-<!--[filterable]="true"-->
-<!--(onSelectChange)="onSelectChange($event)"-->
-<!--[loadViewDistance]="0"-->
-<!--[(ngModel)]="selected">-->
-<!--</ng-dropdown>-->
+<ng-dropdown
+  [items]="items"
+  [totalItemCount]="count"
+  [groupByField]="'group'"
+  [multiSelectable]="true"
+  [showSelectAll]="true"
+  [filterable]="true"
+  [loadViewDistance]="0"
+  [(ngModel)]="selected"
+  (onSelectChange)="onSelectChange($event)">
+</ng-dropdown>
 
-<!--value - {{selected | json}}-->
+value - {{selected | json}}
