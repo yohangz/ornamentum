@@ -111,7 +111,7 @@
   [showIndexColumn]="showIndexColumn"
   [showLoadingSpinner]="showLoadingSpinner"
   [showSubstituteRows]="showSubstituteRows"
-  [selectTrackBy]="'algorithmID'"
+  [selectTrackBy]="'id'"
   [contentHeight]="600"
   [persistTableState]="true"
   [onFilterValueExtract]="tableResource.extractFilterOptions.bind(tableResource)"
@@ -121,38 +121,64 @@
   (onInit)="onInit($event)">
 
   <app-data-table-column
-    [field]="'algorithmID'"
+    [width]="80"
+    [field]="'id'"
     [title]="'ID'"
     [sortable]="true"
     [filterable]="true">
   </app-data-table-column>
   <app-data-table-column
-    [field]="'algorithmName'"
-    [title]="'Name'"
+    [field]="'stationName'"
+    [title]="'Station Name'"
     [sortable]="true"
     [filterable]="true">
   </app-data-table-column>
   <app-data-table-column
-    [field]="'defaultText'"
-    [title]="'Default display text'"
+    [width]="120"
+    [field]="'latitude'"
+    [title]="'Latitude'"
     [sortable]="true"
     [filterable]="true">
   </app-data-table-column>
   <app-data-table-column
-    [field]="'customText'"
-    [title]="'Custom display text'"
+    [width]="120"
+    [field]="'longitude'"
+    [title]="'Longitude'"
     [sortable]="true"
     [filterable]="true">
   </app-data-table-column>
   <app-data-table-column
-    [field]="'description'"
-    [title]="'Description'"
+    [width]="120"
+    [field]="'availableDocks'"
+    [title]="'Available Docks'"
     [sortable]="true"
     [filterable]="true">
   </app-data-table-column>
   <app-data-table-column
-    [field]="'algorithmType'"
-    [title]="'Type'"
+    [width]="110"
+    [field]="'totalDocks'"
+    [title]="'Total Docks'"
+    [sortable]="true"
+    [filterable]="true">
+  </app-data-table-column>
+  <app-data-table-column
+    [width]="100"
+    [field]="'statusValue'"
+    [title]="'Status'"
+    [sortable]="true"
+    [filterable]="true">
+  </app-data-table-column>
+  <app-data-table-column
+    [width]="120"
+    [field]="'availableBikes'"
+    [title]="'Available Bikes'"
+    [sortable]="true"
+    [filterable]="true"
+    [enableMultiSelectFilter]="true">
+  </app-data-table-column>
+  <app-data-table-column
+    [field]="'lastCommunicationTime'"
+    [title]="'Last Communication Time'"
     [sortable]="true"
     [filterable]="true"
     [enableMultiSelectFilter]="true">

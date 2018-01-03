@@ -41,7 +41,7 @@ export class DataTableExampleComponent {
   dataTableComponent: DataTableComponent;
 
   constructor() {
-    this.gridTitle = 'Algorithms Grid';
+    this.gridTitle = 'Stations Details in the New York City Bike Sharing Initiative';
     this.autoFetch = true;
     this.expandableRows = true;
     this.filterDebounce = true;
@@ -90,7 +90,7 @@ export class DataTableExampleComponent {
    */
   private fetchAlgorithmsData(): void {
     this.tableResource = new DataTableResource();
-    this.tableResource.items = data;
+    this.tableResource.items = data.stationBeanList;
 
     this.tableResource.count().then((count) => this.itemCount = count);
   }
