@@ -8,6 +8,7 @@ import { ClickOutsideDirective } from './directives/click-outside.directive';
 
 import { PixelConverterPipe } from './pipes/pixel-converter.pipe';
 import { GlobalRefService } from './services/global-ref.service';
+import { ComponentLoaderFactory } from './services/component-loader-factory.service';
 
 const DIRECTIVES = [
   ClickOutsideDirective
@@ -19,7 +20,8 @@ const PIPES = [
 
 const PROVIDERS = [
   DragAndDropService,
-  GlobalRefService
+  GlobalRefService,
+  ComponentLoaderFactory
 ];
 
 
