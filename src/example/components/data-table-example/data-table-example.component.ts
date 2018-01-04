@@ -12,6 +12,17 @@ declare function require(url: string);
 
 const data = require('../../data/grid-data.json');
 
+export interface ColumnConf {
+  width?: number;
+  title?: string;
+  filterPlaceholder?: string;
+  sortable?: boolean;
+  filterable?: boolean;
+  resizable?: boolean;
+  enableMultiSelectFilter?: boolean;
+  visible?: boolean;
+}
+
 @Component({
   providers: [DataStorageService],
   selector: 'app-data-table-example-component',
@@ -49,43 +60,16 @@ export class DataTableExampleComponent {
   public tableResource: DataTableResource<any>;
   public dataTableComponent: DataTableComponent;
 
-  public firstColConf: {
-    width: number;
-    title: string;
-    filterPlaceholder: string;
-    sortable: boolean;
-    filterable: boolean;
-    resizable: boolean;
-    enableMultiSelectFilter: boolean;
-    visible: boolean;
-  };
-  public secondColConf: {
-    title: string;
-  };
-  public thirdColConf: {
-    title: string;
-  };
-  public forthColConf: {
-    title: string;
-  };
-  public fifthColConf: {
-    title: string;
-  };
-  public sixthColConf: {
-    title: string;
-  };
-  public seventhColConf: {
-    title: string;
-  };
-  public eighthColConf: {
-    title: string;
-  };
-  public ninthColConf: {
-    title: string;
-  };
-  public tenthColConf: {
-    title: string;
-  };
+  public firstColConf: ColumnConf;
+  public secondColConf: ColumnConf;
+  public thirdColConf: ColumnConf;
+  public forthColConf: ColumnConf;
+  public fifthColConf: ColumnConf;
+  public sixthColConf: ColumnConf;
+  public seventhColConf: ColumnConf;
+  public eighthColConf: ColumnConf;
+  public ninthColConf: ColumnConf;
+  public tenthColConf: ColumnConf;
 
   constructor(private dataStorageService: DataStorageService) {
     this.initialTableConf = this.dataStorageService.get(DataTableExampleComponent.tableConfigurationStorageKeyName) ||
@@ -116,38 +100,94 @@ export class DataTableExampleComponent {
     this.firstColConf = {
       width: 80,
       title: 'ID',
-      filterPlaceholder: '',
       sortable: true,
       filterable: true,
+      filterPlaceholder: '',
       resizable: false,
       enableMultiSelectFilter: false,
       visible: true
     };
     this.secondColConf = {
-      title: 'Station Name'
+      title: 'Station Name',
+      sortable: true,
+      filterable: true,
+      filterPlaceholder: '',
+      resizable: false,
+      enableMultiSelectFilter: false,
+      visible: true
     };
     this.thirdColConf = {
-      title: 'Latitude'
+      width: 120,
+      title: 'Latitude',
+      sortable: true,
+      filterable: true,
+      filterPlaceholder: '',
+      resizable: false,
+      enableMultiSelectFilter: false,
+      visible: true
     };
     this.forthColConf = {
-      title: 'Longitude'
+      width: 120,
+      title: 'Longitude',
+      sortable: true,
+      filterable: true,
+      filterPlaceholder: '',
+      resizable: false,
+      enableMultiSelectFilter: false,
+      visible: true
     };
     this.fifthColConf = {
-      title: 'Available Docks'
+      width: 120,
+      title: 'Available Docks',
+      sortable: true,
+      filterable: true,
+      filterPlaceholder: '',
+      resizable: false,
+      enableMultiSelectFilter: false,
+      visible: true
     };
     this.sixthColConf = {
-      title: 'Total Docks'
+      width: 110,
+      title: 'Total Docks',
+      sortable: true,
+      filterable: true,
+      filterPlaceholder: '',
+      resizable: false,
+      enableMultiSelectFilter: false,
+      visible: true
     };
     this.seventhColConf = {
-      title: 'Status'
+      width: 100,
+      title: 'Status',
+      sortable: true,
+      filterable: true,
+      filterPlaceholder: '',
+      resizable: false,
+      enableMultiSelectFilter: false,
+      visible: true
     };
     this.eighthColConf = {
-      title: 'Available Bikes'
+      width: 120,
+      title: 'Available Bikes',
+      sortable: true,
+      filterable: true,
+      filterPlaceholder: '',
+      resizable: false,
+      enableMultiSelectFilter: false,
+      visible: true
     };
     this.ninthColConf = {
-      title: 'Last Communication Time'
+      width: 180,
+      title: 'Last Communication Time',
+      sortable: true,
+      filterable: true,
+      filterPlaceholder: '',
+      resizable: false,
+      enableMultiSelectFilter: false,
+      visible: true
     };
     this.tenthColConf = {
+      width: 100,
       title: 'Action'
     };
 
