@@ -86,9 +86,9 @@ export interface ScrollPoint {
  * Row select event arguments.
  */
 export interface RowSelectEventArgs {
-  row: DataRow,
-  selectedRow?: string,
-  selectedRows?: string[]
+  row: DataRow;
+  selectedRow?: string;
+  selectedRows?: string[];
 }
 
 /**
