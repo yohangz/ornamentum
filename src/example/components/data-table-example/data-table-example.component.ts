@@ -28,6 +28,7 @@ export class DataTableExampleComponent {
     rowSelectable: boolean;
     multiColumnSortable: boolean;
     expandableRows: boolean;
+    remoteDataFetch: boolean;
   };
 
   public gridTitle: string;
@@ -49,7 +50,7 @@ export class DataTableExampleComponent {
   public tableResource: DataTableResource<any>;
   public dataTableComponent: DataTableComponent;
 
-  private translations: DataTableTranslations;
+  // private translations: DataTableTranslations;
 
   constructor(private dataStorageService: DataStorageService) {
     this.initialConfigurations = this.dataStorageService.get(DataTableExampleComponent.configurationStorageKeyName) ||
@@ -58,7 +59,8 @@ export class DataTableExampleComponent {
         showIndexColumn: true,
         rowSelectable: true,
         multiColumnSortable: false,
-        expandableRows: true
+        expandableRows: true,
+        remoteDataFetch: false
       };
 
     this.gridTitle = 'Stations Details in the New York City Bike Sharing Initiative';
@@ -74,10 +76,10 @@ export class DataTableExampleComponent {
     this.indexColumnTitle = '#';
     this.limit = 10;
     this.page = 1;
-    this.translations = {
-      noDataMessageBody: 'ඩේටා නොමැත. සමාවන්න !!',
-      noDataMessageHeader: 'Header'
-    };
+    // this.translations = {
+    //   noDataMessageBody: 'ඩේටා නොමැත. සමාවන්න !!',
+    //   noDataMessageHeader: 'Header'
+    // };
     this.items = [];
 
     this.fetchAlgorithmsData();
@@ -132,7 +134,10 @@ export class DataTableExampleComponent {
    */
   private fetchAlgorithmsData(): void {
     this.tableResource = new DataTableResource();
-    this.tableResource.items = data.stationBeanList;
+
+    if (!this.initialConfigurations.remoteDataFetch) {
+      this.tableResource.items = data.stationBeanList;
+    }
 
     this.tableResource.count().then((count) => this.itemCount = count);
   }
