@@ -33,34 +33,6 @@
         }
       }
     }
-
-    .ng-data-table-column-selector-wrapper {
-      position: relative;
-    }
-
-    .ng-data-table-column-selector-box {
-      @include box-shadow(1px 1px 2px $box-shadow-color);
-      @include font-size(.8, 1.4);
-
-      background: $data-table-dropdown-background;
-      padding: 1.5rem;
-      position: absolute;
-      right: 0;
-      top: .1rem;
-      width: 10rem;
-      z-index: 1060;
-
-      .checkbox {
-        @include font-size(.8, 1.4);
-
-        &:last-child {
-
-          label {
-            margin-bottom: 0;
-          }
-        }
-      }
-    }
   }
 
   .ng-data-table-column-selector-fixed-column {

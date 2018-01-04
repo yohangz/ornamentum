@@ -8,6 +8,16 @@
     border: .07rem solid $data-table-header-border;
     overflow: hidden;
 
+    ::-webkit-scrollbar {
+      width: 15px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      border-radius: 1rem;
+      border: .2rem solid $data-table-header-secondary-background;
+      background-color: $data-table-header-border;
+    }
+
     &.scrollable {
       .ng-data-table-header-wrapper {
         padding-right: 15px;
