@@ -89,7 +89,6 @@ export class DataTableBodyComponent {
    * @param {DataRow} dataRow Data row object.
    */
   public onRowExpand($event: Event, dataRow: DataRow): void {
-    $event.stopPropagation();
     dataRow.expanded = !dataRow.expanded;
     dataRow.dataLoaded = true;
   }

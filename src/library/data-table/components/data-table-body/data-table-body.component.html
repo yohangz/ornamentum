@@ -10,13 +10,13 @@
             [class.clickable]="dataTable.selectOnRowClick"
             (dblclick)="dataTable.rowDoubleClicked(row, $event)"
             (click)="dataTable.rowClicked(row, $event)">
-          <td *ngIf="dataTable.expandColumnVisible && holderIndex === 0" (click)="onRowExpand($event, row)" class="row-expand-button" [attr.rowspan]="groupDetail.rowCount">
-            <span class="zmdi zmdi-caret-right-circle zmdi-hc-lg" *ngIf="!row.expanded"></span>
-            <span class="zmdi zmdi-caret-down-circle zmdi-hc-lg" *ngIf="row.expanded"></span>
+          <td *ngIf="dataTable.expandColumnVisible && holderIndex === 0" (click)="onRowExpand($event, row)" class="row-expand-button ng-ignore-propagation" [attr.rowspan]="groupDetail.rowCount">
+            <span class="zmdi zmdi-caret-right-circle zmdi-hc-lg ng-ignore-propagation" *ngIf="!row.expanded"></span>
+            <span class="zmdi zmdi-caret-down-circle zmdi-hc-lg ng-ignore-propagation" *ngIf="row.expanded"></span>
           </td>
           <td *ngIf="dataTable.indexColumnVisible && holderIndex === 0" class="index-column" [textContent]="getDisplayIndex(row)" [attr.rowspan]="groupDetail.rowCount"></td>
-          <td *ngIf="dataTable.selectColumnVisible && holderIndex === 0" class="select-column" [attr.rowspan]="groupDetail.rowCount">
-            <input class="checkbox-input" type="checkbox" [(ngModel)]="row.selected" (change)="dataTable.onRowSelectChanged(row)" (click)="$event.stopPropagation()"/>
+          <td *ngIf="dataTable.selectColumnVisible && holderIndex === 0" class="select-column ng-ignore-propagation" [attr.rowspan]="groupDetail.rowCount">
+            <input class="checkbox-input ng-ignore-propagation" type="checkbox" [(ngModel)]="row.selected" (change)="dataTable.onRowSelectChanged(row)"/>
           </td>
           <ng-container *ngFor="let column of dataTable.columns">
             <ng-container *ngIf="column.visible">

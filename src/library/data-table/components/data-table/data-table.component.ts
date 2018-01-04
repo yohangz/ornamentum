@@ -647,10 +647,11 @@ export class DataTableComponent implements OnInit, OnDestroy {
 
     if (this.selectOnRowClick || (this.expandableRows && this.expandOnRowClick)) {
       this.rowClickSubscription = this.onRowClick.subscribe((rowClickEventArgs: RowClickEventArgs) => {
-        if (this.selectOnRowClick) {
+        if (this.selectOnRowClick && !rowClickEventArgs.event.srcElement.classList.contains('ng-ignore-propagation')) {
           rowClickEventArgs.row.selected = !rowClickEventArgs.row.selected;
           this.onRowSelectChanged(rowClickEventArgs.row);
         }
+
 
         if (this.expandOnRowClick) {
           rowClickEventArgs.row.expanded = !rowClickEventArgs.row.expanded;
