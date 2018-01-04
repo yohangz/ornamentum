@@ -12,6 +12,11 @@ declare function require(url: string);
 
 const data = require('../../data/grid-data.json');
 
+/**
+ * Interface representing column configurations.
+ *
+ * @interface ColumnConf.
+ */
 export interface ColumnConf {
   width?: number;
   title?: string;
