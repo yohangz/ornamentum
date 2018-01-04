@@ -3,7 +3,7 @@ import { ComponentLoader } from './component-loader.class';
 import { GlobalRefService } from './global-ref.service';
 
 @Injectable()
-export class ComponentLoaderFactory {
+export class ComponentLoaderFactoryService {
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,

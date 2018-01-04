@@ -2,7 +2,7 @@ import { Component, forwardRef, Inject } from '@angular/core';
 
 import { DataTableComponent } from '../data-table/data-table.component';
 import { DataTableColumnSelectorComponent } from '../data-table-column-selector/data-table-column-selector.component';
-import { ComponentLoaderFactory, ComponentLoader } from '../../../utility';
+import { ComponentLoaderFactoryService, ComponentLoader } from '../../../utility';
 
 /**
  * Data table header component.
@@ -16,7 +16,7 @@ import { ComponentLoaderFactory, ComponentLoader } from '../../../utility';
 export class DataTableHeaderComponent {
   public componentLoader: ComponentLoader<DataTableColumnSelectorComponent>;
 
-  constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent, private componentLoaderFactory: ComponentLoaderFactory) {
+  constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent, private componentLoaderFactory: ComponentLoaderFactoryService) {
     this.componentLoader = this.componentLoaderFactory.createLoader<DataTableColumnSelectorComponent>()
   }
 

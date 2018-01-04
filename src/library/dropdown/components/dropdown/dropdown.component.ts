@@ -9,7 +9,7 @@ import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 
 import 'rxjs/add/operator/debounceTime';
-import { ComponentLoaderFactory } from '../../../utility';
+import { ComponentLoaderFactoryService } from '../../../utility';
 import { ComponentLoader } from '../../../utility/services/component-loader.class';
 import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component';
 
@@ -336,7 +336,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   @Output()
   public onSelectChange = new EventEmitter<DropdownItem[] | DropdownItem>();
 
-  constructor(private componentLoaderFactory: ComponentLoaderFactory) {
+  constructor(private componentLoaderFactory: ComponentLoaderFactoryService) {
     this._translations = this.defaultTranslations;
     this.componentLoader = this.componentLoaderFactory.createLoader();
 
