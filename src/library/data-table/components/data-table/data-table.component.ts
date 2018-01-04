@@ -44,7 +44,7 @@ import { StorageMode } from '../../models/data-table-storage-mode.enum';
  */
 @Component({
   providers: [DataTableStateService],
-  selector: 'app-data-table',
+  selector: 'ng-data-table',
   styleUrls: ['./data-table.component.scss'],
   templateUrl: './data-table.component.html'
 })

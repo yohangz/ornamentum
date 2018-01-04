@@ -451,7 +451,7 @@
 </div>
 <br/>
 
-<app-data-table
+<ng-data-table
   [title]="gridTitle"
   [autoFetch]="initialTableConf.autoFetch"
   [expandableRows]="initialTableConf.expandableRows"
@@ -480,7 +480,7 @@
   (onDataLoad)="onDataLoad($event)"
   (onInit)="onInit($event)">
 
-  <app-data-table-column
+  <ng-data-table-column
     [width]="firstColConf.width"
     [field]="'id'"
     [title]="firstColConf.title"
@@ -490,8 +490,8 @@
     [enableMultiSelectFilter]="firstColConf.enableMultiSelectFilter"
     [filterPlaceholder]="firstColConf.filterPlaceholder"
     [visible]="firstColConf.visible">
-  </app-data-table-column>
-  <app-data-table-column
+  </ng-data-table-column>
+  <ng-data-table-column
     [width]="secondColConf.width"
     [field]="'stationName'"
     [title]="secondColConf.title"
@@ -501,8 +501,8 @@
     [enableMultiSelectFilter]="secondColConf.enableMultiSelectFilter"
     [filterPlaceholder]="secondColConf.filterPlaceholder"
     [visible]="secondColConf.visible">
-  </app-data-table-column>
-  <app-data-table-column
+  </ng-data-table-column>
+  <ng-data-table-column
     [width]="thirdColConf.width"
     [field]="'latitude'"
     [title]="thirdColConf.title"
@@ -512,8 +512,8 @@
     [enableMultiSelectFilter]="thirdColConf.enableMultiSelectFilter"
     [filterPlaceholder]="thirdColConf.filterPlaceholder"
     [visible]="thirdColConf.visible">
-  </app-data-table-column>
-  <app-data-table-column
+  </ng-data-table-column>
+  <ng-data-table-column
     [width]="forthColConf.width"
     [field]="'longitude'"
     [title]="forthColConf.title"
@@ -523,8 +523,8 @@
     [enableMultiSelectFilter]="forthColConf.enableMultiSelectFilter"
     [filterPlaceholder]="forthColConf.filterPlaceholder"
     [visible]="forthColConf.visible">
-  </app-data-table-column>
-  <app-data-table-column
+  </ng-data-table-column>
+  <ng-data-table-column
     [width]="fifthColConf.width"
     [field]="'availableDocks'"
     [title]="fifthColConf.title"
@@ -534,8 +534,8 @@
     [enableMultiSelectFilter]="fifthColConf.enableMultiSelectFilter"
     [filterPlaceholder]="fifthColConf.filterPlaceholder"
     [visible]="fifthColConf.visible">
-  </app-data-table-column>
-  <app-data-table-column
+  </ng-data-table-column>
+  <ng-data-table-column
     [width]="sixthColConf.width"
     [field]="'totalDocks'"
     [title]="sixthColConf.title"
@@ -545,8 +545,8 @@
     [enableMultiSelectFilter]="sixthColConf.enableMultiSelectFilter"
     [filterPlaceholder]="sixthColConf.filterPlaceholder"
     [visible]="sixthColConf.visible">
-  </app-data-table-column>
-  <app-data-table-column
+  </ng-data-table-column>
+  <ng-data-table-column
     [width]="seventhColConf.width"
     [field]="'statusValue'"
     [title]="seventhColConf.title"
@@ -556,8 +556,8 @@
     [enableMultiSelectFilter]="seventhColConf.enableMultiSelectFilter"
     [filterPlaceholder]="seventhColConf.filterPlaceholder"
     [visible]="seventhColConf.visible">
-  </app-data-table-column>
-  <app-data-table-column
+  </ng-data-table-column>
+  <ng-data-table-column
     [width]="eighthColConf.width"
     [field]="'availableBikes'"
     [title]="eighthColConf.title"
@@ -567,8 +567,8 @@
     [enableMultiSelectFilter]="eighthColConf.enableMultiSelectFilter"
     [filterPlaceholder]="eighthColConf.filterPlaceholder"
     [visible]="eighthColConf.visible">
-  </app-data-table-column>
-  <app-data-table-column
+  </ng-data-table-column>
+  <ng-data-table-column
     [width]="ninthColConf.width"
     [field]="'lastCommunicationTime'"
     [title]="ninthColConf.title"
@@ -578,16 +578,16 @@
     [enableMultiSelectFilter]="ninthColConf.enableMultiSelectFilter"
     [filterPlaceholder]="ninthColConf.filterPlaceholder"
     [visible]="ninthColConf.visible">
-  </app-data-table-column>
-  <app-data-table-column
+  </ng-data-table-column>
+  <ng-data-table-column
     [width]="tenthColConf.width"
     [title]="tenthColConf.title"
     [resizable]="tenthColConf.resizable"
     [visible]="tenthColConf.visible">
-    <ng-template #appDataTableCell let-row="row">
+    <ng-template #ngDataTableCell let-row="row">
       <td>
         <button (click)="onEdit(row.item, $event)">Edit</button>
       </td>
     </ng-template>
-  </app-data-table-column>
-</app-data-table>
+  </ng-data-table-column>
+</ng-data-table>

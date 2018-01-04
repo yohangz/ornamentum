@@ -12,7 +12,7 @@ import { SortOrder } from '../../models/data-table-sort-order.enum';
  * @class DataTableColumnComponent
  */
 @Directive({
-  selector: 'app-data-table-column'
+  selector: 'ng-data-table-column'
 })
 export class DataTableColumnComponent implements OnInit {
 
@@ -21,13 +21,13 @@ export class DataTableColumnComponent implements OnInit {
 
   // Content Child Properties
 
-  @ContentChild('appDataTableCell')
+  @ContentChild('ngDataTableCell')
   private cellTemplate: TemplateRef<any>;
 
-  @ContentChild('appDataTableHeader')
+  @ContentChild('ngDataTableHeader')
   private headerTemplate: TemplateRef<any>;
 
-  @ContentChild('appFilterTemplate')
+  @ContentChild('ngFilterTemplate')
   private filterTemplate: TemplateRef<any>;
 
   // Inputs

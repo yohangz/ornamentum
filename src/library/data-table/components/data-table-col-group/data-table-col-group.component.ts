@@ -7,8 +7,8 @@ import { DataTableComponent } from '../data-table/data-table.component';
  * @class DataTableColGroup
  */
 @Component({
-  exportAs: 'appDataTableColGroup',
-  selector: '[appDataTableColGroup]',
+  exportAs: 'ngDataTableColGroup',
+  selector: '[ngDataTableColGroup]',
   styleUrls: [ './data-table-col-group.component.scss' ],
   templateUrl: './data-table-col-group.component.html'
 })

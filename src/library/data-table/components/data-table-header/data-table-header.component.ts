@@ -10,7 +10,7 @@ import { ComponentLoader } from '../../../utility/services/component-loader.clas
  * @class DataTableHeaderComponent
  */
 @Component({
-  selector: 'app-data-table-header',
+  selector: 'ng-data-table-header',
   styleUrls: [ './data-table-header.component.scss' ],
   templateUrl: './data-table-header.component.html',
 })

@@ -9,8 +9,8 @@ import { DataTableComponent } from '../data-table/data-table.component';
  * @class DataTableBodyComponent
  */
 @Component({
-  exportAs: 'appDataTableBody',
-  selector: '[appDataTableBody]',
+  exportAs: 'ngDataTableBody',
+  selector: '[ngDataTableBody]',
   styleUrls: [ './data-table-body.component.scss' ],
   templateUrl: './data-table-body.component.html'
 

@@ -7,7 +7,7 @@ import { DataTableComponent } from '../data-table/data-table.component';
  * @class DataTablePaginationComponent
  */
 @Component({
-  selector: 'app-data-table-pagination',
+  selector: 'ng-data-table-pagination',
   styleUrls: [ './data-table-pagination.component.scss' ],
   templateUrl: './data-table-pagination.component.html'
 })

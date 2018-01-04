@@ -1,10 +1,10 @@
 <div class="ng-data-table-wrapper" [ngClass]="{ 'scrollable': !!contentHeight }">
-  <app-data-table-header *ngIf="showHeader"></app-data-table-header>
+  <ng-data-table-header *ngIf="showHeader"></ng-data-table-header>
   <div class="ng-data-table-inner-wrapper">
     <div class="ng-data-table-header-wrapper">
       <div class="ng-data-table-header" [scrollElement]="scrollPosition">
         <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
-          <colgroup appDataTableColGroup></colgroup>
+          <colgroup ngDataTableColGroup></colgroup>
           <thead>
           <tr>
             <th *ngIf="expandColumnVisible" class="expand-column-header">
@@ -66,8 +66,8 @@
         <div class="loading-animation"></div>
       </div>
       <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
-        <colgroup appDataTableColGroup></colgroup>
-        <tbody appDataTableBody [dataRows]="dataRows">
+        <colgroup ngDataTableColGroup></colgroup>
+        <tbody ngDataTableBody [dataRows]="dataRows">
         </tbody>
       </table>
       <ng-container *ngIf="showNoDataOverlay">
@@ -79,5 +79,5 @@
       </ng-container>
     </div>
   </div>
-  <app-data-table-pagination *ngIf="pageable && itemCount"></app-data-table-pagination>
+  <ng-data-table-pagination *ngIf="pageable && itemCount"></ng-data-table-pagination>
 </div>
