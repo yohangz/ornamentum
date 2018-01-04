@@ -9,6 +9,9 @@ files:
 
 rules:
 
+  no-duplicate-properties:
+    - 0
+
   nesting-depth:
     - 1
     - max-depth: 5

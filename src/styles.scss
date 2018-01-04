@@ -16,3 +16,7 @@ body {
 [hidden] {
   display: none;
 }
+
+::-webkit-scrollbar {
+  width: 15px;
+}

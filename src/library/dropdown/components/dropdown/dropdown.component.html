@@ -29,7 +29,7 @@
           </span>
           <input type="text" class="ng-dropdown-input" placeholder="{{ translations.searchPlaceholder }}" aria-describedby="sizing-addon3" (keyup)="filterKeyUp()" autofocus [(ngModel)]="filterText">
           <span class="ng-dropdown-input-group-btn button-container" *ngIf="filterText">
-            <button class="btn btn-default btn-secondary action-button delete-button" type="button" (click)="clearSearch()">
+            <button class="action-button delete-button" type="button" (click)="clearSearch()">
               <i class="zmdi zmdi-close-circle"></i>
             </button>
           </span>
