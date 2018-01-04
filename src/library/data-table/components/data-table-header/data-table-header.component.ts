@@ -29,7 +29,7 @@ export class DataTableHeaderComponent {
       props: {
         dataTable: this.dataTable
       }
-    }, 0);
+    }, -40);
   }
 
   /**
