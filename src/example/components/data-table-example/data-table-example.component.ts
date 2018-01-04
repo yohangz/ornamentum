@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import {
   DataTableParams,
   DataTableResource,
-  DataTableComponent
+  DataTableComponent, DataTableResourceFactoryService
 } from '../../../library/data-table';
 
 import { DataStorageService } from '../../services/data-storage.service';
@@ -76,7 +76,7 @@ export class DataTableExampleComponent {
   public ninthColConf: ColumnConf;
   public tenthColConf: ColumnConf;
 
-  constructor(private dataStorageService: DataStorageService) {
+  constructor(private dataStorageService: DataStorageService, private dataTableResourceFactoryService: DataTableResourceFactoryService) {
     this.initialTableConf = this.dataStorageService.get(DataTableExampleComponent.tableConfigurationStorageKeyName) ||
       {
         autoFetch: true,
@@ -249,7 +249,7 @@ export class DataTableExampleComponent {
    * Fetch algorithms data and bind to the data table source.
    */
   private fetchAlgorithmsData(): void {
-    this.tableResource = new DataTableResource();
+    this.tableResource = this.dataTableResourceFactoryService.createTableResource();
 
     if (!this.initialTableConf.remoteDataFetch) {
       this.tableResource.items = data.stationBeanList;

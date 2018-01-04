@@ -15,6 +15,7 @@ import { ScrollElement } from './directives/scroll-element.directive';
 import { ElementWidth } from './directives/element-width.directive';
 
 import { DataTableConfigService } from './services/data-table-config.service';
+import { DataTableResourceFactoryService } from './services/data-table-resource-factory.service';
 
 import { DropdownModule } from '../dropdown';
 import { UtilityModule } from '../utility';
@@ -35,6 +36,10 @@ const DIRECTIVES = [
   ElementWidth
 ];
 
+const PROVIDERS = [
+  DataTableResourceFactoryService
+];
+
 /***
  * Module representing grid component.
  */
@@ -47,7 +52,10 @@ const DIRECTIVES = [
   ],
   declarations: [
     ...COMPONENTS,
-    ...DIRECTIVES
+    ...DIRECTIVES,
+  ],
+  providers: [
+    ...PROVIDERS
   ],
   exports: [
     DataTableColumnComponent,
