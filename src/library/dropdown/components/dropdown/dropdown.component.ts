@@ -9,6 +9,9 @@ import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 
 import 'rxjs/add/operator/debounceTime';
+import { ComponentLoaderFactory } from '../../../utility';
+import { ComponentLoader } from '../../../utility/services/component-loader.class';
+import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component';
 
 /**
  * Component class to represent search dropdown.
@@ -32,14 +35,16 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   public _groupedItems: DropdownItemGroup[] = [];
 
   public disabled = false;
+  public isLoading = false;
+  public currentItemCount = 0;
+
+  private componentLoader: ComponentLoader<DropdownViewComponent>;
 
   private _translations: SearchDropdownTranslations;
   private _allSelected = false;
   private _selectedOptions: DropdownItem[] = [];
   private _selectedOption: DropdownItem;
-  private currentItemCount = 0;
   private offset = 0;
-  private isLoading = false;
   private defaultTranslations: SearchDropdownTranslations = {
     searchEmptyResult: 'No Results Available',
     searchPlaceholder: 'Search',
@@ -211,14 +216,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   public displaySelectedLimit: number;
 
   /**
-   * Enable/Disable dropdown open.
-   * @default false
-   * @type {boolean}
-   */
-  @Input()
-  public isOpen: boolean = false;
-
-  /**
    * Enable/Disable dropdown data loading on scrolling.
    * @default false
    * @type {boolean}
@@ -339,8 +336,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   @Output()
   public onSelectChange = new EventEmitter<DropdownItem[] | DropdownItem>();
 
-  constructor() {
+  constructor(private componentLoaderFactory: ComponentLoaderFactory) {
     this._translations = this.defaultTranslations;
+    this.componentLoader = this.componentLoaderFactory.createLoader();
+
   }
 
   /**
@@ -404,17 +403,21 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Performs dropdown toggle event.
-   * @param {Event} event
+   * @param {HTMLElement} element Dropdown button element.
    */
-  public toggleDropdown(event: Event): void {
-    this.isOpen = !this.isOpen;
+  public toggleDropdown(element: HTMLElement): void {
+    this.componentLoader.toggle(DropdownViewComponent, element, {
+      props: {
+        dropdown: this
+      }
+    });
   }
 
   /**
    * Triggers drop down close event.
    */
   public closeDropdown(): void {
-    this.isOpen = false;
+    this.componentLoader.hide();
   }
 
   /**

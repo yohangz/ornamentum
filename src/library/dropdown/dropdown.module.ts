@@ -6,10 +6,12 @@ import { UtilityModule } from '../utility/utility.module';
 
 import { DropdownConfigService } from './services/dropdown-config.service';
 
-import { DropdownComponent } from './components/dropdown/dropdown.component'
+import { DropdownComponent } from './components/dropdown/dropdown.component';
+import { DropdownViewComponent } from './components/dropdown-view/dropdown-view.component';
 
 const COMPONENTS = [
-  DropdownComponent
+  DropdownComponent,
+  DropdownViewComponent
 ];
 
 /***
@@ -26,6 +28,9 @@ const COMPONENTS = [
   ],
   exports: [
     DropdownComponent
+  ],
+  entryComponents: [
+    DropdownViewComponent
   ]
 })
 export class DropdownModule {
