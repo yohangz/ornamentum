@@ -1,3 +1,5 @@
+import { DropdownComponent } from '../components/dropdown/dropdown.component';
+
 /**
  * Interface representing search dropdown translations.
  * @interface SearchDropdownTranslations.
@@ -41,6 +43,10 @@ export interface DataRequestParams {
   limit: number;
   departmentID?: number;
   categoryID?: number;
+}
+
+export interface DropdownViewProperty {
+  dropdown: DropdownComponent;
 }
 
 export type ClientFilterCallback = (option: DropdownItem, filterText: string) => boolean;
