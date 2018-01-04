@@ -8,6 +8,7 @@ import { DataTableColGroupComponent } from './components/data-table-col-group/da
 import { DataTablePaginationComponent } from './components/data-table-pagination/data-table-pagination.component';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { DataTableBodyComponent } from './components/data-table-body/data-table-body.component';
+import { DataTableColumnSelectorComponent } from './components/data-table-column-selector/data-table-column-selector.component';
 
 import { ScrollPosition } from './directives/scroll-position.directive';
 import { ScrollElement } from './directives/scroll-element.directive';
@@ -24,7 +25,8 @@ const COMPONENTS = [
   DataTableColGroupComponent,
   DataTableBodyComponent,
   DataTablePaginationComponent,
-  DataTableComponent
+  DataTableComponent,
+  DataTableColumnSelectorComponent
 ];
 
 const DIRECTIVES = [
@@ -50,6 +52,9 @@ const DIRECTIVES = [
   exports: [
     DataTableColumnComponent,
     DataTableComponent
+  ],
+  entryComponents: [
+    DataTableColumnSelectorComponent
   ]
 })
 export class DataTableModule {
