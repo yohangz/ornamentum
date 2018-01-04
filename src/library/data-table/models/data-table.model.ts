@@ -1,5 +1,6 @@
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 import { SortOrder } from './data-table-sort-order.enum';
+import { DataTableComponent } from '../';
 
 export type CellCallback = (row: DataRow, column: DataTableColumnComponent) => string;
 
@@ -158,4 +159,10 @@ export interface FilterColumn {
   field: string;
   filterValue: any;
   filterExpression: FilterExpressionCallback;
+}
+
+export interface ColumnSelectorProperty {
+  props: {
+    dataTable: DataTableComponent;
+  }
 }
