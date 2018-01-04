@@ -1,6 +1,9 @@
 import { Component, forwardRef, Inject } from '@angular/core';
 
 import { DataTableComponent } from '../data-table/data-table.component';
+import { DataTableColumnSelectorComponent } from '../data-table-column-selector/data-table-column-selector.component';
+import { ComponentLoaderFactory } from '../../../utility';
+import { ComponentLoader } from '../../../utility/services/component-loader.class';
 
 /**
  * Data table header component.
@@ -12,23 +15,27 @@ import { DataTableComponent } from '../data-table/data-table.component';
   templateUrl: './data-table-header.component.html',
 })
 export class DataTableHeaderComponent {
+  public componentLoader: ComponentLoader<DataTableColumnSelectorComponent>;
 
-  public columnSelectorOpenState = false;
-
-  constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent) {
+  constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent, private componentLoaderFactory: ComponentLoaderFactory) {
+    this.componentLoader = this.componentLoaderFactory.createLoader<DataTableColumnSelectorComponent>()
   }
 
   /**
    * Toggle column selector.
    */
-  public toggleColumnSelector(): void {
-    this.columnSelectorOpenState = !this.columnSelectorOpenState;
+  public toggleColumnSelector(element: HTMLElement): void {
+    this.componentLoader.toggle(DataTableColumnSelectorComponent, element, {
+      props: {
+        dataTable: this.dataTable
+      }
+    }, 120);
   }
 
   /**
    * Close column selector.
    */
   private closeColumnSelector(): void {
-    this.columnSelectorOpenState = false;
+    this.componentLoader.hide();
   }
 }
