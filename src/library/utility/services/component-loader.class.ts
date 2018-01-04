@@ -5,18 +5,27 @@ import {
   ApplicationRef, ComponentRef
 } from '@angular/core';
 import { Type } from '@angular/core/src/type';
+import { GlobalRefService } from './global-ref.service';
 
 export class ComponentLoader<T> {
 
   private componentRef: ComponentRef<T>;
+  private resizeEventHandler: () => void;
   private isVisible: boolean;
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private appRef: ApplicationRef,
-    private injector: Injector
+    private injector: Injector,
+    private globalRefService: GlobalRefService
   ) {
     this.isVisible = false;
+  }
+
+  private getResizeEventHandler(): () => void {
+    return () => {
+     this.hide();
+    };
   }
 
   public show(component: Type<T>, parentElement: HTMLElement, options: any, pushWidth: number = 0) {
@@ -46,9 +55,11 @@ export class ComponentLoader<T> {
     componentElement.style.left = `${parentElement.offsetLeft + parentElement.offsetWidth - pushWidth}px`;
     componentElement.style.position = 'absolute';
 
+    this.resizeEventHandler = this.getResizeEventHandler();
+
+    this.globalRefService.window.addEventListener('resize', this.resizeEventHandler);
+
     this.isVisible = true;
-
-
   }
 
   public hide() {
@@ -57,6 +68,10 @@ export class ComponentLoader<T> {
       this.componentRef.destroy();
     }
 
+    this.globalRefService.window.removeEventListener(`resize`, this.resizeEventHandler);
+
+    this.componentRef = null;
+    this.resizeEventHandler = null;
     this.isVisible = false;
   }
 

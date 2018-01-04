@@ -162,7 +162,5 @@ export interface FilterColumn {
 }
 
 export interface ColumnSelectorProperty {
-  props: {
-    dataTable: DataTableComponent;
-  }
+  dataTable: DataTableComponent;
 }
