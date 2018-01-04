@@ -51,7 +51,6 @@ export class ComponentLoader<T> {
 
     const componentElement = this.componentRef.location.nativeElement as HTMLElement;
 
-    debugger;
     const bodyClientRect = document.documentElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
 
