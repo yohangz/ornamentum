@@ -9,7 +9,13 @@
     overflow: hidden;
 
     ::-webkit-scrollbar {
-      width: 15px;
+      width: 17px;
+      border-left: .05rem solid $data-table-header-border;
+      margin: .05rem;
+    }
+
+    ::-webkit-scrollbar-track {
+      border: .01rem solid $data-table-header-secondary-background;
     }
 
     ::-webkit-scrollbar-thumb {
@@ -77,12 +83,14 @@
   }
 
   .ng-data-table-content {
+    border-top: .05rem solid $data-table-border;
     overflow: initial;
     position: relative;
     width: 100%;
 
     .ng-data-table {
       border-bottom: 0;
+      border-top: 0;
       border-right: .05rem solid transparent;
       overflow: hidden;
     }
@@ -327,6 +335,12 @@
           &.selected {
             td {
               background: $data-table-selected-row-background;
+            }
+          }
+
+          &:first-child {
+            td {
+              border-top: 0;
             }
           }
         }
