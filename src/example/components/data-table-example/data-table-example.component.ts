@@ -193,7 +193,9 @@ export class DataTableExampleComponent {
     };
     this.tenthColConf = {
       width: 100,
-      title: 'Action'
+      title: 'Action',
+      resizable: false,
+      visible: true
     };
 
     this.fetchAlgorithmsData();

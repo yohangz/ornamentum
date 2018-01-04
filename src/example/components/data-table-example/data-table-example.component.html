@@ -441,6 +441,16 @@
 
     Width:<input type="number" placeholder="Enter Column Width" [(ngModel)]="tenthColConf.width"
                  [ngModelOptions]="{standalone: true}">
+
+    <button (click)="tenthColConf.resizable = !tenthColConf.resizable">
+      <ng-container *ngIf="tenthColConf.resizable">Resizable: <b>ON</b></ng-container>
+      <ng-container *ngIf="!tenthColConf.resizable">Resizable: <b>OFF</b></ng-container>
+    </button>
+
+    <button (click)="tenthColConf.visible = !tenthColConf.visible">
+      <ng-container *ngIf="tenthColConf.visible">Visible: <b>ON</b></ng-container>
+      <ng-container *ngIf="!tenthColConf.visible">Visible: <b>OFF</b></ng-container>
+    </button>
   </div>
 </div>
 <br/>
@@ -575,7 +585,9 @@
   </app-data-table-column>
   <app-data-table-column
     [width]="tenthColConf.width"
-    [title]="tenthColConf.title">
+    [title]="tenthColConf.title"
+    [resizable]="tenthColConf.resizable"
+    [visible]="tenthColConf.visible">
     <ng-template #appDataTableCell let-row="row">
       <td>
         <button (click)="onEdit(row.item, $event)">Edit</button>
