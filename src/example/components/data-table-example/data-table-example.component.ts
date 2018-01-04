@@ -28,7 +28,6 @@ export class DataTableExampleComponent {
     rowSelectable: boolean;
     multiColumnSortable: boolean;
     expandableRows: boolean;
-    contentHeight: string;
   };
 
   public gridTitle: string;
@@ -41,6 +40,7 @@ export class DataTableExampleComponent {
   public showSubstituteRows: boolean;
   public filterDebounceTime: number;
   public indexColumnTitle: string;
+  public contentHeight: string;
   public itemCount: number;
   public items: any[];
   public limit: number;
@@ -58,8 +58,7 @@ export class DataTableExampleComponent {
         showIndexColumn: true,
         rowSelectable: true,
         multiColumnSortable: false,
-        expandableRows: true,
-        contentHeight: '300px'
+        expandableRows: true
       };
 
     this.gridTitle = 'Stations Details in the New York City Bike Sharing Initiative';
@@ -71,6 +70,7 @@ export class DataTableExampleComponent {
     this.showLoadingSpinner = true;
     this.showSubstituteRows = true;
     this.filterDebounceTime = 500;
+    this.contentHeight = '300px';
     this.indexColumnTitle = '#';
     this.limit = 10;
     this.page = 1;

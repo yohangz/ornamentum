@@ -34,11 +34,7 @@
     Hard Reload Data
   </button>
 
-  Content Height:<input placeholder="Enter Content Height" [(ngModel)]="initialConfigurations.contentHeight"
-                        [ngModelOptions]="{standalone: true}">
-
-
-  <button (click)="reloadConfigurations()">RELOAD</button>
+  <button (click)="reloadConfigurations()" style="color: #d32f2f"><b>RELOAD</b></button>
 
 </div>
 <br/>
@@ -92,6 +88,9 @@
                               [ngModelOptions]="{standalone: true}">
 
   Page Number to Display Data:<input placeholder="Enter Page" [(ngModel)]="page" [ngModelOptions]="{standalone: true}">
+
+  Content Height:<input placeholder="Enter Content Height" [(ngModel)]="contentHeight"
+                        [ngModelOptions]="{standalone: true}">
 </div>
 <br/>
 
@@ -116,7 +115,7 @@
   [showLoadingSpinner]="showLoadingSpinner"
   [showSubstituteRows]="showSubstituteRows"
   [selectTrackBy]="'id'"
-  [contentHeight]="600"
+  [contentHeight]="contentHeight"
   [persistTableState]="true"
   [onFilterValueExtract]="tableResource.extractFilterOptions.bind(tableResource)"
 
