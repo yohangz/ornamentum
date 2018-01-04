@@ -118,7 +118,7 @@ export class DataTableExampleComponent {
       filterable: true,
       filterPlaceholder: '',
       resizable: false,
-      enableMultiSelectFilter: false,
+      enableMultiSelectFilter: true,
       visible: true
     };
     this.thirdColConf = {

@@ -43,7 +43,7 @@
       <ng-container *ngFor="let option of props.dropdown._items">
         <li (click)="props.dropdown.setSelected(option)" *ngIf="option.filter">
           <a role="menuitem">
-            <input type="checkbox" class="checkbox-input" [checked]="isSelected(option)" [disabled]="option.disabled" *ngIf="props.dropdown.multiSelectable"/>
+            <input type="checkbox" class="checkbox-input" [checked]="props.dropdown.isSelected(option)" [disabled]="option.disabled" *ngIf="props.dropdown.multiSelectable"/>
             <span>{{option.text}}{{option.disabled}}</span>
           </a>
         </li>
