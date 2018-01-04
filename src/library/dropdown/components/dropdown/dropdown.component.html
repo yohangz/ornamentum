@@ -1,5 +1,4 @@
-<div #dropdownElement class="ng-dropdown" [class.open]="isOpen" (clickOutside)="closeDropdown()">
-
+<div #dropdownElement class="ng-dropdown" (clickOutside)="closeDropdown()">
   <button  type="button" class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [disabled]="disabled">
     <ng-container *ngIf="multiSelectable">
       <ng-container *ngIf="!showAllSelectedItemLabels">

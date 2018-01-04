@@ -1,4 +1,4 @@
-<ul class="ng-dropdown-menu" [style.width]="props.dropdown.dropdownWidth | px">
+<ul class="ng-dropdown-menu" (click)="$event.stopPropagation()" [style.width]="props.dropdown.dropdownWidth | px">
   <ul *ngIf="props.dropdown.filterable">
     <li class="ng-dropdown-search">
       <div class="ng-dropdown-input-group">
