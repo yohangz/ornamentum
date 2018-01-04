@@ -51,8 +51,12 @@ export class ComponentLoader<T> {
 
     const componentElement = this.componentRef.location.nativeElement as HTMLElement;
 
-    componentElement.style.top = `${parentElement.offsetTop + parentElement.offsetHeight}px`;
-    componentElement.style.left = `${parentElement.offsetLeft + parentElement.offsetWidth - pushWidth}px`;
+    debugger;
+    const bodyClientRect = document.documentElement.getBoundingClientRect();
+    const elementClientRect = parentElement.getBoundingClientRect();
+
+    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + (elementClientRect.height || parentElement.offsetHeight)}px`;
+    componentElement.style.left = `${elementClientRect.left - bodyClientRect.left - pushWidth}px`;
     componentElement.style.position = 'absolute';
 
     this.resizeEventHandler = this.getResizeEventHandler();
