@@ -1,0 +1,28 @@
+<div class="ng-data-table-column-selector-wrapper" (click)="$event.stopPropagation()">
+  <div class="ng-data-table-column-selector-box">
+    <div *ngIf="props.dataTable.expandableRows" class="ng-data-table-column-selector-fixed-column checkbox">
+      <label>
+        <input class="checkbox-input" type="checkbox" [(ngModel)]="props.dataTable.expandColumnVisible"/>
+        <span>{{props.dataTable.translations.expandColumn}}</span>
+      </label>
+    </div>
+    <div *ngIf="props.dataTable.showIndexColumn" class="ng-data-table-column-selector-fixed-column checkbox">
+      <label>
+        <input class="checkbox-input" type="checkbox" [(ngModel)]="props.dataTable.indexColumnVisible"/>
+        <span>{{props.dataTable.translations.indexColumn}}</span>
+      </label>
+    </div>
+    <div *ngIf="props.dataTable.rowSelectable" class="ng-data-table-column-selector-fixed-column checkbox">
+      <label>
+        <input class="checkbox-input" type="checkbox" [(ngModel)]="props.dataTable.selectColumnVisible"/>
+        <span>{{props.dataTable.translations.selectColumn}}</span>
+      </label>
+    </div>
+    <div *ngFor="let column of props.dataTable.columns" class="ng-data-table-column-selector-column checkbox">
+      <label>
+        <input class="checkbox-input" type="checkbox" [(ngModel)]="column.visible"/>
+        <span [textContent]="column.title"></span>
+      </label>
+    </div>
+  </div>
+</div>
