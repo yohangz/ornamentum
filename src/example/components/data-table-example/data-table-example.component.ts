@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import {
   DataTableParams,
-  DataTableTranslations,
   DataTableResource,
   DataTableComponent
 } from '../../../library/data-table';
@@ -20,9 +19,9 @@ const data = require('../../data/grid-data.json');
   styleUrls: ['./data-table-example.component.scss']
 })
 export class DataTableExampleComponent {
-  private static configurationStorageKeyName = 'app_initial_conf';
+  private static tableConfigurationStorageKeyName = 'app_table_init_conf';
 
-  public initialConfigurations: {
+  public initialTableConf: {
     autoFetch: boolean;
     showIndexColumn: boolean;
     rowSelectable: boolean;
@@ -50,10 +49,46 @@ export class DataTableExampleComponent {
   public tableResource: DataTableResource<any>;
   public dataTableComponent: DataTableComponent;
 
-  // private translations: DataTableTranslations;
+  public firstColConf: {
+    width: number;
+    title: string;
+    filterPlaceholder: string;
+    sortable: boolean;
+    filterable: boolean;
+    resizable: boolean;
+    enableMultiSelectFilter: boolean;
+    visible: boolean;
+  };
+  public secondColConf: {
+    title: string;
+  };
+  public thirdColConf: {
+    title: string;
+  };
+  public forthColConf: {
+    title: string;
+  };
+  public fifthColConf: {
+    title: string;
+  };
+  public sixthColConf: {
+    title: string;
+  };
+  public seventhColConf: {
+    title: string;
+  };
+  public eighthColConf: {
+    title: string;
+  };
+  public ninthColConf: {
+    title: string;
+  };
+  public tenthColConf: {
+    title: string;
+  };
 
   constructor(private dataStorageService: DataStorageService) {
-    this.initialConfigurations = this.dataStorageService.get(DataTableExampleComponent.configurationStorageKeyName) ||
+    this.initialTableConf = this.dataStorageService.get(DataTableExampleComponent.tableConfigurationStorageKeyName) ||
       {
         autoFetch: true,
         showIndexColumn: true,
@@ -76,11 +111,45 @@ export class DataTableExampleComponent {
     this.indexColumnTitle = '#';
     this.limit = 10;
     this.page = 1;
-    // this.translations = {
-    //   noDataMessageBody: 'ඩේටා නොමැත. සමාවන්න !!',
-    //   noDataMessageHeader: 'Header'
-    // };
     this.items = [];
+
+    this.firstColConf = {
+      width: 80,
+      title: 'ID',
+      filterPlaceholder: '',
+      sortable: true,
+      filterable: true,
+      resizable: false,
+      enableMultiSelectFilter: false,
+      visible: true
+    };
+    this.secondColConf = {
+      title: 'Station Name'
+    };
+    this.thirdColConf = {
+      title: 'Latitude'
+    };
+    this.forthColConf = {
+      title: 'Longitude'
+    };
+    this.fifthColConf = {
+      title: 'Available Docks'
+    };
+    this.sixthColConf = {
+      title: 'Total Docks'
+    };
+    this.seventhColConf = {
+      title: 'Status'
+    };
+    this.eighthColConf = {
+      title: 'Available Bikes'
+    };
+    this.ninthColConf = {
+      title: 'Last Communication Time'
+    };
+    this.tenthColConf = {
+      title: 'Action'
+    };
 
     this.fetchAlgorithmsData();
   }
@@ -121,11 +190,11 @@ export class DataTableExampleComponent {
   }
 
   /**
-   * Responsible for reloading page after updating initial loading configurations.
+   * Responsible for reloading page after updating initial table loading configurations.
    * Store all the updated configurations in the local storage.
    */
-  public reloadConfigurations(): void {
-    this.dataStorageService.set(DataTableExampleComponent.configurationStorageKeyName, this.initialConfigurations);
+  public reloadTableConfigurations(): void {
+    this.dataStorageService.set(DataTableExampleComponent.tableConfigurationStorageKeyName, this.initialTableConf);
     location.reload();
   }
 
@@ -135,7 +204,7 @@ export class DataTableExampleComponent {
   private fetchAlgorithmsData(): void {
     this.tableResource = new DataTableResource();
 
-    if (!this.initialConfigurations.remoteDataFetch) {
+    if (!this.initialTableConf.remoteDataFetch) {
       this.tableResource.items = data.stationBeanList;
     }
 
