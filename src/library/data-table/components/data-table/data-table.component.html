@@ -36,12 +36,13 @@
             </th>
             <ng-container *ngFor="let column of columns">
               <th #th *ngIf="column.visible">
-                <ng-container *ngIf="!column.enableMultiSelectFilter">
-                  <span *ngIf="column.filterTemplate" [ngTemplateOutlet]="column.filterTemplate" [ngTemplateOutletContext]="{ column: column, onFilter: customFilterEventEmitter }"></span>
-                  <input type="text" #filterTextBox *ngIf="column.filterable && !column.filterTemplate" [(ngModel)]="column.filter" (keyup)="filterData($event)" [placeholder]="column.filterPlaceholder"/>
-                </ng-container>
-                <ng-container *ngIf="column.enableMultiSelectFilter">
-                  <ng-dropdown
+                <ng-container *ngIf="column.filterable">
+                  <ng-container *ngIf="!column.enableMultiSelectFilter">
+                    <span *ngIf="column.filterTemplate" [ngTemplateOutlet]="column.filterTemplate" [ngTemplateOutletContext]="{ column: column, onFilter: customFilterEventEmitter }"></span>
+                    <input type="text" #filterTextBox *ngIf="!column.filterTemplate" [(ngModel)]="column.filter" (keyup)="filterData($event)" [placeholder]="column.filterPlaceholder"/>
+                  </ng-container>
+                  <ng-container *ngIf="column.enableMultiSelectFilter">
+                    <ng-dropdown
                       [items]="column.filterOptions"
                       [totalItemCount]="column.filterOptions.length"
                       [(ngModel)]="column.filter"
@@ -52,7 +53,8 @@
                       [triggerSelectChangeOnInit]="false"
                       [displaySelectedLimit]="column.displaySelectedLimit"
                       (onSelectChange)="filterData()">
-                  </ng-dropdown>
+                    </ng-dropdown>
+                  </ng-container>
                 </ng-container>
               </th>
             </ng-container>
