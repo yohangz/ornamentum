@@ -701,6 +701,14 @@ export class DataTableComponent implements OnInit, OnDestroy {
    */
   private dataBind(hardRefresh: boolean): void {
     this.reloading = true;
+    if (hardRefresh) {
+      this.selectedRows = [];
+      this.selectedRow = undefined;
+      this.clearColumnFilters();
+      this.resetColumnSortState();
+      this.isHeardReload = true;
+    }
+
     const dataTableParams = this.getDataTableParams(hardRefresh);
 
     if (this.persistTableState) {
@@ -708,11 +716,6 @@ export class DataTableComponent implements OnInit, OnDestroy {
     }
 
     if (hardRefresh) {
-      this.selectedRows = [];
-      this.selectedRow = undefined;
-      this.clearColumnFilters();
-      this.resetColumnSortState();
-      this.isHeardReload = true;
       this.onRefresh.emit(dataTableParams);
     } else {
       this.onDataLoad.emit(dataTableParams);
