@@ -43,12 +43,6 @@ export class ComponentLoader<T> {
     const domElem = (this.componentRef.hostView as EmbeddedViewRef<any>)
       .rootNodes[0] as HTMLElement;
 
-    // 4. Append DOM element to the body
-    document.body.appendChild(domElem);
-
-    this.componentRef.changeDetectorRef.markForCheck();
-    this.componentRef.changeDetectorRef.detectChanges();
-
     const componentElement = this.componentRef.location.nativeElement as HTMLElement;
 
     const bodyClientRect = document.documentElement.getBoundingClientRect();
@@ -57,6 +51,12 @@ export class ComponentLoader<T> {
     componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + (elementClientRect.height || parentElement.offsetHeight)}px`;
     componentElement.style.left = `${elementClientRect.left - bodyClientRect.left - pushWidth}px`;
     componentElement.style.position = 'absolute';
+
+    // 4. Append DOM element to the body
+    document.body.appendChild(domElem);
+
+    this.componentRef.changeDetectorRef.markForCheck();
+    this.componentRef.changeDetectorRef.detectChanges();
 
     this.resizeEventHandler = this.getResizeEventHandler();
 
