@@ -2,8 +2,7 @@ import { Component, forwardRef, Inject } from '@angular/core';
 
 import { DataTableComponent } from '../data-table/data-table.component';
 import { DataTableColumnSelectorComponent } from '../data-table-column-selector/data-table-column-selector.component';
-import { ComponentLoaderFactory } from '../../../utility';
-import { ComponentLoader } from '../../../utility/services/component-loader.class';
+import { ComponentLoaderFactory, ComponentLoader } from '../../../utility';
 
 /**
  * Data table header component.
