@@ -27,7 +27,7 @@
               </th>
             </ng-container>
           </tr>
-          <tr>
+          <tr *ngIf="hasFilterColumns()">
             <th *ngIf="expandColumnVisible" class="expand-column-header">
             </th>
             <th *ngIf="indexColumnVisible" class="index-column-header">

@@ -1221,4 +1221,8 @@ export class DataTableComponent implements OnInit, OnDestroy {
       'zmdi-format-line-spacing':  column.sortOrder === undefined || column.sortOrder === SortOrder.NONE
     }
   }
+
+  public hasFilterColumns(): boolean {
+    return this.columns.some((column: DataTableColumnComponent) => column.filterable);
+  }
 }
