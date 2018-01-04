@@ -699,7 +699,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * Trigger table data bind.
    * @param {boolean} hardRefresh Hard refresh if true.
    */
-  public dataBind(hardRefresh: boolean): void {
+  private dataBind(hardRefresh: boolean): void {
     this.reloading = true;
     const dataTableParams = this.getDataTableParams(hardRefresh);
 
@@ -717,6 +717,10 @@ export class DataTableComponent implements OnInit, OnDestroy {
     } else {
       this.onDataLoad.emit(dataTableParams);
     }
+  }
+
+  public fetchData(hardRefresh: boolean = false): void {
+    this.dataFetchStream.next(hardRefresh);
   }
 
   /**
