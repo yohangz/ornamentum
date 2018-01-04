@@ -1,29 +1,29 @@
 <!--need to find approach. bcz working fine in the initial load-->
 <div style="border: groove #d32f2f;padding: 5px">
   <h6><b>Have to enable/disable configurations in initial load</b></h6>
-  <button (click)="autoFetch = !autoFetch">
-    <ng-container *ngIf="autoFetch">Auto Fetch: <b>ON</b></ng-container>
-    <ng-container *ngIf="!autoFetch">Auto Fetch: <b>OFF</b></ng-container>
+  <button (click)="initialConfigurations.autoFetch = !initialConfigurations.autoFetch">
+    <ng-container *ngIf="initialConfigurations.autoFetch">Auto Fetch: <b>ON</b></ng-container>
+    <ng-container *ngIf="!initialConfigurations.autoFetch">Auto Fetch: <b>OFF</b></ng-container>
   </button>
 
-  <button (click)="rowSelectable = !rowSelectable">
-    <ng-container *ngIf="rowSelectable">Row Selectable: <b>ON</b></ng-container>
-    <ng-container *ngIf="!rowSelectable">Row Selectable: <b>OFF</b></ng-container>
+  <button (click)="initialConfigurations.rowSelectable = !initialConfigurations.rowSelectable">
+    <ng-container *ngIf="initialConfigurations.rowSelectable">Row Selectable: <b>ON</b></ng-container>
+    <ng-container *ngIf="!initialConfigurations.rowSelectable">Row Selectable: <b>OFF</b></ng-container>
   </button>
 
-  <button (click)="showIndexColumn = !showIndexColumn">
-    <ng-container *ngIf="showIndexColumn">Show Index Column: <b>ON</b></ng-container>
-    <ng-container *ngIf="!showIndexColumn">Show Index Column: <b>OFF</b></ng-container>
+  <button (click)="initialConfigurations.showIndexColumn = !initialConfigurations.showIndexColumn">
+    <ng-container *ngIf="initialConfigurations.showIndexColumn">Show Index Column: <b>ON</b></ng-container>
+    <ng-container *ngIf="!initialConfigurations.showIndexColumn">Show Index Column: <b>OFF</b></ng-container>
   </button>
 
-  <button (click)="multiColumnSortable = !multiColumnSortable">
-    <ng-container *ngIf="multiColumnSortable">Multi Column Sorting: <b>ON</b></ng-container>
-    <ng-container *ngIf="!multiColumnSortable">Multi Column Sorting: <b>OFF</b></ng-container>
+  <button (click)="initialConfigurations.multiColumnSortable = !initialConfigurations.multiColumnSortable">
+    <ng-container *ngIf="initialConfigurations.multiColumnSortable">Multi Column Sorting: <b>ON</b></ng-container>
+    <ng-container *ngIf="!initialConfigurations.multiColumnSortable">Multi Column Sorting: <b>OFF</b></ng-container>
   </button>
 
-  <button (click)="expandableRows = !expandableRows">
-    <ng-container *ngIf="expandableRows">Expandable Rows: <b>ON</b></ng-container>
-    <ng-container *ngIf="!expandableRows">Expandable Rows: <b>OFF</b></ng-container>
+  <button (click)="initialConfigurations.expandableRows = !initialConfigurations.expandableRows">
+    <ng-container *ngIf="initialConfigurations.expandableRows">Expandable Rows: <b>ON</b></ng-container>
+    <ng-container *ngIf="!initialConfigurations.expandableRows">Expandable Rows: <b>OFF</b></ng-container>
   </button>
 
   <button (click)="dataTableComponent.dataBind()">
@@ -34,8 +34,12 @@
     Hard Reload Data
   </button>
 
-  Content Height:<input placeholder="Enter Content Height" [(ngModel)]="contentHeight"
+  Content Height:<input placeholder="Enter Content Height" [(ngModel)]="initialConfigurations.contentHeight"
                         [ngModelOptions]="{standalone: true}">
+
+
+  <button (click)="reloadConfigurations()">RELOAD</button>
+
 </div>
 <br/>
 <!---->
@@ -93,8 +97,8 @@
 
 <app-data-table
   [title]="gridTitle"
-  [autoFetch]="autoFetch"
-  [expandableRows]="expandableRows"
+  [autoFetch]="initialConfigurations.autoFetch"
+  [expandableRows]="initialConfigurations.expandableRows"
   [filterDebounce]="filterDebounce"
   [filterDebounceTime]="filterDebounceTime"
   [indexColumnTitle]="indexColumnTitle"
@@ -102,13 +106,13 @@
   [items]="items"
   [limit]="limit"
   [multiRowSelectable]="multiRowSelectable"
-  [multiColumnSortable]="multiColumnSortable"
+  [multiColumnSortable]="initialConfigurations.multiColumnSortable"
   [page]="page"
   [pageable]="pageable"
-  [rowSelectable]="rowSelectable"
+  [rowSelectable]="initialConfigurations.rowSelectable"
   [selectOnRowClick]="selectOnRowClick"
   [showHeader]="showHeader"
-  [showIndexColumn]="showIndexColumn"
+  [showIndexColumn]="initialConfigurations.showIndexColumn"
   [showLoadingSpinner]="showLoadingSpinner"
   [showSubstituteRows]="showSubstituteRows"
   [selectTrackBy]="'id'"

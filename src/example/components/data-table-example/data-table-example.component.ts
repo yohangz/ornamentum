@@ -7,56 +7,70 @@ import {
   DataTableComponent
 } from '../../../library/data-table';
 
+import { DataStorageService } from '../../services/data-storage.service';
+
 declare function require(url: string);
 
 const data = require('../../data/grid-data.json');
 
 @Component({
+  providers: [DataStorageService],
   selector: 'app-data-table-example-component',
   templateUrl: './data-table-example.component.html',
   styleUrls: ['./data-table-example.component.scss']
 })
 export class DataTableExampleComponent {
-  gridTitle: string;
-  autoFetch: boolean;
-  expandableRows: boolean;
-  filterDebounce: boolean;
-  multiRowSelectable: boolean;
-  pageable: boolean;
-  rowSelectable: boolean;
-  selectOnRowClick: boolean;
-  showHeader: boolean;
-  showIndexColumn: boolean;
-  multiColumnSortable: boolean;
-  showLoadingSpinner: boolean;
-  showSubstituteRows: boolean;
-  filterDebounceTime: number;
-  indexColumnTitle: string;
-  contentHeight: string;
-  itemCount: number;
-  items: any[];
-  limit: number;
-  page: number;
-  tableResource: DataTableResource<any>;
-  translations: DataTableTranslations;
-  dataTableComponent: DataTableComponent;
+  private static configurationStorageKeyName = 'app_initial_conf';
 
-  constructor() {
+  public initialConfigurations: {
+    autoFetch: boolean;
+    showIndexColumn: boolean;
+    rowSelectable: boolean;
+    multiColumnSortable: boolean;
+    expandableRows: boolean;
+    contentHeight: string;
+  };
+
+  public gridTitle: string;
+  public filterDebounce: boolean;
+  public multiRowSelectable: boolean;
+  public pageable: boolean;
+  public selectOnRowClick: boolean;
+  public showHeader: boolean;
+  public showLoadingSpinner: boolean;
+  public showSubstituteRows: boolean;
+  public filterDebounceTime: number;
+  public indexColumnTitle: string;
+  public itemCount: number;
+  public items: any[];
+  public limit: number;
+  public page: number;
+
+  public tableResource: DataTableResource<any>;
+  public dataTableComponent: DataTableComponent;
+
+  private translations: DataTableTranslations;
+
+  constructor(private dataStorageService: DataStorageService) {
+    this.initialConfigurations = this.dataStorageService.get(DataTableExampleComponent.configurationStorageKeyName) ||
+      {
+        autoFetch: true,
+        showIndexColumn: true,
+        rowSelectable: true,
+        multiColumnSortable: false,
+        expandableRows: true,
+        contentHeight: '300px'
+      };
+
     this.gridTitle = 'Stations Details in the New York City Bike Sharing Initiative';
-    this.autoFetch = true;
-    this.expandableRows = true;
     this.filterDebounce = true;
     this.multiRowSelectable = false;
     this.pageable = true;
-    this.rowSelectable = true;
     this.selectOnRowClick = true;
     this.showHeader = true;
-    this.showIndexColumn = true;
-    this.multiColumnSortable = false;
     this.showLoadingSpinner = true;
     this.showSubstituteRows = true;
     this.filterDebounceTime = 500;
-    this.contentHeight = '300px';
     this.indexColumnTitle = '#';
     this.limit = 10;
     this.page = 1;
@@ -102,6 +116,15 @@ export class DataTableExampleComponent {
   public onEdit(item: any, event: any): void {
     event.stopPropagation();
     console.log(item);
+  }
+
+  /**
+   * Responsible for reloading page after updating initial loading configurations.
+   * Store all the updated configurations in the local storage.
+   */
+  public reloadConfigurations(): void {
+    this.dataStorageService.set(DataTableExampleComponent.configurationStorageKeyName, this.initialConfigurations);
+    location.reload();
   }
 
   /**
