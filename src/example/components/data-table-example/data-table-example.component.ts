@@ -24,7 +24,6 @@ export interface ColumnConf {
   sortable?: boolean;
   filterable?: boolean;
   resizable?: boolean;
-  enableMultiSelectFilter?: boolean;
   visible?: boolean;
 }
 
@@ -36,6 +35,7 @@ export interface ColumnConf {
 })
 export class DataTableExampleComponent {
   private static tableConfigurationStorageKeyName = 'app_table_init_conf';
+  private static columnConfigurationStorageKeyName = 'app_column_init_conf';
 
   public initialTableConf: {
     autoFetch: boolean;
@@ -44,6 +44,18 @@ export class DataTableExampleComponent {
     multiColumnSortable: boolean;
     expandableRows: boolean;
     remoteDataFetch: boolean;
+  };
+
+  public initialColumnConf: {
+    multiSelectFilter1: boolean;
+    multiSelectFilter2: boolean;
+    multiSelectFilter3: boolean;
+    multiSelectFilter4: boolean;
+    multiSelectFilter5: boolean;
+    multiSelectFilter6: boolean;
+    multiSelectFilter7: boolean;
+    multiSelectFilter8: boolean;
+    multiSelectFilter9: boolean;
   };
 
   public gridTitle: string;
@@ -87,6 +99,19 @@ export class DataTableExampleComponent {
         remoteDataFetch: false
       };
 
+    this.initialColumnConf = this.dataStorageService.get(DataTableExampleComponent.columnConfigurationStorageKeyName) ||
+      {
+        multiSelectFilter1: false,
+        multiSelectFilter2: false,
+        multiSelectFilter3: false,
+        multiSelectFilter4: false,
+        multiSelectFilter5: false,
+        multiSelectFilter6: false,
+        multiSelectFilter7: false,
+        multiSelectFilter8: false,
+        multiSelectFilter9: false
+      };
+
     this.gridTitle = 'Stations Details in the New York City Bike Sharing Initiative';
     this.filterDebounce = true;
     this.multiRowSelectable = false;
@@ -109,7 +134,6 @@ export class DataTableExampleComponent {
       filterable: true,
       filterPlaceholder: '',
       resizable: false,
-      enableMultiSelectFilter: false,
       visible: true
     };
     this.secondColConf = {
@@ -118,7 +142,6 @@ export class DataTableExampleComponent {
       filterable: true,
       filterPlaceholder: '',
       resizable: false,
-      enableMultiSelectFilter: true,
       visible: true
     };
     this.thirdColConf = {
@@ -128,7 +151,6 @@ export class DataTableExampleComponent {
       filterable: true,
       filterPlaceholder: '',
       resizable: false,
-      enableMultiSelectFilter: false,
       visible: true
     };
     this.forthColConf = {
@@ -138,7 +160,6 @@ export class DataTableExampleComponent {
       filterable: true,
       filterPlaceholder: '',
       resizable: false,
-      enableMultiSelectFilter: false,
       visible: true
     };
     this.fifthColConf = {
@@ -148,7 +169,6 @@ export class DataTableExampleComponent {
       filterable: true,
       filterPlaceholder: '',
       resizable: false,
-      enableMultiSelectFilter: false,
       visible: true
     };
     this.sixthColConf = {
@@ -158,7 +178,6 @@ export class DataTableExampleComponent {
       filterable: true,
       filterPlaceholder: '',
       resizable: false,
-      enableMultiSelectFilter: false,
       visible: true
     };
     this.seventhColConf = {
@@ -168,7 +187,6 @@ export class DataTableExampleComponent {
       filterable: true,
       filterPlaceholder: '',
       resizable: false,
-      enableMultiSelectFilter: false,
       visible: true
     };
     this.eighthColConf = {
@@ -178,7 +196,6 @@ export class DataTableExampleComponent {
       filterable: true,
       filterPlaceholder: '',
       resizable: false,
-      enableMultiSelectFilter: false,
       visible: true
     };
     this.ninthColConf = {
@@ -188,7 +205,6 @@ export class DataTableExampleComponent {
       filterable: true,
       filterPlaceholder: '',
       resizable: false,
-      enableMultiSelectFilter: false,
       visible: true
     };
     this.tenthColConf = {
@@ -242,6 +258,15 @@ export class DataTableExampleComponent {
    */
   public reloadTableConfigurations(): void {
     this.dataStorageService.set(DataTableExampleComponent.tableConfigurationStorageKeyName, this.initialTableConf);
+    location.reload();
+  }
+
+  /**
+   * Responsible for reloading page after updating initial column loading configurations.
+   * Store all the updated configurations in the local storage.
+   */
+  public reloadColumnConfigurations(): void {
+    this.dataStorageService.set(DataTableExampleComponent.columnConfigurationStorageKeyName, this.initialColumnConf);
     location.reload();
   }
 
