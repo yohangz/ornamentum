@@ -338,6 +338,11 @@
             }
           }
 
+          &.disabled {
+            opacity: .3;
+            pointer-events: none;
+          }
+
           &:first-child {
             td {
               border-top: 0;
