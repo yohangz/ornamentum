@@ -97,6 +97,67 @@
 <div style="border: groove #40b30d">
   <h4>Column Configurations</h4>
   <div>
+    <h5><b>Configurations which are Required Page Reload to Apply</b></h5>
+    <span><b>1st Column</b></span>
+    <button (click)="initialColumnConf.multiSelectFilter1 = !initialColumnConf.multiSelectFilter1">
+      <ng-container *ngIf="initialColumnConf.multiSelectFilter1">Enable Multi Select Filter: <b>ON</b></ng-container>
+      <ng-container *ngIf="!initialColumnConf.multiSelectFilter1">Enable Multi Select Filter: <b>OFF</b></ng-container>
+    </button>
+
+    <span><b>2nd Column</b></span>
+    <button (click)="initialColumnConf.multiSelectFilter2 = !initialColumnConf.multiSelectFilter2">
+      <ng-container *ngIf="initialColumnConf.multiSelectFilter2">Enable Multi Select Filter: <b>ON</b></ng-container>
+      <ng-container *ngIf="!initialColumnConf.multiSelectFilter2">Enable Multi Select Filter: <b>OFF</b></ng-container>
+    </button>
+
+    <span><b>3rd Column</b></span>
+    <button (click)="initialColumnConf.multiSelectFilter3 = !initialColumnConf.multiSelectFilter3">
+      <ng-container *ngIf="initialColumnConf.multiSelectFilter3">Enable Multi Select Filter: <b>ON</b></ng-container>
+      <ng-container *ngIf="!initialColumnConf.multiSelectFilter3">Enable Multi Select Filter: <b>OFF</b></ng-container>
+    </button>
+
+    <span><b>4th Column</b></span>
+    <button (click)="initialColumnConf.multiSelectFilter4 = !initialColumnConf.multiSelectFilter4">
+      <ng-container *ngIf="initialColumnConf.multiSelectFilter4">Enable Multi Select Filter: <b>ON</b></ng-container>
+      <ng-container *ngIf="!initialColumnConf.multiSelectFilter4">Enable Multi Select Filter: <b>OFF</b></ng-container>
+    </button>
+
+    <span><b>5th Column</b></span>
+    <button (click)="initialColumnConf.multiSelectFilter5 = !initialColumnConf.multiSelectFilter5">
+      <ng-container *ngIf="initialColumnConf.multiSelectFilter5">Enable Multi Select Filter: <b>ON</b></ng-container>
+      <ng-container *ngIf="!initialColumnConf.multiSelectFilter5">Enable Multi Select Filter: <b>OFF</b></ng-container>
+    </button>
+
+    <span><b>6th Column</b></span>
+    <button (click)="initialColumnConf.multiSelectFilter6 = !initialColumnConf.multiSelectFilter6">
+      <ng-container *ngIf="initialColumnConf.multiSelectFilter6">Enable Multi Select Filter: <b>ON</b></ng-container>
+      <ng-container *ngIf="!initialColumnConf.multiSelectFilter6">Enable Multi Select Filter: <b>OFF</b></ng-container>
+    </button>
+
+    <span><b>7th Column</b></span>
+    <button (click)="initialColumnConf.multiSelectFilter7 = !initialColumnConf.multiSelectFilter7">
+      <ng-container *ngIf="initialColumnConf.multiSelectFilter7">Enable Multi Select Filter: <b>ON</b></ng-container>
+      <ng-container *ngIf="!initialColumnConf.multiSelectFilter7">Enable Multi Select Filter: <b>OFF</b>
+      </ng-container>
+    </button>
+
+    <span><b>8th Column</b></span>
+    <button (click)="initialColumnConf.multiSelectFilter8 = !initialColumnConf.multiSelectFilter8">
+      <ng-container *ngIf="initialColumnConf.multiSelectFilter8">Enable Multi Select Filter: <b>ON</b></ng-container>
+      <ng-container *ngIf="!initialColumnConf.multiSelectFilter8">Enable Multi Select Filter: <b>OFF</b></ng-container>
+    </button>
+
+    <span><b>9th Column</b></span>
+    <button (click)="initialColumnConf.multiSelectFilter9 = !initialColumnConf.multiSelectFilter9">
+      <ng-container *ngIf="initialColumnConf.multiSelectFilter9">Enable Multi Select Filter: <b>ON</b></ng-container>
+      <ng-container *ngIf="!initialColumnConf.multiSelectFilter9">Enable Multi Select Filter: <b>OFF</b></ng-container>
+    </button>
+
+    <button (click)="reloadColumnConfigurations()" style="color: #d32f2f"><b>RELOAD TO APPLY</b></button>
+  </div>
+  <div>
+    <h5><b>Configurations which are not Required Page Reload to Apply</b></h5>
+
     <span><b>1st Column</b></span>
     Title:<input placeholder="Enter Column Title" [(ngModel)]="firstColConf.title"
                  [ngModelOptions]="{standalone: true}">
@@ -120,11 +181,6 @@
     <button (click)="firstColConf.resizable = !firstColConf.resizable">
       <ng-container *ngIf="firstColConf.resizable">Resizable: <b>ON</b></ng-container>
       <ng-container *ngIf="!firstColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="firstColConf.enableMultiSelectFilter = !firstColConf.enableMultiSelectFilter">
-      <ng-container *ngIf="firstColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!firstColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>OFF</b></ng-container>
     </button>
 
     <button (click)="firstColConf.visible = !firstColConf.visible">
@@ -159,11 +215,6 @@
       <ng-container *ngIf="!secondColConf.resizable">Resizable: <b>OFF</b></ng-container>
     </button>
 
-    <button (click)="secondColConf.enableMultiSelectFilter = !secondColConf.enableMultiSelectFilter">
-      <ng-container *ngIf="secondColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!secondColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
     <button (click)="secondColConf.visible = !secondColConf.visible">
       <ng-container *ngIf="secondColConf.visible">Visible: <b>ON</b></ng-container>
       <ng-container *ngIf="!secondColConf.visible">Visible: <b>OFF</b></ng-container>
@@ -194,11 +245,6 @@
     <button (click)="thirdColConf.resizable = !thirdColConf.resizable">
       <ng-container *ngIf="thirdColConf.resizable">Resizable: <b>ON</b></ng-container>
       <ng-container *ngIf="!thirdColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="thirdColConf.enableMultiSelectFilter = !thirdColConf.enableMultiSelectFilter">
-      <ng-container *ngIf="thirdColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!thirdColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>OFF</b></ng-container>
     </button>
 
     <button (click)="thirdColConf.visible = !thirdColConf.visible">
@@ -233,11 +279,6 @@
       <ng-container *ngIf="!forthColConf.resizable">Resizable: <b>OFF</b></ng-container>
     </button>
 
-    <button (click)="forthColConf.enableMultiSelectFilter = !forthColConf.enableMultiSelectFilter">
-      <ng-container *ngIf="forthColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!forthColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
     <button (click)="forthColConf.visible = !forthColConf.visible">
       <ng-container *ngIf="forthColConf.visible">Visible: <b>ON</b></ng-container>
       <ng-container *ngIf="!forthColConf.visible">Visible: <b>OFF</b></ng-container>
@@ -268,11 +309,6 @@
     <button (click)="fifthColConf.resizable = !fifthColConf.resizable">
       <ng-container *ngIf="fifthColConf.resizable">Resizable: <b>ON</b></ng-container>
       <ng-container *ngIf="!fifthColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="fifthColConf.enableMultiSelectFilter = !fifthColConf.enableMultiSelectFilter">
-      <ng-container *ngIf="fifthColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!fifthColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>OFF</b></ng-container>
     </button>
 
     <button (click)="fifthColConf.visible = !fifthColConf.visible">
@@ -307,11 +343,6 @@
       <ng-container *ngIf="!sixthColConf.resizable">Resizable: <b>OFF</b></ng-container>
     </button>
 
-    <button (click)="sixthColConf.enableMultiSelectFilter = !sixthColConf.enableMultiSelectFilter">
-      <ng-container *ngIf="sixthColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!sixthColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
     <button (click)="sixthColConf.visible = !sixthColConf.visible">
       <ng-container *ngIf="sixthColConf.visible">Visible: <b>ON</b></ng-container>
       <ng-container *ngIf="!sixthColConf.visible">Visible: <b>OFF</b></ng-container>
@@ -342,12 +373,6 @@
     <button (click)="seventhColConf.resizable = !seventhColConf.resizable">
       <ng-container *ngIf="seventhColConf.resizable">Resizable: <b>ON</b></ng-container>
       <ng-container *ngIf="!seventhColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="seventhColConf.enableMultiSelectFilter = !seventhColConf.enableMultiSelectFilter">
-      <ng-container *ngIf="seventhColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!seventhColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>OFF</b>
-      </ng-container>
     </button>
 
     <button (click)="seventhColConf.visible = !seventhColConf.visible">
@@ -382,11 +407,6 @@
       <ng-container *ngIf="!eighthColConf.resizable">Resizable: <b>OFF</b></ng-container>
     </button>
 
-    <button (click)="eighthColConf.enableMultiSelectFilter = !eighthColConf.enableMultiSelectFilter">
-      <ng-container *ngIf="eighthColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!eighthColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
     <button (click)="eighthColConf.visible = !eighthColConf.visible">
       <ng-container *ngIf="eighthColConf.visible">Visible: <b>ON</b></ng-container>
       <ng-container *ngIf="!eighthColConf.visible">Visible: <b>OFF</b></ng-container>
@@ -417,11 +437,6 @@
     <button (click)="ninthColConf.resizable = !ninthColConf.resizable">
       <ng-container *ngIf="ninthColConf.resizable">Resizable: <b>ON</b></ng-container>
       <ng-container *ngIf="!ninthColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="ninthColConf.enableMultiSelectFilter = !ninthColConf.enableMultiSelectFilter">
-      <ng-container *ngIf="ninthColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!ninthColConf.enableMultiSelectFilter">Enable Multi Select Filter: <b>OFF</b></ng-container>
     </button>
 
     <button (click)="ninthColConf.visible = !ninthColConf.visible">
@@ -487,7 +502,7 @@
     [sortable]="firstColConf.sortable"
     [filterable]="firstColConf.filterable"
     [resizable]="firstColConf.resizable"
-    [enableMultiSelectFilter]="firstColConf.enableMultiSelectFilter"
+    [enableMultiSelectFilter]="initialColumnConf.multiSelectFilter1"
     [filterPlaceholder]="firstColConf.filterPlaceholder"
     [visible]="firstColConf.visible">
   </ng-data-table-column>
@@ -498,7 +513,7 @@
     [sortable]="secondColConf.sortable"
     [filterable]="secondColConf.filterable"
     [resizable]="secondColConf.resizable"
-    [enableMultiSelectFilter]="secondColConf.enableMultiSelectFilter"
+    [enableMultiSelectFilter]="initialColumnConf.multiSelectFilter2"
     [filterPlaceholder]="secondColConf.filterPlaceholder"
     [visible]="secondColConf.visible">
   </ng-data-table-column>
@@ -509,7 +524,7 @@
     [sortable]="thirdColConf.sortable"
     [filterable]="thirdColConf.filterable"
     [resizable]="thirdColConf.resizable"
-    [enableMultiSelectFilter]="thirdColConf.enableMultiSelectFilter"
+    [enableMultiSelectFilter]="initialColumnConf.multiSelectFilter3"
     [filterPlaceholder]="thirdColConf.filterPlaceholder"
     [visible]="thirdColConf.visible">
   </ng-data-table-column>
@@ -520,7 +535,7 @@
     [sortable]="forthColConf.sortable"
     [filterable]="forthColConf.filterable"
     [resizable]="forthColConf.resizable"
-    [enableMultiSelectFilter]="forthColConf.enableMultiSelectFilter"
+    [enableMultiSelectFilter]="initialColumnConf.multiSelectFilter4"
     [filterPlaceholder]="forthColConf.filterPlaceholder"
     [visible]="forthColConf.visible">
   </ng-data-table-column>
@@ -531,7 +546,7 @@
     [sortable]="fifthColConf.sortable"
     [filterable]="fifthColConf.filterable"
     [resizable]="fifthColConf.resizable"
-    [enableMultiSelectFilter]="fifthColConf.enableMultiSelectFilter"
+    [enableMultiSelectFilter]="initialColumnConf.multiSelectFilter5"
     [filterPlaceholder]="fifthColConf.filterPlaceholder"
     [visible]="fifthColConf.visible">
   </ng-data-table-column>
@@ -542,7 +557,7 @@
     [sortable]="sixthColConf.sortable"
     [filterable]="sixthColConf.filterable"
     [resizable]="sixthColConf.resizable"
-    [enableMultiSelectFilter]="sixthColConf.enableMultiSelectFilter"
+    [enableMultiSelectFilter]="initialColumnConf.multiSelectFilter6"
     [filterPlaceholder]="sixthColConf.filterPlaceholder"
     [visible]="sixthColConf.visible">
   </ng-data-table-column>
@@ -553,7 +568,7 @@
     [sortable]="seventhColConf.sortable"
     [filterable]="seventhColConf.filterable"
     [resizable]="seventhColConf.resizable"
-    [enableMultiSelectFilter]="seventhColConf.enableMultiSelectFilter"
+    [enableMultiSelectFilter]="initialColumnConf.multiSelectFilter7"
     [filterPlaceholder]="seventhColConf.filterPlaceholder"
     [visible]="seventhColConf.visible">
   </ng-data-table-column>
@@ -564,7 +579,7 @@
     [sortable]="eighthColConf.sortable"
     [filterable]="eighthColConf.filterable"
     [resizable]="eighthColConf.resizable"
-    [enableMultiSelectFilter]="eighthColConf.enableMultiSelectFilter"
+    [enableMultiSelectFilter]="initialColumnConf.multiSelectFilter8"
     [filterPlaceholder]="eighthColConf.filterPlaceholder"
     [visible]="eighthColConf.visible">
   </ng-data-table-column>
@@ -575,7 +590,7 @@
     [sortable]="ninthColConf.sortable"
     [filterable]="ninthColConf.filterable"
     [resizable]="ninthColConf.resizable"
-    [enableMultiSelectFilter]="ninthColConf.enableMultiSelectFilter"
+    [enableMultiSelectFilter]="initialColumnConf.multiSelectFilter9"
     [filterPlaceholder]="ninthColConf.filterPlaceholder"
     [visible]="ninthColConf.visible">
   </ng-data-table-column>
