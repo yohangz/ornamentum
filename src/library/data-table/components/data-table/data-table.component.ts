@@ -1110,7 +1110,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    */
   private clearColumnFilters(): void {
     this.columns.forEach((column: DataTableColumnComponent) => {
-      column.filter = '';
+      column.filter = undefined;
     });
   }
 
