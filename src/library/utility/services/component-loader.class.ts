@@ -7,7 +7,13 @@ import {
 import { Type } from '@angular/core/src/type';
 import { GlobalRefService } from './global-ref.service';
 
-export class ComponentLoader<T> {
+export interface ComponentLoader<T> {
+  show(component: Type<T>, parentElement: HTMLElement, options: any, pushWidth?: number): void;
+  toggle(component: Type<T>, parentElement: HTMLElement, options: any, pushWidth?: number): void;
+  hide(): void;
+}
+
+export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
 
   private componentRef: ComponentRef<T>;
   private resizeEventHandler: () => void;
@@ -28,7 +34,7 @@ export class ComponentLoader<T> {
     };
   }
 
-  public show(component: Type<T>, parentElement: HTMLElement, options: any, pushWidth: number = 0) {
+  public show(component: Type<T>, parentElement: HTMLElement, options: any, pushWidth: number = 0): void {
     // 1. Create a component reference from the component
     this.componentRef = this.componentFactoryResolver
       .resolveComponentFactory(component)
@@ -65,7 +71,7 @@ export class ComponentLoader<T> {
     this.isVisible = true;
   }
 
-  public hide() {
+  public hide(): void {
     if (this.componentRef) {
       this.appRef.detachView(this.componentRef.hostView);
       this.componentRef.destroy();
@@ -78,7 +84,7 @@ export class ComponentLoader<T> {
     this.isVisible = false;
   }
 
-  public toggle(component: Type<T>, parentElement: HTMLElement, options: any, pushWidth: number = 0) {
+  public toggle(component: Type<T>, parentElement: HTMLElement, options: any, pushWidth: number = 0): void {
     if (this.isVisible) {
       this.hide();
     } else {

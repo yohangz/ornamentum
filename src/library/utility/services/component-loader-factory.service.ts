@@ -1,5 +1,5 @@
 import { ApplicationRef, ComponentFactoryResolver, Injectable, Injector } from '@angular/core';
-import { ComponentLoader } from './component-loader.class';
+import { AbsoluteComponentLoader, ComponentLoader } from './component-loader.class';
 import { GlobalRefService } from './global-ref.service';
 
 @Injectable()
@@ -12,6 +12,6 @@ export class ComponentLoaderFactoryService {
   ) {}
 
   public createLoader<T>(): ComponentLoader<T> {
-    return new ComponentLoader<T>(this.componentFactoryResolver, this.appRef, this.injector, this.globalRefService);
+    return new AbsoluteComponentLoader<T>(this.componentFactoryResolver, this.appRef, this.injector, this.globalRefService);
   }
 }
