@@ -8,6 +8,7 @@ import {
 } from '../../../library/data-table';
 
 import { DataStorageService } from '../../services/data-storage.service';
+import { DataRow } from '../../../library/data-table/models/data-table.model';
 
 declare function require(url: string);
 
@@ -282,6 +283,10 @@ export class DataTableExampleComponent {
     }
 
     this.tableResource.count().then((count) => this.itemCount = count);
+  }
+
+  public onRowDisabledStateChange(dataRow: DataRow): boolean {
+    return dataRow.index === 1;
   }
 }
 

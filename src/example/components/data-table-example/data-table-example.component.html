@@ -490,6 +490,7 @@
   [contentHeight]="contentHeight"
   [persistTableState]="true"
   [onFilterValueExtract]="tableResource.extractFilterOptions.bind(tableResource)"
+  [onRowDisabledStateChange]="onRowDisabledStateChange"
 
   (onRefresh)="onRefresh($event)"
   (onDataLoad)="onDataLoad($event)"

@@ -28,11 +28,20 @@ export class DataTableBodyComponent {
    * Get row tooltip.
    * @return {string} Row tooltip string.
    */
-  public getTooltip(dataRow: DataRow): string {
+  public getRowTooltipText(dataRow: DataRow): string {
     if (this.dataTable.onRowTooltipChange) {
       return this.dataTable.onRowTooltipChange(dataRow);
     }
+
     return '';
+  }
+
+  public getRowDisabledState(dataRow: DataRow): boolean {
+    if (this.dataTable.onRowDisabledStateChange) {
+      return this.dataTable.onRowDisabledStateChange(dataRow);
+    }
+
+    return false;
   }
 
   /**

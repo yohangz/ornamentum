@@ -27,9 +27,9 @@ import {
   GroupFieldExtractorCallback,
   HeaderClickEventArgs,
   RowClickEventArgs,
-  RowColourChangeCallback,
+  RowColourChangeCallback, RowDisabledStateChangeCallback,
   RowSelectEventArgs,
-  RowTooltipCallback
+  RowTooltipChangeCallback
 } from '../../models/data-table.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
@@ -101,20 +101,28 @@ export class DataTableComponent implements OnInit, OnDestroy {
   // Event handlers
 
   /**
-   * On row colour render event handler callback.
+   * On row colour change event handler callback.
    * @default undefined
    * @type {RowColourChangeCallback}
    */
   @Input()
-  public onRowColourRender: RowColourChangeCallback;
+  public onRowColourChange: RowColourChangeCallback;
 
   /**
    * On row tooltip change event handler callback.
    * @default undefined
-   * @type {RowTooltipCallback}
+   * @type {RowTooltipChangeCallback}
    */
   @Input()
-  public onRowTooltipChange: RowTooltipCallback;
+  public onRowTooltipChange: RowTooltipChangeCallback;
+
+  /**
+   * On row disabled state change event handler callback.
+   * @default undefined
+   * @type {RowDisabledStateChangeCallback}
+   */
+  @Input()
+  public onRowDisabledStateChange: RowDisabledStateChangeCallback;
 
   /**
    * On filter value extract event handler callback.
@@ -979,8 +987,8 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @return {string} CSS compliant colour string.
    */
   public getRowColor(row: DataRow): string {
-    if (this.onRowColourRender) {
-      return this.onRowColourRender(row);
+    if (this.onRowColourChange) {
+      return this.onRowColourChange(row);
     }
   }
 

@@ -24,7 +24,9 @@ export type RowColourChangeCallback = (row: DataRow) => string;
  * @param index Data row index.
  * @return {string} Row tooltip string.
  */
-export type RowTooltipCallback = (row: DataRow) => string;
+export type RowTooltipChangeCallback = (row: DataRow) => string;
+
+export type RowDisabledStateChangeCallback = (row: DataRow) => boolean;
 
 export type FilterFieldMapperCallback = (value: any, index: number, array: any[]) => any | any[];
 
