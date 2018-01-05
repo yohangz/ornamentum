@@ -61,11 +61,43 @@ function predicate() {
 }
 
 /**
- * Data table resource service
- * @class DataTableResource<T>
+ * Data table resource manager interface.
+ * @interface DataTableResource<T>
  */
+export interface DataTableResource<T> {
+  /**
+   * Set data table items.
+   * @param {T[]} value Items collection.
+   */
+  setItems(value: T[]): void;
 
-export class DataTableResource<T> {
+  /**
+   * Query data table items collection.
+   * @param {DataTableParams} params Data table parameters.
+   * @param {(item: T, index: number, items: T[]) => boolean} filter Filter function callback reference.
+   * @return {Promise<any[]>} Item query resolver.
+   */
+  query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Promise<T[]>;
+
+  /**
+   * Extract data table filter options.
+   * @param {DataTableColumnComponent} filterColumn Data table column component.
+   * @return {Promise<any[]>} Filter options array promise.
+   */
+  extractFilterOptions(filterColumn: DataTableColumnComponent): Promise<any[]>;
+
+  /**
+   * Get data table item count.
+   * @return {Promise<number>} Item count promise.
+   */
+  count(): Promise<number>;
+}
+
+/**
+ * Data table resource manager class
+ * @class DataTableResourceManager<T>
+ */
+export class DataTableResourceManager<T> implements DataTableResource<T> {
   private itemsPromise: Promise<T[]>;
   private resolve: Function;
 
@@ -76,15 +108,15 @@ export class DataTableResource<T> {
   }
 
   /**
-   * Set items.
-   * @param {T[]} value
+   * Set data table items.
+   * @param {T[]} value Items collection.
    */
-  public set items(value: T[]) {
+  public setItems(value: T[]): void {
     this.resolve(value);
   }
 
   /**
-   * Query item collection.
+   * Query data table items collection.
    * @param {DataTableParams} params Data table parameters.
    * @param {(item: T, index: number, items: T[]) => boolean} filter Filter function callback reference.
    * @return {Promise<any[]>} Item query resolver.
@@ -161,7 +193,7 @@ export class DataTableResource<T> {
   }
 
   /**
-   * Extract filter options.
+   * Extract data table filter options.
    * @param {DataTableColumnComponent} filterColumn Data table column component.
    * @return {Promise<any[]>} Filter options array promise.
    */
@@ -186,7 +218,7 @@ export class DataTableResource<T> {
   }
 
   /**
-   * Get item count.
+   * Get data table item count.
    * @return {Promise<number>} Item count promise.
    */
   public count(): Promise<number> {

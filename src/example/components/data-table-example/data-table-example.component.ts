@@ -3,7 +3,8 @@ import { Component } from '@angular/core';
 import {
   DataTableParams,
   DataTableResource,
-  DataTableComponent, DataTableResourceFactoryService
+  DataTableComponent,
+  DataTableResourceFactoryService
 } from '../../../library/data-table';
 
 import { DataStorageService } from '../../services/data-storage.service';
@@ -252,7 +253,7 @@ export class DataTableExampleComponent {
     this.tableResource = this.dataTableResourceFactoryService.createTableResource();
 
     if (!this.initialTableConf.remoteDataFetch) {
-      this.tableResource.items = data.stationBeanList;
+      this.tableResource.setItems(data.stationBeanList);
     }
 
     this.tableResource.count().then((count) => this.itemCount = count);
