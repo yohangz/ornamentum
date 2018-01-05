@@ -89,7 +89,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
   @ContentChildren(DataTableColumnComponent)
   public columns: QueryList<DataTableColumnComponent>;
 
-  @ContentChild('dataTableExpand')
+  @ContentChild('ngDataTableExpand')
   public expandTemplate: TemplateRef<any>;
 
   public rowSelectStateUpdate = new EventEmitter();

@@ -1,4 +1,5 @@
 export * from './components/data-table/data-table.component';
+export * from './components/data-table-column/data-table-column.component';
 export * from './services/data-table-config.service';
 export * from './services/data-table-resource.class';
 export * from './services/data-table-resource-factory.service';

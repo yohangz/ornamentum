@@ -14,7 +14,7 @@
     "lint:src": "ng lint",
     "lint:scss": "sass-lint --config .scss-lint.yml --no-exit --verbose",
     "lint": "npm run lint:src && npm run lint:scss",
-    "start": "ng serve --open",
+    "start": "ng serve --open --port 4201",
     "build:dev": "ng build --progress",
     "build:prod": "ng build --extract-css --progress --prod --aot",
     "clean:build": "rimraf coverage dist lib .tmp docs",
