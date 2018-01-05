@@ -161,6 +161,7 @@ export interface FilterColumn {
   field: string;
   filterValue: any;
   filterExpression: FilterExpressionCallback;
+  enableMultiSelectFilter: boolean;
 }
 
 export interface ColumnSelectorProperty {

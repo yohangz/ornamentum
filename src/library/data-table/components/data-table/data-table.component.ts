@@ -695,9 +695,10 @@ export class DataTableComponent implements OnInit, OnDestroy {
 
     params.filterColumns = this.getColumnFilterColumns().map((column: DataTableColumnComponent) => {
       return {
-        field: column.field,
+        field: column.filterField || column.field,
         filterValue: column.filter,
-        filterExpression: column.filterExpression
+        filterExpression: column.filterExpression,
+        enableMultiSelectFilter: column.enableMultiSelectFilter
       }
     });
 
