@@ -28,7 +28,7 @@ export class DataTableHeaderComponent {
       props: {
         dataTable: this.dataTable
       }
-    }, -40);
+    }, element.offsetWidth + 10, element.offsetHeight + 5);
   }
 
   /**
