@@ -12,6 +12,7 @@ import 'rxjs/add/operator/debounceTime';
 import { ComponentLoaderFactoryService } from '../../../utility';
 import { ComponentLoader } from '../../../utility/services/component-loader.class';
 import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component';
+import { MenuPosition } from '../../models/menu-position.enum';
 
 /**
  * Component class to represent search dropdown.
@@ -288,11 +289,25 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   public showSelectedOptionRemove: boolean = true;
 
   /**
-   * Sets dropdown container width.
-   * @type {number | string}
+   * Dropdown menu width.
+   * @type {number}
    */
   @Input()
-  public dropdownWidth: number | string;
+  public menuWidth: number = 320;
+
+  /**
+   * Dropdown menu height.
+   * @type {number}
+   */
+  @Input()
+  public menuHeight: number = 250;
+
+  /**
+   * Menu open position.
+   * @type {MenuPosition}
+   */
+  @Input()
+  public menuPosition: MenuPosition = MenuPosition.BOTTOM_LEFT;
 
   /**
    * Filter de-bounce time milliseconds.
@@ -339,7 +354,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   constructor(private componentLoaderFactory: ComponentLoaderFactoryService) {
     this._translations = this.defaultTranslations;
     this.componentLoader = this.componentLoaderFactory.createLoader();
-
   }
 
   /**
@@ -401,16 +415,28 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     }
   }
 
+  public positionRight(): number {
+    return this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.TOP_RIGHT? 0: undefined;
+  }
+
+  public positionBottom():  number {
+    return this.menuPosition === MenuPosition.TOP_RIGHT || this.menuPosition === MenuPosition.TOP_LEFT? 0: undefined;
+  }
+
   /**
    * Performs dropdown toggle event.
    * @param {HTMLElement} element Dropdown button element.
    */
   public toggleDropdown(element: HTMLElement): void {
+    const floatLeft = this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.TOP_RIGHT? element.offsetWidth: 0;
+    const floatTop = this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.BOTTOM_LEFT? element.offsetHeight: 0;
+
+
     this.componentLoader.toggle(DropdownViewComponent, element, {
       props: {
         dropdown: this
       }
-    });
+    }, floatLeft, floatTop);
   }
 
   /**
