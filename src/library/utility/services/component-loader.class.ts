@@ -8,8 +8,8 @@ import { Type } from '@angular/core/src/type';
 import { GlobalRefService } from './global-ref.service';
 
 export interface ComponentLoader<T> {
-  show(component: Type<T>, parentElement: HTMLElement, options: any, pushWidth?: number): void;
-  toggle(component: Type<T>, parentElement: HTMLElement, options: any, pushWidth?: number): void;
+  show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number): void;
+  toggle(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number): void;
   hide(): void;
 }
 
@@ -34,7 +34,7 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     };
   }
 
-  public show(component: Type<T>, parentElement: HTMLElement, options: any, pushWidth: number = 0): void {
+  public show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0): void {
     // 1. Create a component reference from the component
     this.componentRef = this.componentFactoryResolver
       .resolveComponentFactory(component)
@@ -54,8 +54,8 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     const bodyClientRect = document.documentElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
 
-    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + (elementClientRect.height || parentElement.offsetHeight)}px`;
-    componentElement.style.left = `${elementClientRect.left - bodyClientRect.left - pushWidth}px`;
+    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + floatTop}px`;
+    componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + floatLeft}px`;
     componentElement.style.position = 'absolute';
 
     // 4. Append DOM element to the body
@@ -84,11 +84,12 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     this.isVisible = false;
   }
 
-  public toggle(component: Type<T>, parentElement: HTMLElement, options: any, pushWidth: number = 0): void {
+  public toggle(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0): void {
     if (this.isVisible) {
       this.hide();
     } else {
-      this.show(component, parentElement, options, pushWidth);
+      this.show(component, parentElement, options, floatLeft, floatTop);
     }
   }
 }
+
