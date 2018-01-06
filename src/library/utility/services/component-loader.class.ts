@@ -11,6 +11,7 @@ export interface ComponentLoader<T> {
   show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number): void;
   toggle(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number): void;
   hide(): void;
+  dispose(): void;
 }
 
 export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
@@ -35,6 +36,13 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
   }
 
   public show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0): void {
+    if (this.componentRef) {
+      const componentElement = this.componentRef.location.nativeElement as HTMLElement;
+      componentElement.style.display = 'block';
+      this.isVisible = true;
+      return;
+    }
+
     // 1. Create a component reference from the component
     this.componentRef = this.componentFactoryResolver
       .resolveComponentFactory(component)
@@ -73,6 +81,15 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
 
   public hide(): void {
     if (this.componentRef) {
+      const componentElement = this.componentRef.location.nativeElement as HTMLElement;
+      componentElement.style.display = 'none';
+    }
+
+    this.isVisible = false;
+  }
+
+  public dispose(): void {
+    if (this.componentRef) {
       this.appRef.detachView(this.componentRef.hostView);
       this.componentRef.destroy();
     }
@@ -81,7 +98,6 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
 
     this.componentRef = null;
     this.resizeEventHandler = null;
-    this.isVisible = false;
   }
 
   public toggle(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0): void {

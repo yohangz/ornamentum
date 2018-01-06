@@ -743,6 +743,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     if (this.onChangeSubscription) {
       this.onChangeSubscription.unsubscribe();
     }
+
+    this.componentLoader.dispose();
   }
 
   /**
