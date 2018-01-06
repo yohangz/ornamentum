@@ -25,7 +25,10 @@
     "build": "npm run build:lib && npm run build:prod",
     "explorer": "source-map-explorer ./lib/index.umd.js",
     "gh-pages": "npm run docs && gh-pages -d docs",
-    "prepublishOnly": "npm run docs && npm run build"
+    "prepublishOnly": "npm run docs && npm run build",
+    "preversion": "npm run test:ci",
+    "version": "npm run build",
+    "postversion": "git push && git push --tags"
   },
   "repository": {
     "type": "git",
