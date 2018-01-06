@@ -75,6 +75,12 @@
       <ng-container *ngIf="!filterDebounce">Filter Debounce: <b>OFF</b></ng-container>
     </button>
 
+    <button (click)="expandOnRowClick = !expandOnRowClick">
+      <ng-container *ngIf="expandOnRowClick">Expand On Row Click: <b>ON</b></ng-container>
+      <ng-container *ngIf="!expandOnRowClick">Expand On Row Click: <b>OFF</b></ng-container>
+    </button>
+
+
     Grid Title:<input placeholder="Enter Grid Title" [(ngModel)]="gridTitle"
                       [ngModelOptions]="{standalone: true}">
 
@@ -470,6 +476,7 @@
   [title]="gridTitle"
   [autoFetch]="initialTableConf.autoFetch"
   [expandableRows]="initialTableConf.expandableRows"
+  [expandOnRowClick]="expandOnRowClick"
   [filterDebounce]="filterDebounce"
   [filterDebounceTime]="filterDebounceTime"
   [indexColumnTitle]="indexColumnTitle"

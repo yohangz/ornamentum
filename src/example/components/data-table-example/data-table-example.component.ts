@@ -75,6 +75,7 @@ export class DataTableExampleComponent {
   public items: any[];
   public limit: number;
   public page: number;
+  public expandOnRowClick: boolean;
 
   public tableResource: DataTableResource<any>;
   public dataTableComponent: DataTableComponent;
@@ -128,6 +129,7 @@ export class DataTableExampleComponent {
     this.limit = 10;
     this.page = 1;
     this.items = [];
+    this.expandOnRowClick = false;
 
     this.firstColConf = {
       width: 80,
