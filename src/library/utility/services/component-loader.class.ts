@@ -4,40 +4,43 @@ import {
   EmbeddedViewRef,
   ApplicationRef, ComponentRef
 } from '@angular/core';
+
 import { Type } from '@angular/core/src/type';
+
 import { GlobalRefService } from './global-ref.service';
 
 export interface ComponentLoader<T> {
   show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number): void;
+
   toggle(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number): void;
+
   hide(): void;
+
   dispose(): void;
 }
 
 export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
-
   private componentRef: ComponentRef<T>;
   private resizeEventHandler: () => void;
   private isVisible: boolean;
 
-  constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private appRef: ApplicationRef,
-    private injector: Injector,
-    private globalRefService: GlobalRefService
-  ) {
+  constructor(private componentFactoryResolver: ComponentFactoryResolver,
+              private appRef: ApplicationRef,
+              private injector: Injector,
+              private globalRefService: GlobalRefService) {
     this.isVisible = false;
   }
 
   private getResizeEventHandler(): () => void {
     return () => {
-     this.hide();
+      this.hide();
     };
   }
 
   public show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0): void {
+    const componentElement = this.componentRef.location.nativeElement as HTMLElement;
+
     if (this.componentRef) {
-      const componentElement = this.componentRef.location.nativeElement as HTMLElement;
       componentElement.style.display = 'block';
       this.isVisible = true;
       return;
@@ -56,8 +59,6 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     // 3. Get DOM element from component
     const domElem = (this.componentRef.hostView as EmbeddedViewRef<any>)
       .rootNodes[0] as HTMLElement;
-
-    const componentElement = this.componentRef.location.nativeElement as HTMLElement;
 
     const bodyClientRect = document.documentElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
