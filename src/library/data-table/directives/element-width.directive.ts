@@ -1,12 +1,12 @@
 import {
   AfterViewInit,
-  Directive, ElementRef, EventEmitter, OnInit, Output
+  Directive, ElementRef, EventEmitter, Output
 } from '@angular/core';
 
 @Directive({
   selector: '[elementWidth]'
 })
-export class ElementWidth implements AfterViewInit {
+export class ElementWidthDirective implements AfterViewInit {
   @Output()
   public elementWidth = new EventEmitter();
 
