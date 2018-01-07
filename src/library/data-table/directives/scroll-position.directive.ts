@@ -1,13 +1,16 @@
-import { Directive, ElementRef, EventEmitter, AfterViewInit, NgZone, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, AfterViewInit, NgZone, Output, OnDestroy } from '@angular/core';
 
 import { ScrollPoint } from '../models/data-table.model';
 
 import { Observable } from 'rxjs/Observable';
+import { Subscription } from 'rxjs/Subscription';
 
 @Directive({
   selector: '[scrollPosition]'
 })
-export class ScrollPositionDirective implements AfterViewInit {
+export class ScrollPositionDirective implements AfterViewInit, OnDestroy {
+  private scrollEventSubscription: Subscription;
+
   @Output()
   public scrollPosition = new EventEmitter<ScrollPoint>();
 
@@ -15,7 +18,7 @@ export class ScrollPositionDirective implements AfterViewInit {
 
   public ngAfterViewInit(): void {
     this.zone.runOutsideAngular(() => {
-      Observable.fromEvent(this.el.nativeElement, 'scroll')
+      this.scrollEventSubscription = Observable.fromEvent(this.el.nativeElement, 'scroll')
         .subscribe(res => {
           this.zone.run(() => {
             this.scrollPosition.emit({
@@ -25,5 +28,11 @@ export class ScrollPositionDirective implements AfterViewInit {
           });
         });
     });
+  }
+
+  public ngOnDestroy(): void {
+    if (this.scrollEventSubscription) {
+      this.scrollEventSubscription.unsubscribe();
+    }
   }
 }

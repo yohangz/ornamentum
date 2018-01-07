@@ -8,6 +8,7 @@ import {
 import { Type } from '@angular/core/src/type';
 
 import { GlobalRefService } from './global-ref.service';
+import { Observable } from 'rxjs/Observable';
 
 export interface ComponentLoader<T> {
   show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number): void;
@@ -46,6 +47,12 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + floatLeft}px`;
     componentElement.style.position = 'absolute';
     componentElement.style.display = 'block';
+
+    Observable.fromEvent(this.globalRefService.window, 'resize')
+      .take(1)
+      .subscribe(() => {
+        this.hide();
+      });
   }
 
   public show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0): void {
@@ -79,8 +86,6 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
 
     this.resizeEventHandler = this.getResizeEventHandler();
 
-    this.globalRefService.window.addEventListener('resize', this.resizeEventHandler);
-
     this.isVisible = true;
   }
 
@@ -97,8 +102,6 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
       this.appRef.detachView(this.componentRef.hostView);
       this.componentRef.destroy();
     }
-
-    this.globalRefService.window.removeEventListener(`resize`, this.resizeEventHandler);
 
     this.componentRef = null;
     this.resizeEventHandler = null;
