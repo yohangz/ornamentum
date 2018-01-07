@@ -423,7 +423,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit  
   @Input()
   public set items(value: any[]) {
     this._items = value;
-    this.onAfterReload();
+    this.onAfterDataBind();
   }
 
   /**
@@ -587,13 +587,17 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit  
   }
 
   /**
-   * On after onDataLoad handler.
+   * On after data bind handler.
    */
-  private onAfterReload(): void {
+  private onAfterDataBind(): void {
     this._selectAllCheckbox = false;
     this.dataRows = this.getRows();
     this.substituteItems = this.getSubstituteItems();
     this.rowSelectStateUpdate.emit();
+
+    if (this._offset > this.itemCount) {
+      this._offset = 0;
+    }
 
     if (this.isHeardReload) {
       this.fetchFilterOptions();

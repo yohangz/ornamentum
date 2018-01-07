@@ -2,7 +2,10 @@ import { NgZone } from '@angular/core';
 
 import { SortOrder } from '../models/data-table-sort-order.enum';
 
-import { DataTableParams, FilterColumn, FilterOption, SortColumn } from '../models/data-table.model';
+import {
+  DataTableParams, DataTableQueryResult, FilterColumn, FilterOption,
+  SortColumn
+} from '../models/data-table.model';
 
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
@@ -87,7 +90,7 @@ export interface DataTableResource<T> {
    * @param {(item: T, index: number, items: T[]) => boolean} filter Filter function callback reference.
    * @return {Promise<any[]>} Item query resolver.
    */
-  query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Promise<T[]>;
+  query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Promise<DataTableQueryResult<T[]>>;
 
   /**
    * Extract data table filter options.
@@ -95,12 +98,6 @@ export interface DataTableResource<T> {
    * @return {Promise<any[]>} Filter options array promise.
    */
   extractFilterOptions(filterColumn: DataTableColumnComponent): Promise<any[]>;
-
-  /**
-   * Get data table item count.
-   * @return {Promise<number>} Item count promise.
-   */
-  count(): Promise<number>;
 }
 
 /**
@@ -133,7 +130,7 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
    * @param {(item: T, index: number, items: T[]) => boolean} filter Filter function callback reference.
    * @return {Promise<any[]>} Item query resolver.
    */
-  public query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Promise<T[]> {
+  public query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Promise<DataTableQueryResult<T[]>> {
     let queryPromiseResolver, queryPromiseReject;
     if (this.queryTimeout) {
       clearTimeout(this.queryTimeout);
@@ -146,6 +143,9 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
     this.zone.runOutsideAngular(() => {
       this.queryTimeout = setTimeout(() => {
         this.itemsPromise.then((items: T[]) => {
+          let itemCount = items.length;
+          let offset = params.offset;
+
           let result: T[] = [];
 
           if (filter) {
@@ -181,6 +181,7 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
                 return value.includes(filterValue);
               });
             });
+            itemCount = result.length;
           }
 
           if (params.sortColumns.length) {
@@ -198,14 +199,19 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
           }
 
           if (params.offset !== undefined) {
+            const offset = (params.offset + 1 > result.length)? 0: params.offset;
+
             if (params.limit === undefined) {
-              result = result.slice(params.offset, result.length);
+              result = result.slice(offset, result.length);
             } else {
-              result = result.slice(params.offset, params.offset + params.limit);
+              result = result.slice(offset, offset + params.limit);
             }
           }
 
-          queryPromiseResolver(result);
+          queryPromiseResolver({
+            items: result,
+            count: itemCount
+          });
         });
       });
     });
@@ -252,22 +258,6 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
     return new Promise((resolve, reject) => {
       filterPromiseResolver = resolve;
       filterPromiseReject = reject;
-    });
-  }
-
-  /**
-   * Get data table item count.
-   * @return {Promise<number>} Item count promise.
-   */
-  public count(): Promise<number> {
-    let countPromiseResolver;
-
-    this.itemsPromise.then((items: T[]) => {
-      countPromiseResolver(items.length);
-    });
-
-    return new Promise((resolve) => {
-      countPromiseResolver = resolve;
     });
   }
 }

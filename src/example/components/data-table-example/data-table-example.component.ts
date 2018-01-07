@@ -227,7 +227,10 @@ export class DataTableExampleComponent {
    */
   public onRefresh(params?: any): void {
     this.fetchAlgorithmsData();
-    this.tableResource.query(params).then((items) => this.items = items);
+    this.tableResource.query(params).then((data) => {
+      this.items = data.items;
+      this.itemCount = data.count;
+    });
   }
 
   /**
@@ -235,7 +238,12 @@ export class DataTableExampleComponent {
    * @param {DataTableParams} params  grid parameters.
    */
   public onDataLoad(params?: any): void {
-    this.tableResource.query(params).then((items) => this.items = items);
+    this.tableResource.query(params).then((data) => {
+      debugger;
+      this.items = data.items;
+      this.itemCount = data.count;
+    });
+
   }
 
   /**
@@ -283,8 +291,6 @@ export class DataTableExampleComponent {
     if (!this.initialTableConf.remoteDataFetch) {
       this.tableResource.setItems(data.stationBeanList);
     }
-
-    this.tableResource.count().then((count) => this.itemCount = count);
   }
 
   public onRowDisabledStateChange(dataRow: DataRow): boolean {

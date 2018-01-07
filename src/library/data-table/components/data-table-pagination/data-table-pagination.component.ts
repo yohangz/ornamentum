@@ -92,6 +92,7 @@ export class DataTablePaginationComponent {
     const limit = parseInt(element.value);
     if (this.limit !== limit) {
       this.limit = limit;
+      this.dataTable.offset = 0;
     }
   }
 

@@ -168,3 +168,8 @@ export interface FilterColumn {
 export interface ColumnSelectorProperty {
   dataTable: DataTableComponent;
 }
+
+export interface DataTableQueryResult<T> {
+  items: T[];
+  count: number;
+}
