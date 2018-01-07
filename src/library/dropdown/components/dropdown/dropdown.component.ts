@@ -8,7 +8,6 @@ import {
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 
-import 'rxjs/add/operator/debounceTime';
 import { ComponentLoaderFactoryService } from '../../../utility';
 import { ComponentLoader } from '../../../utility/services/component-loader.class';
 import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component';

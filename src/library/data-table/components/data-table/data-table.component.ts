@@ -8,7 +8,8 @@ import {
   OnInit,
   Output,
   QueryList,
-  TemplateRef
+  TemplateRef,
+  AfterContentInit
 } from '@angular/core';
 
 import { Subject } from 'rxjs/Subject';
@@ -48,14 +49,13 @@ import { StorageMode } from '../../models/data-table-storage-mode.enum';
   styleUrls: ['./data-table.component.scss'],
   templateUrl: './data-table.component.html'
 })
-export class DataTableComponent implements OnInit, OnDestroy {
+export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit  {
   public SortOrder = SortOrder;
 
   private _items: any[] = [];
   private _selectAllCheckbox: boolean = false;
   private _offset: number = 0;
   private _limit: number = 10;
-  private _reloading: boolean = false;
   private resizeInProgress: boolean = false;
   private isHeardReload = false;
   private _translations: DataTableTranslations = {
@@ -570,17 +570,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * Set reloading state.
    * @param {boolean} value
    */
-  public set reloading(value: boolean) {
-    this._reloading = value;
-  }
-
-  /**
-   * Get reloading state.
-   * @return {boolean}
-   */
-  public get reloading(): boolean {
-    return this._reloading;
-  }
+  public reloading: boolean = true;
 
   /**
    * Get last page number.
@@ -590,7 +580,10 @@ export class DataTableComponent implements OnInit, OnDestroy {
     return Math.ceil(this.itemCount / this.limit);
   }
 
-  constructor(private dragAndDropService: DragAndDropService, private dataTableStateService: DataTableStateService) {
+  constructor(
+    private dragAndDropService: DragAndDropService,
+    private dataTableStateService: DataTableStateService
+  ) {
     this.dataTableStateService.storageMode = StorageMode.SESSION;
   }
 
@@ -601,16 +594,16 @@ export class DataTableComponent implements OnInit, OnDestroy {
     this._selectAllCheckbox = false;
     this.dataRows = this.getRows();
     this.substituteItems = this.getSubstituteItems();
-    setTimeout(() => {
-      this.rowSelectStateUpdate.emit();
-    });
+    this.rowSelectStateUpdate.emit();
 
     if (this.isHeardReload) {
       this.fetchFilterOptions();
       this.isHeardReload = false;
     }
 
-    this.reloading = false;
+    setTimeout(() => {
+      this.reloading = false;
+    }, 500);
   }
 
   /**
@@ -775,13 +768,12 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * Fetch filter options from data provider.
    */
   private fetchFilterOptions(): void {
-    setTimeout(() => {
-      this.columns.forEach((column) => {
-        if (column.enableMultiSelectFilter) {
-          this.setFilterOptions(column);
-        }
-      });
+    this.columns.forEach((column) => {
+      if (column.enableMultiSelectFilter) {
+        this.setFilterOptions(column);
+      }
     });
+
   }
 
   private initDataTableState(): void {
@@ -825,18 +817,18 @@ export class DataTableComponent implements OnInit, OnDestroy {
 
     this.initCustomFilterEvent();
     this.initRowSelectionEvent();
+  }
 
-    setTimeout(() => {
-      this.initDataTableState();
+  public ngAfterContentInit(): void {
+    this.initDataTableState();
 
-      this.dataFetchStream.debounceTime(20).subscribe((hardRefresh: boolean) => {
-        this.dataBind(hardRefresh);
-      });
-
-      if (this.autoFetch) {
-        this.dataFetchStream.next(false);
-      }
+    this.dataFetchStream.debounceTime(20).subscribe((hardRefresh: boolean) => {
+      this.dataBind(hardRefresh);
     });
+
+    if (this.autoFetch) {
+      this.dataFetchStream.next(false);
+    }
 
     this.fetchFilterOptions();
     this.onInit.emit(this);
@@ -967,6 +959,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @return {number} Number of columns.
    */
   public get columnTotalCount(): number {
+
     let count = 0;
     count += this.indexColumnVisible ? 1 : 0;
     count += this.selectColumnVisible ? 1 : 0;

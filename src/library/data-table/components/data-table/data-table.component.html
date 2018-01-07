@@ -64,7 +64,7 @@
       </div>
     </div>
     <div class="ng-data-table-content" (scrollPosition)="onScrollPositionChange($event)" [style.height]="contentHeight | px" [style.minHeight]="minHeight | px">
-      <div class="loading-cover" *ngIf="showLoadingSpinner && reloading">
+      <div class="loading-cover" [hidden]="!isLoading">
         <div class="loading-animation"></div>
       </div>
       <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">

@@ -37,7 +37,7 @@
     </td>
   </tr>
 </ng-container>
-<ng-container *ngIf="dataTable.showSubstituteRows && !dataTable.showNoDataOverlay">
+<ng-container *ngIf="dataRows.length && dataTable.showSubstituteRows && !dataTable.showNoDataOverlay">
   <tr *ngFor="let substituteItem of dataTable.substituteItems, let index = index"  [class.row-odd]="isOddSubstituteRow(index)" [class.row-even]="isEvenSubstituteRow(index)">
     <td *ngIf="dataTable.expandColumnVisible">&nbsp;</td>
     <td *ngIf="dataTable.indexColumnVisible">&nbsp;</td>
