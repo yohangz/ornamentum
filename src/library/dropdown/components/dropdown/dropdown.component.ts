@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import {
@@ -30,7 +30,7 @@ import { MenuPosition } from '../../models/menu-position.enum';
     }
   ]
 })
-export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccessor {
+export class DropdownComponent implements OnInit, OnDestroy, AfterViewInit, ControlValueAccessor {
   public _items: DropdownItem[] = [];
   public _groupedItems: DropdownItemGroup[] = [];
 
@@ -125,32 +125,31 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    */
   @Input()
   public set items(value: any[]) {
-    setTimeout(() => {
-      if (this.groupByField) {
-        this._groupedItems = value.reduce((acc: DropdownItemGroup[], item: any) => {
-          const groupIndex = acc.findIndex((group: DropdownItemGroup) => group.groupName === item[this.groupByField]);
-          if (groupIndex > -1) {
-            acc[groupIndex].items.push(this.extractDropdownItem(item));
-          } else {
-            acc.push({
-              groupName: item[this.groupByField],
-              items: [this.extractDropdownItem(item)]
-            });
-          }
+    if (this.groupByField) {
+      this._groupedItems = value.reduce((acc: DropdownItemGroup[], item: any) => {
+        const groupIndex = acc.findIndex((group: DropdownItemGroup) => group.groupName === item[this.groupByField]);
+        if (groupIndex > -1) {
+          acc[groupIndex].items.push(this.extractDropdownItem(item));
+        } else {
+          acc.push({
+            groupName: item[this.groupByField],
+            items: [this.extractDropdownItem(item)]
+          });
+        }
 
-          return acc;
-        }, this.offset > 0 ? this._groupedItems : []);
-      } else {
-        const results = value.map((item) => {
-          return this.extractDropdownItem(item);
-        });
+        return acc;
+      }, this.offset > 0 ? this._groupedItems : []);
+    } else {
+      const results = value.map((item) => {
+        return this.extractDropdownItem(item);
+      });
 
-        this._items = this.offset > 0 ? this._items.concat(results) : results;
-      }
+      this._items = this.offset > 0 ? this._items.concat(results) : results;
+    }
 
-      this.currentItemCount = value.length;
-      this.isLoading = false;
-    });
+    this.currentItemCount = value.length;
+    this._allSelected = this.currentItemCount === this._selectedOptions.length;
+    this.isLoading = false;
   }
 
   /**
@@ -389,14 +388,14 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * Loads data when component is initialized.
    */
   public ngOnInit(): void {
-    if (this.loadDataOnInit) {
-      setTimeout(() => {
-        this.loadData();
-      });
-    }
-
     if (this.filterDebounce) {
       this.initFilterEvent();
+    }
+  }
+
+  public ngAfterViewInit(): void {
+    if (this.loadDataOnInit) {
+      this.loadData();
     }
   }
 
