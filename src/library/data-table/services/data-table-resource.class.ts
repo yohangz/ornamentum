@@ -1,36 +1,41 @@
 import { SortOrder } from '../models/data-table-sort-order.enum';
-import {DataTableParams, FilterOption} from '../models/data-table.model';
+
+import { DataTableParams, FilterColumn, FilterOption, SortColumn } from '../models/data-table.model';
+
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
-import { FilterColumn, SortColumn } from '../';
 
 function predicate() {
-  var fields = [],
-    n_fields = arguments.length,
-    field, name, reverse, cmp;
+  const fields = [];
+  const n_fields = arguments.length;
+  let field;
+  let name;
+  let cmp;
 
-  var default_cmp = function (a, b) {
-      if (a === b) return 0;
+  const default_cmp = function(a, b) {
+      if (a === b) {
+        return 0;
+      }
       return a < b ? -1 : 1;
     },
-    getCmpFunc = function (primer, reverse, comparator) {
-      var dfc = comparator || default_cmp,
-        // closer in scope
-        cmp = comparator || default_cmp;
+    getCmpFunc = function(primer, reverse, comparator) {
+      const dfc = comparator || default_cmp;
+      let cmpValue = comparator || default_cmp; // closer in scope
+
       if (primer) {
-        cmp = function (a, b) {
+        cmpValue = function(a, b) {
           return dfc(primer(a), primer(b));
         };
       }
       if (reverse) {
-        return function (a, b) {
+        return function(a, b) {
           return -1 * cmp(a, b);
         };
       }
-      return cmp;
+      return cmpValue;
     };
 
   // preprocess sorting options
-  for (var i = 0; i < n_fields; i++) {
+  for (let i = 0; i < n_fields; i++) {
     field = arguments[i];
     if (typeof field === 'string') {
       name = field;
@@ -46,15 +51,18 @@ function predicate() {
   }
 
   // final comparison function
-  return function (A, B) {
-    var a, b, name, result;
-    for (var i = 0; i < n_fields; i++) {
+  return function(A, B) {
+    let fieldName;
+    let result;
+    for (let i = 0; i < n_fields; i++) {
       result = 0;
       field = fields[i];
-      name = field.name;
+      fieldName = field.name;
 
-      result = field.cmp(A[name], B[name]);
-      if (result !== 0) break;
+      result = field.cmp(A[fieldName], B[fieldName]);
+      if (result !== 0) {
+        break;
+      }
     }
     return result;
   };
@@ -156,8 +164,8 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
             }
 
             const value = String(column).toLowerCase();
-            const filter = String(filterColumn.filterValue).toLowerCase();
-            return value.includes(filter);
+            const filterValue = String(filterColumn.filterValue).toLowerCase();
+            return value.includes(filterValue);
           });
         });
       }
@@ -170,7 +178,7 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
             name: column.field,
             reverse: column.sortOrder === SortOrder.DESC,
             comparator: column.comparator
-          }
+          };
         });
 
         result.sort(predicate.apply(this, sortExpressions));
@@ -201,7 +209,8 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
     let filterPromiseResolver;
 
     this.itemsPromise.then((items: T[]) => {
-      const filteredItems = items.map(filterColumn.filterFieldMapper ? filterColumn.filterFieldMapper : (item) => item[filterColumn.filterField || filterColumn.field])
+      const filteredItems = items.map(filterColumn.filterFieldMapper ? filterColumn.filterFieldMapper
+        : (item) => item[filterColumn.filterField || filterColumn.field])
         .reduce<T[]>((accumulator: T[], value: T[]) => {
           return accumulator.concat(value);
         }, [])

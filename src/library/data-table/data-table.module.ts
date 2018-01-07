@@ -40,7 +40,7 @@ const PROVIDERS = [
   DataTableResourceFactoryService
 ];
 
-/***
+/**
  * Module representing grid component.
  */
 @NgModule({
