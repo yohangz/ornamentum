@@ -37,9 +37,20 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     };
   }
 
+  private setPosition(parentElement: HTMLElement, floatLeft: number, floatTop: number ): void {
+    const bodyClientRect = this.globalRefService.window.document.documentElement.getBoundingClientRect();
+    const elementClientRect = parentElement.getBoundingClientRect();
+
+    const componentElement = this.componentRef.location.nativeElement as HTMLElement;
+    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + floatTop}px`;
+    componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + floatLeft}px`;
+    componentElement.style.position = 'absolute';
+    componentElement.style.display = 'block';
+  }
+
   public show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0): void {
     if (this.componentRef) {
-      this.componentRef.location.nativeElement.style.display = 'block';
+      this.setPosition(parentElement, floatLeft, floatTop);
       this.isVisible = true;
       return;
     }
@@ -58,13 +69,7 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     const domElem = (this.componentRef.hostView as EmbeddedViewRef<any>)
       .rootNodes[0] as HTMLElement;
 
-    const bodyClientRect = document.documentElement.getBoundingClientRect();
-    const elementClientRect = parentElement.getBoundingClientRect();
-
-    const componentElement = this.componentRef.location.nativeElement as HTMLElement;
-    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + floatTop}px`;
-    componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + floatLeft}px`;
-    componentElement.style.position = 'absolute';
+    this.setPosition(parentElement, floatLeft, floatTop);
 
     // 4. Append DOM element to the body
     document.body.appendChild(domElem);
