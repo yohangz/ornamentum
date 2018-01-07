@@ -169,10 +169,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterViewInit, Cont
     this._selectedOptions = value ? value.map((option) => {
       return this.mapToDropdownItem(option);
     }) : [];
-
-    if (this.triggerSelectChangeOnInit) {
-      this.emitOnSelectChange();
-    }
   }
 
   /**
@@ -181,13 +177,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterViewInit, Cont
    */
   @Input()
   public set selectedOption(value: any) {
-    setTimeout(() => {
-      this._selectedOption = value ? this.mapToDropdownItem(value) : undefined;
-
-      if (this.triggerSelectChangeOnInit) {
-        this.emitOnSelectChange();
-      }
-    });
+    this._selectedOption = value ? this.mapToDropdownItem(value) : undefined;
   }
 
   /**
@@ -396,6 +386,10 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterViewInit, Cont
   public ngAfterViewInit(): void {
     if (this.loadDataOnInit) {
       this.loadData();
+    }
+
+    if (this.triggerSelectChangeOnInit && (this._selectedOption || this._selectedOptions)) {
+      this.emitOnSelectChange();
     }
   }
 
