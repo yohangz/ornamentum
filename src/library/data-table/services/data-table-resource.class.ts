@@ -10,37 +10,33 @@ import {
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
 function predicate() {
-  const fields = [];
-  const n_fields = arguments.length;
-  let field;
-  let name;
-  let cmp;
+  var fields = [],
+    n_fields = arguments.length,
+    field, name, reverse, cmp;
 
-  const default_cmp = function(a, b) {
-      if (a === b) {
-        return 0;
-      }
+  var default_cmp = function (a, b) {
+      if (a === b) return 0;
       return a < b ? -1 : 1;
     },
-    getCmpFunc = function(primer, reverse, comparator) {
-      const dfc = comparator || default_cmp;
-      let cmpValue = comparator || default_cmp; // closer in scope
-
+    getCmpFunc = function (primer, reverse, comparator) {
+      var dfc = comparator || default_cmp,
+        // closer in scope
+        cmp = comparator || default_cmp;
       if (primer) {
-        cmpValue = function(a, b) {
+        cmp = function (a, b) {
           return dfc(primer(a), primer(b));
         };
       }
       if (reverse) {
-        return function(a, b) {
+        return function (a, b) {
           return -1 * cmp(a, b);
         };
       }
-      return cmpValue;
+      return cmp;
     };
 
   // preprocess sorting options
-  for (let i = 0; i < n_fields; i++) {
+  for (var i = 0; i < n_fields; i++) {
     field = arguments[i];
     if (typeof field === 'string') {
       name = field;
@@ -56,18 +52,15 @@ function predicate() {
   }
 
   // final comparison function
-  return function(A, B) {
-    let fieldName;
-    let result;
-    for (let i = 0; i < n_fields; i++) {
+  return function (A, B) {
+    var a, b, name, result;
+    for (var i = 0; i < n_fields; i++) {
       result = 0;
       field = fields[i];
-      fieldName = field.name;
+      name = field.name;
 
-      result = field.cmp(A[fieldName], B[fieldName]);
-      if (result !== 0) {
-        break;
-      }
+      result = field.cmp(A[name], B[name]);
+      if (result !== 0) break;
     }
     return result;
   };
