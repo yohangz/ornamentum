@@ -239,7 +239,6 @@ export class DataTableExampleComponent {
    */
   public onDataLoad(params?: any): void {
     this.tableResource.query(params).then((data) => {
-      debugger;
       this.items = data.items;
       this.itemCount = data.count;
     });
