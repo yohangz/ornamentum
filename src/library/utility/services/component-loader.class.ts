@@ -38,10 +38,8 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
   }
 
   public show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0): void {
-    const componentElement = this.componentRef.location.nativeElement as HTMLElement;
-
     if (this.componentRef) {
-      componentElement.style.display = 'block';
+      this.componentRef.location.nativeElement.style.display = 'block';
       this.isVisible = true;
       return;
     }
@@ -63,6 +61,7 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     const bodyClientRect = document.documentElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
 
+    const componentElement = this.componentRef.location.nativeElement as HTMLElement;
     componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + floatTop}px`;
     componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + floatLeft}px`;
     componentElement.style.position = 'absolute';
@@ -82,8 +81,7 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
 
   public hide(): void {
     if (this.componentRef) {
-      const componentElement = this.componentRef.location.nativeElement as HTMLElement;
-      componentElement.style.display = 'none';
+      this.componentRef.location.nativeElement.style.display = 'none';
     }
 
     this.isVisible = false;
