@@ -1,11 +1,11 @@
-import {Directive, ElementRef, EventEmitter, HostListener, Output} from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
 
-import {ScrollPoint} from '../models/data-table.model';
+import { ScrollPoint } from '../models/data-table.model';
 
 @Directive({
   selector: '[scrollPosition]'
 })
-export class ScrollPosition {
+export class ScrollPositionDirective {
   @Output()
   public scrollPosition = new EventEmitter<ScrollPoint>();
 

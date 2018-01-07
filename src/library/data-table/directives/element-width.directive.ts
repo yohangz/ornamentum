@@ -5,15 +5,16 @@ import {
 @Directive({
   selector: '[elementWidth]'
 })
-export class ElementWidth implements OnInit {
+export class ElementWidthDirective implements OnInit {
+
+  @Output()
+  public elementWidth = new EventEmitter();
+
   ngOnInit(): void {
     setTimeout(() => {
       this.elementWidth.emit(this.el.nativeElement.clientWidth);
     });
   }
-
-  @Output()
-  public elementWidth = new EventEmitter();
 
   constructor(private el: ElementRef) {
   }

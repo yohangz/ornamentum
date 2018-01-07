@@ -1,9 +1,9 @@
-import {Directive, ElementRef, Input} from '@angular/core';
+import { Directive, ElementRef, Input } from '@angular/core';
 
 @Directive({
   selector: '[scrollElement]'
 })
-export class ScrollElement {
+export class ScrollElementDirective {
 
   @Input()
   public set scrollElement(value: number) {
