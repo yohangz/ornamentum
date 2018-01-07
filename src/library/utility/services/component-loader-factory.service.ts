@@ -1,5 +1,7 @@
 import { ApplicationRef, ComponentFactoryResolver, Injectable, Injector } from '@angular/core';
+
 import { AbsoluteComponentLoader, ComponentLoader } from './component-loader.class';
+
 import { GlobalRefService } from './global-ref.service';
 
 @Injectable()

@@ -85,7 +85,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {string}
    */
   @Input()
-  public selectTrackBy: string = 'key';
+  public selectTrackBy = 'key';
 
   /**
    * Represents the name of the attribute used to show the selected item's display text.
@@ -93,7 +93,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {string}
    */
   @Input()
-  public displayTrackBy: string = 'value';
+  public displayTrackBy = 'value';
 
   /**
    * Represents the additional data attribute track by field name.
@@ -101,7 +101,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {string}
    */
   @Input()
-  public dataTrackBy: string = 'data';
+  public dataTrackBy = 'data';
 
   /**
    * Represent field name to group data by.
@@ -118,7 +118,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {string}
    */
   @Input()
-  public disabledTrackBy: string = 'disabled';
+  public disabledTrackBy = 'disabled';
 
   /**
    * Set dropdown items.
@@ -160,7 +160,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {boolean}
    */
   @Input()
-  public triggerSelectChangeOnInit: boolean = true;
+  public triggerSelectChangeOnInit = true;
 
   /**
    * Set previously selected dropdown items.
@@ -205,7 +205,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {number}
    */
   @Input()
-  public limit: number = 10;
+  public limit = 10;
 
   /**
    * Number of items to display when selected.
@@ -222,7 +222,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {boolean}
    */
   @Input()
-  public loadOnScroll: boolean = false;
+  public loadOnScroll = false;
 
   /**
    * Sets the point which needs to trigger additional data loading functionality when scrolling.
@@ -230,7 +230,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {number}
    */
   @Input()
-  public loadViewDistance: number = 1;
+  public loadViewDistance = 1;
 
   /**
    * Filter option for dropdown search.
@@ -238,7 +238,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {string}
    */
   @Input()
-  public filterText: string = '';
+  public filterText = '';
 
   /**
    * Enable/Disable dropdown items multi select option.
@@ -246,7 +246,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {boolean}
    */
   @Input()
-  public multiSelectable: boolean = false;
+  public multiSelectable = false;
 
   /**
    * Enable/Disable dropdown items filtering.
@@ -254,7 +254,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {boolean}
    */
   @Input()
-  public filterable: boolean = false;
+  public filterable = false;
 
   /**
    * Enable/Disable show select all option.
@@ -262,7 +262,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {boolean}
    */
   @Input()
-  public showSelectAll: boolean = false;
+  public showSelectAll = false;
 
   /**
    * Enable/Disable load data in the on init event.
@@ -270,7 +270,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {boolean}
    */
   @Input()
-  public loadDataOnInit: boolean = true;
+  public loadDataOnInit = true;
 
   /**
    * Enable/Disable triggering on select change event one time when select all is selected.
@@ -278,7 +278,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {boolean}
    */
   @Input()
-  public triggerOncePerSelectAll: boolean = true;
+  public triggerOncePerSelectAll = true;
 
   /**
    * Enable/Disable show selected items remove icon.
@@ -286,21 +286,21 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {boolean}
    */
   @Input()
-  public showSelectedOptionRemove: boolean = true;
+  public showSelectedOptionRemove = true;
 
   /**
    * Dropdown menu width.
    * @type {number}
    */
   @Input()
-  public menuWidth: number = 320;
+  public menuWidth = 320;
 
   /**
    * Dropdown menu height.
    * @type {number}
    */
   @Input()
-  public menuHeight: number = 250;
+  public menuHeight = 250;
 
   /**
    * Menu open position.
@@ -315,7 +315,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {number}
    */
   @Input()
-  public filterDebounceTime: number = 500;
+  public filterDebounceTime = 500;
 
   /**
    * Filter de-bounce enabled state.
@@ -323,7 +323,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @type {boolean}
    */
   @Input()
-  public filterDebounce: boolean = true;
+  public filterDebounce = true;
 
   // Input - Event handlers
 
@@ -412,15 +412,15 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       text: option[this.displayTrackBy],
       disabled: option[this.disabledTrackBy],
       data: option[this.dataTrackBy]
-    }
+    };
   }
 
   public positionRight(): number {
-    return this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.TOP_RIGHT? 0: undefined;
+    return this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.TOP_RIGHT ? 0 : undefined;
   }
 
-  public positionBottom():  number {
-    return this.menuPosition === MenuPosition.TOP_RIGHT || this.menuPosition === MenuPosition.TOP_LEFT? 0: undefined;
+  public positionBottom(): number {
+    return this.menuPosition === MenuPosition.TOP_RIGHT || this.menuPosition === MenuPosition.TOP_LEFT ? 0 : undefined;
   }
 
   /**
@@ -428,9 +428,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @param {HTMLElement} element Dropdown button element.
    */
   public toggleDropdown(element: HTMLElement): void {
-    const floatLeft = this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.TOP_RIGHT? element.offsetWidth: 0;
-    const floatTop = this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.BOTTOM_LEFT? element.offsetHeight: 0;
-
+    const floatLeft = this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.TOP_RIGHT
+      ? element.offsetWidth : 0;
+    const floatTop = this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.BOTTOM_LEFT
+      ? element.offsetHeight : 0;
 
     this.componentLoader.toggle(DropdownViewComponent, element, {
       props: {
@@ -493,7 +494,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @param {DropdownItem} option The DropdownItem to be removed from the selected items.
    */
   public onSelectOptionClose(event: Event, option: DropdownItem): void {
-    let selectedId = this._selectedOptions.findIndex(selectedOption => selectedOption.id === option.id);
+    const selectedId = this._selectedOptions.findIndex(selectedOption => selectedOption.id === option.id);
     this._selectedOptions.splice(selectedId, 1);
     this.emitOnSelectChange();
   }
@@ -579,7 +580,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @returns {boolean}
    */
   public isSelected(option: DropdownItem): boolean {
-    let selectedId = this._selectedOptions.find(selectedOption => selectedOption.id === option.id);
+    const selectedId = this._selectedOptions.find(selectedOption => selectedOption.id === option.id);
     return !!selectedId;
   }
 
@@ -638,7 +639,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @return {any} Base dropdown item object.
    */
   private mapOptionToBaseType(dropdownItem: DropdownItem): any {
-    let option = {};
+    const option = {};
 
     option[this.selectTrackBy] = dropdownItem ? dropdownItem.id : '';
     option[this.displayTrackBy] = dropdownItem ? dropdownItem.text : '';
@@ -670,7 +671,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * If multiSelectable is true return all dropdown selected items else return the single selected item.
    */
   private emitOnSelectChange(): void {
-    this.onSelectChange.emit(this.multiSelectable ? this.mapOptionsToBaseType(this._selectedOptions) : this.mapOptionToBaseType(this._selectedOption));
+    this.onSelectChange.emit(this.multiSelectable ? this.mapOptionsToBaseType(this._selectedOptions)
+      : this.mapOptionToBaseType(this._selectedOption));
   }
 
   /**
@@ -719,7 +721,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @param fn Function reference.
    */
   public registerOnTouched(fn: any): void {
-    //TODO: Implement touch event handler
+    // TODO: Implement touch event handler
   }
 
   /**
