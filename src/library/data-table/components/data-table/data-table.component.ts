@@ -50,7 +50,7 @@ import { DragAndDropService } from '../../../utility';
   styleUrls: ['./data-table.component.scss'],
   templateUrl: './data-table.component.html'
 })
-export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit  {
+export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   public SortOrder = SortOrder;
 
   private _items: any[] = [];
@@ -86,17 +86,23 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit  
   private selectStateSubscription: Subscription;
   private customFilterSubscription: Subscription;
 
-  @ContentChildren(DataTableColumnComponent)
-  public columns: QueryList<DataTableColumnComponent>;
-
-  @ContentChild('ngDataTableExpand')
-  public expandTemplate: TemplateRef<any>;
-
   public rowSelectStateUpdate = new EventEmitter();
 
   public dataRows: DataRow[] = [];
   public substituteItems: any[] = [];
   public tableWidth: number;
+
+  /**
+   * Set reloading state.
+   * @param {boolean} value
+   */
+  public reloading = true;
+
+  @ContentChildren(DataTableColumnComponent)
+  public columns: QueryList<DataTableColumnComponent>;
+
+  @ContentChild('ngDataTableExpand')
+  public expandTemplate: TemplateRef<any>;
 
   // Event handlers
 
@@ -566,12 +572,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit  
   }
 
   /**
-   * Set reloading state.
-   * @param {boolean} value
-   */
-  public reloading: boolean = true;
-
-  /**
    * Get last page number.
    * @return {number}
    */
@@ -579,10 +579,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit  
     return Math.ceil(this.itemCount / this.limit);
   }
 
-  constructor(
-    private dragAndDropService: DragAndDropService,
-    private dataTableStateService: DataTableStateService
-  ) {
+  constructor(private dragAndDropService: DragAndDropService,
+              private dataTableStateService: DataTableStateService) {
     this.dataTableStateService.storageMode = StorageMode.SESSION;
   }
 
@@ -1184,17 +1182,17 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit  
     }
 
     column.filterOptions = [];
-    filterOptions.then((filterOptions: any[]) => {
+    filterOptions.then((filterArgs: any[]) => {
       if (column.filterValueFormatter) {
-        column.filterOptions = filterOptions.map((option: any, index: number) => {
+        column.filterOptions = filterArgs.map((option: any, index: number) => {
           return column.filterValueFormatter(option, index);
         });
       } else {
-        column.filterOptions = filterOptions.map((option: any) => {
+        column.filterOptions = filterArgs.map((option: any) => {
           return {
             key: option,
             value: option
-          }
+          };
         });
       }
     });
