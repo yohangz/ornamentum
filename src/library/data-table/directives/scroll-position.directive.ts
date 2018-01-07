@@ -1,12 +1,13 @@
-import { AfterViewInit, Directive, ElementRef, EventEmitter, NgZone, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, AfterViewInit, NgZone, Output } from '@angular/core';
 
-import {ScrollPoint} from '../models/data-table.model';
+import { ScrollPoint } from '../models/data-table.model';
+
 import { Observable } from 'rxjs/Observable';
 
 @Directive({
   selector: '[scrollPosition]'
 })
-export class ScrollPosition implements AfterViewInit {
+export class ScrollPositionDirective implements AfterViewInit {
   @Output()
   public scrollPosition = new EventEmitter<ScrollPoint>();
 

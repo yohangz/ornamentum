@@ -10,9 +10,9 @@ import { DataTableComponent } from './components/data-table/data-table.component
 import { DataTableBodyComponent } from './components/data-table-body/data-table-body.component';
 import { DataTableColumnSelectorComponent } from './components/data-table-column-selector/data-table-column-selector.component';
 
-import { ScrollPosition } from './directives/scroll-position.directive';
-import { ScrollElement } from './directives/scroll-element.directive';
-import { ElementWidth } from './directives/element-width.directive';
+import { ScrollPositionDirective } from './directives/scroll-position.directive';
+import { ScrollElementDirective } from './directives/scroll-element.directive';
+import { ElementWidthDirective } from './directives/element-width.directive';
 
 import { DataTableConfigService } from './services/data-table-config.service';
 import { DataTableResourceFactoryService } from './services/data-table-resource-factory.service';
@@ -31,16 +31,16 @@ const COMPONENTS = [
 ];
 
 const DIRECTIVES = [
-  ScrollPosition,
-  ScrollElement,
-  ElementWidth
+  ScrollPositionDirective,
+  ScrollElementDirective,
+  ElementWidthDirective
 ];
 
 const PROVIDERS = [
   DataTableResourceFactoryService
 ];
 
-/***
+/**
  * Module representing grid component.
  */
 @NgModule({

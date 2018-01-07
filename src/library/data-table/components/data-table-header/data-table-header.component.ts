@@ -2,6 +2,7 @@ import { Component, forwardRef, Inject, OnDestroy } from '@angular/core';
 
 import { DataTableComponent } from '../data-table/data-table.component';
 import { DataTableColumnSelectorComponent } from '../data-table-column-selector/data-table-column-selector.component';
+
 import { ComponentLoaderFactoryService, ComponentLoader } from '../../../utility';
 
 /**
@@ -10,13 +11,14 @@ import { ComponentLoaderFactoryService, ComponentLoader } from '../../../utility
  */
 @Component({
   selector: 'ng-data-table-header',
-  styleUrls: [ './data-table-header.component.scss' ],
+  styleUrls: ['./data-table-header.component.scss'],
   templateUrl: './data-table-header.component.html',
 })
 export class DataTableHeaderComponent implements OnDestroy {
   public componentLoader: ComponentLoader<DataTableColumnSelectorComponent>;
 
-  constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent, private componentLoaderFactory: ComponentLoaderFactoryService) {
+  constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent,
+              private componentLoaderFactory: ComponentLoaderFactoryService) {
     this.componentLoader = this.componentLoaderFactory.createLoader<DataTableColumnSelectorComponent>()
   }
 

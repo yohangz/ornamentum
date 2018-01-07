@@ -4,17 +4,17 @@ import { CommonModule } from '@angular/common';
 
 import { UtilityModule } from '../utility/utility.module';
 
-import { DropdownConfigService } from './services/dropdown-config.service';
-
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { DropdownViewComponent } from './components/dropdown-view/dropdown-view.component';
+
+import { DropdownConfigService } from './services/dropdown-config.service';
 
 const COMPONENTS = [
   DropdownComponent,
   DropdownViewComponent
 ];
 
-/***
+/**
  * Module representing dropdown component.
  */
 @NgModule({

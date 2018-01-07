@@ -1,5 +1,5 @@
 import {
-  Directive, EventEmitter, Output
+  Directive, EventEmitter, HostListener, Output
 } from '@angular/core';
 
 /**
@@ -7,11 +7,7 @@ import {
  * Notify when outside of the self DOM element is clicked.
  */
 @Directive({
-  selector: '[clickOutside]',
-  host: {
-    '(click)': 'trackEvent($event)',
-    '(document: click)': 'compareEvent($event)'
-  }
+  selector: '[clickOutside]'
 })
 export class ClickOutsideDirective {
   private localEvent: Event = null;
@@ -27,6 +23,7 @@ export class ClickOutsideDirective {
    * Track and compare the click event at the document root.
    * @param event Click event
    */
+  @HostListener('document: click', ['$event'])
   public compareEvent(event: Event) {
     // If the event at the document root is the same reference as the
     // event at the target, it means that the event originated from
@@ -45,6 +42,7 @@ export class ClickOutsideDirective {
    * Track the click event on the bound target.
    * @param {Event} event
    */
+  @HostListener('click', ['$event'])
   public trackEvent(event: Event) {
     // When the user clicks inside the bound target, we need to start
     // tracking the event as it bubbles up the DOM tree. This way,

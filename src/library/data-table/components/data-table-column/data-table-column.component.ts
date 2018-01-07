@@ -72,7 +72,7 @@ export class DataTableColumnComponent implements OnInit {
    * @type boolean
    */
   @Input()
-  public filterable: boolean = false;
+  public filterable = false;
 
   /**
    * Resizeable state.
@@ -80,7 +80,7 @@ export class DataTableColumnComponent implements OnInit {
    * @type boolean
    */
   @Input()
-  public resizable: boolean = false;
+  public resizable = false;
 
   /**
    * Data table item mapping field name.
@@ -163,7 +163,7 @@ export class DataTableColumnComponent implements OnInit {
    * @type boolean
    */
   @Input()
-  public visible: boolean = true;
+  public visible = true;
 
   /**
    * Filter placeholder value.
@@ -171,7 +171,7 @@ export class DataTableColumnComponent implements OnInit {
    * @type string
    */
   @Input()
-  public filterPlaceholder: string = '';
+  public filterPlaceholder = '';
 
   /**
    * Filter value.
@@ -196,7 +196,7 @@ export class DataTableColumnComponent implements OnInit {
    * @type boolean
    */
   @Input()
-  public enableMultiSelectFilter: boolean = false;
+  public enableMultiSelectFilter = false;
 
   /**
    * Enable displaying the number of item count selected from the column drop down.
@@ -204,7 +204,7 @@ export class DataTableColumnComponent implements OnInit {
    * @type number
    */
   @Input()
-  public displaySelectedLimit: number = 1;
+  public displaySelectedLimit = 1;
 
   public filterOptions: FilterOption[] = [];
 
@@ -220,7 +220,6 @@ export class DataTableColumnComponent implements OnInit {
       return this.onCellColorRender(row, this);
     }
   }
-
 
   public resetSortOrder(): void {
     this._sortOrder = this._baseSortOrder;

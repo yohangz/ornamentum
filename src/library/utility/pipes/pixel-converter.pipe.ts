@@ -10,7 +10,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class PixelConverterPipe implements PipeTransform {
 
   /**
-   * Fipe transform implementation.
+   * Pipe transform implementation.
    * @param {string | number} value Source value.
    * @param {string[]} args Pipe arguments.
    * @returns {string} Converted pixel value.

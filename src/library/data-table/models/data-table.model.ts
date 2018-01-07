@@ -1,6 +1,7 @@
+import { DataTableComponent } from '../components/data-table/data-table.component';
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
+
 import { SortOrder } from './data-table-sort-order.enum';
-import { DataTableComponent } from '../';
 
 export type CellCallback = (row: DataRow, column: DataTableColumnComponent) => string;
 

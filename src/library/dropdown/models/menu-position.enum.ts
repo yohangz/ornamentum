@@ -1,3 +1,7 @@
+/**
+ * Enum representing a menu position.
+ * @enum MenuPosition
+ */
 export enum MenuPosition {
   TOP_RIGHT,
   TOP_LEFT,

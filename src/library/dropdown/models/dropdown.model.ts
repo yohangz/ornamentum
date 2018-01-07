@@ -45,8 +45,16 @@ export interface DataRequestParams {
   categoryID?: number;
 }
 
+/**
+ * Interface representing a dropdown view property.
+ * @interface DropdownViewProperty.
+ */
 export interface DropdownViewProperty {
   dropdown: DropdownComponent;
 }
 
+/**
+ * Defines type definition for client filter callback function.
+ * @type ClientFilterCallback
+ */
 export type ClientFilterCallback = (option: DropdownItem, filterText: string) => boolean;

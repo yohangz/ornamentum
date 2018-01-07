@@ -85,7 +85,7 @@
       true,
       "single"
     ],
-    "radix": true,
+    "radix": false,
     "semicolon": [
       true,
       "always"
@@ -117,14 +117,12 @@
     ],
     "directive-selector": [
       true,
-      "attribute",
-      "app",
-      "camelCase"
+      "attribute"
     ],
     "component-selector": [
       true,
       "element",
-      "app",
+      "ng",
       "kebab-case"
     ],
     "use-input-property-decorator": true,
