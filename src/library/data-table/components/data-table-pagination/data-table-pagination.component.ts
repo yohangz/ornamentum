@@ -8,7 +8,7 @@ import { DataTableComponent } from '../data-table/data-table.component';
  */
 @Component({
   selector: 'ng-data-table-pagination',
-  styleUrls: [ './data-table-pagination.component.scss' ],
+  styleUrls: ['./data-table-pagination.component.scss'],
   templateUrl: './data-table-pagination.component.html'
 })
 export class DataTablePaginationComponent {
@@ -89,7 +89,7 @@ export class DataTablePaginationComponent {
    * @param {HTMLInputElement} element HTML input element.
    */
   public onPageSizeChange(element: HTMLInputElement): void {
-    let limit = parseInt(element.value);
+    const limit = parseInt(element.value);
     if (this.limit !== limit) {
       this.limit = limit;
     }

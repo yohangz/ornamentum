@@ -9,7 +9,7 @@ import { DataTableComponent } from '../data-table/data-table.component';
 @Component({
   exportAs: 'ngDataTableColGroup',
   selector: '[ngDataTableColGroup]',
-  styleUrls: [ './data-table-col-group.component.scss' ],
+  styleUrls: ['./data-table-col-group.component.scss'],
   templateUrl: './data-table-col-group.component.html'
 })
 export class DataTableColGroupComponent {

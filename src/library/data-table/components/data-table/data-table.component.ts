@@ -14,6 +14,8 @@ import {
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 
+import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
+
 import { SortOrder } from '../../models/data-table-sort-order.enum';
 import {
   CellClickEventArgs,
@@ -31,12 +33,11 @@ import {
   RowSelectEventArgs,
   RowTooltipChangeCallback
 } from '../../models/data-table.model';
+import { StorageMode } from '../../models/data-table-storage-mode.enum';
 
-import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
+import { DataTableStateService } from '../../services/data-table-state.service';
 
 import { DragAndDropService } from '../../../utility';
-import { DataTableStateService } from '../../services/data-table-state.service';
-import { StorageMode } from '../../models/data-table-storage-mode.enum';
 
 /**
  * Data table component.
@@ -52,11 +53,11 @@ export class DataTableComponent implements OnInit, OnDestroy {
   public SortOrder = SortOrder;
 
   private _items: any[] = [];
-  private _selectAllCheckbox: boolean = false;
-  private _offset: number = 0;
-  private _limit: number = 10;
-  private _reloading: boolean = false;
-  private resizeInProgress: boolean = false;
+  private _selectAllCheckbox = false;
+  private _offset = 0;
+  private _limit = 10;
+  private _reloading = false;
+  private resizeInProgress = false;
   private isHeardReload = false;
   private _translations: DataTableTranslations = {
     expandColumn: 'expand',
@@ -79,7 +80,6 @@ export class DataTableComponent implements OnInit, OnDestroy {
 
   public customFilterEventEmitter = new EventEmitter<FilterEventArgs>();
 
-
   private headerClickSubscription: Subscription;
   private rowClickSubscription: Subscription;
   private columnFilterSubscription: Subscription;
@@ -99,48 +99,6 @@ export class DataTableComponent implements OnInit, OnDestroy {
   public tableWidth: number;
 
   // Event handlers
-
-  /**
-   * On row colour change event handler callback.
-   * @default undefined
-   * @type {RowColourChangeCallback}
-   */
-  @Input()
-  public onRowColourChange: RowColourChangeCallback;
-
-  /**
-   * On row tooltip change event handler callback.
-   * @default undefined
-   * @type {RowTooltipChangeCallback}
-   */
-  @Input()
-  public onRowTooltipChange: RowTooltipChangeCallback;
-
-  /**
-   * On row disabled state change event handler callback.
-   * @default undefined
-   * @type {RowDisabledStateChangeCallback}
-   */
-  @Input()
-  public onRowDisabledStateChange: RowDisabledStateChangeCallback;
-
-  /**
-   * On filter value extract event handler callback.
-   * @default undefined
-   * @type {FilterValueExtractCallback}
-   */
-  @Input()
-  public onFilterValueExtract: FilterValueExtractCallback;
-
-  /**
-   * On group field extract event handler callback.
-   * @default default empty extractor
-   * @type {GroupFieldExtractorCallback}
-   */
-  @Input()
-  public onGroupFieldExtract: GroupFieldExtractorCallback = () => {
-    return [];
-  };
 
   /**
    * On data table init event handler.
@@ -214,7 +172,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public persistTableState: boolean = false;
+  public persistTableState = false;
 
   /**
    * Storage more to persist table state.
@@ -229,7 +187,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public multiColumnSortable: boolean = false;
+  public multiColumnSortable = false;
 
   /**
    * Show header if true.
@@ -237,7 +195,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public showHeader: boolean = true;
+  public showHeader = true;
 
   /**
    * Header title text.
@@ -245,7 +203,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {string}
    */
   @Input()
-  public title: string = '';
+  public title = '';
 
   /**
    * Table min height
@@ -280,7 +238,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public pageable: boolean = true;
+  public pageable = true;
 
   /**
    * Show auto generated index counter column.
@@ -288,7 +246,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public showIndexColumn: boolean = true;
+  public showIndexColumn = true;
 
   /**
    * Index column title text
@@ -296,7 +254,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {string}
    */
   @Input()
-  public indexColumnTitle: string = '';
+  public indexColumnTitle = '';
 
   /**
    * Row selectable if true (Show row select checkbox).
@@ -304,7 +262,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {rowSelectable}
    */
   @Input()
-  public rowSelectable: boolean = false;
+  public rowSelectable = false;
 
   /**
    * Multi row selectable if true.
@@ -312,7 +270,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public multiRowSelectable: boolean = true;
+  public multiRowSelectable = true;
 
   /**
    * Show substitute rows (Only applicable when paging is enabled).
@@ -320,7 +278,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public showSubstituteRows: boolean = true;
+  public showSubstituteRows = true;
 
   /**
    * Enable expandable rows.
@@ -328,7 +286,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public expandableRows: boolean = false;
+  public expandableRows = false;
 
   /**
    * Select checkbox on row click.
@@ -336,7 +294,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public selectOnRowClick: boolean = false;
+  public selectOnRowClick = false;
 
   /**
    * Expand table on row click.
@@ -344,7 +302,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public expandOnRowClick: boolean = false;
+  public expandOnRowClick = false;
 
   /**
    * Auto onDataLoad on init.
@@ -352,7 +310,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public autoFetch: boolean = true;
+  public autoFetch = true;
 
   /**
    * Show loading spinner.
@@ -360,7 +318,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public showLoadingSpinner: boolean = false;
+  public showLoadingSpinner = false;
 
   /**
    * Select tracked by (identifier from table data to track selected items uniquely)
@@ -368,7 +326,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {string}
    */
   @Input()
-  public selectTrackBy: string = 'id';
+  public selectTrackBy = 'id';
 
   /**
    * Selected row (effective when multiRowSelectable false).
@@ -400,7 +358,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {number}
    */
   @Input()
-  public filterDebounceTime: number = 500;
+  public filterDebounceTime = 500;
 
   /**
    * Filter de-bounce enabled state.
@@ -408,8 +366,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public filterDebounce: boolean = false;
-
+  public filterDebounce = false;
 
   /**
    * Show refresh button.
@@ -417,7 +374,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public showRefreshButton: boolean = true;
+  public showRefreshButton = true;
 
   /**
    * Show column selector.
@@ -425,7 +382,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
    * @type {boolean}
    */
   @Input()
-  public showColumnSelector: boolean = true;
+  public showColumnSelector = true;
 
   /**
    * Sets width for expander column.
@@ -547,6 +504,48 @@ export class DataTableComponent implements OnInit, OnDestroy {
    */
   public get page(): number {
     return Math.floor(this.offset / this.limit) + 1;
+  }
+
+  /**
+   * On row colour change event handler callback.
+   * @default undefined
+   * @type {RowColourChangeCallback}
+   */
+  @Input()
+  public onRowColourChange: RowColourChangeCallback;
+
+  /**
+   * On row tooltip change event handler callback.
+   * @default undefined
+   * @type {RowTooltipChangeCallback}
+   */
+  @Input()
+  public onRowTooltipChange: RowTooltipChangeCallback;
+
+  /**
+   * On row disabled state change event handler callback.
+   * @default undefined
+   * @type {RowDisabledStateChangeCallback}
+   */
+  @Input()
+  public onRowDisabledStateChange: RowDisabledStateChangeCallback;
+
+  /**
+   * On filter value extract event handler callback.
+   * @default undefined
+   * @type {FilterValueExtractCallback}
+   */
+  @Input()
+  public onFilterValueExtract: FilterValueExtractCallback;
+
+  /**
+   * On group field extract event handler callback.
+   * @default default empty extractor
+   * @type {GroupFieldExtractorCallback}
+   */
+  @Input()
+  public onGroupFieldExtract: GroupFieldExtractorCallback = () => {
+    return [];
   }
 
   /**
@@ -689,7 +688,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
         field: column.field,
         sortOrder: column.sortOrder,
         comparator: column.sortComparatorExpression
-      }
+      };
     });
 
     if (this.pageable) {
@@ -703,7 +702,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
         filterValue: column.filter,
         filterExpression: column.filterExpression,
         enableMultiSelectFilter: column.enableMultiSelectFilter
-      }
+      };
     });
 
     return params;
@@ -790,11 +789,11 @@ export class DataTableComponent implements OnInit, OnDestroy {
       if (dataTableState) {
         this.columns.forEach((column) => {
           const filterColumn = dataTableState.filterColumns.find((col) => {
-            return col.field === column.field
+            return col.field === column.field;
           });
 
           const sortColumn = dataTableState.sortColumns.find((col) => {
-            return col.field === column.field
+            return col.field === column.field;
           });
 
           if (filterColumn) {
@@ -802,7 +801,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
           }
 
           if (sortColumn) {
-            column.sortOrder = sortColumn.sortOrder
+            column.sortOrder = sortColumn.sortOrder;
           }
         });
 
@@ -1006,7 +1005,7 @@ export class DataTableComponent implements OnInit, OnDestroy {
     // maintain the selectedRow(s) in the view
     const id = row.item[this.selectTrackBy];
 
-    let rowSelectEventArgs: RowSelectEventArgs = {
+    const rowSelectEventArgs: RowSelectEventArgs = {
       row: row
     };
 
@@ -1190,17 +1189,17 @@ export class DataTableComponent implements OnInit, OnDestroy {
     }
 
     column.filterOptions = [];
-    filterOptions.then((filterOptions: any[]) => {
+    filterOptions.then((filterArgs: any[]) => {
       if (column.filterValueFormatter) {
-        column.filterOptions = filterOptions.map((option: any, index: number) => {
+        column.filterOptions = filterArgs.map((option: any, index: number) => {
           return column.filterValueFormatter(option, index);
         });
       } else {
-        column.filterOptions = filterOptions.map((option: any) => {
+        column.filterOptions = filterArgs.map((option: any) => {
           return {
             key: option,
             value: option
-          }
+          };
         });
       }
     });
@@ -1214,25 +1213,25 @@ export class DataTableComponent implements OnInit, OnDestroy {
   private extractGroupRowDetails(row: DataRow): GroupDetail {
     const rowGroups = this.onGroupFieldExtract(row);
 
-    let maxRows = rowGroups.reduce((acc: number, value: any[]) => {
+    const maxRows = rowGroups.reduce((acc: number, value: any[]) => {
       return value ? Math.max(acc, value.length) : acc;
     }, 0) || 1;
 
-    let groupHolder = Array.from({ length: maxRows });
+    const groupHolder = Array.from({ length: maxRows });
 
     return {
       rowCount: maxRows,
       groups: rowGroups,
       groupHolder: groupHolder
-    }
+    };
   }
 
-  public getSortIconClass(column: DataTableColumnComponent)  {
+  public getSortIconClass(column: DataTableColumnComponent) {
     return {
       'zmdi-sort-amount-asc': column.sortOrder === SortOrder.ASC,
       'zmdi-sort-amount-desc': column.sortOrder === SortOrder.DESC,
-      'zmdi-format-line-spacing':  column.sortOrder === undefined || column.sortOrder === SortOrder.NONE
-    }
+      'zmdi-format-line-spacing': column.sortOrder === undefined || column.sortOrder === SortOrder.NONE
+    };
   }
 
   public hasFilterColumns(): boolean {

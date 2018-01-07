@@ -11,9 +11,8 @@ import { DataTableComponent } from '../data-table/data-table.component';
 @Component({
   exportAs: 'ngDataTableBody',
   selector: '[ngDataTableBody]',
-  styleUrls: [ './data-table-body.component.scss' ],
+  styleUrls: ['./data-table-body.component.scss'],
   templateUrl: './data-table-body.component.html'
-
 })
 export class DataTableBodyComponent {
 
@@ -22,7 +21,6 @@ export class DataTableBodyComponent {
 
   constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent) {
   }
-
 
   /**
    * Get row tooltip.
@@ -80,7 +78,7 @@ export class DataTableBodyComponent {
    * @return {boolean} True if odd row.
    */
   public isOddSubstituteRow(index: number): boolean {
-    return (index + this.dataTable.substituteItems.length) % 2 === 0
+    return (index + this.dataTable.substituteItems.length) % 2 === 0;
   }
 
   /**
