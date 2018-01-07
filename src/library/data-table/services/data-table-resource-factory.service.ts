@@ -5,7 +5,6 @@ import { DataTableResource, DataTableResourceManager } from './data-table-resour
 @Injectable()
 export class DataTableResourceFactoryService {
   constructor(private zone: NgZone) {
-
   }
 
   public createTableResource<T>(): DataTableResource<T> {

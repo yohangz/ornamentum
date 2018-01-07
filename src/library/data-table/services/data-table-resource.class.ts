@@ -144,7 +144,6 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
       this.queryTimeout = setTimeout(() => {
         this.itemsPromise.then((items: T[]) => {
           let itemCount = items.length;
-          let offset = params.offset;
 
           let result: T[] = [];
 
@@ -199,7 +198,7 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
           }
 
           if (params.offset !== undefined) {
-            const offset = (params.offset + 1 > result.length)? 0: params.offset;
+            const offset = (params.offset + 1 > result.length) ? 0 : params.offset;
 
             if (params.limit === undefined) {
               result = result.slice(offset, result.length);
@@ -253,7 +252,6 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
         });
       });
     });
-
 
     return new Promise((resolve, reject) => {
       filterPromiseResolver = resolve;

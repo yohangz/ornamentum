@@ -19,7 +19,7 @@ export class DataTableHeaderComponent implements OnDestroy {
 
   constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent,
               private componentLoaderFactory: ComponentLoaderFactoryService) {
-    this.componentLoader = this.componentLoaderFactory.createLoader<DataTableColumnSelectorComponent>()
+    this.componentLoader = this.componentLoaderFactory.createLoader<DataTableColumnSelectorComponent>();
   }
 
   /**
