@@ -9,7 +9,7 @@ import {
   Output,
   QueryList,
   TemplateRef,
-  AfterContentInit, NgZone
+  AfterContentInit
 } from '@angular/core';
 
 import { Subject } from 'rxjs/Subject';
@@ -21,7 +21,7 @@ import { SortOrder } from '../../models/data-table-sort-order.enum';
 import {
   CellClickEventArgs,
   DataRow,
-  DataTableParams, DataTableQueryCallback, DataTableQueryResult,
+  DataTableParams,
   DataTableTranslations,
   DoubleClickEventArgs,
   FilterEventArgs,
@@ -39,7 +39,6 @@ import { StorageMode } from '../../models/data-table-storage-mode.enum';
 import { DataTableStateService } from '../../services/data-table-state.service';
 
 import { DragAndDropService, GlobalRefService } from '../../../utility';
-import { Observable } from 'rxjs/Observable';
 
 /**
  * Data table component.
@@ -55,8 +54,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   public SortOrder = SortOrder;
 
   private _items: any[] = [];
-  public itemCount: number;
-
   private _selectAllCheckbox = false;
   private _offset = 0;
   private _limit = 10;
@@ -80,7 +77,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   private columnFilterStream = new Subject();
   private dataFetchStream = new Subject();
-
   public scrollPositionStream = new Subject();
 
   public customFilterEventEmitter = new EventEmitter<FilterEventArgs>();
@@ -90,7 +86,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   private columnFilterSubscription: Subscription;
   private selectStateSubscription: Subscription;
   private customFilterSubscription: Subscription;
-  private dataFetchSubscription: Subscription;
 
   public rowSelectStateUpdate = new EventEmitter();
 
@@ -160,16 +155,16 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * Fired on each data fetch request. But not on hard reload.
    * @type {EventEmitter<DataTableParams>}
    */
-  @Input()
-  public onDataLoad: DataTableQueryCallback;
+  @Output()
+  public onDataLoad = new EventEmitter<DataTableParams>();
 
   /**
    * On refresh event handler.
    * Fired on hard reload button click.
    * @type {EventEmitter<DataTableParams>}
    */
-  @Input()
-  public onRefresh: DataTableQueryCallback;
+  @Output()
+  public onRefresh = new EventEmitter<DataTableParams>();
 
   // Input parameters
 
@@ -357,6 +352,14 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   public selectedRows: any[] = [];
 
   /**
+   * Total item count in data source.
+   * @default undefined
+   * @type {number}
+   */
+  @Input()
+  public itemCount: number;
+
+  /**
    * Filter de-bounce time milliseconds.
    * @default 500
    * @type {number}
@@ -419,6 +422,24 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   @ContentChild('appDataTableNoRecords')
   public noRecordsTemplate: TemplateRef<any>;
+
+  /**
+   * Set data table items array.
+   * @param {any[]} value
+   */
+  @Input()
+  public set items(value: any[]) {
+    this._items = value;
+    this.onAfterDataBind();
+  }
+
+  /**
+   * Get data table items array.
+   * @return {any[]}
+   */
+  public get items(): any[] {
+    return this._items;
+  }
 
   /**
    * Data table display text key translations.
@@ -532,7 +553,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   @Input()
   public onGroupFieldExtract: GroupFieldExtractorCallback = () => {
     return [];
-  };
+  }
 
   /**
    * Set select all checkboxes state.
@@ -561,8 +582,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   constructor(private dragAndDropService: DragAndDropService,
               private dataTableStateService: DataTableStateService,
-              public globalRefService: GlobalRefService,
-              private zone: NgZone) {
+              public globalRefService: GlobalRefService) {
     this.dataTableStateService.storageMode = StorageMode.SESSION;
   }
 
@@ -594,7 +614,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @param {boolean} selectedState
    */
   private onSelectAllCheckboxesChanged(selectedState: boolean): void {
-    this._items.forEach(item => {
+    this.items.forEach(item => {
       const id = item[this.selectTrackBy];
       const index = this.selectedRows.indexOf(id);
 
@@ -689,7 +709,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * Trigger table data bind.
    * @param {boolean} hardRefresh Hard refresh if true.
    */
-  private dataBind(hardRefresh: boolean): Observable<DataTableQueryResult<any[]>> {
+  private dataBind(hardRefresh: boolean): void {
     this.reloading = true;
     if (hardRefresh) {
       this.selectedRows = [];
@@ -706,10 +726,10 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
     }
 
     if (hardRefresh) {
-      return this.onRefresh(dataTableParams);
+      this.onRefresh.emit(dataTableParams);
+    } else {
+      this.onDataLoad.emit(dataTableParams);
     }
-
-    return this.onDataLoad(dataTableParams);
   }
 
   public fetchData(hardRefresh: boolean = false): void {
@@ -786,21 +806,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
     }
   }
 
-  private initDataBind(): void {
-    this.zone.runOutsideAngular(() => {
-      this.dataFetchSubscription = this.dataFetchStream.debounceTime(20).switchMap((hardRefresh: boolean) => {
-
-        return this.dataBind(hardRefresh);
-      }).subscribe((data: DataTableQueryResult<any[]>) => {
-        this.zone.run(() => {
-          this._items = data.items;
-          this.itemCount = data.count;
-          this.onAfterDataBind();
-        });
-      });
-    });
-  }
-
   /**
    * Lifecycle hook that is called after data-bound properties of a directive are initialized.
    */
@@ -819,7 +824,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   public ngAfterContentInit(): void {
     this.initDataTableState();
 
-    this.initDataBind();
+    this.dataFetchStream.debounceTime(20).subscribe((hardRefresh: boolean) => {
+      this.dataBind(hardRefresh);
+    });
 
     if (this.autoFetch) {
       this.dataFetchStream.next(false);
@@ -843,10 +850,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
     if (this.filterDebounce) {
       this.columnFilterSubscription.unsubscribe();
       this.customFilterSubscription.unsubscribe();
-    }
-
-    if (this.dataFetchSubscription) {
-      this.dataFetchSubscription.unsubscribe();
     }
   }
 
@@ -974,7 +977,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @return {Array<any>} Empty array with remaining item count size.
    */
   public getSubstituteItems(): {}[] {
-    return Array.from({ length: this.limit - this._items.length });
+    return Array.from({ length: this.limit - this.items.length });
   }
 
   /**
@@ -1009,7 +1012,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
         this.selectedRows.splice(index, 1);
       }
 
-      this._selectAllCheckbox = this._items.every((item: any) => {
+      this._selectAllCheckbox = this.items.every((item: any) => {
         const itemIndex = item[this.selectTrackBy];
         return this.selectedRows.indexOf(itemIndex) > -1;
       });
@@ -1058,7 +1061,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
         });
 
         this.tableWidth = totalWidth;
-      }
+      },
     });
   }
 
@@ -1125,7 +1128,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @return {DataRow[]} Data rows.
    */
   private getRows(): DataRow[] {
-    return this._items.map((item: any, index: number) => {
+    return this.items.map((item: any, index: number) => {
       return {
         dataLoaded: false,
         expanded: false,
@@ -1167,24 +1170,26 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @param {DataTableColumnComponent} column Data table column component object.
    */
   public setFilterOptions(column: DataTableColumnComponent): void {
+    let filterOptions: Promise<any[]>;
     if (this.onFilterValueExtract) {
-      const filterOptions = this.onFilterValueExtract(column);
-      column.filterOptions = [];
-      filterOptions.subscribe((filterArgs: any[]) => {
-        if (column.filterValueFormatter) {
-          column.filterOptions = filterArgs.map((option: any, index: number) => {
-            return column.filterValueFormatter(option, index);
-          });
-        } else {
-          column.filterOptions = filterArgs.map((option: any) => {
-            return {
-              key: option,
-              value: option
-            };
-          });
-        }
-      });
+      filterOptions = this.onFilterValueExtract(column);
     }
+
+    column.filterOptions = [];
+    filterOptions.then((filterArgs: any[]) => {
+      if (column.filterValueFormatter) {
+        column.filterOptions = filterArgs.map((option: any, index: number) => {
+          return column.filterValueFormatter(option, index);
+        });
+      } else {
+        column.filterOptions = filterArgs.map((option: any) => {
+          return {
+            key: option,
+            value: option
+          };
+        });
+      }
+    });
   }
 
   /**

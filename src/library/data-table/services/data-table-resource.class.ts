@@ -9,8 +9,6 @@ import {
 
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
-import { Observable } from 'rxjs/Observable';
-
 function predicate() {
   var fields = [],
     n_fields = arguments.length,
@@ -74,18 +72,25 @@ function predicate() {
  */
 export interface DataTableResource<T> {
   /**
+   * Set data table items.
+   * @param {T[]} value Items collection.
+   */
+  setItems(value: T[]): void;
+
+  /**
    * Query data table items collection.
    * @param {DataTableParams} params Data table parameters.
    * @param {(item: T, index: number, items: T[]) => boolean} filter Filter function callback reference.
+   * @return {Promise<any[]>} Item query resolver.
    */
-  query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Observable<DataTableQueryResult<T[]>>;
+  query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Promise<DataTableQueryResult<T[]>>;
 
   /**
    * Extract data table filter options.
    * @param {DataTableColumnComponent} filterColumn Data table column component.
-   * @return {Observable<any[]>} Filter options stream.
+   * @return {Promise<any[]>} Filter options array promise.
    */
-  extractFilterOptions(filterColumn: DataTableColumnComponent):  Observable<any[]>;
+  extractFilterOptions(filterColumn: DataTableColumnComponent): Promise<any[]>;
 }
 
 /**
@@ -93,10 +98,23 @@ export interface DataTableResource<T> {
  * @class DataTableResourceManager<T>
  */
 export class DataTableResourceManager<T> implements DataTableResource<T> {
-  private items: T[];
+  private itemsPromise: Promise<T[]>;
+  private resolve: Function;
+  private queryTimeout: number;
+  private filterTimeout: number;
 
-  constructor(private zone: NgZone, items: T[]) {
-    this.items = items;
+  constructor(private zone: NgZone) {
+    this.itemsPromise = new Promise<T[]>((resolve) => {
+      this.resolve = resolve;
+    });
+  }
+
+  /**
+   * Set data table items.
+   * @param {T[]} value Items collection.
+   */
+  public setItems(value: T[]): void {
+    this.resolve(value);
   }
 
   /**
@@ -105,22 +123,31 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
    * @param {(item: T, index: number, items: T[]) => boolean} filter Filter function callback reference.
    * @return {Promise<any[]>} Item query resolver.
    */
-  public query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Observable<DataTableQueryResult<T[]>> {
-    return Observable.create((observer) => {
-      const task = setTimeout(() => {
-        try {
-          let itemCount = this.items.length;
+  public query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Promise<DataTableQueryResult<T[]>> {
+    let queryPromiseResolver, queryPromiseReject;
+    if (this.queryTimeout) {
+      clearTimeout(this.queryTimeout);
+
+      if (queryPromiseReject) {
+        queryPromiseReject();
+      }
+    }
+
+    this.zone.runOutsideAngular(() => {
+      this.queryTimeout = setTimeout(() => {
+        this.itemsPromise.then((items: T[]) => {
+          let itemCount = items.length;
 
           let result: T[] = [];
 
           if (filter) {
-            result = this.items.filter(filter);
+            result = items.filter(filter);
           } else {
-            result = this.items.slice(); // shallow copy to use for sorting instead of changing the original
+            result = items.slice(); // shallow copy to use for sorting instead of changing the original
           }
 
           if (params.filterColumns.length) {
-            result = this.items.filter((item) => {
+            result = items.filter((item) => {
               return params.filterColumns.every((filterColumn: FilterColumn) => {
                 if (filterColumn.filterExpression) {
                   return filterColumn.filterExpression(item, filterColumn.field, filterColumn.filterValue);
@@ -173,20 +200,17 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
             }
           }
 
-          observer.next({
+          queryPromiseResolver({
             items: result,
             count: itemCount
           });
-
-          observer.complete();
-        } catch (error) {
-          observer.error(error);
-        }
+        });
       });
+    });
 
-      return () => {
-        clearTimeout(task);
-      }
+    return new Promise((resolve, reject) => {
+      queryPromiseResolver = resolve;
+      queryPromiseReject = reject;
     });
   }
 
@@ -195,11 +219,20 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
    * @param {DataTableColumnComponent} filterColumn Data table column component.
    * @return {Promise<any[]>} Filter options array promise.
    */
-  public extractFilterOptions(filterColumn: DataTableColumnComponent): Observable<any[]> {
-    return Observable.create((observer) => {
-      const task = setTimeout(() => {
-        try {
-          const filteredItems = this.items.map(filterColumn.filterFieldMapper ? filterColumn.filterFieldMapper
+  public extractFilterOptions(filterColumn: DataTableColumnComponent): Promise<any[]> {
+    let filterPromiseResolver, filterPromiseReject;
+    if (this.filterTimeout) {
+      clearTimeout(this.filterTimeout);
+
+      if (filterPromiseReject) {
+        filterPromiseReject();
+      }
+    }
+
+    this.zone.runOutsideAngular(() => {
+      this.filterTimeout = setTimeout(() => {
+        this.itemsPromise.then((items: T[]) => {
+          const filteredItems = items.map(filterColumn.filterFieldMapper ? filterColumn.filterFieldMapper
             : (item) => item[filterColumn.filterField || filterColumn.field])
             .reduce<T[]>((accumulator: T[], value: T[]) => {
               return accumulator.concat(value);
@@ -208,17 +241,14 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
               return self.indexOf(value) === index;
             });
 
-          observer.next(filteredItems);
-        } catch (error) {
-          observer.error(error);
-        }
-
-        observer.complete();
+          filterPromiseResolver(filteredItems);
+        });
       });
+    });
 
-      return () => {
-        clearTimeout(task);
-      }
+    return new Promise((resolve, reject) => {
+      filterPromiseResolver = resolve;
+      filterPromiseReject = reject;
     });
   }
 }
