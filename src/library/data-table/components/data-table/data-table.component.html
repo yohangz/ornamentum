@@ -4,7 +4,15 @@
     <div class="ng-data-table-header-wrapper" [style.paddingRight]="globalRefService.scrollbarWidth | px">
       <div class="ng-data-table-header" scrollElement [scrollPositionStream]="scrollPositionStream">
         <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
-          <colgroup ngDataTableColGroup></colgroup>
+          <colgroup ngDataTableColGroup
+                    [expandColumnVisible]="expandColumnVisible"
+                    [indexColumnVisible]="indexColumnVisible"
+                    [selectColumnVisible]="selectColumnVisible"
+                    [expanderColumnWidth]="expanderColumnWidth"
+                    [indexColumnWidth]="indexColumnWidth"
+                    [selectionColumnWidth]="selectionColumnWidth"
+                    [columns]="columns">
+          </colgroup>
           <thead>
           <tr>
             <th *ngIf="expandColumnVisible" class="expand-column-header">
@@ -68,7 +76,15 @@
         <div class="loading-animation"></div>
       </div>
       <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
-        <colgroup ngDataTableColGroup></colgroup>
+        <colgroup ngDataTableColGroup
+                  [expandColumnVisible]="expandColumnVisible"
+                  [indexColumnVisible]="indexColumnVisible"
+                  [selectColumnVisible]="selectColumnVisible"
+                  [expanderColumnWidth]="expanderColumnWidth"
+                  [indexColumnWidth]="indexColumnWidth"
+                  [selectionColumnWidth]="selectionColumnWidth"
+                  [columns]="columns">
+        </colgroup>
         <tbody ngDataTableBody [dataRows]="dataRows">
         </tbody>
       </table>
