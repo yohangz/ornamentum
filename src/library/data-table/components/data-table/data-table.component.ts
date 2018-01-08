@@ -80,7 +80,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   private columnFilterStream = new Subject();
   private dataFetchStream = new Subject();
-  private scrollPositionStream = new Subject();
+
+  public scrollPositionStream = new Subject();
 
   public customFilterEventEmitter = new EventEmitter<FilterEventArgs>();
 
