@@ -20,11 +20,9 @@ export class ScrollPositionDirective implements AfterViewInit, OnDestroy {
     this.zone.runOutsideAngular(() => {
       this.scrollEventSubscription = Observable.fromEvent(this.el.nativeElement, 'scroll')
         .subscribe(res => {
-          this.zone.run(() => {
-            this.scrollPosition.emit({
-              scrollLeft: this.el.nativeElement.scrollLeft,
-              scrollTop: this.el.nativeElement.scrollTop
-            });
+          this.scrollPosition.emit({
+            scrollLeft: this.el.nativeElement.scrollLeft,
+            scrollTop: this.el.nativeElement.scrollTop
           });
         });
     });

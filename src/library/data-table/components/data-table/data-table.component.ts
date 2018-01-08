@@ -77,6 +77,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   private columnFilterStream = new Subject();
   private dataFetchStream = new Subject();
+  private scrollPositionStream = new Subject();
 
   public customFilterEventEmitter = new EventEmitter<FilterEventArgs>();
 
@@ -1151,14 +1152,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   public get showNoDataOverlay(): boolean {
     return this.dataRows.length === 0 && !this.reloading;
-  }
-
-  /**
-   * On table body scroll position change.
-   * @param {number} position Scroll position
-   */
-  public onScrollPositionChange(position: any) {
-    this.scrollPosition = position.scrollLeft;
   }
 
   /**

@@ -2,7 +2,7 @@
   <ng-data-table-header *ngIf="showHeader"></ng-data-table-header>
   <div class="ng-data-table-inner-wrapper">
     <div class="ng-data-table-header-wrapper">
-      <div class="ng-data-table-header" [scrollElement]="scrollPosition">
+      <div class="ng-data-table-header" scrollElement [scrollPositionStream]="scrollPositionStream">
         <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
           <colgroup ngDataTableColGroup></colgroup>
           <thead>
@@ -63,7 +63,7 @@
         </table>
       </div>
     </div>
-    <div class="ng-data-table-content" (scrollPosition)="onScrollPositionChange($event)" [style.height]="contentHeight | px" [style.minHeight]="minHeight | px">
+    <div class="ng-data-table-content" (scrollPosition)="scrollPositionStream.next($event)" [style.height]="contentHeight | px" [style.minHeight]="minHeight | px">
       <div class="loading-cover" [hidden]="!isLoading">
         <div class="loading-animation"></div>
       </div>
@@ -83,3 +83,4 @@
   </div>
   <ng-data-table-pagination *ngIf="pageable && itemCount"></ng-data-table-pagination>
 </div>
+
