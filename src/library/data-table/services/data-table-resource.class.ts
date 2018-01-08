@@ -83,7 +83,7 @@ export interface DataTableResource<T> {
    * @param {(item: T, index: number, items: T[]) => boolean} filter Filter function callback reference.
    * @return {Promise<any[]>} Item query resolver.
    */
-  query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Promise<DataTableQueryResult<T[]>>;
+  query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Promise<DataTableQueryResult<T>>;
 
   /**
    * Extract data table filter options.
@@ -123,7 +123,7 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
    * @param {(item: T, index: number, items: T[]) => boolean} filter Filter function callback reference.
    * @return {Promise<any[]>} Item query resolver.
    */
-  public query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Promise<DataTableQueryResult<T[]>> {
+  public query(params: DataTableParams, filter?: (item: T, index: number, items: T[]) => boolean): Promise<DataTableQueryResult<T>> {
     let queryPromiseResolver, queryPromiseReject;
     if (this.queryTimeout) {
       clearTimeout(this.queryTimeout);
