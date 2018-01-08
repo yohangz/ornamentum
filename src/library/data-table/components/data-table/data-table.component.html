@@ -81,5 +81,14 @@
       </ng-container>
     </div>
   </div>
-  <ng-data-table-pagination *ngIf="pageable && itemCount"></ng-data-table-pagination>
+
+  <ng-data-table-pagination *ngIf="pageable && itemCount"
+                            [limit]="limit"
+                            [offset]="offset"
+                            [itemCount]="itemCount"
+                            [translations]="translations"
+                            [maxLimit]="100"
+                            (limitChange)="onLimitChange($event)"
+                            (offsetChange)="onOffsetChange($event)">
+  </ng-data-table-pagination>
 </div>

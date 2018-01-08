@@ -1225,4 +1225,11 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
     return this.columns.some((column: DataTableColumnComponent) => column.filterable);
   }
 
+  public onLimitChange(limit: number) {
+    this.limit = limit;
+  }
+
+  public onOffsetChange(offset) {
+    this.offset = offset;
+  }
 }
