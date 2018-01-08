@@ -480,8 +480,6 @@
   [filterDebounce]="filterDebounce"
   [filterDebounceTime]="filterDebounceTime"
   [indexColumnTitle]="indexColumnTitle"
-  [itemCount]="itemCount"
-  [items]="items"
   [limit]="limit"
   [multiRowSelectable]="multiRowSelectable"
   [multiColumnSortable]="initialTableConf.multiColumnSortable"
@@ -499,8 +497,8 @@
   [onFilterValueExtract]="tableResource.extractFilterOptions.bind(tableResource)"
   [onRowDisabledStateChange]="onRowDisabledStateChange"
 
-  (onRefresh)="onRefresh($event)"
-  (onDataLoad)="onDataLoad($event)"
+  [onRefresh]="onRefresh.bind(this)"
+  [onDataLoad]="onDataLoad.bind(this)"
   (onInit)="onInit($event)">
 
   <ng-data-table-column

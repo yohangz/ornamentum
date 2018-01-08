@@ -2,6 +2,7 @@ import { DataTableComponent } from '../components/data-table/data-table.componen
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
 import { SortOrder } from './data-table-sort-order.enum';
+import { Observable } from 'rxjs/Observable';
 
 export type CellCallback = (row: DataRow, column: DataTableColumnComponent) => string;
 
@@ -33,7 +34,9 @@ export type FilterFieldMapperCallback = (value: any, index: number, array: any[]
 
 export type FilterValueFormatterCallback = (value: any, index: number) => FilterOption;
 
-export type FilterValueExtractCallback = (filterColumn: DataTableColumnComponent) => Promise<any[]>;
+export type FilterValueExtractCallback = (filterColumn: DataTableColumnComponent) => Observable<any[]>;
+
+export type DataTableQueryCallback = (params: DataTableParams) => Observable<DataTableQueryResult<any[]>>;
 
 export type GroupFieldExtractorCallback = (row: DataRow) => any[][];
 

@@ -7,7 +7,7 @@ export class DataTableResourceFactoryService {
   constructor(private zone: NgZone) {
   }
 
-  public createTableResource<T>(): DataTableResource<T> {
-    return new DataTableResourceManager<T>(this.zone);
+  public createTableResource<T>(items: T[]): DataTableResource<T> {
+    return new DataTableResourceManager<T>(this.zone, items);
   }
 }

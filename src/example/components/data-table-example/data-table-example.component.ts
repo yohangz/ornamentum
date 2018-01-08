@@ -8,7 +8,8 @@ import {
 } from '../../../library/data-table';
 
 import { DataStorageService } from '../../services/data-storage.service';
-import { DataRow } from '../../../library/data-table/models/data-table.model';
+import { DataRow, DataTableQueryResult } from '../../../library/data-table/models/data-table.model';
+import { Observable } from 'rxjs/Observable';
 
 declare function require(url: string);
 
@@ -71,8 +72,6 @@ export class DataTableExampleComponent {
   public filterDebounceTime: number;
   public indexColumnTitle: string;
   public contentHeight: string;
-  public itemCount: number;
-  public items: any[];
   public limit: number;
   public page: number;
   public expandOnRowClick: boolean;
@@ -128,7 +127,6 @@ export class DataTableExampleComponent {
     this.indexColumnTitle = '#';
     this.limit = 10;
     this.page = 1;
-    this.items = [];
     this.expandOnRowClick = false;
 
     this.firstColConf = {
@@ -218,31 +216,23 @@ export class DataTableExampleComponent {
       visible: true
     };
 
-    this.fetchAlgorithmsData();
+    this.fetchData();
   }
 
   /**
    * Data table refresh event handler.
    * @param params  Event payload.
    */
-  public onRefresh(params?: any): void {
-    this.fetchAlgorithmsData();
-    this.tableResource.query(params).then((data) => {
-      this.items = data.items;
-      this.itemCount = data.count;
-    });
+  public onRefresh(params: DataTableParams): Observable<DataTableQueryResult<any[]>> {
+    return this.tableResource.query(params);
   }
 
   /**
    * Data table data load event handler.
    * @param {DataTableParams} params  grid parameters.
    */
-  public onDataLoad(params?: any): void {
-    this.tableResource.query(params).then((data) => {
-      this.items = data.items;
-      this.itemCount = data.count;
-    });
-
+  public onDataLoad(params: DataTableParams): Observable<DataTableQueryResult<any[]>> {
+    return this.tableResource.query(params);
   }
 
   /**
@@ -284,12 +274,8 @@ export class DataTableExampleComponent {
   /**
    * Fetch algorithms data and bind to the data table source.
    */
-  private fetchAlgorithmsData(): void {
-    this.tableResource = this.dataTableResourceFactoryService.createTableResource();
-
-    if (!this.initialTableConf.remoteDataFetch) {
-      this.tableResource.setItems(data.stationBeanList);
-    }
+  private fetchData(): void {
+    this.tableResource = this.dataTableResourceFactoryService.createTableResource(data.stationBeanList);
   }
 
   public onRowDisabledStateChange(dataRow: DataRow): boolean {
