@@ -101,7 +101,6 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
   private itemsPromise: Promise<T[]>;
   private resolve: Function;
   private queryTimeout: number;
-  private filterTimeout: number;
 
   constructor(private zone: NgZone) {
     this.itemsPromise = new Promise<T[]>((resolve) => {
@@ -220,35 +219,25 @@ export class DataTableResourceManager<T> implements DataTableResource<T> {
    * @return {Promise<any[]>} Filter options array promise.
    */
   public extractFilterOptions(filterColumn: DataTableColumnComponent): Promise<any[]> {
-    let filterPromiseResolver, filterPromiseReject;
-    if (this.filterTimeout) {
-      clearTimeout(this.filterTimeout);
-
-      if (filterPromiseReject) {
-        filterPromiseReject();
-      }
-    }
+    let filterPromiseResolver;
 
     this.zone.runOutsideAngular(() => {
-      this.filterTimeout = setTimeout(() => {
-        this.itemsPromise.then((items: T[]) => {
-          const filteredItems = items.map(filterColumn.filterFieldMapper ? filterColumn.filterFieldMapper
-            : (item) => item[filterColumn.filterField || filterColumn.field])
-            .reduce<T[]>((accumulator: T[], value: T[]) => {
-              return accumulator.concat(value);
-            }, [])
-            .filter((value, index, self) => {
-              return self.indexOf(value) === index;
-            });
+      this.itemsPromise.then((items: T[]) => {
+        const filteredItems = items.map(filterColumn.filterFieldMapper ? filterColumn.filterFieldMapper
+          : (item) => item[filterColumn.filterField || filterColumn.field])
+          .reduce<T[]>((accumulator: T[], value: T[]) => {
+            return accumulator.concat(value);
+          }, [])
+          .filter((value, index, self) => {
+            return self.indexOf(value) === index;
+          });
 
-          filterPromiseResolver(filteredItems);
-        });
+        filterPromiseResolver(filteredItems);
       });
     });
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       filterPromiseResolver = resolve;
-      filterPromiseReject = reject;
     });
   }
 }
