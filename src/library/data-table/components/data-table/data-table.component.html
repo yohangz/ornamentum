@@ -1,7 +1,7 @@
 <div class="ng-data-table-wrapper" [ngClass]="{ 'scrollable': !!contentHeight }">
   <ng-data-table-header *ngIf="showHeader"></ng-data-table-header>
   <div class="ng-data-table-inner-wrapper">
-    <div class="ng-data-table-header-wrapper">
+    <div class="ng-data-table-header-wrapper" [style.paddingRight]="globalRefService.scrollbarWidth | px">
       <div class="ng-data-table-header" scrollElement [scrollPositionStream]="scrollPositionStream">
         <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
           <colgroup ngDataTableColGroup></colgroup>
@@ -83,4 +83,3 @@
   </div>
   <ng-data-table-pagination *ngIf="pageable && itemCount"></ng-data-table-pagination>
 </div>
-

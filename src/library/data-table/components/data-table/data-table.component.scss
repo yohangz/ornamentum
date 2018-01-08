@@ -8,21 +8,21 @@
     border: .07rem solid $data-table-header-border;
     overflow: hidden;
 
-    ::-webkit-scrollbar {
-      width: 17px;
-      border-left: .05rem solid $data-table-header-border;
-      margin: .05rem;
-    }
-
-    ::-webkit-scrollbar-track {
-      border: .01rem solid $data-table-header-secondary-background;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      border-radius: 1rem;
-      border: .2rem solid $data-table-header-secondary-background;
-      background-color: $data-table-header-border;
-    }
+    //::-webkit-scrollbar {
+    //  width: 17px;
+    //  border-left: .05rem solid $data-table-header-border;
+    //  margin: .05rem;
+    //}
+    //
+    //::-webkit-scrollbar-track {
+    //  border: .01rem solid $data-table-header-secondary-background;
+    //}
+    //
+    //::-webkit-scrollbar-thumb {F
+    //  border-radius: 1rem;
+    //  border: .2rem solid $data-table-header-secondary-background;
+    //  background-color: $data-table-header-border;
+    //}
 
     &.scrollable {
       .ng-data-table-header-wrapper {

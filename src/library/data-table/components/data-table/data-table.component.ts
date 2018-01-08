@@ -38,7 +38,7 @@ import { StorageMode } from '../../models/data-table-storage-mode.enum';
 
 import { DataTableStateService } from '../../services/data-table-state.service';
 
-import { DragAndDropService } from '../../../utility';
+import { DragAndDropService, GlobalRefService } from '../../../utility';
 
 /**
  * Data table component.
@@ -581,7 +581,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   }
 
   constructor(private dragAndDropService: DragAndDropService,
-              private dataTableStateService: DataTableStateService) {
+              private dataTableStateService: DataTableStateService,
+              public globalRefService: GlobalRefService) {
     this.dataTableStateService.storageMode = StorageMode.SESSION;
   }
 
@@ -1223,4 +1224,5 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   public hasFilterColumns(): boolean {
     return this.columns.some((column: DataTableColumnComponent) => column.filterable);
   }
+
 }
