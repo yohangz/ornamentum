@@ -582,7 +582,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   constructor(private dragAndDropService: DragAndDropService,
               private dataTableStateService: DataTableStateService,
-              public globalRefService: GlobalRefService) {
+              private globalRefService: GlobalRefService) {
     this.dataTableStateService.storageMode = StorageMode.SESSION;
   }
 
@@ -1225,11 +1225,15 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
     return this.columns.some((column: DataTableColumnComponent) => column.filterable);
   }
 
-  public onLimitChange(limit: number) {
+  public onLimitChange(limit: number): void {
     this.limit = limit;
   }
 
-  public onOffsetChange(offset) {
+  public onOffsetChange(offset): void {
     this.offset = offset;
+  }
+
+  public get headerPadding(): number {
+    return this.contentHeight? this.globalRefService.scrollbarWidth: 0;
   }
 }
