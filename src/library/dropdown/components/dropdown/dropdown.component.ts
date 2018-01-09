@@ -1,4 +1,7 @@
-import { AfterViewInit, Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import {
+  AfterContentInit, Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit,
+  Output
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import {
@@ -30,7 +33,7 @@ import { MenuPosition } from '../../models/menu-position.enum';
     }
   ]
 })
-export class DropdownComponent implements OnInit, OnDestroy, AfterViewInit, ControlValueAccessor {
+export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, ControlValueAccessor {
   public _items: DropdownItem[] = [];
   public _groupedItems: DropdownItemGroup[] = [];
 
@@ -50,7 +53,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterViewInit, Cont
     searchPlaceholder: 'Search',
     selectAll: 'Select All',
     selectedItems: 'Items',
-    title: 'Select',
+    title: 'Select'
   };
 
   private searchFilterSubject = new Subject();
@@ -383,7 +386,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterViewInit, Cont
     }
   }
 
-  public ngAfterViewInit(): void {
+  public ngAfterContentInit(): void {
     if (this.loadDataOnInit) {
       this.loadData();
     }
