@@ -699,7 +699,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * Trigger table data bind.
    * @param {boolean} hardRefresh Hard refresh if true.
    */
-  private dataBind(hardRefresh: boolean): void {
+  public dataBind(hardRefresh: boolean): void {
     this.reloading = true;
     if (hardRefresh) {
       this.selectedRows = [];
