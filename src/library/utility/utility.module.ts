@@ -2,6 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ClickOutsideDirective } from './directives/click-outside.directive';
+import { InitDirective } from './directives/init.directive';
 
 import { PixelConverterPipe } from './pipes/pixel-converter.pipe';
 
@@ -12,7 +13,8 @@ import { GlobalRefService } from './services/global-ref.service';
 import { ComponentLoaderFactoryService } from './services/component-loader-factory.service';
 
 const DIRECTIVES = [
-  ClickOutsideDirective
+  ClickOutsideDirective,
+  InitDirective
 ];
 
 const PIPES = [

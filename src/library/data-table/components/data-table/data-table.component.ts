@@ -20,7 +20,7 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 import { SortOrder } from '../../models/data-table-sort-order.enum';
 import {
   CellClickEventArgs,
-  DataRow,
+  DataRow, DataTableCellBindEventArgs,
   DataTableParams,
   DataTableTranslations,
   DoubleClickEventArgs,
@@ -30,9 +30,7 @@ import {
   GroupFieldExtractorCallback,
   HeaderClickEventArgs,
   RowClickEventArgs,
-  RowColourChangeCallback, RowDisabledStateChangeCallback,
-  RowSelectEventArgs,
-  RowTooltipChangeCallback
+  RowSelectEventArgs
 } from '../../models/data-table.model';
 import { StorageMode } from '../../models/data-table-storage-mode.enum';
 
@@ -165,6 +163,40 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   @Output()
   public onRefresh = new EventEmitter<DataTableParams>();
+
+  /**
+   * On row bind event handler.
+   * @type {EventEmitter<DataRow>}
+   */
+  @Output()
+  public onRowBind = new EventEmitter<DataRow>();
+
+  /**
+   * On cell bind event handler.
+   * @type {EventEmitter<DataTableCellBindEventArgs>}
+   */
+  @Output()
+  public onCellBind = new EventEmitter<DataTableCellBindEventArgs>();
+
+  // Input Events
+
+  /**
+   * On filter value extract event handler callback.
+   * @default undefined
+   * @type {FilterValueExtractCallback}
+   */
+  @Input()
+  public onFilterValueExtract: FilterValueExtractCallback;
+
+  /**
+   * On group field extract event handler callback.
+   * @default default empty extractor
+   * @type {GroupFieldExtractorCallback}
+   */
+  @Input()
+  public onGroupFieldExtract: GroupFieldExtractorCallback = () => {
+    return [];
+  };
 
   // Input parameters
 
@@ -511,48 +543,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   public get page(): number {
     return Math.floor(this.offset / this.limit) + 1;
-  }
-
-  /**
-   * On row colour change event handler callback.
-   * @default undefined
-   * @type {RowColourChangeCallback}
-   */
-  @Input()
-  public onRowColourChange: RowColourChangeCallback;
-
-  /**
-   * On row tooltip change event handler callback.
-   * @default undefined
-   * @type {RowTooltipChangeCallback}
-   */
-  @Input()
-  public onRowTooltipChange: RowTooltipChangeCallback;
-
-  /**
-   * On row disabled state change event handler callback.
-   * @default undefined
-   * @type {RowDisabledStateChangeCallback}
-   */
-  @Input()
-  public onRowDisabledStateChange: RowDisabledStateChangeCallback;
-
-  /**
-   * On filter value extract event handler callback.
-   * @default undefined
-   * @type {FilterValueExtractCallback}
-   */
-  @Input()
-  public onFilterValueExtract: FilterValueExtractCallback;
-
-  /**
-   * On group field extract event handler callback.
-   * @default default empty extractor
-   * @type {GroupFieldExtractorCallback}
-   */
-  @Input()
-  public onGroupFieldExtract: GroupFieldExtractorCallback = () => {
-    return [];
   }
 
   /**
@@ -981,17 +971,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   }
 
   /**
-   * Get row colour via row colour change event.
-   * @param {DataRow} row Data row object.
-   * @return {string} CSS compliant colour string.
-   */
-  public getRowColor(row: DataRow): string {
-    if (this.onRowColourChange) {
-      return this.onRowColourChange(row);
-    }
-  }
-
-  /**
    * On row selection change event.
    * Maintain selected row state.
    * @param {DataRow} row Data row object.
@@ -1132,6 +1111,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
       return {
         dataLoaded: false,
         expanded: false,
+        disabled: false,
+        colour: '',
+        tooltip: '',
         index: index,
         item: item,
         selected: false

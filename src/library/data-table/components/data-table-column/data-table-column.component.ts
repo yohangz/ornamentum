@@ -1,9 +1,12 @@
 import { ContentChild, Directive, Input, OnInit, TemplateRef } from '@angular/core';
 
 import {
-  CellCallback, FilterFieldMapperCallback, DataRow, FilterExpressionCallback, FilterValueFormatterCallback,
+  FilterFieldMapperCallback,
+  FilterExpressionCallback,
+  FilterValueFormatterCallback,
   SortComparatorCallback,
-  FilterOption
+  CellColourRenderCallback,
+  FilterOption, DataRow
 } from '../../models/data-table.model';
 import { SortOrder } from '../../models/data-table-sort-order.enum';
 
@@ -144,10 +147,10 @@ export class DataTableColumnComponent implements OnInit {
   /**
    * Cell colour render event handler callback function.
    * @default undefined
-   * @type CellCallback
+   * @type CellColourRenderCallback
    */
   @Input()
-  public onCellColorRender: CellCallback;
+  public onCellColorRender: CellColourRenderCallback;
 
   /**
    * Column width.
@@ -210,6 +213,10 @@ export class DataTableColumnComponent implements OnInit {
 
   public actualWidth: number;
 
+  public resetSortOrder(): void {
+    this._sortOrder = this._baseSortOrder;
+  }
+
   /**
    * Get cell colour.
    * @param {DataRow} row Data row object.
@@ -219,10 +226,6 @@ export class DataTableColumnComponent implements OnInit {
     if (this.onCellColorRender !== undefined) {
       return this.onCellColorRender(row, this);
     }
-  }
-
-  public resetSortOrder(): void {
-    this._sortOrder = this._baseSortOrder;
   }
 
   /**

@@ -3,31 +3,11 @@ import { DataTableColumnComponent } from '../components/data-table-column/data-t
 
 import { SortOrder } from './data-table-sort-order.enum';
 
-export type CellCallback = (row: DataRow, column: DataTableColumnComponent) => string;
+export type CellColourRenderCallback = (row: DataRow, column: DataTableColumnComponent) => string;
 
 export type FilterExpressionCallback = (item: any, field: string, filterValue: any) => boolean;
 
 export type SortComparatorCallback = (previousItem: any, nextItem: any) => number;
-
-/**
- * Row colour change event handler.
- * @param item Data item object.
- * @param row Data table row component object.
- * @param index Data row index.
- * @return {string} Row colour (CSS compliant).
- */
-export type RowColourChangeCallback = (row: DataRow) => string;
-
-/**
- * Row tooltip change event handler.
- * @param item Data item object.
- * @param row Data table row component object.
- * @param index Data row index.
- * @return {string} Row tooltip string.
- */
-export type RowTooltipChangeCallback = (row: DataRow) => string;
-
-export type RowDisabledStateChangeCallback = (row: DataRow) => boolean;
 
 export type FilterFieldMapperCallback = (value: any, index: number, array: any[]) => any | any[];
 
@@ -72,6 +52,9 @@ export interface DataTableParams {
 export interface DataRow {
   item: any;
   selected: boolean;
+  disabled: boolean;
+  colour: string;
+  tooltip: string;
   index: number;
   expanded: boolean;
   dataLoaded: boolean;
@@ -172,4 +155,9 @@ export interface ColumnSelectorProperty {
 export interface DataTableQueryResult<T> {
   items: T[];
   count: number;
+}
+
+export interface DataTableCellBindEventArgs {
+  column: DataTableColumnComponent;
+  row: DataRow;
 }

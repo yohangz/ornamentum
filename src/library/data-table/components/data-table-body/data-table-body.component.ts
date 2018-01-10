@@ -3,6 +3,7 @@ import { Component, forwardRef, Inject, Input } from '@angular/core';
 import { DataRow } from '../../models/data-table.model';
 
 import { DataTableComponent } from '../data-table/data-table.component';
+import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
 /**
  * Data table body component.
@@ -20,26 +21,6 @@ export class DataTableBodyComponent {
   public dataRows: DataRow[];
 
   constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent) {
-  }
-
-  /**
-   * Get row tooltip.
-   * @return {string} Row tooltip string.
-   */
-  public getRowTooltipText(dataRow: DataRow): string {
-    if (this.dataTable.onRowTooltipChange) {
-      return this.dataTable.onRowTooltipChange(dataRow);
-    }
-
-    return '';
-  }
-
-  public getRowDisabledState(dataRow: DataRow): boolean {
-    if (this.dataTable.onRowDisabledStateChange) {
-      return this.dataTable.onRowDisabledStateChange(dataRow);
-    }
-
-    return false;
   }
 
   /**
@@ -98,5 +79,25 @@ export class DataTableBodyComponent {
   public onRowExpand($event: Event, dataRow: DataRow): void {
     dataRow.expanded = !dataRow.expanded;
     dataRow.dataLoaded = true;
+  }
+
+  /**
+   * On row initialize event handler.
+   * @param dataRow Data table row.
+   */
+  public onRowInit(dataRow): void {
+    this.dataTable.onRowBind.emit(dataRow);
+  }
+
+  /**
+   * On cell initialize event handler.
+   * @param {DataTableColumnComponent} column Data table column component.
+   * @param {DataRow} row Data table row.
+   */
+  public onCellInit(column: DataTableColumnComponent, row: DataRow): void {
+    this.dataTable.onCellBind.emit({
+      column: column,
+      row: row
+    });
   }
 }

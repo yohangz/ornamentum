@@ -291,7 +291,7 @@ export class DataTableExampleComponent {
     }
   }
 
-  public onRowDisabledStateChange(dataRow: DataRow): boolean {
-    return dataRow.index === 1;
+  public onRowBind(dataRow: DataRow): void {
+    dataRow.disabled = dataRow.index === 1;
   }
 }
