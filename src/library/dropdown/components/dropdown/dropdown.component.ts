@@ -336,6 +336,13 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   public onDataFetch = new EventEmitter<DataRequestParams>();
 
   /**
+   * On dropdown initialize.
+   * @type {EventEmitter<DropdownComponent>}
+   */
+  @Output()
+  public onInit = new EventEmitter<DropdownComponent>();
+
+  /**
    * On select change handler.
    * @type {EventEmitter<DropdownItem[] | DropdownItem>}
    */
@@ -384,6 +391,8 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     if (this.filterDebounce) {
       this.initFilterEvent();
     }
+
+    this.onInit.emit(this);
   }
 
   public ngAfterContentInit(): void {
@@ -469,6 +478,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     if (this.filterDebounce) {
       this.searchFilterSubject.next(this.filterText);
     } else {
+      this.offset = 0;
       this.loadOnScroll ? this.loadData() : this.clientFilter();
     }
   }
@@ -609,6 +619,16 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       offset: this.offset,
       limit: this.limit
     });
+  }
+
+  public dataBind(reset: boolean): void {
+    if (reset) {
+      this.offset = 0;
+      this.filterText = '';
+      this.loadData(false);
+    } else {
+      this.loadData(true);
+    }
   }
 
   /**
