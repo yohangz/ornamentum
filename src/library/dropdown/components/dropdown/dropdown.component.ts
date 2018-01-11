@@ -718,8 +718,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     } else {
       this.selectedOption = value;
     }
-
-    this.emitOnSelectChange();
   }
 
   /**
