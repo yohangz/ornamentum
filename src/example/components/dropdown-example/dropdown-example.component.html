@@ -5,9 +5,13 @@
   [multiSelectable]="true"
   [showSelectAll]="true"
   [filterable]="true"
+  [triggerSelectChangeOnInit]="false"
   [loadViewDistance]="0"
   [(ngModel)]="selected"
-  (onSelectChange)="onSelectChange($event)">
+  (onSelectChange)="onSelectChange($event)"
+  (onInit)="onInit($event)">
 </ng-dropdown>
 
 value - {{selected | json}}
+
+<button (click)="resetSelected()">Clear Selection</button>

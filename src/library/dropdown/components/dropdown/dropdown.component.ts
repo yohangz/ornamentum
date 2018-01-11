@@ -625,6 +625,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     if (reset) {
       this.offset = 0;
       this.filterText = '';
+      this.writeValue(null);
       this.loadData(false);
     } else {
       this.loadData(true);
@@ -717,6 +718,8 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     } else {
       this.selectedOption = value;
     }
+
+    this.emitOnSelectChange();
   }
 
   /**

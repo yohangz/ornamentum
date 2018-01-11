@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 import { DropdownItem } from '../../../library/dropdown/models/dropdown.model';
+import { DropdownComponent } from '../../../library/dropdown/components/dropdown/dropdown.component';
 
 @Component({
   selector: 'app-dropdown-example-component',
@@ -14,6 +15,8 @@ export class DropdownExampleComponent {
   public overrideTranslations: any;
   public itemSelected: any;
   public showFilter: boolean;
+
+  private dropdown: DropdownComponent;
 
   constructor() {
     this.showFilter = false;
@@ -136,5 +139,13 @@ export class DropdownExampleComponent {
 
   public onSelectChange(event: DropdownItem[]): void {
     console.log(event);
+  }
+
+  public resetSelected(): void {
+    this.dropdown.dataBind(true);
+  }
+
+  public onInit(dropdown: DropdownComponent): void {
+    this.dropdown = dropdown;
   }
 }
