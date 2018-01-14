@@ -75,7 +75,7 @@
       <div class="loading-cover" [hidden]="!isLoading">
         <div class="loading-animation"></div>
       </div>
-      <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
+      <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px" [hidden]="isLoading">
         <colgroup ngDataTableColGroup
                   [expandColumnVisible]="expandColumnVisible"
                   [indexColumnVisible]="indexColumnVisible"
