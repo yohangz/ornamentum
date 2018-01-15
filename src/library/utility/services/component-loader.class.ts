@@ -11,9 +11,9 @@ import { GlobalRefService } from './global-ref.service';
 import { Observable } from 'rxjs/Observable';
 
 export interface ComponentLoader<T> {
-  show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number): void;
+  show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number, relativeParentElement?: HTMLElement): void;
 
-  toggle(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number): void;
+  toggle(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number, relativeParentElement?: HTMLElement): void;
 
   hide(): void;
 
@@ -38,8 +38,8 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     };
   }
 
-  private setPosition(parentElement: HTMLElement, floatLeft: number, floatTop: number ): void {
-    const bodyClientRect = this.globalRefService.window.document.documentElement.getBoundingClientRect();
+  private setPosition(parentElement: HTMLElement, holderElement: HTMLElement, floatLeft: number, floatTop: number ): void {
+    const bodyClientRect = holderElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
 
     const componentElement = this.componentRef.location.nativeElement as HTMLElement;
@@ -55,9 +55,9 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
       });
   }
 
-  public show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0): void {
+  public show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0, relativeParentElement?: HTMLElement): void {
     if (this.componentRef) {
-      this.setPosition(parentElement, floatLeft, floatTop);
+      this.setPosition(parentElement, relativeParentElement || this.globalRefService.window.document.documentElement, floatLeft, floatTop);
       this.isVisible = true;
       return;
     }
@@ -76,10 +76,10 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     const domElem = (this.componentRef.hostView as EmbeddedViewRef<any>)
       .rootNodes[0] as HTMLElement;
 
-    this.setPosition(parentElement, floatLeft, floatTop);
+    this.setPosition(parentElement, relativeParentElement || this.globalRefService.window.document.documentElement, floatLeft, floatTop);
 
     // 4. Append DOM element to the body
-    document.body.appendChild(domElem);
+    (relativeParentElement || this.globalRefService.window.document.body).appendChild(domElem);
 
     this.componentRef.changeDetectorRef.markForCheck();
     this.componentRef.changeDetectorRef.detectChanges();
@@ -107,11 +107,11 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     this.resizeEventHandler = null;
   }
 
-  public toggle(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0): void {
+  public toggle(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0, relativeParentElement?: HTMLElement): void {
     if (this.isVisible) {
       this.hide();
     } else {
-      this.show(component, parentElement, options, floatLeft, floatTop);
+      this.show(component, parentElement, options, floatLeft, floatTop, relativeParentElement);
     }
   }
 }
