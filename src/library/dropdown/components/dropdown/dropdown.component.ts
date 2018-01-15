@@ -81,6 +81,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     return this._translations;
   }
 
+  @Input()
+  public relativeParentElement: HTMLElement;
+
   /**
    * Represents the name of the attribute used for selection tracking.
    * @default key
@@ -441,7 +444,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       props: {
         dropdown: this
       }
-    }, floatLeft, floatTop);
+    }, floatLeft, floatTop, this.relativeParentElement);
   }
 
   /**
