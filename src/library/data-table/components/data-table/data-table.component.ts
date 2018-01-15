@@ -447,6 +447,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   @Input()
   public selectionColumnWidth: number | string = 30;
 
+  @Input()
+  public relativeParentElement: HTMLElement;
+
   /**
    * Template to display when data set is empty.
    * @default default template

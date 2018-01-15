@@ -51,6 +51,7 @@
                   </ng-container>
                   <ng-container *ngIf="column.enableMultiSelectFilter">
                     <ng-dropdown
+                      [relativeParentElement]="relativeParentElement"
                       [items]="column.filterOptions"
                       [totalItemCount]="column.filterOptions.length"
                       [(ngModel)]="column.filter"

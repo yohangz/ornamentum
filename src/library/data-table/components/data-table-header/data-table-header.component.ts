@@ -30,7 +30,7 @@ export class DataTableHeaderComponent implements OnDestroy {
       props: {
         dataTable: this.dataTable
       }
-    }, element.offsetWidth + 10, element.offsetHeight + 5);
+    }, element.offsetWidth + 10, element.offsetHeight + 5, this.dataTable.relativeParentElement);
   }
 
   /**
