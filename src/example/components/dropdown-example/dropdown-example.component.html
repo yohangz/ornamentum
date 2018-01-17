@@ -5,9 +5,9 @@
   [multiSelectable]="true"
   [showSelectAll]="true"
   [filterable]="true"
-  [triggerSelectChangeOnInit]="false"
+  [triggerSelectChangeOnInit]="true"
   [loadViewDistance]="0"
-  [(ngModel)]="selected"
+  [selectedOptions]="selected"
   (onSelectChange)="onSelectChange($event)"
   (onInit)="onInit($event)">
 </ng-dropdown>

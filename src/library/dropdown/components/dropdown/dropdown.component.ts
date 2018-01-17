@@ -502,6 +502,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @param {DropdownItem} option The DropdownItem to be removed from the selected items.
    */
   public onSelectOptionClose(event: Event, option: DropdownItem): void {
+    event.stopPropagation();
     const selectedId = this._selectedOptions.findIndex(selectedOption => selectedOption.id === option.id);
     this._selectedOptions.splice(selectedId, 1);
     this.emitOnSelectChange();
