@@ -154,8 +154,12 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     }
 
     this.currentItemCount = value.length;
-    this._allSelected = this.currentItemCount === this._selectedOptions.length;
+    this.updateAllSelectedState();
     this.isLoading = false;
+  }
+
+  public updateAllSelectedState(): void {
+    this._allSelected = this.currentItemCount === this._selectedOptions.length;
   }
 
   /**
@@ -175,6 +179,8 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this._selectedOptions = value ? value.map((option) => {
       return this.mapToDropdownItem(option);
     }) : [];
+
+    this.updateAllSelectedState();
   }
 
   /**
@@ -184,6 +190,8 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   @Input()
   public set selectedOption(value: any) {
     this._selectedOption = value ? this.mapToDropdownItem(value) : undefined;
+
+    this.updateAllSelectedState();
   }
 
   /**

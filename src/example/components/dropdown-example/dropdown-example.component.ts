@@ -115,18 +115,8 @@ export class DropdownExampleComponent {
         }
       ];
 
-      this.selected = [
-        {
-          key: 5,
-          value: 'test34',
-          disabled: false
-        },
-        {
-          key: 14,
-          value: 'test3',
-          disabled: false
-        }
-      ];
+      this.selected = this.items;
+
     }, 1000);
 
 
@@ -134,7 +124,6 @@ export class DropdownExampleComponent {
   }
 
   public onSelectChange(event: DropdownItem[]): void {
-    debugger;
     console.log(event);
   }
 
