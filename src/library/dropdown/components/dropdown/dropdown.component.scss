@@ -10,6 +10,8 @@
 
       .ng-dropdown-toggle {
         @include border-radius(0);
+        @include display-flex;
+        @include flex-wrap(wrap);
         @include font-size(.8, 1);
         background: $multi-select-dropdown-toggle-background;
         border: .05rem solid $multi-select-dropdown-toggle-border;
@@ -24,7 +26,8 @@
         .ng-dropdown-selected-value {
           background: $generated-context-background;
           color: $generated-context-color;
-          margin-right: .5rem;
+          display: inline-block;
+          margin: .1rem .5rem .1rem 0;
           padding: .2rem 1.5rem .2rem .5rem;
           position: relative;
 

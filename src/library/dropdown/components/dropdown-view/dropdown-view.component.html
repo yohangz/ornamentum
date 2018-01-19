@@ -33,7 +33,7 @@
       <li *ngIf="!props.dropdown.currentItemCount" class="ng-dropdown-item empty">{{props.dropdown.translations.searchEmptyResult}}</li>
       <ng-container *ngIf="props.dropdown.groupByField">
         <ng-container *ngFor="let groupedItem of props.dropdown._groupedItems">
-          <li *ngIf="props.dropdown.hasVisibleItems(groupedItem.items)">{{groupedItem.groupName}}</li>
+          <li *ngIf="props.dropdown.hasVisibleItems(groupedItem.items)" class="ng-dropdown-group-heading">{{groupedItem.groupName}}</li>
           <ng-container *ngFor="let option of groupedItem.items">
             <li (click)="props.dropdown.setSelected(option)" *ngIf="option.filter" [class.disabled]="option.disabled">
               <a role="menuitem">

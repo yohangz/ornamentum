@@ -62,7 +62,6 @@
         padding: 1rem;
         position: absolute;
         width: 100%;
-        height: 100%;
         text-align: left;
         top: 0;
         z-index: 10001;
@@ -124,6 +123,12 @@
             margin: .5rem 0;
             padding: 0;
             overflow: hidden;
+          }
+
+          &.ng-dropdown-group-heading {
+            background: $generated-context-background;
+            font-weight: 700;
+            padding: .1rem .3rem;
           }
         }
 
