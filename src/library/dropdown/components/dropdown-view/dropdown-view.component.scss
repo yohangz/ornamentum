@@ -98,13 +98,33 @@
             overflow-y: auto;
             overflow-x: hidden;
             padding: .5rem;
+
+            li {
+
+              &.ng-dropdown-group-heading {
+                border-bottom: .05rem solid;
+                border-color: $generated-context-background;
+                cursor: default;
+                font-weight: 700;
+                margin: .3rem 0;
+                padding: .1rem .3rem;
+
+                &:hover {
+                  background: none;
+                }
+              }
+
+              &:hover {
+                background: $generated-context-background;
+              }
+            }
           }
         }
 
 
         li {
           @include font-size(.8, 1);
-          padding: .25rem 0;
+          padding: .25rem;
           cursor: pointer;
 
           a {
@@ -125,11 +145,7 @@
             overflow: hidden;
           }
 
-          &.ng-dropdown-group-heading {
-            background: $generated-context-background;
-            font-weight: 700;
-            padding: .1rem .3rem;
-          }
+
         }
 
         .ng-dropdown-show-more {
