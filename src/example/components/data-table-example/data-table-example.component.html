@@ -505,6 +505,7 @@
   <ng-data-table-column
     [width]="firstColConf.width"
     [field]="'id'"
+    [filterMenuPosition]="MenuPosition.BOTTOM_LEFT"
     [title]="firstColConf.title"
     [sortable]="firstColConf.sortable"
     [filterable]="firstColConf.filterable"
@@ -523,6 +524,7 @@
     [enableMultiSelectFilter]="initialColumnConf.multiSelectFilter2"
     [filterPlaceholder]="secondColConf.filterPlaceholder"
     [visible]="secondColConf.visible">
+
   </ng-data-table-column>
   <ng-data-table-column
     [width]="thirdColConf.width"
@@ -531,9 +533,24 @@
     [sortable]="thirdColConf.sortable"
     [filterable]="thirdColConf.filterable"
     [resizable]="thirdColConf.resizable"
-    [enableMultiSelectFilter]="initialColumnConf.multiSelectFilter3"
+    [enableMultiSelectFilter]="true"
     [filterPlaceholder]="thirdColConf.filterPlaceholder"
     [visible]="thirdColConf.visible">
+    <ng-template #ngFilterTemplate let-column="column" let-onFilter="onFilter">
+      <ng-dropdown
+        [items]="column.filterOptions"
+        [totalItemCount]="column.filterOptions.length"
+        [menuPosition]="column.filterMenuPosition"
+        [(ngModel)]="column.filter"
+        [filterable]="true"
+        [multiSelectable]="true"
+        [showSelectedOptionRemove]="false"
+        [showSelectAll]="true"
+        [triggerSelectChangeOnInit]="false"
+        [displaySelectedLimit]="column.displaySelectedLimit"
+        (onSelectChange)="onFilter.emit({ column: column, filter: column.filter })">
+      </ng-dropdown>
+    </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
     [width]="forthColConf.width"

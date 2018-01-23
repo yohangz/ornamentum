@@ -9,6 +9,7 @@ import {
   FilterOption, DataRow
 } from '../../models/data-table.model';
 import { SortOrder } from '../../models/data-table-sort-order.enum';
+import { MenuPosition } from '../../../dropdown/models/menu-position.enum';
 
 /**
  * Data table column component.
@@ -208,6 +209,13 @@ export class DataTableColumnComponent implements OnInit {
    */
   @Input()
   public displaySelectedLimit = 1;
+
+  /**
+   * Filter menu position
+   * @type {MenuPosition} Menu position
+   */
+  @Input()
+  public filterMenuPosition: MenuPosition = MenuPosition.BOTTOM_LEFT;
 
   public filterOptions: FilterOption[] = [];
 

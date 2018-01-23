@@ -9,6 +9,7 @@ import {
 
 import { DataStorageService } from '../../services/data-storage.service';
 import { DataRow } from '../../../library/data-table/models/data-table.model';
+import { MenuPosition } from '../../../library';
 
 declare function require(url: string);
 
@@ -36,6 +37,8 @@ export interface ColumnConf {
   styleUrls: ['./data-table-example.component.scss']
 })
 export class DataTableExampleComponent {
+  public MenuPosition = MenuPosition;
+
   private static tableConfigurationStorageKeyName = 'app_table_init_conf';
   private static columnConfigurationStorageKeyName = 'app_column_init_conf';
 
