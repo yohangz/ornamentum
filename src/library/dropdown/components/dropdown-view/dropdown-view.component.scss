@@ -99,7 +99,14 @@
             overflow-x: hidden;
             padding: .5rem;
 
+
             li {
+
+              margin-bottom: .05rem;
+
+              &.ng-item-selected {
+                background: $generated-context-background;
+              }
 
               &.ng-dropdown-group-heading {
                 border-bottom: .05rem solid;
@@ -116,6 +123,16 @@
 
               &:hover {
                 background: $generated-context-background;
+              }
+            }
+
+            &.ng-milti-selectable {
+
+              li {
+
+                &.ng-item-selected {
+                  background: none;
+                }
               }
             }
           }
