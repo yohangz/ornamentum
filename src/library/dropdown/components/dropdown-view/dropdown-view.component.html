@@ -38,7 +38,7 @@
             <li (click)="props.dropdown.setSelected(option)" *ngIf="option.filter" [class.disabled]="option.disabled">
               <a role="menuitem">
                 <input type="checkbox" class="checkbox-input" [checked]="props.dropdown.isSelected(option)" [disabled]="option.disabled" *ngIf="props.dropdown.multiSelectable"/>
-                <span>{{option.text}}</span>
+                <span [class.ng-item-selected]="props.dropdown.isSelected(option)">{{option.text}}</span>
               </a>
             </li>
           </ng-container>
@@ -49,7 +49,7 @@
           <li (click)="props.dropdown.setSelected(option)" *ngIf="option.filter">
             <a role="menuitem">
               <input type="checkbox" class="checkbox-input" [checked]="props.dropdown.isSelected(option)" [disabled]="option.disabled" *ngIf="props.dropdown.multiSelectable"/>
-              <span>{{option.text}}{{option.disabled}}</span>
+              <span [class.ng-item-selected]="props.dropdown.isSelected(option)">{{option.text}}{{option.disabled}}</span>
             </a>
           </li>
         </ng-container>
