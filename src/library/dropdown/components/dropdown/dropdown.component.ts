@@ -597,8 +597,11 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @returns {boolean}
    */
   public isSelected(option: DropdownItem): boolean {
-    const selectedId = this._selectedOptions.find(selectedOption => selectedOption.id === option.id);
-    return !!selectedId;
+    if (this.multiSelectable) {
+      return !!this._selectedOptions.find(selectedOption => selectedOption.id === option.id);
+    }
+
+    return this._selectedOption && option.id === this._selectedOption.id;
   }
 
   /**
