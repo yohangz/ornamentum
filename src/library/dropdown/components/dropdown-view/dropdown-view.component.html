@@ -29,16 +29,16 @@
       <li class="ng-dropdown-divider divider"></li>
     </ul>
 
-    <ul class="ng-dropdown-item-container" [style.height]="props.dropdown.menuHeight - 135 | px" (scroll)="props.dropdown.loadOnScroll ? props.dropdown.checkScrollPosition($event) : null" >
+    <ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="props.dropdown.multiSelectable" [style.height]="props.dropdown.menuHeight - 135 | px" (scroll)="props.dropdown.loadOnScroll ? props.dropdown.checkScrollPosition($event) : null" >
       <li *ngIf="!props.dropdown.currentItemCount" class="ng-dropdown-item empty">{{props.dropdown.translations.searchEmptyResult}}</li>
       <ng-container *ngIf="props.dropdown.groupByField">
         <ng-container *ngFor="let groupedItem of props.dropdown._groupedItems">
           <li *ngIf="props.dropdown.hasVisibleItems(groupedItem.items)" class="ng-dropdown-group-heading">{{groupedItem.groupName}}</li>
           <ng-container *ngFor="let option of groupedItem.items">
-            <li (click)="props.dropdown.setSelected(option)" *ngIf="option.filter" [class.disabled]="option.disabled">
+            <li (click)="props.dropdown.setSelected(option)" *ngIf="option.filter" [class.disabled]="option.disabled" [class.ng-item-selected]="props.dropdown.isSelected(option)">
               <a role="menuitem">
                 <input type="checkbox" class="checkbox-input" [checked]="props.dropdown.isSelected(option)" [disabled]="option.disabled" *ngIf="props.dropdown.multiSelectable"/>
-                <span [class.ng-item-selected]="props.dropdown.isSelected(option)">{{option.text}}</span>
+                <span>{{option.text}}</span>
               </a>
             </li>
           </ng-container>
@@ -46,10 +46,10 @@
       </ng-container>
       <ng-container *ngIf="!props.dropdown.groupByField">
         <ng-container *ngFor="let option of props.dropdown._items">
-          <li (click)="props.dropdown.setSelected(option)" *ngIf="option.filter">
+          <li (click)="props.dropdown.setSelected(option)" *ngIf="option.filter" [class.ng-item-selected]="props.dropdown.isSelected(option)">
             <a role="menuitem">
               <input type="checkbox" class="checkbox-input" [checked]="props.dropdown.isSelected(option)" [disabled]="option.disabled" *ngIf="props.dropdown.multiSelectable"/>
-              <span [class.ng-item-selected]="props.dropdown.isSelected(option)">{{option.text}}{{option.disabled}}</span>
+              <span>{{option.text}}{{option.disabled}}</span>
             </a>
           </li>
         </ng-container>
