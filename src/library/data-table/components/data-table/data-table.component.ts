@@ -744,7 +744,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
     this.customFilterSubscription = this.customFilterEventEmitter
       .subscribe((filterEventArgs: FilterEventArgs) => {
         filterEventArgs.column.filter = filterEventArgs.filter;
-        this.dataFetchStream.next(false);
+        this.filterData();
       });
   }
 
