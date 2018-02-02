@@ -622,7 +622,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   }
 
   /**
-   * Init default values.
+   * Init defaultdefault values.
    */
   private initDefaultValues(): void {
     this.indexColumnVisible = this.showIndexColumn;
@@ -687,7 +687,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
         field: column.filterField || column.field,
         filterValue: column.filter,
         filterExpression: column.filterExpression,
-        enableMultiSelectFilter: column.enableMultiSelectFilter
+        showDropdownFilter: column.showDropdownFilter
       };
     });
 
@@ -761,7 +761,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   private fetchFilterOptions(): void {
     this.columns.forEach((column) => {
-      if (column.enableMultiSelectFilter) {
+      if (column.showDropdownFilter) {
         this.setFilterOptions(column);
       }
     });

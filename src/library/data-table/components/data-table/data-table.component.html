@@ -47,20 +47,28 @@
                 <ng-container *ngIf="column.filterable">
                   <span *ngIf="column.filterTemplate" [ngTemplateOutlet]="column.filterTemplate" [ngTemplateOutletContext]="{ column: column, onFilter: customFilterEventEmitter }"></span>
                   <ng-container *ngIf="!column.filterTemplate">
-                    <input *ngIf="!column.enableMultiSelectFilter" type="text" #filterTextBox [(ngModel)]="column.filter" (keyup)="filterData($event)" [placeholder]="column.filterPlaceholder"/>
+                    <input *ngIf="!column.showDropdownFilter" type="text" #filterTextBox [(ngModel)]="column.filter" (keyup)="filterData($event)" [placeholder]="column.filterPlaceholder"/>
                     <ng-dropdown
-                      *ngIf="column.enableMultiSelectFilter"
+                      *ngIf="column.showDropdownFilter"
                       [relativeParentElement]="relativeParentElement"
                       [items]="column.filterOptions"
                       [totalItemCount]="column.filterOptions.length"
-                      [menuPosition]="column.filterMenuPosition"
                       [(ngModel)]="column.filter"
-                      [filterable]="true"
-                      [multiSelectable]="true"
-                      [showSelectedOptionRemove]="false"
-                      [showSelectAll]="true"
+
+                      [menuPosition]="column.dropdownFilterMenuPosition"
+                      [filterable]="column.dropdownFilterSearchable"
+                      [filterDebounceTime]="column.dropdownFilterSearchDebounceTime"
+                      [filterDebounce]="column.dropdownFilterSearchDebounce"
+                      [multiSelectable]="column.dropdownFilterMultiSelectable"
+                      [showSelectedOptionRemove]="column.dropdownFilterShowSelectedOptionRemove"
+                      [showSelectAll]="column.dropdownFilterShowSelectAll"
+                      [displaySelectedLimit]="column.dropdownFilterDisplaySelectedLimit"
+                      [groupByField]="column.dropdownFilterGroupByField"
+                      [triggerOncePerSelectAll]="column.dropdownFilterTriggerChangeOncePerSelectAll"
+                      [menuHeight]="column.dropdownFilterMenuHeight"
+                      [menuWidth]="column.dropdownFilterMenuWidth"
+
                       [triggerSelectChangeOnInit]="false"
-                      [displaySelectedLimit]="column.displaySelectedLimit"
                       (onSelectChange)="filterData()">
                     </ng-dropdown>
                   </ng-container>
