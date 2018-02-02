@@ -10,6 +10,7 @@ import {
 } from '../../models/data-table.model';
 import { SortOrder } from '../../models/data-table-sort-order.enum';
 import { MenuPosition } from '../../../dropdown/models/menu-position.enum';
+import { DataTableConfigService } from '../../services/data-table-config.service';
 
 /**
  * Data table column component.
@@ -121,7 +122,7 @@ export class DataTableColumnComponent implements OnInit {
 
   /**
    * Custom filter field mapper.
-   * Used to extract filter field when enableMultiSelectFilter option is true.
+   * Used to extract filter field when showDropdownFilter option is true.
    * @default undefined
    * @type FilterFieldMapperCallback
    */
@@ -130,7 +131,7 @@ export class DataTableColumnComponent implements OnInit {
 
   /**
    * Filter value formatter.
-   * Used to map filter multi select dropdown values when enableMultiSelectFilter option is true.
+   * Used to map filter multi select dropdown values when showDropdownFilter option is true.
    * @default undefined
    * @type FilterValueFormatterCallback
    */
@@ -200,15 +201,43 @@ export class DataTableColumnComponent implements OnInit {
    * @type boolean
    */
   @Input()
-  public enableMultiSelectFilter = false;
+  public showDropdownFilter = false;
 
-  /**
-   * Enable displaying the number of item count selected from the column drop down.
-   * @default 1
-   * @type number
-   */
   @Input()
-  public displaySelectedLimit = 1;
+  public dropdownFilterMenuPosition: MenuPosition;
+
+  @Input()
+  public dropdownFilterMultiSelectable: boolean;
+
+  @Input()
+  public dropdownFilterSearchable: boolean;
+
+  @Input()
+  public dropdownFilterSearchDebounceTime: number;
+
+  @Input()
+  public dropdownFilterSearchDebounce: boolean;
+
+  @Input()
+  public dropdownFilterShowSelectAll: boolean;
+
+  @Input()
+  public dropdownFilterDisplaySelectedLimit: number;
+
+  @Input()
+  public dropdownFilterGroupByField: string;
+
+  @Input()
+  public dropdownFilterTriggerChangeOncePerSelectAll: boolean;
+
+  @Input()
+  public dropdownFilterShowSelectedOptionRemove: boolean;
+
+  @Input()
+  public dropdownFilterMenuWidth: number;
+
+  @Input()
+  public dropdownFilterMenuHeight: number;
 
   /**
    * Filter menu position
@@ -216,6 +245,30 @@ export class DataTableColumnComponent implements OnInit {
    */
   @Input()
   public filterMenuPosition: MenuPosition = MenuPosition.BOTTOM_LEFT;
+
+  constructor(private dataTableConfigService: DataTableConfigService) {
+    // Table column config
+    this.sortable = dataTableConfigService.sortable;
+    this._sortOrder = dataTableConfigService.sortOrder;
+    this.filterable = dataTableConfigService.filterable;
+    this.filterPlaceholder = dataTableConfigService.filterPlaceholder;
+    this.resizable = dataTableConfigService.columnResizable;
+    this.visible = dataTableConfigService.columnVisible;
+    this.showDropdownFilter = dataTableConfigService.showDropdownFilter;
+
+    this.dropdownFilterMenuPosition = dataTableConfigService.dropdownFilterMenuPosition;
+    this.dropdownFilterMultiSelectable = dataTableConfigService.dropdownFilterMultiSelectable;
+    this.dropdownFilterSearchable = dataTableConfigService.dropdownFilterSearchable;
+    this.dropdownFilterSearchDebounceTime = dataTableConfigService.dropdownFilterSearchDebounceTime;
+    this.dropdownFilterSearchDebounce = dataTableConfigService.dropdownFilterSearchDebounce;
+    this.dropdownFilterShowSelectAll = dataTableConfigService.dropdownFilterShowSelectAll;
+    this.dropdownFilterDisplaySelectedLimit = dataTableConfigService.dropdownFilterDisplaySelectedLimit;
+    this.dropdownFilterGroupByField = dataTableConfigService.dropdownFilterGroupByField;
+    this.dropdownFilterTriggerChangeOncePerSelectAll = dataTableConfigService.dropdownFilterTriggerChangeOncePerSelectAll;
+    this.dropdownFilterShowSelectedOptionRemove = dataTableConfigService.dropdownFilterShowSelectedOptionRemove;
+    this.dropdownFilterMenuWidth = dataTableConfigService.dropdownFilterMenuWidth;
+    this.dropdownFilterMenuHeight = dataTableConfigService.dropdownFilterMenuHeight;
+  }
 
   public filterOptions: FilterOption[] = [];
 
