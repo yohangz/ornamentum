@@ -145,7 +145,7 @@ export interface FilterColumn {
   field: string;
   filterValue: any;
   filterExpression: FilterExpressionCallback;
-  enableMultiSelectFilter: boolean;
+  showDropdownFilter: boolean;
 }
 
 export interface ColumnSelectorProperty {
