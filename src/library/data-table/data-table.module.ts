@@ -14,11 +14,12 @@ import { ScrollPositionDirective } from './directives/scroll-position.directive'
 import { ScrollElementDirective } from './directives/scroll-element.directive';
 import { ElementWidthDirective } from './directives/element-width.directive';
 
-import { DataTableConfigService } from './services/data-table-config.service';
+import { DATA_TABLE_CONFIG, DataTableConfigService } from './services/data-table-config.service';
 import { DataTableResourceFactoryService } from './services/data-table-resource-factory.service';
 
 import { DropdownModule } from '../dropdown';
 import { UtilityModule } from '../utility';
+import { DataTableConfig } from './models/data-table-config.model';
 
 const COMPONENTS = [
   DataTableHeaderComponent,
@@ -66,10 +67,16 @@ const PROVIDERS = [
   ]
 })
 export class DataTableModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(dataTableConfig?: DataTableConfig): ModuleWithProviders {
     return {
       ngModule: DataTableModule,
-      providers: [DataTableConfigService]
+      providers: [
+        {
+          provide: DATA_TABLE_CONFIG,
+          useValue: dataTableConfig
+        },
+        DataTableConfigService
+      ]
     };
   }
 }
