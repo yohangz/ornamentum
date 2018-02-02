@@ -1,7 +1,10 @@
 import { StorageMode } from './data-table-storage-mode.enum';
 import { DataTableTranslations } from './data-table.model';
+import { SortOrder } from './data-table-sort-order.enum';
+import { MenuPosition } from '../../dropdown/models/menu-position.enum';
 
 export interface DataTableConfig {
+  // Table base config
   persistTableState?: boolean;
   storageMode?: StorageMode;
   multiColumnSortable?: boolean;
@@ -33,4 +36,27 @@ export interface DataTableConfig {
   offset?: number;
   limit?: number;
   translations?: DataTableTranslations
+
+  // Table column config
+  sortable?: boolean;
+  sortOrder?: SortOrder;
+  filterable?: boolean;
+  filterPlaceholder?: string;
+  columnResizable?: boolean;
+  columnVisible?: boolean;
+  showDropdownFilter?: boolean;
+
+  // Column dropdown filter options
+  dropdownFilterMenuPosition?: MenuPosition;
+  dropdownFilterMultiSelectable?: boolean;
+  dropdownFilterSearchable?: boolean;
+  dropdownFilterSearchDebounceTime?: number;
+  dropdownFilterSearchDebounce?: boolean;
+  dropdownFilterShowSelectAll?: boolean;
+  dropdownFilterGroupByField?: string;
+  dropdownFilterDisplaySelectedLimit?: number;
+  dropdownFilterTriggerChangeOncePerSelectAll?: boolean;
+  dropdownFilterShowSelectedOptionRemove?: boolean;
+  dropdownFilterMenuWidth?: number;
+  dropdownFilterMenuHeight?: number;
 }
