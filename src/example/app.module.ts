@@ -26,7 +26,9 @@ const COMPONENTS = [
   imports: [
     BrowserModule,
     FormsModule,
-    DataTableModule.forRoot(),
+    DataTableModule.forRoot({
+      showColumnSelector: true
+    }),
     DropdownModule.forRoot(),
     AppRoutingModule
   ],
