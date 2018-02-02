@@ -3,6 +3,8 @@ import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { DataTableTranslations } from '../models/data-table.model';
 import { DataTableConfig } from '../models/data-table-config.model';
 import { StorageMode } from '../models/data-table-storage-mode.enum';
+import { MenuPosition } from '../../dropdown/models/menu-position.enum';
+import { SortOrder } from '../models/data-table-sort-order.enum';
 
 export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableConfig');
 
@@ -11,14 +13,15 @@ export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableC
  */
 @Injectable()
 export class DataTableConfigService implements DataTableConfig {
+  // Table base config
   public persistTableState = false;
   public storageMode = StorageMode.SESSION;
   public multiColumnSortable = false;
   public showHeader = false;
   public title = '';
-  public minHeight: string | number = undefined;
-  public minWidth: string | number = undefined;
-  public contentHeight:  string | number = undefined;
+  public minHeight = undefined;
+  public minWidth = undefined;
+  public contentHeight = undefined;
   public pageable = false;
   public showIndexColumn = false;
   public indexColumnTitle = '#';
@@ -50,6 +53,29 @@ export class DataTableConfigService implements DataTableConfig {
     paginationRange: 'Results',
     selectColumn: 'select'
   };
+
+  // Table column config
+  public sortable = false;
+  public sortOrder = SortOrder.NONE;
+  public filterable = false;
+  public filterPlaceholder = '';
+  public columnResizable = false;
+  public columnVisible = true;
+  public showDropdownFilter = false;
+
+  // Column dropdown filter options
+  public dropdownFilterMenuPosition = MenuPosition.BOTTOM_LEFT;
+  public dropdownFilterMultiSelectable = true;
+  public dropdownFilterSearchable = true;
+  public dropdownFilterSearchDebounceTime = 500;
+  public dropdownFilterSearchDebounce = true;
+  public dropdownFilterShowSelectAll = true;
+  public dropdownFilterDisplaySelectedLimit = 1;
+  public dropdownFilterGroupByField = undefined;
+  public dropdownFilterTriggerChangeOncePerSelectAll = true;
+  public dropdownFilterShowSelectedOptionRemove = true;
+  public dropdownFilterMenuWidth = 320;
+  public dropdownFilterMenuHeight = 250;
 
   constructor(@Inject(DATA_TABLE_CONFIG) private dataTableConfig: DataTableConfig) {
       if (dataTableConfig) {
