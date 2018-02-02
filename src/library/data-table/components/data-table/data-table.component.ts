@@ -37,6 +37,7 @@ import { StorageMode } from '../../models/data-table-storage-mode.enum';
 import { DataTableStateService } from '../../services/data-table-state.service';
 
 import { DragAndDropService, GlobalRefService } from '../../../utility';
+import { DataTableConfigService } from '../../services/data-table-config.service';
 
 /**
  * Data table component.
@@ -53,19 +54,11 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   private _items: any[] = [];
   private _selectAllCheckbox = false;
-  private _offset = 0;
-  private _limit = 10;
+  private _offset: number;
+  private _limit: number;
   private resizeInProgress = false;
   private isHeardReload = false;
-  private _translations: DataTableTranslations = {
-    expandColumn: 'expand',
-    indexColumn: 'index',
-    noDataMessageHeader: 'Whoops!',
-    noDataMessageBody: 'No data to display. Added data will appear here.',
-    paginationLimit: 'Limit',
-    paginationRange: 'Results',
-    selectColumn: 'select'
-  };
+  private _translations: DataTableTranslations;
 
   public scrollPosition: number;
 
@@ -114,7 +107,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * On row selected state change event handler.
-   * @default undefined
    * @type {EventEmitter<any>}
    */
   @Output()
@@ -182,7 +174,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * On filter value extract event handler callback.
-   * @default undefined
    * @type {FilterValueExtractCallback}
    */
   @Input()
@@ -190,7 +181,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * On group field extract event handler callback.
-   * @default default empty extractor
    * @type {GroupFieldExtractorCallback}
    */
   @Input()
@@ -211,7 +201,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @type {boolean}
    */
   @Input()
-  public persistTableState = false;
+  public persistTableState: boolean;
 
   /**
    * Storage more to persist table state.
@@ -226,28 +216,25 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @type {boolean}
    */
   @Input()
-  public multiColumnSortable = false;
+  public multiColumnSortable: boolean;
 
   /**
    * Show header if true.
-   * @default true
    * @type {boolean}
    */
   @Input()
-  public showHeader = true;
+  public showHeader: boolean;
 
   /**
    * Header title text.
-   * @default empty
    * @type {string}
    */
   @Input()
-  public title = '';
+  public title: string;
 
   /**
    * Table min height
    * Used to set overlay height when not pageable.
-   * @default undefined
    * @type {string|number}
    */
   @Input()
@@ -256,7 +243,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   /**
    * Table min width.
    * Used to set min width of the table. Useful to build a mobile responsive grid without scattering data.
-   * @default undefined
    * @type {string|number}
    */
   @Input()
@@ -265,7 +251,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   /**
    * Height of the table content.
    * This will enable vertical scrolling.
-   * @default empty
    * @type {string|number}
    */
   @Input()
@@ -273,79 +258,69 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * Pageable if true.
-   * @default true
    * @type {boolean}
    */
   @Input()
-  public pageable = true;
+  public pageable: boolean;
 
   /**
    * Show auto generated index counter column.
-   * @default true
    * @type {boolean}
    */
   @Input()
-  public showIndexColumn = true;
+  public showIndexColumn: boolean;
 
   /**
-   * Index column title text
-   * @default empty
+   * Index column title text.
    * @type {string}
    */
   @Input()
-  public indexColumnTitle = '';
+  public indexColumnTitle: string;
 
   /**
    * Row selectable if true (Show row select checkbox).
-   * @default false
    * @type {rowSelectable}
    */
   @Input()
-  public rowSelectable = false;
+  public rowSelectable: boolean;
 
   /**
    * Multi row selectable if true.
-   * @default true
    * @type {boolean}
    */
   @Input()
-  public multiRowSelectable = true;
+  public multiRowSelectable: boolean;
 
   /**
    * Show substitute rows (Only applicable when paging is enabled).
-   * @default true
    * @type {boolean}
    */
   @Input()
-  public showSubstituteRows = true;
+  public showSubstituteRows: boolean;
 
   /**
    * Enable expandable rows.
-   * @default false
    * @type {boolean}
    */
   @Input()
-  public expandableRows = false;
+  public expandableRows: boolean;
 
   /**
    * Select checkbox on row click.
-   * @default false
    * @type {boolean}
    */
   @Input()
-  public selectOnRowClick = false;
+  public selectOnRowClick: boolean;
 
   /**
    * Expand table on row click.
-   * @default false
    * @type {boolean}
    */
   @Input()
-  public expandOnRowClick = false;
+  public expandOnRowClick: boolean;
 
   /**
    * Auto onDataLoad on init.
-   * @default true
    * @type {boolean}
    */
   @Input()
@@ -353,7 +328,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * Show loading spinner.
-   * @default false
    * @type {boolean}
    */
   @Input()
@@ -361,15 +335,13 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * Select tracked by (identifier from table data to track selected items uniquely)
-   * @default id
    * @type {string}
    */
   @Input()
-  public selectTrackBy = 'id';
+  public selectTrackBy: string;
 
   /**
    * Selected row (effective when multiRowSelectable false).
-   * @default undefined
    * @type {any}
    */
   @Input()
@@ -377,7 +349,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * Selected rows (effective when multiRowSelectable true).
-   * @default []
    * @type {Array}
    */
   @Input()
@@ -385,7 +356,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * Total item count in data source.
-   * @default undefined
    * @type {number}
    */
   @Input()
@@ -393,31 +363,27 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * Filter de-bounce time milliseconds.
-   * @default 500
    * @type {number}
    */
   @Input()
-  public filterDebounceTime = 500;
+  public filterDebounceTime: number;
 
   /**
    * Filter de-bounce enabled state.
-   * @default false
    * @type {boolean}
    */
   @Input()
-  public filterDebounce = false;
+  public filterDebounce: boolean;
 
   /**
    * Show refresh button.
-   * @default true
    * @type {boolean}
    */
   @Input()
-  public showRefreshButton = true;
+  public showRefreshButton: boolean;
 
   /**
    * Show column selector.
-   * @default true
    * @type {boolean}
    */
   @Input()
@@ -425,34 +391,34 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * Sets width for expander column.
-   * @default 30
    * @type {number | string}
    */
   @Input()
-  public expanderColumnWidth: number | string = 30;
+  public expanderColumnWidth: number | string;
 
   /**
    * Sets width for index column.
-   * @default 30
    * @type {string | number}
    */
   @Input()
-  public indexColumnWidth: number | string = 30;
+  public indexColumnWidth: number | string;
 
   /**
    * Sets width for selection column.
-   * @default 30
    * @type {string | number}
    */
   @Input()
-  public selectionColumnWidth: number | string = 30;
+  public selectionColumnWidth: number | string;
 
+  /**
+   * Relative parent element. Grid positioning relative to this element.
+   * @type {HTMLElement}
+   */
   @Input()
   public relativeParentElement: HTMLElement;
 
   /**
    * Template to display when data set is empty.
-   * @default default template
    * @type TemplateRef
    */
   @ContentChild('appDataTableNoRecords')
@@ -478,7 +444,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * Data table display text key translations.
-   * @default defaultTranslations
    * @type {DataTableTranslations}
    * @param {DataTableTranslations} data
    */
@@ -575,8 +540,39 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   constructor(private dragAndDropService: DragAndDropService,
               private dataTableStateService: DataTableStateService,
-              private globalRefService: GlobalRefService) {
-    this.dataTableStateService.storageMode = StorageMode.SESSION;
+              private globalRefService: GlobalRefService,
+              private dataTableConfigService: DataTableConfigService) {
+    this.persistTableState = dataTableConfigService.persistTableState;
+    this.storageMode = dataTableConfigService.storageMode;
+    this.multiColumnSortable = dataTableConfigService.multiColumnSortable;
+    this.showHeader = dataTableConfigService.showHeader;
+    this.title = dataTableConfigService.title;
+    this.minHeight = dataTableConfigService.minHeight;
+    this.minWidth = dataTableConfigService.minWidth;
+    this.contentHeight = dataTableConfigService.contentHeight;
+    this.pageable = dataTableConfigService.pageable;
+    this.showIndexColumn = dataTableConfigService.showIndexColumn;
+    this.indexColumnTitle = dataTableConfigService.indexColumnTitle;
+    this.rowSelectable = dataTableConfigService.rowSelectable;
+    this.multiRowSelectable = dataTableConfigService.multiRowSelectable;
+    this.showSubstituteRows = dataTableConfigService.showSubstituteRows;
+    this.expandableRows = dataTableConfigService.expandableRows;
+    this.selectOnRowClick = dataTableConfigService.selectOnRowClick;
+    this.expandOnRowClick = dataTableConfigService.expandOnRowClick;
+    this.autoFetch = dataTableConfigService.autoFetch;
+    this.showLoadingSpinner = dataTableConfigService.showLoadingSpinner;
+    this.selectTrackBy = dataTableConfigService.selectTrackBy;
+    this.filterDebounceTime = dataTableConfigService.filterDebounceTime;
+    this.filterDebounce = dataTableConfigService.filterDebounce;
+    this.showRefreshButton = dataTableConfigService.showRefreshButton;
+    this.showColumnSelector = dataTableConfigService.showColumnSelector;
+    this.expanderColumnWidth = dataTableConfigService.expanderColumnWidth;
+    this.indexColumnWidth = dataTableConfigService.indexColumnWidth;
+    this.selectionColumnWidth = dataTableConfigService.selectionColumnWidth;
+    this.relativeParentElement = dataTableConfigService.relativeParentElement;
+    this._offset = dataTableConfigService.offset;
+    this._limit = dataTableConfigService.limit;
+    this._translations = dataTableConfigService.translations;
   }
 
   /**
@@ -867,7 +863,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @param event Mouse click event argument object.
    */
   public rowClicked(row: DataRow, event: MouseEvent): void {
-    this.onRowClick.emit({ row, event });
+    this.onRowClick.emit({row, event});
   }
 
   /**
@@ -876,7 +872,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @param {MouseEvent} event event Mouse click event argument object.
    */
   public rowDoubleClicked(row: DataRow, event: MouseEvent): void {
-    this.onRowDoubleClick.emit({ row, event });
+    this.onRowDoubleClick.emit({row, event});
   }
 
   /**
@@ -886,7 +882,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @param {MouseEvent} event event event Mouse click event argument object.
    */
   public cellClicked(column: DataTableColumnComponent, row: DataRow, event: MouseEvent): void {
-    this.onCellClick.emit({ row, column, event });
+    this.onCellClick.emit({row, column, event});
   }
 
   /**
@@ -896,7 +892,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   public headerClicked(column: DataTableColumnComponent, event: MouseEvent): void {
     if (!this.resizeInProgress) {
-      this.onHeaderClick.emit({ column, event });
+      this.onHeaderClick.emit({column, event});
     } else {
       this.resizeInProgress = false; // this is because I can't prevent click from mousup of the drag end
     }
@@ -970,7 +966,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @return {Array<any>} Empty array with remaining item count size.
    */
   public getSubstituteItems(): {}[] {
-    return Array.from({ length: this.limit - this.items.length });
+    return Array.from({length: this.limit - this.items.length});
   }
 
   /**
@@ -1043,7 +1039,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
         });
 
         this.tableWidth = totalWidth;
-      },
+      }
     });
   }
 
@@ -1189,7 +1185,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
       return value ? Math.max(acc, value.length) : acc;
     }, 0) || 1;
 
-    const groupHolder = Array.from({ length: maxRows });
+    const groupHolder = Array.from({length: maxRows});
 
     return {
       rowCount: maxRows,
@@ -1219,6 +1215,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   }
 
   public get headerPadding(): number {
-    return this.contentHeight? this.globalRefService.scrollbarWidth: 0;
+    return this.contentHeight ? this.globalRefService.scrollbarWidth : 0;
   }
 }
