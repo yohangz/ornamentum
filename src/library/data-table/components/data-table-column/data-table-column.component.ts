@@ -10,6 +10,7 @@ import {
 } from '../../models/data-table.model';
 import { SortOrder } from '../../models/data-table-sort-order.enum';
 import { MenuPosition } from '../../../dropdown/models/menu-position.enum';
+
 import { DataTableConfigService } from '../../services/data-table-config.service';
 
 /**
@@ -35,11 +36,49 @@ export class DataTableColumnComponent implements OnInit {
   @ContentChild('ngFilterTemplate')
   private filterTemplate: TemplateRef<any>;
 
+  // Event handlers
+
+  /**
+   * Filter expression callback function.
+   * @type FilterExpressionCallback
+   */
+  @Input()
+  public filterExpression: FilterExpressionCallback;
+
+  /**
+   * Sort expression callback function.
+   * @type SortComparatorCallback
+   */
+  @Input()
+  public sortComparatorExpression: SortComparatorCallback;
+
+  /**
+   * Custom filter field mapper.
+   * Used to extract filter field when showDropdownFilter option is true.
+   * @type FilterFieldMapperCallback
+   */
+  @Input()
+  public filterFieldMapper: FilterFieldMapperCallback;
+
+  /**
+   * Filter value formatter.
+   * Used to map filter multi select dropdown values when showDropdownFilter option is true.
+   * @type FilterValueFormatterCallback
+   */
+  @Input()
+  public filterValueFormatter: FilterValueFormatterCallback;
+
+  /**
+   * Cell colour render event handler callback function.
+   * @type CellColourRenderCallback
+   */
+  @Input()
+  public onCellColorRender: CellColourRenderCallback;
+
   // Inputs
 
   /**
    * Column title.
-   * @default undefined
    * @type string
    */
   @Input()
@@ -47,7 +86,6 @@ export class DataTableColumnComponent implements OnInit {
 
   /**
    * Sortable state.
-   * @default false
    * @type boolean
    */
   @Input()
@@ -73,7 +111,6 @@ export class DataTableColumnComponent implements OnInit {
 
   /**
    * Filterable state.
-   * @default false
    * @type boolean
    */
   @Input()
@@ -81,7 +118,6 @@ export class DataTableColumnComponent implements OnInit {
 
   /**
    * Resizeable state.
-   * @default false
    * @type boolean
    */
   @Input()
@@ -89,7 +125,6 @@ export class DataTableColumnComponent implements OnInit {
 
   /**
    * Data table item mapping field name.
-   * @default undefined
    * @type string
    */
   @Input()
@@ -98,65 +133,20 @@ export class DataTableColumnComponent implements OnInit {
   /**
    * Filter field identifier.
    * Fallback to field if not provided.
-   * @default undefined
    * @type string
    */
   @Input()
   public filterField: string;
 
   /**
-   * Filter expression callback function.
-   * @default undefined
-   * @type FilterExpressionCallback
-   */
-  @Input()
-  public filterExpression: FilterExpressionCallback;
-
-  /**
-   * Sort expression callback function.
-   * @default undefined
-   * @type SortComparatorCallback
-   */
-  @Input()
-  public sortComparatorExpression: SortComparatorCallback;
-
-  /**
-   * Custom filter field mapper.
-   * Used to extract filter field when showDropdownFilter option is true.
-   * @default undefined
-   * @type FilterFieldMapperCallback
-   */
-  @Input()
-  public filterFieldMapper: FilterFieldMapperCallback;
-
-  /**
-   * Filter value formatter.
-   * Used to map filter multi select dropdown values when showDropdownFilter option is true.
-   * @default undefined
-   * @type FilterValueFormatterCallback
-   */
-  @Input()
-  public filterValueFormatter: FilterValueFormatterCallback;
-
-  /**
-   * Column title space separated CSS class names
-   * @default undefined
+   * Column title space separated CSS class names.
    * @type string
    */
   @Input()
   public styleClass: string;
 
   /**
-   * Cell colour render event handler callback function.
-   * @default undefined
-   * @type CellColourRenderCallback
-   */
-  @Input()
-  public onCellColorRender: CellColourRenderCallback;
-
-  /**
    * Column width.
-   * @default undefined
    * @type string | number
    */
   @Input()
@@ -164,7 +154,6 @@ export class DataTableColumnComponent implements OnInit {
 
   /**
    * Visible state.
-   * @default true
    * @type boolean
    */
   @Input()
@@ -172,7 +161,6 @@ export class DataTableColumnComponent implements OnInit {
 
   /**
    * Filter placeholder value.
-   * @default empty string
    * @type string
    */
   @Input()
@@ -180,7 +168,6 @@ export class DataTableColumnComponent implements OnInit {
 
   /**
    * Filter value.
-   * @default undefined
    * @type any
    */
   @Input()
@@ -188,7 +175,6 @@ export class DataTableColumnComponent implements OnInit {
 
   /**
    * Resize minimum limit.
-   * @default undefined
    * @type number
    */
   @Input()
@@ -196,55 +182,95 @@ export class DataTableColumnComponent implements OnInit {
 
   /**
    * Enable multi select filtering.
-   * Show multi select dropdown for filtering.
-   * @default false
+   * Show multi select dropdown for filtering.\
    * @type boolean
    */
   @Input()
   public showDropdownFilter = false;
 
+  /**
+   * Dropdown filter menu position.
+   * @type MenuPosition
+   */
   @Input()
   public dropdownFilterMenuPosition: MenuPosition;
 
+  /**
+   * Dropdown filter multi selectable state.
+   * @type boolean
+   */
   @Input()
   public dropdownFilterMultiSelectable: boolean;
 
+  /**
+   * Dropdown filter searchable state.
+   * @type boolean
+   */
   @Input()
   public dropdownFilterSearchable: boolean;
 
+  /**
+   * Dropdown filter search debounce time.
+   * @type number
+   */
   @Input()
   public dropdownFilterSearchDebounceTime: number;
 
+  /**
+   * Dropdown filter  search debounced.
+   * @type boolean
+   */
   @Input()
   public dropdownFilterSearchDebounce: boolean;
 
+  /**
+   * Dropdown filter show select all checkbox.
+   * @type boolean
+   */
   @Input()
   public dropdownFilterShowSelectAll: boolean;
 
+  /**
+   * Dropdown filter selected items display limit.
+   * @type number
+   */
   @Input()
   public dropdownFilterDisplaySelectedLimit: number;
 
+  /**
+   * Dropdown filter group by field.
+   * @type string
+   */
   @Input()
   public dropdownFilterGroupByField: string;
 
+  /**
+   * Dropdown filter trigger select change once per select all state.
+   * @type boolean
+   */
   @Input()
   public dropdownFilterTriggerChangeOncePerSelectAll: boolean;
 
+  /**
+   * Dropdown filter show selected option remove button.
+   * @type boolean
+   */
   @Input()
   public dropdownFilterShowSelectedOptionRemove: boolean;
 
+  /**
+   * Dropdown filter drop menu width.
+   * @type number
+   */
   @Input()
   public dropdownFilterMenuWidth: number;
 
-  @Input()
-  public dropdownFilterMenuHeight: number;
-
   /**
-   * Filter menu position
-   * @type {MenuPosition} Menu position
+   * Dropdown filter drop menu height.
+   * @type number
    */
   @Input()
-  public filterMenuPosition: MenuPosition = MenuPosition.BOTTOM_LEFT;
+  public dropdownFilterMenuHeight: number;
 
   constructor(private dataTableConfigService: DataTableConfigService) {
     // Table column config
