@@ -1,10 +1,10 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
 
-import { DataTableTranslations } from '../models/data-table.model';
+import { DataTableTranslations } from '../models/data-tabl-translations.model';
 import { DataTableConfig } from '../models/data-table-config.model';
-import { StorageMode } from '../models/data-table-storage-mode.enum';
+import { StorageMode } from '../models/storage-mode.enum';
 import { MenuPosition } from '../../dropdown/models/menu-position.enum';
-import { SortOrder } from '../models/data-table-sort-order.enum';
+import { SortOrder } from '../models/sort-order.enum';
 
 export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableConfig');
 
@@ -70,7 +70,7 @@ export class DataTableConfigService implements DataTableConfig {
   public dropdownFilterSearchDebounceTime = 500;
   public dropdownFilterSearchDebounce = true;
   public dropdownFilterShowSelectAll = true;
-  public dropdownFilterDisplaySelectedLimit = 1;
+  public dropdownFilterWrapDisplaySelectLimit = 1;
   public dropdownFilterGroupByField = undefined;
   public dropdownFilterTriggerChangeOncePerSelectAll = true;
   public dropdownFilterShowSelectedOptionRemove = true;
