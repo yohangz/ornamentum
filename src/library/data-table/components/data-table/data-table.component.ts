@@ -95,6 +95,13 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   @ContentChild('ngDataTableExpand')
   public expandTemplate: TemplateRef<any>;
 
+  /**
+   * Template to display when data set is empty.
+   * @type TemplateRef
+   */
+  @ContentChild('appDataTableNoRecords')
+  public noRecordsTemplate: TemplateRef<any>;
+
   // Event handlers
 
   /**
@@ -323,14 +330,14 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @type {boolean}
    */
   @Input()
-  public autoFetch = true;
+  public autoFetch: boolean;
 
   /**
    * Show loading spinner.
    * @type {boolean}
    */
   @Input()
-  public showLoadingSpinner = false;
+  public showLoadingSpinner: boolean;
 
   /**
    * Select tracked by (identifier from table data to track selected items uniquely)
@@ -386,7 +393,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @type {boolean}
    */
   @Input()
-  public showColumnSelector = true;
+  public showColumnSelector: boolean;
 
   /**
    * Sets width for expander column.
@@ -415,13 +422,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   @Input()
   public relativeParentElement: HTMLElement;
-
-  /**
-   * Template to display when data set is empty.
-   * @type TemplateRef
-   */
-  @ContentChild('appDataTableNoRecords')
-  public noRecordsTemplate: TemplateRef<any>;
 
   /**
    * Set data table items array.
