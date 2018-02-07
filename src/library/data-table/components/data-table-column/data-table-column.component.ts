@@ -1,29 +1,31 @@
-import { ContentChild, Directive, Input, OnInit, TemplateRef } from '@angular/core';
-
-import {
-  FilterFieldMapperCallback,
-  FilterExpressionCallback,
-  FilterValueFormatterCallback,
-  SortComparatorCallback,
-  CellColourRenderCallback,
-  FilterOption, DataRow
-} from '../../models/data-table.model';
-import { SortOrder } from '../../models/data-table-sort-order.enum';
-import { MenuPosition } from '../../../dropdown/models/menu-position.enum';
+import { Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/core';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
+
+import { CellColourRenderCallback } from '../../models/cell-colour-render-callback.model';
+import { SortOrder } from '../../models/sort-order.enum';
+import { MenuPosition } from '../../../dropdown/models/menu-position.enum';
+import { FilterOption } from '../../models/filter-option.model';
+import { DataRow } from '../../models/data-row.model';
+import { FilterValueFormatterCallback } from '../../models/filter-value-formatter-callback.model';
+import { FilterFieldMapperCallback } from '../../models/filter-field-mapper-callback.model';
+import { SortComparatorCallback } from '../../models/sort-comparator-callback.model';
+import { FilterExpressionCallback } from '../../models/filter-expression-callback.model';
 
 /**
  * Data table column component.
  * @class DataTableColumnComponent
  */
-@Directive({
-  selector: 'ng-data-table-column'
+@Component({
+  selector: 'ng-data-table-column',
+  template: ''
 })
 export class DataTableColumnComponent implements OnInit {
-
   private _sortOrder: SortOrder = SortOrder.NONE;
   private _baseSortOrder: SortOrder;
+
+  public filterOptions: FilterOption[] = [];
+  public actualWidth: number;
 
   // Content Child Properties
 
@@ -36,7 +38,7 @@ export class DataTableColumnComponent implements OnInit {
   @ContentChild('ngFilterTemplate')
   private filterTemplate: TemplateRef<any>;
 
-  // Event handlers
+  // Callback event handlers
 
   /**
    * Filter expression callback function.
@@ -235,7 +237,7 @@ export class DataTableColumnComponent implements OnInit {
    * @type number
    */
   @Input()
-  public dropdownFilterDisplaySelectedLimit: number;
+  public dropdownFilterWrapDisplaySelectLimit: number;
 
   /**
    * Dropdown filter group by field.
@@ -282,23 +284,20 @@ export class DataTableColumnComponent implements OnInit {
     this.visible = dataTableConfigService.columnVisible;
     this.showDropdownFilter = dataTableConfigService.showDropdownFilter;
 
+    // Dropdown filter config
     this.dropdownFilterMenuPosition = dataTableConfigService.dropdownFilterMenuPosition;
     this.dropdownFilterMultiSelectable = dataTableConfigService.dropdownFilterMultiSelectable;
     this.dropdownFilterSearchable = dataTableConfigService.dropdownFilterSearchable;
     this.dropdownFilterSearchDebounceTime = dataTableConfigService.dropdownFilterSearchDebounceTime;
     this.dropdownFilterSearchDebounce = dataTableConfigService.dropdownFilterSearchDebounce;
     this.dropdownFilterShowSelectAll = dataTableConfigService.dropdownFilterShowSelectAll;
-    this.dropdownFilterDisplaySelectedLimit = dataTableConfigService.dropdownFilterDisplaySelectedLimit;
+    this.dropdownFilterWrapDisplaySelectLimit = dataTableConfigService.dropdownFilterWrapDisplaySelectLimit;
     this.dropdownFilterGroupByField = dataTableConfigService.dropdownFilterGroupByField;
     this.dropdownFilterTriggerChangeOncePerSelectAll = dataTableConfigService.dropdownFilterTriggerChangeOncePerSelectAll;
     this.dropdownFilterShowSelectedOptionRemove = dataTableConfigService.dropdownFilterShowSelectedOptionRemove;
     this.dropdownFilterMenuWidth = dataTableConfigService.dropdownFilterMenuWidth;
     this.dropdownFilterMenuHeight = dataTableConfigService.dropdownFilterMenuHeight;
   }
-
-  public filterOptions: FilterOption[] = [];
-
-  public actualWidth: number;
 
   public resetSortOrder(): void {
     this._sortOrder = this._baseSortOrder;

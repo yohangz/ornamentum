@@ -4,12 +4,12 @@ import {
   DataTableParams,
   DataTableResource,
   DataTableComponent,
-  DataTableResourceFactoryService
-} from '../../../library/data-table';
+  DataTableResourceFactoryService,
+  MenuPosition,
+  DataRow
+} from '../../../library';
 
 import { DataStorageService } from '../../services/data-storage.service';
-import { DataRow } from '../../../library/data-table/models/data-table.model';
-import { MenuPosition } from '../../../library';
 
 declare function require(url: string);
 

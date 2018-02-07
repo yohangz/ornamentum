@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
-import { DataTableParams } from '../models/data-table.model';
-import { StorageMode } from '../models/data-table-storage-mode.enum';
+import { DataTableParams } from '../models/data-table-params.model';
+import { StorageMode } from '../models/storage-mode.enum';
 
 import { GlobalRefService } from '../../utility';
 

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { DataTableTranslations } from '../../models/data-table.model';
+import { DataTableTranslations } from '../../models/data-tabl-translations.model';
 
 /**
  * Data table pagination component.

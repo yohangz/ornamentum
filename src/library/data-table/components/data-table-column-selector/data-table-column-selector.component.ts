@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { ColumnSelectorProperty } from '../../models/data-table.model';
+import { ColumnSelectorProperty } from '../../models/column-selector-property.model';
 
 @Component({
   selector: 'ng-data-table-column-selector',

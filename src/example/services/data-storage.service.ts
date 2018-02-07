@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import { isNull } from 'lodash';
-
 /**
  * Class representing data storage service.
  * @class DataStorageService.
@@ -44,7 +42,7 @@ export class DataStorageService {
    * @returns local - The storage key's value.
    */
   private static getData(lsKey: string): any {
-    return isNull(window.localStorage.getItem(lsKey)) ? '' : window.localStorage.getItem(lsKey);
+    return window.localStorage.getItem(lsKey) === null ? '' : window.localStorage.getItem(lsKey);
   }
 
   /**

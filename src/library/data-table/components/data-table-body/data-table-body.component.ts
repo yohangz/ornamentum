@@ -1,6 +1,6 @@
 import { Component, forwardRef, Inject, Input } from '@angular/core';
 
-import { DataRow } from '../../models/data-table.model';
+import { DataRow } from '../../models/data-row.model';
 
 import { DataTableComponent } from '../data-table/data-table.component';
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';

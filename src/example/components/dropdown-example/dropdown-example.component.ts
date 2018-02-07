@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DropdownItem } from '../../../library/dropdown/models/dropdown.model';
-import { DropdownComponent } from '../../../library/dropdown/components/dropdown/dropdown.component';
+import { DropdownItem, DropdownComponent } from '../../../library';
 
 @Component({
   selector: 'app-dropdown-example-component',

@@ -1,6 +1,6 @@
 import { Directive, ElementRef, EventEmitter, AfterViewInit, NgZone, Output, OnDestroy } from '@angular/core';
 
-import { ScrollPoint } from '../models/data-table.model';
+import { ScrollPoint } from '../models/scroll-point.model';
 
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';

@@ -495,6 +495,8 @@
   [selectTrackBy]="'id'"
   [contentHeight]="contentHeight"
   [persistTableState]="true"
+  [minWidth]="2000"
+  [minHeight]="2000"
   [onFilterValueExtract]="tableResource.extractFilterOptions.bind(tableResource)"
 
   (onRowBind)="onRowBind($event)"
@@ -505,7 +507,7 @@
   <ng-data-table-column
     [width]="firstColConf.width"
     [field]="'id'"
-    [filterMenuPosition]="MenuPosition.BOTTOM_LEFT"
+    [dropdownFilterMenuPosition]="MenuPosition.BOTTOM_LEFT"
     [title]="firstColConf.title"
     [sortable]="firstColConf.sortable"
     [filterable]="firstColConf.filterable"
@@ -524,7 +526,6 @@
     [showDropdownFilter]="initialColumnConf.multiSelectFilter2"
     [filterPlaceholder]="secondColConf.filterPlaceholder"
     [visible]="secondColConf.visible">
-
   </ng-data-table-column>
   <ng-data-table-column
     [width]="thirdColConf.width"

@@ -15,29 +15,28 @@ import {
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 
-import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
+import { SortOrder } from '../../models/sort-order.enum';
+import { FilterValueExtractCallback} from '../../models/filter-value-extract-callback.model';
+import { StorageMode } from '../../models/storage-mode.enum';
+import { DataTableConfigService } from '../../services/data-table-config.service';
+import { CellBindEventArgs } from '../../models/cell-bind-event-args.model';
+import { GroupDetail } from '../../models/group-detail.model';
+import { FilterEventArgs } from '../../models/filter-event-args.model';
+import { CellClickEventArgs } from '../../models/cell-click-event-args.model';
+import { HeaderClickEventArgs } from '../../models/header-click-event-args.model';
+import { DoubleClickEventArgs } from '../../models/double-click-event-args.model';
+import { RowClickEventArgs } from '../../models/row-click-event-args.model';
+import { RowSelectEventArgs } from '../../models/row-select-event-args.model';
+import { DataRow } from '../../models/data-row.model';
+import { DataTableParams } from '../../models/data-table-params.model';
+import { DataTableTranslations } from '../../models/data-tabl-translations.model';
+import { GroupFieldExtractorCallback } from '../../models/group-field-extractor-callback.model';
 
-import { SortOrder } from '../../models/data-table-sort-order.enum';
-import {
-  CellClickEventArgs,
-  DataRow, DataTableCellBindEventArgs,
-  DataTableParams,
-  DataTableTranslations,
-  DoubleClickEventArgs,
-  FilterEventArgs,
-  FilterValueExtractCallback,
-  GroupDetail,
-  GroupFieldExtractorCallback,
-  HeaderClickEventArgs,
-  RowClickEventArgs,
-  RowSelectEventArgs
-} from '../../models/data-table.model';
-import { StorageMode } from '../../models/data-table-storage-mode.enum';
+import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
 import { DataTableStateService } from '../../services/data-table-state.service';
 
 import { DragAndDropService, GlobalRefService } from '../../../utility';
-import { DataTableConfigService } from '../../services/data-table-config.service';
 
 /**
  * Data table component.
@@ -165,10 +164,10 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   /**
    * On cell bind event handler.
-   * @type {EventEmitter<DataTableCellBindEventArgs>}
+   * @type {EventEmitter<CellBindEventArgs>}
    */
   @Output()
-  public onCellBind = new EventEmitter<DataTableCellBindEventArgs>();
+  public onCellBind = new EventEmitter<CellBindEventArgs>();
 
   // Input Events
 
