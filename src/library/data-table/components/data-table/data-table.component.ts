@@ -429,6 +429,10 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   @Input()
   public set items(value: any[]) {
+    if (!value) {
+      return;
+    }
+
     this._items = value;
     this.onAfterDataBind();
   }

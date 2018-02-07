@@ -131,7 +131,7 @@ export class DataTableExampleComponent {
     this.indexColumnTitle = '#';
     this.limit = 10;
     this.page = 1;
-    this.items = [];
+//    this.items = [];
     this.expandOnRowClick = false;
 
     this.firstColConf = {
@@ -241,11 +241,12 @@ export class DataTableExampleComponent {
    * @param {DataTableParams} params  grid parameters.
    */
   public onDataLoad(params?: any): void {
-    this.tableResource.query(params).then((data) => {
-      this.items = data.items;
-      this.itemCount = data.count;
-    });
-
+    setTimeout(() => {
+      this.tableResource.query(params).then((data) => {
+        this.items = data.items;
+        this.itemCount = data.count;
+      });
+    }, 2000);
   }
 
   /**
