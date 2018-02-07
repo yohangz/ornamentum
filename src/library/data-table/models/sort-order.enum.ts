@@ -1,6 +1,5 @@
 /**
- * Enum representing the sort order.
- * @enum SortOrder
+ * Sort order.
  */
 export enum SortOrder {
   NONE,
