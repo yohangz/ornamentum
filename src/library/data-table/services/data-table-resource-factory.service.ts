@@ -1,6 +1,7 @@
 import { Injectable, NgZone } from '@angular/core';
 
-import { DataTableResource, DataTableResourceManager } from './data-table-resource.class';
+import { DataTableResource} from './data-table-resource.class';
+import { DataTableResourceManager } from './data-table-resource-manager.class';
 
 @Injectable()
 export class DataTableResourceFactoryService {
