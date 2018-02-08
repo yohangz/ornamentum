@@ -24,7 +24,7 @@
     <ul *ngIf="props.dropdown.showSelectAll && props.dropdown.multiSelectable && !props.dropdown.loadOnScroll">
       <li class="ng-dropdown-item check-control check-control-check" (click)="props.dropdown.toggleAllSelected()">
         <input type="checkbox" class="checkbox-input" [(ngModel)]="props.dropdown.allSelected" />
-        <span>{{ props.dropdown.translations.selectAll }}</span>
+        <span>{{ props.dropdown.translations.selectAllPlaceholder }}</span>
       </li>
       <li class="ng-dropdown-divider divider"></li>
     </ul>

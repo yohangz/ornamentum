@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { DropdownViewProperty } from '../../models/dropdown.model';
+import { DropdownViewProperty } from '../../models/dropdown-view-property.model';
 
 @Component({
   selector: 'ng-dropdown-view',

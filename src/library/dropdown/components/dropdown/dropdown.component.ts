@@ -4,17 +4,20 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import {
-  ClientFilterCallback, DataRequestParams, DropdownItem, DropdownItemGroup, SearchDropdownTranslations
-} from '../../models/dropdown.model';
-
-import { Subject } from 'rxjs/Subject';
-import { Subscription } from 'rxjs/Subscription';
+import { ClientFilterCallback } from '../../models/client-filter-callback.model';
+import { MenuPosition } from '../../models/menu-position.enum';
+import { DropdownTranslations } from '../../models/dropdown-translations.model';
+import { DropdownItem } from '../../models/dropdown-item.model';
+import { DropdownItemGroup } from '../../models/dropdownItem-group.model';
+import { DataRequestParams } from '../../models/data-request-params.model';
 
 import { ComponentLoaderFactoryService } from '../../../utility';
 import { ComponentLoader } from '../../../utility/services/component-loader.class';
+
 import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component';
-import { MenuPosition } from '../../models/menu-position.enum';
+
+import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
 
 /**
  * Component class to represent search dropdown.
@@ -45,15 +48,15 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
 
   private componentLoader: ComponentLoader<DropdownViewComponent>;
 
-  private _translations: SearchDropdownTranslations;
+  private _translations: DropdownTranslations;
   private _allSelected = false;
   private offset = 0;
-  private defaultTranslations: SearchDropdownTranslations = {
+  private defaultTranslations: DropdownTranslations = {
     searchEmptyResult: 'No Results Available',
     searchPlaceholder: 'Search',
-    selectAll: 'Select All',
-    selectedItems: 'Items',
-    title: 'Select'
+    selectAllPlaceholder: 'Select All',
+    selectedItemWrapPlaceholder: 'Items',
+    selectPlaceholder: 'Select'
   };
 
   private searchFilterSubject = new Subject();
@@ -88,19 +91,19 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   /**
    * Search dropdown display text key translations.
    * @default defaultTranslations
-   * @type {SearchDropdownTranslations}
-   * @param {SearchDropdownTranslations} data The overridable translation values
+   * @type {DropdownTranslations}
+   * @param {DropdownTranslations} data The overridable translation values
    */
   @Input()
-  public set translations(data: SearchDropdownTranslations) {
+  public set translations(data: DropdownTranslations) {
     this._translations = Object.assign(this.defaultTranslations, data);
   }
 
   /**
    * Returns translations.
-   * @returns {SearchDropdownTranslations}
+   * @returns {DropdownTranslations}
    */
-  public get translations(): SearchDropdownTranslations {
+  public get translations(): DropdownTranslations {
     return this._translations;
   }
 
@@ -430,7 +433,8 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       id: option[this.selectTrackBy],
       text: option[this.displayTrackBy],
       disabled: option[this.disabledTrackBy],
-      data: option[this.dataTrackBy]
+      data: option[this.dataTrackBy],
+      filter: true
     };
   }
 
@@ -661,8 +665,8 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       return this._selectedOptions.find(option => option.id === id) || null;
     }
 
-    if (this.selectedOption && this.selectedOption.id === id) {
-      return this.selectedOption;
+    if (this._selectedOption && this._selectedOption.id === id) {
+      return this._selectedOption;
     }
 
     return null;
@@ -723,7 +727,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @return {string} Selected items message.
    */
   public get selectedItemsMessage(): string {
-    return `(${this._selectedOptions.length}) ${this.translations.selectedItems}`;
+    return `(${this._selectedOptions.length}) ${this.translations.selectedItemWrapPlaceholder}`;
   }
 
   /**
