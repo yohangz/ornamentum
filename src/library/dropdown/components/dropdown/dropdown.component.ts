@@ -36,6 +36,8 @@ import { MenuPosition } from '../../models/menu-position.enum';
 export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, ControlValueAccessor {
   public _items: DropdownItem[] = [];
   public _groupedItems: DropdownItemGroup[] = [];
+  public _selectedOptions: DropdownItem[] = [];
+  public _selectedOption: DropdownItem;
 
   public disabled = false;
   public isLoading = false;
@@ -45,8 +47,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
 
   private _translations: SearchDropdownTranslations;
   private _allSelected = false;
-  private _selectedOptions: DropdownItem[] = [];
-  private _selectedOption: DropdownItem;
   private offset = 0;
   private defaultTranslations: SearchDropdownTranslations = {
     searchEmptyResult: 'No Results Available',
@@ -59,6 +59,29 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   private searchFilterSubject = new Subject();
   private searchFilterSubscription: Subscription;
   private onChangeSubscription: Subscription;
+
+  // Outputs : Event Handlers
+
+  /**
+   * On data fetch handler.
+   * @type {EventEmitter<DataRequestParams>}
+   */
+  @Output()
+  public onDataFetch = new EventEmitter<DataRequestParams>();
+
+  /**
+   * On dropdown initialize.
+   * @type {EventEmitter<DropdownComponent>}
+   */
+  @Output()
+  public onInit = new EventEmitter<DropdownComponent>();
+
+  /**
+   * On select change handler.
+   * @type {EventEmitter<DropdownItem[] | DropdownItem>}
+   */
+  @Output()
+  public onSelectChange = new EventEmitter<DropdownItem[] | DropdownItem>();
 
   // Inputs
 
@@ -124,43 +147,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    */
   @Input()
   public disabledTrackBy = 'disabled';
-
-  /**
-   * Set dropdown items.
-   * @param {any[]} value The dropdown item list.
-   */
-  @Input()
-  public set items(value: any[]) {
-    if (this.groupByField) {
-      this._groupedItems = value.reduce((acc: DropdownItemGroup[], item: any) => {
-        const groupIndex = acc.findIndex((group: DropdownItemGroup) => group.groupName === item[this.groupByField]);
-        if (groupIndex > -1) {
-          acc[groupIndex].items.push(this.extractDropdownItem(item));
-        } else {
-          acc.push({
-            groupName: item[this.groupByField],
-            items: [this.extractDropdownItem(item)]
-          });
-        }
-
-        return acc;
-      }, this.offset > 0 ? this._groupedItems : []);
-    } else {
-      const results = value.map((item) => {
-        return this.extractDropdownItem(item);
-      });
-
-      this._items = this.offset > 0 ? this._items.concat(results) : results;
-    }
-
-    this.currentItemCount = value.length;
-    this.updateAllSelectedState();
-    this.isLoading = false;
-  }
-
-  public updateAllSelectedState(): void {
-    this._allSelected = this.currentItemCount === this._selectedOptions.length;
-  }
 
   /**
    * Enable/Disable triggerSelectChangeOnInit option.
@@ -337,28 +323,46 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   @Input()
   public onClientFilter: ClientFilterCallback;
 
-  // Outputs : Event Handlers
-
   /**
-   * On data fetch handler.
-   * @type {EventEmitter<DataRequestParams>}
+   * Set dropdown items.
+   * @param {any[]} value The dropdown item list.
    */
-  @Output()
-  public onDataFetch = new EventEmitter<DataRequestParams>();
+  @Input()
+  public set items(value: any[]) {
+    if (!value) {
+      return;
+    }
 
-  /**
-   * On dropdown initialize.
-   * @type {EventEmitter<DropdownComponent>}
-   */
-  @Output()
-  public onInit = new EventEmitter<DropdownComponent>();
+    if (this.groupByField) {
+      this._groupedItems = value.reduce((acc: DropdownItemGroup[], item: any) => {
+        const groupIndex = acc.findIndex((group: DropdownItemGroup) => group.groupName === item[this.groupByField]);
+        if (groupIndex > -1) {
+          acc[groupIndex].items.push(this.extractDropdownItem(item));
+        } else {
+          acc.push({
+            groupName: item[this.groupByField],
+            items: [this.extractDropdownItem(item)]
+          });
+        }
 
-  /**
-   * On select change handler.
-   * @type {EventEmitter<DropdownItem[] | DropdownItem>}
-   */
-  @Output()
-  public onSelectChange = new EventEmitter<DropdownItem[] | DropdownItem>();
+        return acc;
+      }, this.offset > 0 ? this._groupedItems : []);
+    } else {
+      const results = value.map((item) => {
+        return this.extractDropdownItem(item);
+      });
+
+      this._items = this.offset > 0 ? this._items.concat(results) : results;
+    }
+
+    this.currentItemCount = value.length;
+    this.updateAllSelectedState();
+    this.isLoading = false;
+  }
+
+  public updateAllSelectedState(): void {
+    this._allSelected = this.currentItemCount === this._selectedOptions.length;
+  }
 
   constructor(private componentLoaderFactory: ComponentLoaderFactoryService) {
     this._translations = this.defaultTranslations;
