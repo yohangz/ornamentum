@@ -86,7 +86,7 @@ export class DataTableBodyComponent {
    * @param dataRow Data table row.
    */
   public onRowInit(dataRow): void {
-    this.dataTable.onRowBind.emit(dataRow);
+    this.dataTable.rowBind.emit(dataRow);
   }
 
   /**
@@ -95,7 +95,7 @@ export class DataTableBodyComponent {
    * @param {DataRow} row Data table row.
    */
   public onCellInit(column: DataTableColumnComponent, row: DataRow): void {
-    this.dataTable.onCellBind.emit({
+    this.dataTable.cellBind.emit({
       column: column,
       row: row
     });

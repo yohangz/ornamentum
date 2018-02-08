@@ -498,10 +498,10 @@
   [showRefreshButton]="true"
   [onFilterValueExtract]="tableResource.extractFilterOptions.bind(tableResource)"
 
-  (onRowBind)="onRowBind($event)"
-  (onRefresh)="onRefresh($event)"
-  (onDataLoad)="onDataLoad($event)"
-  (onInit)="onInit($event)">
+  (rowBind)="onRowBind($event)"
+  (refresh)="onRefresh($event)"
+  (dataLoad)="onDataLoad($event)"
+  (init)="onInit($event)">
 
   <ng-data-table-column
     [width]="firstColConf.width"

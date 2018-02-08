@@ -59,8 +59,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   private isHeardReload = false;
   private _translations: DataTableTranslations;
 
-  public scrollPosition: number;
-
   public indexColumnVisible: boolean;
   public selectColumnVisible: boolean;
   public expandColumnVisible: boolean;
@@ -109,42 +107,42 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @type {EventEmitter<DataTableComponent>}
    */
   @Output()
-  public onInit = new EventEmitter<DataTableComponent>();
+  public init = new EventEmitter<DataTableComponent>();
 
   /**
    * On row selected state change event handler.
    * @type {EventEmitter<any>}
    */
   @Output()
-  public onRowSelectedStateChange = new EventEmitter<RowSelectEventArgs>();
+  public rowSelectedStateChange = new EventEmitter<RowSelectEventArgs>();
 
   /**
    * On row click event handler.
    * @type {EventEmitter<any>}
    */
   @Output()
-  public onRowClick = new EventEmitter<RowClickEventArgs>();
+  public rowClick = new EventEmitter<RowClickEventArgs>();
 
   /**
    * On row double click event handler.
    * @type {EventEmitter<any>}
    */
   @Output()
-  public onRowDoubleClick = new EventEmitter<DoubleClickEventArgs>();
+  public rowDoubleClick = new EventEmitter<DoubleClickEventArgs>();
 
   /**
    * On header click event handler.
    * @type {EventEmitter<any>}
    */
   @Output()
-  public onHeaderClick = new EventEmitter<HeaderClickEventArgs>();
+  public headerClick = new EventEmitter<HeaderClickEventArgs>();
 
   /**
    * On cell click event handler.
    * @type {EventEmitter<any>}
    */
   @Output()
-  public onCellClick = new EventEmitter<CellClickEventArgs>();
+  public cellClick = new EventEmitter<CellClickEventArgs>();
 
   /**
    * On data load event handler.
@@ -152,7 +150,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @type {EventEmitter<DataTableParams>}
    */
   @Output()
-  public onDataLoad = new EventEmitter<DataTableParams>();
+  public dataLoad = new EventEmitter<DataTableParams>();
 
   /**
    * On refresh event handler.
@@ -160,21 +158,21 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @type {EventEmitter<DataTableParams>}
    */
   @Output()
-  public onRefresh = new EventEmitter<DataTableParams>();
+  public refresh = new EventEmitter<DataTableParams>();
 
-  /**
+  /**ss
    * On row bind event handler.
    * @type {EventEmitter<DataRow>}
    */
   @Output()
-  public onRowBind = new EventEmitter<DataRow>();
+  public rowBind = new EventEmitter<DataRow>();
 
   /**
    * On cell bind event handler.
    * @type {EventEmitter<CellBindEventArgs>}
    */
   @Output()
-  public onCellBind = new EventEmitter<CellBindEventArgs>();
+  public cellBind = new EventEmitter<CellBindEventArgs>();
 
   // Input Events
 
@@ -190,9 +188,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @type {GroupFieldExtractorCallback}
    */
   @Input()
-  public onGroupFieldExtract: GroupFieldExtractorCallback = () => {
-    return [];
-  };
+  public onGroupFieldExtract: GroupFieldExtractorCallback = (() => []);
 
   // Input parameters
 
@@ -326,7 +322,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
   public expandOnRowClick: boolean;
 
   /**
-   * Auto onDataLoad on init.
+   * Auto dataLoad on init.
    * @type {boolean}
    */
   @Input()
@@ -637,12 +633,12 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * Initialzie default click events.
    */
   private initDefaultClickEvents() {
-    this.headerClickSubscription = this.onHeaderClick.subscribe((headerClickEventArgs: HeaderClickEventArgs) => {
+    this.headerClickSubscription = this.headerClick.subscribe((headerClickEventArgs: HeaderClickEventArgs) => {
       this.sortData(headerClickEventArgs.column);
     });
 
     if (this.selectOnRowClick || (this.expandableRows && this.expandOnRowClick)) {
-      this.rowClickSubscription = this.onRowClick.subscribe((rowClickEventArgs: RowClickEventArgs) => {
+      this.rowClickSubscription = this.rowClick.subscribe((rowClickEventArgs: RowClickEventArgs) => {
         if (rowClickEventArgs.event.srcElement.classList.contains('ng-ignore-propagation')) {
           return;
         }
@@ -718,9 +714,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
     }
 
     if (hardRefresh) {
-      this.onRefresh.emit(dataTableParams);
+      this.refresh.emit(dataTableParams);
     } else {
-      this.onDataLoad.emit(dataTableParams);
+      this.dataLoad.emit(dataTableParams);
     }
   }
 
@@ -825,7 +821,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
     }
 
     this.fetchFilterOptions();
-    this.onInit.emit(this);
+    this.init.emit(this);
   }
 
   /**
@@ -866,7 +862,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @param event Mouse click event argument object.
    */
   public rowClicked(row: DataRow, event: MouseEvent): void {
-    this.onRowClick.emit({row, event});
+    this.rowClick.emit({row, event});
   }
 
   /**
@@ -875,7 +871,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @param {MouseEvent} event event Mouse click event argument object.
    */
   public rowDoubleClicked(row: DataRow, event: MouseEvent): void {
-    this.onRowDoubleClick.emit({row, event});
+    this.rowDoubleClick.emit({row, event});
   }
 
   /**
@@ -885,7 +881,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    * @param {MouseEvent} event event event Mouse click event argument object.
    */
   public cellClicked(column: DataTableColumnComponent, row: DataRow, event: MouseEvent): void {
-    this.onCellClick.emit({row, column, event});
+    this.cellClick.emit({row, column, event});
   }
 
   /**
@@ -895,7 +891,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   public headerClicked(column: DataTableColumnComponent, event: MouseEvent): void {
     if (!this.resizeInProgress) {
-      this.onHeaderClick.emit({column, event});
+      this.headerClick.emit({column, event});
     } else {
       this.resizeInProgress = false; // this is because I can't prevent click from mousup of the drag end
     }
@@ -1014,7 +1010,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
       this.rowSelectStateUpdate.emit();
     }
 
-    this.onRowSelectedStateChange.emit(rowSelectEventArgs);
+    this.rowSelectedStateChange.emit(rowSelectEventArgs);
   }
 
   /**
