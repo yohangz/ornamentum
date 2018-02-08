@@ -18,6 +18,7 @@ import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component'
 
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
+import { DropdownConfigService } from '../../services/dropdown-config.service';
 
 /**
  * Component class to represent search dropdown.
@@ -51,13 +52,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   private _translations: DropdownTranslations;
   private _allSelected = false;
   private offset = 0;
-  private defaultTranslations: DropdownTranslations = {
-    searchEmptyResult: 'No Results Available',
-    searchPlaceholder: 'Search',
-    selectAllPlaceholder: 'Select All',
-    selectedItemWrapPlaceholder: 'Items',
-    selectPlaceholder: 'Select'
-  };
 
   private searchFilterSubject = new Subject();
   private searchFilterSubscription: Subscription;
@@ -96,7 +90,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    */
   @Input()
   public set translations(data: DropdownTranslations) {
-    this._translations = Object.assign(this.defaultTranslations, data);
+    this._translations = {...this.dropdownConfigService.translations, ...data};
   }
 
   /**
@@ -112,32 +106,28 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
 
   /**
    * Represents the name of the attribute used for selection tracking.
-   * @default key
    * @type {string}
    */
   @Input()
-  public selectTrackBy = 'key';
+  public selectTrackBy: string;
 
   /**
    * Represents the name of the attribute used to show the selected item's display text.
-   * @default value
    * @type {string}
    */
   @Input()
-  public displayTrackBy = 'value';
+  public displayTrackBy: string;
 
   /**
    * Represents the additional data attribute track by field name.
-   * @default data
    * @type {string}
    */
   @Input()
-  public dataTrackBy = 'data';
+  public dataTrackBy: string;
 
   /**
    * Represent field name to group data by.
    * Group data only if provided.
-   * @default empty
    * @type {string}
    */
   @Input()
@@ -145,11 +135,10 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
 
   /**
    * Represents the name of the attribute used to disable the selection of dropdown item.
-   * @default disabled
    * @type {string}
    */
   @Input()
-  public disabledTrackBy = 'disabled';
+  public disabledTrackBy: string;
 
   /**
    * Enable/Disable triggerSelectChangeOnInit option.
@@ -157,7 +146,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {boolean}
    */
   @Input()
-  public triggerSelectChangeOnInit = true;
+  public triggerSelectChangeOnInit: boolean;
 
   /**
    * Set previously selected dropdown items.
@@ -192,40 +181,35 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
 
   /**
    * Represents the limit of the items that can be shown in the dropdown at a single time.
-   * @default 10
    * @type {number}
    */
   @Input()
-  public limit = 10;
+  public limit: number;
 
   /**
    * Number of items to display when selected.
    * Used to limit itm count shown when more items are selected.
-   * @default undefined
    * @type {number}
    */
   @Input()
-  public displaySelectedLimit: number;
+  public wrapDisplaySelectLimit: number;
 
   /**
    * Enable/Disable dropdown data loading on scrolling.
-   * @default false
    * @type {boolean}
    */
   @Input()
-  public loadOnScroll = false;
+  public loadOnScroll: boolean;
 
   /**
    * Sets the point which needs to trigger additional data loading functionality when scrolling.
-   * @default 1 Gets data when scrolling one item from the drop down.
    * @type {number}
    */
   @Input()
-  public loadViewDistance = 1;
+  public loadViewDistance: number;
 
   /**
    * Filter option for dropdown search.
-   * @default ''
    * @type {string}
    */
   @Input()
@@ -233,72 +217,66 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
 
   /**
    * Enable/Disable dropdown items multi select option.
-   * @default false
    * @type {boolean}
    */
   @Input()
-  public multiSelectable = false;
+  public multiSelectable: boolean;
 
   /**
    * Enable/Disable dropdown items filtering.
-   * @default false
    * @type {boolean}
    */
   @Input()
-  public filterable = false;
+  public filterable: boolean;
 
   /**
    * Enable/Disable show select all option.
-   * @default false
    * @type {boolean}
    */
   @Input()
-  public showSelectAll = false;
+  public showSelectAll: boolean;
 
   /**
    * Enable/Disable load data in the on init event.
-   * @default true
    * @type {boolean}
    */
   @Input()
-  public loadDataOnInit = true;
+  public loadDataOnInit: boolean;
 
   /**
    * Enable/Disable triggering on select change event one time when select all is selected.
-   * @default true
    * @type {boolean}
    */
   @Input()
-  public triggerOncePerSelectAll = true;
+  public triggerChangeOncePerSelectAll: boolean;
 
   /**
    * Enable/Disable show selected items remove icon.
-   * @default true
    * @type {boolean}
    */
   @Input()
-  public showSelectedOptionRemove = true;
+  public showSelectedOptionRemove: boolean;
 
   /**
    * Dropdown menu width.
    * @type {number}
    */
   @Input()
-  public menuWidth = 320;
+  public menuWidth: number;
 
   /**
    * Dropdown menu height.
    * @type {number}
    */
   @Input()
-  public menuHeight = 250;
+  public menuHeight: number;
 
   /**
    * Menu open position.
    * @type {MenuPosition}
    */
   @Input()
-  public menuPosition: MenuPosition = MenuPosition.BOTTOM_LEFT;
+  public menuPosition: MenuPosition;
 
   /**
    * Filter de-bounce time milliseconds.
@@ -306,7 +284,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {number}
    */
   @Input()
-  public filterDebounceTime = 500;
+  public filterDebounceTime: number;
 
   /**
    * Filter de-bounce enabled state.
@@ -314,7 +292,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {boolean}
    */
   @Input()
-  public filterDebounce = true;
+  public filterDebounce: boolean;
 
   // Input - Event handlers
 
@@ -367,8 +345,31 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this._allSelected = this.currentItemCount === this._selectedOptions.length;
   }
 
-  constructor(private componentLoaderFactory: ComponentLoaderFactoryService) {
-    this._translations = this.defaultTranslations;
+  constructor(private componentLoaderFactory: ComponentLoaderFactoryService,
+              private dropdownConfigService: DropdownConfigService) {
+    this._translations = {...this.dropdownConfigService.translations};
+    this.selectTrackBy = this.dropdownConfigService.selectTrackBy;
+    this.displayTrackBy = this.dropdownConfigService.displayTrackBy;
+    this.dataTrackBy = this.dropdownConfigService.dataTrackBy;
+    this.disabledTrackBy = this.dropdownConfigService.disabledTrackBy;
+    this.menuPosition = this.dropdownConfigService.menuPosition;
+    this.multiSelectable = this.dropdownConfigService.multiSelectable;
+    this.filterable = this.dropdownConfigService.flterable;
+    this.filterDebounce = this.dropdownConfigService.filterDebounce;
+    this.filterDebounceTime = this.dropdownConfigService.filterDebounceTime;
+    this.showSelectAll = this.dropdownConfigService.showSelectAll;
+    this.groupByField = this.dropdownConfigService.groupByField;
+    this.wrapDisplaySelectLimit = this.dropdownConfigService.wrapDisplaySelectLimit;
+    this.triggerSelectChangeOnInit = this.dropdownConfigService.triggerSelectChangeOnInit;
+    this.triggerChangeOncePerSelectAll = this.dropdownConfigService.triggerChangeOncePerSelectAll;
+    this.showSelectedOptionRemove = this.dropdownConfigService.showSelectedOptionRemove;
+    this.menuWidth = this.dropdownConfigService.menuWidth;
+    this.menuHeight = this.dropdownConfigService.menuHeight;
+    this.loadOnScroll = this.dropdownConfigService.loadOnScroll;
+    this.loadViewDistance = this.dropdownConfigService.loadViewDistance;
+    this.limit = this.dropdownConfigService.limit;
+    this.loadDataOnInit = this.dropdownConfigService.loadDataOnInit;
+
     this.componentLoader = this.componentLoaderFactory.createLoader();
   }
 
@@ -570,16 +571,16 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     if (this.groupByField) {
       this._groupedItems.forEach((groupedItem: DropdownItemGroup) => {
         groupedItem.items.forEach((dropdownItem: DropdownItem) => {
-          this.setSelected(dropdownItem, this._allSelected, !this.triggerOncePerSelectAll);
+          this.setSelected(dropdownItem, this._allSelected, !this.triggerChangeOncePerSelectAll);
         });
       });
     } else {
       this._items.forEach((dropdownItem) => {
-        this.setSelected(dropdownItem, this._allSelected, !this.triggerOncePerSelectAll);
+        this.setSelected(dropdownItem, this._allSelected, !this.triggerChangeOncePerSelectAll);
       });
     }
 
-    if (this.triggerOncePerSelectAll) {
+    if (this.triggerChangeOncePerSelectAll) {
       this.emitOnSelectChange();
     }
   }
@@ -719,7 +720,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @return {boolean} Show label if true.
    */
   public get showAllSelectedItemLabels(): boolean {
-    return this.displaySelectedLimit !== undefined ? this._selectedOptions.length > this.displaySelectedLimit : false;
+    return this.wrapDisplaySelectLimit !== undefined ? this._selectedOptions.length > this.wrapDisplaySelectLimit : false;
   }
 
   /**

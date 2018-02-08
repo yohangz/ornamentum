@@ -448,7 +448,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   @Input()
   public set translations(data: DataTableTranslations) {
-    this._translations = Object.assign(this._translations, data);
+    this._translations = { ...this._translations, ...data };
   }
 
   /**
@@ -571,7 +571,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
     this.relativeParentElement = dataTableConfigService.relativeParentElement;
     this._offset = dataTableConfigService.offset;
     this._limit = dataTableConfigService.limit;
-    this._translations = dataTableConfigService.translations;
+    this._translations = { ...dataTableConfigService.translations };
   }
 
   /**

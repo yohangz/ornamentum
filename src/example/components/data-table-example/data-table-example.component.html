@@ -547,7 +547,7 @@
         [showSelectedOptionRemove]="false"
         [showSelectAll]="true"
         [triggerSelectChangeOnInit]="false"
-        [displaySelectedLimit]="column.displaySelectedLimit"
+        [wrapDisplaySelectLimit]="column.displaySelectedLimit"
         (onSelectChange)="onFilter.emit({ column: column, filter: column.filter })">
       </ng-dropdown>
     </ng-template>

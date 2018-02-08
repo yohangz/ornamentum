@@ -28,7 +28,7 @@ export interface DropdownTranslations {
 
   /**
    * Selected items wrap placeholder.
-   * Used when item count > displaySelectedLimit
+   * Used when item count > wrapDisplaySelectLimit
    * @type {string}
    */
   selectedItemWrapPlaceholder?: string;

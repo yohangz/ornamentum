@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { UtilityModule } from '../utility/utility.module';
+import { DropdownConfig } from './models/dropdown-config.model';
 
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { DropdownViewComponent } from './components/dropdown-view/dropdown-view.component';
 
-import { DropdownConfigService } from './services/dropdown-config.service';
+import { DROPDOWN_CONFIG, DropdownConfigService } from './services/dropdown-config.service';
 
 const COMPONENTS = [
   DropdownComponent,
@@ -34,10 +35,16 @@ const COMPONENTS = [
   ]
 })
 export class DropdownModule {
-  static forRoot(): ModuleWithProviders {
+  static forRoot(dropdownConfig?: DropdownConfig): ModuleWithProviders {
     return {
       ngModule: DropdownModule,
-      providers: [DropdownConfigService]
+      providers: [
+        {
+          provide: DROPDOWN_CONFIG,
+          useValue: dropdownConfig
+        },
+        DropdownConfigService
+      ]
     };
   }
 }
