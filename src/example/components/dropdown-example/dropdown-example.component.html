@@ -8,8 +8,8 @@
   [triggerSelectChangeOnInit]="true"
   [loadViewDistance]="0"
   [selectedOptions]="selected"
-  (onSelectChange)="onSelectChange($event)"
-  (onInit)="onInit($event)">
+  (selectChange)="onSelectChange($event)"
+  (init)="onInit($event)">
 </ng-dropdown>
 
 value - {{selected | json}}

@@ -64,21 +64,21 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {EventEmitter<DataRequestParams>}
    */
   @Output()
-  public onDataFetch = new EventEmitter<DataRequestParams>();
+  public dataFetch = new EventEmitter<DataRequestParams>();
 
   /**
    * On dropdown initialize.
    * @type {EventEmitter<DropdownComponent>}
    */
   @Output()
-  public onInit = new EventEmitter<DropdownComponent>();
+  public init = new EventEmitter<DropdownComponent>();
 
   /**
    * On select change handler.
    * @type {EventEmitter<DropdownItem[] | DropdownItem>}
    */
   @Output()
-  public onSelectChange = new EventEmitter<DropdownItem[] | DropdownItem>();
+  public selectChange = new EventEmitter<DropdownItem[] | DropdownItem>();
 
   // Inputs
 
@@ -411,7 +411,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       this.initFilterEvent();
     }
 
-    this.onInit.emit(this);
+    this.init.emit(this);
   }
 
   public ngAfterContentInit(): void {
@@ -638,7 +638,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
 
     this.isLoading = true;
 
-    this.onDataFetch.emit({
+    this.dataFetch.emit({
       filter: this.filterText,
       offset: this.offset,
       limit: this.limit
@@ -711,7 +711,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * If multiSelectable is true return all dropdown selected items else return the single selected item.
    */
   private emitOnSelectChange(): void {
-    this.onSelectChange.emit(this.multiSelectable ? this.mapOptionsToBaseType(this._selectedOptions)
+    this.selectChange.emit(this.multiSelectable ? this.mapOptionsToBaseType(this._selectedOptions)
       : this.mapOptionToBaseType(this._selectedOption));
   }
 
@@ -750,7 +750,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @param {(value: (DropdownItem[] | DropdownItem)) => void} onSelectChange On select change callback function.
    */
   public registerOnChange(onSelectChange: (value: DropdownItem[] | DropdownItem) => void): void {
-    this.onChangeSubscription = this.onSelectChange.subscribe((value) => {
+    this.onChangeSubscription = this.selectChange.subscribe((value) => {
       onSelectChange(value);
     });
   }
