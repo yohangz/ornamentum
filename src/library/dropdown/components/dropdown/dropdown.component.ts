@@ -679,10 +679,14 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @return {any} Base dropdown item object.
    */
   private mapOptionToBaseType(dropdownItem: DropdownItem): any {
+    if (!dropdownItem) {
+      return null;
+    }
+
     const option = {};
 
-    option[this.selectTrackBy] = dropdownItem ? dropdownItem.id : '';
-    option[this.displayTrackBy] = dropdownItem ? dropdownItem.text : '';
+    option[this.selectTrackBy] = dropdownItem.id;
+    option[this.displayTrackBy] = dropdownItem.text;
 
     if (dropdownItem) {
       if (dropdownItem.disabled !== undefined) {
