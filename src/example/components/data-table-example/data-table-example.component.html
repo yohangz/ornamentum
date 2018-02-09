@@ -493,6 +493,7 @@
   [showLoadingSpinner]="showLoadingSpinner"
   [showSubstituteRows]="showSubstituteRows"
   [selectTrackBy]="'id'"
+  [(ngModel)]="selectedDataItems"
   [contentHeight]="contentHeight"
   [persistTableState]="true"
   [showRefreshButton]="true"
@@ -631,3 +632,4 @@
   </ng-data-table-column>
 </ng-data-table>
 
+{{selectedDataItems | json}}

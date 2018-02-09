@@ -63,6 +63,8 @@ export class DataTableExampleComponent {
     multiSelectFilter9: boolean;
   };
 
+  public selectedDataItems: any;
+
   public gridTitle: string;
   public filterDebounce: boolean;
   public multiRowSelectable: boolean;

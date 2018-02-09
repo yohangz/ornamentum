@@ -9,14 +9,14 @@ import {
   Output,
   QueryList,
   TemplateRef,
-  AfterContentInit
+  AfterContentInit, forwardRef
 } from '@angular/core';
 
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 
 import { SortOrder } from '../../models/sort-order.enum';
-import { FilterValueExtractCallback} from '../../models/filter-value-extract-callback.model';
+import { FilterValueExtractCallback } from '../../models/filter-value-extract-callback.model';
 import { StorageMode } from '../../models/storage-mode.enum';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { CellBindEventArgs } from '../../models/cell-bind-event-args.model';
@@ -37,18 +37,26 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 import { DataTableStateService } from '../../services/data-table-state.service';
 
 import { DragAndDropService, GlobalRefService } from '../../../utility';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 /**
  * Data table component.
  * @class DataTableComponent
  */
 @Component({
-  providers: [DataTableStateService],
   selector: 'ng-data-table',
   styleUrls: ['./data-table.component.scss'],
-  templateUrl: './data-table.component.html'
+  templateUrl: './data-table.component.html',
+  providers: [
+    DataTableStateService,
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() => DataTableComponent),
+      multi: true
+    }
+  ]
 })
-export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
+export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, ControlValueAccessor {
   public SortOrder = SortOrder;
 
   private _items: any[] = [];
@@ -448,7 +456,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
    */
   @Input()
   public set translations(data: DataTableTranslations) {
-    this._translations = { ...this._translations, ...data };
+    this._translations = {...this._translations, ...data};
   }
 
   /**
@@ -571,7 +579,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
     this.relativeParentElement = dataTableConfigService.relativeParentElement;
     this._offset = dataTableConfigService.offset;
     this._limit = dataTableConfigService.limit;
-    this._translations = { ...dataTableConfigService.translations };
+    this._translations = {...dataTableConfigService.translations};
   }
 
   /**
@@ -1215,5 +1223,23 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit {
 
   public get headerPadding(): number {
     return this.contentHeight ? this.globalRefService.scrollbarWidth : 0;
+  }
+
+  public writeValue(value: any): void {
+    if (!value) {
+      return;
+    }
+
+    this.selectedRows = this.selectedRow = value;
+  }
+
+  public registerOnChange(onSelectChange: (value: any) => void): void {
+    this.rowSelectedStateChange.subscribe((args: RowSelectEventArgs) => {
+      onSelectChange(this.multiRowSelectable ? args.selectedRows : args.selectedRow);
+    });
+  }
+
+
+  public registerOnTouched(fn: any): void {
   }
 }
