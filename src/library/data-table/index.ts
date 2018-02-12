@@ -15,6 +15,7 @@ export { ScrollPoint } from './models/scroll-point.model';
 export { DataRow } from './models/data-row.model';
 export { DataTableParams } from './models/data-table-params.model';
 export { DataTableTranslations } from './models/data-tabl-translations.model';
+export { GroupDetail } from './models/group-detail.model';
 export { GroupFieldExtractorCallback } from './models/group-field-extractor-callback.model';
 export { FilterValueExtractCallback } from './models/filter-value-extract-callback.model';
 export { FilterValueFormatterCallback } from './models/filter-value-formatter-callback.model';
