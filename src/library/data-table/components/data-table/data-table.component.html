@@ -15,32 +15,32 @@
           </colgroup>
           <thead>
           <tr>
-            <th *ngIf="expandColumnVisible" class="expand-column-header">
+            <th *ngIf="expandColumnVisible" class="ng-data-table-expand-column-header">
             </th>
-            <th *ngIf="indexColumnVisible" class="index-column-header">
+            <th *ngIf="indexColumnVisible" class="ng-data-table-index-column-header">
               <span [textContent]="indexColumnTitle"></span>
             </th>
-            <th *ngIf="selectColumnVisible" class="select-column-header">
-              <input [hidden]="!multiRowSelectable" class="checkbox-input" [disabled]="reloading" type="checkbox" [(ngModel)]="selectAllCheckbox"/>
+            <th *ngIf="selectColumnVisible" class="ng-data-table-select-column-header">
+              <input [hidden]="!multiRowSelectable" class="ng-data-table-checkbox-input" [disabled]="reloading" type="checkbox" [(ngModel)]="selectAllCheckbox"/>
             </th>
             <ng-container *ngFor="let column of columns">
               <th #th *ngIf="column.visible" (click)="headerClicked(column, $event)" (elementWidth)="onElementWidthInit($event, column)"
-                  [class.sortable]="column.sortable" [class.resizable]="column.resizable" [ngClass]="column.styleClass" class="column-header" >
+                  [class.sortable]="column.sortable" [class.resizable]="column.resizable" [ngClass]="column.styleClass" class="ng-data-table-column-header" >
                 <span *ngIf="!column.headerTemplate" [textContent]="column.title"></span>
                 <span *ngIf="column.headerTemplate" [ngTemplateOutlet]="column.headerTemplate" [ngTemplateOutletContext]="{column: column}"></span>
-                <span class="column-sort-icon" [hidden]="!column.sortable">
+                <span class="ng-data-table-column-sort-icon" [hidden]="!column.sortable">
                   <i class="zmdi" [ngClass]="getSortIconClass(column)"></i>
                 </span>
-                <span *ngIf="column.resizable"  class="column-resize-handle float-right" (mousedown)="resizeColumnStart($event, column, th)"></span>
+                <span *ngIf="column.resizable"  class="ng-data-table-column-resize-handle" (mousedown)="resizeColumnStart($event, column, th)"></span>
               </th>
             </ng-container>
           </tr>
           <tr *ngIf="hasFilterColumns()">
-            <th *ngIf="expandColumnVisible" class="expand-column-header">
+            <th *ngIf="expandColumnVisible" class="ng-data-table-expand-column-header">
             </th>
-            <th *ngIf="indexColumnVisible" class="index-column-header">
+            <th *ngIf="indexColumnVisible" class="ng-data-table-index-column-header">
             </th>
-            <th *ngIf="selectColumnVisible" class="select-column-header">
+            <th *ngIf="selectColumnVisible" class="ng-data-table-select-column-header">
             </th>
             <ng-container *ngFor="let column of columns">
               <th #th *ngIf="column.visible">
@@ -82,8 +82,8 @@
       </div>
     </div>
     <div class="ng-data-table-content" (scrollPosition)="scrollPositionStream.next($event)" [style.height]="contentHeight | px" [style.minHeight]="minHeight | px">
-      <div class="loading-cover" [hidden]="!isLoading">
-        <div class="loading-animation"></div>
+      <div class="ng-data-table-loading-cover" [hidden]="!isLoading">
+        <div class="ng-data-table-loading-animation"></div>
       </div>
       <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px" [hidden]="isLoading">
         <colgroup ngDataTableColGroup
@@ -99,7 +99,7 @@
         </tbody>
       </table>
       <ng-container *ngIf="showNoDataOverlay">
-        <div class="no-records-message" *ngIf="translations.noDataMessageHeader && translations.noDataMessageBody">
+        <div class="ng-data-table-no-records-message" *ngIf="translations.noDataMessageHeader && translations.noDataMessageBody">
           <h1>{{translations.noDataMessageHeader}}</h1>
           <h2>{{translations.noDataMessageBody}}</h2>
         </div>

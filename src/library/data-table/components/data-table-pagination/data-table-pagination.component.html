@@ -13,9 +13,9 @@
                (keyup.esc)="onPageSizeRevert(limitInput)"/>
       </div>
     </div>
-    <div class="button-container ng-data-table-pagination-pages">
-      <button [disabled]="hasPrevious" (click)="firstPageClick()" class="ng-data-table-action-button pagination-firstpage">&laquo;</button>
-      <button [disabled]="hasPrevious" (click)="previousPageClick()" class="ng-data-table-action-button pagination-prevpage">&lsaquo;</button>
+    <div class="ng-data-table-pagination-pages">
+      <button [disabled]="hasPrevious" (click)="firstPageClick()" class="ng-data-table-action-button ng-data-table-pagination-firstpage">&laquo;</button>
+      <button [disabled]="hasPrevious" (click)="previousPageClick()" class="ng-data-table-action-button ng-data-table-pagination-prevpage">&lsaquo;</button>
       <div class="ng-data-table-pagination-page">
         <div class="ng-data-table-input-group">
           <input #pageInput type="number" class="ng-data-table-input" min="1" step="1" [attr.max]="maxPage"
@@ -28,8 +28,8 @@
           </div>
         </div>
       </div>
-      <button [disabled]="hasNext" (click)="nextPageClick()" class="ng-data-table-action-button pagination-nextpage">&rsaquo;</button>
-      <button [disabled]="hasNext" (click)="lastPageClick()" class="ng-data-table-action-button pagination-lastpage">&raquo;</button>
+      <button [disabled]="hasNext" (click)="nextPageClick()" class="ng-data-table-action-button ng-data-table-pagination-nextpage">&rsaquo;</button>
+      <button [disabled]="hasNext" (click)="lastPageClick()" class="ng-data-table-action-button ng-data-table-pagination-lastpage">&raquo;</button>
     </div>
   </div>
 </div>

@@ -32,8 +32,12 @@
 
       .ng-data-table-content {
         overflow: auto;
-        overflow-x: auto;
-        overflow-y: auto;
+      }
+
+      > .ng-data-table-inner-wrapper {
+        > .ng-data-table-content {
+          overflow-y: scroll;
+        }
       }
     }
 
@@ -95,7 +99,7 @@
       overflow: hidden;
     }
 
-    .loading-cover {
+    .ng-data-table-loading-cover {
       background: $data-table-header-background;
       border-color: $data-table-header-border;
       border-top: .05rem solid transparent;
@@ -108,7 +112,7 @@
       width: 100%;
       z-index: 1;
 
-      .loading-animation {
+      .ng-data-table-loading-animation {
         animation: loader 1s infinite ease-in-out;
         background-color: $toggle-active-button-background;
         border-radius: 100%;
@@ -124,7 +128,7 @@
       }
     }
 
-    .no-records-message {
+    .ng-data-table-no-records-message {
       padding: 5rem;
       text-align: center;
 
@@ -164,12 +168,12 @@
           vertical-align: bottom;
           word-break: break-all;
 
-          .checkbox-input {
+          .ng-data-table-checkbox-input {
             margin: 0;
           }
 
 
-          .column-resize-handle {
+          .ng-data-table-column-resize-handle {
             bottom: 0;
             cursor: col-resize;
             display: block;
@@ -181,7 +185,7 @@
 
           }
 
-          .column-sort-icon {
+          .ng-data-table-column-sort-icon {
             float: right;
             cursor: pointer;
           }
@@ -230,7 +234,7 @@
 
       tbody {
 
-        .loading-spinner {
+        .ng-data-table-loading-spinner {
           &::before {
             background: $data-table-row-background;
             bottom: 0;
@@ -266,8 +270,8 @@
               border-right: 0;
             }
 
-            .button-container {
-              .action-button {
+            .ng-data-table-button-container {
+              .ng-data-table-action-button {
                 cursor: pointer;
                 display: inline-block;
                 padding: 0 .5rem;

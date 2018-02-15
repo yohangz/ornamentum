@@ -22,8 +22,17 @@
     .ng-data-table-column-selector-box {
 
 
-      .checkbox {
+      .ng-data-table-column-selector-checkbox {
         @include font-size(.8, 1.4);
+
+        label {
+          cursor: pointer;
+          display: block;
+
+          input {
+            cursor: pointer;
+          }
+        }
 
         &:last-child {
 

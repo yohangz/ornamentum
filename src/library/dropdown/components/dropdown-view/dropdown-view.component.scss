@@ -36,9 +36,10 @@
         .ng-dropdown-delete-button {
           @include font-size(.7, .7);
           color: $secondary-background-color;
+          cursor: pointer;
           margin: .01rem;
           outline: none;
-          padding: .41rem;
+          padding: .37rem;
         }
       }
     }

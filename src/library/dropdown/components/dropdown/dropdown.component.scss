@@ -8,6 +8,36 @@
     .ng-dropdown {
       position: relative;
 
+      .ng-dropdown-input-group-btn {
+        margin-left: .01rem;
+        position: absolute;
+        right: .1rem;
+        top: .1rem;
+        z-index: 1;
+
+        .ng-dropdown-delete-button {
+          @include font-size(1.1, 1.2);
+          color: $secondary-background-color;
+          cursor: pointer;
+          margin: .01rem;
+          outline: none;
+          padding: .3rem .35rem;
+
+          i {
+            padding: 0;
+          }
+        }
+      }
+
+      .ng-dropdown-input-group-btn:not([hidden]){
+        ~ .ng-dropdown-toggle {
+          &::after {
+            @include transition(.5s right ease);
+            right: 2.7rem;
+          }
+        }
+      }
+
       .ng-dropdown-toggle {
         @include border-radius(0);
         @include display-flex;
@@ -18,7 +48,7 @@
         color: $multi-select-dropdown-toggle-color;
         cursor: pointer;
         outline: 0;
-        padding: .5rem;
+        padding: .5rem 2rem .5rem .5rem;
         position: relative;
         text-align: left;
         width: 100%;
@@ -27,8 +57,8 @@
           background: $generated-context-background;
           color: $generated-context-color;
           display: inline-block;
-          margin: .1rem .5rem .1rem 0;
-          padding: .2rem 1.5rem .2rem .5rem;
+          margin: 0 .5rem 0 0;
+          padding: 0 1.5rem 0 .5rem;
           position: relative;
 
 
@@ -46,6 +76,7 @@
         }
 
         &::after {
+          @include transition(.5s right ease);
           border-bottom: 0;
           border-left: .3em solid transparent;
           border-right: .3em solid transparent;

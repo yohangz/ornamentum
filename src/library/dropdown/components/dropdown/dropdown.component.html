@@ -1,4 +1,9 @@
 <div #dropdownElement class="ng-dropdown" (clickOutside)="closeDropdown()">
+  <span class="ng-dropdown-input-group-btn" [hidden]="!hasSelectedItems" *ngIf="showClearSelectionButton">
+    <button class="ng-dropdown-delete-button" type="button" (click)="clearSelected()">
+      <i class="zmdi zmdi-close-circle"></i>
+    </button>
+  </span>
   <button  type="button" class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [disabled]="disabled">
     <ng-container *ngIf="multiSelectable">
       <ng-container *ngIf="!showAllSelectedItemLabels">
@@ -18,9 +23,4 @@
       {{ _selectedOption ? _selectedOption.text : translations.selectPlaceholder }}<span class="caret"></span>
     </ng-container>
   </button>
-  <span class="ng-dropdown-input-group-btn button-container" [hidden]="!hasSelectedItems" *ngIf="showClearSelectionButton">
-    <button class="action-button ng-dropdown-delete-button" type="button" (click)="clearSelected()">
-      <i class="zmdi zmdi-close-circle"></i>
-    </button>
-  </span>
 </div>
