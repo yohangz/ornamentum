@@ -73,7 +73,8 @@ export class DataTableConfigService implements DataTableConfig {
   public dropdownFilterWrapDisplaySelectLimit = 1;
   public dropdownFilterGroupByField = undefined;
   public dropdownFilterTriggerChangeOncePerSelectAll = true;
-  public dropdownFilterShowSelectedOptionRemove = false;
+  public dropdownFilterShowSelectedOptionRemoveButton = false;
+  public dropdownFilterShowClearSelectionButton = false;
   public dropdownFilterMenuWidth = 320;
   public dropdownFilterMenuHeight = 250;
 

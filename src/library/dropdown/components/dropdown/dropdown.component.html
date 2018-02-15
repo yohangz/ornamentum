@@ -3,7 +3,7 @@
     <ng-container *ngIf="multiSelectable">
       <ng-container *ngIf="!showAllSelectedItemLabels">
          <span class="ng-dropdown-selected-value" *ngFor="let option of _selectedOptions">
-          {{option.text}} <i class="zmdi zmdi-close-circle" *ngIf="showSelectedOptionRemove" (click)="onSelectOptionClose($event, option)"></i>
+          {{option.text}} <i class="zmdi zmdi-close-circle" *ngIf="showSelectedOptionRemoveButton" (click)="onSelectOptionClose($event, option)"></i>
         </span>
       </ng-container>
       <span *ngIf="showAllSelectedItemLabels">
@@ -18,4 +18,9 @@
       {{ _selectedOption ? _selectedOption.text : translations.selectPlaceholder }}<span class="caret"></span>
     </ng-container>
   </button>
+  <span class="ng-dropdown-input-group-btn button-container" [hidden]="!hasSelectedItems" *ngIf="showClearSelectionButton">
+    <button class="action-button ng-dropdown-delete-button" type="button" (click)="clearSelected()">
+      <i class="zmdi zmdi-close-circle"></i>
+    </button>
+  </span>
 </div>

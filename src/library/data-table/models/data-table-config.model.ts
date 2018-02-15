@@ -330,7 +330,13 @@ export interface DataTableConfig {
    * Dropdown filter show selected option remove button if true.
    * @type {boolean}
    */
-  dropdownFilterShowSelectedOptionRemove?: boolean;
+  dropdownFilterShowSelectedOptionRemoveButton?: boolean;
+
+  /**
+   * Dropdown filter show all select options clear button if true.
+   * @type {boolean}
+   */
+  dropdownFilterShowClearSelectionButton?: boolean;
 
   /**
    * Dropdown filter menu width in pixels.

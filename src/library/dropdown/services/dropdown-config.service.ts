@@ -34,7 +34,8 @@ export class DropdownConfigService implements DropdownConfig {
   public wrapDisplaySelectLimit = 1;
   public triggerSelectChangeOnInit = false;
   public triggerChangeOncePerSelectAll = true;
-  public showSelectedOptionRemove = false;
+  public showSelectedOptionRemoveButton = false;
+  public showClearSelectionButton = false;
   public menuWidth = 320;
   public menuHeight = 250;
   public loadOnScroll = false;

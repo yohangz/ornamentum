@@ -86,7 +86,6 @@ export class DropdownConfig {
    */
   wrapDisplaySelectLimit?: number;
 
-
   /**
    * Trigger select change on init if true.
    * @type {boolean}
@@ -103,7 +102,13 @@ export class DropdownConfig {
    * Show selected option remove button if true.
    * @type {boolean}
    */
-  showSelectedOptionRemove?: boolean;
+  showSelectedOptionRemoveButton?: boolean;
+
+  /**
+   * Show all select options clear button if true.
+   * @type {boolean}
+   */
+  showClearSelectionButton?: boolean;
 
   /**
    * Menu width in pixels.

@@ -91,7 +91,7 @@ export class DataTableColumnComponent implements OnInit {
    * @type boolean
    */
   @Input()
-  public sortable: boolean = false;
+  public sortable = false;
 
   /**
    * Set Data sort oder.
@@ -258,7 +258,14 @@ export class DataTableColumnComponent implements OnInit {
    * @type boolean
    */
   @Input()
-  public dropdownFilterShowSelectedOptionRemove: boolean;
+  public dropdownFilterShowSelectedOptionRemoveButton: boolean;
+
+  /**
+   * Dropdown filter show selected option remove button.
+   * @type boolean
+   */
+  @Input()
+  public dropdownFilterShowClearSelectionButton: boolean;
 
   /**
    * Dropdown filter drop menu width.
@@ -294,7 +301,8 @@ export class DataTableColumnComponent implements OnInit {
     this.dropdownFilterWrapDisplaySelectLimit = dataTableConfigService.dropdownFilterWrapDisplaySelectLimit;
     this.dropdownFilterGroupByField = dataTableConfigService.dropdownFilterGroupByField;
     this.dropdownFilterTriggerChangeOncePerSelectAll = dataTableConfigService.dropdownFilterTriggerChangeOncePerSelectAll;
-    this.dropdownFilterShowSelectedOptionRemove = dataTableConfigService.dropdownFilterShowSelectedOptionRemove;
+    this.dropdownFilterShowSelectedOptionRemoveButton = dataTableConfigService.dropdownFilterShowSelectedOptionRemoveButton;
+    this.dropdownFilterShowClearSelectionButton = dataTableConfigService.dropdownFilterShowClearSelectionButton;
     this.dropdownFilterMenuWidth = dataTableConfigService.dropdownFilterMenuWidth;
     this.dropdownFilterMenuHeight = dataTableConfigService.dropdownFilterMenuHeight;
   }

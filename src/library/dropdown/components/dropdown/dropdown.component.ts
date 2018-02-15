@@ -255,7 +255,13 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {boolean}
    */
   @Input()
-  public showSelectedOptionRemove: boolean;
+  public showSelectedOptionRemoveButton: boolean;
+
+  /**
+   * Show all select options clear button if true.
+   */
+  @Input()
+  public showClearSelectionButton: boolean;
 
   /**
    * Dropdown menu width.
@@ -362,7 +368,8 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.wrapDisplaySelectLimit = this.dropdownConfigService.wrapDisplaySelectLimit;
     this.triggerSelectChangeOnInit = this.dropdownConfigService.triggerSelectChangeOnInit;
     this.triggerChangeOncePerSelectAll = this.dropdownConfigService.triggerChangeOncePerSelectAll;
-    this.showSelectedOptionRemove = this.dropdownConfigService.showSelectedOptionRemove;
+    this.showSelectedOptionRemoveButton = this.dropdownConfigService.showSelectedOptionRemoveButton;
+    this.showClearSelectionButton = this.dropdownConfigService.showClearSelectionButton;
     this.menuWidth = this.dropdownConfigService.menuWidth;
     this.menuHeight = this.dropdownConfigService.menuHeight;
     this.loadOnScroll = this.dropdownConfigService.loadOnScroll;
@@ -419,7 +426,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       this.loadData();
     }
 
-    if (this.triggerSelectChangeOnInit && (this._selectedOption || this._selectedOptions)) {
+    if (this.triggerSelectChangeOnInit) {
       this.emitOnSelectChange();
     }
   }
@@ -514,7 +521,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   }
 
   /**
-   * Performs when clicks on the close icon appeared near the selected item when showSelectedOptionRemove is true.
+   * Performs when clicks on the close icon appeared near the selected item when showSelectedOptionRemoveButton is true.
    * @param {Event} event
    * @param {DropdownItem} option The DropdownItem to be removed from the selected items.
    */
@@ -827,5 +834,26 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    */
   public hasVisibleItems(items: DropdownItem[]): boolean {
     return items.some((item: DropdownItem) => item.filter);
+  }
+
+  /**
+   * Dropdown item selected state.
+   * @return {boolean} - true if has selected items.
+   */
+  public get hasSelectedItems(): boolean {
+    return this.multiSelectable ? !!this._selectedOptions.length : !!this._selectedOption;
+  }
+
+  /**
+   * Clear selected items.
+   */
+  public clearSelected(): void {
+    if (this.multiSelectable)  {
+      this._selectedOptions = [];
+    } else {
+      this._selectedOption = undefined;
+    }
+
+    this.emitOnSelectChange();
   }
 }
