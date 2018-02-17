@@ -1,4 +1,4 @@
-import { Component, forwardRef, Inject, OnDestroy, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, forwardRef, Inject, OnDestroy } from '@angular/core';
 
 import { DataTableComponent } from '../data-table/data-table.component';
 import { DataTableColumnSelectorComponent } from '../data-table-column-selector/data-table-column-selector.component';
