@@ -36,7 +36,7 @@ export class DataTableHeaderComponent implements OnDestroy {
   /**
    * Close column selector.
    */
-  private closeColumnSelector(): void {
+  public closeColumnSelector(): void {
     this.componentLoader.hide();
   }
 
