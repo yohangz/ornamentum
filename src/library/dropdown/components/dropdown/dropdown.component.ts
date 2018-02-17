@@ -1,5 +1,11 @@
 import {
-  AfterContentInit, Component, EventEmitter, forwardRef, Input, OnDestroy, OnInit,
+  AfterContentInit,
+  Component,
+  EventEmitter,
+  forwardRef,
+  Input,
+  OnDestroy,
+  OnInit,
   Output
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -11,14 +17,14 @@ import { DropdownItem } from '../../models/dropdown-item.model';
 import { DropdownItemGroup } from '../../models/dropdownItem-group.model';
 import { DataRequestParams } from '../../models/data-request-params.model';
 
-import { ComponentLoaderFactoryService } from '../../../utility';
 import { ComponentLoader } from '../../../utility/services/component-loader.class';
+import { ComponentLoaderFactoryService } from '../../../utility';
+import { DropdownConfigService } from '../../services/dropdown-config.service';
 
 import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component';
 
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
-import { DropdownConfigService } from '../../services/dropdown-config.service';
 
 /**
  * Component class to represent search dropdown.
@@ -464,11 +470,16 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     const floatTop = this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.BOTTOM_LEFT
       ? element.offsetHeight : 0;
 
-    this.componentLoader.toggle(DropdownViewComponent, element, {
-      props: {
-        dropdown: this
-      }
-    }, floatLeft, floatTop, this.relativeParentElement);
+    this.componentLoader
+      .withFloatLeft(floatLeft)
+      .withFloatTop(floatTop)
+      .withRelativeParentElement(this.relativeParentElement)
+      .withContext({
+        props: {
+          dropdown: this,
+        }
+      })
+      .toggle(DropdownViewComponent, element);
   }
 
   /**
@@ -797,7 +808,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       this.onChangeSubscription.unsubscribe();
     }
 
-    this.componentLoader.dispose();
+    // this.componentLoader.dispose();
   }
 
   /**
@@ -848,7 +859,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * Clear selected items.
    */
   public clearSelected(): void {
-    if (this.multiSelectable)  {
+    if (this.multiSelectable) {
       this._selectedOptions = [];
     } else {
       this._selectedOption = undefined;

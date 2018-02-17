@@ -2,28 +2,41 @@ import {
   Injector,
   ComponentFactoryResolver,
   EmbeddedViewRef,
-  ApplicationRef, ComponentRef
+  ApplicationRef,
+  ComponentRef,
+  Type
 } from '@angular/core';
 
-import { Type } from '@angular/core/src/type';
-
 import { GlobalRefService } from './global-ref.service';
+
 import { Observable } from 'rxjs/Observable';
 
 export interface ComponentLoader<T> {
-  show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number, relativeParentElement?: HTMLElement): void;
+  withFloatLeft(left: number): ComponentLoader<T>;
 
-  toggle(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft?: number, floatTop?: number, relativeParentElement?: HTMLElement): void;
+  withFloatTop(top: number): ComponentLoader<T>;
 
-  hide(): void;
+  withRelativeParentElement(parent: HTMLElement): ComponentLoader<T>;
+
+  withContext(context: any): ComponentLoader<T>;
+
+  hide(): T;
+
+  show(component: Type<T>, parentElement: HTMLElement): T;
+
+  toggle(component: Type<T>, parentElement: HTMLElement): T;
 
   dispose(): void;
 }
 
 export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
-  private componentRef: ComponentRef<T>;
-  private resizeEventHandler: () => void;
+  private componentReference: ComponentRef<T>;
   private isVisible: boolean;
+
+  private floatLeft = 0;
+  private floatTop = 0;
+  private context: any;
+  private relativeParentElement: HTMLElement;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
               private appRef: ApplicationRef,
@@ -32,17 +45,11 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     this.isVisible = false;
   }
 
-  private getResizeEventHandler(): () => void {
-    return () => {
-      this.hide();
-    };
-  }
-
-  private setPosition(parentElement: HTMLElement, holderElement: HTMLElement, floatLeft: number, floatTop: number ): void {
+  private setPosition(parentElement: HTMLElement, holderElement: HTMLElement, floatLeft: number, floatTop: number): void {
     const bodyClientRect = holderElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
 
-    const componentElement = this.componentRef.location.nativeElement as HTMLElement;
+    const componentElement = this.componentReference.location.nativeElement as HTMLElement;
     componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + floatTop}px`;
     componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + floatLeft}px`;
     componentElement.style.position = 'absolute';
@@ -55,64 +62,81 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
       });
   }
 
-  public show(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0, relativeParentElement?: HTMLElement): void {
-    if (this.componentRef) {
-      this.setPosition(parentElement, relativeParentElement || this.globalRefService.window.document.documentElement, floatLeft, floatTop);
+  public withFloatLeft(left: number): ComponentLoader<T> {
+    this.floatLeft = left;
+    return <ComponentLoader<T>>this;
+  }
+
+  public withFloatTop(top: number): ComponentLoader<T> {
+    this.floatTop = top;
+    return <ComponentLoader<T>>this;
+  }
+
+  public withRelativeParentElement(parent: HTMLElement): ComponentLoader<T> {
+    this.relativeParentElement = parent;
+    return <ComponentLoader<T>>this;
+  }
+
+  public withContext(context: any): ComponentLoader<T> {
+    this.context = context;
+    return <ComponentLoader<T>>this;
+  }
+
+  public show(component: Type<T>, parentElement: HTMLElement): T {
+    if (this.componentReference) {
+      this.setPosition(parentElement,
+        this.relativeParentElement || this.globalRefService.window.document.documentElement, this.floatLeft, this.floatTop);
       this.isVisible = true;
       return;
     }
 
     // 1. Create a component reference from the component
-    this.componentRef = this.componentFactoryResolver
+    this.componentReference = this.componentFactoryResolver
       .resolveComponentFactory(component)
       .create(this.injector);
 
-    // 2. Attach component to the appRef so that it's inside the ng component tree
-    this.appRef.attachView(this.componentRef.hostView);
+    Object.assign(this.componentReference.instance, this.context);
 
-    Object.assign(this.componentRef.instance, options);
+    // 2. Attach component to the appRef so that it's inside the ng component tree
+    this.appRef.attachView(this.componentReference.hostView);
 
     // 3. Get DOM element from component
-    const domElem = (this.componentRef.hostView as EmbeddedViewRef<any>)
-      .rootNodes[0] as HTMLElement;
+    const domElem = (this.componentReference.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
 
-    this.setPosition(parentElement, relativeParentElement || this.globalRefService.window.document.documentElement, floatLeft, floatTop);
+    this.setPosition(parentElement, this.relativeParentElement
+      || this.globalRefService.window.document.documentElement, this.floatLeft, this.floatTop);
 
     // 4. Append DOM element to the body
-    (relativeParentElement || this.globalRefService.window.document.body).appendChild(domElem);
+    (this.relativeParentElement || this.globalRefService.window.document.body).appendChild(domElem);
 
-    this.componentRef.changeDetectorRef.markForCheck();
-    this.componentRef.changeDetectorRef.detectChanges();
-
-    this.resizeEventHandler = this.getResizeEventHandler();
+    // Trigger change detection
+    this.componentReference.changeDetectorRef.markForCheck();
+    this.componentReference.changeDetectorRef.detectChanges();
 
     this.isVisible = true;
+    return this.componentReference.instance;
   }
 
-  public hide(): void {
-    if (this.componentRef) {
-      this.componentRef.location.nativeElement.style.display = 'none';
+  public hide(): T {
+    if (this.componentReference) {
+      this.componentReference.location.nativeElement.style.display = 'none';
+      return this.componentReference.instance;
     }
 
     this.isVisible = false;
   }
 
-  public dispose(): void {
-    if (this.componentRef) {
-      this.appRef.detachView(this.componentRef.hostView);
-      this.componentRef.destroy();
-    }
-
-    this.componentRef = null;
-    this.resizeEventHandler = null;
+  public toggle(component: Type<T>, parentElement: HTMLElement): T {
+    return this.isVisible ? this.hide() : this.show(component, parentElement);
   }
 
-  public toggle(component: Type<T>, parentElement: HTMLElement, options: any, floatLeft: number = 0, floatTop: number = 0, relativeParentElement?: HTMLElement): void {
-    if (this.isVisible) {
-      this.hide();
-    } else {
-      this.show(component, parentElement, options, floatLeft, floatTop, relativeParentElement);
+  public dispose(): void {
+    if (this.componentReference) {
+      this.appRef.detachView(this.componentReference.hostView);
+      this.componentReference.destroy();
     }
+
+    this.componentReference = null;
   }
 }
 

@@ -1,4 +1,4 @@
-import { Component, forwardRef, Inject, OnDestroy } from '@angular/core';
+import { Component, forwardRef, Inject, OnDestroy, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 
 import { DataTableComponent } from '../data-table/data-table.component';
 import { DataTableColumnSelectorComponent } from '../data-table-column-selector/data-table-column-selector.component';
@@ -15,7 +15,7 @@ import { ComponentLoaderFactoryService, ComponentLoader } from '../../../utility
   templateUrl: './data-table-header.component.html',
 })
 export class DataTableHeaderComponent implements OnDestroy {
-  public componentLoader: ComponentLoader<DataTableColumnSelectorComponent>;
+  private componentLoader: ComponentLoader<DataTableColumnSelectorComponent>;
 
   constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent,
               private componentLoaderFactory: ComponentLoaderFactoryService) {
@@ -26,11 +26,16 @@ export class DataTableHeaderComponent implements OnDestroy {
    * Toggle column selector.
    */
   public toggleColumnSelector(element: HTMLElement): void {
-    this.componentLoader.toggle(DataTableColumnSelectorComponent, element, {
-      props: {
-        dataTable: this.dataTable
-      }
-    }, element.offsetWidth + 10, element.offsetHeight + 5, this.dataTable.relativeParentElement);
+    this.componentLoader
+      .withFloatLeft(element.offsetWidth + 10)
+      .withFloatTop(element.offsetHeight + 5)
+      .withRelativeParentElement(this.dataTable.relativeParentElement)
+      .withContext({
+        props: {
+          dataTable: this.dataTable,
+        }
+      })
+      .toggle(DataTableColumnSelectorComponent, element);
   }
 
   /**
