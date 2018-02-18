@@ -74,8 +74,7 @@ export class DataTableModule {
         {
           provide: DATA_TABLE_CONFIG,
           useValue: dataTableConfig
-        },
-        DataTableConfigService
+        }
       ]
     };
   }
