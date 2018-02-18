@@ -15,15 +15,6 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 })
 export class DataTableColGroupComponent {
   @Input()
-  public expanderColumnWidth: boolean;
-
-  @Input()
-  public indexColumnWidth: boolean;
-
-  @Input()
-  public selectionColumnWidth: boolean;
-
-  @Input()
   public columns: DataTableColumnComponent;
 
   constructor(public config: DataTableConfigService) {

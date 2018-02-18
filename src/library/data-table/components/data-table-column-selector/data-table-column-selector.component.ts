@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 
@@ -7,8 +7,7 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 @Component({
   selector: 'ng-data-table-column-selector',
   styleUrls: ['./data-table-column-selector.component.scss'],
-  templateUrl: './data-table-column-selector.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './data-table-column-selector.component.html'
 })
 export class DataTableColumnSelectorComponent {
   @Input()
@@ -18,7 +17,7 @@ export class DataTableColumnSelectorComponent {
   public showIndexColumn: boolean;
   public rowSelectable: boolean;
 
-  constructor(public config: DataTableConfigService) {
+  constructor(public config: DataTableConfigService, public cd: ChangeDetectorRef) {
     this.expandableRows = config.rowSelectable;
     this.showIndexColumn = config.showIndexColumn;
     this.rowSelectable = config.rowSelectable;

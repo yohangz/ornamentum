@@ -4,11 +4,7 @@
     <div class="ng-data-table-header-wrapper" [style.paddingRight]="headerPadding | px">
       <div class="ng-data-table-header" scrollElement [scrollPositionStream]="scrollPositionStream">
         <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
-          <colgroup ngDataTableColGroup
-                    [expanderColumnWidth]="expanderColumnWidth"
-                    [indexColumnWidth]="indexColumnWidth"
-                    [selectionColumnWidth]="selectionColumnWidth"
-                    [columns]="columns">
+          <colgroup ngDataTableColGroup [columns]="columns">
           </colgroup>
           <thead>
           <tr>
@@ -83,11 +79,7 @@
         <div class="ng-data-table-loading-animation"></div>
       </div>
       <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px" [hidden]="isLoading">
-        <colgroup ngDataTableColGroup
-                  [expanderColumnWidth]="expanderColumnWidth"
-                  [indexColumnWidth]="indexColumnWidth"
-                  [selectionColumnWidth]="selectionColumnWidth"
-                  [columns]="columns">
+        <colgroup ngDataTableColGroup [columns]="columns">
         </colgroup>
         <tbody ngDataTableBody [dataRows]="dataRows">
         </tbody>

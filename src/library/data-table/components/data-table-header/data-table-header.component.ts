@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Injector, Input, OnDestroy, Output } from '@angular/core';
+import { Component, EventEmitter, Injector, Input, OnDestroy, Output } from '@angular/core';
 
 import { DataTableColumnSelectorComponent } from '../data-table-column-selector/data-table-column-selector.component';
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
@@ -13,8 +13,7 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 @Component({
   selector: 'ng-data-table-header',
   styleUrls: ['./data-table-header.component.scss'],
-  templateUrl: './data-table-header.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './data-table-header.component.html'
 })
 export class DataTableHeaderComponent implements OnDestroy {
   private componentLoader: ComponentLoader<DataTableColumnSelectorComponent>;

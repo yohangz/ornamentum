@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 
@@ -9,8 +9,7 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 @Component({
   selector: 'ng-data-table-pagination',
   styleUrls: ['./data-table-pagination.component.scss'],
-  templateUrl: './data-table-pagination.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  templateUrl: './data-table-pagination.component.html'
 })
 export class DataTablePaginationComponent {
   @Input()

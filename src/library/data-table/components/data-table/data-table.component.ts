@@ -11,6 +11,7 @@ import {
   TemplateRef,
   AfterContentInit, forwardRef
 } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
@@ -37,7 +38,6 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 import { DataTableStateService } from '../../services/data-table-state.service';
 
 import { DragAndDropService, GlobalRefService } from '../../../utility';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 /**
  * Data table component.
@@ -66,11 +66,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   private _limit: number;
   private resizeInProgress = false;
   private isHeardReload = false;
-  // private _translations: DataTableTranslations;
-  //
-  // public indexColumnVisible: boolean;
-  // public selectColumnVisible: boolean;
-  // public expandColumnVisible: boolean;
 
   private columnFilterStream = new Subject();
   private dataFetchStream = new Subject();
@@ -417,21 +412,27 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {number | string}
    */
   @Input()
-  public expanderColumnWidth: number | string;
+  public set expanderColumnWidth(value: number | string) {
+    this.config.expanderColumnWidth = value;
+  }
 
   /**
    * Sets width for index column.
    * @type {string | number}
    */
   @Input()
-  public indexColumnWidth: number | string;
+  public set indexColumnWidth(value: number | string) {
+    this.config.indexColumnWidth = value;
+  }
 
   /**
    * Sets width for selection column.
    * @type {string | number}
    */
   @Input()
-  public selectionColumnWidth: number | string;
+  public set selectionColumnWidth(value: number | string) {
+    this.config.selectionColumnWidth = value;
+  }
 
   /**
    * Relative parent element. Grid positioning relative to this element.
@@ -560,17 +561,13 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     this.storageMode = config.storageMode;
     this.multiColumnSortable = config.multiColumnSortable;
     this.showHeader = config.showHeader;
-    //this.title = config.title;
     this.minHeight = config.minHeight;
     this.minWidth = config.minWidth;
     this.contentHeight = config.contentHeight;
     this.pageable = config.pageable;
-    // this.showIndexColumn = config.showIndexColumn;
     this.indexColumnTitle = config.indexColumnTitle;
-    // this.rowSelectable = config.rowSelectable;
     this.multiRowSelectable = config.multiRowSelectable;
     this.showSubstituteRows = config.showSubstituteRows;
-    // this.expandableRows = config.expandableRows;
     this.selectOnRowClick = config.selectOnRowClick;
     this.expandOnRowClick = config.expandOnRowClick;
     this.autoFetch = config.autoFetch;
@@ -578,15 +575,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     this.selectTrackBy = config.selectTrackBy;
     this.filterDebounceTime = config.filterDebounceTime;
     this.filterDebounce = config.filterDebounce;
-    // this.showRefreshButton = config.showRefreshButton;
-    // this.showColumnSelector = config.showColumnSelector;
-    this.expanderColumnWidth = config.expanderColumnWidth;
-    this.indexColumnWidth = config.indexColumnWidth;
-    this.selectionColumnWidth = config.selectionColumnWidth;
-   // this.relativeParentElement = config.relativeParentElement;
     this._offset = config.offset;
     this._limit = config.limit;
-    // this._translations = {...config.translations};
   }
 
   /**
@@ -634,15 +624,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
 
     this.rowSelectStateUpdate.emit();
   }
-
-  /**
-   * Init defaultdefault values.
-   */
-  // private initDefaultValues(): void {
-  //   this.indexColumnVisible = this.showIndexColumn;
-  //   this.selectColumnVisible = this.rowSelectable;
-  //   this.expandColumnVisible = this.expandableRows;
-  // }
 
   /**
    * Initialzie default click events.
@@ -813,7 +794,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * Lifecycle hook that is called after data-bound properties of a directive are initialized.
    */
   public ngOnInit(): void {
-    //this.initDefaultValues();
     this.initDefaultClickEvents();
 
     if (this.filterDebounce) {
