@@ -5,9 +5,6 @@
       <div class="ng-data-table-header" scrollElement [scrollPositionStream]="scrollPositionStream">
         <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
           <colgroup ngDataTableColGroup
-                    [expandColumnVisible]="expandColumnVisible"
-                    [indexColumnVisible]="indexColumnVisible"
-                    [selectColumnVisible]="selectColumnVisible"
                     [expanderColumnWidth]="expanderColumnWidth"
                     [indexColumnWidth]="indexColumnWidth"
                     [selectionColumnWidth]="selectionColumnWidth"
@@ -15,12 +12,12 @@
           </colgroup>
           <thead>
           <tr>
-            <th *ngIf="expandColumnVisible" class="ng-data-table-expand-column-header">
+            <th *ngIf="config.expandableRows" class="ng-data-table-expand-column-header">
             </th>
-            <th *ngIf="indexColumnVisible" class="ng-data-table-index-column-header">
+            <th *ngIf="config.showIndexColumn" class="ng-data-table-index-column-header">
               <span [textContent]="indexColumnTitle"></span>
             </th>
-            <th *ngIf="selectColumnVisible" class="ng-data-table-select-column-header">
+            <th *ngIf="config.rowSelectable" class="ng-data-table-select-column-header">
               <input [hidden]="!multiRowSelectable" class="ng-data-table-checkbox-input" [disabled]="reloading" type="checkbox" [(ngModel)]="selectAllCheckbox"/>
             </th>
             <ng-container *ngFor="let column of columns">
@@ -36,11 +33,11 @@
             </ng-container>
           </tr>
           <tr *ngIf="hasFilterColumns()">
-            <th *ngIf="expandColumnVisible" class="ng-data-table-expand-column-header">
+            <th *ngIf="config.expandableRows" class="ng-data-table-expand-column-header">
             </th>
-            <th *ngIf="indexColumnVisible" class="ng-data-table-index-column-header">
+            <th *ngIf="config.showIndexColumn" class="ng-data-table-index-column-header">
             </th>
-            <th *ngIf="selectColumnVisible" class="ng-data-table-select-column-header">
+            <th *ngIf="config.rowSelectable" class="ng-data-table-select-column-header">
             </th>
             <ng-container *ngFor="let column of columns">
               <th #th *ngIf="column.visible">
@@ -87,9 +84,6 @@
       </div>
       <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px" [hidden]="isLoading">
         <colgroup ngDataTableColGroup
-                  [expandColumnVisible]="expandColumnVisible"
-                  [indexColumnVisible]="indexColumnVisible"
-                  [selectColumnVisible]="selectColumnVisible"
                   [expanderColumnWidth]="expanderColumnWidth"
                   [indexColumnWidth]="indexColumnWidth"
                   [selectionColumnWidth]="selectionColumnWidth"
@@ -99,9 +93,9 @@
         </tbody>
       </table>
       <ng-container *ngIf="showNoDataOverlay">
-        <div class="ng-data-table-no-records-message" *ngIf="translations.noDataMessageHeader && translations.noDataMessageBody">
-          <h1>{{translations.noDataMessageHeader}}</h1>
-          <h2>{{translations.noDataMessageBody}}</h2>
+        <div class="ng-data-table-no-records-message" *ngIf="config.translations.noDataMessageHeader && config.translations.noDataMessageBody">
+          <h1>{{config.translations.noDataMessageHeader}}</h1>
+          <h2>{{config.translations.noDataMessageBody}}</h2>
         </div>
         <ng-template *ngIf="noRecordsTemplate" [ngTemplateOutlet]="noRecordsTemplate"></ng-template>
       </ng-container>
@@ -112,7 +106,7 @@
                             [limit]="limit"
                             [offset]="offset"
                             [itemCount]="itemCount"
-                            [translations]="translations"
+                            [translations]="config.translations"
                             [maxLimit]="100"
                             (limitChange)="onLimitChange($event)"
                             (offsetChange)="onOffsetChange($event)">

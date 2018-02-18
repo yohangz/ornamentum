@@ -48,6 +48,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   styleUrls: ['./data-table.component.scss'],
   templateUrl: './data-table.component.html',
   providers: [
+    DataTableConfigService,
     DataTableStateService,
     {
       provide: NG_VALUE_ACCESSOR,
@@ -65,11 +66,11 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   private _limit: number;
   private resizeInProgress = false;
   private isHeardReload = false;
-  private _translations: DataTableTranslations;
-
-  public indexColumnVisible: boolean;
-  public selectColumnVisible: boolean;
-  public expandColumnVisible: boolean;
+  // private _translations: DataTableTranslations;
+  //
+  // public indexColumnVisible: boolean;
+  // public selectColumnVisible: boolean;
+  // public expandColumnVisible: boolean;
 
   private columnFilterStream = new Subject();
   private dataFetchStream = new Subject();
@@ -278,7 +279,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {boolean}
    */
   @Input()
-  public showIndexColumn: boolean;
+  public set showIndexColumn(value: boolean) {
+    this.config.showIndexColumn = value;
+  }
 
   /**
    * Index column title text.
@@ -292,7 +295,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {rowSelectable}
    */
   @Input()
-  public rowSelectable: boolean;
+  public set rowSelectable(value: boolean) {
+    this.config.rowSelectable = value;
+  }
 
   /**
    * Multi row selectable if true.
@@ -313,7 +318,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {boolean}
    */
   @Input()
-  public expandableRows: boolean;
+  public set expandableRows(value: boolean) {
+    this.config.expandableRows = value;
+  }
 
   /**
    * Select checkbox on row click.
@@ -456,15 +463,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    */
   @Input()
   public set translations(data: DataTableTranslations) {
-    this._translations = {...this._translations, ...data};
-  }
-
-  /**
-   * Returns translations.
-   * @returns {DataTableTranslations}
-   */
-  public get translations(): DataTableTranslations {
-    return this._translations;
+    this.config.translations = data;
   }
 
   /**
@@ -548,38 +547,38 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   constructor(private dragAndDropService: DragAndDropService,
               private dataTableStateService: DataTableStateService,
               private globalRefService: GlobalRefService,
-              private dataTableConfigService: DataTableConfigService) {
-    this.persistTableState = dataTableConfigService.persistTableState;
-    this.storageMode = dataTableConfigService.storageMode;
-    this.multiColumnSortable = dataTableConfigService.multiColumnSortable;
-    this.showHeader = dataTableConfigService.showHeader;
-    this.title = dataTableConfigService.title;
-    this.minHeight = dataTableConfigService.minHeight;
-    this.minWidth = dataTableConfigService.minWidth;
-    this.contentHeight = dataTableConfigService.contentHeight;
-    this.pageable = dataTableConfigService.pageable;
-    this.showIndexColumn = dataTableConfigService.showIndexColumn;
-    this.indexColumnTitle = dataTableConfigService.indexColumnTitle;
-    this.rowSelectable = dataTableConfigService.rowSelectable;
-    this.multiRowSelectable = dataTableConfigService.multiRowSelectable;
-    this.showSubstituteRows = dataTableConfigService.showSubstituteRows;
-    this.expandableRows = dataTableConfigService.expandableRows;
-    this.selectOnRowClick = dataTableConfigService.selectOnRowClick;
-    this.expandOnRowClick = dataTableConfigService.expandOnRowClick;
-    this.autoFetch = dataTableConfigService.autoFetch;
-    this.showLoadingSpinner = dataTableConfigService.showLoadingSpinner;
-    this.selectTrackBy = dataTableConfigService.selectTrackBy;
-    this.filterDebounceTime = dataTableConfigService.filterDebounceTime;
-    this.filterDebounce = dataTableConfigService.filterDebounce;
-    this.showRefreshButton = dataTableConfigService.showRefreshButton;
-    this.showColumnSelector = dataTableConfigService.showColumnSelector;
-    this.expanderColumnWidth = dataTableConfigService.expanderColumnWidth;
-    this.indexColumnWidth = dataTableConfigService.indexColumnWidth;
-    this.selectionColumnWidth = dataTableConfigService.selectionColumnWidth;
-    this.relativeParentElement = dataTableConfigService.relativeParentElement;
-    this._offset = dataTableConfigService.offset;
-    this._limit = dataTableConfigService.limit;
-    this._translations = {...dataTableConfigService.translations};
+              private config: DataTableConfigService) {
+    this.persistTableState = config.persistTableState;
+    this.storageMode = config.storageMode;
+    this.multiColumnSortable = config.multiColumnSortable;
+    this.showHeader = config.showHeader;
+    this.title = config.title;
+    this.minHeight = config.minHeight;
+    this.minWidth = config.minWidth;
+    this.contentHeight = config.contentHeight;
+    this.pageable = config.pageable;
+    // this.showIndexColumn = config.showIndexColumn;
+    this.indexColumnTitle = config.indexColumnTitle;
+    // this.rowSelectable = config.rowSelectable;
+    this.multiRowSelectable = config.multiRowSelectable;
+    this.showSubstituteRows = config.showSubstituteRows;
+    // this.expandableRows = config.expandableRows;
+    this.selectOnRowClick = config.selectOnRowClick;
+    this.expandOnRowClick = config.expandOnRowClick;
+    this.autoFetch = config.autoFetch;
+    this.showLoadingSpinner = config.showLoadingSpinner;
+    this.selectTrackBy = config.selectTrackBy;
+    this.filterDebounceTime = config.filterDebounceTime;
+    this.filterDebounce = config.filterDebounce;
+    this.showRefreshButton = config.showRefreshButton;
+    this.showColumnSelector = config.showColumnSelector;
+    this.expanderColumnWidth = config.expanderColumnWidth;
+    this.indexColumnWidth = config.indexColumnWidth;
+    this.selectionColumnWidth = config.selectionColumnWidth;
+    this.relativeParentElement = config.relativeParentElement;
+    this._offset = config.offset;
+    this._limit = config.limit;
+    // this._translations = {...config.translations};
   }
 
   /**
@@ -631,11 +630,11 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   /**
    * Init defaultdefault values.
    */
-  private initDefaultValues(): void {
-    this.indexColumnVisible = this.showIndexColumn;
-    this.selectColumnVisible = this.rowSelectable;
-    this.expandColumnVisible = this.expandableRows;
-  }
+  // private initDefaultValues(): void {
+  //   this.indexColumnVisible = this.showIndexColumn;
+  //   this.selectColumnVisible = this.rowSelectable;
+  //   this.expandColumnVisible = this.expandableRows;
+  // }
 
   /**
    * Initialzie default click events.
@@ -645,7 +644,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
       this.sortData(headerClickEventArgs.column);
     });
 
-    if (this.selectOnRowClick || (this.expandableRows && this.expandOnRowClick)) {
+    if (this.selectOnRowClick || (this.config.expandableRows && this.expandOnRowClick)) {
       this.rowClickSubscription = this.rowClick.subscribe((rowClickEventArgs: RowClickEventArgs) => {
         if (rowClickEventArgs.event.srcElement.classList.contains('ng-ignore-propagation')) {
           return;
@@ -806,7 +805,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * Lifecycle hook that is called after data-bound properties of a directive are initialized.
    */
   public ngOnInit(): void {
-    this.initDefaultValues();
+    //this.initDefaultValues();
     this.initDefaultClickEvents();
 
     if (this.filterDebounce) {
@@ -958,9 +957,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    */
   public get columnTotalCount(): number {
     let count = 0;
-    count += this.indexColumnVisible ? 1 : 0;
-    count += this.selectColumnVisible ? 1 : 0;
-    count += this.expandColumnVisible ? 1 : 0;
+    count += this.config.showIndexColumn ? 1 : 0;
+    count += this.config.rowSelectable ? 1 : 0;
+    count += this.config.expandableRows ? 1 : 0;
     this.columns.toArray().forEach(column => {
       count += column.visible ? 1 : 0;
     });
