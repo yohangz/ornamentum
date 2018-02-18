@@ -12,7 +12,7 @@ export class DragAndDropService {
     let y = startY;
     let moved = false;
 
-    function mouseMoveHandler(mouseMoveEvent: MouseEvent) {
+    const mouseMoveHandler = (mouseMoveEvent: MouseEvent) => {
       const dx = mouseMoveEvent.pageX - x;
       const dy = mouseMoveEvent.pageY - y;
       x = mouseMoveEvent.pageX;
@@ -24,9 +24,9 @@ export class DragAndDropService {
       move(mouseMoveEvent, dx, dy, x, y);
 
       mouseMoveEvent.preventDefault(); // to avoid text selection
-    }
+    };
 
-    function mouseUpHandler(mouseUpEvent: MouseEvent) {
+    const mouseUpHandler = (mouseUpEvent: MouseEvent) => {
       x = mouseUpEvent.pageX;
       y = mouseUpEvent.pageY;
 
@@ -36,7 +36,7 @@ export class DragAndDropService {
       if (up) {
         up(mouseUpEvent, x, y, moved);
       }
-    }
+    };
 
     document.addEventListener('mousemove', mouseMoveHandler);
     document.addEventListener('mouseup', mouseUpHandler);
