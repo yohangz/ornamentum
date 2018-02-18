@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
+import { DataTableConfigService } from '../../services/data-table-config.service';
 
 /**
  * Data table column group component.
@@ -14,15 +15,6 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 })
 export class DataTableColGroupComponent {
   @Input()
-  public expandColumnVisible: boolean;
-
-  @Input()
-  public indexColumnVisible: boolean;
-
-  @Input()
-  public selectColumnVisible: boolean;
-
-  @Input()
   public expanderColumnWidth: boolean;
 
   @Input()
@@ -33,5 +25,8 @@ export class DataTableColGroupComponent {
 
   @Input()
   public columns: DataTableColumnComponent;
+
+  constructor(public config: DataTableConfigService) {
+  }
 }
 

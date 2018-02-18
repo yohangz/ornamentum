@@ -1,6 +1,6 @@
-<col *ngIf="expandColumnVisible" [style.width]="expanderColumnWidth | px">
-<col *ngIf="indexColumnVisible" [style.width]="indexColumnWidth | px">
-<col *ngIf="selectColumnVisible" [style.width]="selectionColumnWidth | px">
+<col *ngIf="config.expandableRows" [style.width]="expanderColumnWidth | px">
+<col *ngIf="config.showIndexColumn" [style.width]="indexColumnWidth | px">
+<col *ngIf="config.rowSelectable" [style.width]="selectionColumnWidth | px">
 <ng-container *ngFor="let column of columns">
   <col [style.width]="column.width | px" *ngIf="column.visible">
 </ng-container>
