@@ -212,6 +212,13 @@ export interface DataTableConfig {
   limit?: number;
 
   /**
+   * Data max limit value (max page size).
+   * Applicable only when pageable is true.
+   * @type {number}
+   */
+  maxLimit?: number;
+
+  /**
    * Base display text translations.
    * @type {DataTableTranslations}
    */

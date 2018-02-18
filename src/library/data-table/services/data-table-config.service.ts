@@ -44,6 +44,7 @@ export class DataTableConfigService implements DataTableConfig {
   public relativeParentElement = undefined;
   public offset = 0;
   public limit = 10;
+  public maxLimit = 100;
   public baseTranslations: DataTableTranslations = {
     expandColumn: 'expand',
     indexColumn: 'index',

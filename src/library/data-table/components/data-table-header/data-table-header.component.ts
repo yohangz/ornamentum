@@ -29,8 +29,8 @@ export class DataTableHeaderComponent implements OnDestroy {
   public reload = new EventEmitter();
 
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
-              private config: DataTableConfigService,
-              private injector: Injector) {
+              private injector: Injector,
+              public config: DataTableConfigService) {
     this.componentLoader = this.componentLoaderFactory.createLoader<DataTableColumnSelectorComponent>();
   }
 

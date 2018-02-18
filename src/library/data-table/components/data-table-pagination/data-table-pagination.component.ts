@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { DataTableTranslations } from '../../models/data-tabl-translations.model';
+import { DataTableConfigService } from '../../services/data-table-config.service';
 
 /**
  * Data table pagination component.
@@ -13,10 +13,6 @@ import { DataTableTranslations } from '../../models/data-tabl-translations.model
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DataTablePaginationComponent {
-
-  @Input()
-  public translations: DataTableTranslations;
-
   @Input()
   public itemCount: number;
 
@@ -26,14 +22,14 @@ export class DataTablePaginationComponent {
   @Input()
   public limit: number;
 
-  @Input()
-  public maxLimit: number;
-
   @Output()
   public limitChange = new EventEmitter();
 
   @Output()
   public offsetChange = new EventEmitter();
+
+  constructor(public config: DataTableConfigService) {
+  }
 
   /**
    * First page click handler.
@@ -85,7 +81,7 @@ export class DataTablePaginationComponent {
    */
   public onPageSizeChange(element: HTMLInputElement): void {
     const limit = parseInt(element.value);
-    if (limit > this.maxLimit) {
+    if (limit > this.config.maxLimit) {
       element.value = String(this.limit);
       return;
     }
