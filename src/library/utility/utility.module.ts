@@ -8,9 +8,8 @@ import { PixelConverterPipe } from './pipes/pixel-converter.pipe';
 
 import { UtilityConfigService } from './services/utility-config.service';
 import { DragAndDropService } from './services/drag-and-drop.service';
-
 import { GlobalRefService } from './services/global-ref.service';
-import { ComponentLoaderFactoryService } from './services/component-loader-factory.service';
+import { PopoverComponentLoaderFactoryService } from './services/popover-component-loader-factory.service';
 
 const DIRECTIVES = [
   ClickOutsideDirective,
@@ -24,7 +23,7 @@ const PIPES = [
 const PROVIDERS = [
   DragAndDropService,
   GlobalRefService,
-  ComponentLoaderFactoryService
+  PopoverComponentLoaderFactoryService
 ];
 
 /**
