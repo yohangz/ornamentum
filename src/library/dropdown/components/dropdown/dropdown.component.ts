@@ -3,6 +3,7 @@ import {
   Component,
   EventEmitter,
   forwardRef,
+  Injector,
   Input,
   OnDestroy,
   OnInit,
@@ -17,8 +18,7 @@ import { DropdownItem } from '../../models/dropdown-item.model';
 import { DropdownItemGroup } from '../../models/dropdownItem-group.model';
 import { DataRequestParams } from '../../models/data-request-params.model';
 
-import { ComponentLoader } from '../../../utility/services/component-loader.class';
-import { ComponentLoaderFactoryService } from '../../../utility';
+import { PopoverComponentLoaderFactoryService, ComponentLoader } from '../../../utility';
 import { DropdownConfigService } from '../../services/dropdown-config.service';
 
 import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component';
@@ -357,8 +357,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this._allSelected = this.currentItemCount === this._selectedOptions.length;
   }
 
-  constructor(private componentLoaderFactory: ComponentLoaderFactoryService,
-              private dropdownConfigService: DropdownConfigService) {
+  constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
+              private dropdownConfigService: DropdownConfigService,
+              private injector: Injector) {
     this._translations = {...this.dropdownConfigService.translations};
     this.selectTrackBy = this.dropdownConfigService.selectTrackBy;
     this.displayTrackBy = this.dropdownConfigService.displayTrackBy;
@@ -479,7 +480,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
           dropdown: this,
         }
       })
-      .toggle(DropdownViewComponent, element);
+      .toggle(DropdownViewComponent, element, this.injector);
   }
 
   /**

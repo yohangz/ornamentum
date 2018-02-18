@@ -1,5 +1,5 @@
 export { SortOrder } from './models/sort-order.enum';
-export { StorageMode } from './models/storage-mode.enum'
+export { StorageMode } from './models/storage-mode.enum';
 
 export { CellBindEventArgs } from './models/cell-bind-event-args.model';
 export { QueryResult } from './models/query-result.model';
@@ -28,9 +28,8 @@ export { DataTableComponent } from './components/data-table/data-table.component
 export { DataTableColumnComponent } from './components/data-table-column/data-table-column.component';
 
 export { DataTableResource} from './services/data-table-resource.class';
+export { DataTableResourceManager } from './services/data-table-resource-manager.class';
 
-export { DataTableConfigService } from './services/data-table-config.service';
 export { DataTableResourceFactoryService } from './services/data-table-resource-factory.service';
 
 export { DataTableModule } from './data-table.module';
-export { DataTableResourceManager } from './services/data-table-resource-manager.class';
