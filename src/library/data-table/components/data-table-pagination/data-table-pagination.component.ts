@@ -92,7 +92,7 @@ export class DataTablePaginationComponent {
 
     if (this.limit !== limit) {
       this.offsetChange.emit(0);
-      this.limitChange.emit(limit)
+      this.limitChange.emit(limit);
     }
   }
 
