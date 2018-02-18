@@ -1,4 +1,4 @@
-<div class="ng-data-table-wrapper" [ngClass]="{ 'scrollable': !!contentHeight }">
+<div class="ng-data-table-wrapper" [class.scrollable]="contentHeight">
   <ng-data-table-header *ngIf="showHeader" [reloading]="reloading"  [columns]="columns" (reload)="onReload()"></ng-data-table-header>
   <div class="ng-data-table-inner-wrapper">
     <div class="ng-data-table-header-wrapper" [style.paddingRight]="headerPadding | px">
