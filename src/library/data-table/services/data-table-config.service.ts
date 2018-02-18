@@ -44,7 +44,7 @@ export class DataTableConfigService implements DataTableConfig {
   public relativeParentElement = undefined;
   public offset = 0;
   public limit = 10;
-  public translations: DataTableTranslations = {
+  public baseTranslations: DataTableTranslations = {
     expandColumn: 'expand',
     indexColumn: 'index',
     noDataMessageHeader: 'Whoops!',
@@ -82,5 +82,17 @@ export class DataTableConfigService implements DataTableConfig {
       if (dataTableConfig) {
         Object.assign(<any>this, dataTableConfig);
       }
+  }
+
+  public set translations(value: DataTableTranslations) {
+    this.baseTranslations = {...this.baseTranslations, ...value};
+  }
+
+  /**
+   * Returns translations.
+   * @returns {DataTableTranslations}
+   */
+  public get translations(): DataTableTranslations {
+    return this.baseTranslations;
   }
 }
