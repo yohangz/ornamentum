@@ -9,12 +9,13 @@ import { DataTablePaginationComponent } from './components/data-table-pagination
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { DataTableBodyComponent } from './components/data-table-body/data-table-body.component';
 import { DataTableColumnSelectorComponent } from './components/data-table-column-selector/data-table-column-selector.component';
+import { DataTableNoDataBodyComponent } from './components/data-table-no-data-body/data-table-no-data-body.component';
 
 import { ScrollPositionDirective } from './directives/scroll-position.directive';
 import { ScrollElementDirective } from './directives/scroll-element.directive';
 import { ElementWidthDirective } from './directives/element-width.directive';
 
-import { DATA_TABLE_CONFIG, DataTableConfigService } from './services/data-table-config.service';
+import { DATA_TABLE_CONFIG } from './services/data-table-config.service';
 import { DataTableResourceFactoryService } from './services/data-table-resource-factory.service';
 
 import { DropdownModule } from '../dropdown';
@@ -28,7 +29,8 @@ const COMPONENTS = [
   DataTableBodyComponent,
   DataTablePaginationComponent,
   DataTableComponent,
-  DataTableColumnSelectorComponent
+  DataTableColumnSelectorComponent,
+  DataTableNoDataBodyComponent
 ];
 
 const DIRECTIVES = [

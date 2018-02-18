@@ -1,0 +1,18 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+:host-context {
+  .ng-data-table-no-records-message {
+    padding: 5rem;
+    text-align: center;
+
+    h1 {
+      @include font-size(1.2, 1.4);
+      color: $action-text;
+    }
+
+    h2 {
+      @include font-size(.8, 1.4);
+    }
+  }
+}

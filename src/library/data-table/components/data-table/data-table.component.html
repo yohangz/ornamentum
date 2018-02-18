@@ -84,13 +84,8 @@
         <tbody ngDataTableBody [dataRows]="dataRows">
         </tbody>
       </table>
-      <ng-container *ngIf="showNoDataOverlay">
-        <div class="ng-data-table-no-records-message" *ngIf="config.translations.noDataMessageHeader && config.translations.noDataMessageBody">
-          <h1>{{config.translations.noDataMessageHeader}}</h1>
-          <h2>{{config.translations.noDataMessageBody}}</h2>
-        </div>
-        <ng-template *ngIf="noRecordsTemplate" [ngTemplateOutlet]="noRecordsTemplate"></ng-template>
-      </ng-container>
+      <ng-data-table-no-data-body *ngIf="showNoDataOverlay" [noRecordsTemplate]="noRecordsTemplate">
+      </ng-data-table-no-data-body>
     </div>
   </div>
   <ng-data-table-pagination *ngIf="pageable && itemCount"

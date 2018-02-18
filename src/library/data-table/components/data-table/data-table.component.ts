@@ -1172,7 +1172,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @param {DataRow} row Data row.
    * @return {GroupDetail} Group detail object.
    */
-  private extractGroupRowDetails(row: DataRow): GroupDetail {
+  public extractGroupRowDetails(row: DataRow): GroupDetail {
     const rowGroups = this.onGroupFieldExtract(row);
 
     const maxRows = rowGroups.reduce((acc: number, value: any[]) => {

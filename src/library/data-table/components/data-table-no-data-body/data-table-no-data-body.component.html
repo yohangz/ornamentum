@@ -1,0 +1,5 @@
+<div class="ng-data-table-no-records-message" *ngIf="config.translations.noDataMessageHeader && config.translations.noDataMessageBody">
+  <h1>{{config.translations.noDataMessageHeader}}</h1>
+  <h2>{{config.translations.noDataMessageBody}}</h2>
+</div>
+<ng-template *ngIf="noRecordsTemplate" [ngTemplateOutlet]="noRecordsTemplate"></ng-template>
