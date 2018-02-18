@@ -9,27 +9,11 @@ import {
 
 import { GlobalRefService } from './global-ref.service';
 
+import { ComponentLoader } from './component-loader.interface';
+
 import { Observable } from 'rxjs/Observable';
 
-export interface ComponentLoader<T> {
-  withFloatLeft(left: number): ComponentLoader<T>;
-
-  withFloatTop(top: number): ComponentLoader<T>;
-
-  withRelativeParentElement(parent: HTMLElement): ComponentLoader<T>;
-
-  withContext(context: any): ComponentLoader<T>;
-
-  hide(): T;
-
-  show(component: Type<T>, parentElement: HTMLElement): T;
-
-  toggle(component: Type<T>, parentElement: HTMLElement): T;
-
-  dispose(): void;
-}
-
-export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
+export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   private componentReference: ComponentRef<T>;
   private isVisible: boolean;
 
@@ -40,18 +24,18 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
               private appRef: ApplicationRef,
-              private injector: Injector,
               private globalRefService: GlobalRefService) {
     this.isVisible = false;
   }
 
-  private setPosition(parentElement: HTMLElement, holderElement: HTMLElement, floatLeft: number, floatTop: number): void {
+  private setPosition(parentElement: HTMLElement): void {
+    const holderElement = this.relativeParentElement || this.globalRefService.window.document.documentElement;
     const bodyClientRect = holderElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
 
     const componentElement = this.componentReference.location.nativeElement as HTMLElement;
-    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + floatTop}px`;
-    componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + floatLeft}px`;
+    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + this.floatTop}px`;
+    componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + this.floatLeft}px`;
     componentElement.style.position = 'absolute';
     componentElement.style.display = 'block';
 
@@ -82,10 +66,9 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     return <ComponentLoader<T>>this;
   }
 
-  public show(component: Type<T>, parentElement: HTMLElement): T {
+  public show(component: Type<T>, parentElement: HTMLElement, injector: Injector): T {
     if (this.componentReference) {
-      this.setPosition(parentElement,
-        this.relativeParentElement || this.globalRefService.window.document.documentElement, this.floatLeft, this.floatTop);
+      this.setPosition(parentElement);
       this.isVisible = true;
       return;
     }
@@ -93,7 +76,7 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     // 1. Create a component reference from the component
     this.componentReference = this.componentFactoryResolver
       .resolveComponentFactory(component)
-      .create(this.injector);
+      .create(injector);
 
     Object.assign(this.componentReference.instance, this.context);
 
@@ -103,8 +86,7 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
     // 3. Get DOM element from component
     const domElem = (this.componentReference.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
 
-    this.setPosition(parentElement, this.relativeParentElement
-      || this.globalRefService.window.document.documentElement, this.floatLeft, this.floatTop);
+    this.setPosition(parentElement);
 
     // 4. Append DOM element to the body
     (this.relativeParentElement || this.globalRefService.window.document.body).appendChild(domElem);
@@ -120,14 +102,13 @@ export class AbsoluteComponentLoader<T> implements ComponentLoader<T> {
   public hide(): T {
     if (this.componentReference) {
       this.componentReference.location.nativeElement.style.display = 'none';
+      this.isVisible = false;
       return this.componentReference.instance;
     }
-
-    this.isVisible = false;
   }
 
-  public toggle(component: Type<T>, parentElement: HTMLElement): T {
-    return this.isVisible ? this.hide() : this.show(component, parentElement);
+  public toggle(component: Type<T>, parentElement: HTMLElement, injector: Injector): T {
+    return this.isVisible ? this.hide() : this.show(component, parentElement, injector);
   }
 
   public dispose(): void {
