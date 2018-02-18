@@ -241,7 +241,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {string}
    */
   @Input()
-  public title: string;
+  public set title(value: string) {
+    this.config.title = value;
+  }
 
   /**
    * Table min height
@@ -397,14 +399,18 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {boolean}
    */
   @Input()
-  public showRefreshButton: boolean;
+  public set showRefreshButton(value: boolean) {
+    this.config.showRefreshButton = value;
+  }
 
   /**
    * Show column selector.
    * @type {boolean}
    */
   @Input()
-  public showColumnSelector: boolean;
+  public set showColumnSelector(value: boolean) {
+    this.config.showColumnSelector = value;
+  }
 
   /**
    * Sets width for expander column.
@@ -432,7 +438,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {HTMLElement}
    */
   @Input()
-  public relativeParentElement: HTMLElement;
+  public set relativeParentElement(value: HTMLElement) {
+    this.config.relativeParentElement = value;
+  }
 
   /**
    * Set data table items array.
@@ -552,7 +560,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     this.storageMode = config.storageMode;
     this.multiColumnSortable = config.multiColumnSortable;
     this.showHeader = config.showHeader;
-    this.title = config.title;
+    //this.title = config.title;
     this.minHeight = config.minHeight;
     this.minWidth = config.minWidth;
     this.contentHeight = config.contentHeight;
@@ -570,12 +578,12 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     this.selectTrackBy = config.selectTrackBy;
     this.filterDebounceTime = config.filterDebounceTime;
     this.filterDebounce = config.filterDebounce;
-    this.showRefreshButton = config.showRefreshButton;
-    this.showColumnSelector = config.showColumnSelector;
+    // this.showRefreshButton = config.showRefreshButton;
+    // this.showColumnSelector = config.showColumnSelector;
     this.expanderColumnWidth = config.expanderColumnWidth;
     this.indexColumnWidth = config.indexColumnWidth;
     this.selectionColumnWidth = config.selectionColumnWidth;
-    this.relativeParentElement = config.relativeParentElement;
+   // this.relativeParentElement = config.relativeParentElement;
     this._offset = config.offset;
     this._limit = config.limit;
     // this._translations = {...config.translations};
@@ -1222,6 +1230,10 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
 
   public get headerPadding(): number {
     return this.contentHeight ? this.globalRefService.scrollbarWidth : 0;
+  }
+
+  public onReload(): void {
+    this.dataFetchStream.next(true);
   }
 
   public writeValue(value: any): void {

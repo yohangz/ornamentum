@@ -541,14 +541,14 @@
       <ng-dropdown
         [items]="column.filterOptions"
         [totalItemCount]="column.filterOptions.length"
-        [menuPosition]="column.filterMenuPosition"
+        [menuPosition]="column.dropdownFilterMenuPosition"
         [(ngModel)]="column.filter"
         [filterable]="true"
         [multiSelectable]="true"
         [showSelectedOptionRemoveButton]="false"
         [showSelectAll]="true"
         [triggerSelectChangeOnInit]="false"
-        [wrapDisplaySelectLimit]="column.displaySelectedLimit"
+        [wrapDisplaySelectLimit]="column.dropdownFilterWrapDisplaySelectLimit"
         (selectChange)="onFilter.emit({ column: column, filter: column.filter })">
       </ng-dropdown>
     </ng-template>
