@@ -212,10 +212,10 @@ export interface DataTableConfig {
   limit?: number;
 
   /**
-   * Display text translations.
+   * Base display text translations.
    * @type {DataTableTranslations}
    */
-  translations?: DataTableTranslations
+  baseTranslations?: DataTableTranslations;
 
   // Table column config
 
