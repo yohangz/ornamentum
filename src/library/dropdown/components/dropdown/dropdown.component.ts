@@ -809,7 +809,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       this.onChangeSubscription.unsubscribe();
     }
 
-    // this.componentLoader.dispose();
+    this.componentLoader.dispose();
   }
 
   /**
