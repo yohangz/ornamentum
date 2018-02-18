@@ -22,7 +22,6 @@ import { StorageMode } from '../../models/storage-mode.enum';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { CellBindEventArgs } from '../../models/cell-bind-event-args.model';
 import { GroupDetail } from '../../models/group-detail.model';
-import { FilterEventArgs } from '../../models/filter-event-args.model';
 import { CellClickEventArgs } from '../../models/cell-click-event-args.model';
 import { HeaderClickEventArgs } from '../../models/header-click-event-args.model';
 import { DoubleClickEventArgs } from '../../models/double-click-event-args.model';
@@ -67,17 +66,12 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   private resizeInProgress = false;
   private isHeardReload = false;
 
-  private columnFilterStream = new Subject();
   private dataFetchStream = new Subject();
   public scrollPositionStream = new Subject();
 
-  public customFilterEventEmitter = new EventEmitter<FilterEventArgs>();
-
   private headerClickSubscription: Subscription;
   private rowClickSubscription: Subscription;
-  private columnFilterSubscription: Subscription;
   private selectStateSubscription: Subscription;
-  private customFilterSubscription: Subscription;
 
   public rowSelectStateUpdate = new EventEmitter();
 
@@ -380,14 +374,18 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {number}
    */
   @Input()
-  public filterDebounceTime: number;
+  public set filterDebounceTime(value: number) {
+    this.config.filterDebounceTime = value;
+  }
 
   /**
    * Filter de-bounce enabled state.
    * @type {boolean}
    */
   @Input()
-  public filterDebounce: boolean;
+  public set filterDebounce(value: boolean) {
+    this.config.filterDebounce = value;
+  }
 
   /**
    * Show refresh button.
@@ -573,8 +571,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     this.autoFetch = config.autoFetch;
     this.showLoadingSpinner = config.showLoadingSpinner;
     this.selectTrackBy = config.selectTrackBy;
-    this.filterDebounceTime = config.filterDebounceTime;
-    this.filterDebounce = config.filterDebounce;
     this._offset = config.offset;
     this._limit = config.limit;
   }
@@ -720,25 +716,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     this.dataFetchStream.next(hardRefresh);
   }
 
-  /**
-   * Initialize debounce filter event associated subscriptions.
-   */
-  private initDebounceDefaultFilterEvent(): void {
-    this.columnFilterSubscription = this.columnFilterStream
-      .debounceTime(this.filterDebounceTime)
-      .subscribe(() => {
-        this.dataFetchStream.next(false);
-      });
-  }
-
-  private initCustomFilterEvent(): void {
-    this.customFilterSubscription = this.customFilterEventEmitter
-      .subscribe((filterEventArgs: FilterEventArgs) => {
-        filterEventArgs.column.filter = filterEventArgs.filter;
-        this.filterData();
-      });
-  }
-
   private initRowSelectionEvent(): void {
     this.selectStateSubscription = this.rowSelectStateUpdate.subscribe(() => {
       this.dataRows.forEach((row) => {
@@ -795,12 +772,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    */
   public ngOnInit(): void {
     this.initDefaultClickEvents();
-
-    if (this.filterDebounce) {
-      this.initDebounceDefaultFilterEvent();
-    }
-
-    this.initCustomFilterEvent();
     this.initRowSelectionEvent();
   }
 
@@ -828,11 +799,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
 
     if (this.rowClickSubscription) {
       this.rowClickSubscription.unsubscribe();
-    }
-
-    if (this.filterDebounce) {
-      this.columnFilterSubscription.unsubscribe();
-      this.customFilterSubscription.unsubscribe();
     }
   }
 
@@ -1085,17 +1051,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   }
 
   /**
-   * Filter table data.
-   */
-  public filterData(): void {
-    if (this.filterDebounce) {
-      this.columnFilterStream.next();
-    } else {
-      this.dataFetchStream.next(false);
-    }
-  }
-
-  /**
    * Get data item representing objects.
    * @return {DataRow[]} Data rows.
    */
@@ -1196,7 +1151,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     };
   }
 
-  public hasFilterColumns(): boolean {
+  public get hasFilterColumns(): boolean {
     return this.columns.some((column: DataTableColumnComponent) => column.filterable);
   }
 
@@ -1229,7 +1184,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
       onSelectChange(this.multiRowSelectable ? args.selectedRows : args.selectedRow);
     });
   }
-
 
   public registerOnTouched(fn: any): void {
   }

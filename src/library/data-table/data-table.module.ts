@@ -10,6 +10,8 @@ import { DataTableComponent } from './components/data-table/data-table.component
 import { DataTableBodyComponent } from './components/data-table-body/data-table-body.component';
 import { DataTableColumnSelectorComponent } from './components/data-table-column-selector/data-table-column-selector.component';
 import { DataTableNoDataBodyComponent } from './components/data-table-no-data-body/data-table-no-data-body.component';
+import { DataTableColumnFilterHeaderComponent } from './components/data-table-column-filter-header/data-table-column-filter-header.component';
+import { DataTableColumnFilterTemplateComponent } from './components/data-table-column-filter-template/data-table-column-filter-template.component';
 
 import { ScrollPositionDirective } from './directives/scroll-position.directive';
 import { ScrollElementDirective } from './directives/scroll-element.directive';
@@ -30,7 +32,9 @@ const COMPONENTS = [
   DataTablePaginationComponent,
   DataTableComponent,
   DataTableColumnSelectorComponent,
-  DataTableNoDataBodyComponent
+  DataTableNoDataBodyComponent,
+  DataTableColumnFilterHeaderComponent,
+  DataTableColumnFilterTemplateComponent
 ];
 
 const DIRECTIVES = [

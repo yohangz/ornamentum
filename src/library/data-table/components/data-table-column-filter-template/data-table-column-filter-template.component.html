@@ -1,0 +1,34 @@
+<ng-container *ngIf="column.filterable">
+  <ng-container *ngIf="column.filterTemplate"
+                [ngTemplateOutlet]="column.filterTemplate"
+                [ngTemplateOutletContext]="{ column: column, filter: customFilterStream }">
+  </ng-container>
+  <ng-container *ngIf="!column.filterTemplate">
+    <input *ngIf="!column.showDropdownFilter" type="text" [(ngModel)]="column.filter"
+           (keyup)="filter.emit()" [placeholder]="column.filterPlaceholder"/>
+    <ng-dropdown
+      *ngIf="column.showDropdownFilter"
+      [relativeParentElement]="config.relativeParentElement"
+      [items]="column.filterOptions"
+      [totalItemCount]="column.filterOptions.length"
+      [(ngModel)]="column.filter"
+
+      [menuPosition]="column.dropdownFilterMenuPosition"
+      [filterable]="column.dropdownFilterSearchable"
+      [filterDebounceTime]="column.dropdownFilterSearchDebounceTime"
+      [filterDebounce]="column.dropdownFilterSearchDebounce"
+      [multiSelectable]="column.dropdownFilterMultiSelectable"
+      [showSelectedOptionRemoveButton]="column.dropdownFilterShowSelectedOptionRemoveButton"
+      [showClearSelectionButton]="column.dropdownFilterShowClearSelectionButton"
+      [showSelectAll]="column.dropdownFilterShowSelectAll"
+      [wrapDisplaySelectLimit]="column.dropdownFilterWrapDisplaySelectLimit"
+      [groupByField]="column.dropdownFilterGroupByField"
+      [triggerChangeOncePerSelectAll]="column.dropdownFilterTriggerChangeOncePerSelectAll"
+      [menuHeight]="column.dropdownFilterMenuHeight"
+      [menuWidth]="column.dropdownFilterMenuWidth"
+
+      [triggerSelectChangeOnInit]="false"
+      (selectChange)="filter.emit()">
+    </ng-dropdown>
+  </ng-container>
+</ng-container>

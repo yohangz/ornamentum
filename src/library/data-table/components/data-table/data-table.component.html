@@ -1,5 +1,6 @@
 <div class="ng-data-table-wrapper" [class.scrollable]="contentHeight">
-  <ng-data-table-header *ngIf="showHeader" [reloading]="reloading"  [columns]="columns" (reload)="onReload()"></ng-data-table-header>
+  <ng-data-table-header *ngIf="showHeader" [reloading]="reloading"  [columns]="columns" (reload)="onReload()">
+  </ng-data-table-header>
   <div class="ng-data-table-inner-wrapper">
     <div class="ng-data-table-header-wrapper" [style.paddingRight]="headerPadding | px">
       <div class="ng-data-table-header" scrollElement [scrollPositionStream]="scrollPositionStream">
@@ -28,47 +29,7 @@
               </th>
             </ng-container>
           </tr>
-          <tr *ngIf="hasFilterColumns()">
-            <th *ngIf="config.expandableRows" class="ng-data-table-expand-column-header">
-            </th>
-            <th *ngIf="config.showIndexColumn" class="ng-data-table-index-column-header">
-            </th>
-            <th *ngIf="config.rowSelectable" class="ng-data-table-select-column-header">
-            </th>
-            <ng-container *ngFor="let column of columns">
-              <th #th *ngIf="column.visible">
-                <ng-container *ngIf="column.filterable">
-                  <span *ngIf="column.filterTemplate" [ngTemplateOutlet]="column.filterTemplate" [ngTemplateOutletContext]="{ column: column, onFilter: customFilterEventEmitter }"></span>
-                  <ng-container *ngIf="!column.filterTemplate">
-                    <input *ngIf="!column.showDropdownFilter" type="text" #filterTextBox [(ngModel)]="column.filter" (keyup)="filterData($event)" [placeholder]="column.filterPlaceholder"/>
-                    <ng-dropdown
-                      *ngIf="column.showDropdownFilter"
-                      [relativeParentElement]="config.relativeParentElement"
-                      [items]="column.filterOptions"
-                      [totalItemCount]="column.filterOptions.length"
-                      [(ngModel)]="column.filter"
-
-                      [menuPosition]="column.dropdownFilterMenuPosition"
-                      [filterable]="column.dropdownFilterSearchable"
-                      [filterDebounceTime]="column.dropdownFilterSearchDebounceTime"
-                      [filterDebounce]="column.dropdownFilterSearchDebounce"
-                      [multiSelectable]="column.dropdownFilterMultiSelectable"
-                      [showSelectedOptionRemoveButton]="column.dropdownFilterShowSelectedOptionRemoveButton"
-                      [showClearSelectionButton]="column.dropdownFilterShowClearSelectionButton"
-                      [showSelectAll]="column.dropdownFilterShowSelectAll"
-                      [wrapDisplaySelectLimit]="column.dropdownFilterWrapDisplaySelectLimit"
-                      [groupByField]="column.dropdownFilterGroupByField"
-                      [triggerChangeOncePerSelectAll]="column.dropdownFilterTriggerChangeOncePerSelectAll"
-                      [menuHeight]="column.dropdownFilterMenuHeight"
-                      [menuWidth]="column.dropdownFilterMenuWidth"
-
-                      [triggerSelectChangeOnInit]="false"
-                      (selectChange)="filterData()">
-                    </ng-dropdown>
-                  </ng-container>
-                </ng-container>
-              </th>
-            </ng-container>
+          <tr *ngIf="hasFilterColumns" ngDataTableColumnFilterHeader [columns]="columns" (fetchData)="fetchData($event)">
           </tr>
           </thead>
         </table>

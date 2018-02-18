@@ -537,7 +537,7 @@
     [showDropdownFilter]="true"
     [filterPlaceholder]="thirdColConf.filterPlaceholder"
     [visible]="thirdColConf.visible">
-    <ng-template #ngFilterTemplate let-column="column" let-onFilter="onFilter">
+    <ng-template #ngFilterTemplate let-column="column" let-filter="filter">
       <ng-dropdown
         [items]="column.filterOptions"
         [totalItemCount]="column.filterOptions.length"
@@ -549,7 +549,7 @@
         [showSelectAll]="true"
         [triggerSelectChangeOnInit]="false"
         [wrapDisplaySelectLimit]="column.dropdownFilterWrapDisplaySelectLimit"
-        (selectChange)="onFilter.emit({ column: column, filter: column.filter })">
+        (selectChange)="filter.emit({ column: column, filter: column.filter })">
       </ng-dropdown>
     </ng-template>
   </ng-data-table-column>
