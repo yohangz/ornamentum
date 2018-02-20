@@ -50,7 +50,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   public _selectedOption: DropdownItem;
 
   public disabled = false;
-  public isLoading = false;
+  public isLoading = true;
   public currentItemCount = 0;
 
   private componentLoader: ComponentLoader<DropdownViewComponent>;
@@ -637,9 +637,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @param {boolean} fetchNext Boolean to get more data when scrolling.
    */
   private loadData(fetchNext?: boolean): void {
-
     if (!this.loadOnScroll) {
-      this.isLoading = false;
       return;
     }
 

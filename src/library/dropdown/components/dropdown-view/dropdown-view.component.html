@@ -3,7 +3,7 @@
      [style.height]="props.dropdown.menuHeight | px"
      [style.right]="props.dropdown.positionRight()"
      [style.bottom]="props.dropdown.positionBottom()">
-  <ul #menuElement class="ng-dropdown-menu" (click)="$event.stopPropagation()">
+  <ul class="ng-dropdown-menu" (click)="$event.stopPropagation()">
     <ul *ngIf="props.dropdown.filterable">
       <li class="ng-dropdown-search">
         <div class="ng-dropdown-input-group">
@@ -30,7 +30,6 @@
     </ul>
 
     <ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="props.dropdown.multiSelectable" [style.height]="props.dropdown.menuHeight - 135 | px" (scroll)="props.dropdown.loadOnScroll ? props.dropdown.checkScrollPosition($event) : null" >
-      <li *ngIf="!props.dropdown.currentItemCount" class="ng-dropdown-item empty">{{props.dropdown.translations.searchEmptyResult}}</li>
       <ng-container *ngIf="props.dropdown.groupByField">
         <ng-container *ngFor="let groupedItem of props.dropdown._groupedItems">
           <li *ngIf="props.dropdown.hasVisibleItems(groupedItem.items)" class="ng-dropdown-group-heading">{{groupedItem.groupName}}</li>
@@ -54,7 +53,12 @@
           </li>
         </ng-container>
       </ng-container>
-      <li *ngIf="props.dropdown.isLoading">Loading...</li>
+      <li *ngIf="!props.dropdown.isLoading && !props.dropdown.currentItemCount" class="ng-dropdown-item empty">
+        {{props.dropdown.translations.searchEmptyResult}}
+      </li>
+      <li *ngIf="props.dropdown.isLoading">
+        Loading...
+      </li>
     </ul>
   </ul>
 </div>
