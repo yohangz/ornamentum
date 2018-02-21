@@ -224,7 +224,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {boolean}
    */
   @Input()
-  public showHeader: boolean;
+  public set showHeader(value: boolean) {
+    this.config.showHeader = value;
+  }
 
   /**
    * Header title text.
@@ -524,7 +526,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
               public config: DataTableConfigService) {
     this.storageMode = config.storageMode;
 
-    this.showHeader = config.showHeader;
     this.minHeight = config.minHeight;
     this.minWidth = config.minWidth;
     this.contentHeight = config.contentHeight;

@@ -1,5 +1,5 @@
 <div class="ng-data-table-wrapper" [class.scrollable]="contentHeight">
-  <ng-data-table-header *ngIf="showHeader" [reloading]="reloading"  [columns]="columns">
+  <ng-data-table-header *ngIf="config.showHeader" [reloading]="reloading"  [columns]="columns">
   </ng-data-table-header>
   <div class="ng-data-table-inner-wrapper">
     <div class="ng-data-table-header-wrapper" [style.paddingRight]="headerPadding | px">
