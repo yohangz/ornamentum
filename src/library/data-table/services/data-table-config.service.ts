@@ -1,4 +1,4 @@
-import { Inject, Injectable, InjectionToken } from '@angular/core';
+import { EventEmitter, Inject, Injectable, InjectionToken } from '@angular/core';
 
 import { DataTableTranslations } from '../models/data-tabl-translations.model';
 import { DataTableConfig } from '../models/data-table-config.model';

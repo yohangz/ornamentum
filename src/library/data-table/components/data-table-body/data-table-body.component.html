@@ -1,4 +1,4 @@
-<ng-container *ngFor="let row of dataRows">
+<ng-container *ngFor="let row of dataStateService.dataRows">
   <ng-container *ngIf="dataTable.extractGroupRowDetails(row) as groupDetail">
     <ng-container *ngFor="let _ignore of groupDetail.groupHolder; let holderIndex = index">
       <tr class="ng-data-table-row"
@@ -47,7 +47,7 @@
     </td>
   </tr>
 </ng-container>
-<ng-container *ngIf="dataRows.length && dataTable.showSubstituteRows && !dataTable.showNoDataOverlay">
+<ng-container *ngIf="dataStateService.dataRows.length && dataTable.showSubstituteRows && !dataTable.showNoDataOverlay">
   <tr *ngFor="let substituteItem of dataTable.substituteItems, let index = index"
       [class.row-odd]="isOddSubstituteRow(index)" [class.row-even]="isEvenSubstituteRow(index)">
     <td *ngIf="config.expandableRows">&nbsp;</td>

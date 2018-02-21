@@ -1,5 +1,5 @@
 <div class="ng-data-table-wrapper" [class.scrollable]="contentHeight">
-  <ng-data-table-header *ngIf="showHeader" [reloading]="reloading"  [columns]="columns" (reload)="onReload()">
+  <ng-data-table-header *ngIf="showHeader" [reloading]="reloading"  [columns]="columns">
   </ng-data-table-header>
   <div class="ng-data-table-inner-wrapper">
     <div class="ng-data-table-header-wrapper" [style.paddingRight]="headerPadding | px">
@@ -8,28 +8,9 @@
           <colgroup ngDataTableColGroup [columns]="columns">
           </colgroup>
           <thead>
-          <tr>
-            <th *ngIf="config.expandableRows" class="ng-data-table-expand-column-header">
-            </th>
-            <th *ngIf="config.showIndexColumn" class="ng-data-table-index-column-header">
-              <span [textContent]="indexColumnTitle"></span>
-            </th>
-            <th *ngIf="config.rowSelectable" class="ng-data-table-select-column-header">
-              <input [hidden]="!multiRowSelectable" class="ng-data-table-checkbox-input" type="checkbox" [(ngModel)]="selectAllCheckbox"/>
-            </th>
-            <ng-container *ngFor="let column of columns">
-              <th #th *ngIf="column.visible" (click)="headerClicked(column, $event)" (elementWidth)="onElementWidthInit($event, column)"
-                  [class.sortable]="column.sortable" [class.resizable]="column.resizable" [ngClass]="column.styleClass" class="ng-data-table-column-header" >
-                <span *ngIf="!column.headerTemplate" [textContent]="column.title"></span>
-                <span *ngIf="column.headerTemplate" [ngTemplateOutlet]="column.headerTemplate" [ngTemplateOutletContext]="{column: column}"></span>
-                <span class="ng-data-table-column-sort-icon" [hidden]="!column.sortable">
-                  <i class="zmdi" [ngClass]="getSortIconClass(column)"></i>
-                </span>
-                <span *ngIf="column.resizable"  class="ng-data-table-column-resize-handle" (mousedown)="resizeColumnStart($event, column, th)"></span>
-              </th>
-            </ng-container>
+          <tr ngDataTableColumnTitleHeader [columns]="columns" (tableWidthChange)="tableWidthChange($event)">
           </tr>
-          <tr *ngIf="hasFilterColumns" ngDataTableColumnFilterHeader [columns]="columns" (fetchData)="fetchData($event)">
+          <tr *ngIf="hasFilterColumns" ngDataTableColumnFilterHeader [columns]="columns">
           </tr>
           </thead>
         </table>

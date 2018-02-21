@@ -3,6 +3,7 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { FilterEventArgs } from '../../models/filter-event-args.model';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
+import { DataTableEventStateService } from '../../services/data-table-event.service';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -26,10 +27,8 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
   @Input()
   public columns: DataTableColumnComponent[];
 
-  @Output()
-  public fetchData = new EventEmitter();
-
-  constructor(public config: DataTableConfigService) {
+  constructor(public config: DataTableConfigService,
+              private eventStateService: DataTableEventStateService) {
   }
 
   public ngOnInit(): void {
@@ -59,7 +58,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
     this.columnFilterSubscription = this.columnFilterStream
       .debounceTime(this.config.filterDebounceTime)
       .subscribe(() => {
-        this.fetchData.next(false);
+        this.eventStateService.dataFetchStream.next(false);
       });
   }
 
@@ -67,7 +66,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
     if (this.config.filterDebounce) {
       this.columnFilterStream.next();
     } else {
-      this.fetchData.next(false);
+      this.eventStateService.dataFetchStream.next(false);
     }
   }
 }

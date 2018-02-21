@@ -323,6 +323,35 @@ export class DataTableColumnComponent implements OnInit {
   }
 
   /**
+   * Get new sort order upon sort click.
+   * @return {SortOrder} New sort order enum value.
+   */
+  public getNewSortOrder(): SortOrder {
+    let newSortOrder: SortOrder;
+    switch (this.sortOrder) {
+      case SortOrder.ASC:
+        newSortOrder = SortOrder.DESC;
+        break;
+      case SortOrder.DESC:
+        newSortOrder = SortOrder.NONE;
+        break;
+      case SortOrder.NONE:
+        newSortOrder = SortOrder.ASC;
+        break;
+    }
+
+    return newSortOrder;
+  }
+
+  public getSortIconClass() {
+    return {
+      'zmdi-sort-amount-asc': this.sortOrder === SortOrder.ASC,
+      'zmdi-sort-amount-desc': this.sortOrder === SortOrder.DESC,
+      'zmdi-format-line-spacing': this.sortOrder === undefined || this.sortOrder === SortOrder.NONE
+    };
+  }
+
+  /**
    * Lifecycle hook that is called after data-bound properties of a directive are initialized.
    */
   public ngOnInit(): void {

@@ -5,6 +5,7 @@ import { DataRow } from '../../models/data-row.model';
 import { DataTableComponent } from '../data-table/data-table.component';
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 import { DataTableConfigService } from '../../services/data-table-config.service';
+import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
  * Data table body component.
@@ -22,7 +23,8 @@ export class DataTableBodyComponent {
   public dataRows: DataRow[];
 
   constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent,
-              private config: DataTableConfigService) {
+              public config: DataTableConfigService,
+              public dataStateService: DataTableDataStateService) {
   }
 
   /**

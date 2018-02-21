@@ -1,0 +1,30 @@
+<th class="ng-data-table-expand-column-header" *ngIf="config.expandableRows">
+</th>
+<th class="ng-data-table-index-column-header" *ngIf="config.showIndexColumn">
+  <span [textContent]="config.indexColumnTitle"></span>
+</th>
+<th class="ng-data-table-select-column-header" *ngIf="config.rowSelectable">
+  <input class="ng-data-table-checkbox-input" type="checkbox"
+         [hidden]="!config.multiRowSelectable"
+         [(ngModel)]="allRowSelected"/>
+</th>
+<ng-container *ngFor="let column of columns">
+  <th class="ng-data-table-column-header" #columnHeader *ngIf="column.visible"
+      (click)="onHeaderClick(column, $event)"
+      (elementWidth)="setColumnWidth($event, column)"
+      [class.sortable]="column.sortable"
+      [class.resizable]="column.resizable"
+      [ngClass]="column.styleClass">
+    <span *ngIf="!column.headerTemplate" [textContent]="column.title"></span>
+    <ng-container *ngIf="column.headerTemplate"
+                  [ngTemplateOutlet]="column.headerTemplate"
+                  [ngTemplateOutletContext]="{column: column}">
+    </ng-container>
+    <span class="ng-data-table-column-sort-icon" [hidden]="!column.sortable">
+      <i class="zmdi" [ngClass]="column.getSortIconClass()"></i>
+    </span>
+    <span class="ng-data-table-column-resize-handle" *ngIf="column.resizable"
+          (mousedown)="onColumnResize($event, column, columnHeader)">
+    </span>
+  </th>
+</ng-container>

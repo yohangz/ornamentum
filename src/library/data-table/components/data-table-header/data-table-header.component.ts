@@ -1,10 +1,11 @@
-import { Component, EventEmitter, Injector, Input, OnDestroy, Output } from '@angular/core';
+import { Component, Injector, Input, OnDestroy } from '@angular/core';
 
 import { DataTableColumnSelectorComponent } from '../data-table-column-selector/data-table-column-selector.component';
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
 import { PopoverComponentLoaderFactoryService, ComponentLoader } from '../../../utility';
 import { DataTableConfigService } from '../../services/data-table-config.service';
+import { DataTableEventStateService } from '../../services/data-table-event.service';
 
 /**
  * Data table header component.
@@ -24,11 +25,9 @@ export class DataTableHeaderComponent implements OnDestroy {
   @Input()
   public columns: DataTableColumnComponent;
 
-  @Output()
-  public reload = new EventEmitter();
-
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
+              private eventStateService: DataTableEventStateService,
               public config: DataTableConfigService) {
     this.componentLoader = this.componentLoaderFactory.createLoader<DataTableColumnSelectorComponent>();
   }
@@ -56,5 +55,9 @@ export class DataTableHeaderComponent implements OnDestroy {
 
   public ngOnDestroy(): void {
     this.componentLoader.dispose();
+  }
+
+  public onReload(): void {
+    this.eventStateService.dataFetchStream.next(true);
   }
 }
