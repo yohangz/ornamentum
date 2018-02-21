@@ -1,4 +1,4 @@
-<div class="ng-data-table-wrapper" [class.scrollable]="contentHeight">
+<div class="ng-data-table-wrapper" [class.scrollable]="config.contentHeight">
   <ng-data-table-header *ngIf="config.showHeader" [reloading]="reloading"  [columns]="columns">
   </ng-data-table-header>
   <div class="ng-data-table-inner-wrapper">
@@ -8,7 +8,7 @@
           <colgroup ngDataTableColGroup [columns]="columns">
           </colgroup>
           <thead>
-          <tr ngDataTableColumnTitleHeader [columns]="columns" (tableWidthChange)="tableWidthChange($event)">
+          <tr ngDataTableColumnTitleHeader [columns]="columns">
           </tr>
           <tr *ngIf="hasFilterColumns" ngDataTableColumnFilterHeader [columns]="columns">
           </tr>
@@ -16,11 +16,11 @@
         </table>
       </div>
     </div>
-    <div class="ng-data-table-content" (scrollPosition)="scrollPositionStream.next($event)" [style.height]="contentHeight | px" [style.minHeight]="minHeight | px">
+    <div class="ng-data-table-content" (scrollPosition)="scrollPositionStream.next($event)" [style.height]="config.contentHeight | px" [style.minHeight]="config.minHeight | px">
       <div class="ng-data-table-loading-cover" [hidden]="!isLoading">
         <div class="ng-data-table-loading-animation"></div>
       </div>
-      <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px" [hidden]="isLoading">
+      <table class="ng-data-table" [style.width]="dataStateService.tableWidth | px" [style.minWidth]="config.minWidth | px" [hidden]="isLoading">
         <colgroup ngDataTableColGroup [columns]="columns">
         </colgroup>
         <tbody ngDataTableBody [dataRows]="dataRows">

@@ -8,4 +8,5 @@ export class DataTableDataStateService {
   public selectedRows: any[] = [];
   public dataRows: DataRow[] = [];
   public itemCount: number;
+  public tableWidth: number;
 }

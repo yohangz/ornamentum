@@ -71,7 +71,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   private selectStateSubscription: Subscription;
 
   public substituteItems: any[] = [];
-  public tableWidth: number;
 
   /**
    * Set reloading state.
@@ -243,7 +242,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {string|number}
    */
   @Input()
-  public minHeight: string | number;
+  public set minHeight(value: string | number) {
+    this.config.minHeight = value;
+  }
 
   /**
    * Table min width.
@@ -251,7 +252,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {string|number}
    */
   @Input()
-  public minWidth: string | number;
+  public set minWidth(value: string | number) {
+    this.config.minWidth = value;
+  }
 
   /**
    * Height of the table content.
@@ -259,7 +262,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {string|number}
    */
   @Input()
-  public contentHeight: string | number;
+  public set contentHeight(value: string | number) {
+    this.config.contentHeight = value;
+  }
 
   /**
    * Pageable if true.
@@ -522,13 +527,10 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
               private dataTableStateService: DataTablePersistenceService,
               private globalRefService: GlobalRefService,
               private eventStateService: DataTableEventStateService,
-              private dataStateService: DataTableDataStateService,
+              public dataStateService: DataTableDataStateService,
               public config: DataTableConfigService) {
     this.storageMode = config.storageMode;
 
-    this.minHeight = config.minHeight;
-    this.minWidth = config.minWidth;
-    this.contentHeight = config.contentHeight;
     this.showSubstituteRows = config.showSubstituteRows;
     this.selectOnRowClick = config.selectOnRowClick;
     this.expandOnRowClick = config.expandOnRowClick;
@@ -958,7 +960,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   }
 
   public get headerPadding(): number {
-    return this.contentHeight ? this.globalRefService.scrollbarWidth : 0;
+    return this.config.contentHeight ? this.globalRefService.scrollbarWidth : 0;
   }
 
   public fetchData(hardRefresh: boolean = false): void {
@@ -980,9 +982,5 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   }
 
   public registerOnTouched(fn: any): void {
-  }
-
-  public tableWidthChange(width: number): void {
-    this.tableWidth = width;
   }
 }

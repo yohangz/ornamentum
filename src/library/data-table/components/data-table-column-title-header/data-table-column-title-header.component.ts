@@ -21,9 +21,6 @@ export class DataTableColumnTitleHeaderComponent {
   @Input()
   public columns: DataTableColumnComponent[];
 
-  @Output()
-  public tableWidthChange = new EventEmitter<number>();
-
   constructor(private dragAndDropService: DragAndDropService,
               private eventStateService: DataTableEventStateService,
               private dataStateService: DataTableDataStateService,
@@ -82,7 +79,7 @@ export class DataTableColumnTitleHeaderComponent {
           totalWidth += col.width;
         });
 
-        this.tableWidthChange.emit(totalWidth);
+        this.dataStateService.tableWidth = totalWidth;
       }
     });
   }
