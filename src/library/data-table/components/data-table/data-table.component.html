@@ -1,5 +1,5 @@
 <div class="ng-data-table-wrapper" [class.scrollable]="config.contentHeight">
-  <ng-data-table-header *ngIf="config.showHeader" [reloading]="reloading"  [columns]="columns">
+  <ng-data-table-header *ngIf="config.showHeader" [columns]="columns">
   </ng-data-table-header>
   <div class="ng-data-table-inner-wrapper">
     <div class="ng-data-table-header-wrapper" [style.paddingRight]="headerPadding | px">
@@ -23,12 +23,14 @@
       <table class="ng-data-table" [style.width]="dataStateService.tableWidth | px" [style.minWidth]="config.minWidth | px" [hidden]="isLoading">
         <colgroup ngDataTableColGroup [columns]="columns">
         </colgroup>
-        <tbody ngDataTableBody [dataRows]="dataRows">
+        <tbody ngDataTableBody [columns]="columns">
         </tbody>
       </table>
-      <ng-data-table-no-data-body *ngIf="showNoDataOverlay" [noRecordsTemplate]="noRecordsTemplate">
+      <ng-data-table-no-data-body *ngIf="dataStateService.showNoDataOverlay" [noRecordsTemplate]="noRecordsTemplate">
       </ng-data-table-no-data-body>
     </div>
   </div>
   <ng-data-table-pagination *ngIf="config.pageable && dataStateService.itemCount"></ng-data-table-pagination>
 </div>
+<div ngDataTableSubstituteRows></div>
+

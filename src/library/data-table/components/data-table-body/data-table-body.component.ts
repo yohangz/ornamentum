@@ -18,9 +18,8 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
   templateUrl: './data-table-body.component.html'
 })
 export class DataTableBodyComponent {
-
   @Input()
-  public dataRows: DataRow[];
+  public columns: DataTableColumnComponent[];
 
   constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent,
               public config: DataTableConfigService,
@@ -32,7 +31,7 @@ export class DataTableBodyComponent {
    * @return {number} Page index.
    */
   public getDisplayIndex(dataRow: DataRow): number {
-    if (this.dataTable.pageable) {
+    if (this.config.pageable) {
       return this.config.offset + dataRow.index + 1;
     } else {
       return dataRow.index + 1;
@@ -63,7 +62,7 @@ export class DataTableBodyComponent {
    * @return {boolean} True if odd row.
    */
   public isOddSubstituteRow(index: number): boolean {
-    return (index + this.dataTable.substituteItems.length) % 2 === 0;
+    return (index + this.dataStateService.substituteRows.length) % 2 === 0;
   }
 
   /**
@@ -72,7 +71,7 @@ export class DataTableBodyComponent {
    * @return {boolean} True if even row.
    */
   public isEvenSubstituteRow(index: number): boolean {
-    return (index + this.dataTable.substituteItems.length) % 2 === 1;
+    return (index + this.dataStateService.substituteRows.length) % 2 === 1;
   }
 
   /**

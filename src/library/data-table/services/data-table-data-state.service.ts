@@ -9,4 +9,10 @@ export class DataTableDataStateService {
   public dataRows: DataRow[] = [];
   public itemCount: number;
   public tableWidth: number;
+  public reloading = true;
+  public substituteRows: any[] = [];
+
+  public get showNoDataOverlay(): boolean {
+    return !this.dataRows.length && !this.reloading;
+  }
 }

@@ -26,7 +26,7 @@
           <input class="ng-data-table-checkbox-input ng-ignore-propagation" type="checkbox" [(ngModel)]="row.selected"
                  (change)="dataTable.onRowSelectChanged(row)"/>
         </td>
-        <ng-container *ngFor="let column of dataTable.columns">
+        <ng-container *ngFor="let column of columns">
           <ng-container *ngIf="column.visible">
             <td class="ng-data-table-data-column" *ngIf="!column.cellTemplate && holderIndex === 0"
                 (init)="onCellInit(column, row)" [ngClass]="column.styleClass" [attr.rowspan]="groupDetail.rowCount"
@@ -47,13 +47,13 @@
     </td>
   </tr>
 </ng-container>
-<ng-container *ngIf="dataStateService.dataRows.length && dataTable.showSubstituteRows && !dataTable.showNoDataOverlay">
-  <tr *ngFor="let substituteItem of dataTable.substituteItems, let index = index"
+<ng-container *ngIf="config.showSubstituteRows && dataStateService.dataRows.length && !dataStateService.showNoDataOverlay">
+  <tr *ngFor="let ignored of dataStateService.substituteItems, let index = index"
       [class.row-odd]="isOddSubstituteRow(index)" [class.row-even]="isEvenSubstituteRow(index)">
     <td *ngIf="config.expandableRows">&nbsp;</td>
     <td *ngIf="config.showIndexColumn">&nbsp;</td>
     <td *ngIf="config.rowSelectable">&nbsp;</td>
-    <ng-container *ngFor="let column of dataTable.columns">
+    <ng-container *ngFor="let column of columns">
       <td *ngIf="column.visible">&nbsp;</td>
     </ng-container>
   </tr>

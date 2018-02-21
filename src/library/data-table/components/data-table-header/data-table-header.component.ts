@@ -6,6 +6,7 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 import { PopoverComponentLoaderFactoryService, ComponentLoader } from '../../../utility';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
+import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
  * Data table header component.
@@ -20,14 +21,12 @@ export class DataTableHeaderComponent implements OnDestroy {
   private componentLoader: ComponentLoader<DataTableColumnSelectorComponent>;
 
   @Input()
-  public reloading: boolean;
-
-  @Input()
   public columns: DataTableColumnComponent;
 
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
               private eventStateService: DataTableEventStateService,
+              public dataStateService: DataTableDataStateService,
               public config: DataTableConfigService) {
     this.componentLoader = this.componentLoaderFactory.createLoader<DataTableColumnSelectorComponent>();
   }

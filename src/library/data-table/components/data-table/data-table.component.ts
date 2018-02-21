@@ -70,14 +70,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   private rowClickSubscription: Subscription;
   private selectStateSubscription: Subscription;
 
-  public substituteItems: any[] = [];
-
-  /**
-   * Set reloading state.
-   * @param {boolean} value
-   */
-  public reloading = true;
-
   @ContentChildren(DataTableColumnComponent)
   public columns: QueryList<DataTableColumnComponent>;
 
@@ -316,7 +308,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {boolean}
    */
   @Input()
-  public showSubstituteRows: boolean;
+  public set showSubstituteRows(value: boolean) {
+    this.config.showSubstituteRows = value;
+  }
 
   /**
    * Enable expandable rows.
@@ -531,7 +525,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
               public config: DataTableConfigService) {
     this.storageMode = config.storageMode;
 
-    this.showSubstituteRows = config.showSubstituteRows;
     this.selectOnRowClick = config.selectOnRowClick;
     this.expandOnRowClick = config.expandOnRowClick;
     this.autoFetch = config.autoFetch;
@@ -545,9 +538,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * On after data bind handler.
    */
   private onAfterDataBind(items: any[]): void {
+    this.setDataRows(items);
     this.dataStateService.allRowSelected = false;
-    this.dataStateService.dataRows = this.mapToDataRows(items);
-    this.substituteItems = this.getSubstituteItems();
     this.eventStateService.rowSelectChangeStream.emit();
 
     if (this.config.offset > this.dataStateService.itemCount) {
@@ -560,7 +552,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     }
 
     setTimeout(() => {
-      this.reloading = false;
+      this.dataStateService.reloading = false;
     }, 500);
   }
 
@@ -633,7 +625,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @param {boolean} hardRefresh Hard refresh if true.
    */
   public dataBind(hardRefresh: boolean): void {
-    this.reloading = true;
+    this.dataStateService.reloading = true;
     if (hardRefresh) {
       this.selectedRows = [];
       this.selectedRow = undefined;
@@ -800,13 +792,13 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     return count;
   }
 
-  /**
-   * Get substitute items.
-   * @return {Array<any>} Empty array with remaining item count size.
-   */
-  public getSubstituteItems(): {}[] {
-    return Array.from({length: this.config.limit - this.dataStateService.dataRows.length});
-  }
+  // /**
+  //  * Get substitute items.
+  //  * @return {Array<any>} Empty array with remaining item count size.
+  //  */
+  // public mapSubstituteRows(): {}[] {
+  //   return Array.from({length: this.config.limit - this.dataStateService.dataRows.length});
+  // }
 
   /**
    * On row selection change event.
@@ -875,8 +867,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * Get data item representing objects.
    * @return {DataRow[]} Data rows.
    */
-  private mapToDataRows(items: any[]): DataRow[] {
-    return items.map((item: any, index: number) => {
+  private setDataRows(items: any[]): void {
+    this.dataStateService.dataRows = items.map((item: any, index: number) => {
       return {
         dataLoaded: false,
         expanded: false,
@@ -888,6 +880,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
         selected: false
       };
     });
+
+    const substituteRowCount = this.config.limit - this.dataStateService.dataRows.length;
+    this.dataStateService.substituteRows = Array.from({ length: substituteRowCount });
   }
 
   /**
@@ -895,15 +890,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @return {boolean} True if loading.
    */
   public get isLoading(): boolean {
-    return this.showLoadingSpinner && this.reloading;
-  }
-
-  /**
-   * Show no data overlay status.
-   * @return {boolean} Show overlay if true.
-   */
-  public get showNoDataOverlay(): boolean {
-    return this.dataStateService.dataRows.length === 0 && !this.reloading;
+    return this.showLoadingSpinner && this.dataStateService.reloading;
   }
 
   /**
