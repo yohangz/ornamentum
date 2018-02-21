@@ -33,7 +33,7 @@ export class DataTableBodyComponent {
    */
   public getDisplayIndex(dataRow: DataRow): number {
     if (this.dataTable.pageable) {
-      return this.dataTable.offset + dataRow.index + 1;
+      return this.config.offset + dataRow.index + 1;
     } else {
       return dataRow.index + 1;
     }

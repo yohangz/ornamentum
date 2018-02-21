@@ -63,8 +63,6 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
 export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, ControlValueAccessor {
   public SortOrder = SortOrder;
 
-  private _offset: number;
-  private _limit: number;
   private isHeardReload = false;
 
   public scrollPositionStream = new Subject();
@@ -200,7 +198,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {boolean}
    */
   @Input()
-  public persistTableState: boolean;
+  public set persistTableState(value: boolean) {
+    this.config.persistTableState = value;
+  }
 
   /**
    * Storage more to persist table state.
@@ -378,7 +378,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {number}
    */
   @Input()
-  public itemCount: number;
+  public set itemCount(value: number) {
+    this.dataStateService.itemCount = value;
+  }
 
   /**
    * Filter de-bounce time milliseconds.
@@ -481,16 +483,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    */
   @Input()
   public set offset(value: number) {
-    this._offset = value;
+    this.config.offset = value;
     this.eventStateService.dataFetchStream.next(false);
-  }
-
-  /**
-   * Get offset.
-   * @return {number}
-   */
-  public get offset(): number {
-    return this._offset;
   }
 
   /**
@@ -499,16 +493,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    */
   @Input()
   public set limit(value: number) {
-    this._limit = value;
+    this.config.limit = value;
     this.eventStateService.dataFetchStream.next(false);
-  }
-
-  /**
-   * Set page item limit
-   * @return {number}
-   */
-  public get limit(): number {
-    return this._limit;
   }
 
   /**
@@ -517,7 +503,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    */
   @Input()
   public set page(value: number) {
-    this.offset = (value - 1) * this.limit;
+    this.offset = (value - 1) * this.config.limit;
   }
 
   /**
@@ -525,15 +511,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @return {number}
    */
   public get page(): number {
-    return Math.floor(this.offset / this.limit) + 1;
-  }
-
-  /**
-   * Get last page number.
-   * @return {number}
-   */
-  public get lastPage(): number {
-    return Math.ceil(this.itemCount / this.limit);
+    return Math.floor(this.config.offset / this.config.limit) + 1;
   }
 
   constructor(private dragAndDropService: DragAndDropService,
@@ -541,9 +519,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
               private globalRefService: GlobalRefService,
               private config: DataTableConfigService,
               private eventStateService: DataTableEventStateService,
-              private dataStateService: DataTableDataStateService) {
-    this.persistTableState = config.persistTableState;
+              private dataStateService: DataTableDataStateService,) {
     this.storageMode = config.storageMode;
+
     this.showHeader = config.showHeader;
     this.minHeight = config.minHeight;
     this.minWidth = config.minWidth;
@@ -554,8 +532,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     this.expandOnRowClick = config.expandOnRowClick;
     this.autoFetch = config.autoFetch;
     this.showLoadingSpinner = config.showLoadingSpinner;
-    this._offset = config.offset;
-    this._limit = config.limit;
+    // this._offset = config.offset;
+    // this._limit = config.limit;
 
     this.headerClick = this.eventStateService.headerClickStream;
     this.allRowSelectChange = this.eventStateService.allRowSelectChangeStream;
@@ -570,8 +548,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     this.substituteItems = this.getSubstituteItems();
     this.eventStateService.rowSelectChangeStream.emit();
 
-    if (this._offset > this.itemCount) {
-      this._offset = 0;
+    if (this.config.offset > this.dataStateService.itemCount) {
+      this.config.offset = 0;
     }
 
     if (this.isHeardReload) {
@@ -616,7 +594,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     const params = <DataTableParams>{};
 
     if (resetOffset) {
-      this._offset = 0;
+      this.config.offset = 0;
     }
 
     if (this.columns) {
@@ -641,8 +619,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     }
 
     if (this.pageable) {
-      params.offset = this.offset;
-      params.limit = this.limit;
+      params.offset = this.config.offset;
+      params.limit = this.config.limit;
     }
 
     return params;
@@ -664,7 +642,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
 
     const dataTableParams = this.getDataTableParams(hardRefresh);
 
-    if (this.persistTableState) {
+    if (this.config.persistTableState) {
       this.dataTableStateService.setState(this.id, dataTableParams);
     }
 
@@ -699,7 +677,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   }
 
   private initDataTableState(): void {
-    if (this.persistTableState) {
+    if (this.config.persistTableState) {
       const dataTableState = this.dataTableStateService.getState(this.id);
       if (dataTableState) {
         this.columns.forEach((column) => {
@@ -720,8 +698,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
           }
         });
 
-        this._limit = dataTableState.limit;
-        this._offset = dataTableState.offset;
+        this.config.limit = dataTableState.limit;
+        this.config.offset = dataTableState.offset;
       }
     }
   }
@@ -825,7 +803,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @return {Array<any>} Empty array with remaining item count size.
    */
   public getSubstituteItems(): {}[] {
-    return Array.from({length: this.limit - this.dataStateService.dataRows.length});
+    return Array.from({length: this.config.limit - this.dataStateService.dataRows.length});
   }
 
   /**
@@ -977,14 +955,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
 
   public get hasFilterColumns(): boolean {
     return this.columns.some((column: DataTableColumnComponent) => column.filterable);
-  }
-
-  public onLimitChange(limit: number): void {
-    this.limit = limit;
-  }
-
-  public onOffsetChange(offset): void {
-    this.offset = offset;
   }
 
   public get headerPadding(): number {

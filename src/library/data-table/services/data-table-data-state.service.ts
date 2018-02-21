@@ -7,4 +7,5 @@ export class DataTableDataStateService {
   public selectedRow: any;
   public selectedRows: any[] = [];
   public dataRows: DataRow[] = [];
+  public itemCount: number;
 }

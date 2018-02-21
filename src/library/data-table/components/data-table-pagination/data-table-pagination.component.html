@@ -1,14 +1,14 @@
 <div class="ng-data-table-pagination-box">
   <div class="ng-data-table-pagination-range">
     {{config.translations.paginationRange}}:
-    <span [textContent]="startRowIndex"></span>-<span [textContent]="endRowIndex"></span>&frasl;<span [textContent]="itemCount"></span>
+    <span [textContent]="startRowIndex"></span>-<span [textContent]="endRowIndex"></span>&frasl;<span [textContent]="dataStateService.itemCount"></span>
   </div>
   <div class="ng-data-table-pagination-controllers">
     <div class="ng-data-table-pagination-limit">
       <div class="ng-data-table-input-group">
         <span class="ng-data-table-input-group-addon">{{config.translations.paginationLimit}}:</span>
         <input #limitInput type="number" class="ng-data-table-input" min="1" step="1" [attr.max]="config.maxLimit"
-               [ngModel]="limit"
+               [ngModel]="config.limit"
                (keyup.enter)="onPageSizeChange(limitInput)"
                (keyup.esc)="onPageSizeRevert(limitInput)"/>
       </div>

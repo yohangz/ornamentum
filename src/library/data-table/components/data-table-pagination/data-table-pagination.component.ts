@@ -1,6 +1,7 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
+import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
  * Data table pagination component.
@@ -12,50 +13,36 @@ import { DataTableConfigService } from '../../services/data-table-config.service
   templateUrl: './data-table-pagination.component.html'
 })
 export class DataTablePaginationComponent {
-  @Input()
-  public itemCount: number;
-
-  @Input()
-  public offset: number;
-
-  @Input()
-  public limit: number;
-
-  @Output()
-  public limitChange = new EventEmitter();
-
-  @Output()
-  public offsetChange = new EventEmitter();
-
-  constructor(public config: DataTableConfigService) {
+  constructor(public config: DataTableConfigService,
+              public dataStateService: DataTableDataStateService) {
   }
 
   /**
    * First page click handler.
    */
   public firstPageClick(): void {
-    this.offsetChange.emit(0);
+    this.config.offset = 0;
   }
 
   /**
    * Previous page click handler.
    */
   public previousPageClick(): void {
-    this.offsetChange.emit(this.offset - Math.min(this.limit, this.offset));
+    this.config.offset = this.config.offset - Math.min(this.config.limit, this.config.offset);
   }
 
   /**
    * Next page click handler.
    */
   public nextPageClick(): void {
-    this.offsetChange.emit(this.offset + this.limit);
+    this.config.offset = this.config.offset + this.config.limit;
   }
 
   /**
    * Last page click handler.
    */
   public lastPageClick(): void {
-    this.offsetChange.emit((this.maxPage - 1) * this.limit);
+    this.config.offset = (this.maxPage - 1) * this.config.limit;
   }
 
   /**
@@ -63,7 +50,7 @@ export class DataTablePaginationComponent {
    * @return {number} Page count.
    */
   public get maxPage(): number {
-    return Math.ceil(this.itemCount / this.limit);
+    return Math.ceil(this.dataStateService.itemCount / this.config.limit);
   }
 
   /**
@@ -71,7 +58,7 @@ export class DataTablePaginationComponent {
    * @return {number}
    */
   public get page(): number {
-    return Math.floor(this.offset / this.limit) + 1;
+    return Math.floor(this.config.offset / this.config.limit) + 1;
   }
 
   /**
@@ -81,13 +68,13 @@ export class DataTablePaginationComponent {
   public onPageSizeChange(element: HTMLInputElement): void {
     const limit = parseInt(element.value);
     if (limit > this.config.maxLimit) {
-      element.value = String(this.limit);
+      element.value = String(this.config.limit);
       return;
     }
 
-    if (this.limit !== limit) {
-      this.offsetChange.emit(0);
-      this.limitChange.emit(limit);
+    if (this.config.limit !== limit) {
+      this.config.offset = 0;
+      this.config.limit = limit;
     }
   }
 
@@ -96,7 +83,7 @@ export class DataTablePaginationComponent {
    * @param {HTMLInputElement} element HTML input element.
    */
   public onPageSizeRevert(element: HTMLInputElement): void {
-    element.value = String(this.limit);
+    element.value = String(this.config.limit);
   }
 
   /**
@@ -111,8 +98,7 @@ export class DataTablePaginationComponent {
     }
 
     if (this.page !== page) {
-      const offset = (page - 1) * this.limit;
-      this.offsetChange.emit(offset);
+      this.config.offset = (page - 1) * this.config.limit;
     }
   }
 
@@ -129,7 +115,7 @@ export class DataTablePaginationComponent {
    * @return {boolean} True if there is a previous page.
    */
   public get hasPrevious(): boolean {
-    return this.offset <= 0;
+    return this.config.offset <= 0;
   }
 
   /**
@@ -137,7 +123,7 @@ export class DataTablePaginationComponent {
    * @return {boolean} True if there is a next page.
    */
   public get hasNext(): boolean {
-    return (this.offset + this.limit) >= this.itemCount;
+    return (this.config.offset + this.config.limit) >= this.dataStateService.itemCount;
   }
 
   /**
@@ -145,7 +131,7 @@ export class DataTablePaginationComponent {
    * @return {number} Row index.
    */
   public get startRowIndex(): number {
-    return this.offset + 1;
+    return this.config.offset + 1;
   }
 
   /**
@@ -153,6 +139,6 @@ export class DataTablePaginationComponent {
    * @return {number} End row index.
    */
   public get endRowIndex(): number {
-    return Math.min(this.offset + this.limit, this.itemCount);
+    return Math.min(this.config.offset + this.config.limit, this.dataStateService.itemCount);
   }
 }

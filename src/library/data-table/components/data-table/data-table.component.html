@@ -30,11 +30,5 @@
       </ng-data-table-no-data-body>
     </div>
   </div>
-  <ng-data-table-pagination *ngIf="pageable && itemCount"
-                            [limit]="limit"
-                            [offset]="offset"
-                            [itemCount]="itemCount"
-                            (limitChange)="onLimitChange($event)"
-                            (offsetChange)="onOffsetChange($event)">
-  </ng-data-table-pagination>
+  <ng-data-table-pagination *ngIf="pageable && dataStateService.itemCount"></ng-data-table-pagination>
 </div>
