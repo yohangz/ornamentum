@@ -264,7 +264,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {boolean}
    */
   @Input()
-  public pageable: boolean;
+  public set pageable(value: boolean) {
+    this.config.pageable = value;
+  }
 
   /**
    * Show auto generated index counter column.
@@ -517,23 +519,20 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   constructor(private dragAndDropService: DragAndDropService,
               private dataTableStateService: DataTablePersistenceService,
               private globalRefService: GlobalRefService,
-              private config: DataTableConfigService,
               private eventStateService: DataTableEventStateService,
-              private dataStateService: DataTableDataStateService,) {
+              private dataStateService: DataTableDataStateService,
+              public config: DataTableConfigService) {
     this.storageMode = config.storageMode;
 
     this.showHeader = config.showHeader;
     this.minHeight = config.minHeight;
     this.minWidth = config.minWidth;
     this.contentHeight = config.contentHeight;
-    this.pageable = config.pageable;
     this.showSubstituteRows = config.showSubstituteRows;
     this.selectOnRowClick = config.selectOnRowClick;
     this.expandOnRowClick = config.expandOnRowClick;
     this.autoFetch = config.autoFetch;
     this.showLoadingSpinner = config.showLoadingSpinner;
-    // this._offset = config.offset;
-    // this._limit = config.limit;
 
     this.headerClick = this.eventStateService.headerClickStream;
     this.allRowSelectChange = this.eventStateService.allRowSelectChangeStream;
@@ -618,7 +617,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
         });
     }
 
-    if (this.pageable) {
+    if (this.config.pageable) {
       params.offset = this.config.offset;
       params.limit = this.config.limit;
     }
