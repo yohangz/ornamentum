@@ -502,7 +502,8 @@
   (rowBind)="onRowBind($event)"
   (refresh)="onRefresh($event)"
   (dataLoad)="onDataLoad($event)"
-  (init)="onInit($event)">
+  (init)="onInit($event)"
+  (rowSelectChange)="onRowSelectedStateChange($event)">
 
   <ng-data-table-column
     [width]="firstColConf.width"

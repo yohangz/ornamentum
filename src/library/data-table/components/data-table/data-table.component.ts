@@ -5,7 +5,6 @@ import {
   EventEmitter,
   Input,
   OnDestroy,
-  OnInit,
   Output,
   QueryList,
   TemplateRef,
@@ -21,12 +20,10 @@ import { FilterValueExtractCallback } from '../../models/filter-value-extract-ca
 import { StorageMode } from '../../models/storage-mode.enum';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { CellBindEventArgs } from '../../models/cell-bind-event-args.model';
-import { GroupDetail } from '../../models/group-detail.model';
 import { CellClickEventArgs } from '../../models/cell-click-event-args.model';
 import { HeaderClickEventArgs } from '../../models/header-click-event-args.model';
 import { DoubleClickEventArgs } from '../../models/double-click-event-args.model';
 import { RowClickEventArgs } from '../../models/row-click-event-args.model';
-import { RowSelectEventArgs } from '../../models/row-select-event-args.model';
 import { DataRow } from '../../models/data-row.model';
 import { DataTableParams } from '../../models/data-table-params.model';
 import { DataTableTranslations } from '../../models/data-tabl-translations.model';
@@ -60,15 +57,14 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
     }
   ]
 })
-export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, ControlValueAccessor {
+export class DataTableComponent implements OnDestroy, AfterContentInit, ControlValueAccessor {
   public SortOrder = SortOrder;
 
   private isHeardReload = false;
 
   public scrollPositionStream = new Subject();
 
-  private rowClickSubscription: Subscription;
-  private selectStateSubscription: Subscription;
+  private rowSelectChangeSubscription: Subscription;
 
   @ContentChildren(DataTableColumnComponent)
   public columns: QueryList<DataTableColumnComponent>;
@@ -97,21 +93,21 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {EventEmitter<any>}
    */
   @Output()
-  public rowSelectedStateChange = new EventEmitter<RowSelectEventArgs>();
+  public rowSelectChange: EventEmitter<any | any[]>;
 
   /**
    * On row click event handler.
    * @type {EventEmitter<any>}
    */
   @Output()
-  public rowClick = new EventEmitter<RowClickEventArgs>();
+  public rowClick: EventEmitter<RowClickEventArgs>;
 
   /**
    * On row double click event handler.
    * @type {EventEmitter<any>}
    */
   @Output()
-  public rowDoubleClick = new EventEmitter<DoubleClickEventArgs>();
+  public rowDoubleClick: EventEmitter<DoubleClickEventArgs>;
 
   /**
    * On header click event handler.
@@ -151,7 +147,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {EventEmitter<DataRow>}
    */
   @Output()
-  public rowBind = new EventEmitter<DataRow>();
+  public rowBind: EventEmitter<DataRow>;
 
   /**
    * On cell bind event handler.
@@ -174,7 +170,9 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {GroupFieldExtractorCallback}
    */
   @Input()
-  public onGroupFieldExtract: GroupFieldExtractorCallback = (() => []);
+  public set onGroupFieldExtract(value: GroupFieldExtractorCallback) {
+    this.dataStateService.onGroupFieldExtract = value;
+  }
 
   // Input parameters
 
@@ -326,14 +324,18 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @type {boolean}
    */
   @Input()
-  public selectOnRowClick: boolean;
+  public set selectOnRowClick(value: boolean) {
+    this.config.selectOnRowClick = value;
+  }
 
   /**
    * Expand table on row click.
    * @type {boolean}
    */
   @Input()
-  public expandOnRowClick: boolean;
+  public set expandOnRowClick(value: boolean) {
+    this.config.expandableRows = value;
+  }
 
   /**
    * Auto dataLoad on init.
@@ -365,6 +367,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   @Input()
   public set selectedRow(value: any) {
     this.dataStateService.selectedRow = value;
+    this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRow);
   }
 
   /**
@@ -374,6 +377,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   @Input()
   public set selectedRows(value: any[]) {
     this.dataStateService.selectedRows = value;
+    this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRows);
   }
 
   /**
@@ -525,13 +529,15 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
               public config: DataTableConfigService) {
     this.storageMode = config.storageMode;
 
-    this.selectOnRowClick = config.selectOnRowClick;
-    this.expandOnRowClick = config.expandOnRowClick;
     this.autoFetch = config.autoFetch;
     this.showLoadingSpinner = config.showLoadingSpinner;
 
     this.headerClick = this.eventStateService.headerClickStream;
     this.allRowSelectChange = this.eventStateService.allRowSelectChangeStream;
+    this.rowBind = this.eventStateService.rowBind;
+    this.rowClick = this.eventStateService.rowClick;
+    this.rowDoubleClick = this.eventStateService.rowDoubleClick;
+    this.rowSelectChange = this.eventStateService.rowSelectChangeStream;
   }
 
   /**
@@ -540,7 +546,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   private onAfterDataBind(items: any[]): void {
     this.setDataRows(items);
     this.dataStateService.allRowSelected = false;
-    this.eventStateService.rowSelectChangeStream.emit();
+    this.setRowSelectState();
 
     if (this.config.offset > this.dataStateService.itemCount) {
       this.config.offset = 0;
@@ -552,31 +558,24 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     }
 
     setTimeout(() => {
-      this.dataStateService.reloading = false;
+      this.dataStateService.dataLoading = false;
     }, 500);
   }
 
-  /**
-   * Initialzie default click events.
-   */
-  private initDefaultClickEvents() {
-    if (this.selectOnRowClick || (this.config.expandableRows && this.expandOnRowClick)) {
-      this.rowClickSubscription = this.rowClick.subscribe((rowClickEventArgs: RowClickEventArgs) => {
-        if (rowClickEventArgs.event.srcElement.classList.contains('ng-ignore-propagation')) {
-          return;
-        }
+  public setRowSelectState(): void {
+    this.dataStateService.dataRows.forEach(row => {
+      const id = row.item[this.config.selectTrackBy];
+      if (this.config.multiRowSelectable) {
+        const index = this.dataStateService.selectedRows.indexOf(id);
+        row.selected = index > -1;
+      } else {
+        row.selected = this.dataStateService.selectedRow === id;
+      }
+    });
 
-        if (this.selectOnRowClick) {
-          rowClickEventArgs.row.selected = !rowClickEventArgs.row.selected;
-          this.onRowSelectChanged(rowClickEventArgs.row);
-        }
-
-
-        if (this.expandOnRowClick) {
-          rowClickEventArgs.row.expanded = !rowClickEventArgs.row.expanded;
-        }
-      });
-    }
+    this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataRow) => {
+      return dataRow.selected;
+    });
   }
 
   /**
@@ -625,7 +624,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @param {boolean} hardRefresh Hard refresh if true.
    */
   public dataBind(hardRefresh: boolean): void {
-    this.dataStateService.reloading = true;
+    this.dataStateService.dataLoading = true;
     if (hardRefresh) {
       this.selectedRows = [];
       this.selectedRow = undefined;
@@ -645,18 +644,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     } else {
       this.dataLoad.emit(dataTableParams);
     }
-  }
-
-  private initRowSelectionEvent(): void {
-    this.selectStateSubscription = this.eventStateService.rowSelectChangeStream.subscribe(() => {
-      this.dataStateService.dataRows.forEach((row) => {
-        const newState = this.getRowSelectedState(row.item);
-        if (row.selected !== newState) {
-          row.selected = newState;
-          this.onRowSelectChanged(row);
-        }
-      });
-    });
   }
 
   /**
@@ -698,14 +685,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     }
   }
 
-  /**
-   * Lifecycle hook that is called after data-bound properties of a directive are initialized.
-   */
-  public ngOnInit(): void {
-    this.initDefaultClickEvents();
-    this.initRowSelectionEvent();
-  }
-
   public ngAfterContentInit(): void {
     this.initDataTableState();
 
@@ -725,44 +704,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * Lifecycle hook that is called when a directive, pipe or service is destroyed.
    */
   public ngOnDestroy(): void {
-    this.selectStateSubscription.unsubscribe();
-
-    if (this.rowClickSubscription) {
-      this.rowClickSubscription.unsubscribe();
-    }
-  }
-
-  /**
-   * Get row selected state.
-   * @param item Data table row item object
-   * @return {boolean} Selected state (true if selected).
-   */
-  public getRowSelectedState(item: any): boolean {
-    const id = item[this.config.selectTrackBy];
-
-    if (this.config.multiRowSelectable) {
-      return this.dataStateService.selectedRows.indexOf(id) > -1;
-    } else {
-      return id === this.dataStateService.selectedRow;
-    }
-  }
-
-  /**
-   * Row clicked event handler.
-   * @param {DataRow} row Data row object.
-   * @param event Mouse click event argument object.
-   */
-  public rowClicked(row: DataRow, event: MouseEvent): void {
-    this.rowClick.emit({row, event});
-  }
-
-  /**
-   * Row double clicked event handler.
-   * @param {DataRow} row Data row object.
-   * @param {MouseEvent} event event Mouse click event argument object.
-   */
-  public rowDoubleClicked(row: DataRow, event: MouseEvent): void {
-    this.rowDoubleClick.emit({row, event});
+    this.rowSelectChangeSubscription.unsubscribe();
   }
 
   /**
@@ -790,59 +732,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     });
 
     return count;
-  }
-
-  // /**
-  //  * Get substitute items.
-  //  * @return {Array<any>} Empty array with remaining item count size.
-  //  */
-  // public mapSubstituteRows(): {}[] {
-  //   return Array.from({length: this.config.limit - this.dataStateService.dataRows.length});
-  // }
-
-  /**
-   * On row selection change event.
-   * Maintain selected row state.
-   * @param {DataRow} row Data row object.
-   */
-  public onRowSelectChanged(row: DataRow): void {
-    // maintain the selectedRow(s) in the view
-    const id = row.item[this.config.selectTrackBy];
-
-    const rowSelectEventArgs: RowSelectEventArgs = {
-      row: row
-    };
-
-    if (this.config.multiRowSelectable) {
-      const index = this.dataStateService.selectedRows.indexOf(id);
-      if (row.selected && index < 0) {
-        this.dataStateService.selectedRows.push(id);
-      } else if (!row.selected && index >= 0) {
-        this.dataStateService.selectedRows.splice(index, 1);
-      }
-
-      this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataRow) => {
-        const itemIndex = dataRow.item[this.config.selectTrackBy];
-        return this.dataStateService.selectedRows.indexOf(itemIndex) > -1;
-      });
-
-      rowSelectEventArgs.selectedRows = this.dataStateService.selectedRows;
-    } else {
-      if (row.selected) {
-        this.selectedRow = id;
-      } else if (this.dataStateService.selectedRow === row) {
-        this.selectedRow = undefined;
-      }
-
-      rowSelectEventArgs.selectedRow = this.dataStateService.selectedRow;
-    }
-
-    // unselect all other rows if not multi select.
-    if (row.selected && !this.config.multiRowSelectable) {
-      this.eventStateService.rowSelectChangeStream.emit();
-    }
-
-    this.rowSelectedStateChange.emit(rowSelectEventArgs);
   }
 
   /**
@@ -882,7 +771,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     });
 
     const substituteRowCount = this.config.limit - this.dataStateService.dataRows.length;
-    this.dataStateService.substituteRows = Array.from({ length: substituteRowCount });
+    this.dataStateService.substituteRows = Array.from({length: substituteRowCount});
   }
 
   /**
@@ -890,7 +779,7 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
    * @return {boolean} True if loading.
    */
   public get isLoading(): boolean {
-    return this.showLoadingSpinner && this.dataStateService.reloading;
+    return this.showLoadingSpinner && this.dataStateService.dataLoading;
   }
 
   /**
@@ -921,27 +810,6 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
     });
   }
 
-  /**
-   * Extract group row details.
-   * @param {DataRow} row Data row.
-   * @return {GroupDetail} Group detail object.
-   */
-  public extractGroupRowDetails(row: DataRow): GroupDetail {
-    const rowGroups = this.onGroupFieldExtract(row);
-
-    const maxRows = rowGroups.reduce((acc: number, value: any[]) => {
-      return value ? Math.max(acc, value.length) : acc;
-    }, 0) || 1;
-
-    const groupHolder = Array.from({length: maxRows});
-
-    return {
-      rowCount: maxRows,
-      groups: rowGroups,
-      groupHolder: groupHolder
-    };
-  }
-
   public get hasFilterColumns(): boolean {
     return this.columns.some((column: DataTableColumnComponent) => column.filterable);
   }
@@ -963,8 +831,8 @@ export class DataTableComponent implements OnInit, OnDestroy, AfterContentInit, 
   }
 
   public registerOnChange(onSelectChange: (value: any) => void): void {
-    this.rowSelectedStateChange.subscribe((args: RowSelectEventArgs) => {
-      onSelectChange(this.config.multiRowSelectable ? args.selectedRows : args.selectedRow);
+    this.rowSelectChangeSubscription = this.eventStateService.rowSelectChangeStream.subscribe((selectedIds: any | any[]) => {
+      onSelectChange(selectedIds);
     });
   }
 

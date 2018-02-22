@@ -8,6 +8,7 @@ import { DragAndDropService } from '../../../utility';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
+import { DataRow } from '../../models/data-row.model';
 
 @Component({
   exportAs: 'ngDataTableColumnTitleHeader',
@@ -98,18 +99,15 @@ export class DataTableColumnTitleHeaderComponent {
     this.dataStateService.dataRows.forEach(row => {
       const id = row.item[this.config.selectTrackBy];
       const index = this.dataStateService.selectedRows.indexOf(id);
-
-      if (selectedState) {
-        if (index < 0) {
-          this.dataStateService.selectedRows.push(id);
-        }
-      } else {
-        if (index > -1) {
-          this.dataStateService.selectedRows.splice(index, 1);
-        }
+      if (selectedState && index < 0) {
+        this.dataStateService.selectedRows.push(id);
+      } else if (!selectedState && index > -1) {
+        this.dataStateService.selectedRows.splice(index, 1);
       }
+
+      row.selected = selectedState;
     });
 
-    this.eventStateService.rowSelectChangeStream.emit();
+    this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRows);
   }
 }

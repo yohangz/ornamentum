@@ -6,6 +6,8 @@ import { DataTableComponent } from '../data-table/data-table.component';
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
+import { GroupDetail } from '../../models/group-detail.model';
+import { DataTableEventStateService } from '../../services/data-table-event.service';
 
 /**
  * Data table body component.
@@ -23,7 +25,8 @@ export class DataTableBodyComponent {
 
   constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent,
               public config: DataTableConfigService,
-              public dataStateService: DataTableDataStateService) {
+              public dataStateService: DataTableDataStateService,
+              private eventStateService: DataTableEventStateService) {
   }
 
   /**
@@ -89,7 +92,7 @@ export class DataTableBodyComponent {
    * @param dataRow Data table row.
    */
   public onRowInit(dataRow): void {
-    this.dataTable.rowBind.emit(dataRow);
+    this.eventStateService.rowBind.emit(dataRow);
   }
 
   /**
@@ -102,5 +105,102 @@ export class DataTableBodyComponent {
       column: column,
       row: row
     });
+  }
+
+
+  /**
+   * Extract group row details.
+   * @param {DataRow} row Data row.
+   * @return {GroupDetail} Group detail object.
+   */
+  public extractGroupRowDetails(row: DataRow): GroupDetail {
+    const rowGroups = this.dataStateService.onGroupFieldExtract(row);
+
+    const maxRows = rowGroups.reduce((acc: number, value: any[]) => {
+      return value ? Math.max(acc, value.length) : acc;
+    }, 0) || 1;
+
+    const groupHolder = Array.from({length: maxRows});
+
+    return {
+      rowCount: maxRows,
+      groups: rowGroups,
+      groupHolder: groupHolder
+    };
+  }
+
+  /**
+   * On row selection change event.
+   * Maintain selected row state.
+   * @param {DataRow} row Data row object.
+   */
+  public onRowSelectChange(row: DataRow): void {
+    const id = row.item[this.config.selectTrackBy];
+
+    if (this.config.multiRowSelectable) {
+      const index = this.dataStateService.selectedRows.indexOf(id);
+      if (row.selected && index < 0) {
+        this.dataStateService.selectedRows.push(id);
+      } else if (!row.selected && index > -1) {
+        this.dataStateService.selectedRows.splice(index, 1);
+      }
+
+      this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataRow) => {
+        return dataRow.selected;
+      });
+
+      this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRows);
+    } else {
+      if (row.selected) {
+        this.dataStateService.selectedRow = id;
+      } else {
+        this.dataStateService.selectedRow = undefined;
+      }
+
+      this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRow);
+    }
+
+    // deselect all other rows if not multi select.
+    if (row.selected && !this.config.multiRowSelectable) {
+      this.dataStateService.dataRows.forEach((dataRow: DataRow) => {
+        if (dataRow !== row) {
+          row.selected = false;
+        }
+      });
+    }
+  }
+
+  /**
+   * Row clicked event handler.
+   * @param {DataRow} row Data row object.
+   * @param event Mouse click event argument object.
+   */
+  public rowClicked(row: DataRow, event: MouseEvent): void {
+    if (this.config.selectOnRowClick || (this.config.expandableRows && this.config.expandOnRowClick)) {
+      if (event.srcElement.classList.contains('ng-ignore-propagation')) {
+        return;
+      }
+
+      if (this.config.selectOnRowClick) {
+        row.selected = !row.selected;
+        this.onRowSelectChange(row);
+      }
+
+
+      if (this.config.expandOnRowClick) {
+        row.expanded = !row.expanded;
+      }
+    }
+
+    this.eventStateService.rowClick.emit({row, event});
+  }
+
+  /**
+   * Row double clicked event handler.
+   * @param {DataRow} row Data row object.
+   * @param {MouseEvent} event event Mouse click event argument object.
+   */
+  public rowDoubleClicked(row: DataRow, event: MouseEvent): void {
+    this.eventStateService.rowDoubleClick.emit({row, event});
   }
 }

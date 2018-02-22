@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
+import { DataTableEventStateService } from '../../services/data-table-event.service';
 
 /**
  * Data table pagination component.
@@ -14,7 +15,8 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
 })
 export class DataTablePaginationComponent {
   constructor(public config: DataTableConfigService,
-              public dataStateService: DataTableDataStateService) {
+              public dataStateService: DataTableDataStateService,
+              private eventStateService: DataTableEventStateService) {
   }
 
   /**
@@ -22,6 +24,7 @@ export class DataTablePaginationComponent {
    */
   public firstPageClick(): void {
     this.config.offset = 0;
+    this.eventStateService.dataFetchStream.emit(false);
   }
 
   /**
@@ -29,6 +32,7 @@ export class DataTablePaginationComponent {
    */
   public previousPageClick(): void {
     this.config.offset = this.config.offset - Math.min(this.config.limit, this.config.offset);
+    this.eventStateService.dataFetchStream.emit(false);
   }
 
   /**
@@ -36,6 +40,7 @@ export class DataTablePaginationComponent {
    */
   public nextPageClick(): void {
     this.config.offset = this.config.offset + this.config.limit;
+    this.eventStateService.dataFetchStream.emit(false);
   }
 
   /**
@@ -43,6 +48,7 @@ export class DataTablePaginationComponent {
    */
   public lastPageClick(): void {
     this.config.offset = (this.maxPage - 1) * this.config.limit;
+    this.eventStateService.dataFetchStream.emit(false);
   }
 
   /**
@@ -75,6 +81,7 @@ export class DataTablePaginationComponent {
     if (this.config.limit !== limit) {
       this.config.offset = 0;
       this.config.limit = limit;
+      this.eventStateService.dataFetchStream.emit(false);
     }
   }
 
@@ -99,6 +106,7 @@ export class DataTablePaginationComponent {
 
     if (this.page !== page) {
       this.config.offset = (page - 1) * this.config.limit;
+      this.eventStateService.dataFetchStream.emit(false);
     }
   }
 

@@ -1,16 +1,16 @@
 <ng-container *ngFor="let row of dataStateService.dataRows">
-  <ng-container *ngIf="dataTable.extractGroupRowDetails(row) as groupDetail">
-    <ng-container *ngFor="let _ignore of groupDetail.groupHolder; let holderIndex = index">
+  <ng-container *ngIf="extractGroupRowDetails(row) as groupDetail">
+    <ng-container *ngFor="let ignored of groupDetail.groupHolder; let holderIndex = index">
       <tr class="ng-data-table-row"
           (init)="onRowInit(row)"
           [attr.title]="row.tooltip"
           [class.row-odd]="isOddRow(row)"
           [class.row-even]="isEvenRow(row)"
           [class.selected]="row.selected"
-          [class.clickable]="dataTable.selectOnRowClick"
+          [class.clickable]="config.selectOnRowClick"
           [class.disabled]="row.disabled"
-          (dblclick)="dataTable.rowDoubleClicked(row, $event)"
-          (click)="dataTable.rowClicked(row, $event)">
+          (dblclick)="rowDoubleClicked(row, $event)"
+          (click)="rowClicked(row, $event)">
         <td class="ng-data-table-row-expand-button ng-ignore-propagation" [style.background-color]="row.colour"
             *ngIf="config.expandableRows && holderIndex === 0"
             (click)="onRowExpand($event, row)" [attr.rowspan]="groupDetail.rowCount">
@@ -24,7 +24,7 @@
         <td class="ng-data-table-select-column ng-ignore-propagation" [style.background-color]="row.colour"
             *ngIf="config.rowSelectable && holderIndex === 0" [attr.rowspan]="groupDetail.rowCount">
           <input class="ng-data-table-checkbox-input ng-ignore-propagation" type="checkbox" [(ngModel)]="row.selected"
-                 (change)="dataTable.onRowSelectChanged(row)"/>
+                 (change)="onRowSelectChange(row)"/>
         </td>
         <ng-container *ngFor="let column of columns">
           <ng-container *ngIf="column.visible">

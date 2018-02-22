@@ -244,6 +244,7 @@ export class DataTableExampleComponent {
    */
   public onDataLoad(params?: any): void {
     setTimeout(() => {
+      debugger;
       this.tableResource.query(params).then((data) => {
         this.items = data.items;
         this.itemCount = data.count;
@@ -299,5 +300,9 @@ export class DataTableExampleComponent {
 
   public onRowBind(dataRow: DataRow): void {
     dataRow.disabled = dataRow.index === 1;
+  }
+
+  public onRowSelectedStateChange(selected: any|any[]) {
+    console.log(selected);
   }
 }

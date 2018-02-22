@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { DataRow } from '../models/data-row.model';
+import { GroupFieldExtractorCallback } from '../models/group-field-extractor-callback.model';
 
 @Injectable()
 export class DataTableDataStateService {
@@ -9,10 +10,12 @@ export class DataTableDataStateService {
   public dataRows: DataRow[] = [];
   public itemCount: number;
   public tableWidth: number;
-  public reloading = true;
+  public dataLoading = true;
   public substituteRows: any[] = [];
 
+  public onGroupFieldExtract: GroupFieldExtractorCallback = (() => []);
+
   public get showNoDataOverlay(): boolean {
-    return !this.dataRows.length && !this.reloading;
+    return !this.dataRows.length && !this.dataLoading;
   }
 }

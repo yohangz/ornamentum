@@ -10,7 +10,6 @@ export { CellClickEventArgs } from './models/cell-click-event-args.model';
 export { HeaderClickEventArgs } from './models/header-click-event-args.model';
 export { DoubleClickEventArgs } from './models/double-click-event-args.model';
 export { RowClickEventArgs } from './models/row-click-event-args.model';
-export { RowSelectEventArgs } from './models/row-select-event-args.model';
 export { ScrollPoint } from './models/scroll-point.model';
 export { DataRow } from './models/data-row.model';
 export { DataTableParams } from './models/data-table-params.model';
