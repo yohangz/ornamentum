@@ -88,7 +88,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<DataTableComponent>}
    */
   @Output()
-  public init = new EventEmitter<DataTableComponent>();
+  public init: EventEmitter<DataTableComponent>;
 
   /**
    * On row selected state change event handler.
@@ -134,7 +134,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<DataTableParams>}
    */
   @Output()
-  public dataLoad = new EventEmitter<DataTableParams>();
+  public dataLoad: EventEmitter<DataTableParams>;
 
   /**
    * On refresh event handler.
@@ -142,7 +142,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<DataTableParams>}
    */
   @Output()
-  public refresh = new EventEmitter<DataTableParams>();
+  public refresh: EventEmitter<DataTableParams>;
 
   /**ss
    * On row bind event handler.
@@ -545,6 +545,9 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     this.rowSelectChange = this.eventStateService.rowSelectChangeStream;
     this.cellBind = this.eventStateService.cellBind;
     this.cellClick = this.eventStateService.cellClick;
+    this.init = this.eventStateService.init;
+    this.dataLoad = this.eventStateService.dataLoad;
+    this.refresh = this.eventStateService.refresh;
   }
 
   /**
@@ -647,9 +650,9 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     }
 
     if (hardRefresh) {
-      this.refresh.emit(dataTableParams);
+      this.eventStateService.refresh.emit(dataTableParams);
     } else {
-      this.dataLoad.emit(dataTableParams);
+      this.eventStateService.dataLoad.emit(dataTableParams);
     }
   }
 
@@ -704,7 +707,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     }
 
     this.fetchFilterOptions();
-    this.init.emit(this);
+    this.eventStateService.init.emit(this);
   }
 
   /**
