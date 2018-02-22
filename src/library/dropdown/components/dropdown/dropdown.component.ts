@@ -243,7 +243,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   public showSelectAll: boolean;
 
   /**
-   * Enable/Disable load data in the on init event.
+   * Enable/Disable load data in the on initStream event.
    * @type {boolean}
    */
   @Input()
@@ -633,7 +633,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   }
 
   /**
-   * Loads data to the dropdown when performing on init, searching, clearing search items and scrolling.
+   * Loads data to the dropdown when performing on initStream, searching, clearing search items and scrolling.
    * @param {boolean} fetchNext Boolean to get more data when scrolling.
    */
   private loadData(fetchNext?: boolean): void {

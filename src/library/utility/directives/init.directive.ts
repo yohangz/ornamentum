@@ -1,7 +1,7 @@
 import { Directive, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Directive({
-  selector: '[init]'
+  selector: '[initStream]'
 })
 export class InitDirective implements OnInit {
 

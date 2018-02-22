@@ -94,7 +94,7 @@ export class DataTableBodyComponent {
    * @param dataRow Data table row.
    */
   public onRowInit(dataRow): void {
-    this.eventStateService.rowBind.emit(dataRow);
+    this.eventStateService.rowBindStream.emit(dataRow);
   }
 
   /**
@@ -103,7 +103,7 @@ export class DataTableBodyComponent {
    * @param {DataRow} row Data table row.
    */
   public onCellInit(column: DataTableColumnComponent, row: DataRow): void {
-    this.eventStateService.cellBind.emit({
+    this.eventStateService.cellBindStream.emit({
       column: column,
       row: row
     });
@@ -116,7 +116,7 @@ export class DataTableBodyComponent {
    * @param {MouseEvent} event event event Mouse click event argument object.
    */
   public cellClicked(column: DataTableColumnComponent, row: DataRow, event: MouseEvent): void {
-    this.eventStateService.cellClick.emit({row, column, event});
+    this.eventStateService.cellClickStream.emit({row, column, event});
   }
 
   /**
@@ -220,7 +220,7 @@ export class DataTableBodyComponent {
       }
     }
 
-    this.eventStateService.rowClick.emit({row, event});
+    this.eventStateService.rowClickStream.emit({row, event});
   }
 
   /**
@@ -229,7 +229,7 @@ export class DataTableBodyComponent {
    * @param {MouseEvent} event event Mouse click event argument object.
    */
   public rowDoubleClicked(row: DataRow, event: MouseEvent): void {
-    this.eventStateService.rowDoubleClick.emit({row, event});
+    this.eventStateService.rowDoubleClickStream.emit({row, event});
   }
 
   public get hasSubstituteRows(): boolean {

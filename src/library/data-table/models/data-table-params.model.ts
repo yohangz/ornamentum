@@ -6,6 +6,12 @@ import { FilterColumn } from './filter-column.model';
  */
 export interface DataTableParams {
   /**
+   * True if hard reload triggered.
+   * Refresh button click state
+   */
+  hardReload: boolean;
+
+  /**
    * Data offset value.
    * @type {number}
    */

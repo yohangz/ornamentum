@@ -500,8 +500,7 @@
   [onFilterValueExtract]="tableResource.extractFilterOptions.bind(tableResource)"
 
   (rowBind)="onRowBind($event)"
-  (refresh)="onRefresh($event)"
-  (dataLoad)="onDataLoad($event)"
+  (dataBind)="onDataLoad($event)"
   (init)="onInit($event)"
   (rowSelectChange)="onRowSelectedStateChange($event)">
 

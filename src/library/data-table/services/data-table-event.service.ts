@@ -13,13 +13,13 @@ export class DataTableEventStateService {
   public allRowSelectChangeStream = new EventEmitter<boolean>();
   public dataFetchStream = new EventEmitter<boolean>();
   public headerClickStream = new EventEmitter<HeaderClickEventArgs>();
-  public rowBind = new EventEmitter<DataRow>();
-  public rowClick = new EventEmitter<RowClickEventArgs>();
-  public rowDoubleClick = new EventEmitter<DoubleClickEventArgs>();
+  public rowBindStream = new EventEmitter<DataRow>();
+  public rowClickStream = new EventEmitter<RowClickEventArgs>();
+  public rowDoubleClickStream = new EventEmitter<DoubleClickEventArgs>();
   public rowSelectChangeStream = new EventEmitter<any|any[]>();
-  public cellBind = new EventEmitter<CellBindEventArgs>();
-  public cellClick = new EventEmitter<CellClickEventArgs>();
-  public init = new EventEmitter<DataTableComponent>();
-  public dataLoad = new EventEmitter<DataTableParams>();
-  public refresh = new EventEmitter<DataTableParams>();
+  public cellBindStream = new EventEmitter<CellBindEventArgs>();
+  public cellClickStream = new EventEmitter<CellClickEventArgs>();
+  public initStream = new EventEmitter<DataTableComponent>();
+  public dataBindStream = new EventEmitter<DataTableParams>();
+  public dataBoundStream = new EventEmitter<boolean>();
 }

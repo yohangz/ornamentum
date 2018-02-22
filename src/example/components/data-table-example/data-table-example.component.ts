@@ -227,32 +227,24 @@ export class DataTableExampleComponent {
   }
 
   /**
-   * Data table refresh event handler.
-   * @param params  Event payload.
-   */
-  public onRefresh(params?: any): void {
-    this.fetchAlgorithmsData();
-    this.tableResource.query(params).then((data) => {
-      this.items = data.items;
-      this.itemCount = data.count;
-    });
-  }
-
-  /**
    * Data table data load event handler.
    * @param {DataTableParams} params  grid parameters.
    */
-  public onDataLoad(params?: any): void {
+  public onDataLoad(params: DataTableParams): void {
     setTimeout(() => {
-      this.tableResource.query(params).then((data) => {
-        this.items = data.items;
-        this.itemCount = data.count;
+      if (params.hardReload) {
+        this.fetchAlgorithmsData();
+      }
+
+      this.tableResource.query(params).then((resource) => {
+        this.items = resource.items;
+        this.itemCount = resource.count;
       });
     }, 2000);
   }
 
   /**
-   * On data table init event callback.
+   * On data table initStream event callback.
    * @param {DataTableComponent} dataTableComponent Data table reference.
    */
   public onInit(dataTableComponent: DataTableComponent): void {
@@ -301,7 +293,7 @@ export class DataTableExampleComponent {
     dataRow.disabled = dataRow.index === 1;
   }
 
-  public onRowSelectedStateChange(selected: any|any[]) {
+  public onRowSelectedStateChange(selected: any | any[]) {
     console.log(selected);
   }
 }

@@ -14,6 +14,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
 
 import { SortOrder } from '../../models/sort-order.enum';
 import { FilterValueExtractCallback } from '../../models/filter-value-extract-callback.model';
@@ -59,11 +60,12 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 export class DataTableComponent implements OnDestroy, AfterContentInit, ControlValueAccessor {
   public SortOrder = SortOrder;
 
-  private isHeardReload = false;
+  private heardReload = false;
 
   public scrollPositionStream = new Subject();
 
   private rowSelectChangeSubscription: Subscription;
+  private dataFetchStreamSubscription: Subscription;
 
   @ContentChildren(DataTableColumnComponent)
   public columns: QueryList<DataTableColumnComponent>;
@@ -84,7 +86,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   // Event handlers
 
   /**
-   * On data table init event handler.
+   * On data table initStream event handler.
    * @type {EventEmitter<DataTableComponent>}
    */
   @Output()
@@ -134,15 +136,10 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<DataTableParams>}
    */
   @Output()
-  public dataLoad: EventEmitter<DataTableParams>;
+  public dataBind: EventEmitter<DataTableParams>;
 
-  /**
-   * On refresh event handler.
-   * Fired on hard reload button click.
-   * @type {EventEmitter<DataTableParams>}
-   */
   @Output()
-  public refresh: EventEmitter<DataTableParams>;
+  public dataBound: EventEmitter<boolean>;
 
   /**ss
    * On row bind event handler.
@@ -165,7 +162,9 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {FilterValueExtractCallback}
    */
   @Input()
-  public onFilterValueExtract: FilterValueExtractCallback;
+  public set onFilterValueExtract(value: FilterValueExtractCallback) {
+    this.dataStateService.onFilterValueExtract = value;
+  }
 
   /**
    * On group field extract event handler callback.
@@ -292,7 +291,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @Input()
   public set rowSelectable(value: boolean) {
     this.config.rowSelectable = value;
-    this.resetRowSelectState();
+    this.clearDataRowSelectState();
   }
 
   /**
@@ -302,7 +301,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @Input()
   public set multiRowSelectable(value: boolean) {
     this.config.multiRowSelectable = value;
-    this.resetRowSelectState();
+    this.clearDataRowSelectState();
   }
 
   /**
@@ -342,7 +341,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Auto dataLoad on init.
+   * Auto dataBindStream on initStream.
    * @type {boolean}
    */
   @Input()
@@ -529,6 +528,10 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     return Math.floor(this.config.offset / this.config.limit) + 1;
   }
 
+  public get headerPadding(): number {
+    return this.config.contentHeight ? this.globalRefService.scrollbarWidth : 0;
+  }
+
   constructor(private dragAndDropService: DragAndDropService,
               private dataTableStateService: DataTablePersistenceService,
               private globalRefService: GlobalRefService,
@@ -539,15 +542,15 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
     this.headerClick = this.eventStateService.headerClickStream;
     this.allRowSelectChange = this.eventStateService.allRowSelectChangeStream;
-    this.rowBind = this.eventStateService.rowBind;
-    this.rowClick = this.eventStateService.rowClick;
-    this.rowDoubleClick = this.eventStateService.rowDoubleClick;
+    this.rowBind = this.eventStateService.rowBindStream;
+    this.rowClick = this.eventStateService.rowClickStream;
+    this.rowDoubleClick = this.eventStateService.rowDoubleClickStream;
     this.rowSelectChange = this.eventStateService.rowSelectChangeStream;
-    this.cellBind = this.eventStateService.cellBind;
-    this.cellClick = this.eventStateService.cellClick;
-    this.init = this.eventStateService.init;
-    this.dataLoad = this.eventStateService.dataLoad;
-    this.refresh = this.eventStateService.refresh;
+    this.cellBind = this.eventStateService.cellBindStream;
+    this.cellClick = this.eventStateService.cellClickStream;
+    this.init = this.eventStateService.initStream;
+    this.dataBind = this.eventStateService.dataBindStream;
+    this.dataBound = this.eventStateService.dataBoundStream;
   }
 
   /**
@@ -555,24 +558,47 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    */
   private onAfterDataBind(items: any[]): void {
     this.setDataRows(items);
-    this.dataStateService.allRowSelected = false;
     this.setRowSelectState();
 
     if (this.config.offset > this.dataStateService.itemCount) {
       this.config.offset = 0;
     }
 
-    if (this.isHeardReload) {
-      this.fetchFilterOptions();
-      this.isHeardReload = false;
+    if (this.heardReload) {
+      this.fetchColumnFilterOptions();
+      this.heardReload = false;
     }
 
     setTimeout(() => {
       this.dataStateService.dataLoading = false;
     }, 500);
+
+    this.eventStateService.dataBoundStream.emit(this.heardReload);
   }
 
-  public setRowSelectState(): void {
+  /**
+   * Get data item representing objects.
+   * @return {DataRow[]} Data rows.
+   */
+  private setDataRows(items: any[]): void {
+    this.dataStateService.dataRows = items.map((item: any, index: number) => {
+      return {
+        dataLoaded: false,
+        expanded: false,
+        disabled: false,
+        colour: '',
+        tooltip: '',
+        index: index,
+        item: item,
+        selected: false
+      };
+    });
+
+    const substituteRowCount = this.config.limit - this.dataStateService.dataRows.length;
+    this.dataStateService.substituteRows = Array.from({length: substituteRowCount});
+  }
+
+  private setRowSelectState(): void {
     this.dataStateService.dataRows.forEach(row => {
       const id = row.item[this.config.selectTrackBy];
       if (this.config.multiRowSelectable) {
@@ -590,15 +616,13 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   /**
    * Get data table params.
-   * @param {boolean} resetOffset Reset the offset of true.
+   * @param {boolean} hardReload Hard reload if true.
    * @return {DataTableParams} Data table parameters.
    */
-  private getDataTableParams(resetOffset: boolean): DataTableParams {
-    const params = <DataTableParams>{};
-
-    if (resetOffset) {
-      this.config.offset = 0;
-    }
+  private getDataTableParams(hardReload: boolean): DataTableParams {
+    const params: DataTableParams = {
+      hardReload: hardReload
+    };
 
     if (this.columns) {
       params.sortColumns = this.columns.filter(column => column.sortable)
@@ -631,38 +655,27 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   /**
    * Trigger table data bind.
-   * @param {boolean} hardRefresh Hard refresh if true.
+   * @param {boolean} hardReload Hard refresh if true.
    */
-  public dataBind(hardRefresh: boolean): void {
+  public mapDataTableParameters(hardReload: boolean): Observable<DataTableParams> {
     this.dataStateService.dataLoading = true;
-    if (hardRefresh) {
-      this.selectedRows = [];
-      this.selectedRow = undefined;
-      this.clearColumnFilters();
-      this.resetColumnSortState();
-      this.isHeardReload = true;
+    if (hardReload) {
+      this.clearRowSelectState();
+      this.clearColumnState();
+      this.heardReload = true;
+      this.config.offset = 0;
     }
 
-    const dataTableParams = this.getDataTableParams(hardRefresh);
-
-    if (this.config.persistTableState) {
-      this.dataTableStateService.setState(this.id, dataTableParams);
-    }
-
-    if (hardRefresh) {
-      this.eventStateService.refresh.emit(dataTableParams);
-    } else {
-      this.eventStateService.dataLoad.emit(dataTableParams);
-    }
+    return Observable.of(this.getDataTableParams(hardReload));
   }
 
   /**
    * Fetch filter options from data provider.
    */
-  private fetchFilterOptions(): void {
+  private fetchColumnFilterOptions(): void {
     this.columns.forEach((column) => {
       if (column.showDropdownFilter) {
-        this.setFilterOptions(column);
+        column.fetchFilterOptions();
       }
     });
   }
@@ -695,105 +708,62 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     }
   }
 
+  private initDataFetchEvent(): void {
+    this.dataFetchStreamSubscription = this.eventStateService.dataFetchStream
+      .debounceTime(20)
+      .switchMap((reload: boolean) => this.mapDataTableParameters(reload))
+      .do((dataTableParams: DataTableParams) => {
+        if (this.config.persistTableState) {
+          this.dataTableStateService.setState(this.id, dataTableParams);
+        }
+      })
+      .subscribe((dataTableParams: DataTableParams) => this.eventStateService.dataBindStream.emit(dataTableParams));
+  }
+
   public ngAfterContentInit(): void {
     this.initDataTableState();
-
-    this.eventStateService.dataFetchStream.debounceTime(20).subscribe((hardRefresh: boolean) => {
-      this.dataBind(hardRefresh);
-    });
+    this.initDataFetchEvent();
 
     if (this.config.autoFetch) {
       this.eventStateService.dataFetchStream.next(false);
     }
 
-    this.fetchFilterOptions();
-    this.eventStateService.init.emit(this);
+    this.fetchColumnFilterOptions();
+    this.eventStateService.initStream.emit(this);
   }
 
   /**
    * Lifecycle hook that is called when a directive, pipe or service is destroyed.
    */
   public ngOnDestroy(): void {
-    this.rowSelectChangeSubscription.unsubscribe();
+    if (this.dataFetchStreamSubscription) {
+      this.dataFetchStreamSubscription.unsubscribe();
+    }
+
+    if (this.rowSelectChangeSubscription) {
+      this.rowSelectChangeSubscription.unsubscribe();
+    }
   }
 
   /**
    * Reset column sort state.
    */
-  private resetColumnSortState(): void {
+  private clearColumnState(): void {
     this.columns.forEach((column: DataTableColumnComponent) => {
       column.resetSortOrder();
-    });
-  }
-
-  /**
-   * Clear applied column filters.
-   */
-  private clearColumnFilters(): void {
-    this.columns.forEach((column: DataTableColumnComponent) => {
       column.filter = undefined;
     });
   }
 
-  /**
-   * Get data item representing objects.
-   * @return {DataRow[]} Data rows.
-   */
-  private setDataRows(items: any[]): void {
-    this.dataStateService.dataRows = items.map((item: any, index: number) => {
-      return {
-        dataLoaded: false,
-        expanded: false,
-        disabled: false,
-        colour: '',
-        tooltip: '',
-        index: index,
-        item: item,
-        selected: false
-      };
-    });
-
-    const substituteRowCount = this.config.limit - this.dataStateService.dataRows.length;
-    this.dataStateService.substituteRows = Array.from({length: substituteRowCount});
-  }
-
-  /**
-   * Set filter options data.
-   * user for multi select filter option.
-   * @param {DataTableColumnComponent} column Data table column component object.
-   */
-  public setFilterOptions(column: DataTableColumnComponent): void {
-    let filterOptions: Promise<any[]>;
-    if (this.onFilterValueExtract) {
-      filterOptions = this.onFilterValueExtract(column);
-    }
-
-    column.filterOptions = [];
-    filterOptions.then((filterArgs: any[]) => {
-      if (column.filterValueFormatter) {
-        column.filterOptions = filterArgs.map((option: any, index: number) => {
-          return column.filterValueFormatter(option, index);
-        });
-      } else {
-        column.filterOptions = filterArgs.map((option: any) => {
-          return {
-            key: option,
-            value: option
-          };
-        });
-      }
-    });
-  }
-
-  private resetRowSelectState(): void {
+  private clearRowSelectState(): void {
     this.dataStateService.selectedRow = undefined;
     this.dataStateService.selectedRows = [];
-    this.dataStateService.dataRows.forEach(row => row.selected = false);
     this.dataStateService.allRowSelected = false;
   }
 
-  public get headerPadding(): number {
-    return this.config.contentHeight ? this.globalRefService.scrollbarWidth : 0;
+  private clearDataRowSelectState(): void {
+    this.clearRowSelectState();
+    this.dataStateService.dataRows.forEach(row => row.selected = false);
   }
 
   public fetchData(hardRefresh: boolean = false): void {
@@ -805,13 +775,18 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       return;
     }
 
-    this.selectedRows = this.selectedRow = value;
+    if (this.config.multiRowSelectable) {
+      this.selectedRows = value;
+    } else {
+      this.selectedRow = value;
+    }
   }
 
   public registerOnChange(onSelectChange: (value: any) => void): void {
-    this.rowSelectChangeSubscription = this.eventStateService.rowSelectChangeStream.subscribe((selectedIds: any | any[]) => {
-      onSelectChange(selectedIds);
-    });
+    this.rowSelectChangeSubscription = this.eventStateService.rowSelectChangeStream
+      .subscribe((selectedIds: any | any[]) => {
+        onSelectChange(selectedIds);
+      });
   }
 
   public registerOnTouched(fn: any): void {

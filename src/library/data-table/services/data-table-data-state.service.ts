@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { DataRow } from '../models/data-row.model';
 import { GroupFieldExtractorCallback } from '../models/group-field-extractor-callback.model';
+import { FilterValueExtractCallback } from '../models/filter-value-extract-callback.model';
 
 @Injectable()
 export class DataTableDataStateService {
@@ -14,6 +15,7 @@ export class DataTableDataStateService {
   public substituteRows: any[] = [];
 
   public onGroupFieldExtract: GroupFieldExtractorCallback = (() => []);
+  public onFilterValueExtract: FilterValueExtractCallback;
 
   public get showNoDataOverlay(): boolean {
     return !this.dataRows.length && !this.dataLoading;

@@ -87,7 +87,7 @@ export class DropdownConfig {
   wrapDisplaySelectLimit?: number;
 
   /**
-   * Trigger select change on init if true.
+   * Trigger select change on initStream if true.
    * @type {boolean}
    */
   triggerSelectChangeOnInit?: boolean;

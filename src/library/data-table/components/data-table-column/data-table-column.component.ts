@@ -11,6 +11,7 @@ import { FilterValueFormatterCallback } from '../../models/filter-value-formatte
 import { FilterFieldMapperCallback } from '../../models/filter-field-mapper-callback.model';
 import { SortComparatorCallback } from '../../models/sort-comparator-callback.model';
 import { FilterExpressionCallback } from '../../models/filter-expression-callback.model';
+import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
  * Data table column component.
@@ -281,7 +282,8 @@ export class DataTableColumnComponent implements OnInit {
   @Input()
   public dropdownFilterMenuHeight: number;
 
-  constructor(private dataTableConfigService: DataTableConfigService) {
+  constructor(private dataTableConfigService: DataTableConfigService,
+              private dataStateService: DataTableDataStateService) {
     // Table column config
     this.sortable = dataTableConfigService.sortable;
     this._sortOrder = dataTableConfigService.sortOrder;
@@ -349,6 +351,33 @@ export class DataTableColumnComponent implements OnInit {
       'zmdi-sort-amount-desc': this.sortOrder === SortOrder.DESC,
       'zmdi-format-line-spacing': this.sortOrder === undefined || this.sortOrder === SortOrder.NONE
     };
+  }
+
+  public fetchFilterOptions(): void {
+    if (!this.showDropdownFilter) {
+      return;
+    }
+
+    let filterOptions: Promise<any[]>;
+    if (this.dataStateService.onFilterValueExtract) {
+      filterOptions = this.dataStateService.onFilterValueExtract(this);
+    }
+
+    this.filterOptions = [];
+    filterOptions.then((filterArgs: any[]) => {
+      if (this.filterValueFormatter) {
+        this.filterOptions = filterArgs.map((option: any, index: number) => {
+          return this.filterValueFormatter(option, index);
+        });
+      } else {
+        this.filterOptions = filterArgs.map((option: any) => {
+          return {
+            key: option,
+            value: option
+          };
+        });
+      }
+    });
   }
 
   /**

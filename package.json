@@ -59,7 +59,9 @@
     "url": "https://github.com/yohangz/ornamentum/issues"
   },
   "homepage": "https://github.com/yohangz/ornamentum#readme",
-  "dependencies": {},
+  "dependencies": {
+    "rxjs": "^5.5.2"
+  },
   "peerDependencies": {
     "@angular/common": "^5.0.0",
     "@angular/core": "^5.0.0",
