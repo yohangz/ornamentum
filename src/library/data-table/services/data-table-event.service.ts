@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+
 import { HeaderClickEventArgs } from '../models/header-click-event-args.model';
 import { DataRow } from '../models/data-row.model';
 import { RowClickEventArgs } from '../models/row-click-event-args.model';
@@ -21,5 +22,5 @@ export class DataTableEventStateService {
   public cellClickStream = new EventEmitter<CellClickEventArgs>();
   public initStream = new EventEmitter<DataTableComponent>();
   public dataBindStream = new EventEmitter<DataTableParams>();
-  public dataBoundStream = new EventEmitter<boolean>();
+  public dataBoundStream = new EventEmitter<void>();
 }

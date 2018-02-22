@@ -3,7 +3,7 @@
   </ng-data-table-header>
   <div class="ng-data-table-inner-wrapper">
     <div class="ng-data-table-header-wrapper" [style.paddingRight]="headerPadding | px">
-      <div class="ng-data-table-header" scrollElement [scrollPositionStream]="scrollPositionStream">
+      <div class="ng-data-table-header" scrollElement>
         <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="minWidth | px">
           <colgroup ngDataTableColGroup [columns]="columns">
           </colgroup>
@@ -12,8 +12,8 @@
         </table>
       </div>
     </div>
-    <div class="ng-data-table-content" (scrollPosition)="scrollPositionStream.next($event)"
-         [style.height]="config.contentHeight | px" [style.minHeight]="config.minHeight | px">
+    <div class="ng-data-table-content" scrollPosition [style.height]="config.contentHeight | px"
+         [style.minHeight]="config.minHeight | px">
       <ng-data-table-loading-spinner [loadingSpinnerTemplate]="loadingSpinnerTemplate">
       </ng-data-table-loading-spinner>
       <table class="ng-data-table" [style.width]="dataStateService.tableWidth | px"

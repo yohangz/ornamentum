@@ -1,6 +1,8 @@
-import { AfterViewInit, Directive, ElementRef, Input, OnDestroy } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { AfterViewInit, Directive, ElementRef, OnDestroy } from '@angular/core';
+
 import { Subscription } from 'rxjs/Subscription';
+
+import { ScrollPositionService } from '../services/scroll-position.service';
 
 @Directive({
   selector: '[scrollElement]'
@@ -8,11 +10,11 @@ import { Subscription } from 'rxjs/Subscription';
 export class ScrollElementDirective implements AfterViewInit, OnDestroy {
   private scrollPositionSubscription: Subscription;
 
-  @Input()
-  public scrollPositionStream: Observable<any>;
+  constructor(private el: ElementRef, private scrollPositionService: ScrollPositionService) {
+  }
 
   public ngAfterViewInit(): void {
-    this.scrollPositionSubscription = this.scrollPositionStream.subscribe((value) => {
+    this.scrollPositionSubscription = this.scrollPositionService.scrollPositionStream.subscribe((value) => {
       this.el.nativeElement.scrollLeft = value.scrollLeft;
     });
   }
@@ -21,8 +23,5 @@ export class ScrollElementDirective implements AfterViewInit, OnDestroy {
     if (this.scrollPositionSubscription) {
       this.scrollPositionSubscription.unsubscribe();
     }
-  }
-
-  constructor(private el: ElementRef) {
   }
 }

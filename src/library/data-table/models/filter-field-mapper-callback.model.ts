@@ -5,4 +5,6 @@
  * @param {any[]} array - Data items.
  * @return {any|any[]} Mapped filter value.
  */
-export type FilterFieldMapperCallback = (value: any, index: number, array: any[]) => any | any[];
+import { FilterOption } from './filter-option.model';
+
+export type FilterFieldMapperCallback = (value: any, index: number) => FilterOption;

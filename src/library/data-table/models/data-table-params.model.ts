@@ -1,5 +1,7 @@
 import { SortColumn } from './sort-column.model';
 import { FilterColumn } from './filter-column.model';
+import { QueryResult } from './query-result.model';
+import { Observable } from 'rxjs/Observable';
 
 /**
  * Data table parameters.
@@ -10,6 +12,9 @@ export interface DataTableParams {
    * Refresh button click state
    */
   hardReload: boolean;
+
+
+  resolve: (queryResult: Observable<QueryResult<any>>) => void;
 
   /**
    * Data offset value.

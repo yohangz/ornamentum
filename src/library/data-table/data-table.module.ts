@@ -2,6 +2,8 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
+import { DataTableConfig } from './models/data-table-config.model';
+
 import { DataTableColumnComponent } from './components/data-table-column/data-table-column.component';
 import { DataTableColumnFilterHeaderComponent } from './components/data-table-column-filter-header/data-table-column-filter-header.component';
 import { DataTableColumnFilterTemplateComponent } from './components/data-table-column-filter-template/data-table-column-filter-template.component';
@@ -21,11 +23,10 @@ import { ScrollElementDirective } from './directives/scroll-element.directive';
 import { ElementWidthDirective } from './directives/element-width.directive';
 
 import { DATA_TABLE_CONFIG } from './services/data-table-config.service';
-import { DataTableResourceFactoryService } from './services/data-table-resource-factory.service';
+import { DataTableResource } from './services/data-table-resource.service';
 
 import { DropdownModule } from '../dropdown';
 import { UtilityModule } from '../utility';
-import { DataTableConfig } from './models/data-table-config.model';
 
 const COMPONENTS = [
   DataTableHeaderComponent,
@@ -50,7 +51,7 @@ const DIRECTIVES = [
 ];
 
 const PROVIDERS = [
-  DataTableResourceFactoryService
+  DataTableResource
 ];
 
 /**

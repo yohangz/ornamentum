@@ -1,16 +1,17 @@
-import { Component, ContentChild, Input, OnInit, TemplateRef } from '@angular/core';
+import { Component, ContentChild, Input, OnDestroy, OnInit, TemplateRef } from '@angular/core';
 
-import { DataTableConfigService } from '../../services/data-table-config.service';
+import { Subscription } from 'rxjs/Subscription';
 
 import { CellColourRenderCallback } from '../../models/cell-colour-render-callback.model';
 import { SortOrder } from '../../models/sort-order.enum';
 import { MenuPosition } from '../../../dropdown/models/menu-position.enum';
 import { FilterOption } from '../../models/filter-option.model';
 import { DataRow } from '../../models/data-row.model';
-import { FilterValueFormatterCallback } from '../../models/filter-value-formatter-callback.model';
 import { FilterFieldMapperCallback } from '../../models/filter-field-mapper-callback.model';
 import { SortComparatorCallback } from '../../models/sort-comparator-callback.model';
 import { FilterExpressionCallback } from '../../models/filter-expression-callback.model';
+
+import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
@@ -21,7 +22,9 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
   selector: 'ng-data-table-column',
   template: ''
 })
-export class DataTableColumnComponent implements OnInit {
+export class DataTableColumnComponent implements OnInit, OnDestroy {
+  private filterValueExtractorSubscription: Subscription;
+
   private _sortOrder: SortOrder = SortOrder.NONE;
   private _baseSortOrder: SortOrder;
 
@@ -62,14 +65,6 @@ export class DataTableColumnComponent implements OnInit {
    */
   @Input()
   public filterFieldMapper: FilterFieldMapperCallback;
-
-  /**
-   * Filter value formatter.
-   * Used to map filter multi select dropdown values when showDropdownFilter option is true.
-   * @type FilterValueFormatterCallback
-   */
-  @Input()
-  public filterValueFormatter: FilterValueFormatterCallback;
 
   /**
    * Cell colour render event handler callback function.
@@ -358,26 +353,26 @@ export class DataTableColumnComponent implements OnInit {
       return;
     }
 
-    let filterOptions: Promise<any[]>;
-    if (this.dataStateService.onFilterValueExtract) {
-      filterOptions = this.dataStateService.onFilterValueExtract(this);
+    // Clear previous filter subscription before invoking new event.
+    if (this.filterValueExtractorSubscription) {
+      this.filterValueExtractorSubscription.unsubscribe();
+      this.filterValueExtractorSubscription = null;
     }
 
-    this.filterOptions = [];
-    filterOptions.then((filterArgs: any[]) => {
-      if (this.filterValueFormatter) {
-        this.filterOptions = filterArgs.map((option: any, index: number) => {
-          return this.filterValueFormatter(option, index);
+    if (this.dataStateService.onFilterValueExtract) {
+      this.filterValueExtractorSubscription = this.dataStateService.onFilterValueExtract(this)
+        .take(1)
+        .subscribe((options: FilterOption[]) => {
+          this.filterOptions = options;
         });
-      } else {
-        this.filterOptions = filterArgs.map((option: any) => {
-          return {
-            key: option,
-            value: option
-          };
-        });
-      }
-    });
+    }
+
+  }
+
+  public ngOnDestroy(): void {
+    if (this.filterValueExtractorSubscription) {
+      this.filterValueExtractorSubscription.unsubscribe();
+    }
   }
 
   /**

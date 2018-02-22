@@ -479,8 +479,7 @@
   [filterDebounce]="filterDebounce"
   [filterDebounceTime]="filterDebounceTime"
   [indexColumnTitle]="indexColumnTitle"
-  [itemCount]="itemCount"
-  [items]="items"
+
   [limit]="limit"
   [multiRowSelectable]="multiRowSelectable"
   [multiColumnSortable]="initialTableConf.multiColumnSortable"
@@ -497,7 +496,7 @@
   [contentHeight]="contentHeight"
   [persistTableState]="true"
   [showRefreshButton]="true"
-  [onFilterValueExtract]="tableResource.extractFilterOptions.bind(tableResource)"
+  [onFilterValueExtract]="onFilterValueExtract.bind(this)"
 
   (rowBind)="onRowBind($event)"
   (dataBind)="onDataLoad($event)"
