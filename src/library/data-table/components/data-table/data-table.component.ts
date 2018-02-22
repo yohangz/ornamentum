@@ -343,14 +343,18 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {boolean}
    */
   @Input()
-  public autoFetch: boolean;
+  public set autoFetch(value: boolean) {
+    this.config.autoFetch = value;
+  }
 
   /**
    * Show loading spinner.
    * @type {boolean}
    */
   @Input()
-  public showLoadingSpinner: boolean;
+  public set showLoadingSpinner(value: boolean) {
+    this.config.showLoadingSpinner = value;
+  }
 
   /**
    * Select tracked by (identifier from table data to track selected items uniquely)
@@ -530,9 +534,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
               public config: DataTableConfigService) {
     this.storageMode = config.storageMode;
 
-    this.autoFetch = config.autoFetch;
-    this.showLoadingSpinner = config.showLoadingSpinner;
-
     this.headerClick = this.eventStateService.headerClickStream;
     this.allRowSelectChange = this.eventStateService.allRowSelectChangeStream;
     this.rowBind = this.eventStateService.rowBind;
@@ -695,7 +696,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       this.dataBind(hardRefresh);
     });
 
-    if (this.autoFetch) {
+    if (this.config.autoFetch) {
       this.eventStateService.dataFetchStream.next(false);
     }
 
@@ -755,7 +756,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @return {boolean} True if loading.
    */
   public get isLoading(): boolean {
-    return this.showLoadingSpinner && this.dataStateService.dataLoading;
+    return this.config.showLoadingSpinner && this.dataStateService.dataLoading;
   }
 
   /**
