@@ -335,7 +335,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    */
   @Input()
   public set expandOnRowClick(value: boolean) {
-    this.config.expandableRows = value;
+    this.config.expandOnRowClick = value;
   }
 
   /**
