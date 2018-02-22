@@ -13,6 +13,7 @@ import { DataTableComponent } from './components/data-table/data-table.component
 import { DataTableBodyComponent } from './components/data-table-body/data-table-body.component';
 import { DataTableColumnSelectorComponent } from './components/data-table-column-selector/data-table-column-selector.component';
 import { DataTableNoDataBodyComponent } from './components/data-table-no-data-body/data-table-no-data-body.component';
+import { DataTableHeadComponent } from './components/data-table-head/data-table-head.component';
 
 import { ScrollPositionDirective } from './directives/scroll-position.directive';
 import { ScrollElementDirective } from './directives/scroll-element.directive';
@@ -36,7 +37,8 @@ const COMPONENTS = [
   DataTableNoDataBodyComponent,
   DataTableColumnFilterHeaderComponent,
   DataTableColumnFilterTemplateComponent,
-  DataTableColumnTitleHeaderComponent
+  DataTableColumnTitleHeaderComponent,
+  DataTableHeadComponent
 ];
 
 const DIRECTIVES = [

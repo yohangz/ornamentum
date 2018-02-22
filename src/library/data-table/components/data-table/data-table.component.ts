@@ -810,10 +810,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     });
   }
 
-  public get hasFilterColumns(): boolean {
-    return this.columns.some((column: DataTableColumnComponent) => column.filterable);
-  }
-
   public get headerPadding(): number {
     return this.config.contentHeight ? this.globalRefService.scrollbarWidth : 0;
   }

@@ -21,7 +21,7 @@ export class DataTableHeaderComponent implements OnDestroy {
   private componentLoader: ComponentLoader<DataTableColumnSelectorComponent>;
 
   @Input()
-  public columns: DataTableColumnComponent;
+  public columns: DataTableColumnComponent[];
 
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,

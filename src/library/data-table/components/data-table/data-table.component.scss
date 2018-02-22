@@ -122,84 +122,84 @@
     table-layout: fixed;
     width: 100%;
 
-    thead {
-      //display: block;
-      > tr {
-        > th {
-          @include font-size(.7, 1.6);
-          background: $data-table-header-secondary-background;
-          border: .05rem solid $data-table-header-border;
-          border-right: 0;
-          border-top: 0;
-          color: $data-table-header-text;
-          padding: 0 .5rem;
-          position: relative;
-          vertical-align: bottom;
-          word-break: break-all;
+    ::ng-deep {
 
-          .ng-data-table-checkbox-input {
-            margin: 0;
-          }
-
-
-          .ng-data-table-column-resize-handle {
-            bottom: 0;
-            cursor: col-resize;
-            display: block;
-            height: 100%;
-            position: absolute;
-            right: -.5rem;
-            width: 1rem;
-            z-index: 10001;
-
-          }
-
-          .ng-data-table-column-sort-icon {
-            float: right;
-            cursor: pointer;
-          }
-
-          &:first-child {
-            border-left: 0;
-          }
-
-          &:last-child {
-            border-right: 0;
-          }
-        }
-
-        [hidden] {
-          animation: rotating 1s ease;
-        }
-
-
-        &:last-child {
-          th {
+      thead {
+        //display: block;
+        > tr {
+          > th {
+            @include font-size(.7, 1.6);
             background: $data-table-header-secondary-background;
-            border: 0;
-            border-right: .05rem solid $data-table-header-border;
+            border: .05rem solid $data-table-header-border;
+            border-right: 0;
+            border-top: 0;
+            color: $data-table-header-text;
+            padding: 0 .5rem;
+            position: relative;
+            vertical-align: bottom;
+            word-break: break-all;
 
-            input {
-              border: .05rem solid $data-table-header-border;
-              box-sizing: border-box;
-              font-family: inherit;
-              font-size: inherit;
-              line-height: inherit;
-              margin: .2rem 0;
-              outline: 0;
-              padding: 0 .5rem;
-              width: 100%;
+            .ng-data-table-checkbox-input {
+              margin: 0;
+            }
+
+
+            .ng-data-table-column-resize-handle {
+              bottom: 0;
+              cursor: col-resize;
+              display: block;
+              height: 100%;
+              position: absolute;
+              right: -.5rem;
+              width: 1rem;
+              z-index: 10001;
+
+            }
+
+            .ng-data-table-column-sort-icon {
+              float: right;
+              cursor: pointer;
+            }
+
+            &:first-child {
+              border-left: 0;
             }
 
             &:last-child {
               border-right: 0;
             }
           }
+
+          [hidden] {
+            animation: rotating 1s ease;
+          }
+
+
+          &:last-child {
+            th {
+              background: $data-table-header-secondary-background;
+              border: 0;
+              border-right: .05rem solid $data-table-header-border;
+
+              input {
+                border: .05rem solid $data-table-header-border;
+                box-sizing: border-box;
+                font-family: inherit;
+                font-size: inherit;
+                line-height: inherit;
+                margin: .2rem 0;
+                outline: 0;
+                padding: 0 .5rem;
+                width: 100%;
+              }
+
+              &:last-child {
+                border-right: 0;
+              }
+            }
+          }
         }
       }
-    }
-
-    ::ng-deep {
 
       tbody {
 
