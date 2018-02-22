@@ -290,6 +290,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @Input()
   public set rowSelectable(value: boolean) {
     this.config.rowSelectable = value;
+    this.resetRowSelectState();
   }
 
   /**
@@ -299,6 +300,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @Input()
   public set multiRowSelectable(value: boolean) {
     this.config.multiRowSelectable = value;
+    this.resetRowSelectState();
   }
 
   /**
@@ -808,6 +810,13 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
         });
       }
     });
+  }
+
+  private resetRowSelectState(): void {
+    this.dataStateService.selectedRow = undefined;
+    this.dataStateService.selectedRows = [];
+    this.dataStateService.dataRows.forEach(row => row.selected = false);
+    this.dataStateService.allRowSelected = false;
   }
 
   public get headerPadding(): number {

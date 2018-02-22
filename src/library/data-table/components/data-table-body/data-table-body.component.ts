@@ -164,7 +164,7 @@ export class DataTableBodyComponent {
     if (row.selected && !this.config.multiRowSelectable) {
       this.dataStateService.dataRows.forEach((dataRow: DataRow) => {
         if (dataRow !== row) {
-          row.selected = false;
+          dataRow.selected = false;
         }
       });
     }

@@ -244,7 +244,6 @@ export class DataTableExampleComponent {
    */
   public onDataLoad(params?: any): void {
     setTimeout(() => {
-      debugger;
       this.tableResource.query(params).then((data) => {
         this.items = data.items;
         this.itemCount = data.count;
