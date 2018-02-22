@@ -18,7 +18,6 @@ import { Subscription } from 'rxjs/Subscription';
 import { SortOrder } from '../../models/sort-order.enum';
 import { FilterValueExtractCallback } from '../../models/filter-value-extract-callback.model';
 import { StorageMode } from '../../models/storage-mode.enum';
-import { DataTableConfigService } from '../../services/data-table-config.service';
 import { CellBindEventArgs } from '../../models/cell-bind-event-args.model';
 import { CellClickEventArgs } from '../../models/cell-click-event-args.model';
 import { HeaderClickEventArgs } from '../../models/header-click-event-args.model';
@@ -35,6 +34,7 @@ import { DragAndDropService, GlobalRefService } from '../../../utility';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 import { DataTablePersistenceService } from '../../services/data-table-persistence.service';
+import { DataTableConfigService } from '../../services/data-table-config.service';
 
 /**
  * Data table component.
@@ -75,8 +75,11 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * Template to display when data set is empty.
    * @type TemplateRef
    */
-  @ContentChild('appDataTableNoRecords')
+  @ContentChild('ngDataTableNoRecords')
   public noRecordsTemplate: TemplateRef<any>;
+
+  @ContentChild('ngDataTableLoadingSpinnerTemplate')
+  public loadingSpinnerTemplate: TemplateRef<any>;
 
   // Event handlers
 
@@ -749,14 +752,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
     const substituteRowCount = this.config.limit - this.dataStateService.dataRows.length;
     this.dataStateService.substituteRows = Array.from({length: substituteRowCount});
-  }
-
-  /**
-   * Get loading status.
-   * @return {boolean} True if loading.
-   */
-  public get isLoading(): boolean {
-    return this.config.showLoadingSpinner && this.dataStateService.dataLoading;
   }
 
   /**

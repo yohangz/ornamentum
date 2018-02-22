@@ -1,0 +1,33 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+:host-context {
+  .ng-data-table-loading-cover {
+    background: $data-table-header-background;
+    border-color: $data-table-header-border;
+    border-top: .05rem solid transparent;
+    height: 100%;
+    left: 0;
+    opacity: .8;
+    pointer-events: none;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+    .ng-data-table-loading-animation {
+      animation: loader 1s infinite ease-in-out;
+      background-color: $toggle-active-button-background;
+      border-radius: 100%;
+      content: '';
+      display: block;
+      height: 40px;
+      left: 50%;
+      margin: 0 auto;
+      position: absolute;
+      top: 45%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+    }
+  }
+}

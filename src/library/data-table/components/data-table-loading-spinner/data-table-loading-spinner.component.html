@@ -1,0 +1,4 @@
+<div [hidden]="!isLoading" *ngIf="loadingSpinnerTemplate" [ngTemplateOutlet]="loadingSpinnerTemplate"></div>
+<div class="ng-data-table-loading-cover" [hidden]="!isLoading" *ngIf="!loadingSpinnerTemplate">
+  <div class="ng-data-table-loading-animation"></div>
+</div>

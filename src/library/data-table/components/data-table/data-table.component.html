@@ -14,9 +14,8 @@
     </div>
     <div class="ng-data-table-content" (scrollPosition)="scrollPositionStream.next($event)"
          [style.height]="config.contentHeight | px" [style.minHeight]="config.minHeight | px">
-      <div class="ng-data-table-loading-cover" [hidden]="!isLoading">
-        <div class="ng-data-table-loading-animation"></div>
-      </div>
+      <ng-data-table-loading-spinner [loadingSpinnerTemplate]="loadingSpinnerTemplate">
+      </ng-data-table-loading-spinner>
       <table class="ng-data-table" [style.width]="dataStateService.tableWidth | px"
              [style.minWidth]="config.minWidth | px" [hidden]="isLoading">
         <colgroup ngDataTableColGroup [columns]="columns">
