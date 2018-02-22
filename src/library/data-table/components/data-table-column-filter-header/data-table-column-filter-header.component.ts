@@ -1,11 +1,11 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
 
 import { FilterEventArgs } from '../../models/filter-event-args.model';
 
+import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
+
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
-
-import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
 import { Subscription } from 'rxjs/Subscription';
 import { Subject } from 'rxjs/Subject';

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { SortOrder } from '../../models/sort-order.enum';
 
@@ -8,7 +8,6 @@ import { DragAndDropService } from '../../../utility';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
-import { DataRow } from '../../models/data-row.model';
 
 @Component({
   exportAs: 'ngDataTableColumnTitleHeader',

@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
-
 import { FilterEventArgs } from '../../models/filter-event-args.model';
+
+import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 

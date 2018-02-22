@@ -31,23 +31,25 @@
             <td class="ng-data-table-data-column" *ngIf="!column.cellTemplate && holderIndex === 0"
                 (init)="onCellInit(column, row)" [ngClass]="column.styleClass" [attr.rowspan]="groupDetail.rowCount"
                 [style.background-color]="column.getCellColor(row) || row.colour"
-                (click)="dataTable.cellClicked(column, row, $event)">
+                (click)="cellClicked(column, row, $event)">
               <span>{{row.item[column.field]}}</span>
             </td>
             <ng-container *ngIf="column.cellTemplate" [ngTemplateOutlet]="column.cellTemplate"
-                          [ngTemplateOutletContext]="{ column: column, row: row, groupDetail: groupDetail , index: holderIndex }"></ng-container>
+                          [ngTemplateOutletContext]="{ column: column, row: row, groupDetail: groupDetail , index: holderIndex }">
+            </ng-container>
           </ng-container>
         </ng-container>
       </tr>
     </ng-container>
   </ng-container>
   <tr *ngIf="config.expandableRows" [hidden]="!row.expanded" class="ng-data-table-row-expansion">
-    <td [attr.colspan]="dataTable.columnTotalCount">
-      <div [ngTemplateOutlet]="dataTable.expandTemplate" [ngTemplateOutletContext]="{row: row}"></div>
+    <td [attr.colspan]="totalColumnCount">
+      <ng-container [ngTemplateOutlet]="expandTemplate" [ngTemplateOutletContext]="{ row: row }">
+      </ng-container>
     </td>
   </tr>
 </ng-container>
-<ng-container *ngIf="config.showSubstituteRows && dataStateService.dataRows.length && !dataStateService.showNoDataOverlay">
+<ng-container *ngIf="hasSubstituteRows">
   <tr *ngFor="let ignored of dataStateService.substituteItems, let index = index"
       [class.row-odd]="isOddSubstituteRow(index)" [class.row-even]="isEvenSubstituteRow(index)">
     <td *ngIf="config.expandableRows">&nbsp;</td>

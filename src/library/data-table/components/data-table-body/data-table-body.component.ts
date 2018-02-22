@@ -1,12 +1,12 @@
-import { Component, forwardRef, Inject, Input } from '@angular/core';
+import { Component, Input, TemplateRef } from '@angular/core';
 
 import { DataRow } from '../../models/data-row.model';
+import { GroupDetail } from '../../models/group-detail.model';
 
-import { DataTableComponent } from '../data-table/data-table.component';
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
+
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
-import { GroupDetail } from '../../models/group-detail.model';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 
 /**
@@ -23,8 +23,10 @@ export class DataTableBodyComponent {
   @Input()
   public columns: DataTableColumnComponent[];
 
-  constructor(@Inject(forwardRef(() => DataTableComponent)) public dataTable: DataTableComponent,
-              public config: DataTableConfigService,
+  @Input()
+  public rowExpandTemplate: TemplateRef<any>;
+
+  constructor(public config: DataTableConfigService,
               public dataStateService: DataTableDataStateService,
               private eventStateService: DataTableEventStateService) {
   }
@@ -101,12 +103,21 @@ export class DataTableBodyComponent {
    * @param {DataRow} row Data table row.
    */
   public onCellInit(column: DataTableColumnComponent, row: DataRow): void {
-    this.dataTable.cellBind.emit({
+    this.eventStateService.cellBind.emit({
       column: column,
       row: row
     });
   }
 
+  /**
+   * Cell clicked event handler.
+   * @param {DataTableColumnComponent} column Column data table component object.
+   * @param {DataRow} row Data row object.
+   * @param {MouseEvent} event event event Mouse click event argument object.
+   */
+  public cellClicked(column: DataTableColumnComponent, row: DataRow, event: MouseEvent): void {
+    this.eventStateService.cellClick.emit({row, column, event});
+  }
 
   /**
    * Extract group row details.
@@ -127,6 +138,23 @@ export class DataTableBodyComponent {
       groups: rowGroups,
       groupHolder: groupHolder
     };
+  }
+
+  /**
+   * Get total column count.
+   * Used for substitute row generation.
+   * @return {number} Number of columns.
+   */
+  public get totalColumnCount(): number {
+    let count = 0;
+    count += this.config.showIndexColumn ? 1 : 0;
+    count += this.config.rowSelectable ? 1 : 0;
+    count += this.config.expandableRows ? 1 : 0;
+    this.columns.forEach(column => {
+      count += column.visible ? 1 : 0;
+    });
+
+    return count;
   }
 
   /**
@@ -202,5 +230,9 @@ export class DataTableBodyComponent {
    */
   public rowDoubleClicked(row: DataRow, event: MouseEvent): void {
     this.eventStateService.rowDoubleClick.emit({row, event});
+  }
+
+  public get hasSubstituteRows(): boolean {
+    return this.config.showSubstituteRows && this.dataStateService.dataRows.length && !this.dataStateService.showNoDataOverlay;
   }
 }

@@ -21,7 +21,7 @@
              [style.minWidth]="config.minWidth | px" [hidden]="isLoading">
         <colgroup ngDataTableColGroup [columns]="columns">
         </colgroup>
-        <tbody ngDataTableBody [columns]="columns">
+        <tbody ngDataTableBody [columns]="columns" [rowExpandTemplate]="rowExpandTemplate">
         </tbody>
       </table>
       <ng-data-table-no-data-body *ngIf="dataStateService.showNoDataOverlay" [noRecordsTemplate]="noRecordsTemplate">

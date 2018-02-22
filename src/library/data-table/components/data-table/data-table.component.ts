@@ -31,11 +31,10 @@ import { GroupFieldExtractorCallback } from '../../models/group-field-extractor-
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
-import { DataTablePersistenceService } from '../../services/data-table-persistence.service';
-
 import { DragAndDropService, GlobalRefService } from '../../../utility';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
+import { DataTablePersistenceService } from '../../services/data-table-persistence.service';
 
 /**
  * Data table component.
@@ -69,8 +68,8 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @ContentChildren(DataTableColumnComponent)
   public columns: QueryList<DataTableColumnComponent>;
 
-  @ContentChild('ngDataTableExpand')
-  public expandTemplate: TemplateRef<any>;
+  @ContentChild('ngDataTableRowExpand')
+  public rowExpandTemplate: TemplateRef<any>;
 
   /**
    * Template to display when data set is empty.
@@ -124,7 +123,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<any>}
    */
   @Output()
-  public cellClick = new EventEmitter<CellClickEventArgs>();
+  public cellClick: EventEmitter<CellClickEventArgs>;
 
   /**
    * On data load event handler.
@@ -154,7 +153,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<CellBindEventArgs>}
    */
   @Output()
-  public cellBind = new EventEmitter<CellBindEventArgs>();
+  public cellBind: EventEmitter<CellBindEventArgs>;
 
   // Input Events
 
@@ -540,6 +539,8 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     this.rowClick = this.eventStateService.rowClick;
     this.rowDoubleClick = this.eventStateService.rowDoubleClick;
     this.rowSelectChange = this.eventStateService.rowSelectChangeStream;
+    this.cellBind = this.eventStateService.cellBind;
+    this.cellClick = this.eventStateService.cellClick;
   }
 
   /**
@@ -707,33 +708,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    */
   public ngOnDestroy(): void {
     this.rowSelectChangeSubscription.unsubscribe();
-  }
-
-  /**
-   * Cell clicked event handler.
-   * @param {DataTableColumnComponent} column Column data table component object.
-   * @param {DataRow} row Data row object.
-   * @param {MouseEvent} event event event Mouse click event argument object.
-   */
-  public cellClicked(column: DataTableColumnComponent, row: DataRow, event: MouseEvent): void {
-    this.cellClick.emit({row, column, event});
-  }
-
-  /**
-   * Get total column count.
-   * Used for substitute row generation.
-   * @return {number} Number of columns.
-   */
-  public get columnTotalCount(): number {
-    let count = 0;
-    count += this.config.showIndexColumn ? 1 : 0;
-    count += this.config.rowSelectable ? 1 : 0;
-    count += this.config.expandableRows ? 1 : 0;
-    this.columns.toArray().forEach(column => {
-      count += column.visible ? 1 : 0;
-    });
-
-    return count;
   }
 
   /**

@@ -1,8 +1,8 @@
 import { ChangeDetectorRef, Component, Input } from '@angular/core';
 
-import { DataTableConfigService } from '../../services/data-table-config.service';
-
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
+
+import { DataTableConfigService } from '../../services/data-table-config.service';
 
 @Component({
   selector: 'ng-data-table-column-selector',
