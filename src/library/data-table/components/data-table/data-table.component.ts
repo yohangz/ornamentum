@@ -37,7 +37,9 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 import { DataTablePersistenceService } from '../../services/data-table-persistence.service';
 import { DataTableConfigService } from '../../services/data-table-config.service';
-import { ScrollPositionService } from '../../services/scroll-position.service';
+import { DataTableScrollPositionService } from '../../services/data-table-scroll-position.service';
+import { DataTableResource } from '../../services/data-table-resource.service';
+import { FilterOption } from '../../models/filter-option.model';
 
 /**
  * Data table component.
@@ -51,7 +53,8 @@ import { ScrollPositionService } from '../../services/scroll-position.service';
     DataTableEventStateService,
     DataTablePersistenceService,
     DataTableDataStateService,
-    ScrollPositionService,
+    DataTableScrollPositionService,
+    DataTableResource,
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => DataTableComponent),
@@ -144,6 +147,23 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   public cellBind: EventEmitter<CellBindEventArgs>;
 
   // Input Events
+
+  @Input()
+  public set dataSource(source: Observable<any[]>) {
+    this.dataTableResource.setDataSource(source);
+
+    this.onDataBind = (params: DataTableParams): Observable<QueryResult<any>> => {
+      if (params.hardReload) {
+        this.dataTableResource.setDataSource(source);
+      }
+
+      return this.dataTableResource.query(params);
+    };
+
+    this.onFilterValueExtract = (column: DataTableColumnComponent): Observable<FilterOption[]> => {
+      return this.dataTableResource.extractFilterOptions(column);
+    };
+  }
 
   /**
    * On data load event handler.
@@ -512,6 +532,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
               private dataTableStateService: DataTablePersistenceService,
               private globalRefService: GlobalRefService,
               private eventStateService: DataTableEventStateService,
+              private dataTableResource: DataTableResource<any>,
               public dataStateService: DataTableDataStateService,
               public config: DataTableConfigService) {
     this.storageMode = config.storageMode;
@@ -708,6 +729,8 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     if (this.rowSelectChangeSubscription) {
       this.rowSelectChangeSubscription.unsubscribe();
     }
+
+    this.dataTableResource.dispose();
   }
 
   /**

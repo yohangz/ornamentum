@@ -11,6 +11,9 @@ import { SortOrder } from '../models/sort-order.enum';
 
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Subscription } from 'rxjs/Subscription';
+
 function predicate() {
   var fields = [],
     n_fields = arguments.length,
@@ -73,15 +76,24 @@ function predicate() {
  * @class DataTableResource
  */
 @Injectable()
-export class DataTableResource {
+export class DataTableResource<T> {
+  private itemDataStream = new ReplaySubject<T[]>(1);
+  private dataSourceSubscription: Subscription;
+
+  public setDataSource(dataSource: Observable<T[]>): void {
+    this.dispose();
+    this.dataSourceSubscription = dataSource.subscribe((items: T[]) => {
+      this.itemDataStream.next(items);
+    });
+  }
+
   /**
    * Query data table items collection.
-   * @param {Observable<T[]>} itemStream Item data stream.
    * @param {DataTableParams} params Data table parameters.
    * @return {Observable<QueryResult<T>>} Item query resolver.
    */
-  public query<T>(itemStream: Observable<T[]>, params: DataTableParams): Observable<QueryResult<T>> {
-    return itemStream.switchMap((items: T[]) => {
+  public query(params: DataTableParams): Observable<QueryResult<T>> {
+    return this.itemDataStream.switchMap((items: T[]) => {
       let itemCount = items.length;
       let result: T[] = items.slice();
 
@@ -126,7 +138,9 @@ export class DataTableResource {
           };
         });
 
-        result.sort(predicate.apply(this, sortExpressions));
+        if (sortExpressions.length) {
+          result.sort(predicate.apply(this, sortExpressions));
+        }
       }
 
       if (params.offset !== undefined) {
@@ -148,12 +162,11 @@ export class DataTableResource {
 
   /**
    * Extract data table filter options.
-   * @param {Observable<T[]>} itemStream Item data stream.
    * @param {DataTableColumnComponent} filterColumn Data table column component.
    * @return {Observable<FilterOption[]>} Filter options array observable.
    */
-  public extractFilterOptions<T>(itemStream: Observable<T[]>, filterColumn: DataTableColumnComponent): Observable<FilterOption[]> {
-    return itemStream.switchMap((items: T[]) => {
+  public extractFilterOptions(filterColumn: DataTableColumnComponent): Observable<FilterOption[]> {
+    return this.itemDataStream.switchMap((items: T[]) => {
       const filteredItems = items.map((item: T, index: number) => {
         if (filterColumn.filterFieldMapper) {
           return filterColumn.filterFieldMapper(item, index);
@@ -165,11 +178,18 @@ export class DataTableResource {
           value: field
         };
       })
-      .filter((value, index, self) => {
-        return self.findIndex(item => item.key === value.key) === index;
-      });
+        .filter((value, index, self) => {
+          return self.findIndex(item => item.key === value.key) === index;
+        });
 
       return Observable.of(filteredItems);
     });
+  }
+
+  public dispose(): void {
+    if (this.dataSourceSubscription) {
+      this.dataSourceSubscription.unsubscribe();
+      this.dataSourceSubscription = null;
+    }
   }
 }

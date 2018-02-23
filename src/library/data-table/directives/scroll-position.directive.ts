@@ -3,7 +3,7 @@ import { Directive, ElementRef, AfterViewInit, NgZone, OnDestroy } from '@angula
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import { ScrollPositionService } from '../services/scroll-position.service';
+import { DataTableScrollPositionService } from '../services/data-table-scroll-position.service';
 
 @Directive({
   selector: '[scrollPosition]'
@@ -11,7 +11,7 @@ import { ScrollPositionService } from '../services/scroll-position.service';
 export class ScrollPositionDirective implements AfterViewInit, OnDestroy {
   private scrollEventSubscription: Subscription;
 
-  constructor(private el: ElementRef, private zone: NgZone, private scrollPositionService: ScrollPositionService) {
+  constructor(private el: ElementRef, private zone: NgZone, private scrollPositionService: DataTableScrollPositionService) {
   }
 
   public ngAfterViewInit(): void {

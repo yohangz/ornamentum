@@ -23,7 +23,6 @@ import { ScrollElementDirective } from './directives/scroll-element.directive';
 import { ElementWidthDirective } from './directives/element-width.directive';
 
 import { DATA_TABLE_CONFIG } from './services/data-table-config.service';
-import { DataTableResource } from './services/data-table-resource.service';
 
 import { DropdownModule } from '../dropdown';
 import { UtilityModule } from '../utility';
@@ -51,7 +50,6 @@ const DIRECTIVES = [
 ];
 
 const PROVIDERS = [
-  DataTableResource
 ];
 
 /**

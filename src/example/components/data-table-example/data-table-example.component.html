@@ -496,14 +496,11 @@
   [contentHeight]="contentHeight"
   [persistTableState]="true"
   [showRefreshButton]="true"
-  [onFilterValueExtract]="onFilterValueExtract.bind(this)"
-  [onDataBind]="dataBind.bind(this)"
+  [dataSource]="items"
 
   (rowBind)="onRowBind($event)"
   (init)="onInit($event)"
-  (rowSelectChange)="onRowSelectedStateChange($event)"
-
-  dataSource>
+  (rowSelectChange)="onRowSelectedStateChange($event)">
 
   <ng-data-table-column
     [width]="firstColConf.width"

@@ -2,7 +2,7 @@ import { AfterViewInit, Directive, ElementRef, OnDestroy } from '@angular/core';
 
 import { Subscription } from 'rxjs/Subscription';
 
-import { ScrollPositionService } from '../services/scroll-position.service';
+import { DataTableScrollPositionService } from '../services/data-table-scroll-position.service';
 
 @Directive({
   selector: '[scrollElement]'
@@ -10,7 +10,7 @@ import { ScrollPositionService } from '../services/scroll-position.service';
 export class ScrollElementDirective implements AfterViewInit, OnDestroy {
   private scrollPositionSubscription: Subscription;
 
-  constructor(private el: ElementRef, private scrollPositionService: ScrollPositionService) {
+  constructor(private el: ElementRef, private scrollPositionService: DataTableScrollPositionService) {
   }
 
   public ngAfterViewInit(): void {
