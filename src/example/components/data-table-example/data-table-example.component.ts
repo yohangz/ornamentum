@@ -94,7 +94,7 @@ export class DataTableExampleComponent {
   public ninthColConf: ColumnConf;
   public tenthColConf: ColumnConf;
 
-  public items = new Subject();
+  public items: Observable<any>; // = new Subject();
 
   constructor(private dataStorageService: DataStorageService, private http: HttpClient) {
     this.initialTableConf = this.dataStorageService.get(DataTableExampleComponent.tableConfigurationStorageKeyName) ||
