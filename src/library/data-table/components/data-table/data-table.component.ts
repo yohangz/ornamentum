@@ -29,6 +29,7 @@ import { DataTableTranslations } from '../../models/data-tabl-translations.model
 import { GroupFieldExtractorCallback } from '../../models/group-field-extractor-callback.model';
 import { QueryResult } from '../../models/query-result.model';
 import { DataBindCallback } from '../../models/data-bind-callback.model';
+import { FilterOption } from '../../models/filter-option.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -39,7 +40,6 @@ import { DataTablePersistenceService } from '../../services/data-table-persisten
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableScrollPositionService } from '../../services/data-table-scroll-position.service';
 import { DataTableResource } from '../../services/data-table-resource.service';
-import { FilterOption } from '../../models/filter-option.model';
 
 /**
  * Data table component.
@@ -148,11 +148,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   // Input Events
 
-  @Input()
-  public set dataSource(source: Observable<any[]>) {
-    this.initDataSource(source);
-  }
-
   /**
    * On data load event handler.
    * Fired on each data fetch request. But not on hard reload.
@@ -182,6 +177,11 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   // Input parameters
+
+  @Input()
+  public set dataSource(source: Observable<any[]>) {
+    this.initDataSource(source);
+  }
 
   /**
    * Data table identifier. Required if persist table state is enabled.
