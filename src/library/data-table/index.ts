@@ -26,6 +26,4 @@ export { CellColourRenderCallback } from './models/cell-colour-render-callback.m
 export { DataTableComponent } from './components/data-table/data-table.component';
 export { DataTableColumnComponent } from './components/data-table-column/data-table-column.component';
 
-export { DataTableResource } from './services/data-table-resource.service';
-
 export { DataTableModule } from './data-table.module';
