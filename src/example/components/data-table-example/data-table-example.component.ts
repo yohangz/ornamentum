@@ -10,6 +10,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { DataStorageService } from '../../services/data-storage.service';
 import { Subject } from 'rxjs/Subject';
+import { HttpClient } from '@angular/common/http';
 
 declare function require(url: string);
 
@@ -95,7 +96,7 @@ export class DataTableExampleComponent {
 
   public items = new Subject();
 
-  constructor(private dataStorageService: DataStorageService) {
+  constructor(private dataStorageService: DataStorageService, private http: HttpClient) {
     this.initialTableConf = this.dataStorageService.get(DataTableExampleComponent.tableConfigurationStorageKeyName) ||
       {
         autoFetch: true,
@@ -221,12 +222,14 @@ export class DataTableExampleComponent {
       visible: true
     };
 
-    let count = 0;
-    setInterval(() => {
-      this.items.next(data.stationBeanList.slice(0, count + 50));
-      count += 50;
-    }, 2000);
-    //this.items = Observable.of(data.stationBeanList);
+    // let count = 0;
+    // setInterval(() => {
+    //   this.items.next(data.stationBeanList.slice(0, count + 50));
+    //   count += 50;
+    // }, 2000);
+    // this.items = Observable.of(data.stationBeanList);
+
+    this.items = this.http.get('http://localhost:3334/test/test');
   }
 
   /**

@@ -150,19 +150,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   @Input()
   public set dataSource(source: Observable<any[]>) {
-    this.dataTableResource.setDataSource(source);
-
-    this.onDataBind = (params: DataTableParams): Observable<QueryResult<any>> => {
-      if (params.hardReload) {
-        this.dataTableResource.setDataSource(source);
-      }
-
-      return this.dataTableResource.query(params);
-    };
-
-    this.onFilterValueExtract = (column: DataTableColumnComponent): Observable<FilterOption[]> => {
-      return this.dataTableResource.extractFilterOptions(column);
-    };
+    this.initDataSource(source);
   }
 
   /**
@@ -756,6 +744,22 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   public fetchData(hardRefresh: boolean = false): void {
     this.eventStateService.dataFetchStream.next(hardRefresh);
+  }
+
+  public initDataSource(source: Observable<any>): void {
+    this.dataTableResource.setDataSource(source);
+
+    this.onDataBind = (params: DataTableParams): Observable<QueryResult<any>> => {
+      if (params.hardReload) {
+        this.dataTableResource.setDataSource(source);
+      }
+
+      return this.dataTableResource.query(params);
+    };
+
+    this.onFilterValueExtract = (column: DataTableColumnComponent): Observable<FilterOption[]> => {
+      return this.dataTableResource.extractFilterOptions(column);
+    };
   }
 
   public writeValue(value: any): void {

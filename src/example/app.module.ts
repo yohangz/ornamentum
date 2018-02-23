@@ -11,6 +11,7 @@ import { DropdownExampleComponent } from './components/dropdown-example/dropdown
 import { DataStorageService } from '../example/services/data-storage.service';
 
 import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 const COMPONENTS = [
   AppComponent,
@@ -30,7 +31,8 @@ const COMPONENTS = [
       showColumnSelector: true
     }),
     DropdownModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [DataStorageService],
   bootstrap: [AppComponent]
