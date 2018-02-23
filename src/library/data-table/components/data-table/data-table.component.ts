@@ -13,7 +13,6 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 
@@ -29,6 +28,7 @@ import { DataTableParams } from '../../models/data-table-params.model';
 import { DataTableTranslations } from '../../models/data-tabl-translations.model';
 import { GroupFieldExtractorCallback } from '../../models/group-field-extractor-callback.model';
 import { QueryResult } from '../../models/query-result.model';
+import { DataBindCallback } from '../../models/data-bind-callback.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -126,14 +126,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @Output()
   public cellClick: EventEmitter<CellClickEventArgs>;
 
-  /**
-   * On data load event handler.
-   * Fired on each data fetch request. But not on hard reload.
-   * @type {EventEmitter<DataTableParams>}
-   */
-  @Output()
-  public dataBind: EventEmitter<DataTableParams>;
-
   @Output()
   public dataBound: EventEmitter<void>;
 
@@ -152,6 +144,16 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   public cellBind: EventEmitter<CellBindEventArgs>;
 
   // Input Events
+
+  /**
+   * On data load event handler.
+   * Fired on each data fetch request. But not on hard reload.
+   * @type {EventEmitter<DataTableParams>}
+   */
+  @Input()
+  public set onDataBind(value: DataBindCallback) {
+    this.dataStateService.onDataBind = value;
+  }
 
   /**
    * On filter value extract event handler callback.
@@ -523,7 +525,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     this.cellBind = this.eventStateService.cellBindStream;
     this.cellClick = this.eventStateService.cellClickStream;
     this.init = this.eventStateService.initStream;
-    this.dataBind = this.eventStateService.dataBindStream;
     this.dataBound = this.eventStateService.dataBoundStream;
   }
 
@@ -586,11 +587,20 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     });
   }
 
+  private initDataFetchEvent(): void {
+    this.dataFetchStreamSubscription = this.eventStateService.dataFetchStream
+      .debounceTime(20)
+      .switchMap((reload: boolean) => this.mapDataTableParameters(reload))
+      .subscribe((queryResult: QueryResult<any>) => {
+        this.onAfterDataBind(queryResult);
+      });
+  }
+
   /**
    * Trigger table data bind.
    * @param {boolean} hardReload Hard refresh if true.
    */
-  private mapDataTableParameters(hardReload: boolean): Observable<Observable<QueryResult<any>>> {
+  private mapDataTableParameters(hardReload: boolean): Observable<QueryResult<any>> {
     this.dataStateService.dataLoading = true;
     if (hardReload) {
       this.clearRowSelectState();
@@ -599,16 +609,8 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       this.config.offset = 0;
     }
 
-    const tableDataStream = new Subject<Observable<QueryResult<any>>>();
-
     const params: DataTableParams = {
-      hardReload: hardReload,
-      resolve: (queryResult: Observable<QueryResult<any>>): void => {
-        if (!tableDataStream.closed) {
-          tableDataStream.next(queryResult);
-          tableDataStream.complete();
-        }
-      }
+      hardReload: hardReload
     };
 
     if (this.columns) {
@@ -641,8 +643,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       this.dataTableStateService.setState(this.id, params);
     }
 
-    this.eventStateService.dataBindStream.emit(params);
-    return tableDataStream;
+    return this.dataStateService.onDataBind(params);
   }
 
   /**
@@ -650,7 +651,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    */
   private fetchColumnFilterOptions(): void {
     this.columns.forEach((column) => {
-      if (column.showDropdownFilter) {
+      if (column.filterable && column.showDropdownFilter) {
         column.fetchFilterOptions();
       }
     });
@@ -682,16 +683,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
         this.config.offset = dataTableState.offset;
       }
     }
-  }
-
-  private initDataFetchEvent(): void {
-    this.dataFetchStreamSubscription = this.eventStateService.dataFetchStream
-      .debounceTime(20)
-      .switchMap((reload: boolean) => this.mapDataTableParameters(reload))
-      .switch()
-      .subscribe((queryResult: QueryResult<any>) => {
-        this.onAfterDataBind(queryResult);
-      });
   }
 
   public ngAfterContentInit(): void {

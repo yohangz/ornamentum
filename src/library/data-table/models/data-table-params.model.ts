@@ -13,9 +13,6 @@ export interface DataTableParams {
    */
   hardReload: boolean;
 
-
-  resolve: (queryResult: Observable<QueryResult<any>>) => void;
-
   /**
    * Data offset value.
    * @type {number}

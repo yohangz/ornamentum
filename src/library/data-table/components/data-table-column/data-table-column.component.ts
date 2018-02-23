@@ -353,15 +353,14 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
       return;
     }
 
-    // Clear previous filter subscription before invoking new event.
-    if (this.filterValueExtractorSubscription) {
-      this.filterValueExtractorSubscription.unsubscribe();
-      this.filterValueExtractorSubscription = null;
-    }
-
     if (this.dataStateService.onFilterValueExtract) {
+      // Clear previous filter subscription before invoking new event.
+      if (this.filterValueExtractorSubscription) {
+        this.filterValueExtractorSubscription.unsubscribe();
+        this.filterValueExtractorSubscription = null;
+      }
+
       this.filterValueExtractorSubscription = this.dataStateService.onFilterValueExtract(this)
-        .take(1)
         .subscribe((options: FilterOption[]) => {
           this.filterOptions = options;
         });

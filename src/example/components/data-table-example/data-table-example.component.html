@@ -497,11 +497,13 @@
   [persistTableState]="true"
   [showRefreshButton]="true"
   [onFilterValueExtract]="onFilterValueExtract.bind(this)"
+  [onDataBind]="dataBind.bind(this)"
 
   (rowBind)="onRowBind($event)"
-  (dataBind)="onDataLoad($event)"
   (init)="onInit($event)"
-  (rowSelectChange)="onRowSelectedStateChange($event)">
+  (rowSelectChange)="onRowSelectedStateChange($event)"
+
+  dataSource>
 
   <ng-data-table-column
     [width]="firstColConf.width"

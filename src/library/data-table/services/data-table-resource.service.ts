@@ -74,9 +74,6 @@ function predicate() {
  */
 @Injectable()
 export class DataTableResource {
-  constructor() {
-  }
-
   /**
    * Query data table items collection.
    * @param {Observable<T[]>} itemStream Item data stream.
@@ -84,7 +81,7 @@ export class DataTableResource {
    * @return {Observable<QueryResult<T>>} Item query resolver.
    */
   public query<T>(itemStream: Observable<T[]>, params: DataTableParams): Observable<QueryResult<T>> {
-    return itemStream.take(1).switchMap((items: T[]) => {
+    return itemStream.switchMap((items: T[]) => {
       let itemCount = items.length;
       let result: T[] = items.slice();
 
@@ -156,7 +153,7 @@ export class DataTableResource {
    * @return {Observable<FilterOption[]>} Filter options array observable.
    */
   public extractFilterOptions<T>(itemStream: Observable<T[]>, filterColumn: DataTableColumnComponent): Observable<FilterOption[]> {
-    return itemStream.take(1).switchMap((items: T[]) => {
+    return itemStream.switchMap((items: T[]) => {
       const filteredItems = items.map((item: T, index: number) => {
         if (filterColumn.filterFieldMapper) {
           return filterColumn.filterFieldMapper(item, index);
@@ -168,9 +165,9 @@ export class DataTableResource {
           value: field
         };
       })
-        .filter((value, index, self) => {
-          return self.findIndex(item => item.key === value.key) === index;
-        });
+      .filter((value, index, self) => {
+        return self.findIndex(item => item.key === value.key) === index;
+      });
 
       return Observable.of(filteredItems);
     });

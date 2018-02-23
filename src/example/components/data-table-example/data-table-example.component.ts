@@ -3,17 +3,20 @@ import { Component } from '@angular/core';
 import {
   DataTableParams,
   DataTableComponent,
-  // DataTableResourceFactoryService,
   DataTableResource,
   MenuPosition,
   DataRow
 } from '../../../library';
 
-import { DataStorageService } from '../../services/data-storage.service';
 import { Observable } from 'rxjs/Observable';
-import { FilterFieldMapperCallback } from '../../../library/data-table/models/filter-field-mapper-callback.model';
+
 import { FilterOption } from '../../../library/data-table/models/filter-option.model';
+
 import { DataTableColumnComponent } from '../../../library/data-table/components/data-table-column/data-table-column.component';
+
+import { DataStorageService } from '../../services/data-storage.service';
+import { DataBindCallback } from '../../../library/data-table/models/data-bind-callback.model';
+import { QueryResult } from '../../../library/data-table/models/query-result.model';
 
 declare function require(url: string);
 
@@ -100,7 +103,7 @@ export class DataTableExampleComponent {
   public ninthColConf: ColumnConf;
   public tenthColConf: ColumnConf;
 
-  constructor(private dataStorageService: DataStorageService, public dataTableResourceManager: DataTableResource) {
+  constructor(private dataStorageService: DataStorageService, public dataTableResource: DataTableResource) {
     this.initialTableConf = this.dataStorageService.get(DataTableExampleComponent.tableConfigurationStorageKeyName) ||
       {
         autoFetch: true,
@@ -230,18 +233,17 @@ export class DataTableExampleComponent {
     this.fetchAlgorithmsData();
   }
 
-  /**
-   * Data table data load event handler.
-   * @param {DataTableParams} params  grid parameters.
-   */
-  public onDataLoad(params: DataTableParams): void {
-    setTimeout(() => {
-      if (params.hardReload) {
-        this.fetchAlgorithmsData();
-      }
+  public dataBind(params: DataTableParams): Observable<QueryResult<any>> {
+    // setTimeout(() => {
+    //   if (params.hardReload) {
+    //     this.fetchAlgorithmsData();
+    //   }
+    //
+    //   params.resolve();
+    // }, 2000);
 
-      params.resolve(this.dataTableResourceManager.query(Observable.of(data.stationBeanList), params));
-    }, 2000);
+
+    return this.dataTableResource.query(Observable.of(data.stationBeanList), params);
   }
 
   /**
@@ -280,7 +282,7 @@ export class DataTableExampleComponent {
   }
 
   public onFilterValueExtract(filterColumn: DataTableColumnComponent): Observable<FilterOption[]> {
-    return this.dataTableResourceManager.extractFilterOptions(Observable.of(data.stationBeanList), filterColumn);
+    return this.dataTableResource.extractFilterOptions(Observable.of(data.stationBeanList), filterColumn);
   }
 
   /**

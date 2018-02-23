@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { DataRow } from '../models/data-row.model';
 import { GroupFieldExtractorCallback } from '../models/group-field-extractor-callback.model';
 import { FilterValueExtractCallback } from '../models/filter-value-extract-callback.model';
+import { DataBindCallback } from '../models/data-bind-callback.model';
 
 @Injectable()
 export class DataTableDataStateService {
@@ -18,6 +19,7 @@ export class DataTableDataStateService {
 
   public onGroupFieldExtract: GroupFieldExtractorCallback = (() => []);
   public onFilterValueExtract: FilterValueExtractCallback;
+  public onDataBind: DataBindCallback;
 
   public get showNoDataOverlay(): boolean {
     return !this.dataRows.length && !this.dataLoading;
