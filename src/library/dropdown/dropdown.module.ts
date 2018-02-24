@@ -2,7 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { UtilityModule } from '../utility/utility.module';
+import { UtilityModule } from '../utility';
 import { DropdownConfig } from './models/dropdown-config.model';
 
 import { DropdownComponent } from './components/dropdown/dropdown.component';
