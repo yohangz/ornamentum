@@ -15,7 +15,7 @@
     "lint:scss": "sass-lint --config .scss-lint.yml --no-exit --verbose",
     "lint": "npm run lint:src && npm run lint:scss",
     "start": "ng serve --open --port 4201",
-    "build:dev": "ng build --progress",
+    "build:dev": "ng build --progress --stats-json",
     "build:prod": "ng build --extract-css --progress --prod --aot",
     "clean:build": "rimraf coverage dist lib .tmp docs",
     "ng:compile": "node_modules/.bin/ngc -p tsconfig.esm.json",
@@ -23,7 +23,8 @@
     "build:umd": "webpack --config webpack-umd.config.ts",
     "build:lib": "npm run clean:build && npm run build:esm && npm run build:umd",
     "build": "npm run build:lib && npm run build:prod",
-    "explorer": "source-map-explorer ./lib/index.umd.js",
+    "explorer:bundle": "npx webpack-bundle-analyzer dist/stats.json",
+    "explorer": "npm run build:dev && npm run explorer:bundle",
     "gh-pages": "npm run docs && gh-pages -d docs",
     "prepublishOnly": "npm run docs && npm run build",
     "preversion": "npm run build",
@@ -60,11 +61,15 @@
   },
   "homepage": "https://github.com/yohangz/ornamentum#readme",
   "dependencies": {
+    "@angular/common": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "lodash.orderby": "^4.6.0",
     "rxjs": "^5.5.2"
   },
   "peerDependencies": {
     "@angular/common": "^5.0.0",
     "@angular/core": "^5.0.0",
+    "lodash.orderby": "^4.6.0",
     "rxjs": "^5.5.2"
   },
   "devDependencies": {
@@ -83,6 +88,7 @@
     "@compodoc/compodoc": "^1.0.5",
     "@types/jasmine": "~2.8.2",
     "@types/jasminewd2": "~2.0.2",
+    "@types/lodash.orderby": "^4.6.3",
     "@types/node": "~8.0.57",
     "@types/webpack": "^3.8.1",
     "angular2-template-loader": "^0.6.2",
@@ -109,13 +115,13 @@
     "rimraf": "^2.6.2",
     "sass-lint": "^1.12.1",
     "sass-loader": "^6.0.6",
-    "source-map-explorer": "^1.5.0",
     "to-string-loader": "^1.1.5",
     "ts-node": "~3.3.0",
     "tslint": "~5.8.0",
     "typescript": "~2.4.2",
     "webpack": "^3.8.1",
     "webpack-angular-externals": "^1.0.2",
+    "webpack-bundle-analyzer": "^2.10.1",
     "webpack-rxjs-externals": "^1.1.0",
     "zone.js": "^0.8.14"
   }
