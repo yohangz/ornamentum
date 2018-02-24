@@ -152,7 +152,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {boolean}
    */
   @Input()
-  public triggerSelectChangeOnInit: boolean;
+  public set triggerSelectChangeOnInit(value: boolean) {
+    this.config.triggerSelectChangeOnInit = value;
+  }
 
   /**
    * Set previously selected dropdown items.
@@ -367,7 +369,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.filterDebounceTime = this.config.filterDebounceTime;
     this.showSelectAll = this.config.showSelectAll;
     this.wrapDisplaySelectLimit = this.config.wrapDisplaySelectLimit;
-    this.triggerSelectChangeOnInit = this.config.triggerSelectChangeOnInit;
     this.triggerChangeOncePerSelectAll = this.config.triggerChangeOncePerSelectAll;
     this.showSelectedOptionRemoveButton = this.config.showSelectedOptionRemoveButton;
     this.showClearSelectionButton = this.config.showClearSelectionButton;
@@ -427,7 +428,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       this.loadData();
     }
 
-    if (this.triggerSelectChangeOnInit) {
+    if (this.config.triggerSelectChangeOnInit) {
       this.emitOnSelectChange();
     }
   }
