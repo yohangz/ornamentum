@@ -108,18 +108,18 @@ export class DataTableResource<T> {
               return true;
             }
 
-            const column = item[filterColumn.field];
-            if (column === undefined) {
+            const filterValue = item[filterColumn.field];
+            if (filterValue === undefined) {
               return true;
             }
 
             if (Array.isArray(filterColumn.filterValue)) {
               return filterColumn.filterValue.length === 0 || filterColumn.filterValue.some((option: FilterOption) => {
-                return column === option.key;
+                return filterValue === option.key;
               });
             }
 
-            const value = String(column).toLowerCase();
+            const value = String(filterValue).toLowerCase();
             const filterValue = String(filterColumn.filterValue).toLowerCase();
             return value.includes(filterValue);
           });
