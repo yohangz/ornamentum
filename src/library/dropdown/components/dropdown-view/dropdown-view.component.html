@@ -30,7 +30,7 @@
     </ul>
 
     <ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="props.dropdown.multiSelectable" [style.height]="props.dropdown.menuHeight - 135 | px" (scroll)="props.dropdown.loadOnScroll ? props.dropdown.checkScrollPosition($event) : null" >
-      <ng-container *ngIf="props.dropdown.groupByField">
+      <ng-container *ngIf="config.groupByField">
         <ng-container *ngFor="let groupedItem of props.dropdown._groupedItems">
           <li *ngIf="props.dropdown.hasVisibleItems(groupedItem.items)" class="ng-dropdown-group-heading">{{groupedItem.groupName}}</li>
           <ng-container *ngFor="let option of groupedItem.items">
@@ -43,7 +43,7 @@
           </ng-container>
         </ng-container>
       </ng-container>
-      <ng-container *ngIf="!props.dropdown.groupByField">
+      <ng-container *ngIf="!config.groupByField">
         <ng-container *ngFor="let option of props.dropdown._items">
           <li (click)="props.dropdown.setSelected(option)" *ngIf="option.filter" [class.ng-item-selected]="props.dropdown.isSelected(option)">
             <a role="menuitem">

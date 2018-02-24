@@ -133,7 +133,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {string}
    */
   @Input()
-  public groupByField: string;
+  public set groupByField(value: string) {
+    this.config.groupByField = value;
+  }
 
   /**
    * Represents the name of the attribute used to disable the selection of dropdown item.
@@ -322,14 +324,14 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       return;
     }
 
-    if (this.groupByField) {
+    if (this.config.groupByField) {
       this._groupedItems = value.reduce((acc: DropdownItemGroup[], item: any) => {
-        const groupIndex = acc.findIndex((group: DropdownItemGroup) => group.groupName === item[this.groupByField]);
+        const groupIndex = acc.findIndex((group: DropdownItemGroup) => group.groupName === item[this.config.groupByField]);
         if (groupIndex > -1) {
           acc[groupIndex].items.push(this.extractDropdownItem(item));
         } else {
           acc.push({
-            groupName: item[this.groupByField],
+            groupName: item[this.config.groupByField],
             items: [this.extractDropdownItem(item)]
           });
         }
@@ -363,7 +365,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.filterDebounce = this.config.filterDebounce;
     this.filterDebounceTime = this.config.filterDebounceTime;
     this.showSelectAll = this.config.showSelectAll;
-    this.groupByField = this.config.groupByField;
     this.wrapDisplaySelectLimit = this.config.wrapDisplaySelectLimit;
     this.triggerSelectChangeOnInit = this.config.triggerSelectChangeOnInit;
     this.triggerChangeOncePerSelectAll = this.config.triggerChangeOncePerSelectAll;
@@ -579,7 +580,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   public set allSelected(value: boolean) {
     this._allSelected = value;
 
-    if (this.groupByField) {
+    if (this.config.groupByField) {
       this._groupedItems.forEach((groupedItem: DropdownItemGroup) => {
         groupedItem.items.forEach((dropdownItem: DropdownItem) => {
           this.setSelected(dropdownItem, this._allSelected, !this.triggerChangeOncePerSelectAll);
@@ -816,7 +817,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * Filter data on client search.
    */
   private clientFilter(): void {
-    if (this.groupByField) {
+    if (this.config.groupByField) {
       this._groupedItems.forEach((dropdownItemGroup: DropdownItemGroup) => {
         dropdownItemGroup.items.forEach((dropdownItem: DropdownItem) => {
           this.setFilterState(dropdownItem);
