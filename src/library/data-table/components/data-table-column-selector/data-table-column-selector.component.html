@@ -15,9 +15,9 @@
       </label>
     </div>
     <div class="ng-data-table-column-selector-fixed-column ng-data-table-column-selector-checkbox"
-         *ngIf="rowSelectable && config.showRowSelectCheckbox">
+         *ngIf="showRowSelectCheckboxColumn">
       <label>
-        <input class="ng-data-table-checkbox-input" type="checkbox" [(ngModel)]="config.rowSelectable"/>
+        <input class="ng-data-table-checkbox-input" type="checkbox" [(ngModel)]="config.showRowSelectCheckbox"/>
         <span>{{config.translations.selectColumn}}</span>
       </label>
     </div>

@@ -15,11 +15,11 @@ export class DataTableColumnSelectorComponent {
 
   public expandableRows: boolean;
   public showIndexColumn: boolean;
-  public rowSelectable: boolean;
+  public showRowSelectCheckboxColumn: boolean;
 
   constructor(public config: DataTableConfigService) {
     this.expandableRows = config.rowSelectable;
     this.showIndexColumn = config.showIndexColumn;
-    this.rowSelectable = config.rowSelectable;
+    this.showRowSelectCheckboxColumn = config.showRowSelectCheckboxColumn;
   }
 }
