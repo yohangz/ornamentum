@@ -6,6 +6,7 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { Subscription } from 'rxjs/Subscription';
 
 import orderBy from 'lodash.orderBy';
+import get from 'lodash.get';
 
 import { DataTableParams } from '../models/data-table-params.model';
 import { QueryResult } from '../models/query-result.model';
@@ -53,7 +54,7 @@ export class DataTableResource<T> {
               return true;
             }
 
-            const fieldValue = item[filterColumn.field];
+            const fieldValue = get(item, filterColumn.field);
             if (fieldValue === undefined) {
               return true;
             }
@@ -81,7 +82,7 @@ export class DataTableResource<T> {
           const orderData = sortColumns.reduce((accumulator: any, column: SortColumn) => {
             if (accumulator) {
               accumulator.fields.push(column.field);
-              accumulator.orders.push(column.sortOrder === SortOrder.DESC);
+              accumulator.orders.push(column.sortOrder);
             }
 
             return accumulator;
@@ -123,10 +124,11 @@ export class DataTableResource<T> {
           return filterColumn.filterFieldMapper(item, index);
         }
 
-        const field = item[filterColumn.filterField || filterColumn.field];
+        const filterField = filterColumn.filterField || filterColumn.field;
+        const filterValue = get(item, filterField);
         return {
-          key: field,
-          value: field
+          key: filterValue,
+          value: filterValue
         };
       })
         .filter((value, index, self) => {

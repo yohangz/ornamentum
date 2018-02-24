@@ -31,7 +31,7 @@
                 (init)="onCellInit(column, row)" [ngClass]="column.styleClass" [attr.rowspan]="rowSpanCount"
                 [style.background-color]="column.getCellColor(row) || row.colour"
                 (click)="cellClicked(column, row, $event)">
-              <span>{{row.item[column.field]}}</span>
+              <span>{{ getFieldValue(row, column) }}</span>
             </td>
             <ng-container *ngIf="column.cellTemplate" [ngTemplateOutlet]="column.cellTemplate"
                           [ngTemplateOutletContext]="{ column: column, row: row, spanIndex: rowSpanIndex, rowSpan: rowSpanCount  }">

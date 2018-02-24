@@ -251,6 +251,11 @@ export class DataTableExampleComponent {
         "testStation": false,
         "lastCommunicationTime": "2018-01-03 10:40:29 AM",
         "landMark": "",
+        nest: {
+          level: {
+            x: 5
+          }
+        },
         test: [
           {
             "latitude": 2,
@@ -281,6 +286,11 @@ export class DataTableExampleComponent {
         "testStation": false,
         "lastCommunicationTime": "2018-01-03 10:42:59 AM",
         "landMark": "",
+        nest: {
+          level: {
+            x: 20
+          }
+        },
         test: [
           {
             "latitude": 5,
@@ -311,6 +321,11 @@ export class DataTableExampleComponent {
         "testStation": false,
         "lastCommunicationTime": "2018-01-03 10:40:21 AM",
         "landMark": "",
+        nest: {
+          level: {
+            x: 0
+          }
+        },
         test: [
           {
             "latitude": 8,
@@ -341,6 +356,11 @@ export class DataTableExampleComponent {
         "testStation": false,
         "lastCommunicationTime": "2018-01-03 10:42:38 AM",
         "landMark": "",
+        nest: {
+          level: {
+            x: 343434
+          }
+        },
         test: [
           {
             "latitude": 111,
@@ -371,6 +391,11 @@ export class DataTableExampleComponent {
         "testStation": false,
         "lastCommunicationTime": "2017-11-14 08:58:16 AM",
         "landMark": "",
+        nest: {
+          level: {
+            x: -5
+          }
+        },
         test: [
           {
             "latitude": 67657,

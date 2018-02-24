@@ -1,5 +1,7 @@
 import { Component, Input, TemplateRef } from '@angular/core';
 
+import get from 'lodash.get';
+
 import { DataRow } from '../../models/data-row.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
@@ -221,5 +223,9 @@ export class DataTableBodyComponent {
 
   public get hasSubstituteRows(): boolean {
     return this.config.showSubstituteRows && this.dataStateService.dataRows.length && !this.dataStateService.showNoDataOverlay;
+  }
+
+  public getFieldValue(row: DataRow, column: DataTableColumnComponent) {
+    return get(row.item, column.field);
   }
 }

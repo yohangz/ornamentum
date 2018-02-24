@@ -516,6 +516,13 @@
     [visible]="firstColConf.visible">
   </ng-data-table-column>
   <ng-data-table-column
+    [width]="100"
+    [field]="'nest.level.x'"
+    [title]="'Nested'"
+    [sortable]="true"
+    [filterable]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
     [width]="secondColConf.width"
     [field]="'stationName'"
     [title]="secondColConf.title"
