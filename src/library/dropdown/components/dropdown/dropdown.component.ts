@@ -113,7 +113,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {string}
    */
   @Input()
-  public displayTrackBy: string;
+  public set displayTrackBy(value: string) {
+    this.config.displayTrackBy = value;
+  }
 
   /**
    * Represents the additional data attribute track by field name.
@@ -351,7 +353,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
               public config: DropdownConfigService) {
-    this.displayTrackBy = this.config.displayTrackBy;
     this.dataTrackBy = this.config.dataTrackBy;
     this.disabledTrackBy = this.config.disabledTrackBy;
     this.menuPosition = this.config.menuPosition;
@@ -387,7 +388,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
 
     return {
       id: id,
-      text: item[this.displayTrackBy],
+      text: item[this.config.displayTrackBy],
       disabled: selectedOption ? selectedOption.disabled : item[this.disabledTrackBy],
       data: item[this.dataTrackBy],
       filter: true
@@ -435,7 +436,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   private mapToDropdownItem(option: any): DropdownItem {
     return {
       id: option[this.config.selectTrackBy],
-      text: option[this.displayTrackBy],
+      text: option[this.config.displayTrackBy],
       disabled: option[this.disabledTrackBy],
       data: option[this.dataTrackBy],
       filter: true
@@ -692,7 +693,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     const option = {};
 
     option[this.config.selectTrackBy] = dropdownItem.id;
-    option[this.displayTrackBy] = dropdownItem.text;
+    option[this.config.displayTrackBy] = dropdownItem.text;
 
     if (dropdownItem) {
       if (dropdownItem.disabled !== undefined) {
