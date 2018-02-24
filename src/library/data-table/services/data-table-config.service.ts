@@ -19,6 +19,7 @@ export class DataTableConfigService implements DataTableConfig {
   public multiColumnSortable = false;
   public showHeader = false;
   public title = '';
+  public width = undefined;
   public minHeight = undefined;
   public minWidth = undefined;
   public contentHeight = undefined;

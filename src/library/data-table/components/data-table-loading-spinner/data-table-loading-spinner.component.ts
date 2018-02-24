@@ -11,14 +11,9 @@ export class DataTableLoadingSpinnerComponent {
   @Input()
   public loadingSpinnerTemplate: TemplateRef<any>;
 
-  constructor(public config: DataTableConfigService, public dataStateService: DataTableDataStateService) {
-  }
+  @Input()
+  public isLoading: boolean;
 
-  /**
-   * Get loading status.
-   * @return {boolean} True if loading.
-   */
-  public get isLoading(): boolean {
-    return this.config.showLoadingSpinner && this.dataStateService.dataLoading;
+  constructor(public config: DataTableConfigService, public dataStateService: DataTableDataStateService) {
   }
 }

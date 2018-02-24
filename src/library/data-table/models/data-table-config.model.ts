@@ -1,7 +1,7 @@
 import { StorageMode } from './storage-mode.enum';
 import { DataTableTranslations } from './data-tabl-translations.model';
 import { SortOrder } from './sort-order.enum';
-import { MenuPosition } from '../../dropdown/models/menu-position.enum';
+import { MenuPosition } from '../../dropdown';
 
 /**
  * Data table configuration.
@@ -56,6 +56,13 @@ export interface DataTableConfig {
    * @type {string}
    */
   title?: string;
+
+  /**
+   * Width value in pixels.
+   * Can be used to set the width of teh table (responsive if not set).
+   *  @type {string | number}
+   */
+  width?: string | number;
 
   /**
    * Minimum height value in pixels.

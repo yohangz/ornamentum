@@ -8,7 +8,6 @@ import { MenuPosition } from '../../../dropdown/models/menu-position.enum';
 import { FilterOption } from '../../models/filter-option.model';
 import { DataRow } from '../../models/data-row.model';
 import { FilterFieldMapperCallback } from '../../models/filter-field-mapper-callback.model';
-import { SortComparatorCallback } from '../../models/sort-comparator-callback.model';
 import { FilterExpressionCallback } from '../../models/filter-expression-callback.model';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
@@ -50,13 +49,6 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    */
   @Input()
   public filterExpression: FilterExpressionCallback;
-
-  /**
-   * Sort expression callback function.
-   * @type SortComparatorCallback
-   */
-  @Input()
-  public sortComparatorExpression: SortComparatorCallback;
 
   /**
    * Custom filter field mapper.
@@ -135,6 +127,14 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    */
   @Input()
   public filterField: string;
+
+  /**
+   * Sort field identifier.
+   * Fallback to field if not provided.
+   * @type string
+   */
+  @Input()
+  public sortField: string;
 
   /**
    * Column title space separated CSS class names.

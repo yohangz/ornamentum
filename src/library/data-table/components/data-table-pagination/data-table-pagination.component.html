@@ -18,7 +18,7 @@
       <button [disabled]="hasPrevious" (click)="previousPageClick()" class="ng-data-table-action-button ng-data-table-pagination-prevpage">&lsaquo;</button>
       <div class="ng-data-table-pagination-page">
         <div class="ng-data-table-input-group">
-          <input #pageInput type="number" class="ng-data-table-input" min="1" step="1" [attr.max]="config.maxPage"
+          <input #pageInput type="number" class="ng-data-table-input" min="1" step="1" [attr.max]="maxPage"
                  [ngModel]="page"
                  (keyup.enter)="onPageIndexChange(pageInput)"
                  (keyup.esc)="onPageIndexRevert(pageInput)"/>

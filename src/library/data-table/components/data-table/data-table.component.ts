@@ -233,6 +233,11 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     this.config.title = value;
   }
 
+  @Input()
+  public set width(value: string | number) {
+    this.config.width = value;
+  }
+
   /**
    * Table min height
    * Used to set overlay height when not pageable.
@@ -297,7 +302,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @Input()
   public set rowSelectable(value: boolean) {
     this.config.rowSelectable = value;
-    this.clearDataRowSelectState();
   }
 
   /**
@@ -307,7 +311,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @Input()
   public set multiRowSelectable(value: boolean) {
     this.config.multiRowSelectable = value;
-    this.clearDataRowSelectState();
   }
 
   /**
@@ -516,6 +519,14 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     return this.config.contentHeight ? this.globalRefService.scrollbarWidth : 0;
   }
 
+  /**
+   * Get loading status.
+   * @return {boolean} True if loading.
+   */
+  public get isLoading(): boolean {
+    return this.config.showLoadingSpinner && this.dataStateService.dataLoading;
+  }
+
   constructor(private dragAndDropService: DragAndDropService,
               private dataTableStateService: DataTablePersistenceService,
               private globalRefService: GlobalRefService,
@@ -626,9 +637,8 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       params.sortColumns = this.columns.filter(column => column.sortable)
         .map((column: DataTableColumnComponent) => {
           return {
-            field: column.field,
+            field: column.sortField || column.field,
             sortOrder: column.sortOrder,
-            comparator: column.sortComparatorExpression
           };
         });
 

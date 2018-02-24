@@ -2,6 +2,11 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Subscription } from 'rxjs/Subscription';
+
+import orderBy from 'lodash.orderBy';
+
 import { DataTableParams } from '../models/data-table-params.model';
 import { QueryResult } from '../models/query-result.model';
 import { FilterColumn } from '../models/filter-column.model';
@@ -10,66 +15,6 @@ import { SortColumn } from '../models/sort-column.model';
 import { SortOrder } from '../models/sort-order.enum';
 
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
-
-import { ReplaySubject } from 'rxjs/ReplaySubject';
-import { Subscription } from 'rxjs/Subscription';
-
-function predicate() {
-  var fields = [],
-    n_fields = arguments.length,
-    field, name, reverse, cmp;
-
-  var default_cmp = function (a, b) {
-      if (a === b) return 0;
-      return a < b ? -1 : 1;
-    },
-    getCmpFunc = function (primer, reverse, comparator) {
-      var dfc = comparator || default_cmp,
-        // closer in scope
-        cmp = comparator || default_cmp;
-      if (primer) {
-        cmp = function (a, b) {
-          return dfc(primer(a), primer(b));
-        };
-      }
-      if (reverse) {
-        return function (a, b) {
-          return -1 * cmp(a, b);
-        };
-      }
-      return cmp;
-    };
-
-  // preprocess sorting options
-  for (var i = 0; i < n_fields; i++) {
-    field = arguments[i];
-    if (typeof field === 'string') {
-      name = field;
-      cmp = default_cmp;
-    } else {
-      name = field.name;
-      cmp = getCmpFunc(field.primer, field.reverse, field.comparator);
-    }
-    fields.push({
-      name: name,
-      cmp: cmp
-    });
-  }
-
-  // final comparison function
-  return function (A, B) {
-    var a, b, name, result;
-    for (var i = 0; i < n_fields; i++) {
-      result = 0;
-      field = fields[i];
-      name = field.name;
-
-      result = field.cmp(A[name], B[name]);
-      if (result !== 0) break;
-    }
-    return result;
-  };
-}
 
 /**
  * Data table resource manager class
@@ -128,18 +73,24 @@ export class DataTableResource<T> {
       }
 
       if (params.sortColumns.length) {
-        const sortExpressions = params.sortColumns.filter((column: SortColumn) => {
+        const sortColumns = params.sortColumns.filter((column: SortColumn) => {
           return column.sortOrder !== SortOrder.NONE;
-        }).map((column: SortColumn) => {
-          return {
-            name: column.field,
-            reverse: column.sortOrder === SortOrder.DESC,
-            comparator: column.comparator
-          };
         });
 
-        if (sortExpressions.length) {
-          result.sort(predicate.apply(this, sortExpressions));
+        if (sortColumns.length) {
+          const orderData = sortColumns.reduce((accumulator: any, column: SortColumn) => {
+            if (accumulator) {
+              accumulator.fields.push(column.field);
+              accumulator.orders.push(column.sortOrder === SortOrder.DESC);
+            }
+
+            return accumulator;
+          }, {
+            fields: [],
+            orders: []
+          });
+
+          result = orderBy(result, orderData.fields, orderData.orders);
         }
       }
 

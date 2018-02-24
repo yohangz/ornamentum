@@ -1,5 +1,4 @@
 import { SortOrder } from './sort-order.enum';
-import { SortComparatorCallback } from './sort-comparator-callback.model';
 
 /**
  * Sort column.
@@ -16,10 +15,4 @@ export interface SortColumn {
    * @type {SortOrder}
    */
   sortOrder: SortOrder;
-
-  /**
-   * Sort comparator callback function reference.
-   * @type {SortComparatorCallback}
-   */
-  comparator: SortComparatorCallback;
 }

@@ -16,9 +16,7 @@ export { DataTableParams } from './models/data-table-params.model';
 export { DataTableTranslations } from './models/data-tabl-translations.model';
 export { DynamicRowSpanExtractorCallback } from './models/group-field-extractor-callback.model';
 export { FilterValueExtractCallback } from './models/filter-value-extract-callback.model';
-export { FilterValueFormatterCallback } from './models/filter-value-formatter-callback.model';
 export { FilterFieldMapperCallback } from './models/filter-field-mapper-callback.model';
-export { SortComparatorCallback } from './models/sort-comparator-callback.model';
 export { FilterExpressionCallback } from './models/filter-expression-callback.model';
 export { CellColourRenderCallback } from './models/cell-colour-render-callback.model';
 
