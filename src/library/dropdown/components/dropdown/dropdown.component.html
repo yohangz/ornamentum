@@ -15,12 +15,12 @@
         {{selectedItemsMessage}}
       </span>
       <ng-container *ngIf="!_selectedOptions.length">
-        {{ translations.selectPlaceholder }}
+        {{ config.translations.selectPlaceholder }}
       </ng-container>
       <span class="caret"></span>
     </ng-container>
     <ng-container *ngIf="!multiSelectable">
-      {{ _selectedOption ? _selectedOption.text : translations.selectPlaceholder }}<span class="caret"></span>
+      {{ _selectedOption ? _selectedOption.text : config.translations.selectPlaceholder }}<span class="caret"></span>
     </ng-container>
   </button>
 </div>

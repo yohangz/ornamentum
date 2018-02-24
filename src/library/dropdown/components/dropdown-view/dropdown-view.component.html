@@ -10,7 +10,7 @@
           <span class="ng-dropdown-input-group-addon" id="sizing-addon3">
             <i class="zmdi zmdi-search"></i>
           </span>
-          <input type="text" class="ng-dropdown-input" placeholder="{{ props.dropdown.translations.searchPlaceholder }}" aria-describedby="sizing-addon3" (keyup)="props.dropdown.filterKeyUp()" autofocus [(ngModel)]="props.dropdown.filterText">
+          <input type="text" class="ng-dropdown-input" placeholder="{{ config.translations.searchPlaceholder }}" aria-describedby="sizing-addon3" (keyup)="props.dropdown.filterKeyUp()" autofocus [(ngModel)]="props.dropdown.filterText">
           <span class="ng-dropdown-input-group-btn" *ngIf="props.dropdown.filterText">
             <button class="ng-dropdown-delete-button" type="button" (click)="props.dropdown.clearSearch()">
               <i class="zmdi zmdi-close-circle"></i>
@@ -24,7 +24,7 @@
     <ul *ngIf="props.dropdown.showSelectAll && props.dropdown.multiSelectable && !props.dropdown.loadOnScroll">
       <li class="ng-dropdown-item check-control check-control-check" (click)="props.dropdown.toggleAllSelected()">
         <input type="checkbox" class="ng-dropdown-checkbox-input" [(ngModel)]="props.dropdown.allSelected" />
-        <span>{{ props.dropdown.translations.selectAllPlaceholder }}</span>
+        <span>{{ config.translations.selectAllPlaceholder }}</span>
       </li>
       <li class="ng-dropdown-divider divider"></li>
     </ul>
@@ -54,7 +54,7 @@
         </ng-container>
       </ng-container>
       <li *ngIf="!props.dropdown.isLoading && !props.dropdown.currentItemCount" class="ng-dropdown-item empty">
-        {{props.dropdown.translations.searchEmptyResult}}
+        {{config.translations.searchEmptyResult}}
       </li>
       <li *ngIf="props.dropdown.isLoading">
         Loading...

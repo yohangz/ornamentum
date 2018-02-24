@@ -6,10 +6,10 @@ import { DropdownTranslations } from './dropdown-translations.model';
  */
 export class DropdownConfig {
   /**
-   * Display text translations.
+   * Dropdown base display text translations.
    * @type {DropdownTranslations}
    */
-  translations?: DropdownTranslations;
+  baseTranslations?: DropdownTranslations;
 
   /**
    * Name of the attribute used for selection tracking.

@@ -55,7 +55,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
 
   private componentLoader: ComponentLoader<DropdownViewComponent>;
 
-  private _translations: DropdownTranslations;
   private _allSelected = false;
   private offset = 0;
 
@@ -90,21 +89,11 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
 
   /**
    * Search dropdown display text key translations.
-   * @default defaultTranslations
    * @type {DropdownTranslations}
-   * @param {DropdownTranslations} data The overridable translation values
    */
   @Input()
-  public set translations(data: DropdownTranslations) {
-    this._translations = {...this.dropdownConfigService.translations, ...data};
-  }
-
-  /**
-   * Returns translations.
-   * @returns {DropdownTranslations}
-   */
-  public get translations(): DropdownTranslations {
-    return this._translations;
+  public set translations(value: DropdownTranslations) {
+    this.config.translations = value;
   }
 
   @Input()
@@ -358,31 +347,30 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   }
 
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
-              private dropdownConfigService: DropdownConfigService,
-              private injector: Injector) {
-    this._translations = {...this.dropdownConfigService.translations};
-    this.selectTrackBy = this.dropdownConfigService.selectTrackBy;
-    this.displayTrackBy = this.dropdownConfigService.displayTrackBy;
-    this.dataTrackBy = this.dropdownConfigService.dataTrackBy;
-    this.disabledTrackBy = this.dropdownConfigService.disabledTrackBy;
-    this.menuPosition = this.dropdownConfigService.menuPosition;
-    this.multiSelectable = this.dropdownConfigService.multiSelectable;
-    this.filterable = this.dropdownConfigService.flterable;
-    this.filterDebounce = this.dropdownConfigService.filterDebounce;
-    this.filterDebounceTime = this.dropdownConfigService.filterDebounceTime;
-    this.showSelectAll = this.dropdownConfigService.showSelectAll;
-    this.groupByField = this.dropdownConfigService.groupByField;
-    this.wrapDisplaySelectLimit = this.dropdownConfigService.wrapDisplaySelectLimit;
-    this.triggerSelectChangeOnInit = this.dropdownConfigService.triggerSelectChangeOnInit;
-    this.triggerChangeOncePerSelectAll = this.dropdownConfigService.triggerChangeOncePerSelectAll;
-    this.showSelectedOptionRemoveButton = this.dropdownConfigService.showSelectedOptionRemoveButton;
-    this.showClearSelectionButton = this.dropdownConfigService.showClearSelectionButton;
-    this.menuWidth = this.dropdownConfigService.menuWidth;
-    this.menuHeight = this.dropdownConfigService.menuHeight;
-    this.loadOnScroll = this.dropdownConfigService.loadOnScroll;
-    this.loadViewDistance = this.dropdownConfigService.loadViewDistance;
-    this.limit = this.dropdownConfigService.limit;
-    this.loadDataOnInit = this.dropdownConfigService.loadDataOnInit;
+              private injector: Injector,
+              public config: DropdownConfigService) {
+    this.selectTrackBy = this.config.selectTrackBy;
+    this.displayTrackBy = this.config.displayTrackBy;
+    this.dataTrackBy = this.config.dataTrackBy;
+    this.disabledTrackBy = this.config.disabledTrackBy;
+    this.menuPosition = this.config.menuPosition;
+    this.multiSelectable = this.config.multiSelectable;
+    this.filterable = this.config.flterable;
+    this.filterDebounce = this.config.filterDebounce;
+    this.filterDebounceTime = this.config.filterDebounceTime;
+    this.showSelectAll = this.config.showSelectAll;
+    this.groupByField = this.config.groupByField;
+    this.wrapDisplaySelectLimit = this.config.wrapDisplaySelectLimit;
+    this.triggerSelectChangeOnInit = this.config.triggerSelectChangeOnInit;
+    this.triggerChangeOncePerSelectAll = this.config.triggerChangeOncePerSelectAll;
+    this.showSelectedOptionRemoveButton = this.config.showSelectedOptionRemoveButton;
+    this.showClearSelectionButton = this.config.showClearSelectionButton;
+    this.menuWidth = this.config.menuWidth;
+    this.menuHeight = this.config.menuHeight;
+    this.loadOnScroll = this.config.loadOnScroll;
+    this.loadViewDistance = this.config.loadViewDistance;
+    this.limit = this.config.limit;
+    this.loadDataOnInit = this.config.loadDataOnInit;
 
     this.componentLoader = this.componentLoaderFactory.createLoader();
   }
@@ -749,7 +737,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @return {string} Selected items message.
    */
   public get selectedItemsMessage(): string {
-    return `(${this._selectedOptions.length}) ${this.translations.selectedItemWrapPlaceholder}`;
+    return `(${this._selectedOptions.length}) ${this.config.translations.selectedItemWrapPlaceholder}`;
   }
 
   /**

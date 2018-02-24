@@ -4,6 +4,7 @@ import { DropdownConfig } from '../models/dropdown-config.model';
 import { DropdownTranslations } from '../models/dropdown-translations.model';
 import { MenuPosition } from '../models/menu-position.enum';
 import { DataTableConfig } from '../../data-table/models/data-table-config.model';
+import { DataTableTranslations } from '../../data-table/models/data-tabl-translations.model';
 
 export const DROPDOWN_CONFIG = new InjectionToken<DataTableConfig>('dropdownConfig');
 
@@ -12,7 +13,7 @@ export const DROPDOWN_CONFIG = new InjectionToken<DataTableConfig>('dropdownConf
  */
 @Injectable()
 export class DropdownConfigService implements DropdownConfig {
-  public translations: DropdownTranslations = {
+  public baseTranslations: DropdownTranslations = {
     searchEmptyResult: 'No Results Available',
     searchPlaceholder: 'Search',
     selectAllPlaceholder: 'Select All',
@@ -47,5 +48,13 @@ export class DropdownConfigService implements DropdownConfig {
     if (dropdownConfig) {
       Object.assign(<any>this, dropdownConfig);
     }
+  }
+
+  public set translations(value: DropdownTranslations) {
+    this.baseTranslations = {...this.baseTranslations, ...value};
+  }
+
+  public get translations(): DropdownTranslations {
+    return this.baseTranslations;
   }
 }
