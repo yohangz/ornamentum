@@ -21,7 +21,7 @@
             [textContent]="getDisplayIndex(row)" [attr.rowspan]="rowSpanCount">
         </td>
         <td class="ng-data-table-select-column ng-ignore-propagation" [style.background-color]="row.colour"
-            *ngIf="config.rowSelectable && !rowSpanIndex" [attr.rowspan]="rowSpanCount">
+            *ngIf="showRowSelectCheckbox && !rowSpanIndex" [attr.rowspan]="rowSpanCount">
           <input class="ng-data-table-checkbox-input ng-ignore-propagation" type="checkbox" [(ngModel)]="row.selected"
                  (change)="onRowSelectChange(row)"/>
         </td>

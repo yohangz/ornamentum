@@ -2,7 +2,7 @@
 </th>
 <th *ngIf="config.showIndexColumn" class="ng-data-table-index-column-header">
 </th>
-<th *ngIf="config.rowSelectable" class="ng-data-table-select-column-header">
+<th *ngIf="config.showRowSelectCheckboxColumn" class="ng-data-table-select-column-header">
 </th>
 <ng-container *ngFor="let column of columns">
   <th *ngIf="column.visible">

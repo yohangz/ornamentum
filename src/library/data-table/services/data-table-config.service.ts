@@ -28,6 +28,8 @@ export class DataTableConfigService implements DataTableConfig {
   public indexColumnTitle = '#';
   public rowSelectable = false;
   public multiRowSelectable = false;
+  public showRowSelectCheckbox = false;
+  public showRowSelectAllCheckbox = false;
   public showSubstituteRows = false;
   public expandableRows = false;
   public selectOnRowClick = false;
@@ -81,9 +83,9 @@ export class DataTableConfigService implements DataTableConfig {
   public dropdownFilterMenuHeight = 250;
 
   constructor(@Inject(DATA_TABLE_CONFIG) private dataTableConfig: DataTableConfig) {
-      if (dataTableConfig) {
-        Object.assign(<any>this, dataTableConfig);
-      }
+    if (dataTableConfig) {
+      Object.assign(<any>this, dataTableConfig);
+    }
   }
 
   public set translations(value: DataTableTranslations) {
@@ -96,5 +98,9 @@ export class DataTableConfigService implements DataTableConfig {
    */
   public get translations(): DataTableTranslations {
     return this.baseTranslations;
+  }
+
+  public get showRowSelectCheckboxColumn(): boolean {
+    return this.rowSelectable && this.showRowSelectCheckbox;
   }
 }

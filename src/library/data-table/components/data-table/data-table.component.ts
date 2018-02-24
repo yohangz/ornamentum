@@ -313,6 +313,16 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     this.config.multiRowSelectable = value;
   }
 
+  @Input()
+  public set showRowSelectCheckbox(value: boolean) {
+    this.config.showRowSelectCheckbox = value;
+  }
+
+  @Input()
+  public set showRowSelectAllCheckbox(value: boolean) {
+    this.config.showRowSelectAllCheckbox = value;
+  }
+
   /**
    * Show substitute rows (Only applicable when paging is enabled).
    * @type {boolean}

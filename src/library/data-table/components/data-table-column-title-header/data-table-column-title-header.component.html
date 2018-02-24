@@ -3,9 +3,9 @@
 <th class="ng-data-table-index-column-header" *ngIf="config.showIndexColumn">
   <span [textContent]="config.indexColumnTitle"></span>
 </th>
-<th class="ng-data-table-select-column-header" *ngIf="config.rowSelectable">
+<th class="ng-data-table-select-column-header" *ngIf="config.showRowSelectCheckboxColumn">
   <input class="ng-data-table-checkbox-input" type="checkbox"
-         [hidden]="!config.multiRowSelectable"
+         *ngIf="config.multiRowSelectable && config.showRowSelectAllCheckbox"
          [(ngModel)]="allRowSelected"/>
 </th>
 <ng-container *ngFor="let column of columns">

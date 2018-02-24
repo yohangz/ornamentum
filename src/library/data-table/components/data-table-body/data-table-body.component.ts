@@ -137,7 +137,7 @@ export class DataTableBodyComponent {
   public get totalColumnCount(): number {
     let count = 0;
     count += this.config.showIndexColumn ? 1 : 0;
-    count += this.config.rowSelectable ? 1 : 0;
+    count += this.config.showRowSelectCheckboxColumn ? 1 : 0;
     count += this.config.expandableRows ? 1 : 0;
     this.columns.forEach(column => {
       count += column.visible ? 1 : 0;
@@ -227,5 +227,9 @@ export class DataTableBodyComponent {
 
   public getFieldValue(row: DataRow, column: DataTableColumnComponent) {
     return get(row.item, column.field);
+  }
+
+  public get showRowSelectCheckbox(): boolean {
+    return this.config.rowSelectable && this.config.showRowSelectCheckbox;
   }
 }

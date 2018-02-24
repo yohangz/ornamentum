@@ -481,7 +481,7 @@
   [indexColumnTitle]="indexColumnTitle"
 
   [limit]="limit"
-  [multiRowSelectable]="multiRowSelectable"
+  [multiRowSelectable]="true"
   [multiColumnSortable]="initialTableConf.multiColumnSortable"
   [page]="page"
   [pageable]="pageable"
@@ -498,6 +498,8 @@
   [showRefreshButton]="true"
   [dataSource]="items"
   [onDynamicRowSpanExtract]="onDynamicRowSpanExtract"
+  [showRowSelectCheckbox]="true"
+  [showRowSelectAllCheckbox]="true"
 
   (rowBind)="onRowBind($event)"
   (init)="onInit($event)"

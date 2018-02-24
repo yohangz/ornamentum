@@ -126,6 +126,20 @@ export interface DataTableConfig {
   multiRowSelectable?: boolean;
 
   /**
+   * Show row select checkbox column if true.
+   * Only applicable when rowSelectable is true.
+   * @type {boolean}
+   */
+  showRowSelectCheckbox?: boolean;
+
+  /**
+   * Show select all row checkbox on column header if true.
+   * Only applicable when showRowSelectCheckbox and rowSelectable is true.
+   * @type {boolean}
+   */
+  showRowSelectAllCheckbox?: boolean;
+
+  /**
    * Show substitute rows if true.
    * Fill with empty rows when row count < limit.
    * @type {boolean}

@@ -1,24 +1,28 @@
 <div class="ng-data-table-column-selector-wrapper" (click)="$event.stopPropagation()">
   <div class="ng-data-table-column-selector-box">
-    <div *ngIf="expandableRows" class="ng-data-table-column-selector-fixed-column ng-data-table-column-selector-checkbox">
+    <div class="ng-data-table-column-selector-fixed-column ng-data-table-column-selector-checkbox"
+         *ngIf="expandableRows">
       <label>
         <input class="ng-data-table-checkbox-input" type="checkbox" [(ngModel)]="config.expandableRows"/>
         <span>{{config.translations.expandColumn}}</span>
       </label>
     </div>
-    <div *ngIf="showIndexColumn" class="ng-data-table-column-selector-fixed-column ng-data-table-column-selector-checkbox">
+    <div class="ng-data-table-column-selector-fixed-column ng-data-table-column-selector-checkbox"
+         *ngIf="showIndexColumn">
       <label>
         <input class="ng-data-table-checkbox-input" type="checkbox" [(ngModel)]="config.showIndexColumn"/>
         <span>{{config.translations.indexColumn}}</span>
       </label>
     </div>
-    <div *ngIf="rowSelectable" class="ng-data-table-column-selector-fixed-column ng-data-table-column-selector-checkbox">
+    <div class="ng-data-table-column-selector-fixed-column ng-data-table-column-selector-checkbox"
+         *ngIf="rowSelectable && config.showRowSelectCheckbox">
       <label>
         <input class="ng-data-table-checkbox-input" type="checkbox" [(ngModel)]="config.rowSelectable"/>
         <span>{{config.translations.selectColumn}}</span>
       </label>
     </div>
-    <div *ngFor="let column of columns" class="ng-data-table-column-selector-column ng-data-table-column-selector-checkbox">
+    <div class="ng-data-table-column-selector-column ng-data-table-column-selector-checkbox"
+         *ngFor="let column of columns">
       <label>
         <input class="ng-data-table-checkbox-input" type="checkbox" [(ngModel)]="column.visible"/>
         <span [textContent]="column.title"></span>

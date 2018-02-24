@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -17,7 +17,7 @@ export class DataTableColumnSelectorComponent {
   public showIndexColumn: boolean;
   public rowSelectable: boolean;
 
-  constructor(public config: DataTableConfigService, public cd: ChangeDetectorRef) {
+  constructor(public config: DataTableConfigService) {
     this.expandableRows = config.rowSelectable;
     this.showIndexColumn = config.showIndexColumn;
     this.rowSelectable = config.rowSelectable;
