@@ -747,11 +747,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     this.dataStateService.allRowSelected = false;
   }
 
-  private clearDataRowSelectState(): void {
-    this.clearRowSelectState();
-    this.dataStateService.dataRows.forEach(row => row.selected = false);
-  }
-
   public fetchData(hardRefresh: boolean = false): void {
     this.eventStateService.dataFetchStream.next(hardRefresh);
   }
