@@ -108,7 +108,7 @@ export class DataTableResource<T> {
               return true;
             }
 
-            const column = filterColumn.field ? item[filterColumn.field] : item[filterColumn.field];
+            const column = item[filterColumn.field];
             if (column === undefined) {
               return true;
             }
