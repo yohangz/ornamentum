@@ -1,8 +1,8 @@
 import { DataRow } from './data-row.model';
 
 /**
- * Group field extractor callback.
+ * Dynamic row span extractor callback.
  * @param {DataRow} row - Target data row.
- * @return {any[][]} - Collection of groups
+ * @return {number} - Row span for current row.
  */
-export type GroupFieldExtractorCallback = (row: DataRow) => any[][];
+export type DynamicRowSpanExtractorCallback = (row: DataRow) => number;

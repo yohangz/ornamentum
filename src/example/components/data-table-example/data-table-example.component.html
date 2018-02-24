@@ -497,6 +497,7 @@
   [persistTableState]="true"
   [showRefreshButton]="true"
   [dataSource]="items"
+  [onDynamicRowSpanExtract]="onDynamicRowSpanExtract"
 
   (rowBind)="onRowBind($event)"
   (init)="onInit($event)"
@@ -618,12 +619,21 @@
     [visible]="ninthColConf.visible">
   </ng-data-table-column>
   <ng-data-table-column
+    [field]="'test'"
+    [title]="'Row Span'">
+    <ng-template let-row="row" let-spanIndex="spanIndex" #ngDataTableCell>
+      <td>
+        {{row.item.test[spanIndex].latitude}}
+      </td>
+    </ng-template>
+  </ng-data-table-column>
+  <ng-data-table-column
     [width]="tenthColConf.width"
     [title]="tenthColConf.title"
     [resizable]="tenthColConf.resizable"
     [visible]="tenthColConf.visible">
-    <ng-template #ngDataTableCell let-row="row">
-      <td>
+    <ng-template #ngDataTableCell let-row="row" let-rowSpan="rowSpan" let-spanIndex="spanIndex">
+      <td [attr.rowspan]="rowSpan" *ngIf="!spanIndex">
         <button (click)="onEdit(row.item, $event)">Edit</button>
       </td>
     </ng-template>

@@ -26,7 +26,7 @@ import { RowClickEventArgs } from '../../models/row-click-event-args.model';
 import { DataRow } from '../../models/data-row.model';
 import { DataTableParams } from '../../models/data-table-params.model';
 import { DataTableTranslations } from '../../models/data-tabl-translations.model';
-import { GroupFieldExtractorCallback } from '../../models/group-field-extractor-callback.model';
+import { DynamicRowSpanExtractorCallback } from '../../models/group-field-extractor-callback.model';
 import { QueryResult } from '../../models/query-result.model';
 import { DataBindCallback } from '../../models/data-bind-callback.model';
 import { FilterOption } from '../../models/filter-option.model';
@@ -168,12 +168,12 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * On group field extract event handler callback.
-   * @type {GroupFieldExtractorCallback}
+   * On dynamic row span extract event handler callback.
+   * @type {DynamicRowSpanExtractorCallback}
    */
   @Input()
-  public set onGroupFieldExtract(value: GroupFieldExtractorCallback) {
-    this.dataStateService.onGroupFieldExtract = value;
+  public set onDynamicRowSpanExtract(value: DynamicRowSpanExtractorCallback) {
+    this.dataStateService.onDynamicRowSpanExtract = value;
   }
 
   // Input parameters

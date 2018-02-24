@@ -1,7 +1,6 @@
 import { Component, Input, TemplateRef } from '@angular/core';
 
 import { DataRow } from '../../models/data-row.model';
-import { GroupDetail } from '../../models/group-detail.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -120,24 +119,12 @@ export class DataTableBodyComponent {
   }
 
   /**
-   * Extract group row details.
+   * Get row span collection
    * @param {DataRow} row Data row.
-   * @return {GroupDetail} Group detail object.
+   * @return {any[]} Row span dummy array.
    */
-  public extractGroupRowDetails(row: DataRow): GroupDetail {
-    const rowGroups = this.dataStateService.onGroupFieldExtract(row);
-
-    const maxRows = rowGroups.reduce((acc: number, value: any[]) => {
-      return value ? Math.max(acc, value.length) : acc;
-    }, 0) || 1;
-
-    const groupHolder = Array.from({length: maxRows});
-
-    return {
-      rowCount: maxRows,
-      groups: rowGroups,
-      groupHolder: groupHolder
-    };
+  public getRowSpanCollection(row: DataRow): any[] {
+    return Array.from({length: this.dataStateService.onDynamicRowSpanExtract(row)});
   }
 
   /**

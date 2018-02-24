@@ -1,6 +1,5 @@
 <ng-container *ngFor="let row of dataStateService.dataRows">
-  <ng-container *ngIf="extractGroupRowDetails(row) as groupDetail">
-    <ng-container *ngFor="let ignored of groupDetail.groupHolder; let holderIndex = index">
+  <ng-container *ngFor="let ignored of getRowSpanCollection(row); let rowSpanIndex = index; let rowSpanCount = count">
       <tr class="ng-data-table-row"
           (init)="onRowInit(row)"
           [attr.title]="row.tooltip"
@@ -12,36 +11,35 @@
           (dblclick)="rowDoubleClicked(row, $event)"
           (click)="rowClicked(row, $event)">
         <td class="ng-data-table-row-expand-button ng-ignore-propagation" [style.background-color]="row.colour"
-            *ngIf="config.expandableRows && holderIndex === 0"
-            (click)="onRowExpand($event, row)" [attr.rowspan]="groupDetail.rowCount">
+            *ngIf="config.expandableRows && !rowSpanIndex"
+            (click)="onRowExpand($event, row)" [attr.rowspan]="rowSpanCount">
           <span class="zmdi zmdi-caret-right-circle zmdi-hc-lg ng-ignore-propagation" *ngIf="!row.expanded"></span>
           <span class="zmdi zmdi-caret-down-circle zmdi-hc-lg ng-ignore-propagation" *ngIf="row.expanded"></span>
         </td>
         <td class="index-column" [style.background-color]="row.colour"
-            *ngIf="config.showIndexColumn && holderIndex === 0"
-            [textContent]="getDisplayIndex(row)" [attr.rowspan]="groupDetail.rowCount">
+            *ngIf="config.showIndexColumn && !rowSpanIndex"
+            [textContent]="getDisplayIndex(row)" [attr.rowspan]="rowSpanCount">
         </td>
         <td class="ng-data-table-select-column ng-ignore-propagation" [style.background-color]="row.colour"
-            *ngIf="config.rowSelectable && holderIndex === 0" [attr.rowspan]="groupDetail.rowCount">
+            *ngIf="config.rowSelectable && !rowSpanIndex" [attr.rowspan]="rowSpanCount">
           <input class="ng-data-table-checkbox-input ng-ignore-propagation" type="checkbox" [(ngModel)]="row.selected"
                  (change)="onRowSelectChange(row)"/>
         </td>
         <ng-container *ngFor="let column of columns">
           <ng-container *ngIf="column.visible">
-            <td class="ng-data-table-data-column" *ngIf="!column.cellTemplate && holderIndex === 0"
-                (init)="onCellInit(column, row)" [ngClass]="column.styleClass" [attr.rowspan]="groupDetail.rowCount"
+            <td class="ng-data-table-data-column" *ngIf="!column.cellTemplate && !rowSpanIndex"
+                (init)="onCellInit(column, row)" [ngClass]="column.styleClass" [attr.rowspan]="rowSpanCount"
                 [style.background-color]="column.getCellColor(row) || row.colour"
                 (click)="cellClicked(column, row, $event)">
               <span>{{row.item[column.field]}}</span>
             </td>
             <ng-container *ngIf="column.cellTemplate" [ngTemplateOutlet]="column.cellTemplate"
-                          [ngTemplateOutletContext]="{ column: column, row: row, groupDetail: groupDetail , index: holderIndex }">
+                          [ngTemplateOutletContext]="{ column: column, row: row, spanIndex: rowSpanIndex, rowSpan: rowSpanCount  }">
             </ng-container>
           </ng-container>
         </ng-container>
       </tr>
     </ng-container>
-  </ng-container>
   <tr *ngIf="config.expandableRows" [hidden]="!row.expanded" class="ng-data-table-row-expansion">
     <td [attr.colspan]="totalColumnCount">
       <ng-container [ngTemplateOutlet]="expandTemplate" [ngTemplateOutletContext]="{ row: row }">

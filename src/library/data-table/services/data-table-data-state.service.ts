@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { DataRow } from '../models/data-row.model';
-import { GroupFieldExtractorCallback } from '../models/group-field-extractor-callback.model';
+import { DynamicRowSpanExtractorCallback } from '../models/group-field-extractor-callback.model';
 import { FilterValueExtractCallback } from '../models/filter-value-extract-callback.model';
 import { DataBindCallback } from '../models/data-bind-callback.model';
 
@@ -17,7 +17,7 @@ export class DataTableDataStateService {
   public substituteRows: any[] = [];
   public heardReload = false;
 
-  public onGroupFieldExtract: GroupFieldExtractorCallback = (() => []);
+  public onDynamicRowSpanExtract: DynamicRowSpanExtractorCallback = (() => 1);
   public onFilterValueExtract: FilterValueExtractCallback;
   public onDataBind: DataBindCallback;
 
