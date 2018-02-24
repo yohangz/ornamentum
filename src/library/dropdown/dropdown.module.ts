@@ -8,7 +8,7 @@ import { DropdownConfig } from './models/dropdown-config.model';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { DropdownViewComponent } from './components/dropdown-view/dropdown-view.component';
 
-import { DROPDOWN_CONFIG, DropdownConfigService } from './services/dropdown-config.service';
+import { DROPDOWN_CONFIG } from './services/dropdown-config.service';
 
 const COMPONENTS = [
   DropdownComponent,
@@ -42,8 +42,7 @@ export class DropdownModule {
         {
           provide: DROPDOWN_CONFIG,
           useValue: dropdownConfig
-        },
-        DropdownConfigService
+        }
       ]
     };
   }

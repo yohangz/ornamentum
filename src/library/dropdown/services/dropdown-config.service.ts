@@ -4,7 +4,6 @@ import { DropdownConfig } from '../models/dropdown-config.model';
 import { DropdownTranslations } from '../models/dropdown-translations.model';
 import { MenuPosition } from '../models/menu-position.enum';
 import { DataTableConfig } from '../../data-table/models/data-table-config.model';
-import { DataTableTranslations } from '../../data-table/models/data-tabl-translations.model';
 
 export const DROPDOWN_CONFIG = new InjectionToken<DataTableConfig>('dropdownConfig');
 

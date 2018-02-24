@@ -6,6 +6,4 @@ export { ClientFilterCallback } from './models/client-filter-callback.model';
 
 export { DropdownComponent } from './components/dropdown/dropdown.component';
 
-export { DropdownConfigService } from './services/dropdown-config.service';
-
 export { DropdownModule } from './dropdown.module';

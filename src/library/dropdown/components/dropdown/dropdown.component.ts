@@ -36,6 +36,7 @@ import { Subscription } from 'rxjs/Subscription';
   templateUrl: './dropdown.component.html',
   styleUrls: ['./dropdown.component.scss'],
   providers: [
+    DropdownConfigService,
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => DropdownComponent),
@@ -122,7 +123,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {string}
    */
   @Input()
-  public dataTrackBy: string;
+  public set dataTrackBy(value: string) {
+    this.config.dataTrackBy = value;
+  }
 
   /**
    * Represent field name to group data by.
@@ -353,7 +356,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
               public config: DropdownConfigService) {
-    this.dataTrackBy = this.config.dataTrackBy;
     this.disabledTrackBy = this.config.disabledTrackBy;
     this.menuPosition = this.config.menuPosition;
     this.multiSelectable = this.config.multiSelectable;
@@ -390,7 +392,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       id: id,
       text: item[this.config.displayTrackBy],
       disabled: selectedOption ? selectedOption.disabled : item[this.disabledTrackBy],
-      data: item[this.dataTrackBy],
+      data: item[this.config.dataTrackBy],
       filter: true
     };
   }
@@ -438,7 +440,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       id: option[this.config.selectTrackBy],
       text: option[this.config.displayTrackBy],
       disabled: option[this.disabledTrackBy],
-      data: option[this.dataTrackBy],
+      data: option[this.config.dataTrackBy],
       filter: true
     };
   }
@@ -701,7 +703,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       }
 
       if (dropdownItem.data !== undefined) {
-        option[this.dataTrackBy] = dropdownItem.data;
+        option[this.config.dataTrackBy] = dropdownItem.data;
       }
     }
 

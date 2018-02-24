@@ -115,7 +115,7 @@ export class DropdownExampleComponent {
       ];
 
       this.count = this.items.length;
-    }, 8000);
+    }, 1000);
 
 //    this.selected = this.items;
 
