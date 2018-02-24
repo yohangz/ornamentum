@@ -104,7 +104,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {string}
    */
   @Input()
-  public selectTrackBy: string;
+  public set selectTrackBy(value: string) {
+    this.config.selectTrackBy = value;
+  }
 
   /**
    * Represents the name of the attribute used to show the selected item's display text.
@@ -349,7 +351,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
               public config: DropdownConfigService) {
-    this.selectTrackBy = this.config.selectTrackBy;
     this.displayTrackBy = this.config.displayTrackBy;
     this.dataTrackBy = this.config.dataTrackBy;
     this.disabledTrackBy = this.config.disabledTrackBy;
@@ -381,7 +382,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @return {DropdownItem} Dropdown item object.
    */
   private extractDropdownItem(item: any): DropdownItem {
-    const id = item[this.selectTrackBy];
+    const id = item[this.config.selectTrackBy];
     const selectedOption = this.getSelectedOption(id);
 
     return {
@@ -433,7 +434,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    */
   private mapToDropdownItem(option: any): DropdownItem {
     return {
-      id: option[this.selectTrackBy],
+      id: option[this.config.selectTrackBy],
       text: option[this.displayTrackBy],
       disabled: option[this.disabledTrackBy],
       data: option[this.dataTrackBy],
@@ -690,7 +691,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
 
     const option = {};
 
-    option[this.selectTrackBy] = dropdownItem.id;
+    option[this.config.selectTrackBy] = dropdownItem.id;
     option[this.displayTrackBy] = dropdownItem.text;
 
     if (dropdownItem) {
