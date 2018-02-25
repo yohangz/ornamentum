@@ -281,7 +281,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {boolean}
    */
   @Input()
-  public showSelectedOptionRemoveButton: boolean;
+  public set showSelectedOptionRemoveButton(value: boolean) {
+    this.config.showSelectedOptionRemoveButton = value;
+  }
 
   /**
    * Show all select options clear button if true.
@@ -383,7 +385,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.menuPosition = this.config.menuPosition;
     this.filterDebounce = this.config.filterDebounce;
     this.filterDebounceTime = this.config.filterDebounceTime;
-    this.showSelectedOptionRemoveButton = this.config.showSelectedOptionRemoveButton;
     this.showClearSelectionButton = this.config.showClearSelectionButton;
     this.menuWidth = this.config.menuWidth;
     this.menuHeight = this.config.menuHeight;

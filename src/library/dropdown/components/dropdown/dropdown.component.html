@@ -8,7 +8,7 @@
     <ng-container *ngIf="config.multiSelectable">
       <ng-container *ngIf="!showAllSelectedItemLabels">
          <span class="ng-dropdown-selected-value" *ngFor="let option of _selectedOptions">
-          {{option.text}} <i class="zmdi zmdi-close-circle" *ngIf="showSelectedOptionRemoveButton" (click)="onSelectOptionClose($event, option)"></i>
+          {{option.text}} <i class="zmdi zmdi-close-circle" *ngIf="config.showSelectedOptionRemoveButton" (click)="onSelectOptionClose($event, option)"></i>
         </span>
       </ng-container>
       <span *ngIf="showAllSelectedItemLabels">
