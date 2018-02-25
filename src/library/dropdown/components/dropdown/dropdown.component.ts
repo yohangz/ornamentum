@@ -289,7 +289,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * Show all select options clear button if true.
    */
   @Input()
-  public showClearSelectionButton: boolean;
+  public set showClearSelectionButton(value: boolean) {
+    this.config.showClearSelectionButton = value;
+  }
 
   /**
    * Dropdown menu width.
@@ -385,7 +387,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.menuPosition = this.config.menuPosition;
     this.filterDebounce = this.config.filterDebounce;
     this.filterDebounceTime = this.config.filterDebounceTime;
-    this.showClearSelectionButton = this.config.showClearSelectionButton;
     this.menuWidth = this.config.menuWidth;
     this.menuHeight = this.config.menuHeight;
 

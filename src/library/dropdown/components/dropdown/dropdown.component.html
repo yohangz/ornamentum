@@ -1,5 +1,5 @@
 <div #dropdownElement class="ng-dropdown" (clickOutside)="closeDropdown()">
-  <span class="ng-dropdown-input-group-btn" [hidden]="!hasSelectedItems" *ngIf="showClearSelectionButton">
+  <span class="ng-dropdown-input-group-btn" [hidden]="!hasSelectedItems" *ngIf="config.showClearSelectionButton">
     <button class="ng-dropdown-delete-button" type="button" (click)="clearSelected()">
       <i class="zmdi zmdi-close-circle"></i>
     </button>
