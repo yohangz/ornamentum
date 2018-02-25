@@ -86,6 +86,16 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   @Output()
   public selectChange = new EventEmitter<DropdownItem[] | DropdownItem>();
 
+  // Input - Event handlers
+
+  /**
+   * On client filter callback.
+   * @default undefined
+   * @type {ClientFilterCallback}
+   */
+  @Input()
+  public onClientFilter: ClientFilterCallback;
+
   // Inputs
 
   /**
@@ -340,16 +350,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   public set filterDebounceTime(value: number) {
     this.config.filterDebounceTime = value;
   }
-
-  // Input - Event handlers
-
-  /**
-   * On client filter callback.
-   * @default undefined
-   * @type {ClientFilterCallback}
-   */
-  @Input()
-  public onClientFilter: ClientFilterCallback;
 
   /**
    * Set dropdown items.
