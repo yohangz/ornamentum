@@ -220,7 +220,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {number}
    */
   @Input()
-  public loadViewDistance: number;
+  public set loadViewDistance(value: number) {
+    this.config.loadViewDistance = value;
+  }
 
   /**
    * Filter option for dropdown search.
@@ -379,7 +381,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.showClearSelectionButton = this.config.showClearSelectionButton;
     this.menuWidth = this.config.menuWidth;
     this.menuHeight = this.config.menuHeight;
-    this.loadViewDistance = this.config.loadViewDistance;
     this.loadDataOnInit = this.config.loadDataOnInit;
 
     this.componentLoader = this.componentLoaderFactory.createLoader();
@@ -501,7 +502,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     const roundingPixel = 1;
     const gutterPixel = 1;
 
-    if (scrollTop >= scrollHeight - (1 + this.loadViewDistance) * scrollElementHeight - roundingPixel - gutterPixel) {
+    if (scrollTop >= scrollHeight - (1 + this.config.loadViewDistance) * scrollElementHeight - roundingPixel - gutterPixel) {
       this.loadData(true);
     }
   }
