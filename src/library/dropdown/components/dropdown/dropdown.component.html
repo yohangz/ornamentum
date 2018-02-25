@@ -5,7 +5,7 @@
     </button>
   </span>
   <button  type="button" class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [disabled]="disabled">
-    <ng-container *ngIf="multiSelectable">
+    <ng-container *ngIf="config.multiSelectable">
       <ng-container *ngIf="!showAllSelectedItemLabels">
          <span class="ng-dropdown-selected-value" *ngFor="let option of _selectedOptions">
           {{option.text}} <i class="zmdi zmdi-close-circle" *ngIf="showSelectedOptionRemoveButton" (click)="onSelectOptionClose($event, option)"></i>
@@ -19,7 +19,7 @@
       </ng-container>
       <span class="caret"></span>
     </ng-container>
-    <ng-container *ngIf="!multiSelectable">
+    <ng-container *ngIf="!config.multiSelectable">
       {{ _selectedOption ? _selectedOption.text : config.translations.selectPlaceholder }}<span class="caret"></span>
     </ng-container>
   </button>

@@ -21,7 +21,7 @@
       <li class="ng-dropdown-divider divider"></li>
     </ul>
 
-    <ul *ngIf="props.dropdown.showSelectAll && props.dropdown.multiSelectable && !config.loadOnScroll">
+    <ul *ngIf="props.dropdown.showSelectAll && config.multiSelectable && !config.loadOnScroll">
       <li class="ng-dropdown-item check-control check-control-check" (click)="props.dropdown.toggleAllSelected()">
         <input type="checkbox" class="ng-dropdown-checkbox-input" [(ngModel)]="props.dropdown.allSelected" />
         <span>{{ config.translations.selectAllPlaceholder }}</span>
@@ -29,14 +29,14 @@
       <li class="ng-dropdown-divider divider"></li>
     </ul>
 
-    <ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="props.dropdown.multiSelectable" [style.height]="props.dropdown.menuHeight - 135 | px" (scroll)="config.loadOnScroll ? props.dropdown.checkScrollPosition($event) : null" >
+    <ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="config.multiSelectable" [style.height]="props.dropdown.menuHeight - 135 | px" (scroll)="config.loadOnScroll ? props.dropdown.checkScrollPosition($event) : null" >
       <ng-container *ngIf="config.groupByField">
         <ng-container *ngFor="let groupedItem of props.dropdown._groupedItems">
           <li *ngIf="props.dropdown.hasVisibleItems(groupedItem.items)" class="ng-dropdown-group-heading">{{groupedItem.groupName}}</li>
           <ng-container *ngFor="let option of groupedItem.items">
             <li (click)="props.dropdown.setSelected(option)" *ngIf="option.filter" [class.disabled]="option.disabled" [class.ng-item-selected]="props.dropdown.isSelected(option)">
               <a role="menuitem">
-                <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="props.dropdown.isSelected(option)" [disabled]="option.disabled" *ngIf="props.dropdown.multiSelectable"/>
+                <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="props.dropdown.isSelected(option)" [disabled]="option.disabled" *ngIf="config.multiSelectable"/>
                 <span>{{option.text}}</span>
               </a>
             </li>
@@ -47,7 +47,7 @@
         <ng-container *ngFor="let option of props.dropdown._items">
           <li (click)="props.dropdown.setSelected(option)" *ngIf="option.filter" [class.ng-item-selected]="props.dropdown.isSelected(option)">
             <a role="menuitem">
-              <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="props.dropdown.isSelected(option)" [disabled]="option.disabled" *ngIf="props.dropdown.multiSelectable"/>
+              <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="props.dropdown.isSelected(option)" [disabled]="option.disabled" *ngIf="config.multiSelectable"/>
               <span>{{option.text}}{{option.disabled}}</span>
             </a>
           </li>

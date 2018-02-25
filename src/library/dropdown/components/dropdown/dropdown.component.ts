@@ -236,7 +236,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {boolean}
    */
   @Input()
-  public multiSelectable: boolean;
+  public set multiSelectable(value: boolean) {
+    this.config.multiSelectable = value;
+  }
 
   /**
    * Enable/Disable dropdown items filtering.
@@ -371,7 +373,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
               private injector: Injector,
               public config: DropdownConfigService) {
     this.menuPosition = this.config.menuPosition;
-    this.multiSelectable = this.config.multiSelectable;
     this.filterable = this.config.flterable;
     this.filterDebounce = this.config.filterDebounce;
     this.filterDebounceTime = this.config.filterDebounceTime;
@@ -550,7 +551,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @param {boolean} triggerOnSelect
    */
   public setSelected(option: DropdownItem, state?: boolean, triggerOnSelect?: boolean): void {
-    if (this.multiSelectable) {
+    if (this.config.multiSelectable) {
       const selectedIndex = this._selectedOptions.findIndex(selectedOption => selectedOption.id === option.id);
       if (state !== undefined) {
         if (!state && selectedIndex > -1) {
@@ -624,7 +625,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @returns {boolean}
    */
   public isSelected(option: DropdownItem): boolean {
-    if (this.multiSelectable) {
+    if (this.config.multiSelectable) {
       return !!this._selectedOptions.find(selectedOption => selectedOption.id === option.id);
     }
 
@@ -678,7 +679,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @returns {DropdownItem} The DropdownItem.
    */
   private getSelectedOption(id: any): DropdownItem {
-    if (this.multiSelectable) {
+    if (this.config.multiSelectable) {
       return this._selectedOptions.find(option => option.id === id) || null;
     }
 
@@ -731,7 +732,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * If multiSelectable is true return all dropdown selected items else return the single selected item.
    */
   private emitOnSelectChange(): void {
-    this.selectChange.emit(this.multiSelectable ? this.mapOptionsToBaseType(this._selectedOptions)
+    this.selectChange.emit(this.config.multiSelectable ? this.mapOptionsToBaseType(this._selectedOptions)
       : this.mapOptionToBaseType(this._selectedOption));
   }
 
@@ -757,7 +758,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @param value Selected value.
    */
   public writeValue(value: any): void {
-    if (this.multiSelectable) {
+    if (this.config.multiSelectable) {
       this.selectedOptions = value;
     } else {
       this.selectedOption = value;
@@ -850,14 +851,14 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @return {boolean} - true if has selected items.
    */
   public get hasSelectedItems(): boolean {
-    return this.multiSelectable ? !!this._selectedOptions.length : !!this._selectedOption;
+    return this.config.multiSelectable ? !!this._selectedOptions.length : !!this._selectedOption;
   }
 
   /**
    * Clear selected items.
    */
   public clearSelected(): void {
-    if (this.multiSelectable) {
+    if (this.config.multiSelectable) {
       this._selectedOptions = [];
     } else {
       this._selectedOption = undefined;
