@@ -307,14 +307,18 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {number}
    */
   @Input()
-  public menuHeight: number;
+  public set menuHeight(value: number) {
+    this.config.menuHeight = value;
+  }
 
   /**
    * Menu open position.
    * @type {MenuPosition}
    */
   @Input()
-  public menuPosition: MenuPosition;
+  public set menuPosition(value: MenuPosition) {
+    this.config.menuPosition = value;
+  }
 
   /**
    * Filter de-bounce time milliseconds.
@@ -386,10 +390,8 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
               public config: DropdownConfigService) {
-    this.menuPosition = this.config.menuPosition;
     this.filterDebounce = this.config.filterDebounce;
     this.filterDebounceTime = this.config.filterDebounceTime;
-    this.menuHeight = this.config.menuHeight;
 
     this.componentLoader = this.componentLoaderFactory.createLoader();
   }
@@ -461,11 +463,11 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   }
 
   public positionRight(): number {
-    return this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.TOP_RIGHT ? 0 : undefined;
+    return this.config.menuPosition === MenuPosition.BOTTOM_RIGHT || this.config.menuPosition === MenuPosition.TOP_RIGHT ? 0 : undefined;
   }
 
   public positionBottom(): number {
-    return this.menuPosition === MenuPosition.TOP_RIGHT || this.menuPosition === MenuPosition.TOP_LEFT ? 0 : undefined;
+    return this.config.menuPosition === MenuPosition.TOP_RIGHT || this.config.menuPosition === MenuPosition.TOP_LEFT ? 0 : undefined;
   }
 
   /**
@@ -473,9 +475,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @param {HTMLElement} element Dropdown button element.
    */
   public toggleDropdown(element: HTMLElement): void {
-    const floatLeft = this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.TOP_RIGHT
+    const floatLeft = this.config.menuPosition === MenuPosition.BOTTOM_RIGHT || this.config.menuPosition === MenuPosition.TOP_RIGHT
       ? element.offsetWidth : 0;
-    const floatTop = this.menuPosition === MenuPosition.BOTTOM_RIGHT || this.menuPosition === MenuPosition.BOTTOM_LEFT
+    const floatTop = this.config.menuPosition === MenuPosition.BOTTOM_RIGHT || this.config.menuPosition === MenuPosition.BOTTOM_LEFT
       ? element.offsetHeight : 0;
 
     this.componentLoader

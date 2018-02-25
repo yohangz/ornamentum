@@ -1,6 +1,6 @@
 <div class="ng-dropdown-menu-wrapper"
      [style.width]="config.menuWidth | px"
-     [style.height]="props.dropdown.menuHeight | px"
+     [style.height]="config.menuHeight | px"
      [style.right]="props.dropdown.positionRight()"
      [style.bottom]="props.dropdown.positionBottom()">
   <ul class="ng-dropdown-menu" (click)="$event.stopPropagation()">
@@ -29,7 +29,7 @@
       <li class="ng-dropdown-divider divider"></li>
     </ul>
 
-    <ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="config.multiSelectable" [style.height]="props.dropdown.menuHeight - 135 | px" (scroll)="config.loadOnScroll ? props.dropdown.checkScrollPosition($event) : null" >
+    <ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="config.multiSelectable" [style.height]="menuHeight.menuHeight - 135 | px" (scroll)="config.loadOnScroll ? props.dropdown.checkScrollPosition($event) : null" >
       <ng-container *ngIf="config.groupByField">
         <ng-container *ngFor="let groupedItem of props.dropdown._groupedItems">
           <li *ngIf="props.dropdown.hasVisibleItems(groupedItem.items)" class="ng-dropdown-group-heading">{{groupedItem.groupName}}</li>
