@@ -202,7 +202,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {number}
    */
   @Input()
-  public wrapDisplaySelectLimit: number;
+  public set wrapDisplaySelectLimit(value: number) {
+    this.config.wrapDisplaySelectLimit = value;
+  }
 
   /**
    * Enable/Disable dropdown data loading on scrolling.
@@ -370,7 +372,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.filterDebounce = this.config.filterDebounce;
     this.filterDebounceTime = this.config.filterDebounceTime;
     this.showSelectAll = this.config.showSelectAll;
-    this.wrapDisplaySelectLimit = this.config.wrapDisplaySelectLimit;
     this.triggerChangeOncePerSelectAll = this.config.triggerChangeOncePerSelectAll;
     this.showSelectedOptionRemoveButton = this.config.showSelectedOptionRemoveButton;
     this.showClearSelectionButton = this.config.showClearSelectionButton;
@@ -737,7 +738,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @return {boolean} Show label if true.
    */
   public get showAllSelectedItemLabels(): boolean {
-    return this.wrapDisplaySelectLimit !== undefined ? this._selectedOptions.length > this.wrapDisplaySelectLimit : false;
+    return this.config.wrapDisplaySelectLimit !== undefined ? this._selectedOptions.length > this.config.wrapDisplaySelectLimit : false;
   }
 
   /**
