@@ -21,7 +21,7 @@
       <li class="ng-dropdown-divider divider"></li>
     </ul>
 
-    <ul *ngIf="props.dropdown.showSelectAll && props.dropdown.multiSelectable && !props.dropdown.loadOnScroll">
+    <ul *ngIf="props.dropdown.showSelectAll && props.dropdown.multiSelectable && !config.loadOnScroll">
       <li class="ng-dropdown-item check-control check-control-check" (click)="props.dropdown.toggleAllSelected()">
         <input type="checkbox" class="ng-dropdown-checkbox-input" [(ngModel)]="props.dropdown.allSelected" />
         <span>{{ config.translations.selectAllPlaceholder }}</span>
@@ -29,7 +29,7 @@
       <li class="ng-dropdown-divider divider"></li>
     </ul>
 
-    <ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="props.dropdown.multiSelectable" [style.height]="props.dropdown.menuHeight - 135 | px" (scroll)="props.dropdown.loadOnScroll ? props.dropdown.checkScrollPosition($event) : null" >
+    <ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="props.dropdown.multiSelectable" [style.height]="props.dropdown.menuHeight - 135 | px" (scroll)="config.loadOnScroll ? props.dropdown.checkScrollPosition($event) : null" >
       <ng-container *ngIf="config.groupByField">
         <ng-container *ngFor="let groupedItem of props.dropdown._groupedItems">
           <li *ngIf="props.dropdown.hasVisibleItems(groupedItem.items)" class="ng-dropdown-group-heading">{{groupedItem.groupName}}</li>

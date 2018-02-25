@@ -211,7 +211,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {boolean}
    */
   @Input()
-  public loadOnScroll: boolean;
+  public set loadOnScroll(value: boolean) {
+    this.config.loadOnScroll = value;
+  }
 
   /**
    * Sets the point which needs to trigger additional data loading functionality when scrolling.
@@ -377,7 +379,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.showClearSelectionButton = this.config.showClearSelectionButton;
     this.menuWidth = this.config.menuWidth;
     this.menuHeight = this.config.menuHeight;
-    this.loadOnScroll = this.config.loadOnScroll;
     this.loadViewDistance = this.config.loadViewDistance;
     this.loadDataOnInit = this.config.loadDataOnInit;
 
@@ -409,7 +410,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.searchFilterSubscription = this.searchFilterSubject
       .debounceTime(this.filterDebounceTime)
       .subscribe(() => {
-        this.loadOnScroll ? this.loadData() : this.clientFilter();
+        this.config.loadOnScroll ? this.loadData() : this.clientFilter();
       });
   }
 
@@ -515,7 +516,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
       this.searchFilterSubject.next(this.filterText);
     } else {
       this.offset = 0;
-      this.loadOnScroll ? this.loadData() : this.clientFilter();
+      this.config.loadOnScroll ? this.loadData() : this.clientFilter();
     }
   }
 
@@ -526,7 +527,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   public clearSearch(): void {
     this.offset = 0;
     this.filterText = '';
-    this.loadOnScroll ? this.loadData() : this.clientFilter();
+    this.config.loadOnScroll ? this.loadData() : this.clientFilter();
   }
 
   /**
@@ -634,7 +635,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @param {boolean} fetchNext Boolean to get more data when scrolling.
    */
   private loadData(fetchNext?: boolean): void {
-    if (!this.loadOnScroll) {
+    if (!this.config.loadOnScroll) {
       return;
     }
 
