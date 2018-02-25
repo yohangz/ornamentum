@@ -192,7 +192,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {number}
    */
   @Input()
-  public limit: number;
+  public set limit(value: number) {
+    this.config.limit = value;
+  }
 
   /**
    * Number of items to display when selected.
@@ -376,7 +378,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.menuHeight = this.config.menuHeight;
     this.loadOnScroll = this.config.loadOnScroll;
     this.loadViewDistance = this.config.loadViewDistance;
-    this.limit = this.config.limit;
     this.loadDataOnInit = this.config.loadDataOnInit;
 
     this.componentLoader = this.componentLoaderFactory.createLoader();
@@ -645,7 +646,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     }
 
     if (fetchNext) {
-      this.offset = this.offset + this.limit;
+      this.offset = this.offset + this.config.limit;
     }
 
     this.isLoading = true;
@@ -653,7 +654,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.dataFetch.emit({
       filter: this.filterText,
       offset: this.offset,
-      limit: this.limit
+      limit: this.config.limit
     });
   }
 
