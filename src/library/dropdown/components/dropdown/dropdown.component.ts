@@ -272,7 +272,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {boolean}
    */
   @Input()
-  public triggerChangeOncePerSelectAll: boolean;
+  public set triggerChangeOncePerSelectAll(value: boolean) {
+    this.config.triggerChangeOncePerSelectAll = value;
+  }
 
   /**
    * Enable/Disable show selected items remove icon.
@@ -381,7 +383,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.menuPosition = this.config.menuPosition;
     this.filterDebounce = this.config.filterDebounce;
     this.filterDebounceTime = this.config.filterDebounceTime;
-    this.triggerChangeOncePerSelectAll = this.config.triggerChangeOncePerSelectAll;
     this.showSelectedOptionRemoveButton = this.config.showSelectedOptionRemoveButton;
     this.showClearSelectionButton = this.config.showClearSelectionButton;
     this.menuWidth = this.config.menuWidth;
@@ -593,16 +594,16 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     if (this.config.groupByField) {
       this._groupedItems.forEach((groupedItem: DropdownItemGroup) => {
         groupedItem.items.forEach((dropdownItem: DropdownItem) => {
-          this.setSelected(dropdownItem, this._allSelected, !this.triggerChangeOncePerSelectAll);
+          this.setSelected(dropdownItem, this._allSelected, !this.config.triggerChangeOncePerSelectAll);
         });
       });
     } else {
       this._items.forEach((dropdownItem) => {
-        this.setSelected(dropdownItem, this._allSelected, !this.triggerChangeOncePerSelectAll);
+        this.setSelected(dropdownItem, this._allSelected, !this.config.triggerChangeOncePerSelectAll);
       });
     }
 
-    if (this.triggerChangeOncePerSelectAll) {
+    if (this.config.triggerChangeOncePerSelectAll) {
       this.emitOnSelectChange();
     }
   }
