@@ -326,7 +326,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {boolean}
    */
   @Input()
-  public filterDebounce: boolean;
+  public set filterDebounce(value: boolean) {
+    this.config.filterDebounce = value;
+  }
 
 
   /**
@@ -393,8 +395,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
               public config: DropdownConfigService) {
-    this.filterDebounce = this.config.filterDebounce;
-
     this.componentLoader = this.componentLoaderFactory.createLoader();
   }
 
@@ -432,7 +432,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * Loads data when component is initialized.
    */
   public ngOnInit(): void {
-    if (this.filterDebounce) {
+    if (this.config.filterDebounce) {
       this.initFilterEvent();
     }
 
@@ -525,7 +525,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   public filterKeyUp(): void {
     this.offset = 0;
 
-    if (this.filterDebounce) {
+    if (this.config.filterDebounce) {
       this.searchFilterSubject.next(this.filterText);
     } else {
       this.offset = 0;
@@ -810,7 +810,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * Lifecycle hook that is called when component is destroyed.
    */
   public ngOnDestroy(): void {
-    if (this.filterDebounce) {
+    if (this.config.filterDebounce) {
       this.searchFilterSubscription.unsubscribe();
     }
 
