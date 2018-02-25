@@ -4,7 +4,7 @@
      [style.right]="props.dropdown.positionRight()"
      [style.bottom]="props.dropdown.positionBottom()">
   <ul class="ng-dropdown-menu" (click)="$event.stopPropagation()">
-    <ul *ngIf="props.dropdown.filterable">
+    <ul *ngIf="config.filterable">
       <li class="ng-dropdown-search">
         <div class="ng-dropdown-input-group">
           <span class="ng-dropdown-input-group-addon" id="sizing-addon3">

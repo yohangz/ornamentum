@@ -26,7 +26,7 @@ export class DropdownConfigService implements DropdownConfig {
   public disabledTrackBy = 'disabled';
   public menuPosition = MenuPosition.BOTTOM_LEFT;
   public multiSelectable = false;
-  public flterable = false;
+  public filterable = false;
   public filterDebounce = true;
   public filterDebounceTime = 500;
   public showSelectAll = false;

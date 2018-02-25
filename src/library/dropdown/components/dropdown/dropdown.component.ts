@@ -245,7 +245,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {boolean}
    */
   @Input()
-  public filterable: boolean;
+  public set filterable(value: boolean) {
+    this.config.filterable = value;
+  }
 
   /**
    * Enable/Disable show select all option.
@@ -373,7 +375,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
               private injector: Injector,
               public config: DropdownConfigService) {
     this.menuPosition = this.config.menuPosition;
-    this.filterable = this.config.flterable;
     this.filterDebounce = this.config.filterDebounce;
     this.filterDebounceTime = this.config.filterDebounceTime;
     this.showSelectAll = this.config.showSelectAll;

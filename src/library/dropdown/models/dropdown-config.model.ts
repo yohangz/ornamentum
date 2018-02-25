@@ -52,7 +52,7 @@ export class DropdownConfig {
    * Show dropdown search input.
    * @type {boolean}
    */
-  flterable?: boolean;
+  filterable?: boolean;
 
   /**
    * Enable filter debounce with provided SearchDebounceTime if true.
