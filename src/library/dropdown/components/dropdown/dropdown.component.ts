@@ -298,7 +298,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {number}
    */
   @Input()
-  public menuWidth: number;
+  public set menuWidth(value: number) {
+    this.config.menuWidth = value;
+  }
 
   /**
    * Dropdown menu height.
@@ -387,7 +389,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.menuPosition = this.config.menuPosition;
     this.filterDebounce = this.config.filterDebounce;
     this.filterDebounceTime = this.config.filterDebounceTime;
-    this.menuWidth = this.config.menuWidth;
     this.menuHeight = this.config.menuHeight;
 
     this.componentLoader = this.componentLoaderFactory.createLoader();
