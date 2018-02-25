@@ -321,20 +321,23 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   }
 
   /**
-   * Filter de-bounce time milliseconds.
-   * @default 500
-   * @type {number}
-   */
-  @Input()
-  public filterDebounceTime: number;
-
-  /**
    * Filter de-bounce enabled state.
    * @default false
    * @type {boolean}
    */
   @Input()
   public filterDebounce: boolean;
+
+
+  /**
+   * Filter de-bounce time milliseconds.
+   * @default 500
+   * @type {number}
+   */
+  @Input()
+  public set filterDebounceTime(value: number) {
+    this.config.filterDebounceTime = value;
+  }
 
   // Input - Event handlers
 
@@ -391,7 +394,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
               private injector: Injector,
               public config: DropdownConfigService) {
     this.filterDebounce = this.config.filterDebounce;
-    this.filterDebounceTime = this.config.filterDebounceTime;
 
     this.componentLoader = this.componentLoaderFactory.createLoader();
   }
@@ -419,7 +421,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    */
   private initFilterEvent(): void {
     this.searchFilterSubscription = this.searchFilterSubject
-      .debounceTime(this.filterDebounceTime)
+      .debounceTime(this.config.filterDebounceTime)
       .subscribe(() => {
         this.config.loadOnScroll ? this.loadData() : this.clientFilter();
       });
