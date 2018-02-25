@@ -254,14 +254,18 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {boolean}
    */
   @Input()
-  public showSelectAll: boolean;
+  public set showSelectAll(value: boolean) {
+    this.config.showSelectAll = value;
+  }
 
   /**
    * Enable/Disable load data in the on initStream event.
    * @type {boolean}
    */
   @Input()
-  public loadDataOnInit: boolean;
+  public set loadDataOnInit(value: boolean) {
+    this.config.loadDataOnInit = value;
+  }
 
   /**
    * Enable/Disable triggering on select change event one time when select all is selected.
@@ -377,13 +381,11 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.menuPosition = this.config.menuPosition;
     this.filterDebounce = this.config.filterDebounce;
     this.filterDebounceTime = this.config.filterDebounceTime;
-    this.showSelectAll = this.config.showSelectAll;
     this.triggerChangeOncePerSelectAll = this.config.triggerChangeOncePerSelectAll;
     this.showSelectedOptionRemoveButton = this.config.showSelectedOptionRemoveButton;
     this.showClearSelectionButton = this.config.showClearSelectionButton;
     this.menuWidth = this.config.menuWidth;
     this.menuHeight = this.config.menuHeight;
-    this.loadDataOnInit = this.config.loadDataOnInit;
 
     this.componentLoader = this.componentLoaderFactory.createLoader();
   }
@@ -430,7 +432,7 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   }
 
   public ngAfterContentInit(): void {
-    if (this.loadDataOnInit) {
+    if (this.config.loadDataOnInit) {
       this.loadData();
     }
 
