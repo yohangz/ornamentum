@@ -18,20 +18,20 @@ import { Observable } from 'rxjs/Observable';
 
 import get from 'lodash.get';
 
-import { FilterValueExtractCallback } from '../../models/filter-value-extract-callback.model';
-import { StorageMode } from '../../models/storage-mode.enum';
-import { CellBindEventArgs } from '../../models/cell-bind-event-args.model';
-import { CellClickEventArgs } from '../../models/cell-click-event-args.model';
-import { HeaderClickEventArgs } from '../../models/header-click-event-args.model';
-import { DoubleClickEventArgs } from '../../models/double-click-event-args.model';
-import { RowClickEventArgs } from '../../models/row-click-event-args.model';
-import { DataRow } from '../../models/data-row.model';
+import { DataTableFilterValueExtractCallback } from '../../models/data-table-filter-value-extract-callback.model';
+import { DataTableStorageMode } from '../../models/data-table-storage-mode.enum';
+import { DataTableCellBindEventArgs } from '../../models/data-table-cell-bind-event-args.model';
+import { DataTableCellClickEventArgs } from '../../models/data-table-cell-click-event-args.model';
+import { DataTableHeaderClickEventArgs } from '../../models/data-table-header-click-event-args.model';
+import { DataTableDoubleClickEventArgs } from '../../models/data-table-double-click-event-args.model';
+import { DataTableRowClickEventArgs } from '../../models/data-table-row-click-event-args.model';
+import { DataTableRow } from '../../models/data-table-row.model';
 import { DataTableRequestParams } from '../../models/data-table-request-params.model';
-import { DataTableTranslations } from '../../models/data-tabl-translations.model';
-import { DynamicRowSpanExtractorCallback } from '../../models/group-field-extractor-callback.model';
+import { DataTableTranslations } from '../../models/data-table-translations.model';
+import { DataTableDynamicRowSpanExtractorCallback } from '../../models/data-table-group-field-extractor-callback.model';
 import { DataTableQueryResult } from '../../models/data-table-query-result.model';
-import { DataBindCallback } from '../../models/data-bind-callback.model';
-import { FilterOption } from '../../models/filter-option.model';
+import { DataTableDataBindCallback } from '../../models/data-table-data-bind-callback.model';
+import { DataTableFilterOption } from '../../models/data-table-filter-option.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -105,21 +105,21 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<any>}
    */
   @Output()
-  public rowClick: EventEmitter<RowClickEventArgs>;
+  public rowClick: EventEmitter<DataTableRowClickEventArgs>;
 
   /**
    * On row double click event handler.
    * @type {EventEmitter<any>}
    */
   @Output()
-  public rowDoubleClick: EventEmitter<DoubleClickEventArgs>;
+  public rowDoubleClick: EventEmitter<DataTableDoubleClickEventArgs>;
 
   /**
    * On header click event handler.
    * @type {EventEmitter<any>}
    */
   @Output()
-  public headerClick: EventEmitter<HeaderClickEventArgs>;
+  public headerClick: EventEmitter<DataTableHeaderClickEventArgs>;
 
   @Output()
   public allRowSelectChange: EventEmitter<boolean>;
@@ -129,24 +129,24 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<any>}
    */
   @Output()
-  public cellClick: EventEmitter<CellClickEventArgs>;
+  public cellClick: EventEmitter<DataTableCellClickEventArgs>;
 
   @Output()
   public dataBound: EventEmitter<void>;
 
   /**ss
    * On row bind event handler.
-   * @type {EventEmitter<DataRow>}
+   * @type {EventEmitter<DataTableRow>}
    */
   @Output()
-  public rowBind: EventEmitter<DataRow>;
+  public rowBind: EventEmitter<DataTableRow>;
 
   /**
    * On cell bind event handler.
-   * @type {EventEmitter<CellBindEventArgs>}
+   * @type {EventEmitter<DataTableCellBindEventArgs>}
    */
   @Output()
-  public cellBind: EventEmitter<CellBindEventArgs>;
+  public cellBind: EventEmitter<DataTableCellBindEventArgs>;
 
   // Input Events
 
@@ -156,25 +156,25 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<DataTableRequestParams>}
    */
   @Input()
-  public set onDataBind(value: DataBindCallback) {
+  public set onDataBind(value: DataTableDataBindCallback) {
     this.dataStateService.onDataBind = value;
   }
 
   /**
    * On filter value extract event handler callback.
-   * @type {FilterValueExtractCallback}
+   * @type {DataTableFilterValueExtractCallback}
    */
   @Input()
-  public set onFilterValueExtract(value: FilterValueExtractCallback) {
+  public set onFilterValueExtract(value: DataTableFilterValueExtractCallback) {
     this.dataStateService.onFilterValueExtract = value;
   }
 
   /**
    * On dynamic row span extract event handler callback.
-   * @type {DynamicRowSpanExtractorCallback}
+   * @type {DataTableDynamicRowSpanExtractorCallback}
    */
   @Input()
-  public set onDynamicRowSpanExtract(value: DynamicRowSpanExtractorCallback) {
+  public set onDynamicRowSpanExtract(value: DataTableDynamicRowSpanExtractorCallback) {
     this.dataStateService.onDynamicRowSpanExtract = value;
   }
 
@@ -204,7 +204,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * Storage more to persist table state.
    */
   @Input()
-  public set storageMode(value: StorageMode) {
+  public set storageMode(value: DataTableStorageMode) {
     this.dataTableStateService.storageMode = value;
   }
 
@@ -591,7 +591,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   /**
    * Get data item representing objects.
-   * @return {DataRow[]} Data rows.
+   * @return {DataTableRow[]} Data rows.
    */
   private setDataRows(items: any[]): void {
     this.dataStateService.dataRows = items.map((item: any, index: number) => {
@@ -600,6 +600,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
         expanded: false,
         disabled: false,
         colour: '',
+        cssClass: '',
         tooltip: '',
         index: index,
         item: item,
@@ -608,7 +609,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     });
 
     if (this.config.multiRowSelectable) {
-      this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataRow) => {
+      this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataTableRow) => {
         return dataRow.selected;
       });
     }
@@ -776,7 +777,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       return this.dataTableResourceService.query(params);
     };
 
-    this.onFilterValueExtract = (column: DataTableColumnComponent): Observable<FilterOption[]> => {
+    this.onFilterValueExtract = (column: DataTableColumnComponent): Observable<DataTableFilterOption[]> => {
       return this.dataTableResourceService.extractFilterOptions(column);
     };
   }

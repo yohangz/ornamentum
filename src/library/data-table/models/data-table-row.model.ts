@@ -1,7 +1,7 @@
 /**
  * Data table row
  */
-export interface DataRow {
+export interface DataTableRow {
   /**
    * Source data item reference.
    * @type {any}

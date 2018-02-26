@@ -5,4 +5,4 @@
  * @param {any} filterValue - Filter value
  * @return {boolean} Include item if true, else remove.
  */
-export type FilterExpressionCallback = (item: any, field: string, filterValue: any) => boolean;
+export type DataTableFilterExpressionCallback = (item: any, field: string, filterValue: any) => boolean;

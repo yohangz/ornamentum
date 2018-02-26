@@ -10,10 +10,10 @@ import get from 'lodash.get';
 
 import { DataTableRequestParams } from '../models/data-table-request-params.model';
 import { DataTableQueryResult } from '../models/data-table-query-result.model';
-import { FilterColumn } from '../models/filter-column.model';
-import { FilterOption } from '../models/filter-option.model';
-import { SortColumn } from '../models/sort-column.model';
-import { SortOrder } from '../models/sort-order.enum';
+import { DataTableFilterColumn } from '../models/data-table-filter-column.model';
+import { DataTableFilterOption } from '../models/data-table-filter-option.model';
+import { DataTableSortColumn } from '../models/data-table-sort-column.model';
+import { DataTableSortOrder } from '../models/data-table-sort-order.enum';
 
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
@@ -45,7 +45,7 @@ export class DataTableResourceService<T> {
 
       if (params.filterColumns.length) {
         result = items.filter((item) => {
-          return params.filterColumns.every((filterColumn: FilterColumn) => {
+          return params.filterColumns.every((filterColumn: DataTableFilterColumn) => {
             if (filterColumn.filterExpression) {
               return filterColumn.filterExpression(item, filterColumn.field, filterColumn.filterValue);
             }
@@ -60,7 +60,7 @@ export class DataTableResourceService<T> {
             }
 
             if (Array.isArray(filterColumn.filterValue)) {
-              return filterColumn.filterValue.length === 0 || filterColumn.filterValue.some((option: FilterOption) => {
+              return filterColumn.filterValue.length === 0 || filterColumn.filterValue.some((option: DataTableFilterOption) => {
                 return fieldValue === option.key;
               });
             }
@@ -74,12 +74,12 @@ export class DataTableResourceService<T> {
       }
 
       if (params.sortColumns.length) {
-        const sortColumns = params.sortColumns.filter((column: SortColumn) => {
-          return column.sortOrder !== SortOrder.NONE;
+        const sortColumns = params.sortColumns.filter((column: DataTableSortColumn) => {
+          return column.sortOrder !== DataTableSortOrder.NONE;
         });
 
         if (sortColumns.length) {
-          const orderData = sortColumns.reduce((accumulator: any, column: SortColumn) => {
+          const orderData = sortColumns.reduce((accumulator: any, column: DataTableSortColumn) => {
             if (accumulator) {
               accumulator.fields.push(column.field);
               accumulator.orders.push(column.sortOrder);
@@ -115,9 +115,9 @@ export class DataTableResourceService<T> {
   /**
    * Extract data table filter options.
    * @param {DataTableColumnComponent} filterColumn Data table column component.
-   * @return {Observable<FilterOption[]>} Filter options array observable.
+   * @return {Observable<DataTableFilterOption[]>} Filter options array observable.
    */
-  public extractFilterOptions(filterColumn: DataTableColumnComponent): Observable<FilterOption[]> {
+  public extractFilterOptions(filterColumn: DataTableColumnComponent): Observable<DataTableFilterOption[]> {
     return this.itemDataStream.switchMap((items: T[]) => {
       const filteredItems = items.map((item: T, index: number) => {
         if (filterColumn.filterFieldMapper) {

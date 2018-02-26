@@ -10,10 +10,10 @@ export class ElementWidthDirective implements AfterViewInit {
   @Output()
   public elementWidth = new EventEmitter();
 
-  public ngAfterViewInit(): void {
-    this.elementWidth.emit(this.el.nativeElement.clientWidth);
+  constructor(private el: ElementRef) {
   }
 
-  constructor(private el: ElementRef) {
+  public ngAfterViewInit(): void {
+    this.elementWidth.emit(this.el.nativeElement.clientWidth);
   }
 }

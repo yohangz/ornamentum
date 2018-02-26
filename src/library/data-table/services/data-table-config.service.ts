@@ -1,10 +1,10 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
 
-import { DataTableTranslations } from '../models/data-tabl-translations.model';
+import { DataTableTranslations } from '../models/data-table-translations.model';
 import { DataTableConfig } from '../models/data-table-config.model';
-import { StorageMode } from '../models/storage-mode.enum';
+import { DataTableStorageMode } from '../models/data-table-storage-mode.enum';
 import { DropdownMenuPosition } from '../../dropdown';
-import { SortOrder } from '../models/sort-order.enum';
+import { DataTableSortOrder } from '../models/data-table-sort-order.enum';
 
 export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableConfig');
 
@@ -15,7 +15,7 @@ export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableC
 export class DataTableConfigService implements DataTableConfig {
   // Table base config
   public persistTableState = false;
-  public storageMode = StorageMode.SESSION;
+  public storageMode = DataTableStorageMode.SESSION;
   public multiColumnSortable = false;
   public showHeader = false;
   public title = '';
@@ -48,6 +48,7 @@ export class DataTableConfigService implements DataTableConfig {
   public offset = 0;
   public limit = 10;
   public maxLimit = 100;
+  public stateKeyPrefix = 'grid_state_';
   public baseTranslations: DataTableTranslations = {
     expandColumn: 'expand',
     indexColumn: 'index',
@@ -60,7 +61,7 @@ export class DataTableConfigService implements DataTableConfig {
 
   // Table column config
   public sortable = false;
-  public sortOrder = SortOrder.NONE;
+  public sortOrder = DataTableSortOrder.NONE;
   public filterable = false;
   public filterPlaceholder = '';
   public columnResizable = false;

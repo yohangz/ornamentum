@@ -1,7 +1,7 @@
 /**
  * Sort order.
  */
-export enum SortOrder {
+export enum DataTableSortOrder {
   NONE = '',
   ASC = 'asc',
   DESC = 'desc'

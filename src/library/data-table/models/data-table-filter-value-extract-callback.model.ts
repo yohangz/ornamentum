@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs/Observable';
 
-import { FilterOption } from './filter-option.model';
+import { DataTableFilterOption } from './data-table-filter-option.model';
 
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
@@ -9,4 +9,4 @@ import { DataTableColumnComponent } from '../components/data-table-column/data-t
  * @param {DataTableColumnComponent} column - Target filter column.
  * @return {Promise<any[]>} - Filter value promise.
  */
-export type FilterValueExtractCallback = (column: DataTableColumnComponent) => Observable<FilterOption[]>;
+export type DataTableFilterValueExtractCallback = (column: DataTableColumnComponent) => Observable<DataTableFilterOption[]>;

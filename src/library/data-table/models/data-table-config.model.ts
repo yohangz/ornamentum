@@ -1,6 +1,6 @@
-import { StorageMode } from './storage-mode.enum';
-import { DataTableTranslations } from './data-tabl-translations.model';
-import { SortOrder } from './sort-order.enum';
+import { DataTableStorageMode } from './data-table-storage-mode.enum';
+import { DataTableTranslations } from './data-table-translations.model';
+import { DataTableSortOrder } from './data-table-sort-order.enum';
 import { DropdownMenuPosition } from '../../dropdown';
 
 /**
@@ -19,9 +19,9 @@ export interface DataTableConfig {
   /**
    * Storage mode to persist table state.
    * Only applicable when persistTableState is true.
-   * @type {StorageMode}
+   * @type {DataTableStorageMode}
    */
-  storageMode?: StorageMode;
+  storageMode?: DataTableStorageMode;
 
   /**
    * Multiple column sortable if true.
@@ -256,9 +256,9 @@ export interface DataTableConfig {
 
   /**
    * Initial column sort order.
-   * @type {SortOrder}
+   * @type {DataTableSortOrder}
    */
-  sortOrder?: SortOrder;
+  sortOrder?: DataTableSortOrder;
 
   /**
    * Column filterable if true.
@@ -377,4 +377,10 @@ export interface DataTableConfig {
    * @type {number}
    */
   dropdownFilterMenuHeight?: number;
+
+  /**
+   * State persistence key prefix.
+   * @type {string}
+   */
+  stateKeyPrefix?: string;
 }

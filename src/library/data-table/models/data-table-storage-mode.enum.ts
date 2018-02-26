@@ -1,7 +1,7 @@
 /**
  * Storage mode.
  */
-export enum StorageMode {
+export enum DataTableStorageMode {
   LOCAL,
   SESSION
 }

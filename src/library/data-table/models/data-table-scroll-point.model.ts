@@ -1,7 +1,7 @@
 /**
  * Scroll position point.
  */
-export interface ScrollPoint {
+export interface DataTableScrollPoint {
   /**
    * Scroll left pixel count.
    * @type {number}

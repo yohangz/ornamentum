@@ -1,28 +1,32 @@
 import { Injectable } from '@angular/core';
 
 import { DataTableRequestParams } from '../models/data-table-request-params.model';
-import { StorageMode } from '../models/storage-mode.enum';
+import { DataTableStorageMode } from '../models/data-table-storage-mode.enum';
 
 import { GlobalRefService } from '../../utility';
+import { DataTableConfigService } from './data-table-config.service';
 
 @Injectable()
 export class DataTablePersistenceService {
-  private static GRID_STATE_KEY = 'grid_state_';
-
   private storage: Storage;
 
-  constructor(private globalRefService: GlobalRefService) {
+  constructor(private globalRefService: GlobalRefService,
+              private config: DataTableConfigService) {
   }
 
-  public set storageMode(value: StorageMode) {
-    this.storage = value === StorageMode.LOCAL ? this.globalRefService.window.localStorage : this.globalRefService.window.sessionStorage;
+  public set storageMode(value: DataTableStorageMode) {
+    if (value === DataTableStorageMode.LOCAL) {
+      this.storage = this.globalRefService.window.localStorage;
+    } else {
+      this.storage = this.globalRefService.window.sessionStorage;
+    }
   }
 
   public setState(id: string, value: DataTableRequestParams) {
-    this.storage.setItem(`${DataTablePersistenceService.GRID_STATE_KEY}${id}`, JSON.stringify(value));
+    this.storage.setItem(`${this.config.stateKeyPrefix}${id}`, JSON.stringify(value));
   }
 
   public getState(id: string): DataTableRequestParams {
-    return JSON.parse(this.storage.getItem(`${DataTablePersistenceService.GRID_STATE_KEY}${id}`));
+    return JSON.parse(this.storage.getItem(`${this.config.stateKeyPrefix}${id}`));
   }
 }

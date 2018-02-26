@@ -2,13 +2,12 @@ import { Component, ContentChild, Input, OnDestroy, OnInit, TemplateRef } from '
 
 import { Subscription } from 'rxjs/Subscription';
 
-import { CellColourRenderCallback } from '../../models/cell-colour-render-callback.model';
-import { SortOrder } from '../../models/sort-order.enum';
+import { DataTableCellColourRenderCallback } from '../../models/data-table-cell-colour-render-callback.model';
+import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
 import { DropdownMenuPosition } from '../../../dropdown/models/dropdown-menu-position.enum';
-import { FilterOption } from '../../models/filter-option.model';
-import { DataRow } from '../../models/data-row.model';
-import { FilterFieldMapperCallback } from '../../models/filter-field-mapper-callback.model';
-import { FilterExpressionCallback } from '../../models/filter-expression-callback.model';
+import { DataTableRow } from '../../models/data-table-row.model';
+import { DataTableFilterFieldMapperCallback } from '../../models/data-table-filter-field-mapper-callback.model';
+import { DataTableFilterExpressionCallback } from '../../models/data-table-filter-expression-callback.model';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
@@ -24,10 +23,9 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
 export class DataTableColumnComponent implements OnInit, OnDestroy {
   private filterValueExtractorSubscription: Subscription;
 
-  private _sortOrder: SortOrder = SortOrder.NONE;
-  private _baseSortOrder: SortOrder;
+  private _sortOrder: DataTableSortOrder = DataTableSortOrder.NONE;
+  private _baseSortOrder: DataTableSortOrder;
 
-  // public filterOptions: FilterOption[] = [];
   public actualWidth: number;
 
   // Content Child Properties
@@ -45,25 +43,25 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   /**
    * Filter expression callback function.
-   * @type FilterExpressionCallback
+   * @type DataTableFilterExpressionCallback
    */
   @Input()
-  public filterExpression: FilterExpressionCallback;
+  public filterExpression: DataTableFilterExpressionCallback;
 
   /**
    * Custom filter field mapper.
    * Used to extract filter field when showDropdownFilter option is true.
-   * @type FilterFieldMapperCallback
+   * @type DataTableFilterFieldMapperCallback
    */
   @Input()
-  public filterFieldMapper: FilterFieldMapperCallback;
+  public filterFieldMapper: DataTableFilterFieldMapperCallback;
 
   /**
    * Cell colour render event handler callback function.
-   * @type CellColourRenderCallback
+   * @type DataTableCellColourRenderCallback
    */
   @Input()
-  public onCellColorRender: CellColourRenderCallback;
+  public onCellColorRender: DataTableCellColourRenderCallback;
 
   // Inputs
 
@@ -83,19 +81,19 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   /**
    * Set Data sort oder.
-   * @type SortOrder
+   * @type DataTableSortOrder
    */
   @Input()
-  public set sortOrder(value: SortOrder) {
+  public set sortOrder(value: DataTableSortOrder) {
     this._sortOrder = value;
     this._baseSortOrder = value;
   }
 
   /**
    * Get data sort order.
-   * @returns {SortOrder}
+   * @returns {DataTableSortOrder}
    */
-  public get sortOrder(): SortOrder {
+  public get sortOrder(): DataTableSortOrder {
     return this._sortOrder;
   }
 
@@ -310,10 +308,10 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   /**
    * Get cell colour.
-   * @param {DataRow} row Data row object.
+   * @param {DataTableRow} row Data row object.
    * @return {string} Cell colour string.
    */
-  public getCellColor(row: DataRow) {
+  public getCellColor(row: DataTableRow) {
     if (this.onCellColorRender !== undefined) {
       return this.onCellColorRender(row, this);
     }
@@ -321,19 +319,19 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   /**
    * Get new sort order upon sort click.
-   * @return {SortOrder} New sort order enum value.
+   * @return {DataTableSortOrder} New sort order enum value.
    */
-  public getNewSortOrder(): SortOrder {
-    let newSortOrder: SortOrder;
+  public getNewSortOrder(): DataTableSortOrder {
+    let newSortOrder: DataTableSortOrder;
     switch (this.sortOrder) {
-      case SortOrder.ASC:
-        newSortOrder = SortOrder.DESC;
+      case DataTableSortOrder.ASC:
+        newSortOrder = DataTableSortOrder.DESC;
         break;
-      case SortOrder.DESC:
-        newSortOrder = SortOrder.NONE;
+      case DataTableSortOrder.DESC:
+        newSortOrder = DataTableSortOrder.NONE;
         break;
-      case SortOrder.NONE:
-        newSortOrder = SortOrder.ASC;
+      case DataTableSortOrder.NONE:
+        newSortOrder = DataTableSortOrder.ASC;
         break;
     }
 
@@ -342,31 +340,11 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   public getSortIconClass() {
     return {
-      'zmdi-sort-amount-asc': this.sortOrder === SortOrder.ASC,
-      'zmdi-sort-amount-desc': this.sortOrder === SortOrder.DESC,
-      'zmdi-format-line-spacing': this.sortOrder === undefined || this.sortOrder === SortOrder.NONE
+      'zmdi-sort-amount-asc': this.sortOrder === DataTableSortOrder.ASC,
+      'zmdi-sort-amount-desc': this.sortOrder === DataTableSortOrder.DESC,
+      'zmdi-format-line-spacing': this.sortOrder === undefined || this.sortOrder === DataTableSortOrder.NONE
     };
   }
-
-  // public fetchFilterOptions(): void {
-  //   if (!this.showDropdownFilter) {
-  //     return;
-  //   }
-  //
-  //   if (this.dataStateService.onFilterValueExtract) {
-  //     // Clear previous filter subscription before invoking new event.
-  //     if (this.filterValueExtractorSubscription) {
-  //       this.filterValueExtractorSubscription.unsubscribe();
-  //       this.filterValueExtractorSubscription = null;
-  //     }
-  //
-  //     this.filterValueExtractorSubscription = this.dataStateService.onFilterValueExtract(this)
-  //       .subscribe((options: FilterOption[]) => {
-  //         this.filterOptions = options;
-  //       });
-  //   }
-  //
-  // }
 
   public ngOnDestroy(): void {
     if (this.filterValueExtractorSubscription) {

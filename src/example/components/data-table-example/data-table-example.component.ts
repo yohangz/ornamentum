@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import {
   DataTableComponent,
   DropdownMenuPosition,
-  DataRow
+  DataTableRow
 } from '../../../library';
 
 import { Observable } from 'rxjs/Observable';
@@ -445,7 +445,7 @@ export class DataTableExampleComponent {
     location.reload();
   }
 
-  public onRowBind(dataRow: DataRow): void {
+  public onRowBind(dataRow: DataTableRow): void {
     dataRow.disabled = dataRow.index === 1;
   }
 
@@ -453,7 +453,7 @@ export class DataTableExampleComponent {
     console.log(selected);
   }
 
-  public onDynamicRowSpanExtract(row: DataRow): number {
+  public onDynamicRowSpanExtract(row: DataTableRow): number {
     return row.item.test.length;
   }
 }

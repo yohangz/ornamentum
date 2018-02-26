@@ -5,6 +5,6 @@
  * @param {any[]} array - Data items.
  * @return {any|any[]} Mapped filter value.
  */
-import { FilterOption } from './filter-option.model';
+import { DataTableFilterOption } from './data-table-filter-option.model';
 
-export type FilterFieldMapperCallback = (value: any, index: number) => FilterOption;
+export type DataTableFilterFieldMapperCallback = (value: any, index: number) => DataTableFilterOption;

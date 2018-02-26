@@ -1,14 +1,14 @@
-import { DataRow } from './data-row.model';
+import { DataTableRow } from './data-table-row.model';
 
 /**
  * Row click event arguments.
  */
-export interface RowClickEventArgs {
+export interface DataTableRowClickEventArgs {
   /**
    * Target data row.
-   * @type {DataRow}
+   * @type {DataTableRow}
    */
-  row: DataRow;
+  row: DataTableRow;
 
   /**
    * Target mouse event.

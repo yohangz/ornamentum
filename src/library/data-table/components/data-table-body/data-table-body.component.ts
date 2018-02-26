@@ -2,7 +2,7 @@ import { Component, Input, TemplateRef } from '@angular/core';
 
 import get from 'lodash.get';
 
-import { DataRow } from '../../models/data-row.model';
+import { DataTableRow } from '../../models/data-table-row.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -36,7 +36,7 @@ export class DataTableBodyComponent {
    * Get current page index.
    * @return {number} Page index.
    */
-  public getDisplayIndex(dataRow: DataRow): number {
+  public getDisplayIndex(dataRow: DataTableRow): number {
     if (this.config.pageable) {
       return this.config.offset + dataRow.index + 1;
     } else {
@@ -46,19 +46,19 @@ export class DataTableBodyComponent {
 
   /**
    * Is odd row.
-   * @param {DataRow} row Data row object.
+   * @param {DataTableRow} row Data row object.
    * @return {boolean} True if odd row.
    */
-  public isOddRow(row: DataRow): boolean {
+  public isOddRow(row: DataTableRow): boolean {
     return row.index % 2 === 0;
   }
 
   /**
    * Is even row
-   * @param {DataRow} row Data row object.
+   * @param {DataTableRow} row Data row object.
    * @return {boolean} True if even row.
    */
-  public isEvenRow(row: DataRow): boolean {
+  public isEvenRow(row: DataTableRow): boolean {
     return row.index % 2 === 1;
   }
 
@@ -83,9 +83,9 @@ export class DataTableBodyComponent {
   /**
    * On row expand event handler.
    * @param {Event} $event Click event arguments.
-   * @param {DataRow} dataRow Data row object.
+   * @param {DataTableRow} dataRow Data row object.
    */
-  public onRowExpand($event: Event, dataRow: DataRow): void {
+  public onRowExpand($event: Event, dataRow: DataTableRow): void {
     dataRow.expanded = !dataRow.expanded;
     dataRow.dataLoaded = true;
   }
@@ -101,9 +101,9 @@ export class DataTableBodyComponent {
   /**
    * On cell initialize event handler.
    * @param {DataTableColumnComponent} column Data table column component.
-   * @param {DataRow} row Data table row.
+   * @param {DataTableRow} row Data table row.
    */
-  public onCellInit(column: DataTableColumnComponent, row: DataRow): void {
+  public onCellInit(column: DataTableColumnComponent, row: DataTableRow): void {
     this.eventStateService.cellBindStream.emit({
       column: column,
       row: row
@@ -113,19 +113,19 @@ export class DataTableBodyComponent {
   /**
    * Cell clicked event handler.
    * @param {DataTableColumnComponent} column Column data table component object.
-   * @param {DataRow} row Data row object.
+   * @param {DataTableRow} row Data row object.
    * @param {MouseEvent} event event event Mouse click event argument object.
    */
-  public cellClicked(column: DataTableColumnComponent, row: DataRow, event: MouseEvent): void {
+  public cellClicked(column: DataTableColumnComponent, row: DataTableRow, event: MouseEvent): void {
     this.eventStateService.cellClickStream.emit({row, column, event});
   }
 
   /**
    * Get row span collection
-   * @param {DataRow} row Data row.
+   * @param {DataTableRow} row Data row.
    * @return {any[]} Row span dummy array.
    */
-  public getRowSpanCollection(row: DataRow): any[] {
+  public getRowSpanCollection(row: DataTableRow): any[] {
     return Array.from({length: this.dataStateService.onDynamicRowSpanExtract(row)});
   }
 
@@ -149,9 +149,9 @@ export class DataTableBodyComponent {
   /**
    * On row selection change event.
    * Maintain selected row state.
-   * @param {DataRow} row Data row object.
+   * @param {DataTableRow} row Data row object.
    */
-  public onRowSelectChange(row: DataRow): void {
+  public onRowSelectChange(row: DataTableRow): void {
     const id = get(row.item, this.config.selectTrackBy);
 
     if (this.config.multiRowSelectable) {
@@ -162,7 +162,7 @@ export class DataTableBodyComponent {
         this.dataStateService.selectedRows.splice(index, 1);
       }
 
-      this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataRow) => {
+      this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataTableRow) => {
         return dataRow.selected;
       });
 
@@ -172,7 +172,7 @@ export class DataTableBodyComponent {
         this.dataStateService.selectedRow = id;
 
         // deselect all other rows if not multi select.
-        this.dataStateService.dataRows.forEach((dataRow: DataRow) => {
+        this.dataStateService.dataRows.forEach((dataRow: DataTableRow) => {
           if (dataRow !== row) {
             dataRow.selected = false;
           }
@@ -187,10 +187,10 @@ export class DataTableBodyComponent {
 
   /**
    * Row clicked event handler.
-   * @param {DataRow} row Data row object.
+   * @param {DataTableRow} row Data row object.
    * @param event Mouse click event argument object.
    */
-  public rowClicked(row: DataRow, event: MouseEvent): void {
+  public rowClicked(row: DataTableRow, event: MouseEvent): void {
     if (this.config.selectOnRowClick || (this.config.expandableRows && this.config.expandOnRowClick)) {
       if (event.srcElement.classList.contains('ng-ignore-propagation')) {
         return;
@@ -212,10 +212,10 @@ export class DataTableBodyComponent {
 
   /**
    * Row double clicked event handler.
-   * @param {DataRow} row Data row object.
+   * @param {DataTableRow} row Data row object.
    * @param {MouseEvent} event event Mouse click event argument object.
    */
-  public rowDoubleClicked(row: DataRow, event: MouseEvent): void {
+  public rowDoubleClicked(row: DataTableRow, event: MouseEvent): void {
     this.eventStateService.rowDoubleClickStream.emit({row, event});
   }
 
@@ -223,7 +223,7 @@ export class DataTableBodyComponent {
     return this.config.showSubstituteRows && this.dataStateService.dataRows.length && !this.dataStateService.showNoDataOverlay;
   }
 
-  public getFieldValue(row: DataRow, column: DataTableColumnComponent) {
+  public getFieldValue(row: DataTableRow, column: DataTableColumnComponent) {
     return get(row.item, column.field);
   }
 

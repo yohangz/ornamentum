@@ -1,9 +1,10 @@
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
+import { DataTableRow } from './data-table-row.model';
 
 /**
- * Header click event arguments.
+ * Cell bind event arguments.
  */
-export interface HeaderClickEventArgs {
+export interface DataTableCellBindEventArgs {
   /**
    * Target column.
    * @type {DataTableColumnComponent}
@@ -11,8 +12,8 @@ export interface HeaderClickEventArgs {
   column: DataTableColumnComponent;
 
   /**
-   * Target mouse event.
-   * @type {MouseEvent}
+   * Target row.
+   * @type {DataTableRow}
    */
-  event: MouseEvent;
+  row: DataTableRow;
 }

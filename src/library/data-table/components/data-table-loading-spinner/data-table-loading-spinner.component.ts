@@ -1,4 +1,5 @@
 import { Component, Input, TemplateRef } from '@angular/core';
+
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 

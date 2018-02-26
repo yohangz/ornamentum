@@ -1,19 +1,17 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
-import { FilterEventArgs } from '../../models/filter-event-args.model';
+import { Observable } from 'rxjs/Observable';
+import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
+
+import { DataTableFilterEventArgs } from '../../models/data-table-filter-event-args.model';
+import { DataTableFilterOption } from '../../models/data-table-filter-option.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
-
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
-import { FilterOption } from '../../';
-import { compiler } from 'webpack';
-import { DropdownComponent } from '../../../dropdown';
-import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'ng-data-table-column-filter-template',
@@ -25,12 +23,12 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
   public column: DataTableColumnComponent;
 
   @Input()
-  public customFilterStream: Observable<FilterEventArgs>;
+  public customFilterStream: Observable<DataTableFilterEventArgs>;
 
   @Output()
   public filter = new EventEmitter();
 
-  public filterDataStream = new Subject<FilterOption[]>();
+  public filterDataStream = new Subject<DataTableFilterOption[]>();
 
   private filterValueExtractorSubscription: Subscription;
 
@@ -48,7 +46,7 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
         }
 
         this.filterValueExtractorSubscription = this.dataStateService.onFilterValueExtract(this.column)
-          .subscribe((options: FilterOption[]) => {
+          .subscribe((options: DataTableFilterOption[]) => {
             this.filterDataStream.next(options);
           });
       });

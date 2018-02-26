@@ -1,14 +1,14 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
 
-import { FilterEventArgs } from '../../models/filter-event-args.model';
+import { Subscription } from 'rxjs/Subscription';
+import { Subject } from 'rxjs/Subject';
+
+import { DataTableFilterEventArgs } from '../../models/data-table-filter-event-args.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
-
-import { Subscription } from 'rxjs/Subscription';
-import { Subject } from 'rxjs/Subject';
 
 @Component({
   exportAs: 'ngDataTableColumnFilterHeader',
@@ -22,7 +22,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
   private customFilterSubscription: Subscription;
   private columnFilterSubscription: Subscription;
 
-  public customFilterStream = new EventEmitter<FilterEventArgs>();
+  public customFilterStream = new EventEmitter<DataTableFilterEventArgs>();
 
   @Input()
   public columns: DataTableColumnComponent[];
@@ -48,7 +48,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
 
   private initCustomFilterEvent(): void {
     this.customFilterSubscription = this.customFilterStream
-      .subscribe((filterEventArgs: FilterEventArgs) => {
+      .subscribe((filterEventArgs: DataTableFilterEventArgs) => {
         filterEventArgs.column.filter = filterEventArgs.filter;
         this.onFilter();
       });

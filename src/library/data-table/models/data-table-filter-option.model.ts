@@ -1,7 +1,7 @@
 /**
  * Filter options.
  */
-export interface FilterOption {
+export interface DataTableFilterOption {
   /**
    * Filter item key.
    * @type {any}

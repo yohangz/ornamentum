@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 
-import { SortOrder } from '../../models/sort-order.enum';
+import get from 'lodash.get';
+
+import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -8,7 +10,6 @@ import { DragAndDropService } from '../../../utility';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
-import get from 'lodash.get';
 
 @Component({
   exportAs: 'ngDataTableColumnTitleHeader',
@@ -46,12 +47,12 @@ export class DataTableColumnTitleHeaderComponent {
           const sortColumns = this.columns.filter(item => item.sortable);
           sortColumns.forEach((sortColumn: DataTableColumnComponent) => {
             if (sortColumn !== column) {
-              sortColumn.sortOrder = SortOrder.NONE;
+              sortColumn.sortOrder = DataTableSortOrder.NONE;
             }
           });
         }
 
-        column.sortOrder = SortOrder.ASC;
+        column.sortOrder = DataTableSortOrder.ASC;
       }
 
       this.eventStateService.dataFetchStream.next(false);

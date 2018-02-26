@@ -1,11 +1,11 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
-import { HeaderClickEventArgs } from '../models/header-click-event-args.model';
-import { DataRow } from '../models/data-row.model';
-import { RowClickEventArgs } from '../models/row-click-event-args.model';
-import { DoubleClickEventArgs } from '../models/double-click-event-args.model';
-import { CellBindEventArgs } from '../models/cell-bind-event-args.model';
-import { CellClickEventArgs } from '../models/cell-click-event-args.model';
+import { DataTableHeaderClickEventArgs } from '../models/data-table-header-click-event-args.model';
+import { DataTableRow } from '../models/data-table-row.model';
+import { DataTableRowClickEventArgs } from '../models/data-table-row-click-event-args.model';
+import { DataTableDoubleClickEventArgs } from '../models/data-table-double-click-event-args.model';
+import { DataTableCellBindEventArgs } from '../models/data-table-cell-bind-event-args.model';
+import { DataTableCellClickEventArgs } from '../models/data-table-cell-click-event-args.model';
 
 import { DataTableComponent } from '../components/data-table/data-table.component';
 
@@ -13,13 +13,13 @@ import { DataTableComponent } from '../components/data-table/data-table.componen
 export class DataTableEventStateService {
   public allRowSelectChangeStream = new EventEmitter<boolean>();
   public dataFetchStream = new EventEmitter<boolean>();
-  public headerClickStream = new EventEmitter<HeaderClickEventArgs>();
-  public rowBindStream = new EventEmitter<DataRow>();
-  public rowClickStream = new EventEmitter<RowClickEventArgs>();
-  public rowDoubleClickStream = new EventEmitter<DoubleClickEventArgs>();
+  public headerClickStream = new EventEmitter<DataTableHeaderClickEventArgs>();
+  public rowBindStream = new EventEmitter<DataTableRow>();
+  public rowClickStream = new EventEmitter<DataTableRowClickEventArgs>();
+  public rowDoubleClickStream = new EventEmitter<DataTableDoubleClickEventArgs>();
   public rowSelectChangeStream = new EventEmitter<any|any[]>();
-  public cellBindStream = new EventEmitter<CellBindEventArgs>();
-  public cellClickStream = new EventEmitter<CellClickEventArgs>();
+  public cellBindStream = new EventEmitter<DataTableCellBindEventArgs>();
+  public cellClickStream = new EventEmitter<DataTableCellClickEventArgs>();
   public initStream = new EventEmitter<DataTableComponent>();
   public dataBoundStream = new EventEmitter<void>();
   public fetchFilterOptionsStream = new EventEmitter<void>();

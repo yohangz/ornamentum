@@ -3,7 +3,7 @@ import { DataTableColumnComponent } from '../components/data-table-column/data-t
 /**
  * Filter event arguments.
  */
-export interface FilterEventArgs {
+export interface DataTableFilterEventArgs {
   /**
    * Target column.
    * @type {DataTableColumnComponent}

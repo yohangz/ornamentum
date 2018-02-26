@@ -1,9 +1,9 @@
-import { FilterExpressionCallback } from './filter-expression-callback.model';
+import { DataTableFilterExpressionCallback } from './data-table-filter-expression-callback.model';
 
 /**
  * Filter column
  */
-export interface FilterColumn {
+export interface DataTableFilterColumn {
   /**
    * Filter field property name.
    * @type {string}
@@ -18,9 +18,9 @@ export interface FilterColumn {
 
   /**
    * Filter expression.
-   * @type {FilterExpressionCallback}
+   * @type {DataTableFilterExpressionCallback}
    */
-  filterExpression: FilterExpressionCallback;
+  filterExpression: DataTableFilterExpressionCallback;
 
   /**
    * Show dropdown filter state.

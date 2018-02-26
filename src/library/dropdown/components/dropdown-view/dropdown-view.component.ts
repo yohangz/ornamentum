@@ -1,14 +1,15 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 
-import { DropdownViewProperty } from '../../models/dropdown-view-property.model';
+import { Subscription } from 'rxjs/Subscription';
+
+import get from 'lodash.get';
+
+import { DropdownItem } from '../../models/dropdown-item.model';
+import { DropdownMenuPosition } from '../../models/dropdown-menu-position.enum';
 
 import { DropdownConfigService } from '../../services/dropdown-config.service';
 import { DropdownDataStateService } from '../../services/dropdown-data-state.service';
-import get from 'lodash.get';
-import { DropdownItem } from '../../models/dropdown-item.model';
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
-import { Subscription } from 'rxjs/Subscription';
-import { DropdownMenuPosition } from '../../models/dropdown-menu-position.enum';
 
 @Component({
   selector: 'ng-dropdown-view',
