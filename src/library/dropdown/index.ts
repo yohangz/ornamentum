@@ -1,4 +1,4 @@
-export { MenuPosition } from './models/menu-position.enum';
+export { DropdownMenuPosition } from './models/dropdown-menu-position.enum';
 export { DropdownTranslations } from './models/dropdown-translations.model';
 export { DropdownItem } from './models/dropdown-item.model';
 export { DropdownRequestParams } from './models/dropdown-request-params.model';

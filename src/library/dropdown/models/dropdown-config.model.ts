@@ -1,4 +1,4 @@
-import { MenuPosition } from './menu-position.enum';
+import { DropdownMenuPosition } from './dropdown-menu-position.enum';
 import { DropdownTranslations } from './dropdown-translations.model';
 
 /**
@@ -31,9 +31,9 @@ export class DropdownConfig {
 
   /**
    * Menu position.
-   * @type {MenuPosition}
+   * @type {DropdownMenuPosition}
    */
-  menuPosition?: MenuPosition;
+  menuPosition?: DropdownMenuPosition;
 
   /**
    * Multi selectable if true.
@@ -135,12 +135,20 @@ export class DropdownConfig {
   closeMenuOnSelect?: boolean;
 
   /**
-   * Show dropdown option select checkbox.
+   * Show dropdown option select checkbox if true.
    * @type {boolean}
    */
   showOptionSelectCheckbox?: boolean;
 
+  /**
+   * Trigger select change once per select all if true.
+   * @type {boolean}
+   */
   triggerSelectChangeOncePerSelectAll?: boolean;
 
+  /**
+   * Trigger select change on init if true.
+   * @type {boolean}
+   */
   triggerSelectChangeOnInit?: boolean;
 }

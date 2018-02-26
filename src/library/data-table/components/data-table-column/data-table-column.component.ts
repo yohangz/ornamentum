@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { CellColourRenderCallback } from '../../models/cell-colour-render-callback.model';
 import { SortOrder } from '../../models/sort-order.enum';
-import { MenuPosition } from '../../../dropdown/models/menu-position.enum';
+import { DropdownMenuPosition } from '../../../dropdown/models/dropdown-menu-position.enum';
 import { FilterOption } from '../../models/filter-option.model';
 import { DataRow } from '../../models/data-row.model';
 import { FilterFieldMapperCallback } from '../../models/filter-field-mapper-callback.model';
@@ -188,10 +188,10 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   /**
    * Dropdown filter menu position.
-   * @type MenuPosition
+   * @type DropdownMenuPosition
    */
   @Input()
-  public dropdownFilterMenuPosition: MenuPosition;
+  public dropdownFilterMenuPosition: DropdownMenuPosition;
 
   /**
    * Dropdown filter multi selectable state.

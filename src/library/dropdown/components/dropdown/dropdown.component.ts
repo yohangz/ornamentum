@@ -17,10 +17,10 @@ import get from 'lodash.get';
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { MenuPosition } from '../../models/menu-position.enum';
+import { DropdownMenuPosition } from '../../models/dropdown-menu-position.enum';
 import { DropdownTranslations } from '../../models/dropdown-translations.model';
 import { DropdownItem } from '../../models/dropdown-item.model';
-import { DropdownItemGroup } from '../../models/dropdownItem-group.model';
+import { DropdownItemGroup } from '../../models/dropdown-Item-group.model';
 import { DropdownRequestParams } from '../../models/dropdown-request-params.model';
 import { DropdownDataBindCallback } from '../../models/dropdown-data-bind-callback.model';
 import { DropdownQueryResult } from '../../models/dropdown-query-result.model';
@@ -285,10 +285,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Menu open position.
-   * @type {MenuPosition}
+   * @type {DropdownMenuPosition}
    */
   @Input()
-  public set menuPosition(value: MenuPosition) {
+  public set menuPosition(value: DropdownMenuPosition) {
     this.config.menuPosition = value;
   }
 
@@ -364,11 +364,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   public positionRight(): number {
-    return this.config.menuPosition === MenuPosition.BOTTOM_RIGHT || this.config.menuPosition === MenuPosition.TOP_RIGHT ? 0 : undefined;
+    return this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT ? 0 : undefined;
   }
 
   public positionBottom(): number {
-    return this.config.menuPosition === MenuPosition.TOP_RIGHT || this.config.menuPosition === MenuPosition.TOP_LEFT ? 0 : undefined;
+    return this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_LEFT ? 0 : undefined;
   }
 
   /**
@@ -376,9 +376,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @param {HTMLElement} element Dropdown button element.
    */
   public toggleDropdown(element: HTMLElement): void {
-    const floatLeft = this.config.menuPosition === MenuPosition.BOTTOM_RIGHT || this.config.menuPosition === MenuPosition.TOP_RIGHT
+    const floatLeft = this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT
       ? element.offsetWidth : 0;
-    const floatTop = this.config.menuPosition === MenuPosition.BOTTOM_RIGHT || this.config.menuPosition === MenuPosition.BOTTOM_LEFT
+    const floatTop = this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.BOTTOM_LEFT
       ? element.offsetHeight : 0;
 
     this.componentLoader
