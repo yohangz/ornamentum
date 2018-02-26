@@ -42,7 +42,6 @@ export class DropdownConfigService implements DropdownConfig {
   public closeMenuOnSelect = false;
   public showOptionSelectCheckbox = true;
   public triggerSelectChangeOncePerSelectAll = false;
-  public triggerSelectChangeOnInit = false;
 
   constructor(@Inject(DROPDOWN_CONFIG) private dropdownConfig: DropdownConfig) {
     if (dropdownConfig) {

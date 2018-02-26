@@ -328,11 +328,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.config.triggerSelectChangeOncePerSelectAll = value;
   }
 
-  @Input()
-  public set triggerSelectChangeOnInit(value: boolean) {
-    this.config.triggerSelectChangeOnInit = value;
-  }
-
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
               private eventStateService: DropdownEventStateService,
@@ -497,13 +492,13 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       this.dataStateService.dropdownItemGroups.forEach(group => {
         group.items.forEach(item => {
           item.selected = selectedState;
-          this.optionSelectChange(item, this.config.triggerSelectChangeOncePerSelectAll, false);
+          this.optionSelectChange(item, !this.config.triggerSelectChangeOncePerSelectAll, false);
         });
       });
     } else {
       this.dataStateService.dropdownItems.forEach(item => {
         item.selected = selectedState;
-        this.optionSelectChange(item, this.config.triggerSelectChangeOncePerSelectAll, false);
+        this.optionSelectChange(item, !this.config.triggerSelectChangeOncePerSelectAll, false);
       });
     }
 
@@ -645,11 +640,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
     if (this.config.loadDataOnInit) {
       this.eventStateService.dataFetchStream.emit(false);
-    }
-
-    if (this.config.triggerSelectChangeOnInit) {
-      const options = this.config.multiSelectable ? this.dataStateService.selectedOptions : this.dataStateService.selectedOption;
-      this.eventStateService.selectChangeStream.emit(options);
     }
 
     this.eventStateService.initStream.emit(this);

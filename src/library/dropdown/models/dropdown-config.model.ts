@@ -145,10 +145,4 @@ export class DropdownConfig {
    * @type {boolean}
    */
   triggerSelectChangeOncePerSelectAll?: boolean;
-
-  /**
-   * Trigger select change on init if true.
-   * @type {boolean}
-   */
-  triggerSelectChangeOnInit?: boolean;
 }
