@@ -14,7 +14,7 @@ export class DropdownDataStateService {
   public selectedOptions: any[] = [];
   public offset = 0;
   public totalOptionCount: number;
-  public currentItemCount: number;
+  public currentItemCount = 0;
   public dropdownItems: DropdownItem[] = [];
   public dropdownItemGroups: DropdownItemGroup[] = [];
   public filterText = '';

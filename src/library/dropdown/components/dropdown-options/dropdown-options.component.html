@@ -29,7 +29,7 @@
       </li>
     </ng-container>
   </ng-container>
-  <li *ngIf="!dataStateService.dataLoading && !dataStateService.totalOptionCount" class="ng-dropdown-no-data">
+  <li *ngIf="!dataStateService.dataLoading && dataStateService.totalOptionCount === 0" class="ng-dropdown-no-data">
     {{config.translations.noDataMessage}}
   </li>
 </ul>

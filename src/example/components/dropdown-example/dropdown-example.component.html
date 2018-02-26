@@ -1,16 +1,30 @@
+<!--<ng-dropdown-->
+  <!--[groupByField]="'group'"-->
+  <!--[multiSelectable]="true"-->
+  <!--[showSelectAll]="true"-->
+  <!--[filterable]="true"-->
+  <!--[showClearSelectionButton]="true"-->
+  <!--[triggerSelectChangeOncePerSelectAll]="true"-->
+  <!--[dataSource]="items"-->
+  <!--[loadViewDistance]="0"-->
+  <!--[selectedOptions]="selected"-->
+  <!--[showSelectedOptionRemoveButton]="true"-->
+
+  <!--(selectChange)="onSelectChange($event)">-->
+<!--</ng-dropdown>-->
+
+
 <ng-dropdown
-  [groupByField]="'group'"
   [multiSelectable]="true"
   [showSelectAll]="true"
   [filterable]="true"
   [showClearSelectionButton]="true"
   [triggerSelectChangeOncePerSelectAll]="true"
-  [dataSource]="items"
+  [loadOnScroll]="true"
   [loadViewDistance]="0"
   [selectedOptions]="selected"
   [showSelectedOptionRemoveButton]="true"
+  [onDataBind]="onDataBind"
 
   (selectChange)="onSelectChange($event)">
 </ng-dropdown>
-
-

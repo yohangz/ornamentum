@@ -26,15 +26,15 @@ export class DropdownOptionsComponent {
    * @param event
    */
   public checkScrollPosition(event: any) {
+
     const scrollTop = event.target.scrollTop;
     const scrollHeight = event.target.scrollHeight;
     const scrollElementHeight = event.target.clientHeight;
 
     const roundingPixel = 1;
     const gutterPixel = 1;
-    const elementHeight = scrollElementHeight - roundingPixel - gutterPixel;
 
-    if (scrollTop >= (scrollHeight - ((1 + this.config.loadViewDistance) * elementHeight))
+    if (scrollTop >= scrollHeight - (1 + this.config.loadViewDistance) * scrollElementHeight - roundingPixel - gutterPixel
       && this.dataStateService.currentItemCount < this.dataStateService.totalOptionCount) {
       this.dataStateService.offset = this.dataStateService.offset + this.config.limit;
       this.eventStateService.dataFetchStream.emit(false);

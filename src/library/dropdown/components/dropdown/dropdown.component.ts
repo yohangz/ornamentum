@@ -79,6 +79,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   // Input - Event handlers
 
+  @Input()
   public set onDataBind(value: DropdownDataBindCallback) {
     this.dataStateService.onDataBind = value;
   }
@@ -505,16 +506,16 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
         }
 
         return accumulator;
-      }, this.dataStateService.offset > 0 ? this.dataStateService.dropdownItemGroups : []);
+      }, this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownItemGroups : []);
     } else {
       this.dataStateService.dropdownItems = queryResult.items.reduce((accumulator: DropdownItem[], item: any) => {
         accumulator.push(this.extractDropdownItem(item));
         return accumulator;
-      }, this.dataStateService.offset > 0 ? this.dataStateService.dropdownItems : []);
+      }, this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownItems : []);
     }
 
     this.dataStateService.totalOptionCount = queryResult.count;
-    this.dataStateService.currentItemCount = queryResult.items.length;
+    this.dataStateService.currentItemCount += queryResult.items.length;
     this.dataStateService.setAllOptionsSelectedState();
   }
 
