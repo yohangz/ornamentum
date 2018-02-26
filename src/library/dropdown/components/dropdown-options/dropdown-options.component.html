@@ -1,6 +1,5 @@
 <ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="config.multiSelectable"
     (scroll)="config.loadOnScroll ? scrollEvent.next($event) : null" >
-  <!-- TODO: Fix menu height calculation -->
   <ng-container *ngIf="config.groupByField">
     <ng-container *ngFor="let groupedItem of dataStateService.dropdownItemGroups">
       <li class="ng-dropdown-group-heading">{{ groupedItem.groupName }}</li>
