@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 import { DropdownItem, DropdownQueryResult, DropdownRequestParams } from '../../../library';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'app-dropdown-example-component',
@@ -123,6 +124,7 @@ export class DropdownExampleComponent {
   }
 
   public onDataBind(params: DropdownRequestParams): Observable<DropdownQueryResult<any>> {
+    const dataStream = new Subject<DropdownQueryResult<any>>();
     const data: DropdownQueryResult<any> = {
       items: [
         {
@@ -212,6 +214,11 @@ export class DropdownExampleComponent {
       ],
       count: 100
     };
-    return Observable.of(data);
+
+    setTimeout(() => {
+      dataStream.next(data);
+    }, 2000);
+
+    return dataStream;
   }
 }
