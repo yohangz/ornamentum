@@ -1,11 +1,11 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
 
+import get from 'lodash.get';
+
 import { DropdownConfig } from '../models/dropdown-config.model';
 import { DropdownTranslations } from '../models/dropdown-translations.model';
 import { DropdownMenuPosition } from '../models/dropdown-menu-position.enum';
 import { DataTableConfig } from '../../data-table/models/data-table-config.model';
-
-import get from 'lodash.get';
 
 export const DROPDOWN_CONFIG = new InjectionToken<DataTableConfig>('dropdownConfig');
 
@@ -51,14 +51,27 @@ export class DropdownConfigService implements DropdownConfig {
     }
   }
 
+  /**
+   * Set dropdown translations.
+   * @param {DropdownTranslations} value - Dropdown translations object.
+   */
   public set translations(value: DropdownTranslations) {
     this.baseTranslations = {...this.baseTranslations, ...value};
   }
 
+  /**
+   * Get dropdown translations.
+   * @return {DropdownTranslations} - Dropdown translations.
+   */
   public get translations(): DropdownTranslations {
     return this.baseTranslations;
   }
 
+  /**
+   * Get display text from source item.
+   * @param {any} item - Source item object.
+   * @return {string} - Display text.
+   */
   public getDisplayText(item: any): string {
     return get(item, this.displayTrackBy);
   }
