@@ -2,16 +2,15 @@
      [style.width]="config.menuWidth | px"
      [style.height]="config.menuHeight | px"
      [style.right]="positionRight()"
-     [style.bottom]="positionBottom()">
-  <ul class="ng-dropdown-menu" (click)="$event.stopPropagation()">
-    <li *ngIf="config.filterable">
-      <ng-dropdown-filter></ng-dropdown-filter>
-    </li>
-    <li *ngIf="config.showSelectAll && config.multiSelectable && !config.loadOnScroll">
-      <ng-dropdown-select-all-option></ng-dropdown-select-all-option>
-    </li>
-    <li>
-      <ng-dropdown-options (toggleOptionSelectedState)="toggleOptionSelectedState($event)"></ng-dropdown-options>
-    </li>
-  </ul>
+     [style.bottom]="positionBottom()"
+     (click)="$event.stopPropagation()">
+  <div *ngIf="config.filterable" style="height: 60px;">
+    <ng-dropdown-filter></ng-dropdown-filter>
+  </div>
+  <div *ngIf="config.showSelectAll && config.multiSelectable && !config.loadOnScroll">
+    <ng-dropdown-select-all-option></ng-dropdown-select-all-option>
+  </div>
+  <div style="height: calc(100% - 80px); overflow-y: auto;">
+    <ng-dropdown-options (toggleOptionSelectedState)="toggleOptionSelectedState($event)"></ng-dropdown-options>
+  </div>
 </div>
