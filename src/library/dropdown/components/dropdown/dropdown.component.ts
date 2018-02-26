@@ -364,11 +364,19 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   public positionRight(): number {
-    return this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT ? 0 : undefined;
+    if (this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT) {
+      return 0;
+    }
+
+    return;
   }
 
   public positionBottom(): number {
-    return this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_LEFT ? 0 : undefined;
+    if (this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_LEFT) {
+      return 0;
+    }
+
+    return;
   }
 
   /**
@@ -376,10 +384,16 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @param {HTMLElement} element Dropdown button element.
    */
   public toggleDropdown(element: HTMLElement): void {
-    const floatLeft = this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT
-      ? element.offsetWidth : 0;
-    const floatTop = this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.BOTTOM_LEFT
-      ? element.offsetHeight : 0;
+    let floatLeft = 0;
+    let floatTop = 0;
+
+    if (this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT) {
+      floatLeft = element.offsetWidth;
+    }
+
+    if (this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.BOTTOM_LEFT) {
+      floatTop = element.offsetHeight;
+    }
 
     this.componentLoader
       .withFloatLeft(floatLeft)
