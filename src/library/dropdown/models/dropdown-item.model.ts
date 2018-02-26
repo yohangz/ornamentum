@@ -21,15 +21,14 @@ export interface DropdownItem {
   disabled: boolean;
 
   /**
+   * Selected state.
+   * @type {boolean}
+   */
+  selected: boolean;
+
+  /**
    * Source item data reference.
    * @type {any}
    */
-  data: any;
-
-  /**
-   * Filter item state.
-   * Render only if true.
-   * @type {boolean}
-   */
-  filter?: boolean;
+  item: any;
 }

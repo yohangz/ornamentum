@@ -1,12 +1,10 @@
 import { SortColumn } from './sort-column.model';
 import { FilterColumn } from './filter-column.model';
-import { QueryResult } from './query-result.model';
-import { Observable } from 'rxjs/Observable';
 
 /**
  * Data table parameters.
  */
-export interface DataTableParams {
+export interface DataTableRequestParams {
   /**
    * True if hard reload triggered.
    * Refresh button click state

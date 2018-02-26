@@ -12,13 +12,13 @@ export interface DropdownTranslations {
    * Search placeholder.
    * @type {string}
    */
-  searchPlaceholder?: string;
+  filterPlaceholder?: string;
 
   /**
    * Search empty result text.
    * @type {string}
    */
-  searchEmptyResult?: string;
+  noDataMessage?: string;
 
   /**
    * Select all checkbox placeholder.

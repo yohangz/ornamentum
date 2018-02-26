@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { InitDirective } from './directives/init.directive';
+import { FocusDirective } from './directives/focus.directive';
 
 import { PixelConverterPipe } from './pipes/pixel-converter.pipe';
 
@@ -13,7 +14,8 @@ import { PopoverComponentLoaderFactoryService } from './services/popover-compone
 
 const DIRECTIVES = [
   ClickOutsideDirective,
-  InitDirective
+  InitDirective,
+  FocusDirective
 ];
 
 const PIPES = [

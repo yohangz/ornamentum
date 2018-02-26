@@ -152,7 +152,7 @@ export class DataTableBodyComponent {
    * @param {DataRow} row Data row object.
    */
   public onRowSelectChange(row: DataRow): void {
-    const id = row.item[this.config.selectTrackBy];
+    const id = get(row.item, this.config.selectTrackBy);
 
     if (this.config.multiRowSelectable) {
       const index = this.dataStateService.selectedRows.indexOf(id);
@@ -170,20 +170,18 @@ export class DataTableBodyComponent {
     } else {
       if (row.selected) {
         this.dataStateService.selectedRow = id;
+
+        // deselect all other rows if not multi select.
+        this.dataStateService.dataRows.forEach((dataRow: DataRow) => {
+          if (dataRow !== row) {
+            dataRow.selected = false;
+          }
+        });
       } else {
         this.dataStateService.selectedRow = undefined;
       }
 
       this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRow);
-    }
-
-    // deselect all other rows if not multi select.
-    if (row.selected && !this.config.multiRowSelectable) {
-      this.dataStateService.dataRows.forEach((dataRow: DataRow) => {
-        if (dataRow !== row) {
-          dataRow.selected = false;
-        }
-      });
     }
   }
 

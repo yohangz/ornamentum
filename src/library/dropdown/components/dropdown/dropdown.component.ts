@@ -1,5 +1,4 @@
 import {
-  AfterContentInit,
   Component,
   EventEmitter,
   forwardRef,
@@ -9,22 +8,30 @@ import {
   OnInit,
   Output
 } from '@angular/core';
+
+import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
+
+import get from 'lodash.get';
+
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { ClientFilterCallback } from '../../models/client-filter-callback.model';
 import { MenuPosition } from '../../models/menu-position.enum';
 import { DropdownTranslations } from '../../models/dropdown-translations.model';
 import { DropdownItem } from '../../models/dropdown-item.model';
 import { DropdownItemGroup } from '../../models/dropdownItem-group.model';
-import { DataRequestParams } from '../../models/data-request-params.model';
+import { DropdownRequestParams } from '../../models/dropdown-request-params.model';
+import { DropdownDataBindCallback } from '../../models/dropdown-data-bind-callback.model';
+import { DropdownQueryResult } from '../../models/dropdown-query-result.model';
 
 import { PopoverComponentLoaderFactoryService, ComponentLoader } from '../../../utility';
 import { DropdownConfigService } from '../../services/dropdown-config.service';
+import { DropdownDataStateService } from '../../services/dropdown-data-state.service';
+import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
+import { DropdownResourceService } from '../../services/dropdown-resource.service';
 
 import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component';
-
-import { Subject } from 'rxjs/Subject';
-import { Subscription } from 'rxjs/Subscription';
 
 /**
  * Component class to represent search dropdown.
@@ -37,6 +44,9 @@ import { Subscription } from 'rxjs/Subscription';
   styleUrls: ['./dropdown.component.scss'],
   providers: [
     DropdownConfigService,
+    DropdownDataStateService,
+    DropdownEventStateService,
+    DropdownResourceService,
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => DropdownComponent),
@@ -44,59 +54,48 @@ import { Subscription } from 'rxjs/Subscription';
     }
   ]
 })
-export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, ControlValueAccessor {
-  public _items: DropdownItem[] = [];
-  public _groupedItems: DropdownItemGroup[] = [];
-  public _selectedOptions: DropdownItem[] = [];
-  public _selectedOption: DropdownItem;
-
-  public disabled = false;
-  public isLoading = true;
-  public currentItemCount = 0;
-
+export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccessor {
   private componentLoader: ComponentLoader<DropdownViewComponent>;
 
-  private _allSelected = false;
-  private offset = 0;
+  private dataFilterStream = new Subject();
+  private dataFilterSubscription: Subscription;
 
-  private searchFilterSubject = new Subject();
-  private searchFilterSubscription: Subscription;
-  private onChangeSubscription: Subscription;
+  private onSelectChangeSubscription: Subscription;
 
   // Outputs : Event Handlers
-
-  /**
-   * On data fetch handler.
-   * @type {EventEmitter<DataRequestParams>}
-   */
-  @Output()
-  public dataFetch = new EventEmitter<DataRequestParams>();
-
   /**
    * On dropdown initialize.
    * @type {EventEmitter<DropdownComponent>}
    */
   @Output()
-  public init = new EventEmitter<DropdownComponent>();
+  public init: EventEmitter<DropdownComponent>;
 
   /**
    * On select change handler.
    * @type {EventEmitter<DropdownItem[] | DropdownItem>}
    */
   @Output()
-  public selectChange = new EventEmitter<DropdownItem[] | DropdownItem>();
+  public selectChange: EventEmitter<any[] | any>;
+
+
+  @Output()
+  public dataBound: EventEmitter<void>;
+
+  @Output()
+  public allOptionSelectChange: EventEmitter<boolean>;
 
   // Input - Event handlers
 
-  /**
-   * On client filter callback.
-   * @default undefined
-   * @type {ClientFilterCallback}
-   */
-  @Input()
-  public onClientFilter: ClientFilterCallback;
+  public set onDataBind(value: DropdownDataBindCallback) {
+    this.dataStateService.onDataBind = value;
+  }
 
   // Inputs
+
+  @Input()
+  public set dataSource(source: Observable<any[]>) {
+    this.initDataSource(source);
+  }
 
   /**
    * Search dropdown display text key translations.
@@ -129,15 +128,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   }
 
   /**
-   * Represents the additional data attribute track by field name.
-   * @type {string}
-   */
-  @Input()
-  public set dataTrackBy(value: string) {
-    this.config.dataTrackBy = value;
-  }
-
-  /**
    * Represent field name to group data by.
    * Group data only if provided.
    * @type {string}
@@ -157,26 +147,13 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   }
 
   /**
-   * Enable/Disable triggerSelectChangeOnInit option.
-   * @default true
-   * @type {boolean}
-   */
-  @Input()
-  public set triggerSelectChangeOnInit(value: boolean) {
-    this.config.triggerSelectChangeOnInit = value;
-  }
-
-  /**
    * Set previously selected dropdown items.
    * @param {any[]} value The selected dropdown item list.
    */
   @Input()
   public set selectedOptions(value: any[]) {
-    this._selectedOptions = value ? value.map((option) => {
-      return this.mapToDropdownItem(option);
-    }) : [];
-
-    this.updateAllSelectedState();
+    this.dataStateService.selectedOptions = value || [];
+    this.eventStateService.selectChangeStream.emit(value);
   }
 
   /**
@@ -185,17 +162,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    */
   @Input()
   public set selectedOption(value: any) {
-    this._selectedOption = value ? this.mapToDropdownItem(value) : undefined;
-
-    this.updateAllSelectedState();
+    this.dataStateService.selectedOption = value;
+    this.eventStateService.selectChangeStream.emit(value);
   }
-
-  /**
-   * Represents the total item count.
-   * @type {number}
-   */
-  @Input()
-  public totalItemCount: number;
 
   /**
    * Represents the limit of the items that can be shown in the dropdown at a single time.
@@ -239,7 +208,9 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @type {string}
    */
   @Input()
-  public filterText = '';
+  public set filterText(value: string) {
+    this.dataStateService.filterText = value;
+  }
 
   /**
    * Enable/Disable dropdown items multi select option.
@@ -275,15 +246,6 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
   @Input()
   public set loadDataOnInit(value: boolean) {
     this.config.loadDataOnInit = value;
-  }
-
-  /**
-   * Enable/Disable triggering on select change event one time when select all is selected.
-   * @type {boolean}
-   */
-  @Input()
-  public set triggerChangeOncePerSelectAll(value: boolean) {
-    this.config.triggerChangeOncePerSelectAll = value;
   }
 
   /**
@@ -351,116 +313,54 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     this.config.filterDebounceTime = value;
   }
 
-  /**
-   * Set dropdown items.
-   * @param {any[]} value The dropdown item list.
-   */
   @Input()
-  public set items(value: any[]) {
-    if (!value) {
-      return;
-    }
-
-    if (this.config.groupByField) {
-      this._groupedItems = value.reduce((acc: DropdownItemGroup[], item: any) => {
-        const groupIndex = acc.findIndex((group: DropdownItemGroup) => group.groupName === item[this.config.groupByField]);
-        if (groupIndex > -1) {
-          acc[groupIndex].items.push(this.extractDropdownItem(item));
-        } else {
-          acc.push({
-            groupName: item[this.config.groupByField],
-            items: [this.extractDropdownItem(item)]
-          });
-        }
-
-        return acc;
-      }, this.offset > 0 ? this._groupedItems : []);
-    } else {
-      const results = value.map((item) => {
-        return this.extractDropdownItem(item);
-      });
-
-      this._items = this.offset > 0 ? this._items.concat(results) : results;
-    }
-
-    this.currentItemCount = value.length;
-    this.updateAllSelectedState();
-    this.isLoading = false;
+  public set closeMenuOnSelect(value: boolean) {
+    this.config.closeMenuOnSelect = value;
   }
 
-  public updateAllSelectedState(): void {
-    this._allSelected = this.currentItemCount === this._selectedOptions.length;
+  @Input()
+  public set showOptionSelectCheckbox(value: boolean) {
+    this.config.showOptionSelectCheckbox = value;
+  }
+
+  @Input()
+  public set triggerSelectChangeOncePerSelectAll(value: boolean) {
+    this.config.triggerSelectChangeOncePerSelectAll = value;
+  }
+
+  @Input()
+  public set triggerSelectChangeOnInit(value: boolean) {
+    this.config.triggerSelectChangeOnInit = value;
   }
 
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
+              private eventStateService: DropdownEventStateService,
+              private dropdownResourceService: DropdownResourceService<any>,
+              public dataStateService: DropdownDataStateService,
               public config: DropdownConfigService) {
     this.componentLoader = this.componentLoaderFactory.createLoader();
+
+    this.dataBound = this.eventStateService.dataBoundStream;
+    this.selectChange = this.eventStateService.selectChangeStream;
+    this.init = this.eventStateService.initStream;
+    this.allOptionSelectChange = this.eventStateService.allOptionSelectChangeStream;
   }
 
-  /**
-   * Extract dropdown item out of generic item provided.
-   * @param item Generic item object.
-   * @return {DropdownItem} Dropdown item object.
-   */
-  private extractDropdownItem(item: any): DropdownItem {
-    const id = item[this.config.selectTrackBy];
-    const selectedOption = this.getSelectedOption(id);
-
-    return {
-      id: id,
-      text: item[this.config.displayTrackBy],
-      disabled: selectedOption ? selectedOption.disabled : item[this.config.disabledTrackBy],
-      data: item[this.config.dataTrackBy],
-      filter: true
-    };
+  public getDisplayText(option: DropdownItem): string {
+    return get(option.item, this.config.displayTrackBy);
   }
 
-  /**
-   * Initialize filter event associated subscriptions.
-   */
-  private initFilterEvent(): void {
-    this.searchFilterSubscription = this.searchFilterSubject
-      .debounceTime(this.config.filterDebounceTime)
-      .subscribe(() => {
-        this.config.loadOnScroll ? this.loadData() : this.clientFilter();
-      });
-  }
+  private initDataSource(source: Observable<any>): void {
+    debugger;
+    this.dropdownResourceService.setDataSource(source);
 
-  /**
-   * ngOnInit handler.
-   * Loads data when component is initialized.
-   */
-  public ngOnInit(): void {
-    if (this.config.filterDebounce) {
-      this.initFilterEvent();
-    }
+    this.dataStateService.onDataBind = (params: DropdownRequestParams): Observable<DropdownQueryResult<any>> => {
+      if (params.hardReload) {
+        this.dropdownResourceService.setDataSource(source);
+      }
 
-    this.init.emit(this);
-  }
-
-  public ngAfterContentInit(): void {
-    if (this.config.loadDataOnInit) {
-      this.loadData();
-    }
-
-    if (this.config.triggerSelectChangeOnInit) {
-      this.emitOnSelectChange();
-    }
-  }
-
-  /**
-   * Map base option to dropdown item type.
-   * @param option base option object.
-   * @return {DropdownItem} Dropdown item object.
-   */
-  private mapToDropdownItem(option: any): DropdownItem {
-    return {
-      id: option[this.config.selectTrackBy],
-      text: option[this.config.displayTrackBy],
-      disabled: option[this.config.disabledTrackBy],
-      data: option[this.config.dataTrackBy],
-      filter: true
+      return this.dropdownResourceService.query(params);
     };
   }
 
@@ -515,244 +415,23 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     const gutterPixel = 1;
 
     if (scrollTop >= scrollHeight - (1 + this.config.loadViewDistance) * scrollElementHeight - roundingPixel - gutterPixel) {
-      this.loadData(true);
+      this.dataStateService.offset = this.dataStateService.offset + this.config.limit;
+      this.eventStateService.dataFetchStream.emit(false);
     }
   }
 
-  /**
-   * Triggers only when keyboards key up event when user types something in the dropdown search box.
-   */
-  public filterKeyUp(): void {
-    this.offset = 0;
-
-    if (this.config.filterDebounce) {
-      this.searchFilterSubject.next(this.filterText);
-    } else {
-      this.offset = 0;
-      this.config.loadOnScroll ? this.loadData() : this.clientFilter();
-    }
-  }
-
-  /**
-   * Performs clear search event when click on the close button appeared in the search box.
-   * Loads data again.
-   */
-  public clearSearch(): void {
-    this.offset = 0;
-    this.filterText = '';
-    this.config.loadOnScroll ? this.loadData() : this.clientFilter();
-  }
-
-  /**
-   * Performs when clicks on the close icon appeared near the selected item when showSelectedOptionRemoveButton is true.
-   * @param {Event} event
-   * @param {DropdownItem} option The DropdownItem to be removed from the selected items.
-   */
-  public onSelectOptionClose(event: Event, option: DropdownItem): void {
+  public onSelectOptionRemove(event: Event, option: DropdownItem): void {
     event.stopPropagation();
-    const selectedId = this._selectedOptions.findIndex(selectedOption => selectedOption.id === option.id);
-    this._selectedOptions.splice(selectedId, 1);
-    this.emitOnSelectChange();
+    option.selected = false;
+    this.optionSelectChange(option);
   }
 
-  /**
-   * Trigger when selecting an item from the dropdown item list.
-   * @param {DropdownItem} option
-   * @param {boolean} state
-   * @param {boolean} triggerOnSelect
-   */
-  public setSelected(option: DropdownItem, state?: boolean, triggerOnSelect?: boolean): void {
-    if (this.config.multiSelectable) {
-      const selectedIndex = this._selectedOptions.findIndex(selectedOption => selectedOption.id === option.id);
-      if (state !== undefined) {
-        if (!state && selectedIndex > -1) {
-          this._selectedOptions.splice(selectedIndex, 1);
-        }
-
-        if (state && selectedIndex < 0) {
-          this._selectedOptions.push(option);
-        }
-      } else {
-        if (selectedIndex > -1) {
-          this._selectedOptions.splice(selectedIndex, 1);
-        } else {
-          this._selectedOptions.push(option);
-        }
-
-        this._allSelected = this.currentItemCount === this._selectedOptions.length;
-      }
-    } else {
-      this._selectedOption = option;
-      this.closeDropdown();
+  public get showAllSelectedOptionLabels(): boolean {
+    if (this.config.wrapDisplaySelectLimit !== undefined) {
+      return this.dataStateService.selectedOptions.length > this.config.wrapDisplaySelectLimit;
     }
 
-    if (triggerOnSelect === undefined || triggerOnSelect) {
-      this.emitOnSelectChange();
-    }
-  }
-
-  /**
-   * Model binding attribute to the select all option.
-   * @param {boolean} value
-   */
-  public set allSelected(value: boolean) {
-    this._allSelected = value;
-
-    if (this.config.groupByField) {
-      this._groupedItems.forEach((groupedItem: DropdownItemGroup) => {
-        groupedItem.items.forEach((dropdownItem: DropdownItem) => {
-          this.setSelected(dropdownItem, this._allSelected, !this.config.triggerChangeOncePerSelectAll);
-        });
-      });
-    } else {
-      this._items.forEach((dropdownItem) => {
-        this.setSelected(dropdownItem, this._allSelected, !this.config.triggerChangeOncePerSelectAll);
-      });
-    }
-
-    if (this.config.triggerChangeOncePerSelectAll) {
-      this.emitOnSelectChange();
-    }
-  }
-
-  /**
-   * Returns all selected boolean value.
-   * @returns {boolean}
-   */
-  public get allSelected(): boolean {
-    return this._allSelected;
-  }
-
-  /**
-   * Performs toggle all selected event.
-   */
-  public toggleAllSelected(): void {
-    this.allSelected = !this.allSelected;
-  }
-
-  /**
-   * Returns true if the provided option is already selected else return false.
-   * @param option The DropdownItem.
-   * @returns {boolean}
-   */
-  public isSelected(option: DropdownItem): boolean {
-    if (this.config.multiSelectable) {
-      return !!this._selectedOptions.find(selectedOption => selectedOption.id === option.id);
-    }
-
-    return this._selectedOption && option.id === this._selectedOption.id;
-  }
-
-  /**
-   * Loads data to the dropdown when performing on initStream, searching, clearing search items and scrolling.
-   * @param {boolean} fetchNext Boolean to get more data when scrolling.
-   */
-  private loadData(fetchNext?: boolean): void {
-    if (!this.config.loadOnScroll) {
-      return;
-    }
-
-    if (this.isLoading) {
-      return;
-    }
-
-    if (fetchNext && this.currentItemCount >= this.totalItemCount) {
-      return;
-    }
-
-    if (fetchNext) {
-      this.offset = this.offset + this.config.limit;
-    }
-
-    this.isLoading = true;
-
-    this.dataFetch.emit({
-      filter: this.filterText,
-      offset: this.offset,
-      limit: this.config.limit
-    });
-  }
-
-  public dataBind(reset: boolean): void {
-    if (reset) {
-      this.offset = 0;
-      this.filterText = '';
-      this.writeValue(null);
-      this.loadData(false);
-    } else {
-      this.loadData(true);
-    }
-  }
-
-  /**
-   * Return if the matched selected dropdown item is available for the provided id Else return null.
-   * @param id The dropdown item id.
-   * @returns {DropdownItem} The DropdownItem.
-   */
-  private getSelectedOption(id: any): DropdownItem {
-    if (this.config.multiSelectable) {
-      return this._selectedOptions.find(option => option.id === id) || null;
-    }
-
-    if (this._selectedOption && this._selectedOption.id === id) {
-      return this._selectedOption;
-    }
-
-    return null;
-  }
-
-  /**
-   * Map option back to base type.
-   * @param {DropdownItem} dropdownItem Dropdown item.
-   * @return {any} Base dropdown item object.
-   */
-  private mapOptionToBaseType(dropdownItem: DropdownItem): any {
-    if (!dropdownItem) {
-      return null;
-    }
-
-    const option = {};
-
-    option[this.config.selectTrackBy] = dropdownItem.id;
-    option[this.config.displayTrackBy] = dropdownItem.text;
-
-    if (dropdownItem) {
-      if (dropdownItem.disabled !== undefined) {
-        option[this.config.disabledTrackBy] = dropdownItem.disabled;
-      }
-
-      if (dropdownItem.data !== undefined) {
-        option[this.config.dataTrackBy] = dropdownItem.data;
-      }
-    }
-
-    return option;
-  }
-
-  /**
-   * Map options to bas type.
-   * @param {DropdownItem[]} dropdownItems Dropdown items.
-   * @return {any[]} Base dropdown item object array.
-   */
-  private mapOptionsToBaseType(dropdownItems: DropdownItem[]): any[] {
-    return dropdownItems.map(item => this.mapOptionToBaseType(item));
-  }
-
-  /**
-   * Emit the selected values from the dropdown.
-   * If multiSelectable is true return all dropdown selected items else return the single selected item.
-   */
-  private emitOnSelectChange(): void {
-    this.selectChange.emit(this.config.multiSelectable ? this.mapOptionsToBaseType(this._selectedOptions)
-      : this.mapOptionToBaseType(this._selectedOption));
-  }
-
-  /**
-   * Get show all selected item labels state.
-   * @return {boolean} Show label if true.
-   */
-  public get showAllSelectedItemLabels(): boolean {
-    return this.config.wrapDisplaySelectLimit !== undefined ? this._selectedOptions.length > this.config.wrapDisplaySelectLimit : false;
+    return false;
   }
 
   /**
@@ -760,7 +439,129 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * @return {string} Selected items message.
    */
   public get selectedItemsMessage(): string {
-    return `(${this._selectedOptions.length}) ${this.config.translations.selectedItemWrapPlaceholder}`;
+    return `(${this.dataStateService.selectedOptions.length}) ${this.config.translations.selectedItemWrapPlaceholder}`;
+  }
+
+  /**
+   * ngOnDestroy handler.
+   * Lifecycle hook that is called when component is destroyed.
+   */
+  public ngOnDestroy(): void {
+    if (this.dataFilterSubscription) {
+      this.dataFilterSubscription.unsubscribe();
+    }
+
+    if (this.onSelectChangeSubscription) {
+      this.onSelectChangeSubscription.unsubscribe();
+    }
+
+    this.componentLoader.dispose();
+  }
+
+  public get hasSelectedItems(): boolean {
+    return this.config.multiSelectable ? !!this.dataStateService.selectedOptions.length : !!this.dataStateService.selectedOption;
+  }
+
+  /**
+   * Clear selected items.
+   */
+  public clearSelectedOptions(): void {
+    this.allOptionsSelectedStateChange(false);
+  }
+
+  public toggleAllOptionSelectedState(): void {
+    this.dataStateService.allOptionsSelected = !this.dataStateService.allOptionsSelected;
+    this.allOptionsSelectedStateChange(this.dataStateService.allOptionsSelected);
+  }
+
+  public get allOptionsSelected(): boolean {
+    return this.dataStateService.allOptionsSelected;
+  }
+
+  private allOptionsSelectedStateChange(selectedState: boolean): void {
+    if (this.config.groupByField) {
+      this.dataStateService.dropdownItemGroups.forEach(group => {
+        group.items.forEach(item => {
+          item.selected = selectedState;
+          this.optionSelectChange(item, this.config.triggerSelectChangeOncePerSelectAll);
+        });
+      });
+    } else {
+      this.dataStateService.dropdownItems.forEach(item => {
+        item.selected = selectedState;
+        this.optionSelectChange(item, this.config.triggerSelectChangeOncePerSelectAll);
+      });
+    }
+
+    if (this.config.triggerSelectChangeOncePerSelectAll) {
+      this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
+    }
+
+    this.eventStateService.allOptionSelectChangeStream.emit(selectedState);
+  }
+
+  public toggleOptionSelectedState(option: DropdownItem): void {
+    option.selected = !option.selected;
+    this.optionSelectChange(option);
+  }
+
+  public optionSelectChange(option: DropdownItem, triggerSelectChange: boolean = true): void {
+    const id = get(option, this.config.selectTrackBy);
+    if (this.config.multiSelectable) {
+      const selectedIndex = this.dataStateService.selectedOptions.findIndex((item: any) => {
+        return get(item, this.config.selectTrackBy) === id;
+      });
+
+      if (selectedIndex > -1) {
+        this.dataStateService.selectedOptions.splice(selectedIndex, 1);
+      } else {
+        this.dataStateService.selectedOptions.push(option.item);
+      }
+
+      if (triggerSelectChange) {
+        this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
+      }
+    } else {
+      if (option.selected) {
+        this.dataStateService.selectedOption = option.item;
+      } else {
+        this.dataStateService.selectedOption = undefined;
+      }
+
+      // deselect all options except current.
+      if (this.config.groupByField) {
+        this.dataStateService.dropdownItemGroups.forEach(group => {
+          group.items.forEach(item => {
+            if (item !== option) {
+              item.selected = false;
+            }
+          });
+        });
+      } else {
+        this.dataStateService.dropdownItems.forEach(item => {
+          if (item !== option) {
+            item.selected = false;
+          }
+        });
+      }
+
+      if (triggerSelectChange) {
+        this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);
+      }
+    }
+
+    if (this.config.closeMenuOnSelect && option.selected) {
+      this.closeDropdown();
+    }
+  }
+
+  /**
+   * Set disabled state.
+   * ControlValueAccessor implementation.
+   * @param {boolean} isDisabled True if disabled.
+   */
+  public setDisabledState?(isDisabled: boolean): void {
+    this.dataStateService.disabled = isDisabled;
   }
 
   /**
@@ -781,8 +582,8 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
    * ControlValueAccessor implementation.
    * @param {(value: (DropdownItem[] | DropdownItem)) => void} onSelectChange On select change callback function.
    */
-  public registerOnChange(onSelectChange: (value: DropdownItem[] | DropdownItem) => void): void {
-    this.onChangeSubscription = this.selectChange.subscribe((value) => {
+  public registerOnChange(onSelectChange: (value: any[] | any) => void): void {
+    this.onSelectChangeSubscription = this.selectChange.subscribe((value) => {
       onSelectChange(value);
     });
   }
@@ -796,85 +597,145 @@ export class DropdownComponent implements OnInit, OnDestroy, AfterContentInit, C
     // TODO: Implement touch event handler
   }
 
-  /**
-   * Set disabled state.
-   * ControlValueAccessor implementation.
-   * @param {boolean} isDisabled True if disabled.
-   */
-  public setDisabledState?(isDisabled: boolean): void {
-    this.disabled = isDisabled;
+  public clearFilter(): void {
+    this.dataStateService.offset = 0;
+    this.dataStateService.filterText = '';
+    this.eventStateService.dataFetchStream.emit(false);
   }
 
-  /**
-   * ngOnDestroy handler.
-   * Lifecycle hook that is called when component is destroyed.
-   */
-  public ngOnDestroy(): void {
+  public filterKeyUp(): void {
     if (this.config.filterDebounce) {
-      this.searchFilterSubscription.unsubscribe();
-    }
-
-    if (this.onChangeSubscription) {
-      this.onChangeSubscription.unsubscribe();
-    }
-
-    this.componentLoader.dispose();
-  }
-
-  /**
-   * Set dropdown item filter state.
-   * @param {DropdownItem} dropdownItem Dropdown item object.
-   */
-  private setFilterState(dropdownItem: DropdownItem): void {
-    const optionText = String(dropdownItem.text).toLowerCase();
-    const filterText = String(this.filterText).toLowerCase();
-    dropdownItem.filter = this.onClientFilter ? this.onClientFilter(dropdownItem, this.filterText) : optionText.includes(filterText);
-  }
-
-  /**
-   * Filter data on client search.
-   */
-  private clientFilter(): void {
-    if (this.config.groupByField) {
-      this._groupedItems.forEach((dropdownItemGroup: DropdownItemGroup) => {
-        dropdownItemGroup.items.forEach((dropdownItem: DropdownItem) => {
-          this.setFilterState(dropdownItem);
-        });
-      });
+      this.dataFilterStream.next(this.dataStateService.filterText);
     } else {
-      this._items.forEach((dropdownItem: DropdownItem) => {
-        this.setFilterState(dropdownItem);
-      });
+      this.dataStateService.offset = 0;
+      this.eventStateService.dataFetchStream.emit(false);
     }
   }
 
-  /**
-   * Has visible dropdown items
-   * @param {DropdownItem[]} items Dropdown items
-   * @return {boolean} True if any of the item in dropdown is visible.
-   */
-  public hasVisibleItems(items: DropdownItem[]): boolean {
-    return items.some((item: DropdownItem) => item.filter);
+  private initFilterDebounceEvent(): void {
+    this.dataFilterSubscription = this.dataFilterStream
+      .debounceTime(this.config.filterDebounceTime)
+      .subscribe(() => {
+        this.dataStateService.offset = 0;
+        this.eventStateService.dataFetchStream.emit(false);
+      });
   }
 
-  /**
-   * Dropdown item selected state.
-   * @return {boolean} - true if has selected items.
-   */
-  public get hasSelectedItems(): boolean {
-    return this.config.multiSelectable ? !!this._selectedOptions.length : !!this._selectedOption;
+  public ngOnInit(): void {
+    this.initDataFetchEvent();
+    this.initFilterDebounceEvent();
+
+    if (this.config.loadDataOnInit) {
+      this.eventStateService.dataFetchStream.emit(false);
+    }
+
+    if (this.config.triggerSelectChangeOnInit) {
+      const options = this.config.multiSelectable ? this.dataStateService.selectedOptions : this.dataStateService.selectedOption;
+      this.eventStateService.selectChangeStream.emit(options);
+    }
+
+    this.eventStateService.initStream.emit(this);
   }
 
-  /**
-   * Clear selected items.
-   */
-  public clearSelected(): void {
+  private getSelectedState(id: any): boolean {
     if (this.config.multiSelectable) {
-      this._selectedOptions = [];
-    } else {
-      this._selectedOption = undefined;
+      return this.dataStateService.selectedOptions.some((item: any) => {
+        return get(item, this.config.selectTrackBy) === id;
+      });
     }
 
-    this.emitOnSelectChange();
+    return get(this.dataStateService.selectedOption, this.config.selectTrackBy) === id;
+  }
+
+  private extractDropdownItem(item: any): DropdownItem {
+    const id = get(item, this.config.selectTrackBy);
+
+    return {
+      id: id,
+      text: get(item, this.config.displayTrackBy),
+      disabled: get(item, this.config.disabledTrackBy),
+      selected: this.getSelectedState(id),
+      item: item
+    };
+  }
+
+  private setDropdownOptions(queryResult: DropdownQueryResult<any>) {
+    if (this.config.groupByField) {
+      this.dataStateService.dropdownItemGroups = queryResult.items.reduce((accumulator: DropdownItemGroup[], item: any) => {
+        const groupFieldValue = get(item, this.config.groupByField);
+        const currentGroup = accumulator.find((group: DropdownItemGroup) => group.groupName === groupFieldValue);
+
+        if (currentGroup) {
+          currentGroup.items.push(this.extractDropdownItem(item));
+        } else {
+          accumulator.push({
+            groupName: groupFieldValue,
+            items: [this.extractDropdownItem(item)]
+          });
+        }
+
+        return accumulator;
+      }, this.dataStateService.offset > 0 ? this.dataStateService.dropdownItemGroups : []);
+    } else {
+      this.dataStateService.dropdownItems = queryResult.items.reduce((accumulator: DropdownItem[], item: any) => {
+        accumulator.push(this.extractDropdownItem(item));
+        return accumulator;
+      }, this.dataStateService.offset > 0 ? this.dataStateService.dropdownItems : []);
+    }
+
+    this.dataStateService.totalOptionCount = queryResult.count;
+
+    if (this.config.multiSelectable) {
+      this.dataStateService.allOptionsSelected = this.dataStateService.totalOptionCount === this.dataStateService.selectedOptions.length
+        && this.dataStateService.totalOptionCount !== 0;
+    }
+  }
+
+  private onAfterDataBind(queryResult: DropdownQueryResult<any>): void {
+    this.setDropdownOptions(queryResult);
+    this.dataStateService.dataLoading = false;
+    this.eventStateService.dataBoundStream.emit();
+  }
+
+  private mapToDataBindRequest(hardReload: boolean): Observable<DropdownQueryResult<any>> {
+    this.dataStateService.dataLoading = true;
+
+    if (hardReload) {
+      this.dataStateService.offset = 0;
+      this.dataStateService.filterText = '';
+    }
+
+    const requestParams: DropdownRequestParams = {
+      hardReload: hardReload
+    };
+
+    if (this.config.loadOnScroll) {
+      requestParams.limit = this.config.limit;
+      requestParams.offset = this.dataStateService.offset;
+    }
+
+    if (this.config.filterable) {
+      requestParams.filter = {
+        key: this.config.displayTrackBy,
+        value: this.dataStateService.filterText
+      };
+    }
+
+    return this.dataStateService.onDataBind(requestParams);
+  }
+
+  // Do not emit dataFetchStream true unless it is required to hard reload the dropdown options.
+  private initDataFetchEvent(): void {
+    this.eventStateService.dataFetchStream
+      .debounceTime(20)
+      .switchMap((hardReload: boolean) => this.mapToDataBindRequest(hardReload))
+      .subscribe((queryResult: DropdownQueryResult<any>) => {
+        this.onAfterDataBind(queryResult);
+      });
+  }
+
+  // Can be used to explicitly trigger data bind event.
+  public dataBind(hardReload: boolean = false): void {
+    this.eventStateService.dataFetchStream.emit(hardReload);
   }
 }

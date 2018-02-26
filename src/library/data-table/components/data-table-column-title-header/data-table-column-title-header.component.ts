@@ -8,6 +8,7 @@ import { DragAndDropService } from '../../../utility';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
+import get from 'lodash.get';
 
 @Component({
   exportAs: 'ngDataTableColumnTitleHeader',
@@ -96,7 +97,7 @@ export class DataTableColumnTitleHeaderComponent {
 
   private allRowSelectedChanged(selectedState: boolean): void {
     this.dataStateService.dataRows.forEach(row => {
-      const id = row.item[this.config.selectTrackBy];
+      const id = get(row.item, this.config.selectTrackBy);
       const index = this.dataStateService.selectedRows.indexOf(id);
       if (selectedState && index < 0) {
         this.dataStateService.selectedRows.push(id);

@@ -9,8 +9,7 @@
     <ng-dropdown
       *ngIf="column.showDropdownFilter"
       [relativeParentElement]="config.relativeParentElement"
-      [items]="column.filterOptions"
-      [totalItemCount]="column.filterOptions.length"
+      [dataSource]="filterDataStream"
       [(ngModel)]="column.filter"
 
       [menuPosition]="column.dropdownFilterMenuPosition"
@@ -23,7 +22,7 @@
       [showSelectAll]="column.dropdownFilterShowSelectAll"
       [wrapDisplaySelectLimit]="column.dropdownFilterWrapDisplaySelectLimit"
       [groupByField]="column.dropdownFilterGroupByField"
-      [triggerChangeOncePerSelectAll]="column.dropdownFilterTriggerChangeOncePerSelectAll"
+      [triggerSelectChangeOncePerSelectAll]="column.dropdownFilterTriggerChangeOncePerSelectAll"
       [menuHeight]="column.dropdownFilterMenuHeight"
       [menuWidth]="column.dropdownFilterMenuWidth"
 

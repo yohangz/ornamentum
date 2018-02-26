@@ -27,7 +27,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   private _sortOrder: SortOrder = SortOrder.NONE;
   private _baseSortOrder: SortOrder;
 
-  public filterOptions: FilterOption[] = [];
+  // public filterOptions: FilterOption[] = [];
   public actualWidth: number;
 
   // Content Child Properties
@@ -348,25 +348,25 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     };
   }
 
-  public fetchFilterOptions(): void {
-    if (!this.showDropdownFilter) {
-      return;
-    }
-
-    if (this.dataStateService.onFilterValueExtract) {
-      // Clear previous filter subscription before invoking new event.
-      if (this.filterValueExtractorSubscription) {
-        this.filterValueExtractorSubscription.unsubscribe();
-        this.filterValueExtractorSubscription = null;
-      }
-
-      this.filterValueExtractorSubscription = this.dataStateService.onFilterValueExtract(this)
-        .subscribe((options: FilterOption[]) => {
-          this.filterOptions = options;
-        });
-    }
-
-  }
+  // public fetchFilterOptions(): void {
+  //   if (!this.showDropdownFilter) {
+  //     return;
+  //   }
+  //
+  //   if (this.dataStateService.onFilterValueExtract) {
+  //     // Clear previous filter subscription before invoking new event.
+  //     if (this.filterValueExtractorSubscription) {
+  //       this.filterValueExtractorSubscription.unsubscribe();
+  //       this.filterValueExtractorSubscription = null;
+  //     }
+  //
+  //     this.filterValueExtractorSubscription = this.dataStateService.onFilterValueExtract(this)
+  //       .subscribe((options: FilterOption[]) => {
+  //         this.filterOptions = options;
+  //       });
+  //   }
+  //
+  // }
 
   public ngOnDestroy(): void {
     if (this.filterValueExtractorSubscription) {

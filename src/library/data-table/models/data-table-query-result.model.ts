@@ -1,7 +1,7 @@
 /**
  * Query result
  */
-export interface QueryResult<T> {
+export interface DataTableQueryResult<T> {
   /**
    * Items collection.
    * @type {T[]}

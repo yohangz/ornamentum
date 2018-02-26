@@ -24,12 +24,6 @@ export class DropdownConfig {
   displayTrackBy?: string;
 
   /**
-   * Additional data attribute track by field name.
-   * @type {string}
-   */
-  dataTrackBy?: string;
-
-  /**
    * Name of the attribute used to disable the selection of dropdown item.
    * @type {string}
    */
@@ -87,18 +81,6 @@ export class DropdownConfig {
   wrapDisplaySelectLimit?: number;
 
   /**
-   * Trigger select change on initStream if true.
-   * @type {boolean}
-   */
-  triggerSelectChangeOnInit?: boolean;
-
-  /**
-   * Trigger change once per select all if true.
-   * @type {boolean}
-   */
-  triggerChangeOncePerSelectAll?: boolean;
-
-  /**
    * Show selected option remove button if true.
    * @type {boolean}
    */
@@ -145,4 +127,20 @@ export class DropdownConfig {
    * @type {boolean}
    */
   loadDataOnInit?: boolean;
+
+  /**
+   * Close dropdown menu on option select.
+   * @type {boolean}
+   */
+  closeMenuOnSelect?: boolean;
+
+  /**
+   * Show dropdown option select checkbox.
+   * @type {boolean}
+   */
+  showOptionSelectCheckbox?: boolean;
+
+  triggerSelectChangeOncePerSelectAll?: boolean;
+
+  triggerSelectChangeOnInit?: boolean;
 }

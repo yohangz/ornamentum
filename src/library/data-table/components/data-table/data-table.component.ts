@@ -16,6 +16,8 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 
+import get from 'lodash.get';
+
 import { FilterValueExtractCallback } from '../../models/filter-value-extract-callback.model';
 import { StorageMode } from '../../models/storage-mode.enum';
 import { CellBindEventArgs } from '../../models/cell-bind-event-args.model';
@@ -24,10 +26,10 @@ import { HeaderClickEventArgs } from '../../models/header-click-event-args.model
 import { DoubleClickEventArgs } from '../../models/double-click-event-args.model';
 import { RowClickEventArgs } from '../../models/row-click-event-args.model';
 import { DataRow } from '../../models/data-row.model';
-import { DataTableParams } from '../../models/data-table-params.model';
+import { DataTableRequestParams } from '../../models/data-table-request-params.model';
 import { DataTableTranslations } from '../../models/data-tabl-translations.model';
 import { DynamicRowSpanExtractorCallback } from '../../models/group-field-extractor-callback.model';
-import { QueryResult } from '../../models/query-result.model';
+import { DataTableQueryResult } from '../../models/data-table-query-result.model';
 import { DataBindCallback } from '../../models/data-bind-callback.model';
 import { FilterOption } from '../../models/filter-option.model';
 
@@ -39,7 +41,7 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
 import { DataTablePersistenceService } from '../../services/data-table-persistence.service';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableScrollPositionService } from '../../services/data-table-scroll-position.service';
-import { DataTableResource } from '../../services/data-table-resource.service';
+import { DataTableResourceService } from '../../services/data-table-resource.service';
 
 /**
  * Data table component.
@@ -54,7 +56,7 @@ import { DataTableResource } from '../../services/data-table-resource.service';
     DataTablePersistenceService,
     DataTableDataStateService,
     DataTableScrollPositionService,
-    DataTableResource,
+    DataTableResourceService,
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => DataTableComponent),
@@ -151,7 +153,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   /**
    * On data load event handler.
    * Fired on each data fetch request. But not on hard reload.
-   * @type {EventEmitter<DataTableParams>}
+   * @type {EventEmitter<DataTableRequestParams>}
    */
   @Input()
   public set onDataBind(value: DataBindCallback) {
@@ -541,7 +543,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
               private dataTableStateService: DataTablePersistenceService,
               private globalRefService: GlobalRefService,
               private eventStateService: DataTableEventStateService,
-              private dataTableResource: DataTableResource<any>,
+              private dataTableResourceService: DataTableResourceService<any>,
               public dataStateService: DataTableDataStateService,
               public config: DataTableConfigService) {
     this.storageMode = config.storageMode;
@@ -561,22 +563,30 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   /**
    * On after data bind handler.
    */
-  private onAfterDataBind(queryResult: QueryResult<any>): void {
+  private onAfterDataBind(queryResult: DataTableQueryResult<any>): void {
     this.dataStateService.itemCount = queryResult.count;
     this.setDataRows(queryResult.items);
-    this.setRowSelectState();
 
     if (this.config.offset > this.dataStateService.itemCount) {
       this.config.offset = 0;
     }
 
     if (this.dataStateService.heardReload) {
-      this.fetchColumnFilterOptions();
+      this.eventStateService.fetchFilterOptionsStream.emit();
       this.dataStateService.heardReload = false;
     }
 
     this.dataStateService.dataLoading = false;
     this.eventStateService.dataBoundStream.emit();
+  }
+
+  private getSelectedState(item: any): boolean {
+    const id = get(item.item, this.config.selectTrackBy);
+    if (this.config.multiRowSelectable) {
+      return this.dataStateService.selectedRows.indexOf(id) > -1;
+    }
+
+    return this.dataStateService.selectedRow === id;
   }
 
   /**
@@ -593,35 +603,25 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
         tooltip: '',
         index: index,
         item: item,
-        selected: false
+        selected: this.getSelectedState(item)
       };
     });
+
+    if (this.config.multiRowSelectable) {
+      this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataRow) => {
+        return dataRow.selected;
+      });
+    }
 
     const substituteRowCount = this.config.limit - this.dataStateService.dataRows.length;
     this.dataStateService.substituteRows = Array.from({length: substituteRowCount});
   }
 
-  private setRowSelectState(): void {
-    this.dataStateService.dataRows.forEach(row => {
-      const id = row.item[this.config.selectTrackBy];
-      if (this.config.multiRowSelectable) {
-        const index = this.dataStateService.selectedRows.indexOf(id);
-        row.selected = index > -1;
-      } else {
-        row.selected = this.dataStateService.selectedRow === id;
-      }
-    });
-
-    this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataRow) => {
-      return dataRow.selected;
-    });
-  }
-
   private initDataFetchEvent(): void {
     this.dataFetchStreamSubscription = this.eventStateService.dataFetchStream
       .debounceTime(20)
-      .switchMap((reload: boolean) => this.mapDataTableParameters(reload))
-      .subscribe((queryResult: QueryResult<any>) => {
+      .switchMap((reload: boolean) => this.mapDataBind(reload))
+      .subscribe((queryResult: DataTableQueryResult<any>) => {
         this.onAfterDataBind(queryResult);
       });
   }
@@ -630,7 +630,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * Trigger table data bind.
    * @param {boolean} hardReload Hard refresh if true.
    */
-  private mapDataTableParameters(hardReload: boolean): Observable<QueryResult<any>> {
+  private mapDataBind(hardReload: boolean): Observable<DataTableQueryResult<any>> {
     this.dataStateService.dataLoading = true;
     if (hardReload) {
       this.clearRowSelectState();
@@ -639,7 +639,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       this.config.offset = 0;
     }
 
-    const params: DataTableParams = {
+    const params: DataTableRequestParams = {
       hardReload: hardReload
     };
 
@@ -675,16 +675,16 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     return this.dataStateService.onDataBind(params);
   }
 
-  /**
-   * Fetch filter options from data provider.
-   */
-  private fetchColumnFilterOptions(): void {
-    this.columns.forEach((column) => {
-      if (column.filterable && column.showDropdownFilter) {
-        column.fetchFilterOptions();
-      }
-    });
-  }
+  // /**
+  //  * Fetch filter options from data provider.
+  //  */
+  // private fetchColumnFilterOptions(): void {
+  //   this.columns.forEach((column) => {
+  //     if (column.filterable && column.showDropdownFilter) {
+  //       column.fetchFilterOptions();
+  //     }
+  //   });
+  // }
 
   private initDataTableState(): void {
     if (this.config.persistTableState) {
@@ -722,7 +722,11 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       this.eventStateService.dataFetchStream.next(false);
     }
 
-    this.fetchColumnFilterOptions();
+    // remove this
+    setTimeout(() => {
+      this.eventStateService.fetchFilterOptionsStream.emit();
+    }, 0);
+
     this.eventStateService.initStream.emit(this);
   }
 
@@ -738,7 +742,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       this.rowSelectChangeSubscription.unsubscribe();
     }
 
-    this.dataTableResource.dispose();
+    this.dataTableResourceService.dispose();
   }
 
   /**
@@ -762,18 +766,18 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   public initDataSource(source: Observable<any>): void {
-    this.dataTableResource.setDataSource(source);
+    this.dataTableResourceService.setDataSource(source);
 
-    this.onDataBind = (params: DataTableParams): Observable<QueryResult<any>> => {
+    this.onDataBind = (params: DataTableRequestParams): Observable<DataTableQueryResult<any>> => {
       if (params.hardReload) {
-        this.dataTableResource.setDataSource(source);
+        this.dataTableResourceService.setDataSource(source);
       }
 
-      return this.dataTableResource.query(params);
+      return this.dataTableResourceService.query(params);
     };
 
     this.onFilterValueExtract = (column: DataTableColumnComponent): Observable<FilterOption[]> => {
-      return this.dataTableResource.extractFilterOptions(column);
+      return this.dataTableResourceService.extractFilterOptions(column);
     };
   }
 

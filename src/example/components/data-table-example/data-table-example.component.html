@@ -531,36 +531,36 @@
     [sortable]="secondColConf.sortable"
     [filterable]="secondColConf.filterable"
     [resizable]="secondColConf.resizable"
-    [showDropdownFilter]="initialColumnConf.multiSelectFilter2"
+    [showDropdownFilter]="true"
     [filterPlaceholder]="secondColConf.filterPlaceholder"
     [visible]="secondColConf.visible">
   </ng-data-table-column>
-  <ng-data-table-column
-    [width]="thirdColConf.width"
-    [field]="'latitude'"
-    [title]="thirdColConf.title"
-    [sortable]="thirdColConf.sortable"
-    [filterable]="thirdColConf.filterable"
-    [resizable]="thirdColConf.resizable"
-    [showDropdownFilter]="true"
-    [filterPlaceholder]="thirdColConf.filterPlaceholder"
-    [visible]="thirdColConf.visible">
-    <ng-template #ngFilterTemplate let-column="column" let-filter="filter">
-      <ng-dropdown
-        [items]="column.filterOptions"
-        [totalItemCount]="column.filterOptions.length"
-        [menuPosition]="column.dropdownFilterMenuPosition"
-        [(ngModel)]="column.filter"
-        [filterable]="true"
-        [multiSelectable]="true"
-        [showSelectedOptionRemoveButton]="false"
-        [showSelectAll]="true"
-        [triggerSelectChangeOnInit]="false"
-        [wrapDisplaySelectLimit]="column.dropdownFilterWrapDisplaySelectLimit"
-        (selectChange)="filter.emit({ column: column, filter: column.filter })">
-      </ng-dropdown>
-    </ng-template>
-  </ng-data-table-column>
+  <!--<ng-data-table-column-->
+    <!--[width]="thirdColConf.width"-->
+    <!--[field]="'latitude'"-->
+    <!--[title]="thirdColConf.title"-->
+    <!--[sortable]="thirdColConf.sortable"-->
+    <!--[filterable]="thirdColConf.filterable"-->
+    <!--[resizable]="thirdColConf.resizable"-->
+    <!--[showDropdownFilter]="true"-->
+    <!--[filterPlaceholder]="thirdColConf.filterPlaceholder"-->
+    <!--[visible]="thirdColConf.visible">-->
+    <!--<ng-template #ngFilterTemplate let-column="column" let-filter="filter">-->
+      <!--<ng-dropdown-->
+        <!--[items]="column.filterOptions"-->
+        <!--[totalItemCount]="column.filterOptions.length"-->
+        <!--[menuPosition]="column.dropdownFilterMenuPosition"-->
+        <!--[(ngModel)]="column.filter"-->
+        <!--[filterable]="true"-->
+        <!--[multiSelectable]="true"-->
+        <!--[showSelectedOptionRemoveButton]="false"-->
+        <!--[showSelectAll]="true"-->
+        <!--[triggerSelectChangeOnInit]="false"-->
+        <!--[wrapDisplaySelectLimit]="column.dropdownFilterWrapDisplaySelectLimit"-->
+        <!--(selectChange)="filter.emit({ column: column, filter: column.filter })">-->
+      <!--</ng-dropdown>-->
+    <!--</ng-template>-->
+  <!--</ng-data-table-column>-->
   <ng-data-table-column
     [width]="forthColConf.width"
     [field]="'longitude'"

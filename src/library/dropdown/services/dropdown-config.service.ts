@@ -13,8 +13,8 @@ export const DROPDOWN_CONFIG = new InjectionToken<DataTableConfig>('dropdownConf
 @Injectable()
 export class DropdownConfigService implements DropdownConfig {
   public baseTranslations: DropdownTranslations = {
-    searchEmptyResult: 'No Results Available',
-    searchPlaceholder: 'Search',
+    noDataMessage: 'No Results Available',
+    filterPlaceholder: 'Search',
     selectAllPlaceholder: 'Select All',
     selectedItemWrapPlaceholder: 'Items',
     selectPlaceholder: 'Select'
@@ -22,7 +22,6 @@ export class DropdownConfigService implements DropdownConfig {
 
   public selectTrackBy = 'key';
   public displayTrackBy = 'value';
-  public dataTrackBy = 'data';
   public disabledTrackBy = 'disabled';
   public menuPosition = MenuPosition.BOTTOM_LEFT;
   public multiSelectable = false;
@@ -32,8 +31,6 @@ export class DropdownConfigService implements DropdownConfig {
   public showSelectAll = false;
   public groupByField = undefined;
   public wrapDisplaySelectLimit = 1;
-  public triggerSelectChangeOnInit = false;
-  public triggerChangeOncePerSelectAll = true;
   public showSelectedOptionRemoveButton = false;
   public showClearSelectionButton = false;
   public menuWidth = 320;
@@ -42,6 +39,10 @@ export class DropdownConfigService implements DropdownConfig {
   public loadViewDistance = 1;
   public limit = 30;
   public loadDataOnInit = true;
+  public closeMenuOnSelect = false;
+  public showOptionSelectCheckbox = true;
+  public triggerSelectChangeOncePerSelectAll = false;
+  public triggerSelectChangeOnInit = false;
 
   constructor(@Inject(DROPDOWN_CONFIG) private dropdownConfig: DropdownConfig) {
     if (dropdownConfig) {

@@ -8,8 +8,8 @@ import { Subscription } from 'rxjs/Subscription';
 import orderBy from 'lodash.orderBy';
 import get from 'lodash.get';
 
-import { DataTableParams } from '../models/data-table-params.model';
-import { QueryResult } from '../models/query-result.model';
+import { DataTableRequestParams } from '../models/data-table-request-params.model';
+import { DataTableQueryResult } from '../models/data-table-query-result.model';
 import { FilterColumn } from '../models/filter-column.model';
 import { FilterOption } from '../models/filter-option.model';
 import { SortColumn } from '../models/sort-column.model';
@@ -19,10 +19,10 @@ import { DataTableColumnComponent } from '../components/data-table-column/data-t
 
 /**
  * Data table resource manager class
- * @class DataTableResource
+ * @class DataTableResourceService
  */
 @Injectable()
-export class DataTableResource<T> {
+export class DataTableResourceService<T> {
   private itemDataStream = new ReplaySubject<T[]>(1);
   private dataSourceSubscription: Subscription;
 
@@ -35,10 +35,10 @@ export class DataTableResource<T> {
 
   /**
    * Query data table items collection.
-   * @param {DataTableParams} params Data table parameters.
-   * @return {Observable<QueryResult<T>>} Item query resolver.
+   * @param {DataTableRequestParams} params Data table parameters.
+   * @return {Observable<DataTableQueryResult<T>>} Item query resolver.
    */
-  public query(params: DataTableParams): Observable<QueryResult<T>> {
+  public query(params: DataTableRequestParams): Observable<DataTableQueryResult<T>> {
     return this.itemDataStream.switchMap((items: T[]) => {
       let itemCount = items.length;
       let result: T[] = items.slice();

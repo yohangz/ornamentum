@@ -22,4 +22,5 @@ export class DataTableEventStateService {
   public cellClickStream = new EventEmitter<CellClickEventArgs>();
   public initStream = new EventEmitter<DataTableComponent>();
   public dataBoundStream = new EventEmitter<void>();
+  public fetchFilterOptionsStream = new EventEmitter<void>();
 }

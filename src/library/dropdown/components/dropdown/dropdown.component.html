@@ -1,26 +1,33 @@
 <div #dropdownElement class="ng-dropdown" (clickOutside)="closeDropdown()">
   <span class="ng-dropdown-input-group-btn" [hidden]="!hasSelectedItems" *ngIf="config.showClearSelectionButton">
-    <button class="ng-dropdown-delete-button" type="button" (click)="clearSelected()">
+    <button class="ng-dropdown-delete-button" type="button" (click)="clearSelectedOptions()">
       <i class="zmdi zmdi-close-circle"></i>
     </button>
   </span>
-  <button  type="button" class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [disabled]="disabled">
+  <button  type="button" class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [disabled]="dataStateService.disabled">
     <ng-container *ngIf="config.multiSelectable">
-      <ng-container *ngIf="!showAllSelectedItemLabels">
-         <span class="ng-dropdown-selected-value" *ngFor="let option of _selectedOptions">
-          {{option.text}} <i class="zmdi zmdi-close-circle" *ngIf="config.showSelectedOptionRemoveButton" (click)="onSelectOptionClose($event, option)"></i>
+      <ng-container *ngIf="!showAllSelectedOptionLabels">
+         <span class="ng-dropdown-selected-value" *ngFor="let option of dataStateService.selectedOptions">
+          {{ getDisplayText(option) }} <i class="zmdi zmdi-close-circle" *ngIf="config.showSelectedOptionRemoveButton"
+                             (click)="onSelectOptionRemove($event, option)"></i>
         </span>
       </ng-container>
-      <span *ngIf="showAllSelectedItemLabels">
-        {{selectedItemsMessage}}
+      <span *ngIf="showAllSelectedOptionLabels">
+        {{ selectedItemsMessage }}
       </span>
-      <ng-container *ngIf="!_selectedOptions.length">
+      <span *ngIf="!dataStateService.selectedOptions.length">
         {{ config.translations.selectPlaceholder }}
-      </ng-container>
+      </span>
       <span class="caret"></span>
     </ng-container>
     <ng-container *ngIf="!config.multiSelectable">
-      {{ _selectedOption ? _selectedOption.text : config.translations.selectPlaceholder }}<span class="caret"></span>
+      <span *ngIf="dataStateService.selectedOption">
+        {{ getDisplayText(option) }}
+      </span>
+      <span *ngIf="!dataStateService.selectedOption">
+        {{ config.translations.selectPlaceholder }}
+      </span>
+      <span class="caret"></span>
     </ng-container>
   </button>
 </div>

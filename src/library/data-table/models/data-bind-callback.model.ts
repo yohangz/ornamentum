@@ -1,5 +1,5 @@
-import { QueryResult } from './query-result.model';
-import { DataTableParams } from './data-table-params.model';
+import { DataTableQueryResult } from './data-table-query-result.model';
+import { DataTableRequestParams } from './data-table-request-params.model';
 import { Observable } from 'rxjs/Observable';
 
-export type DataBindCallback = (params: DataTableParams) => Observable<QueryResult<any>>;
+export type DataBindCallback = (params: DataTableRequestParams) => Observable<DataTableQueryResult<any>>;

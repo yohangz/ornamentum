@@ -10,6 +10,5 @@ export class InitDirective implements OnInit {
 
   public ngOnInit(): void {
     this.init.emit();
-
   }
 }
