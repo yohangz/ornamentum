@@ -51,7 +51,7 @@
                 <a role="menuitem">
                   <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="option.selected"
                          [disabled]="option.disabled" *ngIf="config.showOptionSelectCheckbox"/>
-                  <span>{{ props.dropdown.getDisplayText(option) }}</span>
+                  <span>{{ props.dropdown.getDisplayText(option.item) }}</span>
                 </a>
               </li>
             </ng-container>
@@ -64,7 +64,7 @@
               <a role="menuitem">
                 <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="option.selected"
                        [disabled]="option.disabled" *ngIf="config.showOptionSelectCheckbox"/>
-                <span>{{ props.dropdown.getDisplayText(option) }}</span>
+                <span>{{ props.dropdown.getDisplayText(option.item) }}</span>
               </a>
             </li>
           </ng-container>

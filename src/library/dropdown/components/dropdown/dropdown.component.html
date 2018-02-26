@@ -22,7 +22,7 @@
     </ng-container>
     <ng-container *ngIf="!config.multiSelectable">
       <span *ngIf="dataStateService.selectedOption">
-        {{ getDisplayText(option) }}
+        {{ getDisplayText(dataStateService.selectedOption) }}
       </span>
       <span *ngIf="!dataStateService.selectedOption">
         {{ config.translations.selectPlaceholder }}

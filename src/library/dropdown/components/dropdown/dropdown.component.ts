@@ -347,8 +347,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.allOptionSelectChange = this.eventStateService.allOptionSelectChangeStream;
   }
 
-  public getDisplayText(option: DropdownItem): string {
-    return get(option.item, this.config.displayTrackBy);
+  public getDisplayText(item: any): string {
+    return get(item, this.config.displayTrackBy);
   }
 
   private initDataSource(source: Observable<any>): void {
