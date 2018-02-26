@@ -11,6 +11,7 @@ export const DROPDOWN_CONFIG = new InjectionToken<DataTableConfig>('dropdownConf
 
 /**
  * This service class hold all the global configurations of dropdown which can be overridden while importing the module.
+ * Used to manage dropdown base configuration state.
  */
 @Injectable()
 export class DropdownConfigService implements DropdownConfig {
