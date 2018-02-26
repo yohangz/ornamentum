@@ -1,6 +1,11 @@
 import { EventEmitter, Injectable } from '@angular/core';
+
 import { DropdownComponent } from '../components/dropdown/dropdown.component';
 
+/**
+ * Dropdown event state service.
+ * Manage dropdown event handler state.
+ */
 @Injectable()
 export class DropdownEventStateService {
   public dataFetchStream = new EventEmitter<boolean>();
