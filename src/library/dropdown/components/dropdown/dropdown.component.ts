@@ -352,7 +352,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   private initDataSource(source: Observable<any>): void {
-    debugger;
     this.dropdownResourceService.setDataSource(source);
 
     this.dataStateService.onDataBind = (params: DropdownRequestParams): Observable<DropdownQueryResult<any>> => {
@@ -414,7 +413,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     const roundingPixel = 1;
     const gutterPixel = 1;
 
-    if (scrollTop >= scrollHeight - (1 + this.config.loadViewDistance) * scrollElementHeight - roundingPixel - gutterPixel) {
+    if (scrollTop >= scrollHeight - (1 + this.config.loadViewDistance) * scrollElementHeight - roundingPixel - gutterPixel
+      && this.dataStateService.currentItemCount < this.dataStateService.totalOptionCount) { // todo: validate item count with current
       this.dataStateService.offset = this.dataStateService.offset + this.config.limit;
       this.eventStateService.dataFetchStream.emit(false);
     }
@@ -483,13 +483,13 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       this.dataStateService.dropdownItemGroups.forEach(group => {
         group.items.forEach(item => {
           item.selected = selectedState;
-          this.optionSelectChange(item, this.config.triggerSelectChangeOncePerSelectAll);
+          this.optionSelectChange(item, this.config.triggerSelectChangeOncePerSelectAll, false);
         });
       });
     } else {
       this.dataStateService.dropdownItems.forEach(item => {
         item.selected = selectedState;
-        this.optionSelectChange(item, this.config.triggerSelectChangeOncePerSelectAll);
+        this.optionSelectChange(item, this.config.triggerSelectChangeOncePerSelectAll, false);
       });
     }
 
@@ -505,21 +505,25 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.optionSelectChange(option);
   }
 
-  public optionSelectChange(option: DropdownItem, triggerSelectChange: boolean = true): void {
-    const id = get(option, this.config.selectTrackBy);
+  public optionSelectChange(option: DropdownItem, triggerSelectChange: boolean = true, triggerSelectAllStateUpdate: boolean = true): void {
+    const id = get(option.item, this.config.selectTrackBy);
     if (this.config.multiSelectable) {
       const selectedIndex = this.dataStateService.selectedOptions.findIndex((item: any) => {
         return get(item, this.config.selectTrackBy) === id;
       });
 
-      if (selectedIndex > -1) {
-        this.dataStateService.selectedOptions.splice(selectedIndex, 1);
-      } else {
+      if (option.selected && selectedIndex < 0) {
         this.dataStateService.selectedOptions.push(option.item);
+      } else if (!option.selected && selectedIndex > -1) {
+        this.dataStateService.selectedOptions.splice(selectedIndex, 1);
       }
 
       if (triggerSelectChange) {
         this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
+      }
+
+      if (triggerSelectAllStateUpdate) {
+        this.setAllOptionsSelectedState();
       }
     } else {
       if (option.selected) {
@@ -684,11 +688,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     }
 
     this.dataStateService.totalOptionCount = queryResult.count;
-
-    if (this.config.multiSelectable) {
-      this.dataStateService.allOptionsSelected = this.dataStateService.totalOptionCount === this.dataStateService.selectedOptions.length
-        && this.dataStateService.totalOptionCount !== 0;
-    }
+    this.dataStateService.currentItemCount = queryResult.items.length;
+    this.setAllOptionsSelectedState();
   }
 
   private onAfterDataBind(queryResult: DropdownQueryResult<any>): void {
@@ -737,5 +738,24 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   // Can be used to explicitly trigger data bind event.
   public dataBind(hardReload: boolean = false): void {
     this.eventStateService.dataFetchStream.emit(hardReload);
+  }
+
+  private setAllOptionsSelectedState(): void {
+    if (!this.config.multiSelectable || !this.config.showSelectAll) {
+      return;
+    }
+
+    if (this.dataStateService.currentItemCount === 0) {
+      this.dataStateService.allOptionsSelected = false;
+      return;
+    }
+
+    if (this.config.groupByField) {
+      this.dataStateService.allOptionsSelected = this.dataStateService.dropdownItemGroups
+        .every(group => group.items.every(item => item.selected));
+    } else {
+      this.dataStateService.allOptionsSelected = this.dataStateService.dropdownItems
+        .every(item => item.selected);
+    }
   }
 }

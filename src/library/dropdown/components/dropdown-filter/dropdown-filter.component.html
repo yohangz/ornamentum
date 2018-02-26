@@ -1,0 +1,19 @@
+<ul>
+  <li class="ng-dropdown-search">
+    <div class="ng-dropdown-input-group">
+      <span class="ng-dropdown-input-group-addon">
+        <i class="zmdi zmdi-search"></i>
+      </span>
+      <input type="text" class="ng-dropdown-input" focus
+             [attr.placeholder]="config.translations.filterPlaceholder"
+             (keyup)="props.dropdown.filterKeyUp()"
+             [(ngModel)]="props.dropdown.filterText">
+      <span class="ng-dropdown-input-group-btn" *ngIf="props.dropdown.filterText">
+        <button class="ng-dropdown-delete-button" type="button" (click)="props.dropdown.clearSearch()">
+          <i class="zmdi zmdi-close-circle"></i>
+        </button>
+      </span>
+    </div>
+  </li>
+  <li class="ng-dropdown-divider divider"></li>
+</ul>
