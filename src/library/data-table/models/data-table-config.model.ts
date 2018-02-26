@@ -349,10 +349,10 @@ export interface DataTableConfig {
   dropdownFilterWrapDisplaySelectLimit?: number;
 
   /**
-   * Dropdown filter trigger change once per select all if true.
+   * Dropdown filter trigger select change once per select all if true.
    * @type {boolean}
    */
-  dropdownFilterTriggerChangeOncePerSelectAll?: boolean;
+  dropdownFilterTriggerSelectChangeOncePerSelectAll?: boolean;
 
   /**
    * Dropdown filter show selected option remove button if true.
