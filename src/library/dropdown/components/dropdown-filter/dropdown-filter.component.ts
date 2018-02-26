@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
+import { Subject } from 'rxjs/Subject';
+import { Subscription } from 'rxjs/Subscription';
+
 import { DropdownConfigService } from '../../services/dropdown-config.service';
 import { DropdownDataStateService } from '../../services/dropdown-data-state.service';
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
-import { Subject } from 'rxjs/Subject';
-import { Subscription } from 'rxjs/Subscription';
 
 @Component({
   selector: 'ng-dropdown-filter',

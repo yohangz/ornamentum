@@ -9,7 +9,6 @@ import {
   Output
 } from '@angular/core';
 
-import { Subject } from 'rxjs/Subject';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 
@@ -57,10 +56,8 @@ import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component'
 export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccessor {
   private componentLoader: ComponentLoader<DropdownViewComponent>;
 
-  // private dataFilterStream = new Subject();
-  // private dataFilterSubscription: Subscription;
-
   private onSelectChangeSubscription: Subscription;
+  private onAllOptionSelectChangeSubscription: Subscription;
 
   // Outputs : Event Handlers
   /**
@@ -80,9 +77,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   @Output()
   public dataBound: EventEmitter<void>;
-
-  @Output()
-  public allOptionSelectChange: EventEmitter<boolean>;
 
   // Input - Event handlers
 
@@ -339,7 +333,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.dataBound = this.eventStateService.dataBoundStream;
     this.selectChange = this.eventStateService.selectChangeStream;
     this.init = this.eventStateService.initStream;
-    this.allOptionSelectChange = this.eventStateService.allOptionSelectChangeStream;
   }
 
   public getDisplayText(item: any): string {
@@ -456,9 +449,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * Lifecycle hook that is called when component is destroyed.
    */
   public ngOnDestroy(): void {
-    // if (this.dataFilterSubscription) {
-    //   this.dataFilterSubscription.unsubscribe();
-    // }
+    if (this.onAllOptionSelectChangeSubscription) {
+      this.onAllOptionSelectChangeSubscription.unsubscribe();
+    }
 
     if (this.onSelectChangeSubscription) {
       this.onSelectChangeSubscription.unsubscribe();
@@ -475,16 +468,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * Clear selected items.
    */
   public clearSelectedOptions(): void {
-    this.allOptionsSelectedStateChange(false);
-  }
-
-  public toggleAllOptionSelectedState(): void {
-    this.dataStateService.allOptionsSelected = !this.dataStateService.allOptionsSelected;
-    this.allOptionsSelectedStateChange(this.dataStateService.allOptionsSelected);
-  }
-
-  public get allOptionsSelected(): boolean {
-    return this.dataStateService.allOptionsSelected;
+    this.eventStateService.allOptionSelectChangeStream.emit(false);
   }
 
   private allOptionsSelectedStateChange(selectedState: boolean): void {
@@ -505,8 +489,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     if (this.config.triggerSelectChangeOncePerSelectAll) {
       this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
     }
-
-    this.eventStateService.allOptionSelectChangeStream.emit(selectedState);
   }
 
   public toggleOptionSelectedState(option: DropdownItem): void {
@@ -610,33 +592,12 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     // TODO: Implement touch event handler
   }
 
-  // public clearFilter(): void {
-  //   this.dataStateService.offset = 0;
-  //   this.dataStateService.filterText = '';
-  //   this.eventStateService.dataFetchStream.emit(false);
-  // }
-  //
-  // public filterKeyUp(): void {
-  //   if (this.config.filterDebounce) {
-  //     this.dataFilterStream.next(this.dataStateService.filterText);
-  //   } else {
-  //     this.dataStateService.offset = 0;
-  //     this.eventStateService.dataFetchStream.emit(false);
-  //   }
-  // }
-
-  // private initFilterDebounceEvent(): void {
-  //   this.dataFilterSubscription = this.dataFilterStream
-  //     .debounceTime(this.config.filterDebounceTime)
-  //     .subscribe(() => {
-  //       this.dataStateService.offset = 0;
-  //       this.eventStateService.dataFetchStream.emit(false);
-  //     });
-  // }
-
   public ngOnInit(): void {
     this.initDataFetchEvent();
-    // this.initFilterDebounceEvent();
+
+    this.onAllOptionSelectChangeSubscription = this.eventStateService.allOptionSelectChangeStream.subscribe((state: boolean) => {
+      this.allOptionsSelectedStateChange(state);
+    });
 
     if (this.config.loadDataOnInit) {
       this.eventStateService.dataFetchStream.emit(false);
