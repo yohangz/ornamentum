@@ -57,7 +57,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   private componentLoader: ComponentLoader<DropdownViewComponent>;
 
   private onSelectChangeSubscription: Subscription;
-  private onAllOptionSelectChangeSubscription: Subscription;
 
   // Outputs : Event Handlers
   /**
@@ -335,10 +334,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.init = this.eventStateService.initStream;
   }
 
-  public getDisplayText(item: any): string {
-    return get(item, this.config.displayTrackBy);
-  }
-
   private initDataSource(source: Observable<any>): void {
     this.dropdownResourceService.setDataSource(source);
 
@@ -349,22 +344,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
       return this.dropdownResourceService.query(params);
     };
-  }
-
-  public positionRight(): number {
-    if (this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT) {
-      return 0;
-    }
-
-    return;
-  }
-
-  public positionBottom(): number {
-    if (this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_LEFT) {
-      return 0;
-    }
-
-    return;
   }
 
   /**
@@ -387,11 +366,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       .withFloatLeft(floatLeft)
       .withFloatTop(floatTop)
       .withRelativeParentElement(this.relativeParentElement)
-      .withContext({
-        props: {
-          dropdown: this,
-        }
-      })
       .toggle(DropdownViewComponent, element, this.injector);
   }
 
@@ -400,32 +374,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    */
   public closeDropdown(): void {
     this.componentLoader.hide();
-  }
-
-  /**
-   * Performs data loading when scrolling by checking the scroll position.
-   * This will trigger only when loadOnScroll is true.
-   * @param event
-   */
-  public checkScrollPosition(event: any) {
-    const scrollTop = event.target.scrollTop;
-    const scrollHeight = event.target.scrollHeight;
-    const scrollElementHeight = event.target.clientHeight;
-
-    const roundingPixel = 1;
-    const gutterPixel = 1;
-
-    if (scrollTop >= scrollHeight - (1 + this.config.loadViewDistance) * scrollElementHeight - roundingPixel - gutterPixel
-      && this.dataStateService.currentItemCount < this.dataStateService.totalOptionCount) { // todo: validate item count with current
-      this.dataStateService.offset = this.dataStateService.offset + this.config.limit;
-      this.eventStateService.dataFetchStream.emit(false);
-    }
-  }
-
-  public onSelectOptionRemove(event: Event, option: DropdownItem): void {
-    event.stopPropagation();
-    option.selected = false;
-    this.optionSelectChange(option);
   }
 
   public get showAllSelectedOptionLabels(): boolean {
@@ -449,10 +397,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * Lifecycle hook that is called when component is destroyed.
    */
   public ngOnDestroy(): void {
-    if (this.onAllOptionSelectChangeSubscription) {
-      this.onAllOptionSelectChangeSubscription.unsubscribe();
-    }
-
     if (this.onSelectChangeSubscription) {
       this.onSelectChangeSubscription.unsubscribe();
     }
@@ -469,85 +413,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    */
   public clearSelectedOptions(): void {
     this.eventStateService.allOptionSelectChangeStream.emit(false);
-  }
-
-  private allOptionsSelectedStateChange(selectedState: boolean): void {
-    if (this.config.groupByField) {
-      this.dataStateService.dropdownItemGroups.forEach(group => {
-        group.items.forEach(item => {
-          item.selected = selectedState;
-          this.optionSelectChange(item, !this.config.triggerSelectChangeOncePerSelectAll, false);
-        });
-      });
-    } else {
-      this.dataStateService.dropdownItems.forEach(item => {
-        item.selected = selectedState;
-        this.optionSelectChange(item, !this.config.triggerSelectChangeOncePerSelectAll, false);
-      });
-    }
-
-    if (this.config.triggerSelectChangeOncePerSelectAll) {
-      this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
-    }
-  }
-
-  public toggleOptionSelectedState(option: DropdownItem): void {
-    option.selected = !option.selected;
-    this.optionSelectChange(option);
-  }
-
-  public optionSelectChange(option: DropdownItem, triggerSelectChange: boolean = true, triggerSelectAllStateUpdate: boolean = true): void {
-    const id = get(option.item, this.config.selectTrackBy);
-    if (this.config.multiSelectable) {
-      const selectedIndex = this.dataStateService.selectedOptions.findIndex((item: any) => {
-        return get(item, this.config.selectTrackBy) === id;
-      });
-
-      if (option.selected && selectedIndex < 0) {
-        this.dataStateService.selectedOptions.push(option.item);
-      } else if (!option.selected && selectedIndex > -1) {
-        this.dataStateService.selectedOptions.splice(selectedIndex, 1);
-      }
-
-      if (triggerSelectChange) {
-        this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
-      }
-
-      if (triggerSelectAllStateUpdate) {
-        this.setAllOptionsSelectedState();
-      }
-    } else {
-      if (option.selected) {
-        this.dataStateService.selectedOption = option.item;
-      } else {
-        this.dataStateService.selectedOption = undefined;
-      }
-
-      // deselect all options except current.
-      if (this.config.groupByField) {
-        this.dataStateService.dropdownItemGroups.forEach(group => {
-          group.items.forEach(item => {
-            if (item !== option) {
-              item.selected = false;
-            }
-          });
-        });
-      } else {
-        this.dataStateService.dropdownItems.forEach(item => {
-          if (item !== option) {
-            item.selected = false;
-          }
-        });
-      }
-
-      if (triggerSelectChange) {
-        this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);
-      }
-    }
-
-    if (this.config.closeMenuOnSelect && option.selected) {
-      this.closeDropdown();
-    }
   }
 
   /**
@@ -594,10 +459,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   public ngOnInit(): void {
     this.initDataFetchEvent();
-
-    this.onAllOptionSelectChangeSubscription = this.eventStateService.allOptionSelectChangeStream.subscribe((state: boolean) => {
-      this.allOptionsSelectedStateChange(state);
-    });
 
     if (this.config.loadDataOnInit) {
       this.eventStateService.dataFetchStream.emit(false);
@@ -654,7 +515,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
     this.dataStateService.totalOptionCount = queryResult.count;
     this.dataStateService.currentItemCount = queryResult.items.length;
-    this.setAllOptionsSelectedState();
+    this.dataStateService.setAllOptionsSelectedState();
   }
 
   private onAfterDataBind(queryResult: DropdownQueryResult<any>): void {
@@ -703,24 +564,5 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   // Can be used to explicitly trigger data bind event.
   public dataBind(hardReload: boolean = false): void {
     this.eventStateService.dataFetchStream.emit(hardReload);
-  }
-
-  private setAllOptionsSelectedState(): void {
-    if (!this.config.multiSelectable || !this.config.showSelectAll) {
-      return;
-    }
-
-    if (this.dataStateService.currentItemCount === 0) {
-      this.dataStateService.allOptionsSelected = false;
-      return;
-    }
-
-    if (this.config.groupByField) {
-      this.dataStateService.allOptionsSelected = this.dataStateService.dropdownItemGroups
-        .every(group => group.items.every(item => item.selected));
-    } else {
-      this.dataStateService.allOptionsSelected = this.dataStateService.dropdownItems
-        .every(item => item.selected);
-    }
   }
 }

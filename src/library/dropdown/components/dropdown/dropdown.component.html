@@ -3,7 +3,7 @@
     <ng-container *ngIf="config.multiSelectable">
       <ng-container *ngIf="!showAllSelectedOptionLabels">
          <span class="ng-dropdown-selected-value" *ngFor="let option of dataStateService.selectedOptions">
-          {{ getDisplayText(option) }} <i class="zmdi zmdi-close" *ngIf="config.showSelectedOptionRemoveButton"
+          {{ config.getDisplayText(option) }} <i class="zmdi zmdi-close" *ngIf="config.showSelectedOptionRemoveButton"
                              (click)="onSelectOptionRemove($event, option)"></i>
         </span>
       </ng-container>
@@ -16,7 +16,7 @@
     </ng-container>
     <ng-container *ngIf="!config.multiSelectable">
       <span *ngIf="dataStateService.selectedOption">
-        {{ getDisplayText(dataStateService.selectedOption) }}
+        {{ config.getDisplayText(dataStateService.selectedOption) }}
       </span>
       <span *ngIf="!dataStateService.selectedOption">
         {{ config.translations.selectPlaceholder }}

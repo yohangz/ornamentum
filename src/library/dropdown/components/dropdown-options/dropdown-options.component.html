@@ -1,0 +1,35 @@
+<ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="config.multiSelectable"
+    [style.height]="config.menuHeight - 135 | px"
+    (scroll)="config.loadOnScroll ? checkScrollPosition($event) : null" >
+  <!-- TODO: Fix menu height calculation -->
+  <ng-container *ngIf="config.groupByField">
+    <ng-container *ngFor="let groupedItem of dataStateService.dropdownItemGroups">
+      <li class="ng-dropdown-group-heading">{{ groupedItem.groupName }}</li>
+      <ng-container *ngFor="let option of groupedItem.items">
+        <li (click)="toggleOptionSelectedState.emit(option)" [class.disabled]="option.disabled"
+            [class.ng-item-selected]="option.selected">
+          <a role="menuitem">
+            <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="option.selected"
+                   [disabled]="option.disabled" *ngIf="config.showOptionSelectCheckbox"/>
+            <span>{{ config.getDisplayText(option.item) }}</span>
+          </a>
+        </li>
+      </ng-container>
+    </ng-container>
+  </ng-container>
+  <ng-container *ngIf="!config.groupByField">
+    <ng-container *ngFor="let option of dataStateService.dropdownItems">
+      <li (click)="toggleOptionSelectedState.emit(option)" [class.disabled]="option.disabled"
+          [class.ng-item-selected]="option.selected">
+        <a role="menuitem">
+          <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="option.selected"
+                 [disabled]="option.disabled" *ngIf="config.showOptionSelectCheckbox"/>
+          <span>{{ config.getDisplayText(option.item) }}</span>
+        </a>
+      </li>
+    </ng-container>
+  </ng-container>
+  <li *ngIf="!dataStateService.dataLoading && !dataStateService.totalOptionCount" class="ng-dropdown-no-data">
+    {{config.translations.noDataMessage}}
+  </li>
+</ul>
