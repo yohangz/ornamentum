@@ -8,6 +8,7 @@
           [class.selected]="row.selected"
           [class.clickable]="config.selectOnRowClick"
           [class.disabled]="row.disabled"
+          [ngClass]="row.cssClass"
           (dblclick)="rowDoubleClicked(row, $event)"
           (click)="rowClicked(row, $event)">
         <td class="ng-data-table-row-expand-button ng-ignore-propagation" [style.background-color]="row.colour"

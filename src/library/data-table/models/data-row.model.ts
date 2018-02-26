@@ -27,6 +27,12 @@ export interface DataRow {
   colour: string;
 
   /**
+   * Row CSS class name.
+   * @type {string}
+   */
+  cssClass: string;
+
+  /**
    * Row tooltip text.
    * @type {string}
    */
