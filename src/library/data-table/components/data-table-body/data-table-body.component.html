@@ -28,7 +28,7 @@
         <ng-container *ngFor="let column of columns">
           <ng-container *ngIf="column.visible">
             <td class="ng-data-table-data-column" *ngIf="!column.cellTemplate && !rowSpanIndex"
-                (init)="onCellInit(column, row)" [ngClass]="column.styleClass" [attr.rowspan]="rowSpanCount"
+                (init)="onCellInit(column, row)" [ngClass]="column.cssClass" [attr.rowspan]="rowSpanCount"
                 [style.background-color]="column.getCellColor(row) || row.colour"
                 (click)="cellClicked(column, row, $event)">
               <span>{{ getFieldValue(row, column) }}</span>

@@ -14,7 +14,7 @@
       (elementWidth)="setColumnWidth($event, column)"
       [class.sortable]="column.sortable"
       [class.resizable]="column.resizable"
-      [ngClass]="column.styleClass">
+      [ngClass]="column.cssClass">
     <span *ngIf="!column.headerTemplate" [textContent]="column.title"></span>
     <ng-container *ngIf="column.headerTemplate"
                   [ngTemplateOutlet]="column.headerTemplate"

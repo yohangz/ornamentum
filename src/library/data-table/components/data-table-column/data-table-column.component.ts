@@ -141,7 +141,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * @type string
    */
   @Input()
-  public styleClass: string;
+  public cssClass: string;
 
   /**
    * Column width.
@@ -378,11 +378,11 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * Lifecycle hook that is called after data-bound properties of a directive are initialized.
    */
   public ngOnInit(): void {
-    if (!this.styleClass && this.field) {
+    if (!this.cssClass && this.field) {
       if (/^[a-zA-Z0-9_]+$/.test(this.field)) {
-        this.styleClass = 'column-' + this.field;
+        this.cssClass = 'column-' + this.field;
       } else {
-        this.styleClass = 'column-' + this.field.replace(/[^a-zA-Z0-9_]/g, '');
+        this.cssClass = 'column-' + this.field.replace(/[^a-zA-Z0-9_]/g, '');
       }
     }
   }
