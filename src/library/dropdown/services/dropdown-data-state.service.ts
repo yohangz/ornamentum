@@ -6,6 +6,10 @@ import { DropdownItemGroup } from '../models/dropdown-Item-group.model';
 
 import { DropdownConfigService } from './dropdown-config.service';
 
+/**
+ * Dropdown data state service.
+ * Manage dropdown state data.
+ */
 @Injectable()
 export class DropdownDataStateService {
   public allOptionsSelected = false;
@@ -25,6 +29,10 @@ export class DropdownDataStateService {
   constructor(private config: DropdownConfigService) {
   }
 
+  /**
+   * Set all options selected state.
+   * Applicable only when multiSelectable and showSelectAll options are enabled.
+   */
   public setAllOptionsSelectedState(): void {
     if (!this.config.multiSelectable || !this.config.showSelectAll) {
       return;
