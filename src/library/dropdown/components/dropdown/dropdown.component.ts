@@ -57,8 +57,8 @@ import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component'
 export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccessor {
   private componentLoader: ComponentLoader<DropdownViewComponent>;
 
-  private dataFilterStream = new Subject();
-  private dataFilterSubscription: Subscription;
+  // private dataFilterStream = new Subject();
+  // private dataFilterSubscription: Subscription;
 
   private onSelectChangeSubscription: Subscription;
 
@@ -456,9 +456,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * Lifecycle hook that is called when component is destroyed.
    */
   public ngOnDestroy(): void {
-    if (this.dataFilterSubscription) {
-      this.dataFilterSubscription.unsubscribe();
-    }
+    // if (this.dataFilterSubscription) {
+    //   this.dataFilterSubscription.unsubscribe();
+    // }
 
     if (this.onSelectChangeSubscription) {
       this.onSelectChangeSubscription.unsubscribe();
@@ -610,33 +610,33 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     // TODO: Implement touch event handler
   }
 
-  public clearFilter(): void {
-    this.dataStateService.offset = 0;
-    this.dataStateService.filterText = '';
-    this.eventStateService.dataFetchStream.emit(false);
-  }
+  // public clearFilter(): void {
+  //   this.dataStateService.offset = 0;
+  //   this.dataStateService.filterText = '';
+  //   this.eventStateService.dataFetchStream.emit(false);
+  // }
+  //
+  // public filterKeyUp(): void {
+  //   if (this.config.filterDebounce) {
+  //     this.dataFilterStream.next(this.dataStateService.filterText);
+  //   } else {
+  //     this.dataStateService.offset = 0;
+  //     this.eventStateService.dataFetchStream.emit(false);
+  //   }
+  // }
 
-  public filterKeyUp(): void {
-    if (this.config.filterDebounce) {
-      this.dataFilterStream.next(this.dataStateService.filterText);
-    } else {
-      this.dataStateService.offset = 0;
-      this.eventStateService.dataFetchStream.emit(false);
-    }
-  }
-
-  private initFilterDebounceEvent(): void {
-    this.dataFilterSubscription = this.dataFilterStream
-      .debounceTime(this.config.filterDebounceTime)
-      .subscribe(() => {
-        this.dataStateService.offset = 0;
-        this.eventStateService.dataFetchStream.emit(false);
-      });
-  }
+  // private initFilterDebounceEvent(): void {
+  //   this.dataFilterSubscription = this.dataFilterStream
+  //     .debounceTime(this.config.filterDebounceTime)
+  //     .subscribe(() => {
+  //       this.dataStateService.offset = 0;
+  //       this.eventStateService.dataFetchStream.emit(false);
+  //     });
+  // }
 
   public ngOnInit(): void {
     this.initDataFetchEvent();
-    this.initFilterDebounceEvent();
+    // this.initFilterDebounceEvent();
 
     if (this.config.loadDataOnInit) {
       this.eventStateService.dataFetchStream.emit(false);
