@@ -62,9 +62,13 @@
 
           li {
             @include font-size(.8, 1);
-            margin-bottom: .1rem;
-            padding: .25rem;
             cursor: pointer;
+            margin-bottom: .1rem;
+            overflow: hidden;
+            padding: .25rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
 
             a {
               color: $multi-select-dropdown-toggle-color;

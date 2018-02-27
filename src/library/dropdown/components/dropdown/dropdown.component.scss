@@ -11,7 +11,7 @@
       .ng-dropdown-input-group-btn {
         position: absolute;
         right: 1.5rem;
-        top: .1rem;
+        top: .4rem;
         z-index: 1;
 
         .ng-dropdown-delete-button {
@@ -19,7 +19,7 @@
           color: $secondary-background-color;
           cursor: pointer;
           outline: none;
-          padding: .3rem .5rem;
+          padding: .1rem .5rem;
 
           i {
             @include font-size(1.1, 1.4);
@@ -63,14 +63,26 @@
         text-align: left;
         width: 100%;
 
+        .ng-dropdown-selected-item {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+
         .ng-dropdown-selected-value {
           background: $generated-context-background;
           color: $generated-context-color;
           display: inline-block;
           margin: .1rem .2rem .1rem .1rem;
-          padding: 0 .5rem 0 .5rem;
+          overflow: hidden;
+          padding: 0 1.5rem 0 .5rem;
           position: relative;
+          text-overflow: ellipsis;
+          white-space: nowrap;
 
+          &.close-enabled {
+            padding: 0 .5rem 0 .5rem;
+          }
 
           i {
             @include font-size(.9, .9);
@@ -78,13 +90,12 @@
             color: $alert-error-color;
             cursor: pointer;
             height: auto;
-            position: relative;
-            right: 0;
-            top: .1rem;
+            position: absolute;
+            right: .2rem;
+            top: .45rem;
             width: .7rem;
           }
         }
-
       }
     }
 

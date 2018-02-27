@@ -18,7 +18,7 @@
       </span>
     </ng-container>
     <ng-container *ngIf="!config.multiSelectable">
-      <span *ngIf="dataStateService.selectedOption">
+      <span class="ng-dropdown-selected-item" *ngIf="dataStateService.selectedOption">
         {{ config.getDisplayText(dataStateService.selectedOption) }}
       </span>
       <span *ngIf="!dataStateService.selectedOption">
