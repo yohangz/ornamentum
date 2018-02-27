@@ -245,6 +245,12 @@ export interface DataTableConfig {
    */
   baseTranslations?: DataTableTranslations;
 
+  /**
+   * State persistence key prefix.
+   * @type {string}
+   */
+  stateKeyPrefix?: string;
+
   // Table column config
 
   /**
@@ -379,8 +385,8 @@ export interface DataTableConfig {
   dropdownFilterMenuHeight?: number;
 
   /**
-   * State persistence key prefix.
-   * @type {string}
+   * Dropdown filter multi select option max width.
+   * @type {number}
    */
-  stateKeyPrefix?: string;
+  dropdownFilterMultiSelectOptionMaxWidth?: number;
 }

@@ -10,8 +10,6 @@
       *ngIf="column.showDropdownFilter"
       [relativeParentElement]="config.relativeParentElement"
       [dataSource]="filterDataStream"
-      [(ngModel)]="column.filter"
-
       [menuPosition]="column.dropdownFilterMenuPosition"
       [filterable]="column.dropdownFilterSearchable"
       [filterDebounceTime]="column.dropdownFilterSearchDebounceTime"
@@ -25,6 +23,9 @@
       [triggerSelectChangeOncePerSelectAll]="column.dropdownFilterTriggerSelectChangeOncePerSelectAll"
       [menuHeight]="column.dropdownFilterMenuHeight"
       [menuWidth]="column.dropdownFilterMenuWidth"
+      [multiSelectOptionMaxWidth]="column.dropdownFilterMultiSelectOptionMaxWidth"
+
+      [(ngModel)]="column.filter"
       (selectChange)="filter.emit()">
     </ng-dropdown>
   </ng-container>

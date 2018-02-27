@@ -82,6 +82,7 @@ export class DataTableConfigService implements DataTableConfig {
   public dropdownFilterShowClearSelectionButton = false;
   public dropdownFilterMenuWidth = 320;
   public dropdownFilterMenuHeight = 250;
+  public dropdownFilterMultiSelectOptionMaxWidth = 135;
 
   constructor(@Inject(DATA_TABLE_CONFIG) private dataTableConfig: DataTableConfig) {
     if (dataTableConfig) {

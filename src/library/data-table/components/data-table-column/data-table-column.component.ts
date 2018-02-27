@@ -10,7 +10,6 @@ import { DataTableFilterFieldMapperCallback } from '../../models/data-table-filt
 import { DataTableFilterExpressionCallback } from '../../models/data-table-filter-expression-callback.model';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
-import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
  * Data table column component.
@@ -275,8 +274,10 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   @Input()
   public dropdownFilterMenuHeight: number;
 
-  constructor(private dataTableConfigService: DataTableConfigService,
-              private dataStateService: DataTableDataStateService) {
+  @Input()
+  public dropdownFilterMultiSelectOptionMaxWidth: number;
+
+  constructor(private dataTableConfigService: DataTableConfigService) {
     // Table column config
     this.sortable = dataTableConfigService.sortable;
     this._sortOrder = dataTableConfigService.sortOrder;
@@ -300,6 +301,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     this.dropdownFilterShowClearSelectionButton = dataTableConfigService.dropdownFilterShowClearSelectionButton;
     this.dropdownFilterMenuWidth = dataTableConfigService.dropdownFilterMenuWidth;
     this.dropdownFilterMenuHeight = dataTableConfigService.dropdownFilterMenuHeight;
+    this.dropdownFilterMultiSelectOptionMaxWidth = dataTableConfigService.dropdownFilterMultiSelectOptionMaxWidth;
   }
 
   public resetSortOrder(): void {
