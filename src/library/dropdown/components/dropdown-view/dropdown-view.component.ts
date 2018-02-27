@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 
 import { Subscription } from 'rxjs/Subscription';
+import { Subject } from 'rxjs/Subject';
 
 import get from 'lodash.get';
 
@@ -17,6 +18,9 @@ import { DropdownEventStateService } from '../../services/dropdown-event-state.s
   styleUrls: ['./dropdown-view.component.scss']
 })
 export class DropdownViewComponent implements OnInit, OnDestroy {
+  public scrollEvent = new Subject<any>();
+
+  private scrollEventSubscription: Subscription;
   private onAllOptionSelectChangeSubscription: Subscription;
 
   @Output()
@@ -129,6 +133,11 @@ export class DropdownViewComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
+    this.scrollEventSubscription = this.scrollEvent.debounceTime(100)
+      .subscribe((event: any) => {
+        this.checkScrollPosition(event);
+      });
+
     this.onAllOptionSelectChangeSubscription = this.eventStateService.allOptionSelectChangeStream
       .subscribe((state: boolean) => {
         this.allOptionsSelectedStateChange(state);
@@ -139,5 +148,37 @@ export class DropdownViewComponent implements OnInit, OnDestroy {
     if (this.onAllOptionSelectChangeSubscription) {
       this.onAllOptionSelectChangeSubscription.unsubscribe();
     }
+
+    if (this.scrollEventSubscription) {
+      this.scrollEventSubscription.unsubscribe();
+    }
+  }
+
+  /**
+   * Performs data loading when scrolling by checking the scroll position.
+   * This will trigger only when loadOnScroll is true.
+   * @param event
+   */
+  public checkScrollPosition(event: any) {
+    const scrollTop = event.target.scrollTop;
+    const scrollHeight = event.target.scrollHeight;
+    const scrollElementHeight = event.target.clientHeight;
+
+    const roundingPixel = 1;
+    const gutterPixel = 1;
+
+    if (scrollTop >= scrollHeight - (1 + this.config.loadViewDistance) * scrollElementHeight - roundingPixel - gutterPixel
+      && this.dataStateService.currentItemCount < this.dataStateService.totalOptionCount && !this.dataStateService.dataLoading) {
+      this.dataStateService.offset = this.dataStateService.offset + this.config.limit;
+      this.eventStateService.dataFetchStream.emit(false);
+    }
+  }
+
+  public get showSelectAllCheckbox(): boolean {
+    return this.config.showSelectAll && this.config.multiSelectable && !this.config.loadOnScroll;
+  }
+
+  public get isOnlySelectOptionView(): boolean {
+    return !this.config.filterable && !this.showSelectAllCheckbox;
   }
 }

@@ -1,16 +1,17 @@
 <div class="ng-dropdown-menu-wrapper"
+     [class.ng-dropdown-item-list]="isOnlySelectOptionView"
      [style.width]="config.menuWidth | px"
      [style.height]="config.menuHeight | px"
      [style.right]="positionRight()"
      [style.bottom]="positionBottom()"
      (click)="$event.stopPropagation()">
-  <div *ngIf="config.filterable" class="ng-dropdown-filter-wrapper">
+  <div class="ng-dropdown-filter-wrapper" *ngIf="config.filterable">
     <ng-dropdown-filter></ng-dropdown-filter>
   </div>
-  <div class="ng-dropdown-item-filter-container" *ngIf="config.showSelectAll && config.multiSelectable && !config.loadOnScroll">
+  <div class="ng-dropdown-item-filter-container" *ngIf="showSelectAllCheckbox">
     <ng-dropdown-select-all-option></ng-dropdown-select-all-option>
   </div>
-  <div class="ng-dropdown-item-container-wrapper">
+  <div class="ng-dropdown-item-container-wrapper" (scroll)="config.loadOnScroll ? scrollEvent.next($event) : null">
     <ng-dropdown-options (toggleOptionSelectedState)="toggleOptionSelectedState($event)"></ng-dropdown-options>
   </div>
 </div>
