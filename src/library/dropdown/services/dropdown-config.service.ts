@@ -33,7 +33,7 @@ export class DropdownConfigService implements DropdownConfig {
   public filterDebounceTime = 500;
   public showSelectAll = false;
   public groupByField = undefined;
-  public wrapDisplaySelectLimit = 1;
+  public wrapDisplaySelectLimit = undefined;
   public showSelectedOptionRemoveButton = false;
   public showClearSelectionButton = false;
   public menuWidth = 320;
