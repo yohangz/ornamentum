@@ -43,6 +43,10 @@
             right: .5rem;
             top: .7rem;
           }
+
+          .ng-dropdown-loading {
+            @include font-size(.9, 1.1);
+          }
         }
       }
     }

@@ -75,13 +75,13 @@
           display: inline-block;
           margin: .1rem .2rem .1rem .1rem;
           overflow: hidden;
-          padding: 0 1.5rem 0 .5rem;
+          padding: 0 .5rem 0 .5rem;
           position: relative;
           text-overflow: ellipsis;
           white-space: nowrap;
 
-          &.close-enabled {
-            padding: 0 .5rem 0 .5rem;
+          &.ng-dropdown-option-close-enabled {
+            padding: 0 1.5rem 0 .5rem;
           }
 
           i {

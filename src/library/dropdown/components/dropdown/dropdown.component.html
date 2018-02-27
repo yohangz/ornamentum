@@ -4,7 +4,7 @@
       <ng-container *ngIf="!showAllSelectedOptionLabels">
          <span class="ng-dropdown-selected-value" *ngFor="let option of dataStateService.selectedOptions"
                [style.max-width]="config.multiSelectOptionMaxWidth | px"
-               [class.ng-dropdown-option-close]="config.showSelectedOptionRemoveButton">
+               [class.ng-dropdown-option-close-enabled]="config.showSelectedOptionRemoveButton">
           {{ config.getDisplayText(option) }}
            <i class="zmdi zmdi-close" *ngIf="config.showSelectedOptionRemoveButton"
               (click)="onSelectOptionRemove($event, option)"></i>
