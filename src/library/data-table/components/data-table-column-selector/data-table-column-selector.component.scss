@@ -17,6 +17,15 @@
       width: 15rem;
       z-index: 1060;
 
+      .ng-data-table-column-selector-box-heading {
+        @include font-size(.9, 1.4);
+        border-bottom: .05rem solid $data-table-header-border;
+        font-weight: 400;
+        margin-bottom: .5rem;
+        padding-bottom: .3rem;
+        text-align: center;
+      }
+
     }
 
     .ng-data-table-column-selector-box {

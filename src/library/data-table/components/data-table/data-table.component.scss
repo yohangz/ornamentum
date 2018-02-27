@@ -47,6 +47,24 @@
           .ng-dropdown-loading {
             @include font-size(.9, 1.1);
           }
+
+          .ng-dropdown-down-arrow {
+            @include font-size(.9, 1);
+            top: .4rem;
+          }
+
+          .ng-dropdown-input-group-btn {
+            right: 1.1rem;
+            top: .3rem;
+
+            .ng-dropdown-delete-button {
+              padding: .1rem .2rem;
+
+              i {
+                @include font-size(.8, 1);
+              }
+            }
+          }
         }
       }
     }
@@ -113,6 +131,29 @@
             position: relative;
             vertical-align: bottom;
             word-break: break-all;
+
+            .ng-data-table-header-input-box {
+              .ng-data-table-input-group-btn {
+                position: absolute;
+                right: .8rem;
+                top: .3rem;
+                z-index: 1;
+
+                .ng-data-table-delete-button {
+                  border: 0;
+                  color: $secondary-background-color;
+                  cursor: pointer;
+                  outline: none;
+                  padding: .1rem .2rem;
+
+                  i {
+                    @include font-size(.8, 1);
+                    font-weight: 700;
+                    padding: 0;
+                  }
+                }
+              }
+            }
 
             .ng-data-table-checkbox-input {
               margin: 0;
