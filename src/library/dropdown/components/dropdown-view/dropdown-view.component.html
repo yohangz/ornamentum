@@ -4,13 +4,13 @@
      [style.right]="positionRight()"
      [style.bottom]="positionBottom()"
      (click)="$event.stopPropagation()">
-  <div *ngIf="config.filterable" style="height: 60px;">
+  <div *ngIf="config.filterable" class="ng-dropdown-filter-wrapper">
     <ng-dropdown-filter></ng-dropdown-filter>
   </div>
-  <div *ngIf="config.showSelectAll && config.multiSelectable && !config.loadOnScroll">
+  <div class="ng-dropdown-item-filter-container" *ngIf="config.showSelectAll && config.multiSelectable && !config.loadOnScroll">
     <ng-dropdown-select-all-option></ng-dropdown-select-all-option>
   </div>
-  <div style="height: calc(100% - 80px); overflow-y: auto;">
+  <div class="ng-dropdown-item-container-wrapper">
     <ng-dropdown-options (toggleOptionSelectedState)="toggleOptionSelectedState($event)"></ng-dropdown-options>
   </div>
 </div>

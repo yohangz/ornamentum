@@ -1,4 +1,5 @@
 @import '../../../node_modules/compass-mixins/lib/compass';
+@import '../../../node_modules/compass-mixins/lib/animate';
 
 // font-size use em as a unit and px as a fallback
 @mixin font-size($size: 1.6, $line: $size * 1.5) {

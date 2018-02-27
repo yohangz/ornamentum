@@ -1,19 +1,18 @@
-<ul>
-  <li class="ng-dropdown-search">
-    <div class="ng-dropdown-input-group">
-      <span class="ng-dropdown-input-group-addon" id="sizing-addon3">
-        <i class="zmdi zmdi-search"></i>
-      </span>
-      <input type="text" class="ng-dropdown-input" focus
-             [attr.placeholder]="config.translations.filterPlaceholder"
-             (keyup)="filterKeyUp()"
-             [(ngModel)]="dataStateService.filterText">
-      <span class="ng-dropdown-input-group-btn" *ngIf="dataStateService.filterText">
-        <button class="ng-dropdown-delete-button" type="button" (click)="clearFilter()">
-          <i class="zmdi zmdi-close-circle"></i>
-        </button>
-      </span>
-    </div>
-  </li>
-  <li class="ng-dropdown-divider divider"></li>
-</ul>
+<div class="ng-dropdown-search">
+  <div class="ng-dropdown-input-group">
+    <span class="ng-dropdown-input-group-addon" id="sizing-addon3">
+      <i class="zmdi zmdi-search"></i>
+    </span>
+    <input type="text" class="ng-dropdown-input" focus
+           [attr.placeholder]="config.translations.filterPlaceholder"
+           (keyup)="filterKeyUp()"
+           [(ngModel)]="dataStateService.filterText">
+    <span class="ng-dropdown-input-group-btn" *ngIf="dataStateService.filterText">
+      <button class="ng-dropdown-delete-button" type="button" (click)="clearFilter()">
+        <i class="zmdi zmdi-close"></i>
+      </button>
+    </span>
+  </div>
+</div>
+<div class="ng-dropdown-divider divider"></div>
+

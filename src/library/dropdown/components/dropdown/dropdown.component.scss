@@ -9,46 +9,56 @@
       position: relative;
 
       .ng-dropdown-input-group-btn {
-        margin-left: .01rem;
         position: absolute;
-        right: .1rem;
+        right: 1.5rem;
         top: .1rem;
         z-index: 1;
 
         .ng-dropdown-delete-button {
-          @include font-size(1.1, 1.2);
+          border: 0;
           color: $secondary-background-color;
           cursor: pointer;
-          margin: .01rem;
           outline: none;
-          padding: .3rem .35rem;
+          padding: .3rem .5rem;
 
           i {
+            @include font-size(1.1, 1.4);
+            font-weight: 700;
             padding: 0;
           }
         }
       }
 
-      .ng-dropdown-input-group-btn:not([hidden]){
-        ~ .ng-dropdown-toggle {
-          &::after {
-            @include transition(.5s right ease);
-            right: 2.7rem;
-          }
-        }
+
+      .ng-dropdown-down-arrow {
+        @include font-size(1.4, 1.4);
+        position: absolute;
+        right: .5rem;
+        top: .5rem;
+        z-index: 1;
+      }
+
+      .ng-dropdown-loading {
+        @include font-size(1.4, 1.4);
+        @include animation(rotating 2s linear infinite);
+        background: $multi-select-dropdown-toggle-background;
+        position: absolute;
+        right: .5rem;
+        top: .3rem;
+        z-index: 1;
       }
 
       .ng-dropdown-toggle {
         @include border-radius(0);
         @include display-flex;
         @include flex-wrap(wrap);
-        @include font-size(.8, 1);
+        @include font-size(.8, 1.7);
         background: $multi-select-dropdown-toggle-background;
         border: .05rem solid $multi-select-dropdown-toggle-border;
         color: $multi-select-dropdown-toggle-color;
         cursor: pointer;
         outline: 0;
-        padding: .5rem 2rem .5rem .5rem;
+        padding: .2rem 2.7rem .2rem .5rem;
         position: relative;
         text-align: left;
         width: 100%;
@@ -57,40 +67,33 @@
           background: $generated-context-background;
           color: $generated-context-color;
           display: inline-block;
-          margin: 0 .5rem 0 0;
-          padding: 0 1.5rem 0 .5rem;
+          margin: .1rem .2rem .1rem .1rem;
+          padding: 0 .5rem 0 .5rem;
           position: relative;
 
 
           i {
-            @include font-size(1.1, 1.4);
+            @include font-size(.9, .9);
             background: $generated-context-background;
             color: $alert-error-color;
             cursor: pointer;
-            height: 1.3rem;
-            position: absolute;
+            height: auto;
+            position: relative;
             right: 0;
-            top: .05rem;
-            width: 1.3rem;
+            top: .1rem;
+            width: .7rem;
           }
         }
 
-        &::after {
-          @include transition(.5s right ease);
-          border-bottom: 0;
-          border-left: .3em solid transparent;
-          border-right: .3em solid transparent;
-          border-top: .3em solid;
-          content: '';
-          display: inline-block;
-          height: 0;
-          margin-left: .255em;
-          position: absolute;
-          right: .5rem;
-          top: .8rem;
-          vertical-align: .255em;
-          width: 0;
-        }
+      }
+    }
+
+    @-webkit-keyframes rotating {
+      from{
+        -webkit-transform: rotate(0deg);
+      }
+      to{
+        -webkit-transform: rotate(360deg);
       }
     }
   }
