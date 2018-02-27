@@ -2,9 +2,11 @@
   <button  type="button" class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [disabled]="dataStateService.disabled">
     <ng-container *ngIf="config.multiSelectable">
       <ng-container *ngIf="!showAllSelectedOptionLabels">
-         <span class="ng-dropdown-selected-value" *ngFor="let option of dataStateService.selectedOptions">
-          {{ config.getDisplayText(option) }} <i class="zmdi zmdi-close" *ngIf="config.showSelectedOptionRemoveButton"
-                             (click)="onSelectOptionRemove($event, option)"></i>
+         <span class="ng-dropdown-selected-value" *ngFor="let option of dataStateService.selectedOptions"
+               [style.max-width]="config.multiSelectOptionMaxWidth | px">
+          {{ config.getDisplayText(option) }}
+           <i class="zmdi zmdi-close" *ngIf="config.showSelectedOptionRemoveButton"
+              (click)="onSelectOptionRemove($event, option)"></i>
         </span>
       </ng-container>
       <span *ngIf="showAllSelectedOptionLabels">

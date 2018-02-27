@@ -145,4 +145,10 @@ export class DropdownConfig {
    * @type {boolean}
    */
   triggerSelectChangeOncePerSelectAll?: boolean;
+
+  /**
+   * Multi select option maximum width.
+   * @type {boolean}
+   */
+  multiSelectOptionMaxWidth?: number;
 }

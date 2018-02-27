@@ -322,6 +322,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.config.triggerSelectChangeOncePerSelectAll = value;
   }
 
+  @Input()
+  public set multiSelectOptionMaxWidth(value: number) {
+    this.config.multiSelectOptionMaxWidth = value;
+  }
+
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
               private eventStateService: DropdownEventStateService,
