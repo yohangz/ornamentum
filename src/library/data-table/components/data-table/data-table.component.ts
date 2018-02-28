@@ -581,7 +581,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   private getSelectedState(item: any): boolean {
-    const id = get(item.item, this.config.selectTrackBy);
+    const id = get(item, this.config.selectTrackBy);
     if (this.config.multiRowSelectable) {
       return this.dataStateService.selectedRows.indexOf(id) > -1;
     }
@@ -609,9 +609,10 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     });
 
     if (this.config.multiRowSelectable) {
-      this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataTableRow) => {
-        return dataRow.selected;
-      });
+      this.dataStateService.allRowSelected = this.dataStateService.dataRows.length !== 0
+        && this.dataStateService.dataRows.every((dataRow: DataTableRow) => {
+          return dataRow.selected;
+        });
     }
 
     const substituteRowCount = this.config.limit - this.dataStateService.dataRows.length;
@@ -675,17 +676,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
     return this.dataStateService.onDataBind(params);
   }
-
-  // /**
-  //  * Fetch filter options from data provider.
-  //  */
-  // private fetchColumnFilterOptions(): void {
-  //   this.columns.forEach((column) => {
-  //     if (column.filterable && column.showDropdownFilter) {
-  //       column.fetchFilterOptions();
-  //     }
-  //   });
-  // }
 
   private initDataTableState(): void {
     if (this.config.persistTableState) {
