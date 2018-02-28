@@ -50,7 +50,6 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
             this.filterDataStream.next(options);
           });
       });
-
     }
   }
 
@@ -60,5 +59,10 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
     }
 
     this.filterDataStream.complete();
+  }
+
+  public clearFilter(): void {
+    this.column.filter = '';
+    this.filter.emit();
   }
 }

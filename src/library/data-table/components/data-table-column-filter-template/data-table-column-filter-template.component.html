@@ -8,7 +8,7 @@
       <input type="text" [(ngModel)]="column.filter"
              (keyup)="filter.emit()" [placeholder]="column.filterPlaceholder"/>
       <span class="ng-data-table-input-group-btn">
-      <button class="ng-data-table-delete-button" type="button">
+      <button class="ng-data-table-delete-button" type="button" (click)="clearFilter()">
         <i class="zmdi zmdi-close"></i>
       </button>
     </span>
