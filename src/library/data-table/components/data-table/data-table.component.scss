@@ -36,6 +36,8 @@
 
           .ng-dropdown-selected-value {
             background: none;
+            margin: 0;
+            padding: 0 1.5rem 0 .5rem;
           }
 
           &::after {
@@ -326,7 +328,21 @@
 
           &.selected {
             td {
-              background: $data-table-selected-row-background;
+              background: darken($data-table-selected-row-background, 10%);
+            }
+
+            &:hover {
+              td {
+                background: darken($data-table-selected-row-background, 10%);
+              }
+
+              + .row-even,
+              + .row-odd {
+
+                td {
+                  background: darken($data-table-selected-row-background, 10%);
+                }
+              }
             }
           }
 
