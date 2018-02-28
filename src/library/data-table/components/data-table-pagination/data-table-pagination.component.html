@@ -8,7 +8,7 @@
       <div class="ng-data-table-input-group">
         <span class="ng-data-table-input-group-addon">{{config.translations.paginationLimit}}:</span>
         <input #limitInput type="number" class="ng-data-table-input" min="1" step="1" [attr.max]="config.maxLimit"
-               [ngModel]="config.limit"
+               [class.ng-data-table-input-error]="isInvalidLimit(limitInput)" [ngModel]="config.limit" required
                (keyup.enter)="onPageSizeChange(limitInput)"
                (keyup.esc)="onPageSizeRevert(limitInput)"/>
       </div>
@@ -19,7 +19,7 @@
       <div class="ng-data-table-pagination-page">
         <div class="ng-data-table-input-group">
           <input #pageInput type="number" class="ng-data-table-input" min="1" step="1" [attr.max]="maxPage"
-                 [ngModel]="page"
+                 [class.ng-data-table-input-error]="isInvalidPageIndex(pageInput)" [ngModel]="page" required
                  (keyup.enter)="onPageIndexChange(pageInput)"
                  (keyup.esc)="onPageIndexRevert(pageInput)"/>
           <div class="ng-data-table-input-group-addon">

@@ -68,16 +68,26 @@ export class DataTablePaginationComponent {
   }
 
   /**
+   * Check limit invalid status. True if limit is invalid.
+   * @param {HTMLInputElement} element - Limit input DOM element.
+   * @return {boolean} - Invalid status.
+   */
+  public isInvalidLimit(element: HTMLInputElement): boolean {
+    const limit = parseInt(element.value);
+    return element.value === '' || limit > this.config.maxLimit || limit < 1;
+  }
+
+  /**
    * On page size change.
    * @param {HTMLInputElement} element HTML input element.
    */
   public onPageSizeChange(element: HTMLInputElement): void {
-    const limit = parseInt(element.value);
-    if (limit > this.config.maxLimit) {
+    if (this.isInvalidLimit(element)) {
       element.value = String(this.config.limit);
       return;
     }
 
+    const limit = parseInt(element.value);
     if (this.config.limit !== limit) {
       this.config.offset = 0;
       this.config.limit = limit;
@@ -94,16 +104,26 @@ export class DataTablePaginationComponent {
   }
 
   /**
+   * Is invalid page index. True if page index is invalid.
+   * @param {HTMLInputElement} element - Page index DOM element.
+   * @return {boolean} - Invalid status.
+   */
+  public isInvalidPageIndex(element: HTMLInputElement): boolean {
+    const page = parseInt(element.value);
+    return element.value === '' || page > this.maxPage || page < 1;
+  }
+
+  /**
    * On page size change.
    * @param {HTMLInputElement} element HTML input element.
    */
   public onPageIndexChange(element: HTMLInputElement): void {
-    const page = parseInt(element.value);
-    if (page > this.maxPage) {
+    if (this.isInvalidPageIndex(element)) {
       element.value = String(this.page);
       return;
     }
 
+    const page = parseInt(element.value);
     if (this.page !== page) {
       this.config.offset = (page - 1) * this.config.limit;
       this.eventStateService.dataFetchStream.emit(false);
