@@ -23,6 +23,10 @@
     margin-bottom: -.05rem;
     padding: .5rem;
 
+    .ng-data-table-input-error,
+    .ng-invalid {
+      border-color: $alert-error-color;
+    }
 
   }
 

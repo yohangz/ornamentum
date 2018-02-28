@@ -75,7 +75,11 @@
             }
 
             &.ng-item-selected {
-              background: $generated-context-background;
+              background: darken($generated-context-background, 10%);
+
+              &:hover {
+                background:darken($generated-context-background, 10%);
+              }
             }
 
             &.ng-dropdown-group-heading {
@@ -104,23 +108,6 @@
         }
       }
 
-      .ng-dropdown-item-filter-container {
-        height: 2.7rem;
-
-        ul {
-          list-style-type: none;
-          margin: 0;
-          padding: 0;
-
-          li {
-            @include font-size(.8, 1);
-            margin-bottom: .1rem;
-            padding: .25rem;
-            cursor: pointer;
-          }
-        }
-      }
-
       .ng-dropdown-show-more {
         text-align: center;
         width: 100%;
@@ -141,23 +128,6 @@
 
         + .ng-dropdown-item-container-wrapper {
           height: calc(100% - 3rem);
-        }
-      }
-
-      .ng-dropdown-item-filter-container {
-
-        + .ng-dropdown-item-container-wrapper {
-          height: calc(100% - 2.7rem);
-        }
-      }
-
-      > .ng-dropdown-filter-wrapper {
-
-        + .ng-dropdown-item-filter-container {
-
-          + .ng-dropdown-item-container-wrapper {
-            height: calc(100% - 5.7rem);
-          }
         }
       }
     }

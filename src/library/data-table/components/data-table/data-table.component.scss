@@ -330,19 +330,19 @@
 
           &.selected {
             td {
-              background: darken($data-table-selected-row-background, 10%);
+              background: $data-table-selected-row-background;
             }
 
             &:hover {
               td {
-                background: darken($data-table-selected-row-background, 10%);
+                background: $data-table-selected-row-background;
               }
 
               + .row-even,
               + .row-odd {
 
                 td {
-                  background: darken($data-table-selected-row-background, 10%);
+                  background: $data-table-selected-row-background;
                 }
               }
             }

@@ -51,19 +51,20 @@
       .ng-dropdown-toggle {
         @include border-radius(0);
         @include display-flex;
-        @include flex-wrap(wrap);
+        @include flex-wrap(no-wrap);
         @include font-size(.8, 1.7);
         background: $multi-select-dropdown-toggle-background;
         border: .05rem solid $multi-select-dropdown-toggle-border;
         color: $multi-select-dropdown-toggle-color;
         cursor: pointer;
         outline: 0;
-        padding: .2rem 2.7rem .2rem .5rem;
+        padding: .2rem 3rem .2rem .5rem;
         position: relative;
         text-align: left;
         width: 100%;
 
-        .ng-dropdown-selected-item {
+        .ng-dropdown-selected-item,
+        .ng-dropdown-selected-placeholder {
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -73,7 +74,7 @@
           background: $generated-context-background;
           color: $generated-context-color;
           display: inline-block;
-          margin: .1rem .2rem .1rem .1rem;
+          margin: 0 .2rem 0 .1rem;
           overflow: hidden;
           padding: 0 .5rem 0 .5rem;
           position: relative;

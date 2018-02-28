@@ -10,10 +10,10 @@
               (click)="onSelectOptionRemove($event, index)"></i>
         </span>
       </ng-container>
-      <span *ngIf="wrapSelectedOptions">
+      <span class="ng-dropdown-selected-item" *ngIf="wrapSelectedOptions">
         {{ wrappedSelectedOptions }}
       </span>
-      <span *ngIf="!dataStateService.selectedOptions.length">
+      <span class="ng-dropdown-selected-placeholder" *ngIf="!dataStateService.selectedOptions.length">
         {{ config.translations.selectPlaceholder }}
       </span>
     </ng-container>
@@ -21,7 +21,7 @@
       <span class="ng-dropdown-selected-item" *ngIf="dataStateService.selectedOption">
         {{ config.getDisplayText(dataStateService.selectedOption) }}
       </span>
-      <span *ngIf="!dataStateService.selectedOption">
+      <span class="ng-dropdown-selected-placeholder" *ngIf="!dataStateService.selectedOption">
         {{ config.translations.selectPlaceholder }}
       </span>
     </ng-container>
