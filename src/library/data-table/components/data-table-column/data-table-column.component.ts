@@ -30,13 +30,13 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   // Content Child Properties
 
   @ContentChild('ngDataTableCell')
-  private cellTemplate: TemplateRef<any>;
+  public cellTemplate: TemplateRef<any>;
 
   @ContentChild('ngDataTableHeader')
-  private headerTemplate: TemplateRef<any>;
+  public headerTemplate: TemplateRef<any>;
 
   @ContentChild('ngFilterTemplate')
-  private filterTemplate: TemplateRef<any>;
+  public filterTemplate: TemplateRef<any>;
 
   // Callback event handlers
 

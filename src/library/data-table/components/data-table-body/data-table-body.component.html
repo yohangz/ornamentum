@@ -49,7 +49,7 @@
   </tr>
 </ng-container>
 <ng-container *ngIf="hasSubstituteRows">
-  <tr *ngFor="let ignored of dataStateService.substituteItems, let index = index"
+  <tr *ngFor="let ignored of dataStateService.substituteRows, let index = index"
       [class.row-odd]="isOddSubstituteRow(index)" [class.row-even]="isEvenSubstituteRow(index)">
     <td *ngIf="config.expandableRows">&nbsp;</td>
     <td *ngIf="config.showIndexColumn">&nbsp;</td>
