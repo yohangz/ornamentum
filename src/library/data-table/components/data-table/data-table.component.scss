@@ -135,6 +135,8 @@
             word-break: break-all;
 
             .ng-data-table-header-input-box {
+              position: relative;
+
               .ng-data-table-input-group-btn {
                 position: absolute;
                 right: .8rem;
