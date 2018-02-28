@@ -139,4 +139,9 @@ export class DropdownConfig {
    * @type {boolean}
    */
   multiSelectOptionMaxWidth?: number;
+
+  /**
+   * Set first dropdown option selected if true.
+   */
+  setFirstOptionSelected?: boolean;
 }

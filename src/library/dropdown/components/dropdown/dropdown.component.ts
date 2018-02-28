@@ -311,6 +311,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.config.multiSelectOptionMaxWidth = value;
   }
 
+  @Input()
+  public set setFirstOptionSelected(value: boolean) {
+    this.config.setFirstOptionSelected = value;
+  }
+
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
               private eventStateService: DropdownEventStateService,
@@ -498,6 +503,14 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
         accumulator.push(this.extractDropdownItem(item));
         return accumulator;
       }, this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownItems : []);
+    }
+
+    if (this.config.setFirstOptionSelected && queryResult.items.length) {
+      if (this.config.multiSelectable) {
+        this.dataStateService.selectedOptions = [ queryResult.items[0] ];
+      } else {
+        this.dataStateService.selectedOption = queryResult.items[0];
+      }
     }
 
     this.dataStateService.totalOptionCount = queryResult.count;
