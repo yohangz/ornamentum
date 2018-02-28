@@ -18,7 +18,6 @@ export class DropdownConfigService implements DropdownConfig {
   public baseTranslations: DropdownTranslations = {
     noDataMessage: 'No Results Available',
     filterPlaceholder: 'Search',
-    selectAllPlaceholder: 'Select All',
     selectedItemWrapPlaceholder: 'Items',
     selectPlaceholder: 'Select'
   };
@@ -31,7 +30,6 @@ export class DropdownConfigService implements DropdownConfig {
   public filterable = false;
   public filterDebounce = true;
   public filterDebounceTime = 500;
-  public showSelectAll = false;
   public groupByField = undefined;
   public wrapDisplaySelectLimit = undefined;
   public showSelectedOptionRemoveButton = false;
@@ -44,7 +42,6 @@ export class DropdownConfigService implements DropdownConfig {
   public loadDataOnInit = true;
   public closeMenuOnSelect = false;
   public showOptionSelectCheckbox = true;
-  public triggerSelectChangeOncePerSelectAll = false;
   public multiSelectOptionMaxWidth = 135;
 
   constructor(@Inject(DROPDOWN_CONFIG) private dropdownConfig: DropdownConfig) {

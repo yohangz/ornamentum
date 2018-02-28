@@ -240,13 +240,6 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   public dropdownFilterGroupByField: string;
 
   /**
-   * Dropdown filter trigger select change once per select all state.
-   * @type boolean
-   */
-  @Input()
-  public dropdownFilterTriggerSelectChangeOncePerSelectAll: boolean;
-
-  /**
    * Dropdown filter show selected option remove button.
    * @type boolean
    */
@@ -293,10 +286,8 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     this.dropdownFilterSearchable = dataTableConfigService.dropdownFilterSearchable;
     this.dropdownFilterSearchDebounceTime = dataTableConfigService.dropdownFilterSearchDebounceTime;
     this.dropdownFilterSearchDebounce = dataTableConfigService.dropdownFilterSearchDebounce;
-    this.dropdownFilterShowSelectAll = dataTableConfigService.dropdownFilterShowSelectAll;
     this.dropdownFilterWrapDisplaySelectLimit = dataTableConfigService.dropdownFilterWrapDisplaySelectLimit;
     this.dropdownFilterGroupByField = dataTableConfigService.dropdownFilterGroupByField;
-    this.dropdownFilterTriggerSelectChangeOncePerSelectAll = dataTableConfigService.dropdownFilterTriggerSelectChangeOncePerSelectAll;
     this.dropdownFilterShowSelectedOptionRemoveButton = dataTableConfigService.dropdownFilterShowSelectedOptionRemoveButton;
     this.dropdownFilterShowClearSelectionButton = dataTableConfigService.dropdownFilterShowClearSelectionButton;
     this.dropdownFilterMenuWidth = dataTableConfigService.dropdownFilterMenuWidth;

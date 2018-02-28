@@ -43,7 +43,7 @@
     </ng-container>
   <tr *ngIf="config.expandableRows" [hidden]="!row.expanded" class="ng-data-table-row-expansion">
     <td [attr.colspan]="totalColumnCount">
-      <ng-container [ngTemplateOutlet]="expandTemplate" [ngTemplateOutletContext]="{ row: row }">
+      <ng-container [ngTemplateOutlet]="rowExpandTemplate" [ngTemplateOutletContext]="{ row: row }">
       </ng-container>
     </td>
   </tr>

@@ -62,12 +62,6 @@ export class DropdownConfig {
   filterDebounceTime?: number;
 
   /**
-   * Show select all checkbox if true.
-   * @type {boolean}
-   */
-  showSelectAll?: boolean;
-
-  /**
    * Group by field name in item schema.
    * @type {string}
    */
@@ -139,12 +133,6 @@ export class DropdownConfig {
    * @type {boolean}
    */
   showOptionSelectCheckbox?: boolean;
-
-  /**
-   * Trigger select change once per select all if true.
-   * @type {boolean}
-   */
-  triggerSelectChangeOncePerSelectAll?: boolean;
 
   /**
    * Multi select option maximum width.

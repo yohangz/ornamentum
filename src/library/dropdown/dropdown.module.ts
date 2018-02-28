@@ -8,7 +8,6 @@ import { DropdownConfig } from './models/dropdown-config.model';
 import { DropdownComponent } from './components/dropdown/dropdown.component';
 import { DropdownViewComponent } from './components/dropdown-view/dropdown-view.component';
 import { DropdownFilterComponent } from './components/dropdown-filter/dropdown-filter.component';
-import { DropdownSelectAllOptionComponent } from './components/dropdown-select-all-option/dropdown-select-all-option.component';
 import { DropdownOptionsComponent } from './components/dropdown-options/dropdown-options.component';
 
 import { DROPDOWN_CONFIG } from './services/dropdown-config.service';
@@ -17,7 +16,6 @@ const COMPONENTS = [
   DropdownComponent,
   DropdownViewComponent,
   DropdownFilterComponent,
-  DropdownSelectAllOptionComponent,
   DropdownOptionsComponent
 ];
 

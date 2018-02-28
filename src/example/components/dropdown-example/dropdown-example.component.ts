@@ -16,6 +16,21 @@ export class DropdownExampleComponent {
   public selected = [];
 
   constructor() {
+    // this.selected = [
+    //   {
+    //     key: 2,
+    //     group: 'A',
+    //     value: 'test1',
+    //     disabled: false
+    //   },
+    //   {
+    //     key: 3,
+    //     group: 'A',
+    //     value: 'test2',
+    //     disabled: true
+    //   }
+    // ];
+
     this.items = Observable.of([
       {
         key: 1,
@@ -103,20 +118,22 @@ export class DropdownExampleComponent {
       }
     ]);
 
-    this.selected = [
-      {
-        key: 13,
-        group: 'C',
-        value: 'test3',
-        disabled: false
-      },
-      {
-        key: 14,
-        group: 'A',
-        value: 'test3',
-        disabled: false
-      }
-    ];
+    setTimeout(() => {
+      this.selected = [
+        {
+          key: 13,
+          group: 'C',
+          value: 'test3',
+          disabled: false
+        },
+        {
+          key: 14,
+          group: 'A',
+          value: 'test3',
+          disabled: false
+        }
+      ];
+    }, 5000);
   }
 
   public onSelectChange(event: DropdownItem[]): void {
@@ -215,7 +232,7 @@ export class DropdownExampleComponent {
       count: 100
     };
 
-    setTimeout(() => {
+    setInterval(() => {
       dataStream.next(data);
     }, 2000);
 

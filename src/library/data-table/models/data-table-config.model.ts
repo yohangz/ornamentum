@@ -336,12 +336,6 @@ export interface DataTableConfig {
   dropdownFilterSearchDebounceTime?: number;
 
   /**
-   * Dropdown filter show select all checkbox if true.
-   * @type {boolean}
-   */
-  dropdownFilterShowSelectAll?: boolean;
-
-  /**
    * Dropdown filter group by field name in item schema.
    * @type {string}
    */
@@ -353,12 +347,6 @@ export interface DataTableConfig {
    * @type {number}
    */
   dropdownFilterWrapDisplaySelectLimit?: number;
-
-  /**
-   * Dropdown filter trigger select change once per select all if true.
-   * @type {boolean}
-   */
-  dropdownFilterTriggerSelectChangeOncePerSelectAll?: boolean;
 
   /**
    * Dropdown filter show selected option remove button if true.

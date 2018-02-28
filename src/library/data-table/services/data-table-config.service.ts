@@ -74,10 +74,8 @@ export class DataTableConfigService implements DataTableConfig {
   public dropdownFilterSearchable = true;
   public dropdownFilterSearchDebounceTime = 500;
   public dropdownFilterSearchDebounce = true;
-  public dropdownFilterShowSelectAll = true;
   public dropdownFilterWrapDisplaySelectLimit = 1;
   public dropdownFilterGroupByField = undefined;
-  public dropdownFilterTriggerSelectChangeOncePerSelectAll = true;
   public dropdownFilterShowSelectedOptionRemoveButton = false;
   public dropdownFilterShowClearSelectionButton = false;
   public dropdownFilterMenuWidth = 320;

@@ -24,7 +24,7 @@ import { DropdownRequestParams } from '../../models/dropdown-request-params.mode
 import { DropdownDataBindCallback } from '../../models/dropdown-data-bind-callback.model';
 import { DropdownQueryResult } from '../../models/dropdown-query-result.model';
 
-import { PopoverComponentLoaderFactoryService, ComponentLoader } from '../../../utility';
+import { PopoverComponentLoaderFactoryService } from '../../../utility';
 import { DropdownConfigService } from '../../services/dropdown-config.service';
 import { DropdownDataStateService } from '../../services/dropdown-data-state.service';
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
@@ -54,8 +54,6 @@ import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component'
   ]
 })
 export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccessor {
-  private componentLoader: ComponentLoader<DropdownViewComponent>;
-
   private onSelectChangeSubscription: Subscription;
 
   // Outputs : Event Handlers
@@ -225,15 +223,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Enable/Disable show select all option.
-   * @type {boolean}
-   */
-  @Input()
-  public set showSelectAll(value: boolean) {
-    this.config.showSelectAll = value;
-  }
-
-  /**
    * Enable/Disable load data in the on initStream event.
    * @type {boolean}
    */
@@ -318,11 +307,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   @Input()
-  public set triggerSelectChangeOncePerSelectAll(value: boolean) {
-    this.config.triggerSelectChangeOncePerSelectAll = value;
-  }
-
-  @Input()
   public set multiSelectOptionMaxWidth(value: number) {
     this.config.multiSelectOptionMaxWidth = value;
   }
@@ -333,7 +317,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
               private dropdownResourceService: DropdownResourceService<any>,
               public dataStateService: DropdownDataStateService,
               public config: DropdownConfigService) {
-    this.componentLoader = this.componentLoaderFactory.createLoader();
+    this.dataStateService.componentLoaderRef = this.componentLoaderFactory.createLoader();
 
     this.dataBound = this.eventStateService.dataBoundStream;
     this.selectChange = this.eventStateService.selectChangeStream;
@@ -368,7 +352,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       floatTop = element.offsetHeight;
     }
 
-    this.componentLoader
+    this.dataStateService.componentLoaderRef
       .withFloatLeft(floatLeft)
       .withFloatTop(floatTop)
       .withRelativeParentElement(this.relativeParentElement)
@@ -379,10 +363,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * Triggers drop down close event.
    */
   public closeDropdown(): void {
-    this.componentLoader.hide();
+    this.dataStateService.componentLoaderRef.hide();
   }
 
-  public get showAllSelectedOptionLabels(): boolean {
+  public get wrapSelectedOptions(): boolean {
     if (this.config.wrapDisplaySelectLimit !== undefined) {
       return this.dataStateService.selectedOptions.length > this.config.wrapDisplaySelectLimit;
     }
@@ -390,11 +374,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     return false;
   }
 
-  /**
-   * Get selected items message.
-   * @return {string} Selected items message.
-   */
-  public get selectedItemsMessage(): string {
+  public get wrappedSelectedOptions(): string {
     return `(${this.dataStateService.selectedOptions.length}) ${this.config.translations.selectedItemWrapPlaceholder}`;
   }
 
@@ -407,7 +387,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       this.onSelectChangeSubscription.unsubscribe();
     }
 
-    this.componentLoader.dispose();
+    this.dataStateService.componentLoaderRef.dispose();
   }
 
   public get hasSelectedItems(): boolean {
@@ -417,8 +397,20 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   /**
    * Clear selected items.
    */
-  public clearSelectedOptions(): void {
-    this.eventStateService.allOptionSelectChangeStream.emit(false);
+  public clearSelectedOptions(event: Event): void {
+    event.stopPropagation();
+
+    if (this.config.multiSelectable) {
+      this.dataStateService.selectedOptions = [];
+      this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
+    } else {
+      this.dataStateService.selectedOption = undefined;
+      this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);
+    }
+
+    if (this.config.closeMenuOnSelect) {
+      this.closeDropdown();
+    }
   }
 
   /**
@@ -473,16 +465,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.eventStateService.initStream.emit(this);
   }
 
-  private getSelectedState(id: any): boolean {
-    if (this.config.multiSelectable) {
-      return this.dataStateService.selectedOptions.some((item: any) => {
-        return get(item, this.config.selectTrackBy) === id;
-      });
-    }
-
-    return get(this.dataStateService.selectedOption, this.config.selectTrackBy) === id;
-  }
-
   private extractDropdownItem(item: any): DropdownItem {
     const id = get(item, this.config.selectTrackBy);
 
@@ -490,7 +472,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       id: id,
       text: get(item, this.config.displayTrackBy),
       disabled: get(item, this.config.disabledTrackBy),
-      selected: this.getSelectedState(id),
       item: item
     };
   }
@@ -521,7 +502,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
     this.dataStateService.totalOptionCount = queryResult.count;
     this.dataStateService.currentItemCount += queryResult.items.length;
-    this.dataStateService.setAllOptionsSelectedState();
   }
 
   private onAfterDataBind(queryResult: DropdownQueryResult<any>): void {
@@ -570,5 +550,15 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   // Can be used to explicitly trigger data bind event.
   public dataBind(hardReload: boolean = false): void {
     this.eventStateService.dataFetchStream.emit(hardReload);
+  }
+
+  public onSelectOptionRemove(event: Event, index: number): void {
+    event.stopPropagation();
+    this.dataStateService.selectedOptions.splice(index, 1);
+    this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
+
+    if (this.config.closeMenuOnSelect) {
+      this.closeDropdown();
+    }
   }
 }

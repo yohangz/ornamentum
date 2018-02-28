@@ -21,12 +21,6 @@ export interface DropdownItem {
   disabled: boolean;
 
   /**
-   * Selected state.
-   * @type {boolean}
-   */
-  selected: boolean;
-
-  /**
    * Source item data reference.
    * @type {any}
    */

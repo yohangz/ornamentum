@@ -1,17 +1,17 @@
 <div #dropdownElement class="ng-dropdown" (clickOutside)="closeDropdown()">
   <button  type="button" class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [disabled]="dataStateService.disabled">
     <ng-container *ngIf="config.multiSelectable">
-      <ng-container *ngIf="!showAllSelectedOptionLabels">
-         <span class="ng-dropdown-selected-value" *ngFor="let option of dataStateService.selectedOptions"
+      <ng-container *ngIf="!wrapSelectedOptions">
+         <span class="ng-dropdown-selected-value" *ngFor="let item of dataStateService.selectedOptions; let index = index"
                [style.max-width]="config.multiSelectOptionMaxWidth | px"
                [class.ng-dropdown-option-close-enabled]="config.showSelectedOptionRemoveButton">
-          {{ config.getDisplayText(option) }}
+          {{ config.getDisplayText(item) }}
            <i class="zmdi zmdi-close" *ngIf="config.showSelectedOptionRemoveButton"
-              (click)="onSelectOptionRemove($event, option)"></i>
+              (click)="onSelectOptionRemove($event, index)"></i>
         </span>
       </ng-container>
-      <span *ngIf="showAllSelectedOptionLabels">
-        {{ selectedItemsMessage }}
+      <span *ngIf="wrapSelectedOptions">
+        {{ wrappedSelectedOptions }}
       </span>
       <span *ngIf="!dataStateService.selectedOptions.length">
         {{ config.translations.selectPlaceholder }}
@@ -26,7 +26,7 @@
       </span>
     </ng-container>
     <span class="ng-dropdown-input-group-btn" [hidden]="!hasSelectedItems" *ngIf="config.showClearSelectionButton">
-      <button class="ng-dropdown-delete-button" type="button" (click)="clearSelectedOptions()">
+      <button class="ng-dropdown-delete-button" type="button" (click)="clearSelectedOptions($event)">
         <i class="zmdi zmdi-close"></i>
       </button>
     </span>

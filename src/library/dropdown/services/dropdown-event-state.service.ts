@@ -12,5 +12,4 @@ export class DropdownEventStateService {
   public dataBoundStream = new EventEmitter<void>();
   public selectChangeStream = new EventEmitter<any[] | any>();
   public initStream = new EventEmitter<DropdownComponent>();
-  public allOptionSelectChangeStream = new EventEmitter<boolean>();
 }
