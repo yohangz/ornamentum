@@ -4,8 +4,8 @@
                 [ngTemplateOutletContext]="{ column: column, filter: customFilterStream }">
   </ng-container>
   <ng-container *ngIf="!column.filterTemplate">
-    <div class="ng-data-table-header-input-box">
-      <input *ngIf="!column.showDropdownFilter" type="text" [(ngModel)]="column.filter"
+    <div class="ng-data-table-header-input-box" *ngIf="!column.showDropdownFilter">
+      <input type="text" [(ngModel)]="column.filter"
              (keyup)="filter.emit()" [placeholder]="column.filterPlaceholder"/>
       <span class="ng-data-table-input-group-btn">
       <button class="ng-data-table-delete-button" type="button">
