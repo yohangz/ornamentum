@@ -582,6 +582,10 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   private getSelectedState(item: any): boolean {
     const id = get(item, this.config.selectTrackBy);
+    if (id === undefined) {
+      return false;
+    }
+
     if (this.config.multiRowSelectable) {
       return this.dataStateService.selectedRows.indexOf(id) > -1;
     }
