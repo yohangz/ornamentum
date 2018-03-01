@@ -3,12 +3,17 @@
 
 :host-context {
   .ng-data-table-no-records-message {
-    padding: 5rem;
-    text-align: center;
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-wrap(wrap);
+    @include flex-direction(column);
+    height: 100%;
 
     h1 {
       @include font-size(1.2, 1.4);
       color: $action-text;
+      margin-bottom: 0;
     }
 
     h2 {
