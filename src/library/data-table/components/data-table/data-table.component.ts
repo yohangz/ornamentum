@@ -407,7 +407,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    */
   @Input()
   public set selectedRows(value: any[]) {
-    this.dataStateService.selectedRows = value;
+    this.dataStateService.selectedRows = value || [];
     this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRows);
   }
 
@@ -789,10 +789,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   public writeValue(value: any): void {
-    if (!value) {
-      return;
-    }
-
     if (this.config.multiRowSelectable) {
       this.selectedRows = value;
     } else {

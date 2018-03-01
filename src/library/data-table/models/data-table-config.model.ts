@@ -251,6 +251,12 @@ export interface DataTableConfig {
    */
   stateKeyPrefix?: string;
 
+  /**
+   * Show row expand loading spinner if true.
+   * Applicable only when row expand is enabled.
+   */
+  showRowExpandLoadingSpinner?: boolean;
+
   // Table column config
 
   /**
@@ -300,10 +306,11 @@ export interface DataTableConfig {
   showDropdownFilter?: boolean;
 
   /**
-   * Show row expand loading spinner if true.
-   * Applicable only when row expand is enabled.
+   * Show filter clear button if true.
+   * Applicable only for none dropdown filter mode.
+   * @type {boolean}
    */
-  showRowExpandLoadingSpinner?: boolean;
+  showFilterClearButton?: boolean;
 
   // Column dropdown filter options
 

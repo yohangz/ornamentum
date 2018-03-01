@@ -150,7 +150,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   @Input()
   public set selectedOptions(value: any[]) {
     this.dataStateService.selectedOptions = value || [];
-    this.eventStateService.selectChangeStream.emit(value);
+    this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
   }
 
   /**
@@ -160,7 +160,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   @Input()
   public set selectedOption(value: any) {
     this.dataStateService.selectedOption = value;
-    this.eventStateService.selectChangeStream.emit(value);
+    this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);
   }
 
   /**

@@ -5,10 +5,11 @@
   </ng-container>
   <ng-container *ngIf="!column.filterTemplate">
     <div class="ng-data-table-header-input-box" *ngIf="!column.showDropdownFilter">
-      <input type="text" [(ngModel)]="column.filter"
+      <input type="text" [(ngModel)]="column.filter" [class.ng-data-table-clear-filter]="showFilterClearButton"
              (keyup)="filter.emit()" [placeholder]="column.filterPlaceholder"/>
       <span class="ng-data-table-input-group-btn">
-      <button class="ng-data-table-delete-button" type="button" (click)="clearFilter()">
+      <button *ngIf="column.showFilterClearButton" class="ng-data-table-delete-button"
+              type="button" (click)="clearFilter()">
         <i class="zmdi zmdi-close"></i>
       </button>
     </span>

@@ -168,6 +168,9 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   @Input()
   public filter: any;
 
+  @Input()
+  public showFilterClearButton: any;
+
   /**
    * Resize minimum limit.
    * @type number
@@ -279,6 +282,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     this.resizable = dataTableConfigService.columnResizable;
     this.visible = dataTableConfigService.columnVisible;
     this.showDropdownFilter = dataTableConfigService.showDropdownFilter;
+    this.showFilterClearButton = dataTableConfigService.showFilterClearButton;
 
     // Dropdown filter config
     this.dropdownFilterMenuPosition = dataTableConfigService.dropdownFilterMenuPosition;

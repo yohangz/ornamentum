@@ -68,6 +68,7 @@ export class DataTableConfigService implements DataTableConfig {
   public columnResizable = false;
   public columnVisible = true;
   public showDropdownFilter = false;
+  public showFilterClearButton = false;
 
   // Column dropdown filter options
   public dropdownFilterMenuPosition = DropdownMenuPosition.BOTTOM_LEFT;

@@ -44,7 +44,7 @@ export class DropdownOptionsComponent {
 
       this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
     } else {
-      if (this.dataStateService.selectedOption) {
+      if (get(this.dataStateService.selectedOption, this.config.selectTrackBy) === id) {
         this.dataStateService.selectedOption = undefined;
       } else {
         this.dataStateService.selectedOption = option.item;
