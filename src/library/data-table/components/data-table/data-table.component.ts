@@ -184,6 +184,11 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   // Input parameters
 
   @Input()
+  public set items(value: any[]) {
+    this.dataSource = Observable.of(value);
+  }
+
+  @Input()
   public set dataSource(source: Observable<any[]>) {
     this.initDataSource(source);
   }
