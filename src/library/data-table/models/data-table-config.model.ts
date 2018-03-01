@@ -1,7 +1,7 @@
 import { DataTableStorageMode } from './data-table-storage-mode.enum';
 import { DataTableTranslations } from './data-table-translations.model';
 import { DataTableSortOrder } from './data-table-sort-order.enum';
-import { DropdownMenuPosition } from '../../dropdown';
+import { DropdownMenuPosition, DropdownSelectMode } from '../../dropdown';
 
 /**
  * Data table configuration.
@@ -322,11 +322,11 @@ export interface DataTableConfig {
   dropdownFilterMenuPosition?: DropdownMenuPosition;
 
   /**
-   * Dropdown filter multi selectable if true.
+   * Dropdown select mode.
    * Applicable only when showDropdownFilter is true.
    * @type {boolean}
    */
-  dropdownFilterMultiSelectable?: boolean;
+  dropdownFilterSelectMode?: DropdownSelectMode;
 
   /**
    * Dropdown filter searchable if true.

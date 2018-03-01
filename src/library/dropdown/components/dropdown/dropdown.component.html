@@ -1,6 +1,6 @@
 <div #dropdownElement class="ng-dropdown" (clickOutside)="closeDropdown()">
   <button  type="button" class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [disabled]="dataStateService.disabled">
-    <ng-container *ngIf="config.multiSelectable">
+    <ng-container *ngIf="config.selectMode === DropdownSelectMode.MULTI">
       <ng-container *ngIf="!wrapSelectedOptions">
          <span class="ng-dropdown-selected-value" *ngFor="let item of dataStateService.selectedOptions; let index = index"
                [style.max-width]="config.multiSelectOptionMaxWidth | px"
@@ -17,7 +17,7 @@
         {{ config.translations.selectPlaceholder }}
       </span>
     </ng-container>
-    <ng-container *ngIf="!config.multiSelectable">
+    <ng-container *ngIf="config.selectMode !== DropdownSelectMode.MULTI">
       <span class="ng-dropdown-selected-item" *ngIf="dataStateService.selectedOption">
         {{ config.getDisplayText(dataStateService.selectedOption) }}
       </span>

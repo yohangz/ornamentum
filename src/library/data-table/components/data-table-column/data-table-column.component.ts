@@ -8,6 +8,7 @@ import { DropdownMenuPosition } from '../../../dropdown/models/dropdown-menu-pos
 import { DataTableRow } from '../../models/data-table-row.model';
 import { DataTableFilterFieldMapperCallback } from '../../models/data-table-filter-field-mapper-callback.model';
 import { DataTableFilterExpressionCallback } from '../../models/data-table-filter-expression-callback.model';
+import { DropdownSelectMode } from '../../../dropdown';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 
@@ -198,7 +199,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * @type boolean
    */
   @Input()
-  public dropdownFilterMultiSelectable: boolean;
+  public dropdownFilterSelectMode: DropdownSelectMode;
 
   /**
    * Dropdown filter searchable state.
@@ -286,7 +287,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
     // Dropdown filter config
     this.dropdownFilterMenuPosition = dataTableConfigService.dropdownFilterMenuPosition;
-    this.dropdownFilterMultiSelectable = dataTableConfigService.dropdownFilterMultiSelectable;
+    this.dropdownFilterSelectMode = dataTableConfigService.dropdownFilterSelectMode;
     this.dropdownFilterSearchable = dataTableConfigService.dropdownFilterSearchable;
     this.dropdownFilterSearchDebounceTime = dataTableConfigService.dropdownFilterSearchDebounceTime;
     this.dropdownFilterSearchDebounce = dataTableConfigService.dropdownFilterSearchDebounce;

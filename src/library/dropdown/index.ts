@@ -6,6 +6,7 @@ export { DropdownFilter } from './models/dropdown-filter.model';
 export { DropdownDataBindCallback } from './models/dropdown-data-bind-callback.model';
 export { DropdownQueryResult } from './models/dropdown-query-result.model';
 export { DropdownConfig } from './models/dropdown-config.model';
+export { DropdownSelectMode } from './models/dropdown-select-mode.enum';
 
 export { DropdownComponent } from './components/dropdown/dropdown.component';
 

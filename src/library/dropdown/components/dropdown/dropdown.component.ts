@@ -25,6 +25,7 @@ import { DropdownItemGroup } from '../../models/dropdown-Item-group.model';
 import { DropdownRequestParams } from '../../models/dropdown-request-params.model';
 import { DropdownDataBindCallback } from '../../models/dropdown-data-bind-callback.model';
 import { DropdownQueryResult } from '../../models/dropdown-query-result.model';
+import { DropdownSelectMode } from '../../models/dropdown-select-mode.enum';
 
 import { PopoverComponentLoaderFactoryService } from '../../../utility';
 import { DropdownConfigService } from '../../services/dropdown-config.service';
@@ -56,6 +57,8 @@ import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component'
   ]
 })
 export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccessor {
+  public DropdownSelectMode = DropdownSelectMode;
+
   private onSelectChangeSubscription: Subscription;
 
   @ContentChild('ngDropdownLoadingSpinner')
@@ -210,12 +213,12 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Enable/Disable dropdown items multi select option.
-   * @type {boolean}
+   * Dropdown select mode.
+   * @type {DropdownSelectMode}
    */
   @Input()
-  public set multiSelectable(value: boolean) {
-    this.config.multiSelectable = value;
+  public set selectMode(value: DropdownSelectMode) {
+    this.config.selectMode = value;
   }
 
   /**
@@ -401,7 +404,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   public get hasSelectedItems(): boolean {
-    return this.config.multiSelectable ? !!this.dataStateService.selectedOptions.length : !!this.dataStateService.selectedOption;
+    if (this.config.selectMode === DropdownSelectMode.MULTI) {
+      return !!this.dataStateService.selectedOptions.length;
+    }
+
+    return !!this.dataStateService.selectedOption;
   }
 
   /**
@@ -410,7 +417,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   public clearSelectedOptions(event: Event): void {
     event.stopPropagation();
 
-    if (this.config.multiSelectable) {
+    if (this.config.selectMode === DropdownSelectMode.MULTI) {
       this.dataStateService.selectedOptions = [];
       this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
     } else {
@@ -438,7 +445,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @param value Selected value.
    */
   public writeValue(value: any): void {
-    if (this.config.multiSelectable) {
+    if (this.config.selectMode === DropdownSelectMode.MULTI) {
       this.selectedOptions = value;
     } else {
       this.selectedOption = value;
@@ -511,10 +518,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     }
 
     if (this.config.setFirstOptionSelected && queryResult.items.length) {
-      if (this.config.multiSelectable) {
-        this.dataStateService.selectedOptions = [queryResult.items[0]];
+      if (this.config.selectMode === DropdownSelectMode.MULTI) {
+        this.selectedOptions = [queryResult.items[0]];
       } else {
-        this.dataStateService.selectedOption = queryResult.items[0];
+        this.selectedOption = queryResult.items[0];
       }
     }
 

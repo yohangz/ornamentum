@@ -1,25 +1,24 @@
 <ng-dropdown
   [groupByField]="'group'"
-  [multiSelectable]="true"
-  [setFirstOptionSelected]="true"
+  [selectMode]="DropdownSelectMode.SINGLE"
   [filterable]="true"
   [showClearSelectionButton]="true"
   [dataSource]="items"
   [loadViewDistance]="0"
-  [selectedOptions]="selected"
   [showSelectedOptionRemoveButton]="true"
+  [setFirstOptionSelected]="true"
+  [(ngModel)]="singleSelected"
 
   (selectChange)="onSelectChange($event)">
 </ng-dropdown>
 
 
 <ng-dropdown
-  [multiSelectable]="true"
+  [selectMode]="DropdownSelectMode.SINGLE"
   [filterable]="true"
   [showClearSelectionButton]="true"
   [loadOnScroll]="false"
   [loadViewDistance]="0"
-  [(ngModel)]="selected"
   [showSelectedOptionRemoveButton]="true"
   [onDataBind]="onDataBind"
 
@@ -28,3 +27,7 @@
     <div>LL</div>
   </ng-template>
 </ng-dropdown>
+
+<!--[(ngModel)]="selected"-->
+
+<!--[setFirstOptionSelected]="true"-->

@@ -1,4 +1,4 @@
-<ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="config.multiSelectable">
+<ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="config.selectMode === DropdownSelectMode.MULTI">
   <ng-container *ngIf="config.groupByField">
     <ng-container *ngFor="let groupedItem of dataStateService.dropdownItemGroups">
       <li class="ng-dropdown-group-heading">{{ groupedItem.groupName }}</li>

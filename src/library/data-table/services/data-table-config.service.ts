@@ -3,8 +3,8 @@ import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { DataTableTranslations } from '../models/data-table-translations.model';
 import { DataTableConfig } from '../models/data-table-config.model';
 import { DataTableStorageMode } from '../models/data-table-storage-mode.enum';
-import { DropdownMenuPosition } from '../../dropdown';
 import { DataTableSortOrder } from '../models/data-table-sort-order.enum';
+import { DropdownMenuPosition, DropdownSelectMode } from '../../dropdown';
 
 export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableConfig');
 
@@ -72,7 +72,7 @@ export class DataTableConfigService implements DataTableConfig {
 
   // Column dropdown filter options
   public dropdownFilterMenuPosition = DropdownMenuPosition.BOTTOM_LEFT;
-  public dropdownFilterMultiSelectable = true;
+  public dropdownFilterSelectMode = DropdownSelectMode.MULTI;
   public dropdownFilterSearchable = true;
   public dropdownFilterSearchDebounceTime = 500;
   public dropdownFilterSearchDebounce = true;

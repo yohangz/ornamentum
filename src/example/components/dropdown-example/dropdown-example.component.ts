@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 
-import { DropdownItem, DropdownQueryResult, DropdownRequestParams } from '../../../library';
+import { DropdownItem, DropdownQueryResult, DropdownRequestParams, DropdownSelectMode } from '../../../library';
 import { Subject } from 'rxjs/Subject';
 
 @Component({
@@ -11,9 +11,11 @@ import { Subject } from 'rxjs/Subject';
   styleUrls: ['./dropdown-example.component.scss']
 })
 export class DropdownExampleComponent {
+  public DropdownSelectMode = DropdownSelectMode;
   public items: Observable<any>;
 
   public selected = [];
+  public singleSelected;
 
   constructor() {
     // this.selected = [
@@ -118,21 +120,42 @@ export class DropdownExampleComponent {
       }
     ]);
 
+    this.singleSelected = {
+      key: 13,
+      group: 'C',
+      value: 'test3',
+      disabled: false
+    };
+    this.selected = [
+      {
+        key: 13,
+        group: 'C',
+        value: 'test3',
+        disabled: false
+      },
+      {
+        key: 14,
+        group: 'A',
+        value: 'test3',
+        disabled: false
+      }
+    ];
+
     setTimeout(() => {
-      this.selected = [
-        {
-          key: 13,
-          group: 'C',
-          value: 'test3',
-          disabled: false
-        },
-        {
-          key: 14,
-          group: 'A',
-          value: 'test3',
-          disabled: false
-        }
-      ];
+      // this.selected = [
+      //   {
+      //     key: 13,
+      //     group: 'C',
+      //     value: 'test3',
+      //     disabled: false
+      //   },
+      //   {
+      //     key: 14,
+      //     group: 'A',
+      //     value: 'test3',
+      //     disabled: false
+      //   }
+      // ];
     }, 5000);
   }
 

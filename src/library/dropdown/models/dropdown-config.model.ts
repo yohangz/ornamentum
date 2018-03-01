@@ -1,5 +1,6 @@
 import { DropdownMenuPosition } from './dropdown-menu-position.enum';
 import { DropdownTranslations } from './dropdown-translations.model';
+import { DropdownSelectMode } from './dropdown-select-mode.enum';
 
 /**
  * Dropdown configuration.
@@ -36,10 +37,10 @@ export class DropdownConfig {
   menuPosition?: DropdownMenuPosition;
 
   /**
-   * Multi selectable if true.
-   * @type {boolean}
+   * Dropdown option select mode.
+   * @type {DropdownSelectMode}
    */
-  multiSelectable?: boolean;
+  selectMode?: DropdownSelectMode;
 
   /**
    * Filterable if true.
