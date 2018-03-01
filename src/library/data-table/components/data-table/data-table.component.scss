@@ -47,7 +47,8 @@
           }
 
           .ng-dropdown-loading {
-            @include font-size(.9, 1.1);
+            right: .2rem;
+            top: .4rem;
           }
 
           .ng-dropdown-down-arrow {
@@ -106,6 +107,10 @@
       border-right: .05rem solid transparent;
       overflow: hidden;
     }
+
+    &.ng-data-table-loading {
+      pointer-events: none;
+    }
   }
 
   .ng-data-table {
@@ -139,7 +144,7 @@
 
               .ng-data-table-input-group-btn {
                 position: absolute;
-                right: .8rem;
+                right: .2rem;
                 top: .3rem;
                 z-index: 1;
 
@@ -156,6 +161,10 @@
                     padding: 0;
                   }
                 }
+              }
+
+              .ng-data-table-clear-filter {
+                padding: 0 1rem 0 .5rem;
               }
             }
 
@@ -238,6 +247,12 @@
 
           cursor: pointer;
 
+          &.ng-data-table-row-expansion {
+            > td {
+              padding: 0;
+            }
+          }
+
           > td {
             @include font-size(.7, 1.4);
             background: $data-table-row-background;
@@ -286,6 +301,20 @@
 
             .state-upcoming {
               color: $state-upcoming-color;
+            }
+
+            &.ng-data-table-row-expand-button {
+              position: relative;
+
+              .ng-data-table-loading-animation {
+                height: 15px;
+                left: 25%;
+                margin: 0 auto;
+                position: absolute;
+                top: 10%;
+                transform: translate(-50%, -50%);
+                width: 15px;
+              }
             }
 
           }
@@ -360,28 +389,10 @@
           }
         }
 
-        [hidden] {
-          animation: rotating 2s linear infinite;
-        }
-
         + tbody {
           border-top: .05rem solid $data-table-border;
         }
       }
     }
-  }
-}
-@keyframes loader {
-  0% {
-    transform: scale(0);
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(1);
   }
 }
