@@ -83,7 +83,7 @@ export interface DataTableConfig {
    * Can be used to dynamically set table height on a full responsive none scroll-y (Vertical scrolling) design.
    * @type {string | number}
    */
-  contentHeight?:  string | number;
+  contentHeight?: string | number;
 
   /**
    * Show pagination bar if true.
@@ -298,6 +298,12 @@ export interface DataTableConfig {
    * @type {boolean}
    */
   showDropdownFilter?: boolean;
+
+  /**
+   * Show row expand loading spinner if true.
+   * Applicable only when row expand is enabled.
+   */
+  showRowExpandLoadingSpinner?: boolean;
 
   // Column dropdown filter options
 

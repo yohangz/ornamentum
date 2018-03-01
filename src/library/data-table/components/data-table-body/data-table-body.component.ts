@@ -27,6 +27,9 @@ export class DataTableBodyComponent {
   @Input()
   public rowExpandTemplate: TemplateRef<any>;
 
+  @Input()
+  public rowExpandLoadingSpinnerTemplate: TemplateRef<any>;
+
   constructor(public config: DataTableConfigService,
               public dataStateService: DataTableDataStateService,
               private eventStateService: DataTableEventStateService) {
@@ -87,7 +90,10 @@ export class DataTableBodyComponent {
    */
   public onRowExpand($event: Event, dataRow: DataTableRow): void {
     dataRow.expanded = !dataRow.expanded;
-    dataRow.dataLoaded = true;
+
+    if (!this.config.showRowExpandLoadingSpinner) {
+      dataRow.dataLoaded = true;
+    }
   }
 
   /**
@@ -229,5 +235,9 @@ export class DataTableBodyComponent {
 
   public get showRowSelectCheckbox(): boolean {
     return this.config.rowSelectable && this.config.showRowSelectCheckbox;
+  }
+
+  public isRowExpanderLoading(row: DataTableRow): boolean {
+    return row.expanded && !row.dataLoaded;
   }
 }

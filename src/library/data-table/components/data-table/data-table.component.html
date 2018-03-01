@@ -14,13 +14,15 @@
     </div>
     <div class="ng-data-table-content" scrollPosition [style.height]="config.contentHeight | px"
          [style.minHeight]="config.minHeight | px">
-      <ng-data-table-loading-spinner [loadingSpinnerTemplate]="loadingSpinnerTemplate" [isLoading]="isLoading">
+      <ng-data-table-loading-spinner [loadingSpinnerTemplate]="loadingSpinnerTemplate"
+                                     [isLoading]="isLoading" [showOverlay]="true">
       </ng-data-table-loading-spinner>
       <table class="ng-data-table" [style.width]="dataStateService.tableWidth | px"
              [style.minWidth]="config.minWidth | px" [hidden]="isLoading">
         <colgroup ngDataTableColGroup [columns]="columns">
         </colgroup>
-        <tbody ngDataTableBody [columns]="columns" [rowExpandTemplate]="rowExpandTemplate">
+        <tbody ngDataTableBody [columns]="columns" [rowExpandTemplate]="rowExpandTemplate"
+               [rowExpandLoadingSpinnerTemplate]="rowExpandLoadingSpinnerTemplate">
         </tbody>
       </table>
       <ng-data-table-no-data-body *ngIf="dataStateService.showNoDataOverlay" [noRecordsTemplate]="noRecordsTemplate">

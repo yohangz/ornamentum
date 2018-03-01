@@ -81,8 +81,11 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @ContentChild('ngDataTableNoRecords')
   public noRecordsTemplate: TemplateRef<any>;
 
-  @ContentChild('ngDataTableLoadingSpinnerTemplate')
+  @ContentChild('ngDataTableLoadingSpinner')
   public loadingSpinnerTemplate: TemplateRef<any>;
+
+  @ContentChild('ngDataTableRowExpandLoadingSpinner')
+  public rowExpandLoadingSpinnerTemplate: TemplateRef<any>;
 
   // Event handlers
 
@@ -488,6 +491,15 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @Input()
   public set translations(data: DataTableTranslations) {
     this.config.translations = data;
+  }
+
+  /**
+   * Set show row expand loading spinner state.
+   * @param {boolean} value Show row expand loading spinner if true.
+   */
+  @Input()
+  public set showRowExpandLoadingSpinner(value: boolean) {
+    this.config.showRowExpandLoadingSpinner = value;
   }
 
   /**

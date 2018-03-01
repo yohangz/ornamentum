@@ -45,6 +45,7 @@ export class DataTableConfigService implements DataTableConfig {
   public indexColumnWidth: string | number = 30;
   public selectionColumnWidth: string | number = 30;
   public relativeParentElement = undefined;
+  public showRowExpandLoadingSpinner = false;
   public offset = 0;
   public limit = 10;
   public maxLimit = 100;

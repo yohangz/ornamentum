@@ -500,6 +500,7 @@
   [onDynamicRowSpanExtract]="onDynamicRowSpanExtract"
   [showRowSelectCheckbox]="true"
   [showRowSelectAllCheckbox]="true"
+  [showRowExpandLoadingSpinner]="true"
 
   (rowBind)="onRowBind($event)"
   (init)="onInit($event)"
@@ -647,6 +648,16 @@
       </td>
     </ng-template>
   </ng-data-table-column>
+  <ng-template #ngDataTableRowExpand let-row="row">
+    <div *ngIf="row.expanded || row.dataLoaded">
+      <div *ngIf="showDataLoaded(row)">
+      </div>
+      <span *ngIf="row.dataLoaded">Data Loaded</span>
+    </div>
+  </ng-template>
+  <ng-template #ngDataTableRowExpandLoadingSpinner>
+    LL
+  </ng-template>
 </ng-data-table>
 
 {{selectedDataItems | json}}

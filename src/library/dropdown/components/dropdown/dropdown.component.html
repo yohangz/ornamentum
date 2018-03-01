@@ -33,8 +33,10 @@
     <span class="ng-dropdown-down-arrow" *ngIf="!dataStateService.dataLoading">
       <i class="zmdi zmdi-chevron-down"></i>
     </span>
-    <span class="ng-dropdown-loading" *ngIf="dataStateService.dataLoading" >
-      <i class="zmdi zmdi-spinner"></i>
+    <span class="ng-dropdown-loading" [hidden]="!dataStateService.dataLoading">
+      <i class="zmdi zmdi-spinner" *ngIf="!loadingSpinnerTemplate" ></i>
+      <div *ngIf="loadingSpinnerTemplate" [ngTemplateOutlet]="loadingSpinnerTemplate">
+      </div>
     </span>
-  </button>
+ </button>
 </div>

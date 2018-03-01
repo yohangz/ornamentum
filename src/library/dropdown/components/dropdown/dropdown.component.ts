@@ -1,12 +1,14 @@
 import {
   Component,
+  ContentChild,
   EventEmitter,
   forwardRef,
   Injector,
   Input,
   OnDestroy,
   OnInit,
-  Output
+  Output,
+  TemplateRef
 } from '@angular/core';
 
 import { Subscription } from 'rxjs/Subscription';
@@ -55,6 +57,9 @@ import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component'
 })
 export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccessor {
   private onSelectChangeSubscription: Subscription;
+
+  @ContentChild('ngDropdownLoadingSpinner')
+  public loadingSpinnerTemplate: TemplateRef<any>;
 
   // Outputs : Event Handlers
   /**
@@ -507,7 +512,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
     if (this.config.setFirstOptionSelected && queryResult.items.length) {
       if (this.config.multiSelectable) {
-        this.dataStateService.selectedOptions = [ queryResult.items[0] ];
+        this.dataStateService.selectedOptions = [queryResult.items[0]];
       } else {
         this.dataStateService.selectedOption = queryResult.items[0];
       }

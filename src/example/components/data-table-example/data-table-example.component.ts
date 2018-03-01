@@ -456,4 +456,14 @@ export class DataTableExampleComponent {
   public onDynamicRowSpanExtract(row: DataTableRow): number {
     return row.item.test.length;
   }
+
+  public showDataLoaded(row: DataTableRow): boolean {
+    if (!row.dataLoaded) {
+      setTimeout(() => {
+        row.dataLoaded = true;
+      }, 2000);
+    }
+
+    return row.dataLoaded;
+  }
 }
