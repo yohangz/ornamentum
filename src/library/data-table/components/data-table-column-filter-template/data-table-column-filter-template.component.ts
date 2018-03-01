@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -31,29 +31,36 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
   public filterDataStream = new Subject<DataTableFilterOption[]>();
 
   private filterValueExtractorSubscription: Subscription;
+  private fetchFilterOptionsStreamSubscription: Subscription;
 
   constructor(public config: DataTableConfigService,
               public dataStateService: DataTableDataStateService,
-              private eventStateService: DataTableEventStateService) {
+              private eventStateService: DataTableEventStateService,
+              private zone: NgZone) {
   }
 
   public ngOnInit(): void {
     if (this.column.showDropdownFilter && this.dataStateService.onFilterValueExtract) {
-      this.eventStateService.fetchFilterOptionsStream.subscribe(() => {
-        if (this.filterValueExtractorSubscription) {
-          this.filterValueExtractorSubscription.unsubscribe();
-          this.filterValueExtractorSubscription = null;
-        }
+      this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream
+        .subscribe(() => {
+          if (this.filterValueExtractorSubscription) {
+            this.filterValueExtractorSubscription.unsubscribe();
+            this.filterValueExtractorSubscription = null;
+          }
 
-        this.filterValueExtractorSubscription = this.dataStateService.onFilterValueExtract(this.column)
-          .subscribe((options: DataTableFilterOption[]) => {
-            this.filterDataStream.next(options);
-          });
-      });
+          this.filterValueExtractorSubscription = this.dataStateService.onFilterValueExtract(this.column)
+            .subscribe((options: DataTableFilterOption[]) => {
+              setTimeout(() => this.filterDataStream.next(options), 0);
+            });
+        });
     }
   }
 
   public ngOnDestroy(): void {
+    if (this.fetchFilterOptionsStreamSubscription) {
+      this.fetchFilterOptionsStreamSubscription.unsubscribe();
+    }
+
     if (this.filterValueExtractorSubscription) {
       this.filterValueExtractorSubscription.unsubscribe();
     }

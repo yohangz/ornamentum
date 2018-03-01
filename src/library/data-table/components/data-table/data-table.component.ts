@@ -584,7 +584,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     }
 
     if (this.dataStateService.heardReload) {
-      this.eventStateService.fetchFilterOptionsStream.emit();
+      this.eventStateService.fetchFilterOptionsStream.next(false);
       this.dataStateService.heardReload = false;
     }
 
@@ -729,11 +729,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       this.eventStateService.dataFetchStream.next(false);
     }
 
-    // remove this
-    setTimeout(() => {
-      this.eventStateService.fetchFilterOptionsStream.emit();
-    }, 0);
-
+    this.eventStateService.fetchFilterOptionsStream.next(true);
     this.eventStateService.initStream.emit(this);
   }
 

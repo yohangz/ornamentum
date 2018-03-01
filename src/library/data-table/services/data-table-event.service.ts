@@ -1,5 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+
 import { DataTableHeaderClickEventArgs } from '../models/data-table-header-click-event-args.model';
 import { DataTableRow } from '../models/data-table-row.model';
 import { DataTableRowClickEventArgs } from '../models/data-table-row-click-event-args.model';
@@ -22,5 +24,5 @@ export class DataTableEventStateService {
   public cellClickStream = new EventEmitter<DataTableCellClickEventArgs>();
   public initStream = new EventEmitter<DataTableComponent>();
   public dataBoundStream = new EventEmitter<void>();
-  public fetchFilterOptionsStream = new EventEmitter<void>();
+  public fetchFilterOptionsStream = new ReplaySubject(1);
 }
