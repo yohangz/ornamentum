@@ -10,14 +10,14 @@ export class DataTableDataStateService {
   public allRowSelected = false;
   public selectedRow: any;
   public selectedRows: any[] = [];
-  public dataRows: DataTableRow[] = [];
+  public dataRows: DataTableRow<any>[] = [];
   public itemCount: number;
   public tableWidth: number;
   public dataLoading = true;
   public substituteRows: any[] = [];
   public heardReload = false;
 
-  public onDynamicRowSpanExtract: DataTableDynamicRowSpanExtractorCallback = (() => 1);
+  public onDynamicRowSpanExtract: DataTableDynamicRowSpanExtractorCallback<any> = (() => 1);
   public onFilterValueExtract: DataTableFilterValueExtractCallback;
   public onDataBind: DataTableDataBindCallback;
 

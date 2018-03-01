@@ -7,4 +7,4 @@ import { DataTableColumnComponent } from '../components/data-table-column/data-t
  * @param {DataTableColumnComponent} column - Target Data table column component reference.
  * @return {string} - Colour hex string
  */
-export type DataTableCellColourRenderCallback = (row: DataTableRow, column: DataTableColumnComponent) => string;
+export type DataTableCellColourRenderCallback<T> = (row: DataTableRow<T>, column: DataTableColumnComponent) => string;

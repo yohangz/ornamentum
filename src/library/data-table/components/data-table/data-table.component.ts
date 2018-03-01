@@ -108,14 +108,14 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<any>}
    */
   @Output()
-  public rowClick: EventEmitter<DataTableRowClickEventArgs>;
+  public rowClick: EventEmitter<DataTableRowClickEventArgs<any>>;
 
   /**
    * On row double click event handler.
    * @type {EventEmitter<any>}
    */
   @Output()
-  public rowDoubleClick: EventEmitter<DataTableDoubleClickEventArgs>;
+  public rowDoubleClick: EventEmitter<DataTableDoubleClickEventArgs<any>>;
 
   /**
    * On header click event handler.
@@ -132,7 +132,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<any>}
    */
   @Output()
-  public cellClick: EventEmitter<DataTableCellClickEventArgs>;
+  public cellClick: EventEmitter<DataTableCellClickEventArgs<any>>;
 
   @Output()
   public dataBound: EventEmitter<void>;
@@ -142,14 +142,14 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {EventEmitter<DataTableRow>}
    */
   @Output()
-  public rowBind: EventEmitter<DataTableRow>;
+  public rowBind: EventEmitter<DataTableRow<any>>;
 
   /**
    * On cell bind event handler.
    * @type {EventEmitter<DataTableCellBindEventArgs>}
    */
   @Output()
-  public cellBind: EventEmitter<DataTableCellBindEventArgs>;
+  public cellBind: EventEmitter<DataTableCellBindEventArgs<any>>;
 
   // Input Events
 
@@ -177,7 +177,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @type {DataTableDynamicRowSpanExtractorCallback}
    */
   @Input()
-  public set onDynamicRowSpanExtract(value: DataTableDynamicRowSpanExtractorCallback) {
+  public set onDynamicRowSpanExtract(value: DataTableDynamicRowSpanExtractorCallback<any>) {
     this.dataStateService.onDynamicRowSpanExtract = value;
   }
 
@@ -626,7 +626,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
     if (this.config.multiRowSelectable) {
       this.dataStateService.allRowSelected = this.dataStateService.dataRows.length !== 0
-        && this.dataStateService.dataRows.every((dataRow: DataTableRow) => {
+        && this.dataStateService.dataRows.every((dataRow: DataTableRow<any>) => {
           return dataRow.selected;
         });
     }

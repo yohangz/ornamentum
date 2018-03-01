@@ -9,12 +9,10 @@ import {
 import { Observable } from 'rxjs/Observable';
 
 import { DataStorageService } from '../../services/data-storage.service';
-import { Subject } from 'rxjs/Subject';
+
 import { HttpClient } from '@angular/common/http';
 
 declare function require(url: string);
-
-const data = require('../../data/grid-data.json');
 
 /**
  * Interface representing column configurations.
@@ -445,7 +443,7 @@ export class DataTableExampleComponent {
     location.reload();
   }
 
-  public onRowBind(dataRow: DataTableRow): void {
+  public onRowBind(dataRow: DataTableRow<any>): void {
     dataRow.disabled = dataRow.index === 1;
   }
 
@@ -453,11 +451,11 @@ export class DataTableExampleComponent {
     console.log(selected);
   }
 
-  public onDynamicRowSpanExtract(row: DataTableRow): number {
+  public onDynamicRowSpanExtract(row: DataTableRow<any>): number {
     return row.item.test.length;
   }
 
-  public showDataLoaded(row: DataTableRow): boolean {
+  public showDataLoaded(row: DataTableRow<any>): boolean {
     if (!row.dataLoaded) {
       setTimeout(() => {
         row.dataLoaded = true;

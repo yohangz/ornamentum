@@ -4,7 +4,7 @@ import { DataTableRow } from './data-table-row.model';
 /**
  * Cell click event arguments.
  */
-export interface DataTableCellClickEventArgs {
+export interface DataTableCellClickEventArgs<T> {
   /**
    * Target column.
    * {DataTableColumnComponent}
@@ -15,7 +15,7 @@ export interface DataTableCellClickEventArgs {
    * Target data row.
    * @type {DataTableRow}
    */
-  row: DataTableRow;
+  row: DataTableRow<T>;
 
   /**
    * Mouse event arguments.

@@ -61,7 +61,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * @type DataTableCellColourRenderCallback
    */
   @Input()
-  public onCellColorRender: DataTableCellColourRenderCallback;
+  public onCellColorRender: DataTableCellColourRenderCallback<any>;
 
   // Inputs
 
@@ -313,7 +313,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * @param {DataTableRow} row Data row object.
    * @return {string} Cell colour string.
    */
-  public getCellColor(row: DataTableRow) {
+  public getCellColor(row: DataTableRow<any>) {
     if (this.onCellColorRender !== undefined) {
       return this.onCellColorRender(row, this);
     }

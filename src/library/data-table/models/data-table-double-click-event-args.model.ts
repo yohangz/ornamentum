@@ -3,11 +3,11 @@ import { DataTableRow } from './data-table-row.model';
 /**
  * Double click event arguments.
  */
-export interface DataTableDoubleClickEventArgs {
+export interface DataTableDoubleClickEventArgs<T> {
   /**
    * Target data row.
    */
-  row: DataTableRow;
+  row: DataTableRow<T>;
 
   /**
    * Target mouse event arguments.

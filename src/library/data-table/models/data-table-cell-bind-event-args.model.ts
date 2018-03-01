@@ -4,7 +4,7 @@ import { DataTableRow } from './data-table-row.model';
 /**
  * Cell bind event arguments.
  */
-export interface DataTableCellBindEventArgs {
+export interface DataTableCellBindEventArgs<T> {
   /**
    * Target column.
    * @type {DataTableColumnComponent}
@@ -15,5 +15,5 @@ export interface DataTableCellBindEventArgs {
    * Target row.
    * @type {DataTableRow}
    */
-  row: DataTableRow;
+  row: DataTableRow<T>;
 }

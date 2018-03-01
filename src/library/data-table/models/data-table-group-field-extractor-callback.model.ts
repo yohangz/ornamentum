@@ -5,4 +5,4 @@ import { DataTableRow } from './data-table-row.model';
  * @param {DataTableRow} row - Target data row.
  * @return {number} - Row span for current row.
  */
-export type DataTableDynamicRowSpanExtractorCallback = (row: DataTableRow) => number;
+export type DataTableDynamicRowSpanExtractorCallback<T> = (row: DataTableRow<T>) => number;

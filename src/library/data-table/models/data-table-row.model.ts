@@ -1,12 +1,12 @@
 /**
  * Data table row
  */
-export interface DataTableRow {
+export interface DataTableRow<T> {
   /**
    * Source data item reference.
    * @type {any}
    */
-  item: any;
+  item: T;
 
   /**
    * Row selected state.
