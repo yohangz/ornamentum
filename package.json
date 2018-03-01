@@ -1,6 +1,6 @@
 {
   "name": "ornamentum",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "Angular 2+ Data Table (Dev Inprogress)",
   "main": "./lib/index.umd.js",
   "module": "./lib/index.js",
