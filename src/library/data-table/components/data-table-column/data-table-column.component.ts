@@ -181,11 +181,11 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   /**
    * Enable multi select filtering.
-   * Show multi select dropdown for filtering.\
+   * Show multi select dropdown for filtering.
    * @type boolean
    */
   @Input()
-  public showDropdownFilter = false;
+  public showDropdownFilter: boolean;
 
   /**
    * Dropdown filter menu position.
