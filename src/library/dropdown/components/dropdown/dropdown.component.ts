@@ -93,6 +93,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   // Inputs
 
   @Input()
+  public set items(value: any[]) {
+    this.dataSource = Observable.of(value);
+  }
+
+  @Input()
   public set dataSource(source: Observable<any[]>) {
     this.initDataSource(source);
   }
