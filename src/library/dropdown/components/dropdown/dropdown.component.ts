@@ -425,9 +425,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);
     }
 
-    if (this.config.closeMenuOnSelect) {
-      this.closeDropdown();
-    }
+    this.closeDropdown();
   }
 
   /**
@@ -582,8 +580,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.dataStateService.selectedOptions.splice(index, 1);
     this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
 
-    if (this.config.closeMenuOnSelect) {
-      this.closeDropdown();
-    }
+    this.closeDropdown();
   }
 }

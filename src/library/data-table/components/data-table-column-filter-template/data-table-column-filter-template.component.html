@@ -30,6 +30,7 @@
       [menuHeight]="column.dropdownFilterMenuHeight"
       [menuWidth]="column.dropdownFilterMenuWidth"
       [multiSelectOptionMaxWidth]="column.dropdownFilterMultiSelectOptionMaxWidth"
+      [closeMenuOnSelect]="column.dropdownFilterCloseMenuOnSelect"
 
       [(ngModel)]="column.filter"
       (selectChange)="filter.emit()">

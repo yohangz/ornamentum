@@ -390,4 +390,10 @@ export interface DataTableConfig {
    * @type {number}
    */
   dropdownFilterMultiSelectOptionMaxWidth?: number;
+
+  /**
+   * Dropdown filter close menu on select if true.
+   * @type {boolean}
+   */
+  dropdownFilterCloseMenuOnSelect?: boolean;
 }
