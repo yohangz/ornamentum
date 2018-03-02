@@ -10,6 +10,7 @@ import { DataTableCellBindEventArgs } from '../models/data-table-cell-bind-event
 import { DataTableCellClickEventArgs } from '../models/data-table-cell-click-event-args.model';
 
 import { DataTableComponent } from '../components/data-table/data-table.component';
+import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
 @Injectable()
 export class DataTableEventStateService {
@@ -24,5 +25,6 @@ export class DataTableEventStateService {
   public cellClickStream = new EventEmitter<DataTableCellClickEventArgs<any>>();
   public initStream = new EventEmitter<DataTableComponent>();
   public dataBoundStream = new EventEmitter<void>();
+  public columnBind = new EventEmitter<DataTableColumnComponent>();
   public fetchFilterOptionsStream = new ReplaySubject(1);
 }

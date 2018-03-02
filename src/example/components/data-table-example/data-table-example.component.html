@@ -502,6 +502,7 @@
   [showRowSelectAllCheckbox]="true"
   [showRowExpandLoadingSpinner]="true"
 
+  (columnBind)="onColumnBind($event)"
   (rowBind)="onRowBind($event)"
   (init)="onInit($event)"
   (rowSelectChange)="onRowSelectedStateChange($event)">

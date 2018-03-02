@@ -145,6 +145,13 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   public rowBind: EventEmitter<DataTableRow<any>>;
 
   /**
+   * On column bind event handler.
+   * @type {EventEmitter<DataTableColumnComponent>}
+   */
+  @Output()
+  public columnBind: EventEmitter<DataTableColumnComponent>;
+
+  /**
    * On cell bind event handler.
    * @type {EventEmitter<DataTableCellBindEventArgs>}
    */
@@ -575,6 +582,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     this.cellClick = this.eventStateService.cellClickStream;
     this.init = this.eventStateService.initStream;
     this.dataBound = this.eventStateService.dataBoundStream;
+    this.columnBind = this.eventStateService.columnBind;
   }
 
   /**
@@ -620,7 +628,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
         dataLoaded: false,
         expanded: false,
         disabled: false,
-        colour: '',
+        color: '',
         cssClass: '',
         tooltip: '',
         index: index,

@@ -2,7 +2,7 @@ import { Component, ContentChild, Input, OnDestroy, OnInit, TemplateRef } from '
 
 import { Subscription } from 'rxjs/Subscription';
 
-import { DataTableCellColourRenderCallback } from '../../models/data-table-cell-colour-render-callback.model';
+import { DataTableCellColorRenderCallback } from '../../models/data-table-cell-color-render-callback.model';
 import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
 import { DropdownMenuPosition } from '../../../dropdown/models/dropdown-menu-position.enum';
 import { DataTableRow } from '../../models/data-table-row.model';
@@ -11,6 +11,7 @@ import { DataTableFilterExpressionCallback } from '../../models/data-table-filte
 import { DropdownSelectMode } from '../../../dropdown';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
+import { DataTableEventStateService } from '../../services/data-table-event.service';
 
 /**
  * Data table column component.
@@ -57,11 +58,11 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   public filterFieldMapper: DataTableFilterFieldMapperCallback;
 
   /**
-   * Cell colour render event handler callback function.
-   * @type DataTableCellColourRenderCallback
+   * Cell color render event handler callback function.
+   * @type DataTableCellColorRenderCallback
    */
   @Input()
-  public onCellColorRender: DataTableCellColourRenderCallback<any>;
+  public onCellColorRender: DataTableCellColorRenderCallback<any>;
 
   // Inputs
 
@@ -277,7 +278,8 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   @Input()
   public dropdownFilterCloseMenuOnSelect: boolean;
 
-  constructor(private dataTableConfigService: DataTableConfigService) {
+  constructor(private dataTableConfigService: DataTableConfigService,
+              private eventStateService: DataTableEventStateService) {
     // Table column config
     this.sortable = dataTableConfigService.sortable;
     this._sortOrder = dataTableConfigService.sortOrder;
@@ -309,9 +311,9 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Get cell colour.
+   * Get cell color.
    * @param {DataTableRow} row Data row object.
-   * @return {string} Cell colour string.
+   * @return {string} Cell color string.
    */
   public getCellColor(row: DataTableRow<any>) {
     if (this.onCellColorRender !== undefined) {
@@ -365,5 +367,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
         this.cssClass = 'column-' + this.field.replace(/[^a-zA-Z0-9_]/g, '');
       }
     }
+
+    this.eventStateService.columnBind.emit(this);
   }
 }

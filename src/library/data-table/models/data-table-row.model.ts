@@ -21,10 +21,10 @@ export interface DataTableRow<T> {
   disabled: boolean;
 
   /**
-   * Row colour hex.
+   * Row color hex.
    * @type {string}
    */
-  colour: string;
+  color: string;
 
   /**
    * Row CSS class name.

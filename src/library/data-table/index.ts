@@ -18,7 +18,7 @@ export { DataTableDynamicRowSpanExtractorCallback } from './models/data-table-gr
 export { DataTableFilterValueExtractCallback } from './models/data-table-filter-value-extract-callback.model';
 export { DataTableFilterFieldMapperCallback } from './models/data-table-filter-field-mapper-callback.model';
 export { DataTableFilterExpressionCallback } from './models/data-table-filter-expression-callback.model';
-export { DataTableCellColourRenderCallback } from './models/data-table-cell-colour-render-callback.model';
+export { DataTableCellColorRenderCallback } from './models/data-table-cell-color-render-callback.model';
 
 export { DataTableComponent } from './components/data-table/data-table.component';
 export { DataTableColumnComponent } from './components/data-table-column/data-table-column.component';
