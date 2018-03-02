@@ -576,7 +576,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   // Can be used to explicitly trigger data bind event.
-  public dataBind(hardReload: boolean = false): void {
+  public fetchData(hardReload: boolean = false): void {
     this.eventStateService.dataFetchStream.emit(hardReload);
   }
 
