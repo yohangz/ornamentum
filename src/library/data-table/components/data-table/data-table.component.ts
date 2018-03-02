@@ -32,6 +32,7 @@ import { DataTableDynamicRowSpanExtractorCallback } from '../../models/data-tabl
 import { DataTableQueryResult } from '../../models/data-table-query-result.model';
 import { DataTableDataBindCallback } from '../../models/data-table-data-bind-callback.model';
 import { DataTableFilterOption } from '../../models/data-table-filter-option.model';
+import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -322,12 +323,12 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Multi row selectable if true.
+   * Row select mode.
    * @type {boolean}
    */
   @Input()
-  public set multiRowSelectable(value: boolean) {
-    this.config.multiRowSelectable = value;
+  public set selectMode(value: DataTableSelectMode) {
+    this.config.selectMode = value;
   }
 
   @Input()
@@ -404,7 +405,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Selected row (effective when multiRowSelectable false).
+   * Selected row (effective when rowSelectMode is SINGLE or SINGLE_TOGGLE).
    * @type {any}
    */
   @Input()
@@ -414,7 +415,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Selected rows (effective when multiRowSelectable true).
+   * Selected rows (effective when selectMode is SINGLE or SINGLE_TOGGLE true).
    * @type {Array}
    */
   @Input()
@@ -611,7 +612,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       return false;
     }
 
-    if (this.config.multiRowSelectable) {
+    if (this.config.selectMode === DataTableSelectMode.MULTI) {
       return this.dataStateService.selectedRows.indexOf(id) > -1;
     }
 
@@ -637,7 +638,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       };
     });
 
-    if (this.config.multiRowSelectable) {
+    if (this.config.selectMode === DataTableSelectMode.MULTI) {
       this.dataStateService.allRowSelected = this.dataStateService.dataRows.length !== 0
         && this.dataStateService.dataRows.every((dataRow: DataTableRow<any>) => {
           return dataRow.selected;
@@ -798,7 +799,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   public writeValue(value: any): void {
-    if (this.config.multiRowSelectable) {
+    if (this.config.selectMode === DataTableSelectMode.MULTI) {
       this.selectedRows = value;
     } else {
       this.selectedRow = value;

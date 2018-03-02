@@ -4,6 +4,7 @@ import { DataTableTranslations } from '../models/data-table-translations.model';
 import { DataTableConfig } from '../models/data-table-config.model';
 import { DataTableStorageMode } from '../models/data-table-storage-mode.enum';
 import { DataTableSortOrder } from '../models/data-table-sort-order.enum';
+import { DataTableSelectMode } from '../models/data-table-select-mode.model';
 import { DropdownMenuPosition, DropdownSelectMode } from '../../dropdown';
 
 export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableConfig');
@@ -27,7 +28,7 @@ export class DataTableConfigService implements DataTableConfig {
   public showIndexColumn = false;
   public indexColumnTitle = '#';
   public rowSelectable = false;
-  public multiRowSelectable = false;
+  public selectMode = DataTableSelectMode.SINGLE;
   public showRowSelectCheckbox = false;
   public showRowSelectAllCheckbox = false;
   public showSubstituteRows = false;

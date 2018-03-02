@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import get from 'lodash.get';
 
 import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
+import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -110,5 +111,9 @@ export class DataTableColumnTitleHeaderComponent {
     });
 
     this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRows);
+  }
+
+  public get showAllRowSelectCheckbox(): boolean {
+    return this.config.selectMode === DataTableSelectMode.MULTI && this.config.showRowSelectAllCheckbox;
   }
 }

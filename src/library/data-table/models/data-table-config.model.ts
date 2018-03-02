@@ -1,6 +1,7 @@
 import { DataTableStorageMode } from './data-table-storage-mode.enum';
 import { DataTableTranslations } from './data-table-translations.model';
 import { DataTableSortOrder } from './data-table-sort-order.enum';
+import { DataTableSelectMode } from './data-table-select-mode.model';
 import { DropdownMenuPosition, DropdownSelectMode } from '../../dropdown';
 
 /**
@@ -119,11 +120,11 @@ export interface DataTableConfig {
   selectOnRowClick?: boolean;
 
   /**
-   * Multiple row selectable if true.
+   * Data table row select mode.
    * Applicable only when rowSelectable is true.
    * @type {boolean}
    */
-  multiRowSelectable?: boolean;
+  selectMode?: DataTableSelectMode;
 
   /**
    * Show row select checkbox column if true.

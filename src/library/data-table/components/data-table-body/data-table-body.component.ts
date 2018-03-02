@@ -3,6 +3,7 @@ import { Component, Input, TemplateRef } from '@angular/core';
 import get from 'lodash.get';
 
 import { DataTableRow } from '../../models/data-table-row.model';
+import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -160,34 +161,56 @@ export class DataTableBodyComponent {
   public onRowSelectChange(row: DataTableRow<any>): void {
     const id = get(row.item, this.config.selectTrackBy);
 
-    if (this.config.multiRowSelectable) {
-      const index = this.dataStateService.selectedRows.indexOf(id);
-      if (row.selected && index < 0) {
-        this.dataStateService.selectedRows.push(id);
-      } else if (!row.selected && index > -1) {
-        this.dataStateService.selectedRows.splice(index, 1);
+    switch (this.config.selectMode) {
+      case DataTableSelectMode.MULTI: {
+        const index = this.dataStateService.selectedRows.indexOf(id);
+        if (row.selected && index < 0) {
+          this.dataStateService.selectedRows.push(id);
+        } else if (!row.selected && index > -1) {
+          this.dataStateService.selectedRows.splice(index, 1);
+        }
+
+        this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataTableRow<any>) => {
+          return dataRow.selected;
+        });
+
+        this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRows);
+        break;
       }
+      case DataTableSelectMode.SINGLE_TOGGLE: {
+        if (row.selected) {
+          this.dataStateService.selectedRow = id;
 
-      this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataTableRow<any>) => {
-        return dataRow.selected;
-      });
+          // deselect all other row other rows
+          this.dataStateService.dataRows.forEach((dataRow: DataTableRow<any>) => {
+            if (dataRow !== row) {
+              dataRow.selected = false;
+            }
+          });
+        } else {
+          this.dataStateService.selectedRow = undefined;
+        }
 
-      this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRows);
-    } else {
-      if (row.selected) {
+        this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRow);
+        break;
+      }
+      case DataTableSelectMode.SINGLE: {
+        const previousSelection = this.dataStateService.selectedRow;
         this.dataStateService.selectedRow = id;
+        row.selected = true;
 
-        // deselect all other rows if not multi select.
+        // deselect all other row other rows
         this.dataStateService.dataRows.forEach((dataRow: DataTableRow<any>) => {
           if (dataRow !== row) {
             dataRow.selected = false;
           }
         });
-      } else {
-        this.dataStateService.selectedRow = undefined;
-      }
 
-      this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRow);
+        if (previousSelection !== id) {
+          this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRow);
+        }
+        break;
+      }
     }
   }
 

@@ -4,7 +4,8 @@ import {
   DataTableComponent,
   DropdownMenuPosition,
   DataTableRow,
-  DataTableColumnComponent
+  DataTableColumnComponent,
+  DataTableSelectMode
 } from '../../../library';
 
 import { Observable } from 'rxjs/Observable';
@@ -38,6 +39,7 @@ export interface ColumnConf {
 })
 export class DataTableExampleComponent {
   public MenuPosition = DropdownMenuPosition;
+  public DataTableSelectMode = DataTableSelectMode;
 
   private static tableConfigurationStorageKeyName = 'app_table_init_conf';
   private static columnConfigurationStorageKeyName = 'app_column_init_conf';

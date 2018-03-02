@@ -5,7 +5,7 @@
 </th>
 <th class="ng-data-table-select-column-header" *ngIf="config.showRowSelectCheckboxColumn">
   <input class="ng-data-table-checkbox-input" type="checkbox"
-         *ngIf="config.multiRowSelectable && config.showRowSelectAllCheckbox"
+         *ngIf="showAllRowSelectCheckbox"
          [(ngModel)]="allRowSelected"/>
 </th>
 <ng-container *ngFor="let column of columns">
