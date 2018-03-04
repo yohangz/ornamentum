@@ -94,7 +94,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   @Input()
   public set items(value: any[]) {
-    this.dataSource = Observable.of(value);
+    if (!value) {
+      return;
+    }
+
+    this.eventStateService.staticDataSourceStream.next(value);
   }
 
   @Input()
@@ -476,6 +480,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   public ngOnInit(): void {
+    if (!this.dataStateService.onDataBind) {
+      this.dataSource = this.eventStateService.staticDataSourceStream;
+    }
+
     this.initDataFetchEvent();
 
     if (this.config.loadDataOnInit) {

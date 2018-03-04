@@ -27,4 +27,5 @@ export class DataTableEventStateService {
   public dataBoundStream = new EventEmitter<void>();
   public columnBind = new EventEmitter<DataTableColumnComponent>();
   public fetchFilterOptionsStream = new ReplaySubject(1);
+  public staticDataSourceStream = new ReplaySubject<any[]>(1);
 }

@@ -1,5 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+
 import { DropdownComponent } from '../components/dropdown/dropdown.component';
 
 /**
@@ -12,4 +14,5 @@ export class DropdownEventStateService {
   public dataBoundStream = new EventEmitter<void>();
   public selectChangeStream = new EventEmitter<any[] | any>();
   public initStream = new EventEmitter<DropdownComponent>();
+  public staticDataSourceStream = new ReplaySubject<any[]>(1);
 }

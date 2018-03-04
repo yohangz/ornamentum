@@ -19,4 +19,8 @@ export class DataTableNoDataBodyComponent {
   public resetFilters(): void {
     this.eventStateService.dataFetchStream.emit(true);
   }
+
+  public get showDefaultNoDataTemplate(): boolean {
+    return !!(!this.noRecordsTemplate && this.config.translations.noDataMessageHeader && this.config.translations.noDataMessageBody);
+  }
 }

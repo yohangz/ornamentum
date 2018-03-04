@@ -193,7 +193,11 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   @Input()
   public set items(value: any[]) {
-    this.dataSource = Observable.of(value);
+    if (!value) {
+      return;
+    }
+
+    this.eventStateService.staticDataSourceStream.next(value);
   }
 
   @Input()
@@ -736,6 +740,10 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   public ngAfterContentInit(): void {
+    if (!this.dataStateService.onDataBind) {
+      this.dataSource = this.eventStateService.staticDataSourceStream;
+    }
+
     this.initDataTableState();
     this.initDataFetchEvent();
 

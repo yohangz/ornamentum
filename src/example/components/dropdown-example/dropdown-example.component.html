@@ -3,7 +3,7 @@
   [selectMode]="DropdownSelectMode.SINGLE"
   [filterable]="true"
   [showClearSelectionButton]="false"
-  [dataSource]="items"
+  [items]="selected"
   [loadViewDistance]="0"
   [showSelectedOptionRemoveButton]="true"
   [setFirstOptionSelected]="true"
@@ -13,20 +13,20 @@
 </ng-dropdown>
 
 
-<ng-dropdown
-  [selectMode]="DropdownSelectMode.SINGLE"
-  [filterable]="true"
-  [showClearSelectionButton]="true"
-  [loadOnScroll]="false"
-  [loadViewDistance]="0"
-  [showSelectedOptionRemoveButton]="true"
-  [onDataBind]="onDataBind"
+<!--<ng-dropdown-->
+  <!--[selectMode]="DropdownSelectMode.SINGLE"-->
+  <!--[filterable]="true"-->
+  <!--[showClearSelectionButton]="true"-->
+  <!--[loadOnScroll]="false"-->
+  <!--[loadViewDistance]="0"-->
+  <!--[showSelectedOptionRemoveButton]="true"-->
+  <!--[onDataBind]="onDataBind"-->
 
-  (selectChange)="onSelectChange($event)">
-  <ng-template #ngDropdownLoadingSpinner>
-    <div>LL</div>
-  </ng-template>
-</ng-dropdown>
+  <!--(selectChange)="onSelectChange($event)">-->
+  <!--<ng-template #ngDropdownLoadingSpinner>-->
+    <!--<div>LL</div>-->
+  <!--</ng-template>-->
+<!--</ng-dropdown>-->
 
 <!--[(ngModel)]="selected"-->
 
