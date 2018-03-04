@@ -23,13 +23,13 @@ import { DataTableColumnComponent } from '../components/data-table-column/data-t
  */
 @Injectable()
 export class DataTableResourceService<T> {
-  private itemDataStream = new ReplaySubject<T[]>(1);
+  private itemDataStream: ReplaySubject<T[]>;
   private dataSourceSubscription: Subscription;
 
   public setDataSource(dataSource: Observable<T[]>): void {
     this.dispose();
 
-    if (!this.itemDataStream.closed) {
+    if (this.itemDataStream && !this.itemDataStream.closed) {
       this.itemDataStream.complete();
     }
 

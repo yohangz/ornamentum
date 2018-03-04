@@ -11,16 +11,17 @@ import { DropdownRequestParams } from '../models/dropdown-request-params.model';
 
 @Injectable()
 export class DropdownResourceService<T> {
-  private itemDataStream = new ReplaySubject<T[]>(1);
+  private itemDataStream: ReplaySubject<T[]>;
   private dataSourceSubscription: Subscription;
 
   public setDataSource(dataSource: Observable<T[]>): void {
     this.dispose();
 
-    if (!this.itemDataStream.closed) {
+    if (this.itemDataStream && !this.itemDataStream.closed) {
       this.itemDataStream.complete();
     }
 
+    this.itemDataStream = new ReplaySubject<T[]>(1);
     this.dataSourceSubscription = dataSource.subscribe((items: T[]) => {
       this.itemDataStream.next(items);
     });
