@@ -1,27 +1,6 @@
 <div class="ng-data-table-column-selector-wrapper" (click)="$event.stopPropagation()">
   <div class="ng-data-table-column-selector-box-heading">Show/Hide Column</div>
   <div class="ng-data-table-column-selector-box">
-    <div class="ng-data-table-column-selector-fixed-column ng-data-table-column-selector-checkbox"
-         *ngIf="expandableRows">
-      <label>
-        <input class="ng-data-table-checkbox-input" type="checkbox" [(ngModel)]="config.expandableRows"/>
-        <span>{{config.translations.expandColumn}}</span>
-      </label>
-    </div>
-    <div class="ng-data-table-column-selector-fixed-column ng-data-table-column-selector-checkbox"
-         *ngIf="showIndexColumn">
-      <label>
-        <input class="ng-data-table-checkbox-input" type="checkbox" [(ngModel)]="config.showIndexColumn"/>
-        <span>{{config.translations.indexColumn}}</span>
-      </label>
-    </div>
-    <div class="ng-data-table-column-selector-fixed-column ng-data-table-column-selector-checkbox"
-         *ngIf="showRowSelectCheckboxColumn">
-      <label>
-        <input class="ng-data-table-checkbox-input" type="checkbox" [(ngModel)]="config.showRowSelectCheckbox"/>
-        <span>{{config.translations.selectColumn}}</span>
-      </label>
-    </div>
     <div class="ng-data-table-column-selector-column ng-data-table-column-selector-checkbox"
          *ngFor="let column of columns">
       <label>

@@ -3,24 +3,6 @@
  */
 export interface DataTableTranslations {
   /**
-   * Index column title.
-   * @type {number}
-   */
-  indexColumn?: string;
-
-  /**
-   * Select checkbox column title.
-   * @type {string}
-   */
-  selectColumn?: string;
-
-  /**
-   * Expand column title.
-   * @type {string}
-   */
-  expandColumn?: string;
-
-  /**
    * Pagination limit label title.
    * @type {string}
    */

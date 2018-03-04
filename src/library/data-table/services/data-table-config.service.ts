@@ -52,13 +52,10 @@ export class DataTableConfigService implements DataTableConfig {
   public maxLimit = 100;
   public stateKeyPrefix = 'grid_state_';
   public baseTranslations: DataTableTranslations = {
-    expandColumn: 'expand',
-    indexColumn: 'index',
     noDataMessageHeader: 'Whoops!',
     noDataMessageBody: 'No data to display. Added data will appear here.',
     paginationLimit: 'Limit',
     paginationRange: 'Results',
-    selectColumn: 'select'
   };
 
   // Table column config
