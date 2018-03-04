@@ -28,6 +28,12 @@ export class DataTableResourceService<T> {
 
   public setDataSource(dataSource: Observable<T[]>): void {
     this.dispose();
+
+    if (!this.itemDataStream.closed) {
+      this.itemDataStream.complete();
+    }
+
+    this.itemDataStream = new ReplaySubject<T[]>(1);
     this.dataSourceSubscription = dataSource.subscribe((items: T[]) => {
       this.itemDataStream.next(items);
     });
@@ -143,6 +149,10 @@ export class DataTableResourceService<T> {
     if (this.dataSourceSubscription) {
       this.dataSourceSubscription.unsubscribe();
       this.dataSourceSubscription = null;
+    }
+
+    if (this.itemDataStream && !this.itemDataStream.closed) {
+      this.itemDataStream.complete();
     }
   }
 }

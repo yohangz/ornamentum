@@ -484,31 +484,29 @@
   [selectMode]="DataTableSelectMode.SINGLE_TOGGLE"
   [multiColumnSortable]="initialTableConf.multiColumnSortable"
   [page]="page"
-  [pageable]="pageable"
+  [pageable]="false"
   [rowSelectable]="initialTableConf.rowSelectable"
   [selectOnRowClick]="selectOnRowClick"
   [showHeader]="showHeader"
   [showIndexColumn]="initialTableConf.showIndexColumn"
-  [showLoadingSpinner]="showLoadingSpinner"
+  [showLoadingSpinner]="true"
   [showSubstituteRows]="true"
   [selectTrackBy]="'id'"
   [(ngModel)]="selectedDataItems"
-  [contentHeight]="contentHeight"
   [persistTableState]="true"
   [showRefreshButton]="true"
-  [dataSource]="items"
   [onDynamicRowSpanExtract]="onDynamicRowSpanExtract"
   [showRowSelectCheckbox]="true"
   [showRowSelectAllCheckbox]="true"
   [showRowExpandLoadingSpinner]="true"
-
+  [minWidth]="1000"
+  [dataSource]="items"
   (columnBind)="onColumnBind($event)"
   (rowBind)="onRowBind($event)"
   (init)="onInit($event)"
   (rowSelectChange)="onRowSelectedStateChange($event)">
 
   <ng-data-table-column
-    [width]="firstColConf.width"
     [field]="'id'"
     [dropdownFilterMenuPosition]="MenuPosition.BOTTOM_LEFT"
     [title]="firstColConf.title"
@@ -521,14 +519,12 @@
     [showFilterClearButton]="true">
   </ng-data-table-column>
   <ng-data-table-column
-    [width]="100"
     [field]="'nest.level.x'"
     [title]="'Nested'"
     [sortable]="true"
     [filterable]="true">
   </ng-data-table-column>
   <ng-data-table-column
-    [width]="secondColConf.width"
     [field]="'stationName'"
     [title]="secondColConf.title"
     [sortable]="secondColConf.sortable"
@@ -566,7 +562,6 @@
     <!--</ng-template>-->
   <!--</ng-data-table-column>-->
   <ng-data-table-column
-    [width]="forthColConf.width"
     [field]="'longitude'"
     [title]="forthColConf.title"
     [sortable]="forthColConf.sortable"
@@ -577,7 +572,6 @@
     [visible]="forthColConf.visible">
   </ng-data-table-column>
   <ng-data-table-column
-    [width]="fifthColConf.width"
     [field]="'availableDocks'"
     [title]="fifthColConf.title"
     [sortable]="fifthColConf.sortable"
@@ -588,7 +582,6 @@
     [visible]="fifthColConf.visible">
   </ng-data-table-column>
   <ng-data-table-column
-    [width]="sixthColConf.width"
     [field]="'totalDocks'"
     [title]="sixthColConf.title"
     [sortable]="sixthColConf.sortable"
@@ -599,7 +592,6 @@
     [visible]="sixthColConf.visible">
   </ng-data-table-column>
   <ng-data-table-column
-    [width]="seventhColConf.width"
     [field]="'statusValue'"
     [title]="seventhColConf.title"
     [sortable]="seventhColConf.sortable"
@@ -610,7 +602,6 @@
     [visible]="seventhColConf.visible">
   </ng-data-table-column>
   <ng-data-table-column
-    [width]="eighthColConf.width"
     [field]="'availableBikes'"
     [title]="eighthColConf.title"
     [sortable]="eighthColConf.sortable"
@@ -621,7 +612,6 @@
     [visible]="eighthColConf.visible">
   </ng-data-table-column>
   <ng-data-table-column
-    [width]="ninthColConf.width"
     [field]="'lastCommunicationTime'"
     [title]="ninthColConf.title"
     [sortable]="ninthColConf.sortable"
@@ -641,7 +631,6 @@
     </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
-    [width]="tenthColConf.width"
     [title]="tenthColConf.title"
     [resizable]="tenthColConf.resizable"
     [visible]="tenthColConf.visible">
