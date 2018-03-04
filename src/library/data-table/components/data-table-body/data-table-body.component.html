@@ -59,7 +59,7 @@
       [class.row-odd]="isOddSubstituteRow(index)" [class.row-even]="isEvenSubstituteRow(index)">
     <td *ngIf="config.expandableRows">&nbsp;</td>
     <td *ngIf="config.showIndexColumn">&nbsp;</td>
-    <td *ngIf="config.rowSelectable">&nbsp;</td>
+    <td *ngIf="showRowSelectCheckbox">&nbsp;</td>
     <ng-container *ngFor="let column of columns">
       <td *ngIf="column.visible">&nbsp;</td>
     </ng-container>
