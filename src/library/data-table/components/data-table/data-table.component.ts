@@ -815,4 +815,8 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   public registerOnTouched(fn: any): void {
   }
+
+  public get tableWidth(): number {
+    return this.config.width || this.dataStateService.tableWidth;
+  }
 }

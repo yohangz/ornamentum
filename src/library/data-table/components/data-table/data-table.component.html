@@ -4,7 +4,7 @@
   <div class="ng-data-table-inner-wrapper">
     <div class="ng-data-table-header-wrapper" [style.paddingRight]="headerPadding | px">
       <div class="ng-data-table-header" scrollElement>
-        <table class="ng-data-table" [style.width]="width | px" [style.minWidth]="minWidth | px">
+        <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="config.minWidth | px">
           <colgroup ngDataTableColGroup [columns]="columns">
           </colgroup>
           <thead ngDataTableHead [columns]="columns">
@@ -17,8 +17,8 @@
       <ng-data-table-loading-spinner [loadingSpinnerTemplate]="loadingSpinnerTemplate"
                                      [isLoading]="isLoading" [showOverlay]="true">
       </ng-data-table-loading-spinner>
-      <table class="ng-data-table" [style.width]="dataStateService.tableWidth | px"
-             [style.minWidth]="config.minWidth | px" [hidden]="isLoading">
+      <table class="ng-data-table" [style.width]="tableWidth | px" [style.minWidth]="config.minWidth | px"
+             [hidden]="isLoading">
         <colgroup ngDataTableColGroup [columns]="columns">
         </colgroup>
         <tbody ngDataTableBody [columns]="columns" [rowExpandTemplate]="rowExpandTemplate"
