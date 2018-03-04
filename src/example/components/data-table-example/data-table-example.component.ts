@@ -640,6 +640,7 @@ export class DataTableExampleComponent {
 
   public onRowBind(dataRow: DataTableRow<any>): void {
     dataRow.disabled = dataRow.index === 1;
+    dataRow.cssClass = 'test-class';
   }
 
   public onRowSelectedStateChange(selected: any | any[]) {
