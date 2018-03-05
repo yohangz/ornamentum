@@ -96,6 +96,11 @@
         height: 1.4rem;
         margin-right: .5rem;
         outline: none;
+
+        &[disabled] {
+          cursor: not-allowed;
+          opacity: .7;
+        }
       }
 
       .ng-data-table-pagination-page {

@@ -12,6 +12,10 @@
       .ng-data-table-header-wrapper {
         padding-right: 15px;
         position: relative;
+
+        .ng-data-table-header {
+          overflow: hidden;
+        }
       }
 
       .ng-data-table-content {
@@ -85,7 +89,6 @@
 
     .ng-data-table-header {
       border-right: .05rem solid $data-table-header-border;
-      overflow: hidden;
       position: relative;
       width: 100%;
 
@@ -284,6 +287,8 @@
                   @include font-size(.9, 1);
                   padding-right: 0;
                 }
+
+
               }
             }
 
