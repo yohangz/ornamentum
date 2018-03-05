@@ -1,6 +1,6 @@
 {
   "name": "ornamentum",
-  "version": "1.1.19",
+  "version": "1.1.20",
   "description": "Angular 2+ Data Table (Dev Inprogress)",
   "main": "./lib/index.umd.js",
   "module": "./lib/index.js",
@@ -60,8 +60,7 @@
     "url": "https://github.com/yohangz/ornamentum/issues"
   },
   "homepage": "https://github.com/yohangz/ornamentum#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "peerDependencies": {
     "@angular/forms": "^5.2.7",
     "@angular/common": "^5.2.7",
