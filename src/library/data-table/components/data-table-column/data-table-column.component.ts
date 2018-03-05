@@ -157,6 +157,13 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   public visible = true;
 
   /**
+   * Show filed in column selector.
+   * @type {boolean}
+   */
+  @Input()
+  public showInColumnSelector = true;
+
+  /**
    * Filter placeholder value.
    * @type string
    */
