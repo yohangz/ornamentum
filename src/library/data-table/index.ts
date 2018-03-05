@@ -1,3 +1,5 @@
+import { DataFetchMode } from './models/data-fetch-mode.enum';
+
 export { DataTableSortOrder } from './models/data-table-sort-order.enum';
 export { DataTableStorageMode } from './models/data-table-storage-mode.enum';
 
@@ -20,6 +22,7 @@ export { DataTableFilterFieldMapperCallback } from './models/data-table-filter-f
 export { DataTableFilterExpressionCallback } from './models/data-table-filter-expression-callback.model';
 export { DataTableCellColorRenderCallback } from './models/data-table-cell-color-render-callback.model';
 export { DataTableSelectMode } from './models/data-table-select-mode.model';
+export { DataFetchMode } from './models/data-fetch-mode.enum';
 
 export { DataTableComponent } from './components/data-table/data-table.component';
 export { DataTableColumnComponent } from './components/data-table-column/data-table-column.component';

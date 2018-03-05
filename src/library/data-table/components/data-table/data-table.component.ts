@@ -33,6 +33,7 @@ import { DataTableQueryResult } from '../../models/data-table-query-result.model
 import { DataTableDataBindCallback } from '../../models/data-table-data-bind-callback.model';
 import { DataTableFilterOption } from '../../models/data-table-filter-option.model';
 import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
+import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -526,7 +527,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @Input()
   public set offset(value: number) {
     this.config.offset = value;
-    this.eventStateService.dataFetchStream.next(false);
+    this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);
   }
 
   /**
@@ -536,7 +537,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   @Input()
   public set limit(value: number) {
     this.config.limit = value;
-    this.eventStateService.dataFetchStream.next(false);
+    this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);
   }
 
   /**
@@ -656,19 +657,15 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   private initDataFetchEvent(): void {
     this.dataFetchStreamSubscription = this.eventStateService.dataFetchStream
       .debounceTime(20)
-      .switchMap((reload: boolean) => this.mapDataBind(reload))
+      .switchMap((fetchMode: DataFetchMode) => this.mapDataBind(fetchMode))
       .subscribe((queryResult: DataTableQueryResult<any>) => {
         this.onAfterDataBind(queryResult);
       });
   }
 
-  /**
-   * Trigger table data bind.
-   * @param {boolean} hardReload Hard refresh if true.
-   */
-  private mapDataBind(hardReload: boolean): Observable<DataTableQueryResult<any>> {
+  private mapDataBind(fetchMode: DataFetchMode): Observable<DataTableQueryResult<any>> {
     this.dataStateService.dataLoading = true;
-    if (hardReload) {
+    if (fetchMode === DataFetchMode.HARD_RELOAD) {
       this.clearRowSelectState();
       this.clearColumnState();
       this.dataStateService.heardReload = true;
@@ -676,7 +673,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     }
 
     const params: DataTableRequestParams = {
-      hardReload: hardReload
+      loadData: fetchMode === DataFetchMode.HARD_RELOAD || fetchMode === DataFetchMode.SOFT_RELOAD
     };
 
     if (this.columns) {
@@ -748,7 +745,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     this.initDataFetchEvent();
 
     if (this.config.autoFetch) {
-      this.eventStateService.dataFetchStream.next(false);
+      this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);
     }
 
     this.eventStateService.fetchFilterOptionsStream.next(true);
@@ -786,15 +783,15 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     this.dataStateService.allRowSelected = false;
   }
 
-  public fetchData(hardRefresh: boolean = false): void {
-    this.eventStateService.dataFetchStream.next(hardRefresh);
+  public fetchData(fetchMode: DataFetchMode = DataFetchMode.SOFT_RELOAD): void {
+    this.eventStateService.dataFetchStream.next(fetchMode);
   }
 
   public initDataSource(source: Observable<any>): void {
     this.dataTableResourceService.setDataSource(source);
 
     this.onDataBind = (params: DataTableRequestParams): Observable<DataTableQueryResult<any>> => {
-      if (params.hardReload) {
+      if (params.loadData) {
         this.dataTableResourceService.setDataSource(source);
       }
 

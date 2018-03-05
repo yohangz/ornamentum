@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { DataFetchMode } from '../../models/data-fetch-mode.enum';
+
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
@@ -24,7 +26,7 @@ export class DataTablePaginationComponent {
    */
   public firstPageClick(): void {
     this.config.offset = 0;
-    this.eventStateService.dataFetchStream.emit(false);
+    this.eventStateService.dataFetchStream.emit(DataFetchMode.SOFT_LOAD);
   }
 
   /**
@@ -32,7 +34,7 @@ export class DataTablePaginationComponent {
    */
   public previousPageClick(): void {
     this.config.offset = this.config.offset - Math.min(this.config.limit, this.config.offset);
-    this.eventStateService.dataFetchStream.emit(false);
+    this.eventStateService.dataFetchStream.emit(DataFetchMode.SOFT_LOAD);
   }
 
   /**
@@ -40,7 +42,7 @@ export class DataTablePaginationComponent {
    */
   public nextPageClick(): void {
     this.config.offset = this.config.offset + this.config.limit;
-    this.eventStateService.dataFetchStream.emit(false);
+    this.eventStateService.dataFetchStream.emit(DataFetchMode.SOFT_LOAD);
   }
 
   /**
@@ -48,7 +50,7 @@ export class DataTablePaginationComponent {
    */
   public lastPageClick(): void {
     this.config.offset = (this.maxPage - 1) * this.config.limit;
-    this.eventStateService.dataFetchStream.emit(false);
+    this.eventStateService.dataFetchStream.emit(DataFetchMode.SOFT_LOAD);
   }
 
   /**
@@ -73,7 +75,7 @@ export class DataTablePaginationComponent {
    * @return {boolean} - Invalid status.
    */
   public isInvalidLimit(element: HTMLInputElement): boolean {
-    const limit = parseInt(element.value);
+    const limit = Number(element.value);
     return element.value === '' || limit > this.config.maxLimit || limit < 1;
   }
 
@@ -87,11 +89,11 @@ export class DataTablePaginationComponent {
       return;
     }
 
-    const limit = parseInt(element.value);
+    const limit = Number(element.value);
     if (this.config.limit !== limit) {
       this.config.offset = 0;
       this.config.limit = limit;
-      this.eventStateService.dataFetchStream.emit(false);
+      this.eventStateService.dataFetchStream.emit(DataFetchMode.SOFT_LOAD);
     }
   }
 
@@ -109,7 +111,7 @@ export class DataTablePaginationComponent {
    * @return {boolean} - Invalid status.
    */
   public isInvalidPageIndex(element: HTMLInputElement): boolean {
-    const page = parseInt(element.value);
+    const page = Number(element.value);
     return element.value === '' || page > this.maxPage || page < 1;
   }
 
@@ -123,10 +125,10 @@ export class DataTablePaginationComponent {
       return;
     }
 
-    const page = parseInt(element.value);
+    const page = Number(element.value);
     if (this.page !== page) {
       this.config.offset = (page - 1) * this.config.limit;
-      this.eventStateService.dataFetchStream.emit(false);
+      this.eventStateService.dataFetchStream.emit(DataFetchMode.SOFT_LOAD);
     }
   }
 

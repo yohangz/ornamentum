@@ -5,7 +5,8 @@ import {
   DropdownMenuPosition,
   DataTableRow,
   DataTableColumnComponent,
-  DataTableSelectMode
+  DataTableSelectMode,
+  DataFetchMode
 } from '../../../library';
 
 import { Observable } from 'rxjs/Observable';
@@ -13,12 +14,8 @@ import { Observable } from 'rxjs/Observable';
 import { DataStorageService } from '../../services/data-storage.service';
 
 import { HttpClient } from '@angular/common/http';
-import set = Reflect.set;
-import { Subject } from 'rxjs/Subject';
 
 import 'rxjs/add/operator/timeout';
-import { DataTableRequestParams } from '../../../library/data-table/models/data-table-request-params.model';
-import { DataTableQueryResult } from '../../../library/data-table/models/data-table-query-result.model';
 
 declare function require(url: string);
 
@@ -665,5 +662,14 @@ export class DataTableExampleComponent {
     if (column.field === 'stationName') {
       column.visible = false;
     }
+  }
+
+  public onFilter(item: any, field: string, filterValue: any): boolean {
+    console.log('filter ', filterValue);
+    return true;
+  }
+
+  public fetchData(): void {
+    this.dataTableComponent.fetchData(DataFetchMode.SOFT_RELOAD);
   }
 }

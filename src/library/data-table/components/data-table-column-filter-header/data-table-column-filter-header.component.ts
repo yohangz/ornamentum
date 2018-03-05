@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { Subject } from 'rxjs/Subject';
 
 import { DataTableFilterEventArgs } from '../../models/data-table-filter-event-args.model';
+import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -58,7 +59,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
     this.columnFilterSubscription = this.columnFilterStream
       .debounceTime(this.config.filterDebounceTime)
       .subscribe(() => {
-        this.eventStateService.dataFetchStream.next(false);
+        this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);
       });
   }
 
@@ -66,7 +67,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
     if (this.config.filterDebounce) {
       this.columnFilterStream.next();
     } else {
-      this.eventStateService.dataFetchStream.next(false);
+      this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);
     }
   }
 }

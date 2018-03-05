@@ -1,5 +1,7 @@
 import { Component, Input, TemplateRef } from '@angular/core';
 
+import { DataFetchMode } from '../../models/data-fetch-mode.enum';
+
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 
@@ -17,7 +19,7 @@ export class DataTableNoDataBodyComponent {
   }
 
   public resetFilters(): void {
-    this.eventStateService.dataFetchStream.emit(true);
+    this.eventStateService.dataFetchStream.emit(DataFetchMode.HARD_RELOAD);
   }
 
   public get showDefaultNoDataTemplate(): boolean {

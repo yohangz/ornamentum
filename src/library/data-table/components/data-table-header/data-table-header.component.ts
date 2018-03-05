@@ -1,5 +1,7 @@
 import { Component, Injector, Input, OnDestroy } from '@angular/core';
 
+import { DataFetchMode } from '../../models/data-fetch-mode.enum';
+
 import { DataTableColumnSelectorComponent } from '../data-table-column-selector/data-table-column-selector.component';
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -57,6 +59,6 @@ export class DataTableHeaderComponent implements OnDestroy {
   }
 
   public onReload(): void {
-    this.eventStateService.dataFetchStream.next(true);
+    this.eventStateService.dataFetchStream.next(DataFetchMode.HARD_RELOAD);
   }
 }

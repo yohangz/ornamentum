@@ -524,7 +524,8 @@
     [field]="'nest.level.x'"
     [title]="'Nested'"
     [sortable]="true"
-    [filterable]="true">
+    [filterable]="true"
+    [filterExpression]="onFilter">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'stationName'"
@@ -655,3 +656,6 @@
 </ng-data-table>
 
 {{selectedDataItems | json}}
+
+
+<button (click)="fetchData()">Fetch Data</button>

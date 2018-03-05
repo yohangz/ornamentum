@@ -4,6 +4,7 @@ import { get } from 'lodash';
 
 import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
 import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
+import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -56,7 +57,7 @@ export class DataTableColumnTitleHeaderComponent {
         column.sortOrder = DataTableSortOrder.ASC;
       }
 
-      this.eventStateService.dataFetchStream.next(false);
+      this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);
     }
   }
 

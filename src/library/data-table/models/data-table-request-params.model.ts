@@ -6,10 +6,9 @@ import { DataTableFilterColumn } from './data-table-filter-column.model';
  */
 export interface DataTableRequestParams {
   /**
-   * True if hard reload triggered.
-   * Refresh button click state
+   * True if re-fetch data load mode is triggered.
    */
-  hardReload: boolean;
+  loadData: boolean;
 
   /**
    * Data offset value.
