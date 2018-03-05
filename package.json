@@ -60,13 +60,14 @@
     "url": "https://github.com/yohangz/ornamentum/issues"
   },
   "homepage": "https://github.com/yohangz/ornamentum#readme",
-  "dependencies": {},
+  "dependencies": {
+    "lodash.get": "^4.4.2",
+    "lodash.orderby": "^4.6.0"
+  },
   "peerDependencies": {
     "@angular/forms": "^5.2.7",
     "@angular/common": "^5.2.7",
     "@angular/core": "^5.2.7",
-    "lodash.get": "^4.4.2",
-    "lodash.orderby": "^4.6.0",
     "rxjs": "^5.5.6"
   },
   "devDependencies": {
