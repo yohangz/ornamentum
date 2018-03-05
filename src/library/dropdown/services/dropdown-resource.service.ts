@@ -4,7 +4,7 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 
-import get from 'lodash.get';
+import { get } from 'lodash';
 
 import { DropdownQueryResult } from '../models/dropdown-query-result.model';
 import { DropdownRequestParams } from '../models/dropdown-request-params.model';

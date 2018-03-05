@@ -61,13 +61,16 @@
   },
   "homepage": "https://github.com/yohangz/ornamentum#readme",
   "dependencies": {
-    "lodash.get": "^4.4.2",
-    "lodash.orderby": "^4.6.0"
-  },
-  "peerDependencies": {
-    "@angular/forms": "^5.2.7",
     "@angular/common": "^5.2.7",
     "@angular/core": "^5.2.7",
+    "@angular/forms": "^5.2.7",
+    "lodash": "^4.17.5",
+    "rxjs": "^5.5.6"
+  },
+  "peerDependencies": {
+    "@angular/common": "^5.2.7",
+    "@angular/core": "^5.2.7",
+    "@angular/forms": "^5.2.7",
     "rxjs": "^5.5.6"
   },
   "devDependencies": {
@@ -83,8 +86,7 @@
     "@compodoc/compodoc": "^1.0.5",
     "@types/jasmine": "~2.8.2",
     "@types/jasminewd2": "~2.0.2",
-    "@types/lodash.get": "^4.4.3",
-    "@types/lodash.orderby": "^4.6.3",
+    "@types/lodash": "^4.14.104",
     "@types/node": "~8.0.57",
     "@types/webpack": "^3.8.1",
     "angular2-template-loader": "^0.6.2",
@@ -113,7 +115,7 @@
     "to-string-loader": "^1.1.5",
     "ts-node": "~3.3.0",
     "tslint": "~5.9.1",
-    "typescript": "~2.5.3",
+    "typescript": "2.5.3",
     "webpack": "^3.8.1",
     "webpack-angular-externals": "^1.0.2",
     "webpack-bundle-analyzer": "^2.10.1",

@@ -1,6 +1,6 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
 
-import get from 'lodash.get';
+import { get } from 'lodash';
 
 import { DropdownConfig } from '../models/dropdown-config.model';
 import { DropdownTranslations } from '../models/dropdown-translations.model';
@@ -31,8 +31,8 @@ export class DropdownConfigService implements DropdownConfig {
   public filterable = false;
   public filterDebounce = true;
   public filterDebounceTime = 500;
-  public groupByField = undefined;
-  public wrapDisplaySelectLimit = undefined;
+  public groupByField: string = undefined;
+  public wrapDisplaySelectLimit: number = undefined;
   public showSelectedOptionRemoveButton = false;
   public showClearSelectionButton = false;
   public menuWidth = 320;
