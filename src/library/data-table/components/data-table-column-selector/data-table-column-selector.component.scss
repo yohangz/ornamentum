@@ -10,6 +10,8 @@
       @include font-size(.8, 1.4);
 
       background: $data-table-dropdown-background;
+      max-height: 20rem;
+      overflow: hidden;
       padding: 1.5rem;
       position: absolute;
       right: 0;
@@ -29,6 +31,8 @@
     }
 
     .ng-data-table-column-selector-box {
+      max-height: 15rem;
+      overflow: auto;
 
 
       .ng-data-table-column-selector-checkbox {
