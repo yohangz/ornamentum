@@ -43,6 +43,7 @@ export interface ColumnConf {
 export class DataTableExampleComponent {
   public MenuPosition = DropdownMenuPosition;
   public DataTableSelectMode = DataTableSelectMode;
+  public DataFetchMode = DataFetchMode;
 
   private static tableConfigurationStorageKeyName = 'app_table_init_conf';
   private static columnConfigurationStorageKeyName = 'app_column_init_conf';
@@ -667,9 +668,5 @@ export class DataTableExampleComponent {
   public onFilter(item: any, field: string, filterValue: any): boolean {
     console.log('filter ', filterValue);
     return true;
-  }
-
-  public fetchData(): void {
-    this.dataTableComponent.fetchData(DataFetchMode.SOFT_RELOAD);
   }
 }

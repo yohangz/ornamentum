@@ -32,9 +32,9 @@
       <ng-container *ngIf="!initialTableConf.remoteDataFetch">Fetch Remote Data: <b>OFF</b></ng-container>
     </button>
 
-    <button (click)="dataTableComponent.fetchData()">Reload Data</button>
+    <button (click)="dataTableComponent.fetchData(DataFetchMode.SOFT_RELOAD)">Soft Reload</button>
 
-    <button (click)="dataTableComponent.fetchData(true)">Hard Reload Data</button>
+    <button (click)="dataTableComponent.fetchData(DataFetchMode.HARD_RELOAD)">Hard Reload</button>
 
     <button (click)="reloadTableConfigurations()" style="color: #d32f2f"><b>RELOAD TO APPLY</b></button>
   </div>
@@ -656,6 +656,3 @@
 </ng-data-table>
 
 {{selectedDataItems | json}}
-
-
-<button (click)="fetchData()">Fetch Data</button>
