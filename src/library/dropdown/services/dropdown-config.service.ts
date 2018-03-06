@@ -45,6 +45,9 @@ export class DropdownConfigService implements DropdownConfig {
   public showOptionSelectCheckbox = false;
   public multiSelectOptionMaxWidth = 135;
   public setFirstOptionSelected = false;
+  public triggerSelectChangeOnInit = false;
+  public triggerSelectChangeOnModelUpdate = false;
+  public triggerSelectChangeOnFirstOptionSelect = false;
 
   constructor(@Inject(DROPDOWN_CONFIG) private dropdownConfig: DropdownConfig) {
     if (dropdownConfig) {

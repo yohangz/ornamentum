@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, NgZone, OnDestroy, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
@@ -35,8 +35,7 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
 
   constructor(public config: DataTableConfigService,
               public dataStateService: DataTableDataStateService,
-              private eventStateService: DataTableEventStateService,
-              private zone: NgZone) {
+              private eventStateService: DataTableEventStateService) {
   }
 
   public ngOnInit(): void {

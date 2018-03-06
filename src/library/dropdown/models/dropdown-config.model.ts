@@ -142,7 +142,29 @@ export class DropdownConfig {
   multiSelectOptionMaxWidth?: number;
 
   /**
-   * Set first dropdown option selected if true.
+   * Set first dropdown option selected on data fetch if true.
+   * @type {boolean}
    */
   setFirstOptionSelected?: boolean;
+
+  /**
+   * Trigger select change event on init if true.
+   * Can be used to enable selectedItems or selectedItem associated change trigger.
+   * @type {boolean}
+   */
+  triggerSelectChangeOnInit?: boolean;
+
+  /**
+   * Trigger select change on explicit model update if true.
+   * Applicable only when form binding is used.
+   * @type {boolean}
+   */
+  triggerSelectChangeOnModelUpdate?: boolean;
+
+  /**
+   * Trigger select change on first option select change if true.
+   * Applicable only when setFirstOptionSelected is true.
+   * @type {boolean}
+   */
+  triggerSelectChangeOnFirstOptionSelect?: boolean;
 }

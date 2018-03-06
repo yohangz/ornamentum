@@ -131,22 +131,20 @@ export class DropdownExampleComponent {
       disabled: false
     };
 
-    setTimeout(() => {
-      this.selected = [
-        {
-          key: 13,
-          group: 'C',
-          value: 'test3',
-          disabled: false
-        },
-        {
-          key: 14,
-          group: 'A',
-          value: 'test3',
-          disabled: false
-        }
-      ];
-    }, 5000);
+    this.selected = [
+      {
+        key: 13,
+        group: 'C',
+        value: 'test3',
+        disabled: false
+      },
+      {
+        key: 14,
+        group: 'A',
+        value: 'test3',
+        disabled: false
+      }
+    ];
 
     setTimeout(() => {
       // this.selected = [

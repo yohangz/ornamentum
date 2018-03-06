@@ -162,7 +162,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   @Input()
   public set selectedOptions(value: any[]) {
     this.dataStateService.selectedOptions = value || [];
-    this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
   }
 
   /**
@@ -172,7 +171,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   @Input()
   public set selectedOption(value: any) {
     this.dataStateService.selectedOption = value;
-    this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);
   }
 
   /**
@@ -302,7 +300,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.config.filterDebounce = value;
   }
 
-
   /**
    * Filter de-bounce time milliseconds.
    * @default 500
@@ -331,6 +328,21 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   @Input()
   public set setFirstOptionSelected(value: boolean) {
     this.config.setFirstOptionSelected = value;
+  }
+
+  @Input()
+  public set triggerSelectChangeOnInit(value: boolean) {
+    this.config.triggerSelectChangeOnInit = value;
+  }
+
+  @Input()
+  public set triggerSelectChangeOnModelUpdate(value: boolean) {
+    this.config.triggerSelectChangeOnModelUpdate = value;
+  }
+
+  @Input()
+  public set triggerSelectChangeOnFirstOptionSelect(value: boolean) {
+    this.config.triggerSelectChangeOnFirstOptionSelect = value;
   }
 
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
@@ -420,6 +432,14 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     return !!this.dataStateService.selectedOption;
   }
 
+  public triggerSelectChange(): void {
+    if (this.config.selectMode === DropdownSelectMode.MULTI) {
+      this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
+    } else {
+      this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);
+    }
+  }
+
   /**
    * Clear selected items.
    */
@@ -453,9 +473,13 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    */
   public writeValue(value: any): void {
     if (this.config.selectMode === DropdownSelectMode.MULTI) {
-      this.selectedOptions = value;
+      this.dataStateService.selectedOptions = value || [];
     } else {
-      this.selectedOption = value;
+      this.dataStateService.selectedOption = value;
+    }
+
+    if (this.config.triggerSelectChangeOnModelUpdate) {
+      this.triggerSelectChange();
     }
   }
 
@@ -488,6 +512,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
     if (this.config.loadDataOnInit) {
       this.eventStateService.dataFetchStream.emit(false);
+    }
+
+    if (this.config.triggerSelectChangeOnInit) {
+      this.triggerSelectChange();
     }
 
     this.eventStateService.initStream.emit(this);
@@ -530,9 +558,13 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
     if (this.config.setFirstOptionSelected && queryResult.items.length) {
       if (this.config.selectMode === DropdownSelectMode.MULTI) {
-        this.selectedOptions = [queryResult.items[0]];
+        this.dataStateService.selectedOptions = [queryResult.items[0]];
       } else {
-        this.selectedOption = queryResult.items[0];
+        this.dataStateService.selectedOption = queryResult.items[0];
+      }
+
+      if (this.config.triggerSelectChangeOnFirstOptionSelect) {
+        this.triggerSelectChange();
       }
     }
 

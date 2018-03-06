@@ -473,14 +473,12 @@
 <br/>
 <ng-data-table
   [title]="gridTitle"
-  [autoFetch]="initialTableConf.autoFetch"
   [expandableRows]="initialTableConf.expandableRows"
   [expandOnRowClick]="expandOnRowClick"
   [filterDebounce]="filterDebounce"
   [filterDebounceTime]="filterDebounceTime"
   [indexColumnTitle]="indexColumnTitle"
-
-  [limit]="limit"
+  [limit]="10"
   [selectMode]="DataTableSelectMode.SINGLE_TOGGLE"
   [multiColumnSortable]="initialTableConf.multiColumnSortable"
   [page]="page"
@@ -501,20 +499,20 @@
   [showRowExpandLoadingSpinner]="true"
   [minWidth]="1000"
   [contentHeight]="500"
-  [dataSource]="items"
+
   (columnBind)="onColumnBind($event)"
   (rowBind)="onRowBind($event)"
   (init)="onInit($event)"
-  (rowSelectChange)="onRowSelectedStateChange($event)">
+  (rowSelectChange)="onRowSelectedStateChange($event)" [onDataBind]="onDataBind">
 
   <ng-data-table-column
     [field]="'id'"
     [dropdownFilterMenuPosition]="MenuPosition.BOTTOM_LEFT"
     [title]="firstColConf.title"
     [sortable]="firstColConf.sortable"
-    [filterable]="firstColConf.filterable"
+    [filterable]="true"
     [resizable]="firstColConf.resizable"
-    [showDropdownFilter]="initialColumnConf.multiSelectFilter1"
+    [showDropdownFilter]="true"
     [filterPlaceholder]="firstColConf.filterPlaceholder"
     [visible]="firstColConf.visible"
     [showFilterClearButton]="true"
