@@ -1,15 +1,27 @@
 <ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="config.selectMode === DropdownSelectMode.MULTI">
   <ng-container *ngIf="config.groupByField">
     <ng-container *ngFor="let groupedItem of dataStateService.dropdownItemGroups">
-      <li class="ng-dropdown-group-heading">{{ groupedItem.groupName }}</li>
+      <li *ngIf="!dataStateService.dropdownOptionGroupHeaderTemplate" class="ng-dropdown-group-heading">
+        {{ groupedItem.groupName }}
+      </li>
+      <ng-container *ngIf="dataStateService.dropdownOptionGroupHeaderTemplate"
+                    [ngTemplateOutlet]="dataStateService.dropdownOptionGroupHeaderTemplate"
+                    [ngTemplateOutletContext]="{ groupedItem: groupedItem }">
+      </ng-container>
       <ng-container *ngFor="let option of groupedItem.items">
         <li (click)="toggleOptionSelectedState(option)" [class.disabled]="option.disabled"
             [class.ng-item-selected]="getSelectedState(option.id)">
-          <a role="menuitem">
-            <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="getSelectedState(option.id)"
-                   [disabled]="option.disabled" *ngIf="config.showOptionSelectCheckbox"/>
-            <span [title]="config.getDisplayText(option.item)">{{config.getDisplayText(option.item)}}</span>
-          </a>
+          <ng-container *ngIf="!dataStateService.dropdownOptionTemplate">
+            <a>
+              <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="getSelectedState(option.id)"
+                     [disabled]="option.disabled" *ngIf="config.showOptionSelectCheckbox"/>
+              <span [title]="option.text">{{option.text}}</span>
+            </a>
+          </ng-container>
+          <ng-container *ngIf="dataStateService.dropdownOptionTemplate"
+                        [ngTemplateOutlet]="dataStateService.dropdownOptionTemplate"
+                        [ngTemplateOutletContext]="{ option: option,  selected: getSelectedState(option.id) }">
+          </ng-container>
         </li>
       </ng-container>
     </ng-container>
@@ -18,11 +30,17 @@
     <ng-container *ngFor="let option of dataStateService.dropdownItems">
       <li (click)="toggleOptionSelectedState(option)" [class.disabled]="option.disabled"
           [class.ng-item-selected]="getSelectedState(option.id)">
-        <a role="menuitem">
-          <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="getSelectedState(option.id)"
-                 [disabled]="option.disabled" *ngIf="config.showOptionSelectCheckbox"/>
-          <span [title]="config.getDisplayText(option.item)">{{config.getDisplayText(option.item)}}</span>
-        </a>
+        <ng-container *ngIf="!dataStateService.dropdownOptionTemplate">
+          <a>
+            <input type="checkbox" class="ng-dropdown-checkbox-input" [checked]="getSelectedState(option.id)"
+                   [disabled]="option.disabled" *ngIf="config.showOptionSelectCheckbox"/>
+            <span [title]="option.text">{{option.text}}</span>
+          </a>
+        </ng-container>
+        <ng-container *ngIf="dataStateService.dropdownOptionTemplate"
+                      [ngTemplateOutlet]="dataStateService.dropdownOptionTemplate"
+                      [ngTemplateOutletContext]="{ option: option,  selected: getSelectedState(option.id) }">
+        </ng-container>
       </li>
     </ng-container>
   </ng-container>

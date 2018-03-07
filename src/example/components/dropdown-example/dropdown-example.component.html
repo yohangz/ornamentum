@@ -9,6 +9,12 @@
   [setFirstOptionSelected]="true"
 
   (selectChange)="onSelectChange($event)">
+  <ng-template #ngDropdownOptionGroupHeader>
+    Group
+  </ng-template>
+  <ng-template #ngDropdownOption let-option="option">
+    {{option.text}} -- Template
+  </ng-template>
 </ng-dropdown>
 
 

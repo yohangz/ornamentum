@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, TemplateRef } from '@angular/core';
 
 import { DropdownItem } from '../models/dropdown-item.model';
 import { DropdownDataBindCallback } from '../models/dropdown-data-bind-callback.model';
@@ -23,6 +23,8 @@ export class DropdownDataStateService {
   public filterText = '';
   public disabled = false;
   public componentLoaderRef: ComponentLoader<any>;
+  public dropdownOptionTemplate: TemplateRef<any>;
+  public dropdownOptionGroupHeaderTemplate: TemplateRef<any>;
 
   public onDataBind: DropdownDataBindCallback;
 }

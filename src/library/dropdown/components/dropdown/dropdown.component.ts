@@ -64,6 +64,16 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   @ContentChild('ngDropdownLoadingSpinner')
   public loadingSpinnerTemplate: TemplateRef<any>;
 
+  @ContentChild('ngDropdownOption')
+  public set dropdownOptionTemplate(value: TemplateRef<any>) {
+    this.dataStateService.dropdownOptionTemplate = value;
+  }
+
+  @ContentChild('ngDropdownOptionGroupHeader')
+  public set dropdownOptionGroupHeaderTemplate(value: TemplateRef<any>) {
+    this.dataStateService.dropdownOptionGroupHeaderTemplate = value;
+  }
+
   // Outputs : Event Handlers
   /**
    * On dropdown initialize.
