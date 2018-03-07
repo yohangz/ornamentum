@@ -363,21 +363,22 @@
           }
 
           &.selected {
+
             td {
               background: $data-table-selected-row-background;
             }
 
             &:hover {
+
               td {
                 background: $data-table-selected-row-background;
               }
 
-              + .row-even,
-              + .row-odd {
+              + .selected {
 
-                td {
-                  background: $data-table-selected-row-background;
-                }
+                  td {
+                    background: $data-table-selected-row-background;
+                  }
               }
             }
           }
