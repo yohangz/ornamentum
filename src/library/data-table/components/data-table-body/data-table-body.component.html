@@ -11,7 +11,7 @@
           [ngClass]="row.cssClass"
           (dblclick)="rowDoubleClicked(row, $event)"
           (click)="rowClicked(row, $event)">
-        <td class="ng-data-table-row-expand-button ng-ignore-propagation" [style.background-color]="row.colour"
+        <td class="ng-data-table-row-expand-button ng-ignore-propagation" [style.background-color]="row.color"
             *ngIf="config.expandableRows && !rowSpanIndex"
             (click)="onRowExpand($event, row)" [attr.rowspan]="rowSpanCount">
           <div [hidden]="config.showRowExpandLoadingSpinner && isRowExpanderLoading(row)">
@@ -23,11 +23,11 @@
                                          [isLoading]="isRowExpanderLoading(row)" [showOverlay]="false">
           </ng-data-table-loading-spinner>
         </td>
-        <td class="index-column" [style.background-color]="row.colour"
+        <td class="index-column" [style.background-color]="row.color"
             *ngIf="config.showIndexColumn && !rowSpanIndex"
             [textContent]="getDisplayIndex(row)" [attr.rowspan]="rowSpanCount">
         </td>
-        <td class="ng-data-table-select-column ng-ignore-propagation" [style.background-color]="row.colour"
+        <td class="ng-data-table-select-column ng-ignore-propagation" [style.background-color]="row.color"
             *ngIf="showRowSelectCheckbox && !rowSpanIndex" [attr.rowspan]="rowSpanCount">
           <input class="ng-data-table-checkbox-input ng-ignore-propagation" type="checkbox" [(ngModel)]="row.selected"
                  (change)="onRowSelectChange(row)"/>
@@ -36,7 +36,7 @@
           <ng-container *ngIf="column.visible">
             <td class="ng-data-table-data-column" *ngIf="!column.cellTemplate && !rowSpanIndex"
                 (init)="onCellInit(column, row)" [ngClass]="column.cssClass" [attr.rowspan]="rowSpanCount"
-                [style.background-color]="column.getCellColor(row) || row.colour"
+                [style.background-color]="column.getCellColor(row) || row.color"
                 (click)="cellClicked(column, row, $event)">
               <span>{{ getFieldValue(row, column) }}</span>
             </td>
