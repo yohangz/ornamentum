@@ -50,10 +50,13 @@
 
           .ng-dropdown-no-data {
             @include font-size(1.2, 1.6);
+            bottom: 0;
             color: $multi-select-dropdown-icon-background;
-            height: 100%;
-            padding-top: 60%;
+            left: 0;
+            position: absolute;
+            right: 0;
             text-align: center;
+            top: 50%;
 
             &:hover {
               background: none;

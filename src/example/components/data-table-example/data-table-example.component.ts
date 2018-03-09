@@ -102,7 +102,8 @@ export class DataTableExampleComponent {
   public ninthColConf: ColumnConf;
   public tenthColConf: ColumnConf;
 
-  public items: Observable<any>; // = new Subject();
+  public items: Observable<any>;
+  //public items = new Subject();
 
   constructor(private dataStorageService: DataStorageService, private http: HttpClient) {
     this.initialTableConf = this.dataStorageService.get(DataTableExampleComponent.tableConfigurationStorageKeyName) ||
@@ -229,6 +230,10 @@ export class DataTableExampleComponent {
       resizable: false,
       visible: true
     };
+
+    // setInterval(() => {
+    //   this.items.next([]);
+    // }, 2000);
 
     // let count = 0;
     // setInterval(() => {
