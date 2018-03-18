@@ -238,6 +238,13 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   public dropdownFilterShowSelectAll: boolean;
 
   /**
+   * Dropdown filter show option select checkbox.
+   * @type boolean
+   */
+  @Input()
+  public dropDownFilterShowOptionSelectCheckbox: boolean;
+
+  /**
    * Dropdown filter selected items display limit.
    * @type number
    */
