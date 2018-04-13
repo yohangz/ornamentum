@@ -36,6 +36,9 @@ Thumbs.db
 /docs
 /.tmp
 
+# log files
+yarn-error.log
+
 # Build artifacts
 dist
 lib
