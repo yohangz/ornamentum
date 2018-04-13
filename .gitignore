@@ -33,6 +33,7 @@ testem.log
 Thumbs.db
 
 # Temporary files
+/docs
 /.tmp
 
 # Build artifacts
