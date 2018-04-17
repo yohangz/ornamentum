@@ -171,4 +171,14 @@ export class DataTablePaginationComponent {
   public get endRowIndex(): number {
     return Math.min(this.config.offset + this.config.limit, this.dataStateService.itemCount);
   }
+
+  /**
+   * Prevent invalid key press.
+   * @param {KeyboardEvent} event Keyboard event object.
+   */
+  public preventInvalidKeyPress(event: KeyboardEvent): void {
+    if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode !== 14 && event.keyCode !== 27)) {
+      event.preventDefault();
+    }
+  }
 }
