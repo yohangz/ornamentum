@@ -1,0 +1,61 @@
+<ng-data-table
+  [title]="'Test'"
+  [pageable]="true"
+  [dataSource]="items">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [sortable]="true"
+    [filterable]="true"
+    [resizable]="true"
+    [showDropdownFilter]="true"
+    [filterPlaceholder]="'ID Filter'"
+    [showFilterClearButton]="true"
+    [showInColumnSelector]="false"
+    [width]="100">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stationName'"
+    [title]="'Station Name'"
+    [sortable]="true"
+    [filterable]="true"
+    [resizable]="true"
+    [showDropdownFilter]="true"
+    [filterPlaceholder]="'Station Name Filter'"
+    [showFilterClearButton]="true"
+    [showInColumnSelector]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'statusValue'"
+    [title]="'Status Value'"
+    [sortable]="true"
+    [filterable]="true"
+    [resizable]="true"
+    [showDropdownFilter]="true"
+    [filterPlaceholder]="'Status Value Filter'"
+    [showFilterClearButton]="true"
+    [showInColumnSelector]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'availableBikes'"
+    [title]="'Available Bikes'"
+    [sortable]="true"
+    [filterable]="true"
+    [resizable]="true"
+    [showDropdownFilter]="true"
+    [filterPlaceholder]="'Bike Count Filter'"
+    [showFilterClearButton]="true"
+    [showInColumnSelector]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stAddress1'"
+    [title]="'Address'"
+    [sortable]="true"
+    [filterable]="true"
+    [resizable]="true"
+    [showDropdownFilter]="true"
+    [filterPlaceholder]="'Address Name Filter'"
+    [showFilterClearButton]="true"
+    [showInColumnSelector]="true">
+  </ng-data-table-column>
+</ng-data-table>

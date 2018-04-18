@@ -1,0 +1,374 @@
+//@import '../../../../styles/variables';
+//@import '../../../../styles/mixins';
+//
+//:host-context {
+//
+//  .navbar {
+//
+//    @include color-theme {
+//      background: get-theme-variable('main-nav-bar-background');
+//    }
+//
+//    min-height: 3rem;
+//    padding: 0 1rem;
+//    z-index: 10003;
+//
+//    .navbar-brand {
+//
+//      @include color-theme {
+//        color: get-theme-variable('main-nav-bar-text');
+//      }
+//
+//      @include font-size(1.2, 1.6);
+//      font-weight: 500;
+//      padding-left: 55px;
+//      position: relative;
+//      text-transform: uppercase;
+//
+//      &::before {
+//        background: url('../../../../assets/img/kiralogo.png');
+//        background-size: cover;
+//        bottom: 0;
+//        content: '';
+//        height: 35px;
+//        left: 0;
+//        position: absolute;
+//        width: 45px;
+//      }
+//    }
+//
+//    .navbar-toggler {
+//
+//      i {
+//        @include color-theme {
+//          color: get-theme-variable('main-nav-bar-text');
+//        }
+//      }
+//    }
+//
+//    .dropdown-toggle {
+//      &::after {
+//        border: 0;
+//      }
+//    }
+//
+//    .main-navigation {
+//      height: auto;
+//      overflow: hidden;
+//      position: relative;
+//      width: 100%;
+//      z-index: 10002;
+//    }
+//
+//    .logout-button {
+//      @include color-theme {
+//        background: get-theme-variable('action-text-delete-background');
+//        border-color: get-theme-variable('action-text-delete-background');
+//        color: get-theme-variable('action-text-delete');
+//      }
+//      @include display-flex;
+//      @include align-items(center);
+//      @include transition(.5s all ease);
+//      @include border-radius(.15rem);
+//      @include box-shadow(0 .2rem .5rem rgba(0, 0, 0, .2));
+//      border: .05rem solid;
+//      cursor: pointer;
+//      margin-right: .5rem;
+//      padding: .3rem .5rem;
+//
+//      &:hover {
+//        @include color-theme {
+//          background: get-theme-variable('action-text-delete');
+//          border-color: get-theme-variable('action-text-delete-background');
+//          color: get-theme-variable('action-text-delete-background');
+//        }
+//        @include box-shadow(1px 2px 3px $box-shadow-color);
+//      }
+//    }
+//
+//    .navbar-nav {
+//
+//      > .nav-item {
+//        position: relative;
+//
+//        > .nav-link {
+//          @include color-theme {
+//            color: get-theme-variable('main-nav-bar-text');
+//          }
+//
+//          @include font-size(.8, 2);
+//          cursor: pointer;
+//          font-weight: 300;
+//          letter-spacing: .03rem;
+//
+//          .main-nav-label {
+//            padding: 0 .5rem;
+//          }
+//
+//          .menu-icon {
+//            @include font-size(1, 1.4);
+//            padding-right: .5rem;
+//            vertical-align: middle;
+//          }
+//
+//          .menu-title {
+//            padding: 0 .5rem;
+//          }
+//        }
+//
+//        &.active {
+//
+//          > .dropdown-toggle {
+//            @include color-theme {
+//              background: get-theme-variable('main-nav-bar-active-background');
+//              color: get-theme-variable('main-nav-bar-background') !important;
+//            }
+//            @include border-radius(.2rem);
+//            @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, .1));
+//            display: block;
+//            margin: .5rem 0;
+//            padding: 0 .5rem;
+//          }
+//
+//        }
+//
+//        &.dropdown {
+//
+//          .expand-icon {
+//            @include transition(all .3s ease-in-out);
+//            @include transform(rotate(0deg));
+//            @include font-size(1.4, 1.4);
+//            vertical-align: sub;
+//          }
+//
+//          &.expanded {
+//
+//            > .dropdown-toggle {
+//
+//              .expand-icon {
+//                @include transition(all .3s ease-in-out);
+//                @include transform(rotate(90deg));
+//              }
+//            }
+//
+//            .dropdown-menu {
+//
+//              @include color-theme {
+//                background: get-theme-variable('main-nav-bar-background');
+//              }
+//
+//              border: 0;
+//              margin: 0;
+//              padding: 0 .5rem .5rem;
+//              z-index: 10002;
+//
+//              > .dropdown-item {
+//
+//                margin: 0 0 .5rem;
+//                padding: 0;
+//
+//                &:last-child {
+//                  margin: 0;
+//                }
+//
+//                &.nav-leaf {
+//
+//                  > .nav-link {
+//
+//                    .expand-icon {
+//                      display: none;
+//                    }
+//                  }
+//
+//                }
+//
+//                > .nav-link {
+//                  @include color-theme {
+//                    color: get-theme-variable('main-nav-bar-text');
+//                  }
+//                  @include border-radius(.2rem);
+//                  @include font-size(.8, 2);
+//                  cursor: pointer;
+//                  font-weight: 300;
+//                  letter-spacing: .03rem;
+//                  padding: 0;
+//
+//                  .main-nav-label {
+//                    padding: 0 .5rem;
+//                  }
+//
+//                  .menu-icon {
+//                    @include font-size(1, 1.4);
+//                    padding-right: .5rem;
+//                  }
+//
+//                  .menu-title {
+//                    padding: 0 .5rem;
+//                  }
+//                }
+//
+//                &.expanded {
+//
+//                  .dropdown-menu {
+//                    @include box-shadow(.5rem .5rem 1rem rgba(0, 0, 0, .175));
+//                    left: 11.7rem;
+//                    padding: .5rem;
+//                    top: 0;
+//                  }
+//                }
+//
+//                &:hover,
+//                &.active {
+//                  background: none;
+//
+//                  > .nav-link {
+//                    @include color-theme {
+//                      background: get-theme-variable('main-nav-bar-active-background');
+//                      color: get-theme-variable('main-nav-bar-background') !important;
+//                    }
+//                    @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, .1));
+//                  }
+//                }
+//              }
+//            }
+//          }
+//        }
+//      }
+//
+//      &.user-menu {
+//        @include display-flex;
+//        @include flex-direction(row);
+//
+//        li {
+//
+//          &.profile-name {
+//
+//            @include color-theme {
+//              border-color: get-theme-variable('main-nav-bar-text');
+//              color: get-theme-variable('main-nav-bar-text');
+//            }
+//
+//            @include font-size(.9, 1.2);
+//            border-right: .05rem solid;
+//            display: block;
+//            font-weight: 600;
+//            padding: .3rem 1rem;
+//            text-transform: capitalize;
+//          }
+//        }
+//      }
+//    }
+//  }
+//
+//  .user-menu-container-sm {
+//    @include display-flex;
+//    @include justify-content(space-between);
+//    @include flex-grow(2);
+//  }
+//
+//  @media (min-width: 991px) {
+//
+//    .navbar {
+//      .main-navigation {
+//        height: auto !important;
+//        opacity: 1 !important;
+//        overflow: visible;
+//      }
+//    }
+//
+//    .user-menu-container-sm {
+//      display: none;
+//    }
+//  }
+//
+//  @media (max-width: 991px) {
+//
+//    .navbar {
+//      padding: .3rem 0 0;
+//
+//      .nav-brand-lg {
+//        display: none;
+//      }
+//
+//      .navbar-nav {
+//        > .nav-item {
+//
+//          @include color-theme {
+//            border-color: get-theme-variable('main-nav-bar-submenu-border');
+//          }
+//          border-top: .05rem solid;
+//          padding: .3rem 0;
+//
+//          > .nav-link {
+//            margin: 0 .5rem;
+//            padding: 0;
+//          }
+//
+//          &.active {
+//            > .dropdown-toggle {
+//              margin: 0 .5rem;
+//            }
+//          }
+//
+//          &.dropdown {
+//            &.expanded {
+//              .dropdown-menu {
+//                padding: 0 .5rem;
+//
+//                > .dropdown-item {
+//                  &.expanded {
+//                    .dropdown-menu {
+//                      box-shadow: none;
+//                      padding: 0;
+//                    }
+//                  }
+//                }
+//              }
+//            }
+//          }
+//
+//          &.expanded {
+//
+//            .expanded {
+//              padding: .5rem 0 0 1rem;
+//
+//              .dropdown-menu {
+//                box-shadow: none;
+//
+//                .dropdown-item {
+//                  @include color-theme {
+//                    border-color: get-theme-variable('main-nav-bar-submenu-border');
+//                  }
+//                  border-top: .05rem solid;
+//                  margin: 0;
+//                  padding: .3rem 0 .2rem;
+//
+//                  .expand-icon {
+//                    @include transition(all .3s ease-in-out);
+//                    @include transform(rotate(0deg));
+//                  }
+//
+//                  &.expanded {
+//
+//                    .expand-icon {
+//                      @include transition(all .3s ease-in-out);
+//                      @include transform(rotate(90deg));
+//                    }
+//                  }
+//
+//                }
+//              }
+//            }
+//          }
+//        }
+//      }
+//    }
+//
+//    .user-menu-container-lg {
+//      display: none !important;
+//    }
+//  }
+//}
+//
+//
+//

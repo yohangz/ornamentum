@@ -9,7 +9,7 @@ import {
   DataFetchMode,
   DataTableRequestParams,
   DataTableQueryResult
-} from '../../../library';
+} from '../../../../../../library/index';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -39,11 +39,11 @@ export interface ColumnConf {
 
 @Component({
   providers: [DataStorageService],
-  selector: 'app-data-table-example-component',
-  templateUrl: './data-table-example.component.html',
-  styleUrls: ['./data-table-example.component.scss']
+  selector: 'app-data-table-filtering-component',
+  templateUrl: './data-table-filtering.component.html',
+  styleUrls: ['./data-table-filtering.component.scss']
 })
-export class DataTableExampleComponent {
+export class DataTableFilteringComponent {
   public MenuPosition = DropdownMenuPosition;
   public DataTableSelectMode = DataTableSelectMode;
   public DataFetchMode = DataFetchMode;
@@ -106,7 +106,7 @@ export class DataTableExampleComponent {
   //public items = new Subject();
 
   constructor(private dataStorageService: DataStorageService, private http: HttpClient) {
-    this.initialTableConf = this.dataStorageService.get(DataTableExampleComponent.tableConfigurationStorageKeyName) ||
+    this.initialTableConf = this.dataStorageService.get(DataTableFilteringComponent.tableConfigurationStorageKeyName) ||
       {
         autoFetch: true,
         showIndexColumn: true,
@@ -116,7 +116,7 @@ export class DataTableExampleComponent {
         remoteDataFetch: false
       };
 
-    this.initialColumnConf = this.dataStorageService.get(DataTableExampleComponent.columnConfigurationStorageKeyName) ||
+    this.initialColumnConf = this.dataStorageService.get(DataTableFilteringComponent.columnConfigurationStorageKeyName) ||
       {
         multiSelectFilter1: false,
         multiSelectFilter2: false,
@@ -631,7 +631,7 @@ export class DataTableExampleComponent {
    * Store all the updated configurations in the local storage.
    */
   public reloadTableConfigurations(): void {
-    this.dataStorageService.set(DataTableExampleComponent.tableConfigurationStorageKeyName, this.initialTableConf);
+    this.dataStorageService.set(DataTableFilteringComponent.tableConfigurationStorageKeyName, this.initialTableConf);
     location.reload();
   }
 
@@ -640,7 +640,7 @@ export class DataTableExampleComponent {
    * Store all the updated configurations in the local storage.
    */
   public reloadColumnConfigurations(): void {
-    this.dataStorageService.set(DataTableExampleComponent.columnConfigurationStorageKeyName, this.initialColumnConf);
+    this.dataStorageService.set(DataTableFilteringComponent.columnConfigurationStorageKeyName, this.initialColumnConf);
     location.reload();
   }
 

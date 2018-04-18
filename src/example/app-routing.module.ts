@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DataTableExampleComponent } from '../example/components/data-table-example/data-table-example.component';
-import { DropdownExampleComponent } from '../example/components/dropdown-example/dropdown-example.component';
+import { AppMainComponent } from './main/components';
 
 /**
  * Represent application main routes.
@@ -10,17 +9,9 @@ import { DropdownExampleComponent } from '../example/components/dropdown-example
  */
 const appRoutes: Routes = [
   {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'grid'
-  },
-  {
-    component: DataTableExampleComponent,
-    path: 'grid'
-  },
-  {
-    component: DropdownExampleComponent,
-    path: 'dropdown'
+    component: AppMainComponent,
+    loadChildren: 'example/feature/feature.module#FeatureModule',
+    path: ''
   }
 ];
 

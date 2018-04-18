@@ -1,41 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 
-import { DataTableModule, DropdownModule } from '../library';
+import { AppMainModule } from './main/main.module';
 
 import { AppComponent } from './app.component';
-import { DataTableExampleComponent } from './components/data-table-example/data-table-example.component';
-import { DropdownExampleComponent } from './components/dropdown-example/dropdown-example.component';
-
-import { DataStorageService } from '../example/services/data-storage.service';
 
 import { AppRoutingModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
-
-const COMPONENTS = [
-  AppComponent,
-  DataTableExampleComponent,
-  DropdownExampleComponent
-];
-
 
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
-    ...COMPONENTS
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    DataTableModule.forRoot({
-      showColumnSelector: true
-    }),
-    DropdownModule.forRoot(),
-    AppRoutingModule,
-    HttpClientModule
+    AppMainModule,
+    AppRoutingModule
   ],
-  providers: [DataStorageService],
-  bootstrap: [AppComponent]
+  providers: []
 })
 export class AppModule {
 }

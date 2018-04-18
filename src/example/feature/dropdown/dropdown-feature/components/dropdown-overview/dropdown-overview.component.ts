@@ -2,15 +2,16 @@ import { Component } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 
-import { DropdownItem, DropdownQueryResult, DropdownRequestParams, DropdownSelectMode } from '../../../library';
+import { DropdownItem, DropdownQueryResult, DropdownRequestParams, DropdownSelectMode } from '../../../../../../library/index';
+
 import { Subject } from 'rxjs/Subject';
 
 @Component({
-  selector: 'app-dropdown-example-component',
-  templateUrl: './dropdown-example.component.html',
-  styleUrls: ['./dropdown-example.component.scss']
+  selector: 'app-dropdown-overview-component',
+  templateUrl: './dropdown-overview.component.html',
+  styleUrls: ['./dropdown-overview.component.scss']
 })
-export class DropdownExampleComponent {
+export class DropdownOverviewComponent {
   public DropdownSelectMode = DropdownSelectMode;
   // public items: Observable<any>;
 

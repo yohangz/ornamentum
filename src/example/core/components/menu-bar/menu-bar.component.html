@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+  <a class="navbar-brand nav-brand-lg app-name-lg">{{appName}}</a>
+  <div class="main-navigation navbar-collapse" id="mainnavbar">
+    <ul class="navbar-nav mr-auto">
+      <ng-container *ngFor="let menuItem of menuItems">
+        <li class="nav-item"
+            [class.active]="menuItem.active"
+            [class.expanded]="menuItem.expanded">
+          <a class="nav-link" (click)="onMenuItemClick(menuItem)">
+            <span class="main-nav-label">
+              <i [ngClass]="menuItem.iconClasses"></i><span class="menu-title">{{menuItem.title}}</span>
+            </span>
+          </a>
+        </li>
+      </ng-container>
+    </ul>
+  </div>
+</nav>
