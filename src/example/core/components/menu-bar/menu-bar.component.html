@@ -4,11 +4,10 @@
     <ul class="navbar-nav mr-auto">
       <ng-container *ngFor="let menuItem of menuItems">
         <li class="nav-item"
-            [class.active]="menuItem.active"
-            [class.expanded]="menuItem.expanded">
+            [class.active]="menuItem.active">
           <a class="nav-link" (click)="onMenuItemClick(menuItem)">
             <span class="main-nav-label">
-              <i [ngClass]="menuItem.iconClasses"></i><span class="menu-title">{{menuItem.title}}</span>
+              <i></i><span class="menu-title">{{menuItem.title}}</span>
             </span>
           </a>
         </li>

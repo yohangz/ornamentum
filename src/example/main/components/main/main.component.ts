@@ -17,12 +17,10 @@ export class AppMainComponent {
   constructor() {
     this.menuItems = [
       {
-        iconClasses: ['zmdi', 'zmdi-folder-star-alt', 'menu-icon'],
         routePath: 'data-table',
         title: 'Data Table',
       },
       {
-        iconClasses: ['zmdi', 'zmdi-file-text', 'menu-icon'],
         routePath: 'dropdown',
         title: 'Dropdown'
       }
