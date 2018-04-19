@@ -1,685 +1,95 @@
-<div style="border: groove #d32f2f">
-  <h4>Data Table Configurations</h4>
-  <div>
-    <h5><b>Configurations which are Required Page Reload to Apply</b></h5>
-    <button (click)="initialTableConf.autoFetch = !initialTableConf.autoFetch">
-      <ng-container *ngIf="initialTableConf.autoFetch">Auto Fetch: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialTableConf.autoFetch">Auto Fetch: <b>OFF</b></ng-container>
-    </button>
+<h1>Data Table Filtering</h1>
 
-    <button (click)="initialTableConf.rowSelectable = !initialTableConf.rowSelectable">
-      <ng-container *ngIf="initialTableConf.rowSelectable">Row Selectable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialTableConf.rowSelectable">Row Selectable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="initialTableConf.showIndexColumn = !initialTableConf.showIndexColumn">
-      <ng-container *ngIf="initialTableConf.showIndexColumn">Show Index Column: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialTableConf.showIndexColumn">Show Index Column: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="initialTableConf.multiColumnSortable = !initialTableConf.multiColumnSortable">
-      <ng-container *ngIf="initialTableConf.multiColumnSortable">Multi Column Sorting: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialTableConf.multiColumnSortable">Multi Column Sorting: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="initialTableConf.expandableRows = !initialTableConf.expandableRows">
-      <ng-container *ngIf="initialTableConf.expandableRows">Expandable Rows: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialTableConf.expandableRows">Expandable Rows: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="initialTableConf.remoteDataFetch = !initialTableConf.remoteDataFetch">
-      <ng-container *ngIf="initialTableConf.remoteDataFetch">Fetch Remote Data: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialTableConf.remoteDataFetch">Fetch Remote Data: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="dataTableComponent.fetchData(DataFetchMode.SOFT_RELOAD)">Soft Reload</button>
-
-    <button (click)="dataTableComponent.fetchData(DataFetchMode.HARD_RELOAD)">Hard Reload</button>
-
-    <button (click)="reloadTableConfigurations()" style="color: #d32f2f"><b>RELOAD TO APPLY</b></button>
-  </div>
-  <div>
-    <h5><b>Configurations which are not Required Page Reload to Apply</b></h5>
-    <button (click)="multiRowSelectable = !multiRowSelectable">
-      <ng-container *ngIf="multiRowSelectable">Multi-select: <b>ON</b></ng-container>
-      <ng-container *ngIf="!multiRowSelectable">Multi-select: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="pageable = !pageable">
-      <ng-container *ngIf="pageable">Pageable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!pageable">Pageable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="selectOnRowClick = !selectOnRowClick">
-      <ng-container *ngIf="selectOnRowClick">Select On Row Click: <b>ON</b></ng-container>
-      <ng-container *ngIf="!selectOnRowClick">Select On Row Click: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="showHeader = !showHeader">
-      <ng-container *ngIf="showHeader">Show Header <b>On</b></ng-container>
-      <ng-container *ngIf="!showHeader">Show header: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="showLoadingSpinner = !showLoadingSpinner">
-      <ng-container *ngIf="showLoadingSpinner">Show Loading Spinner: <b>ON</b></ng-container>
-      <ng-container *ngIf="!showLoadingSpinner">Show Loading Spinner: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="showSubstituteRows = !showSubstituteRows">
-      <ng-container *ngIf="showSubstituteRows">Show Substitute Rows: <b>ON</b></ng-container>
-      <ng-container *ngIf="!showSubstituteRows">Show Substitute Rows: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="filterDebounce = !filterDebounce">
-      <ng-container *ngIf="filterDebounce">Filter Debounce: <b>ON</b></ng-container>
-      <ng-container *ngIf="!filterDebounce">Filter Debounce: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="expandOnRowClick = !expandOnRowClick">
-      <ng-container *ngIf="expandOnRowClick">Expand On Row Click: <b>ON</b></ng-container>
-      <ng-container *ngIf="!expandOnRowClick">Expand On Row Click: <b>OFF</b></ng-container>
-    </button>
-
-
-    Grid Title:<input placeholder="Enter Grid Title" [(ngModel)]="gridTitle"
-                      [ngModelOptions]="{standalone: true}">
-
-    Index Column Title:<input placeholder="Enter Index Column Title" [(ngModel)]="indexColumnTitle"
-                              [ngModelOptions]="{standalone: true}">
-
-    Item Limit:<input placeholder="Enter Item Limit" [(ngModel)]="limit" [ngModelOptions]="{standalone: true}">
-
-    Filter Debounce Time:<input placeholder="Enter Filter Debounce Time" [(ngModel)]="filterDebounceTime"
-                                [ngModelOptions]="{standalone: true}">
-
-    Page Number to Display Data:<input placeholder="Enter Page" [(ngModel)]="page"
-                                       [ngModelOptions]="{standalone: true}">
-
-    Content Height:<input placeholder="Enter Content Height" [(ngModel)]="contentHeight"
-                          [ngModelOptions]="{standalone: true}">
-  </div>
-</div>
-<br/>
-<div style="border: groove #40b30d">
-  <h4>Column Configurations</h4>
-  <div>
-    <h5><b>Configurations which are Required Page Reload to Apply</b></h5>
-    <span><b>1st Column</b></span>
-    <button (click)="initialColumnConf.multiSelectFilter1 = !initialColumnConf.multiSelectFilter1">
-      <ng-container *ngIf="initialColumnConf.multiSelectFilter1">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialColumnConf.multiSelectFilter1">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
-    <span><b>2nd Column</b></span>
-    <button (click)="initialColumnConf.multiSelectFilter2 = !initialColumnConf.multiSelectFilter2">
-      <ng-container *ngIf="initialColumnConf.multiSelectFilter2">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialColumnConf.multiSelectFilter2">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
-    <span><b>3rd Column</b></span>
-    <button (click)="initialColumnConf.multiSelectFilter3 = !initialColumnConf.multiSelectFilter3">
-      <ng-container *ngIf="initialColumnConf.multiSelectFilter3">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialColumnConf.multiSelectFilter3">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
-    <span><b>4th Column</b></span>
-    <button (click)="initialColumnConf.multiSelectFilter4 = !initialColumnConf.multiSelectFilter4">
-      <ng-container *ngIf="initialColumnConf.multiSelectFilter4">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialColumnConf.multiSelectFilter4">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
-    <span><b>5th Column</b></span>
-    <button (click)="initialColumnConf.multiSelectFilter5 = !initialColumnConf.multiSelectFilter5">
-      <ng-container *ngIf="initialColumnConf.multiSelectFilter5">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialColumnConf.multiSelectFilter5">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
-    <span><b>6th Column</b></span>
-    <button (click)="initialColumnConf.multiSelectFilter6 = !initialColumnConf.multiSelectFilter6">
-      <ng-container *ngIf="initialColumnConf.multiSelectFilter6">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialColumnConf.multiSelectFilter6">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
-    <span><b>7th Column</b></span>
-    <button (click)="initialColumnConf.multiSelectFilter7 = !initialColumnConf.multiSelectFilter7">
-      <ng-container *ngIf="initialColumnConf.multiSelectFilter7">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialColumnConf.multiSelectFilter7">Enable Multi Select Filter: <b>OFF</b>
-      </ng-container>
-    </button>
-
-    <span><b>8th Column</b></span>
-    <button (click)="initialColumnConf.multiSelectFilter8 = !initialColumnConf.multiSelectFilter8">
-      <ng-container *ngIf="initialColumnConf.multiSelectFilter8">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialColumnConf.multiSelectFilter8">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
-    <span><b>9th Column</b></span>
-    <button (click)="initialColumnConf.multiSelectFilter9 = !initialColumnConf.multiSelectFilter9">
-      <ng-container *ngIf="initialColumnConf.multiSelectFilter9">Enable Multi Select Filter: <b>ON</b></ng-container>
-      <ng-container *ngIf="!initialColumnConf.multiSelectFilter9">Enable Multi Select Filter: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="reloadColumnConfigurations()" style="color: #d32f2f"><b>RELOAD TO APPLY</b></button>
-  </div>
-  <div>
-    <h5><b>Configurations which are not Required Page Reload to Apply</b></h5>
-
-    <span><b>1st Column</b></span>
-    Title:<input placeholder="Enter Column Title" [(ngModel)]="firstColConf.title"
-                 [ngModelOptions]="{standalone: true}">
-
-    Width:<input type="number" placeholder="Enter Column Width" [(ngModel)]="firstColConf.width"
-                 [ngModelOptions]="{standalone: true}">
-
-    Filter Placeholder:<input placeholder="Enter Filter Placeholder" [(ngModel)]="firstColConf.filterPlaceholder"
-                              [ngModelOptions]="{standalone: true}">
-
-    <button (click)="firstColConf.sortable = !firstColConf.sortable">
-      <ng-container *ngIf="firstColConf.sortable">Sortable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!firstColConf.sortable">Sortable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="firstColConf.filterable = !firstColConf.filterable">
-      <ng-container *ngIf="firstColConf.filterable">Filterable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!firstColConf.filterable">Filterable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="firstColConf.resizable = !firstColConf.resizable">
-      <ng-container *ngIf="firstColConf.resizable">Resizable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!firstColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="firstColConf.visible = !firstColConf.visible">
-      <ng-container *ngIf="firstColConf.visible">Visible: <b>ON</b></ng-container>
-      <ng-container *ngIf="!firstColConf.visible">Visible: <b>OFF</b></ng-container>
-    </button>
-
-    <br/>
-
-    <span><b>2nd Column</b></span>
-    Title:<input placeholder="Enter Column Title" [(ngModel)]="secondColConf.title"
-                 [ngModelOptions]="{standalone: true}">
-
-    Width:<input type="number" placeholder="Enter Column Width" [(ngModel)]="secondColConf.width"
-                 [ngModelOptions]="{standalone: true}">
-
-    Filter Placeholder:<input placeholder="Enter Filter Placeholder" [(ngModel)]="secondColConf.filterPlaceholder"
-                              [ngModelOptions]="{standalone: true}">
-
-    <button (click)="secondColConf.sortable = !secondColConf.sortable">
-      <ng-container *ngIf="secondColConf.sortable">Sortable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!secondColConf.sortable">Sortable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="secondColConf.filterable = !secondColConf.filterable">
-      <ng-container *ngIf="secondColConf.filterable">Filterable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!secondColConf.filterable">Filterable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="secondColConf.resizable = !secondColConf.resizable">
-      <ng-container *ngIf="secondColConf.resizable">Resizable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!secondColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="secondColConf.visible = !secondColConf.visible">
-      <ng-container *ngIf="secondColConf.visible">Visible: <b>ON</b></ng-container>
-      <ng-container *ngIf="!secondColConf.visible">Visible: <b>OFF</b></ng-container>
-    </button>
-
-    <br/>
-
-    <span><b>3rd Column</b></span>
-    Title:<input placeholder="Enter Column Title" [(ngModel)]="thirdColConf.title"
-                 [ngModelOptions]="{standalone: true}">
-
-    Width:<input type="number" placeholder="Enter Column Width" [(ngModel)]="thirdColConf.width"
-                 [ngModelOptions]="{standalone: true}">
-
-    Filter Placeholder:<input placeholder="Enter Filter Placeholder" [(ngModel)]="thirdColConf.filterPlaceholder"
-                              [ngModelOptions]="{standalone: true}">
-
-    <button (click)="thirdColConf.sortable = !thirdColConf.sortable">
-      <ng-container *ngIf="thirdColConf.sortable">Sortable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!thirdColConf.sortable">Sortable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="thirdColConf.filterable = !thirdColConf.filterable">
-      <ng-container *ngIf="thirdColConf.filterable">Filterable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!thirdColConf.filterable">Filterable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="thirdColConf.resizable = !thirdColConf.resizable">
-      <ng-container *ngIf="thirdColConf.resizable">Resizable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!thirdColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="thirdColConf.visible = !thirdColConf.visible">
-      <ng-container *ngIf="thirdColConf.visible">Visible: <b>ON</b></ng-container>
-      <ng-container *ngIf="!thirdColConf.visible">Visible: <b>OFF</b></ng-container>
-    </button>
-
-    <br/>
-
-    <span><b>4th Column</b></span>
-    Title:<input placeholder="Enter Column Title" [(ngModel)]="forthColConf.title"
-                 [ngModelOptions]="{standalone: true}">
-
-    Width:<input type="number" placeholder="Enter Column Width" [(ngModel)]="forthColConf.width"
-                 [ngModelOptions]="{standalone: true}">
-
-    Filter Placeholder:<input placeholder="Enter Filter Placeholder" [(ngModel)]="forthColConf.filterPlaceholder"
-                              [ngModelOptions]="{standalone: true}">
-
-    <button (click)="forthColConf.sortable = !forthColConf.sortable">
-      <ng-container *ngIf="forthColConf.sortable">Sortable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!forthColConf.sortable">Sortable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="forthColConf.filterable = !forthColConf.filterable">
-      <ng-container *ngIf="forthColConf.filterable">Filterable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!forthColConf.filterable">Filterable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="forthColConf.resizable = !forthColConf.resizable">
-      <ng-container *ngIf="forthColConf.resizable">Resizable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!forthColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="forthColConf.visible = !forthColConf.visible">
-      <ng-container *ngIf="forthColConf.visible">Visible: <b>ON</b></ng-container>
-      <ng-container *ngIf="!forthColConf.visible">Visible: <b>OFF</b></ng-container>
-    </button>
-
-    <br/>
-
-    <span><b>5th Column</b></span>
-    Title:<input placeholder="Enter Column Title" [(ngModel)]="fifthColConf.title"
-                 [ngModelOptions]="{standalone: true}">
-
-    Width:<input type="number" placeholder="Enter Column Width" [(ngModel)]="fifthColConf.width"
-                 [ngModelOptions]="{standalone: true}">
-
-    Filter Placeholder:<input placeholder="Enter Filter Placeholder" [(ngModel)]="fifthColConf.filterPlaceholder"
-                              [ngModelOptions]="{standalone: true}">
-
-    <button (click)="fifthColConf.sortable = !fifthColConf.sortable">
-      <ng-container *ngIf="fifthColConf.sortable">Sortable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!fifthColConf.sortable">Sortable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="fifthColConf.filterable = !fifthColConf.filterable">
-      <ng-container *ngIf="fifthColConf.filterable">Filterable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!fifthColConf.filterable">Filterable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="fifthColConf.resizable = !fifthColConf.resizable">
-      <ng-container *ngIf="fifthColConf.resizable">Resizable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!fifthColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="fifthColConf.visible = !fifthColConf.visible">
-      <ng-container *ngIf="fifthColConf.visible">Visible: <b>ON</b></ng-container>
-      <ng-container *ngIf="!fifthColConf.visible">Visible: <b>OFF</b></ng-container>
-    </button>
-
-    <br/>
-
-    <span><b>6th Column</b></span>
-    Title:<input placeholder="Enter Column Title" [(ngModel)]="sixthColConf.title"
-                 [ngModelOptions]="{standalone: true}">
-
-    Width:<input type="number" placeholder="Enter Column Width" [(ngModel)]="sixthColConf.width"
-                 [ngModelOptions]="{standalone: true}">
-
-    Filter Placeholder:<input placeholder="Enter Filter Placeholder" [(ngModel)]="sixthColConf.filterPlaceholder"
-                              [ngModelOptions]="{standalone: true}">
-
-    <button (click)="sixthColConf.sortable = !sixthColConf.sortable">
-      <ng-container *ngIf="sixthColConf.sortable">Sortable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!sixthColConf.sortable">Sortable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="sixthColConf.filterable = !sixthColConf.filterable">
-      <ng-container *ngIf="sixthColConf.filterable">Filterable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!sixthColConf.filterable">Filterable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="sixthColConf.resizable = !sixthColConf.resizable">
-      <ng-container *ngIf="sixthColConf.resizable">Resizable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!sixthColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="sixthColConf.visible = !sixthColConf.visible">
-      <ng-container *ngIf="sixthColConf.visible">Visible: <b>ON</b></ng-container>
-      <ng-container *ngIf="!sixthColConf.visible">Visible: <b>OFF</b></ng-container>
-    </button>
-
-    <br/>
-
-    <span><b>7th Column</b></span>
-    Title:<input placeholder="Enter Column Title" [(ngModel)]="seventhColConf.title"
-                 [ngModelOptions]="{standalone: true}">
-
-    Width:<input type="number" placeholder="Enter Column Width" [(ngModel)]="seventhColConf.width"
-                 [ngModelOptions]="{standalone: true}">
-
-    Filter Placeholder:<input placeholder="Enter Filter Placeholder" [(ngModel)]="seventhColConf.filterPlaceholder"
-                              [ngModelOptions]="{standalone: true}">
-
-    <button (click)="seventhColConf.sortable = !seventhColConf.sortable">
-      <ng-container *ngIf="seventhColConf.sortable">Sortable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!seventhColConf.sortable">Sortable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="seventhColConf.filterable = !seventhColConf.filterable">
-      <ng-container *ngIf="seventhColConf.filterable">Filterable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!seventhColConf.filterable">Filterable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="seventhColConf.resizable = !seventhColConf.resizable">
-      <ng-container *ngIf="seventhColConf.resizable">Resizable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!seventhColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="seventhColConf.visible = !seventhColConf.visible">
-      <ng-container *ngIf="seventhColConf.visible">Visible: <b>ON</b></ng-container>
-      <ng-container *ngIf="!seventhColConf.visible">Visible: <b>OFF</b></ng-container>
-    </button>
-
-    <br/>
-
-    <span><b>8th Column</b></span>
-    Title:<input placeholder="Enter Column Title" [(ngModel)]="eighthColConf.title"
-                 [ngModelOptions]="{standalone: true}">
-
-    Width:<input type="number" placeholder="Enter Column Width" [(ngModel)]="eighthColConf.width"
-                 [ngModelOptions]="{standalone: true}">
-
-    Filter Placeholder:<input placeholder="Enter Filter Placeholder" [(ngModel)]="eighthColConf.filterPlaceholder"
-                              [ngModelOptions]="{standalone: true}">
-
-    <button (click)="eighthColConf.sortable = !eighthColConf.sortable">
-      <ng-container *ngIf="eighthColConf.sortable">Sortable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!eighthColConf.sortable">Sortable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="eighthColConf.filterable = !eighthColConf.filterable">
-      <ng-container *ngIf="eighthColConf.filterable">Filterable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!eighthColConf.filterable">Filterable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="eighthColConf.resizable = !eighthColConf.resizable">
-      <ng-container *ngIf="eighthColConf.resizable">Resizable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!eighthColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="eighthColConf.visible = !eighthColConf.visible">
-      <ng-container *ngIf="eighthColConf.visible">Visible: <b>ON</b></ng-container>
-      <ng-container *ngIf="!eighthColConf.visible">Visible: <b>OFF</b></ng-container>
-    </button>
-
-    <br/>
-
-    <span><b>9th Column</b></span>
-    Title:<input placeholder="Enter Column Title" [(ngModel)]="ninthColConf.title"
-                 [ngModelOptions]="{standalone: true}">
-
-    Width:<input type="number" placeholder="Enter Column Width" [(ngModel)]="ninthColConf.width"
-                 [ngModelOptions]="{standalone: true}">
-
-    Filter Placeholder:<input placeholder="Enter Filter Placeholder" [(ngModel)]="ninthColConf.filterPlaceholder"
-                              [ngModelOptions]="{standalone: true}">
-
-    <button (click)="ninthColConf.sortable = !ninthColConf.sortable">
-      <ng-container *ngIf="ninthColConf.sortable">Sortable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!ninthColConf.sortable">Sortable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="ninthColConf.filterable = !ninthColConf.filterable">
-      <ng-container *ngIf="ninthColConf.filterable">Filterable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!ninthColConf.filterable">Filterable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="ninthColConf.resizable = !ninthColConf.resizable">
-      <ng-container *ngIf="ninthColConf.resizable">Resizable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!ninthColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="ninthColConf.visible = !ninthColConf.visible">
-      <ng-container *ngIf="ninthColConf.visible">Visible: <b>ON</b></ng-container>
-      <ng-container *ngIf="!ninthColConf.visible">Visible: <b>OFF</b></ng-container>
-    </button>
-
-    <br/>
-
-    <span><b>10th Column</b></span>
-    Title:<input placeholder="Enter Column Title" [(ngModel)]="tenthColConf.title"
-                 [ngModelOptions]="{standalone: true}">
-
-    Width:<input type="number" placeholder="Enter Column Width" [(ngModel)]="tenthColConf.width"
-                 [ngModelOptions]="{standalone: true}">
-
-    <button (click)="tenthColConf.resizable = !tenthColConf.resizable">
-      <ng-container *ngIf="tenthColConf.resizable">Resizable: <b>ON</b></ng-container>
-      <ng-container *ngIf="!tenthColConf.resizable">Resizable: <b>OFF</b></ng-container>
-    </button>
-
-    <button (click)="tenthColConf.visible = !tenthColConf.visible">
-      <ng-container *ngIf="tenthColConf.visible">Visible: <b>ON</b></ng-container>
-      <ng-container *ngIf="!tenthColConf.visible">Visible: <b>OFF</b></ng-container>
-    </button>
-  </div>
-</div>
-<br/>
+<h2>Filter Dropdown</h2>
 
 <ng-data-table
-  [title]="'Test'"
-  [pageable]="true"
+  [title]="'Station Details'"
+  [selectTrackBy]="'id'"
   [dataSource]="items"
->
+  [pageable]="false"
+  [showHeader]="true"
+  [showRefreshButton]="false"
+  [showIndexColumn]="true"
+  [showColumnSelector]="false">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [sortable]="true"
     [filterable]="true"
-    [resizable]="true"
     [showDropdownFilter]="true"
-    [filterPlaceholder]="'ID Filter'"
-    [showFilterClearButton]="true"
-    [showInColumnSelector]="false">
+    [width]="100">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'stationName'"
     [title]="'Station Name'"
-    [sortable]="true"
     [filterable]="true"
-    [resizable]="true"
-    [showDropdownFilter]="true"
-    [filterPlaceholder]="'Station Name Filter'"
-    [showFilterClearButton]="true"
-    [showInColumnSelector]="true">
+    [showDropdownFilter]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'statusValue'"
+    [title]="'Status Value'"
+    [filterable]="true"
+    [showDropdownFilter]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'availableBikes'"
+    [title]="'Available Bikes'"
+    [filterable]="true"
+    [showDropdownFilter]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stAddress1'"
+    [title]="'Address'"
+    [filterable]="true"
+    [showDropdownFilter]="true">
   </ng-data-table-column>
 </ng-data-table>
 
-<!--<ng-data-table-->
-  <!--[title]="gridTitle"-->
-  <!--[expandableRows]="initialTableConf.expandableRows"-->
-  <!--[expandOnRowClick]="expandOnRowClick"-->
-  <!--[filterDebounce]="filterDebounce"-->
-  <!--[filterDebounceTime]="filterDebounceTime"-->
-  <!--[indexColumnTitle]="indexColumnTitle"-->
-  <!--[limit]="10"-->
-  <!--[selectMode]="DataTableSelectMode.SINGLE_TOGGLE"-->
-  <!--[multiColumnSortable]="initialTableConf.multiColumnSortable"-->
-  <!--[page]="1"-->
-  <!--[pageable]="true"-->
-  <!--[rowSelectable]="initialTableConf.rowSelectable"-->
-  <!--[selectOnRowClick]="selectOnRowClick"-->
-  <!--[showHeader]="showHeader"-->
-  <!--[showIndexColumn]="initialTableConf.showIndexColumn"-->
-  <!--[showLoadingSpinner]="true"-->
-  <!--[showSubstituteRows]="true"-->
-  <!--[selectTrackBy]="'id'"-->
-  <!--[persistTableState]="true"-->
-  <!--[showRefreshButton]="true"-->
-  <!--[onDynamicRowSpanExtract]="onDynamicRowSpanExtract"-->
-  <!--[showRowSelectCheckbox]="true"-->
-  <!--[showRowSelectAllCheckbox]="true"-->
-  <!--[showRowExpandLoadingSpinner]="true"-->
-  <!--[minWidth]="1000"-->
-  <!--[contentHeight]="500"-->
-  <!--[items]="items"-->
-  <!--(columnBind)="onColumnBind($event)"-->
-  <!--(rowBind)="onRowBind($event)"-->
-  <!--(init)="onInit($event)"-->
-  <!--(rowSelectChange)="onRowSelectedStateChange($event)" >-->
 
-  <!--<ng-data-table-column-->
-    <!--[field]="'id'"-->
-    <!--[dropdownFilterMenuPosition]="MenuPosition.BOTTOM_LEFT"-->
-    <!--[title]="firstColConf.title"-->
-    <!--[sortable]="firstColConf.sortable"-->
-    <!--[filterable]="true"-->
-    <!--[resizable]="firstColConf.resizable"-->
-    <!--[showDropdownFilter]="true"-->
-    <!--[filterPlaceholder]="firstColConf.filterPlaceholder"-->
-    <!--[visible]="firstColConf.visible"-->
-    <!--[showFilterClearButton]="true"-->
-    <!--[showInColumnSelector]="false">-->
-  <!--</ng-data-table-column>-->
-  <!--<ng-data-table-column-->
-    <!--[field]="'nest.level.x'"-->
-    <!--[title]="'Nested'"-->
-    <!--[sortable]="true"-->
-    <!--[filterable]="true"-->
-    <!--[filterExpression]="onFilter">-->
-  <!--</ng-data-table-column>-->
-  <!--<ng-data-table-column-->
-    <!--[field]="'stationName'"-->
-    <!--[title]="secondColConf.title"-->
-    <!--[sortable]="secondColConf.sortable"-->
-    <!--[filterable]="secondColConf.filterable"-->
-    <!--[resizable]="secondColConf.resizable"-->
-    <!--[showDropdownFilter]="true"-->
-    <!--[dropdownFilterShowClearSelectionButton]="true"-->
-    <!--[filterPlaceholder]="secondColConf.filterPlaceholder"-->
-    <!--[visible]="true">-->
-  <!--</ng-data-table-column>-->
-  <!--&lt;!&ndash;<ng-data-table-column&ndash;&gt;-->
-    <!--&lt;!&ndash;[width]="thirdColConf.width"&ndash;&gt;-->
-    <!--&lt;!&ndash;[field]="'latitude'"&ndash;&gt;-->
-    <!--&lt;!&ndash;[title]="thirdColConf.title"&ndash;&gt;-->
-    <!--&lt;!&ndash;[sortable]="thirdColConf.sortable"&ndash;&gt;-->
-    <!--&lt;!&ndash;[filterable]="thirdColConf.filterable"&ndash;&gt;-->
-    <!--&lt;!&ndash;[resizable]="thirdColConf.resizable"&ndash;&gt;-->
-    <!--&lt;!&ndash;[showDropdownFilter]="true"&ndash;&gt;-->
-    <!--&lt;!&ndash;[filterPlaceholder]="thirdColConf.filterPlaceholder"&ndash;&gt;-->
-    <!--&lt;!&ndash;[visible]="thirdColConf.visible">&ndash;&gt;-->
-    <!--&lt;!&ndash;<ng-template #ngFilterTemplate let-column="column" let-filter="filter">&ndash;&gt;-->
-      <!--&lt;!&ndash;<ng-dropdown&ndash;&gt;-->
-        <!--&lt;!&ndash;[items]="column.filterOptions"&ndash;&gt;-->
-        <!--&lt;!&ndash;[totalItemCount]="column.filterOptions.length"&ndash;&gt;-->
-        <!--&lt;!&ndash;[menuPosition]="column.dropdownFilterMenuPosition"&ndash;&gt;-->
-        <!--&lt;!&ndash;[(ngModel)]="column.filter"&ndash;&gt;-->
-        <!--&lt;!&ndash;[filterable]="true"&ndash;&gt;-->
-        <!--&lt;!&ndash;[multiSelectable]="true"&ndash;&gt;-->
-        <!--&lt;!&ndash;[showSelectedOptionRemoveButton]="false"&ndash;&gt;-->
-        <!--&lt;!&ndash;[showSelectAll]="true"&ndash;&gt;-->
-        <!--&lt;!&ndash;[triggerSelectChangeOnInit]="false"&ndash;&gt;-->
-        <!--&lt;!&ndash;[wrapDisplaySelectLimit]="column.dropdownFilterWrapDisplaySelectLimit"&ndash;&gt;-->
-        <!--&lt;!&ndash;(selectChange)="filter.emit({ column: column, filter: column.filter })">&ndash;&gt;-->
-      <!--&lt;!&ndash;</ng-dropdown>&ndash;&gt;-->
-    <!--&lt;!&ndash;</ng-template>&ndash;&gt;-->
-  <!--&lt;!&ndash;</ng-data-table-column>&ndash;&gt;-->
-  <!--<ng-data-table-column-->
-    <!--[field]="'longitude'"-->
-    <!--[title]="forthColConf.title"-->
-    <!--[sortable]="forthColConf.sortable"-->
-    <!--[filterable]="forthColConf.filterable"-->
-    <!--[resizable]="forthColConf.resizable"-->
-    <!--[showDropdownFilter]="initialColumnConf.multiSelectFilter4"-->
-    <!--[filterPlaceholder]="forthColConf.filterPlaceholder"-->
-    <!--[visible]="forthColConf.visible">-->
-  <!--</ng-data-table-column>-->
-  <!--<ng-data-table-column-->
-    <!--[field]="'availableDocks'"-->
-    <!--[title]="fifthColConf.title"-->
-    <!--[sortable]="fifthColConf.sortable"-->
-    <!--[filterable]="fifthColConf.filterable"-->
-    <!--[resizable]="fifthColConf.resizable"-->
-    <!--[showDropdownFilter]="initialColumnConf.multiSelectFilter5"-->
-    <!--[filterPlaceholder]="fifthColConf.filterPlaceholder"-->
-    <!--[visible]="fifthColConf.visible">-->
-  <!--</ng-data-table-column>-->
-  <!--<ng-data-table-column-->
-    <!--[field]="'totalDocks'"-->
-    <!--[title]="sixthColConf.title"-->
-    <!--[sortable]="sixthColConf.sortable"-->
-    <!--[filterable]="sixthColConf.filterable"-->
-    <!--[resizable]="sixthColConf.resizable"-->
-    <!--[showDropdownFilter]="initialColumnConf.multiSelectFilter6"-->
-    <!--[filterPlaceholder]="sixthColConf.filterPlaceholder"-->
-    <!--[visible]="sixthColConf.visible">-->
-  <!--</ng-data-table-column>-->
-  <!--<ng-data-table-column-->
-    <!--[field]="'statusValue'"-->
-    <!--[title]="seventhColConf.title"-->
-    <!--[sortable]="seventhColConf.sortable"-->
-    <!--[filterable]="seventhColConf.filterable"-->
-    <!--[resizable]="seventhColConf.resizable"-->
-    <!--[showDropdownFilter]="initialColumnConf.multiSelectFilter7"-->
-    <!--[filterPlaceholder]="seventhColConf.filterPlaceholder"-->
-    <!--[visible]="seventhColConf.visible">-->
-  <!--</ng-data-table-column>-->
-  <!--<ng-data-table-column-->
-    <!--[field]="'availableBikes'"-->
-    <!--[title]="eighthColConf.title"-->
-    <!--[sortable]="eighthColConf.sortable"-->
-    <!--[filterable]="eighthColConf.filterable"-->
-    <!--[resizable]="eighthColConf.resizable"-->
-    <!--[showDropdownFilter]="initialColumnConf.multiSelectFilter8"-->
-    <!--[filterPlaceholder]="eighthColConf.filterPlaceholder"-->
-    <!--[visible]="eighthColConf.visible">-->
-  <!--</ng-data-table-column>-->
-  <!--<ng-data-table-column-->
-    <!--[field]="'lastCommunicationTime'"-->
-    <!--[title]="ninthColConf.title"-->
-    <!--[sortable]="ninthColConf.sortable"-->
-    <!--[filterable]="ninthColConf.filterable"-->
-    <!--[resizable]="ninthColConf.resizable"-->
-    <!--[showDropdownFilter]="initialColumnConf.multiSelectFilter9"-->
-    <!--[filterPlaceholder]="ninthColConf.filterPlaceholder"-->
-    <!--[visible]="ninthColConf.visible">-->
-  <!--</ng-data-table-column>-->
-  <!--<ng-data-table-column-->
-    <!--[field]="'test'"-->
-    <!--[title]="'Row Span'">-->
-    <!--<ng-template let-row="row" let-spanIndex="spanIndex" #ngDataTableCell>-->
-      <!--<td>-->
-        <!--{{row.item.test[spanIndex].latitude}}-->
-      <!--</td>-->
-    <!--</ng-template>-->
-  <!--</ng-data-table-column>-->
-  <!--<ng-data-table-column-->
-    <!--[title]="tenthColConf.title"-->
-    <!--[resizable]="tenthColConf.resizable"-->
-    <!--[visible]="tenthColConf.visible">-->
-    <!--<ng-template #ngDataTableCell let-row="row" let-rowSpan="rowSpan" let-spanIndex="spanIndex">-->
-      <!--<td [attr.rowspan]="rowSpan" *ngIf="!spanIndex">-->
-        <!--<button (click)="onEdit(row.item, $event)">Edit</button>-->
-      <!--</td>-->
-    <!--</ng-template>-->
-  <!--</ng-data-table-column>-->
-  <!--<ng-template #ngDataTableRowExpand let-row="row">-->
-    <!--<div *ngIf="row.expanded || row.dataLoaded">-->
-      <!--<div *ngIf="showDataLoaded(row)">-->
-      <!--</div>-->
-      <!--<span *ngIf="row.dataLoaded">Data Loaded</span>-->
-    <!--</div>-->
-  <!--</ng-template>-->
-  <!--&lt;!&ndash;<ng-template #ngDataTableRowExpandLoadingSpinner>&ndash;&gt;-->
-    <!--&lt;!&ndash;LL&ndash;&gt;-->
-  <!--&lt;!&ndash;</ng-template>&ndash;&gt;-->
-<!--</ng-data-table>-->
+<h2>Filter Text Box</h2>
 
-{{selectedDataItems | json}}
+<ng-data-table
+  [title]="'Station Details'"
+  [selectTrackBy]="'id'"
+  [dataSource]="items"
+  [pageable]="false"
+  [showHeader]="true"
+  [showRefreshButton]="false"
+  [showIndexColumn]="true"
+  [showColumnSelector]="false">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [filterable]="true"
+    [filterPlaceholder]="'ID Filter'"
+    [showFilterClearButton]="true"
+    [width]="100">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stationName'"
+    [title]="'Station Name'"
+    [filterable]="true"
+    [filterPlaceholder]="'Station Name Filter'"
+    [showFilterClearButton]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'statusValue'"
+    [title]="'Status Value'"
+    [filterable]="true"
+    [filterPlaceholder]="'Status Value Filter'"
+    [showFilterClearButton]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'availableBikes'"
+    [title]="'Available Bikes'"
+    [filterable]="true"
+    [filterPlaceholder]="'Bike Count Filter'"
+    [showFilterClearButton]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stAddress1'"
+    [title]="'Address'"
+    [filterable]="true"
+    [filterPlaceholder]="'Address Name Filter'"
+    [showFilterClearButton]="true">
+  </ng-data-table-column>
+</ng-data-table>
