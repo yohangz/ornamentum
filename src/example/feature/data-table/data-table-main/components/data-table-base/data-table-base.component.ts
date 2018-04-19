@@ -35,6 +35,10 @@ export class DataTableBaseComponent {
     {
       routePath: 'sorting',
       title: 'Sorting',
+    },
+    {
+      routePath: 'resizable',
+      title: 'Resizable',
     }
   ];
 }

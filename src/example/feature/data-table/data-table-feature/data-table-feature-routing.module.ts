@@ -1,8 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DataTableOverviewComponent } from './components/data-table-overview/data-table-overview.component';
-import { DataTableFilteringComponent } from './components/data-table-filtering/data-table-filtering.component';
+import {
+  DataTableFilteringComponent,
+  DataTableOverviewComponent,
+  DataTableSortingComponent,
+  DataTableResizableComponent
+} from './components';
 
 /**
  * Represent application data table feature module routes.
@@ -23,12 +27,12 @@ const dataTableFeatureRoutes: Routes = [
     path: 'data-binding'
   },
   {
-    component: DataTableOverviewComponent,
-    path: 'editing'
-  },
-  {
     component: DataTableFilteringComponent,
     path: 'filtering'
+  },
+  {
+    component: DataTableSortingComponent,
+    path: 'sorting'
   },
   {
     component: DataTableOverviewComponent,
@@ -39,8 +43,8 @@ const dataTableFeatureRoutes: Routes = [
     path: 'paging'
   },
   {
-    component: DataTableOverviewComponent,
-    path: 'sorting'
+    component: DataTableResizableComponent,
+    path: 'resizable'
   }
 ];
 

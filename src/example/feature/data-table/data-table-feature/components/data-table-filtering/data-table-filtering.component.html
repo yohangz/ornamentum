@@ -21,24 +21,28 @@
   <ng-data-table-column
     [field]="'stationName'"
     [title]="'Station Name'"
+    [dropdownFilterMenuPosition]="MenuPosition.BOTTOM_RIGHT"
     [filterable]="true"
     [showDropdownFilter]="true">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'statusValue'"
     [title]="'Status Value'"
+    [dropdownFilterMenuPosition]="MenuPosition.BOTTOM_LEFT"
     [filterable]="true"
     [showDropdownFilter]="true">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'availableBikes'"
     [title]="'Available Bikes'"
+    [dropdownFilterMenuPosition]="MenuPosition.TOP_LEFT"
     [filterable]="true"
     [showDropdownFilter]="true">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'stAddress1'"
     [title]="'Address'"
+    [dropdownFilterMenuPosition]="MenuPosition.TOP_RIGHT"
     [filterable]="true"
     [showDropdownFilter]="true">
   </ng-data-table-column>

@@ -4,10 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from '../../../../library';
 
-import { DataTableOverviewComponent } from './components/data-table-overview/data-table-overview.component';
-import { DataTableFilteringComponent } from './components/data-table-filtering/data-table-filtering.component';
-
-import { DataStorageService } from './services/data-storage.service';
+import { COMPONENTS, SERVICES } from './index';
 
 import { DataTableFeatureRoutingModule } from './data-table-feature-routing.module';
 
@@ -16,10 +13,7 @@ import { DataTableFeatureRoutingModule } from './data-table-feature-routing.modu
  * @class DataTableFeatureModule
  */
 @NgModule({
-  declarations: [
-    DataTableOverviewComponent,
-    DataTableFilteringComponent
-  ],
+  declarations: [...COMPONENTS],
   exports: [],
   imports: [
     CommonModule,
@@ -29,7 +23,7 @@ import { DataTableFeatureRoutingModule } from './data-table-feature-routing.modu
     }),
     DataTableFeatureRoutingModule
   ],
-  providers: [DataStorageService]
+  providers: [...SERVICES]
 })
 export class DataTableFeatureModule {
 }
