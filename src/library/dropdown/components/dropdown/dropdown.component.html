@@ -1,5 +1,5 @@
 <div #dropdownElement class="ng-dropdown" (clickOutside)="closeDropdown()">
-  <button  type="button" class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [disabled]="dataStateService.disabled">
+  <button  type="button" class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [class.disabled]="dataStateService.disabled">
     <ng-container *ngIf="config.selectMode === DropdownSelectMode.MULTI">
       <ng-container *ngIf="!wrapSelectedOptions">
          <span class="ng-dropdown-selected-value" *ngFor="let item of dataStateService.selectedOptions; let index = index"

@@ -320,6 +320,15 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.config.filterDebounceTime = value;
   }
 
+  /**
+   * Control disabled state
+   * @param {boolean} value Disabled if true.
+   */
+  @Input()
+  public set disabled(value: boolean) {
+    this.dataStateService.disabled = value;
+  }
+
   @Input()
   public set closeMenuOnSelect(value: boolean) {
     this.config.closeMenuOnSelect = value;
