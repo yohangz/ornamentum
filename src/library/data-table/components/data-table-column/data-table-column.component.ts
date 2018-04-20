@@ -358,9 +358,9 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   public getSortIconClass() {
     return {
-      'zmdi-sort-amount-asc': this.sortOrder === DataTableSortOrder.ASC,
-      'zmdi-sort-amount-desc': this.sortOrder === DataTableSortOrder.DESC,
-      'zmdi-format-line-spacing': this.sortOrder === undefined || this.sortOrder === DataTableSortOrder.NONE
+      'sort-asc': this.sortOrder === DataTableSortOrder.ASC,
+      'sort-dsc': this.sortOrder === DataTableSortOrder.DESC,
+      'sort-reset': this.sortOrder === undefined || this.sortOrder === DataTableSortOrder.NONE
     };
   }
 
