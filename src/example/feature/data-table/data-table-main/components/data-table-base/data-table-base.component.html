@@ -1,10 +1,21 @@
 <h2>Features and Functionalities</h2>
 
+<label>Data Table Configuration</label>
 <ul>
-  <li *ngFor="let usage of usages">
-    <a class="nav-link" routerLink="{{usage.routePath}}">
+  <li *ngFor="let conf of tableConf">
+    <a class="nav-link" routerLink="{{conf.routePath}}">
             <span class="main-nav-label">
-              <span class="menu-title">{{usage.title}}</span>
+              <span class="menu-title">{{conf.title}}</span>
+            </span>
+    </a></li>
+</ul>
+
+<label>Data Table Column Configuration</label>
+<ul>
+  <li *ngFor="let conf of columnConf">
+    <a class="nav-link" routerLink="{{conf.routePath}}">
+            <span class="main-nav-label">
+              <span class="menu-title">{{conf.title}}</span>
             </span>
     </a></li>
 </ul>

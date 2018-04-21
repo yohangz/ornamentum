@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class DataTableBaseComponent {
 
-  public usages = [
+  public tableConf = [
     {
       routePath: 'overview',
       title: 'Overview',
@@ -17,20 +17,8 @@ export class DataTableBaseComponent {
       title: 'Data Binding',
     },
     {
-      routePath: 'filtering',
-      title: 'Filtering',
-    },
-    {
       routePath: 'paging',
       title: 'Paging',
-    },
-    {
-      routePath: 'sorting',
-      title: 'Sorting',
-    },
-    {
-      routePath: 'resizable',
-      title: 'Resizable',
     },
     {
       routePath: 'translations',
@@ -51,6 +39,29 @@ export class DataTableBaseComponent {
     {
       routePath: 'substitute-rows',
       title: 'Substitute Rows',
+    },
+    {
+      routePath: 'responsive-configuration',
+      title: 'Responsive Configuration',
+    },
+    {
+      routePath: 'grouping',
+      title: 'Grouping',
+    }
+  ];
+
+  public columnConf = [
+    {
+      routePath: 'filtering',
+      title: 'Filtering',
+    },
+    {
+      routePath: 'sorting',
+      title: 'Sorting',
+    },
+    {
+      routePath: 'resizable',
+      title: 'Resizable',
     },
     {
       routePath: 'responsive-configuration',
