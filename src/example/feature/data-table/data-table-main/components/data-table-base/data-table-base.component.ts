@@ -14,19 +14,11 @@ export class DataTableBaseComponent {
     },
     {
       routePath: 'data-binding',
-      title: 'Data binding',
-    },
-    {
-      routePath: 'editing',
-      title: 'Editing',
+      title: 'Data Binding',
     },
     {
       routePath: 'filtering',
       title: 'Filtering',
-    },
-    {
-      routePath: 'grouping',
-      title: 'Grouping',
     },
     {
       routePath: 'paging',
@@ -39,6 +31,34 @@ export class DataTableBaseComponent {
     {
       routePath: 'resizable',
       title: 'Resizable',
-    }
+    },
+    {
+      routePath: 'translations',
+      title: 'Translations',
+    },
+    {
+      routePath: 'header-details',
+      title: 'Header Details',
+    },
+    {
+      routePath: 'data-persistence',
+      title: 'Data Persistence',
+    },
+    {
+      routePath: 'limit',
+      title: 'Data Limit',
+    },
+    {
+      routePath: 'substitute-rows',
+      title: 'Substitute Rows',
+    },
+    {
+      routePath: 'responsive-configuration',
+      title: 'Responsive Configuration',
+    },
+    {
+      routePath: 'grouping',
+      title: 'Grouping',
+    },
   ];
 }

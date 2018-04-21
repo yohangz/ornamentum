@@ -2,7 +2,15 @@ import {
   DataTableFilteringComponent,
   DataTableOverviewComponent,
   DataTableSortingComponent,
-  DataTableResizableComponent
+  DataTableResizableComponent,
+  DataTablePagingComponent,
+  DataTableTranslationsComponent,
+  DataTableHeaderDetailsComponent,
+  DataTablePersistDataComponent,
+  DataTableSubstituteRowsComponent,
+  DataTableLimitComponent,
+  DataTableResponsiveConfComponent,
+  DataTableDataBindingComponent
 } from './components';
 
 import { DataStorageService } from './services/data-storage.service';
@@ -10,9 +18,17 @@ import { DataStorageService } from './services/data-storage.service';
 // Components
 export const COMPONENTS = [
   DataTableFilteringComponent,
+  DataTableDataBindingComponent,
   DataTableOverviewComponent,
   DataTableSortingComponent,
-  DataTableResizableComponent
+  DataTableResizableComponent,
+  DataTablePagingComponent,
+  DataTableTranslationsComponent,
+  DataTableHeaderDetailsComponent,
+  DataTablePersistDataComponent,
+  DataTableSubstituteRowsComponent,
+  DataTableLimitComponent,
+  DataTableResponsiveConfComponent
 ];
 
 // Services

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
+import { DataTableSelectMode } from '../../../../../../library/index';
 
-import { DataTableSelectMode } from '../../../../../../library/data-table/models/data-table-select-mode.model';
+import { Observable } from 'rxjs/Observable';
 
 import { sampleData } from '../../data/data-table-example';
 

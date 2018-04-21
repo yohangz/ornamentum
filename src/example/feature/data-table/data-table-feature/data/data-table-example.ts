@@ -1,14 +1,34 @@
 export const sampleData = [
   {
-    'id': 72,
-    'stationName': 'W 52 St & 11 Ave',
+    'id': 1,
+    'stationName': 'station 1',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'Not In Service',
+    'statusKey': 1,
+    'availableBikes': 120,
+    'stAddress1': 'stAddress1',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 2,
+    'stationName': 'station 2',
     'availableDocks': 27,
     'totalDocks': 39,
     'latitude': 1,
     'longitude': -73.99392888,
     'statusValue': 'In Service',
     'statusKey': 1,
-    'availableBikes': 10,
+    'availableBikes': 101,
     'stAddress1': 'W 52 St & 11 Ave',
     'stAddress2': '',
     'city': '',
@@ -17,161 +37,286 @@ export const sampleData = [
     'altitude': '',
     'testStation': false,
     'lastCommunicationTime': '2018-01-03 10:40:29 AM',
-    'landMark': '',
-    'nest': {
-      'level': {
-        'x': 5
-      }
-    },
-    'test': [
-      {
-        'latitude': 2,
-        'longitude': -73.99392888
-      },
-      {
-        'latitude': 1,
-        'longitude': -73.99392888
-      }
-    ]
+    'landMark': ''
   },
   {
-    'id': 79,
-    'stationName': 'Franklin St & W Broadway',
-    'availableDocks': 21,
-    'totalDocks': 33,
+    'id': 3,
+    'stationName': 'station 3',
+    'availableDocks': 27,
+    'totalDocks': 39,
     'latitude': 1,
-    'longitude': -74.00666661,
+    'longitude': -73.99392888,
     'statusValue': 'In Service',
     'statusKey': 1,
-    'availableBikes': 12,
-    'stAddress1': 'Franklin St & W Broadway',
+    'availableBikes': 140,
+    'stAddress1': 'stAddress1',
     'stAddress2': '',
     'city': '',
     'postalCode': '',
     'location': '',
     'altitude': '',
     'testStation': false,
-    'lastCommunicationTime': '2018-01-03 10:42:59 AM',
-    'landMark': '',
-    'nest': {
-      'level': {
-        'x': 20
-      }
-    },
-    'test': [
-      {
-        'latitude': 5,
-        'longitude': -73.99392888
-      },
-      {
-        'latitude': 7,
-        'longitude': -73.99392888
-      }
-    ]
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
   },
   {
-    'id': 82,
-    'stationName': 'St James Pl & Pearl St',
-    'availableDocks': 12,
-    'totalDocks': 27,
-    'latitude': 40.71117416,
-    'longitude': -74.00016545,
-    'statusValue': 'In Service',
-    'statusKey': 1,
-    'availableBikes': 15,
-    'stAddress1': 'St James Pl & Pearl St',
-    'stAddress2': '',
-    'city': '',
-    'postalCode': '',
-    'location': '',
-    'altitude': '',
-    'testStation': false,
-    'lastCommunicationTime': '2018-01-03 10:40:21 AM',
-    'landMark': '',
-    'nest': {
-      'level': {
-        'x': 0
-      }
-    },
-    'test': [
-      {
-        'latitude': 8,
-        'longitude': -73.99392888
-      },
-      {
-        'latitude': 11,
-        'longitude': -73.99392888
-      }
-    ]
-  },
-  {
-    'id': 83,
-    'stationName': 'Atlantic Ave & Fort Greene Pl',
-    'availableDocks': 24,
-    'totalDocks': 62,
-    'latitude': 40.68382604,
-    'longitude': -73.97632328,
-    'statusValue': 'In Service',
-    'statusKey': 1,
-    'availableBikes': 37,
-    'stAddress1': 'Atlantic Ave & Fort Greene Pl',
-    'stAddress2': '',
-    'city': '',
-    'postalCode': '',
-    'location': '',
-    'altitude': '',
-    'testStation': false,
-    'lastCommunicationTime': '2018-01-03 10:42:38 AM',
-    'landMark': '',
-    'nest': {
-      'level': {
-        'x': 343434
-      }
-    },
-    'test': [
-      {
-        'latitude': 111,
-        'longitude': -73.99392888
-      },
-      {
-        'latitude': 45,
-        'longitude': -73.99392888
-      }
-    ]
-  },
-  {
-    'id': 116,
-    'stationName': 'W 17 St & 8 Ave',
-    'availableDocks': 1,
-    'totalDocks': 7,
+    'id': 4,
+    'stationName': 'station 4',
+    'availableDocks': 27,
+    'totalDocks': 39,
     'latitude': 1,
-    'longitude': -74.00149746,
+    'longitude': -73.99392888,
     'statusValue': 'Not In Service',
-    'statusKey': 3,
-    'availableBikes': 0,
-    'stAddress1': 'W 17 St & 8 Ave',
+    'statusKey': 1,
+    'availableBikes': 710,
+    'stAddress1': 'W 52 St & 11 Ave',
     'stAddress2': '',
     'city': '',
     'postalCode': '',
     'location': '',
     'altitude': '',
     'testStation': false,
-    'lastCommunicationTime': '2017-11-14 08:58:16 AM',
-    'landMark': '',
-    'nest': {
-      'level': {
-        'x': -5
-      }
-    },
-    'test': [
-      {
-        'latitude': 67657,
-        'longitude': -73.99392888
-      },
-      {
-        'latitude': 238,
-        'longitude': -73.99392888
-      }
-    ]
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 5,
+    'stationName': 'station 5',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'In Service',
+    'statusKey': 1,
+    'availableBikes': 106,
+    'stAddress1': 'W 52 St & 11 Ave',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 6,
+    'stationName': 'station 6',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'In Service',
+    'statusKey': 1,
+    'availableBikes': 145,
+    'stAddress1': 'stAddress1',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 7,
+    'stationName': 'station 7',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'In Service',
+    'statusKey': 1,
+    'availableBikes': 66,
+    'stAddress1': 'stAddress1',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 8,
+    'stationName': 'station 8',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'Not In Service',
+    'statusKey': 1,
+    'availableBikes': 56,
+    'stAddress1': 'n0123/park street',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 11,
+    'stationName': 'station 12',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'Not In Service',
+    'statusKey': 1,
+    'availableBikes': 120,
+    'stAddress1': 'stAddress1',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 22,
+    'stationName': 'station 22',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'In Service',
+    'statusKey': 1,
+    'availableBikes': 101,
+    'stAddress1': 'W 52 St & 11 Ave',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 33,
+    'stationName': 'station 33',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'In Service',
+    'statusKey': 1,
+    'availableBikes': 140,
+    'stAddress1': 'stAddress1',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 44,
+    'stationName': 'station 44',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'Not In Service',
+    'statusKey': 1,
+    'availableBikes': 710,
+    'stAddress1': 'W 52 St & 11 Ave',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 55,
+    'stationName': 'station 55',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'In Service',
+    'statusKey': 1,
+    'availableBikes': 106,
+    'stAddress1': 'W 52 St & 11 Ave',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 66,
+    'stationName': 'station 66',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'In Service',
+    'statusKey': 1,
+    'availableBikes': 145,
+    'stAddress1': 'stAddress1',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 77,
+    'stationName': 'station 77',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'In Service',
+    'statusKey': 1,
+    'availableBikes': 66,
+    'stAddress1': 'stAddress1',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
+  },
+  {
+    'id': 88,
+    'stationName': 'station 88',
+    'availableDocks': 27,
+    'totalDocks': 39,
+    'latitude': 1,
+    'longitude': -73.99392888,
+    'statusValue': 'Not In Service',
+    'statusKey': 1,
+    'availableBikes': 56,
+    'stAddress1': 'n0123/park street',
+    'stAddress2': '',
+    'city': '',
+    'postalCode': '',
+    'location': '',
+    'altitude': '',
+    'testStation': false,
+    'lastCommunicationTime': '2018-01-03 10:40:29 AM',
+    'landMark': ''
   }
 ];

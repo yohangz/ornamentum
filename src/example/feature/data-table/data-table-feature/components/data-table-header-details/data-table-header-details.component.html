@@ -1,6 +1,10 @@
-<h1>Data Table Resizable</h1>
+<h1>Data Table Header Details</h1>
 
-<p>[resizable]="true or false"</p>
+<ul>
+  <li>[showHeader]="true or false"</li>
+  <li>[showRefreshButton]="true or false"</li>
+  <li>[showColumnSelector]="true or false"</li>
+</ul>
 
 <ng-data-table
   [title]="'Station Details'"
@@ -8,14 +12,15 @@
   [dataSource]="items"
   [pageable]="false"
   [showHeader]="true"
-  [showRefreshButton]="false"
+  [showRefreshButton]="true"
   [showIndexColumn]="true"
-  [showColumnSelector]="false">
+  [showColumnSelector]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
     [resizable]="true"
-    [width]="100">
+    [width]="100"
+    [showInColumnSelector]="false">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'stationName'"

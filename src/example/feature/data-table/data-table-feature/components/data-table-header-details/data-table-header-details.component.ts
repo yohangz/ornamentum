@@ -7,11 +7,11 @@ import { Observable } from 'rxjs/Observable';
 import { sampleData } from '../../data/data-table-example';
 
 @Component({
-  selector: 'app-data-table-resizable-component',
-  templateUrl: './data-table-resizable.component.html',
-  styleUrls: ['./data-table-resizable.component.scss']
+  selector: 'app-data-table-header-details-component',
+  templateUrl: './data-table-header-details.component.html',
+  styleUrls: ['./data-table-header-details.component.scss']
 })
-export class DataTableResizableComponent {
+export class DataTableHeaderDetailsComponent {
   public DataTableSelectMode = DataTableSelectMode;
 
   public items: Observable<any>;

@@ -1,6 +1,15 @@
 <h1>Data Table Filtering</h1>
 
 <h2>Filter Dropdown</h2>
+<ul>
+  <li>[filterable]="true or false"</li>
+  <li>[showDropdownFilter]="true or false""</li>
+  <li>[dropdownFilterMenuPosition]="MenuPosition.BOTTOM_RIGHT" | "MenuPosition.BOTTOM_LEFT" | "MenuPosition.TOP_LEFT" |
+    "MenuPosition.TOP_RIGHT"
+  </li>
+  <li>[dropDownFilterShowOptionSelectCheckbox]="true or false"</li>
+  <li>[dropdownFilterCloseMenuOnSelect]="true or false"</li>
+</ul>
 
 <ng-data-table
   [title]="'Station Details'"
@@ -16,40 +25,51 @@
     [title]="'ID'"
     [filterable]="true"
     [showDropdownFilter]="true"
-    [width]="100">
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [dropdownFilterCloseMenuOnSelect]="false"
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'stationName'"
     [title]="'Station Name'"
     [dropdownFilterMenuPosition]="MenuPosition.BOTTOM_RIGHT"
     [filterable]="true"
-    [showDropdownFilter]="true">
+    [showDropdownFilter]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [dropdownFilterCloseMenuOnSelect]="false">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'statusValue'"
     [title]="'Status Value'"
     [dropdownFilterMenuPosition]="MenuPosition.BOTTOM_LEFT"
     [filterable]="true"
-    [showDropdownFilter]="true">
+    [showDropdownFilter]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'availableBikes'"
     [title]="'Available Bikes'"
     [dropdownFilterMenuPosition]="MenuPosition.TOP_LEFT"
     [filterable]="true"
-    [showDropdownFilter]="true">
+    [showDropdownFilter]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'stAddress1'"
     [title]="'Address'"
     [dropdownFilterMenuPosition]="MenuPosition.TOP_RIGHT"
     [filterable]="true"
-    [showDropdownFilter]="true">
+    [showDropdownFilter]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true">
   </ng-data-table-column>
 </ng-data-table>
 
-
 <h2>Filter Text Box</h2>
+<ul>
+  <li>[filterable]="true or false"</li>
+  <li>[filterPlaceholder]="Filter place holder text to display"</li>
+  <li>[showFilterClearButton]="true or false"</li>
+</ul>
 
 <ng-data-table
   [title]="'Station Details'"

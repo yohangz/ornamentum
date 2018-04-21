@@ -2,3 +2,11 @@ export { DataTableOverviewComponent } from './data-table-overview/data-table-ove
 export { DataTableFilteringComponent } from './data-table-filtering/data-table-filtering.component';
 export { DataTableSortingComponent } from './data-table-sorting/data-table-sorting.component';
 export { DataTableResizableComponent } from './data-table-resizable/data-table-resizable.component';
+export { DataTablePagingComponent } from './data-table-paging/data-table-paging.component';
+export { DataTableTranslationsComponent } from './data-table-translations/data-table-translations.component';
+export { DataTableHeaderDetailsComponent } from './data-table-header-details/data-table-header-details.component';
+export { DataTablePersistDataComponent } from './data-table-persist-data/data-table-persist-data.component';
+export { DataTableSubstituteRowsComponent } from './data-table-substitute-rows/data-table-substitute-rows.component';
+export { DataTableLimitComponent } from './data-table-limit/data-table-limit.component';
+export { DataTableResponsiveConfComponent } from './data-table-responsive-conf/data-table-responsive-conf.component';
+export { DataTableDataBindingComponent } from './data-table-data-binding/data-table-data-binding.component';

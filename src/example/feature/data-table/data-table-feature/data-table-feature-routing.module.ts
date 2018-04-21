@@ -5,7 +5,15 @@ import {
   DataTableFilteringComponent,
   DataTableOverviewComponent,
   DataTableSortingComponent,
-  DataTableResizableComponent
+  DataTableResizableComponent,
+  DataTablePagingComponent,
+  DataTableTranslationsComponent,
+  DataTableHeaderDetailsComponent,
+  DataTablePersistDataComponent,
+  DataTableSubstituteRowsComponent,
+  DataTableLimitComponent,
+  DataTableResponsiveConfComponent,
+  DataTableDataBindingComponent
 } from './components';
 
 /**
@@ -23,7 +31,7 @@ const dataTableFeatureRoutes: Routes = [
     path: 'overview'
   },
   {
-    component: DataTableOverviewComponent,
+    component: DataTableDataBindingComponent,
     path: 'data-binding'
   },
   {
@@ -39,13 +47,37 @@ const dataTableFeatureRoutes: Routes = [
     path: 'grouping'
   },
   {
-    component: DataTableOverviewComponent,
+    component: DataTablePagingComponent,
     path: 'paging'
   },
   {
     component: DataTableResizableComponent,
     path: 'resizable'
-  }
+  },
+  {
+    component: DataTableTranslationsComponent,
+    path: 'translations'
+  },
+  {
+    component: DataTableHeaderDetailsComponent,
+    path: 'header-details'
+  },
+  {
+    component: DataTablePersistDataComponent,
+    path: 'data-persistence'
+  },
+  {
+    component: DataTableLimitComponent,
+    path: 'limit'
+  },
+  {
+    component: DataTableSubstituteRowsComponent,
+    path: 'substitute-rows'
+  },
+  {
+    component: DataTableResponsiveConfComponent,
+    path: 'responsive-configuration'
+  },
 ];
 
 /**
