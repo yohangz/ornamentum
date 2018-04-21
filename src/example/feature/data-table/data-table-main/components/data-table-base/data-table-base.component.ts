@@ -45,6 +45,10 @@ export class DataTableBaseComponent {
       title: 'Responsive Configuration',
     },
     {
+      routePath: 'loading-spinner',
+      title: 'Data Loading Spinner',
+    },
+    {
       routePath: 'grouping',
       title: 'Grouping',
     }

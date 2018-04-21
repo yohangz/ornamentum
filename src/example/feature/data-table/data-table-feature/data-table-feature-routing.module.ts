@@ -13,7 +13,8 @@ import {
   DataTableSubstituteRowsComponent,
   DataTableLimitComponent,
   DataTableResponsiveConfComponent,
-  DataTableDataBindingComponent
+  DataTableDataBindingComponent,
+  DataTableLoadingSpinnerComponent
 } from './components';
 
 /**
@@ -77,6 +78,10 @@ const dataTableFeatureRoutes: Routes = [
   {
     component: DataTableResponsiveConfComponent,
     path: 'responsive-configuration'
+  },
+  {
+    component: DataTableLoadingSpinnerComponent,
+    path: 'loading-spinner'
   },
 ];
 
