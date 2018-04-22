@@ -70,14 +70,6 @@ export class DataTableBaseComponent {
     {
       routePath: 'resizable',
       title: 'Resizable',
-    },
-    {
-      routePath: 'responsive-configuration',
-      title: 'Responsive Configuration',
-    },
-    {
-      routePath: 'grouping',
-      title: 'Grouping',
-    },
+    }
   ];
 }
