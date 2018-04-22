@@ -14,7 +14,8 @@ import {
   DataTableLimitComponent,
   DataTableResponsiveConfComponent,
   DataTableDataBindingComponent,
-  DataTableLoadingSpinnerComponent
+  DataTableLoadingSpinnerComponent,
+  DataTableEventsComponent
 } from './components';
 
 /**
@@ -82,6 +83,10 @@ const dataTableFeatureRoutes: Routes = [
   {
     component: DataTableLoadingSpinnerComponent,
     path: 'loading-spinner'
+  },
+  {
+    component: DataTableEventsComponent,
+    path: 'events'
   },
 ];
 

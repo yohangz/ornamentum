@@ -11,3 +11,4 @@ export { DataTableLimitComponent } from './data-table-limit/data-table-limit.com
 export { DataTableResponsiveConfComponent } from './data-table-responsive-conf/data-table-responsive-conf.component';
 export { DataTableDataBindingComponent } from './data-table-data-binding/data-table-data-binding.component';
 export { DataTableLoadingSpinnerComponent } from './data-table-loading-spinner/data-table-loading-spinner.component';
+export { DataTableEventsComponent } from './data-table-events/data-table-events.component';

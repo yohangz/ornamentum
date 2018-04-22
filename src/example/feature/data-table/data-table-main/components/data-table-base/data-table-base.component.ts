@@ -51,6 +51,10 @@ export class DataTableBaseComponent {
     {
       routePath: 'grouping',
       title: 'Grouping',
+    },
+    {
+      routePath: 'events',
+      title: 'Events',
     }
   ];
 
