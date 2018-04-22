@@ -12,3 +12,5 @@ export { DataTableResponsiveConfComponent } from './data-table-responsive-conf/d
 export { DataTableDataBindingComponent } from './data-table-data-binding/data-table-data-binding.component';
 export { DataTableLoadingSpinnerComponent } from './data-table-loading-spinner/data-table-loading-spinner.component';
 export { DataTableEventsComponent } from './data-table-events/data-table-events.component';
+export { DataTableRowExpandTemplateComponent } from './data-table-row-expand-template/data-table-row-expand-template.component';
+export { DataTableCellTemplateComponent } from './data-table-cell-template/data-table-cell-template.component';

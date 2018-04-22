@@ -20,6 +20,16 @@
     </a></li>
 </ul>
 
+<label>Data Table Templates</label>
+<ul>
+  <li *ngFor="let template of templates">
+    <a class="nav-link" routerLink="{{template.routePath}}">
+            <span class="main-nav-label">
+              <span class="menu-title">{{template.title}}</span>
+            </span>
+    </a></li>
+</ul>
+
 <div>
   <router-outlet></router-outlet>
 </div>

@@ -9,6 +9,19 @@
   </li>
   <li>[dropDownFilterShowOptionSelectCheckbox]="true or false"</li>
   <li>[dropdownFilterCloseMenuOnSelect]="true or false"</li>
+  <li>[dropdownFilterShowSelectAll]="true or false"</li>
+  <li>[dropdownFilterSelectMode]="DropdownSelectMode.MULTI" | DropdownSelectMode.SINGLE" | DropdownSelectMode.SINGLE_TOGGLE"</li>
+  <li>[dropdownFilterWrapDisplaySelectLimit]="5 (limit in number)"</li>
+  <li>[dropdownFilterShowSelectedOptionRemoveButton]="true or false"</li>
+  <li>[dropdownFilterGroupByField]="group field name"</li>
+  <li>[dropdownFilterMenuHeight]="200 (height in number)"</li>
+  <li>[dropdownFilterMenuWidth]="200 (width in number)"</li>
+  <li>[dropdownFilterMultiSelectOptionMaxWidth]="300 (max width in number)"</li>
+  <li>[dropdownFilterSearchable]="true or false"</li>
+  <li>[dropdownFilterSearchDebounce]="true or false"</li>
+  <li>[dropdownFilterSearchDebounceTime]="100 (time in number)"</li>
+  <li>[dropdownFilterShowClearSelectionButton]="true or false"</li>
+  <li>[filter]="Column value filter" => In here [{{ '{' }} key: "In Service", value: "In Service" {{ '}' }}] filter is applied for the status value column</li>
 </ul>
 
 <ng-data-table
@@ -44,7 +57,8 @@
     [dropdownFilterMenuPosition]="MenuPosition.BOTTOM_LEFT"
     [filterable]="true"
     [showDropdownFilter]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [filter]="[{ key: 'In Service', value: 'In Service' }]">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'availableBikes'"

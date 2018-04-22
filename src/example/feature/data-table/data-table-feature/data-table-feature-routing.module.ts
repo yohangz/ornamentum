@@ -15,7 +15,9 @@ import {
   DataTableResponsiveConfComponent,
   DataTableDataBindingComponent,
   DataTableLoadingSpinnerComponent,
-  DataTableEventsComponent
+  DataTableEventsComponent,
+  DataTableCellTemplateComponent,
+  DataTableRowExpandTemplateComponent
 } from './components';
 
 /**
@@ -37,24 +39,8 @@ const dataTableFeatureRoutes: Routes = [
     path: 'data-binding'
   },
   {
-    component: DataTableFilteringComponent,
-    path: 'filtering'
-  },
-  {
-    component: DataTableSortingComponent,
-    path: 'sorting'
-  },
-  {
-    component: DataTableOverviewComponent,
-    path: 'grouping'
-  },
-  {
     component: DataTablePagingComponent,
     path: 'paging'
-  },
-  {
-    component: DataTableResizableComponent,
-    path: 'resizable'
   },
   {
     component: DataTableTranslationsComponent,
@@ -81,6 +67,10 @@ const dataTableFeatureRoutes: Routes = [
     path: 'responsive-configuration'
   },
   {
+    // component: DataTableOverviewComponent,
+    path: 'grouping'
+  },
+  {
     component: DataTableLoadingSpinnerComponent,
     path: 'loading-spinner'
   },
@@ -88,6 +78,26 @@ const dataTableFeatureRoutes: Routes = [
     component: DataTableEventsComponent,
     path: 'events'
   },
+  {
+    component: DataTableFilteringComponent,
+    path: 'column/filtering'
+  },
+  {
+    component: DataTableSortingComponent,
+    path: 'column/sorting'
+  },
+  {
+    component: DataTableResizableComponent,
+    path: 'column/resizable'
+  },
+  {
+    component: DataTableCellTemplateComponent,
+    path: 'templates/cell-template'
+  },
+  {
+    component: DataTableRowExpandTemplateComponent,
+    path: 'templates/expand-template'
+  }
 ];
 
 /**

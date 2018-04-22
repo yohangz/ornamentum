@@ -12,7 +12,9 @@ import {
   DataTableResponsiveConfComponent,
   DataTableDataBindingComponent,
   DataTableLoadingSpinnerComponent,
-  DataTableEventsComponent
+  DataTableEventsComponent,
+  DataTableRowExpandTemplateComponent,
+  DataTableCellTemplateComponent
 } from './components';
 
 import { DataStorageService } from './services/data-storage.service';
@@ -32,7 +34,9 @@ export const COMPONENTS = [
   DataTableLimitComponent,
   DataTableResponsiveConfComponent,
   DataTableLoadingSpinnerComponent,
-  DataTableEventsComponent
+  DataTableEventsComponent,
+  DataTableCellTemplateComponent,
+  DataTableRowExpandTemplateComponent
 ];
 
 // Services

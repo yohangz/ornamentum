@@ -1,0 +1,42 @@
+<h1>Data Table Cell Template</h1>
+
+<label>Sample cell template for status value column:
+<pre><code>{{code}}</code></pre>
+</label>
+
+<ng-data-table
+  [title]="'Station Details'"
+  [selectTrackBy]="'id'"
+  [dataSource]="items"
+  [pageable]="false"
+  [showHeader]="true"
+  [showRefreshButton]="false"
+  [showIndexColumn]="true"
+  [showColumnSelector]="false">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [width]="100">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stationName'"
+    [title]="'Station Name'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'statusValue'"
+    [title]="'Status Value'">
+    <ng-template #ngDataTableCell let-row="row">
+      <td>
+        {{row.item.statusValue.toUpperCase()}}
+      </td>
+    </ng-template>
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'availableBikes'"
+    [title]="'Available Bikes'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stAddress1'"
+    [title]="'Address'">
+  </ng-data-table-column>
+</ng-data-table>

@@ -60,16 +60,27 @@ export class DataTableBaseComponent {
 
   public columnConf = [
     {
-      routePath: 'filtering',
+      routePath: 'column/filtering',
       title: 'Filtering',
     },
     {
-      routePath: 'sorting',
+      routePath: 'column/sorting',
       title: 'Sorting',
     },
     {
-      routePath: 'resizable',
+      routePath: 'column/resizable',
       title: 'Resizable',
+    }
+  ];
+
+  public templates = [
+    {
+      routePath: 'templates/cell-template',
+      title: 'Cell Template',
+    },
+    {
+      routePath: 'templates/expand-template',
+      title: 'Expand Template',
     }
   ];
 }
