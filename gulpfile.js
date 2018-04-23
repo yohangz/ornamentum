@@ -28,7 +28,7 @@ const styleProcessor = (stylePath, ext, styleFile, callback) => {
     postcss(processors)
       .use(url({
         url: 'inline',
-        basePath: path.resolve(__dirname, 'src/library')  // path.resolve(__dirname, 'src/library').fixed()
+        basePath: path.resolve(__dirname, 'src/library')
       }))
       .process(css, {
         from: undefined
