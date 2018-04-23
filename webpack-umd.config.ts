@@ -50,7 +50,6 @@ export default {
         test: /\.json$/,
         use: 'json-loader'
       },
-
       {
         test: /\.css$/,
         use: ['to-string-loader', 'css-loader']
@@ -60,7 +59,16 @@ export default {
         test: /\.scss$/,
         use: ['to-string-loader', 'css-loader', 'sass-loader']
       },
-
+      {
+        test: /\.(png|jp(e*)g|gif|svg)$/,
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 8192, // Convert images < 8kb to base64 strings
+            name: 'images/[hash]-[name].[ext]'
+          }
+        }]
+      },
       {
         test: /\.html$/,
         use: 'raw-loader'
