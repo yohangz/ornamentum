@@ -13,7 +13,7 @@
   "angularCompilerOptions": {
     "flatModuleOutFile": "ornamentum.js",
     "flatModuleId": "ornamentum",
-    "genDir": ".tmp/lib-es2015",
+    "genDir": "./.tmp/lib-es2015",
     "debug": true,
     "skipTemplateCodegen": true,
     "skipMetadataEmit": false,

@@ -37,7 +37,7 @@ import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
-import { DragAndDropService, GlobalRefService } from '../../../utility';
+import { DragAndDropService, GlobalRefService } from '../../../utility/utility.module';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 import { DataTablePersistenceService } from '../../services/data-table-persistence.service';

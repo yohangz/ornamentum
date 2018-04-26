@@ -2,7 +2,7 @@ import { DataTableStorageMode } from './data-table-storage-mode.enum';
 import { DataTableTranslations } from './data-table-translations.model';
 import { DataTableSortOrder } from './data-table-sort-order.enum';
 import { DataTableSelectMode } from './data-table-select-mode.model';
-import { DropdownMenuPosition, DropdownSelectMode } from '../../dropdown';
+import { DropdownMenuPosition, DropdownSelectMode } from '../../dropdown/dropdown.module';
 
 /**
  * Data table configuration.

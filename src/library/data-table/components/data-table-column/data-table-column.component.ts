@@ -8,7 +8,7 @@ import { DropdownMenuPosition } from '../../../dropdown/models/dropdown-menu-pos
 import { DataTableRow } from '../../models/data-table-row.model';
 import { DataTableFilterFieldMapperCallback } from '../../models/data-table-filter-field-mapper-callback.model';
 import { DataTableFilterExpressionCallback } from '../../models/data-table-filter-expression-callback.model';
-import { DropdownSelectMode } from '../../../dropdown';
+import { DropdownSelectMode } from '../../../dropdown/dropdown.module';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';

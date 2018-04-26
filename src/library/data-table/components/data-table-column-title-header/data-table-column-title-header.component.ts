@@ -8,7 +8,7 @@ import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
-import { DragAndDropService } from '../../../utility';
+import { DragAndDropService } from '../../../utility/utility.module';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
