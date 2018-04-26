@@ -43,3 +43,4 @@ package-lock.json
 # Build artifacts
 dist
 lib
+stats
