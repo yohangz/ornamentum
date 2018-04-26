@@ -1,0 +1,23 @@
+{
+  "extends": "./tsconfig.lib.json",
+  "compilerOptions": {
+    "target": "es5",
+    "outDir": "./.tmp/lib-es5/",
+    "rootDir": "./.tmp/src-inlined",
+    "baseUrl": "",
+    "types": []
+  },
+  "files": [
+    "./.tmp/src-inlined/index.ts"
+  ],
+  "angularCompilerOptions": {
+    "flatModuleOutFile": "ornamentum.js",
+    "flatModuleId": "ornamentum",
+    "genDir": ".tmp/lib-es5",
+    "debug": false,
+    "skipTemplateCodegen": true,
+    "skipMetadataEmit": false,
+    "strictMetadataEmit": true,
+    "annotateForClosureCompiler": false
+  }
+}
