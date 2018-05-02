@@ -16,7 +16,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 
-import { get } from 'lodash';
+import get from 'lodash-es/get';
 
 import { DataTableFilterValueExtractCallback } from '../../models/data-table-filter-value-extract-callback.model';
 import { DataTableStorageMode } from '../../models/data-table-storage-mode.enum';
@@ -37,7 +37,7 @@ import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
-import { DragAndDropService, GlobalRefService } from '../../../utility';
+import { DragAndDropService, GlobalRefService } from '../../../utility/utility.module';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 import { DataTablePersistenceService } from '../../services/data-table-persistence.service';

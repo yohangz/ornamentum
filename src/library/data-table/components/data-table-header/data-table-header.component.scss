@@ -1,7 +1,18 @@
+@import '../../../styles/images/variables';
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
 :host-context {
+
+  %table-header-icon {
+    top: .7em;
+    content: '';
+    cursor: pointer;
+    height: 1.7em;
+    position: absolute;
+    width: 1.7em;
+  }
+
   .ng-data-table-top-header {
     @include display-flex;
     @include justify-content(space-between);
@@ -17,20 +28,30 @@
     }
 
     .ng-data-table-action-button-container {
-      margin: .2rem;
+      position: relative;
 
       .ng-data-table-action-button {
-        @include border-radius(0);
-        background: none;
         border: 0;
-        cursor: pointer;
-        margin-right: 0;
-        outline: none;
-        padding: .2rem .5rem;
 
-        i {
-          @include font-size(1.1, 1.5);
+        &.ng-data-table-refresh-button {
+          @extend %table-header-icon;
+          background: transparent url($refresh-url) no-repeat;
+          background-size: contain;
+          right: 0;
         }
+
+        &.ng-data-table-column-selector-button {
+          @extend %table-header-icon;
+          background: transparent url($list-view-url) no-repeat;
+          background-size: contain;
+          right: 2.5em;
+        }
+
+        &:focus,
+        &:visited {
+          outline: none;
+        }
+
       }
     }
   }
