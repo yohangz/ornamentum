@@ -14,7 +14,7 @@ import {
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 
-import { get } from 'lodash';
+import get from 'lodash-es/get';
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -27,7 +27,7 @@ import { DropdownDataBindCallback } from '../../models/dropdown-data-bind-callba
 import { DropdownQueryResult } from '../../models/dropdown-query-result.model';
 import { DropdownSelectMode } from '../../models/dropdown-select-mode.enum';
 
-import { PopoverComponentLoaderFactoryService } from '../../../utility';
+import { PopoverComponentLoaderFactoryService } from '../../../utility/utility.module';
 import { DropdownConfigService } from '../../services/dropdown-config.service';
 import { DropdownDataStateService } from '../../services/dropdown-data-state.service';
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';

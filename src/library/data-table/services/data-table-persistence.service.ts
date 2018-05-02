@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { DataTableRequestParams } from '../models/data-table-request-params.model';
 import { DataTableStorageMode } from '../models/data-table-storage-mode.enum';
 
-import { GlobalRefService } from '../../utility';
+import { GlobalRefService } from '../../utility/utility.module';
 import { DataTableConfigService } from './data-table-config.service';
 
 @Injectable()

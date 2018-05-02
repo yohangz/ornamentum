@@ -6,7 +6,7 @@ import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/switchMap';
 import 'rxjs/add/operator/do';
 
-export * from './data-table';
-export * from './dropdown';
-export * from './utility';
+export * from './data-table/data-table.module';
+export * from './dropdown/dropdown.module';
+export * from './utility/utility.module';
 

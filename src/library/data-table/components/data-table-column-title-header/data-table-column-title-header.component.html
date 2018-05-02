@@ -20,9 +20,7 @@
                   [ngTemplateOutlet]="column.headerTemplate"
                   [ngTemplateOutletContext]="{column: column}">
     </ng-container>
-    <span class="ng-data-table-column-sort-icon" [hidden]="!column.sortable">
-      <i class="zmdi" [ngClass]="column.getSortIconClass()"></i>
-    </span>
+    <span class="ng-data-table-column-sort-icon" [hidden]="!column.sortable" [ngClass]="column.getSortIconClass()"></span>
     <span class="ng-data-table-column-resize-handle" *ngIf="column.resizable"
           (mousedown)="onColumnResize($event, column, columnHeader)">
     </span>

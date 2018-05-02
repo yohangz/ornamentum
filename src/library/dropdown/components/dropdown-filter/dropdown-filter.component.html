@@ -1,16 +1,12 @@
 <div class="ng-dropdown-search">
   <div class="ng-dropdown-input-group">
-    <span class="ng-dropdown-input-group-addon" id="sizing-addon3">
-      <i class="zmdi zmdi-search"></i>
-    </span>
+    <span class="ng-dropdown-input-group-addon" id="sizing-addon3"></span>
     <input type="text" class="ng-dropdown-input" focus
            [attr.placeholder]="config.translations.filterPlaceholder"
            (keyup)="filterKeyUp()"
            [(ngModel)]="dataStateService.filterText">
     <span class="ng-dropdown-input-group-btn" *ngIf="dataStateService.filterText">
-      <button class="ng-dropdown-delete-button" type="button" (click)="clearFilter()">
-        <i class="zmdi zmdi-close"></i>
-      </button>
+      <button class="ng-dropdown-delete-button" type="button" (click)="clearFilter()"></button>
     </span>
   </div>
 </div>

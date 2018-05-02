@@ -5,7 +5,7 @@ import { DataTableConfig } from '../models/data-table-config.model';
 import { DataTableStorageMode } from '../models/data-table-storage-mode.enum';
 import { DataTableSortOrder } from '../models/data-table-sort-order.enum';
 import { DataTableSelectMode } from '../models/data-table-select-mode.model';
-import { DropdownMenuPosition, DropdownSelectMode } from '../../dropdown';
+import { DropdownMenuPosition, DropdownSelectMode } from '../../dropdown/dropdown.module';
 
 export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableConfig');
 
