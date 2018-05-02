@@ -38,7 +38,6 @@ Thumbs.db
 
 # log files
 yarn-error.log
-package-lock.json
 
 # Build artifacts
 dist
