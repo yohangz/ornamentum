@@ -14,7 +14,7 @@ import {
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 
-import { get } from 'lodash';
+import get from 'lodash-es/get';
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 

@@ -161,7 +161,8 @@ gulp.task('rollup-bundle', () => {
     'rxjs/add/operator/debounceTime': 'Rx.Observable.prototype',
     'rxjs/add/operator/take': 'Rx.Observable.prototype',
 
-    'lodash': '_'
+    'lodash-es/get': '_.get',
+    'lodash-es/orderBy': '_.orderBy'
   };
 
   const rollupBaseConfig = {
@@ -183,7 +184,7 @@ gulp.task('rollup-bundle', () => {
     external: Object.keys(globals),
     plugins: [
       rollupCommonjs({
-        include: ['node_modules/rxjs/**']
+        include: 'node_modules/**'
       }),
       rollupSourcemaps(),
       rollupNodeResolve({

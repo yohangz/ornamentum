@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { get } from 'lodash';
+import get from 'lodash-es/get';
 
 import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
 import { DataTableSelectMode } from '../../models/data-table-select-mode.model';

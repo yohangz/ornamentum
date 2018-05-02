@@ -16,7 +16,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subscription } from 'rxjs/Subscription';
 import { Observable } from 'rxjs/Observable';
 
-import { get } from 'lodash';
+import get from 'lodash-es/get';
 
 import { DataTableFilterValueExtractCallback } from '../../models/data-table-filter-value-extract-callback.model';
 import { DataTableStorageMode } from '../../models/data-table-storage-mode.enum';
