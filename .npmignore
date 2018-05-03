@@ -20,20 +20,29 @@ Desktop.ini
 
 # Temporary files
 .tmp
+stats
 
 # Library files
 src/
+e2e/
 
+# Project resources
 .angular-cli.json
+.babelrc
 .editorconfig
+.gitignore
+.npmignore
 .scss-lint.yml
-gulpfile
-karma.conf
-protractor.conf
+
+gulpfile.babel.js
+karma.conf.js
+protractor.conf.js
+
 tsconfig.doc.json
-tsconfig.esm.json
+tsconfig.lib.es5.json
+tsconfig.lib.es2015.json
+tsconfig.lib.json
 tsconfig.json
+
 tslint.json
-webpack-umd.config
 yarn.lock
-dist
