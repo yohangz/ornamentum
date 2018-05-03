@@ -1,6 +1,6 @@
 {
   "name": "ornamentum",
-  "version": "1.1.34",
+  "version": "1.1.35",
   "description": "Angular 2+ Data Table (Dev Inprogress)",
   "scripts": {
     "ng": "ng",
