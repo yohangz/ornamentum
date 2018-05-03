@@ -27,6 +27,7 @@
     "explorer": "npm run build:dev && npm run explorer:bundle",
     "preversion": "npm run build",
     "postversion": "git push && git push --tags && ngh --dir docs",
+    "prerelease": "npm run build",
     "release": "npm publish dist"
   },
   "repository": {
