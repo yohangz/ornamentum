@@ -25,9 +25,9 @@
     "build": "npm run build:lib && npm run build:docs",
     "explorer:bundle": "npx webpack-bundle-analyzer stats/stats.json",
     "explorer": "npm run build:dev && npm run explorer:bundle",
-    "prepublishOnly": "npm run build",
     "preversion": "npm run build",
-    "postversion": "git push && git push --tags && ngh --dir docs"
+    "postversion": "git push && git push --tags && ngh --dir docs",
+    "release": "npm publish dist"
   },
   "repository": {
     "type": "git",
