@@ -1,4 +1,4 @@
-import {DropdownComponent} from '../';
+import { DropdownComponent } from '../components/dropdown/dropdown.component';
 
 /**
  * Dropdown view property.

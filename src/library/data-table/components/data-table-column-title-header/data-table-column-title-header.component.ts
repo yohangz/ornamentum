@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { get } from 'lodash';
+import get from 'lodash-es/get';
 
 import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
 import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
@@ -8,7 +8,7 @@ import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
-import { DragAndDropService } from '../../../utility';
+import { DragAndDropService } from '../../../utility/utility.module';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';

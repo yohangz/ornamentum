@@ -8,7 +8,7 @@ import { DropdownMenuPosition } from '../../../dropdown/models/dropdown-menu-pos
 import { DataTableRow } from '../../models/data-table-row.model';
 import { DataTableFilterFieldMapperCallback } from '../../models/data-table-filter-field-mapper-callback.model';
 import { DataTableFilterExpressionCallback } from '../../models/data-table-filter-expression-callback.model';
-import { DropdownSelectMode } from '../../../dropdown';
+import { DropdownSelectMode } from '../../../dropdown/dropdown.module';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
@@ -358,9 +358,9 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   public getSortIconClass() {
     return {
-      'zmdi-sort-amount-asc': this.sortOrder === DataTableSortOrder.ASC,
-      'zmdi-sort-amount-desc': this.sortOrder === DataTableSortOrder.DESC,
-      'zmdi-format-line-spacing': this.sortOrder === undefined || this.sortOrder === DataTableSortOrder.NONE
+      'sort-asc': this.sortOrder === DataTableSortOrder.ASC,
+      'sort-dsc': this.sortOrder === DataTableSortOrder.DESC,
+      'sort-reset': this.sortOrder === undefined || this.sortOrder === DataTableSortOrder.NONE
     };
   }
 

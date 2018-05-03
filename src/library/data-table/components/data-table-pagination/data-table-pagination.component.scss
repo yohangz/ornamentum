@@ -36,7 +36,7 @@
 
     span {
       color: $data-table-pagination-results;
-      padding: 0 .5rem;
+      padding: 0 .2rem;
 
     }
   }
@@ -74,8 +74,6 @@
       @include display-flex;
       @include align-items(center);
       background-color: $data-table-header-background;
-      border: 1px solid $data-table-border;
-      border-right: 0;
       margin-bottom: 0;
       padding: .375rem .75rem;
       text-align: center;
@@ -115,8 +113,8 @@
         }
 
         .ng-data-table-input-group-addon {
+          border: 1px solid $data-table-border;
           border-left: 0;
-          border-right: 1px solid $data-table-border;
         }
 
         .ng-data-table-input {

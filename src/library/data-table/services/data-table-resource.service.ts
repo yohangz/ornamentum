@@ -5,8 +5,8 @@ import { Observable } from 'rxjs/Observable';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { Subscription } from 'rxjs/Subscription';
 
-import { orderBy } from 'lodash';
-import { get } from 'lodash';
+import orderBy from 'lodash-es/orderBy';
+import get from 'lodash-es/get';
 
 import { DataTableRequestParams } from '../models/data-table-request-params.model';
 import { DataTableQueryResult } from '../models/data-table-query-result.model';

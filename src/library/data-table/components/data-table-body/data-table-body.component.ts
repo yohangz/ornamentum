@@ -1,6 +1,6 @@
 import { Component, Input, TemplateRef } from '@angular/core';
 
-import { get } from 'lodash';
+import get from 'lodash-es/get';
 
 import { DataTableRow } from '../../models/data-table-row.model';
 import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
