@@ -1,14 +1,18 @@
-<h2>Features and Functionalities</h2>
+<div class="page-wrapper-inner-content">
+  <div class="side-menu">
+    <h4>Features and Functionalities</h4>
 
-<ul>
-  <li *ngFor="let usage of usages">
-    <a class="nav-link" routerLink="{{usage.routePath}}">
+    <ul>
+      <li *ngFor="let usage of usages">
+        <a class="nav-link" routerLink="{{usage.routePath}}">
             <span class="main-nav-label">
               <span class="menu-title">{{usage.title}}</span>
             </span>
-    </a></li>
-</ul>
+        </a></li>
+    </ul>
+  </div>
 
-<div>
-  <router-outlet></router-outlet>
+  <div class="main-pane">
+    <router-outlet></router-outlet>
+  </div>
 </div>

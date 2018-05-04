@@ -1,35 +1,40 @@
-<h2>Features and Functionalities</h2>
+<div class="page-wrapper-inner-content">
+  <div class="side-menu">
+    <h4>Features and Functionalities</h4>
 
-<label>Data Table Configuration</label>
-<ul>
-  <li *ngFor="let conf of tableConf">
-    <a class="nav-link" routerLink="{{conf.routePath}}">
-            <span class="main-nav-label">
-              <span class="menu-title">{{conf.title}}</span>
-            </span>
-    </a></li>
-</ul>
+    <label>Data Table Configuration</label>
+    <ul>
+      <li *ngFor="let conf of tableConf">
+        <a class="nav-link" routerLink="{{conf.routePath}}">
+              <span class="main-nav-label">
+                <span class="menu-title">{{conf.title}}</span>
+              </span>
+        </a></li>
+    </ul>
 
-<label>Data Table Column Configuration</label>
-<ul>
-  <li *ngFor="let conf of columnConf">
-    <a class="nav-link" routerLink="{{conf.routePath}}">
-            <span class="main-nav-label">
-              <span class="menu-title">{{conf.title}}</span>
-            </span>
-    </a></li>
-</ul>
+    <label>Data Table Column Configuration</label>
+    <ul>
+      <li *ngFor="let conf of columnConf">
+        <a class="nav-link" routerLink="{{conf.routePath}}">
+              <span class="main-nav-label">
+                <span class="menu-title">{{conf.title}}</span>
+              </span>
+        </a></li>
+    </ul>
 
-<label>Data Table Templates</label>
-<ul>
-  <li *ngFor="let template of templates">
-    <a class="nav-link" routerLink="{{template.routePath}}">
-            <span class="main-nav-label">
-              <span class="menu-title">{{template.title}}</span>
-            </span>
-    </a></li>
-</ul>
+    <label>Data Table Templates</label>
+    <ul>
+      <li *ngFor="let template of templates">
+        <a class="nav-link" routerLink="{{template.routePath}}">
+              <span class="main-nav-label">
+                <span class="menu-title">{{template.title}}</span>
+              </span>
+        </a></li>
+    </ul>
+  </div>
 
-<div>
-  <router-outlet></router-outlet>
+
+  <div class="main-pane">
+    <router-outlet></router-outlet>
+  </div>
 </div>

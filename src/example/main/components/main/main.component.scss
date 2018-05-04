@@ -1,104 +1,68 @@
-//@import '../../../../styles/variables';
-//@import '../../../../styles/mixins';
-//
-//:host-context {
-//
-//  .client-error-message {
-//
-//    @include color-theme {
-//      background: get-theme-variable('alert-error-color');
-//      color: get-theme-variable('alert-error-text-color');
-//    }
-//    bottom: 0;
-//    padding: .5rem;
-//    position: fixed;
-//
-//    a {
-//      @include color-theme {
-//        background: get-theme-variable('alert-error-color');
-//        color: get-theme-variable('alert-error-text-color');
-//      }
-//    }
-//
-//    i {
-//      @include font-size(1.2, 1.6);
-//      padding-right: .5rem;
-//    }
-//  }
-//
-//  .page-wrapper-content {
-//
-//    @include color-theme {
-//      background: get-theme-variable('page-content-background');
-//    }
-//  }
-//
-//  ::ng-deep {
-//
-//    .page-content {
-//      position: relative;
-//
-//      .page-content-left-pane {
-//        height: calc(100vh - 5.8rem);
-//        overflow-y: auto;
-//        padding: 1.4rem;
-//
-//        .footer-action-buttons {
-//
-//          @include color-theme {
-//            border-color: get-theme-variable('form-border-color');
-//          }
-//          @include justify-content(flex-end);
-//          border-top: .05rem solid;
-//          margin-top: 1rem;
-//          padding: 1rem;
-//          width: 100%;
-//        }
-//      }
-//
-//      .page-content-right-pane {
-//
-//        @include color-theme {
-//          background: get-theme-variable('right-pane-background');
-//        }
-//        @include box-shadow(-1px -1px 2px $box-shadow-color);
-//        @include font-size(.8, 1.4);
-//        @include transition (margin .3s ease);
-//        margin-right: -16rem;
-//        padding: 1.5rem;
-//        width: 16rem;
-//
-//        .right-pane-inner-content {
-//          position: fixed;
-//          top: 9rem;
-//          width: 13rem;
-//        }
-//
-//        h2 {
-//          @include font-size(1.2, 1.6);
-//          text-align: center;
-//          text-transform: uppercase;
-//        }
-//
-//        .right-pane-content {
-//          padding-top: .5rem;
-//        }
-//
-//        &.active {
-//          @include transition(all 1s ease);
-//          flex: 0 0 -16rem;
-//          margin: 0;
-//        }
-//      }
-//    }
-//  }
-//
-//  .footer {
-//
-//    @include color-theme {
-//      background: get-theme-variable('action-bar-background');
-//    }
-//    @include font-size(.7, 1.6);
-//    padding: 0 1.5rem;
-//  }
-//}
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+:host-context {
+  ::ng-deep {
+    .page-wrapper-inner-content{
+      @include display-flex;
+      @include justify-content(space-between);
+      font-family: $primary-font;
+
+      .side-menu {
+        background: $side-menu-background;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 1rem 1rem 5rem;
+        position: fixed;
+        width: 25vw;
+
+        h4 {
+          margin-bottom: 0;
+        }
+
+        label {
+          @include font-size(1, 1.4);
+          color: $side-menu-label-text;
+        }
+
+        ul {
+          li {
+            @include font-size(1, 1);
+            list-style-type: none;
+
+            a {
+              @include font-size(.9, 1);
+              color: $side-menu-link-color;
+              position: relative;
+
+              &::before {
+                color: $side-menu-label-text;
+                content: "\f2f5 ";
+                font-family: 'Material-Design-Iconic-Font';
+                height: 1rem;
+                left: -.3rem;
+                pointer-events: none;
+                position: absolute;
+                width: 1rem;
+              }
+            }
+          }
+        }
+      }
+
+      .main-pane {
+        padding: 1rem 1rem 1rem 28vw;
+
+        h1 {
+          @include font-size(1.6, 1.4);
+        }
+
+        h2 {
+          @include font-size(1.3, 1.4);
+          color: $side-menu-label-text;
+        }
+      }
+    }
+  }
+}
+
+

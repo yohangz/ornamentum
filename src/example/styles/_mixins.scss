@@ -1,0 +1,37 @@
+@mixin clearfix {
+  &::before,
+  &::after {
+    content: '';
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+
+// font-size use em as a unit and px as a fallback
+@mixin font-size($size: 1.6, $line: $size * 1.5) {
+  font-size: ($size * 10) + px;
+  font-size: $size + rem;
+  line-height: ($line * 10) + px;
+  line-height: $line + rem;
+}
+
+
+@mixin breakpoint($point) {
+  @if $point == max640 {
+    @media only screen and (max-width: 640px) {
+      @content;
+    }
+  } @else if $point == max767 {
+    @media only screen and (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == max480 {
+    @media only screen and (max-width: 1199px) {
+      @content;
+    }
+  }
+}
+
