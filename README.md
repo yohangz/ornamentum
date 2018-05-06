@@ -1,3 +1,5 @@
-#UI Grid
+#Ornamentum
 
-Development Inprogress
+Angular (NGX) component kit
+
+
