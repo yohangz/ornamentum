@@ -89,6 +89,7 @@
     "awesome-typescript-loader": "^3.4.0",
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "bootstrap": "^4.1.1",
     "codelyzer": "^4.0.1",
     "compass-mixins": "^0.12.10",
     "core-js": "^2.4.1",
