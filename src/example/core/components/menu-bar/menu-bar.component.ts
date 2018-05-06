@@ -1,8 +1,5 @@
-import {
-  Component,
-  Input
-} from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { Router, UrlSegment } from '@angular/router';
 
 import { MenuItem } from '../../models';
 
@@ -37,5 +34,26 @@ export class MenuBarComponent {
     });
 
     this.router.navigateByUrl(menuItemPath.map(menuItem => menuItem.routePath).join('/'));
+  }
+
+  public initMenuItemActiveState(segments: UrlSegment[], menuItems: MenuItem[]): void {
+    if (segments.length && menuItems.length) {
+      const segment = segments.splice(0, 1)[0];
+      const menuItem = menuItems.find((item: MenuItem) => {
+        return item.routePath === segment.path;
+      });
+
+      if (menuItem) {
+        menuItem.active = true;
+      }
+    }
+  }
+
+  public ngAfterContentInit(): void {
+    const urlPath = this.router.parseUrl(this.router.url);
+    if (urlPath.root.children.primary) {
+      const segmentGroup = urlPath.root.children.primary.segments;
+      this.initMenuItemActiveState([...segmentGroup], this.menuItems);
+    }
   }
 }
