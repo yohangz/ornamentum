@@ -23,22 +23,25 @@
   </ng-template>
 </ng-dropdown>
 
+<h2>Installation</h2>
+<ol>
+  <li>Install the package
+    <pre><code>{{install_code}}</code></pre>
+  </li>
 
-<!--<ng-dropdown-->
-  <!--[selectMode]="DropdownSelectMode.SINGLE"-->
-  <!--[filterable]="true"-->
-  <!--[showClearSelectionButton]="true"-->
-  <!--[loadOnScroll]="false"-->
-  <!--[loadViewDistance]="0"-->
-  <!--[showSelectedOptionRemoveButton]="true"-->
-  <!--[onDataBind]="onDataBind"-->
+  <li>As the second step, import DropdownModule into your application root module
+    <pre><code>{{import_code}}</code></pre>
+  </li>
+</ol>
 
-  <!--(selectChange)="onSelectChange($event)">-->
-  <!--<ng-template #ngDropdownLoadingSpinner>-->
-    <!--<div>LL</div>-->
-  <!--</ng-template>-->
-<!--</ng-dropdown>-->
+<h2>Dependencies</h2>
+<ul>
+  <li>@angular/common</li>
+  <li>@angular/core</li>
+  <li>@angular/forms</li>
+  <li>lodash-es</li>
+  <li>rxjs</li>
+</ul>
 
-<!--[(ngModel)]="selected"-->
-
-<!--[setFirstOptionSelected]="true"-->
+<h2>Suggested Links</h2>
+<a [href]="'src/docs/api-docs/modules/DropdownModule.html'" target="_blank">API Doc for DropdownModule</a>
