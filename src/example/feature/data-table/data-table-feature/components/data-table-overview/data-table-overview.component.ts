@@ -16,6 +16,25 @@ export class DataTableOverviewComponent {
 
   public items: Observable<any>;
 
+  public install_code = ` 
+   npm install ornamentum`;
+
+  public import_code = ` 
+   import { NgModule } from '@angular/core';
+   import { BrowserModule } from '@angular/platform-browser';
+      
+   import { DataTableModule } from 'ornamentum';
+      
+   import { AppComponent } from './app.component';
+
+   @NgModule({
+     bootstrap: [AppComponent],
+     declarations: [AppComponent],
+     imports: [BrowserModule, DataTableModule.forRoot()]
+    })
+    export class AppModule {
+    }`;
+
   constructor() {
     this.items = Observable.of(sampleData);
   }
