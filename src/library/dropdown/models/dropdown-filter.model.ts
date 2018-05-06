@@ -1,7 +1,7 @@
 /**
  * Dropdown filter.
  */
-export class DropdownFilter {
+export interface DropdownFilter {
   /**
    * Filter key.
    */

@@ -5,7 +5,7 @@ import { DropdownSelectMode } from './dropdown-select-mode.enum';
 /**
  * Dropdown configuration.
  */
-export class DropdownConfig {
+export interface DropdownConfig {
   /**
    * Dropdown base display text translations.
    * @type {DropdownTranslations}
