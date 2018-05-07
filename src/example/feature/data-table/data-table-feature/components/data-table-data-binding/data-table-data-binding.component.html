@@ -1,12 +1,23 @@
 <h1>Data Table Data Binding</h1>
+<ul>
+  <li>The main objective of data table is to show data in tabular format.</li>
+  <li>In order to show data we need to bind the data to the data table. There are two types of bindings can be used,
+    when binding data to the ornamentum data table.
+    <ul>
+      <li>Static Data Binding</li>
+      <li>Dynamic Data Biding</li>
+    </ul>
+  </li>
+  <li>Depending on the requirement users can select the best data binding method.</li>
+</ul>
 
 <h2>Static Data Binding</h2>
-<p>[items]="items"</p>
+<p>In static data binding, source data should be passed via the <b>items</b> attribute => [items]="data"</p>
 
 <ng-data-table
   [title]="'Station Details'"
   [selectTrackBy]="'id'"
-  [items]="items"
+  [items]="data"
   [pageable]="false"
   [showHeader]="true"
   [showRefreshButton]="false"
@@ -36,7 +47,7 @@
 </ng-data-table>
 
 <h2>Dynamic Data Biding</h2>
-<p>[dataSource]="dataSource"</p>
+<p>In dynamic data binding, data should be passed via the <b>dataSource</b> attribute => [dataSource]="source"</p>
 
 <ng-data-table
   [title]="'Station Details'"
@@ -69,3 +80,8 @@
     [title]="'Address'">
   </ng-data-table-column>
 </ng-data-table>
+
+<br/>
+
+<h2>Suggested Links</h2>
+<a [href]="''" target="_blank">API Doc for Data Binding</a>

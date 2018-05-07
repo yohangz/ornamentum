@@ -15,10 +15,10 @@ export class DataTableDataBindingComponent {
   public DataTableSelectMode = DataTableSelectMode;
 
   public dataSource: Observable<any>;
-  public items: any[];
+  public data: any[];
 
   constructor() {
     this.dataSource = Observable.of(sampleData);
-    this.items = sampleData;
+    this.data = sampleData;
   }
 }
