@@ -1,27 +1,96 @@
 <h1>Data Table Filtering</h1>
 
-<h2>Filter Dropdown</h2>
 <ul>
-  <li>[filterable]="true or false"</li>
-  <li>[showDropdownFilter]="true or false""</li>
-  <li>[dropdownFilterMenuPosition]="MenuPosition.BOTTOM_RIGHT" | "MenuPosition.BOTTOM_LEFT" | "MenuPosition.TOP_LEFT" |
-    "MenuPosition.TOP_RIGHT"
+  <li>Filtering lets users to see the data which belongs to a specified criteria.</li>
+  <li>There are multiple list of configurations are available when working with data table filtering.</li>
+  <li>To Enable filtering, it is required to set the following property into true in the required columns.</li>
+  <h5>[filterable]="true"</h5>
+  <li>Note that, The default value for filterable property is <b>false</b>. When there is no value or false value is
+    assigned to the filterable property, both dropdown & text box filtering will be off for the specified columns.
   </li>
-  <li>[dropDownFilterShowOptionSelectCheckbox]="true or false"</li>
-  <li>[dropdownFilterCloseMenuOnSelect]="true or false"</li>
-  <li>[dropdownFilterShowSelectAll]="true or false"</li>
-  <li>[dropdownFilterSelectMode]="DropdownSelectMode.MULTI" | DropdownSelectMode.SINGLE" | DropdownSelectMode.SINGLE_TOGGLE"</li>
-  <li>[dropdownFilterWrapDisplaySelectLimit]="5 (limit in number)"</li>
-  <li>[dropdownFilterShowSelectedOptionRemoveButton]="true or false"</li>
-  <li>[dropdownFilterGroupByField]="group field name"</li>
-  <li>[dropdownFilterMenuHeight]="200 (height in number)"</li>
-  <li>[dropdownFilterMenuWidth]="200 (width in number)"</li>
-  <li>[dropdownFilterMultiSelectOptionMaxWidth]="300 (max width in number)"</li>
-  <li>[dropdownFilterSearchable]="true or false"</li>
-  <li>[dropdownFilterSearchDebounce]="true or false"</li>
-  <li>[dropdownFilterSearchDebounceTime]="100 (time in number)"</li>
-  <li>[dropdownFilterShowClearSelectionButton]="true or false"</li>
-  <li>[filter]="Column value filter" => In here [{{ '{' }} key: "In Service", value: "In Service" {{ '}' }}] filter is applied for the status value column</li>
+</ul>
+
+<h2>Filter Dropdown</h2>
+<p>The following content shows the available configurations when using column dropdown filter.</p>
+
+<ul class="main-ul">
+  <li><b>[showDropdownFilter]="true or false"</b> => Enable/disable table column dropdown filter. The default value
+    for this config is false.
+  </li>
+  <li><b>[dropdownFilterMenuPosition]="MenuPosition.BOTTOM_RIGHT" | "MenuPosition.BOTTOM_LEFT" | "MenuPosition.TOP_LEFT"
+    | "MenuPosition.TOP_RIGHT"</b> => Enables users to configure the dropdown filter position. Note that, there are
+    4 positions users can configure to align the dropdown. The default value for this config is
+    MenuPosition.BOTTOM_LEFT. According to the following example,
+
+    <ul class="sub-ul">
+      <li>Station Name column filter has the position of BOTTOM_RIGHT</li>
+      <li>Status Value column filter has the position of BOTTOM_LEFT</li>
+      <li>Available Bikes column filter has the position of TOP_LEFT</li>
+      <li>Address column filter has the position of TOP_RIGHT</li>
+    </ul>
+
+  </li>
+  <li><b>[dropDownFilterShowOptionSelectCheckbox]="true or false"</b> => Show/hide dropdown filter's option selection
+    check boxes. If value is not specified check boxes won't be shown.
+  </li>
+  <li><b>[dropdownFilterCloseMenuOnSelect]="true or false"</b> => Enable/disable dropdown filter close after an
+    option is selected. The default value for this config is true. According to the following example,
+
+    <ul class="sub-ul">
+      <li>Station Name column filter has <b>false</b> value for this config</li>
+      <li>Station Name column filter has <b>true</b> value for this config</li>
+    </ul>
+
+  </li>
+  <li><b>[dropdownFilterShowSelectAll]="true or false"</b> => Show/hide dropdown filter all option selection check box.
+    If value is not specified select all check box won't be shown.
+  </li>
+  <li><b>[dropdownFilterSelectMode]="DropdownSelectMode.MULTI" | DropdownSelectMode.SINGLE" |
+    DropdownSelectMode.SINGLE_TOGGLE"</b> => Enables users to configure the dropdown filter option selection type.
+    The default value for this config is DropdownSelectMode.MULTI. There are 3 types of selection types available in
+    ornamentum data table dropdown filter.
+
+    <ul class="sub-ul">
+      <li>MULTI mode: Enable multiple option selection</li>
+      <li>SINGLE mode: Enable single option selection</li>
+      <li>SINGLE_TOGGLE mode: Enable single option selection with toggle</li>
+    </ul>
+
+  </li>
+  <li><b>[dropdownFilterWrapDisplaySelectLimit]="5 (limit in number)"</b> => Used to configure the number of options to
+    be shown in the dropdown at a time. The default value for this config is 1.
+  </li>
+  <li><b>[dropdownFilterShowSelectedOptionRemoveButton]="true or false"</b> => Used to show/hide the filtered option
+    removal from the dropdown. The default value for this config is false.
+  </li>
+  <li><b>[dropdownFilterGroupByField]="group field name"</b> => Enable dropdown filter options grouping under a
+    specified name. If the group name is not specified all the values are shown as a single group.
+  </li>
+  <li><b>[dropdownFilterMenuHeight]="200 (height in number)"</b> => Used to specify the column dropdown filter menu
+    height. The default value for this config is 250.
+  </li>
+  <li><b>[dropdownFilterMenuWidth]="200 (width in number)"</b> => Used to specify the column dropdown filter menu
+    width. The default value for this config is 320.
+  </li>
+  <li><b>[dropdownFilterMultiSelectOptionMaxWidth]="300 (max width in number)"</b> => Used to specify the multiple
+    option selection dropdown option max width. The default value for this config is 135.
+  </li>
+  <li><b>[dropdownFilterSearchable]="true or false"</b> => Used to show/hide dropdown filter search box. The default
+    value for this config is true.
+  </li>
+  <li><b>[dropdownFilterSearchDebounce]="true or false"</b> => Used to enable/disable dropdown filter debounce. The
+    default value for this config is true.
+  </li>
+  <li><b>[dropdownFilterSearchDebounceTime]="100 (time in number)"</b> => Used to specify the dropdown filter search
+    debounce time. The default value for this config is 500.
+  </li>
+  <li><b>[dropdownFilterShowClearSelectionButton]="true or false"</b> => Used to show/hide drop down filter selection
+    clear button. The default value for this config is true.
+  </li>
+  <li><b>[filter]="Column value filter"</b> => Used to provide a filter to see the values matched for specified
+    criteria. In here [{{ '{' }} key: "In Service", value: "In Service" {{ '}' }}] filter is applied for the Status
+    Value column.
+  </li>
 </ul>
 
 <ng-data-table
@@ -79,10 +148,15 @@
 </ng-data-table>
 
 <h2>Filter Text Box</h2>
+<p>The following content shows the available configurations when using column search filter text box.</p>
+
 <ul>
-  <li>[filterable]="true or false"</li>
-  <li>[filterPlaceholder]="Filter place holder text to display"</li>
-  <li>[showFilterClearButton]="true or false"</li>
+  <li><b>[filterPlaceholder]="Filter place holder text to display"</b> => Used to specify placeholder name for search
+    text box. If value is npt specified, filter text value is shown as empty.
+  </li>
+  <li><b>[showFilterClearButton]="true or false"</b> => Used to show/hide text box search filter clear button. If
+    default value for this config is true.
+  </li>
 </ul>
 
 <ng-data-table
@@ -131,3 +205,6 @@
     [showFilterClearButton]="true">
   </ng-data-table-column>
 </ng-data-table>
+
+<h2>Suggested Links</h2>
+<a [href]="''" target="_blank">API Doc for Data Filtering</a>
