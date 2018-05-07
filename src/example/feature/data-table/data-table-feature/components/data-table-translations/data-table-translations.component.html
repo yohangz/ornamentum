@@ -1,13 +1,33 @@
 <h1>Data Table Translations</h1>
 
-<b>[translations]="DataTableTranslations"</b>
+<ul>
+  <li>Data table translations will allow users to configure the basic settings.</li>
+  <li>Those translations are required to passed via the <b>translations</b> attribute as follows.
+    <h5>[translations]="DataTableTranslations"</h5>
+  </li>
+  <li>Going through the following, shows the configurations can be passed via the translations.
+    <ul>
+      <li>noDataMessageHeader</li>
+      <li>noDataMessageBody</li>
+      <li>paginationLimit</li>
+      <li>paginationRange</li>
+    </ul>
+  </li>
+  <li>Let's see how these can be configured in different scenarios.</li>
+</ul>
 
 <h2>Data Table Translations for No Data Scenario</h2>
-<p>The default template will be shown when data is not available.</p>
+<p>The default template will be shown when data is not available. In that scenario, users can customized the message
+  needs to show using this translations property.</p>
 
 <ul>
-  <li>noDataMessageBody: "Customized No Data Message Body"</li>
-  <li>noDataMessageHeader: "Customized No Data Message Header"</li>
+  <li><b>noDataMessageBody: "Customized No Data Message Body"</b> => This configuration is used to set the message
+    header name on the message to be shown in the table body when there are no data to display. The default value for
+    this config is 'No data to display. Added data will appear here.'
+  </li>
+  <li><b>noDataMessageHeader: "Customized No Data Message Header"</b> => This configuration is used to set the message
+    to be shown in the table body when there are no data to display.The default value for this config is 'Whoops!'.
+  </li>
 </ul>
 
 <ng-data-table
@@ -44,10 +64,15 @@
 </ng-data-table>
 
 <h2>Data Table Translations for Pagination</h2>
+<p>Also this translations property can be used to customize the pagination naming. The following properties shows what
+  are those.</p>
 
 <ul>
-  <li>paginationLimit: "This is the message for paginationLimit"</li>
-  <li>paginationRange: "This is the message for paginationRange"</li>
+  <li><b>paginationLimit: "This is the message for paginationLimit"</b> => This is used to customize the pagination
+    limit naming. The default value for this config is 'Limit'.
+  </li>
+  <li><b>paginationRange: "This is the message for paginationRange"</b> => This is used to customize the pagination
+    range naming. The default value for this config is 'Results'.</li>
 </ul>
 
 <ng-data-table
@@ -82,3 +107,6 @@
     [title]="'Address'">
   </ng-data-table-column>
 </ng-data-table>
+
+<h2>Suggested Links</h2>
+<a [href]="''" target="_blank">API Doc for Data Translations</a>
