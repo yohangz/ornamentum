@@ -1,8 +1,26 @@
 <h1>Data Table Data Persistence</h1>
 
 <ul>
-  <li>[id]="state saving key name in the browser storage"</li>
-  <li>[persistTableState]="true or false"</li>
+  <li>Data enables users to persist data they are doing state transitions. As an example navigating through the
+    routes.
+  </li>
+  <li>So in here when users do search results, filtering, sorting etc..</li>
+  <li>The updated state of the data table will be stored in the users's browser storage.</li>
+  <li>To enable data persistence users have to set the <b>persistTableState</b> property in to true. The default value
+    for this config is false.
+  </li>
+  <li>There are two types of storage modes can be configured when using this data table. Those are,
+    <ul>
+      <li>Local Storage</li>
+      <li>Session Storage</li>
+    </ul>
+    In here, we are using session storage as the default storage mode. The following configurations shows what are the
+    other things we need to use when persisting data.
+    <ul>
+      <li>[storageMode]="DataTableStorageMode.SESSION" or "DataTableStorageMode.LOCAL"</li>
+      <li>[id]="state saving key name in the browser storage"</li>
+    </ul>
+  </li>
 </ul>
 
 <ng-data-table
@@ -15,7 +33,7 @@
   [showRefreshButton]="false"
   [showIndexColumn]="true"
   [showColumnSelector]="false"
-  [persistTableState]="false">
+  [persistTableState]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
@@ -48,3 +66,6 @@
     [filterable]="true">
   </ng-data-table-column>
 </ng-data-table>
+
+<h2>Suggested Links</h2>
+<a [href]="''" target="_blank">API Doc for Data Persistence</a>
