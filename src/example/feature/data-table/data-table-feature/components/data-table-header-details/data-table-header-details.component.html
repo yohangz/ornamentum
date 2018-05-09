@@ -1,9 +1,25 @@
 <h1>Data Table Header Details</h1>
 
 <ul>
-  <li>[showHeader]="true or false"</li>
-  <li>[showRefreshButton]="true or false"</li>
-  <li>[showColumnSelector]="true or false"</li>
+  <li>Showing header details along with the header menu will helps users to get some understanding about what kind of
+    data is shown.
+  </li>
+  <li>To show header in the data table users needs to set the <b>showHeader</b> property in to true. The default value
+    for this is false.
+  </li>
+  <li>In the header, it shows title of the table, available columns and data refresh button. Those can be configured as
+    follows.
+    <ul>
+      <li><b>[title]="true or false"</b> => Specify the table data title. The default value for this config is ''.</li>
+      <li><b>[showRefreshButton]="true or false"</b> => Show/hide refresh button. The default value for this config is
+        false.
+      </li>
+      <li><b>[showColumnSelector]="true or false"</b> => Show/hide the button to trigger the column selection menu. The
+        default
+        value for this config is false.
+      </li>
+    </ul>
+  </li>
 </ul>
 
 <ng-data-table
@@ -43,3 +59,6 @@
     [resizable]="true">
   </ng-data-table-column>
 </ng-data-table>
+
+<h2>Suggested Links</h2>
+<a [href]="''" target="_blank">API Doc for Data Table Header</a>
