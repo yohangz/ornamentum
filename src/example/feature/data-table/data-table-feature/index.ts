@@ -10,7 +10,8 @@ import {
   DataTableSubstituteRowsComponent,
   DataTableLimitComponent,
   DataTableResponsiveConfComponent,
-  DataTableDataBindingComponent,
+  DataTableServerSideDataBindingComponent,
+  DataTableClientSideDataBindingComponent,
   DataTableLoadingSpinnerComponent,
   DataTableEventsComponent,
   DataTableRowExpandTemplateComponent,
@@ -22,7 +23,8 @@ import { DataStorageService } from './services/data-storage.service';
 // Components
 export const COMPONENTS = [
   DataTableFilteringComponent,
-  DataTableDataBindingComponent,
+  DataTableServerSideDataBindingComponent,
+  DataTableClientSideDataBindingComponent,
   DataTableOverviewComponent,
   DataTableSortingComponent,
   DataTableResizableComponent,

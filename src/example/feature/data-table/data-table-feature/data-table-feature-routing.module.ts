@@ -13,7 +13,8 @@ import {
   DataTableSubstituteRowsComponent,
   DataTableLimitComponent,
   DataTableResponsiveConfComponent,
-  DataTableDataBindingComponent,
+  DataTableClientSideDataBindingComponent,
+  DataTableServerSideDataBindingComponent,
   DataTableLoadingSpinnerComponent,
   DataTableEventsComponent,
   DataTableCellTemplateComponent,
@@ -35,8 +36,15 @@ const dataTableFeatureRoutes: Routes = [
     path: 'overview'
   },
   {
-    component: DataTableDataBindingComponent,
-    path: 'data-binding'
+    component: DataTableClientSideDataBindingComponent,
+    path: 'client-side-data-binding'
+  },
+  {
+    component: DataTableServerSideDataBindingComponent,
+    path: 'server-side-data-binding'
+  },
+  {
+    path: 'real-time-data-binding'
   },
   {
     component: DataTablePagingComponent,
@@ -67,7 +75,6 @@ const dataTableFeatureRoutes: Routes = [
     path: 'responsive-configuration'
   },
   {
-    // component: DataTableOverviewComponent,
     path: 'grouping'
   },
   {

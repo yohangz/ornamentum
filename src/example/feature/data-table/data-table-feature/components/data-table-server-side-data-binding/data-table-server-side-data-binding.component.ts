@@ -7,18 +7,16 @@ import { Observable } from 'rxjs/Observable';
 import { sampleData } from '../../data/data-table-example';
 
 @Component({
-  selector: 'app-data-table-data-binding-component',
-  templateUrl: './data-table-data-binding.component.html',
-  styleUrls: ['./data-table-data-binding.component.scss']
+  selector: 'app-data-table-server-side-data-binding-component',
+  templateUrl: './data-table-server-side-data-binding.component.html',
+  styleUrls: ['./data-table-server-side-data-binding.component.scss']
 })
-export class DataTableDataBindingComponent {
+export class DataTableServerSideDataBindingComponent {
   public DataTableSelectMode = DataTableSelectMode;
 
   public dataSource: Observable<any>;
-  public data: any[];
 
   constructor() {
     this.dataSource = Observable.of(sampleData);
-    this.data = sampleData;
   }
 }

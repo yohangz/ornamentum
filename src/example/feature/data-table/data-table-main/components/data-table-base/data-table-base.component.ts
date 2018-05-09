@@ -13,8 +13,16 @@ export class DataTableBaseComponent {
       title: 'Overview',
     },
     {
-      routePath: 'data-binding',
-      title: 'Data Binding',
+      routePath: 'client-side-data-binding',
+      title: 'Client Side Data Binding',
+    },
+    {
+      routePath: 'server-side-data-binding',
+      title: 'Server Side Data Binding',
+    },
+    {
+      routePath: 'real-time-data-binding',
+      title: 'Real Time Data Binding',
     },
     {
       routePath: 'paging',
