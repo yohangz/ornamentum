@@ -1,6 +1,7 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 :host-context {
+
   ::ng-deep {
     .page-wrapper-inner-content{
       @include display-flex;
@@ -8,12 +9,14 @@
       font-family: $primary-font;
 
       .side-menu {
+        @include box-shadow(1px 1px 3px #ccc);
         background: $side-menu-background;
         height: 100vh;
         overflow-y: auto;
         padding: 1rem 1rem 5rem;
         position: fixed;
         width: 25vw;
+        z-index: 10000;
 
         h4 {
           margin-bottom: 0;
@@ -36,8 +39,7 @@
 
               &::before {
                 color: $side-menu-label-text;
-                content: "\f2f5 ";
-                font-family: 'Material-Design-Iconic-Font';
+                content: ">";
                 height: 1rem;
                 left: -.3rem;
                 pointer-events: none;

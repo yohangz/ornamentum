@@ -17,6 +17,25 @@ body {
   display: none;
 }
 
+::-webkit-scrollbar-track {
+  background-color: #ccc;
+}
+
+::-webkit-scrollbar {
+  background-color: #2c2c2c;
+  height: 10px;
+  width: 10px;
+
+}
+
+::-webkit-scrollbar-thumb {
+  @include border-radius(.3rem);
+  background-color: #2c2c2c;
+  border: .15rem solid;
+  border-color: #ccc;
+  opacity: .5;
+}
+
 
 
 

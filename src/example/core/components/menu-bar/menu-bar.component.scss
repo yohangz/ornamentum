@@ -4,12 +4,14 @@
 :host-context {
 
   .navbar {
+    @include box-shadow(1px 2px 3px #ccc);
     background: $nav-bar-background;
     color: $primary-text-color;
     font-family: $primary-font;
 
     .app-name-lg {
       color: $side-menu-link-color;
+      font-weight: 700;
     }
   }
 
