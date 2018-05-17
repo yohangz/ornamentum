@@ -18,23 +18,17 @@ Desktop.ini
 # Mac
 .DS_Store
 
-# Temporary files
-.tmp
-stats
-
 # Library files
 src/
 e2e/
 
 # Project resources
-.angular-cli.json
-.babelrc
+angular.json
 .editorconfig
 .gitignore
 .npmignore
 .scss-lint.yml
 
-gulpfile.babel.js
 karma.conf.js
 protractor.conf.js
 

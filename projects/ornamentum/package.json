@@ -1,0 +1,12 @@
+{
+  "name": "ornamentum",
+  "version": "1.1.35",
+  "peerDependencies": {
+    "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/compiler": "^6.0.0-rc.0 || ^6.0.0",
+    "@angular/forms": "^6.0.0-rc.0 || ^6.0.0",
+    "lodash-es": "^4.17.10",
+    "rxjs": "^6.0.0"
+  }
+}

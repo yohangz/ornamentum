@@ -1,3 +1,15 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+/lib
+/stats
+
+# dependencies
+/node_modules
+
 # IDEs and editors
 /.idea
 .project
@@ -20,13 +32,9 @@
 /coverage
 /libpeerconnection.log
 npm-debug.log
+yarn-error.log
 testem.log
 /typings
-/node_modules
-
-# e2e
-/e2e/*.js
-/e2e/*.map
 
 # System Files
 .DS_Store
@@ -35,11 +43,3 @@ Thumbs.db
 # Temporary files
 /docs
 /.tmp
-
-# log files
-yarn-error.log
-
-# Build artifacts
-dist
-lib
-stats
