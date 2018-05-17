@@ -1,0 +1,14 @@
+<div class="ng-dropdown-menu-wrapper"
+     [class.ng-dropdown-item-list]="!this.config.filterable"
+     [style.width]="config.menuWidth | px"
+     [style.height]="config.menuHeight | px"
+     [style.right]="positionRight()"
+     [style.bottom]="positionBottom()"
+     (click)="$event.stopPropagation()">
+  <div class="ng-dropdown-filter-wrapper" *ngIf="config.filterable">
+    <ng-dropdown-filter></ng-dropdown-filter>
+  </div>
+  <div class="ng-dropdown-item-container-wrapper" (scroll)="config.loadOnScroll ? scrollEvent.next($event) : null">
+    <ng-dropdown-options></ng-dropdown-options>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+<col *ngIf="config.expandableRows" [style.width]="config.expanderColumnWidth | px">
+<col *ngIf="config.showIndexColumn" [style.width]="config.indexColumnWidth | px">
+<col *ngIf="config.showRowSelectCheckboxColumn" [style.width]="config.selectionColumnWidth | px">
+<ng-container *ngFor="let column of columns">
+  <col [style.width]="column.width | px" *ngIf="column.visible">
+</ng-container>

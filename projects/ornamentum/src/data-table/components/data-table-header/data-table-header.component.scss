@@ -1,0 +1,62 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+:host-context {
+
+  %table-header-icon {
+    top: .7em;
+    content: '';
+    cursor: pointer;
+    height: 1.7em;
+    position: absolute;
+    width: 1.7em;
+  }
+
+  .ng-data-table-top-header {
+    @include display-flex;
+    @include justify-content(space-between);
+    @include font-size(.8, 1.4);
+    border-bottom: .05rem solid $data-table-header-border;
+    min-height: 2rem;
+    padding: 0 .5rem 0 1rem;
+
+    .ng-data-table-title {
+      @include font-size(1, 1.8);
+      font-weight: 700;
+      margin: .4rem 0 0;
+    }
+
+    .ng-data-table-action-button-container {
+      position: relative;
+
+      .ng-data-table-action-button {
+        border: 0;
+
+        &.ng-data-table-refresh-button {
+          @extend %table-header-icon;
+          background: transparent url(../../../styles/images/refresh.svg) no-repeat;
+          background-size: contain;
+          right: 0;
+        }
+
+        &.ng-data-table-column-selector-button {
+          @extend %table-header-icon;
+          background: transparent url(../../../styles/images/list-view.svg) no-repeat;
+          background-size: contain;
+          right: 2.5em;
+        }
+
+        &:focus,
+        &:visited {
+          outline: none;
+        }
+
+      }
+    }
+  }
+
+  .ng-data-table-column-selector-fixed-column {
+    font-style: italic;
+    font-weight: 600;
+  }
+}

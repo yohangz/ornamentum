@@ -1,0 +1,17 @@
+#########################
+## Sass Lint File
+#########################
+# Linter Options
+
+files:
+  include: 'projects/ornamentum/**/*.scss'
+  ignore: 'node_modules/src/**/*'
+
+rules:
+
+  no-duplicate-properties:
+    - 0
+
+  nesting-depth:
+    - 1
+    - max-depth: 5

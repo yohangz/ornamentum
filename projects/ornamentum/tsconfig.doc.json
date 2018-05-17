@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node"
+  },
+  "include": [
+    "projects/ornamentum/src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "e2e",
+    ".tmp"
+  ]
+}

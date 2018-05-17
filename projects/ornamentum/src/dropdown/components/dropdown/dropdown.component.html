@@ -1,0 +1,38 @@
+<div #dropdownElement class="ng-dropdown" (clickOutside)="closeDropdown()">
+  <div class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [class.disabled]="dataStateService.disabled">
+    <ng-container *ngIf="config.selectMode === DropdownSelectMode.MULTI">
+      <ng-container *ngIf="!wrapSelectedOptions">
+         <span class="ng-dropdown-selected-value" *ngFor="let item of dataStateService.selectedOptions; let index = index"
+               [style.max-width]="config.multiSelectOptionMaxWidth | px"
+               [class.ng-dropdown-option-close-enabled]="config.showSelectedOptionRemoveButton">
+          {{ config.getDisplayText(item) }}
+           <i class="ng-dropdown-remove-selected-value" *ngIf="config.showSelectedOptionRemoveButton"
+              (click)="onSelectOptionRemove($event, index)"></i>
+        </span>
+      </ng-container>
+      <span class="ng-dropdown-selected-item" *ngIf="wrapSelectedOptions">
+        {{ wrappedSelectedOptions }}
+      </span>
+      <span class="ng-dropdown-selected-placeholder" *ngIf="!dataStateService.selectedOptions.length">
+        {{ config.translations.selectPlaceholder }}
+      </span>
+    </ng-container>
+    <ng-container *ngIf="config.selectMode !== DropdownSelectMode.MULTI">
+      <span class="ng-dropdown-selected-item" *ngIf="dataStateService.selectedOption">
+        {{ config.getDisplayText(dataStateService.selectedOption) }}
+      </span>
+      <span class="ng-dropdown-selected-placeholder" *ngIf="!dataStateService.selectedOption">
+        {{ config.translations.selectPlaceholder }}
+      </span>
+    </ng-container>
+    <span class="ng-dropdown-down-arrow" *ngIf="!dataStateService.dataLoading"></span>
+    <span class="ng-dropdown-loading" [hidden]="!dataStateService.dataLoading">
+      <div class="ng-dropdown-loading-animation" *ngIf="!loadingSpinnerTemplate"></div>
+      <div *ngIf="loadingSpinnerTemplate" [ngTemplateOutlet]="loadingSpinnerTemplate">
+      </div>
+    </span>
+ </div>
+  <span class="ng-dropdown-input-group-btn" [hidden]="!hasSelectedItems" *ngIf="config.showClearSelectionButton">
+      <button class="ng-dropdown-delete-button" type="button" (click)="clearSelectedOptions($event)"></button>
+  </span>
+</div>

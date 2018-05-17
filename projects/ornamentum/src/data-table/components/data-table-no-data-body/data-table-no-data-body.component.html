@@ -1,0 +1,6 @@
+<div class="ng-data-table-no-records-message" *ngIf="showDefaultNoDataTemplate">
+  <h1>{{config.translations.noDataMessageHeader}}</h1>
+  <h2>{{config.translations.noDataMessageBody}}</h2>
+  <button (click)="resetFilters()">Reload Data</button>
+</div>
+<ng-template *ngIf="noRecordsTemplate" [ngTemplateOutlet]="noRecordsTemplate"></ng-template>

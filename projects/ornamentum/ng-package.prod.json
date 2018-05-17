@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/ornamentum",
+  "deleteDestPath": true,
+  "lib": {
+    "entryFile": "src/index.ts",
+    "languageLevel": ["dom", "es2017"],
+    "cssUrl": "inline",
+    "umdModuleIds": {
+      "lodash-es/get": "_.get",
+      "lodash-es/orderBy": "_.orderBy",
+      "rxjs": "Rx"
+    }
+  }
+}
