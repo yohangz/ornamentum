@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { ReplaySubject } from 'rxjs';
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-import { Subscription } from 'rxjs';
+import { ReplaySubject, Observable, of, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 import get from 'lodash-es/get';

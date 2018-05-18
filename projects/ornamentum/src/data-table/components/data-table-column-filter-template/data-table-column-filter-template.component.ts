@@ -1,8 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { Subject } from 'rxjs';
-import { Subscription } from 'rxjs';
+import { Observable, Subject, Subscription } from 'rxjs';
 
 import { DataTableFilterEventArgs } from '../../models/data-table-filter-event-args.model';
 import { DataTableFilterOption } from '../../models/data-table-filter-option.model';

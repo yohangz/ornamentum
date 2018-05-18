@@ -1,9 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { ReplaySubject } from 'rxjs';
-import { Subscription } from 'rxjs';
-import { of } from 'rxjs';
+import { Observable, ReplaySubject, Subscription, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
 

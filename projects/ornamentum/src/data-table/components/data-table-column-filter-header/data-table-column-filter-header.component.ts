@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit } from '@angular/core';
 
-import { Subscription } from 'rxjs';
-import { Subject } from 'rxjs';
+import { Subscription, Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 import { DataTableFilterEventArgs } from '../../models/data-table-filter-event-args.model';

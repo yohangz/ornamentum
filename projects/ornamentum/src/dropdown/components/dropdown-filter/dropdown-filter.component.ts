@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { Subject } from 'rxjs';
-import { Subscription } from 'rxjs';
+import { Subject, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 import { DropdownConfigService } from '../../services/dropdown-config.service';

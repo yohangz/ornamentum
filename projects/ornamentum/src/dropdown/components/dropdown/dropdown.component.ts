@@ -11,10 +11,8 @@ import {
   TemplateRef
 } from '@angular/core';
 
-import { Subscription } from 'rxjs';
-import { Observable } from 'rxjs';
-import { debounceTime } from 'rxjs/operators';
-import { switchMap } from 'rxjs/operators';
+import { Subscription, Observable } from 'rxjs';
+import { debounceTime, switchMap } from 'rxjs/operators';
 
 import get from 'lodash-es/get';
 
