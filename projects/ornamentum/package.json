@@ -1,6 +1,6 @@
 {
   "name": "ornamentum",
-  "version": "1.1.35",
+  "version": "2.0.0",
   "peerDependencies": {
     "@angular/common": "^6.0.0-rc.0 || ^6.0.0",
     "@angular/core": "^6.0.0-rc.0 || ^6.0.0",
@@ -8,5 +8,43 @@
     "@angular/forms": "^6.0.0-rc.0 || ^6.0.0",
     "lodash-es": "^4.17.10",
     "rxjs": "^6.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yohangz/ornamentum.git"
+  },
+  "keywords": [
+    "Angular",
+    "Grid",
+    "Data Table",
+    "Dropdown List",
+    "Multi Select Dropdown",
+    "Angular 6+",
+    "UI Grid",
+    "NG Grid",
+    "NGX Grid"
+  ],
+  "contributors": [
+    {
+      "name": "Yohan Gomez",
+      "email": "yohan.gz@gmail.com",
+      "url": "https://github.com/yohangz"
+    },
+    {
+      "name": "Lahiru Jayamanna",
+      "email": "lsampath999@gmail.com",
+      "url": "https://github.com/lahiruz"
+    },
+    {
+      "name": "Samuditha Wadigamangawa",
+      "email": "samuditha@live.com",
+      "url": "https://github.com/samudithaw"
+    }
+  ],
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/yohangz/ornamentum/issues"
+  },
+  "homepage": "https://yohangz.github.io/ornamentum",
+  "description": "Angular Toolkit"
 }
