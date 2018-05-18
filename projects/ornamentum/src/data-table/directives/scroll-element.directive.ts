@@ -5,7 +5,7 @@ import { Subscription } from 'rxjs';
 import { DataTableScrollPositionService } from '../services/data-table-scroll-position.service';
 
 @Directive({
-  selector: '[scrollElement]'
+  selector: '[ngScrollElement]'
 })
 export class ScrollElementDirective implements AfterViewInit, OnDestroy {
   private scrollPositionSubscription: Subscription;

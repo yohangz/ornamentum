@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
  * Append px if value is number type. Return the same if value is string.
  */
 @Pipe({
-  name: 'px'
+  name: 'ngPx'
 })
 export class PixelConverterPipe implements PipeTransform {
 

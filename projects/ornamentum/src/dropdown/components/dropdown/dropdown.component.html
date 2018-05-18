@@ -1,9 +1,9 @@
-<div #dropdownElement class="ng-dropdown" (clickOutside)="closeDropdown()">
+<div #dropdownElement class="ng-dropdown" (ngClickOutside)="closeDropdown()">
   <div class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [class.disabled]="dataStateService.disabled">
     <ng-container *ngIf="config.selectMode === DropdownSelectMode.MULTI">
       <ng-container *ngIf="!wrapSelectedOptions">
          <span class="ng-dropdown-selected-value" *ngFor="let item of dataStateService.selectedOptions; let index = index"
-               [style.max-width]="config.multiSelectOptionMaxWidth | px"
+               [style.max-width]="config.multiSelectOptionMaxWidth | ngPx"
                [class.ng-dropdown-option-close-enabled]="config.showSelectedOptionRemoveButton">
           {{ config.getDisplayText(item) }}
            <i class="ng-dropdown-remove-selected-value" *ngIf="config.showSelectedOptionRemoveButton"

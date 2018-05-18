@@ -1,7 +1,7 @@
 <div class="ng-dropdown-menu-wrapper"
      [class.ng-dropdown-item-list]="!this.config.filterable"
-     [style.width]="config.menuWidth | px"
-     [style.height]="config.menuHeight | px"
+     [style.width]="config.menuWidth | ngPx"
+     [style.height]="config.menuHeight | ngPx"
      [style.right]="positionRight()"
      [style.bottom]="positionBottom()"
      (click)="$event.stopPropagation()">

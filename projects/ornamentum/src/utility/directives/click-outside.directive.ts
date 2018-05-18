@@ -7,7 +7,7 @@ import {
  * Notify when outside of the self DOM element is clicked.
  */
 @Directive({
-  selector: '[clickOutside]'
+  selector: '[ngClickOutside]'
 })
 export class ClickOutsideDirective {
   private localEvent: Event = null;
@@ -17,7 +17,7 @@ export class ClickOutsideDirective {
    * @type {EventEmitter<Event>}
    */
   @Output()
-  public clickOutside = new EventEmitter<Event>();
+  public ngClickOutside = new EventEmitter<Event>();
 
   /**
    * Track and compare the click event at the document root.
@@ -32,7 +32,7 @@ export class ClickOutsideDirective {
     // event at the target, the event must have originated from
     // outside of the target.
     if (event !== this.localEvent) {
-      this.clickOutside.emit(event);
+      this.ngClickOutside.emit(event);
     }
 
     this.localEvent = null;

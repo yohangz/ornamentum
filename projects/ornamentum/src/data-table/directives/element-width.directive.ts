@@ -4,16 +4,16 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[elementWidth]'
+  selector: '[ngElementWidth]'
 })
 export class ElementWidthDirective implements AfterViewInit {
   @Output()
-  public elementWidth = new EventEmitter();
+  public ngElementWidth = new EventEmitter();
 
   constructor(private el: ElementRef) {
   }
 
   public ngAfterViewInit(): void {
-    this.elementWidth.emit(this.el.nativeElement.clientWidth);
+    this.ngElementWidth.emit(this.el.nativeElement.clientWidth);
   }
 }

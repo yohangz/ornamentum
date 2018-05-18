@@ -11,7 +11,7 @@
 <ng-container *ngFor="let column of columns">
   <th class="ng-data-table-column-header" #columnHeader *ngIf="column.visible"
       (click)="onHeaderClick(column, $event)"
-      (elementWidth)="setColumnWidth($event, column)"
+      (ngElementWidth)="setColumnWidth($event, column)"
       [class.sortable]="column.sortable"
       [class.resizable]="column.resizable"
       [ngClass]="column.cssClass">

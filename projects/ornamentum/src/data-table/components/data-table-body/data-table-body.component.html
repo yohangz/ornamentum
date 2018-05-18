@@ -1,7 +1,7 @@
 <ng-container *ngFor="let row of dataStateService.dataRows">
   <ng-container *ngFor="let ignored of getRowSpanCollection(row); let rowSpanIndex = index; let rowSpanCount = count">
       <tr class="ng-data-table-row"
-          (init)="onRowInit(row)"
+          (ngInit)="onRowInit(row)"
           [attr.title]="row.tooltip"
           [class.row-odd]="isOddRow(row)"
           [class.row-even]="isEvenRow(row)"
@@ -35,7 +35,7 @@
         <ng-container *ngFor="let column of columns">
           <ng-container *ngIf="column.visible">
             <td class="ng-data-table-data-column" *ngIf="!column.cellTemplate && !rowSpanIndex"
-                (init)="onCellInit(column, row)" [ngClass]="column.cssClass" [attr.rowspan]="rowSpanCount"
+                (ngInit)="onCellInit(column, row)" [ngClass]="column.cssClass" [attr.rowspan]="rowSpanCount"
                 [style.background-color]="column.getCellColor(row) || row.color"
                 (click)="cellClicked(column, row, $event)">
               <span>{{ getFieldValue(row, column) }}</span>
