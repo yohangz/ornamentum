@@ -1,10 +1,9 @@
 {
   "name": "ornamentum-demo",
-  "version": "1.1.35",
+  "version": "2.0.0",
   "description": "Angular Toolkit",
   "scripts": {
     "ng": "ng",
-
     "test:demo": "ng test",
     "test:demo:ci": "ng test --single-run",
     "e2e:demo": "ng e2e",
@@ -14,7 +13,6 @@
     "build:demo:prod": "ng build --prod",
     "lint:demo:scss": "sass-lint --config src/.scss-lint.yml --no-exit --verbose",
     "explorer:demo:bundle": "npx webpack-bundle-analyzer dist/ornamentum-demo/stats.json",
-
     "test:lib": "ng test ornamentum",
     "test:lib:ci": "ng test ornamentum --single-run",
     "e2e:lib": "ng e2e ornamentum",
@@ -23,16 +21,12 @@
     "build:lib:prod": "ng build ornamentum --prod",
     "lint:lib:scss": "sass-lint --config projects/ornamentum/.scss-lint.yml --no-exit --verbose",
     "docs:lib": "compodoc -p projects/ornamentum/tsconfig.doc.json -d dist/ornamentum-demo/api-docs --disableCoverage --disablePrivate --disableInternal --disableProtected",
-
     "clean:dist": "rimraf dist",
-
     "lint": "npm run lint:demo && npm run lint:lib && npm run lint:demo:scss && npm run lint:lib:scss",
     "start": "npm run clean:dist && npm run build:lib:dev && ng serve --open --port 4201",
     "build": "npm run clean:dist && npm run build:lib:prod && npm run build:demo:prod && npm run docs:lib",
     "explorer": "npm run clean:dist && npm run build:lib:dev && npm run build:demo:dev && npm run explorer:demo:bundle",
-
     "docs:publish": "ngh --dir dist/ornamentum-demo",
-
     "preversion": "npm run build",
     "postversion": "git push && git push --tags && npm run docs:publish",
     "prerelease": "npm run build",
