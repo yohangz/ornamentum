@@ -1,5 +1,7 @@
 // Global style dependencies required for example
 @import '~bootstrap/scss/bootstrap';
+@import '~code-prettify/loader/prettify.css';
+@import '~color-themes-for-google-code-prettify/dist/themes/tranquil-heart.css';
 
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;

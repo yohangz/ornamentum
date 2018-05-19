@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
 import { sampleData } from '../../data/data-table-example';
+import { demoSnippets } from './data-table-overview.list';
 
 @Component({
   selector: 'app-data-table-overview-component',
@@ -14,27 +15,9 @@ import { sampleData } from '../../data/data-table-example';
 })
 export class DataTableOverviewComponent {
   public DataTableSelectMode = DataTableSelectMode;
-
   public items: Observable<any>;
 
-  public install_code = ` 
-   npm install ornamentum`;
-
-  public import_code = ` 
-   import { NgModule } from '@angular/core';
-   import { BrowserModule } from '@angular/platform-browser';
-      
-   import { DataTableModule } from 'ornamentum';
-      
-   import { AppComponent } from './app.component';
-
-   @NgModule({
-     bootstrap: [AppComponent],
-     declarations: [AppComponent],
-     imports: [BrowserModule, DataTableModule.forRoot()]
-    })
-    export class AppModule {
-    }`;
+  public demoSnippets = demoSnippets;
 
   constructor() {
     this.items = of(sampleData);

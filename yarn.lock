@@ -1507,6 +1507,10 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/code-point-at/-/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
 
+code-prettify@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/code-prettify/-/code-prettify-0.1.0.tgz#46870cc8c1a50d09bad539b33a983dbd4aa34b1e"
+
 codelyzer@~4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/codelyzer/-/codelyzer-4.2.1.tgz#d56eaacefca7e8138aac0a630e484bdb09988544"
@@ -1544,6 +1548,10 @@ color-name@^1.1.1:
 color-support@^1.1.3:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/color-support/-/color-support-1.1.3.tgz#93834379a1cc9a0c61f82f52f0d04322251bd5a2"
+
+color-themes-for-google-code-prettify@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/color-themes-for-google-code-prettify/-/color-themes-for-google-code-prettify-2.0.4.tgz#deeacf657fd68576864754d4e486d78dfdb1e784"
 
 colors@1.1.2:
   version "1.1.2"
