@@ -5,7 +5,7 @@ export type UpHandler = (event: MouseEvent, x: number, y: number, moved: boolean
 
 @Injectable()
 export class DragAndDropService {
-  public drag(event: MouseEvent, { move: move, up: up }: { move: MoveHandler, up?: UpHandler }) {
+  public drag(event: MouseEvent, { move, up }: { move: MoveHandler, up?: UpHandler }) {
     const startX = event.pageX;
     const startY = event.pageY;
     let x = startX;

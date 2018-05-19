@@ -17,6 +17,7 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
  */
 @Component({
   exportAs: 'ngDataTableBody',
+  // tslint:disable-next-line
   selector: '[ngDataTableBody]',
   styleUrls: ['./data-table-body.component.scss'],
   templateUrl: './data-table-body.component.html'

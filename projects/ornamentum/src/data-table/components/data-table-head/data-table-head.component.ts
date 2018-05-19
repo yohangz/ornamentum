@@ -4,6 +4,7 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 
 @Component({
   exportAs: 'ngDataTableHead',
+  // tslint:disable-next-line
   selector: '[ngDataTableHead]',
   styleUrls: ['./data-table-head.component.scss'],
   templateUrl: './data-table-head.component.html'
