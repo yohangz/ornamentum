@@ -19,3 +19,4 @@ export {
 export {
   DataTableClientSideDataBindingComponent
 } from './data-table-client-side-data-binding/data-table-client-side-data-binding.component';
+export { DataTableRealTimeDataBindingComponent } from './data-table-real-time-data-binding/data-table-real-time-data-binding.component';

@@ -18,7 +18,8 @@ import {
   DataTableLoadingSpinnerComponent,
   DataTableEventsComponent,
   DataTableCellTemplateComponent,
-  DataTableRowExpandTemplateComponent
+  DataTableRowExpandTemplateComponent,
+  DataTableRealTimeDataBindingComponent
 } from './components';
 
 /**
@@ -44,6 +45,7 @@ const dataTableFeatureRoutes: Routes = [
     path: 'server-side-data-binding'
   },
   {
+    component: DataTableRealTimeDataBindingComponent,
     path: 'real-time-data-binding'
   },
   {
