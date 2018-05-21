@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
 import { sampleData } from '../../data/data-table-example';
+import { demoSnippet } from './data-table-row-expand-template';
 
 @Component({
   selector: 'app-data-table-row-expand-template-component',
@@ -17,9 +18,7 @@ export class DataTableRowExpandTemplateComponent {
 
   public items: Observable<any>;
 
-  public code = `  <ng-template #ngDataTableRowExpand let-row="row">
-    <span>This is row expand template</span>
-  </ng-template>`;
+  public demoSnippet = demoSnippet;
 
   constructor() {
     this.items = of(sampleData);

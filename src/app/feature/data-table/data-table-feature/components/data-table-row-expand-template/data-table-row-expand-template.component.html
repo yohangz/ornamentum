@@ -1,14 +1,22 @@
 <h1>Data Table Row Expand Template</h1>
+<p>This feature enables users to customize the table row expandable section by providing their own template. There are
+  set of configurations needs to be enabled to see and control the behaviour of this expandable template.</p>
 
 <ul>
-  <li>[expandableRows]="true or false"</li>
-  <li>[expandOnRowClick]="true or false"</li>
-  <li>[showRowExpandLoadingSpinner]="true or false"</li>
+  <li><b>[expandableRows]="true or false"</b> => Determine whether to show/hide the expandable rows section.</li>
+  <li><b>[expandOnRowClick]="true or false"</b> => Tells data table to expand the table row on user row click event when
+    expandable rows feature is enabled.
+  </li>
+  <li><b>[showRowExpandLoadingSpinner]="true or false"</b> => Enables loading spinner when data is fetching to the table row
+    expandable section.
+  </li>
 </ul>
 
-<label>Sample row expand template:
-  <pre><code>{{code}}</code></pre>
+<label>The following code block shows how we use the template to show simple text output in row expand.
+  <pre class="prettyprint lang-html">{{demoSnippet.template}}</pre>
 </label>
+
+<p>Here is the table output after applying the above row expand template.</p>
 
 <ng-data-table
   [title]="'Station Details'"
