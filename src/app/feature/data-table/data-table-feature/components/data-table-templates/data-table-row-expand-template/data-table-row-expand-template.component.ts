@@ -5,7 +5,7 @@ import { DataTableSelectMode } from 'ornamentum';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
-import { sampleData } from '../../data/data-table-example';
+import { sampleData } from '../../../data/data-table-example';
 import { demoSnippet } from './data-table-row-expand-template';
 
 @Component({

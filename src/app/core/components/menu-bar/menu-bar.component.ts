@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { AfterContentInit, Component, Input } from '@angular/core';
 import { Router, UrlSegment } from '@angular/router';
 
 import { MenuItem } from '../../models';
@@ -8,7 +8,7 @@ import { MenuItem } from '../../models';
   styleUrls: ['./menu-bar.component.scss'],
   templateUrl: './menu-bar.component.html'
 })
-export class MenuBarComponent {
+export class MenuBarComponent implements AfterContentInit {
   @Input()
   public menuItems: MenuItem[];
 

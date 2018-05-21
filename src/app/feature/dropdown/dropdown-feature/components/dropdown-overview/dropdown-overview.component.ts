@@ -21,9 +21,9 @@ export class DropdownOverviewComponent {
   public import_code = `
    import { NgModule } from '@angular/core';
    import { BrowserModule } from '@angular/platform-browser';
-      
+
    import { DropdownModule } from 'ornamentum';
-      
+
    import { AppComponent } from './app.component';
 
    @NgModule({
@@ -33,7 +33,6 @@ export class DropdownOverviewComponent {
     })
     export class AppModule {
     }`;
-
 
 
   public items = new Subject();
