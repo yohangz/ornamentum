@@ -16,7 +16,6 @@ import {
   DataTableClientSideDataBindingComponent,
   DataTableServerSideDataBindingComponent,
   DataTableLoadingSpinnerComponent,
-  DataTableEventsComponent,
   DataTableCellTemplateComponent,
   DataTableRowExpandTemplateComponent,
   DataTableRealTimeDataBindingComponent,
@@ -79,15 +78,14 @@ const dataTableFeatureRoutes: Routes = [
     path: 'responsive-configuration'
   },
   {
-    path: 'grouping'
-  },
-  {
     component: DataTableLoadingSpinnerComponent,
     path: 'loading-spinner'
   },
   {
-    component: DataTableEventsComponent,
-    path: 'events'
+    path: 'grouping'
+  },
+  {
+    path: 'row-selection'
   },
   {
     component: DataTableFilteringComponent,

@@ -10,7 +10,6 @@ export { DataTableSubstituteRowsComponent } from './data-table-substitute-rows/d
 export { DataTableLimitComponent } from './data-table-limit/data-table-limit.component';
 export { DataTableResponsiveConfComponent } from './data-table-responsive-conf/data-table-responsive-conf.component';
 export { DataTableLoadingSpinnerComponent } from './data-table-loading-spinner/data-table-loading-spinner.component';
-export { DataTableEventsComponent } from './data-table-events/data-table-events.component';
 export { DataTableRowExpandTemplateComponent } from './data-table-templates/data-table-row-expand-template/data-table-row-expand-template.component';
 export { DataTableCellTemplateComponent } from './data-table-templates/data-table-cell-template/data-table-cell-template.component';
 export { DataTableServerSideDataBindingComponent } from './data-table-server-side-data-binding/data-table-server-side-data-binding.component';

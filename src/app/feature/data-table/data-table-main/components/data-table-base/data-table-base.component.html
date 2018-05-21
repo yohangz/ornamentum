@@ -31,6 +31,16 @@
               </span>
         </a></li>
     </ul>
+
+    <label>Data Table Events</label>
+    <ul>
+      <li *ngFor="let event of events">
+        <a class="nav-link" routerLink="{{event.routePath}}">
+              <span class="main-nav-label">
+                <span class="menu-title">{{event.title}}</span>
+              </span>
+        </a></li>
+    </ul>
   </div>
 
   <div class="main-pane">
