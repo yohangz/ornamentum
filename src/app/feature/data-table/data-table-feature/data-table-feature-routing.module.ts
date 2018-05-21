@@ -20,7 +20,8 @@ import {
   DataTableCellTemplateComponent,
   DataTableRowExpandTemplateComponent,
   DataTableRealTimeDataBindingComponent,
-  DataTableNoRecordsTemplateComponent
+  DataTableNoRecordsTemplateComponent,
+  DataTableLoadingSpinnerTemplateComponent
 } from './components';
 
 /**
@@ -111,6 +112,10 @@ const dataTableFeatureRoutes: Routes = [
   {
     component: DataTableNoRecordsTemplateComponent,
     path: 'templates/no-records-template'
+  },
+  {
+    component: DataTableLoadingSpinnerTemplateComponent,
+    path: 'templates/loading-spinner-template'
   }
 ];
 

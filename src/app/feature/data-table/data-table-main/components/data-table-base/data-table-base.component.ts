@@ -93,6 +93,10 @@ export class DataTableBaseComponent {
     {
       routePath: 'templates/no-records-template',
       title: 'No Records Template',
+    },
+    {
+      routePath: 'templates/loading-spinner-template',
+      title: 'Loading Spinner Template',
     }
   ];
 }

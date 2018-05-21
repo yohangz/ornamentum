@@ -1,0 +1,52 @@
+<h1>Data Table Loading Spinner Template</h1>
+<p>This feature enables users to customize the table data loading spinner by providing their own template when data
+  loading is in progress.</p>
+
+<label>The following code block example shows the way of data table loading spinner template using. In here we used
+  simple text to override the native loading functionality. You can also provide your own custom templates with the any
+  custom styles as you like.
+  <pre class="prettyprint lang-html">{{demoSnippet.template}}</pre>
+</label>
+
+<p>Here is the table output after applying the above loading spinner template.</p>
+
+<ng-data-table
+  [title]="'Station Details'"
+  [selectTrackBy]="'id'"
+  [items]="items"
+  [contentHeight]="200"
+  [pageable]="true"
+  [showHeader]="true"
+  [showRefreshButton]="false"
+  [showIndexColumn]="true"
+  [showColumnSelector]="false"
+  [showLoadingSpinner]="true">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [width]="100">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stationName'"
+    [title]="'Station Name'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'statusValue'"
+    [title]="'Status Value'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'availableBikes'"
+    [title]="'Available Bikes'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stAddress1'"
+    [title]="'Address'">
+  </ng-data-table-column>
+  <ng-template #ngDataTableLoadingSpinner>
+    <h1>Data loading => In Progress</h1>
+  </ng-template>
+</ng-data-table>
+
+<br>
+<h2>Suggested Links</h2>
+<a [href]="''" target="_blank">API Doc for Data Table Loading Spinner Template</a>

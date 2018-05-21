@@ -17,3 +17,4 @@ export { DataTableServerSideDataBindingComponent } from './data-table-server-sid
 export { DataTableClientSideDataBindingComponent } from './data-table-client-side-data-binding/data-table-client-side-data-binding.component';
 export { DataTableRealTimeDataBindingComponent } from './data-table-real-time-data-binding/data-table-real-time-data-binding.component';
 export { DataTableNoRecordsTemplateComponent } from './data-table-templates/data-table-no-records-template/data-table-no-records-template.component';
+export { DataTableLoadingSpinnerTemplateComponent } from './data-table-templates/data-table-loading-spinner-template/data-table-loading-spinner-template.component';
