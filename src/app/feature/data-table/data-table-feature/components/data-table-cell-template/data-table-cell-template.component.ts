@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
 import { sampleData } from '../../data/data-table-example';
+import { demoSnippet } from './data-table-cell-template';
 
 @Component({
   selector: 'app-data-table-cell-template-component',
@@ -17,11 +18,7 @@ export class DataTableCellTemplateComponent {
 
   public items: Observable<any>;
 
-  public code = `  <ng-template #ngDataTableCell let-row="row">
-    <td>
-      {{row.item.statusValue.toUpperCase()}}
-    </td>
-  </ng-template>`;
+  public demoSnippet = demoSnippet;
 
   constructor() {
     this.items = of(sampleData);
