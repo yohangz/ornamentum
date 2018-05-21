@@ -83,16 +83,16 @@ export class DataTableBaseComponent {
 
   public templates = [
     {
-      routePath: 'templates/header-template',
-      title: 'Header Template',
-    },
-    {
       routePath: 'templates/cell-template',
       title: 'Cell Template',
     },
     {
       routePath: 'templates/expand-template',
       title: 'Expand Template',
+    },
+    {
+      routePath: 'templates/no-records-template',
+      title: 'No Records Template',
     }
   ];
 }

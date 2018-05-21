@@ -13,10 +13,7 @@ export { DataTableLoadingSpinnerComponent } from './data-table-loading-spinner/d
 export { DataTableEventsComponent } from './data-table-events/data-table-events.component';
 export { DataTableRowExpandTemplateComponent } from './data-table-templates/data-table-row-expand-template/data-table-row-expand-template.component';
 export { DataTableCellTemplateComponent } from './data-table-templates/data-table-cell-template/data-table-cell-template.component';
-export {
-  DataTableServerSideDataBindingComponent
-} from './data-table-server-side-data-binding/data-table-server-side-data-binding.component';
-export {
-  DataTableClientSideDataBindingComponent
-} from './data-table-client-side-data-binding/data-table-client-side-data-binding.component';
+export { DataTableServerSideDataBindingComponent } from './data-table-server-side-data-binding/data-table-server-side-data-binding.component';
+export { DataTableClientSideDataBindingComponent } from './data-table-client-side-data-binding/data-table-client-side-data-binding.component';
 export { DataTableRealTimeDataBindingComponent } from './data-table-real-time-data-binding/data-table-real-time-data-binding.component';
+export { DataTableNoRecordsTemplateComponent } from './data-table-templates/data-table-no-records-template/data-table-no-records-template.component';

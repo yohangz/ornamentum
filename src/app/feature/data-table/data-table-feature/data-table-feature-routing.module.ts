@@ -19,7 +19,8 @@ import {
   DataTableEventsComponent,
   DataTableCellTemplateComponent,
   DataTableRowExpandTemplateComponent,
-  DataTableRealTimeDataBindingComponent
+  DataTableRealTimeDataBindingComponent,
+  DataTableNoRecordsTemplateComponent
 } from './components';
 
 /**
@@ -106,6 +107,10 @@ const dataTableFeatureRoutes: Routes = [
   {
     component: DataTableRowExpandTemplateComponent,
     path: 'templates/expand-template'
+  },
+  {
+    component: DataTableNoRecordsTemplateComponent,
+    path: 'templates/no-records-template'
   }
 ];
 

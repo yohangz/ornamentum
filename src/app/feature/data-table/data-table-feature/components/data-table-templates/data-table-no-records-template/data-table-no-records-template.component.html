@@ -1,12 +1,12 @@
-<h1>Data Table Cell Template</h1>
-<p>This feature enables users to customize the table cell by providing their own template.</p>
+<h1>Data Table No Records Template</h1>
+<p>This feature enables users to customize the table body by providing their own template where data is not
+  available.</p>
 
-<label>The following code block example shows how the cell template is used for <b>Status Value</b> column to show it's
-  value in upper case letters.
+<label>The following code block example shows the way of no records template using.
   <pre class="prettyprint lang-html">{{demoSnippet.template}}</pre>
 </label>
 
-<p>Here is the table output after applying the above cell template.</p>
+<p>Here is the table output after applying the above no records template.</p>
 
 <ng-data-table
   [title]="'Station Details'"
@@ -29,11 +29,6 @@
   <ng-data-table-column
     [field]="'statusValue'"
     [title]="'Status Value'">
-    <ng-template #ngDataTableCell let-row="row">
-      <td>
-        {{row.item.statusValue.toUpperCase()}}
-      </td>
-    </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'availableBikes'"
@@ -43,8 +38,12 @@
     [field]="'stAddress1'"
     [title]="'Address'">
   </ng-data-table-column>
+  <ng-template #ngDataTableNoRecords>
+    <h1>No data have been added</h1>
+    <h2>Please add data.</h2>
+  </ng-template>
 </ng-data-table>
 
 <br>
 <h2>Suggested Links</h2>
-<a [href]="''" target="_blank">API Doc for Data Table Cell Template</a>
+<a [href]="''" target="_blank">API Doc for Data Table No Records Template</a>

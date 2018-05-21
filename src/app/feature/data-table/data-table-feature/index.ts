@@ -16,7 +16,8 @@ import {
   DataTableEventsComponent,
   DataTableRowExpandTemplateComponent,
   DataTableCellTemplateComponent,
-  DataTableRealTimeDataBindingComponent
+  DataTableRealTimeDataBindingComponent,
+  DataTableNoRecordsTemplateComponent
 } from './components';
 
 import { DataStorageService } from './services/data-storage.service';
@@ -40,7 +41,8 @@ export const COMPONENTS = [
   DataTableEventsComponent,
   DataTableCellTemplateComponent,
   DataTableRowExpandTemplateComponent,
-  DataTableRealTimeDataBindingComponent
+  DataTableRealTimeDataBindingComponent,
+  DataTableNoRecordsTemplateComponent
 ];
 
 // Services
