@@ -162,7 +162,7 @@ export class DropdownOverviewComponent {
       {
         key: 14,
         group: 'A',
-        value: 'test3',
+        value: 'test4',
         disabled: false
       }
     ];
@@ -287,4 +287,8 @@ export class DropdownOverviewComponent {
 
     return dataStream;
   }
+
+  // public onDataBind(params: DropdownRequestParams): Observable<DropdownQueryResult<any>> {
+  //   return this.data;
+  // }
 }
