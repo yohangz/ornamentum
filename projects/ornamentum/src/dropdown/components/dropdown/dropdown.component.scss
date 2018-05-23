@@ -1,6 +1,9 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
+$close-icon-url: '../../../styles/images/close.svg';
+$dropdown-arrow-icon-url: '../../../styles/images/dropdown-arrow.svg';
+
 :host-context {
 
   ::ng-deep {
@@ -17,16 +20,16 @@
         z-index: 2;
 
         .ng-dropdown-delete-button {
-          background: transparent url(../../../styles/images/close.svg) no-repeat;
+          background: transparent url($close-icon-url) no-repeat;
           background-size: contain;
           border: 0;
           color: $secondary-background-color;
           cursor: pointer;
           height: 100%;
+          left: 0;
           outline: none;
           padding: .1rem .5rem;
           position: absolute;
-          left: 0;
           top: 0;
           width: 100%;
         }
@@ -34,7 +37,7 @@
 
 
       .ng-dropdown-down-arrow {
-        background: transparent url(../../../styles/images/dropdown-arrow.svg) no-repeat;
+        background: transparent url($dropdown-arrow-icon-url) no-repeat;
         background-size: contain;
         cursor: pointer;
         height: 1.5em;
@@ -46,8 +49,8 @@
       }
 
       .ng-dropdown-loading {
-        right: .3rem;
         position: absolute;
+        right: .3rem;
         top: .7rem;
         z-index: 10;
 
@@ -79,8 +82,9 @@
 
         &.disabled {
           cursor: not-allowed;
-          pointer-events: none;
           opacity: .6;
+          pointer-events: none;
+
         }
 
         .ng-dropdown-selected-item,
@@ -97,7 +101,7 @@
           display: inline-block;
           margin: 0 .2rem 0 .1rem;
           overflow: hidden;
-          padding: 0 .5rem 0 .5rem;
+          padding: 0 .5rem;
           position: relative;
           text-overflow: ellipsis;
           white-space: nowrap;
@@ -107,14 +111,14 @@
           }
 
           .ng-dropdown-remove-selected-value {
-            background: transparent url(../../../styles/images/close.svg) no-repeat;
+            background: transparent url($close-icon-url) no-repeat;
             background-size: contain;
-            top: .5em;
             content: '';
             cursor: pointer;
             height: 1.2em;
             position: absolute;
             right: .3em;
+            top: .5em;
             width: 1.2em;
           }
         }

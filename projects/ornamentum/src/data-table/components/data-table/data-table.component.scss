@@ -1,6 +1,10 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
+$close-icon-url: '../../../styles/images/close.svg';
+$collapsed-icon-url: '../../../styles/images/collapsed-icon.svg';
+$expand-icon-url: '../../../styles/images/expanded-icon.svg';
+
 :host-context {
 
   .ng-data-table-wrapper {
@@ -133,42 +137,34 @@
             vertical-align: bottom;
             word-break: break-all;
 
-            &.ng-data-table-column-header {
-
-              span {
-                @include font-size(.7, 1);
-              }
-
-            }
-
             .ng-data-table-header-input-box {
               position: relative;
+            }
 
-              .ng-data-table-input-group-btn {
+            .ng-data-table-input-group-btn {
+              position: absolute;
+              right: .2rem;
+              top: .3rem;
+              z-index: 1;
+
+              .ng-data-table-delete-button {
+                background: transparent url($close-icon-url) no-repeat;
+                background-size: contain;
+                border: 0;
+                color: $secondary-background-color;
+                cursor: pointer;
+                height: 1.2em;
+                outline: none;
+                padding: .1rem .2rem;
                 position: absolute;
-                right: .2rem;
-                top: .3rem;
-                z-index: 1;
-
-                .ng-data-table-delete-button {
-                  background: transparent url(../../../styles/images/close.svg) no-repeat;
-                  background-size: contain;
-                  border: 0;
-                  color: $secondary-background-color;
-                  cursor: pointer;
-                  height: 1.2em;
-                  outline: none;
-                  padding: .1rem .2rem;
-                  position: absolute;
-                  right: .2em;
-                  top: .5em;
-                  width: 1.2em;
-                }
+                right: .2em;
+                top: .5em;
+                width: 1.2em;
               }
+            }
 
-              .ng-data-table-clear-filter {
-                padding: 0 1.4rem 0 .5rem;
-              }
+            .ng-data-table-clear-filter {
+              padding: 0 1.4rem 0 .5rem;
             }
 
             .ng-data-table-checkbox-input {
@@ -195,6 +191,14 @@
             &:last-child {
               border-right: 0;
             }
+          }
+
+          .ng-data-table-column-header {
+
+            span {
+              @include font-size(.7, 1);
+            }
+
           }
 
           [hidden] {
@@ -308,24 +312,24 @@
               position: relative;
 
               %table-expand-icon {
-                top: .7em;
                 content: '';
                 cursor: pointer;
                 height: 1.2em;
-                position: absolute;
                 left: .7em;
+                position: absolute;
+                top: .7em;
                 width: 1.2em;
               }
 
               .ng-data-table-expander-collapsed-icon {
                 @extend %table-expand-icon;
-                background: transparent url(../../../styles/images/collapsed-icon.svg) no-repeat;
+                background: transparent url($collapsed-icon-url) no-repeat;
                 background-size: contain;
               }
 
               .ng-data-table-expander-expanded-icon {
                 @extend %table-expand-icon;
-                background: transparent url(../../../styles/images/expanded-icon.svg) no-repeat;
+                background: transparent url($expand-icon-url) no-repeat;
                 background-size: contain;
               }
 
@@ -395,9 +399,9 @@
 
               + .selected {
 
-                  td {
-                    background: $data-table-selected-row-background;
-                  }
+                td {
+                  background: $data-table-selected-row-background;
+                }
               }
             }
           }

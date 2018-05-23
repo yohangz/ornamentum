@@ -1,6 +1,9 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
+$search-icon-url: '../../../styles/images/search.svg';
+$close-icon-url: '../../../styles/images/close.svg';
+
 :host-context {
 
   ::ng-deep {
@@ -27,15 +30,15 @@
           white-space: nowrap;
           width: 2em;
 
-          &:after {
-            background: transparent url(../../../styles/images/search.svg) no-repeat;
+          &::after {
+            background: transparent url($search-icon-url) no-repeat;
             background-size: contain;
-            top: .2em;
             content: '';
             cursor: pointer;
             height: 1.7em;
-            position: absolute;
             left: .2em;
+            position: absolute;
+            top: .2em;
             width: 1.7em;
           }
         }
@@ -63,7 +66,7 @@
         z-index: 2;
 
         .ng-dropdown-delete-button {
-          background: transparent url(../../../styles/images/close.svg) no-repeat;
+          background: transparent url($close-icon-url) no-repeat;
           background-size: contain;
           border: 0;
           cursor: pointer;
@@ -71,8 +74,8 @@
           outline: none;
           padding: .3rem .5rem;
           position: absolute;
-          right: .4em;
-          top: .6em;
+          right: .1em;
+          top: .1em;
           width: 1.7em;
         }
       }

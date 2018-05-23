@@ -13,18 +13,18 @@
     width: 1.2em;
 
     &.sort-asc {
-     background: transparent url(../../../styles/images/sort-asc.svg) no-repeat;
-     background-size: contain;
+      background: transparent url('../../../styles/images/sort-asc.svg') no-repeat;
+      background-size: contain;
     }
 
     &.sort-dsc {
-     background: transparent url(../../../styles/images/sort-dsc.svg) no-repeat;
-     background-size: contain;
+      background: transparent url('../../../styles/images/sort-dsc.svg') no-repeat;
+      background-size: contain;
     }
 
     &.sort-reset {
-     background: transparent url(../../../styles/images/sort-reset.svg) no-repeat;
-     background-size: contain;
+      background: transparent url('../../../styles/images/sort-reset.svg') no-repeat;
+      background-size: contain;
     }
   }
 }

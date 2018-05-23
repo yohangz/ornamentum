@@ -1,6 +1,9 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
+$refresh-icon-url: '../../../styles/images/refresh.svg';
+$list-view-icon-url: '../../../styles/images/list-view.svg';
+
 :host-context {
 
   %table-header-icon {
@@ -34,15 +37,17 @@
 
         &.ng-data-table-refresh-button {
           @extend %table-header-icon;
-          background: transparent url(../../../styles/images/refresh.svg) no-repeat;
+          background: transparent url($refresh-icon-url) no-repeat;
           background-size: contain;
+          height: 1.4em;
           right: 0;
         }
 
         &.ng-data-table-column-selector-button {
           @extend %table-header-icon;
-          background: transparent url(../../../styles/images/list-view.svg) no-repeat;
+          background: transparent url($list-view-icon-url) no-repeat;
           background-size: contain;
+          height: 1.4em;
           right: 2.5em;
         }
 

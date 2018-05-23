@@ -18,8 +18,8 @@
       margin: .125rem 0 0;
       padding: 1rem;
       position: absolute;
-      width: 100%;
       text-align: left;
+      width: 100%;
       z-index: 10001;
 
       &.ng-dropdown-item-list {
@@ -34,8 +34,8 @@
         border-top: 1px solid $multi-select-dropdown-toggle-border;
         height: 0;
         margin: .5rem 0;
-        padding: 0;
         overflow: hidden;
+        padding: 0;
       }
 
       .ng-dropdown-item-container-wrapper {
@@ -82,7 +82,7 @@
               background: darken($generated-context-background, 10%);
 
               &:hover {
-                background:darken($generated-context-background, 10%);
+                background: darken($generated-context-background, 10%);
               }
             }
 
