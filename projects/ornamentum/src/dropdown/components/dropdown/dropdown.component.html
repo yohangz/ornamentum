@@ -1,5 +1,5 @@
 <div #dropdownElement class="ng-dropdown" (ngClickOutside)="closeDropdown()">
-  <button class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [class.disabled]="dataStateService.disabled">
+  <div class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [class.disabled]="dataStateService.disabled">
     <ng-container *ngIf="config.selectMode === DropdownSelectMode.MULTI">
       <ng-container *ngIf="!wrapSelectedOptions">
          <span class="ng-dropdown-selected-value" *ngFor="let item of dataStateService.selectedOptions; let index = index"
@@ -26,7 +26,7 @@
       </span>
     </ng-container>
     <span class="ng-dropdown-input-group-btn" [hidden]="!hasSelectedItems" *ngIf="config.showClearSelectionButton">
-      <button class="ng-dropdown-delete-button" type="button" (click)="clearSelectedOptions($event)"></button>
+      <div class="ng-dropdown-delete-button" (click)="clearSelectedOptions($event)"></div>
     </span>
     <span class="ng-dropdown-down-arrow" *ngIf="!dataStateService.dataLoading"></span>
     <span class="ng-dropdown-loading" [hidden]="!dataStateService.dataLoading">
@@ -34,5 +34,5 @@
       <div *ngIf="loadingSpinnerTemplate" [ngTemplateOutlet]="loadingSpinnerTemplate">
       </div>
     </span>
- </button>
+ </div>
 </div>
