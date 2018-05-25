@@ -1,6 +1,6 @@
 {
   "name": "ornamentum-demo",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "Angular Toolkit",
   "scripts": {
     "ng": "ng",
