@@ -89,7 +89,18 @@ export class DataTableResourceService<T> {
                 const orderData = sortColumns.reduce((accumulator: any, column: DataTableSortColumn) => {
                   if (accumulator) {
                     accumulator.fields.push(column.field);
-                    accumulator.orders.push(column.sortOrder);
+
+                    let sortOrderValue = '';
+                    switch (column.sortOrder) {
+                      case DataTableSortOrder.ASC:
+                        sortOrderValue = 'asc';
+                        break;
+                      case DataTableSortOrder.DESC:
+                        sortOrderValue = 'desc';
+                        break;
+                    }
+
+                    accumulator.orders.push(sortOrderValue);
                   }
 
                   return accumulator;
