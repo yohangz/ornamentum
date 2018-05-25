@@ -13,7 +13,7 @@ import { sampleData } from '../../data/data-table-example';
   styleUrls: ['./data-table-sorting.component.scss']
 })
 export class DataTableSortingComponent {
-  public SortOrder = DataTableSortOrder;
+  public DataTableSortOrder = DataTableSortOrder;
   public DataTableSelectMode = DataTableSelectMode;
 
   public items: Observable<any>;

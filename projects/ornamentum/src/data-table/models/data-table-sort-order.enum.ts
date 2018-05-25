@@ -2,7 +2,7 @@
  * Sort order.
  */
 export enum DataTableSortOrder {
-  NONE = '',
-  ASC = 'asc',
-  DESC = 'desc'
+  NONE,
+  ASC,
+  DESC
 }
