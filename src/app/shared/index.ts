@@ -1,7 +1,5 @@
 // components
 import {
-  FooterComponent,
-  MenuBarComponent,
   TabComponent,
   TabSetComponent,
   ExampleCodeComponent
@@ -11,8 +9,6 @@ import {
  * Export all core components.
  */
 export const COMPONENTS = [
-  FooterComponent,
-  MenuBarComponent,
   TabComponent,
   TabSetComponent,
   ExampleCodeComponent

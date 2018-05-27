@@ -1,0 +1,22 @@
+<app-tab-set>
+  <app-tab [id]="'js'" [title]="'JavaScript'" *ngIf="javascript">
+    <ng-template #tabContent>
+      <pre class="prettyprint linenums lang-js">{{javascript}}</pre>
+    </ng-template>
+  </app-tab>
+  <app-tab [id]="'html'" [title]="'HTML'" *ngIf="html">
+    <ng-template #tabContent>
+      <pre class="prettyprint linenums lang-html">{{html}}</pre>
+    </ng-template>
+  </app-tab>
+  <app-tab [id]="'css'" [title]="'CSS'" *ngIf="css">
+    <ng-template #tabContent>
+      <pre class="prettyprint linenums lang-css">{{css}}</pre>
+    </ng-template>
+  </app-tab>
+  <app-tab [id]="'json'" [title]="'JSON'" *ngIf="json">
+    <ng-template #tabContent>
+      <pre class="prettyprint linenums lang-json">{{json}}</pre>
+    </ng-template>
+  </app-tab>
+</app-tab-set>

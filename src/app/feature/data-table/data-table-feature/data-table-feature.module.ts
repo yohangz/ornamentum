@@ -8,6 +8,8 @@ import { COMPONENTS, SERVICES } from './index';
 
 import { DataTableFeatureRoutingModule } from './data-table-feature-routing.module';
 
+import { SharedModule } from '../../../shared/shared.module';
+
 /**
  * Module class for containing data table feature module.
  * @class DataTableFeatureModule
@@ -18,6 +20,7 @@ import { DataTableFeatureRoutingModule } from './data-table-feature-routing.modu
   imports: [
     CommonModule,
     FormsModule,
+    SharedModule,
     DataTableModule.forRoot({
       showColumnSelector: true
     }),
