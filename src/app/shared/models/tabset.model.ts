@@ -1,4 +1,4 @@
-import { TabComponent } from '../components/tab-set/tab/tab';
+import { TabComponent } from '../components';
 
 export interface TabChangeEvent {
   /**

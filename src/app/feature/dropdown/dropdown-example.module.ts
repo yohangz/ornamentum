@@ -5,8 +5,6 @@ import { DropdownBaseComponent } from './dropdown-main/components/dropdown-base/
 
 import { DropdownExampleRoutingModule } from './dropdown-example-routing.module';
 
-import { SharedModule } from '../../shared/shared.module';
-
 /**
  * Module class for containing dropdown example module.
  * @class DropdownExampleModule
@@ -18,7 +16,6 @@ import { SharedModule } from '../../shared/shared.module';
   exports: [],
   imports: [
     CommonModule,
-    SharedModule,
     DropdownExampleRoutingModule
   ],
   providers: []

@@ -1,10 +1,7 @@
 // components
 import {
   FooterComponent,
-  MenuBarComponent,
-  TabComponent,
-  TabSetComponent,
-  ExampleCodeComponent
+  MenuBarComponent
 } from './components';
 
 /**
@@ -12,8 +9,5 @@ import {
  */
 export const COMPONENTS = [
   FooterComponent,
-  MenuBarComponent,
-  TabComponent,
-  TabSetComponent,
-  ExampleCodeComponent
+  MenuBarComponent
 ];
