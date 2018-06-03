@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DataTableModule } from 'ornamentum';
   
-import { AppComponent } from './app.component';
+import { BasicUsageComponent } from './basic-usage.component';
 
 @NgModule({
- bootstrap: [AppComponent],
- declarations: [AppComponent],
+ bootstrap: [BasicUsageComponent],
+ declarations: [BasicUsageComponent],
  imports: [BrowserModule, DataTableModule.forRoot()]
 })
-export class AppModule {
+export class BasicUsageModule {
 }

@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { ExampleFile, FileType } from '../../models';
 
 /**
  * Component class to represent application footer.
@@ -10,15 +11,8 @@ import { Component, Input } from '@angular/core';
   templateUrl: './example-code.component.html'
 })
 export class ExampleCodeComponent {
-  @Input()
-  public css: string;
+  public FileType = FileType;
 
   @Input()
-  public javascript: string;
-
-  @Input()
-  public html: string;
-
-  @Input()
-  public json: string;
+  public files: ExampleFile[];
 }

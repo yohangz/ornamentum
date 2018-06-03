@@ -1,22 +1,12 @@
-<app-tab-set>
-  <app-tab [id]="'js'" [title]="'JavaScript'" *ngIf="javascript">
-    <ng-template #tabContent>
-      <pre class="prettyprint linenums lang-js">{{javascript}}</pre>
-    </ng-template>
-  </app-tab>
-  <app-tab [id]="'html'" [title]="'HTML'" *ngIf="html">
-    <ng-template #tabContent>
-      <pre class="prettyprint linenums lang-html">{{html}}</pre>
-    </ng-template>
-  </app-tab>
-  <app-tab [id]="'css'" [title]="'CSS'" *ngIf="css">
-    <ng-template #tabContent>
-      <pre class="prettyprint linenums lang-css">{{css}}</pre>
-    </ng-template>
-  </app-tab>
-  <app-tab [id]="'json'" [title]="'JSON'" *ngIf="json">
-    <ng-template #tabContent>
-      <pre class="prettyprint linenums lang-json">{{json}}</pre>
-    </ng-template>
-  </app-tab>
+<app-tab-set [ngSwitch]="">
+  <ng-container *ngFor="let file of files; index as i">
+    <app-tab [ngSwitch]="file.type"  [id]="'tab-' + i" [title]="file.name">
+      <ng-template #tabContent>
+        <pre *ngSwitchCase="FileType.TS" class="prettyprint linenums lang-js">{{file.content}}</pre>
+        <pre *ngSwitchCase="FileType.CSS" class="prettyprint linenums lang-css">{{file.content}}</pre>
+        <pre *ngSwitchCase="FileType.HTML" class="prettyprint linenums lang-html">{{file.content}}</pre>
+        <pre *ngSwitchCase="FileType.JSON" class="prettyprint linenums lang-json">{{file.content}}</pre>
+      </ng-template>
+    </app-tab>
+  </ng-container>
 </app-tab-set>

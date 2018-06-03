@@ -1,57 +1,38 @@
 <h1>Data Table Overview</h1>
-<p>The Data Table displays data in a tabular format with complete set of configurations.</p>
+<p>Full fledged data table component with extensive configuration support.</p>
 
-<h2>Basic Usage</h2>
-<p>The following example demonstrates the Data Table in action.</p>
+<h1>Feature Overview</h1>
+<ul>
+  <li>Client/Server data binding</li>
+  <li>Live/real-time data binding</li>
+  <li>Pagination</li>
+  <li>Multi/Single column sorting</li>
+  <li>Row grouping</li>
+  <li>Multi/Single value filtering</li>
+  <li>Row selection</li>
+  <li>Expandable rows</li>
+  <li>Column resizing</li>
+  <li>Cell/Header templating</li>
+  <li>Translations</li>
+</ul>
 
-<ng-data-table
-  [title]="'Station Details'"
-  [selectTrackBy]="'id'"
-  [dataSource]="items"
-  [pageable]="false"
-  [showHeader]="true"
-  [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [width]="100">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'">
-  </ng-data-table-column>
-</ng-data-table>
+<h1>Basic Usage</h1>
+<p>The following example demonstrates the Data Table basic usage.</p>
 
-<br/>
+<app-basic-usage></app-basic-usage>
 
-<h2>Installation</h2>
-<ol>
-  <li>Install the package
-    <pre class="prettyprint lang-js">{{demoSnippets.import}}</pre>
-  </li>
-  <li>As the second step, import DataTableModule into your application root module
-    <pre class="prettyprint linenums lang-js">{{demoSnippets.usage}}</pre>
-  </li>
-</ol>
-
-<app-example-code [javascript]="demoSnippets.usage" [css]="demoSnippets.import">
+<app-example-code [files]="basicUsage">
 </app-example-code>
 
-<br/>
+<!--<h2>Installation</h2>-->
+<!--<ol>-->
+  <!--<li>Install the package-->
+    <!--<pre class="prettyprint lang-js">{{demoSnippets.import}}</pre>-->
+  <!--</li>-->
+  <!--<li>As the second step, import DataTableModule into your application root module-->
+    <!--<pre class="prettyprint linenums lang-js">{{demoSnippets.usage}}</pre>-->
+  <!--</li>-->
+<!--</ol>-->
 
 <h2>Dependencies</h2>
 <ul>
