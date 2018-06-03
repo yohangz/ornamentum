@@ -1,7 +1,8 @@
 // components
 import {
   FooterComponent,
-  MenuBarComponent
+  MainMenuComponent,
+  LeftNavigationComponent
 } from './components';
 
 /**
@@ -9,5 +10,6 @@ import {
  */
 export const COMPONENTS = [
   FooterComponent,
-  MenuBarComponent
+  MainMenuComponent,
+  LeftNavigationComponent
 ];

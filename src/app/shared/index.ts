@@ -3,7 +3,7 @@ import {
   TabComponent,
   TabSetComponent,
   ExampleCodeComponent,
-  CopyContentComponent
+  CopyContentComponent,
 } from './components';
 
 import { ClipboardDirective } from './directives';

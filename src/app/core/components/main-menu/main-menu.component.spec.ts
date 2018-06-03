@@ -4,7 +4,7 @@
 // import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { Router, UrlSegment } from '@angular/router';
 //
-// import { MenuBarComponent } from './menu-bar.component';
+// import { MainMenuComponent } from './menu-bar.component';
 // import { MenuItem } from '../../models/menu-item.model';
 // import { UserPriority } from '../../enums/user-priority.enum';
 //
@@ -81,10 +81,10 @@
 //   }
 // }
 //
-// describe('MenuBarComponent component tests', () => {
+// describe('MainMenuComponent component tests', () => {
 //
-//   let component: MenuBarComponent;
-//   let fixture: ComponentFixture<MenuBarComponent>;
+//   let component: MainMenuComponent;
+//   let fixture: ComponentFixture<MainMenuComponent>;
 //   let debugElement: DebugElement;
 //   let htmlElement: HTMLElement;
 //
@@ -94,12 +94,12 @@
 //
 //
 //     TestBed.configureTestingModule({
-//       declarations: [MenuBarComponent],
+//       declarations: [MainMenuComponent],
 //       imports: [],
 //       providers: [{ provide: Router, useClass: MockRouter }]
 //     }).compileComponents();
 //
-//     fixture = TestBed.createComponent(MenuBarComponent);
+//     fixture = TestBed.createComponent(MainMenuComponent);
 //
 //     component = fixture.componentInstance;
 //

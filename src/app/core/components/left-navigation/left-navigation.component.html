@@ -1,0 +1,13 @@
+<div class="side-menu">
+  <input type="text" placeholder="Search Feature"/>
+  <ul>
+    <li *ngFor="let item of menuItems" [routerLinkActive]="'active'">
+      <a class="nav-link" [routerLink]="item.routePath">
+        <span class="main-nav-label">
+          <i class="sub-menu-item"></i>
+          <span class="menu-title">{{item.title}}</span>
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>

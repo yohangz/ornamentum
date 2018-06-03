@@ -1,2 +1,3 @@
+export { LeftNavigationComponent } from './left-navigation/left-navigation.component';
 export { FooterComponent } from './footer/footer.component';
-export { MenuBarComponent } from './menu-bar/menu-bar.component';
+export { MainMenuComponent } from './main-menu/main-menu.component';

@@ -8,7 +8,7 @@ import { DropdownOverviewComponent } from './components/dropdown-overview/dropdo
 
 import { DropdownFeatureRoutingModule } from './dropdown-feature-routing.module';
 
-import { SharedModule } from '../../../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 /**
  * Module class for containing dropdown feature module.

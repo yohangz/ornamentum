@@ -8,7 +8,7 @@ import { COMPONENTS, SERVICES } from './index';
 
 import { DataTableFeatureRoutingModule } from './data-table-feature-routing.module';
 
-import { SharedModule } from '../../../shared/shared.module';
+import { SharedModule } from '../../shared/shared.module';
 
 /**
  * Module class for containing data table feature module.

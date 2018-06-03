@@ -1,10 +1,10 @@
 // components
-import { AppMainComponent, BaseComponent } from './components';
+import { MainComponent, BaseComponent } from './components';
 
 /**
  * Export all main components.
  */
 export const COMPONENTS = [
-  AppMainComponent,
+  MainComponent,
   BaseComponent
 ];

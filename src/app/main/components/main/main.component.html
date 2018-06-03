@@ -1,9 +1,6 @@
-<div class="main-wrapper">
-  <div class="page-wrapper">
-    <app-menu-bar class="menu" [appName]="'Ornamentum'" [menuItems]="menuItems">
-    </app-menu-bar>
-    <div class="page-wrapper-content">
-      <router-outlet></router-outlet>
-    </div>
+<div class="page-wrapper-inner-content" *ngIf="navigationData">
+  <app-left-navigation [menuItems]="navigationData"></app-left-navigation>
+  <div class="main-pane">
+    <router-outlet></router-outlet>
   </div>
 </div>

@@ -4,8 +4,8 @@ import { RouterModule } from '@angular/router';
 
 import { AppCoreModule } from '../core/core.module';
 
-import { BaseComponent } from './components';
 import { COMPONENTS } from './index';
+import { BaseComponent } from './components';
 
 /**
  * Module class for containing main module.

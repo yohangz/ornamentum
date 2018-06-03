@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg sticky-top">
+  <a class="navbar-brand nav-brand-lg app-name-lg">Ornamentum</a>
+  <div class="main-navigation navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" [routerLinkActive]="'active'">
+        <a class="nav-link" [routerLink]="'/data-table'">
+            <span class="main-nav-label">
+              <i class="data-table-icon"></i>
+              <span class="menu-title">Data Table</span>
+            </span>
+        </a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="'active'">
+        <a class="nav-link" [routerLink]="'/dropdown'">
+            <span class="main-nav-label">
+              <i class="dropdown-icon"></i>
+              <span class="menu-title">Dropdown</span>
+            </span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="api-docs" target="_blank">
+          <span class="main-nav-label">
+            <i></i><span class="menu-title">API Docs</span>
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
