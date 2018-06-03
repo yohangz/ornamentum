@@ -2,8 +2,11 @@
 import {
   TabComponent,
   TabSetComponent,
-  ExampleCodeComponent
+  ExampleCodeComponent,
+  CopyContentComponent
 } from './components';
+
+import { ClipboardDirective } from './directives';
 
 /**
  * Export all core components.
@@ -11,5 +14,7 @@ import {
 export const COMPONENTS = [
   TabComponent,
   TabSetComponent,
-  ExampleCodeComponent
+  ExampleCodeComponent,
+  CopyContentComponent,
+  ClipboardDirective
 ];

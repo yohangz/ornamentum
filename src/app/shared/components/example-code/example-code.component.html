@@ -2,6 +2,7 @@
   <ng-container *ngFor="let file of files; index as i">
     <app-tab [ngSwitch]="file.type"  [id]="'tab-' + i" [title]="file.name">
       <ng-template #tabContent>
+        <app-copy-content [data]="file.content"></app-copy-content>
         <pre *ngSwitchCase="FileType.TS" class="prettyprint linenums lang-js">{{file.content}}</pre>
         <pre *ngSwitchCase="FileType.CSS" class="prettyprint linenums lang-css">{{file.content}}</pre>
         <pre *ngSwitchCase="FileType.HTML" class="prettyprint linenums lang-html">{{file.content}}</pre>
