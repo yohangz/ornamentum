@@ -13,7 +13,7 @@ export const basicUsage: ExampleFile[] = [
   },
   {
     type: FileType.HTML,
-    name: 'basic-usage.data.ts',
+    name: 'basic-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/basic-usage/basic-usage.component.html')
   },
   {
