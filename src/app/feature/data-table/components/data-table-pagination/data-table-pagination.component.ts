@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
-
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
-import { sampleData } from '../../data/data-table-example';
+import { paginationUsage } from './data-table-pagination.list';
 
 @Component({
   selector: 'app-data-table-pagination-component',
@@ -13,11 +8,5 @@ import { sampleData } from '../../data/data-table-example';
   styleUrls: ['./data-table-pagination.component.scss']
 })
 export class DataTablePaginationComponent {
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public items: Observable<any>;
-
-  constructor() {
-    this.items = of(sampleData);
-  }
+  public paginationUsage = paginationUsage;
 }

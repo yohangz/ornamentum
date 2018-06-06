@@ -6,11 +6,13 @@ export { DataTableServerSideDataBindingComponent } from './data-table-server-sid
 export { ServerSideDataBindingComponent } from './data-table-server-side-data-binding/example/server-side-data-binding/server-side-data-binding.component';
 export { DataTableRealTimeDataBindingComponent } from './data-table-real-time-data-binding/data-table-real-time-data-binding.component';
 export { RealTimeDataBindingComponent } from './data-table-real-time-data-binding/example/real-time-data-binding/real-time-data-binding.component';
+export { DataTablePaginationComponent } from './data-table-pagination/data-table-pagination.component';
+export { PaginationUsageComponent } from './data-table-pagination/example/pagination-usage/pagination-usage.component';
+export { DataTableColumnSortingComponent } from './data-table-column-sorting/data-table-column-sorting.component';
+export { ColumnSortingUsageComponent } from './data-table-column-sorting/example/column-sorting-usage/column-sorting-usage.component';
 
 export { DataTableFilteringComponent } from './data-table-filtering/data-table-filtering.component';
-export { DataTableSortingComponent } from './data-table-sorting/data-table-sorting.component';
 export { DataTableResizableComponent } from './data-table-resizable/data-table-resizable.component';
-export { DataTablePaginationComponent } from './data-table-pagination/data-table-pagination.component';
 export { DataTableTranslationsComponent } from './data-table-translations/data-table-translations.component';
 export { DataTableHeaderDetailsComponent } from './data-table-header-details/data-table-header-details.component';
 export { DataTablePersistDataComponent } from './data-table-persist-data/data-table-persist-data.component';

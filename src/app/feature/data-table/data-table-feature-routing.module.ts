@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {
   DataTableFilteringComponent,
   DataTableOverviewComponent,
-  DataTableSortingComponent,
+  DataTableColumnSortingComponent,
   DataTableResizableComponent,
   DataTablePaginationComponent,
   DataTableTranslationsComponent,
@@ -92,7 +92,7 @@ const dataTableFeatureRoutes: Routes = [
     path: 'column/filtering'
   },
   {
-    component: DataTableSortingComponent,
+    component: DataTableColumnSortingComponent,
     path: 'column/sorting'
   },
   {

@@ -8,8 +8,10 @@ import {
   DataTableRealTimeDataBindingComponent,
   RealTimeDataBindingComponent,
   DataTablePaginationComponent,
+  PaginationUsageComponent,
+  DataTableColumnSortingComponent,
+  ColumnSortingUsageComponent,
 
-  DataTableSortingComponent,
   DataTableFilteringComponent,
   DataTableResizableComponent,
   DataTableTranslationsComponent,
@@ -38,8 +40,10 @@ export const COMPONENTS = [
   DataTableRealTimeDataBindingComponent,
   RealTimeDataBindingComponent,
   DataTablePaginationComponent,
+  PaginationUsageComponent,
+  DataTableColumnSortingComponent,
+  ColumnSortingUsageComponent,
 
-  DataTableSortingComponent,
   DataTableFilteringComponent,
   DataTableResizableComponent,
   DataTableTranslationsComponent,
