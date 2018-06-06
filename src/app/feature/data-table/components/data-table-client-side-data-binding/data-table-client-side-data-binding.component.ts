@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
-
-import { sampleData } from '../../data/data-table-example';
+import { clientSideDataBindingUsage } from './data-table-client-side-data-binding.list';
 
 @Component({
   selector: 'app-data-table-client-side-data-binding-component',
@@ -10,11 +8,5 @@ import { sampleData } from '../../data/data-table-example';
   styleUrls: ['./data-table-client-side-data-binding.component.scss']
 })
 export class DataTableClientSideDataBindingComponent {
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public data: any[];
-
-  constructor() {
-    this.data = sampleData;
-  }
+  public clientSideDataBindingUsage = clientSideDataBindingUsage;
 }

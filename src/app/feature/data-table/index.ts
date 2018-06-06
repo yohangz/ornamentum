@@ -1,6 +1,10 @@
 import {
-  DataTableFilteringComponent,
   DataTableOverviewComponent,
+  BasicUsageComponent,
+  DataTableClientSideDataBindingComponent,
+  ClientSideDataBindingComponent,
+
+  DataTableFilteringComponent,
   DataTableSortingComponent,
   DataTableResizableComponent,
   DataTablePaginationComponent,
@@ -11,24 +15,25 @@ import {
   DataTableLimitComponent,
   DataTableResponsiveConfComponent,
   DataTableServerSideDataBindingComponent,
-  DataTableClientSideDataBindingComponent,
   DataTableLoadingSpinnerComponent,
   DataTableRowExpandTemplateComponent,
   DataTableCellTemplateComponent,
   DataTableRealTimeDataBindingComponent,
   DataTableNoRecordsTemplateComponent,
-  DataTableLoadingSpinnerTemplateComponent,
-  BasicUsageComponent
+  DataTableLoadingSpinnerTemplateComponent
 } from './components';
 
 import { DataStorageService } from './services/data-storage.service';
 
 // Components
 export const COMPONENTS = [
+  DataTableOverviewComponent,
+  BasicUsageComponent,
+  DataTableClientSideDataBindingComponent,
+  ClientSideDataBindingComponent,
+
   DataTableFilteringComponent,
   DataTableServerSideDataBindingComponent,
-  DataTableClientSideDataBindingComponent,
-  DataTableOverviewComponent,
   DataTableSortingComponent,
   DataTableResizableComponent,
   DataTablePaginationComponent,
@@ -43,8 +48,7 @@ export const COMPONENTS = [
   DataTableRowExpandTemplateComponent,
   DataTableRealTimeDataBindingComponent,
   DataTableNoRecordsTemplateComponent,
-  DataTableLoadingSpinnerTemplateComponent,
-  BasicUsageComponent
+  DataTableLoadingSpinnerTemplateComponent
 ];
 
 // Services
