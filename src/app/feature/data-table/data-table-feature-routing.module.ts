@@ -6,7 +6,7 @@ import {
   DataTableOverviewComponent,
   DataTableSortingComponent,
   DataTableResizableComponent,
-  DataTablePagingComponent,
+  DataTablePaginationComponent,
   DataTableTranslationsComponent,
   DataTableHeaderDetailsComponent,
   DataTablePersistDataComponent,
@@ -50,8 +50,8 @@ const dataTableFeatureRoutes: Routes = [
     path: 'real-time-data-binding'
   },
   {
-    component: DataTablePagingComponent,
-    path: 'paging'
+    component: DataTablePaginationComponent,
+    path: 'pagination'
   },
   {
     component: DataTableTranslationsComponent,

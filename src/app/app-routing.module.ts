@@ -27,8 +27,8 @@ const dropdownNavigationData: MenuItem[] = [
     title: 'Grouping',
   },
   {
-    routePath: 'paging',
-    title: 'Paging',
+    routePath: 'pagination',
+    title: 'Pagination',
   },
   {
     routePath: 'sorting',
@@ -38,117 +38,133 @@ const dropdownNavigationData: MenuItem[] = [
 
 const dataTableNavigationData: MenuItem[] = [
   {
-    title: 'Overview',
     routePath: '/data-table/overview',
+    title: 'Overview'
   },
   {
-    routePath: '/client-side-data-binding',
+    routePath: '/data-table/client-side-data-binding',
     title: 'Client Side Data Binding',
   },
   {
-    routePath: '/server-side-data-binding',
+    routePath: '/data-table/server-side-data-binding',
     title: 'Server Side Data Binding'
   },
   {
-    routePath: '/real-time-data-binding',
+    routePath: '/data-table/real-time-data-binding',
     title: 'Real Time Data Binding'
   },
   {
-    routePath: '/paging',
-    title: 'Paging'
+    routePath: '/data-table/pagination',
+    title: 'Pagination'
   },
   {
-    routePath: '/translations',
-    title: 'Translations'
+    routePath: '/data-table/column/sorting',
+    title: 'Column Sorting'
   },
   {
-    routePath: '/header-details',
-    title: 'Header Details'
+    routePath: '/data-table/grouping',
+    title: 'Row Grouping'
   },
   {
-    routePath: '/data-persistence',
-    title: 'Data Persistence'
-  },
-  {
-    routePath: '/limit',
-    title: 'Data Limit'
-  },
-  {
-    routePath: '/substitute-rows',
-    title: 'Substitute Rows'
-  },
-  {
-    routePath: '/responsive-configuration',
-    title: 'Responsive Configuration'
-  },
-  {
-    routePath: '/loading-spinner',
-    title: 'Data Loading Spinner'
-  },
-  {
-    routePath: '/grouping',
-    title: 'Grouping'
-  },
-  {
-    routePath: '/row-selection',
-    title: 'Row Selection'
-  },
-  {
-    routePath: 'column/filtering',
+    routePath: '/data-table/column/filtering',
     title: 'Filtering'
   },
   {
-    routePath: 'column/sorting',
-    title: 'Sorting'
+    routePath: '/data-table/row-selection',
+    title: 'Row Selection'
   },
   {
-    routePath: 'column/resizable',
-    title: 'Resizable'
+    routePath: '/data-table/column/resizable',
+    title: 'Column Resizing'
   },
   {
-    routePath: 'events/init',
-    title: 'init'
+    routePath: '/data-table/translations',
+    title: 'Translations'
   },
   {
-    routePath: 'events/allRowSelectChange',
-    title: 'allRowSelectChange'
+    routePath: '/data-table/header-details',
+    title: 'Header Details'
   },
   {
-    routePath: 'events/rowBind',
-    title: 'rowBind'
+    routePath: '/data-table/data-persistence',
+    title: 'Data Persistence'
   },
   {
-    routePath: 'events/rowSelectChange',
-    title: 'rowSelectChange'
+    routePath: '/data-table/limit',
+    title: 'Data Limit'
   },
   {
-    routePath: 'events/cellBind',
-    title: 'cellBind'
+    routePath: '/data-table/substitute-rows',
+    title: 'Substitute Rows'
   },
   {
-    routePath: 'events/cellClick',
-    title: 'cellClick'
+    routePath: '/data-table/responsive-configuration',
+    title: 'Responsive Configuration'
   },
   {
-    routePath: 'events/columnBind',
-    title: 'columnBind'
+    routePath: '/data-table/loading-spinner',
+    title: 'Data Loading Spinner'
   },
   {
-    routePath: 'events/dataBound',
-    title: 'dataBound'
+    routePath: '/data-table/templates/cell-template',
+    title: 'Cell Template'
   },
   {
-    routePath: 'events/headerClick',
-    title: 'headerClick'
+    routePath: '/data-table/templates/expand-template',
+    title: 'Row Expand Template'
   },
   {
-    routePath: 'events/rowClick',
-    title: 'rowClick'
+    routePath: '/data-table/templates/loading-spinner-template',
+    title: 'Loading Spinner Template'
   },
   {
-    routePath: 'events/rowDoubleClick',
-    title: 'rowDoubleClick'
+    routePath: '/data-table/templates/no-records-template',
+    title: 'No Records Template'
   }
+  // {
+  //   routePath: '/data-table/events/init',
+  //   title: 'init'
+  // },
+  // {
+  //   routePath: '/data-table/events/allRowSelectChange',
+  //   title: 'allRowSelectChange'
+  // },
+  // {
+  //   routePath: '/data-table/events/rowBind',
+  //   title: 'rowBind'
+  // },
+  // {
+  //   routePath: '/data-table/events/rowSelectChange',
+  //   title: 'rowSelectChange'
+  // },
+  // {
+  //   routePath: '/data-table/events/cellBind',
+  //   title: 'cellBind'
+  // },
+  // {
+  //   routePath: '/data-table/events/cellClick',
+  //   title: 'cellClick'
+  // },
+  // {
+  //   routePath: '/data-table/events/columnBind',
+  //   title: 'columnBind'
+  // },
+  // {
+  //   routePath: '/data-table/events/dataBound',
+  //   title: 'dataBound'
+  // },
+  // {
+  //   routePath: '/data-table/events/headerClick',
+  //   title: 'headerClick'
+  // },
+  // {
+  //   routePath: '/data-table/events/rowClick',
+  //   title: 'rowClick'
+  // },
+  // {
+  //   routePath: '/data-table/events/rowDoubleClick',
+  //   title: 'rowDoubleClick'
+  // }
 ];
 
 /**

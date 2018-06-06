@@ -8,11 +8,11 @@ import { of } from 'rxjs';
 import { sampleData } from '../../data/data-table-example';
 
 @Component({
-  selector: 'app-data-table-paging-component',
-  templateUrl: './data-table-paging.component.html',
-  styleUrls: ['./data-table-paging.component.scss']
+  selector: 'app-data-table-pagination-component',
+  templateUrl: './data-table-pagination.component.html',
+  styleUrls: ['./data-table-pagination.component.scss']
 })
-export class DataTablePagingComponent {
+export class DataTablePaginationComponent {
   public DataTableSelectMode = DataTableSelectMode;
 
   public items: Observable<any>;

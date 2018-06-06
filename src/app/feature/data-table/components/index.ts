@@ -4,7 +4,7 @@ export { DataTableOverviewComponent } from './data-table-overview/data-table-ove
 export { DataTableFilteringComponent } from './data-table-filtering/data-table-filtering.component';
 export { DataTableSortingComponent } from './data-table-sorting/data-table-sorting.component';
 export { DataTableResizableComponent } from './data-table-resizable/data-table-resizable.component';
-export { DataTablePagingComponent } from './data-table-paging/data-table-paging.component';
+export { DataTablePaginationComponent } from './data-table-pagination/data-table-pagination.component';
 export { DataTableTranslationsComponent } from './data-table-translations/data-table-translations.component';
 export { DataTableHeaderDetailsComponent } from './data-table-header-details/data-table-header-details.component';
 export { DataTablePersistDataComponent } from './data-table-persist-data/data-table-persist-data.component';
