@@ -1,0 +1,21 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+:host-context {
+  .search-place-holder {
+
+    background: $side-menu-background;
+    position: sticky;
+    left: 0;
+    margin-bottom: 0;
+    padding: .7rem .5rem 0;
+    top: 0;
+    z-index: 12;
+
+    input {
+      @include font-size(.8, 2);
+      height: 35px;
+      width: 100%;
+    }
+  }
+}

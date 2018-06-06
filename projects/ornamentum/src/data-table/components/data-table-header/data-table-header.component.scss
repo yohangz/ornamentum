@@ -10,8 +10,6 @@ $list-view-icon-url: '../../../styles/images/list-view.svg';
     content: '';
     cursor: pointer;
     height: 1.7em;
-    position: absolute;
-    top: .7em;
     width: 1.7em;
   }
 
@@ -22,6 +20,7 @@ $list-view-icon-url: '../../../styles/images/list-view.svg';
     border-bottom: .05rem solid $data-table-header-border;
     min-height: 2rem;
     padding: 0 .5rem 0 1rem;
+    position: relative;
 
     .ng-data-table-title {
       @include font-size(1, 1.8);
@@ -30,7 +29,9 @@ $list-view-icon-url: '../../../styles/images/list-view.svg';
     }
 
     .ng-data-table-action-button-container {
-      position: relative;
+      position: absolute;
+      right: 0;
+      top: .7em;
 
       .ng-data-table-action-button {
         border: 0;
@@ -40,7 +41,7 @@ $list-view-icon-url: '../../../styles/images/list-view.svg';
           background: transparent url($refresh-icon-url) no-repeat;
           background-size: contain;
           height: 1.4em;
-          right: 0;
+          margin-right: .5em;
         }
 
         &.ng-data-table-column-selector-button {
@@ -48,7 +49,7 @@ $list-view-icon-url: '../../../styles/images/list-view.svg';
           background: transparent url($list-view-icon-url) no-repeat;
           background-size: contain;
           height: 1.4em;
-          right: 2.5em;
+          margin-right: .5em;
         }
 
         &:focus,

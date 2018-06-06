@@ -3,22 +3,161 @@
 :host-context {
 
   ::ng-deep {
+
+    .prettyprint {
+      background: $nav-tabs-border-color;
+      white-space: pre-wrap;
+
+      ol {
+        padding-left: 3.5rem;
+
+        li {
+          background-color: $nav-tabs-border-color;
+        }
+      }
+    }
+
+    .icon-toggle {
+      cursor: pointer;
+      display: block;
+      left: 1.5rem;
+      padding: 0;
+      position: fixed;
+      top: .7rem;
+      z-index: 1021;
+
+      .navbar-toggler-icon {
+        background-image: url(../../../assets/img/menu.svg);
+        background-repeat: no-repeat;
+      }
+    }
+
+    .toggler-check-box {
+      display: none;
+    }
+
+    .toggler-check-box ~ .page-wrapper-inner-content .main-pane {
+      padding-left: 250px;
+      transition: padding 1s ease;
+    }
+
+    .toggler-check-box {
+      ~ .side-menu-collapsed {
+        &.page-wrapper-inner-content {
+          .main-pane {
+            padding-left: 2rem;
+            transition: padding 1s ease;
+          }
+        }
+      }
+    }
+
+    .toggler-check-box {
+      ~ .side-menu-collapsed {
+        &.page-wrapper-inner-content {
+          .off-canvas {
+            .side-menu {
+              left: -225px;
+              transition: left 1s ease;
+            }
+          }
+        }
+      }
+    }
+
+    .toggler-check-box:checked {
+      ~ .side-menu-collapsed {
+        &.page-wrapper-inner-content {
+          .off-canvas {
+            .side-menu {
+              left: 0;
+              transition: left 1s ease;
+            }
+
+            .side-menu-overlay {
+              background: rgba(0,0,0, 0.5);
+              height: 100%;
+              left: 0;
+              position: fixed;
+              top: 0;
+              transition: all 1s ease;
+              visibility: visible;
+              width: 100%;
+              z-index: 1;
+            }
+          }
+        }
+      }
+    }
+
+    .toggler-check-box:checked {
+      ~ .side-menu-collapsed {
+        &.page-wrapper-inner-content {
+          .main-pane {
+            padding-left: 2rem;
+            transition: padding 1s ease;
+          }
+        }
+      }
+    }
+
+    .toggler-check-box:checked ~ .page-wrapper-inner-content .off-canvas .side-menu {
+      left: -225px;
+      transition: left 1s ease;
+    }
+
+
+
+    .toggler-check-box:checked ~ .page-wrapper-inner-content .main-pane {
+      padding-left: 2rem;
+      transition: all 1s ease;
+    }
+
     .page-wrapper-inner-content{
       @include display-flex;
       @include justify-content(space-between);
       font-family: $primary-font;
 
-      .side-menu {
-        @include box-shadow(1px 1px 3px #ccc);
-        background: $side-menu-background;
-        height: 100vh;
-        overflow-y: auto;
-        padding: 1rem 1rem 5rem;
+      .off-canvas {
+        position: absolute;
+        width: 20vw;
+        z-index: 1;
+
+        .side-menu-overlay {
+          background: none;
+          height: 100%;
+          position: fixed;
+          transition: all 1s ease;
+          visibility: hidden;
+          width: 100%;
+        }
+      }
+
+
+      .off-canvas > .side-menu {
         position: fixed;
-        width: 25vw;
-        z-index: 10000;
+        left: 0;
+        transition: left 1s ease;
+        width: 225px;
+        z-index: 2;
+      }
+
+
+      .off-canvas > .side-menu > .side-menu-navi {
+        background: white;
+        height: 100%;
+      }
+
+      .side-menu {
+        background: $side-menu-background;
+        border-right: 1px solid $main-nav-bar-active-text;
+        height: calc(100vh - 54px);
+        overflow-y: auto;
+        padding: 0 0 8rem;
+
 
         h4 {
+          @include font-size(1.2, 1.2);
           margin-bottom: 0;
         }
 
@@ -28,23 +167,28 @@
         }
 
         ul {
+          padding: .5rem 0 0 0;
+
+
           li {
             @include font-size(1, 1);
             list-style-type: none;
 
             a {
-              @include font-size(.9, 1);
+              @include font-size(.8, 1);
               color: $side-menu-link-color;
               position: relative;
 
-              &::before {
-                color: $side-menu-label-text;
-                content: ">";
-                height: 1rem;
-                left: -.3rem;
-                pointer-events: none;
-                position: absolute;
-                width: 1rem;
+              &:hover {
+                background: $primary-text-color;
+              }
+            }
+
+            &.active {
+              a {
+                span {
+                  color: $side-menu-link-active-color;;
+                }
               }
             }
           }
@@ -52,7 +196,8 @@
       }
 
       .main-pane {
-        padding: 1rem 1rem 1rem 28vw;
+        @include font-size(.9, 1.4);
+        padding: 1rem;
 
         h1 {
           @include font-size(1.6, 1.4);
@@ -61,6 +206,135 @@
         h2 {
           @include font-size(1.3, 1.4);
           color: $side-menu-label-text;
+        }
+
+        .nav-tabs {
+          @include flex-wrap(nowrap);
+          background: $nav-tabs-active-color;
+          border: none;
+          margin-top: 1rem;
+
+          .nav-item {
+            margin-right: .1rem;
+          }
+
+          .nav-link {
+            @include font-size(.7, 1.4);
+            @include border-radius(0);
+            border: 0;
+            border-bottom: 3px solid transparent;
+            color: $side-menu-background;
+            cursor: pointer;
+            font-weight: 700;
+            height: 100%;
+            padding: .5rem .7rem .5rem 2.2rem;
+            position: relative;
+
+            .ts-icon {
+               background: url(../../../assets/img/typescript.svg) no-repeat;
+               background-size: 100% 100%;
+               border: 0;
+               cursor: pointer;
+               display: inline-block;
+               height: 1.2rem;
+               position: absolute;
+               left: .5rem;
+               top: .5rem;
+               width: 1.2rem;
+             }
+
+            .html-icon {
+              background: url(../../../assets/img/html-5.svg) no-repeat;
+              background-size: 100% 100%;
+              border: 0;
+              cursor: pointer;
+              display: inline-block;
+              height: 1.2rem;
+              position: absolute;
+              left: .5rem;
+              top: .5rem;
+              width: 1.2rem;
+            }
+
+            .json-icon {
+              background: url(../../../assets/img/json.svg) no-repeat;
+              background-size: 100% 100%;
+              border: 0;
+              cursor: pointer;
+              display: inline-block;
+              height: 1.2rem;
+              position: absolute;
+              left: .5rem;
+              top: .5rem;
+              width: 1.2rem;
+            }
+
+            .css-icon {
+              background: url(../../../assets/img/css-3.svg) no-repeat;
+              background-size: 100% 100%;
+              border: 0;
+              cursor: pointer;
+              display: inline-block;
+              height: 1.2rem;
+              position: absolute;
+              left: .5rem;
+              top: .5rem;
+              width: 1.2rem;
+            }
+
+            &.active {
+              background: $nav-tabs-border-color;
+              border: none;
+              border-bottom: 3px solid $side-menu-link-active-color;
+
+              &:hover {
+                border-bottom: 3px solid $side-menu-link-active-color;
+              }
+            }
+
+            &:hover {
+              border: none;
+              border-bottom: 3px solid transparent;
+            }
+          }
+        }
+
+        .tab-content {
+          position: relative;
+
+          .edit-on-sandbox {
+            background: url(../../../assets/img/edit-on-sandbox.svg) no-repeat;
+            background-size: 100% 100%;
+            display: inline-block;
+            height: 1.5rem;
+            position: absolute;
+            right: 2.5rem;
+            top: .5rem;
+            width: 1.5rem;
+
+            &:hover {
+              opacity: .6;
+            }
+          }
+
+          app-copy-content {
+            button {
+              background: url(../../../assets/img/copy.svg) no-repeat;
+              background-size: 100% 100%;
+              border: 0;
+              cursor: pointer;
+              display: inline-block;
+              height: 1.5rem;
+              position: absolute;
+              right: .5rem;
+              top: .5rem;
+              width: 1.5rem;
+
+              &:hover {
+                opacity: .6;
+              }
+            }
+          }
         }
       }
     }

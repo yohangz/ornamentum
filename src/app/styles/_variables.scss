@@ -1,10 +1,13 @@
 @import '~compass-mixins/lib/compass';
 
-$primary-font: 'Quicksand', sans-serif;
+$primary-font: 'Roboto', sans-serif;
 $nav-bar-background: #2c2c2c;
 $primary-text-color: #f5f5f5;
 $main-nav-bar-active-background: #555;
 $main-nav-bar-active-text: #ccc;
-$side-menu-background: #0C87E2;
-$side-menu-label-text: #ccc;
-$side-menu-link-color: #fff;
+$side-menu-background: #fff;
+$side-menu-label-text: #777;
+$side-menu-link-color: #333;
+$side-menu-link-active-color: #1976d2;
+$nav-tabs-border-color: #24282A;
+$nav-tabs-active-color: #1C2022
