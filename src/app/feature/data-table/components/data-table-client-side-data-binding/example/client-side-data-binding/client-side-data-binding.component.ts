@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 import { DataTableSelectMode } from 'ornamentum';
 
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
 import { data } from './client-side-data-binding.data';
 
 @Component({
@@ -13,9 +10,9 @@ import { data } from './client-side-data-binding.data';
 })
 export class ClientSideDataBindingComponent {
   public DataTableSelectMode = DataTableSelectMode;
-  public items: Observable<any>;
+  public items: any[];
 
   constructor() {
-    this.items = of(data);
+    this.items = data;
   }
 }

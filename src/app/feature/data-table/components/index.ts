@@ -2,6 +2,10 @@ export { DataTableOverviewComponent } from './data-table-overview/data-table-ove
 export { BasicUsageComponent } from './data-table-overview/example/basic-usage/basic-usage.component';
 export { DataTableClientSideDataBindingComponent } from './data-table-client-side-data-binding/data-table-client-side-data-binding.component';
 export { ClientSideDataBindingComponent } from './data-table-client-side-data-binding/example/client-side-data-binding/client-side-data-binding.component';
+export { DataTableServerSideDataBindingComponent } from './data-table-server-side-data-binding/data-table-server-side-data-binding.component';
+export { ServerSideDataBindingComponent } from './data-table-server-side-data-binding/example/server-side-data-binding/server-side-data-binding.component';
+export { DataTableRealTimeDataBindingComponent } from './data-table-real-time-data-binding/data-table-real-time-data-binding.component';
+export { RealTimeDataBindingComponent } from './data-table-real-time-data-binding/example/real-time-data-binding/real-time-data-binding.component';
 
 export { DataTableFilteringComponent } from './data-table-filtering/data-table-filtering.component';
 export { DataTableSortingComponent } from './data-table-sorting/data-table-sorting.component';
@@ -16,7 +20,5 @@ export { DataTableResponsiveConfComponent } from './data-table-responsive-conf/d
 export { DataTableLoadingSpinnerComponent } from './data-table-loading-spinner/data-table-loading-spinner.component';
 export { DataTableRowExpandTemplateComponent } from './data-table-templates/data-table-row-expand-template/data-table-row-expand-template.component';
 export { DataTableCellTemplateComponent } from './data-table-templates/data-table-cell-template/data-table-cell-template.component';
-export { DataTableServerSideDataBindingComponent } from './data-table-server-side-data-binding/data-table-server-side-data-binding.component';
-export { DataTableRealTimeDataBindingComponent } from './data-table-real-time-data-binding/data-table-real-time-data-binding.component';
 export { DataTableNoRecordsTemplateComponent } from './data-table-templates/data-table-no-records-template/data-table-no-records-template.component';
 export { DataTableLoadingSpinnerTemplateComponent } from './data-table-templates/data-table-loading-spinner-template/data-table-loading-spinner-template.component';

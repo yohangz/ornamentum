@@ -3,22 +3,24 @@ import {
   BasicUsageComponent,
   DataTableClientSideDataBindingComponent,
   ClientSideDataBindingComponent,
-
-  DataTableFilteringComponent,
-  DataTableSortingComponent,
-  DataTableResizableComponent,
+  DataTableServerSideDataBindingComponent,
+  ServerSideDataBindingComponent,
+  DataTableRealTimeDataBindingComponent,
+  RealTimeDataBindingComponent,
   DataTablePaginationComponent,
+
+  DataTableSortingComponent,
+  DataTableFilteringComponent,
+  DataTableResizableComponent,
   DataTableTranslationsComponent,
   DataTableHeaderDetailsComponent,
   DataTablePersistDataComponent,
   DataTableSubstituteRowsComponent,
   DataTableLimitComponent,
   DataTableResponsiveConfComponent,
-  DataTableServerSideDataBindingComponent,
   DataTableLoadingSpinnerComponent,
   DataTableRowExpandTemplateComponent,
   DataTableCellTemplateComponent,
-  DataTableRealTimeDataBindingComponent,
   DataTableNoRecordsTemplateComponent,
   DataTableLoadingSpinnerTemplateComponent
 } from './components';
@@ -31,12 +33,15 @@ export const COMPONENTS = [
   BasicUsageComponent,
   DataTableClientSideDataBindingComponent,
   ClientSideDataBindingComponent,
-
-  DataTableFilteringComponent,
   DataTableServerSideDataBindingComponent,
-  DataTableSortingComponent,
-  DataTableResizableComponent,
+  ServerSideDataBindingComponent,
+  DataTableRealTimeDataBindingComponent,
+  RealTimeDataBindingComponent,
   DataTablePaginationComponent,
+
+  DataTableSortingComponent,
+  DataTableFilteringComponent,
+  DataTableResizableComponent,
   DataTableTranslationsComponent,
   DataTableHeaderDetailsComponent,
   DataTablePersistDataComponent,
@@ -46,7 +51,6 @@ export const COMPONENTS = [
   DataTableLoadingSpinnerComponent,
   DataTableCellTemplateComponent,
   DataTableRowExpandTemplateComponent,
-  DataTableRealTimeDataBindingComponent,
   DataTableNoRecordsTemplateComponent,
   DataTableLoadingSpinnerTemplateComponent
 ];
