@@ -93,60 +93,10 @@
   </li>
 </ul>
 
-<ng-data-table
-  [title]="'Station Details'"
-  [selectTrackBy]="'id'"
-  [dataSource]="items"
-  [pageable]="false"
-  [showHeader]="true"
-  [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [filterable]="true"
-    [showDropdownFilter]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true"
-    [dropdownFilterCloseMenuOnSelect]="false"
-    [width]="120">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'"
-    [dropdownFilterMenuPosition]="MenuPosition.BOTTOM_RIGHT"
-    [filterable]="true"
-    [showDropdownFilter]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true"
-    [dropdownFilterCloseMenuOnSelect]="false">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'"
-    [dropdownFilterMenuPosition]="MenuPosition.BOTTOM_LEFT"
-    [filterable]="true"
-    [showDropdownFilter]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true"
-    [filter]="[{ key: 'In Service', value: 'In Service' }]">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'"
-    [dropdownFilterMenuPosition]="MenuPosition.TOP_LEFT"
-    [filterable]="true"
-    [showDropdownFilter]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'"
-    [dropdownFilterMenuPosition]="MenuPosition.TOP_RIGHT"
-    [filterable]="true"
-    [showDropdownFilter]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
-  </ng-data-table-column>
-</ng-data-table>
-<br>
+<app-filter-dropdown-usage></app-filter-dropdown-usage>
+
+<app-example-code [files]="filterDropdownUsage"></app-example-code>
+
 <h2>Filter Text Box</h2>
 <p>The following content shows the available configurations when using column search filter text box.</p>
 
@@ -159,52 +109,9 @@
   </li>
 </ul>
 
-<ng-data-table
-  [title]="'Station Details'"
-  [selectTrackBy]="'id'"
-  [dataSource]="items"
-  [pageable]="false"
-  [showHeader]="true"
-  [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [filterable]="true"
-    [filterPlaceholder]="'ID Filter'"
-    [showFilterClearButton]="true"
-    [width]="100">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'"
-    [filterable]="true"
-    [filterPlaceholder]="'Station Name Filter'"
-    [showFilterClearButton]="true">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'"
-    [filterable]="true"
-    [filterPlaceholder]="'Status Value Filter'"
-    [showFilterClearButton]="true">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'"
-    [filterable]="true"
-    [filterPlaceholder]="'Bike Count Filter'"
-    [showFilterClearButton]="true">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'"
-    [filterable]="true"
-    [filterPlaceholder]="'Address Name Filter'"
-    [showFilterClearButton]="true">
-  </ng-data-table-column>
-</ng-data-table>
+<app-filter-text-box-usage></app-filter-text-box-usage>
+
+<app-example-code [files]="filterTextBoxUsage"></app-example-code>
 
 <h2>Suggested Links</h2>
 <a [href]="''" target="_blank">API Doc for Data Filtering</a>

@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode, DropdownMenuPosition } from 'ornamentum';
-
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
-import { sampleData } from '../../data/data-table-example';
+import { filterDropdownUsage, filterTextBoxUsage } from './data-table-filtering.list';
 
 @Component({
   selector: 'app-data-table-filtering-component',
@@ -13,12 +8,6 @@ import { sampleData } from '../../data/data-table-example';
   styleUrls: ['./data-table-filtering.component.scss']
 })
 export class DataTableFilteringComponent {
-  public MenuPosition = DropdownMenuPosition;
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public items: Observable<any>;
-
-  constructor() {
-    this.items = of(sampleData);
-  }
+  public filterDropdownUsage = filterDropdownUsage;
+  public filterTextBoxUsage = filterTextBoxUsage;
 }

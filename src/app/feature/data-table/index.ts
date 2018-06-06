@@ -11,8 +11,10 @@ import {
   PaginationUsageComponent,
   DataTableColumnSortingComponent,
   ColumnSortingUsageComponent,
-
   DataTableFilteringComponent,
+  FilterDropdownUsageComponent,
+  FilterTextBoxUsageComponent,
+
   DataTableResizableComponent,
   DataTableTranslationsComponent,
   DataTableHeaderDetailsComponent,
@@ -43,8 +45,10 @@ export const COMPONENTS = [
   PaginationUsageComponent,
   DataTableColumnSortingComponent,
   ColumnSortingUsageComponent,
-
   DataTableFilteringComponent,
+  FilterDropdownUsageComponent,
+  FilterTextBoxUsageComponent,
+
   DataTableResizableComponent,
   DataTableTranslationsComponent,
   DataTableHeaderDetailsComponent,

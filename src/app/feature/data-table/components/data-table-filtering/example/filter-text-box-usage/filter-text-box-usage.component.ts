@@ -3,13 +3,13 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
-import { data } from './basic-usage.data';
+import { data } from './filter-text-box-usage.data';
 
 @Component({
-  selector: 'app-basic-usage',
-  templateUrl: './basic-usage.component.html'
+  selector: 'app-filter-text-box-usage',
+  templateUrl: './filter-text-box-usage.component.html'
 })
-export class BasicUsageComponent {
+export class FilterTextBoxUsageComponent {
   public items: Observable<any>;
 
   constructor() {

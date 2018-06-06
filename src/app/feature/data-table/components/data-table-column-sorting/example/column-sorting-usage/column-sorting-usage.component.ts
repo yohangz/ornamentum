@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode, DataTableSortOrder } from 'ornamentum';
+import { DataTableSortOrder } from 'ornamentum';
 
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
@@ -12,7 +12,6 @@ import { data } from './column-sorting-usage.data';
   templateUrl: './column-sorting-usage.component.html'
 })
 export class ColumnSortingUsageComponent {
-  public DataTableSelectMode = DataTableSelectMode;
   public DataTableSortOrder = DataTableSortOrder;
 
   public items: Observable<any>;

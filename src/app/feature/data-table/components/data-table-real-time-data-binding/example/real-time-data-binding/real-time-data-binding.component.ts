@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
-
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
@@ -12,7 +10,6 @@ import { data } from './real-time-data-binding.data';
   templateUrl: './real-time-data-binding.component.html'
 })
 export class RealTimeDataBindingComponent {
-  public DataTableSelectMode = DataTableSelectMode;
   public dataSource: Observable<any>;
 
   public interval: any;

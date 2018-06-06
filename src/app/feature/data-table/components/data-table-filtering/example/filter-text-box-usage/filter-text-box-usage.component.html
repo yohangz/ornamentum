@@ -1,0 +1,46 @@
+<ng-data-table
+  [title]="'Station Details'"
+  [selectTrackBy]="'id'"
+  [dataSource]="items"
+  [pageable]="false"
+  [showHeader]="true"
+  [showRefreshButton]="false"
+  [showIndexColumn]="true"
+  [showColumnSelector]="false">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [filterable]="true"
+    [filterPlaceholder]="'ID Filter'"
+    [showFilterClearButton]="true"
+    [width]="100">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stationName'"
+    [title]="'Station Name'"
+    [filterable]="true"
+    [filterPlaceholder]="'Station Name Filter'"
+    [showFilterClearButton]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'statusValue'"
+    [title]="'Status Value'"
+    [filterable]="true"
+    [filterPlaceholder]="'Status Value Filter'"
+    [showFilterClearButton]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'availableBikes'"
+    [title]="'Available Bikes'"
+    [filterable]="true"
+    [filterPlaceholder]="'Bike Count Filter'"
+    [showFilterClearButton]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stAddress1'"
+    [title]="'Address'"
+    [filterable]="true"
+    [filterPlaceholder]="'Address Name Filter'"
+    [showFilterClearButton]="true">
+  </ng-data-table-column>
+</ng-data-table>

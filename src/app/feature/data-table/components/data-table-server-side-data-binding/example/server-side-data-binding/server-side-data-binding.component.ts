@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
-
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
@@ -12,7 +10,6 @@ import { data } from './server-side-data-binding.data';
   templateUrl: './server-side-data-binding.component.html'
 })
 export class ServerSideDataBindingComponent {
-  public DataTableSelectMode = DataTableSelectMode;
   public dataSource: Observable<any>;
 
   constructor() {

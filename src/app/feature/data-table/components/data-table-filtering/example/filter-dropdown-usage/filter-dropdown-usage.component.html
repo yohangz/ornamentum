@@ -1,0 +1,53 @@
+<ng-data-table
+  [title]="'Station Details'"
+  [selectTrackBy]="'id'"
+  [dataSource]="items"
+  [pageable]="false"
+  [showHeader]="true"
+  [showRefreshButton]="false"
+  [showIndexColumn]="true"
+  [showColumnSelector]="false">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [filterable]="true"
+    [showDropdownFilter]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [dropdownFilterCloseMenuOnSelect]="false"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stationName'"
+    [title]="'Station Name'"
+    [dropdownFilterMenuPosition]="DropdownMenuPosition.BOTTOM_RIGHT"
+    [filterable]="true"
+    [showDropdownFilter]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [dropdownFilterCloseMenuOnSelect]="false">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'statusValue'"
+    [title]="'Status Value'"
+    [dropdownFilterMenuPosition]="DropdownMenuPosition.BOTTOM_LEFT"
+    [filterable]="true"
+    [showDropdownFilter]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [filter]="[{ key: 'In Service', value: 'In Service' }]">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'availableBikes'"
+    [title]="'Available Bikes'"
+    [dropdownFilterMenuPosition]="DropdownMenuPosition.TOP_LEFT"
+    [filterable]="true"
+    [showDropdownFilter]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stAddress1'"
+    [title]="'Address'"
+    [dropdownFilterMenuPosition]="DropdownMenuPosition.TOP_RIGHT"
+    [filterable]="true"
+    [showDropdownFilter]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true">
+  </ng-data-table-column>
+</ng-data-table>
