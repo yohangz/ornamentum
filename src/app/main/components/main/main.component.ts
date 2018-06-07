@@ -17,6 +17,7 @@ export class MainComponent implements OnDestroy {
   public sideMenuCollapsed = false;
 
   constructor() {
+    this.sideMenuCollapsed = window.innerWidth < 991;
     this.resizeEventSubscription = fromEvent(window, 'resize')
       .pipe(
         debounceTime(66)
