@@ -13,6 +13,7 @@
             padding-bottom: 1.6rem;
             padding-left: 1rem;
             padding-top: 1.6rem;
+            width: 10rem;
           }
         }
         .icon-menu {
@@ -51,6 +52,8 @@
       .navbar-toggler-icon {
         background-image: url(../../../assets/img/menu.svg);
         background-repeat: no-repeat;
+        height: 1.3em;
+        width: 1.3em;
       }
     }
 
@@ -63,9 +66,10 @@
       transition: padding 1s ease;
     }
 
-    .toggler-check-box {
-      ~ .side-menu-collapsed {
-        &.page-wrapper-inner-content {
+
+    .side-menu-collapsed {
+      .toggler-check-box {
+        ~ .page-wrapper-inner-content {
           .main-pane {
             padding-left: 2rem;
             transition: padding 1s ease;
@@ -74,9 +78,9 @@
       }
     }
 
-    .toggler-check-box {
-      ~ .side-menu-collapsed {
-        &.page-wrapper-inner-content {
+    .side-menu-collapsed {
+      .toggler-check-box {
+        ~ .page-wrapper-inner-content {
           .off-canvas {
             .side-menu {
               left: -225px;
@@ -87,9 +91,9 @@
       }
     }
 
-    .toggler-check-box:checked {
-      ~ .side-menu-collapsed {
-        &.page-wrapper-inner-content {
+    .side-menu-collapsed {
+      .toggler-check-box:checked {
+        ~ .page-wrapper-inner-content {
           .off-canvas {
             .side-menu {
               left: 0;
@@ -112,9 +116,9 @@
       }
     }
 
-    .toggler-check-box:checked {
-      ~ .side-menu-collapsed {
-        &.page-wrapper-inner-content {
+    .side-menu-collapsed {
+      .toggler-check-box:checked {
+        ~ .page-wrapper-inner-content {
           .main-pane {
             padding-left: 2rem;
             transition: padding 1s ease;
@@ -231,7 +235,6 @@
         }
 
         .nav-tabs {
-          @include flex-wrap(nowrap);
           background: $nav-tabs-active-color;
           border: none;
           margin-top: 1rem;
