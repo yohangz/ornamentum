@@ -17,14 +17,18 @@ export class MainComponent implements OnDestroy {
   public sideMenuCollapsed = false;
 
   constructor() {
-    this.sideMenuCollapsed = window.innerWidth < 991;
+    this.setMenuCollapsedState();
     this.resizeEventSubscription = fromEvent(window, 'resize')
       .pipe(
         debounceTime(66)
       )
       .subscribe(() => {
-        this.sideMenuCollapsed = window.innerWidth < 991;
+        this.setMenuCollapsedState();
       });
+  }
+
+  private setMenuCollapsedState(): void {
+    this.sideMenuCollapsed = window.innerWidth < 991;
   }
 
   public ngOnDestroy(): void {
