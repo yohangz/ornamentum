@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
+
+import { fromEvent, Subscription } from 'rxjs/index';
+import { debounceTime } from 'rxjs/operators';
 
 /**
  * Component class for showing main view.
@@ -9,6 +12,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./main.component.scss'],
   templateUrl: './main.component.html'
 })
-export class MainComponent {
+export class MainComponent implements OnDestroy {
+  private resizeEventSubscription: Subscription;
+  public sideMenuCollapsed = false;
+
+  constructor() {
+    this.resizeEventSubscription = fromEvent(window, 'resize')
+      .pipe(
+        debounceTime(66)
+      )
+      .subscribe(() => {
+        this.sideMenuCollapsed = window.innerWidth < 991;
+      });
+  }
+
+  public ngOnDestroy(): void {
+    this.resizeEventSubscription.unsubscribe();
+  }
 }
 

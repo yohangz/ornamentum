@@ -1,5 +1,5 @@
 <div class="main-wrapper">
-  <div class="page-wrapper">
+  <div class="page-wrapper" [class.side-menu-collapsed]="sideMenuCollapsed">
     <app-main-menu></app-main-menu>
     <div class="page-wrapper-content">
       <router-outlet></router-outlet>
