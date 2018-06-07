@@ -10,13 +10,20 @@
     background: $nav-bar-background;
     flex-wrap: nowrap;
     font-family: $primary-font;
-    padding: 0 1rem;
+    padding: 0 1rem 0 1.5rem;
 
     .app-name-lg {
-      color: $main-nav-bar-active-text;
-      font-weight: 700;
+      background: url(../../../assets/img/ornamentum.svg) no-repeat;
+      background-size: 100% 100%;
+      display: inline-block;
+      height: 2.2rem;
       padding-left: 4rem;
-      padding-top: .3rem;
+      padding-top: 0;
+      position: relative;
+      left: 1.5rem;
+      top: 0;
+      width: 14rem;
+
 
       &:hover {
         color: $main-nav-bar-active-text;
@@ -80,6 +87,10 @@
           right: 1rem;
           top: -.4rem;
           width: 2rem;
+
+          &:hover {
+            opacity: .7;
+          }
         }
       }
 
