@@ -1,0 +1,32 @@
+<ng-data-table
+  [title]="'Station Details'"
+  [selectTrackBy]="'id'"
+  [dataSource]="emptyItemSet"
+  [pageable]="true"
+  [showHeader]="true"
+  [showRefreshButton]="false"
+  [showIndexColumn]="true"
+  [showColumnSelector]="false"
+  [translations]="DataTableTranslations">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [width]="100">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stationName'"
+    [title]="'Station Name'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'statusValue'"
+    [title]="'Status Value'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'availableBikes'"
+    [title]="'Available Bikes'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'stAddress1'"
+    [title]="'Address'">
+  </ng-data-table-column>
+</ng-data-table>

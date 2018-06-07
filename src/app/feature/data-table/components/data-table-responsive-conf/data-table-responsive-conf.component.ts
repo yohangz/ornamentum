@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
-
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
-import { sampleData } from '../../data/data-table-example';
+import { responsiveConfAllUsage, responsiveConfWithoutWidthHeightUsage } from './data-table-responsive-conf.list';
 
 @Component({
   selector: 'app-data-table-responsive-conf-component',
@@ -13,11 +8,6 @@ import { sampleData } from '../../data/data-table-example';
   styleUrls: ['./data-table-responsive-conf.component.scss']
 })
 export class DataTableResponsiveConfComponent {
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public items: Observable<any>;
-
-  constructor() {
-    this.items = of(sampleData);
-  }
+  public responsiveConfAllUsage = responsiveConfAllUsage;
+  public responsiveConfWithoutWidthHeightUsage = responsiveConfWithoutWidthHeightUsage;
 }

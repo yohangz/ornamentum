@@ -31,12 +31,15 @@ import {
   LoadingSpinnerTemplateUsageComponent,
   DataTableNoRecordsTemplateComponent,
   NoRecordsTemplateUsageComponent,
+  DataTableLimitComponent,
   DataTableHeaderDetailsComponent,
   TableHeaderDetailsUsageComponent,
-
-  DataTableLimitComponent,
   DataTableResponsiveConfComponent,
-  DataTableTranslationsComponent
+  ResponsiveConfAllUsageComponent,
+  ResponsiveConfWithoutWidthHeightUsageComponent,
+  DataTableTranslationsComponent,
+  DataTableTranslationsNoDataUsageComponent,
+  DataTableTranslationsPaginationUsageComponent
 } from './components';
 
 import { DataStorageService } from './services/data-storage.service';
@@ -75,12 +78,15 @@ export const COMPONENTS = [
   LoadingSpinnerTemplateUsageComponent,
   DataTableNoRecordsTemplateComponent,
   NoRecordsTemplateUsageComponent,
+  DataTableLimitComponent,
   DataTableHeaderDetailsComponent,
   TableHeaderDetailsUsageComponent,
-
-  DataTableLimitComponent,
   DataTableResponsiveConfComponent,
+  ResponsiveConfAllUsageComponent,
+  ResponsiveConfWithoutWidthHeightUsageComponent,
   DataTableTranslationsComponent,
+  DataTableTranslationsNoDataUsageComponent,
+  DataTableTranslationsPaginationUsageComponent
 ];
 
 // Services

@@ -30,39 +30,10 @@
   </li>
 </ul>
 
-<ng-data-table
-  [title]="'Station Details'"
-  [selectTrackBy]="'id'"
-  [dataSource]="emptyItemSet"
-  [pageable]="true"
-  [showHeader]="true"
-  [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false"
-  [translations]="DataTableTranslations">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [width]="100">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'">
-  </ng-data-table-column>
-</ng-data-table>
-<br>
+<app-data-table-translations-no-data-usage></app-data-table-translations-no-data-usage>
+
+<app-example-code [files]="dataTableTranslationsNoDataUsage"></app-example-code>
+
 <h2>Data Table Translations for Pagination</h2>
 <p>Also this translations property can be used to customize the pagination naming. The following properties shows what
   are those.</p>
@@ -76,38 +47,9 @@
   </li>
 </ul>
 
-<ng-data-table
-  [title]="'Station Details'"
-  [selectTrackBy]="'id'"
-  [dataSource]="paginationItems"
-  [pageable]="true"
-  [showHeader]="true"
-  [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false"
-  [translations]="DataTableTranslations">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [width]="100">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'">
-  </ng-data-table-column>
-</ng-data-table>
+<app-data-table-translations-pagination-usage></app-data-table-translations-pagination-usage>
+
+<app-example-code [files]="dataTableTranslationsPaginationUsage"></app-example-code>
 
 <h2>Suggested Links</h2>
 <a [href]="''" target="_blank">API Doc for Data Table Translations</a>
