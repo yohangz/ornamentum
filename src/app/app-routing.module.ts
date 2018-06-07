@@ -1,124 +1,124 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { MainComponent } from './main/components';
+import { FeatureComponent, MainComponent, HomeComponent } from './main/components';
 
 import { MenuItem } from './core/models';
 
 const dropdownNavigationData: MenuItem[] = [
   {
-    routePath: 'overview',
+    routePath: '/feature/dropdown/overview',
     title: 'Overview',
   },
   {
-    routePath: 'data-binding',
+    routePath: '/feature/dropdown/data-binding',
     title: 'Data binding',
   },
   {
-    routePath: 'editing',
+    routePath: '/feature/dropdown/editing',
     title: 'Editing',
   },
   {
-    routePath: 'filtering',
+    routePath: '/feature/dropdown/filtering',
     title: 'Filtering',
   },
   {
-    routePath: 'grouping',
+    routePath: '/feature/dropdown/grouping',
     title: 'Grouping',
   },
   {
-    routePath: 'pagination',
+    routePath: '/feature/dropdown/pagination',
     title: 'Pagination',
   },
   {
-    routePath: 'sorting',
+    routePath: '/feature/dropdown/sorting',
     title: 'Sorting',
   }
 ];
 
 const dataTableNavigationData: MenuItem[] = [
   {
-    routePath: '/data-table/overview',
+    routePath: '/feature/data-table/overview',
     title: 'Overview'
   },
   {
-    routePath: '/data-table/client-side-data-binding',
+    routePath: '/feature/data-table/client-side-data-binding',
     title: 'Client Side Data Binding',
   },
   {
-    routePath: '/data-table/server-side-data-binding',
+    routePath: '/feature/data-table/server-side-data-binding',
     title: 'Server Side Data Binding'
   },
   {
-    routePath: '/data-table/real-time-data-binding',
+    routePath: '/feature/data-table/real-time-data-binding',
     title: 'Real Time Data Binding'
   },
   {
-    routePath: '/data-table/pagination',
+    routePath: '/feature/data-table/pagination',
     title: 'Pagination'
   },
   {
-    routePath: '/data-table/column/sorting',
+    routePath: '/feature/data-table/column/sorting',
     title: 'Column Sorting'
   },
   {
-    routePath: '/data-table/grouping',
+    routePath: '/feature/data-table/grouping',
     title: 'Row Grouping'
   },
   {
-    routePath: '/data-table/column/filtering',
+    routePath: '/feature/data-table/column/filtering',
     title: 'Filtering'
   },
   {
-    routePath: '/data-table/row-selection',
+    routePath: '/feature/data-table/row-selection',
     title: 'Row Selection'
   },
   {
-    routePath: '/data-table/column/resizable',
+    routePath: '/feature/data-table/column/resizable',
     title: 'Column Resizing'
   },
   {
-    routePath: '/data-table/data-persistence',
+    routePath: '/feature/data-table/data-persistence',
     title: 'Data Persistence'
   },
   {
-    routePath: '/data-table/substitute-rows',
+    routePath: '/feature/data-table/substitute-rows',
     title: 'Substitute Rows'
   },
   {
-    routePath: '/data-table/loading-spinner',
+    routePath: '/feature/data-table/loading-spinner',
     title: 'Data Loading Spinner'
   },
   {
-    routePath: '/data-table/templates/cell-template',
+    routePath: '/feature/data-table/templates/cell-template',
     title: 'Cell Template'
   },
   {
-    routePath: '/data-table/templates/expand-template',
+    routePath: '/feature/data-table/templates/expand-template',
     title: 'Row Expand Template'
   },
   {
-    routePath: '/data-table/templates/loading-spinner-template',
+    routePath: '/feature/data-table/templates/loading-spinner-template',
     title: 'Loading Spinner Template'
   },
   {
-    routePath: '/data-table/templates/no-records-template',
+    routePath: '/feature/data-table/templates/no-records-template',
     title: 'No Records Template'
   },
   {
-    routePath: '/data-table/limit',
+    routePath: '/feature/data-table/limit',
     title: 'Data Limit'
   },
   {
-    routePath: '/data-table/header-details',
+    routePath: '/feature/data-table/header-details',
     title: 'Header Details'
   },
   {
-    routePath: '/data-table/responsive-configuration',
+    routePath: '/feature/data-table/responsive-configuration',
     title: 'Responsive Configuration'
   },
   {
-    routePath: '/data-table/translations',
+    routePath: '/feature/data-table/translations',
     title: 'Translations'
   },
   // {
@@ -173,26 +173,31 @@ const dataTableNavigationData: MenuItem[] = [
  */
 const appRoutes: Routes = [
   {
+    component: HomeComponent,
     path: '',
-    pathMatch: 'full',
-    redirectTo: 'data-table'
   },
   {
     component: MainComponent,
-    loadChildren: './feature/data-table/data-table-feature.module#DataTableFeatureModule',
-    path: 'data-table',
-    data: {
-      navigation: dataTableNavigationData
-    }
+    path: 'feature',
+    children: [
+      {
+        component: FeatureComponent,
+        loadChildren: './feature/data-table/data-table-feature.module#DataTableFeatureModule',
+        path: 'data-table',
+        data: {
+          navigation: dataTableNavigationData
+        }
+      },
+      {
+        component: FeatureComponent,
+        loadChildren: './feature/dropdown/dropdown-feature.module#DropdownFeatureModule',
+        path: 'dropdown',
+        data: {
+          navigation: dropdownNavigationData
+        }
+      }
+    ]
   },
-  {
-    component: MainComponent,
-    loadChildren: './feature/dropdown/dropdown-feature.module#DropdownFeatureModule',
-    path: 'dropdown',
-    data: {
-      navigation: dropdownNavigationData
-    }
-  }
 ];
 
 /**

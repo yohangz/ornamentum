@@ -1,0 +1,10 @@
+<label for="off_canvas" class="navbar-toggler navbar-toggle icon-toggle">
+  <span class="navbar-toggler-icon"></span>
+</label>
+<input type="checkbox" class="toggler-check-box" id="off_canvas" />
+<div class="page-wrapper-inner-content" *ngIf="navigationData">
+  <app-left-navigation [menuItems]="navigationData" class="off-canvas"></app-left-navigation>
+  <div class="main-pane">
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -1,10 +1,12 @@
 // components
-import { MainComponent, BaseComponent } from './components';
+import { MainComponent, BaseComponent, HomeComponent, FeatureComponent } from './components';
 
 /**
  * Export all main components.
  */
 export const COMPONENTS = [
   MainComponent,
-  BaseComponent
+  BaseComponent,
+  HomeComponent,
+  FeatureComponent
 ];

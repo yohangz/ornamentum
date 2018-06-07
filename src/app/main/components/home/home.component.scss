@@ -1,0 +1,23 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+:host-context {
+  .page-wrapper {
+    &.side-menu-collapsed {
+      ::ng-deep {
+        .navbar {
+          flex-wrap: wrap;
+
+          .navbar-brand {
+            padding-bottom: 1rem;
+            padding-top: 1rem;
+          }
+        }
+        .icon-menu {
+          position: absolute;
+          right: .5rem;
+          top: 1rem;
+        }
+      }
+    }
+  }
+}
