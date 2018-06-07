@@ -23,10 +23,14 @@ export { FilterTextBoxUsageComponent } from './data-table-filtering/example/filt
 export { DataTableResizableComponent } from './data-table-resizable/data-table-resizable.component';
 export { ColumnResizableUsageComponent } from './data-table-resizable/example/column-resizable-usage/column-resizable-usage.component';
 
-export { DataTableTranslationsComponent } from './data-table-translations/data-table-translations.component';
-export { DataTableHeaderDetailsComponent } from './data-table-header-details/data-table-header-details.component';
 export { DataTablePersistDataComponent } from './data-table-persist-data/data-table-persist-data.component';
+export { DataPersistenceUsageComponent } from './data-table-persist-data/example/data-persistence-usage/data-persistence-usage.component';
+
 export { DataTableSubstituteRowsComponent } from './data-table-substitute-rows/data-table-substitute-rows.component';
+export { WithSubstituteRowsUsageComponent } from './data-table-substitute-rows/example/with-substitute-rows-usage/with-substitute-rows-usage.component';
+export { WithoutSubstituteRowsUsageComponent } from './data-table-substitute-rows/example/without-substitute-rows-usage/without-substitute-rows-usage.component';
+
+
 export { DataTableLimitComponent } from './data-table-limit/data-table-limit.component';
 export { DataTableResponsiveConfComponent } from './data-table-responsive-conf/data-table-responsive-conf.component';
 export { DataTableLoadingSpinnerComponent } from './data-table-loading-spinner/data-table-loading-spinner.component';
@@ -34,3 +38,5 @@ export { DataTableRowExpandTemplateComponent } from './data-table-templates/data
 export { DataTableCellTemplateComponent } from './data-table-templates/data-table-cell-template/data-table-cell-template.component';
 export { DataTableNoRecordsTemplateComponent } from './data-table-templates/data-table-no-records-template/data-table-no-records-template.component';
 export { DataTableLoadingSpinnerTemplateComponent } from './data-table-templates/data-table-loading-spinner-template/data-table-loading-spinner-template.component';
+export { DataTableTranslationsComponent } from './data-table-translations/data-table-translations.component';
+export { DataTableHeaderDetailsComponent } from './data-table-header-details/data-table-header-details.component';

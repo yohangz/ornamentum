@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
-
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
-import { sampleData } from '../../data/data-table-example';
+import { dataPersistenceUsage } from './data-table-persist-data.list';
 
 @Component({
   selector: 'app-data-table-persist-data-component',
@@ -13,11 +8,5 @@ import { sampleData } from '../../data/data-table-example';
   styleUrls: ['./data-table-persist-data.component.scss']
 })
 export class DataTablePersistDataComponent {
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public items: Observable<any>;
-
-  constructor() {
-    this.items = of(sampleData);
-  }
+  public dataPersistenceUsage = dataPersistenceUsage;
 }

@@ -5,75 +5,16 @@
 <h2>With Substitute Rows</h2>
 <p>[showSubstituteRows]="true"</p>
 
-<ng-data-table
-  [title]="'Station Details'"
-  [selectTrackBy]="'id'"
-  [dataSource]="items"
-  [limit]="20"
-  [pageable]="true"
-  [showHeader]="true"
-  [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false"
-  [showSubstituteRows]="true">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [width]="100">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'">
-  </ng-data-table-column>
-</ng-data-table>
-<br>
+<app-with-substitute-rows-usage></app-with-substitute-rows-usage>
+
+<app-example-code [files]="withSubstituteRowsUsage"></app-example-code>
+
 <h2>Without Substitute Rows</h2>
 <p>[showSubstituteRows]="false"</p>
 
-<ng-data-table
-  [title]="'Station Details'"
-  [selectTrackBy]="'id'"
-  [dataSource]="items"
-  [limit]="20"
-  [pageable]="true"
-  [showHeader]="true"
-  [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [width]="100">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'">
-  </ng-data-table-column>
-</ng-data-table>
+<app-without-substitute-rows-usage></app-without-substitute-rows-usage>
+
+<app-example-code [files]="withoutSubstituteRowsUsage"></app-example-code>
 
 <h2>Suggested Links</h2>
 <a [href]="''" target="_blank">API Doc for Data Table Substitute Rows</a>

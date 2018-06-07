@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-
-import { DataTableSelectMode } from 'ornamentum';
-
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
-import { sampleData } from '../../data/data-table-example';
+import { withSubstituteRowsUsage, withoutSubstituteRowsUsage } from './data-table-substitute-rows.list';
 
 @Component({
   selector: 'app-data-table-substitute-rows-component',
@@ -13,11 +7,6 @@ import { sampleData } from '../../data/data-table-example';
   styleUrls: ['./data-table-substitute-rows.component.scss']
 })
 export class DataTableSubstituteRowsComponent {
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public items: Observable<any>;
-
-  constructor() {
-    this.items = of(sampleData);
-  }
+  public withSubstituteRowsUsage = withSubstituteRowsUsage;
+  public withoutSubstituteRowsUsage = withoutSubstituteRowsUsage;
 }

@@ -16,11 +16,14 @@ import {
   FilterTextBoxUsageComponent,
   DataTableResizableComponent,
   ColumnResizableUsageComponent,
+  DataTablePersistDataComponent,
+  DataPersistenceUsageComponent,
+  DataTableSubstituteRowsComponent,
+  WithSubstituteRowsUsageComponent,
+  WithoutSubstituteRowsUsageComponent,
 
   DataTableTranslationsComponent,
   DataTableHeaderDetailsComponent,
-  DataTablePersistDataComponent,
-  DataTableSubstituteRowsComponent,
   DataTableLimitComponent,
   DataTableResponsiveConfComponent,
   DataTableLoadingSpinnerComponent,
@@ -51,18 +54,21 @@ export const COMPONENTS = [
   FilterTextBoxUsageComponent,
   DataTableResizableComponent,
   ColumnResizableUsageComponent,
-
-  DataTableTranslationsComponent,
-  DataTableHeaderDetailsComponent,
   DataTablePersistDataComponent,
+  DataPersistenceUsageComponent,
   DataTableSubstituteRowsComponent,
+  WithSubstituteRowsUsageComponent,
+  WithoutSubstituteRowsUsageComponent,
+
   DataTableLimitComponent,
   DataTableResponsiveConfComponent,
   DataTableLoadingSpinnerComponent,
   DataTableCellTemplateComponent,
   DataTableRowExpandTemplateComponent,
   DataTableNoRecordsTemplateComponent,
-  DataTableLoadingSpinnerTemplateComponent
+  DataTableLoadingSpinnerTemplateComponent,
+  DataTableTranslationsComponent,
+  DataTableHeaderDetailsComponent
 ];
 
 // Services

@@ -78,28 +78,12 @@ const dataTableNavigationData: MenuItem[] = [
     title: 'Column Resizing'
   },
   {
-    routePath: '/data-table/translations',
-    title: 'Translations'
-  },
-  {
-    routePath: '/data-table/header-details',
-    title: 'Header Details'
-  },
-  {
     routePath: '/data-table/data-persistence',
     title: 'Data Persistence'
   },
   {
-    routePath: '/data-table/limit',
-    title: 'Data Limit'
-  },
-  {
     routePath: '/data-table/substitute-rows',
     title: 'Substitute Rows'
-  },
-  {
-    routePath: '/data-table/responsive-configuration',
-    title: 'Responsive Configuration'
   },
   {
     routePath: '/data-table/loading-spinner',
@@ -120,7 +104,23 @@ const dataTableNavigationData: MenuItem[] = [
   {
     routePath: '/data-table/templates/no-records-template',
     title: 'No Records Template'
-  }
+  },
+  {
+    routePath: '/data-table/limit',
+    title: 'Data Limit'
+  },
+  {
+    routePath: '/data-table/header-details',
+    title: 'Header Details'
+  },
+  {
+    routePath: '/data-table/responsive-configuration',
+    title: 'Responsive Configuration'
+  },
+  {
+    routePath: '/data-table/translations',
+    title: 'Translations'
+  },
   // {
   //   routePath: '/data-table/events/init',
   //   title: 'init'
