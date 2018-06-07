@@ -1,25 +1,5 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 :host-context {
-  .page-wrapper {
-    &.side-menu-collapsed {
-      ::ng-deep {
-        .navbar {
-          flex-wrap: wrap;
 
-          .navbar-brand {
-            left: 3rem;
-            padding-bottom: 1.6rem;
-            padding-left: 1rem;
-            padding-top: 1.6rem;
-          }
-        }
-        .icon-menu {
-          position: absolute;
-          right: .5rem;
-          top: 1rem;
-        }
-      }
-    }
-  }
 }

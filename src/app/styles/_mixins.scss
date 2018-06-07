@@ -28,8 +28,8 @@
     @media only screen and (max-width: 767px) {
       @content;
     }
-  } @else if $point == max480 {
-    @media only screen and (max-width: 1199px) {
+  } @else if $point == max991 {
+    @media only screen and (max-width: 991px) {
       @content;
     }
   }
