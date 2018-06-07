@@ -12,42 +12,9 @@
   <li>According to following example resizable is enabled for all columns.</li>
 </ul>
 
-<ng-data-table
-  [title]="'Station Details'"
-  [selectTrackBy]="'id'"
-  [dataSource]="items"
-  [pageable]="false"
-  [showHeader]="true"
-  [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [resizable]="true"
-    [width]="100">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'"
-    [resizable]="true">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'"
-    [resizable]="true">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'"
-    [resizable]="true">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'"
-    [resizable]="true">
-  </ng-data-table-column>
-</ng-data-table>
+<app-column-resizable-usage></app-column-resizable-usage>
+
+<app-example-code [files]="columnResizableUsage"></app-example-code>
 
 <h2>Suggested Links</h2>
 <a [href]="''" target="_blank">API Doc for Data Table Column Resizable</a>

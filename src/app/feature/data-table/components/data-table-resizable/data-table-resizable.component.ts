@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
-
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
-import { sampleData } from '../../data/data-table-example';
+import { columnResizableUsage } from './data-table-resizable.list';
 
 @Component({
   selector: 'app-data-table-resizable-component',
@@ -13,11 +8,5 @@ import { sampleData } from '../../data/data-table-example';
   styleUrls: ['./data-table-resizable.component.scss']
 })
 export class DataTableResizableComponent {
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public items: Observable<any>;
-
-  constructor() {
-    this.items = of(sampleData);
-  }
+  public columnResizableUsage = columnResizableUsage;
 }

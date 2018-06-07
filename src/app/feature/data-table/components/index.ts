@@ -21,6 +21,8 @@ export { FilterDropdownUsageComponent } from './data-table-filtering/example/fil
 export { FilterTextBoxUsageComponent } from './data-table-filtering/example/filter-text-box-usage/filter-text-box-usage.component';
 
 export { DataTableResizableComponent } from './data-table-resizable/data-table-resizable.component';
+export { ColumnResizableUsageComponent } from './data-table-resizable/example/column-resizable-usage/column-resizable-usage.component';
+
 export { DataTableTranslationsComponent } from './data-table-translations/data-table-translations.component';
 export { DataTableHeaderDetailsComponent } from './data-table-header-details/data-table-header-details.component';
 export { DataTablePersistDataComponent } from './data-table-persist-data/data-table-persist-data.component';
