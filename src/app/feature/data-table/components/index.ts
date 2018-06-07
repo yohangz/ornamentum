@@ -1,3 +1,4 @@
+
 export { DataTableOverviewComponent } from './data-table-overview/data-table-overview.component';
 export { BasicUsageComponent } from './data-table-overview/example/basic-usage/basic-usage.component';
 
@@ -43,8 +44,9 @@ export { LoadingSpinnerTemplateUsageComponent } from './data-table-templates/dat
 export { DataTableNoRecordsTemplateComponent } from './data-table-templates/data-table-no-records-template/data-table-no-records-template.component';
 export { NoRecordsTemplateUsageComponent } from './data-table-templates/data-table-no-records-template/example/no-records-template-usage/no-records-template-usage.component';
 
+export { DataTableHeaderDetailsComponent } from './data-table-header-details/data-table-header-details.component';
+export { TableHeaderDetailsUsageComponent } from './data-table-header-details/example/table-header-details-usage/table-header-details-usage.component';
 
 export { DataTableLimitComponent } from './data-table-limit/data-table-limit.component';
-export { DataTableHeaderDetailsComponent } from './data-table-header-details/data-table-header-details.component';
 export { DataTableResponsiveConfComponent } from './data-table-responsive-conf/data-table-responsive-conf.component';
 export { DataTableTranslationsComponent } from './data-table-translations/data-table-translations.component';

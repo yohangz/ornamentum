@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
-
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
-import { sampleData } from '../../data/data-table-example';
+import { tableHeaderDetailsUsage } from './data-table-header-details.list';
 
 @Component({
   selector: 'app-data-table-header-details-component',
@@ -13,11 +8,5 @@ import { sampleData } from '../../data/data-table-example';
   styleUrls: ['./data-table-header-details.component.scss']
 })
 export class DataTableHeaderDetailsComponent {
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public items: Observable<any>;
-
-  constructor() {
-    this.items = of(sampleData);
-  }
+  public tableHeaderDetailsUsage = tableHeaderDetailsUsage;
 }
