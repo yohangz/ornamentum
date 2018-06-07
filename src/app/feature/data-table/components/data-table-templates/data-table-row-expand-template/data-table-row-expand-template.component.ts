@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
+import { rowExpandTemplateUsage } from './data-table-row-expand-template.list';
 
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
-import { sampleData } from '../../../data/data-table-example';
 import { demoSnippet } from './data-table-row-expand-template';
 
 @Component({
@@ -14,13 +10,7 @@ import { demoSnippet } from './data-table-row-expand-template';
   styleUrls: ['./data-table-row-expand-template.component.scss']
 })
 export class DataTableRowExpandTemplateComponent {
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public items: Observable<any>;
+  public rowExpandTemplateUsage = rowExpandTemplateUsage;
 
   public demoSnippet = demoSnippet;
-
-  constructor() {
-    this.items = of(sampleData);
-  }
 }

@@ -1,11 +1,7 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
+import { cellTemplateUsage } from './data-table-cell-template.list';
 
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
-import { sampleData } from '../../../data/data-table-example';
 import { demoSnippet } from './data-table-cell-template';
 
 @Component({
@@ -14,13 +10,7 @@ import { demoSnippet } from './data-table-cell-template';
   styleUrls: ['./data-table-cell-template.component.scss']
 })
 export class DataTableCellTemplateComponent {
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public items: Observable<any>;
+  public cellTemplateUsage = cellTemplateUsage;
 
   public demoSnippet = demoSnippet;
-
-  constructor() {
-    this.items = of(sampleData);
-  }
 }

@@ -7,41 +7,9 @@
 
 <p>If this enabled a spinner will be displayed until the completion of the table data loading.</p>
 
-<ng-data-table
-  [title]="'Station Details'"
-  [selectTrackBy]="'id'"
-  [items]="items"
-  [contentHeight]="200"
-  [pageable]="true"
-  [showHeader]="true"
-  [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false"
-  [showLoadingSpinner]="true">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [width]="100">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'">
-  </ng-data-table-column>
-</ng-data-table>
+<app-loading-spinner-usage></app-loading-spinner-usage>
 
-<br>
+<app-example-code [files]="loadingSpinnerUsage"></app-example-code>
 
 <p>Please note that this loading spinner functionality can be overridden by any external party by providing a custom
   spinner template. Refer <b>Loading Spinner Template</b> under <b>Data Table Templates</b> section for more details.

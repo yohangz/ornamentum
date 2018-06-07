@@ -21,16 +21,21 @@ import {
   DataTableSubstituteRowsComponent,
   WithSubstituteRowsUsageComponent,
   WithoutSubstituteRowsUsageComponent,
+  DataTableLoadingSpinnerComponent,
+  LoadingSpinnerUsageComponent,
+  DataTableCellTemplateComponent,
+  CellTemplateUsageComponent,
+  DataTableRowExpandTemplateComponent,
+  RowExpandTemplateUsageComponent,
+  DataTableLoadingSpinnerTemplateComponent,
+  LoadingSpinnerTemplateUsageComponent,
+  DataTableNoRecordsTemplateComponent,
+  NoRecordsTemplateUsageComponent,
 
   DataTableTranslationsComponent,
   DataTableHeaderDetailsComponent,
   DataTableLimitComponent,
   DataTableResponsiveConfComponent,
-  DataTableLoadingSpinnerComponent,
-  DataTableRowExpandTemplateComponent,
-  DataTableCellTemplateComponent,
-  DataTableNoRecordsTemplateComponent,
-  DataTableLoadingSpinnerTemplateComponent
 } from './components';
 
 import { DataStorageService } from './services/data-storage.service';
@@ -59,14 +64,19 @@ export const COMPONENTS = [
   DataTableSubstituteRowsComponent,
   WithSubstituteRowsUsageComponent,
   WithoutSubstituteRowsUsageComponent,
+  DataTableLoadingSpinnerComponent,
+  LoadingSpinnerUsageComponent,
+  DataTableCellTemplateComponent,
+  CellTemplateUsageComponent,
+  DataTableRowExpandTemplateComponent,
+  RowExpandTemplateUsageComponent,
+  DataTableLoadingSpinnerTemplateComponent,
+  LoadingSpinnerTemplateUsageComponent,
+  DataTableNoRecordsTemplateComponent,
+  NoRecordsTemplateUsageComponent,
 
   DataTableLimitComponent,
   DataTableResponsiveConfComponent,
-  DataTableLoadingSpinnerComponent,
-  DataTableCellTemplateComponent,
-  DataTableRowExpandTemplateComponent,
-  DataTableNoRecordsTemplateComponent,
-  DataTableLoadingSpinnerTemplateComponent,
   DataTableTranslationsComponent,
   DataTableHeaderDetailsComponent
 ];

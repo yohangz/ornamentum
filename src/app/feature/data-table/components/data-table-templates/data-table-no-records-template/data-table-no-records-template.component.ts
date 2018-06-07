@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
-
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+import { noRecordsTemplateUsage } from './data-table-no-records-template.list';
 
 import { demoSnippet } from './data-table-no-records-template';
 
@@ -13,13 +10,7 @@ import { demoSnippet } from './data-table-no-records-template';
   styleUrls: ['./data-table-no-records-template.component.scss']
 })
 export class DataTableNoRecordsTemplateComponent {
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public items: Observable<any>;
+  public noRecordsTemplateUsage = noRecordsTemplateUsage;
 
   public demoSnippet = demoSnippet;
-
-  constructor() {
-    this.items = of([]);
-  }
 }

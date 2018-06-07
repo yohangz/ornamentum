@@ -19,43 +19,9 @@
 
 <p>Here is the table output after applying the above row expand template.</p>
 
-<ng-data-table
-  [title]="'Station Details'"
-  [selectTrackBy]="'id'"
-  [dataSource]="items"
-  [pageable]="false"
-  [showHeader]="true"
-  [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false"
-  [expandableRows]="true"
-  [expandOnRowClick]="true"
-  [showRowExpandLoadingSpinner]="false">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [width]="100">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'">
-  </ng-data-table-column>
-  <ng-template #ngDataTableRowExpand let-row="row">
-    <span>This is row expand template</span>
-  </ng-template>
-</ng-data-table>
+<app-row-expand-template-usage></app-row-expand-template-usage>
+
+<app-example-code [files]="rowExpandTemplateUsage"></app-example-code>
 
 <h2>Suggested Links</h2>
 <a [href]="''" target="_blank">API Doc for Data Table Row Expand Template</a>

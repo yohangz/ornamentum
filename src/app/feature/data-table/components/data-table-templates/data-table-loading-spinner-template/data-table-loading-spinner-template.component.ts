@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
+import { loadingSpinnerTemplateUsage } from './data-table-loading-spinner-template.list';
 
 import { demoSnippet } from './data-table-loading-spinner-template';
-import { sampleData } from '../../../data/data-table-example';
 
 @Component({
   selector: 'app-data-table-loading-spinner-template-component',
@@ -11,15 +10,7 @@ import { sampleData } from '../../../data/data-table-example';
   styleUrls: ['./data-table-loading-spinner-template.component.scss']
 })
 export class DataTableLoadingSpinnerTemplateComponent {
-  public DataTableSelectMode = DataTableSelectMode;
+  public loadingSpinnerTemplateUsage = loadingSpinnerTemplateUsage;
 
   public demoSnippet = demoSnippet;
-
-  public items: any[];
-
-  constructor() {
-    setTimeout(() => {
-      this.items = sampleData;
-    }, 3000);
-  }
 }
