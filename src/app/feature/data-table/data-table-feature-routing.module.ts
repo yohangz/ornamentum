@@ -5,6 +5,7 @@ import {
   DataTableFilteringComponent,
   DataTableOverviewComponent,
   DataTableColumnSortingComponent,
+  DataTableRowGroupingComponent,
   DataTableResizableComponent,
   DataTablePaginationComponent,
   DataTableTranslationsComponent,
@@ -82,6 +83,7 @@ const dataTableFeatureRoutes: Routes = [
     path: 'loading-spinner'
   },
   {
+    component: DataTableRowGroupingComponent,
     path: 'grouping'
   },
   {

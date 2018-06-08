@@ -16,6 +16,9 @@ export { PaginationUsageComponent } from './data-table-pagination/example/pagina
 export { DataTableColumnSortingComponent } from './data-table-column-sorting/data-table-column-sorting.component';
 export { ColumnSortingUsageComponent } from './data-table-column-sorting/example/column-sorting-usage/column-sorting-usage.component';
 
+export { DataTableRowGroupingComponent } from './data-table-row-grouping/data-table-row-grouping.component';
+export { RowGroupingUsageComponent } from './data-table-row-grouping/example/row-grouping-usage/row-grouping-usage.component';
+
 export { DataTableFilteringComponent } from './data-table-filtering/data-table-filtering.component';
 export { FilterDropdownUsageComponent } from './data-table-filtering/example/filter-dropdown-usage/filter-dropdown-usage.component';
 export { FilterTextBoxUsageComponent } from './data-table-filtering/example/filter-text-box-usage/filter-text-box-usage.component';

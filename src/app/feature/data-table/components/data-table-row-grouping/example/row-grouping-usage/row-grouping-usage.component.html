@@ -1,0 +1,30 @@
+<ng-data-table
+  [title]="'All Open Source Licenses'"
+  [selectTrackBy]="'id'"
+  [dataSource]="items"
+  [pageable]="true"
+  [showHeader]="true"
+  [showRefreshButton]="false"
+  [showIndexColumn]="true"
+  [showColumnSelector]="false"
+
+  [onDynamicRowSpanExtract]="onDynamicRowSpanExtract">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [width]="100">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'name'"
+    [title]="'License Name'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'links'"
+    [title]="'Links'">
+    <ng-template #ngDataTableCell let-row="row" let-spanIndex="spanIndex">
+      <td>
+        <span>{{getUrlLinkValue(row.item, spanIndex, 'url')}}</span>
+      </td>
+    </ng-template>
+  </ng-data-table-column>
+</ng-data-table>
