@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
-
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
-import { sampleData } from '../../data/data-table-example';
+import {
+  limitWithoutPaginationUsage,
+  limitWithPaginationUsage,
+  paginationWithoutLimitUsage,
+  withoutLimitAndPaginationUsage
+} from './data-table-limit.list';
 
 @Component({
   selector: 'app-data-table-limit-component',
@@ -13,11 +13,8 @@ import { sampleData } from '../../data/data-table-example';
   styleUrls: ['./data-table-limit.component.scss']
 })
 export class DataTableLimitComponent {
-  public DataTableSelectMode = DataTableSelectMode;
-
-  public items: Observable<any>;
-
-  constructor() {
-    this.items = of(sampleData);
-  }
+  public limitWithPaginationUsage = limitWithPaginationUsage;
+  public limitWithoutPaginationUsage = limitWithoutPaginationUsage;
+  public paginationWithoutLimitUsage = paginationWithoutLimitUsage;
+  public withoutLimitAndPaginationUsage = withoutLimitAndPaginationUsage;
 }
