@@ -9,5 +9,4 @@ import { basicUsage } from './dropdown-overview.list';
 })
 export class DropdownOverviewComponent {
   public basicUsage = basicUsage;
-;
 }
