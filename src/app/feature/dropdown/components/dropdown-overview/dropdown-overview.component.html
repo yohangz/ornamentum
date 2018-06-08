@@ -3,67 +3,10 @@
 <h2>Basic Usage</h2>
 <p>The following example demonstrates the Dropdown in action.</p>
 
-<!--[items]="selected"-->
+<app-basic-usage></app-basic-usage>
 
-
-
-<div #parentElement style="position: relative;">
-  <!--<ng-dropdown-->
-    <!--[relativeParentElement]="parentElement"-->
-    <!--[groupByField]="'group'"-->
-    <!--[selectMode]="DropdownSelectMode.SINGLE"-->
-    <!--[filterable]="true"-->
-    <!--[showClearSelectionButton]="false"-->
-    <!--[items]="selected"-->
-    <!--[loadViewDistance]="0"-->
-    <!--[showSelectedOptionRemoveButton]="true"-->
-    <!--[setFirstOptionSelected]="true"-->
-    <!--[disabled]="false"-->
-
-    <!--(selectChange)="onSelectChange($event)">-->
-    <!--<ng-template #ngDropdownOptionGroupHeader>-->
-      <!--Group-->
-    <!--</ng-template>-->
-    <!--<ng-template #ngDropdownOption let-option="option">-->
-      <!--{{option.text}} &#45;&#45; Template-->
-    <!--</ng-template>-->
-  <!--</ng-dropdown>-->
-  <label>
-  <ng-dropdown
-    [relativeParentElement]="parentElement"
-    [selectTrackBy]="'key'"
-    [selectMode]="DropdownSelectMode.MULTI"
-    [items]="selected"
-    [filterable]="true"
-    [showClearSelectionButton]="true"
-    [showSelectedOptionRemoveButton]="true"
-    [closeMenuOnSelect]="false"
-    [limit]="50">
-    <!--<ng-template #ngDropdownOptionGroupHeader>-->
-    <!--Group-->
-    <!--</ng-template>-->
-    <!--<ng-template #ngDropdownOption let-option="option">-->
-    <!--{{option.text}} &#45;&#45; Template-->
-    <!--</ng-template>-->
-  </ng-dropdown>
-  </label>
-</div>
-
-
-<br/>
-
-<h2>Installation</h2>
-<ol>
-  <li>Install the package
-    <pre><code>{{install_code}}</code></pre>
-  </li>
-
-  <li>As the second step, import DropdownModule into your application root module
-    <pre><code>{{import_code}}</code></pre>
-  </li>
-</ol>
-
-<br/>
+<app-example-code [files]="basicUsage">
+</app-example-code>
 
 <h2>Dependencies</h2>
 <ul>

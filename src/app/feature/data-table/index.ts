@@ -16,10 +16,8 @@ import {
   DataTableFilteringComponent,
   FilterDropdownUsageComponent,
   FilterTextBoxUsageComponent,
-
   DataTableRowSelectionComponent,
   RowSelectionUsageComponent,
-
   DataTableResizableComponent,
   ColumnResizableUsageComponent,
   DataTablePersistDataComponent,
@@ -73,10 +71,8 @@ export const COMPONENTS = [
   DataTableFilteringComponent,
   FilterDropdownUsageComponent,
   FilterTextBoxUsageComponent,
-
   DataTableRowSelectionComponent,
   RowSelectionUsageComponent,
-
   DataTableResizableComponent,
   ColumnResizableUsageComponent,
   DataTablePersistDataComponent,

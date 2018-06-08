@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { DropdownModule } from 'ornamentum';
 
-import { DropdownOverviewComponent } from './components/dropdown-overview/dropdown-overview.component';
+import { COMPONENTS } from './index';
 
 import { DropdownFeatureRoutingModule } from './dropdown-feature-routing.module';
 
@@ -15,9 +15,7 @@ import { SharedModule } from '../../shared/shared.module';
  * @class DropdownFeatureModule
  */
 @NgModule({
-  declarations: [
-    DropdownOverviewComponent
-  ],
+  declarations: [...COMPONENTS],
   exports: [],
   imports: [
     CommonModule,
