@@ -6,6 +6,7 @@ import {
   DataTableOverviewComponent,
   DataTableColumnSortingComponent,
   DataTableRowGroupingComponent,
+  DataTableRowSelectionComponent,
   DataTableResizableComponent,
   DataTablePaginationComponent,
   DataTableTranslationsComponent,
@@ -87,6 +88,7 @@ const dataTableFeatureRoutes: Routes = [
     path: 'grouping'
   },
   {
+    component: DataTableRowSelectionComponent,
     path: 'row-selection'
   },
   {
