@@ -14,6 +14,7 @@
     "lint:demo:scss": "sass-lint --config src/.scss-lint.yml --no-exit --verbose",
     "explorer:demo:bundle": "npx webpack-bundle-analyzer dist/ornamentum-demo/stats.json",
     "test:lib": "ng test ornamentum",
+    "test:lib:coverage": "ng test --code-coverage=true ornamentum",
     "test:lib:ci": "ng test ornamentum --single-run",
     "e2e:lib": "ng e2e ornamentum",
     "lint:lib": "ng lint ornamentum",
