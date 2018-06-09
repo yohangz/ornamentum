@@ -31,7 +31,7 @@
     "preversion": "npm run build",
     "version": "node src/version.js && git add src/version.js",
     "postversion": "git push && git push --tags",
-    "prerelease": "npm run build",
+    "prerelease": "npm run build && cp README.md dist/ornamentum",
     "release": "npm publish dist/ornamentum",
     "postrelease": "npm run docs:publish"
   },
