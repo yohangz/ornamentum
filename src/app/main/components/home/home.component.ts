@@ -10,5 +10,10 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
+  private currentYear: Number;
+
+  constructor() {
+    this.currentYear = (new Date()).getFullYear();
+  }
 }
 
