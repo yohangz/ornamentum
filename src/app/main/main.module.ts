@@ -7,6 +7,8 @@ import { AppCoreModule } from '../core/core.module';
 import { COMPONENTS } from './index';
 import { BaseComponent } from './components';
 
+import { ContainerResponsiveService } from './services/container-responsive.service';
+
 /**
  * Module class for containing main module.
  * @class AppMainModule
@@ -23,7 +25,9 @@ import { BaseComponent } from './components';
     RouterModule,
     CommonModule
   ],
-  providers: []
+  providers: [
+    ContainerResponsiveService
+  ]
 })
 export class AppMainModule {
 }

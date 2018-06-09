@@ -10,4 +10,7 @@ import { MenuGroup } from '../../models';
 export class LeftNavigationComponent {
   @Input()
   public menuGroups: MenuGroup[];
+
+  @Input()
+  public height: number;
 }

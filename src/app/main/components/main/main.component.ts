@@ -1,7 +1,8 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 import { fromEvent, Subscription } from 'rxjs/index';
 import { debounceTime } from 'rxjs/operators';
+import { ContainerResponsiveService } from '../../services/container-responsive.service';
 
 /**
  * Component class for showing main view.
@@ -12,23 +13,34 @@ import { debounceTime } from 'rxjs/operators';
   styleUrls: ['./main.component.scss'],
   templateUrl: './main.component.html'
 })
-export class MainComponent implements OnDestroy {
+export class MainComponent implements OnInit, OnDestroy {
   private resizeEventSubscription: Subscription;
-  public sideMenuCollapsed = false;
+  public contentHeight: number;
 
-  constructor() {
-    this.setMenuCollapsedState();
+  @ViewChild('headerElement')
+  public headerElement: ElementRef;
+
+  constructor(private containerResponsive: ContainerResponsiveService) {
+  }
+
+  private emitContainerHeight(): void {
+    const newHeight = window.innerHeight - this.headerElement.nativeElement.offsetHeight;
+    if (newHeight !== this.contentHeight) {
+      this.contentHeight = newHeight;
+      this.containerResponsive.containerSize.next(newHeight);
+    }
+  }
+
+  public ngOnInit(): void {
     this.resizeEventSubscription = fromEvent(window, 'resize')
       .pipe(
         debounceTime(66)
       )
       .subscribe(() => {
-        this.setMenuCollapsedState();
+        this.emitContainerHeight();
       });
-  }
 
-  private setMenuCollapsedState(): void {
-    this.sideMenuCollapsed = window.innerWidth < 991;
+    this.emitContainerHeight();
   }
 
   public ngOnDestroy(): void {

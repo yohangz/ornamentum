@@ -1,0 +1,17 @@
+.copy-content {
+  background: url(../../../assets/img/copy.svg) no-repeat;
+  background-size: 100% 100%;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.5rem;
+  position: absolute;
+  right: .5rem;
+  top: .5rem;
+  width: 1.5rem;
+
+  &:hover {
+    opacity: .6;
+  }
+}
+

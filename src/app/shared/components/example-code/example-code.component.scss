@@ -1,0 +1,82 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.ts-icon {
+  background: url(../../../assets/img/typescript.svg) no-repeat;
+  background-size: 100% 100%;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.2rem;
+  position: absolute;
+  left: .5rem;
+  top: .5rem;
+  width: 1.2rem;
+}
+
+.html-icon {
+  background: url(../../../assets/img/html-5.svg) no-repeat;
+  background-size: 100% 100%;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.2rem;
+  position: absolute;
+  left: .5rem;
+  top: .5rem;
+  width: 1.2rem;
+}
+
+.json-icon {
+  background: url(../../../assets/img/json.svg) no-repeat;
+  background-size: 100% 100%;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.2rem;
+  position: absolute;
+  left: .5rem;
+  top: .5rem;
+  width: 1.2rem;
+}
+
+.css-icon {
+  background: url(../../../assets/img/css-3.svg) no-repeat;
+  background-size: 100% 100%;
+  border: 0;
+  cursor: pointer;
+  display: inline-block;
+  height: 1.2rem;
+  position: absolute;
+  left: .5rem;
+  top: .5rem;
+  width: 1.2rem;
+}
+
+.edit-on-sandbox {
+  background: url(../../../assets/img/edit-on-sandbox.svg) no-repeat;
+  background-size: 100% 100%;
+  display: inline-block;
+  height: 1.5rem;
+  position: absolute;
+  right: 2.5rem;
+  top: .5rem;
+  width: 1.5rem;
+
+  &:hover {
+    opacity: .6;
+  }
+}
+
+.prettyprint {
+  background: $nav-tabs-border-color;
+  white-space: pre-wrap;
+
+  ol {
+    padding-left: 3.5rem;
+
+    li {
+      background-color: $nav-tabs-border-color;
+    }
+  }
+}

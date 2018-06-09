@@ -8,7 +8,7 @@ import { VERSION } from '../../../../environments/version';
   templateUrl: './main-menu.component.html'
 })
 export class MainMenuComponent {
-  private packageVersion: string;
+  public packageVersion: string;
 
   constructor() {
     this.packageVersion = VERSION;
