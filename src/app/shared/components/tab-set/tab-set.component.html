@@ -1,7 +1,4 @@
 <ul class="nav nav-tabs justify-content-start" role="tablist">
-  <li class="nav-item">
-    <div class="nav-link"><</div>
-  </li>
   <li class="nav-item" *ngFor="let tab of tabCollection">
     <a [id]="tab.id" class="nav-link" [class.active]="tab.active" [class.disabled]="tab.disabled"
        (click)="onTabClick(tab)" role="tab" [attr.aria-expanded]="tab.active"
@@ -9,9 +6,6 @@
       <span *ngIf="!tab.tabTitle">{{tab.title}}</span>
       <ng-container [ngTemplateOutlet]="tab.tabTitle"></ng-container>
     </a>
-  </li>
-  <li class="nav-item">
-    <div class="nav-link">></div>
   </li>
 </ul>
 <div class="tab-content">
