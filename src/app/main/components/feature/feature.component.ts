@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 import { MenuGroup } from '../../../core/models';
+import { ContainerResponsiveService } from '../../services/container-responsive.service';
 
 @Component({
   selector: 'app-feature',
@@ -11,16 +12,24 @@ import { MenuGroup } from '../../../core/models';
   styleUrls: ['./feature.component.scss']
 })
 export class FeatureComponent  implements OnDestroy {
-  public navigationData: MenuGroup[];
   private activeRouteSubscription: Subscription;
+  private containerResponsiveSubscription: Subscription;
 
-  constructor(private activatedRoute: ActivatedRoute) {
+  public navigationData: MenuGroup[];
+  public containerHeight: number;
+
+  constructor(private activatedRoute: ActivatedRoute, private containerResponsive: ContainerResponsiveService) {
     this.activeRouteSubscription = this.activatedRoute.data.subscribe((data: any) => {
       this.navigationData = data.navigation;
+    });
+
+    this.containerResponsiveSubscription = this.containerResponsive.containerSize.subscribe((height: number) => {
+      this.containerHeight = height;
     });
   }
 
   public ngOnDestroy(): void {
     this.activeRouteSubscription.unsubscribe();
+    this.containerResponsiveSubscription.unsubscribe();
   }
 }

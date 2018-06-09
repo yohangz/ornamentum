@@ -1,9 +1,10 @@
-<div class="side-menu">
-  <div class="side-menu-navi">
-    <div class="form-group search-place-holder">
-      <input class="form-control" type="text" placeholder="Search Feature"/>
-    </div>
-    <nav *ngFor="let group of menuGroups">
+<div class="left-navigation" [style.height.px]="height">
+  <div class="form-group search-place-holder">
+    <input class="form-control" type="text" placeholder="Search Feature"/>
+  </div>
+  <div class="side-menu" [style.height.px]="height - 51">
+    <div class="side-menu-navigation">
+      <nav *ngFor="let group of menuGroups">
      <span class="main-nav-label">
         <span class="menu-title">{{group.name}}</span>
         <ul>
@@ -16,8 +17,9 @@
             </li>
           </ul>
       </span>
-    </nav>
+      </nav>
+    </div>
   </div>
+  <div class="side-menu-overlay"></div>
 </div>
-<div class="side-menu-overlay"></div>
 

@@ -1,0 +1,44 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.nav-tabs {
+  background: $nav-tabs-active-color;
+  border: none;
+  margin-top: 1rem;
+
+  .nav-item {
+    margin-right: .1rem;
+  }
+
+  .nav-link {
+    @include font-size(.7, 1.4);
+    @include border-radius(0);
+    border: 0;
+    border-bottom: 3px solid transparent;
+    color: $side-menu-background;
+    cursor: pointer;
+    font-weight: 700;
+    height: 100%;
+    padding: .5rem .7rem .5rem 2.2rem;
+    position: relative;
+
+    &.active {
+      background: $nav-tabs-border-color;
+      border: none;
+      border-bottom: 3px solid $side-menu-link-active-color;
+
+      &:hover {
+        border-bottom: 3px solid $side-menu-link-active-color;
+      }
+    }
+
+    &:hover {
+      border: none;
+      border-bottom: 3px solid transparent;
+    }
+  }
+}
+
+.tab-content {
+  position: relative;
+}

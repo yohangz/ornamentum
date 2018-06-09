@@ -1,21 +1,86 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
-:host-context {
-  .search-place-holder {
+.left-navigation {
+  position: relative;
+  z-index: 1;
+  width: 225px;
 
+  .search-place-holder {
     background: $side-menu-background;
-    position: sticky;
-    left: 0;
-    margin-bottom: 0;
-    padding: .7rem .5rem 0;
-    top: 0;
+    position: relative;
+    padding: 8px 6px;
+    margin: 0;
     z-index: 12;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
 
     input {
       @include font-size(.8, 2);
       height: 35px;
       width: 100%;
     }
+  }
+
+  .side-menu {
+    background: $side-menu-background;
+    border-right: 1px solid $main-nav-bar-active-text;
+    overflow-y: auto;
+    padding: 0 0 8rem;
+    position: relative;
+    left: 0;
+    z-index: 2;
+
+    .side-menu-navigation {
+      background: white;
+      height: 100%;
+    }
+
+    h4 {
+      @include font-size(1.2, 1.2);
+      margin-bottom: 0;
+    }
+
+    label {
+      @include font-size(1, 1.4);
+      color: $side-menu-label-text;
+    }
+
+    ul {
+      padding: .5rem 0 0 0;
+
+
+      li {
+        @include font-size(1, 1);
+        list-style-type: none;
+
+        a {
+          @include font-size(.8, 1);
+          color: $side-menu-link-color;
+          position: relative;
+
+          &:hover {
+            background: $primary-text-color;
+          }
+        }
+
+        &.active {
+          a {
+            span {
+              color: $side-menu-link-active-color;;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .side-menu-overlay {
+    background: none;
+    height: 100%;
+    position: fixed;
+    transition: all 1s ease;
+    visibility: hidden;
+    width: 100%;
   }
 }
