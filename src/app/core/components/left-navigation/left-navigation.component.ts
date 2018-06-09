@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { MenuItem } from '../../models';
+import { MenuGroup } from '../../models';
 
 @Component({
   selector: 'app-left-navigation',
@@ -9,5 +9,5 @@ import { MenuItem } from '../../models';
 })
 export class LeftNavigationComponent {
   @Input()
-  public menuItems: MenuItem[];
+  public menuGroups: MenuGroup[];
 }

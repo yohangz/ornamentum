@@ -3,167 +3,192 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { FeatureComponent, MainComponent, HomeComponent } from './main/components';
 
-import { MenuItem } from './core/models';
+import { MenuGroup } from './core/models';
 
-const dropdownNavigationData: MenuItem[] = [
+const dropdownNavigationData: MenuGroup[] = [
   {
-    routePath: '/feature/dropdown/overview',
-    title: 'Overview',
+    name: 'Overview',
+    menuItems: [
+      {
+        routePath: '/feature/dropdown/overview',
+        title: 'Basic Usage',
+      }
+    ]
   },
   {
-    routePath: '/feature/dropdown/data-binding',
-    title: 'Data binding',
-  },
-  {
-    routePath: '/feature/dropdown/editing',
-    title: 'Editing',
-  },
-  {
-    routePath: '/feature/dropdown/filtering',
-    title: 'Filtering',
-  },
-  {
-    routePath: '/feature/dropdown/grouping',
-    title: 'Grouping',
-  },
-  {
-    routePath: '/feature/dropdown/pagination',
-    title: 'Pagination',
-  },
-  {
-    routePath: '/feature/dropdown/sorting',
-    title: 'Sorting',
+    name: 'Feature',
+    menuItems: [
+      {
+        routePath: '/feature/dropdown/data-binding',
+        title: 'Data binding',
+      },
+      {
+        routePath: '/feature/dropdown/editing',
+        title: 'Editing',
+      },
+      {
+        routePath: '/feature/dropdown/filtering',
+        title: 'Filtering',
+      },
+      {
+        routePath: '/feature/dropdown/grouping',
+        title: 'Grouping',
+      },
+      {
+        routePath: '/feature/dropdown/pagination',
+        title: 'Pagination',
+      },
+      {
+        routePath: '/feature/dropdown/sorting',
+        title: 'Sorting',
+      }
+    ]
   }
 ];
 
-const dataTableNavigationData: MenuItem[] = [
+const dataTableNavigationData: MenuGroup[] = [
   {
-    routePath: '/feature/data-table/overview',
-    title: 'Overview'
+    name: 'Overview',
+    menuItems: [
+      {
+        routePath: '/feature/data-table/overview',
+        title: 'Basic Usage',
+      }
+    ]
   },
   {
-    routePath: '/feature/data-table/client-side-data-binding',
-    title: 'Client Side Data Binding',
+    name: 'Data Binding',
+    menuItems: [
+      {
+        routePath: '/feature/data-table/client-side-data-binding',
+        title: 'Client Side Data Binding',
+      },
+      {
+        routePath: '/feature/data-table/server-side-data-binding',
+        title: 'Server Side Data Binding'
+      },
+      {
+        routePath: '/feature/data-table/real-time-data-binding',
+        title: 'Real Time Data Binding'
+      }
+    ]
   },
   {
-    routePath: '/feature/data-table/server-side-data-binding',
-    title: 'Server Side Data Binding'
-  },
-  {
-    routePath: '/feature/data-table/real-time-data-binding',
-    title: 'Real Time Data Binding'
-  },
-  {
-    routePath: '/feature/data-table/pagination',
-    title: 'Pagination'
-  },
-  {
-    routePath: '/feature/data-table/column/sorting',
-    title: 'Column Sorting'
-  },
-  {
-    routePath: '/feature/data-table/grouping',
-    title: 'Row Grouping'
-  },
-  {
-    routePath: '/feature/data-table/column/filtering',
-    title: 'Filtering'
-  },
-  {
-    routePath: '/feature/data-table/row-selection',
-    title: 'Row Selection'
-  },
-  {
-    routePath: '/feature/data-table/column/resizable',
-    title: 'Column Resizing'
-  },
-  {
-    routePath: '/feature/data-table/data-persistence',
-    title: 'Data Persistence'
-  },
-  {
-    routePath: '/feature/data-table/substitute-rows',
-    title: 'Substitute Rows'
-  },
-  {
-    routePath: '/feature/data-table/loading-spinner',
-    title: 'Data Loading Spinner'
-  },
-  {
-    routePath: '/feature/data-table/templates/cell-template',
-    title: 'Cell Template'
-  },
-  {
-    routePath: '/feature/data-table/templates/expand-template',
-    title: 'Row Expand Template'
-  },
-  {
-    routePath: '/feature/data-table/templates/loading-spinner-template',
-    title: 'Loading Spinner Template'
-  },
-  {
-    routePath: '/feature/data-table/templates/no-records-template',
-    title: 'No Records Template'
-  },
-  {
-    routePath: '/feature/data-table/limit',
-    title: 'Data Limit'
-  },
-  {
-    routePath: '/feature/data-table/header-details',
-    title: 'Header Details'
-  },
-  {
-    routePath: '/feature/data-table/responsive-configuration',
-    title: 'Responsive Configuration'
-  },
-  {
-    routePath: '/feature/data-table/translations',
-    title: 'Translations'
-  },
+    name: 'Functionality',
+    menuItems: [
+      {
+        routePath: '/feature/data-table/pagination',
+        title: 'Pagination'
+      },
+      {
+        routePath: '/feature/data-table/column/sorting',
+        title: 'Column Sorting'
+      },
+      {
+        routePath: '/feature/data-table/grouping',
+        title: 'Row Grouping'
+      },
+      {
+        routePath: '/feature/data-table/column/filtering',
+        title: 'Filtering'
+      },
+      {
+        routePath: '/feature/data-table/row-selection',
+        title: 'Row Selection'
+      },
+      {
+        routePath: '/feature/data-table/column/resizable',
+        title: 'Column Resizing'
+      },
+      {
+        routePath: '/feature/data-table/data-persistence',
+        title: 'Data Persistence'
+      },
+      {
+        routePath: '/feature/data-table/substitute-rows',
+        title: 'Substitute Rows'
+      },
+      {
+        routePath: '/feature/data-table/loading-spinner',
+        title: 'Data Loading Spinner'
+      },
+      {
+        routePath: '/feature/data-table/templates/cell-template',
+        title: 'Cell Template'
+      },
+      {
+        routePath: '/feature/data-table/templates/expand-template',
+        title: 'Row Expand Template'
+      },
+      {
+        routePath: '/feature/data-table/templates/loading-spinner-template',
+        title: 'Loading Spinner Template'
+      },
+      {
+        routePath: '/feature/data-table/templates/no-records-template',
+        title: 'No Records Template'
+      },
+      {
+        routePath: '/feature/data-table/limit',
+        title: 'Data Limit'
+      },
+      {
+        routePath: '/feature/data-table/header-details',
+        title: 'Header Details'
+      },
+      {
+        routePath: '/feature/data-table/responsive-configuration',
+        title: 'Responsive Configuration'
+      },
+      {
+        routePath: '/feature/data-table/translations',
+        title: 'Translations'
+      }
+    ]
+  }
   // {
   //   routePath: '/data-table/events/init',
-  //   title: 'init'
+  //   name: 'init'
   // },
   // {
   //   routePath: '/data-table/events/allRowSelectChange',
-  //   title: 'allRowSelectChange'
+  //   name: 'allRowSelectChange'
   // },
   // {
   //   routePath: '/data-table/events/rowBind',
-  //   title: 'rowBind'
+  //   name: 'rowBind'
   // },
   // {
   //   routePath: '/data-table/events/rowSelectChange',
-  //   title: 'rowSelectChange'
+  //   name: 'rowSelectChange'
   // },
   // {
   //   routePath: '/data-table/events/cellBind',
-  //   title: 'cellBind'
+  //   name: 'cellBind'
   // },
   // {
   //   routePath: '/data-table/events/cellClick',
-  //   title: 'cellClick'
+  //   name: 'cellClick'
   // },
   // {
   //   routePath: '/data-table/events/columnBind',
-  //   title: 'columnBind'
+  //   name: 'columnBind'
   // },
   // {
   //   routePath: '/data-table/events/dataBound',
-  //   title: 'dataBound'
+  //   name: 'dataBound'
   // },
   // {
   //   routePath: '/data-table/events/headerClick',
-  //   title: 'headerClick'
+  //   name: 'headerClick'
   // },
   // {
   //   routePath: '/data-table/events/rowClick',
-  //   title: 'rowClick'
+  //   name: 'rowClick'
   // },
   // {
   //   routePath: '/data-table/events/rowDoubleClick',
-  //   title: 'rowDoubleClick'
+  //   name: 'rowDoubleClick'
   // }
 ];
 
