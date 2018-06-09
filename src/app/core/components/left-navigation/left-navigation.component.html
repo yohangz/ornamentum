@@ -3,16 +3,20 @@
     <div class="form-group search-place-holder">
       <input class="form-control" type="text" placeholder="Search Feature"/>
     </div>
-    <ul>
-      <li *ngFor="let item of menuItems" [routerLinkActive]="'active'">
-        <a class="nav-link" [routerLink]="item.routePath">
-          <span class="main-nav-label">
-            <i class="sub-menu-item"></i>
-            <span class="menu-title">{{item.title}}</span>
-          </span>
-        </a>
-      </li>
-    </ul>
+    <nav *ngFor="let group of menuGroups">
+     <span class="main-nav-label">
+        <span class="menu-title">{{group.name}}</span>
+        <ul>
+           <li *ngFor="let menuItem of group.menuItems" [routerLinkActive]="'active'">
+            <a class="nav-link" [routerLink]="menuItem.routePath">
+              <span class="main-nav-label">
+                <span class="menu-title">{{menuItem.title}}</span>
+              </span>
+            </a>
+            </li>
+          </ul>
+      </span>
+    </nav>
   </div>
 </div>
 <div class="side-menu-overlay"></div>

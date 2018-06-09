@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Subscription } from 'rxjs/internal/Subscription';
 
-import { MenuItem } from '../../../core/models';
+import { MenuGroup } from '../../../core/models';
 
 @Component({
   selector: 'app-feature',
@@ -11,7 +11,7 @@ import { MenuItem } from '../../../core/models';
   styleUrls: ['./feature.component.scss']
 })
 export class FeatureComponent  implements OnDestroy {
-  public navigationData: MenuItem[];
+  public navigationData: MenuGroup[];
   private activeRouteSubscription: Subscription;
 
   constructor(private activatedRoute: ActivatedRoute) {
