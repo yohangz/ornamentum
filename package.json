@@ -29,9 +29,11 @@
     "explorer": "npm run clean:dist && npm run build:lib:dev && npm run build:demo:dev && npm run explorer:demo:bundle",
     "docs:publish": "ngh --dir dist/ornamentum-demo",
     "preversion": "npm run build",
-    "postversion": "git push && git push --tags && npm run docs:publish",
+    "version": "node src/version.js && git add src/version.js",
+    "postversion": "git push && git push --tags",
     "prerelease": "npm run build",
-    "release": "npm publish dist/ornamentum"
+    "release": "npm publish dist/ornamentum",
+    "postrelease": "npm run docs:publish"
   },
   "repository": {
     "type": "git",
@@ -102,6 +104,7 @@
     "@types/node": "~8.9.4",
     "angular-cli-ghpages": "^0.5.2",
     "codelyzer": "~4.2.1",
+    "fs-extra": "^6.0.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",
