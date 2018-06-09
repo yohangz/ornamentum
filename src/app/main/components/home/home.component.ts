@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { VERSION } from '../../../../environments/version';
 
 /**
- * Component class for showing base view.
- * @class BaseComponent
+ * Documentation home page view component.
+ * @class HomeComponent
  */
 @Component({
   selector: 'app-home',
@@ -11,9 +12,11 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   private currentYear: Number;
+  private packageVersion: string;
 
   constructor() {
     this.currentYear = (new Date()).getFullYear();
+    this.packageVersion = VERSION;
   }
 }
 
