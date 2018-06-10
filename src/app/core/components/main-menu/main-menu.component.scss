@@ -12,16 +12,25 @@
     font-family: $primary-font;
     padding: 0 1rem 0 1.5rem;
 
+    .navbar-toggle-button {
+      cursor: pointer;
+      display: block;
+
+      .toggler-icon {
+        background-image: url(../../../assets/img/menu.svg);
+        height: 1.3em;
+        width: 1.3em;
+      }
+    }
+
     .app-name-lg {
       @include transition(.5s all ease);
       background: url(../../../assets/img/ornamentum.svg) no-repeat;
       background-size: 100% 100%;
       display: inline-block;
       height: 2.2rem;
-      padding-left: 4rem;
       padding-top: 0;
       position: relative;
-      left: 1.5rem;
       top: 0;
       width: 14rem;
 
