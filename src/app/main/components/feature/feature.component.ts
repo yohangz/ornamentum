@@ -3,8 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Subscription } from 'rxjs/internal/Subscription';
 
-import { MenuGroup } from '../../../core/models';
-import { ContainerResponsiveService } from '../../services/container-responsive.service';
+import { MenuGroup, ResizeArgs } from '../../../core/models';
+import { ContainerResponsiveService } from '../../../core/services';
+
 
 @Component({
   selector: 'app-feature',
@@ -23,8 +24,8 @@ export class FeatureComponent  implements OnDestroy {
       this.navigationData = data.navigation;
     });
 
-    this.containerResponsiveSubscription = this.containerResponsive.containerSize.subscribe((height: number) => {
-      this.containerHeight = height;
+    this.containerResponsiveSubscription = this.containerResponsive.containerSize.subscribe((resizeArgs: ResizeArgs) => {
+      this.containerHeight = resizeArgs.containerHeight;
     });
   }
 

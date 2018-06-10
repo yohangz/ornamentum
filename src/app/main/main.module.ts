@@ -5,9 +5,8 @@ import { RouterModule } from '@angular/router';
 import { AppCoreModule } from '../core/core.module';
 
 import { COMPONENTS } from './index';
-import { BaseComponent } from './components';
 
-import { ContainerResponsiveService } from './services/container-responsive.service';
+import { BaseComponent } from './components';
 
 /**
  * Module class for containing main module.
@@ -25,9 +24,7 @@ import { ContainerResponsiveService } from './services/container-responsive.serv
     RouterModule,
     CommonModule
   ],
-  providers: [
-    ContainerResponsiveService
-  ]
+  providers: []
 })
 export class AppMainModule {
 }
