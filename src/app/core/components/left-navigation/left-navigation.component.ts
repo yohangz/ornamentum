@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 import { MenuGroup } from '../../models';
 
@@ -13,4 +13,11 @@ export class LeftNavigationComponent {
 
   @Input()
   public height: number;
+
+  @ViewChild('searchBox')
+  public searchBox: ElementRef;
+
+  public get menuHeight(): number {
+    return this.height - this.searchBox.nativeElement.offsetHeight;
+  }
 }
