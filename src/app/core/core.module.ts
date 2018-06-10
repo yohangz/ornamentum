@@ -3,6 +3,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import { UtilityModule } from 'ornamentum';
+
 import { COMPONENTS, SERVICES } from './index';
 
 import { throwIfAlreadyLoaded } from './module-import.guard';
@@ -21,7 +23,8 @@ import { throwIfAlreadyLoaded } from './module-import.guard';
   imports: [
     CommonModule,
     RouterModule,
-    HttpClientModule
+    HttpClientModule,
+    UtilityModule.forRoot()
   ],
   providers: [
     ...SERVICES

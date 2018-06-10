@@ -40,6 +40,12 @@ export class LeftNavigationComponent implements OnDestroy {
     return this.containerHeight - this.searchBox.nativeElement.offsetHeight;
   }
 
+  public clickOutside(): void {
+    if (this.mobileMode) {
+      this.expanded = false;
+    }
+  }
+
   public ngOnDestroy(): void {
     this.containerResponsiveSubscription.unsubscribe();
     this.navigationToggleSubscription.unsubscribe();
