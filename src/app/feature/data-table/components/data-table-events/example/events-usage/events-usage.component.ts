@@ -46,6 +46,7 @@ export class EventsUsageComponent implements OnInit{
   }
 
   public onRowSelectChange(selectedData: any | any[]): void {
+    // if selectTrackBy property is specified, the selected row id or ids will be passed as a parameter to this method.
     // goes your implementation
   }
 
