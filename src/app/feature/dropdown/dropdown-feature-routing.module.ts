@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DropdownOverviewComponent } from './components/dropdown-overview/dropdown-overview.component';
+import {
+  DropdownOverviewComponent,
+  DropdownItemSelectionComponent
+} from './components';
 
 /**
  * Represent application dropdown feature module routes.
@@ -18,8 +21,16 @@ const dropdownFeatureRoutes: Routes = [
     path: 'overview'
   },
   {
-    component: DropdownOverviewComponent,
-    path: 'data-binding'
+    // component: DropdownClientSideDataBindingComponent,
+    path: 'client-side-data-binding'
+  },
+  {
+    // component: DropdownServerSideDataBindingComponent,
+    path: 'server-side-data-binding'
+  },
+  {
+    // component: DropdownRealTimeDataBindingComponent,
+    path: 'real-time-data-binding'
   },
   {
     component: DropdownOverviewComponent,
@@ -34,13 +45,21 @@ const dropdownFeatureRoutes: Routes = [
     path: 'grouping'
   },
   {
+    component: DropdownItemSelectionComponent,
+    path: 'item-selection'
+  },
+  {
     component: DropdownOverviewComponent,
     path: 'paging'
   },
   {
     component: DropdownOverviewComponent,
     path: 'sorting'
-  }
+  },
+  {
+    // component: DropdownTranslationsComponent,
+    path: 'translations'
+  },
 ];
 
 /**
