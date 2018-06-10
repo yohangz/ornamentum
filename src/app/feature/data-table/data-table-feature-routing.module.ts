@@ -22,7 +22,8 @@ import {
   DataTableRowExpandTemplateComponent,
   DataTableRealTimeDataBindingComponent,
   DataTableNoRecordsTemplateComponent,
-  DataTableLoadingSpinnerTemplateComponent
+  DataTableLoadingSpinnerTemplateComponent,
+  DataTableEventsComponent
 } from './components';
 
 /**
@@ -118,7 +119,11 @@ const dataTableFeatureRoutes: Routes = [
   {
     component: DataTableLoadingSpinnerTemplateComponent,
     path: 'templates/loading-spinner-template'
-  }
+  },
+  {
+    component: DataTableEventsComponent,
+    path: 'events'
+  },
 ];
 
 /**
