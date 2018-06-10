@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { rowSelectionUsage } from './data-table-row-selection.list';
+import { multiRowSelectionUsage, singleRowSelectionUsage, singleToggleRowSelectionUsage } from './data-table-row-selection.list';
 
 @Component({
   selector: 'app-data-table-row-selection-component',
@@ -8,5 +8,7 @@ import { rowSelectionUsage } from './data-table-row-selection.list';
   styleUrls: ['./data-table-row-selection.component.scss']
 })
 export class DataTableRowSelectionComponent {
-  public rowSelectionUsage = rowSelectionUsage;
+  public singleRowSelectionUsage = singleRowSelectionUsage;
+  public singleToggleRowSelectionUsage = singleToggleRowSelectionUsage;
+  public multiRowSelectionUsage = multiRowSelectionUsage;
 }

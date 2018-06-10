@@ -5,13 +5,13 @@ import { DataTableSelectMode } from 'ornamentum';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
-import { data } from './row-selection-usage.data';
+import { data } from './single-toggle-row-selection-usage.data';
 
 @Component({
-  selector: 'app-row-selection-usage',
-  templateUrl: './row-selection-usage.component.html'
+  selector: 'app-single-toggle-row-selection-usage',
+  templateUrl: './single-toggle-row-selection-usage.component.html'
 })
-export class RowSelectionUsageComponent {
+export class SingleToggleRowSelectionUsageComponent {
   public DataTableSelectMode = DataTableSelectMode;
 
   public items: Observable<any>;

@@ -150,51 +150,56 @@ const dataTableNavigationData: MenuGroup[] = [
         title: 'No Records Template'
       }
     ]
+  },
+  {
+    name: 'Events',
+    menuItems: [
+      {
+        routePath: '/data-table/events/init',
+        title: 'init'
+      },
+      {
+        routePath: '/data-table/events/allRowSelectChange',
+        title: 'allRowSelectChange'
+      },
+      {
+        routePath: '/data-table/events/rowBind',
+        title: 'rowBind'
+      },
+      {
+        routePath: '/data-table/events/rowSelectChange',
+        title: 'rowSelectChange'
+      },
+      {
+        routePath: '/data-table/events/cellBind',
+        title: 'cellBind'
+      },
+      {
+        routePath: '/data-table/events/cellClick',
+        title: 'cellClick'
+      },
+      {
+        routePath: '/data-table/events/columnBind',
+        title: 'columnBind'
+      },
+      {
+        routePath: '/data-table/events/dataBound',
+        title: 'dataBound'
+      },
+      {
+        routePath: '/data-table/events/headerClick',
+        title: 'headerClick'
+      },
+      {
+        routePath: '/data-table/events/rowClick',
+        title: 'rowClick'
+      },
+      {
+        routePath: '/data-table/events/rowDoubleClick',
+        title: 'rowDoubleClick'
+      }
+    ]
   }
-  // {
-  //   routePath: '/data-table/events/init',
-  //   name: 'init'
-  // },
-  // {
-  //   routePath: '/data-table/events/allRowSelectChange',
-  //   name: 'allRowSelectChange'
-  // },
-  // {
-  //   routePath: '/data-table/events/rowBind',
-  //   name: 'rowBind'
-  // },
-  // {
-  //   routePath: '/data-table/events/rowSelectChange',
-  //   name: 'rowSelectChange'
-  // },
-  // {
-  //   routePath: '/data-table/events/cellBind',
-  //   name: 'cellBind'
-  // },
-  // {
-  //   routePath: '/data-table/events/cellClick',
-  //   name: 'cellClick'
-  // },
-  // {
-  //   routePath: '/data-table/events/columnBind',
-  //   name: 'columnBind'
-  // },
-  // {
-  //   routePath: '/data-table/events/dataBound',
-  //   name: 'dataBound'
-  // },
-  // {
-  //   routePath: '/data-table/events/headerClick',
-  //   name: 'headerClick'
-  // },
-  // {
-  //   routePath: '/data-table/events/rowClick',
-  //   name: 'rowClick'
-  // },
-  // {
-  //   routePath: '/data-table/events/rowDoubleClick',
-  //   name: 'rowDoubleClick'
-  // }
 ];
 
 /**
