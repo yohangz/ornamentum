@@ -29,14 +29,6 @@ import {
   WithoutSubstituteRowsUsageComponent,
   DataTableLoadingSpinnerComponent,
   LoadingSpinnerUsageComponent,
-  DataTableCellTemplateComponent,
-  CellTemplateUsageComponent,
-  DataTableRowExpandTemplateComponent,
-  RowExpandTemplateUsageComponent,
-  DataTableLoadingSpinnerTemplateComponent,
-  LoadingSpinnerTemplateUsageComponent,
-  DataTableNoRecordsTemplateComponent,
-  NoRecordsTemplateUsageComponent,
   DataTableLimitComponent,
   LimitWithPaginationUsageComponent,
   LimitWithoutPaginationUsageComponent,
@@ -49,7 +41,17 @@ import {
   ResponsiveConfWithoutWidthHeightUsageComponent,
   DataTableTranslationsComponent,
   DataTableTranslationsNoDataUsageComponent,
-  DataTableTranslationsPaginationUsageComponent
+  DataTableTranslationsPaginationUsageComponent,
+  DataTableEventsComponent,
+  EventsUsageComponent,
+  DataTableCellTemplateComponent,
+  CellTemplateUsageComponent,
+  DataTableRowExpandTemplateComponent,
+  RowExpandTemplateUsageComponent,
+  DataTableLoadingSpinnerTemplateComponent,
+  LoadingSpinnerTemplateUsageComponent,
+  DataTableNoRecordsTemplateComponent,
+  NoRecordsTemplateUsageComponent,
 } from './components';
 
 import { DataStorageService } from './services/data-storage.service';
@@ -86,14 +88,6 @@ export const COMPONENTS = [
   WithoutSubstituteRowsUsageComponent,
   DataTableLoadingSpinnerComponent,
   LoadingSpinnerUsageComponent,
-  DataTableCellTemplateComponent,
-  CellTemplateUsageComponent,
-  DataTableRowExpandTemplateComponent,
-  RowExpandTemplateUsageComponent,
-  DataTableLoadingSpinnerTemplateComponent,
-  LoadingSpinnerTemplateUsageComponent,
-  DataTableNoRecordsTemplateComponent,
-  NoRecordsTemplateUsageComponent,
   DataTableLimitComponent,
   LimitWithPaginationUsageComponent,
   LimitWithoutPaginationUsageComponent,
@@ -106,7 +100,17 @@ export const COMPONENTS = [
   ResponsiveConfWithoutWidthHeightUsageComponent,
   DataTableTranslationsComponent,
   DataTableTranslationsNoDataUsageComponent,
-  DataTableTranslationsPaginationUsageComponent
+  DataTableTranslationsPaginationUsageComponent,
+  DataTableEventsComponent,
+  EventsUsageComponent,
+  DataTableCellTemplateComponent,
+  CellTemplateUsageComponent,
+  DataTableRowExpandTemplateComponent,
+  RowExpandTemplateUsageComponent,
+  DataTableLoadingSpinnerTemplateComponent,
+  LoadingSpinnerTemplateUsageComponent,
+  DataTableNoRecordsTemplateComponent,
+  NoRecordsTemplateUsageComponent
 ];
 
 // Services

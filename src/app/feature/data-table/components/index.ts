@@ -41,16 +41,6 @@ export { WithoutSubstituteRowsUsageComponent } from './data-table-substitute-row
 export { DataTableLoadingSpinnerComponent } from './data-table-loading-spinner/data-table-loading-spinner.component';
 export { LoadingSpinnerUsageComponent } from './data-table-loading-spinner/example/loading-spinner-usage/loading-spinner-usage.component';
 
-// templates
-export { DataTableCellTemplateComponent } from './data-table-templates/data-table-cell-template/data-table-cell-template.component';
-export { CellTemplateUsageComponent } from './data-table-templates/data-table-cell-template/example/cell-template-usage/cell-template-usage.component';
-export { DataTableRowExpandTemplateComponent } from './data-table-templates/data-table-row-expand-template/data-table-row-expand-template.component';
-export { RowExpandTemplateUsageComponent } from './data-table-templates/data-table-row-expand-template/example/row-expand-template-usage/row-expand-template-usage.component';
-export { DataTableLoadingSpinnerTemplateComponent } from './data-table-templates/data-table-loading-spinner-template/data-table-loading-spinner-template.component';
-export { LoadingSpinnerTemplateUsageComponent } from './data-table-templates/data-table-loading-spinner-template/example/loading-spinner-template-usage/loading-spinner-template-usage.component';
-export { DataTableNoRecordsTemplateComponent } from './data-table-templates/data-table-no-records-template/data-table-no-records-template.component';
-export { NoRecordsTemplateUsageComponent } from './data-table-templates/data-table-no-records-template/example/no-records-template-usage/no-records-template-usage.component';
-
 export { DataTableLimitComponent } from './data-table-limit/data-table-limit.component';
 export { LimitWithPaginationUsageComponent } from './data-table-limit/example/limit-with-pagination-usage/limit-with-pagination-usage.component';
 export { LimitWithoutPaginationUsageComponent } from './data-table-limit/example/limit-without-pagination-usage/limit-without-pagination-usage.component';
@@ -67,3 +57,16 @@ export { ResponsiveConfWithoutWidthHeightUsageComponent } from './data-table-res
 export { DataTableTranslationsComponent } from './data-table-translations/data-table-translations.component';
 export { DataTableTranslationsNoDataUsageComponent } from './data-table-translations/example/data-table-translations-no-data-usage/data-table-translations-no-data-usage.component';
 export { DataTableTranslationsPaginationUsageComponent } from './data-table-translations/example/data-table-translations-pagination-usage/data-table-translations-pagination-usage.component';
+
+export { DataTableEventsComponent } from './data-table-events/data-table-events.component';
+export { EventsUsageComponent } from './data-table-events/example/events-usage/events-usage.component';
+
+// templates
+export { DataTableCellTemplateComponent } from './data-table-templates/data-table-cell-template/data-table-cell-template.component';
+export { CellTemplateUsageComponent } from './data-table-templates/data-table-cell-template/example/cell-template-usage/cell-template-usage.component';
+export { DataTableRowExpandTemplateComponent } from './data-table-templates/data-table-row-expand-template/data-table-row-expand-template.component';
+export { RowExpandTemplateUsageComponent } from './data-table-templates/data-table-row-expand-template/example/row-expand-template-usage/row-expand-template-usage.component';
+export { DataTableLoadingSpinnerTemplateComponent } from './data-table-templates/data-table-loading-spinner-template/data-table-loading-spinner-template.component';
+export { LoadingSpinnerTemplateUsageComponent } from './data-table-templates/data-table-loading-spinner-template/example/loading-spinner-template-usage/loading-spinner-template-usage.component';
+export { DataTableNoRecordsTemplateComponent } from './data-table-templates/data-table-no-records-template/data-table-no-records-template.component';
+export { NoRecordsTemplateUsageComponent } from './data-table-templates/data-table-no-records-template/example/no-records-template-usage/no-records-template-usage.component';
