@@ -33,7 +33,8 @@ export class MainMenuComponent implements OnInit, OnDestroy {
     });
   }
 
-  public toggleNavigation(): void {
+  public toggleNavigation(event: MouseEvent): void {
+    event.stopPropagation();
     this.containerResponsive.navigationToggle.next();
   }
 
