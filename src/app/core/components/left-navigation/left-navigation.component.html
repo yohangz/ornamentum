@@ -1,4 +1,4 @@
-<div class="left-navigation" [style.height.px]="height" [hidden]="!expanded" (ngClickOutside)="clickOutside()"
+<div class="left-navigation" [style.height.px]="height" [hidden]="!expanded" (ngClickOutside)="closeMenu()"
      [style.position]="mobileMode? 'absolute': 'relative'">
   <div class="form-group search-place-holder" #searchBox>
     <input class="form-control" type="text" placeholder="Search Feature"/>
@@ -9,7 +9,7 @@
      <span class="main-nav-label">
         <span class="menu-title">{{group.name}}</span>
         <ul>
-           <li *ngFor="let menuItem of group.menuItems" [routerLinkActive]="'active'">
+           <li *ngFor="let menuItem of group.menuItems" [routerLinkActive]="'active'" (click)="closeMenu()">
             <a class="nav-link" [routerLink]="menuItem.routePath">
               <span class="main-nav-label">
                 <span class="menu-title">{{menuItem.title}}</span>
