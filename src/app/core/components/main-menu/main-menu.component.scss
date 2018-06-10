@@ -15,6 +15,7 @@
     .navbar-toggle-button {
       cursor: pointer;
       display: block;
+      outline: none;
 
       .toggler-icon {
         background-image: url(../../../assets/img/menu.svg);
