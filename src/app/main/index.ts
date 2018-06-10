@@ -1,4 +1,3 @@
-// components
 import { MainComponent, BaseComponent, HomeComponent, FeatureComponent } from './components';
 
 /**
