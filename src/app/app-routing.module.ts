@@ -113,22 +113,6 @@ const dataTableNavigationData: MenuGroup[] = [
         title: 'Data Loading Spinner'
       },
       {
-        routePath: '/feature/data-table/templates/cell-template',
-        title: 'Cell Template'
-      },
-      {
-        routePath: '/feature/data-table/templates/expand-template',
-        title: 'Row Expand Template'
-      },
-      {
-        routePath: '/feature/data-table/templates/loading-spinner-template',
-        title: 'Loading Spinner Template'
-      },
-      {
-        routePath: '/feature/data-table/templates/no-records-template',
-        title: 'No Records Template'
-      },
-      {
         routePath: '/feature/data-table/limit',
         title: 'Data Limit'
       },
@@ -143,6 +127,27 @@ const dataTableNavigationData: MenuGroup[] = [
       {
         routePath: '/feature/data-table/translations',
         title: 'Translations'
+      }
+    ]
+  },
+  {
+    name: 'Templating',
+    menuItems: [
+      {
+        routePath: '/feature/data-table/templates/cell-template',
+        title: 'Cell Template'
+      },
+      {
+        routePath: '/feature/data-table/templates/expand-template',
+        title: 'Row Expand Template'
+      },
+      {
+        routePath: '/feature/data-table/templates/loading-spinner-template',
+        title: 'Loading Spinner Template'
+      },
+      {
+        routePath: '/feature/data-table/templates/no-records-template',
+        title: 'No Records Template'
       }
     ]
   }
