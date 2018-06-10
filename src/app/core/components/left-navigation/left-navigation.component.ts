@@ -11,6 +11,7 @@ import { ContainerResponsiveService } from '../../services';
 })
 export class LeftNavigationComponent implements OnDestroy {
   private containerResponsiveSubscription: Subscription;
+  private navigationToggleSubscription: Subscription;
 
   @Input()
   public menuGroups: MenuGroup[];
@@ -19,10 +20,19 @@ export class LeftNavigationComponent implements OnDestroy {
   public searchBox: ElementRef;
 
   public containerHeight: number;
+  public expanded =  true;
+  public mobileMode = false;
 
   constructor(private containerResponsive: ContainerResponsiveService) {
     this.containerResponsiveSubscription = this.containerResponsive.containerSize.subscribe((resizeArgs: ResizeArgs) => {
       this.containerHeight = resizeArgs.containerHeight;
+
+      this.mobileMode = resizeArgs.windowWidth < 991;
+      this.expanded = !this.mobileMode;
+    });
+
+    this.navigationToggleSubscription = this.containerResponsive.navigationToggle.subscribe(() => {
+      this.expanded = !this.expanded;
     });
   }
 
@@ -32,5 +42,6 @@ export class LeftNavigationComponent implements OnDestroy {
 
   public ngOnDestroy(): void {
     this.containerResponsiveSubscription.unsubscribe();
+    this.navigationToggleSubscription.unsubscribe();
   }
 }
