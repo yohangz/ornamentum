@@ -2,11 +2,58 @@
 
 <ul>
   <li>This help users to do the row selection in the data table.</li>
+  <li>There are several configurations are available when using row selection.</li>
+
+  <ul>
+    <li><b>[rowSelectable]="true or false"</b> => Enable/disable table row selection</li>
+    <li><b>[showRowSelectCheckbox]="true or false"</b> => Enable/disable table row selection check boxes.</li>
+    <li><b>[selectOnRowClick]="true or false"</b> => Enable/disable table row selection on row click event.</li>
+    <li><b>[selectMode]="DataTableSelectMode.SINGLE" | "DataTableSelectMode.SINGLE_TOGGLE" |
+      "DataTableSelectMode.MULTI" </b> => Enables users to configure the dropdown row selection type. There are 3 row
+      selection types are available in the data table. The default value for this config is
+      DataTableSelectMode.SINGLE. The available types are,
+      <ul>
+        <li>Single row selection: DataTableSelectMode.SINGLE</li>
+        <li>Single toggle row selection: DataTableSelectMode.SINGLE_TOGGLE</li>
+        <li>Multi row selection: DataTableSelectMode.MULTI</li>
+      </ul>
+  </ul>
 </ul>
 
-<app-row-selection-usage></app-row-selection-usage>
+<h2>Single Row Selection</h2>
+<ul>
+  <li>Users are only allowed to select one row at a time.</li>
+  <li>Once the selection is made, it can only be changed by selecting other row. That means, only one row item can be
+    selected.
+  </li>
+</ul>
 
-<app-example-code [files]="rowSelectionUsage"></app-example-code>
+<app-single-row-selection-usage></app-single-row-selection-usage>
+
+<app-example-code [files]="singleRowSelectionUsage"></app-example-code>
+
+<h2>Single Toggle Row Selection</h2>
+<ul>
+  <li>Users are only allowed to select one row at a time.</li>
+  <li>Can toggle the row selection.</li>
+  <li>But in this type, once the selection is made, it can be removed by clicking the row itself(if select on row
+    click is enabled) or by unchecking the checkbox(if check boxes enabled).
+  </li>
+</ul>
+
+<app-single-toggle-row-selection-usage></app-single-toggle-row-selection-usage>
+
+<app-example-code [files]="singleToggleRowSelectionUsage"></app-example-code>
+
+<h2>Multi Row Selection</h2>
+<ul>
+  <li>Users can select multiple rows at a time.</li>
+  <li>Can toggle the row selection.</li>
+</ul>
+
+<app-multi-row-selection-usage></app-multi-row-selection-usage>
+
+<app-example-code [files]="multiRowSelectionUsage"></app-example-code>
 
 <h2>Suggested Links</h2>
 <a [href]="''" target="_blank">API Doc for Data Table Row Selection</a>

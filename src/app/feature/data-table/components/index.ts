@@ -24,7 +24,9 @@ export { FilterDropdownUsageComponent } from './data-table-filtering/example/fil
 export { FilterTextBoxUsageComponent } from './data-table-filtering/example/filter-text-box-usage/filter-text-box-usage.component';
 
 export { DataTableRowSelectionComponent } from './data-table-row-selection/data-table-row-selection.component';
-export { RowSelectionUsageComponent } from './data-table-row-selection/example/row-selection-usage/row-selection-usage.component';
+export { SingleRowSelectionUsageComponent } from './data-table-row-selection/example/single-row-selection-usage/single-row-selection-usage.component';
+export { SingleToggleRowSelectionUsageComponent } from './data-table-row-selection/example/single-toggle-row-selection-usage/single-toggle-row-selection-usage.component';
+export { MultiRowSelectionUsageComponent } from './data-table-row-selection/example/multi-row-selection-usage/multi-row-selection-usage.component';
 
 export { DataTableResizableComponent } from './data-table-resizable/data-table-resizable.component';
 export { ColumnResizableUsageComponent } from './data-table-resizable/example/column-resizable-usage/column-resizable-usage.component';
