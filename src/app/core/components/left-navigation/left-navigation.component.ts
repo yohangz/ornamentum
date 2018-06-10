@@ -1,13 +1,24 @@
 import { Component, ElementRef, Input, OnDestroy, ViewChild } from '@angular/core';
+import { animate, state, style, transition, trigger } from '@angular/animations';
+
+import { Subscription } from 'rxjs/internal/Subscription';
 
 import { MenuGroup, ResizeArgs } from '../../models';
-import { Subscription } from 'rxjs/internal/Subscription';
 import { ContainerResponsiveService } from '../../services';
+
 
 @Component({
   selector: 'app-left-navigation',
   templateUrl: './left-navigation.component.html',
-  styleUrls: ['./left-navigation.component.scss']
+  styleUrls: ['./left-navigation.component.scss'],
+  animations: [
+    trigger('slide', [
+      state('expand', style({ left: 0, visibility: 'visible' })),
+      state('collapsed', style({ left: '-225px', visibility: 'hidden' })),
+      transition('collapsed => expand', animate('300ms ease-in')),
+      transition('expand => collapsed', animate('300ms ease-out'))
+    ])
+  ]
 })
 export class LeftNavigationComponent implements OnDestroy {
   private containerResponsiveSubscription: Subscription;
@@ -27,7 +38,7 @@ export class LeftNavigationComponent implements OnDestroy {
     this.containerResponsiveSubscription = this.containerResponsive.containerSize.subscribe((resizeArgs: ResizeArgs) => {
       this.containerHeight = resizeArgs.containerHeight;
 
-      this.mobileMode = resizeArgs.windowWidth < 991;
+      this.mobileMode = this.containerResponsive.isMobileMode(resizeArgs.windowWidth);
       this.expanded = !this.mobileMode;
     });
 

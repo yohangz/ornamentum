@@ -9,4 +9,8 @@ import { ResizeArgs } from '../models';
 export class ContainerResponsiveService {
   public containerSize = new ReplaySubject<ResizeArgs>(1);
   public navigationToggle = new Subject<void>();
+
+  public isMobileMode(width: number): boolean {
+    return width < 990;
+  }
 }

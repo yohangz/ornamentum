@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { UtilityModule } from 'ornamentum';
 
@@ -24,6 +25,7 @@ import { throwIfAlreadyLoaded } from './module-import.guard';
     CommonModule,
     RouterModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     UtilityModule.forRoot()
   ],
   providers: [
