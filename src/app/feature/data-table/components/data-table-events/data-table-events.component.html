@@ -4,21 +4,64 @@
   <li>There are several events types are available in this data table as follows.</li>
   <ul>
     <li>
-      <label class="event-item">init: </label>Triggers when initializing the data table.
+      <label class="event-item">init: </label>
+      <ul>
+        <li>Triggers when initializing the data table.</li>
+      </ul>
     </li>
-    <li><label class="event-item">allRowSelectChange:</label></li>
-    <li><label class="event-item">rowBind: </label>For each table row this will trigger when binding row data.</li>
-    <li><label class="event-item">rowSelectChange: </label>Triggers when row select state changes.</li>
-    <li><label class="event-item">cellBind: </label>For each table row cell this will trigger when binding cell data.
+    <li><label class="event-item">allRowSelectChange:</label>
+      <ul>
+        <li></li>
+      </ul>
     </li>
-    <li><label class="event-item">cellClick: </label>Triggers when clicks on table cell.</li>
-    <li><label class="event-item">columnBind: </label>Triggers for each column before all the other events to set column
-      configurations.
+    <li><label class="event-item">rowBind: </label>
+      <ul>
+        <li>For each table row this will trigger when binding row data.</li>
+      </ul>
     </li>
-    <li><label class="event-item">dataBound: </label></li>
-    <li><label class="event-item">headerClick: </label>triggers when clicking table column header row.</li>
-    <li><label class="event-item">rowClick: </label>Triggers when user clicks on table row.</li>
-    <li><label class="event-item">rowDoubleClick: </label>Triggers when user double clicks on table row.</li>
+    <li><label class="event-item">rowSelectChange: </label>
+      <ul>
+        <li>Triggers when row select state changes. To identify selected
+          rows uniquely it is necessary to specify <b>[selectTrackBy]"</b> property. Therefore, a unique value column
+          name should be set as the value for this attribute. According to this example it is <b>'id'.</b>
+        </li>
+      </ul>
+    </li>
+    <li><label class="event-item">cellBind: </label>
+      <ul>
+        <li>For each table row cell this will trigger when binding cell data.</li>
+      </ul>
+    </li>
+    <li><label class="event-item">cellClick: </label>
+      <ul>
+        <li>Triggers when clicks on table cell.</li>
+      </ul>
+    </li>
+    <li><label class="event-item">columnBind: </label>
+      <ul>
+        <li>Triggers for each column before all the other events to set column configurations.</li>
+      </ul>
+    </li>
+    <li><label class="event-item">dataBound: </label>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><label class="event-item">headerClick: </label>
+      <ul>
+        <li>Triggers when clicking table column header row.</li>
+      </ul>
+    </li>
+    <li><label class="event-item">rowClick: </label>
+      <ul>
+        <li>Triggers when user clicks on table row.</li>
+      </ul>
+    </li>
+    <li><label class="event-item">rowDoubleClick: </label>
+      <ul>
+        <li>Triggers when user double clicks on table row.</li>
+      </ul>
+    </li>
   </ul>
   <li>Please refer following example to see, how this event can be used and what types of data is passed to these
     events.
