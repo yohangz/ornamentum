@@ -1,4 +1,5 @@
-<div class="left-navigation" [style.height.px]="height">
+<div class="left-navigation" [style.height.px]="height" [hidden]="!expanded"
+     [style.position]="mobileMode? 'absolute': 'relative'">
   <div class="form-group search-place-holder" #searchBox>
     <input class="form-control" type="text" placeholder="Search Feature"/>
   </div>

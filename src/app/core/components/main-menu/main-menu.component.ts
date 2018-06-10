@@ -20,12 +20,6 @@ export class MainMenuComponent implements OnInit, OnDestroy {
   @ViewChild('menuElement')
   public menuElement: ElementRef;
 
-  @Input()
-  public sidebarExpanded = true;
-
-  @Output()
-  public navigationToggle = new EventEmitter<boolean>();
-
   constructor(private containerResponsive: ContainerResponsiveService) {
     this.packageVersion = VERSION;
   }
@@ -40,8 +34,7 @@ export class MainMenuComponent implements OnInit, OnDestroy {
   }
 
   public toggleNavigation(): void {
-    this.sidebarExpanded = !this.sidebarExpanded;
-    this.navigationToggle.emit(this.sidebarExpanded);
+    this.containerResponsive.navigationToggle.next();
   }
 
   public ngOnInit(): void {
