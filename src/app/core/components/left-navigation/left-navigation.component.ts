@@ -13,8 +13,8 @@ import { ContainerResponsiveService } from '../../services';
   styleUrls: ['./left-navigation.component.scss'],
   animations: [
     trigger('slide', [
-      state('expand', style({ left: 0, visibility: 'visible' })),
-      state('collapsed', style({ left: '-225px', visibility: 'hidden' })),
+      state('expand', style({ left: 0, })),
+      state('collapsed', style({ left: '-225px', })),
       transition('collapsed => expand', animate('300ms ease-in')),
       transition('expand => collapsed', animate('300ms ease-out'))
     ])
