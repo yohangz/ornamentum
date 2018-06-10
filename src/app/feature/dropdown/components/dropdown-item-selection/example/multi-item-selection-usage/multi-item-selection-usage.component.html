@@ -3,11 +3,8 @@
     <ng-dropdown
       [relativeParentElement]="parentElement"
       [selectTrackBy]="'key'"
+      [selectMode]="DropdownSelectMode.MULTI"
       [items]="items"
-      [filterable]="true"
-      [showClearSelectionButton]="true"
-      [showSelectedOptionRemoveButton]="true"
-      [closeMenuOnSelect]="true"
       [limit]="50">
     </ng-dropdown>
   </label>

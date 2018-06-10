@@ -16,31 +16,64 @@ const dropdownNavigationData: MenuGroup[] = [
     ]
   },
   {
-    name: 'Feature',
+    name: 'Data Binding',
     menuItems: [
       {
-        routePath: '/feature/dropdown/data-binding',
-        title: 'Data binding',
+        routePath: '/feature/dropdown/client-side-data-binding',
+        title: 'Client Side Data Binding',
       },
       {
-        routePath: '/feature/dropdown/editing',
-        title: 'Editing',
+        routePath: '/feature/dropdown/server-side-data-binding',
+        title: 'Server Side Data Binding'
       },
       {
-        routePath: '/feature/dropdown/filtering',
-        title: 'Filtering',
+        routePath: '/feature/dropdown/real-time-data-binding',
+        title: 'Real Time Data Binding'
+      }
+    ]
+  },
+  {
+    name: 'Functionality',
+    menuItems: [
+      {
+        routePath: '/feature/dropdown/sorting',
+        title: 'Sorting'
       },
       {
         routePath: '/feature/dropdown/grouping',
-        title: 'Grouping',
+        title: 'Grouping'
       },
       {
-        routePath: '/feature/dropdown/pagination',
-        title: 'Pagination',
+        routePath: '/feature/dropdown/filtering',
+        title: 'Filtering'
       },
       {
-        routePath: '/feature/dropdown/sorting',
-        title: 'Sorting',
+        routePath: '/feature/dropdown/item-selection',
+        title: 'Item Selection'
+      },
+      {
+        routePath: '/feature/dropdown/data-persistence',
+        title: 'Data Persistence'
+      },
+      {
+        routePath: '/feature/dropdown/loading-spinner',
+        title: 'Data Loading Spinner'
+      },
+      {
+        routePath: '/feature/dropdown/limit',
+        title: 'Data Limit'
+      },
+      {
+        routePath: '/feature/dropdown/responsive-configuration',
+        title: 'Responsive Configuration'
+      },
+      {
+        routePath: '/feature/dropdown/translations',
+        title: 'Translations'
+      },
+      {
+        routePath: '/feature/dropdown/events',
+        title: 'Events'
       }
     ]
   }

@@ -15,7 +15,7 @@ export const data = [
     key: 3,
     group: 'A',
     value: 'test2',
-    disabled: true
+    disabled: false
   },
   {
     key: 4,
