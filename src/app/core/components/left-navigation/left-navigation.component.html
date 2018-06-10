@@ -1,4 +1,4 @@
-<div class="left-navigation" [style.height.px]="height" [hidden]="!expanded" (ngClickOutside)="closeMenu()"
+<div class="left-navigation" [style.height.px]="height" [@slide]="expanded? 'expand': 'collapsed'" (ngClickOutside)="closeMenu()"
      [style.position]="mobileMode? 'absolute': 'relative'">
   <div class="form-group search-place-holder" #searchBox>
     <input class="form-control" type="text" placeholder="Search Feature"/>

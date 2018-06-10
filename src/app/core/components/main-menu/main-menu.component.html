@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-inverse bg-inverse sticky-top" #menuElement>
-  <button class="navbar-toggler navbar-toggle-button" type="button" (click)="toggleNavigation($event)"
+  <button class="navbar-toggler navbar-toggle-button" type="button" (click)="toggleNavigation($event)" *ngIf="isMobileMode"
           aria-label="Toggle side navigation">
     <span class="navbar-toggler-icon toggler-icon"></span>
   </button>
