@@ -1,7 +1,9 @@
-import { Component, ElementRef, EventEmitter, Input, OnDestroy, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
 import { fromEvent, Subscription } from 'rxjs/index';
 import { debounceTime } from 'rxjs/operators';
+
+import { GlobalRefService } from 'ornamentum';
 
 import { VERSION } from '../../../../environments/version';
 
@@ -21,17 +23,17 @@ export class MainMenuComponent implements OnInit, OnDestroy {
   @ViewChild('menuElement')
   public menuElement: ElementRef;
 
-  constructor(private containerResponsive: ContainerResponsiveService) {
+  constructor(private containerResponsive: ContainerResponsiveService, private globalRefService: GlobalRefService) {
     this.packageVersion = VERSION;
   }
 
   private emitContainerHeight(): void {
-    this.isMobileMode = this.containerResponsive.isMobileMode(window.innerWidth);
+    this.isMobileMode = this.containerResponsive.isMobileMode(this.globalRefService.window.innerWidth);
     this.containerResponsive.containerSize.next({
-      containerHeight: window.innerHeight - this.menuElement.nativeElement.offsetHeight,
-      containerWidth: window.innerWidth,
-      windowHeight: window.innerHeight,
-      windowWidth: window.innerWidth
+      containerHeight: this.globalRefService.window.innerHeight - this.menuElement.nativeElement.offsetHeight,
+      containerWidth: this.globalRefService.window.innerWidth,
+      windowHeight: this.globalRefService.window.innerHeight,
+      windowWidth: this.globalRefService.window.innerWidth
     });
   }
 
@@ -41,7 +43,7 @@ export class MainMenuComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-    this.resizeEventSubscription = fromEvent(window, 'resize')
+    this.resizeEventSubscription = fromEvent(this.globalRefService.window, 'resize')
       .pipe(
         debounceTime(66)
       )
