@@ -1,24 +1,28 @@
 import {
   DropdownOverviewComponent,
   BasicUsageComponent,
+  FilteringUsageComponent,
+  DropdownFilteringComponent,
   MultiItemSelectionUsageComponent,
   SingleItemSelectionUsageComponent,
   SingleToggleItemSelectionUsageComponent,
   ItemSelectionWithAllOptionsUsageComponent,
   DropdownItemSelectionComponent,
-  FilteringUsageComponent,
-  DropdownFilteringComponent
+  DataLimitUsageComponent,
+  DropdownLimitComponent
 } from './components';
 
 // Components
 export const COMPONENTS = [
   DropdownOverviewComponent,
   BasicUsageComponent,
+  FilteringUsageComponent,
+  DropdownFilteringComponent,
   MultiItemSelectionUsageComponent,
   SingleItemSelectionUsageComponent,
   SingleToggleItemSelectionUsageComponent,
   ItemSelectionWithAllOptionsUsageComponent,
   DropdownItemSelectionComponent,
-  FilteringUsageComponent,
-  DropdownFilteringComponent
+  DataLimitUsageComponent,
+  DropdownLimitComponent
 ];
