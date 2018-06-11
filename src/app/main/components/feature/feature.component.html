@@ -1,6 +1,6 @@
 <div class="page-wrapper-inner-content" *ngIf="navigationData">
   <app-left-navigation [menuGroups]="navigationData"></app-left-navigation>
-  <div class="main-pane" [style.height.px]="containerHeight">
+  <div class="main-pane" [style.height.px]="containerHeight" [@routeFadeIn]="getState()">
     <router-outlet></router-outlet>
   </div>
 </div>
