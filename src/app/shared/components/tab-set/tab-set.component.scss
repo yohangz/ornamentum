@@ -8,6 +8,18 @@
 
   .nav-item {
     margin-right: .1rem;
+
+    &.active {
+      .nav-link {
+        background: $nav-tabs-border-color;
+        border: none;
+        border-bottom: 3px solid $side-menu-link-active-color;
+
+        &:hover {
+          border-bottom: 3px solid $side-menu-link-active-color;
+        }
+      }
+    }
   }
 
   .nav-link {
@@ -22,19 +34,13 @@
     padding: .5rem .7rem .5rem 2.2rem;
     position: relative;
 
-    &.active {
-      background: $nav-tabs-border-color;
-      border: none;
-      border-bottom: 3px solid $side-menu-link-active-color;
-
-      &:hover {
-        border-bottom: 3px solid $side-menu-link-active-color;
-      }
-    }
-
     &:hover {
       border: none;
       border-bottom: 3px solid transparent;
+    }
+
+    span {
+      display: none;
     }
   }
 }
