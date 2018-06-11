@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {
   DropdownOverviewComponent,
+  DropdownClientSideDataBindingComponent,
+  DropdownServerSideDataBindingComponent,
+  DropdownRealTimeDataBindingComponent,
   DropdownFilteringComponent,
   DropdownItemSelectionComponent,
   DropdownLimitComponent
@@ -23,15 +26,15 @@ const dropdownFeatureRoutes: Routes = [
     path: 'overview'
   },
   {
-    // component: DropdownClientSideDataBindingComponent,
+    component: DropdownClientSideDataBindingComponent,
     path: 'client-side-data-binding'
   },
   {
-    // component: DropdownServerSideDataBindingComponent,
+    component: DropdownServerSideDataBindingComponent,
     path: 'server-side-data-binding'
   },
   {
-    // component: DropdownRealTimeDataBindingComponent,
+    component: DropdownRealTimeDataBindingComponent,
     path: 'real-time-data-binding'
   },
   {
@@ -53,10 +56,6 @@ const dropdownFeatureRoutes: Routes = [
   {
     component: DropdownOverviewComponent,
     path: 'paging'
-  },
-  {
-    component: DropdownOverviewComponent,
-    path: 'sorting'
   },
   {
     component: DropdownLimitComponent,

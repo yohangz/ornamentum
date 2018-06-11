@@ -36,10 +36,6 @@ const dropdownNavigationData: MenuGroup[] = [
     name: 'Functionality',
     menuItems: [
       {
-        routePath: '/feature/dropdown/sorting',
-        title: 'Sorting'
-      },
-      {
         routePath: '/feature/dropdown/grouping',
         title: 'Grouping'
       },

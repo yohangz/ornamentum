@@ -1,6 +1,13 @@
 export { DropdownOverviewComponent } from './dropdown-overview/dropdown-overview.component';
 export { BasicUsageComponent } from './dropdown-overview/example/basic-usage/basic-usage.component';
 
+export { ClientSideDataBindingComponent } from './dropdown-client-side-data-binding/example/client-side-data-binding/client-side-data-binding.component';
+export { DropdownClientSideDataBindingComponent } from './dropdown-client-side-data-binding/dropdown-client-side-data-binding.component';
+export { ServerSideDataBindingComponent } from './dropdown-server-side-data-binding/example/server-side-data-binding/server-side-data-binding.component';
+export { DropdownServerSideDataBindingComponent } from './dropdown-server-side-data-binding/dropdown-server-side-data-binding.component';
+export { RealTimeDataBindingComponent } from './dropdown-real-time-data-binding/example/real-time-data-binding/real-time-data-binding.component';
+export { DropdownRealTimeDataBindingComponent } from './dropdown-real-time-data-binding/dropdown-real-time-data-binding.component';
+
 export { FilteringUsageComponent } from './dropdown-filtering/example/filtering-usage/filtering-usage.component';
 export { DropdownFilteringComponent } from './dropdown-filtering/dropdown-filtering.component';
 
@@ -12,4 +19,3 @@ export { DropdownItemSelectionComponent } from './dropdown-item-selection/dropdo
 
 export { DataLimitUsageComponent } from './dropdown-limit/example/data-limit-usage/data-limit-usage.component';
 export { DropdownLimitComponent } from './dropdown-limit/dropdown-limit.component';
-
