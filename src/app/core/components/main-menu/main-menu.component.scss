@@ -12,10 +12,17 @@
     font-family: $primary-font;
     padding: 0 1rem 0 1.5rem;
 
+    @include breakpoint(max991) {
+      @include flex-wrap(wrap)
+    }
+
     .navbar-toggle-button {
       cursor: pointer;
       display: block;
       outline: none;
+      left: -1rem;
+      position: relative;
+      top: .5rem;
 
       .toggler-icon {
         background-image: url(../../../assets/img/menu.svg);
@@ -33,7 +40,13 @@
       padding-top: 0;
       position: relative;
       top: 0;
-      width: 14rem;
+      width: 10rem;
+
+      @include breakpoint(max991) {
+        left: 4rem;
+        position: absolute;
+        top:.5rem;
+      }
 
 
       &:hover {
@@ -45,6 +58,10 @@
 
   .navbar-nav {
     flex-direction: row;
+
+    @include breakpoint(max991) {
+      padding-top: 1rem;
+    }
 
     > .nav-item {
       padding: 0 1rem;
@@ -59,6 +76,10 @@
         letter-spacing: .03rem;
         padding-left: 0;
         padding-right: 0;
+
+        @include breakpoint(max991) {
+          @include font-size(.8, 2);
+        }
 
         .main-nav-label {
           padding: 0;
@@ -112,6 +133,19 @@
           display: block;
           margin: 0;
         }
+      }
+    }
+
+    &.icon-menu {
+      @include breakpoint(max991) {
+        padding-top: 0;
+        position: absolute;
+        top: 0;
+        right: .5rem;
+      }
+
+      .nav-item {
+        padding: 0 1.3rem;
       }
     }
   }
