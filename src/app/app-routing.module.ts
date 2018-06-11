@@ -48,20 +48,60 @@ const dropdownNavigationData: MenuGroup[] = [
         title: 'Item Selection'
       },
       {
-        routePath: '/feature/dropdown/data-persistence',
-        title: 'Data Persistence'
-      },
-      {
-        routePath: '/feature/dropdown/loading-spinner',
-        title: 'Data Loading Spinner'
-      },
-      {
         routePath: '/feature/dropdown/limit',
         title: 'Data Limit'
       },
       {
-        routePath: '/feature/dropdown/responsive-configuration',
-        title: 'Responsive Configuration'
+        routePath: '/feature/dropdown/disable',
+        title: 'Dropdown Disabling'
+      },
+      {
+        routePath: '/feature/dropdown/disabled-options',
+        title: 'Disabled Options'
+      },
+      {
+        routePath: '/feature/dropdown/display-tracked-by',
+        title: 'Display Tracked By'
+      },
+      {
+        routePath: '/feature/dropdown/load-on-scroll',
+        title: 'Load On Scroll'
+      },
+      {
+        routePath: '/feature/dropdown/menu-position',
+        title: 'Menu Position'
+      },
+      {
+        routePath: '/feature/dropdown/menu-height',
+        title: 'Menu Height'
+      },
+      {
+        routePath: '/feature/dropdown/menu-width',
+        title: 'Menu Width'
+      },
+      {
+        routePath: '/feature/dropdown/load-data-on-init',
+        title: 'Load Data On Init'
+      },
+      {
+        routePath: '/feature/dropdown/on-data-bind',
+        title: 'On Data Bind'
+      },
+      {
+        routePath: '/feature/dropdown/trigger-select-change-on-init',
+        title: 'Trigger Select Change On Init'
+      },
+      {
+        routePath: '/feature/dropdown/trigger-select-change-on-first-option-select',
+        title: 'Trigger Select Change On First Option Select'
+      },
+      {
+        routePath: '/feature/dropdown/trigger-select-change-on-model-update',
+        title: 'Trigger Select Change On Model Update'
+      },
+      {
+        routePath: '/feature/dropdown/wrap-display-select-limit',
+        title: 'Wrap Display Select Limit'
       },
       {
         routePath: '/feature/dropdown/translations',

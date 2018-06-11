@@ -39,32 +39,80 @@ const dropdownFeatureRoutes: Routes = [
   },
   {
     component: DropdownOverviewComponent,
-    path: 'editing'
+    path: 'grouping'
   },
   {
     component: DropdownFilteringComponent,
     path: 'filtering'
   },
   {
-    component: DropdownOverviewComponent,
-    path: 'grouping'
-  },
-  {
     component: DropdownItemSelectionComponent,
     path: 'item-selection'
-  },
-  {
-    component: DropdownOverviewComponent,
-    path: 'paging'
   },
   {
     component: DropdownLimitComponent,
     path: 'limit'
   },
   {
-    // component: DropdownTranslationsComponent,
+    // component: DropdownLimitComponent,
+    path: 'disable'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'disabled-options'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'display-tracked-by'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'load-on-scroll'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'menu-position'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'menu-height'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'menu-width'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'load-data-on-init'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'on-data-bind'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'trigger-select-change-on-init'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'trigger-select-change-on-first-option-select'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'trigger-select-change-on-model-update'
+  },
+  {
+    // component: DropdownLimitComponent,
+    path: 'wrap-display-select-limit'
+  },
+  {
+    // component: DropdownLimitComponent,
     path: 'translations'
   },
+  {
+    // component: DropdownLimitComponent,
+    path: 'events'
+  }
 ];
 
 /**
