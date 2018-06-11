@@ -3,7 +3,7 @@
     <header>
       <app-main-menu></app-main-menu>
     </header>
-    <div class="page-wrapper-content">
+    <div class="page-wrapper-content" [@routeFadeIn]="getState()">
       <router-outlet></router-outlet>
     </div>
   </div>
