@@ -5,7 +5,9 @@ import {
   SingleItemSelectionUsageComponent,
   SingleToggleItemSelectionUsageComponent,
   ItemSelectionWithAllOptionsUsageComponent,
-  DropdownItemSelectionComponent
+  DropdownItemSelectionComponent,
+  FilteringUsageComponent,
+  DropdownFilteringComponent
 } from './components';
 
 // Components
@@ -16,5 +18,7 @@ export const COMPONENTS = [
   SingleItemSelectionUsageComponent,
   SingleToggleItemSelectionUsageComponent,
   ItemSelectionWithAllOptionsUsageComponent,
-  DropdownItemSelectionComponent
+  DropdownItemSelectionComponent,
+  FilteringUsageComponent,
+  DropdownFilteringComponent
 ];

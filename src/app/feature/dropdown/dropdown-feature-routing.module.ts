@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {
   DropdownOverviewComponent,
-  DropdownItemSelectionComponent
+  DropdownItemSelectionComponent,
+  DropdownFilteringComponent
 } from './components';
 
 /**
@@ -37,7 +38,7 @@ const dropdownFeatureRoutes: Routes = [
     path: 'editing'
   },
   {
-    component: DropdownOverviewComponent,
+    component: DropdownFilteringComponent,
     path: 'filtering'
   },
   {

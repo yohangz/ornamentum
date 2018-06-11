@@ -6,3 +6,6 @@ export { SingleItemSelectionUsageComponent } from './dropdown-item-selection/exa
 export { SingleToggleItemSelectionUsageComponent } from './dropdown-item-selection/example/single-toggle-item-selection-usage/single-toggle-item-selection-usage.component';
 export { ItemSelectionWithAllOptionsUsageComponent } from './dropdown-item-selection/example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.component';
 export { DropdownItemSelectionComponent } from './dropdown-item-selection/dropdown-item-selection.component';
+
+export { FilteringUsageComponent } from './dropdown-filtering/example/filtering-usage/filtering-usage.component';
+export { DropdownFilteringComponent } from './dropdown-filtering/dropdown-filtering.component';
