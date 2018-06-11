@@ -6,7 +6,7 @@
   ::ng-deep {
 
   .navbar {
-    @include box-shadow(1px 2px 3px #151515);
+    @include box-shadow(1px 2px 3px #818284);
     background: $nav-bar-background;
     flex-wrap: nowrap;
     font-family: $primary-font;
