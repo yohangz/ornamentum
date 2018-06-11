@@ -1,0 +1,31 @@
+<h1>DropDown Filtering</h1>
+
+<ul>
+  <li>Filtering lets users to see the data which belongs to a specified criteria.</li>
+  <li>To Enable filtering, it is required to set the following property into true.</li>
+  <h5>[filterable]="true"</h5>
+  <li>Note that, The default value for filterable property is <b>false</b>. When there is no value or false value is
+    assigned to the filterable property, filtering feature won't be enabled for the dropdown.
+  </li>
+</ul>
+
+<p>Additionally, the following configurations can be configured with filtering when enabling dropdown filterable option.</p>
+
+<ul>
+  <li><b>[filterDebounce]="true or false"</b> => Used to enable/disable dropdown filter debounce. The
+    default value for this config is true.
+  </li>
+  <li><b>[filterDebounceTime]="100 (time in number)"</b> => Used to specify the dropdown filter search
+    debounce time. The default value for this config is 500.
+  </li>
+  <li><b>[filterText]="'Filter Text Value'"</b> => Used to set default filter text value for the dropdown. The
+    default value for this config is empty.
+  </li>
+</ul>
+
+<app-filtering-usage></app-filtering-usage>
+
+<app-example-code [files]="filteringUsage"></app-example-code>
+
+<h2>Suggested Links</h2>
+<a [href]="''" target="_blank">API Doc for Data Filtering</a>
