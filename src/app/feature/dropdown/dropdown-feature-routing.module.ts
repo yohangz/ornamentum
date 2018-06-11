@@ -3,8 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {
   DropdownOverviewComponent,
+  DropdownFilteringComponent,
   DropdownItemSelectionComponent,
-  DropdownFilteringComponent
+  DropdownLimitComponent
 } from './components';
 
 /**
@@ -56,6 +57,10 @@ const dropdownFeatureRoutes: Routes = [
   {
     component: DropdownOverviewComponent,
     path: 'sorting'
+  },
+  {
+    component: DropdownLimitComponent,
+    path: 'limit'
   },
   {
     // component: DropdownTranslationsComponent,
