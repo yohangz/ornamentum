@@ -6,15 +6,11 @@
   ::ng-deep {
 
   .navbar {
-    @include box-shadow(1px 2px 3px #ccc);
+    @include box-shadow(1px 2px 3px #151515);
     background: $nav-bar-background;
     flex-wrap: nowrap;
     font-family: $primary-font;
     padding: 0 1rem 0 1.5rem;
-
-    @include breakpoint(max991) {
-      @include flex-wrap(wrap)
-    }
 
     .navbar-toggle-button {
       cursor: pointer;
@@ -23,6 +19,10 @@
       left: -1rem;
       position: relative;
       top: .5rem;
+
+      @include breakpoint(max991) {
+        top: 0;
+      }
 
       .toggler-icon {
         background-image: url(../../../assets/img/menu.svg);
@@ -43,9 +43,12 @@
       width: 10rem;
 
       @include breakpoint(max991) {
+        background: url(../../../assets/img/ornamentum-sm.svg) no-repeat;
+        height: 2.5rem;
         left: 4rem;
         position: absolute;
         top:.5rem;
+        width: 5rem;
       }
 
 
@@ -58,10 +61,10 @@
 
   .navbar-nav {
     flex-direction: row;
-
     @include breakpoint(max991) {
-      padding-top: 1rem;
+      margin-left: 2rem;
     }
+
 
     > .nav-item {
       padding: 0 1rem;
@@ -83,6 +86,10 @@
 
         .main-nav-label {
           padding: 0;
+
+          .menu-title {
+            font-weight: 700;
+          }
         }
 
         .menu-icon {
@@ -92,6 +99,7 @@
         }
 
         .menu-title {
+          font-weight: 700;
           padding: 0 .5rem;
         }
 
@@ -142,6 +150,14 @@
         position: absolute;
         top: 0;
         right: .5rem;
+
+        li {
+          display: none;
+        }
+
+        li:last-child {
+          display: block;
+        }
       }
 
       .nav-item {
