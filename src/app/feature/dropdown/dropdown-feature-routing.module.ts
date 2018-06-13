@@ -6,6 +6,7 @@ import {
   DropdownClientSideDataBindingComponent,
   DropdownServerSideDataBindingComponent,
   DropdownRealTimeDataBindingComponent,
+  DropdownItemGroupingComponent,
   DropdownFilteringComponent,
   DropdownItemSelectionComponent,
   DropdownLimitComponent
@@ -38,7 +39,7 @@ const dropdownFeatureRoutes: Routes = [
     path: 'real-time-data-binding'
   },
   {
-    component: DropdownOverviewComponent,
+    component: DropdownItemGroupingComponent,
     path: 'grouping'
   },
   {
