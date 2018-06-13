@@ -8,6 +8,9 @@ export { DropdownServerSideDataBindingComponent } from './dropdown-server-side-d
 export { RealTimeDataBindingComponent } from './dropdown-real-time-data-binding/example/real-time-data-binding/real-time-data-binding.component';
 export { DropdownRealTimeDataBindingComponent } from './dropdown-real-time-data-binding/dropdown-real-time-data-binding.component';
 
+export { ItemGroupingUsageComponent } from './dropdown-item-grouping/example/item-grouping-usage/item-grouping-usage.component';
+export { DropdownItemGroupingComponent } from './dropdown-item-grouping/dropdown-item-grouping.component';
+
 export { FilteringUsageComponent } from './dropdown-filtering/example/filtering-usage/filtering-usage.component';
 export { DropdownFilteringComponent } from './dropdown-filtering/dropdown-filtering.component';
 
