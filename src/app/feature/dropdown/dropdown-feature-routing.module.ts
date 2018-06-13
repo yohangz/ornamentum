@@ -9,7 +9,8 @@ import {
   DropdownItemGroupingComponent,
   DropdownFilteringComponent,
   DropdownItemSelectionComponent,
-  DropdownLimitComponent
+  DropdownLimitComponent,
+  DropdownDisablingComponent
 } from './components';
 
 /**
@@ -55,7 +56,7 @@ const dropdownFeatureRoutes: Routes = [
     path: 'limit'
   },
   {
-    // component: DropdownLimitComponent,
+    component: DropdownDisablingComponent,
     path: 'disable'
   },
   {

@@ -22,3 +22,6 @@ export { DropdownItemSelectionComponent } from './dropdown-item-selection/dropdo
 
 export { DataLimitUsageComponent } from './dropdown-limit/example/data-limit-usage/data-limit-usage.component';
 export { DropdownLimitComponent } from './dropdown-limit/dropdown-limit.component';
+
+export { DisablingUsageComponent } from './dropdown-disabling/example/disabling-usage/disabling-usage.component';
+export { DropdownDisablingComponent } from './dropdown-disabling/dropdown-disabling.component';
