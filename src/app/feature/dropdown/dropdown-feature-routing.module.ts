@@ -11,7 +11,8 @@ import {
   DropdownItemSelectionComponent,
   DropdownLimitComponent,
   DropdownDisablingComponent,
-  DropdownItemDisablingComponent
+  DropdownItemDisablingComponent,
+  DropdownDisplayTrackedByComponent
 } from './components';
 
 /**
@@ -65,7 +66,7 @@ const dropdownFeatureRoutes: Routes = [
     path: 'item-disabling'
   },
   {
-    // component: DropdownLimitComponent,
+    component: DropdownDisplayTrackedByComponent,
     path: 'display-tracked-by'
   },
   {
