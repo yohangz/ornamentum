@@ -231,7 +231,7 @@ export class DataTableBodyComponent {
         return;
       }
 
-      if (this.config.selectOnRowClick) {
+      if (this.config.rowSelectable && this.config.selectOnRowClick) {
         row.selected = !row.selected;
         this.onRowSelectChange(row);
       }
