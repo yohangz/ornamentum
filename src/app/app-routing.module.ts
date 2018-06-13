@@ -56,8 +56,8 @@ const dropdownNavigationData: MenuGroup[] = [
         title: 'Dropdown Disabling'
       },
       {
-        routePath: '/feature/dropdown/disabled-options',
-        title: 'Disabled Options'
+        routePath: '/feature/dropdown/item-disabling',
+        title: 'Item Disabling'
       },
       {
         routePath: '/feature/dropdown/display-tracked-by',

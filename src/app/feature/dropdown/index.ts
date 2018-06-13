@@ -19,7 +19,9 @@ import {
   DataLimitUsageComponent,
   DropdownLimitComponent,
   DisablingUsageComponent,
-  DropdownDisablingComponent
+  DropdownDisablingComponent,
+  ItemDisablingUsageComponent,
+  DropdownItemDisablingComponent
 } from './components';
 
 // Components
@@ -44,5 +46,7 @@ export const COMPONENTS = [
   DataLimitUsageComponent,
   DropdownLimitComponent,
   DisablingUsageComponent,
-  DropdownDisablingComponent
+  DropdownDisablingComponent,
+  ItemDisablingUsageComponent,
+  DropdownItemDisablingComponent
 ];
