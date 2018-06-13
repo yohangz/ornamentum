@@ -28,3 +28,6 @@ export { DropdownDisablingComponent } from './dropdown-disabling/dropdown-disabl
 
 export { ItemDisablingUsageComponent } from './dropdown-item-disabling/example/item-disabling-usage/item-disabling-usage.component';
 export { DropdownItemDisablingComponent } from './dropdown-item-disabling/dropdown-item-disabling.component';
+
+export { DisplayTrackedByUsageComponent } from './dropdown-display-tracked-by/example/display-tracked-by-usage/display-tracked-by-usage.component';
+export { DropdownDisplayTrackedByComponent } from './dropdown-display-tracked-by/dropdown-display-tracked-by.component';
