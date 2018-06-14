@@ -15,7 +15,9 @@ import {
   DropdownDisplayTrackedByComponent,
   DropdownLoadOnScrollComponent,
   DropdownMenuPositionComponent,
-  DropdownMenuWidthHeightComponent
+  DropdownMenuWidthHeightComponent,
+  DropdownLoadOnInitComponent,
+  DropdownOnDataBindComponent
 } from './components';
 
 /**
@@ -85,11 +87,11 @@ const dropdownFeatureRoutes: Routes = [
     path: 'menu-width-height'
   },
   {
-    // component: DropdownLimitComponent,
+    component: DropdownLoadOnInitComponent,
     path: 'load-data-on-init'
   },
   {
-    // component: DropdownLimitComponent,
+    component: DropdownOnDataBindComponent,
     path: 'on-data-bind'
   },
   {

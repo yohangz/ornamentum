@@ -29,7 +29,11 @@ import {
   MenuPositionUsageComponent,
   DropdownMenuPositionComponent,
   MenuWidthHeightUsageComponent,
-  DropdownMenuWidthHeightComponent
+  DropdownMenuWidthHeightComponent,
+  LoadOnInitUsageComponent,
+  DropdownLoadOnInitComponent,
+  OnDataBindUsageComponent,
+  DropdownOnDataBindComponent
 } from './components';
 
 // Components
@@ -64,5 +68,9 @@ export const COMPONENTS = [
   MenuPositionUsageComponent,
   DropdownMenuPositionComponent,
   MenuWidthHeightUsageComponent,
-  DropdownMenuWidthHeightComponent
+  DropdownMenuWidthHeightComponent,
+  LoadOnInitUsageComponent,
+  DropdownLoadOnInitComponent,
+  OnDataBindUsageComponent,
+  DropdownOnDataBindComponent
 ];

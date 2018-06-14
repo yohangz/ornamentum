@@ -6,13 +6,13 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { data } from './load-on-scroll-usage.data';
+import { data } from './on-data-bind-usage.data';
 
 @Component({
-  selector: 'app-load-on-scroll-usage',
-  templateUrl: './load-on-scroll-usage.component.html'
+  selector: 'app-on-data-bind-usage',
+  templateUrl: './on-data-bind-usage.component.html'
 })
-export class LoadOnScrollUsageComponent {
+export class OnDataBindUsageComponent {
 
   constructor() {
     this.onDataBind = this.onDataBind.bind(this);
