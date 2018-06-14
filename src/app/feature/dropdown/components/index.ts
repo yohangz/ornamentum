@@ -32,6 +32,9 @@ export { DropdownItemDisablingComponent } from './dropdown-item-disabling/dropdo
 export { DisplayTrackedByUsageComponent } from './dropdown-display-tracked-by/example/display-tracked-by-usage/display-tracked-by-usage.component';
 export { DropdownDisplayTrackedByComponent } from './dropdown-display-tracked-by/dropdown-display-tracked-by.component';
 
+export { LoadOnScrollUsageComponent } from './dropdown-load-on-scroll/example/load-on-scroll-usage/load-on-scroll-usage.component';
+export { DropdownLoadOnScrollComponent } from './dropdown-load-on-scroll/dropdown-load-on-scroll.component';
+
 export { MenuPositionUsageComponent } from './dropdown-menu-position/example/menu-position-usage/menu-position-usage.component';
 export { DropdownMenuPositionComponent } from './dropdown-menu-position/dropdown-menu-position.component';
 
