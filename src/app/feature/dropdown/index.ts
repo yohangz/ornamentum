@@ -23,7 +23,11 @@ import {
   ItemDisablingUsageComponent,
   DropdownItemDisablingComponent,
   DisplayTrackedByUsageComponent,
-  DropdownDisplayTrackedByComponent
+  DropdownDisplayTrackedByComponent,
+  MenuPositionUsageComponent,
+  DropdownMenuPositionComponent,
+  MenuWidthHeightUsageComponent,
+  DropdownMenuWidthHeightComponent
 } from './components';
 
 // Components
@@ -52,5 +56,9 @@ export const COMPONENTS = [
   ItemDisablingUsageComponent,
   DropdownItemDisablingComponent,
   DisplayTrackedByUsageComponent,
-  DropdownDisplayTrackedByComponent
+  DropdownDisplayTrackedByComponent,
+  MenuPositionUsageComponent,
+  DropdownMenuPositionComponent,
+  MenuWidthHeightUsageComponent,
+  DropdownMenuWidthHeightComponent
 ];

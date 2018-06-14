@@ -1,0 +1,12 @@
+<div #parentElement style="position: relative;">
+  <label>
+    <ng-dropdown
+      [relativeParentElement]="parentElement"
+      [selectTrackBy]="'key'"
+      [items]="items"
+      [limit]="50"
+      [filterable]="true"
+      [menuPosition]="DropdownMenuPosition.TOP_LEFT">
+    </ng-dropdown>
+  </label>
+</div>
