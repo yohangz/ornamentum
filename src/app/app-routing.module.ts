@@ -72,12 +72,8 @@ const dropdownNavigationData: MenuGroup[] = [
         title: 'Menu Position'
       },
       {
-        routePath: '/feature/dropdown/menu-height',
-        title: 'Menu Height'
-      },
-      {
-        routePath: '/feature/dropdown/menu-width',
-        title: 'Menu Width'
+        routePath: '/feature/dropdown/menu-width-height',
+        title: 'Menu Width & Height'
       },
       {
         routePath: '/feature/dropdown/load-data-on-init',

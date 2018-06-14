@@ -31,3 +31,9 @@ export { DropdownItemDisablingComponent } from './dropdown-item-disabling/dropdo
 
 export { DisplayTrackedByUsageComponent } from './dropdown-display-tracked-by/example/display-tracked-by-usage/display-tracked-by-usage.component';
 export { DropdownDisplayTrackedByComponent } from './dropdown-display-tracked-by/dropdown-display-tracked-by.component';
+
+export { MenuPositionUsageComponent } from './dropdown-menu-position/example/menu-position-usage/menu-position-usage.component';
+export { DropdownMenuPositionComponent } from './dropdown-menu-position/dropdown-menu-position.component';
+
+export { MenuWidthHeightUsageComponent } from './dropdown-menu-width-height/example/menu-width-height-usage/menu-width-height-usage.component';
+export { DropdownMenuWidthHeightComponent } from './dropdown-menu-width-height/dropdown-menu-width-height.component';

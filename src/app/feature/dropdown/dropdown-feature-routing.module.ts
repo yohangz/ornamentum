@@ -12,7 +12,9 @@ import {
   DropdownLimitComponent,
   DropdownDisablingComponent,
   DropdownItemDisablingComponent,
-  DropdownDisplayTrackedByComponent
+  DropdownDisplayTrackedByComponent,
+  DropdownMenuPositionComponent,
+  DropdownMenuWidthHeightComponent
 } from './components';
 
 /**
@@ -74,16 +76,12 @@ const dropdownFeatureRoutes: Routes = [
     path: 'load-on-scroll'
   },
   {
-    // component: DropdownLimitComponent,
+    component: DropdownMenuPositionComponent,
     path: 'menu-position'
   },
   {
-    // component: DropdownLimitComponent,
-    path: 'menu-height'
-  },
-  {
-    // component: DropdownLimitComponent,
-    path: 'menu-width'
+    component: DropdownMenuWidthHeightComponent,
+    path: 'menu-width-height'
   },
   {
     // component: DropdownLimitComponent,
