@@ -2,9 +2,9 @@
   <label>
     <ng-dropdown
       [relativeParentElement]="parentElement"
-      [items]="items"
       [limit]="50"
-      [filterable]="true">
+      [loadOnScroll]="true"
+      [onDataBind]="onDataBind">
     </ng-dropdown>
   </label>
 </div>

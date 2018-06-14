@@ -65,7 +65,7 @@ const dropdownNavigationData: MenuGroup[] = [
       },
       {
         routePath: '/feature/dropdown/load-on-scroll',
-        title: 'Load On Scroll'
+        title: 'Load Data On Scroll'
       },
       {
         routePath: '/feature/dropdown/menu-position',

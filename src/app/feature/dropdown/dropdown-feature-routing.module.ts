@@ -13,6 +13,7 @@ import {
   DropdownDisablingComponent,
   DropdownItemDisablingComponent,
   DropdownDisplayTrackedByComponent,
+  DropdownLoadOnScrollComponent,
   DropdownMenuPositionComponent,
   DropdownMenuWidthHeightComponent
 } from './components';
@@ -72,7 +73,7 @@ const dropdownFeatureRoutes: Routes = [
     path: 'display-tracked-by'
   },
   {
-    // component: DropdownLimitComponent,
+    component: DropdownLoadOnScrollComponent,
     path: 'load-on-scroll'
   },
   {
