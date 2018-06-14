@@ -40,3 +40,9 @@ export { DropdownMenuPositionComponent } from './dropdown-menu-position/dropdown
 
 export { MenuWidthHeightUsageComponent } from './dropdown-menu-width-height/example/menu-width-height-usage/menu-width-height-usage.component';
 export { DropdownMenuWidthHeightComponent } from './dropdown-menu-width-height/dropdown-menu-width-height.component';
+
+export { DropdownLoadOnInitComponent } from './dropdown-load-on-init/dropdown-load-on-init.component';
+export { LoadOnInitUsageComponent } from './dropdown-load-on-init/example/load-on-init-usage/load-on-init-usage.component';
+
+export { OnDataBindUsageComponent } from './dropdown-on-data-bind/example/on-data-bind-usage/on-data-bind-usage.component';
+export { DropdownOnDataBindComponent } from './dropdown-on-data-bind/dropdown-on-data-bind.component';
