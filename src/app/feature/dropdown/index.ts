@@ -44,6 +44,8 @@ import {
   DropdownOptionTemplateComponent,
   OptionGroupHeaderTemplateUsageComponent,
   DropdownOptionGroupHeaderTemplateComponent,
+  LoadingSpinnerTemplateUsageComponent,
+  DropdownLoadingSpinnerTemplateComponent
 } from './components';
 
 // Components
@@ -93,4 +95,6 @@ export const COMPONENTS = [
   DropdownOptionTemplateComponent,
   OptionGroupHeaderTemplateUsageComponent,
   DropdownOptionGroupHeaderTemplateComponent,
+  LoadingSpinnerTemplateUsageComponent,
+  DropdownLoadingSpinnerTemplateComponent
 ];
