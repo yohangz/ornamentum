@@ -92,6 +92,23 @@ const dropdownNavigationData: MenuGroup[] = [
         title: 'Events'
       }
     ]
+  },
+  {
+    name: 'Templating',
+    menuItems: [
+      {
+        routePath: '/feature/dropdown/templates/dropdown-option-template',
+        title: 'Dropdown Option Template'
+      },
+      {
+        routePath: '/feature/dropdown/templates/dropdown-option-group-header-template',
+        title: 'Dropdown Option Group Header Template'
+      },
+      {
+        routePath: '/feature/dropdown/templates/loading-spinner-template',
+        title: 'Loading Spinner Template'
+      }
+    ]
   }
 ];
 
@@ -203,56 +220,7 @@ const dataTableNavigationData: MenuGroup[] = [
         title: 'No Records Template'
       }
     ]
-  },
-  // {
-  //   name: 'Events',
-  //   menuItems: [
-  //     {
-  //       routePath: '/data-table/events/init',
-  //       title: 'init'
-  //     },
-  //     {
-  //       routePath: '/data-table/events/allRowSelectChange',
-  //       title: 'allRowSelectChange'
-  //     },
-  //     {
-  //       routePath: '/data-table/events/rowBind',
-  //       title: 'rowBind'
-  //     },
-  //     {
-  //       routePath: '/data-table/events/rowSelectChange',
-  //       title: 'rowSelectChange'
-  //     },
-  //     {
-  //       routePath: '/data-table/events/cellBind',
-  //       title: 'cellBind'
-  //     },
-  //     {
-  //       routePath: '/data-table/events/cellClick',
-  //       title: 'cellClick'
-  //     },
-  //     {
-  //       routePath: '/data-table/events/columnBind',
-  //       title: 'columnBind'
-  //     },
-  //     {
-  //       routePath: '/data-table/events/dataBound',
-  //       title: 'dataBound'
-  //     },
-  //     {
-  //       routePath: '/data-table/events/headerClick',
-  //       title: 'headerClick'
-  //     },
-  //     {
-  //       routePath: '/data-table/events/rowClick',
-  //       title: 'rowClick'
-  //     },
-  //     {
-  //       routePath: '/data-table/events/rowDoubleClick',
-  //       title: 'rowDoubleClick'
-  //     }
-  //   ]
-  // }
+  }
 ];
 
 /**

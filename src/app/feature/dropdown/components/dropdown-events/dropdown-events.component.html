@@ -13,11 +13,16 @@
       <ul>
         <li>Triggers when dropdown item select state changes. To identify selected
           items uniquely it is necessary to specify <b>[selectTrackBy]"</b> property. Therefore, a unique value key
-          name should be set as the value for this attribute. According to this example it is <b>'key'</b>. If user
-          wants to trigger select change event in the init that can be achieved by setting true for the available
-          <b>triggerSelectChangeOnInit</b> configuration as follows.
+          name should be set as the value for this attribute. According to this example it is <b>'key'</b>. There are
+          set of configuration are introduced in the dropdown to work smoothly with the selected change event.
+          Those configurations can be seen as follows.
           <ul>
-            <li>[triggerSelectChangeOnInit]="true"</li>
+            <li><b>[triggerSelectChangeOnInit]="true or false"</b> => The default value for this config is false.</li>
+            <li><b>[triggerSelectChangeOnFirstOptionSelect]="true or false"</b> => The default value for this config is
+              false.
+            </li>
+            <li><b>[triggerSelectChangeOnModelUpdate]="true or false"</b> => The default value for this config is false.
+            </li>
           </ul>
         </li>
       </ul>

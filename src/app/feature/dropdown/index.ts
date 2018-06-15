@@ -39,7 +39,9 @@ import {
   AdditionalTranslationsUsageComponent,
   DropdownTranslationsComponent,
   EventsUsageComponent,
-  DropdownEventsComponent
+  DropdownEventsComponent,
+  OptionTemplateUsageComponent,
+  DropdownOptionTemplateComponent
 } from './components';
 
 // Components
@@ -84,5 +86,7 @@ export const COMPONENTS = [
   AdditionalTranslationsUsageComponent,
   DropdownTranslationsComponent,
   EventsUsageComponent,
-  DropdownEventsComponent
+  DropdownEventsComponent,
+  OptionTemplateUsageComponent,
+  DropdownOptionTemplateComponent
 ];

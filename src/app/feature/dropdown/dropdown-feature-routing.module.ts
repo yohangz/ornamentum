@@ -19,7 +19,8 @@ import {
   DropdownLoadOnInitComponent,
   DropdownOnDataBindComponent,
   DropdownTranslationsComponent,
-  DropdownEventsComponent
+  DropdownEventsComponent,
+  DropdownOptionTemplateComponent
 } from './components';
 
 /**
@@ -103,6 +104,22 @@ const dropdownFeatureRoutes: Routes = [
   {
     component: DropdownEventsComponent,
     path: 'events'
+  },
+  {
+    component: DropdownOptionTemplateComponent,
+    path: 'templates/dropdown-option-template'
+  },
+  {
+    // component: DropdownEventsComponent,
+    path: 'templates/dropdown-option-template'
+  },
+  {
+    // component: DropdownEventsComponent,
+    path: 'templates/dropdown-option-group-header-template'
+  },
+  {
+    // component: DropdownEventsComponent,
+    path: 'templates/loading-spinner-template'
   }
 ];
 
