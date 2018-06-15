@@ -21,7 +21,8 @@ import {
   DropdownTranslationsComponent,
   DropdownEventsComponent,
   DropdownOptionTemplateComponent,
-  DropdownOptionGroupHeaderTemplateComponent
+  DropdownOptionGroupHeaderTemplateComponent,
+  DropdownLoadingSpinnerTemplateComponent
 } from './components';
 
 /**
@@ -115,7 +116,7 @@ const dropdownFeatureRoutes: Routes = [
     path: 'templates/dropdown-option-group-header-template'
   },
   {
-    // component: DropdownEventsComponent,
+    component: DropdownLoadingSpinnerTemplateComponent,
     path: 'templates/loading-spinner-template'
   }
 ];

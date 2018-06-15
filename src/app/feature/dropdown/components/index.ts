@@ -59,4 +59,5 @@ export { OptionTemplateUsageComponent } from './dropdown-templates/dropdown-opti
 export { DropdownOptionTemplateComponent } from './dropdown-templates/dropdown-option-template/dropdown-option-template.component';
 export { OptionGroupHeaderTemplateUsageComponent } from './dropdown-templates/dropdown-option-group-header-template/example/option-group-header-template-usage/option-group-header-template-usage.component';
 export { DropdownOptionGroupHeaderTemplateComponent } from './dropdown-templates/dropdown-option-group-header-template/dropdown-option-group-header-template.component';
-
+export { LoadingSpinnerTemplateUsageComponent } from './dropdown-templates/dropdown-loading-spinner/example/loading-spinner-template-usage/loading-spinner-template-usage.component';
+export { DropdownLoadingSpinnerTemplateComponent } from './dropdown-templates/dropdown-loading-spinner/dropdown-loading-spinner-template.component';
