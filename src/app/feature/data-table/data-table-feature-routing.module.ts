@@ -105,6 +105,10 @@ const dataTableFeatureRoutes: Routes = [
     path: 'column/resizable'
   },
   {
+    component: DataTableEventsComponent,
+    path: 'events'
+  },
+  {
     component: DataTableCellTemplateComponent,
     path: 'templates/cell-template'
   },
@@ -119,11 +123,7 @@ const dataTableFeatureRoutes: Routes = [
   {
     component: DataTableLoadingSpinnerTemplateComponent,
     path: 'templates/loading-spinner-template'
-  },
-  {
-    component: DataTableEventsComponent,
-    path: 'events'
-  },
+  }
 ];
 
 /**

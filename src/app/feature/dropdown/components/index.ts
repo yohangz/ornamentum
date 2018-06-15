@@ -54,3 +54,6 @@ export { DropdownTranslationsComponent } from './dropdown-translations/dropdown-
 
 export { DropdownEventsComponent } from './dropdown-events/dropdown-events.component';
 export { EventsUsageComponent } from './dropdown-events/example/events-usage/events-usage.component';
+
+export { OptionTemplateUsageComponent } from './dropdown-templates/dropdown-option-template/example/option-template-usage/option-template-usage.component';
+export { DropdownOptionTemplateComponent } from './dropdown-templates/dropdown-option-template/dropdown-option-template.component';
