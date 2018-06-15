@@ -20,7 +20,8 @@ import {
   DropdownOnDataBindComponent,
   DropdownTranslationsComponent,
   DropdownEventsComponent,
-  DropdownOptionTemplateComponent
+  DropdownOptionTemplateComponent,
+  DropdownOptionGroupHeaderTemplateComponent
 } from './components';
 
 /**
@@ -110,11 +111,7 @@ const dropdownFeatureRoutes: Routes = [
     path: 'templates/dropdown-option-template'
   },
   {
-    // component: DropdownEventsComponent,
-    path: 'templates/dropdown-option-template'
-  },
-  {
-    // component: DropdownEventsComponent,
+    component: DropdownOptionGroupHeaderTemplateComponent,
     path: 'templates/dropdown-option-group-header-template'
   },
   {

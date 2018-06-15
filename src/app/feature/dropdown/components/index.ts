@@ -57,3 +57,6 @@ export { EventsUsageComponent } from './dropdown-events/example/events-usage/eve
 
 export { OptionTemplateUsageComponent } from './dropdown-templates/dropdown-option-template/example/option-template-usage/option-template-usage.component';
 export { DropdownOptionTemplateComponent } from './dropdown-templates/dropdown-option-template/dropdown-option-template.component';
+export { OptionGroupHeaderTemplateUsageComponent } from './dropdown-templates/dropdown-option-group-header-template/example/option-group-header-template-usage/option-group-header-template-usage.component';
+export { DropdownOptionGroupHeaderTemplateComponent } from './dropdown-templates/dropdown-option-group-header-template/dropdown-option-group-header-template.component';
+

@@ -41,7 +41,9 @@ import {
   EventsUsageComponent,
   DropdownEventsComponent,
   OptionTemplateUsageComponent,
-  DropdownOptionTemplateComponent
+  DropdownOptionTemplateComponent,
+  OptionGroupHeaderTemplateUsageComponent,
+  DropdownOptionGroupHeaderTemplateComponent,
 } from './components';
 
 // Components
@@ -88,5 +90,7 @@ export const COMPONENTS = [
   EventsUsageComponent,
   DropdownEventsComponent,
   OptionTemplateUsageComponent,
-  DropdownOptionTemplateComponent
+  DropdownOptionTemplateComponent,
+  OptionGroupHeaderTemplateUsageComponent,
+  DropdownOptionGroupHeaderTemplateComponent,
 ];
