@@ -12,6 +12,7 @@ import {
   FilteringUsageComponent,
   DropdownFilteringComponent,
   MultiItemSelectionUsageComponent,
+  MultiItemWrappedSelectionUsageComponent,
   SingleItemSelectionUsageComponent,
   SingleToggleItemSelectionUsageComponent,
   ItemSelectionWithAllOptionsUsageComponent,
@@ -33,7 +34,12 @@ import {
   LoadOnInitUsageComponent,
   DropdownLoadOnInitComponent,
   OnDataBindUsageComponent,
-  DropdownOnDataBindComponent
+  DropdownOnDataBindComponent,
+  TranslationsNoDataUsageComponent,
+  AdditionalTranslationsUsageComponent,
+  DropdownTranslationsComponent,
+  EventsUsageComponent,
+  DropdownEventsComponent
 } from './components';
 
 // Components
@@ -51,6 +57,7 @@ export const COMPONENTS = [
   FilteringUsageComponent,
   DropdownFilteringComponent,
   MultiItemSelectionUsageComponent,
+  MultiItemWrappedSelectionUsageComponent,
   SingleItemSelectionUsageComponent,
   SingleToggleItemSelectionUsageComponent,
   ItemSelectionWithAllOptionsUsageComponent,
@@ -72,5 +79,10 @@ export const COMPONENTS = [
   LoadOnInitUsageComponent,
   DropdownLoadOnInitComponent,
   OnDataBindUsageComponent,
-  DropdownOnDataBindComponent
+  DropdownOnDataBindComponent,
+  TranslationsNoDataUsageComponent,
+  AdditionalTranslationsUsageComponent,
+  DropdownTranslationsComponent,
+  EventsUsageComponent,
+  DropdownEventsComponent
 ];

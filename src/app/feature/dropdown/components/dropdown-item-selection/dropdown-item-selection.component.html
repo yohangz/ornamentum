@@ -39,6 +39,19 @@
       item(s) uniquely. The default value for this config is 'key'. Please refer dropdown events section for more
       details.
     </li>
+    <li><b>[wrapDisplaySelectLimit]="true or false"</b> => This is a configuration which needs to use in the multi
+      option selection mode. The default value for this config is false. Enabling this configuration will show user a
+      different text when there are 2 or more
+      selected options without showing all the selected items. If this is false, it will list all the selected options.
+      As an example,
+      <ul>
+        <li>If 3 items are selected, it shows (3) Items</li>
+        <li>If 5 items are selected, it shows (5) Items</li>
+        <li>(3) Items, (5) Items, etc => In here the <b>'Items'</b> text can be configured via dropdown translations.
+          Refer <a routerLink="/feature/dropdown/translations">Dropdown Translations</a> section for more details.
+        </li>
+      </ul>
+    </li>
   </ul>
 </ul>
 
@@ -77,6 +90,16 @@
 
 <app-example-code [files]="multiItemSelectionUsage"></app-example-code>
 
+<h2>Multi Item Selection with Wrapping Selected Options</h2>
+<ul>
+  <li>The following configurations is enabled to wrap the selected items.</li>
+  <li><b>[wrapDisplaySelectLimit]="true"</b></li>
+</ul>
+
+<app-multi-item-wrapped-selection-usage></app-multi-item-wrapped-selection-usage>
+
+<app-example-code [files]="multiItemSelectionWithWrappedItemsUsage"></app-example-code>
+
 <h2>Item Selection With All Other options</h2>
 <ul>
   <li>The following example shows how all the other options can be used with the row selection. Note that, for this
@@ -97,7 +120,7 @@
 
 <app-item-selection-with-all-options-usage></app-item-selection-with-all-options-usage>
 
-<app-example-code [files]="itemSelecttionWithAllOptionsUsage"></app-example-code>
+<app-example-code [files]="itemSelectionWithAllOptionsUsage"></app-example-code>
 
 <h2>Suggested Links</h2>
 <a [href]="''" target="_blank">API Doc for Dropdown Item Selection</a>

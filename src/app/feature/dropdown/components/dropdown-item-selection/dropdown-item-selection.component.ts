@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
 import {
-  itemSelecttionWithAllOptionsUsage,
+  itemSelectionWithAllOptionsUsage,
   multiItemSelectionUsage,
+  multiItemSelectionWithWrappedItemsUsage,
   singleItemSelectionUsage,
   singleToggleItemSelectionUsage
 } from './dropdown-item-selection.list';
@@ -16,5 +17,6 @@ export class DropdownItemSelectionComponent {
   public singleItemSelectionUsage = singleItemSelectionUsage;
   public singleToggleItemSelectionUsage = singleToggleItemSelectionUsage;
   public multiItemSelectionUsage = multiItemSelectionUsage;
-  public itemSelecttionWithAllOptionsUsage = itemSelecttionWithAllOptionsUsage;
+  public multiItemSelectionWithWrappedItemsUsage = multiItemSelectionWithWrappedItemsUsage;
+  public itemSelectionWithAllOptionsUsage = itemSelectionWithAllOptionsUsage;
 }

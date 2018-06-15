@@ -96,10 +96,6 @@ const dropdownNavigationData: MenuGroup[] = [
         title: 'Trigger Select Change On Model Update'
       },
       {
-        routePath: '/feature/dropdown/wrap-display-select-limit',
-        title: 'Wrap Display Select Limit'
-      },
-      {
         routePath: '/feature/dropdown/translations',
         title: 'Translations'
       },

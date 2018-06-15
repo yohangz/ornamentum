@@ -1,0 +1,60 @@
+<h1>DropDown Translations</h1>
+
+<ul>
+  <li>Dropdown translations will allow users to configure the basic settings.</li>
+  <li>Those translations are required to passed via the <b>translations</b> attribute as follows.
+    <h5>[translations]="dropdownTranslations"</h5>
+  </li>
+  <li>Going through the following, shows the configurations can be passed via the translations.
+    <ul>
+      <li>noDataMessage</li>
+      <li>filterPlaceholder</li>
+      <li>selectedItemWrapPlaceholder</li>
+      <li>selectPlaceholder</li>
+    </ul>
+  </li>
+  <li>Let's see how these can be configured in different scenarios.</li>
+</ul>
+
+<h2>Dropdown Translations for No Data Scenario</h2>
+<ul>
+  <li>In this scenario, when data is not available users can provide customized message needs to show, via this
+    translations property.
+  </li>
+  <li><b>noDataMessage: "Customized No Data Message"</b> => This configuration is used to set the message
+    header name on the message to be shown in the dropdown body when there are no data to display. The default value for
+    this config is 'No Results Available'
+  </li>
+</ul>
+
+<app-translations-no-data-usage></app-translations-no-data-usage>
+
+<app-example-code [files]="translationsNoDataUsage"></app-example-code>
+
+<h2>Dropdown Additional Translations</h2>
+<ul>
+  <li>The other translations properties can be considered in this section.</li>
+  <ul>
+    <li><b>filterPlaceholder: "This is filter place holder"</b> => This configuration is used to customize the place
+      holder text for dropdown value filtering text box when filtering is enabled. The default value for this config is
+      'Search'.
+    </li>
+    <li><b>selectPlaceholder: "This is select place holder"</b> => This configuration is used to customize the select
+      place holder text in the dropdown. The default value for this config is 'Select'.
+    </li>
+    <li><b>selectedItemWrapPlaceholder: "Wrapped Items"</b> => This works only when multi selection mode enabled in the
+      dropdown. For this purpose in here, selection mode is set for Multi. Also to enable selected items wrapping, it is
+      required to set true for wrapDisplaySelectLimit. Refer <a routerLink="/feature/dropdown/item-selection">Dropdown
+        Item Selection</a>'s Multi Item Selection with Wrapping Selected Options section for more details. This
+      configuration is used to customize the text which shows to indicate the wrapped items. The default value for this
+      config is 'Item'. Please select multiple options from the drop down to see how this actually works.
+    </li>
+  </ul>
+</ul>
+
+<app-additional-translations-usage></app-additional-translations-usage>
+
+<app-example-code [files]="additionalTranslationsUsage"></app-example-code>
+
+<h2>Suggested Links</h2>
+<a [href]="''" target="_blank">API Doc for Dropdown Translations</a>

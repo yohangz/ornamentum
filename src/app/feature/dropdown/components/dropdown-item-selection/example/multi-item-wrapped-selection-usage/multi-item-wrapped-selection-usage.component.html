@@ -1,0 +1,13 @@
+<div #parentElement style="position: relative;">
+  <label>
+    <ng-dropdown
+      [relativeParentElement]="parentElement"
+      [selectTrackBy]="'key'"
+      [selectMode]="DropdownSelectMode.MULTI"
+      [items]="items"
+      [selectedOptions]="selectedOptions"
+      [limit]="50"
+      [wrapDisplaySelectLimit]="true">
+    </ng-dropdown>
+  </label>
+</div>
