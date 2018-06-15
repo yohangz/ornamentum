@@ -15,6 +15,7 @@ export { FilteringUsageComponent } from './dropdown-filtering/example/filtering-
 export { DropdownFilteringComponent } from './dropdown-filtering/dropdown-filtering.component';
 
 export { MultiItemSelectionUsageComponent } from './dropdown-item-selection/example/multi-item-selection-usage/multi-item-selection-usage.component';
+export { MultiItemWrappedSelectionUsageComponent } from './dropdown-item-selection/example/multi-item-wrapped-selection-usage/multi-item-wrapped-selection-usage.component';
 export { SingleItemSelectionUsageComponent } from './dropdown-item-selection/example/single-item-selection-usage/single-item-selection-usage.component';
 export { SingleToggleItemSelectionUsageComponent } from './dropdown-item-selection/example/single-toggle-item-selection-usage/single-toggle-item-selection-usage.component';
 export { ItemSelectionWithAllOptionsUsageComponent } from './dropdown-item-selection/example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.component';
@@ -46,3 +47,10 @@ export { LoadOnInitUsageComponent } from './dropdown-load-on-init/example/load-o
 
 export { OnDataBindUsageComponent } from './dropdown-on-data-bind/example/on-data-bind-usage/on-data-bind-usage.component';
 export { DropdownOnDataBindComponent } from './dropdown-on-data-bind/dropdown-on-data-bind.component';
+
+export { TranslationsNoDataUsageComponent } from './dropdown-translations/example/translations-no-data-usage/translations-no-data-usage.component';
+export { AdditionalTranslationsUsageComponent } from './dropdown-translations/example/additional-translations-usage/additional-translations-usage.component';
+export { DropdownTranslationsComponent } from './dropdown-translations/dropdown-translations.component';
+
+export { DropdownEventsComponent } from './dropdown-events/dropdown-events.component';
+export { EventsUsageComponent } from './dropdown-events/example/events-usage/events-usage.component';

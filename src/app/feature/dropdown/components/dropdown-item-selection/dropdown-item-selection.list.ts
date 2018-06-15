@@ -71,7 +71,30 @@ export const multiItemSelectionUsage: ExampleFile[] = [
   }
 ];
 
-export const itemSelecttionWithAllOptionsUsage: ExampleFile[] = [
+export const multiItemSelectionWithWrappedItemsUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'multi-item-selection-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/multi-item-selection-usage/multi-item-selection-usage.module.md')
+  },
+  {
+    type: FileType.TS,
+    name: 'multi-item-selection-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/multi-item-selection-usage/multi-item-selection-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'multi-item-selection-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/multi-item-selection-usage/multi-item-selection-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'multi-item-selection-usage.data.ts',
+    content: require('!!raw-loader?lang=typescript!./example/multi-item-selection-usage/multi-item-selection-usage.data.ts')
+  }
+];
+
+export const itemSelectionWithAllOptionsUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'item-selection-with-all-options-usage.module.ts',

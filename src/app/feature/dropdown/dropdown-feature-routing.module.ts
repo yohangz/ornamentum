@@ -17,7 +17,9 @@ import {
   DropdownMenuPositionComponent,
   DropdownMenuWidthHeightComponent,
   DropdownLoadOnInitComponent,
-  DropdownOnDataBindComponent
+  DropdownOnDataBindComponent,
+  DropdownTranslationsComponent,
+  DropdownEventsComponent
 } from './components';
 
 /**
@@ -107,15 +109,11 @@ const dropdownFeatureRoutes: Routes = [
     path: 'trigger-select-change-on-model-update'
   },
   {
-    // component: DropdownLimitComponent,
-    path: 'wrap-display-select-limit'
-  },
-  {
-    // component: DropdownLimitComponent,
+    component: DropdownTranslationsComponent,
     path: 'translations'
   },
   {
-    // component: DropdownLimitComponent,
+    component: DropdownEventsComponent,
     path: 'events'
   }
 ];
