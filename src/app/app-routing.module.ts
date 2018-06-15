@@ -84,18 +84,6 @@ const dropdownNavigationData: MenuGroup[] = [
         title: 'On Data Bind'
       },
       {
-        routePath: '/feature/dropdown/trigger-select-change-on-init',
-        title: 'Trigger Select Change On Init'
-      },
-      {
-        routePath: '/feature/dropdown/trigger-select-change-on-first-option-select',
-        title: 'Trigger Select Change On First Option Select'
-      },
-      {
-        routePath: '/feature/dropdown/trigger-select-change-on-model-update',
-        title: 'Trigger Select Change On Model Update'
-      },
-      {
         routePath: '/feature/dropdown/translations',
         title: 'Translations'
       },

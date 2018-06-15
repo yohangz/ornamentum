@@ -2,9 +2,16 @@
   <label>
     <ng-dropdown
       [relativeParentElement]="parentElement"
+      [selectTrackBy]="'key'"
       [items]="items"
       [limit]="50"
-      [disabled]="true">
+      [triggerSelectChangeOnInit]="true"
+      [triggerSelectChangeOnFirstOptionSelect]="false"
+      [triggerSelectChangeOnModelUpdate]="true"
+
+      (init)="onDropdownInit($event)"
+      (selectChange)="onSelectChange($event)"
+      (dataBound)="onDataBound($event)">
     </ng-dropdown>
   </label>
 </div>

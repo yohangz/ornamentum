@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import {
   DataTableComponent,
@@ -21,16 +21,13 @@ import { data } from './events-usage.data';
   selector: 'app-events-usage',
   templateUrl: './events-usage.component.html'
 })
-export class EventsUsageComponent implements OnInit{
+export class EventsUsageComponent {
   public DataTableSelectMode = DataTableSelectMode;
 
   public items: Observable<any>;
 
   constructor() {
     this.items = of(data);
-  }
-
-  public ngOnInit(){
   }
 
   public onDataTableInit(dataTable: DataTableComponent): void {

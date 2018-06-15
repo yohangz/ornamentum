@@ -97,18 +97,6 @@ const dropdownFeatureRoutes: Routes = [
     path: 'on-data-bind'
   },
   {
-    // component: DropdownLimitComponent,
-    path: 'trigger-select-change-on-init'
-  },
-  {
-    // component: DropdownLimitComponent,
-    path: 'trigger-select-change-on-first-option-select'
-  },
-  {
-    // component: DropdownLimitComponent,
-    path: 'trigger-select-change-on-model-update'
-  },
-  {
     component: DropdownTranslationsComponent,
     path: 'translations'
   },
