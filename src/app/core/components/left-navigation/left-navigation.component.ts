@@ -13,10 +13,16 @@ import { ContainerResponsiveService } from '../../services';
   styleUrls: ['./left-navigation.component.scss'],
   animations: [
     trigger('slide', [
-      state('expand', style({ left: 0, })),
-      state('collapsed', style({ left: '-225px', })),
-      transition('collapsed => expand', animate('300ms ease-in')),
-      transition('expand => collapsed', animate('300ms ease-out'))
+      state('expand', style({
+        'left': '0',
+        'visibility': 'visible',
+      })),
+      state('collapsed', style({
+        'left': '-225px',
+        'box-shadow': 'none',
+        'visibility': 'hidden',
+      })),
+      transition('collapsed <=> expand', animate('400ms cubic-bezier(0.25, 0.8, 0.25, 1)'))
     ])
   ]
 })
