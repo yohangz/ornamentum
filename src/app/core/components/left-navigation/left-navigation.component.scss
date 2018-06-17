@@ -81,10 +81,13 @@
   }
 
   .side-menu-overlay {
-    background: none;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: .5;
     height: 100%;
     position: fixed;
-    transition: all 1s ease;
+    transition: opacity 100s ease-in-out;
     visibility: hidden;
     width: 100%;
   }
