@@ -1,11 +1,12 @@
-<div class="left-navigation" [style.height.px]="height" [@slide]="expanded? 'expand': 'collapsed'" (ngClickOutside)="closeMenu()"
+<div class="left-navigation" [style.height.px]="height" [@slide]="expanded? 'expand': 'collapsed'"
      [style.position]="mobileMode? 'absolute': 'relative'">
-  <div class="form-group search-place-holder" #searchBox>
-    <input class="form-control" type="text" placeholder="Search Feature" #searchInput (keyup)="onSearchKeyUp(searchInput)"/>
-  </div>
-  <div class="side-menu" [style.height.px]="menuHeight">
-    <div class="side-menu-navigation">
-      <nav *ngFor="let group of displayMenuGroups">
+  <div (ngClickOutside)="closeMenu()">
+    <div class="form-group search-place-holder" #searchBox>
+      <input class="form-control" type="text" placeholder="Search Feature" #searchInput (keyup)="onSearchKeyUp(searchInput)"/>
+    </div>
+    <div class="side-menu" [style.height.px]="menuHeight">
+      <div class="side-menu-navigation">
+        <nav *ngFor="let group of displayMenuGroups">
      <span class="main-nav-label">
         <span class="menu-title">{{group.name}}</span>
         <ul>
@@ -18,9 +19,10 @@
             </li>
           </ul>
       </span>
-      </nav>
+        </nav>
+      </div>
     </div>
   </div>
-  <div class="side-menu-overlay"></div>
+  <div class="side-menu-overlay" [style.visibility]="expanded? 'visible':'hidden'"></div>
 </div>
 
