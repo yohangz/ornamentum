@@ -12,8 +12,8 @@ import { VERSION } from '../../../../environments/version';
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
-  private currentYear: Number;
-  private packageVersion: string;
+  public currentYear: Number;
+  public packageVersion: string;
 
   constructor() {
     this.currentYear = (new Date()).getFullYear();
