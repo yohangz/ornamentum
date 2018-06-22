@@ -1,0 +1,845 @@
+@import 'variables';
+@import 'mixins';
+
+/*
+ * Data table main wrapper styles
+ * Scrollable table styles
+ * Data table header styles
+ * Data table content styles
+ */
+
+.ng-data-table-container {
+  border: .07rem solid $data-table-container-border;
+  overflow: hidden;
+
+  //Scrollable table styles
+  &.scrollable {
+
+    .ng-data-table-content-header-container {
+      padding-right: 15px;
+      position: relative;
+
+      .ng-data-table-content-header {
+        overflow: hidden;
+      }
+    }
+
+    > .ng-data-table-content-container {
+      > .ng-data-table-content {
+        overflow-y: scroll;
+      }
+    }
+
+    .ng-data-table-content {
+      overflow: auto;
+    }
+  }
+
+  //Data table content container styles
+  .ng-data-table-content-container {
+    background: $data-table-content-background;
+    overflow-y: auto;
+
+    // Data table content header container styles
+    .ng-data-table-content-header-container {
+      border: 0;
+
+      .ng-data-table-content-header {
+        background: $data-table-content-header-background;
+        border-right: .05rem solid $data-table-content-header-border;
+        position: relative;
+        width: 100%;
+
+        .ng-data-table {
+          border: 0;
+        }
+      }
+    }
+
+    // Data table content styles
+    .ng-data-table-content {
+      border-top: .05rem solid $data-table-content-border;
+      overflow: initial;
+      position: relative;
+      width: 100%;
+
+      .ng-data-table {
+        border-bottom: 0;
+        border-right: .05rem solid transparent;
+        border-top: 0;
+        overflow: hidden;
+      }
+
+      &.ng-data-table-loading {
+        pointer-events: none;
+      }
+    }
+  }
+
+  /*
+   * ng-dropdown styles override to matching with data table styles.
+   * ng-dropdown selected value styles.
+  */
+
+  .ng-dropdown {
+    .ng-dropdown-toggle {
+      @include font-size(.7, 1.1);
+      margin: .2rem 0;
+      padding: .26rem .5rem;
+      text-align: left;
+      width: 100%;
+
+      .ng-dropdown-selected-value {
+        background: none;
+        margin: 0;
+        padding: 0 1.5rem 0 .5rem;
+      }
+
+      &::after {
+        position: absolute;
+        right: .5rem;
+        top: .7rem;
+      }
+
+      .ng-dropdown-loading {
+        right: .2rem;
+        top: .4rem;
+      }
+
+      .ng-dropdown-down-arrow {
+        top: .3rem;
+      }
+
+      .ng-dropdown-input-group-btn {
+        right: 1.2rem;
+        top: .4rem;
+      }
+    }
+  }
+}
+
+/*
+ * Top table header styles for the following elements.
+ * Data table main title
+ * Data table refresh button
+ * Data table column selector button
+ */
+
+%table-header-icon {
+  content: '';
+  cursor: pointer;
+  height: 1.7em;
+  width: 1.7em;
+}
+
+.ng-data-table-top-header-container {
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(space-between);
+  @include font-size(.8, 1.4);
+  background-color: $data-table-top-header-background;
+  border-bottom: .05rem solid $data-table-top-header-border;
+  min-height: 2rem;
+  padding: 0 .5rem 0 .5rem;
+  position: relative;
+
+  .ng-data-table-top-header-title {
+    @include font-size(1, 1.8);
+    color: $data-table-top-header-text-color;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .ng-data-table-top-header-button-container {
+    position: absolute;
+    right: 0;
+    top: .7em;
+
+    .ng-data-table-action-button {
+      border: 0;
+
+      &.ng-data-table-refresh-button {
+        @extend %table-header-icon;
+        background: inline-svg($refresh-icon-url);
+        background-size: contain;
+        height: 1.4em;
+        margin-right: .5em;
+      }
+
+      &.ng-data-table-column-selector-button {
+        @extend %table-header-icon;
+        background: inline-svg($list-view-icon-url);
+        background-size: contain;
+        height: 1.4em;
+        margin-right: .5em;
+      }
+
+      &:focus,
+      &:visited {
+        outline: none;
+      }
+    }
+  }
+}
+
+/*
+ * Top table header column selector popup styles and styles for the following elements.
+ * Popup title
+ * Check box selector list view
+ * Data table column selector button
+ */
+
+.ng-data-table-column-selector-wrapper {
+  @include box-shadow(1px 1px 2px $box-shadow-color);
+  @include font-size(.8, 1.4);
+  background: $data-table-dropdown-background;
+  max-height: 20rem;
+  overflow: hidden;
+  padding: 1.5rem;
+  position: absolute;
+  right: .2rem;
+  top: 0;
+  width: 15rem;
+  z-index: 1060;
+
+  .ng-data-table-column-selector-box-heading {
+    @include font-size(.9, 1.4);
+    border-bottom: .05rem solid $data-table-dropdown-border;
+    font-weight: 400;
+    margin-bottom: .5rem;
+    padding-bottom: .3rem;
+    text-align: center;
+  }
+
+  .ng-data-table-column-selector-box {
+    max-height: 15rem;
+    overflow: auto;
+
+    .ng-data-table-column-selector-checkbox {
+      @include font-size(.8, 1.4);
+
+      label {
+        cursor: pointer;
+        display: block;
+
+        input {
+          cursor: pointer;
+          margin-right: .5rem;
+        }
+      }
+
+      &:last-child {
+
+        label {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+
+/*
+ * Common table styles.
+ * Table row styles
+ * Table column styles
+ */
+
+.ng-data-table {
+  border: .05rem solid $data-table-border;
+  border-collapse: collapse;
+  border-left: 0;
+  margin-bottom: 0;
+  max-width: 100%;
+  table-layout: fixed;
+  width: 100%;
+
+  thead {
+    > tr {
+      > th {
+        @include font-size(.7, 1.7);
+        border: .05rem solid $data-table-content-header-border;
+        border-right: 0;
+        border-top: 0;
+        color: $data-table-content-header-text-color;
+        padding: 0 .3em;
+        position: relative;
+        vertical-align: bottom;
+        word-break: break-all;
+
+        .ng-data-table-header-input-box {
+          position: relative;
+        }
+
+        .ng-data-table-input-group-btn {
+          position: absolute;
+          right: .2rem;
+          top: .3rem;
+          z-index: 1;
+
+          .ng-data-table-delete-button {
+            background: inline-svg($close-icon-url);
+            background-size: contain;
+            border: 0;
+            color: $delete-color;
+            cursor: pointer;
+            height: 1.2em;
+            outline: none;
+            padding: .1rem .2rem;
+            position: absolute;
+            right: .2em;
+            top: .5em;
+            width: 1.2em;
+          }
+        }
+
+        .ng-data-table-clear-filter {
+          padding: 0 1.4rem 0 .5rem;
+        }
+
+        .ng-data-table-checkbox-input {
+          margin: 0;
+        }
+
+        .ng-data-table-column-resize-handle {
+          bottom: 0;
+          cursor: col-resize;
+          display: block;
+          height: 100%;
+          position: absolute;
+          right: -.5rem;
+          width: 1rem;
+          z-index: 10001;
+
+        }
+
+        &:first-child {
+          border-left: 0;
+        }
+
+        &:last-child {
+          border-right: 0;
+        }
+      }
+
+      .ng-data-table-column-header {
+        span {
+          @include font-size(.7, 1);
+        }
+      }
+
+      [hidden] {
+        animation: rotating 1s ease;
+      }
+
+      &:last-child {
+        th {
+          border: 0;
+          border-right: .05rem solid $data-table-content-header-border;
+
+          input {
+            border: .05rem solid $data-table-content-header-border;
+            box-sizing: border-box;
+            font-family: inherit;
+            font-size: inherit;
+            height: 2.4em;
+            line-height: inherit;
+            margin: .2rem 0;
+            outline: 0;
+            padding: 0 .5rem;
+            width: 100%;
+          }
+
+          &:last-child {
+            border-right: 0;
+          }
+        }
+      }
+    }
+  }
+
+
+  tbody {
+    .ng-data-table-loading-spinner {
+      &::before {
+        background: $data-table-loading-window-background;
+        bottom: 0;
+        height: 100%;
+        opacity: .3;
+        position: absolute;
+        width: 100%;
+      }
+    }
+
+    > tr {
+
+      cursor: pointer;
+
+      &.ng-data-table-row-expansion {
+        > td {
+          padding: 0;
+        }
+      }
+
+      > td {
+        @include font-size(.7, 1.4);
+        background: $data-table-row-background;
+        border-left: 0;
+        border-right: .05rem solid  $data-table-border;
+        border-top: .05rem solid $data-table-border;
+        color: $data-table-cell-text-color;
+        font-weight: 400;
+        padding: .2rem .5rem;
+        vertical-align: top;
+        word-break: break-all;
+
+        &:last-child {
+          border-right: 0;
+        }
+
+        &.ng-data-table-row-expand-button {
+          position: relative;
+
+          %table-expand-icon {
+            content: '';
+            cursor: pointer;
+            height: 1.2em;
+            left: .7em;
+            position: absolute;
+            top: .7em;
+            width: 1.2em;
+          }
+
+          .ng-data-table-expander-collapsed-icon {
+            @extend %table-expand-icon;
+            background: inline-svg($collapsed-icon-url);
+            background-size: contain;
+          }
+
+          .ng-data-table-expander-expanded-icon {
+            @extend %table-expand-icon;
+            background: inline-svg($expand-icon-url);
+            //background: url(app/themes/data-table/images/close.svg);
+            background-size: contain;
+          }
+
+
+          .ng-data-table-loading-animation {
+            height: 15px;
+            left: 25%;
+            margin: 0 auto;
+            position: absolute;
+            top: 10%;
+            transform: translate(-50%, -50%);
+            width: 15px;
+          }
+        }
+
+      }
+
+      &.row-odd {
+        td {
+          background: $data-table-odd-row-background;
+        }
+
+        &:hover {
+          td {
+            background: $data-table-odd-row-hover-background;
+          }
+
+          + .row-odd {
+
+            td {
+              background: $data-table-odd-row-hover-background;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        td {
+          background: $data-table-row-hover-background;
+        }
+      }
+
+      &.row-even {
+        td {
+          background: $data-table-even-row-background;
+        }
+
+        &:hover {
+          td {
+            background: $data-table-even-row-hover-background;
+          }
+
+          + .row-even {
+
+            td {
+              background: $data-table-even-row-hover-background;
+            }
+          }
+        }
+      }
+
+      &.selected {
+
+        td {
+          background: $data-table-selected-row-background;
+        }
+
+        &:hover {
+
+          td {
+            background: $data-table-selected-row-hover-background;
+          }
+
+          + .selected {
+
+            td {
+              background: $data-table-selected-row-hover-background;
+            }
+          }
+        }
+      }
+
+      &.disabled {
+        opacity: .3;
+        pointer-events: none;
+      }
+
+      &:first-child {
+        td {
+          border-top: 0;
+        }
+      }
+    }
+
+    + tbody {
+      border-top: .05rem solid $data-table-border;
+    }
+  }
+}
+
+/*
+ * Data table sorting icons styles
+ * Ascending icon styles
+ * Descending icon styles
+ * Reset icon styles
+ */
+
+.ng-data-table-column-sort-icon {
+  bottom: .5em;
+  content: '';
+  cursor: pointer;
+  height: 1.2em;
+  position: absolute;
+  right: .5em;
+  width: 1.2em;
+
+  &.sort-asc {
+    background: inline-svg($sort-ascending-icon-url);
+    background-size: contain;
+  }
+
+  &.sort-dsc {
+    background: inline-svg($sort-descending-icon-url);
+    background-size: contain;
+  }
+
+  &.sort-reset {
+    background: inline-svg($sort-reset-icon-url);
+    background-size: contain;
+  }
+}
+
+/*
+ * Data table Loading Window Styles
+ * Loading animation styles
+ */
+
+.ng-data-table-loading-cover {
+  background: $data-table-loading-window-background;
+  border-color: $data-table-loading-window-border;
+  border-top: .05rem solid transparent;
+  height: 100%;
+  left: 0;
+  opacity: .8;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.ng-data-table-loading-animation {
+  animation: loader 1s infinite ease-in-out;
+  background-color: $data-table-loading-animation-color;
+  border-radius: 100%;
+  content: '';
+  display: block;
+  height: 40px;
+  left: 50%;
+  margin: 0 auto;
+  position: absolute;
+  top: 45%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+}
+
+@keyframes loader {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/*
+ * Data table no records found message styles
+ */
+
+.ng-data-table-no-records-message {
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(center);
+  @include flex-wrap(wrap);
+  @include flex-direction(column);
+  height: 100%;
+
+  h1 {
+    @include font-size(1.2, 1.4);
+    color: $data-table-no-record-message-text-color;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    @include font-size(.8, 1.4);
+  }
+}
+
+/*
+ * Data table pagination style for the following elements.
+ * Pagination range
+ * Pagination controllers
+ * Pagination limit
+ * Pagination pages
+ */
+
+
+%form-styles {
+  @include font-size(.7, .8);
+  border: .05rem solid $data-table-pagination-input-border;
+  padding: .25rem;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.ng-data-table-pagination-container {
+  @include display-flex;
+  @include font-size(.7, 1.4);
+  @include justify-content(space-between);
+
+  background: $data-table-pagination-background;
+  border-bottom: 0;
+  border-top: .05rem solid $data-table-pagination-border;
+  margin-bottom: -.05rem;
+  padding: .5rem;
+
+  .ng-data-table-input-error,
+  .ng-invalid {
+    border-color: $delete-color;
+  }
+
+  .ng-data-table-pagination-range {
+    @include display-flex;
+    @include align-items(center);
+    color: $data-table-pagination-range-text-color;
+
+    span {
+      color: $data-table-pagination-range-value-text-color;
+      padding: 0 .2rem;
+
+    }
+  }
+
+  .ng-data-table-pagination-controllers {
+    @include display-flex;
+    @include font-size(.7, 1.4);
+    @include justify-content(space-between);
+
+    .ng-data-table-pagination-limit {
+      margin-right: 2.5rem;
+
+      .ng-data-table-pagination-input-container {
+        @include display-flex;
+        @include align-items(stretch);
+        @include flex-wrap(wrap);
+        height: 1.4rem;
+        position: relative;
+        width: 100%;
+      }
+
+      .ng-data-table-pagination-input {
+        @extend %form-styles;
+        max-width: 3rem;
+      }
+    }
+
+    .ng-data-table-pagination-input {
+      @extend %form-styles;
+
+    }
+
+    .ng-data-table-pagination-input-label {
+      @extend %form-styles;
+      @include display-flex;
+      @include align-items(center);
+      border: 0;
+      color: $data-table-pagination-input-label-text-color;
+      margin-bottom: 0;
+      padding: .375rem .75rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .ng-data-table-pagination-pages {
+      @include display-flex;
+      @include justify-content(space-between);
+
+      .ng-data-table-pagination-input-container {
+        height: 1.4rem;
+      }
+
+      %action-button-icon-styles {
+        background-size: contain;
+        content: '';
+        height: .5rem;
+        position: relative;
+        width: .5rem;
+      }
+
+      .ng-data-table-action-button {
+        @include font-size(.7, .8);
+        @include display-flex;
+        @include justify-content(center);
+        background-color: $data-table-pagination-action-button-background;
+        border: .05rem solid $data-table-pagination-action-button-border;
+        cursor: pointer;
+        height: 1.4rem;
+        margin-right: .5rem;
+        padding: 0;
+        position: relative;
+        outline: none;
+        width: 1.4rem;
+
+        &[disabled] {
+          background-color: $data-table-pagination-disabled-action-button-background;
+          border: .05rem solid $data-table-pagination-disabled-action-button-border;
+          cursor: not-allowed;
+          opacity: .7;
+        }
+
+        &.ng-data-table-pagination-firstpage {
+          background-color: $data-table-pagination-first-page-action-button-background;
+          border: .05rem solid $data-table-pagination-first-page-action-button-border;
+
+          &:before {
+            @extend %action-button-icon-styles;
+            background: inline-svg($first-page-icon-url);
+          }
+
+          &:hover {
+            background-color: $data-table-pagination-first-page-action-button-background-hover;
+          }
+        }
+
+        &.ng-data-table-pagination-prevpage {
+          background-color: $data-table-pagination-previous-page-action-button-background;
+          border: .05rem solid $data-table-pagination-previous-page-action-button-border;
+
+          &:before {
+            @extend %action-button-icon-styles;
+            background: inline-svg($previous-page-icon-url);
+          }
+
+          &:hover {
+            background-color: $data-table-pagination-previous-page-action-button-background-hover;
+          }
+        }
+
+        &.ng-data-table-pagination-nextpage {
+          background-color: $data-table-pagination-next-page-action-button-background;
+          border: .05rem solid $data-table-pagination-next-page-action-button-border;
+
+          &:before {
+            @extend %action-button-icon-styles;
+            background: inline-svg($next-page-icon-url);
+          }
+
+          &:hover {
+            background-color: $data-table-pagination-next-page-action-button-background-hover;
+          }
+        }
+
+        &.ng-data-table-pagination-lastpage {
+          background-color: $data-table-pagination-last-page-action-button-background;
+          border: .05rem solid $data-table-pagination-last-page-action-button-border;
+
+          &:before {
+            @extend %action-button-icon-styles;
+            background: inline-svg($last-page-icon-url);
+          }
+
+          &:hover {
+            background-color: $data-table-pagination-last-page-action-button-background-hover;
+          }
+        }
+
+        &:hover {
+          background-color: $data-table-pagination-action-button-background-hover;
+        }
+      }
+
+      .ng-data-table-pagination-page {
+        margin-right: .5rem;
+
+        .ng-data-table-pagination-input-container {
+          @include display-flex;
+          @include align-items(stretch);
+          height: 1.4rem;
+          position: relative;
+          width: 100%;
+        }
+
+        .ng-data-table-pagination-input-label {
+          border: 1px solid $data-table-border;
+          border-left: 0;
+        }
+
+        .ng-data-table-pagination-input {
+          @include display-flex;
+          @include align-items(center);
+          @include flex(1 1 auto);
+          margin-bottom: 0;
+          min-width: 2.5rem;
+          position: relative;
+          width: 1%;
+          z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+
+
+

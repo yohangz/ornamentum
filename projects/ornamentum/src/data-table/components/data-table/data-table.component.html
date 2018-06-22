@@ -1,9 +1,9 @@
-<div class="ng-data-table-wrapper" [class.scrollable]="config.contentHeight">
+<div class="ng-data-table-container" [class.scrollable]="config.contentHeight">
   <ng-data-table-header *ngIf="config.showHeader" [columns]="columns">
   </ng-data-table-header>
-  <div class="ng-data-table-inner-wrapper">
-    <div class="ng-data-table-header-wrapper" [style.paddingRight]="headerPadding | ngPx">
-      <div class="ng-data-table-header" ngScrollElement>
+  <div class="ng-data-table-content-container">
+    <div class="ng-data-table-content-header-container" [style.paddingRight]="headerPadding | ngPx">
+      <div class="ng-data-table-content-header" ngScrollElement>
         <table class="ng-data-table" [style.width]="tableWidth | ngPx" [style.minWidth]="config.minWidth | ngPx">
           <colgroup ngDataTableColGroup [columns]="columns">
           </colgroup>
