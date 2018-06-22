@@ -1,6 +1,6 @@
-<div class="ng-data-table-top-header">
-  <h4 class="ng-data-table-title" [textContent]="config.title"></h4>
-  <div class="ng-data-table-action-button-container">
+<div class="ng-data-table-top-header-container">
+  <h4 class="ng-data-table-top-header-title" [textContent]="config.title"></h4>
+  <div class="ng-data-table-top-header-button-container">
     <button type="button" class="ng-data-table-action-button ng-data-table-refresh-button"
             (click)="onReload()" *ngIf="config.showRefreshButton" [disabled]="dataStateService.dataLoading">
     </button>

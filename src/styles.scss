@@ -5,6 +5,8 @@
 @import 'app/styles/variables';
 @import 'app/styles/mixins';
 
+@import 'app/themes/data-table/dark.theme';
+
 body {
   background: $primary-text-color;
   font-family: $primary-font;
