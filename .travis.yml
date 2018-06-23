@@ -7,7 +7,9 @@ branches:
 cache: yarn
 install: yarn
 script: yarn build
+addons:
+  ssh_known_hosts: ${DEPLOY_HOST}
 deploy:
   skip_cleanup: true
   provider: script
-  script: "./deploy.sh"
+  script: /bin/sh /deploy.sh
