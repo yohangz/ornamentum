@@ -8,8 +8,8 @@ cache: yarn
 install: yarn
 script: yarn build
 addons:
-  ssh_known_hosts: ${DEPLOY_HOST}
+  ssh_known_hosts: $DEPLOY_HOST
 deploy:
   skip_cleanup: true
   provider: script
-  script: /bin/sh /deploy.sh
+  script: "./deploy.sh"
