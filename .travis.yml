@@ -9,10 +9,10 @@ before_install:
   - openssl aes-256-cbc -K $encrypted_48bfcff1b99c_key -iv $encrypted_48bfcff1b99c_iv -in id_rsa_ornamentum.enc -out ~/.ssh/id_rsa_ornamentum -d
 install:
   - yarn
-  - eval "$(ssh-agent)"
-  - chmod 600 ./deploy.secret.key
-  - ssh-add ./deploy.secret.key
-  - echo $DEPLOY_KNOWN_HOST | base64 --decode >> $HOME/.ssh/known_hosts
+  - eval "$(ssh-agent -s)"
+  - chmod 600 ~/.ssh/id_rsa_ornamentum
+  - ssh-add -K ~/.ssh/id_rsa_ornamentum
+  - echo $DEPLOY_KNOWN_HOST | base64 --decode >> ~/.ssh/known_hosts
   - chmod 644 $HOME/.ssh/known_hosts
 script: yarn build
 deploy:
