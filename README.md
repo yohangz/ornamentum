@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/yohangz/ornamentum.svg?branch=master)](https://travis-ci.org/yohangz/ornamentum)
+
 #Ornamentum
 
 > Lightweight, Highly configurable, feature rich, UI framework agnostic full responsive Angular component kit with minimal dependencies. 
