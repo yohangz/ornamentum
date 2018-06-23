@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 echo "start deploy"
 echo "${DEPLOY_RSA_KEY}" | base64 --decode >/tmp/rsync_rsa
