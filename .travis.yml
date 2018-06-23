@@ -8,7 +8,9 @@ cache: yarn
 install:
   - yarn
   - echo $DEPLOY_KNOWN_HOST | base64 --decode >> $HOME/.ssh/known_hosts
+  - chmod 644 $HOME/.ssh/known_hosts
   - echo $DEPLOY_RSA_KEY | base64 --decode > $HOME/.ssh/id_rsa_deploy
+  - chmod 600 $HOME/.ssh/id_rsa_deploy
 script: yarn build
 deploy:
   skip_cleanup: true
