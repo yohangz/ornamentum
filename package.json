@@ -10,7 +10,7 @@
     "lint:demo": "ng lint",
     "start:demo": "ng serve --open --port 4201",
     "build:demo:dev": "ng build --stats-json",
-    "build:demo:prod": "ng build --prod --base-href /ornamentum/",
+    "build:demo:prod": "ng build --prod",
     "lint:demo:scss": "sass-lint --config src/.scss-lint.yml --no-exit --verbose",
     "explorer:demo:bundle": "npx webpack-bundle-analyzer dist/ornamentum-demo/stats.json",
     "test:lib": "ng test ornamentum",
