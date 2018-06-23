@@ -1,7 +1,13 @@
 language: node_js
 node_js: "8.11.3"
 branches:
-  only: master
+  only:
+   - master
+   - /^v.*$/
 cache: yarn
 install: yarn
 script: yarn build
+deploy:
+  skip_cleanup: true
+  provider: script
+  script: deploy.sh
