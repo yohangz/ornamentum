@@ -6,7 +6,7 @@
     "moduleResolution": "node"
   },
   "include": [
-    "projects/ornamentum/src/**/*.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "node_modules",
