@@ -5,10 +5,11 @@ branches:
    - master
    - /^v.*$/
 cache: yarn
-install: yarn
+install:
+  - yarn
+  - echo $DEPLOY_KNOWN_HOST | base64 --decode >> $HOME/.ssh/known_hosts
+  - echo $DEPLOY_RSA_KEY | base64 --decode > $HOME/.ssh/id_rsa_deploy
 script: yarn build
-addons:
-  ssh_known_hosts: $DEPLOY_HOST
 deploy:
   skip_cleanup: true
   provider: script

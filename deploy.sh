@@ -1,7 +1,6 @@
 #!/bin/bash
 
 echo "start deploy"
-echo "${DEPLOY_RSA_KEY}" | base64 --decode >/tmp/rsync_rsa
-rsync -avz -e "ssh -i /tmp/rsync_rsa" --delete ${TRAVIS_BUILD_DIR}/dist/ornamentum-demo/ ${DEPLOY_USER}@${DEPLOY_HOST}:~/ornamentum.app/
+rsync -avz -e "ssh -i ${HOME}/.ssh/id_rsa_deploy" --delete ${TRAVIS_BUILD_DIR}/dist/ornamentum-demo/ ${DEPLOY_USER}@${DEPLOY_HOST}:~/ornamentum.app/
 echo "end deploy"
 
