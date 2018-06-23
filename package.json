@@ -28,7 +28,7 @@
     "build": "npm run clean:dist && npm run build:lib:prod && npm run build:demo:prod && npm run docs:lib",
     "explorer": "npm run clean:dist && npm run build:lib:dev && npm run build:demo:dev && npm run explorer:demo:bundle",
     "docs:publish": "ngh --dir dist/ornamentum-demo",
-    "version": "node version.js && npm run build",
+    "version": "node version.js && npm run build && git add src/environments/version.ts projects/ornamentum/package.json",
     "postversion": "git push && git push --tags",
     "prerelease": "npm run build && cp README.md dist/ornamentum",
     "release": "npm publish dist/ornamentum",
