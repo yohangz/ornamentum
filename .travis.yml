@@ -11,7 +11,7 @@ install:
   - yarn
   - eval "$(ssh-agent -s)"
   - chmod 600 ~/.ssh/id_rsa_ornamentum
-  - ssh-add -K ~/.ssh/id_rsa_ornamentum
+  - ssh-add ~/.ssh/id_rsa_ornamentum
   - echo $DEPLOY_KNOWN_HOST | base64 --decode >> ~/.ssh/known_hosts
   - chmod 644 $HOME/.ssh/known_hosts
 script: yarn build
