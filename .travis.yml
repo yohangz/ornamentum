@@ -5,12 +5,15 @@ branches:
    - master
    - /^v.*$/
 cache: yarn
+before_install:
+  - openssl aes-256-cbc -K $encrypted_48bfcff1b99c_key -iv $encrypted_48bfcff1b99c_iv -in id_rsa_ornamentum.enc -out ~\/.ssh/id_rsa_ornamentum -d
 install:
   - yarn
+  - eval "$(ssh-agent)"
+  - chmod 600 ./deploy.secret.key
+  - ssh-add ./deploy.secret.key
   - echo $DEPLOY_KNOWN_HOST | base64 --decode >> $HOME/.ssh/known_hosts
   - chmod 644 $HOME/.ssh/known_hosts
-  - echo $DEPLOY_RSA_KEY | base64 --decode > $HOME/.ssh/id_rsa_deploy
-  - chmod 600 $HOME/.ssh/id_rsa_deploy
 script: yarn build
 deploy:
   skip_cleanup: true
