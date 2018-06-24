@@ -8,7 +8,6 @@ export class SeoGuard implements CanActivate {
   }
 
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    debugger;
     const seo: SeoData = route.data.seo;
     this.title.setTitle(seo.title);
 
