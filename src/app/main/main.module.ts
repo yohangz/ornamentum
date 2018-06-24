@@ -23,8 +23,7 @@ import { BaseComponent } from './components';
     AppCoreModule,
     RouterModule,
     CommonModule
-  ],
-  providers: []
+  ]
 })
 export class AppMainModule {
 }

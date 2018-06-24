@@ -11,7 +11,7 @@ const dropdownNavigationData: MenuGroup[] = [
     menuItems: [
       {
         routePath: '/feature/dropdown/overview',
-        title: 'Basic Usage',
+        title: 'Basic Usage'
       }
     ]
   },
@@ -20,7 +20,7 @@ const dropdownNavigationData: MenuGroup[] = [
     menuItems: [
       {
         routePath: '/feature/dropdown/client-side-data-binding',
-        title: 'Client Side Data Binding',
+        title: 'Client Side Data Binding'
       },
       {
         routePath: '/feature/dropdown/server-side-data-binding',
@@ -28,7 +28,7 @@ const dropdownNavigationData: MenuGroup[] = [
       },
       {
         routePath: '/feature/dropdown/real-time-data-binding',
-        title: 'Real Time Data Binding'
+        title: 'Realtime Data Binding'
       }
     ]
   },
@@ -118,7 +118,7 @@ const dataTableNavigationData: MenuGroup[] = [
     menuItems: [
       {
         routePath: '/feature/data-table/overview',
-        title: 'Basic Usage',
+        title: 'Basic Usage'
       }
     ]
   },
@@ -127,7 +127,7 @@ const dataTableNavigationData: MenuGroup[] = [
     menuItems: [
       {
         routePath: '/feature/data-table/client-side-data-binding',
-        title: 'Client Side Data Binding',
+        title: 'Client Side Data Binding'
       },
       {
         routePath: '/feature/data-table/server-side-data-binding',
@@ -253,7 +253,7 @@ const appRoutes: Routes = [
         }
       }
     ]
-  },
+  }
 ];
 
 /**
