@@ -24,6 +24,7 @@ import {
   DropdownOptionGroupHeaderTemplateComponent,
   DropdownLoadingSpinnerTemplateComponent
 } from './components';
+import { SeoGuard } from '../../core/seo.guard';
 
 /**
  * Represent application dropdown feature module routes.
@@ -37,87 +38,255 @@ const dropdownFeatureRoutes: Routes = [
   },
   {
     component: DropdownOverviewComponent,
-    path: 'overview'
+    path: 'overview',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown Overview',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownClientSideDataBindingComponent,
-    path: 'client-side-data-binding'
+    path: 'client-side-data-binding',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Data Binding | Client SIde Data Binding',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownServerSideDataBindingComponent,
-    path: 'server-side-data-binding'
+    path: 'server-side-data-binding',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Data Binding |  Server Side Data Binding',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownRealTimeDataBindingComponent,
-    path: 'real-time-data-binding'
+    path: 'real-time-data-binding',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Data Binding |  Realtime Data Binding',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownItemGroupingComponent,
-    path: 'grouping'
+    path: 'grouping',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality |  Grouping',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownFilteringComponent,
-    path: 'filtering'
+    path: 'filtering',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality |  Filtering',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownItemSelectionComponent,
-    path: 'item-selection'
+    path: 'item-selection',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality |  Item Selection',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownLimitComponent,
-    path: 'limit'
+    path: 'limit',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality |  Data Limit',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownDisablingComponent,
-    path: 'disable'
+    path: 'disable',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality |  Dropdown Filter Disabling',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownItemDisablingComponent,
-    path: 'item-disabling'
+    path: 'item-disabling',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown  | Functionality | Item Disabling',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownDisplayTrackedByComponent,
-    path: 'display-tracked-by'
+    path: 'display-tracked-by',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality | Display Tracking',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownLoadOnScrollComponent,
-    path: 'load-on-scroll'
+    path: 'load-on-scroll',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality | Load On Scroll',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownMenuPositionComponent,
-    path: 'menu-position'
+    path: 'menu-position',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality | Menu Position',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownMenuWidthHeightComponent,
-    path: 'menu-width-height'
+    path: 'menu-width-height',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality | Menu Width & Height',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownLoadOnInitComponent,
-    path: 'load-data-on-init'
+    path: 'load-data-on-init',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality | Load Data On Init',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownOnDataBindComponent,
-    path: 'on-data-bind'
+    path: 'on-data-bind',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality | On Data Bind',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownTranslationsComponent,
-    path: 'translations'
+    path: 'translations',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality | Translations',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownEventsComponent,
-    path: 'events'
+    path: 'events',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Functionality | Events',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownOptionTemplateComponent,
-    path: 'templates/dropdown-option-template'
+    path: 'templates/dropdown-option-template',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Templating | Dropdown Option Template',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownOptionGroupHeaderTemplateComponent,
-    path: 'templates/dropdown-option-group-header-template'
+    path: 'templates/dropdown-option-group-header-template',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Templating | Dropdown Option Group Header Template',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   },
   {
     component: DropdownLoadingSpinnerTemplateComponent,
-    path: 'templates/loading-spinner-template'
+    path: 'templates/loading-spinner-template',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Templating | Loading Spinner Template',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   }
 ];
 

@@ -9,6 +9,7 @@ import { UtilityModule } from 'ornamentum';
 import { COMPONENTS, SERVICES } from './index';
 
 import { throwIfAlreadyLoaded } from './module-import.guard';
+import { SeoGuard } from './seo.guard';
 
 /**
  * Module class for containing core module.
@@ -29,7 +30,8 @@ import { throwIfAlreadyLoaded } from './module-import.guard';
     UtilityModule.forRoot()
   ],
   providers: [
-    ...SERVICES
+    ...SERVICES,
+    SeoGuard
   ]
 })
 export class AppCoreModule {
