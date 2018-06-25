@@ -12,7 +12,6 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
  */
 @Component({
   selector: 'ng-data-table-pagination',
-  styleUrls: ['./data-table-pagination.component.scss'],
   templateUrl: './data-table-pagination.component.html'
 })
 export class DataTablePaginationComponent {

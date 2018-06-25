@@ -43,7 +43,6 @@ import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component'
 @Component({
   selector: 'ng-dropdown',
   templateUrl: './dropdown.component.html',
-  styleUrls: ['./dropdown.component.scss'],
   providers: [
     DropdownConfigService,
     DropdownDataStateService,

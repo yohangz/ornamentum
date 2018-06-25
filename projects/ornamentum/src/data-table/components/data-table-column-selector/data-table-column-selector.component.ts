@@ -4,7 +4,6 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 
 @Component({
   selector: 'ng-data-table-column-selector',
-  styleUrls: ['./data-table-column-selector.component.scss'],
   templateUrl: './data-table-column-selector.component.html'
 })
 export class DataTableColumnSelectorComponent {

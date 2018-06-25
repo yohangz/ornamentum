@@ -50,7 +50,6 @@ import { DataTableResourceService } from '../../services/data-table-resource.ser
  */
 @Component({
   selector: 'ng-data-table',
-  styleUrls: ['./data-table.component.scss'],
   templateUrl: './data-table.component.html',
   providers: [
     DataTableConfigService,

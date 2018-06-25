@@ -12,8 +12,7 @@ import { DropdownEventStateService } from '../../services/dropdown-event-state.s
 
 @Component({
   selector: 'ng-dropdown-options',
-  templateUrl: './dropdown-options.component.html',
-  styleUrls: ['./dropdown-options.component.scss']
+  templateUrl: './dropdown-options.component.html'
 })
 export class DropdownOptionsComponent {
   public DropdownSelectMode = DropdownSelectMode;
