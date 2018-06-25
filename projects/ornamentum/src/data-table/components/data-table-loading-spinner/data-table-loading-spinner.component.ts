@@ -5,7 +5,6 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
 
 @Component({
   selector: 'ng-data-table-loading-spinner',
-  styleUrls: ['./data-table-loading-spinner.component.scss'],
   templateUrl: './data-table-loading-spinner.component.html'
 })
 export class DataTableLoadingSpinnerComponent {

@@ -17,7 +17,6 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
   exportAs: 'ngDataTableColumnTitleHeader',
   // tslint:disable-next-line
   selector: '[ngDataTableColumnTitleHeader]',
-  styleUrls: ['./data-table-column-title-header.component.scss'],
   templateUrl: './data-table-column-title-header.component.html'
 })
 export class DataTableColumnTitleHeaderComponent {

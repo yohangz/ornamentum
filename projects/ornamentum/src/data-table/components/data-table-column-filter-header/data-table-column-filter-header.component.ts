@@ -15,7 +15,6 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
   exportAs: 'ngDataTableColumnFilterHeader',
   // tslint:disable-next-line
   selector: '[ngDataTableColumnFilterHeader]',
-  styleUrls: ['./data-table-column-filter-header.component.scss'],
   templateUrl: './data-table-column-filter-header.component.html'
 })
 export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {

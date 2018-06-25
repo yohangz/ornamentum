@@ -11,8 +11,7 @@ import { DropdownEventStateService } from '../../services/dropdown-event-state.s
 
 @Component({
   selector: 'ng-dropdown-view',
-  templateUrl: './dropdown-view.component.html',
-  styleUrls: ['./dropdown-view.component.scss']
+  templateUrl: './dropdown-view.component.html'
 })
 export class DropdownViewComponent implements OnInit, OnDestroy {
   public scrollEvent = new Subject<any>();

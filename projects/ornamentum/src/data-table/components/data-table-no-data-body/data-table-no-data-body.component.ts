@@ -7,7 +7,6 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
 
 @Component({
   selector: 'ng-data-table-no-data-body',
-  styleUrls: ['./data-table-no-data-body.component.scss'],
   templateUrl: './data-table-no-data-body.component.html'
 })
 export class DataTableNoDataBodyComponent {

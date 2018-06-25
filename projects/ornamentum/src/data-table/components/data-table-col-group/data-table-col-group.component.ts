@@ -12,7 +12,6 @@ import { DataTableConfigService } from '../../services/data-table-config.service
   exportAs: 'ngDataTableColGroup',
   // tslint:disable-next-line
   selector: '[ngDataTableColGroup]',
-  styleUrls: ['./data-table-col-group.component.scss'],
   templateUrl: './data-table-col-group.component.html'
 })
 export class DataTableColGroupComponent {

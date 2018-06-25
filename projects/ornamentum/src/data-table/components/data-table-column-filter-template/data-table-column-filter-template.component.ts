@@ -13,7 +13,6 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
 
 @Component({
   selector: 'ng-data-table-column-filter-template',
-  styleUrls: ['./data-table-column-filter-template.component.scss'],
   templateUrl: './data-table-column-filter-template.component.html'
 })
 export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy {

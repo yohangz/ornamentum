@@ -9,8 +9,7 @@ import { DropdownEventStateService } from '../../services/dropdown-event-state.s
 
 @Component({
   selector: 'ng-dropdown-filter',
-  templateUrl: './dropdown-filter.component.html',
-  styleUrls: ['./dropdown-filter.component.scss']
+  templateUrl: './dropdown-filter.component.html'
 })
 export class DropdownFilterComponent implements OnDestroy, OnInit {
   private dataFilterStream = new Subject();

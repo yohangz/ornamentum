@@ -16,7 +16,6 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
  */
 @Component({
   selector: 'ng-data-table-header',
-  styleUrls: ['./data-table-header.component.scss'],
   templateUrl: './data-table-header.component.html'
 })
 export class DataTableHeaderComponent implements OnDestroy {
