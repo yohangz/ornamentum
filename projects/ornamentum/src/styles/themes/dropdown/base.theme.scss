@@ -1,5 +1,5 @@
 @import 'base.theme.variables';
-@import 'mixins';
+@import '../mixins';
 
 //$close-icon-url: '../../../styles/images/close.svg';
 //$search-icon-url: '../../../styles/images/search.svg';
@@ -340,4 +340,5 @@
     }
   }
 }
+
 

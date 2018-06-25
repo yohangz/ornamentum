@@ -2,11 +2,12 @@
 @import '~bootstrap/scss/bootstrap';
 @import '~code-prettify/loader/prettify.css';
 @import '~color-themes-for-google-code-prettify/dist/themes/tranquil-heart.css';
+@import '~color-themes-for-google-code-prettify/dist/themes/tranquil-heart.css';
+
 @import 'app/styles/variables';
 @import 'app/styles/mixins';
 
-@import 'app/themes/dropdown/base.theme';
-@import 'app/themes/data-table/dark.theme';
+@import '../dist/ornamentum/themes/dropdown/base.theme';
 
 body {
   background: #fff;
