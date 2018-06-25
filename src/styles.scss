@@ -5,10 +5,11 @@
 @import 'app/styles/variables';
 @import 'app/styles/mixins';
 
+@import 'app/themes/dropdown/base.theme';
 @import 'app/themes/data-table/dark.theme';
 
 body {
-  background: $primary-text-color;
+  background: #fff;
   font-family: $primary-font;
   font-size: 1rem;
   line-height: 1.5rem;
