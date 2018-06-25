@@ -1,5 +1,5 @@
-@import 'variables';
 @import 'mixins';
+@import 'base.theme.variables';
 
 /*
  * Data table main wrapper styles
@@ -75,45 +75,45 @@
       }
     }
   }
+}
 
-  /*
+/*
    * ng-dropdown styles override to matching with data table styles.
    * ng-dropdown selected value styles.
   */
 
-  .ng-dropdown {
-    .ng-dropdown-toggle {
-      @include font-size(.7, 1.1);
-      margin: .2rem 0;
-      padding: .26rem .5rem;
-      text-align: left;
-      width: 100%;
+.ng-dropdown {
+  .ng-dropdown-toggle {
+    @include font-size(.7, 1.1);
+    margin: .2rem 0;
+    padding: .26rem .5rem;
+    text-align: left;
+    width: 100%;
 
-      .ng-dropdown-selected-value {
-        background: none;
-        margin: 0;
-        padding: 0 1.5rem 0 .5rem;
-      }
+    .ng-dropdown-selected-value {
+      background: none;
+      margin: 0;
+      padding: 0 1.5rem 0 .5rem;
+    }
 
-      &::after {
-        position: absolute;
-        right: .5rem;
-        top: .7rem;
-      }
+    &::after {
+      position: absolute;
+      right: .5rem;
+      top: .7rem;
+    }
 
-      .ng-dropdown-loading {
-        right: .2rem;
-        top: .4rem;
-      }
+    .ng-dropdown-loading {
+      right: .2rem;
+      top: .4rem;
+    }
 
-      .ng-dropdown-down-arrow {
-        top: .3rem;
-      }
+    .ng-dropdown-down-arrow {
+      top: .3rem;
+    }
 
-      .ng-dropdown-input-group-btn {
-        right: 1.2rem;
-        top: .4rem;
-      }
+    .ng-dropdown-input-group-btn {
+      right: 1.2rem;
+      top: .4rem;
     }
   }
 }
@@ -205,6 +205,7 @@
   .ng-data-table-column-selector-box-heading {
     @include font-size(.9, 1.4);
     border-bottom: .05rem solid $data-table-dropdown-border;
+    color: $data-table-dropdown-heading-text-color;
     font-weight: 400;
     margin-bottom: .5rem;
     padding-bottom: .3rem;
@@ -219,6 +220,7 @@
       @include font-size(.8, 1.4);
 
       label {
+        color: $data-table-dropdown-text-color;
         cursor: pointer;
         display: block;
 
@@ -262,7 +264,7 @@
         border-right: 0;
         border-top: 0;
         color: $data-table-content-header-text-color;
-        padding: 0 .3em;
+        padding: 0 .5rem;
         position: relative;
         vertical-align: bottom;
         word-break: break-all;
@@ -440,6 +442,7 @@
       &.row-odd {
         td {
           background: $data-table-odd-row-background;
+          color: $data-table-odd-row-cell-text-color;
         }
 
         &:hover {
@@ -465,6 +468,7 @@
       &.row-even {
         td {
           background: $data-table-even-row-background;
+          color: $data-table-even-row-cell-text-color;
         }
 
         &:hover {
@@ -485,6 +489,7 @@
 
         td {
           background: $data-table-selected-row-background;
+          color: $data-table-selected-row-cell-text-color;
         }
 
         &:hover {
@@ -605,6 +610,15 @@
  * Data table no records found message styles
  */
 
+.ng-data-table-no-records-message-container {
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(center);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
 .ng-data-table-no-records-message {
   @include display-flex;
   @include align-items(center);
@@ -613,14 +627,19 @@
   @include flex-direction(column);
   height: 100%;
 
-  h1 {
-    @include font-size(1.2, 1.4);
-    color: $data-table-no-record-message-text-color;
+  .ng-data-table-no-records-main-heading-message {
+    @include font-size(1.2, 2);
+    color: $ng-data-table-no-records-main-heading-message-text-color;
     margin-bottom: 0;
   }
 
-  h2 {
+  .ng-data-table-no-records-sub-heading-message {
     @include font-size(.8, 1.4);
+    color: $ng-data-table-no-records-sub-heading-message-text-color;
+  }
+
+  .ng-data-table-no-records-message-buttone {
+
   }
 }
 
@@ -636,6 +655,7 @@
 %form-styles {
   @include font-size(.7, .8);
   border: .05rem solid $data-table-pagination-input-border;
+  color: $data-table-pagination-input-text-color;
   padding: .25rem;
 
   &:focus {
@@ -696,7 +716,7 @@
 
     .ng-data-table-pagination-input {
       @extend %form-styles;
-
+      background: $data-table-pagination-input-background;
     }
 
     .ng-data-table-pagination-input-label {
@@ -821,7 +841,7 @@
         }
 
         .ng-data-table-pagination-input-label {
-          border: 1px solid $data-table-border;
+          border: 1px solid $data-table-pagination-input-label-border;
           border-left: 0;
         }
 
@@ -839,6 +859,8 @@
     }
   }
 }
+
+
 
 
 
