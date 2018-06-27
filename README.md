@@ -14,6 +14,8 @@
 
 > Lightweight, feature rich, highly configurable, UI framework agnostic full responsive Angular data table with minimal dependencies. 
 
+Check out the [documentation](https://ornamentum.app/api-docs/) & [demos](https://ornamentum.app/) for more information!
+
 ## Installation
 
 Install the Ornamentum package and its [dependencies](#peer-dependencies) using the following command:
@@ -32,6 +34,7 @@ Via NPM
 * Lodash-es 2.14.10 (get and orderBy)
 
 ## Features
+
 
 
 ## How to Contribute
@@ -67,6 +70,9 @@ Recent changes can be viewed on Github on the [CHANGELOG.md](https://github.com/
 ## License
 
 This software is licensed under the [MIT License][license]
+
+[license-badge]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license]: https://github.com/yohangz/ornamentum/blob/master/LICENSE
 
 [yohan-profile]: https://github.com/yohangz
 [lahiru-profile]: https://github.com/lahiruz
