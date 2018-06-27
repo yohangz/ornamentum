@@ -239,7 +239,15 @@
           list-style-type: none;
 
           li {
-            padding-right: 5px;
+            position: relative;
+            padding-left: .4em;
+            line-height: 2em;
+
+            &::before {
+              position: absolute;
+              left: -1.5em;
+              top: .1em;
+            }
 
             &.data-icon::before {
               content: url(../../../../assets/images/data.svg);
