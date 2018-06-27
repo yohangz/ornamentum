@@ -14,11 +14,13 @@
 
 > Lightweight, feature rich, highly configurable, UI framework agnostic, full responsive Angular data table with minimal dependencies. 
 Ornamentum data table is a powerful widget which allows you to visualize via its table representation. 
-This is an open source library which is implemented by using minimum set dependencies and works in all most all the well-known browsers. 
-
-It was built for modern browsers using [Angular 6+](https://angular.io/), [Bootstrap](https://getbootstrap.com/) & [SCSS](https://sass-lang.com/).
+This is an open source UI framework agnostic library which is working fine in all most all the well-known browsers. 
 
 Check out the [documentation](https://ornamentum.app/api-docs/) & [demos](https://ornamentum.app/) for more information!
+
+## Prerequisites
+
+- [Angular 6+](https://angular.io/)
 
 ## Installation
 
@@ -31,11 +33,6 @@ Via [Yarn](https://yarnpkg.com/lang/en/)
 Via [NPM](https://www.npmjs.com/)
 
 ```npm install ornamentum lodash-es --save```
-
-## Peer Dependencies
-
-* [Angular 6+](https://angular.io/)
-* [lodash-es](https://www.npmjs.com/package/lodash-es)
 
 ## Features
 
