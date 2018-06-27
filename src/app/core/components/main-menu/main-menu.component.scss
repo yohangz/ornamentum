@@ -25,7 +25,7 @@
       }
 
       .toggler-icon {
-        background-image: url(../../../assets/img/menu.svg);
+        background-image: url(../../../../assets/images/menu.svg);
         height: 1.3em;
         width: 1.3em;
       }
@@ -33,7 +33,7 @@
 
     .app-name-lg {
       @include transition(.5s all ease);
-      background: url(../../../assets/img/ornamentum.svg) no-repeat;
+      background: url(../../../../assets/images/ornamentum.svg) no-repeat;
       background-size: 100% 100%;
       display: inline-block;
       height: 2.2rem;
@@ -43,7 +43,7 @@
       width: 10rem;
 
       @include breakpoint(max991) {
-        background: url(../../../assets/img/ornamentum-sm.svg) no-repeat;
+        background: url(../../../../assets/images/ornamentum-sm.svg) no-repeat;
         height: 2.5rem;
         left: 4rem;
         position: absolute;
@@ -104,7 +104,7 @@
         }
 
         .github-icon {
-          background: url(../../../assets/img/github-logo.svg) no-repeat;
+          background: url(../../../../assets/images/github-logo.svg) no-repeat;
           background-size: 100% 100%;
           display: inline-block;
           height: 2rem;
@@ -118,7 +118,7 @@
         }
 
         .api-docs {
-          background: url(../../../assets/img/api.svg) no-repeat;
+          background: url(../../../../assets/images/api.svg) no-repeat;
           background-size: 100% 100%;
           display: inline-block;
           height: 2rem;
