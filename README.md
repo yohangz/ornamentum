@@ -24,7 +24,7 @@ Check out the [documentation](https://ornamentum.app/api-docs/) & [demos](https:
 
 ## Installation
 
-Install the Ornamentum package and its [dependencies](#peer-dependencies) using the following command:
+Install the Ornamentum package using the following command:
 
 Via [Yarn](https://yarnpkg.com/lang/en/)
 
