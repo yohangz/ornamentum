@@ -18,10 +18,10 @@ Added Support for,
 - Single, multi and single toggle row selection modes.
 - Experimental column resizing.
 - Experimental row grouping support.
-- Translation support and much more (refer [demos](https://ornamentum.app/) for more information).
-- Documentation.
+- Translation support and much more.
+- Complete [documentation](https://ornamentum.app/api-docs/) & [examples](https://ornamentum.app/) integration.
 
-## upcoming
+## Upcoming
 
 ### Features
 

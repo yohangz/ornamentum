@@ -24,11 +24,11 @@ Check out the [documentation](https://ornamentum.app/api-docs/) & [demos](https:
 
 Install the Ornamentum package and its [dependencies](#peer-dependencies) using the following command:
 
-Via Yarn
+Via [Yarn](https://yarnpkg.com/lang/en/)
 
 ```yarn add ornamentum lodash-es --save```
 
-Via NPM
+Via [NPM](https://www.npmjs.com/)
 
 ```npm install ornamentum lodash-es --save```
 
