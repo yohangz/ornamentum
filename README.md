@@ -36,17 +36,63 @@ Via NPM
 * Lodash-es 2.14.10 (get and orderBy)
 
 ## Features
-
-<img src="./documentation/data.svg" alt="data"/> Client, server and realtime data binding support with observables </br>
-<img src="./documentation/sort.svg" alt="data"/> Single and multi column sorting </br>
-<img src="./documentation/filter.svg" alt="data"/> Single and multi value filtering </br>
-<img src="./documentation/layout.svg" alt="data"/> Custom layout templating support </br>
-<img src="./documentation/persist.svg" alt="data"/> Data table state persistence with session/local storage modes </br>
-<img src="./documentation/paging.svg" alt="data"/> Client and server side pagination </br>
-<img src="./documentation/select.svg" alt="data"/> Single, multi and single toggle row selection modes </br>
-<img src="./documentation/resize.svg" alt="data"/> Experimental column resizing </br>
-<img src="./documentation/group.svg" alt="data"/> Experimental row grouping support </br>
-<img src="./documentation/translate.svg" alt="data"/> Translation support and much more
+<style>
+	ul.icon-list {
+    list-style-type: none;
+  }
+  ul.icon-list li {
+    position: relative;
+    padding-left: 0.4em;
+    line-height: 2em;
+  }
+  ul.icon-list li::before {
+    position: absolute;
+    left: -1.5em;
+    top: 0.1em;
+  }
+  ul.icon-list li.data-icon::before {
+    content: url(../../../../assets/images/data.svg);
+  }
+  ul.icon-list li.sort-icon::before {
+    content: url(../../../../assets/images/sort.svg);
+  }
+  ul.icon-list li.filter-icon::before {
+    content: url(../../../../assets/images/filter.svg);
+  }
+  ul.icon-list li.layout-icon::before {
+    content: url(../../../../assets/images/layout.svg);
+  }
+  ul.icon-list li.persist-icon::before {
+    content: url(../../../../assets/images/persist.svg);
+  }
+  ul.icon-list li.paging-icon::before {
+    content: url(../../../../assets/images/paging.svg);
+  }
+  ul.icon-list li.select-icon::before {
+    content: url(../../../../assets/images/select.svg);
+  }
+  ul.icon-list li.resize-icon::before {
+    content: url(../../../../assets/images/resize.svg);
+  }
+  ul.icon-list li.group-icon::before {
+    content: url(../../../../assets/images/group.svg);
+  }
+  ul.icon-list li.translation-icon::before {
+    content: url(../../../../assets/images/translate.svg);
+  }
+</style>
+<ul class="icon-list">
+  <li class="data-icon">Client, server and realtime data binding support with observables</li>
+  <li class="sort-icon">Single and multi column sorting</li>
+  <li class="filter-icon">Single and multi value filtering</li>
+  <li class="layout-icon">Custom layout templating support</li>
+  <li class="persist-icon">Data table state persistence with session/local storage modes</li>
+  <li class="paging-icon">Client and server side pagination</li>
+  <li class="select-icon">Single, multi and single toggle row selection modes</li>
+  <li class="resize-icon">Experimental column resizing</li>
+  <li class="group-icon">Experimental row grouping support</li>
+  <li class="translation-icon">Translation support and much more</li>
+</ul>
 
 ## How to Contribute
 
