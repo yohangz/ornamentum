@@ -4,6 +4,7 @@ branches:
   only:
    - master
    - /^v.*$/
+   - /^greenkeeper/.*$/
 cache: yarn
 before_install:
   - openssl aes-256-cbc -K $encrypted_48bfcff1b99c_key -iv $encrypted_48bfcff1b99c_iv -in deploy.key.enc -out deploy.key -d

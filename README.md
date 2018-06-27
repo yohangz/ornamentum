@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/yohangz/ornamentum.svg?branch=master)](https://travis-ci.org/yohangz/ornamentum)
+[![Build Status](https://travis-ci.org/yohangz/ornamentum.svg?branch=master)](https://travis-ci.org/yohangz/ornamentum) [![Greenkeeper badge](https://badges.greenkeeper.io/yohangz/ornamentum.svg)](https://greenkeeper.io/)
 
 #Ornamentum
 
