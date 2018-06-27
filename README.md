@@ -35,15 +35,15 @@ Via NPM
 
 ## Features
 
-<img src="./documentation/data.svg" alt="data"/> Client, server and realtime data binding support with observables </br></br>
-<img src="./documentation/sort.svg" alt="data"/> Single and multi column sorting </br></br>
-<img src="./documentation/filter.svg" alt="data"/> Single and multi value filtering </br></br>
-<img src="./documentation/layout.svg" alt="data"/> Custom layout templating support </br></br>
-<img src="./documentation/persist.svg" alt="data"/> Data table state persistence with session/local storage modes </br></br>
-<img src="./documentation/paging.svg" alt="data"/> Client and server side pagination </br></br>
-<img src="./documentation/select.svg" alt="data"/> Single, multi and single toggle row selection modes </br></br>
-<img src="./documentation/resize.svg" alt="data"/> Experimental column resizing </br></br>
-<img src="./documentation/group.svg" alt="data"/> Experimental row grouping support </br></br>
+<img src="./documentation/data.svg" alt="data"/> Client, server and realtime data binding support with observables </br>
+<img src="./documentation/sort.svg" alt="data"/> Single and multi column sorting </br>
+<img src="./documentation/filter.svg" alt="data"/> Single and multi value filtering </br>
+<img src="./documentation/layout.svg" alt="data"/> Custom layout templating support </br>
+<img src="./documentation/persist.svg" alt="data"/> Data table state persistence with session/local storage modes </br>
+<img src="./documentation/paging.svg" alt="data"/> Client and server side pagination </br>
+<img src="./documentation/select.svg" alt="data"/> Single, multi and single toggle row selection modes </br>
+<img src="./documentation/resize.svg" alt="data"/> Experimental column resizing </br>
+<img src="./documentation/group.svg" alt="data"/> Experimental row grouping support </br>
 <img src="./documentation/translate.svg" alt="data"/> Translation support and much more
 
 ## How to Contribute
