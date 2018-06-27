@@ -4,6 +4,10 @@
 
 > Lightweight, feature rich, highly configurable, UI framework agnostic full responsive Angular data table with minimal dependencies. 
 
+<h1 align="center">
+  <img src="./documentation/ornamentum.svg" alt="ornamentum"/>
+</h1>
+
 ## Why Ornamentum?
 
 ## Peer Dependencies
