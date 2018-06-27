@@ -24,7 +24,7 @@ Check out the [documentation](https://ornamentum.app/api-docs/) & [demos](https:
 
 ## Installation
 
-Install the Ornamentum package using the following command:
+Install the Ornamentum package and its [dependencies](#peer-dependencies) using the following command
 
 Via [Yarn](https://yarnpkg.com/lang/en/)
 
@@ -33,6 +33,14 @@ Via [Yarn](https://yarnpkg.com/lang/en/)
 Via [NPM](https://www.npmjs.com/)
 
 ```npm install ornamentum lodash-es --save```
+
+## Peer Dependencies
+
+- [@angular/common](https://www.npmjs.com/package/@angular/common): ^6.0.0-rc.0 || ^6.0.0
+- [@angular/core](https://www.npmjs.com/package/@angular/core): ^6.0.0-rc.0 || ^6.0.0
+- [@angular/forms](https://www.npmjs.com/package/@angular/forms): ^6.0.0-rc.0 || ^6.0.0
+- [lodash-es](https://www.npmjs.com/package/lodash-es): ^4.17.10
+- [rxjs](https://rxjs-dev.firebaseapp.com/): ^6.0.0
 
 ## Features
 
