@@ -2,7 +2,7 @@
 
 # Ornamentum
 
-> Lightweight, Highly configurable, feature rich, UI framework agnostic full responsive Angular component kit with minimal dependencies. 
+> Lightweight, Highly configurable, feature rich, UI framework agnostic full responsive Angular Data Table with minimal dependencies. 
 
 ## Why Ornamentum?
 
