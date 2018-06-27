@@ -51,34 +51,34 @@ Via NPM
     top: 0.1em;
   }
   ul.icon-list li.data-icon::before {
-    content: url(../../../../assets/images/data.svg);
+    content: url(./documentation/data.svg);
   }
   ul.icon-list li.sort-icon::before {
-    content: url(../../../../assets/images/sort.svg);
+    content: url(./documentation/sort.svg);
   }
   ul.icon-list li.filter-icon::before {
-    content: url(../../../../assets/images/filter.svg);
+    content: url(./documentation/filter.svg);
   }
   ul.icon-list li.layout-icon::before {
-    content: url(../../../../assets/images/layout.svg);
+    content: url(./documentation/layout.svg);
   }
   ul.icon-list li.persist-icon::before {
-    content: url(../../../../assets/images/persist.svg);
+    content: url(./documentation/persist.svg);
   }
   ul.icon-list li.paging-icon::before {
-    content: url(../../../../assets/images/paging.svg);
+    content: url(./documentation/paging.svg);
   }
   ul.icon-list li.select-icon::before {
-    content: url(../../../../assets/images/select.svg);
+    content: url(./documentation/select.svg);
   }
   ul.icon-list li.resize-icon::before {
-    content: url(../../../../assets/images/resize.svg);
+    content: url(./documentation/resize.svg);
   }
   ul.icon-list li.group-icon::before {
-    content: url(../../../../assets/images/group.svg);
+    content: url(./documentation/group.svg);
   }
   ul.icon-list li.translation-icon::before {
-    content: url(../../../../assets/images/translate.svg);
+    content: url(./documentation/translate.svg);
   }
 </style>
 <ul class="icon-list">
