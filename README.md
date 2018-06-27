@@ -12,9 +12,10 @@
   </a>
 </p>
 
-> Lightweight, feature rich, highly configurable, UI framework agnostic, full responsive Angular data table with minimal dependencies.
-
+> Lightweight, feature rich, highly configurable, UI framework agnostic, full responsive Angular data table with minimal dependencies. 
 Ornamentum data table is a powerful widget which allows you to visualize via its table representation. This is a ```Highly Configurable``` ```Open Source``` library which has ```Minimum Dependency Support``` and works in all most all the well-known browsers. 
+
+It was built for modern browsers using [Angular 6+](https://angular.io/), [Bootstrap](https://getbootstrap.com/) & [SCSS](https://sass-lang.com/).
 
 Check out the [documentation](https://ornamentum.app/api-docs/) & [demos](https://ornamentum.app/) for more information!
 
@@ -32,8 +33,8 @@ Via NPM
 
 ## Peer Dependencies
 
-* Angular 6 or above
-* Lodash-es 2.14.10 (get and orderBy)
+* [Angular 6+](https://angular.io/)
+* [lodash-es](https://www.npmjs.com/package/lodash-es)
 
 ## Features
 
@@ -57,12 +58,10 @@ Setup project in local development environment
 git clone git@github.com:yohangz/ornamentum.git
 cd ornamentum
 
-# this would install and would do a yarn link for jest-editor-support
-yarn install
-
-# start the app
+# start the app (please make sure to install yarn in your enviornment)
 yarn start
 ```
+Refer [CONTRIBUTING.md] for more details.
 
 ## Contributors
 
