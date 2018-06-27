@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/yohangz/ornamentum.svg?branch=master)](https://travis-ci.org/yohangz/ornamentum)
+[![MIT License][license-badge]][LICENSE] [![Build Status](https://travis-ci.org/yohangz/ornamentum.svg?branch=master)](https://travis-ci.org/yohangz/ornamentum)
 
 # Ornamentum
 
@@ -60,6 +60,20 @@ yarn start
 
 ## Contributors
 
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+|[<img src="https://avatars2.githubusercontent.com/u/5279079?s=400&v=4" width="100px;"/><br /><sub>Yohan Gomez</sub>][yohan-profile]|[<img src="https://avatars2.githubusercontent.com/u/6312524?s=400&u=efc9267c6f903c379fafaaf7b3b0d9a939474c01&v=4" width="100px;"/><br /><sub>Lahiru Jayamanna</sub>][lahiru-profile]|[<img src="https://avatars2.githubusercontent.com/u/35022498?s=400&v=4" width="100px;"/><br /><sub>Samuditha Wadigamangawa</sub>][samuditha-profile]|
+| :---: | :---: | :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
 ## Changelog
 
 ## License
+
+This software is licensed under the MIT license
+
+[license-badge]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
+[license]: https://github.com/yohangz/ornamentum/blob/master/LICENSE
+
+[yohan-profile]: https://github.com/yohangz
+[lahiru-profile]: https://github.com/lahiruz
+[samuditha-profile]: https://github.com/samudithaw
