@@ -1,12 +1,9 @@
-[![MIT License][license-badge]][LICENSE] [![Build Status](https://travis-ci.org/yohangz/ornamentum.svg?branch=master)](https://travis-ci.org/yohangz/ornamentum)
-
-# Ornamentum
+<p align="center">
+  <img src="./documentation/ornamentum.svg" alt="ornamentum"/>
+  [![MIT License][license-badge]][LICENSE] [![Build Status](https://travis-ci.org/yohangz/ornamentum.svg?branch=master)](https://travis-ci.org/yohangz/ornamentum)
+</p>
 
 > Lightweight, feature rich, highly configurable, UI framework agnostic full responsive Angular data table with minimal dependencies. 
-
-<h1 align="center">
-  <img src="./documentation/ornamentum.svg" alt="ornamentum"/>
-</h1>
 
 ## Why Ornamentum?
 
