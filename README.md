@@ -1,17 +1,17 @@
 [![Build Status](https://travis-ci.org/yohangz/ornamentum.svg?branch=master)](https://travis-ci.org/yohangz/ornamentum)
 
-#Ornamentum
+# Ornamentum
 
 > Lightweight, Highly configurable, feature rich, UI framework agnostic full responsive Angular component kit with minimal dependencies. 
 
-##Why Ornamentum?
+## Why Ornamentum?
 
-##Dependency Details
+## Dependency Details
 
 * Angular 6 or above
 * Lodash-es 2.14.10 - get and orderBy
 
-##Installation
+## Installation
 
 Install the Ornamentum package and its dependencies using the following command:
 
@@ -23,23 +23,23 @@ Via NPM
 
 ```npm install ornamentum lodash-es --save```
 
-##Features
+## Features
 
-###Data Table
-###Dropdown
+### Data Table
+### Dropdown
 
-##Distribution detail
+## Distribution detail
 
 Distribution file structure details
 
-##Usage
+## Usage
 
-###Via Angular CLI
-###Via System JS
+### Via Angular CLI
+### Via System JS
 
 
 
-##Issues
+## Issues
 
 
 ##Contribute
