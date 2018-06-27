@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./documentation/ornamentum.svg" alt="ornamentum"/>
+  <img src="./documentation/images/ornamentum.svg" alt="ornamentum"/>
   
   <a href="https://travis-ci.org/yohangz/ornamentum">
     <img src="https://travis-ci.org/yohangz/ornamentum.svg?branch=master" alt="travis build" height="18">
@@ -44,16 +44,16 @@ Via [NPM](https://www.npmjs.com/)
 
 ## Features
 
-<img src="./documentation/data.svg" alt="Data bind"/> Client, server and realtime data binding support with observables </br>
-<img src="./documentation/sort.svg" alt="Sorting"/> Single and multi column sorting </br>
-<img src="./documentation/filter.svg" alt="Filtering"/> Single and multi value filtering </br>
-<img src="./documentation/layout.svg" alt="Layouting"/> Custom layout templating support </br>
-<img src="./documentation/persist.svg" alt="Persistence"/> Data table state persistence with session/local storage modes </br>
-<img src="./documentation/paging.svg" alt="Paging"/> Client and server side pagination </br>
-<img src="./documentation/select.svg" alt="Selection"/> Single, multi and single toggle row selection modes </br>
-<img src="./documentation/resize.svg" alt="Resizing"/> Experimental column resizing </br>
-<img src="./documentation/group.svg" alt="Grouping"/> Experimental row grouping support </br>
-<img src="./documentation/translate.svg" alt="Translation"/> Translation support and much more
+<img src="./documentation/images/data.svg" alt="Data bind"/> Client, server and realtime data binding support with observables </br>
+<img src="./documentation/images/sort.svg" alt="Sorting"/> Single and multi column sorting </br>
+<img src="./documentation/images/filter.svg" alt="Filtering"/> Single and multi value filtering </br>
+<img src="./documentation/images/layout.svg" alt="Layouting"/> Custom layout templating support </br>
+<img src="./documentation/images/persist.svg" alt="Persistence"/> Data table state persistence with session/local storage modes </br>
+<img src="./documentation/images/paging.svg" alt="Paging"/> Client and server side pagination </br>
+<img src="./documentation/images/select.svg" alt="Selection"/> Single, multi and single toggle row selection modes </br>
+<img src="./documentation/images/resize.svg" alt="Resizing"/> Experimental column resizing </br>
+<img src="./documentation/images/group.svg" alt="Grouping"/> Experimental row grouping support </br>
+<img src="./documentation/images/translate.svg" alt="Translation"/> Translation support and much more
 
 ## How to Contribute
 

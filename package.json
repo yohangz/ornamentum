@@ -22,7 +22,7 @@
     "build:lib:dev": "npm run build:lib:scss:copy && ng build ornamentum",
     "build:lib:prod": "npm run build:lib:scss:copy && ng build ornamentum --prod",
     "lint:lib:scss": "sass-lint --config projects/ornamentum/.scss-lint.yml --no-exit --verbose",
-    "docs:lib": "compodoc -p projects/ornamentum/tsconfig.doc.json -d dist/ornamentum-demo/api-docs --disableCoverage --disablePrivate --disableInternal --disableProtected",
+    "docs:lib": "compodoc -p projects/ornamentum/tsconfig.doc.json -d dist/ornamentum-demo/api-docs -n 'Ornamentum' --customFavicon 'src/favicon.ico' --assetsFolder 'documentation' --disableCoverage --disablePrivate --disableInternal --disableProtected",
     "clean:dist": "rimraf dist",
     "lint": "npm run lint:demo && npm run lint:lib && npm run lint:demo:scss && npm run lint:lib:scss",
     "start": "npm run clean:dist && npm run build:lib:dev && ng serve --open --port 4201",
