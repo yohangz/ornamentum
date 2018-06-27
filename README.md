@@ -1,46 +1,6 @@
 <style>
-	ul.icon-list {
+	ul {
     list-style-type: none;
-  }
-  ul.icon-list li {
-    position: relative;
-    padding-left: 0.4em;
-    line-height: 2em;
-  }
-  ul.icon-list li::before {
-    position: absolute;
-    left: -1.5em;
-    top: 0.1em;
-  }
-  ul.icon-list li.data-icon::before {
-    content: url(./documentation/data.svg);
-  }
-  ul.icon-list li.sort-icon::before {
-    content: url(./documentation/sort.svg);
-  }
-  ul.icon-list li.filter-icon::before {
-    content: url(./documentation/filter.svg);
-  }
-  ul.icon-list li.layout-icon::before {
-    content: url(./documentation/layout.svg);
-  }
-  ul.icon-list li.persist-icon::before {
-    content: url(./documentation/persist.svg);
-  }
-  ul.icon-list li.paging-icon::before {
-    content: url(./documentation/paging.svg);
-  }
-  ul.icon-list li.select-icon::before {
-    content: url(./documentation/select.svg);
-  }
-  ul.icon-list li.resize-icon::before {
-    content: url(./documentation/resize.svg);
-  }
-  ul.icon-list li.group-icon::before {
-    content: url(./documentation/group.svg);
-  }
-  ul.icon-list li.translation-icon::before {
-    content: url(./documentation/translate.svg);
   }
 </style>
 <p align="center">
