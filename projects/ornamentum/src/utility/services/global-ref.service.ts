@@ -1,4 +1,5 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 /**
  * Global reference service.
@@ -8,33 +9,38 @@ import { Injectable } from '@angular/core';
 export class GlobalRefService {
   private _scrollbarWidth: number;
 
-  constructor() {
-    this.setScrollbarWidth();
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
   }
 
-  private setScrollbarWidth(): void {
-    const outer = document.createElement('div');
-    outer.style.visibility = 'hidden';
-    outer.style.width = '100px';
-    outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
+  public setScrollbarWidth(): void {
+    if (this._scrollbarWidth !== undefined) {
+      return;
+    }
 
-    document.body.appendChild(outer);
+    if (isPlatformBrowser(this.platformId)) {
+      const outer = document.createElement('div');
+      outer.style.visibility = 'hidden';
+      outer.style.width = '100px';
+      outer.style.msOverflowStyle = 'scrollbar'; // needed for WinJS apps
 
-    const widthNoScroll = outer.offsetWidth;
-    // force scrollbars
-    outer.style.overflow = 'scroll';
+      document.body.appendChild(outer);
 
-    // add innerdiv
-    const inner = document.createElement('div');
-    inner.style.width = '100%';
-    outer.appendChild(inner);
+      const widthNoScroll = outer.offsetWidth;
+      // force scrollbars
+      outer.style.overflow = 'scroll';
 
-    const widthWithScroll = inner.offsetWidth;
+      // add innerdiv
+      const inner = document.createElement('div');
+      inner.style.width = '100%';
+      outer.appendChild(inner);
 
-    // remove divs
-    outer.parentNode.removeChild(outer);
+      const widthWithScroll = inner.offsetWidth;
 
-    this._scrollbarWidth = widthNoScroll - widthWithScroll;
+      // remove divs
+      outer.parentNode.removeChild(outer);
+
+      this._scrollbarWidth = widthNoScroll - widthWithScroll;
+    }
   }
 
   /**

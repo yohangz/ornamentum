@@ -54,8 +54,6 @@ import {
   NoRecordsTemplateUsageComponent,
 } from './components';
 
-import { DataStorageService } from './services/data-storage.service';
-
 // Components
 export const COMPONENTS = [
   DataTableOverviewComponent,
@@ -115,5 +113,4 @@ export const COMPONENTS = [
 
 // Services
 export const SERVICES = [
-  DataStorageService
 ];
