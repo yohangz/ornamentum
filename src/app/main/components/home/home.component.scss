@@ -234,6 +234,54 @@
       .section-description {
         @include font-size(1, 1.6);
         letter-spacing: .05rem;
+
+        ul.icon-list {
+          list-style-type: none;
+
+          li {
+            padding-right: 5px;
+
+            &.data-icon::before {
+              content: url(../../../../assets/images/data.svg);
+            }
+
+            &.sort-icon::before {
+              content: url(../../../../assets/images/sort.svg);
+            }
+
+            &.filter-icon::before {
+              content: url(../../../../assets/images/filter.svg);
+            }
+
+            &.layout-icon::before {
+              content: url(../../../../assets/images/layout.svg);
+            }
+
+            &.persist-icon::before {
+              content: url(../../../../assets/images/persist.svg);
+            }
+
+            &.paging-icon::before {
+              content: url(../../../../assets/images/paging.svg);
+            }
+
+            &.select-icon::before {
+              content: url(../../../../assets/images/select.svg);
+            }
+
+            &.resize-icon::before {
+              content: url(../../../../assets/images/resize.svg);
+            }
+
+            &.group-icon::before {
+              content: url(../../../../assets/images/group.svg);
+            }
+
+            &.translation-icon::before {
+              content: url(../../../../assets/images/translate.svg);
+            }
+          }
+        }
       }
 
       &.last-section {
