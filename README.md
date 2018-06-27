@@ -1,6 +1,16 @@
 <p align="center">
   <img src="./documentation/ornamentum.svg" alt="ornamentum"/>
-  [![MIT License][license-badge]][LICENSE] [![Build Status](https://travis-ci.org/yohangz/ornamentum.svg?branch=master)](https://travis-ci.org/yohangz/ornamentum)
+</p>
+
+<p align="center">
+  <a href="https://travis-ci.org/yohangz">
+    <img src="https://travis-ci.org/yohangz/ornamentum.svg?branch=master"
+         alt="Travis Build">
+  </a>
+   <a href="https://github.com/yohangz/ornamentum/blob/master/LICENSE">
+    <img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat"
+         alt="License">
+  </a>
 </p>
 
 > Lightweight, feature rich, highly configurable, UI framework agnostic full responsive Angular data table with minimal dependencies. 
