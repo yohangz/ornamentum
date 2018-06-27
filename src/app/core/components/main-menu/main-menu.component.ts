@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 import { fromEvent, Subscription } from 'rxjs/index';
 import { debounceTime } from 'rxjs/operators';
@@ -23,7 +24,9 @@ export class MainMenuComponent implements OnInit, OnDestroy {
   @ViewChild('menuElement')
   public menuElement: ElementRef;
 
-  constructor(private containerResponsive: ContainerResponsiveService, private globalRefService: GlobalRefService) {
+  constructor(private containerResponsive: ContainerResponsiveService,
+              private globalRefService: GlobalRefService,
+              @Inject(PLATFORM_ID) private platformId: Object) {
     this.packageVersion = VERSION;
   }
 
@@ -43,18 +46,22 @@ export class MainMenuComponent implements OnInit, OnDestroy {
   }
 
   public ngOnInit(): void {
-    this.resizeEventSubscription = fromEvent(this.globalRefService.window, 'resize')
-      .pipe(
-        debounceTime(66)
-      )
-      .subscribe(() => {
-        this.emitContainerHeight();
-      });
+    if (isPlatformBrowser(this.platformId)) {
+      this.resizeEventSubscription = fromEvent(this.globalRefService.window, 'resize')
+        .pipe(
+          debounceTime(66)
+        )
+        .subscribe(() => {
+          this.emitContainerHeight();
+        });
 
-    this.emitContainerHeight();
+      this.emitContainerHeight();
+    }
   }
 
   public ngOnDestroy(): void {
-    this.resizeEventSubscription.unsubscribe();
+    if (this.resizeEventSubscription) {
+      this.resizeEventSubscription.unsubscribe();
+    }
   }
 }

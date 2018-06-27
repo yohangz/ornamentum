@@ -1,5 +1,6 @@
-import { AfterContentInit, Component } from '@angular/core';
+import { AfterContentInit, Component, Inject, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { isPlatformBrowser } from '@angular/common';
 import { filter } from 'rxjs/operators';
 
 /**
@@ -15,7 +16,8 @@ export class BaseComponent implements AfterContentInit {
   private previousUrl: string;
 
   constructor(private route: ActivatedRoute,
-              private router: Router) {
+              private router: Router,
+              @Inject(PLATFORM_ID) private platformId: Object) {
   }
 
   private getUrl(): string {
@@ -31,15 +33,17 @@ export class BaseComponent implements AfterContentInit {
   }
 
   public ngAfterContentInit(): any {
-    this.previousUrl = this.getUrl();
-    setTimeout(() => PR.prettyPrint(), 50);
+    if (isPlatformBrowser(this.platformId)) {
+      this.previousUrl = this.getUrl();
+      setTimeout(() => PR.prettyPrint(), 50);
 
-    this.router.events
-      .pipe(
-        filter(event => event instanceof NavigationEnd)
-      )
-      .subscribe(() => {
-        setTimeout(() => this.prettyPrint(), 50);
-      });
+      this.router.events
+        .pipe(
+          filter(event => event instanceof NavigationEnd)
+        )
+        .subscribe(() => {
+          setTimeout(() => this.prettyPrint(), 50);
+        });
+    }
   }
 }
