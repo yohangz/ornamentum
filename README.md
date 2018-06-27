@@ -2,27 +2,21 @@
   <img src="./documentation/ornamentum.svg" alt="ornamentum"/>
   
   <a href="https://travis-ci.org/yohangz/ornamentum">
-    <img src="https://travis-ci.org/yohangz/ornamentum.svg?branch=master"
-           alt="Travis Build">
-   </a>
-    <a href="https://github.com/yohangz/ornamentum/blob/master/LICENSE">
-    <img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat"
-           alt="License">
-    </a>
+    <img src="https://travis-ci.org/yohangz/ornamentum.svg?branch=master" alt="travis build">
+  </a>
+  <a href="https://github.com/yohangz/ornamentum/blob/master/LICENSE">
+    <img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="license">
+  </a>  
+  <a href="https://badge.fury.io/js/ornamentum">
+    <img src="https://badge.fury.io/js/ornamentum.svg" alt="npm version" height="18">
+  </a>
 </p>
 
 > Lightweight, feature rich, highly configurable, UI framework agnostic full responsive Angular data table with minimal dependencies. 
 
-## Why Ornamentum?
-
-## Peer Dependencies
-
-* Angular 6 or above
-* Lodash-es 2.14.10 - get and orderBy
-
 ## Installation
 
-Install the Ornamentum package and its dependencies using the following command:
+Install the Ornamentum package and its [dependencies](#peer-dependencies) using the following command:
 
 Via Yarn
 
@@ -32,28 +26,15 @@ Via NPM
 
 ```npm install ornamentum lodash-es --save```
 
+## Peer Dependencies
+
+* Angular 6 or above
+* Lodash-es 2.14.10 (get and orderBy)
+
 ## Features
 
-### Data Table
 
-
-### Dropdown
-
-## Distribution detail
-
-Distribution file structure details
-
-## Usage
-
-### Via Angular CLI
-### Via System JS
-
-
-
-## Issues
-
-
-##Contribute
+## How to Contribute
 
 Setup project in local development environment
 
@@ -81,15 +62,11 @@ Contributions of any kind are welcome!
 
 ## Changelog
 
-## Changelog
 Recent changes can be viewed on Github on the [CHANGELOG.md](https://github.com/yohangz/ornamentum/blob/master/CHANGELOG.md)
 
 ## License
 
 This software is licensed under the [MIT License][license]
-
-[license-badge]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
-[license]: https://github.com/yohangz/ornamentum/blob/master/LICENSE
 
 [yohan-profile]: https://github.com/yohangz
 [lahiru-profile]: https://github.com/lahiruz
