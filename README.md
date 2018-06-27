@@ -58,8 +58,8 @@ yarn install
 yarn start
 ```
 
-##Contributors
+## Contributors
 
-##Changelog
+## Changelog
 
-##License
+## License
