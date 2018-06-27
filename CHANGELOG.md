@@ -9,7 +9,7 @@
 ### Features
  
 Added Support for,
-- Client, server and realtime data binding support with observables.
+- Client, server and real-time data binding support with observables.
 - Single and multi column sorting.
 - Single and multi value filtering.
 - Custom layout templating support.
@@ -25,7 +25,8 @@ Added Support for,
 
 ### Features
 
-- Unit testing support.
+- Complete unit testing support.
+- Code coverage support.
 
 
 
