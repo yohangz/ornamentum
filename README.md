@@ -35,7 +35,16 @@ Via NPM
 
 ## Features
 
-
+- <img src="./documentation/data.svg" alt="data"/> Client, server and realtime data binding support with observables
+- <img src="./documentation/sort.svg" alt="data"/> Single and multi column sorting
+- <img src="./documentation/filter.svg" alt="data"/> Single and multi value filtering
+- <img src="./documentation/layout.svg" alt="data"/> Custom layout templating support
+- <img src="./documentation/persist.svg" alt="data"/> Data table state persistence with session/local storage modes
+- <img src="./documentation/paging.svg" alt="data"/> Client and server side pagination
+- <img src="./documentation/select.svg" alt="data"/> Single, multi and single toggle row selection modes
+- <img src="./documentation/resize.svg" alt="data"/> Experimental column resizing
+- <img src="./documentation/group.svg" alt="data"/> Experimental row grouping support
+- <img src="./documentation/translate.svg" alt="data"/> Translation support and much more
 
 ## How to Contribute
 
