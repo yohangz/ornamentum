@@ -26,7 +26,7 @@ Install the Ornamentum package and its dependencies using the following command:
 
 Via Yarn
 
-```yarn add ornamentum lodash-es```
+```yarn add ornamentum lodash-es --save```
 
 Via NPM
 
@@ -35,6 +35,8 @@ Via NPM
 ## Features
 
 ### Data Table
+
+
 ### Dropdown
 
 ## Distribution detail
@@ -78,6 +80,9 @@ This project follows the [all-contributors](https://github.com/kentcdodds/all-co
 Contributions of any kind are welcome!
 
 ## Changelog
+
+## Changelog
+Recent changes can be viewed on Github on the [CHANGELOG.md](https://github.com/yohangz/ornamentum/blob/master/CHANGELOG.md)
 
 ## License
 
