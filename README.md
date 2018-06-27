@@ -1,41 +1,3 @@
-<p align="center">
-  <img src="./documentation/ornamentum.svg" alt="ornamentum"/>
-  
-  <a href="https://travis-ci.org/yohangz/ornamentum">
-    <img src="https://travis-ci.org/yohangz/ornamentum.svg?branch=master" alt="travis build" height="18">
-  </a>
-  <a href="https://github.com/yohangz/ornamentum/blob/master/LICENSE">
-    <img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="license" height="18">
-  </a>  
-  <a href="https://badge.fury.io/js/ornamentum">
-    <img src="https://badge.fury.io/js/ornamentum.svg" alt="npm version" height="18">
-  </a>
-</p>
-
-> Lightweight, feature rich, highly configurable, UI framework agnostic, full responsive Angular data table with minimal dependencies.
-
-Ornamentum data table is a powerful widget which allows you to visualize via its table representation. This is a ```Highly Configurable``` ```Open Source``` library which has ```Minimum Dependency Support``` and works in all most all the well-known browsers. 
-
-Check out the [documentation](https://ornamentum.app/api-docs/) & [demos](https://ornamentum.app/) for more information!
-
-## Installation
-
-Install the Ornamentum package and its [dependencies](#peer-dependencies) using the following command:
-
-Via Yarn
-
-```yarn add ornamentum lodash-es --save```
-
-Via NPM
-
-```npm install ornamentum lodash-es --save```
-
-## Peer Dependencies
-
-* Angular 6 or above
-* Lodash-es 2.14.10 (get and orderBy)
-
-## Features
 <style>
 	ul.icon-list {
     list-style-type: none;
@@ -81,6 +43,44 @@ Via NPM
     content: url(./documentation/translate.svg);
   }
 </style>
+<p align="center">
+  <img src="./documentation/ornamentum.svg" alt="ornamentum"/>
+  
+  <a href="https://travis-ci.org/yohangz/ornamentum">
+    <img src="https://travis-ci.org/yohangz/ornamentum.svg?branch=master" alt="travis build" height="18">
+  </a>
+  <a href="https://github.com/yohangz/ornamentum/blob/master/LICENSE">
+    <img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="license" height="18">
+  </a>  
+  <a href="https://badge.fury.io/js/ornamentum">
+    <img src="https://badge.fury.io/js/ornamentum.svg" alt="npm version" height="18">
+  </a>
+</p>
+
+> Lightweight, feature rich, highly configurable, UI framework agnostic, full responsive Angular data table with minimal dependencies.
+
+Ornamentum data table is a powerful widget which allows you to visualize via its table representation. This is a ```Highly Configurable``` ```Open Source``` library which has ```Minimum Dependency Support``` and works in all most all the well-known browsers. 
+
+Check out the [documentation](https://ornamentum.app/api-docs/) & [demos](https://ornamentum.app/) for more information!
+
+## Installation
+
+Install the Ornamentum package and its [dependencies](#peer-dependencies) using the following command:
+
+Via Yarn
+
+```yarn add ornamentum lodash-es --save```
+
+Via NPM
+
+```npm install ornamentum lodash-es --save```
+
+## Peer Dependencies
+
+* Angular 6 or above
+* Lodash-es 2.14.10 (get and orderBy)
+
+## Features
 <ul class="icon-list">
   <li class="data-icon">Client, server and realtime data binding support with observables</li>
   <li class="sort-icon">Single and multi column sorting</li>
