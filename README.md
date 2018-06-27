@@ -13,7 +13,8 @@
 </p>
 
 > Lightweight, feature rich, highly configurable, UI framework agnostic, full responsive Angular data table with minimal dependencies. 
-Ornamentum data table is a powerful widget which allows you to visualize via its table representation. This is a Highly Configurable Open Source library which is implemented by using minimum dependencies and works in all most all the well-known browsers. 
+Ornamentum data table is a powerful widget which allows you to visualize via its table representation. 
+This is an open source library which is implemented by using minimum set dependencies and works in all most all the well-known browsers. 
 
 It was built for modern browsers using [Angular 6+](https://angular.io/), [Bootstrap](https://getbootstrap.com/) & [SCSS](https://sass-lang.com/).
 
