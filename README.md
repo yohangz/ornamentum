@@ -2,10 +2,10 @@
   <img src="./documentation/ornamentum.svg" alt="ornamentum"/>
   
   <a href="https://travis-ci.org/yohangz/ornamentum">
-    <img src="https://travis-ci.org/yohangz/ornamentum.svg?branch=master" alt="travis build">
+    <img src="https://travis-ci.org/yohangz/ornamentum.svg?branch=master" alt="travis build" height="18">
   </a>
   <a href="https://github.com/yohangz/ornamentum/blob/master/LICENSE">
-    <img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="license">
+    <img src="http://img.shields.io/badge/license-MIT-blue.svg?style=flat" alt="license" height="18">
   </a>  
   <a href="https://badge.fury.io/js/ornamentum">
     <img src="https://badge.fury.io/js/ornamentum.svg" alt="npm version" height="18">
