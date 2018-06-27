@@ -2,11 +2,11 @@
 
 # Ornamentum
 
-> Lightweight, Highly configurable, feature rich, UI framework agnostic full responsive Angular Data Table with minimal dependencies. 
+> Lightweight, feature rich, highly configurable, UI framework agnostic full responsive Angular data table with minimal dependencies. 
 
 ## Why Ornamentum?
 
-## Dependency Details
+## Peer Dependencies
 
 * Angular 6 or above
 * Lodash-es 2.14.10 - get and orderBy

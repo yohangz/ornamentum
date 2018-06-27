@@ -1,7 +1,7 @@
 {
   "name": "ornamentum-demo",
   "version": "2.0.7",
-  "description": "Angular Toolkit",
+  "description": "Lightweight, feature rich, highly configurable, UI framework agnostic full responsive Angular data table with minimal dependencies.",
   "scripts": {
     "ng": "ng",
     "test:demo": "ng test",
