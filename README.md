@@ -12,7 +12,9 @@
   </a>
 </p>
 
-> Lightweight, feature rich, highly configurable, UI framework agnostic full responsive Angular data table with minimal dependencies. 
+> Lightweight, feature rich, highly configurable, UI framework agnostic, full responsive Angular data table with minimal dependencies.
+
+Ornamentum data table is a powerful widget which allows you to visualize via its table representation.
 
 Check out the [documentation](https://ornamentum.app/api-docs/) & [demos](https://ornamentum.app/) for more information!
 
