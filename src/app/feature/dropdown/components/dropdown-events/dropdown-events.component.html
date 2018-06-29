@@ -1,8 +1,8 @@
 <h1>Dropdown Events</h1>
 
-<ul>
+<ul class="main-pane-list">
   <li>There are several events types are available in this dropdown as follows.</li>
-  <ul>
+  <ul class="main-pane-list">
     <li>
       <label class="event-item">init: </label>
       <ul>
@@ -10,13 +10,13 @@
       </ul>
     </li>
     <li><label class="event-item">selectChange: </label>
-      <ul>
+      <ul class="main-pane-list">
         <li>Triggers when dropdown item select state changes. To identify selected
           items uniquely it is necessary to specify <b>[selectTrackBy]"</b> property. Therefore, a unique value key
           name should be set as the value for this attribute. According to this example it is <b>'key'</b>. There are
           set of configuration are introduced in the dropdown to work smoothly with the selected change event.
           Those configurations can be seen as follows.
-          <ul>
+          <ul class="main-pane-list">
             <li><b>[triggerSelectChangeOnInit]="true or false"</b> => The default value for this config is false.</li>
             <li><b>[triggerSelectChangeOnFirstOptionSelect]="true or false"</b> => The default value for this config is
               false.
@@ -28,7 +28,7 @@
       </ul>
     </li>
     <li><label class="event-item">dataBound: </label>
-      <ul>
+      <ul class="main-pane-list">
         <li>This will trigger after completion of data binding.</li>
       </ul>
     </li>

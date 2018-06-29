@@ -1,5 +1,5 @@
 //Dropdown Icons
-$dropdown-icon-color: #333;
+$dropdown-icon-color: #fff;
 $dropdown-search-icon-color: #fff;
 $dropdown-icon-close-color: #d32f2f;
 $close-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $dropdown-icon-close-color + '" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>' !default;
@@ -14,46 +14,46 @@ $delete-color: #d32f2f;
 $dropdown-loading-animation-color: #3b78e7 !default;
 
 //Dropdown Selector Styles
-$dropdown-selector-background: #fff !default;
-$dropdown-selector-border: #ddd !default;
-$dropdown-selector-text-color: #333 !default;
+$dropdown-selector-background: #2c232b !default;
+$dropdown-selector-border: #111 !default;
+$dropdown-selector-text-color: #fff !default;
 
 //Dropdown Selector Selected Styles
-$dropdown-selector-selected-background: #f1f5f5 !default;
-$dropdown-selector-selected-color: #333 !default;
+$dropdown-selector-selected-background: #7b2222 !default;
+$dropdown-selector-selected-color: #fff !default;
 
 //Dropdown Search Box Styles
-$dropdown-selector-search-icon-background: #3b78e7 !default;
+$dropdown-selector-search-icon-background: #7b2222 !default;
 $dropdown-selector-search-input-background: #fff !default;
 $dropdown-selector-search-input-border: #ddd !default;
 
 //Dropdown Item Wrapper Styles
-$dropdown-item-wrapper-background: #fff !default;
-$dropdown-item-wrapper-border: #ddd !default;
-$dropdown-item-wrapper-text-color: #333 !default;
-$dropdown-item-wrapper-divider-border: #ddd !default;
+$dropdown-item-wrapper-background: #2c232b !default;
+$dropdown-item-wrapper-border: #111 !default;
+$dropdown-item-wrapper-text-color: #fff !default;
+$dropdown-item-wrapper-divider-border: #333 !default;
 
 //Dropdown No Data Message Styles
-$dropdown-no-data-message-text-color: #3b78e7 !default;
+$dropdown-no-data-message-text-color: #fff !default;
 
 //Dropdown Item Container Styles
-$dropdown-item-container-wrapper-border: #ddd !default;
+$dropdown-item-container-wrapper-border: #7b2222 !default;
 
-$dropdown-item-container-item-background: #fff !default;
-$dropdown-item-container-item-text-color: #333 !default;
+$dropdown-item-container-item-background: #2c232b !default;
+$dropdown-item-container-item-text-color: #fff !default;
 
 $dropdown-item-container-item-hover-background:  #ddd !default;
 $dropdown-item-container-item-hover-text-color: #333 !default;
 
-$dropdown-item-container-selected-item-background: #3b78e7 !default;
+$dropdown-item-container-selected-item-background: #7b2222 !default;
 $dropdown-item-container-selected-item-text-color: #fff !default;
 
 $dropdown-item-container-selected-item-hover-text-color: #fff !default;
-$dropdown-item-container-selected-item-hover-background: #333 !default;
+$dropdown-item-container-selected-item-hover-background: #7b2222 !default;
 
-$dropdown-item-container-group-heading-background: #fff !default;
-$dropdown-item-container-group-heading-border: #ddd !default;
-$dropdown-item-container-group-heading-color: #333 !default;
-$dropdown-item-container-group-heading-hover-background: none !default;
-$dropdown-item-container-group-heading-hover-border: #ddd !default;
-$dropdown-item-container-group-heading-hover-color:  #333 !default;
+$dropdown-item-container-group-heading-background: #7b2222 !default;
+$dropdown-item-container-group-heading-border: #7b2222 !default;
+$dropdown-item-container-group-heading-color: #fff !default;
+$dropdown-item-container-group-heading-hover-background: #7b2222 !default;
+$dropdown-item-container-group-heading-hover-border: #7b2222 !default;
+$dropdown-item-container-group-heading-hover-color:  #fff !default;

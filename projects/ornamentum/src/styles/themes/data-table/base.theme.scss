@@ -9,7 +9,9 @@
  */
 
 .ng-data-table-container {
-  border: .07rem solid $data-table-container-border;
+  border-color: $data-table-container-border;
+  border-style: solid;
+  border-width: .07rem;
   overflow: hidden;
 
   //Scrollable table styles
@@ -46,7 +48,10 @@
 
       .ng-data-table-content-header {
         background: $data-table-content-header-background;
-        border-right: .05rem solid $data-table-content-header-border;
+        border: 0;
+        border-color: $data-table-content-header-border;
+        border-right-width: .05rem;
+        border-style: solid;
         position: relative;
         width: 100%;
 
@@ -58,15 +63,20 @@
 
     // Data table content styles
     .ng-data-table-content {
-      border-top: .05rem solid $data-table-content-border;
+      border: 0;
+      border-color: $data-table-content-border;
+      border-top-width: .05rem;
+      border-style: solid;
       overflow: initial;
       position: relative;
       width: 100%;
 
       .ng-data-table {
         border-bottom: 0;
-        border-right: .05rem solid transparent;
+        border-color: transparent;
+        border-right-width: .05rem;
         border-top: 0;
+        border-style: solid;
         overflow: hidden;
       }
 
@@ -138,7 +148,10 @@
   @include justify-content(space-between);
   @include font-size(.8, 1.4);
   background-color: $data-table-top-header-background;
-  border-bottom: .05rem solid $data-table-top-header-border;
+  border: 0;
+  border-bottom-width: .05rem;
+  border-color: $data-table-top-header-border;
+  border-style: solid;
   min-height: 2rem;
   padding: 0 .5rem 0 .5rem;
   position: relative;
@@ -204,7 +217,10 @@
 
   .ng-data-table-column-selector-box-heading {
     @include font-size(.9, 1.4);
-    border-bottom: .05rem solid $data-table-dropdown-border;
+    border: 0;
+    border-bottom-width: .05rem;
+    border-color: $data-table-dropdown-border;
+    border-style: solid;
     color: $data-table-dropdown-heading-text-color;
     font-weight: 400;
     margin-bottom: .5rem;
@@ -248,9 +264,11 @@
  */
 
 .ng-data-table {
-  border: .05rem solid $data-table-border;
+  border-width: .05rem;
   border-collapse: collapse;
+  border-color: $data-table-border;
   border-left: 0;
+  border-style: solid;
   margin-bottom: 0;
   max-width: 100%;
   table-layout: fixed;
@@ -260,8 +278,10 @@
     > tr {
       > th {
         @include font-size(.7, 1.7);
-        border: .05rem solid $data-table-content-header-border;
+        border-width: .05rem;
+        border-color: $data-table-content-header-border;
         border-right: 0;
+        border-style: solid;
         border-top: 0;
         color: $data-table-content-header-text-color;
         padding: 0 .5rem;
@@ -336,11 +356,15 @@
 
       &:last-child {
         th {
-          border: 0;
-          border-right: .05rem solid $data-table-content-header-border;
+          border-width: 0;
+          border-color: $data-table-content-header-border;
+          border-right-width: .05rem;
+          border-style: solid;
 
           input {
-            border: .05rem solid $data-table-content-header-border;
+            border-width: .05rem;
+            border-color: $data-table-content-header-border;
+            border-style: solid;
             box-sizing: border-box;
             font-family: inherit;
             font-size: inherit;
@@ -386,9 +410,11 @@
       > td {
         @include font-size(.7, 1.4);
         background: $data-table-row-background;
-        border-left: 0;
-        border-right: .05rem solid  $data-table-border;
-        border-top: .05rem solid $data-table-border;
+        border: 0;
+        border-color: $data-table-border;
+        border-right-width: .05rem;
+        border-style: solid;
+        border-top-width: .05rem;
         color: $data-table-cell-text-color;
         font-weight: 400;
         padding: .2rem .5rem;
@@ -448,12 +474,14 @@
         &:hover {
           td {
             background: $data-table-odd-row-hover-background;
+            color: $data-table-odd-row-hover-cell-text-color;
           }
 
           + .row-odd {
 
             td {
               background: $data-table-odd-row-hover-background;
+              color: $data-table-odd-row-hover-cell-text-color;
             }
           }
         }
@@ -462,6 +490,7 @@
       &:hover {
         td {
           background: $data-table-row-hover-background;
+          color: $data-table-row-hover-cell-text-color;
         }
       }
 
@@ -474,12 +503,14 @@
         &:hover {
           td {
             background: $data-table-even-row-hover-background;
+            color: $data-table-even-row-hover-cell-text-color;
           }
 
           + .row-even {
 
             td {
               background: $data-table-even-row-hover-background;
+              color: $data-table-even-row-hover-cell-text-color;
             }
           }
         }
@@ -496,12 +527,14 @@
 
           td {
             background: $data-table-selected-row-hover-background;
+            color: $data-table-selected-row-hover-cell-text-color;
           }
 
           + .selected {
 
             td {
               background: $data-table-selected-row-hover-background;
+              color: $data-table-selected-row-hover-cell-text-color;
             }
           }
         }
@@ -520,7 +553,10 @@
     }
 
     + tbody {
-      border-top: .05rem solid $data-table-border;
+      border-color: $data-table-border;
+      border-style: solid;
+      border-top-width: .05rem;
+
     }
   }
 }
@@ -564,8 +600,10 @@
 
 .ng-data-table-loading-cover {
   background: $data-table-loading-window-background;
+  border: 0;
   border-color: $data-table-loading-window-border;
-  border-top: .05rem solid transparent;
+  border-top-width: .05rem;
+  border-style: solid;
   height: 100%;
   left: 0;
   opacity: .8;
@@ -654,7 +692,9 @@
 
 %form-styles {
   @include font-size(.7, .8);
-  border: .05rem solid $data-table-pagination-input-border;
+  border-color: $data-table-pagination-input-border;
+  border-style: solid;
+  border-width: .05rem;
   color: $data-table-pagination-input-text-color;
   padding: .25rem;
 
@@ -669,8 +709,10 @@
   @include justify-content(space-between);
 
   background: $data-table-pagination-background;
-  border-bottom: 0;
-  border-top: .05rem solid $data-table-pagination-border;
+  border: 0;
+  border-color: $data-table-pagination-border;
+  border-top-width: .05rem;
+  border-style: solid;
   margin-bottom: -.05rem;
   padding: .5rem;
 
@@ -752,7 +794,9 @@
         @include display-flex;
         @include justify-content(center);
         background-color: $data-table-pagination-action-button-background;
-        border: .05rem solid $data-table-pagination-action-button-border;
+        border-width: .05rem;
+        border-color: $data-table-pagination-action-button-border;
+        border-style: solid;
         cursor: pointer;
         height: 1.4rem;
         margin-right: .5rem;
@@ -763,14 +807,18 @@
 
         &[disabled] {
           background-color: $data-table-pagination-disabled-action-button-background;
-          border: .05rem solid $data-table-pagination-disabled-action-button-border;
+          border-width: .05rem;
+          border-color: $data-table-pagination-disabled-action-button-border;
+          border-style: solid;
           cursor: not-allowed;
           opacity: .7;
         }
 
         &.ng-data-table-pagination-firstpage {
           background-color: $data-table-pagination-first-page-action-button-background;
-          border: .05rem solid $data-table-pagination-first-page-action-button-border;
+          border-width: .05rem;
+          border-color: $data-table-pagination-first-page-action-button-border;
+          border-style: solid;
 
           &:before {
             @extend %action-button-icon-styles;
@@ -784,7 +832,9 @@
 
         &.ng-data-table-pagination-prevpage {
           background-color: $data-table-pagination-previous-page-action-button-background;
-          border: .05rem solid $data-table-pagination-previous-page-action-button-border;
+          border-width: .05rem;
+          border-color: $data-table-pagination-previous-page-action-button-border;
+          border-style: solid;
 
           &:before {
             @extend %action-button-icon-styles;
@@ -798,7 +848,9 @@
 
         &.ng-data-table-pagination-nextpage {
           background-color: $data-table-pagination-next-page-action-button-background;
-          border: .05rem solid $data-table-pagination-next-page-action-button-border;
+          border-width: .05rem;
+          border-color: $data-table-pagination-next-page-action-button-border;
+          border-style: solid;
 
           &:before {
             @extend %action-button-icon-styles;
@@ -812,7 +864,9 @@
 
         &.ng-data-table-pagination-lastpage {
           background-color: $data-table-pagination-last-page-action-button-background;
-          border: .05rem solid $data-table-pagination-last-page-action-button-border;
+          border-width: .05rem;
+          border-color: $data-table-pagination-last-page-action-button-border;
+          border-style: solid;
 
           &:before {
             @extend %action-button-icon-styles;
@@ -841,7 +895,9 @@
         }
 
         .ng-data-table-pagination-input-label {
-          border: 1px solid $data-table-pagination-input-label-border;
+          border-width: .05rem;
+          border-style: solid;
+          border-color: $data-table-pagination-input-label-border;
           border-left: 0;
         }
 

@@ -1,10 +1,10 @@
 <h1>Dropdown Row Selection</h1>
 
-<ul>
+<ul class="main-pane-list">
   <li>This help users to do the item selection in the dropdown.</li>
   <li>There are several configurations are available when using item selection.</li>
 
-  <ul>
+  <ul class="main-pane-list">
     <li><b>[setFirstOptionSelected]="true or false"</b> => Enable/disable setting first option selected in dropdown. The
       default value for this config is false.
     </li>
@@ -20,7 +20,7 @@
       "DropdownSelectMode.MULTI" </b> => Enables users to configure the dropdown item selection type. There are 3 item
       selection types are available in the dropdown. The default value for this config is
       DropdownSelectMode.SINGLE_TOGGLE. The available types are,
-      <ul>
+      <ul class="main-pane-list">
         <li>Single item selection: DropdownSelectMode.SINGLE</li>
         <li>Single toggle item selection: DropdownSelectMode.SINGLE_TOGGLE</li>
         <li>Multi item selection: DropdownSelectMode.MULTI</li>
@@ -44,7 +44,7 @@
       different text when there are 2 or more
       selected options without showing all the selected items. If this is false, it will list all the selected options.
       As an example,
-      <ul>
+      <ul class="main-pane-list">
         <li>If 3 items are selected, it shows (3) Items</li>
         <li>If 5 items are selected, it shows (5) Items</li>
         <li>(3) Items, (5) Items, etc => In here the <b>'Items'</b> text can be configured via dropdown translations.
@@ -56,7 +56,7 @@
 </ul>
 
 <h2>Single Item Selection</h2>
-<ul>
+<ul class="main-pane-list">
   <li>Users are only allowed to select one item at a time.</li>
   <li>Once the selection is made, it can only be changed by selecting other item. That means, only one item can be
     selected.
@@ -68,7 +68,7 @@
 <app-example-code [files]="singleItemSelectionUsage"></app-example-code>
 
 <h2>Single Toggle Item Selection</h2>
-<ul>
+<ul class="main-pane-list">
   <li>Users are only allowed to select one item at a time.</li>
   <li>Can toggle the item selection.</li>
   <li>But in this type, once the selection is made, it can be removed by clicking the item itself or by unchecking the
@@ -81,7 +81,7 @@
 <app-example-code [files]="singleToggleItemSelectionUsage"></app-example-code>
 
 <h2>Multi Item Selection</h2>
-<ul>
+<ul class="main-pane-list">
   <li>Users can select multiple items at a time.</li>
   <li>Can toggle the item selection.</li>
 </ul>
@@ -91,7 +91,7 @@
 <app-example-code [files]="multiItemSelectionUsage"></app-example-code>
 
 <h2>Multi Item Selection with Wrapping Selected Options</h2>
-<ul>
+<ul class="main-pane-list">
   <li>The following configurations is enabled to wrap the selected items.</li>
   <li><b>[wrapDisplaySelectLimit]="true"</b></li>
 </ul>
@@ -101,13 +101,13 @@
 <app-example-code [files]="multiItemSelectionWithWrappedItemsUsage"></app-example-code>
 
 <h2>Item Selection With All Other options</h2>
-<ul>
+<ul class="main-pane-list">
   <li>The following example shows how all the other options can be used with the row selection. Note that, for this
     example multi selection mode is used and for the other selection types also, these additional configurations can
     be configured in the same way.
   </li>
   <li>These are the configured properties in here.</li>
-  <ul>
+  <ul class="main-pane-list">
     <li><b>[showOptionSelectCheckbox]="true"</b></li>
     <li><b>[selectedOptions]="selectedOptions"</b> => Refer example to to see the provided value for selectedOptions. If
       user want to select one item, single object can be provided via selectedOption attribute.
