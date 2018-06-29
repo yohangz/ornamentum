@@ -27,7 +27,9 @@
           color: $side-menu-label-text;
         }
 
-        ul {
+        .main-pane-list,
+        .main-ul,
+        .sub-ul {
           li {
             @include font-size(.9, 2);
           }

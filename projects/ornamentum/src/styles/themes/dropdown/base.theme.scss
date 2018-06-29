@@ -1,13 +1,17 @@
 @import 'base.theme.variables';
 @import '../mixins';
 
-//$close-icon-url: '../../../styles/images/close.svg';
-//$search-icon-url: '../../../styles/images/search.svg';
-//$dropdown-arrow-icon-url: '../../../styles/images/dropdown-arrow.svg';
+/*
+ * Dropdown wrapper styles
+ * Dropdown Selector Delete Icon styles
+ * Dropdown Selector Arrow styles
+ * Dropdown Selector Loading Animation styles
+ */
 
 .ng-dropdown {
   position: relative;
 
+  // Dropdown Delete Button Container Styles
   .ng-dropdown-input-group-btn {
     height: 1.3em;
     position: absolute;
@@ -16,11 +20,12 @@
     width: 1.3em;
     z-index: 2;
 
+    // Dropdown Delete Button Styles
     .ng-dropdown-delete-button {
       background: inline-svg($close-icon-url);
       background-size: contain;
       border: 0;
-      color: $secondary-background-color;
+      color: $delete-color;
       cursor: pointer;
       height: 100%;
       left: 0;
@@ -32,7 +37,7 @@
     }
   }
 
-
+  // Dropdown Arrow Styles
   .ng-dropdown-down-arrow {
     background: inline-svg($dropdown-arrow-icon-url);
     background-size: contain;
@@ -45,6 +50,7 @@
     z-index: 1;
   }
 
+  // Dropdown Loading Animation Styles
   .ng-dropdown-loading {
     position: absolute;
     right: .3rem;
@@ -54,7 +60,7 @@
 
     .ng-dropdown-loading-animation {
       animation: loader 1s infinite ease-in-out;
-      background-color: $toggle-active-button-background;
+      background-color: $dropdown-loading-animation-color;
       border-radius: 100%;
       height: 1rem;
       width: 1rem;
@@ -62,14 +68,15 @@
   }
 
 
+  // Dropdown Selector Styles
   .ng-dropdown-toggle {
     @include border-radius(0);
     @include display-flex;
     @include flex-wrap(no-wrap);
-    @include font-size(.8, 1.7);
-    background: $multi-select-dropdown-toggle-background;
-    border: .05rem solid $multi-select-dropdown-toggle-border;
-    color: $multi-select-dropdown-toggle-color;
+    @include font-size(.8, 1.4);
+    background: $dropdown-selector-background;
+    border: .05rem solid $dropdown-selector-border;
+    color: $dropdown-selector-text-color;
     cursor: pointer;
     outline: 0;
     padding: .2rem 3rem .2rem .5rem;
@@ -93,8 +100,8 @@
     }
 
     .ng-dropdown-selected-value {
-      background: $generated-context-background;
-      color: $generated-context-color;
+      background: $dropdown-selector-selected-background;
+      color: $dropdown-selector-selected-color;
       display: inline-block;
       margin: 0 .2rem 0 .1rem;
       overflow: hidden;
@@ -115,27 +122,19 @@
         height: 1.2em;
         position: absolute;
         right: .3em;
-        top: .5em;
+        top: .3em;
         width: 1.2em;
       }
     }
   }
 }
 
-@keyframes loader {
-  0% {
-    transform: scale(0);
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(1);
-  }
-}
+/*
+ * Dropdown Search Field Style
+ * Search Icon box Styles
+ * Search Input Filed Styles
+ * Delete Icon Styles
+ */
 
 .ng-dropdown-search {
 
@@ -150,9 +149,8 @@
       @include display-flex;
       @include align-items(center);
       @include font-size(.875, 1.5);
-      background: $multi-select-dropdown-icon-background;
+      background: $dropdown-selector-search-icon-background;
       border: 0;
-      color: $multi-select-dropdown-toggle-color;
       margin-bottom: 0;
       padding: .25rem .5rem;
       text-align: center;
@@ -176,7 +174,8 @@
       @include display-flex;
       @include flex(1 1 auto);
       @include align-items(center);
-      border: .05rem solid $multi-select-dropdown-toggle-border;
+      background: $dropdown-selector-search-input-background;
+      border: .05rem solid $dropdown-selector-search-input-border;
       font-size: .875rem;
       line-height: 1.5;
       margin-bottom: 0;
@@ -210,12 +209,18 @@
   }
 }
 
+/*
+ * Dropdown Item List Styles
+ * Dropdown Item List Group Heading Styles
+ * Dropdown Item List Selected Items styles
+ */
+
 .ng-dropdown-menu-wrapper {
   background-clip: padding-box;
-  background-color: $multi-select-dropdown-toggle-background;
-  border: .05rem solid $multi-select-dropdown-toggle-border;
+  background-color: $dropdown-item-wrapper-background;
+  border: .05rem solid $dropdown-item-wrapper-border;
   border-radius: 0;
-  color: $multi-select-dropdown-toggle-color;
+  color: $dropdown-item-wrapper-text-color;
   display: block;
   font-size: 1rem;
   height: 250px;
@@ -231,12 +236,12 @@
     padding: 0;
 
     .ng-dropdown-item-container-wrapper {
-      border: 0;
+      border: .07rem solid transparent;
     }
   }
 
   .ng-dropdown-divider {
-    border-top: 1px solid $multi-select-dropdown-toggle-border;
+    border-top: 1px solid $dropdown-item-wrapper-divider-border;
     height: 0;
     margin: .5rem 0;
     overflow: hidden;
@@ -244,7 +249,7 @@
   }
 
   .ng-dropdown-item-container-wrapper {
-    border: .07rem solid $multi-select-dropdown-toggle-border;
+    border: .07rem solid $dropdown-item-container-wrapper-border;
     height: 100%;
     overflow-y: auto;
 
@@ -253,11 +258,12 @@
       list-style-type: none;
       margin: 0;
       padding: .5rem;
+      position: relative;
 
       .ng-dropdown-no-data {
         @include font-size(1.2, 1.6);
         bottom: 0;
-        color: $multi-select-dropdown-icon-background;
+        color: $dropdown-no-data-message-text-color;
         left: 0;
         position: absolute;
         right: 0;
@@ -271,41 +277,24 @@
 
       li {
         @include font-size(.8, 1);
+        background: $dropdown-item-container-item-background;
         cursor: pointer;
         margin-bottom: .1rem;
         overflow: hidden;
-        padding: .25rem;
+        padding: .25rem .5rem;
         text-overflow: ellipsis;
         white-space: nowrap;
 
-
         a {
-          color: $multi-select-dropdown-toggle-color;
-        }
-
-        &.ng-item-selected {
-          background: darken($generated-context-background, 10%);
-
-          &:hover {
-            background: darken($generated-context-background, 10%);
-          }
-        }
-
-        &.ng-dropdown-group-heading {
-          border-bottom: .05rem solid;
-          border-color: $generated-context-background;
-          cursor: default;
-          font-weight: 700;
-          margin: .3rem 0;
-          padding: .1rem .3rem;
-
-          &:hover {
-            background: none;
-          }
+          color: $dropdown-item-container-item-text-color;
         }
 
         &:hover {
-          background: $generated-context-background;
+          background: $dropdown-item-container-item-hover-background;
+
+          a {
+            color: $dropdown-item-container-item-hover-text-color;
+          }
         }
 
         &.disabled {
@@ -313,21 +302,37 @@
           pointer-events: none;
 
         }
-      }
-    }
-  }
 
-  .ng-dropdown-show-more {
-    text-align: center;
-    width: 100%;
+        &.ng-item-selected {
 
-    a {
-      @include font-size(.8, 1);
-      color: $multi-select-dropdown-link-color;
-      cursor: pointer;
+          background: $dropdown-item-container-selected-item-background;
 
-      &:hover {
-        color: $multi-select-dropdown-link-color-hover;
+          a {
+            color: $dropdown-item-container-selected-item-text-color;
+          }
+
+          &:hover {
+            background: $dropdown-item-container-selected-item-hover-background;
+          }
+        }
+
+        &.ng-dropdown-group-heading {
+          background: $dropdown-item-container-group-heading-background;
+          border-bottom: .05rem solid;
+          border-color: $dropdown-item-container-group-heading-border;
+          color: $dropdown-item-container-group-heading-color;
+          cursor: default;
+          font-weight: 700;
+          margin: .3rem 0;
+          padding: .1rem .3rem;
+
+          &:hover {
+            background: $dropdown-item-container-group-heading-hover-background;
+            border-color: $dropdown-item-container-group-heading-hover-border;
+            color: $dropdown-item-container-group-heading-hover-color;
+          }
+        }
+
       }
     }
   }
@@ -338,6 +343,21 @@
     + .ng-dropdown-item-container-wrapper {
       height: calc(100% - 3rem);
     }
+  }
+}
+
+@keyframes loader {
+  0% {
+    transform: scale(0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1);
   }
 }
 
