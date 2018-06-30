@@ -85,9 +85,8 @@ Recent changes can be viewed on Github on the [CHANGELOG.md](https://github.com/
 
 ## License
 
-This software is licensed under the [MIT License][license]
+This software is licensed under the [MIT][license] License
 
-[license-badge]: http://img.shields.io/badge/license-MIT-blue.svg?style=flat
 [license]: https://github.com/yohangz/ornamentum/blob/master/LICENSE
 
 [yohan-profile]: https://github.com/yohangz
