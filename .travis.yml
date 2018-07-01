@@ -1,12 +1,15 @@
 language: node_js
-node_js: "8.11.3"
+node_js: 8.11.3
+services:
+  - docker
 branches:
   only:
-   - master
-   - /^v.*$/
+  - master
+  - "/^v.*$/"
 cache: yarn
 before_install:
-  - openssl aes-256-cbc -K $encrypted_48bfcff1b99c_key -iv $encrypted_48bfcff1b99c_iv -in deploy.key.enc -out deploy.key -d
+  - openssl aes-256-cbc -K $encrypted_48bfcff1b99c_key -iv $encrypted_48bfcff1b99c_iv
+    -in deploy.key.enc -out deploy.key -d
 install:
   - yarn
   - eval "$(ssh-agent -s)"
@@ -19,5 +22,5 @@ deploy:
   skip_cleanup: true
   provider: script
   script: "./deploy.sh"
-  on:
-    tags: true
+#  on:
+#    tags: true
