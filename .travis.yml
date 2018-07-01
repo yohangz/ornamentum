@@ -23,5 +23,5 @@ deploy:
   skip_cleanup: true
   provider: script
   script: "./deploy.sh"
-#  on:
-#    tags: true
+  on:
+    tags: true
