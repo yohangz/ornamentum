@@ -10,7 +10,7 @@ docker build --pull --cache-from ${IMAGE_NAME} -t ${IMAGE_NAME} ${TRAVIS_BUILD_D
 echo "login to docker hub"
 echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
 
-echo "login to docker hub"
+echo "tag docker image"
 docker tag ${IMAGE_NAME} ${IMAGE_NAME}:latest
 
 echo "push docker image"
