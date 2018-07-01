@@ -22,6 +22,6 @@ script: yarn build
 deploy:
   skip_cleanup: true
   provider: script
-  script: "./publish.sh"
+  script: "./deploy.sh"
 #  on:
 #    tags: true
