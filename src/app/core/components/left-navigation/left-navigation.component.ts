@@ -15,11 +15,13 @@ import { ContainerResponsiveService } from '../../services';
     trigger('slide', [
       state('expand', style({
         'left': '0',
+        'padding': '0',
         'visibility': 'visible',
       })),
       state('collapsed', style({
-        'left': '-225px',
+        'left': '-250px',
         'box-shadow': 'none',
+        'padding': '0',
         'visibility': 'hidden',
       })),
       transition('collapsed <=> expand', animate('400ms cubic-bezier(0.25, 0.8, 0.25, 1)'))
@@ -55,7 +57,7 @@ export class LeftNavigationComponent implements OnInit, OnDestroy {
   }
 
   public get menuHeight(): number {
-    return this.containerHeight - this.searchBox.nativeElement.offsetHeight;
+    return this.containerHeight - this.searchBox.nativeElement.offsetHeight - 90px;
   }
 
   public closeMenu(): void {

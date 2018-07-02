@@ -11,6 +11,6 @@ export class ContainerResponsiveService {
   public navigationToggle = new Subject<void>();
 
   public isMobileMode(width: number): boolean {
-    return width < 990;
+    return width < 992;
   }
 }
