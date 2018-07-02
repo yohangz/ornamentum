@@ -28,7 +28,7 @@
     "clean:dist": "rimraf dist",
     "lint": "npm run lint:demo && npm run lint:lib && npm run lint:demo:scss && npm run lint:lib:scss",
     "start": "npm run clean:dist && npm run build:lib:dev && npm run start:demo",
-    "start:ssr": "npm run build && node dist/ornamentum-demo/server.js",
+    "start:ssr": "npm run build && DIST_FOLDER=dist/ornamentum-demo node dist/ornamentum-demo/server.js",
     "build": "npm run clean:dist && npm run build:lib:prod && npm run build:demo:prod && npm run build:demo:server:bundle && npm run build:demo:server && npm run docs:lib",
     "explorer": "npm run clean:dist && npm run build:lib:dev && npm run build:demo:dev && npm run explorer:demo:bundle",
     "version": "node version.js && npm run build && git add src/environments/version.ts projects/ornamentum/package.json",

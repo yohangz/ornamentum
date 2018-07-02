@@ -14,7 +14,7 @@ enableProdMode();
 const app = express();
 
 const PORT = process.env.PORT || 8080;
-const DIST_FOLDER = process.cwd();
+const DIST_FOLDER = process.env.DIST_FOLDER ? join(process.cwd(), process.env.DIST_FOLDER) : process.cwd();
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
 const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/ornamentum-demo/server/main');
