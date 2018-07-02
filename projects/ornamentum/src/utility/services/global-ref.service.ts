@@ -1,5 +1,4 @@
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { Injectable } from '@angular/core';
 
 /**
  * Global reference service.
@@ -9,7 +8,8 @@ import { isPlatformBrowser } from '@angular/common';
 export class GlobalRefService {
   private _scrollbarWidth: number;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor() {
+    this.setScrollbarWidth();
   }
 
   public setScrollbarWidth(): void {
@@ -17,7 +17,7 @@ export class GlobalRefService {
       return;
     }
 
-    if (isPlatformBrowser(this.platformId)) {
+    if (document) {
       const outer = document.createElement('div');
       outer.style.visibility = 'hidden';
       outer.style.width = '100px';
@@ -29,7 +29,7 @@ export class GlobalRefService {
       // force scrollbars
       outer.style.overflow = 'scroll';
 
-      // add innerdiv
+      // add inner div
       const inner = document.createElement('div');
       inner.style.width = '100%';
       outer.appendChild(inner);
@@ -56,13 +56,5 @@ export class GlobalRefService {
    */
   public get window(): Window {
     return window;
-  }
-
-  /**
-   * Get console reference.
-   * @return {Console} Console reference.
-   */
-  public get console(): Console {
-    return console;
   }
 }

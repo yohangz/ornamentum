@@ -9,7 +9,7 @@ import {
   QueryList,
   TemplateRef,
   AfterContentInit,
-  forwardRef, OnInit
+  forwardRef
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -65,7 +65,7 @@ import { DataTableResourceService } from '../../services/data-table-resource.ser
     }
   ]
 })
-export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, ControlValueAccessor {
+export class DataTableComponent implements OnDestroy, AfterContentInit, ControlValueAccessor {
   private rowSelectChangeSubscription: Subscription;
   private dataFetchStreamSubscription: Subscription;
 
@@ -824,9 +824,5 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
 
   public get tableWidth(): number {
     return this.config.width || this.dataStateService.tableWidth;
-  }
-
-  public ngOnInit(): void {
-    this.globalRefService.setScrollbarWidth();
   }
 }
