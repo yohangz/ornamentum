@@ -15,7 +15,7 @@ export class DataTablePersistenceService {
   }
 
   public set storageMode(value: DataTableStorageMode) {
-    if (this.globalRefService.window) {
+    if (this.globalRefService.isBrowser) {
       if (value === DataTableStorageMode.LOCAL) {
         this.storage = this.globalRefService.window.localStorage;
       } else {
@@ -25,13 +25,13 @@ export class DataTablePersistenceService {
   }
 
   public setState(id: string, value: DataTableRequestParams) {
-    if (this.globalRefService.window) {
+    if (this.globalRefService.isBrowser) {
       this.storage.setItem(`${this.config.stateKeyPrefix}${id}`, JSON.stringify(value));
     }
   }
 
   public getState(id: string): DataTableRequestParams {
-    if (this.globalRefService.window) {
+    if (this.globalRefService.isBrowser) {
       return JSON.parse(this.storage.getItem(`${this.config.stateKeyPrefix}${id}`));
     }
 

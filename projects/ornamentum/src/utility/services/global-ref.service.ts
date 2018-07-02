@@ -17,7 +17,7 @@ export class GlobalRefService {
       return;
     }
 
-    if (document) {
+    if (this.isBrowser) {
       const outer = document.createElement('div');
       outer.style.visibility = 'hidden';
       outer.style.width = '100px';
@@ -56,5 +56,9 @@ export class GlobalRefService {
    */
   public get window(): Window {
     return window;
+  }
+
+  public get isBrowser(): boolean {
+    return typeof window !== 'undefined';
   }
 }
