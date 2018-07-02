@@ -174,6 +174,7 @@
       &.ng-data-table-refresh-button {
         @extend %table-header-icon;
         background: inline-svg($refresh-icon-url);
+        background-repeat: no-repeat;
         background-size: contain;
         height: 1.4em;
         margin-right: .5em;
@@ -182,6 +183,7 @@
       &.ng-data-table-column-selector-button {
         @extend %table-header-icon;
         background: inline-svg($list-view-icon-url);
+        background-repeat: no-repeat;
         background-size: contain;
         height: 1.4em;
         margin-right: .5em;
@@ -442,13 +444,14 @@
             @extend %table-expand-icon;
             background: inline-svg($collapsed-icon-url);
             background-size: contain;
+            background-repeat: no-repeat;
           }
 
           .ng-data-table-expander-expanded-icon {
             @extend %table-expand-icon;
             background: inline-svg($expand-icon-url);
-            //background: url(app/themes/data-table/images/close.svg);
             background-size: contain;
+            background-repeat: no-repeat;
           }
 
 
@@ -823,6 +826,7 @@
           &:before {
             @extend %action-button-icon-styles;
             background: inline-svg($first-page-icon-url);
+            background-repeat: no-repeat;
           }
 
           &:hover {
@@ -839,6 +843,7 @@
           &:before {
             @extend %action-button-icon-styles;
             background: inline-svg($previous-page-icon-url);
+            background-repeat: no-repeat;
           }
 
           &:hover {
@@ -855,6 +860,7 @@
           &:before {
             @extend %action-button-icon-styles;
             background: inline-svg($next-page-icon-url);
+            background-repeat: no-repeat;
           }
 
           &:hover {
@@ -871,6 +877,7 @@
           &:before {
             @extend %action-button-icon-styles;
             background: inline-svg($last-page-icon-url);
+            background-repeat: no-repeat;
           }
 
           &:hover {
