@@ -86,6 +86,7 @@
     "@angular/pwa": "^0.6.8",
     "@angular/router": "^6.0.0",
     "@angular/service-worker": "^6.0.0",
+    "@nguniversal/common": "^6.0.0",
     "@nguniversal/express-engine": "^6.0.0",
     "@nguniversal/module-map-ngfactory-loader": "^6.0.0",
     "bootstrap": "^4.1.1",
