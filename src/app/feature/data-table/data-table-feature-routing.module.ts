@@ -5,7 +5,6 @@ import { SeoGuard } from '../../core/seo.guard';
 
 import {
   DataTableFilteringComponent,
-  DataTableOverviewComponent,
   DataTableColumnSortingComponent,
   DataTableRowGroupingComponent,
   DataTableRowSelectionComponent,
@@ -39,7 +38,7 @@ const dataTableFeatureRoutes: Routes = [
     redirectTo: 'overview'
   },
   {
-    component: DataTableOverviewComponent,
+    loadChildren: './data-table-overview/data-table-overview.module#DataTableOverviewModule',
     path: 'overview',
     canActivate: [SeoGuard],
     data: {
