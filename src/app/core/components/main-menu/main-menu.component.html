@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-inverse bg-inverse sticky-top" #menuElement>
-  <button class="navbar-toggler navbar-toggle-button" type="button" (click)="toggleNavigation($event)" *ngIf="isMobileMode"
+  <button class="navbar-toggler navbar-toggle-button" type="button" (click)="toggleNavigation($event)"
           aria-label="Toggle side navigation">
     <span class="navbar-toggler-icon toggler-icon"></span>
   </button>
@@ -26,8 +26,26 @@
     <ul class="navbar-nav ml-auto icon-menu">
       <li class="nav-item">
         <a class="nav-link" target="_blank" href="https://www.npmjs.com/package/ornamentum">
-          <span class="main-nav-label">v{{packageVersion}}</span>
+          <span class="main-nav-label package-version">v{{packageVersion}}</span>
         </a>
+      </li>
+      <li class="nav-item">
+        <div class="nav-link">
+          <span class="main-nav-label theme-switcher">
+            <span class="theme"></span>
+            <div class="theme-selector-container">
+            <div class="themes-selector">
+              <a href="#" title="Base Theme"> <span class="base-theme"></span></a>
+            </div>
+            <div class="themes-selector">
+              <a href="#" title="Dark Theme"><span class="dark-theme"></span></a>
+            </div>
+            <div class="themes-selector">
+              <a href="#" title="Flat Theme"><span class="flat-theme"></span></a>
+            </div>
+          </div>
+          </span>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="api-docs" target="_blank">

@@ -57,7 +57,7 @@ export class LeftNavigationComponent implements OnInit, OnDestroy {
   }
 
   public get menuHeight(): number {
-    return this.containerHeight - this.searchBox.nativeElement.offsetHeight - 90;
+    return this.containerHeight - this.searchBox.nativeElement.offsetHeight - 30;
   }
 
   public closeMenu(): void {

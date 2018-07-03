@@ -14,13 +14,14 @@
 
     .navbar-toggle-button {
       cursor: pointer;
-      display: block;
+      display: none;
       outline: none;
       left: -1rem;
       position: relative;
       top: .5rem;
 
       @include breakpoint(max991) {
+        display: block;
         top: 0;
       }
 
@@ -70,6 +71,10 @@
       padding: 0 1rem;
       position: relative;
 
+      @include breakpoint(max480) {
+        padding: 0 .5rem;
+      }
+
       > .nav-link {
         @include font-size(1, 2);
         border-bottom: 5px solid transparent;
@@ -87,8 +92,32 @@
         .main-nav-label {
           padding: 0;
 
+          &.package-version {
+            @include font-size(.8, 2);
+          }
+
           .menu-title {
             font-weight: 700;
+          }
+
+          &.theme-switcher {
+            display: inline-block;
+            position: relative;
+
+            &:hover {
+              > .theme-selector-container {
+                @include display-flex;
+                @include transition(all .3s ease);
+                @include scale(1);
+                height: 50px;
+                width: 120px;
+
+                span {
+                  height: 25px;
+                  width: 25px;
+                }
+              }
+            }
           }
         }
 
@@ -130,6 +159,58 @@
             opacity: .7;
           }
         }
+
+        .theme {
+          background: url(../../../../assets/images/theme.svg) no-repeat;
+          background-size: 100% 100%;
+          height: 25px;
+          left: -1.7rem;
+          position: absolute;
+          top: -1.1rem;
+          width: 25px;
+        }
+
+        .theme-selector-container {
+          @include box-shadow(1px 2px 3px $nav-bar-background);
+          @include justify-content(center);
+          @include transition(all .2s ease);
+          @include scale(0);
+          background: $nav-bar-background;
+          height: 0;
+          padding: 1rem 0;
+          position: absolute;
+          right: 0;
+          top: 8px;
+          width: 0;
+          z-index: 12;
+
+          .themes-selector {
+            padding: 0 5px;
+            position: relative;
+            width: 35px;
+
+
+            span {
+              @include border-radius(50%);
+              border: 2px solid #fff;
+              height: 0;
+              position: absolute;
+              width: 0;
+
+              &.dark-theme {
+                background: $dark-theme-color;
+              }
+
+              &.base-theme {
+                background: $base-theme-color;
+              }
+
+              &.flat-theme {
+                background: $flat-theme-color;
+              }
+            }
+          }
+        }
       }
 
       &.active {
@@ -155,7 +236,8 @@
           display: none;
         }
 
-        li:last-child {
+        li:last-child,
+        li:nth-child(2) {
           display: block;
         }
       }
