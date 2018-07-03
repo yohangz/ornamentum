@@ -1,8 +1,8 @@
 export { DropdownOverviewComponent } from './dropdown-overview/dropdown-overview.component';
 export { BasicUsageComponent } from './dropdown-overview/example/basic-usage/basic-usage.component';
 
-export { ClientSideDataBindingComponent } from './dropdown-client-side-data-binding/example/client-side-data-binding/client-side-data-binding.component';
-export { DropdownClientSideDataBindingComponent } from './dropdown-client-side-data-binding/dropdown-client-side-data-binding.component';
+// export { ClientSideDataBindingComponent } from '../dropdown-client-side-data-binding/components/example/client-side-data-binding/client-side-data-binding.component';
+// export { DropdownClientSideDataBindingComponent } from '../dropdown-client-side-data-binding/components/dropdown-client-side-data-binding.component';
 export { ServerSideDataBindingComponent } from './dropdown-server-side-data-binding/example/server-side-data-binding/server-side-data-binding.component';
 export { DropdownServerSideDataBindingComponent } from './dropdown-server-side-data-binding/dropdown-server-side-data-binding.component';
 export { RealTimeDataBindingComponent } from './dropdown-real-time-data-binding/example/real-time-data-binding/real-time-data-binding.component';

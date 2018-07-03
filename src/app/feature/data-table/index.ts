@@ -1,6 +1,4 @@
 import {
-  DataTableOverviewComponent,
-  BasicUsageComponent,
   DataTableClientSideDataBindingComponent,
   ClientSideDataBindingComponent,
   DataTableServerSideDataBindingComponent,
@@ -56,8 +54,6 @@ import {
 
 // Components
 export const COMPONENTS = [
-  DataTableOverviewComponent,
-  BasicUsageComponent,
   DataTableClientSideDataBindingComponent,
   ClientSideDataBindingComponent,
   DataTableServerSideDataBindingComponent,

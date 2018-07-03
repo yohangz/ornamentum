@@ -1,8 +1,8 @@
 import {
   DropdownOverviewComponent,
   BasicUsageComponent,
-  ClientSideDataBindingComponent,
-  DropdownClientSideDataBindingComponent,
+  // ClientSideDataBindingComponent,
+  // DropdownClientSideDataBindingComponent,
   ServerSideDataBindingComponent,
   DropdownServerSideDataBindingComponent,
   RealTimeDataBindingComponent,
@@ -52,8 +52,8 @@ import {
 export const COMPONENTS = [
   DropdownOverviewComponent,
   BasicUsageComponent,
-  ClientSideDataBindingComponent,
-  DropdownClientSideDataBindingComponent,
+  // ClientSideDataBindingComponent,
+  // DropdownClientSideDataBindingComponent,
   ServerSideDataBindingComponent,
   DropdownServerSideDataBindingComponent,
   RealTimeDataBindingComponent,

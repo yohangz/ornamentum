@@ -1,4 +1,4 @@
-import { ExampleFile, FileType } from '../../../../shared/models';
+import { ExampleFile, FileType } from '../../../../shared/models/index';
 
 export const basicUsage: ExampleFile[] = [
   {

@@ -1,6 +1,3 @@
-export { DataTableOverviewComponent } from './data-table-overview/data-table-overview.component';
-export { BasicUsageComponent } from './data-table-overview/example/basic-usage/basic-usage.component';
-
 export { DataTableClientSideDataBindingComponent } from './data-table-client-side-data-binding/data-table-client-side-data-binding.component';
 export { ClientSideDataBindingComponent } from './data-table-client-side-data-binding/example/client-side-data-binding/client-side-data-binding.component';
 

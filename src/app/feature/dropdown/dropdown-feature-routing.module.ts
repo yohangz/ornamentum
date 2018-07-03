@@ -3,7 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import {
   DropdownOverviewComponent,
-  DropdownClientSideDataBindingComponent,
   DropdownServerSideDataBindingComponent,
   DropdownRealTimeDataBindingComponent,
   DropdownItemGroupingComponent,
@@ -49,7 +48,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownClientSideDataBindingComponent,
+    loadChildren: './dropdown-client-side-data-binding/dropdown-client-side-data-binding.module#DropdownClientSideDataBindingModule',
     path: 'client-side-data-binding',
     canActivate: [SeoGuard],
     data: {
