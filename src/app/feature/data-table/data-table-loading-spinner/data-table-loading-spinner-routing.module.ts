@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DataTableOverviewComponent } from './index';
+import { DataTableLoadingSpinnerComponent } from './index';
 
 /**
- * Represent data table overview routes.
+ * Represent data table loading spinner routes.
  * @type Routes
  */
 const dataTableOverviewRoutes: Routes = [
   {
-    component: DataTableOverviewComponent,
+    component: DataTableLoadingSpinnerComponent,
     path: ''
   }
 ];
 
 /**
- * Data table overview routing module.
- * @class DataTableOverviewRoutingModule
+ * Data table loading spinner routing module.
+ * @class DataTableLoadingSpinnerRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableOverviewRoutes)]
 })
-export class DataTableOverviewRoutingModule {
+export class DataTableLoadingSpinnerRoutingModule {
 }
