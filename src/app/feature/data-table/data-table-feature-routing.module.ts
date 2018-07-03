@@ -3,30 +3,6 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { SeoGuard } from '../../core/seo.guard';
 
-import {
-  DataTableFilteringComponent,
-  DataTableColumnSortingComponent,
-  DataTableRowGroupingComponent,
-  DataTableRowSelectionComponent,
-  DataTableResizableComponent,
-  DataTablePaginationComponent,
-  DataTableTranslationsComponent,
-  DataTableHeaderDetailsComponent,
-  DataTablePersistDataComponent,
-  DataTableSubstituteRowsComponent,
-  DataTableLimitComponent,
-  DataTableResponsiveConfComponent,
-  DataTableClientSideDataBindingComponent,
-  DataTableServerSideDataBindingComponent,
-  DataTableLoadingSpinnerComponent,
-  DataTableCellTemplateComponent,
-  DataTableRowExpandTemplateComponent,
-  DataTableRealTimeDataBindingComponent,
-  DataTableNoRecordsTemplateComponent,
-  DataTableLoadingSpinnerTemplateComponent,
-  DataTableEventsComponent
-} from './components';
-
 /**
  * Represent application data table feature module routes.
  * @type Routes
@@ -50,7 +26,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableClientSideDataBindingComponent,
+    loadChildren: './data-table-client-side-data-binding/data-table-client-side-data-binding.module#DataTableClientSideDataBindingModule',
     path: 'client-side-data-binding',
     canActivate: [SeoGuard],
     data: {
@@ -62,7 +38,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableServerSideDataBindingComponent,
+    loadChildren: './data-table-server-side-data-binding/data-table-server-side-data-binding.module#DataTableServerSideDataBindingModule',
     path: 'server-side-data-binding',
     canActivate: [SeoGuard],
     data: {
@@ -74,7 +50,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableRealTimeDataBindingComponent,
+    loadChildren: './data-table-real-time-data-binding/data-table-real-time-data-binding.module#DataTableRealTimeDataBindingModule',
     path: 'real-time-data-binding',
     canActivate: [SeoGuard],
     data: {
@@ -86,7 +62,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTablePaginationComponent,
+    loadChildren: './data-table-pagination/data-table-pagination.module#DataTablePaginationModule',
     path: 'pagination',
     canActivate: [SeoGuard],
     data: {
@@ -98,7 +74,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableTranslationsComponent,
+    loadChildren: './data-table-translations/data-table-translations.module#DataTableTranslationsModule',
     path: 'translations',
     canActivate: [SeoGuard],
     data: {
@@ -110,7 +86,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableHeaderDetailsComponent,
+    loadChildren: './data-table-header-details/data-table-header-details.module#DataTableHeaderDetailsModule',
     path: 'header-details',
     canActivate: [SeoGuard],
     data: {
@@ -122,7 +98,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTablePersistDataComponent,
+    loadChildren: './data-table-persist-data/data-table-persist-data.module#DataTablePersistDataModule',
     path: 'data-persistence',
     canActivate: [SeoGuard],
     data: {
@@ -134,7 +110,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableLimitComponent,
+    loadChildren: './data-table-limit/data-table-limit.module#DataTableLimitModule',
     path: 'limit',
     canActivate: [SeoGuard],
     data: {
@@ -146,7 +122,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableSubstituteRowsComponent,
+    loadChildren: './data-table-substitute-rows/data-table-substitute-rows.module#DataTableSubstituteRowsModule',
     path: 'substitute-rows',
     canActivate: [SeoGuard],
     data: {
@@ -158,7 +134,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableResponsiveConfComponent,
+    loadChildren: './data-table-responsive-conf/data-table-responsive-conf.module#DataTableResponsiveConfModule',
     path: 'responsive-configuration',
     canActivate: [SeoGuard],
     data: {
@@ -170,7 +146,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableLoadingSpinnerComponent,
+    loadChildren: './data-table-loading-spinner/data-table-loading-spinner.module#DataTableLoadingSpinnerModule',
     path: 'loading-spinner',
     canActivate: [SeoGuard],
     data: {
@@ -182,7 +158,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableRowGroupingComponent,
+    loadChildren: './data-table-row-grouping/data-table-row-grouping.module#DataTableRowGroupingModule',
     path: 'grouping',
     canActivate: [SeoGuard],
     data: {
@@ -194,7 +170,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableRowSelectionComponent,
+    loadChildren: './data-table-row-selection/data-table-row-selection.module#DataTableRowSelectionModule',
     path: 'row-selection',
     canActivate: [SeoGuard],
     data: {
@@ -206,7 +182,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableFilteringComponent,
+    loadChildren: './data-table-filtering/data-table-filtering.module#DataTableFilteringModule',
     path: 'column/filtering',
     canActivate: [SeoGuard],
     data: {
@@ -218,7 +194,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableColumnSortingComponent,
+    loadChildren: './data-table-column-sorting/data-table-column-sorting.module#DataTableColumnSortingModule',
     path: 'column/sorting',
     canActivate: [SeoGuard],
     data: {
@@ -230,7 +206,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableResizableComponent,
+    loadChildren: './data-table-resizable/data-table-resizable.module#DataTableResizableModule',
     path: 'column/resizable',
     canActivate: [SeoGuard],
     data: {
@@ -242,7 +218,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableEventsComponent,
+    loadChildren: './data-table-events/data-table-events.module#DataTableEventsModule',
     path: 'events',
     canActivate: [SeoGuard],
     data: {
@@ -254,7 +230,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableCellTemplateComponent,
+    loadChildren: './data-table-cell-template/data-table-cell-template.module#DataTableCellTemplateModule',
     path: 'templates/cell-template',
     canActivate: [SeoGuard],
     data: {
@@ -266,7 +242,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableRowExpandTemplateComponent,
+    loadChildren: './data-table-row-expand-template/data-table-row-expand-template.module#DataTableRowExpandTemplateModule',
     path: 'templates/expand-template',
     canActivate: [SeoGuard],
     data: {
@@ -278,7 +254,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableNoRecordsTemplateComponent,
+    loadChildren: './data-table-no-records-template/data-table-no-records-template.module#DataTableNoRecordsTemplateModule',
     path: 'templates/no-records-template',
     canActivate: [SeoGuard],
     data: {
@@ -290,7 +266,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    component: DataTableLoadingSpinnerTemplateComponent,
+    loadChildren: './data-table-loading-spinner-template/data-table-loading-spinner-template.module#DataTableLoadingSpinnerTemplateModule',
     path: 'templates/loading-spinner-template',
     canActivate: [SeoGuard],
     data: {
