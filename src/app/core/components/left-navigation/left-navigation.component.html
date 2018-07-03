@@ -1,5 +1,4 @@
-<div class="left-navigation" [style.height.px]="containerHeight" [@slide]="expanded? 'expand': 'collapsed'"
-     [style.position]="mobileMode? 'absolute': 'relative'">
+<div class="left-navigation" [style.height.px]="containerHeight" [@slide]="expanded? 'expand': 'collapsed'">
   <div (ngClickOutside)="closeMenu()" class="left-navigation-container">
     <div class="form-group search-place-holder" #searchBox>
       <input class="form-control" type="text" placeholder="Search Feature" #searchInput
@@ -23,21 +22,7 @@
         </nav>
       </div>
     </div>
-    <div class="theme-selector-container">
-      <div class="themes-selector">
-         <span></span>
-      </div>
-      <div class="themes-selector">
-        <a href="#" title="Base Theme"> <span class="base-theme"></span></a>
-      </div>
-      <div class="themes-selector">
-        <a href="#" title="Dark Theme"><span class="dark-theme"></span></a>
-      </div>
-      <div class="themes-selector">
-        <a href="#" title="Flat Theme"><span class="flat-theme"></span></a>
-      </div>
-    </div>
   </div>
-  <div class="side-menu-overlay" [style.visibility]="mobileMode && expanded? 'visible':'hidden'"></div>
+  <div class="side-menu-overlay" [style.visibility]="expanded? 'visible':'hidden'"></div>
 </div>
 

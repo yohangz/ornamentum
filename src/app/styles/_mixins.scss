@@ -20,7 +20,11 @@
 
 
 @mixin breakpoint($point) {
-  @if $point == max640 {
+  @if $point == max480 {
+    @media only screen and (max-width: 480px) {
+      @content;
+    }
+  } @else if $point == max640 {
     @media only screen and (max-width: 640px) {
       @content;
     }
