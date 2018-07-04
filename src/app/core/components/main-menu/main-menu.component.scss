@@ -110,7 +110,7 @@
                 @include transition(all .3s ease);
                 @include scale(1);
                 height: 50px;
-                width: 120px;
+                width: 150px;
 
                 span {
                   height: 25px;
@@ -207,6 +207,10 @@
 
               &.flat-theme {
                 background: $flat-theme-color;
+              }
+
+              &.ornamentum-theme {
+                background: $ornamentum-theme-color;
               }
             }
           }
