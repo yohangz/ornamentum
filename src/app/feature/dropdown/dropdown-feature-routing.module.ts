@@ -1,28 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {
-  DropdownOverviewComponent,
-  DropdownServerSideDataBindingComponent,
-  DropdownRealTimeDataBindingComponent,
-  DropdownItemGroupingComponent,
-  DropdownFilteringComponent,
-  DropdownItemSelectionComponent,
-  DropdownLimitComponent,
-  DropdownDisablingComponent,
-  DropdownItemDisablingComponent,
-  DropdownDisplayTrackedByComponent,
-  DropdownLoadOnScrollComponent,
-  DropdownMenuPositionComponent,
-  DropdownMenuWidthHeightComponent,
-  DropdownLoadOnInitComponent,
-  DropdownOnDataBindComponent,
-  DropdownTranslationsComponent,
-  DropdownEventsComponent,
-  DropdownOptionTemplateComponent,
-  DropdownOptionGroupHeaderTemplateComponent,
-  DropdownLoadingSpinnerTemplateComponent
-} from './components';
 import { SeoGuard } from '../../core/seo.guard';
 
 /**
@@ -36,7 +14,7 @@ const dropdownFeatureRoutes: Routes = [
     redirectTo: 'overview'
   },
   {
-    component: DropdownOverviewComponent,
+    loadChildren: './dropdown-overview/dropdown-overview.module#DropdownOverviewModule',
     path: 'overview',
     canActivate: [SeoGuard],
     data: {
@@ -60,7 +38,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownServerSideDataBindingComponent,
+    loadChildren: './dropdown-server-side-data-binding/dropdown-server-side-data-binding.module#DropdownServerSideDataBindingModule',
     path: 'server-side-data-binding',
     canActivate: [SeoGuard],
     data: {
@@ -72,7 +50,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownRealTimeDataBindingComponent,
+    loadChildren: './dropdown-real-time-data-binding/dropdown-real-time-data-binding.module#DropdownRealTimeDataBindingModule',
     path: 'real-time-data-binding',
     canActivate: [SeoGuard],
     data: {
@@ -84,7 +62,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownItemGroupingComponent,
+    loadChildren: './dropdown-item-grouping/dropdown-item-grouping.module#DropdownItemGroupingModule',
     path: 'grouping',
     canActivate: [SeoGuard],
     data: {
@@ -96,7 +74,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownFilteringComponent,
+    loadChildren: './dropdown-filtering/dropdown-filtering.module#DropdownFilteringModule',
     path: 'filtering',
     canActivate: [SeoGuard],
     data: {
@@ -108,7 +86,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownItemSelectionComponent,
+    loadChildren: './dropdown-item-selection/dropdown-item-selection.module#DropdownItemSelectionModule',
     path: 'item-selection',
     canActivate: [SeoGuard],
     data: {
@@ -120,7 +98,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownLimitComponent,
+    loadChildren: './dropdown-limit/dropdown-limit.module#DropdownLimitModule',
     path: 'limit',
     canActivate: [SeoGuard],
     data: {
@@ -132,7 +110,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownDisablingComponent,
+    loadChildren: './dropdown-disabling/dropdown-disabling.module#DropdownDisablingModule',
     path: 'disable',
     canActivate: [SeoGuard],
     data: {
@@ -144,7 +122,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownItemDisablingComponent,
+    loadChildren: './dropdown-item-disabling/dropdown-item-disabling.module#DropdownItemDisablingModule',
     path: 'item-disabling',
     canActivate: [SeoGuard],
     data: {
@@ -156,7 +134,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownDisplayTrackedByComponent,
+    loadChildren: './dropdown-display-tracked-by/dropdown-display-tracked-by.module#DropdownDisplayTrackedByModule',
     path: 'display-tracked-by',
     canActivate: [SeoGuard],
     data: {
@@ -168,7 +146,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownLoadOnScrollComponent,
+    loadChildren: './dropdown-load-on-scroll/dropdown-load-on-scroll.module#DropdownLoadOnScrollModule',
     path: 'load-on-scroll',
     canActivate: [SeoGuard],
     data: {
@@ -180,7 +158,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownMenuPositionComponent,
+    loadChildren: './dropdown-menu-position/dropdown-menu-position.module#DropdownMenuPositionModule',
     path: 'menu-position',
     canActivate: [SeoGuard],
     data: {
@@ -192,7 +170,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownMenuWidthHeightComponent,
+    loadChildren: './dropdown-menu-width-height/dropdown-menu-width-height.module#DropdownMenuWidthHeightModule',
     path: 'menu-width-height',
     canActivate: [SeoGuard],
     data: {
@@ -204,7 +182,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownLoadOnInitComponent,
+    loadChildren: './dropdown-load-on-init/dropdown-load-on-init.module#DropdownLoadOnInitModule',
     path: 'load-data-on-init',
     canActivate: [SeoGuard],
     data: {
@@ -216,7 +194,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownOnDataBindComponent,
+    loadChildren: './dropdown-on-data-bind/dropdown-on-data-bind.module#DropdownOnDataBindModule',
     path: 'on-data-bind',
     canActivate: [SeoGuard],
     data: {
@@ -228,7 +206,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownTranslationsComponent,
+    loadChildren: './dropdown-translations/dropdown-translations.module#DropdownTranslationsModule',
     path: 'translations',
     canActivate: [SeoGuard],
     data: {
@@ -240,7 +218,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownEventsComponent,
+    loadChildren: './dropdown-events/dropdown-events.module#DropdownEventsModule',
     path: 'events',
     canActivate: [SeoGuard],
     data: {
@@ -252,7 +230,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownOptionTemplateComponent,
+    loadChildren: './dropdown-option-template/dropdown-option-template.module#DropdownOptionTemplateModule',
     path: 'templates/dropdown-option-template',
     canActivate: [SeoGuard],
     data: {
@@ -264,7 +242,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownOptionGroupHeaderTemplateComponent,
+    loadChildren: './dropdown-option-group-header-template/dropdown-option-group-header-template.module#DropdownOptionGroupHeaderTemplateModule',
     path: 'templates/dropdown-option-group-header-template',
     canActivate: [SeoGuard],
     data: {
@@ -276,7 +254,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    component: DropdownLoadingSpinnerTemplateComponent,
+    loadChildren: './dropdown-loading-spinner-template/dropdown-loading-spinner-template.module#DropdownLoadingSpinnerTemplateModule',
     path: 'templates/loading-spinner-template',
     canActivate: [SeoGuard],
     data: {
