@@ -1,0 +1,31 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
+import { DropdownModule } from 'ornamentum';
+
+import { DropdownOverviewComponent, BasicUsageComponent } from './index';
+
+import { DropdownOverviewRoutingModule } from './dropdown-overview-routing.module';
+
+import { SharedModule } from '../../../shared/shared.module';
+
+/**
+ * Module class for containing dropdown overview module.
+ * @class DropdownOverviewModule
+ */
+@NgModule({
+  declarations: [
+    DropdownOverviewComponent,
+    BasicUsageComponent
+  ],
+  exports: [],
+  imports: [
+    CommonModule,
+    SharedModule,
+    DropdownModule.forRoot(),
+    DropdownOverviewRoutingModule
+  ],
+  providers: []
+})
+export class DropdownOverviewModule {
+}
