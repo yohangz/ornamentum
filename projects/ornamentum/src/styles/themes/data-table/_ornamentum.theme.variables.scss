@@ -21,47 +21,47 @@ $box-shadow-color: rgba(0, 0, 0, .2) !default;
 $delete-color: #d32f2f !default;
 
 //Data Table Container Styles
-$data-table-container-border: #111 !default;
+$data-table-container-border: #7b2222 !default;
 
 //Data Table Top Header Styles
-$data-table-top-header-background: #111 !default;
+$data-table-top-header-background: #7b2222 !default;
 $data-table-top-header-border: transparent !default;
 $data-table-top-header-text-color: #f5f5f5 !default;
 
 //Data Table Dropdown Styles
-$data-table-dropdown-background: #111 !default;
+$data-table-dropdown-background: #2c232b !default;
 $data-table-dropdown-border: #555 !default;
 $data-table-dropdown-heading-text-color: #f5f5f5 !default;
 $data-table-dropdown-text-color: #f5f5f5 !default;
 
 
 //Data Table Content Header Styles
-$data-table-content-header-background: #222 !default;;
+$data-table-content-header-background: #111 !default;;
 $data-table-content-header-border: transparent !default;
 $data-table-content-header-text-color: #f5f5f5 !default;
 
 //Data Table Content Styles
 $data-table-content-background: #333 !default;
-$data-table-content-border: #333 !default;
+$data-table-content-border: #7b2222 !default;
 
 //Common Data Table Styles
 
 $data-table-border: #2c232b !default;
 $data-table-row-background: #121212 !default;
 $data-table-cell-text-color: #f5f5f5 !default;
-$data-table-row-hover-background: #555 !default;
+$data-table-row-hover-background: #4c1414 !default;
 $data-table-row-hover-cell-text-color: #f5f5f5 !default;
 
 
-$data-table-odd-row-background: #333 !default;
+$data-table-odd-row-background: #2c232b !default;
 $data-table-odd-row-cell-text-color: #f5f5f5 !default;
-$data-table-odd-row-hover-background: #555 !default;
+$data-table-odd-row-hover-background: #4c1414 !default;
 $data-table-odd-row-hover-cell-text-color: #f5f5f5 !default;
 
 
-$data-table-even-row-background: #444 !default;
+$data-table-even-row-background: #121212 !default;
 $data-table-even-row-cell-text-color: #f5f5f5 !default;
-$data-table-even-row-hover-background: #555 !default;
+$data-table-even-row-hover-background: #4c1414 !default;
 $data-table-even-row-hover-cell-text-color: #f5f5f5 !default;
 
 
@@ -73,41 +73,41 @@ $data-table-selected-row-hover-cell-text-color: #f5f5f5 !default;
 
 
 //Data Table Loading Window Background
-$data-table-loading-window-background: #111 !default;
-$data-table-loading-window-border: #222 !default;
-$data-table-loading-animation-color: #fff !default;
+$data-table-loading-window-background: #f1f1f1 !default;
+$data-table-loading-window-border: #ccc !default;
+$data-table-loading-animation-color: #7b2222 !default;
 
 //No Record Message Text Color
 $ng-data-table-no-records-main-heading-message-text-color: #fff !default;
 $ng-data-table-no-records-sub-heading-message-text-color: #f5f5f5 !default;
 
 //Data Table Pagination Style
-$data-table-pagination-background: #111 !default;
+$data-table-pagination-background: #7b2222 !default;
 $data-table-pagination-border: #333 !default;
 $data-table-pagination-range-text-color: #f5f5f5 !default;
 $data-table-pagination-range-value-text-color: #fff !default;
 $data-table-pagination-text-color: #f5f5f5 !default;
-$data-table-pagination-input-border: #222 !default;
-$data-table-pagination-input-label-border: #222 !default;
+$data-table-pagination-input-border: #000 !default;
+$data-table-pagination-input-label-border: #000 !default;
 $data-table-pagination-input-label-text-color: #fff !default;
-$data-table-pagination-input-background: #222 !default;
+$data-table-pagination-input-background: #000 !default;
 $data-table-pagination-input-text-color: #fff !default;
 
 //Data Table Pagination Action Button Styles
 $data-table-pagination-action-button-background: #222 !default;
-$data-table-pagination-action-button-background-hover: #222 !default;
-$data-table-pagination-action-button-border: #222 !default;
-$data-table-pagination-disabled-action-button-background: #222 !default;
-$data-table-pagination-disabled-action-button-border: #222 !default;;
-$data-table-pagination-first-page-action-button-background: #222 !default;
+$data-table-pagination-action-button-background-hover: #111 !default;
+$data-table-pagination-action-button-border: #000 !default;
+$data-table-pagination-disabled-action-button-background: #000 !default;
+$data-table-pagination-disabled-action-button-border: #111 !default;;
+$data-table-pagination-first-page-action-button-background: #000 !default;
 $data-table-pagination-first-page-action-button-background-hover: #333 !default;
-$data-table-pagination-first-page-action-button-border: #222 !default;
-$data-table-pagination-previous-page-action-button-background: #222 !default;
+$data-table-pagination-first-page-action-button-border: #000 !default;
+$data-table-pagination-previous-page-action-button-background: #111 !default;
 $data-table-pagination-previous-page-action-button-background-hover: #333 !default;
-$data-table-pagination-previous-page-action-button-border: #222 !default;
-$data-table-pagination-next-page-action-button-background: #222 !default;
+$data-table-pagination-previous-page-action-button-border: #000 !default;
+$data-table-pagination-next-page-action-button-background: #000 !default;
 $data-table-pagination-next-page-action-button-background-hover: #333 !default;
-$data-table-pagination-next-page-action-button-border: #222 !default;
-$data-table-pagination-last-page-action-button-background: #222 !default;
+$data-table-pagination-next-page-action-button-border: #000 !default;
+$data-table-pagination-last-page-action-button-background: #111 !default;
 $data-table-pagination-last-page-action-button-background-hover: #333 !default;
-$data-table-pagination-last-page-action-button-border: #222 !default;
+$data-table-pagination-last-page-action-button-border: #000 !default;

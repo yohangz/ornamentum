@@ -22,7 +22,7 @@ $box-shadow-color: rgba(0, 0, 0, .2) !default;
 $delete-color: #d32f2f !default;
 
 //Data Table Container Styles
-$data-table-container-border: #ccc !default;
+$data-table-container-border: #eaeaea !default;
 
 //Data Table Top Header Styles
 $data-table-top-header-background: #00529f !default;
@@ -31,7 +31,7 @@ $data-table-top-header-text-color: #fff !default;
 
 //Data Table Dropdown Styles
 $data-table-dropdown-background: #00529f !default;
-$data-table-dropdown-border: #ccc !default;
+$data-table-dropdown-border: #eaeaea !default;
 $data-table-dropdown-heading-text-color: #fff !default;
 $data-table-dropdown-text-color: #fff !default;
 
@@ -43,38 +43,38 @@ $data-table-content-header-text-color: #f5f5f5 !default;
 
 //Data Table Content Styles
 $data-table-content-background: #fff !default;
-$data-table-content-border: #ccc !default;
+$data-table-content-border: #eaeaea !default;
 
 //Common Data Table Styles
 
-$data-table-border: #ccc !default;
+$data-table-border: #eaeaea !default;
 $data-table-row-background: #fff !default;
 $data-table-cell-text-color: #f5f5f5 !default;
-$data-table-row-hover-background: #00529f !default;
-$data-table-row-hover-cell-text-color: #f5f5f5 !default;
+$data-table-row-hover-background: #ccc !default;
+$data-table-row-hover-cell-text-color: #333 !default;
 
 
 $data-table-odd-row-background: #fff !default;
 $data-table-odd-row-cell-text-color: #666 !default;
-$data-table-odd-row-hover-background: #00529f !default;
-$data-table-odd-row-hover-cell-text-color: #fff !default;
+$data-table-odd-row-hover-background: #ccc !default;
+$data-table-odd-row-hover-cell-text-color: #333 !default;
 
 
 $data-table-even-row-background: #f5f5f5 !default;
 $data-table-even-row-cell-text-color: #666 !default;
-$data-table-even-row-hover-background: #00529f !default;
-$data-table-even-row-hover-cell-text-color: #fff !default;
+$data-table-even-row-hover-background: #ccc !default;
+$data-table-even-row-hover-cell-text-color: #333 !default;
 
 
 $data-table-selected-row-background:  #8e8989 !default;
 $data-table-selected-row-cell-text-color: #f5f5f5 !default;
 $data-table-selected-row-hover-background: #8e8989 !default;
-$data-table-selected-row-hover-cell-text-color: #fff !default;
+$data-table-selected-row-hover-cell-text-color: #333 !default;
 
 
 //Data Table Loading Window Background
 $data-table-loading-window-background: #f1f1f1 !default;
-$data-table-loading-window-border: #ccc !default;
+$data-table-loading-window-border: #eaeaea !default;
 $data-table-loading-animation-color: #00529f !default;
 
 //No Record Message Text Color
@@ -83,7 +83,7 @@ $ng-data-table-no-records-sub-heading-message-text-color: #f5f5f5 !default;
 
 //Data Table Pagination Style
 $data-table-pagination-background: #00529f !default;
-$data-table-pagination-border: #ccc !default;
+$data-table-pagination-border: #eaeaea !default;
 $data-table-pagination-range-text-color: #fff !default;
 $data-table-pagination-range-value-text-color: #fff !default;
 $data-table-pagination-text-color: #fff !default;
