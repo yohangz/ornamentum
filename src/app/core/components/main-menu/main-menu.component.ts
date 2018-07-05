@@ -19,7 +19,6 @@ export class MainMenuComponent implements OnInit, OnDestroy {
   private resizeEventSubscription: Subscription;
 
   public packageVersion: string;
-  public isMobileMode = false;
 
   @ViewChild('menuElement')
   public menuElement: ElementRef;
@@ -31,7 +30,6 @@ export class MainMenuComponent implements OnInit, OnDestroy {
   }
 
   private emitContainerHeight(): void {
-    this.isMobileMode = this.containerResponsive.isMobileMode(this.globalRefService.window.innerWidth);
     this.containerResponsive.containerSize.next({
       containerHeight: this.globalRefService.window.innerHeight - this.menuElement.nativeElement.offsetHeight,
       containerWidth: this.globalRefService.window.innerWidth,

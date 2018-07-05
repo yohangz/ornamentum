@@ -39,16 +39,13 @@ export class LeftNavigationComponent implements OnInit, OnDestroy {
   public searchBox: ElementRef;
 
   public containerHeight: number;
-  public expanded =  true;
+  public expanded =  false;
   public mobileMode = false;
   public displayMenuGroups: MenuGroup[];
 
   constructor(private containerResponsive: ContainerResponsiveService) {
     this.containerResponsiveSubscription = this.containerResponsive.containerSize.subscribe((resizeArgs: ResizeArgs) => {
       this.containerHeight = resizeArgs.containerHeight;
-
-      this.mobileMode = this.containerResponsive.isMobileMode(resizeArgs.windowWidth);
-      this.expanded = !this.mobileMode;
     });
 
     this.navigationToggleSubscription = this.containerResponsive.navigationToggle.subscribe(() => {
