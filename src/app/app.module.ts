@@ -3,6 +3,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { APP_ID, Inject, NgModule, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { environment } from '../environments/environment';
 
@@ -21,7 +22,8 @@ import { AppComponent } from './app.component';
     TransferHttpCacheModule,
     AppMainModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
+    BrowserAnimationsModule
   ],
   providers: []
 })
