@@ -19,11 +19,31 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/favicon-16x16.png",
-              "src/favicon-32x32.png",
-              "src/assets",
-              "src/manifest.json"
+              {
+                "glob": "icons/*",
+                "input": "src/assets",
+                "output": "/assets"
+              },
+              {
+                "glob": "favicon.ico",
+                "input": "src",
+                "output": "/"
+              },
+              {
+                "glob": "favicon-16x16.ico",
+                "input": "src",
+                "output": "/"
+              },
+              {
+                "glob": "favicon-32x32.ico",
+                "input": "src",
+                "output": "/"
+              },
+              {
+                "glob": "manifest.json",
+                "input": "src",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -39,7 +59,7 @@
                 }
               ],
               "optimization": true,
-              "outputHashing": "all",
+              "outputHashing": "bundles",
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
@@ -78,14 +98,7 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/favicon-16x16.png",
-              "src/favicon-32x32.png",
-              "src/assets",
-              "src/manifest.json"
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -106,26 +119,6 @@
             "outputPath": "dist/ornamentum-demo/server",
             "main": "src/main.server.ts",
             "tsConfig": "src/tsconfig.server.json"
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": true,
-              "buildOptimizer": true,
-              "serviceWorker": true
-            }
           }
         }
       }
