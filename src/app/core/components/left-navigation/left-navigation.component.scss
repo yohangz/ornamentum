@@ -2,23 +2,38 @@
 @import '../../../styles/mixins';
 
 .left-navigation {
-  padding: 10px;
+  padding: 0;
   position: relative;
   z-index: 2;
   width: 250px;
+  left: 0;
+  visibility: visible;
 
   @include breakpoint(max991) {
-
-    padding: 0;
     position: absolute;
+    box-shadow: none;
+    left: -250px;
+    visibility: hidden;
 
-    &[style*='visible'] {
-      .side-menu-overlay {
-        visibility: visible !important;
-      }
+    &.nav-expanded {
+      left: 0;
+      visibility: visible;
+      transition: left 200ms ease-in;
     }
 
+    .side-menu-overlay {
+      top: 0;
+      left: 0;
+      background: #000;
+      opacity: 0;
+      height: 100%;
+      position: fixed;
+      width: 100%;
 
+      &.show-overlay {
+        opacity: .5;
+      }
+    }
   }
 
   .left-navigation-container {
@@ -100,17 +115,5 @@
         }
       }
     }
-  }
-
-  .side-menu-overlay {
-    top: 0;
-    left: 0;
-    background: #000;
-    opacity: .5;
-    height: 100%;
-    position: fixed;
-    transition: opacity 100s ease-in-out;
-    visibility: hidden !important;
-    width: 100%;
   }
 }

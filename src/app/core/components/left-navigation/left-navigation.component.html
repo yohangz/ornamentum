@@ -1,5 +1,5 @@
-<div class="left-navigation" [style.height.px]="containerHeight" [@slide]="expanded? 'expand': 'collapsed'">
-  <div (ngClickOutside)="closeMenu()" class="left-navigation-container">
+<div class="left-navigation" [style.height.px]="containerHeight" [class.nav-expanded]="expanded">
+  <div class="left-navigation-container" (ngClickOutside)="closeMenu()">
     <div class="form-group search-place-holder" #searchBox>
       <input class="form-control" type="text" placeholder="Search Feature" #searchInput
              (keyup)="onSearchKeyUp(searchInput)"/>
@@ -23,6 +23,6 @@
       </div>
     </div>
   </div>
-  <div class="side-menu-overlay" [style.visibility]="expanded? 'visible':'hidden'"></div>
+  <div class="side-menu-overlay" [class.show-overlay]="expanded"></div>
 </div>
 
