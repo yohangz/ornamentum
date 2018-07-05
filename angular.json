@@ -30,12 +30,12 @@
                 "output": "/"
               },
               {
-                "glob": "favicon-16x16.ico",
+                "glob": "favicon-16x16.png",
                 "input": "src",
                 "output": "/"
               },
               {
-                "glob": "favicon-32x32.ico",
+                "glob": "favicon-32x32.png",
                 "input": "src",
                 "output": "/"
               },
