@@ -632,21 +632,6 @@
   width: 40px;
 }
 
-@keyframes loader {
-  0% {
-    transform: scale(0);
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: scale(1);
-  }
-}
-
 /*
  * Data table no records found message styles
  */
