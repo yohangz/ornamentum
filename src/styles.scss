@@ -6,7 +6,25 @@
 @import 'app/styles/variables';
 @import 'app/styles/mixins';
 
-@import '../dist/ornamentum/themes/base.theme';
+.om-base-theme {
+  @import '../dist/ornamentum/themes/base.theme';
+}
+
+.om-dark-theme {
+  @import '../dist/ornamentum/themes/dark.theme';
+}
+
+.om-flat-theme {
+  @import '../dist/ornamentum/themes/flat.theme';
+}
+
+.om-material-theme {
+  @import '../dist/ornamentum/themes/material.theme';
+}
+
+.om-ornamentum-theme {
+  @import '../dist/ornamentum/themes/ornamentum.theme';
+}
 
 body {
   background: #fff;
@@ -24,6 +42,8 @@ body {
 [hidden] {
   display: none;
 }
+
+// Custom scrollbar styling
 
 ::-webkit-scrollbar-track {
   background-color: #eee;

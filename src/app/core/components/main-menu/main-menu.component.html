@@ -35,16 +35,24 @@
             <span class="theme"></span>
             <div class="theme-selector-container">
             <div class="themes-selector">
-              <a href="#" title="Base Theme"> <span class="base-theme"></span></a>
+              <a (click)="onThemeChange(CoreConstants.BASE_THEME_CLASS)" title="Base Theme">
+                <span class="base-theme"></span>
+              </a>
             </div>
             <div class="themes-selector">
-              <a href="#" title="Dark Theme"><span class="dark-theme"></span></a>
+              <a (click)="onThemeChange(CoreConstants.DARK_THEME_CLASS)" title="Dark Theme">
+                <span class="dark-theme"></span>
+              </a>
             </div>
             <div class="themes-selector">
-              <a href="#" title="Flat Theme"><span class="flat-theme"></span></a>
+              <a (click)="onThemeChange(CoreConstants.FLAT_THEME_CLASS)" title="Flat Theme">
+                <span class="flat-theme"></span>
+              </a>
             </div>
                <div class="themes-selector">
-              <a href="#" title="Ornamentum Theme"><span class="ornamentum-theme"></span></a>
+              <a (click)="onThemeChange(CoreConstants.ORNAMENTUM_THEME_CLASS)" title="Ornamentum Theme">
+                <span class="ornamentum-theme"></span>
+              </a>
             </div>
           </div>
           </span>
