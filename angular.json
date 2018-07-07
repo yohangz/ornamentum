@@ -46,6 +46,9 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.css",
+              "node_modules/code-prettify/loader/prettify.css",
+              "node_modules/color-themes-for-google-code-prettify/dist/themes/tranquil-heart.css",
               "src/styles.scss"
             ],
             "scripts": []
