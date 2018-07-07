@@ -1,36 +1,40 @@
-<h1>Data Table Overview</h1>
-<p>Full fledged data table component with extensive configuration support.</p>
+<div #parent>
+  <h1>Data Table Overview</h1>
+  <p>Full fledged data table component with extensive configuration support.</p>
 
-<h1>Feature Overview</h1>
-<ul class="main-pane-list">
-  <li>Client/Server data binding</li>
-  <li>Live/real-time data binding</li>
-  <li>Pagination</li>
-  <li>Multi/Single column sorting</li>
-  <li>Row grouping</li>
-  <li>Multi/Single value filtering</li>
-  <li>Row selection</li>
-  <li>Expandable rows</li>
-  <li>Column resizing</li>
-  <li>Cell/Header templating</li>
-  <li>Translations</li>
-</ul>
-<h1>Basic Usage</h1>
-<p>The following example demonstrates the Data Table basic usage.</p>
+  <h1>Feature Overview</h1>
+  <ul class="main-pane-list">
+    <li>Client/Server data binding</li>
+    <li>Live/real-time data binding</li>
+    <li>Pagination</li>
+    <li>Multi/Single column sorting</li>
+    <li>Row grouping</li>
+    <li>Multi/Single value filtering</li>
+    <li>Row selection</li>
+    <li>Expandable rows</li>
+    <li>Column resizing</li>
+    <li>Cell/Header templating</li>
+    <li>Translations</li>
+  </ul>
+  <h1>Basic Usage</h1>
+  <p>The following example demonstrates the Data Table basic usage.</p>
 
-<app-basic-usage></app-basic-usage>
 
-<app-example-code [files]="basicUsage">
-</app-example-code>
+  <app-basic-usage [parentElement]="parent"></app-basic-usage>
 
-<h2>Dependencies</h2>
-<ul class="main-pane-list">
-  <li>@angular/common</li>
-  <li>@angular/core</li>
-  <li>@angular/forms</li>
-  <li>lodash-es</li>
-  <li>rxjs</li>
-</ul>
 
-<h2>Suggested Links</h2>
-<a [href]="'src/docs/api-docs/modules/DataTableModule.html'" target="_blank">API Doc for DataTableModule</a>
+  <app-example-code [files]="basicUsage">
+  </app-example-code>
+
+  <h2>Dependencies</h2>
+  <ul class="main-pane-list">
+    <li>@angular/common</li>
+    <li>@angular/core</li>
+    <li>@angular/forms</li>
+    <li>lodash-es</li>
+    <li>rxjs</li>
+  </ul>
+
+  <h2>Suggested Links</h2>
+  <a [href]="'src/docs/api-docs/modules/DataTableModule.html'" target="_blank">API Doc for DataTableModule</a>
+</div>
