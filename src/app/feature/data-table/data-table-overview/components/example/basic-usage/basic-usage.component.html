@@ -2,7 +2,8 @@
   [title]="'Station Details'"
   [dataSource]="items"
   [showHeader]="true"
-  [minHeight]="200">
+  [minHeight]="200"
+  [relativeParentElement]="parentElement">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
@@ -25,3 +26,4 @@
     [title]="'Address'">
   </ng-data-table-column>
 </ng-data-table>
+

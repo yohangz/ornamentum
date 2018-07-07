@@ -1,30 +1,35 @@
-<h1>Data Table Header Details</h1>
+<div #parent>
+  <h1>Data Table Header Details</h1>
 
-<ul class="main-pane-list">
-  <li>Showing header details along with the header menu will helps users to get some understanding about what kind of
-    data is shown.
-  </li>
-  <li>To show header in the data table users needs to set the <b>showHeader</b> property in to true. The default value
-    for this is false.
-  </li>
-  <li>In the header, it shows title of the table, available columns and data refresh button. Those can be configured as
-    follows.
-    <ul class="main-pane-list">
-      <li><b>[title]="true or false"</b> => Specify the table data title. The default value for this config is ''.</li>
-      <li><b>[showRefreshButton]="true or false"</b> => Show/hide refresh button. The default value for this config is
-        false.
-      </li>
-      <li><b>[showColumnSelector]="true or false"</b> => Show/hide the button to trigger the column selection menu. The
-        default
-        value for this config is false.
-      </li>
-    </ul>
-  </li>
-</ul>
+  <ul class="main-pane-list">
+    <li>Showing header details along with the header menu will helps users to get some understanding about what kind of
+      data is shown.
+    </li>
+    <li>To show header in the data table users needs to set the <b>showHeader</b> property in to true. The default value
+      for this is false.
+    </li>
+    <li>In the header, it shows title of the table, available columns and data refresh button. Those can be configured
+      as
+      follows.
+      <ul class="main-pane-list">
+        <li><b>[title]="true or false"</b> => Specify the table data title. The default value for this config is ''.
+        </li>
+        <li><b>[showRefreshButton]="true or false"</b> => Show/hide refresh button. The default value for this config is
+          false.
+        </li>
+        <li><b>[showColumnSelector]="true or false"</b> => Show/hide the button to trigger the column selection menu.
+          The
+          default
+          value for this config is false.
+        </li>
+      </ul>
+    </li>
+  </ul>
 
-<app-table-header-details-usage></app-table-header-details-usage>
+  <app-table-header-details-usage [parentElement]="parent"></app-table-header-details-usage>
 
-<app-example-code [files]="tableHeaderDetailsUsage"></app-example-code>
+  <app-example-code [files]="tableHeaderDetailsUsage"></app-example-code>
 
-<h2>Suggested Links</h2>
-<a [href]="''" target="_blank">API Doc for Data Table Header</a>
+  <h2>Suggested Links</h2>
+  <a [href]="''" target="_blank">API Doc for Data Table Header</a>
+</div>
