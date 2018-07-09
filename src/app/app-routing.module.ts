@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { FeatureComponent, MainComponent, HomeComponent } from './main/components';
+import { FeatureComponent, MainComponent, HomeComponent, PageNotFoundComponent } from './main/components';
 
 import { MenuGroup } from './core/models';
 
@@ -253,6 +253,10 @@ const appRoutes: Routes = [
         }
       }
     ]
+  },
+  {
+    component: PageNotFoundComponent,
+    path: '**'
   }
 ];
 

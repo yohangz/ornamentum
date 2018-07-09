@@ -1,0 +1,50 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.page-not-found-page {
+  background: url('../../../../assets/images/bg-404.jpg') center;
+  background-size: cover;
+  font-family: $primary-font;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+}
+
+.error-page {
+
+  @include transform(translateY(-50%));
+  bottom: 0;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 50%;
+
+  h1 {
+    @include font-size(16, 12);
+    //background: $secondary-background-color;
+    //color: lighten($secondary-background-color, 100%);
+    display: inline-block;
+    padding: 2rem;
+  }
+
+  .error-page-heading {
+    @include font-size(2.2, 3.8);
+
+    span {
+      @include font-size(1.8, 2.8);
+      display: block;
+      font-weight: 600;
+    }
+
+    a {
+      //background: $secondary-background-color;
+      //color: lighten($secondary-background-color, 100%);
+      padding: .5rem 1rem;
+      text-transform: uppercase;
+    }
+  }
+
+}

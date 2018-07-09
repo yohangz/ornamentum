@@ -1,396 +1,394 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
-:host-context {
-  .home-container {
-    header {
-      min-height: 100vh;
+.home-container {
+  header {
+    min-height: 100vh;
 
-      .background-overlay-main {
-        @include display-flex;
-        @include flex-direction(column);
-        @include justify-content(center);
-        @include align-items(center);
-        @include transform(skewY(30deg));
-        @include transform-origin(100%);
-        background: linear-gradient(-12deg, $background-overlay-gradient-1, $background-overlay-gradient-2);
-        height: 80vh;
-        max-height: 650px;
-        min-height: 600px;
+    .background-overlay-main {
+      @include display-flex;
+      @include flex-direction(column);
+      @include justify-content(center);
+      @include align-items(center);
+      @include transform(skewY(30deg));
+      @include transform-origin(100%);
+      background: linear-gradient(-12deg, $background-overlay-gradient-1, $background-overlay-gradient-2);
+      height: 80vh;
+      max-height: 650px;
+      min-height: 600px;
+      position: absolute;
+      width: 100%;
+      padding: 2rem;
+      overflow: hidden;
+      z-index: 2;
+
+      @include breakpoint(max991) {
+        max-height: 500px;
+        min-height: 500px;
+      }
+
+      @include breakpoint(max767) {
+        max-height: 300px;
+        min-height: 300px;
+      }
+    }
+
+    .background-overlay-sub {
+      @include display-flex;
+      @include flex-direction(column);
+      @include justify-content(center);
+      @include align-items(center);
+      @include transform(skewY(-10deg));
+      @include transform-origin(-1%);
+      background: linear-gradient(-120deg, $background-overlay-gradient-3, $background-overlay-gradient-4);
+      height: 80vh;
+      max-height: 850px;
+      min-height: 750px;
+      position: absolute;
+      width: 100%;
+      padding: 2rem;
+      overflow: hidden;
+
+      @include breakpoint(max767) {
+        min-height: 750px;
+      }
+    }
+
+    .background-overlay-sub-2 {
+      @include display-flex;
+      @include flex-direction(column);
+      @include justify-content(center);
+      @include align-items(center);
+      @include transform(skewY(30deg));
+      @include transform-origin(-1%);
+      background: linear-gradient(-120deg, $background-overlay-gradient-5, $background-overlay-gradient-6);
+      height: 80vh;
+      max-height: 950px;
+      min-height: 1150px;
+      position: absolute;
+      top:80%;
+      width: 100%;
+      padding: 2rem;
+      overflow: hidden;
+      z-index: -1;
+    }
+
+    .intro {
+      @include display-flex;
+      @include flex-direction(row);
+      @include justify-content(center);
+      left: 5%;
+      max-width: 600px;
+      position: absolute;
+      top: 40%;
+      z-index: 3;
+
+      @include breakpoint(max640) {
+        top: 25%;
+      }
+
+      .ornamentum-logo {
+        background: url(../../../../assets/images/ornamentum.svg) no-repeat;
+        background-size: 100% 100%;
+        display: inline-block;
+        height: 10rem;
+        left: 0;
         position: absolute;
-        width: 100%;
-        padding: 2rem;
-        overflow: hidden;
-        z-index: 2;
+        width: 50rem;
 
         @include breakpoint(max991) {
-          max-height: 500px;
-          min-height: 500px;
+          width: 30rem;
         }
-
-        @include breakpoint(max767) {
-          max-height: 300px;
-          min-height: 300px;
-        }
-      }
-
-      .background-overlay-sub {
-        @include display-flex;
-        @include flex-direction(column);
-        @include justify-content(center);
-        @include align-items(center);
-        @include transform(skewY(-10deg));
-        @include transform-origin(-1%);
-        background: linear-gradient(-120deg, $background-overlay-gradient-3, $background-overlay-gradient-4);
-        height: 80vh;
-        max-height: 850px;
-        min-height: 750px;
-        position: absolute;
-        width: 100%;
-        padding: 2rem;
-        overflow: hidden;
-
-        @include breakpoint(max767) {
-          min-height: 750px;
-        }
-      }
-
-      .background-overlay-sub-2 {
-        @include display-flex;
-        @include flex-direction(column);
-        @include justify-content(center);
-        @include align-items(center);
-        @include transform(skewY(30deg));
-        @include transform-origin(-1%);
-        background: linear-gradient(-120deg, $background-overlay-gradient-5, $background-overlay-gradient-6);
-        height: 80vh;
-        max-height: 950px;
-        min-height: 1150px;
-        position: absolute;
-        top:80%;
-        width: 100%;
-        padding: 2rem;
-        overflow: hidden;
-        z-index: -1;
-      }
-
-      .intro {
-        @include display-flex;
-        @include flex-direction(row);
-        @include justify-content(center);
-        left: 5%;
-        max-width: 600px;
-        position: absolute;
-        top: 40%;
-        z-index: 3;
 
         @include breakpoint(max640) {
-          top: 25%;
+          width: 28rem;
         }
 
-        .ornamentum-logo {
-          background: url(../../../../assets/images/ornamentum.svg) no-repeat;
-          background-size: 100% 100%;
-          display: inline-block;
-          height: 10rem;
+        @include breakpoint(max480) {
+          width: 20rem;
+        }
+
+      }
+
+      .intro-description {
+        @include font-size(1.2, 1.8);
+        color: $main-nav-bar-active-text;
+        left: 13.5rem;
+        letter-spacing: .05rem;
+        position: absolute;
+        top: 8rem;
+        width: 40rem;
+
+        @include breakpoint(max991) {
+          left: 8rem;
+          width: 30rem;
+        }
+
+        @include breakpoint(max767) {
+          left: 8rem;
+          width: 27rem;
+        }
+
+        @include breakpoint(max640) {
+          left: 4.5rem;
+          width: 22rem;
+        }
+
+        @include breakpoint(max480) {
+          left: 4.5rem;
+          width: 15rem;
+        }
+
+      }
+
+      .button-container {
+        left: 13.5rem;
+        position: absolute;
+        top: 13rem;
+        width: 40rem;
+
+        @include breakpoint(max991) {
+          left: 8rem;
+          top: 15rem;
+          width: 30rem;
+        }
+
+        @include breakpoint(max767) {
+          left: 8rem;
+          width: 27rem;
+        }
+
+        @include breakpoint(max640) {
+          left: 1rem;
+          top: 18rem;
+          width: 25rem;
+          @include transform(scale(.8));
+        }
+
+        @include breakpoint(max480) {
+          @include transform(scale(.7));
           left: 0;
-          position: absolute;
-          width: 50rem;
-
-          @include breakpoint(max991) {
-            width: 30rem;
-          }
-
-          @include breakpoint(max640) {
-            width: 28rem;
-          }
-
-          @include breakpoint(max480) {
-            width: 20rem;
-          }
-
+          top: 20rem;
+          width: 25rem;
         }
 
-        .intro-description {
-          @include font-size(1.2, 1.8);
-          color: $main-nav-bar-active-text;
-          left: 13.5rem;
+        .get-started-button {
+          @include font-size(1.2, 1.6);
+          @include border-radius(25px);
+          @include box-shadow(2px 2px 5px $background-overlay-gradient-4);
+          @include transition(all 1s ease);
+          background: $background-overlay-gradient-1;
+          border:  1px solid $background-overlay-gradient-1;
+          color: $primary-text-color;
+          cursor: pointer;
+          outline: 0;
           letter-spacing: .05rem;
-          position: absolute;
-          top: 8rem;
-          width: 40rem;
+          padding: .4rem 3rem;
+          text-decoration: none;
 
-          @include breakpoint(max991) {
-            left: 8rem;
-            width: 30rem;
+          &:hover {
+            @include box-shadow(4px 4px 8px $background-overlay-gradient-4);
+            background: $background-overlay-gradient-2;
           }
-
-          @include breakpoint(max767) {
-            left: 8rem;
-            width: 27rem;
-          }
-
-          @include breakpoint(max640) {
-            left: 4.5rem;
-            width: 22rem;
-          }
-
-          @include breakpoint(max480) {
-            left: 4.5rem;
-            width: 15rem;
-          }
-
         }
 
-        .button-container {
-          left: 13.5rem;
-          position: absolute;
-          top: 13rem;
-          width: 40rem;
+        .git-hub-button {
+          @include font-size(1.2, 1.6);
+          @include border-radius(25px);
+          @include box-shadow(2px 2px 5px $background-overlay-gradient-4);
+          @include transition(all 1s ease);
+          background: $primary-text-color;
+          border:  1px solid $primary-text-color;
+          color: $background-overlay-gradient-4;
+          cursor: pointer;
+          outline: 0;
+          letter-spacing: .05rem;
+          margin-left: 1rem;
+          padding: .4rem 3rem;
+          text-decoration: none;
 
-          @include breakpoint(max991) {
-            left: 8rem;
-            top: 15rem;
-            width: 30rem;
+          &:hover {
+            @include box-shadow(4px 4px 8px $background-overlay-gradient-4);
+            background: darken($primary-text-color, 30%);
+          }
+        }
+      }
+    }
+  }
+
+  section {
+    @include display-flex;
+    @include flex-direction(row);
+    @include flex-grow(1);
+    padding: 5rem;
+    position: relative;
+    z-index: 3;
+
+    @include breakpoint(max767) {
+      display: table;
+      @include flex-wrap(wrap);
+      padding: 2rem;
+    }
+
+    h1 {
+      @include font-size(2, 2.4);
+      @include text-shadow(1px 1px 1px $background-overlay-gradient-6);
+      color: $background-overlay-gradient-1;
+      font-weight: 700;
+      margin-bottom: 0;
+    }
+    h2 {
+      @include font-size(1.2, 1.6);
+      color: $side-menu-label-text;
+      font-weight: 300;
+    }
+
+    .section-image-container,
+    .description-container {
+      width: 50%;
+
+      @include breakpoint(max767) {
+        width: 100%;
+      }
+    }
+
+    .section-image-container {
+      @include breakpoint(max767) {
+        display: table-header-group;
+      }
+    }
+
+    .section-image {
+
+      &.rich-data-table {
+        background: url(../../../../assets/images/rich-table.png) no-repeat;
+        background-size: contain;
+        display: block;
+        max-width: 1000px;
+        min-height: 400px;
+
+      }
+
+      &.open-source {
+        background: url(../../../../assets/images/open-source.png) no-repeat;
+        background-size: contain;
+        display: block;
+        max-width: 1000px;
+        min-height: 400px;
+      }
+
+      &.ui-framework {
+        background: url(../../../../assets/images/ui-framework-agnostic.png) no-repeat;
+        background-size: contain;
+        display: block;
+        max-width: 1000px;
+        min-height: 400px;
+      }
+
+      &.configurable {
+        background: url(../../../../assets/images/configurable.png) no-repeat;
+        background-size: contain;
+        display: block;
+        max-width: 1000px;
+        min-height: 400px;
+      }
+
+      &.minimal {
+        background: url(../../../../assets/images/minimal.png) no-repeat;
+        background-size: contain;
+        display: block;
+        max-width: 1000px;
+        min-height: 400px;
+      }
+
+      @include breakpoint(max767) {
+        background-position: 50% !important;
+        margin-bottom: 20px;
+        min-height: 200px !important;
+      }
+
+    }
+
+    .section-description {
+      @include font-size(1, 1.6);
+      letter-spacing: .05rem;
+
+      ul.icon-list {
+        list-style-type: none;
+
+        li {
+          position: relative;
+          padding-left: .4em;
+          line-height: 2em;
+
+          &::before {
+            position: absolute;
+            left: -1.5em;
+            top: .1em;
           }
 
-          @include breakpoint(max767) {
-            left: 8rem;
-            width: 27rem;
+          &.data-icon::before {
+            content: url(../../../../assets/images/data.svg);
           }
 
-          @include breakpoint(max640) {
-            left: 1rem;
-            top: 18rem;
-            width: 25rem;
-            @include transform(scale(.8));
+          &.sort-icon::before {
+            content: url(../../../../assets/images/sort.svg);
           }
 
-          @include breakpoint(max480) {
-            @include transform(scale(.7));
-            left: 0;
-            top: 20rem;
-            width: 25rem;
+          &.filter-icon::before {
+            content: url(../../../../assets/images/filter.svg);
           }
 
-          .get-started-button {
-            @include font-size(1.2, 1.6);
-            @include border-radius(25px);
-            @include box-shadow(2px 2px 5px $background-overlay-gradient-4);
-            @include transition(all 1s ease);
-            background: $background-overlay-gradient-1;
-            border:  1px solid $background-overlay-gradient-1;
-            color: $primary-text-color;
-            cursor: pointer;
-            outline: 0;
-            letter-spacing: .05rem;
-            padding: .4rem 3rem;
-            text-decoration: none;
-
-            &:hover {
-              @include box-shadow(4px 4px 8px $background-overlay-gradient-4);
-              background: $background-overlay-gradient-2;
-            }
+          &.layout-icon::before {
+            content: url(../../../../assets/images/layout.svg);
           }
 
-          .git-hub-button {
-            @include font-size(1.2, 1.6);
-            @include border-radius(25px);
-            @include box-shadow(2px 2px 5px $background-overlay-gradient-4);
-            @include transition(all 1s ease);
-            background: $primary-text-color;
-            border:  1px solid $primary-text-color;
-            color: $background-overlay-gradient-4;
-            cursor: pointer;
-            outline: 0;
-            letter-spacing: .05rem;
-            margin-left: 1rem;
-            padding: .4rem 3rem;
-            text-decoration: none;
+          &.persist-icon::before {
+            content: url(../../../../assets/images/persist.svg);
+          }
 
-            &:hover {
-              @include box-shadow(4px 4px 8px $background-overlay-gradient-4);
-              background: darken($primary-text-color, 30%);
-            }
+          &.paging-icon::before {
+            content: url(../../../../assets/images/paging.svg);
+          }
+
+          &.select-icon::before {
+            content: url(../../../../assets/images/select.svg);
+          }
+
+          &.resize-icon::before {
+            content: url(../../../../assets/images/resize.svg);
+          }
+
+          &.group-icon::before {
+            content: url(../../../../assets/images/group.svg);
+          }
+
+          &.translation-icon::before {
+            content: url(../../../../assets/images/translate.svg);
           }
         }
       }
     }
 
-    section {
-      @include display-flex;
-      @include flex-direction(row);
-      @include flex-grow(1);
-      padding: 5rem;
-      position: relative;
-      z-index: 3;
-
-      @include breakpoint(max767) {
-        display: table;
-        @include flex-wrap(wrap);
+    &.last-section {
+      .background-overlay-sub-3 {
+        @include display-flex;
+        @include flex-direction(column);
+        @include justify-content(center);
+        @include align-items(center);
+        @include transform(skewY(-15deg));
+        @include transform-origin(-1%);
+        background: linear-gradient(120deg, $background-overlay-gradient-5, $background-overlay-gradient-6);
+        height: 80vh;
+        max-height: 875px;
+        min-height: 750px;
+        left: 0;
+        position: absolute;
+        top:90%;
+        width: 100%;
         padding: 2rem;
-      }
-
-      h1 {
-        @include font-size(2, 2.4);
-        @include text-shadow(1px 1px 1px $background-overlay-gradient-6);
-        color: $background-overlay-gradient-1;
-        font-weight: 700;
-        margin-bottom: 0;
-      }
-      h2 {
-        @include font-size(1.2, 1.6);
-        color: $side-menu-label-text;
-        font-weight: 300;
-      }
-
-      .section-image-container,
-      .description-container {
-        width: 50%;
-
-        @include breakpoint(max767) {
-          width: 100%;
-        }
-      }
-
-      .section-image-container {
-        @include breakpoint(max767) {
-          display: table-header-group;
-        }
-      }
-
-      .section-image {
-
-        &.rich-data-table {
-          background: url(../../../../assets/images/rich-table.png) no-repeat;
-          background-size: contain;
-          display: block;
-          max-width: 1000px;
-          min-height: 400px;
-
-        }
-
-        &.open-source {
-          background: url(../../../../assets/images/open-source.png) no-repeat;
-          background-size: contain;
-          display: block;
-          max-width: 1000px;
-          min-height: 400px;
-        }
-
-        &.ui-framework {
-          background: url(../../../../assets/images/ui-framework-agnostic.png) no-repeat;
-          background-size: contain;
-          display: block;
-          max-width: 1000px;
-          min-height: 400px;
-        }
-
-        &.configurable {
-          background: url(../../../../assets/images/configurable.png) no-repeat;
-          background-size: contain;
-          display: block;
-          max-width: 1000px;
-          min-height: 400px;
-        }
-
-        &.minimal {
-          background: url(../../../../assets/images/minimal.png) no-repeat;
-          background-size: contain;
-          display: block;
-          max-width: 1000px;
-          min-height: 400px;
-        }
-
-        @include breakpoint(max767) {
-          background-position: 50% !important;
-          margin-bottom: 20px;
-          min-height: 200px !important;
-        }
-
-      }
-
-      .section-description {
-        @include font-size(1, 1.6);
-        letter-spacing: .05rem;
-
-        ul.icon-list {
-          list-style-type: none;
-
-          li {
-            position: relative;
-            padding-left: .4em;
-            line-height: 2em;
-
-            &::before {
-              position: absolute;
-              left: -1.5em;
-              top: .1em;
-            }
-
-            &.data-icon::before {
-              content: url(../../../../assets/images/data.svg);
-            }
-
-            &.sort-icon::before {
-              content: url(../../../../assets/images/sort.svg);
-            }
-
-            &.filter-icon::before {
-              content: url(../../../../assets/images/filter.svg);
-            }
-
-            &.layout-icon::before {
-              content: url(../../../../assets/images/layout.svg);
-            }
-
-            &.persist-icon::before {
-              content: url(../../../../assets/images/persist.svg);
-            }
-
-            &.paging-icon::before {
-              content: url(../../../../assets/images/paging.svg);
-            }
-
-            &.select-icon::before {
-              content: url(../../../../assets/images/select.svg);
-            }
-
-            &.resize-icon::before {
-              content: url(../../../../assets/images/resize.svg);
-            }
-
-            &.group-icon::before {
-              content: url(../../../../assets/images/group.svg);
-            }
-
-            &.translation-icon::before {
-              content: url(../../../../assets/images/translate.svg);
-            }
-          }
-        }
-      }
-
-      &.last-section {
-        .background-overlay-sub-3 {
-          @include display-flex;
-          @include flex-direction(column);
-          @include justify-content(center);
-          @include align-items(center);
-          @include transform(skewY(-15deg));
-          @include transform-origin(-1%);
-          background: linear-gradient(120deg, $background-overlay-gradient-5, $background-overlay-gradient-6);
-          height: 80vh;
-          max-height: 875px;
-          min-height: 750px;
-          left: 0;
-          position: absolute;
-          top:90%;
-          width: 100%;
-          padding: 2rem;
-          overflow: hidden;
-          z-index: -1;
-        }
+        overflow: hidden;
+        z-index: -1;
       }
     }
   }

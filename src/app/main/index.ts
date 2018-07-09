@@ -1,4 +1,11 @@
-import { MainComponent, BaseComponent, HomeComponent, FeatureComponent, FooterComponent } from './components';
+import {
+  MainComponent,
+  BaseComponent,
+  HomeComponent,
+  FeatureComponent,
+  FooterComponent,
+  PageNotFoundComponent
+} from './components';
 
 /**
  * Export all main components.
@@ -8,5 +15,6 @@ export const COMPONENTS = [
   BaseComponent,
   HomeComponent,
   FeatureComponent,
-  FooterComponent
+  FooterComponent,
+  PageNotFoundComponent
 ];
