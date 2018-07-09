@@ -1,5 +1,6 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
+
 :host-context {
   .home-container {
     header {
@@ -389,44 +390,6 @@
           padding: 2rem;
           overflow: hidden;
           z-index: -1;
-        }
-      }
-    }
-
-    footer {
-      background: linear-gradient(-120deg, $background-overlay-gradient-3, $background-overlay-gradient-4);
-      color: $primary-text-color;
-      margin: 0 auto;
-      padding: 2rem;
-      position: relative;
-      z-index: 3;
-
-      h3 {
-        @include font-size(1.1, 1.6);
-        @include text-shadow(0 0 1px $background-overlay-gradient-2);
-        color: $background-overlay-gradient-1;
-        text-transform: uppercase;
-      }
-
-      ul {
-        list-style-type: none;
-        padding-left: 0;
-
-        li {
-          @include font-size(.9, 2);
-        }
-      }
-
-      .copyrights {
-        @include font-size(.8, 1);
-        border-top: 1px solid  $main-nav-bar-active-background;
-        color: $main-nav-bar-active-text;
-        padding: 1rem 0;
-        text-align: center;
-
-        span {
-          display: block;
-          padding: .2rem 0;
         }
       }
     }
