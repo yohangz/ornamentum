@@ -199,6 +199,10 @@ export class DataTableBodyComponent {
         break;
       }
       case DataTableSelectMode.SINGLE: {
+        if (this.config.selectOnRowClick) {
+          break;
+        }
+
         const previousSelection = this.dataStateService.selectedRow;
         this.dataStateService.selectedRow = id;
         row.selected = true;
