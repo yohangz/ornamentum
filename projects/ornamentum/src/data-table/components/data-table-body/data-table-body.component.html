@@ -30,7 +30,7 @@
         <td class="ng-data-table-select-column ng-ignore-propagation" [style.background-color]="row.color"
             *ngIf="showRowSelectCheckbox && !rowSpanIndex" [attr.rowspan]="rowSpanCount">
           <input class="ng-data-table-checkbox-input ng-ignore-propagation" type="checkbox" [(ngModel)]="row.selected"
-                 (change)="onRowSelectChange(row)"/>
+               (click)="onRowSelectClick($event)"  (change)="onRowSelectChange(row)"/>
         </td>
         <ng-container *ngFor="let column of columns">
           <ng-container *ngIf="column.visible">
