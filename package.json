@@ -22,7 +22,7 @@
     "e2e:lib": "ng e2e ornamentum",
     "lint:lib": "ng lint ornamentum",
     "build:lib:scss": "node-sass projects/ornamentum/src/styles/themes/ -o dist/ornamentum/prebuilt-themes/ --importer ./node_modules/node-sass-tilde-importer --source-map true --source-map-contents true",
-    "build:lib:scss:copy": "cpx './projects/ornamentum/src/styles/**/*./' './dist/ornamentum'",
+    "build:lib:scss:copy": "cpx './projects/ornamentum/src/styles/**/*' './dist/ornamentum'",
     "build:lib:dev": "npm run build:lib:scss && npm run build:lib:scss:copy && ng build ornamentum",
     "build:lib:prod": "npm run build:lib:scss && npm run build:lib:scss:copy && ng build ornamentum --prod",
     "lint:lib:scss": "sass-lint --config projects/ornamentum/.scss-lint.yml --no-exit --verbose",
