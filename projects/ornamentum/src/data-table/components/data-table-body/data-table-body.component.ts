@@ -158,6 +158,16 @@ export class DataTableBodyComponent {
   }
 
   /**
+   * On row click event.
+   * @param {Event} event Row click event.
+   */
+  public onRowSelectClick(event: Event): void {
+    if (this.config.selectMode === DataTableSelectMode.SINGLE) {
+      event.preventDefault();
+    }
+  }
+
+  /**
    * On row selection change event.
    * Maintain selected row state.
    * @param {DataTableRow} row Data row object.
@@ -199,10 +209,6 @@ export class DataTableBodyComponent {
         break;
       }
       case DataTableSelectMode.SINGLE: {
-        if (this.config.selectOnRowClick) {
-          break;
-        }
-
         const previousSelection = this.dataStateService.selectedRow;
         this.dataStateService.selectedRow = id;
         row.selected = true;
