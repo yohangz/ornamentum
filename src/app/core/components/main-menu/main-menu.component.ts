@@ -10,7 +10,7 @@ import { VERSION } from '../../../../environments/version';
 
 import { ContainerResponsiveService } from '../../services';
 
-import { CoreConstants } from '../../core.constants';
+import { Theme } from '../../models/theme.enum';
 
 @Component({
   selector: 'app-main-menu',
@@ -20,7 +20,8 @@ import { CoreConstants } from '../../core.constants';
 export class MainMenuComponent implements OnInit, OnDestroy {
   private resizeEventSubscription: Subscription;
 
-  public CoreConstants = CoreConstants;
+  public Theme = Theme;
+  public selectedTheme = Theme.dark;
   public packageVersion: string;
 
   @ViewChild('menuElement')
@@ -61,6 +62,8 @@ export class MainMenuComponent implements OnInit, OnDestroy {
 
       this.emitContainerHeight();
     }
+
+    this.themeChange.emit(this.selectedTheme);
   }
 
   public ngOnDestroy(): void {
@@ -69,7 +72,12 @@ export class MainMenuComponent implements OnInit, OnDestroy {
     }
   }
 
-  public onThemeChange(cssClass: string): void {
-    this.themeChange.emit(cssClass);
+  public onThemeChange(theme: Theme): void {
+    this.selectedTheme = theme;
+    this.themeChange.emit(this.selectedTheme);
+  }
+
+  public isSelectedTheme(theme: Theme): boolean {
+    return this.selectedTheme === theme;
   }
 }
