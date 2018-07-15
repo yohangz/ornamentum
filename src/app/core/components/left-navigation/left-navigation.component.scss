@@ -43,22 +43,6 @@
     z-index: 2;
   }
 
-  .search-place-holder {
-    background: $side-menu-background;
-    position: relative;
-    padding: 8px 6px;
-    margin: 0;
-    z-index: 12;
-    border: 1px solid #ccc;
-    border-bottom: 0;
-
-    input {
-      @include font-size(.8, 2);
-      height: 35px;
-      width: 100%;
-    }
-  }
-
   .side-menu {
     background: $side-menu-background;
     border: 1px solid $main-nav-bar-active-text;
