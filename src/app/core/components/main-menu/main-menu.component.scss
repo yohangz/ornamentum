@@ -235,15 +235,6 @@
         position: absolute;
         top: 0;
         right: .5rem;
-
-        li {
-          display: none;
-        }
-
-        li:last-child,
-        li:nth-child(2) {
-          display: block;
-        }
       }
 
       .nav-item {
