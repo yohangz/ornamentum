@@ -34,23 +34,23 @@
           <span class="main-nav-label theme-switcher">
             <span class="theme"></span>
             <div class="theme-selector-container">
-            <div class="themes-selector">
-              <a (click)="onThemeChange(CoreConstants.BASE_THEME_CLASS)" title="Base Theme">
+            <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.base)">
+              <a (click)="onThemeChange(Theme.base)" title="Base Theme">
                 <span class="base-theme"></span>
               </a>
             </div>
-            <div class="themes-selector">
-              <a (click)="onThemeChange(CoreConstants.DARK_THEME_CLASS)" title="Dark Theme">
+            <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.dark)">
+              <a (click)="onThemeChange(Theme.dark)" title="Dark Theme">
                 <span class="dark-theme"></span>
               </a>
             </div>
-            <div class="themes-selector">
-              <a (click)="onThemeChange(CoreConstants.FLAT_THEME_CLASS)" title="Flat Theme">
+            <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.flat)">
+              <a (click)="onThemeChange(Theme.flat)" title="Flat Theme">
                 <span class="flat-theme"></span>
               </a>
             </div>
-            <div class="themes-selector">
-              <a (click)="onThemeChange(CoreConstants.ORNAMENTUM_THEME_CLASS)" title="Ornamentum Theme">
+            <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.ornamentum)">
+              <a (click)="onThemeChange(Theme.ornamentum)" title="Ornamentum Theme">
                 <span class="ornamentum-theme"></span>
               </a>
             </div>
