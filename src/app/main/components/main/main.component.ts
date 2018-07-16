@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { animate, group, query, style, transition, trigger } from '@angular/animations';
 import { Router } from '@angular/router';
+import { animate, group, query, style, transition, trigger } from '@angular/animations';
+
+import { Theme } from '../../../core/models/theme.enum';
 
 /**
  * Component class for showing main view.
@@ -29,7 +31,7 @@ import { Router } from '@angular/router';
   ]
 })
 export class MainComponent {
-  public themeCssClass: string;
+  public themeCssClass: string = Theme.dark;
 
   constructor(private router: Router) {
   }

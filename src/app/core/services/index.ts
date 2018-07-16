@@ -1,1 +1,1 @@
-export { ContainerResponsiveService } from './container-responsive.service';
+export { NavigationService } from './navigation.service';
