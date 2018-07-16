@@ -5,7 +5,7 @@
   overflow: hidden;
 
   .page-wrapper {
-    position:  absolute;
+    position:  fixed;
     display:  flex;
     flex-direction: column;
     top: 56px;
@@ -24,9 +24,8 @@
     .page-wrapper-content {
       width: 100%;
       position:  relative;
-      overflow:  hidden;
+      overflow:  auto;
       display: block;
-      height:  100%;
     }
   }
 }
