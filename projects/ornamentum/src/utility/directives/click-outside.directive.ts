@@ -22,7 +22,7 @@ export class ClickOutsideDirective {
    * Track and compare the click event at the document root.
    * @param event Click event
    */
-  @HostListener('document: click', ['$event'])
+  @HostListener('document:click', ['$event'])
   public compareEvent(event: Event) {
     if (this.el.nativeElement && this.el.nativeElement.contains(event.target)) {
       return;
