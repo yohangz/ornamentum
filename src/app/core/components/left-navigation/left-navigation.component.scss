@@ -3,14 +3,14 @@
 
 .left-navigation {
   padding: 0;
-  position: relative;
+  position: sticky;
   z-index: 2;
   width: 250px;
   left: 0;
   visibility: visible;
 
   @include breakpoint(max991) {
-    position: absolute;
+    position: fixed;
     box-shadow: none;
     left: -250px;
     visibility: hidden;
@@ -51,6 +51,7 @@
     position: relative;
     left: 0;
     z-index: 2;
+    height: calc(100vh - 88px);
 
     .side-menu-navigation {
       background: $side-menu-background;

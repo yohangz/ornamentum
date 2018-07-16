@@ -1,21 +1,13 @@
-import { Component, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component } from '@angular/core';
 
-import { Subscription } from 'rxjs/internal/Subscription';
-
-import { MenuGroup, ResizeArgs } from '../../../core/models';
-import { ContainerResponsiveService } from '../../../core/services';
-
+import { MenuGroup } from '../../../core/models';
 
 @Component({
   selector: 'app-feature',
   templateUrl: './feature.component.html',
   styleUrls: ['./feature.component.scss']
 })
-export class FeatureComponent  implements OnDestroy {
-  private containerResponsiveSubscription: Subscription;
-
-  public containerHeight: number;
+export class FeatureComponent {
   public menuGroups: MenuGroup[] = [
     {
       name: 'Data Table',
@@ -200,15 +192,4 @@ export class FeatureComponent  implements OnDestroy {
       ]
     }
   ];
-
-  constructor(private activatedRoute: ActivatedRoute,
-              private containerResponsive: ContainerResponsiveService) {
-    this.containerResponsiveSubscription = this.containerResponsive.containerSize.subscribe((resizeArgs: ResizeArgs) => {
-      this.containerHeight = resizeArgs.containerHeight;
-    });
-  }
-
-  public ngOnDestroy(): void {
-    this.containerResponsiveSubscription.unsubscribe();
-  }
 }

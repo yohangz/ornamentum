@@ -3,7 +3,7 @@ import {
   LeftNavigationComponent
 } from './components';
 
-import { ContainerResponsiveService } from './services';
+import { NavigationService } from './services';
 
 /**
  * Export all core components.
@@ -14,5 +14,5 @@ export const COMPONENTS = [
 ];
 
 export const SERVICES = [
-  ContainerResponsiveService
+  NavigationService
 ];

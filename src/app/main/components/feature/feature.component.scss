@@ -9,6 +9,9 @@
       @include display-flex;
       @include justify-content(space-between);
       font-family: $primary-font;
+      position: relative;
+      overflow: auto;
+      height: 100%;
 
       .main-pane {
         position: relative;

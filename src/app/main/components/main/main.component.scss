@@ -4,7 +4,29 @@
 .main-wrapper {
   overflow: hidden;
 
-  .page-wrapper-content{
-    width: 100%;
+  .page-wrapper {
+    position:  absolute;
+    display:  flex;
+    flex-direction: column;
+    top: 56px;
+    bottom:  0;
+    left:  0;
+    right:  0;
+
+    header {
+      position:  fixed;
+      top:  0;
+      left:  0;
+      right:  0;
+      z-index: 3;
+    }
+
+    .page-wrapper-content {
+      width: 100%;
+      position:  relative;
+      overflow:  hidden;
+      display: block;
+      height:  100%;
+    }
   }
 }
