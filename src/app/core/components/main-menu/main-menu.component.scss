@@ -99,6 +99,60 @@
           display: inline-block;
           position: relative;
 
+          .themes-selector {
+            a {
+              position: relative;
+
+              span {
+                &:before {
+                  background: #fff;
+                  border-radius: 2px;
+                  content: "";
+                  height: 2px;
+                  left: 5px;
+                  position: absolute;
+                  top: 10px;
+                  transform: rotate(45deg);
+                  transform-origin: 0% 0%;
+                  transition: width 50ms ease 50ms;
+                  width: 0;
+
+                }
+
+                &:after {
+                  content: "";
+
+                  height: 2px;
+                  background: #fff;
+                  border-radius: 2px;
+                  left: 8px;
+                  position: absolute;
+                  top: 16px;
+                  transform: rotate(305deg);
+                  transform-origin: 0% 0%;
+                  transition: width 50ms ease;
+                  width: 0;
+                }
+              }
+            }
+          }
+
+          .selected {
+            a {
+              span {
+                &:after {
+                  transition: width 150ms ease 100ms;
+                  width: 13px;
+                }
+
+                &:before {
+                  transition: width 150ms ease 100ms;
+                  width: 8px;
+                }
+              }
+            }
+          }
+
           &:hover {
             > .theme-selector-container {
               @include display-flex;
@@ -108,9 +162,11 @@
               width: 150px;
 
               span {
+                border: 2px solid #fff;
                 height: 25px;
                 width: 25px;
               }
+
             }
           }
         }
@@ -186,7 +242,7 @@
 
           span {
             @include border-radius(50%);
-            border: 2px solid #fff;
+            border: 0;
             height: 0;
             position: absolute;
             width: 0;
