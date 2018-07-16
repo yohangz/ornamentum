@@ -89,6 +89,7 @@
 
         &.package-version {
           @include font-size(.8, 2);
+          font-weight: 700;
         }
 
         .menu-title {
@@ -189,7 +190,7 @@
         display: inline-block;
         height: 2rem;
         position: absolute;
-        right: .2rem;
+        left: .2rem;
         width: 2rem;
 
         &:hover {
@@ -289,6 +290,17 @@
 
     .nav-item {
       padding: 0 1.3rem;
+    }
+
+    .github-icon-link {
+      padding: 0 1rem 0 2.5rem;
+
+      .github-link {
+        font-weight: 700;
+        @include breakpoint(max767) {
+          display: none;
+        }
+      }
     }
   }
 }

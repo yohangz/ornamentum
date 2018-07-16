@@ -4,7 +4,7 @@
       <div class="side-menu-navigation">
         <nav *ngFor="let group of menuGroups">
           <span class="main-nav-label">
-            <span class="menu-title">{{group.name}}</span>
+            <span class="menu-title main-menu-title">{{group.name}}</span>
             <ul>
                <li *ngFor="let menuItem of group.menuItems" [routerLinkActive]="'active'" (click)="closeMenu()">
                 <a class="nav-link" [routerLink]="menuItem.routePath">

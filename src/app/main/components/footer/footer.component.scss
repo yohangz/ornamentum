@@ -25,6 +25,10 @@ footer {
 
     li {
       @include font-size(.9, 2);
+
+      a {
+        color: $main-nav-bar-active-text;
+      }
     }
   }
 
