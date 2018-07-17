@@ -23,6 +23,7 @@ export class ClickOutsideDirective {
    * @param event Click event
    */
   @HostListener('document:click', ['$event'])
+  @HostListener('document:touchstart', ['$event'])
   public compareEvent(event: Event) {
     if (this.el.nativeElement && this.el.nativeElement.contains(event.target)) {
       return;
