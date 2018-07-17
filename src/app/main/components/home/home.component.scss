@@ -83,6 +83,10 @@
       top: 40%;
       z-index: 3;
 
+      @include breakpoint(max767) {
+        top: 13%;
+      }
+
       @include breakpoint(max640) {
         top: 25%;
       }
@@ -220,14 +224,14 @@
     @include display-flex;
     @include flex-direction(row);
     @include flex-grow(1);
-    padding: 5rem;
+    padding: 1rem 5rem;
     position: relative;
     z-index: 3;
 
     @include breakpoint(max767) {
       display: table;
       @include flex-wrap(wrap);
-      padding: 2rem;
+      padding: .5rem 2rem;
     }
 
     h1 {
