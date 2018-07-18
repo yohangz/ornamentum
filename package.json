@@ -77,7 +77,7 @@
   "bugs": {
     "url": "https://github.com/yohangz/ornamentum/issues"
   },
-  "homepage": "https://github.com/yohangz/ornamentum#readme",
+  "homepage": "https://ornamentum.app",
   "dependencies": {
     "@angular/animations": "^6.0.0",
     "@angular/common": "^6.0.0",
