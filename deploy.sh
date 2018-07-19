@@ -29,15 +29,17 @@ handleError $? "docker login successful" "docker login failure"
 
 print "tag docker image" "$Gre"
 docker tag ${IMAGE_NAME} ${IMAGE_NAME}:latest
-docker tag ${IMAGE_NAME} ${IMAGE_NAME}:${TRAVIS_TAG}
 handleError $? "docker tag successful" "docker tag failure"
+
+#docker tag ${IMAGE_NAME} ${IMAGE_NAME}:${TRAVIS_TAG}
+#handleError $? "docker tag successful" "docker tag failure"
 
 print "push docker image" "$Gre"
 docker push ${IMAGE_NAME}:latest
 handleError $? "docker latest push successful" "docker latest push failure"
 
-docker push ${IMAGE_NAME}:${TRAVIS_TAG}
-handleError $? "docker tag push successful" "docker tag push failure"
+#docker push ${IMAGE_NAME}:${TRAVIS_TAG}
+#handleError $? "docker tag push successful" "docker tag push failure"
 
 ssh -i ~/.ssh/id_rsa_ornamentum ${DEPLOY_USER}@${DEPLOY_HOST} "sh deploy.ornamentum.sh"
 
