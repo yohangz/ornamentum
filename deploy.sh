@@ -10,9 +10,9 @@ function print() {
 function handleError() {
   if [ "$1" == "0" ]
   then
-    print $2 "$Gre"
+    echo -e "\n$Gre$2$RCol"
   else
-    print $3 "$Red"
+    echo -e "\n$Red$3$RCol"
     exit 1
   fi
 }
@@ -29,8 +29,6 @@ handleError $? "docker login successful" "docker login failure"
 
 print "tag docker image" "$Gre"
 docker tag ${IMAGE_NAME} ${IMAGE_NAME}:latest
-handleError $? "docker latest tag successful" "docker latest tag failure"
-
 docker tag ${IMAGE_NAME} ${IMAGE_NAME}:${TRAVIS_TAG}
 handleError $? "docker tag successful" "docker tag failure"
 
