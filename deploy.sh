@@ -46,7 +46,5 @@ ssh -i ~/.ssh/id_rsa_ornamentum ${DEPLOY_USER}@${DEPLOY_HOST} "sh deploy.ornamen
 print "end publish" "$Gre"
 print "deploy verification start" "$Gre"
 
-curl --retry 5 --retry-delay 5 -k -I "https://"${DEPLOY_HOST}
-
-curl --retry 5 --retry-delay 5 -k -I "https://"${DEPLOY_HOST} 2>&1 | grep -q "HTTP/2 200"
+curl --retry 5 --retry-delay 5 --fail --silent -k -I "https://"${DEPLOY_HOST}
 handleError $? "deployment successful" "deployment failure"
