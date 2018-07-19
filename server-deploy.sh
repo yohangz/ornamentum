@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/bin/bash
+
 RCol='\e[0m' ; Red='\e[0;31m'; Yel='\e[0;33m'; Blu='\e[0;34m'; Gre='\e[0;32m'; Pur='\e[0;35m'; Cya='\e[0;36m';
 IMAGE="yohangz/ornamentum"
 CONTAINER="ornamentum-container"
