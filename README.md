@@ -12,9 +12,7 @@
   </a>
 </p>
 
-> Lightweight, feature rich, highly configurable, UI framework agnostic, full responsive Angular data table with minimal dependencies. 
-Ornamentum data table is a powerful widget which allows you to visualize via its table representation. 
-This is an open source library which works in all most all the well-known browsers. 
+> Ornamentum data table is a lightweight, feature rich, highly configurable, UI framework agnostic, full responsive Angular data table with minimal dependencies. 
 
 Check out the [documentation](https://ornamentum.app/api-docs/) & [demos](https://ornamentum.app/) for more information!
 
@@ -61,8 +59,7 @@ Setup project in local development environment
 
 ```
 # clone project
-git clone git@github.com:yohangz/ornamentum.git
-cd ornamentum
+git clone git@github.com:yohangz/ornamentum.git && && cd $_
 
 # start the app (please make sure to install yarn in your enviornment)
 yarn start
