@@ -32,6 +32,21 @@ Via [NPM](https://www.npmjs.com/)
 
 ```npm install ornamentum lodash-es --save```
 
+## How to Use
+
+Here is the list of tasks available out of the box and run these via `npm run <task_name>`
+
+```
+  build               Builds production ready distribution
+  clean:dist          Cleans distribution
+  test:lib            Runs spec tests
+  lint                Runs tslinit & scss lint
+  test:lib:coverage   Generates coverage reports by running all the tests
+  documentation       Generates API Documentation
+  start               Runs ornamentum demo & watches file changes
+  release             Responsible for publishing ornamentum distribution
+```
+
 ## Peer Dependencies
 
 - [@angular/common](https://www.npmjs.com/package/@angular/common): ^6.0.0-rc.0 || ^6.0.0
