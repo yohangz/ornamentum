@@ -72,7 +72,7 @@ Here is the list of tasks available out of the box and run these via `npm run <t
 
 Setup project in local development environment
 
-```
+```sh
 # clone project
 git clone git@github.com:yohangz/ornamentum.git && && cd $_
 
