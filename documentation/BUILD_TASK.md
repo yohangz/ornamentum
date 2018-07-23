@@ -58,7 +58,7 @@ yarn explorer
 1. Clone Ornamentum source and move to project directory `git clone git@github.com:yohangz/ornamentum.git && $_`
 2. Install dependencies `yarn`
 3. Run serve task `yarn start` 
-5. Explicitly build lib project when lib code is updated [(Read more)](https://github.com/angular/angular-cli/wiki/stories-create-library#why-do-i-need-to-build-the-library-everytime-i-make-changes).
+5. Explicitly build lib project when lib code is updated ([Read more](https://github.com/angular/angular-cli/wiki/stories-create-library#why-do-i-need-to-build-the-library-everytime-i-make-changes)).
 6. Run build task after change is done: `yarn build`
 7. Commit changes with a meaningful message if build is successful with no lint issues and unit test failures.
 8. Push changes and verify travis build stats
