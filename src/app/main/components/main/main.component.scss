@@ -25,6 +25,7 @@
       width: 100%;
       position:  relative;
       overflow:  auto;
+      -webkit-overflow-scrolling: touch;
       display: block;
     }
   }

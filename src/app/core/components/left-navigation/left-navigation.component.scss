@@ -49,6 +49,7 @@
     background: $side-menu-background;
     border: 1px solid $main-nav-bar-active-text;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     padding: 0;
     position: relative;
     left: 0;
