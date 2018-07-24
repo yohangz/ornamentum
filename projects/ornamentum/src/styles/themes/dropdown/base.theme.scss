@@ -1,12 +1,11 @@
 @import 'base.theme.variables';
 @import '../mixins';
 
-/*
- * Dropdown wrapper styles
- * Dropdown Selector Delete Icon styles
- * Dropdown Selector Arrow styles
- * Dropdown Selector Loading Animation styles
- */
+
+// Dropdown wrapper styles
+// Dropdown Selector Delete Icon styles
+// Dropdown Selector Arrow styles
+// Dropdown Selector Loading Animation styles
 
 .ng-dropdown {
   position: relative;
@@ -129,12 +128,12 @@
   }
 }
 
-/*
- * Dropdown Search Field Style
- * Search Icon box Styles
- * Search Input Filed Styles
- * Delete Icon Styles
- */
+
+// Dropdown Search Field Style
+// Search Icon box Styles
+// Search Input Filed Styles
+// Delete Icon Styles
+
 
 .ng-dropdown-search {
 
@@ -209,11 +208,11 @@
   }
 }
 
-/*
- * Dropdown Item List Styles
- * Dropdown Item List Group Heading Styles
- * Dropdown Item List Selected Items styles
- */
+
+// Dropdown Item List Styles
+// Dropdown Item List Group Heading Styles
+// Dropdown Item List Selected Items styles
+
 
 .ng-dropdown-menu-wrapper {
   background-clip: padding-box;

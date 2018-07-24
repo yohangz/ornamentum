@@ -370,6 +370,10 @@
           &.translation-icon::before {
             content: url(../../../../assets/images/translate.svg);
           }
+
+          a {
+            color: $side-menu-link-active-color;
+          }
         }
       }
     }

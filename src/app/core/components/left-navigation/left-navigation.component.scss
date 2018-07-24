@@ -121,7 +121,8 @@
         &.active {
           a {
             span {
-              color: $side-menu-link-active-color;;
+              color: $side-menu-link-active-color;
+              font-weight: 700;
             }
           }
         }

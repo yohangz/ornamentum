@@ -10,7 +10,7 @@
       </ng-template>
       <ng-template #tabContent>
         <app-copy-content [data]="file.content"></app-copy-content>
-        <a rel="noopener" target="_blank" href="https://codesandbox.io/s/6z14zk7n3w" class="edit-on-sandbox"></a>
+        <a rel="noopener" href="https://codesandbox.io/s/6z14zk7n3w" target="_blank" title="Edit on Sandbox" class="edit-on-sandbox"></a>
         <pre *ngSwitchCase="FileType.TS" class="prettyprint linenums lang-js">{{file.content}}</pre>
         <pre *ngSwitchCase="FileType.CSS" class="prettyprint linenums lang-css">{{file.content}}</pre>
         <pre *ngSwitchCase="FileType.HTML" class="prettyprint linenums lang-html">{{file.content}}</pre>

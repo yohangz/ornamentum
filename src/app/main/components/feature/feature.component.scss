@@ -34,6 +34,10 @@
             @include font-size(.9, 2);
           }
         }
+
+        a {
+          color: $side-menu-link-active-color;
+        }
       }
     }
   }
