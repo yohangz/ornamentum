@@ -3,7 +3,7 @@
     <header>
       <app-main-menu (themeChange)="onThemeChange($event)" [selectedTheme]="themeCssClass"></app-main-menu>
     </header>
-    <div class="page-wrapper-content">
+    <div class="page-wrapper-content" #pageWrapper>
       <router-outlet></router-outlet>
     </div>
   </div>
