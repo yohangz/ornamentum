@@ -59,7 +59,7 @@ Setup project in local development environment
 
 ```sh
 # clone project
-git clone git@github.com:yohangz/ornamentum.git && && cd $_
+git clone git@github.com:yohangz/ornamentum.git && cd $_
 
 # start the app (please make sure to install yarn in your enviornment)
 yarn start
