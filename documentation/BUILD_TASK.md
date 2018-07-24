@@ -2,13 +2,16 @@
 
 > This repo contains Ornamentum [library](https://www.npmjs.com/package/ornamentum) and [demo site](http://www.ornamentum.app) codebase.
 
-## Demo site
+## Demo application tasks
 
 Ornamentum demo source reside under `src` directory. This is a [Angular CLI](https://github.com/angular/angular-cli) universal solution (SSR enabled) with service worker integration. 
 
 ```sh
-# run SCSS lint and TS lint
-yarn lint:demo
+# run TS lint
+yarn lint:demo:ts
+
+# run SCSS lint
+yarn lint:demo:scss
 
 # run test stute on watch mode
 yarn test:demo
@@ -23,11 +26,17 @@ yarn start
 yarn start:ssr
 ```
 
-## Library project
+## Library project tasks
 
 Ornamentum library source reside under `projects/ornamentum/src` directory. This is a Angular CLI based [library project](https://github.com/angular/angular-cli/wiki/stories-create-library).
 
 ```sh
+# run TS lint
+yarn lint:lib:ts
+
+# run SCSS lint
+yarn lint:lib:scss
+
 # run test stute on watch mode
 yarn test:lib
 
@@ -39,6 +48,13 @@ yarn build:lib:dev
 
 # build library project on prod mode
 yarn build:lib:prod
+```
+
+## Common tasks
+
+```sh
+# run both library and demo project linters
+yarn lint
 
 # build both library and demo project on production mode
 yarn build
@@ -59,6 +75,7 @@ yarn explorer
 2. Install dependencies `yarn`
 3. Run serve task `yarn start` 
 5. Explicitly build lib project when lib code is updated ([Read more](https://github.com/angular/angular-cli/wiki/stories-create-library#why-do-i-need-to-build-the-library-everytime-i-make-changes)).
-6. Run build task after change is done: `yarn build`
+6. Execute linters and fix prompted `yarn lint`
+6. Run build task after changes are done `yarn build`
 7. Commit changes with a meaningful message if build is successful with no lint issues and unit test failures.
 8. Push changes and verify travis build stats
