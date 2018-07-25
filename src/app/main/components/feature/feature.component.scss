@@ -2,42 +2,33 @@
 @import '../../../styles/mixins';
 
 :host-context {
-
   ::ng-deep {
-
-    .page-wrapper-inner-content {
-      @include display-flex;
-      font-family: $primary-font;
+    .main-pane {
       position: relative;
-      height: 100%;
+      width: 100%;
 
-      .main-pane {
-        position: relative;
-        width: 100%;
+      @include font-size(.9, 1.4);
+      padding: 1rem;
 
-        @include font-size(.9, 1.4);
-        padding: 1rem;
+      h1 {
+        @include font-size(1.6, 1.4);
+      }
 
-        h1 {
-          @include font-size(1.6, 1.4);
+      h2 {
+        @include font-size(1.3, 1.4);
+        color: $side-menu-label-text;
+      }
+
+      .main-pane-list,
+      .main-ul,
+      .sub-ul {
+        li {
+          @include font-size(.9, 2);
         }
+      }
 
-        h2 {
-          @include font-size(1.3, 1.4);
-          color: $side-menu-label-text;
-        }
-
-        .main-pane-list,
-        .main-ul,
-        .sub-ul {
-          li {
-            @include font-size(.9, 2);
-          }
-        }
-
-        a {
-          color: $side-menu-link-active-color;
-        }
+      a {
+        color: $side-menu-link-active-color;
       }
     }
   }
