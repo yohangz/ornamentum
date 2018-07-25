@@ -15,3 +15,9 @@ rules:
   nesting-depth:
     - 1
     - max-depth: 5
+
+  no-vendor-prefixes:
+    - 1
+    -
+        excluded-identifiers:
+          - webkit

@@ -1,10 +1,13 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
 li {
   padding-bottom: 10px;
 }
 
 .sub-ul {
   li {
+    color: $side-menu-label-text;
     padding-bottom: 2px;
-    color: #5d5d5d;
   }
 }

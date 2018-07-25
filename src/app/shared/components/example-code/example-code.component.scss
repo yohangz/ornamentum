@@ -1,60 +1,41 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
 
-.ts-icon {
-  background: url(../../../../assets/images/typescript.svg) no-repeat;
+%pretty-icons {
   background-size: 100% 100%;
   border: 0;
   cursor: pointer;
   display: inline-block;
   height: 1.2rem;
-  position: absolute;
   left: .5rem;
+  position: absolute;
   top: .5rem;
   width: 1.2rem;
+}
+
+
+.ts-icon {
+  @extend %pretty-icons;
+  background: url('../../../../assets/images/typescript.svg') no-repeat;
 }
 
 .html-icon {
-  background: url(../../../../assets/images/html-5.svg) no-repeat;
-  background-size: 100% 100%;
-  border: 0;
-  cursor: pointer;
-  display: inline-block;
-  height: 1.2rem;
-  position: absolute;
-  left: .5rem;
-  top: .5rem;
-  width: 1.2rem;
+  @extend %pretty-icons;
+  background: url('../../../../assets/images/html-5.svg') no-repeat;
 }
 
 .json-icon {
-  background: url(../../../../assets/images/json.svg) no-repeat;
-  background-size: 100% 100%;
-  border: 0;
-  cursor: pointer;
-  display: inline-block;
-  height: 1.2rem;
-  position: absolute;
-  left: .5rem;
-  top: .5rem;
-  width: 1.2rem;
+  @extend %pretty-icons;
+  background: url('../../../../assets/images/json.svg') no-repeat;
 }
 
 .css-icon {
-  background: url(../../../../assets/images/css-3.svg) no-repeat;
-  background-size: 100% 100%;
-  border: 0;
-  cursor: pointer;
-  display: inline-block;
-  height: 1.2rem;
-  position: absolute;
-  left: .5rem;
-  top: .5rem;
-  width: 1.2rem;
+  @extend %pretty-icons;
+  background: url('../../../../assets/images/css-3.svg') no-repeat;
 }
 
 .edit-on-sandbox {
-  background: url(../../../../assets/images/edit-on-sandbox.svg) no-repeat;
+  background: url('../../../../assets/images/edit-on-sandbox.svg') no-repeat;
   background-size: 100% 100%;
   display: inline-block;
   height: 1.5rem;
@@ -70,8 +51,9 @@
 
 .prettyprint {
   background: $nav-tabs-border-color;
+  color: $primary-text-color;
   white-space: pre-wrap;
-  color: #fff;
+
 
   ol {
     padding-left: 3.5rem;

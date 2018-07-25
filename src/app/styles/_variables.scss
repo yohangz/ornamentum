@@ -3,21 +3,29 @@ $nav-bar-background: #1c2023;
 $primary-text-color: #f5f5f5;
 $main-nav-bar-active-background: #555;
 $main-nav-bar-active-text: #ccc;
+$main-menu-box-shadow: rgba(0, 0 , 0 , .5);
+
+$side-menu-background-light: #fff;
 $side-menu-background: #f5f5f5;
 $side-menu-dark-background: #eaeaea;
 $side-menu-label-text: #555;
 $side-menu-link-color: #333;
-$side-menu-link-active-color: #10508F;
-$nav-tabs-border-color: #24282A;
-$nav-tabs-active-color: #1C2022;
-$background-overlay-gradient-1: #B21F1F;
+$side-menu-link-active-color: #10508f;
+$nav-tabs-border-color: #24282a;
+$nav-tabs-active-color: #1c2022;
+$background-overlay-gradient-1: #b21f1f;
 $background-overlay-gradient-2: #e11111;
-$background-overlay-gradient-3: #333333;
-$background-overlay-gradient-4: #111111;
-$background-overlay-gradient-5: #eeeeee;
-$background-overlay-gradient-6: #bbbbbb;
+$background-overlay-gradient-3: #333;
+$background-overlay-gradient-4: #111;
+$background-overlay-gradient-5: #eee;
+$background-overlay-gradient-6: #bbb;
+$background-overlay: #000;
 
+$theme-selector-background: #fff;
 $dark-theme-color: #111;
 $flat-theme-color: #00529f;
 $base-theme-color: #ddd;
 $ornamentum-theme-color: #7b2222;
+
+$scroll-bar-track-color: #eee;
+$scroll-bar-color: #ccc;
