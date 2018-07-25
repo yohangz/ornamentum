@@ -4,7 +4,11 @@
       <app-main-menu (themeChange)="onThemeChange($event)" [selectedTheme]="themeCssClass"></app-main-menu>
     </header>
     <div class="page-wrapper-content" #pageWrapper>
-      <router-outlet></router-outlet>
+      <div class="page-wrapper-inner-content">
+        <app-left-navigation [menuGroups]="menuGroups"></app-left-navigation>
+        <router-outlet></router-outlet>
+      </div>
+      <app-footer></app-footer>
     </div>
   </div>
 </div>

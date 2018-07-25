@@ -19,7 +19,8 @@
     &.nav-expanded {
       left: 0;
       visibility: visible;
-      top: inherit;
+      top: 56px;
+      bottom: 0;
       transition: left 200ms ease-in;
     }
 
@@ -43,6 +44,12 @@
     padding: 1rem;
     position: relative;
     z-index: 2;
+
+    @include breakpoint(max991) {
+      overflow-y: auto;
+      height: 100%;
+      padding: 0;
+    }
   }
 
   .side-menu {
