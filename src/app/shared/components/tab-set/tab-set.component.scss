@@ -3,7 +3,7 @@
 
 .nav-tabs {
   background: $nav-tabs-active-color;
-  border: none;
+  border: 0;
   margin-top: 1rem;
 
   .nav-item {
@@ -12,7 +12,7 @@
     &.active {
       .nav-link {
         background: $nav-tabs-border-color;
-        border: none;
+        border: 0;
         border-bottom: 3px solid $side-menu-link-active-color;
 
         &:hover {
@@ -35,7 +35,7 @@
     position: relative;
 
     &:hover {
-      border: none;
+      border: 0;
       border-bottom: 3px solid transparent;
     }
 

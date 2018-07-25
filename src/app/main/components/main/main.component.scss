@@ -5,28 +5,28 @@
   overflow: hidden;
 
   .page-wrapper {
-    position:  fixed;
-    display:  flex;
-    flex-direction: column;
-    top: 56px;
+    @include display-flex;
+    @include flex-direction(column);
     bottom:  0;
     left:  0;
+    position:  fixed;
     right:  0;
+    top: 56px;
 
     header {
-      position:  fixed;
-      top:  0;
       left:  0;
+      position:  fixed;
       right:  0;
+      top:  0;
       z-index: 3;
     }
 
     .page-wrapper-content {
-      width: 100%;
-      position:  relative;
-      overflow:  auto;
       -webkit-overflow-scrolling: touch;
       display: block;
+      overflow:  auto;
+      position:  relative;
+      width: 100%;
 
       .page-wrapper-inner-content {
         @include display-flex;

@@ -2,18 +2,19 @@
 @import '../../../styles/mixins';
 
 .navbar {
-  @include box-shadow(1px 2px 3px #818284);
+  @include box-shadow(1px 2px 3px $main-menu-box-shadow);
   background: $nav-bar-background;
   flex-wrap: nowrap;
   font-family: $primary-font;
-  padding: 0 1rem 0 1.5rem;
   height: 56px;
+  padding: 0 1rem 0 1.5rem;
+
 
   .navbar-toggle-button {
     cursor: pointer;
     display: none;
-    outline: none;
     left: -1rem;
+    outline: none;
     position: relative;
     top: .5rem;
 
@@ -23,15 +24,15 @@
     }
 
     .toggler-icon {
-      background-image: url(../../../../assets/images/menu.svg);
-      height: 1.3em;
-      width: 1.3em;
+      background-image: url('../../../../assets/images/menu.svg');
+      height: 1.3rem;
+      width: 1.3rem;
     }
   }
 
   .app-name-lg {
     @include transition(.5s all ease);
-    background: url(../../../../assets/images/ornamentum.svg) no-repeat;
+    background: url('../../../../assets/images/ornamentum.svg') no-repeat;
     background-size: 100% 100%;
     display: inline-block;
     height: 2.2rem;
@@ -41,7 +42,7 @@
     width: 10rem;
 
     @include breakpoint(max991) {
-      background: url(../../../../assets/images/ornamentum-sm.svg) no-repeat;
+      background: url('../../../../assets/images/ornamentum-sm.svg') no-repeat;
       height: 2.5rem;
       left: 4rem;
       position: absolute;
@@ -58,6 +59,7 @@
 
 .navbar-nav {
   flex-direction: row;
+
   @include breakpoint(max991) {
     margin-left: 2rem;
   }
@@ -100,59 +102,7 @@
           display: inline-block;
           position: relative;
 
-          .themes-selector {
-            a {
-              position: relative;
 
-              span {
-                &:before {
-                  background: #fff;
-                  border-radius: 2px;
-                  content: "";
-                  height: 2px;
-                  left: 5px;
-                  position: absolute;
-                  top: 10px;
-                  transform: rotate(45deg);
-                  transform-origin: 0% 0%;
-                  transition: width 50ms ease 50ms;
-                  width: 0;
-
-                }
-
-                &:after {
-                  content: "";
-
-                  height: 2px;
-                  background: #fff;
-                  border-radius: 2px;
-                  left: 8px;
-                  position: absolute;
-                  top: 16px;
-                  transform: rotate(305deg);
-                  transform-origin: 0% 0%;
-                  transition: width 50ms ease;
-                  width: 0;
-                }
-              }
-            }
-          }
-
-          .selected {
-            a {
-              span {
-                &:after {
-                  transition: width 150ms ease 100ms;
-                  width: 13px;
-                }
-
-                &:before {
-                  transition: width 150ms ease 100ms;
-                  width: 8px;
-                }
-              }
-            }
-          }
 
           &:hover {
             > .theme-selector-container {
@@ -163,7 +113,7 @@
               width: 150px;
 
               span {
-                border: 2px solid #fff;
+                border: 2px solid $theme-selector-background;
                 height: 25px;
                 width: 25px;
               }
@@ -185,12 +135,12 @@
       }
 
       .github-icon {
-        background: url(../../../../assets/images/github-logo.svg) no-repeat;
+        background: url('../../../../assets/images/github-logo.svg') no-repeat;
         background-size: 100% 100%;
         display: inline-block;
         height: 2rem;
-        position: absolute;
         left: .2rem;
+        position: absolute;
         width: 2rem;
 
         &:hover {
@@ -199,7 +149,7 @@
       }
 
       .api-docs {
-        background: url(../../../../assets/images/api.svg) no-repeat;
+        background: url('../../../../assets/images/api.svg') no-repeat;
         background-size: 100% 100%;
         display: inline-block;
         height: 2rem;
@@ -213,7 +163,7 @@
       }
 
       .theme {
-        background: url(../../../../assets/images/theme.svg) no-repeat;
+        background: url('../../../../assets/images/theme.svg') no-repeat;
         background-size: 100% 100%;
         height: 25px;
         left: -1.7rem;
@@ -241,6 +191,10 @@
           position: relative;
           width: 35px;
 
+          a {
+            position: relative;
+          }
+
           span {
             @include border-radius(50%);
             border: 0;
@@ -263,6 +217,51 @@
             &.ornamentum-theme {
               background: $ornamentum-theme-color;
             }
+
+            &::before {
+              @include transform(rotate(45deg));
+              @include transform-origin(0);
+              @include transition(width 50ms ease 50ms);
+              background: $theme-selector-background;
+              border-radius: 2px;
+              content: '';
+              height: 2px;
+              left: 4px;
+              position: absolute;
+              top: 10px;
+              width: 0;
+
+            }
+
+            &::after {
+              @include transform(rotate(305deg));
+              @include transform-origin(0);
+              @include transition(width 50ms ease);
+              background: $theme-selector-background;
+              border-radius: 2px;
+              content: '';
+              height: 2px;
+              left: 8px;
+              position: absolute;
+              top: 16px;
+              width: 0;
+            }
+          }
+
+          &.selected {
+            a {
+              span {
+                &::after {
+                  @include transition(width 150ms ease 100ms);
+                  width: 13px;
+                }
+
+                &::before {
+                  @include transition(width 150ms ease 100ms);
+                  width: 8px;
+                }
+              }
+            }
           }
         }
       }
@@ -284,8 +283,8 @@
     @include breakpoint(max991) {
       padding-top: 0;
       position: absolute;
-      top: 0;
       right: .5rem;
+      top: 0;
     }
 
     .nav-item {

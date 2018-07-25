@@ -2,13 +2,14 @@
 @import '../../../styles/mixins';
 
 :host-context {
-  ::ng-deep {
-    .main-pane {
-      position: relative;
-      width: 100%;
 
+  ::ng-deep {
+
+    .main-pane {
       @include font-size(.9, 1.4);
       padding: 1rem;
+      position: relative;
+      width: 100%;
 
       h1 {
         @include font-size(1.6, 1.4);
