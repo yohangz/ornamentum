@@ -4,7 +4,8 @@ import {
   HomeComponent,
   FeatureComponent,
   FooterComponent,
-  PageNotFoundComponent
+  PageNotFoundComponent,
+  DataTableDemoComponent
 } from './components';
 
 /**
@@ -16,5 +17,6 @@ export const COMPONENTS = [
   HomeComponent,
   FeatureComponent,
   FooterComponent,
-  PageNotFoundComponent
+  PageNotFoundComponent,
+  DataTableDemoComponent
 ];
