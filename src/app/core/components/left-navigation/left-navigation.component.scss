@@ -46,8 +46,8 @@
     z-index: 2;
 
     @include breakpoint(max991) {
-      overflow-y: auto;
       height: 100%;
+      overflow-y: auto;
       padding: 0;
     }
   }
