@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { FeatureComponent, MainComponent, HomeComponent, PageNotFoundComponent } from './main/components';
+import {
+  MainComponent,
+  PageNotFoundComponent,
+  OverviewComponent
+} from './main/components';
 
 /**
  * Represent application main routes.
@@ -9,7 +13,8 @@ import { FeatureComponent, MainComponent, HomeComponent, PageNotFoundComponent }
  */
 const appRoutes: Routes = [
   {
-    component: HomeComponent,
+    component: OverviewComponent,
+    loadChildren: './overview/overview.module#OverviewModule',
     path: '',
   },
   {
@@ -17,12 +22,10 @@ const appRoutes: Routes = [
     path: 'feature',
     children: [
       {
-        component: FeatureComponent,
         loadChildren: './feature/data-table/data-table-feature.module#DataTableFeatureModule',
         path: 'data-table'
       },
       {
-        component: FeatureComponent,
         loadChildren: './feature/dropdown/dropdown-feature.module#DropdownFeatureModule',
         path: 'dropdown'
       }
@@ -40,7 +43,7 @@ const appRoutes: Routes = [
  */
 @NgModule({
   exports: [RouterModule],
-  imports: [RouterModule.forRoot(appRoutes, { initialNavigation: 'enabled' })]
+  imports: [RouterModule.forRoot(appRoutes, {initialNavigation: 'enabled'})]
 })
 export class AppRoutingModule {
 }

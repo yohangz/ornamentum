@@ -34,6 +34,13 @@
         font-family: $primary-font;
         height: 100%;
         position: relative;
+
+        .main-pane {
+          @include font-size(.9, 1.4);
+          padding: 1rem;
+          position: relative;
+          width: 100%;
+        }
       }
     }
   }

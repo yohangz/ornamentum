@@ -1,11 +1,9 @@
 import {
   MainComponent,
   BaseComponent,
-  HomeComponent,
-  FeatureComponent,
   FooterComponent,
   PageNotFoundComponent,
-  DataTableDemoComponent
+  OverviewComponent
 } from './components';
 
 /**
@@ -14,9 +12,7 @@ import {
 export const COMPONENTS = [
   MainComponent,
   BaseComponent,
-  HomeComponent,
-  FeatureComponent,
   FooterComponent,
   PageNotFoundComponent,
-  DataTableDemoComponent
+  OverviewComponent
 ];
