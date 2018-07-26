@@ -26,6 +26,10 @@
       background: linear-gradient(-12deg, $background-overlay-gradient-1, $background-overlay-gradient-2);
       min-height: 100vh;
       z-index: 1;
+
+      @include breakpoint(max640) {
+        @include transform-origin(0);
+      }
     }
 
     .background-overlay-sub {
@@ -138,8 +142,8 @@
         }
 
         @include breakpoint(max640) {
-          @include transform(scale(.8));
-          left: 1rem;
+          @include transform(scale(.9));
+          left: 2rem;
           top: 18rem;
           width: 25rem;
         }
@@ -169,6 +173,17 @@
           &:hover {
             @include box-shadow(4px 4px 8px $background-overlay-gradient-4);
             background: $background-overlay-gradient-2;
+
+            @include breakpoint(max640) {
+              @include border-radius(15px);
+              background: linear-gradient(-120deg, $background-overlay-gradient-4, $background-overlay-gradient-3);
+              border:  1px solid $background-overlay-gradient-4;
+            }
+          }
+
+          @include breakpoint(max640) {
+            background: linear-gradient(-120deg, $background-overlay-gradient-3, $background-overlay-gradient-4);
+            border:  1px solid $background-overlay-gradient-4;
           }
         }
 
@@ -205,6 +220,16 @@
     padding: 1rem 5rem;
     position: relative;
     z-index: 3;
+
+    &:first-of-type {
+
+      h1 {
+        @include breakpoint(max640) {
+          color: $primary-background;
+        }
+      }
+
+    }
 
     &.last-section {
       border-bottom: 0;
@@ -306,9 +331,21 @@
       color: $main-nav-bar-active-text;
       font-weight: 300;
 
+      @include breakpoint(max575) {
+        margin-bottom: .2rem;
+      }
+
 
       .icon-box {
         padding: 1rem;
+
+        @include breakpoint(max575) {
+          @include display-flex;
+        }
+
+        .icon-description {
+          margin-left: .5rem;
+        }
       }
 
       %icon-placement {
@@ -316,6 +353,7 @@
       }
 
       .data-icon {
+
         &::before {
           @extend %icon-placement;
           content: url('../../../../assets/images/data.svg');
