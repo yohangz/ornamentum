@@ -1,8 +1,8 @@
 {
   "name": "Ornamentum",
   "short_name": "Ornamentum",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "theme_color": "#24282a",
+  "background_color": "#111",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
