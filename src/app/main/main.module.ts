@@ -1,6 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
+import { DataTableModule } from 'ornamentum';
 
 import { AppCoreModule } from '../core/core.module';
 
@@ -23,6 +26,10 @@ import { BaseComponent } from './components';
     AppCoreModule,
     RouterModule,
     CommonModule,
+    FormsModule,
+    DataTableModule.forRoot({
+      showColumnSelector: true
+    }),
   ]
 })
 export class AppMainModule {
