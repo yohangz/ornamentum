@@ -3,14 +3,15 @@
   "assetGroups": [{
     "name": "app",
     "installMode": "prefetch",
+    "updateMode": "prefetch",
     "resources": {
       "files": [
-        "/index.html",
-        "/*.css",
-        "/*.js",
-        "/*.png",
-        "/*.svg",
-        "/*.ico"
+        "/favicon.ico",
+        "/index.html"
+      ],
+      "urls": [
+        "https://fonts.googleapis.com/**",
+        "https://fonts.gstatic.com/**"
       ]
     }
   }, {
@@ -19,7 +20,18 @@
     "updateMode": "prefetch",
     "resources": {
       "files": [
-        "/assets/**"
+        "/assets/**",
+        "/*.png",
+        "/*.svg"
+      ]
+    }
+  }, {
+    "name": "script",
+    "installMode": "lazy",
+    "updateMode": "prefetch",
+    "resources": {
+      "files": [
+        "/*.js"
       ]
     }
   }]
