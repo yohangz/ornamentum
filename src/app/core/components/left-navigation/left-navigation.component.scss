@@ -16,15 +16,18 @@
     left: -250px;
     position: fixed;
     top: 56px;
+    visibility: hidden;
 
     &.nav-expanded {
-      @include transition(left 200ms ease-in);
+      @include transition(all 200ms ease-in);
       left: 0;
+      visibility: visible;
     }
 
     &.nav-collapsed {
-      @include transition(left 200ms ease-out);
+      @include transition(all 200ms ease-out);
       left: -250px;
+      visibility: hidden;
     }
 
     .side-menu-overlay {
