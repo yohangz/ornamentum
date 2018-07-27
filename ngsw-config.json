@@ -7,7 +7,10 @@
     "resources": {
       "files": [
         "/favicon.ico",
-        "/index.html"
+        "/index.html",
+        "/*.js",
+        "/*.css",
+        "/*.(png|svg|jpeg|gif)"
       ],
       "urls": [
         "https://fonts.googleapis.com/**",
@@ -20,18 +23,7 @@
     "updateMode": "prefetch",
     "resources": {
       "files": [
-        "/assets/**",
-        "/*.png",
-        "/*.svg"
-      ]
-    }
-  }, {
-    "name": "script",
-    "installMode": "lazy",
-    "updateMode": "prefetch",
-    "resources": {
-      "files": [
-        "/*.js"
+        "/assets/**"
       ]
     }
   }]
