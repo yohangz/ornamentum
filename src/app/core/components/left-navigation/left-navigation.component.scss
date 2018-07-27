@@ -11,17 +11,20 @@
   z-index: 2;
 
   @include breakpoint(max991) {
+    bottom: 0;
     box-shadow: none;
     left: -250px;
     position: fixed;
-    visibility: hidden;
+    top: 56px;
 
     &.nav-expanded {
       @include transition(left 200ms ease-in);
-      bottom: 0;
       left: 0;
-      top: 56px;
-      visibility: visible;
+    }
+
+    &.nav-collapsed {
+      @include transition(left 200ms ease-out);
+      left: -250px;
     }
 
     .side-menu-overlay {
@@ -36,6 +39,11 @@
       &.show-overlay {
         opacity: .5;
         @include transition(opacity 200ms ease-in);
+      }
+
+      &.hide-overlay {
+        opacity: 0;
+        @include transition(opacity 200ms ease-out);
       }
     }
   }
