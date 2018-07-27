@@ -21,6 +21,7 @@ export class MainComponent implements OnInit, OnDestroy {
   public themeCssClass: string = Theme.dark;
   public menuGroups: MenuGroup[] = [
     {
+      expanded: true,
       name: 'Data Table',
       menuItems: [
         {
@@ -114,6 +115,7 @@ export class MainComponent implements OnInit, OnDestroy {
       ]
     },
     {
+      expanded: true,
       name: 'Dropdown',
       menuItems: [
         {

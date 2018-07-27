@@ -1,11 +1,12 @@
-<div class="left-navigation" [style.height.px]="containerHeight" [class.nav-expanded]="expanded" [class.nav-collapsed]="!expanded">
+<div class="left-navigation" [ngClass]="expandedStateClass">
   <div class="left-navigation-container" (ngClickOutside)="closeMenu()">
-    <div class="side-menu" [style.height.px]="menuHeight">
+    <div class="side-menu">
       <div class="side-menu-navigation">
         <nav *ngFor="let group of menuGroups">
-          <span class="main-nav-label">
+          <span class="main-nav-label" (click)="navToggle(group)">
             <span class="menu-title main-menu-title">{{group.name}}</span>
-            <ul>
+            <div class="sub-menu-item-container">
+               <ul>
                <li *ngFor="let menuItem of group.menuItems" [routerLinkActive]="'active'">
                 <a class="nav-link" [routerLink]="menuItem.routePath">
                   <span class="main-nav-label">
@@ -14,11 +15,12 @@
                 </a>
                 </li>
               </ul>
+            </div>
           </span>
         </nav>
       </div>
     </div>
   </div>
-  <div class="side-menu-overlay" [class.show-overlay]="expanded" [class.hide-overlay]="!expanded"></div>
+  <div class="side-menu-overlay" [ngClass]="expandedStateClass"></div>
 </div>
 
