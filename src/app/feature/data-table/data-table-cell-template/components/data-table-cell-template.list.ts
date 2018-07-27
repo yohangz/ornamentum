@@ -16,10 +16,10 @@ export const cellTemplateUsage: ExampleFile[] = [
     name: 'cell-template-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/cell-template-usage/cell-template-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'cell-template-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/cell-template-usage/cell-template-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('../../../../shared/data/sample-data.json')
+  // }
 ];
 

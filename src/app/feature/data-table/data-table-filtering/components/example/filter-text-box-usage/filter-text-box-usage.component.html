@@ -1,46 +1,70 @@
 <ng-data-table
-  [title]="'Station Details'"
-  [dataSource]="items"
+  [title]="'Business Details'"
+  [items]="items"
+  [minHeight]="200"
+  [minWidth]="1000"
   [pageable]="false"
   [showHeader]="true"
   [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false"
-  [minHeight]="200">
+  [showColumnSelector]="false">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
     [filterable]="true"
     [filterPlaceholder]="'ID Filter'"
     [showFilterClearButton]="true"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'symbol'"
+    [title]="'Symbol'"
+    [filterable]="true"
+    [filterPlaceholder]="'Symbol Filter'"
+    [showFilterClearButton]="true"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'business_class'"
+    [title]="'Business Class'"
+    [filterable]="true"
+    [filterPlaceholder]="'Business Class Filter'"
+    [showFilterClearButton]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'time_stamp'"
+    [title]="'Timestamp'"
+    [filterable]="true"
+    [filterPlaceholder]="'Timestamp Filter'"
+    [showFilterClearButton]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'confirmation_type'"
+    [title]="'Confirmation Type'"
+    [filterable]="true"
+    [filterPlaceholder]="'Confirmation Type Filter'"
+    [showFilterClearButton]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'side'"
+    [title]="'Side'"
+    [filterable]="true"
+    [filterPlaceholder]="'Side Filter'"
+    [showFilterClearButton]="true"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'volume'"
+    [title]="'Volume'"
+    [filterable]="true"
+    [filterPlaceholder]="'Volume Filter'"
+    [showFilterClearButton]="true"
     [width]="100">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'"
+    [field]="'price'"
+    [title]="'Price'"
     [filterable]="true"
-    [filterPlaceholder]="'Station Name Filter'"
-    [showFilterClearButton]="true">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'"
-    [filterable]="true"
-    [filterPlaceholder]="'Status Value Filter'"
-    [showFilterClearButton]="true">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'"
-    [filterable]="true"
-    [filterPlaceholder]="'Bike Count Filter'"
-    [showFilterClearButton]="true">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'"
-    [filterable]="true"
-    [filterPlaceholder]="'Address Name Filter'"
+    [filterPlaceholder]="'Price Filter'"
     [showFilterClearButton]="true">
   </ng-data-table-column>
 </ng-data-table>

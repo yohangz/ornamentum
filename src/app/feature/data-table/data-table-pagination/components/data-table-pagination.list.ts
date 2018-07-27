@@ -16,10 +16,10 @@ export const paginationUsage: ExampleFile[] = [
     name: 'pagination-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/pagination-usage/pagination-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'pagination-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/pagination-usage/pagination-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 

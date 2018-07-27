@@ -1,6 +1,6 @@
 <ng-data-table
-  [title]="'Station Details'"
-  [dataSource]="items"
+  [title]="'Business Details'"
+  [items]="items"
   [minWidth]="650"
   [minHeight]="200"
   [contentHeight]="400"
@@ -8,27 +8,41 @@
   [pageable]="false"
   [showHeader]="true"
   [showRefreshButton]="false"
-  [showIndexColumn]="true"
   [showColumnSelector]="false">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'symbol'"
+    [title]="'Symbol'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'business_class'"
+    [title]="'Business Class'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'time_stamp'"
+    [title]="'Timestamp'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'confirmation_type'"
+    [title]="'Confirmation Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'side'"
+    [title]="'Side'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'volume'"
+    [title]="'Volume'"
     [width]="100">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'">
+    [field]="'price'"
+    [title]="'Price'">
   </ng-data-table-column>
 </ng-data-table>
