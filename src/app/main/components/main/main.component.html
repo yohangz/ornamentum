@@ -6,7 +6,9 @@
     <div class="page-wrapper-content" #pageWrapper>
       <div class="page-wrapper-inner-content">
         <app-left-navigation [menuGroups]="menuGroups"></app-left-navigation>
-        <router-outlet></router-outlet>
+        <div class="main-pane">
+          <router-outlet></router-outlet>
+        </div>
       </div>
       <app-footer></app-footer>
     </div>
