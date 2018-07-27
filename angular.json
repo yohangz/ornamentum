@@ -25,19 +25,9 @@
                 "output": "/assets"
               },
               {
-                "glob": "favicon.ico",
-                "input": "src",
-                "output": "/"
-              },
-              {
-                "glob": "favicon-16x16.png",
-                "input": "src",
-                "output": "/"
-              },
-              {
-                "glob": "favicon-32x32.png",
-                "input": "src",
-                "output": "/"
+                "glob": "favicon/*",
+                "input": "src/assets",
+                "output": "/assets"
               },
               {
                 "glob": "manifest.json",
@@ -62,9 +52,9 @@
                 }
               ],
               "optimization": true,
-              "outputHashing": "bundles",
+              "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
+              "extractCss": false,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
