@@ -1,12 +1,11 @@
 import { Component, Input, OnDestroy } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs/internal/Subscription';
+import { filter } from 'rxjs/operators';
 
 import { MenuGroup } from '../../models';
 import { NavigationService } from '../../services';
-import { animationFrame } from 'rxjs/internal/scheduler/animationFrame';
-import { NavigationEnd, Router } from '@angular/router';
-import { filter } from 'rxjs/operators';
 
 
 @Component({
@@ -21,7 +20,6 @@ export class LeftNavigationComponent implements OnDestroy {
   @Input()
   public menuGroups: MenuGroup[];
 
-  public containerHeight: number;
   public expanded =  false;
 
   constructor(private containerResponsive: NavigationService, private router: Router) {
@@ -36,10 +34,6 @@ export class LeftNavigationComponent implements OnDestroy {
     });
   }
 
-  public get menuHeight(): number {
-    return this.containerHeight - 32;
-  }
-
   public closeMenu(): void {
     this.expanded = false;
   }
@@ -47,5 +41,13 @@ export class LeftNavigationComponent implements OnDestroy {
   public ngOnDestroy(): void {
     this.navigationToggleSubscription.unsubscribe();
     this.routeEventSubscription.unsubscribe();
+  }
+
+  public navToggle(menuGroup: MenuGroup): void {
+    menuGroup.expanded = !menuGroup.expanded;
+  }
+
+  public get expandedStateClass() {
+    return this.expanded ? 'expanded' : 'collapsed';
   }
 }
