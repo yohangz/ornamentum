@@ -1,31 +1,63 @@
 <ng-data-table
-  [title]="'Station Details'"
+  [title]="'Business Details'"
   [items]="items"
+  [minHeight]="200"
+  [minWidth]="1130"
   [pageable]="false"
   [showHeader]="true"
   [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false"
-  [minHeight]="200">
+  [showColumnSelector]="false">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'symbol'"
+    [title]="'Symbol'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'business_class'"
+    [title]="'Business Class'"
+    [visible]="false">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'time_stamp'"
+    [title]="'Timestamp'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'confirmation_type'"
+    [title]="'Confirmation Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'side'"
+    [title]="'Side'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'volume'"
+    [title]="'Volume'"
     [width]="100">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'">
+    [field]="'price'"
+    [title]="'Price'">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'">
+    [field]="'market_order_id'"
+    [title]="'Market Order ID'"
+    [visible]="false">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'">
+    [field]="'market_id'"
+    [title]="'Market ID'"
+    [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'">
+    [field]="'broker_id'"
+    [title]="'Broker ID'"
+    [visible]="false"
+    [width]="80">
   </ng-data-table-column>
 </ng-data-table>

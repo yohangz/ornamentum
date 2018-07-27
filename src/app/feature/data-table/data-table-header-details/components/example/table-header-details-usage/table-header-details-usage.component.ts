@@ -1,21 +1,20 @@
 import { Component, ElementRef, Input } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+import { ExampleDataModel } from '../../../../../../shared/models';
 
-import { data } from './table-header-details-usage.data';
+import { TableDataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-table-header-details-usage',
   templateUrl: './table-header-details-usage.component.html'
 })
 export class TableHeaderDetailsUsageComponent {
-  public items: Observable<any>;
+  public items: ExampleDataModel[];
 
   @Input()
   public parentElement: ElementRef;
 
-  constructor() {
-    this.items = of(data);
+  constructor(private tableDataFetchService: TableDataFetchService) {
+    this.items = this.tableDataFetchService.getTableData();
   }
 }

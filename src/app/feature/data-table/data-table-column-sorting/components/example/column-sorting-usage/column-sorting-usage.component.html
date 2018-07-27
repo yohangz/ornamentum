@@ -1,39 +1,71 @@
 <ng-data-table
-  [title]="'Station Details'"
-  [dataSource]="items"
+  [title]="'Business Details'"
+  [items]="items"
+  [minHeight]="200"
+  [minWidth]="1130"
   [pageable]="false"
   [showHeader]="true"
   [showRefreshButton]="false"
-  [showIndexColumn]="true"
-  [showColumnSelector]="false"
-  [minHeight]="200">
+  [showColumnSelector]="false">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
     [sortable]="true"
-    [sortOrder]="DataTableSortOrder.ASC"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'symbol'"
+    [title]="'Symbol'"
+    [sortable]="true"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'business_class'"
+    [title]="'Business Class'"
+    [sortable]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'time_stamp'"
+    [title]="'Timestamp'"
+    [sortable]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'confirmation_type'"
+    [title]="'Confirmation Type'"
+    [sortable]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'side'"
+    [title]="'Side'"
+    [sortable]="true"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'volume'"
+    [title]="'Volume'"
+    [sortable]="true"
     [width]="100">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'"
-    [sortable]="true"
-    [sortOrder]="DataTableSortOrder.DESC">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'"
-    [sortable]="true"
-    [sortOrder]="DataTableSortOrder.DESC">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'"
+    [field]="'price'"
+    [title]="'Price'"
     [sortable]="true">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'"
+    [field]="'market_order_id'"
+    [title]="'Market Order ID'"
     [sortable]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'market_id'"
+    [title]="'Market ID'"
+    [sortable]="true"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'broker_id'"
+    [title]="'Broker ID'"
+    [sortable]="true"
+    [width]="80">
   </ng-data-table-column>
 </ng-data-table>

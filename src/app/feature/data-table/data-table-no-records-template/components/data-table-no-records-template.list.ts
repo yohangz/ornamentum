@@ -16,10 +16,10 @@ export const noRecordsTemplateUsage: ExampleFile[] = [
     name: 'no-records-template-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/no-records-template-usage/no-records-template-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'no-records-template-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/no-records-template-usage/no-records-template-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 

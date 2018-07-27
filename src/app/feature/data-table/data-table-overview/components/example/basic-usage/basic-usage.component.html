@@ -1,29 +1,147 @@
 <ng-data-table
-  [title]="'Station Details'"
-  [dataSource]="items"
-  [showHeader]="true"
+  [id]="'business_detail_summery'"
+  [title]="'Business Details'"
+  [dataSource]="dataSource"
   [minHeight]="200"
+  [minWidth]="1130"
+  [showHeader]="true"
+  [pageable]="true"
+  [showRefreshButton]="true"
+  [showRowSelectCheckbox]="true"
+  [rowSelectable]="true"
+  [selectOnRowClick]="true"
+  [showSubstituteRows]="true"
+  [persistTableState]="true"
+  [expandableRows]="true"
+  [showRowExpandLoadingSpinner]="false"
+  [selectMode]="DataTableSelectMode.MULTI"
   [relativeParentElement]="parentElement">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [width]="100">
+    [showInColumnSelector]="false"
+    [sortable]="true"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'"
+    [width]="70">
+    <ng-template #ngDataTableCell let-row="row">
+      <td>
+        <span><i class="zmdi zmdi-account"></i></span>
+        <span>{{row.item.id}}</span>
+      </td>
+    </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'stationName'"
-    [title]="'Station Name'">
+    [field]="'symbol'"
+    [title]="'Symbol'"
+    [sortable]="true"
+    [filterable]="true"
+    [showDropdownFilter]="true"
+    [dropdownFilterShowClearSelectionButton]="true"
+    [dropdownFilterShowSelectAll]="true"
+    [dropdownFilterSearchable]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [width]="120">
+    <ng-template #ngDataTableCell let-row="row">
+      <td>
+        <span><i class="zmdi zmdi-star-circle"></i></span>
+        <span>{{row.item.symbol}}</span>
+      </td>
+    </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'statusValue'"
-    [title]="'Status Value'">
+    [field]="'business_class'"
+    [title]="'Business Class'"
+    [sortable]="true"
+    [visible]="false"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'availableBikes'"
-    [title]="'Available Bikes'">
+    [field]="'time_stamp'"
+    [title]="'Timestamp'"
+    [sortable]="true"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'">
+    <ng-template #ngDataTableCell let-row="row">
+      <td>
+        <span><i class="zmdi zmdi-time"></i></span>
+        <span style="color: #4dc71f">{{row.item.time_stamp}}</span>
+      </td>
+    </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'stAddress1'"
-    [title]="'Address'">
+    [field]="'confirmation_type'"
+    [title]="'Confirmation Type'"
+    [sortable]="true"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'">
   </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'side'"
+    [title]="'Side'"
+    [sortable]="true"
+    [filterable]="true"
+    [showDropdownFilter]="true"
+    [dropdownFilterShowClearSelectionButton]="true"
+    [dropdownFilterShowSelectAll]="true"
+    [dropdownFilterSearchable]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [width]="120">
+    <ng-template #ngDataTableCell let-row="row">
+      <td>
+        <span>{{row.item.side.toUpperCase()}}</span>
+      </td>
+    </ng-template>
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'volume'"
+    [title]="'Volume'"
+    [sortable]="true"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'price'"
+    [title]="'Price'"
+    [sortable]="true"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'">
+    <ng-template #ngDataTableCell let-row="row">
+      <td>
+        <span style="color: red"> ${{row.item.price}}</span>
+      </td>
+    </ng-template>
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'market_order_id'"
+    [title]="'Market Order ID'"
+    [sortable]="true"
+    [visible]="false"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'market_id'"
+    [title]="'Market ID'"
+    [sortable]="true"
+    [filterable]="true"
+    [visible]="false"
+    [filterPlaceholder]="'Search'"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'broker_id'"
+    [title]="'Broker ID'"
+    [sortable]="true"
+    [filterable]="true"
+    [visible]="false"
+    [filterPlaceholder]="'Search'"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-template #ngDataTableRowExpand let-row="row">
+    <app-chart-usage *ngIf="row.expanded || row.dataLoaded"></app-chart-usage>
+  </ng-template>
 </ng-data-table>
-

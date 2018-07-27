@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+import { ExampleDataModel } from '../../../../../../shared/models';
 
-import { data } from './with-substitute-rows-usage.data';
+import { TableDataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-with-substitute-rows-usage',
   templateUrl: './with-substitute-rows-usage.component.html'
 })
 export class WithSubstituteRowsUsageComponent {
-  public items: Observable<any>;
+  public items: ExampleDataModel[];
 
-  constructor() {
-    this.items = of(data);
+  constructor(private tableDataFetchService: TableDataFetchService) {
+    this.items = this.tableDataFetchService.getTableData();
   }
 }

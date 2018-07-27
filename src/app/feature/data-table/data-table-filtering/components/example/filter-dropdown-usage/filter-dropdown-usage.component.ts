@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 import { DropdownMenuPosition } from 'ornamentum';
 
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+import { ExampleDataModel } from '../../../../../../shared/models';
 
-import { data } from './filter-dropdown-usage.data';
+import { TableDataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-filter-dropdown-usage',
@@ -14,9 +13,12 @@ import { data } from './filter-dropdown-usage.data';
 export class FilterDropdownUsageComponent {
   public DropdownMenuPosition = DropdownMenuPosition;
 
-  public items: Observable<any>;
+  @Input()
+  public parentElement: ElementRef;
 
-  constructor() {
-    this.items = of(data);
+  public items: ExampleDataModel[];
+
+  constructor(private tableDataFetchService: TableDataFetchService) {
+    this.items = this.tableDataFetchService.getTableData();
   }
 }

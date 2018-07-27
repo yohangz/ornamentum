@@ -6,10 +6,14 @@ import {
   CopyContentComponent,
 } from './components';
 
+// directives
 import { ClipboardDirective } from './directives';
 
+// services
+import { TableDataFetchService } from './services';
+
 /**
- * Export all core components.
+ * Export all shared components.
  */
 export const COMPONENTS = [
   TabComponent,
@@ -17,4 +21,11 @@ export const COMPONENTS = [
   ExampleCodeComponent,
   CopyContentComponent,
   ClipboardDirective
+];
+
+/**
+ * Export all shared services.
+ */
+export const SERVICES = [
+  TableDataFetchService
 ];

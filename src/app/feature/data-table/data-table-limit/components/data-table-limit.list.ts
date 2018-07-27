@@ -16,11 +16,11 @@ export const limitWithPaginationUsage: ExampleFile[] = [
     name: 'limit-with-pagination-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/limit-with-pagination-usage/limit-with-pagination-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'limit-with-pagination-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/limit-with-pagination-usage/limit-with-pagination-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 
 export const limitWithoutPaginationUsage: ExampleFile[] = [
@@ -39,11 +39,11 @@ export const limitWithoutPaginationUsage: ExampleFile[] = [
     name: 'limit-without-pagination-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/limit-without-pagination-usage/limit-without-pagination-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'limit-without-pagination-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/limit-without-pagination-usage/limit-without-pagination-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 
 export const paginationWithoutLimitUsage: ExampleFile[] = [
@@ -62,11 +62,11 @@ export const paginationWithoutLimitUsage: ExampleFile[] = [
     name: 'pagination-without-limit-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/pagination-without-limit-usage/pagination-without-limit-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'pagination-without-limit-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/pagination-without-limit-usage/pagination-without-limit-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 
 export const withoutLimitAndPaginationUsage: ExampleFile[] = [
@@ -85,9 +85,9 @@ export const withoutLimitAndPaginationUsage: ExampleFile[] = [
     name: 'without-limit-and-pagination-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/without-limit-and-pagination-usage/without-limit-and-pagination-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'without-limit-and-pagination-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/without-limit-and-pagination-usage/without-limit-and-pagination-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];

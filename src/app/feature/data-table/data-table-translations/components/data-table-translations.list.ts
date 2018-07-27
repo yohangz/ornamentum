@@ -16,11 +16,11 @@ export const dataTableTranslationsNoDataUsage: ExampleFile[] = [
     name: 'data-table-translations-no-data-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/data-table-translations-no-data-usage/data-table-translations-no-data-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'data-table-translations-no-data-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/data-table-translations-no-data-usage/data-table-translations-no-data-usage.data.ts')
-  }
+  // {
+  //   type: FileType.TS,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.json')
+  // }
 ];
 
 export const dataTableTranslationsPaginationUsage: ExampleFile[] = [
@@ -39,10 +39,10 @@ export const dataTableTranslationsPaginationUsage: ExampleFile[] = [
     name: 'data-table-translations-pagination-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/data-table-translations-pagination-usage/data-table-translations-pagination-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'data-table-translations-pagination-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/data-table-translations-pagination-usage/data-table-translations-pagination-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('../../../../shared/data/sample-data.json')
+  // }
 ];
 

@@ -16,11 +16,11 @@ export const filterDropdownUsage: ExampleFile[] = [
     name: 'filter-dropdown-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/filter-dropdown-usage/filter-dropdown-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'filter-dropdown-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/filter-dropdown-usage/filter-dropdown-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 
 export const filterTextBoxUsage: ExampleFile[] = [
@@ -39,10 +39,10 @@ export const filterTextBoxUsage: ExampleFile[] = [
     name: 'filter-text-box-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/filter-text-box-usage/filter-text-box-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'filter-text-box-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/filter-text-box-usage/filter-text-box-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 

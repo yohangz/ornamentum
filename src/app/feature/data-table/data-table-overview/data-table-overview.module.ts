@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableOverviewComponent, BasicUsageComponent } from './index';
+import { DataTableOverviewComponent, BasicUsageComponent, ChartUsageComponent } from './index';
 
 import { DataTableOverviewRoutingModule } from './data-table-overview-routing.module';
 
@@ -17,13 +17,14 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTableOverviewComponent,
-    BasicUsageComponent
+    BasicUsageComponent,
+    ChartUsageComponent
   ],
   exports: [],
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule,
+    SharedModule.forRoot(),
     DataTableModule.forRoot({
       showColumnSelector: true
     }),
