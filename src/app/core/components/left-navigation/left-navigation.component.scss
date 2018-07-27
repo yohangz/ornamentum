@@ -35,6 +35,7 @@
 
       &.show-overlay {
         opacity: .5;
+        @include transition(opacity 200ms ease-in);
       }
     }
   }
