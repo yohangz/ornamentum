@@ -25,7 +25,6 @@ export class LeftNavigationComponent implements OnDestroy {
   public expanded =  false;
 
   constructor(private containerResponsive: NavigationService, private router: Router) {
-    debugger;
     this.navigationToggleSubscription = this.containerResponsive.navigationToggle.subscribe(() => {
       this.expanded = !this.expanded;
     });
