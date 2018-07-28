@@ -1,7 +1,11 @@
-import { AfterContentInit, Component, Inject, PLATFORM_ID } from '@angular/core';
+import { AfterContentInit, Component, Inject, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+
 import { filter } from 'rxjs/operators';
+import { Subscription } from 'rxjs/internal/Subscription';
+
+import { SwUpdate } from '@angular/service-worker';
 
 /**
  * Component class for showing base view.
@@ -12,12 +16,24 @@ import { filter } from 'rxjs/operators';
   styleUrls: ['./base.component.scss'],
   templateUrl: './base.component.html'
 })
-export class BaseComponent implements AfterContentInit {
+export class BaseComponent implements AfterContentInit, OnDestroy {
   private previousUrl: string;
+  private swSubscription: Subscription;
+
+  public showWorkerBanner = false;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
+              private updates: SwUpdate,
               @Inject(PLATFORM_ID) private platformId: Object) {
+    if (window) {
+      this.swSubscription = this.updates.available.subscribe(() => {
+        this.showWorkerBanner = true;
+        setTimeout(() => {
+          this.updates.activateUpdate().then(() => document.location.reload());
+        }, 2000);
+      });
+    }
   }
 
   private getUrl(): string {
@@ -45,5 +61,9 @@ export class BaseComponent implements AfterContentInit {
           setTimeout(() => this.prettyPrint(), 50);
         });
     }
+  }
+
+  public ngOnDestroy(): void {
+    this.swSubscription.unsubscribe();
   }
 }
