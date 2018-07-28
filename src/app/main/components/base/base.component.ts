@@ -26,7 +26,7 @@ export class BaseComponent implements AfterContentInit, OnDestroy {
               private router: Router,
               private updates: SwUpdate,
               @Inject(PLATFORM_ID) private platformId: Object) {
-    if (window) {
+    if (isPlatformBrowser(this.platformId)) {
       this.swSubscription = this.updates.available.subscribe(() => {
         this.showWorkerUpdateBanner = true;
         setTimeout(() => {
