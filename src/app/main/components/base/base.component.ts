@@ -20,7 +20,7 @@ export class BaseComponent implements AfterContentInit, OnDestroy {
   private previousUrl: string;
   private swSubscription: Subscription;
 
-  public showWorkerBanner = false;
+  public showWorkerUpdateBanner = false;
 
   constructor(private route: ActivatedRoute,
               private router: Router,
@@ -28,7 +28,7 @@ export class BaseComponent implements AfterContentInit, OnDestroy {
               @Inject(PLATFORM_ID) private platformId: Object) {
     if (window) {
       this.swSubscription = this.updates.available.subscribe(() => {
-        this.showWorkerBanner = true;
+        this.showWorkerUpdateBanner = true;
         setTimeout(() => {
           this.updates.activateUpdate().then(() => document.location.reload());
         }, 2000);
