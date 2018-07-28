@@ -64,6 +64,8 @@ export class BaseComponent implements AfterContentInit, OnDestroy {
   }
 
   public ngOnDestroy(): void {
-    this.swSubscription.unsubscribe();
+    if (this.swSubscription) {
+      this.swSubscription.unsubscribe();
+    }
   }
 }
