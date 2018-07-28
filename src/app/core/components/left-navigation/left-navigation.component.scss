@@ -99,13 +99,29 @@
       background: $side-menu-background;
       height: 100%;
 
-      .main-nav-label {
+      .main-menu-title {
+        background: $side-menu-dark-background;
+        cursor: pointer;
+        display: block;
+        font-weight: 700;
+        padding: .5rem 1rem;
+      }
 
-        .main-menu-title {
-          background: $side-menu-dark-background;
-          display: block;
-          font-weight: 700;
-          padding: .5rem 1rem;
+      .sub-menu-item-container {
+
+        &.expanded {
+          visibility: visible;
+          opacity: 1;
+          max-height: 4000px;
+          @include transition(visibility .5s,opacity .5s,max-height .5s ease-in-out);
+        }
+
+        &.collapsed {
+          visibility: hidden;
+          opacity: 0;
+          overflow: hidden;
+          max-height: 1px;
+          @include transition( visibility 275ms,opacity 275ms,max-height 280ms ease-out);
         }
       }
     }
