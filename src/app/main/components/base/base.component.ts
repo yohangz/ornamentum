@@ -18,7 +18,7 @@ import { SwUpdate } from '@angular/service-worker';
 })
 export class BaseComponent implements AfterContentInit, OnDestroy {
   private previousUrl: string;
-  private swSubscription: Subscription;
+  private readonly swSubscription: Subscription;
 
   public showWorkerUpdateBanner = false;
 
