@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
+import { NavigationStart, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs/internal/Subscription';
 import { filter } from 'rxjs/operators';
@@ -28,7 +28,7 @@ export class LeftNavigationComponent implements OnDestroy {
     });
 
     this.routeEventSubscription = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
+      filter(event => event instanceof NavigationStart)
     ).subscribe(() => {
       this.closeMenu();
     });
