@@ -43,11 +43,11 @@ export class LeftNavigationComponent implements OnDestroy {
     this.routeEventSubscription.unsubscribe();
   }
 
-  public navToggle(menuGroup: MenuGroup): void {
-    menuGroup.expanded = !menuGroup.expanded;
+  public getExpandedClass(state: boolean): string {
+    return state ? 'expanded' : 'collapsed';
   }
 
-  public get expandedStateClass() {
-    return this.expanded ? 'expanded' : 'collapsed';
+  public menuItemToggle(menuGroup: MenuGroup): void {
+    menuGroup.expanded = !menuGroup.expanded;
   }
 }
