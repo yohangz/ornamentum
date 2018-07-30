@@ -1,0 +1,42 @@
+@import '../../../styles/variables';
+@import '../../../styles/mixins';
+
+.right-navigation {
+  border-left: 5px solid $icon-list-background;
+  position: sticky;
+  top: 20px;
+  width: 200px;
+
+  @include breakpoint(max991) {
+    display: none;
+  }
+
+  ul {
+    padding-left: .5rem;
+
+    li {
+      @include font-size(1, 1.8);
+      color: $side-menu-link-color;
+      font-weight: 600;
+      list-style-type: none;
+
+      a {
+        @include font-size(.8, 1.6);
+        color: $side-menu-label-text;
+        font-weight: 400;
+      }
+
+      ul {
+        li {
+          padding-left: 1rem;
+
+            &::before {
+              content: '-';
+              left: 1rem;
+              position: absolute;
+            }
+        }
+      }
+    }
+  }
+}

@@ -35,6 +35,12 @@ export class MainComponent {
             {
               title: 'Dependencies',
               anchor: 'dependencies',
+              subNavigation: [
+                {
+									title: 'Dependencies',
+									anchor: 'dependencies',
+                }
+              ]
             },
             {
               title: 'Suggested Links',
