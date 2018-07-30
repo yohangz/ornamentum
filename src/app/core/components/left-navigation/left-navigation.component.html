@@ -7,7 +7,7 @@
           <div class="sub-menu-item-container" [ngClass]="getExpandedClass(group.expanded)">
             <ul>
               <li *ngFor="let menuItem of group.menuItems" [routerLinkActive]="'active'">
-                <a class="nav-link" [routerLink]="menuItem.routePath">
+                <a class="nav-link" [routerLink]="menuItem.routePath" (click)="onRouteChange(menuItem)">
                   <span class="main-nav-label">
                     <span class="menu-title">{{menuItem.title}}</span>
                   </span>
