@@ -3,7 +3,7 @@
     <div class="side-menu">
       <div class="side-menu-navigation">
         <nav *ngFor="let group of menuGroups">
-          <span class="menu-title main-menu-title" (click)="menuItemToggle(group)">{{group.name}}</span>
+          <span class="menu-title main-menu-title" [ngClass]="getExpandedClass(group.expanded)" (click)="menuItemToggle(group)">{{group.name}}</span>
           <div class="sub-menu-item-container" [ngClass]="getExpandedClass(group.expanded)">
             <ul>
               <li *ngFor="let menuItem of group.menuItems" [routerLinkActive]="'active'">

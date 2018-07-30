@@ -19,37 +19,16 @@
   header {
     min-height: 100vh;
 
-    .background-overlay-main {
-      @extend %header-background;
-      @include transform(skewY(-15deg));
-      @include transform-origin(0%);
-      background: linear-gradient(-120deg, $background-overlay-gradient-1, $background-overlay-gradient-2);
-      min-height: 100vh;
-      z-index: -1;
-
-      @include breakpoint(max640) {
-        @include transform-origin(15%);
-      }
-    }
-
     .background-overlay-sub {
       @extend %header-background;
       @include transform(skewY(-15deg));
       @include transform-origin(-5%);
+      @include box-shadow(2px 2px 10px $primary-background);
       background: linear-gradient(-120deg, $background-overlay-gradient-3, $background-overlay-gradient-4);
+      border-bottom: 20px solid $background-overlay-gradient-1;
       min-height: 100vh;
     }
 
-    .background-overlay-sub-2 {
-      @extend %header-background;
-      @include transform(skewY(30deg));
-      @include transform-origin(-1%);
-      background: linear-gradient(-120deg, $background-overlay-gradient-5, $background-overlay-gradient-6);
-      max-height: 950px;
-      min-height: 1150px;
-      top: 80%;
-      z-index: -1;
-    }
 
     .intro {
       @include display-flex;
@@ -61,12 +40,30 @@
       top: 25%;
       z-index: 3;
 
+      @include breakpoint(max991) {
+        top: 13%;
+      }
+
       @include breakpoint(max767) {
         top: 13%;
       }
 
       @include breakpoint(max640) {
         top: 25%;
+      }
+
+      @include breakpoint(max480) {
+        top: 50px;
+      }
+
+      @include breakpoint(max360) {
+        @include transform(scale(.8));
+        top: 40px;
+      }
+
+      @include breakpoint(max812) {
+        @include transform(scale(.7));
+        top: 20px;
       }
 
       .ornamentum-logo {
@@ -211,6 +208,7 @@
     position: absolute;
     top: 70vh;
     width: 100%;
+    z-index: 1000;
 
     @include breakpoint(max640) {
       padding: 1rem;
@@ -259,7 +257,19 @@
     z-index: 3;
 
     &:first-of-type {
-      padding-top: 22rem;
+      padding-top: 25rem;
+
+      @include breakpoint(max480) {
+        padding-top: 25rem;
+      }
+
+      @include breakpoint(max360) {
+        padding-top: 27rem;
+      }
+
+      @include breakpoint(max812) {
+        padding-top: 30rem;
+      }
     }
 
     &:nth-of-type(even) {
@@ -269,7 +279,7 @@
     @include breakpoint(max767) {
       @include flex-wrap(wrap);
       display: table;
-      padding: .5rem 2rem;
+      padding: 1rem 2rem;
     }
 
     h1 {
@@ -337,7 +347,7 @@
 
 
       @include breakpoint(max480) {
-        min-height: 200px;;
+        min-height: 200px;
       }
     }
 
