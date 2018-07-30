@@ -40,13 +40,13 @@
       width: 100%;
 
       &.expanded {
-        opacity: .5;
         @include transition(opacity 200ms ease-in);
+        opacity: .5;
       }
 
       &.collapsed {
-        opacity: 0;
         @include transition(opacity 200ms ease-out);
+        opacity: 0;
       }
     }
   }
@@ -64,18 +64,31 @@
     }
   }
 
+  %expand-icon {
+    background: url('../../../../assets/images/expand.svg') no-repeat;
+    background-size: contain;
+    content: '';
+    height: 10px;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    transition: transform .5s ease;
+    width: 10px;
+  }
+
   .side-menu {
     -webkit-overflow-scrolling: touch;
-    background: $side-menu-background;
-    border: 1px solid $main-nav-bar-active-text;
-    max-height: calc(100vh - 88px);
+    background: $side-menu-background-light;
     left: 0;
+    max-height: calc(100vh - 88px);
     overflow-y: auto;
     padding: 0;
     position: relative;
     z-index: 2;
 
     @include breakpoint(max991) {
+      border: 0;
       max-height: 100%;
     }
 
@@ -99,29 +112,57 @@
       background: $side-menu-background;
       height: 100%;
 
+      nav {
+        border-bottom: 1px solid $main-nav-bar-active-text;
+
+        &:last-child {
+          border: 0;
+        }
+      }
+
       .main-menu-title {
         background: $side-menu-dark-background;
+        color: $side-menu-label-text;
         cursor: pointer;
         display: block;
-        font-weight: 700;
+        font-weight: 600;
         padding: .5rem 1rem;
+        position: relative;
+
+        &.expanded {
+
+          &::after {
+            @extend %expand-icon;
+            transform: rotate(-90deg);
+          }
+        }
+
+        &.collapsed {
+
+          &::after {
+            @extend %expand-icon;
+            transform: rotate(0deg);
+          }
+        }
       }
 
       .sub-menu-item-container {
 
         &.expanded {
-          visibility: visible;
-          opacity: 1;
+          @include transition(visibility .5s, opacity .5s, max-height .5s ease-in-out);
           max-height: 4000px;
-          @include transition(visibility .5s,opacity .5s,max-height .5s ease-in-out);
+          opacity: 1;
+          visibility: visible;
+
         }
 
         &.collapsed {
-          visibility: hidden;
+          @include transition(visibility 275ms, opacity 275ms, max-height 280ms ease-out);
+          max-height: 0;
           opacity: 0;
           overflow: hidden;
-          max-height: 1px;
-          @include transition( visibility 275ms,opacity 275ms,max-height 280ms ease-out);
+          visibility: hidden;
+
         }
       }
     }
