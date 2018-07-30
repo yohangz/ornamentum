@@ -3,10 +3,12 @@ import {
   TabComponent,
   TabSetComponent,
   ExampleCodeComponent,
-  CopyContentComponent,
+  CopyContentComponent
 } from './components';
 
-import { ClipboardDirective } from './directives';
+import {
+  ClipboardDirective
+} from './directives';
 
 /**
  * Export all core components.
@@ -15,6 +17,12 @@ export const COMPONENTS = [
   TabComponent,
   TabSetComponent,
   ExampleCodeComponent,
-  CopyContentComponent,
+  CopyContentComponent
+];
+
+export const DIRECTIVES = [
   ClipboardDirective
+];
+
+export const SERVICES = [
 ];

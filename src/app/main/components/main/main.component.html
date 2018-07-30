@@ -5,10 +5,11 @@
     </header>
     <div class="page-wrapper-content" #pageWrapper>
       <div class="page-wrapper-inner-content">
-        <app-left-navigation [menuGroups]="menuGroups"></app-left-navigation>
+        <app-left-navigation [menuGroups]="menuGroups" (routeChange)="onRouteChange($event)"></app-left-navigation>
         <div class="main-pane">
           <router-outlet></router-outlet>
         </div>
+        <app-right-navigation [menuItem]="activeMenuItem" [parent]="pageWrapper"></app-right-navigation>
       </div>
       <app-footer></app-footer>
     </div>

@@ -1,11 +1,8 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { NavigationEnd, Router } from '@angular/router';
-
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Theme } from '../../../core/models/theme.enum';
-import { filter } from 'rxjs/operators';
-import { MenuGroup } from '../../../core/models';
+import { MenuGroup, MenuItem } from '../../../core/models';
 
 /**
  * Component class for showing main view.
@@ -16,8 +13,7 @@ import { MenuGroup } from '../../../core/models';
   styleUrls: ['./main.component.scss'],
   templateUrl: './main.component.html'
 })
-export class MainComponent implements OnInit, OnDestroy {
-  public routerSubscription: Subscription;
+export class MainComponent {
   public themeCssClass: string = Theme.dark;
   public menuGroups: MenuGroup[] = [
     {
@@ -26,7 +22,25 @@ export class MainComponent implements OnInit, OnDestroy {
       menuItems: [
         {
           routePath: '/feature/data-table/overview',
-          title: 'Overview'
+          title: 'Overview',
+          navigation: [
+            {
+              title: 'Feature Overview',
+              anchor: 'featureOverview',
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage',
+            },
+            {
+              title: 'Dependencies',
+              anchor: 'dependencies',
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks',
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/client-side-data-binding',
@@ -206,28 +220,32 @@ export class MainComponent implements OnInit, OnDestroy {
     }
   ];
 
+  public activeMenuItem: MenuItem;
+
   @ViewChild('pageWrapper')
   public pageWrapper: ElementRef;
 
   constructor(private router: Router) {
+    const path = router.url.split('#')[0];
+    for (const menuGroup of this.menuGroups) {
+      const item = menuGroup.menuItems.find((menuItem: MenuItem) => {
+        return menuItem.routePath === path;
+      });
+
+      if (item) {
+        this.activeMenuItem = item;
+        break;
+      }
+    }
   }
 
   public onThemeChange(cssClass: string): void {
     this.themeCssClass = cssClass;
   }
 
-  public ngOnInit(): void {
-    this.routerSubscription = this.router.events.pipe(
-        filter(event => event instanceof NavigationEnd)
-      ).subscribe(() => {
-        if (this.pageWrapper && this.router.url.includes('/feature/')) {
-          this.pageWrapper.nativeElement.scrollTop = 0;
-        }
-      });
-  }
-
-  public ngOnDestroy(): void {
-    this.routerSubscription.unsubscribe();
+  public onRouteChange(menuItem: MenuItem): void {
+    this.activeMenuItem = menuItem;
+    this.pageWrapper.nativeElement.scrollTop = 0;
   }
 }
 
