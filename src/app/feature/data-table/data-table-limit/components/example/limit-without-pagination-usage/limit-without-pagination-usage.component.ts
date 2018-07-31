@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+import { ExampleDataModel } from '../../../../../../shared/models';
 
-import { data } from './limit-without-pagination-usage.data';
+import { TableDataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-limit-without-pagination-usage',
   templateUrl: './limit-without-pagination-usage.component.html'
 })
 export class LimitWithoutPaginationUsageComponent {
-  public items: Observable<any>;
+  public items: ExampleDataModel[];
 
-  constructor() {
-    this.items = of(data);
+  constructor(private tableDataFetchService: TableDataFetchService) {
+    this.items = this.tableDataFetchService.getTableData();
   }
 }

@@ -16,10 +16,10 @@ export const rowGroupingUsage: ExampleFile[] = [
     name: 'row-grouping-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/row-grouping-usage/row-grouping-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'row-grouping-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/row-grouping-usage/row-grouping-usage.data.ts')
-  }
+  // {
+  //   type: FileType.TS,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.json')
+  // }
 ];
 

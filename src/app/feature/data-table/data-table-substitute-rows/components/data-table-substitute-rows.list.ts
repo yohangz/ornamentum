@@ -16,11 +16,11 @@ export const withSubstituteRowsUsage: ExampleFile[] = [
     name: 'with-substitute-rows-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/with-substitute-rows-usage/with-substitute-rows-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'with-substitute-rows-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/with-substitute-rows-usage/with-substitute-rows-usage.data.ts')
-  }
+  // {
+  //   type: FileType.TS,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.json')
+  // }
 ];
 
 export const withoutSubstituteRowsUsage: ExampleFile[] = [
@@ -39,10 +39,10 @@ export const withoutSubstituteRowsUsage: ExampleFile[] = [
     name: 'without-substitute-rows-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/without-substitute-rows-usage/without-substitute-rows-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'without-substitute-rows-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/without-substitute-rows-usage/without-substitute-rows-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 

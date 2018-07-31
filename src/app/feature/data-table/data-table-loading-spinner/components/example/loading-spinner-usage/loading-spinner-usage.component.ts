@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 
-import { data } from './loading-spinner-usage.data';
+import { ExampleDataModel } from '../../../../../../shared/models';
+
+import { TableDataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-loading-spinner-usage',
   templateUrl: './loading-spinner-usage.component.html'
 })
 export class LoadingSpinnerUsageComponent {
-  public items: any[];
+  public items: ExampleDataModel[];
 
-  constructor() {
+  constructor(private tableDataFetchService: TableDataFetchService) {
     setTimeout(() => {
-      this.items = data;
+      this.items = this.tableDataFetchService.getTableData();
     }, 3000);
   }
 }

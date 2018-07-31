@@ -28,7 +28,7 @@ import { SharedModule } from '../../../shared/shared.module';
   imports: [
     CommonModule,
     FormsModule,
-    SharedModule,
+    SharedModule.forRoot(),
     DataTableModule.forRoot({
       showColumnSelector: true
     }),

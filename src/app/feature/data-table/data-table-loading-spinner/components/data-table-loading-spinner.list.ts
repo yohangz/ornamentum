@@ -16,10 +16,10 @@ export const loadingSpinnerUsage: ExampleFile[] = [
     name: 'loading-spinner-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/loading-spinner-usage/loading-spinner-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'loading-spinner-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/loading-spinner-usage/loading-spinner-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 

@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 
 import { DataTableSelectMode } from 'ornamentum';
 
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+import { ExampleDataModel } from '../../../../../../shared/models';
 
-import { data } from './multi-row-selection-usage.data';
+import { TableDataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-multi-row-selection-usage',
@@ -14,9 +13,9 @@ import { data } from './multi-row-selection-usage.data';
 export class MultiRowSelectionUsageComponent {
   public DataTableSelectMode = DataTableSelectMode;
 
-  public items: Observable<any>;
+  public items: ExampleDataModel[];
 
-  constructor() {
-    this.items = of(data);
+  constructor(private tableDataFetchService: TableDataFetchService) {
+    this.items = this.tableDataFetchService.getTableData();
   }
 }

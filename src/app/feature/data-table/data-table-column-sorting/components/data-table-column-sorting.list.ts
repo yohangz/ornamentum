@@ -16,10 +16,10 @@ export const columnSortingUsage: ExampleFile[] = [
     name: 'column-sorting-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/column-sorting-usage/column-sorting-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'column-sorting-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/column-sorting-usage/column-sorting-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 

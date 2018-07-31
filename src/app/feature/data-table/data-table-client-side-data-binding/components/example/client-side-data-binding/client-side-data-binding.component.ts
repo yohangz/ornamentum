@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 
-import { data } from './client-side-data-binding.data';
+import { ExampleDataModel } from '../../../../../../shared/models';
+
+import { TableDataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-client-side-data-binding',
   templateUrl: './client-side-data-binding.component.html'
 })
 export class ClientSideDataBindingComponent {
-  public items: any[];
+  public items: ExampleDataModel[];
 
-  constructor() {
-    this.items = data;
+  constructor(private tableDataFetchService: TableDataFetchService) {
+    this.items = this.tableDataFetchService.getTableData();
   }
 }

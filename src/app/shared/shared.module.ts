@@ -1,9 +1,13 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
 import { COMPONENTS, DIRECTIVES, SERVICES } from './index';
 
+/**
+ * Module class for containing shared components, directives & services.
+ * @class SharedModule
+ */
 @NgModule({
   imports: [
     RouterModule,
@@ -16,9 +20,15 @@ import { COMPONENTS, DIRECTIVES, SERVICES } from './index';
   exports: [
     ...COMPONENTS,
     ...DIRECTIVES
-  ],
-  providers: [
-    ...SERVICES
   ]
 })
-export class SharedModule { }
+export class SharedModule {
+  static forRoot(): ModuleWithProviders {
+    return {
+      ngModule: SharedModule,
+      providers: [
+        ...SERVICES
+      ]
+    };
+  }
+}

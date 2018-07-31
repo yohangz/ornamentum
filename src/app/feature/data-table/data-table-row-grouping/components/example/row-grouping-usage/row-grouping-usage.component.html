@@ -1,30 +1,69 @@
 <ng-data-table
-  [title]="'All Open Source Licenses'"
-  [dataSource]="items"
+  [title]="'Business Details'"
+  [items]="items"
+  [minHeight]="200"
+  [minWidth]="1130"
   [pageable]="true"
   [showHeader]="true"
   [showRefreshButton]="false"
-  [showIndexColumn]="true"
   [showColumnSelector]="false"
-  [minHeight]="200"
-
   [onDynamicRowSpanExtract]="onDynamicRowSpanExtract">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'retailer_country'"
+    [title]="'Retailer Country'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'order_method_type'"
+    [title]="'Order Method Type'"
+    [visible]="false">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'retailer_type'"
+    [title]="'Retailer Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'product_line'"
+    [title]="'Product Line'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'product_type'"
+    [title]="'Product Type'"
     [width]="100">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'name'"
-    [title]="'License Name'">
+    [field]="'product'"
+    [title]="'Product'"
+    [width]="100">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'links'"
-    [title]="'Links'">
-    <ng-template #ngDataTableCell let-row="row" let-spanIndex="spanIndex">
-      <td>
-        <span>{{getUrlLinkValue(row.item, spanIndex, 'url')}}</span>
-      </td>
-    </ng-template>
+    [field]="'year'"
+    [title]="'Year'">
   </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'quarter'"
+    [title]="'Quarter'"
+    [visible]="false">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'revenue'"
+    [title]="'Revenue'"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'quantity'"
+    [title]="'Quantity'"
+    [visible]="false"
+    [width]="80">
+  </ng-data-table-column>
+  <!--<ng-template #ngDataTableCell let-row="row" let-spanIndex="spanIndex">-->
+    <!--<td>-->
+      <!--<span>{{getUrlLinkValue(row.item, spanIndex, 'url')}}</span>-->
+    <!--</td>-->
+  <!--</ng-template>-->
 </ng-data-table>

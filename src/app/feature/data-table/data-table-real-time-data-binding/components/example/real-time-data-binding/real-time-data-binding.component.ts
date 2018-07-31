@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
+import { Subscription } from 'rxjs/index';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
-import { data } from './real-time-data-binding.data';
+import { TableDataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-real-time-data-binding',
@@ -11,41 +12,37 @@ import { data } from './real-time-data-binding.data';
 })
 export class RealTimeDataBindingComponent {
   public dataSource: Observable<any>;
+  private dataSubscription: Subscription;
 
-  public interval: any;
+  private interval: any;
 
-  constructor() {
-    this.dataSource = of(data);
+  @Input()
+  public parentElement: ElementRef;
+
+  constructor(private tableDataFetchService: TableDataFetchService) {
+    this.dataSource = of(this.tableDataFetchService.getTableData());
   }
 
   public ngOnInit(): void {
-    let a = 1;
-
     this.interval = setInterval(() => {
-      this.dataSource.subscribe((data: any[]) => {
-        data[0].stationName = `station ${++a}`;
-        data[1].stationName = `station ${++a + 1}`;
-        data[2].stationName = `station ${++a + 3}`;
-        data[3].stationName = `station ${++a + 5}`;
-        data[4].stationName = `station ${++a + 7}`;
-        data[5].stationName = `station ${++a + 9}`;
+      this.dataSubscription = this.dataSource.subscribe((data: any[]) => {
+        data.forEach((val, index) => {
+          let date = val.retailer_type;
+          let newDate = new Date(date);
 
-        data[3].statusValue = `Not In Service ${++a + 1}`;
-        data[4].statusValue = `In Service ${++a + 2}`;
-        data[5].statusValue = `Not In Service ${++a + 3}`;
+          data[index].retailer_type = new Date(newDate.setDate(newDate.getDate() + 1)).toUTCString();
 
-        data[6].availableBikes = 10 + ++a;
-        data[7].availableBikes = 20 + ++a;
-        data[8].availableBikes = 30 + ++a;
-
-        data[9].stAddress1 = `Address for number ${++a + 9}`;
-        data[10].stAddress1 = `Address for number ${++a + 10}`;
-        data[11].stAddress1 = `Address for number ${++a + 11}`;
+          data[index].year = Number(val.year) + 0.25;
+        });
       });
-    }, 1000);
+    }, 100);
   }
 
   public ngOnDestroy(): void {
     clearInterval(this.interval);
+
+    if (this.dataSubscription) {
+      this.dataSubscription.unsubscribe();
+    }
   }
 }
