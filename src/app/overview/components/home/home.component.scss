@@ -231,14 +231,14 @@
             }
 
             &::-webkit-scrollbar {
-              background-color: $scroll-bar-color;
+              background-color: $nav-bar-background;
               height: 5px;
               width: 5px;
             }
 
             &::-webkit-scrollbar-thumb {
               @include border-radius(0);
-              background-color: $scroll-bar-color;
+              background-color: $nav-bar-background;
               opacity: .5;
             }
           }
@@ -386,6 +386,34 @@
       &.minimal {
         @extend %section-images;
         background: url('../../../../assets/images/minimal.png') no-repeat;
+        background-position: 50%;
+        background-size: contain;
+      }
+
+      &.reactive {
+        @extend %section-images;
+        background: url('../../../../assets/images/reactive.png') no-repeat;
+        background-position: 50%;
+        background-size: contain;
+      }
+
+      &.universal-angular {
+        @extend %section-images;
+        background: url('../../../../assets/images/universal-angular.png') no-repeat;
+        background-position: 50%;
+        background-size: contain;
+      }
+
+      &.no-jquery {
+        @extend %section-images;
+        background: url('../../../../assets/images/no-jquery.png') no-repeat;
+        background-position: 50%;
+        background-size: contain;
+      }
+
+      &.responsive {
+        @extend %section-images;
+        background: url('../../../../assets/images/responsive.png') no-repeat;
         background-position: 50%;
         background-size: contain;
       }
