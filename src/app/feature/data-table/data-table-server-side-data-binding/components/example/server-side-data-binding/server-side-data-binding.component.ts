@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
-import { ExampleDataModel } from '../../../../../../shared/models';
+import { DataTableExampleDataModel } from '../../../../../../shared/models';
 
 import { TableDataFetchService } from '../../../../../../shared/services';
 
@@ -12,10 +12,10 @@ import { TableDataFetchService } from '../../../../../../shared/services';
   templateUrl: './server-side-data-binding.component.html'
 })
 export class ServerSideDataBindingComponent {
-  public dataSource: Observable<ExampleDataModel[]>;
+  public dataSource: Observable<DataTableExampleDataModel[]>;
 
   constructor(private tableDataFetchService: TableDataFetchService) {
-    const data: ExampleDataModel[] = this.tableDataFetchService.getTableData();
+    const data: DataTableExampleDataModel[] = this.tableDataFetchService.getTableData();
     this.dataSource = of(data);
   }
 }

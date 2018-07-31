@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { DataTableSortOrder } from 'ornamentum';
 
-import { ExampleDataModel } from '../../../../../../shared/models';
+import { DataTableExampleDataModel } from '../../../../../../shared/models';
 
 import { TableDataFetchService } from '../../../../../../shared/services';
 
@@ -13,7 +13,7 @@ import { TableDataFetchService } from '../../../../../../shared/services';
 export class ColumnSortingUsageComponent {
   public DataTableSortOrder = DataTableSortOrder;
 
-  public items: ExampleDataModel[];
+  public items: DataTableExampleDataModel[];
 
   constructor(private tableDataFetchService: TableDataFetchService) {
     this.items = this.tableDataFetchService.getTableData();

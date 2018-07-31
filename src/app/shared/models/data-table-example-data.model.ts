@@ -1,4 +1,4 @@
-export interface ExampleDataModel {
+export interface DataTableExampleDataModel {
   id?: number;
   retailer_type: string;
   retailer_country: string;

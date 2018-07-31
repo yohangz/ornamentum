@@ -1,0 +1,302 @@
+[
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Cooking Gear",
+    "key": 17,
+    "disabled": true
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Sleeping Bags",
+    "key": 22,
+    "disabled": false
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Lanterns",
+    "key": 27,
+    "disabled": true
+  },
+  {
+    "product_line": "Mountaineering Equipment",
+    "product_type": "Safety",
+    "key": 32,
+    "disabled": false
+  },
+  {
+    "product_line": "Mountaineering Equipment",
+    "product_type": "Climbing Accessories",
+    "key": 37,
+    "disabled": true
+  },
+  {
+    "product_line": "Mountaineering Equipment",
+    "product_type": "Climbing Accessories",
+    "key": 42,
+    "disabled": false
+  },
+  {
+    "product_line": "Mountaineering Equipment",
+    "product_type": "Tools",
+    "key": 47,
+    "disabled": true
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Knives",
+    "key": 52,
+    "disabled": false
+  },
+  {
+    "product_line": "Outdoor Protection",
+    "product_type": "First Aid",
+    "key": 57,
+    "disabled": true
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Watches",
+    "key": 62,
+    "disabled": false
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Eyewear",
+    "key": 67,
+    "disabled": true
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Knives",
+    "key": 72,
+    "disabled": false
+  },
+  {
+    "product_line": "Golf Equipment",
+    "product_type": "Irons",
+    "key": 77,
+    "disabled": true
+  },
+  {
+    "product_line": "Golf Equipment",
+    "product_type": "Woods",
+    "key": 82,
+    "disabled": false
+  },
+  {
+    "product_line": "Golf Equipment",
+    "product_type": "Golf Accessories",
+    "key": 87,
+    "disabled": true
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Cooking Gear",
+    "key": 92,
+    "disabled": false
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Cooking Gear",
+    "key": 97,
+    "disabled": true
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Sleeping Bags",
+    "key": 102,
+    "disabled": false
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Sleeping Bags",
+    "key": 107,
+    "disabled": true
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Packs",
+    "key": 112,
+    "disabled": false
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Lanterns",
+    "key": 117,
+    "disabled": true
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Watches",
+    "key": 122,
+    "disabled": false
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Watches",
+    "key": 127,
+    "disabled": true
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Eyewear",
+    "key": 132,
+    "disabled": false
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Eyewear",
+    "key": 137,
+    "disabled": true
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Eyewear",
+    "key": 142,
+    "disabled": false
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Knives",
+    "key": 147,
+    "disabled": true
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Binoculars",
+    "key": 152,
+    "disabled": false
+  },
+  {
+    "product_line": "Outdoor Protection",
+    "product_type": "Insect Repellents",
+    "key": 157,
+    "disabled": true
+  },
+  {
+    "product_line": "Outdoor Protection",
+    "product_type": "Sunscreen",
+    "key": 162,
+    "disabled": false
+  },
+  {
+    "product_line": "Outdoor Protection",
+    "product_type": "First Aid",
+    "key": 167,
+    "disabled": true
+  },
+  {
+    "product_line": "Golf Equipment",
+    "product_type": "Putters",
+    "key": 172,
+    "disabled": false
+  },
+  {
+    "product_line": "Golf Equipment",
+    "product_type": "Golf Accessories",
+    "key": 177,
+    "disabled": true
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Tents",
+    "key": 182,
+    "disabled": false
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Lanterns",
+    "key": 187,
+    "disabled": true
+  },
+  {
+    "product_line": "Outdoor Protection",
+    "product_type": "Insect Repellents",
+    "key": 192,
+    "disabled": false
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Cooking Gear",
+    "key": 197,
+    "disabled": true
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Sleeping Bags",
+    "key": 202,
+    "disabled": false
+  },
+  {
+    "product_line": "Camping Equipment",
+    "product_type": "Lanterns",
+    "key": 207,
+    "disabled": true
+  },
+  {
+    "product_line": "Mountaineering Equipment",
+    "product_type": "Safety",
+    "key": 212,
+    "disabled": false
+  },
+  {
+    "product_line": "Mountaineering Equipment",
+    "product_type": "Climbing Accessories",
+    "key": 217,
+    "disabled": true
+  },
+  {
+    "product_line": "Mountaineering Equipment",
+    "product_type": "Climbing Accessories",
+    "key": 222,
+    "disabled": false
+  },
+  {
+    "product_line": "Mountaineering Equipment",
+    "product_type": "Tools",
+    "key": 227,
+    "disabled": true
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Watches",
+    "key": 232,
+    "disabled": false
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Watches",
+    "key": 237,
+    "disabled": true
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Eyewear",
+    "key": 242,
+    "disabled": false
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Eyewear",
+    "key": 247,
+    "disabled": true
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Binoculars",
+    "key": 252,
+    "disabled": false
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Navigation",
+    "key": 257,
+    "disabled": true
+  },
+  {
+    "product_line": "Personal Accessories",
+    "product_type": "Eyewear",
+    "key": 262,
+    "disabled": false
+  }
+]
