@@ -12,10 +12,9 @@ import {
   DataTableRow
 } from 'ornamentum';
 
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+import { ExampleDataModel } from '../../../../../../shared/models';
 
-import { data } from './events-usage.data';
+import { TableDataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-events-usage',
@@ -24,10 +23,10 @@ import { data } from './events-usage.data';
 export class EventsUsageComponent {
   public DataTableSelectMode = DataTableSelectMode;
 
-  public items: Observable<any>;
+  public items: ExampleDataModel[];
 
-  constructor() {
-    this.items = of(data);
+  constructor(private tableDataFetchService: TableDataFetchService) {
+    this.items = this.tableDataFetchService.getTableData();
   }
 
   public onDataTableInit(dataTable: DataTableComponent): void {

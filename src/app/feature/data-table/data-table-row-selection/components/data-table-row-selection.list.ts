@@ -16,11 +16,11 @@ export const singleRowSelectionUsage: ExampleFile[] = [
     name: 'single-row-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/single-row-selection-usage/single-row-selection-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'single-row-selection-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/single-row-selection-usage/single-row-selection-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 
 export const singleToggleRowSelectionUsage: ExampleFile[] = [
@@ -39,11 +39,11 @@ export const singleToggleRowSelectionUsage: ExampleFile[] = [
     name: 'single-toggle-row-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/single-toggle-row-selection-usage/single-toggle-row-selection-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'single-toggle-row-selection-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/single-toggle-row-selection-usage/single-toggle-row-selection-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 
 export const multiRowSelectionUsage: ExampleFile[] = [
@@ -62,11 +62,11 @@ export const multiRowSelectionUsage: ExampleFile[] = [
     name: 'multi-row-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/multi-row-selection-usage/multi-row-selection-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'multi-row-selection-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/multi-row-selection-usage/multi-row-selection-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 
 

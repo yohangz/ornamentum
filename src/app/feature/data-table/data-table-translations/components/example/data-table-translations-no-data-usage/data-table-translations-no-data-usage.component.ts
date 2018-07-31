@@ -2,9 +2,6 @@ import { Component } from '@angular/core';
 
 import { DataTableTranslations } from 'ornamentum';
 
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
-
 @Component({
   selector: 'app-data-table-translations-no-data-usage',
   templateUrl: './data-table-translations-no-data-usage.component.html'
@@ -17,9 +14,9 @@ export class DataTableTranslationsNoDataUsageComponent {
     noDataMessageHeader: 'Customized No Data Message Header'
   };
 
-  public emptyItemSet: Observable<any>;
+  public emptyItemSet: any;
 
   constructor() {
-    this.emptyItemSet = of([]);
+    this.emptyItemSet = [];
   }
 }

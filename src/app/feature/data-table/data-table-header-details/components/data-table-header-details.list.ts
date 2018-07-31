@@ -16,10 +16,10 @@ export const tableHeaderDetailsUsage: ExampleFile[] = [
     name: 'table-header-details-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/table-header-details-usage/table-header-details-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'table-header-details-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/table-header-details-usage/table-header-details-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 

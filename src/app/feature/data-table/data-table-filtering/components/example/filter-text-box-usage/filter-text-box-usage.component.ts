@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
+import { ExampleDataModel } from '../../../../../../shared/models';
 
-import { data } from './filter-text-box-usage.data';
+import { TableDataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-filter-text-box-usage',
   templateUrl: './filter-text-box-usage.component.html'
 })
 export class FilterTextBoxUsageComponent {
-  public items: Observable<any>;
+  public items: ExampleDataModel[];
 
-  constructor() {
-    this.items = of(data);
+  constructor(private tableDataFetchService: TableDataFetchService) {
+    this.items = this.tableDataFetchService.getTableData();
   }
 }

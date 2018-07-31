@@ -16,11 +16,11 @@ export const responsiveConfAllUsage: ExampleFile[] = [
     name: 'responsive-conf-all-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/responsive-conf-all-usage/responsive-conf-all-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-all-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-all-usage/responsive-conf-all-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
 
 export const responsiveConfWithoutWidthHeightUsage: ExampleFile[] = [
@@ -39,9 +39,9 @@ export const responsiveConfWithoutWidthHeightUsage: ExampleFile[] = [
     name: 'responsive-conf-without-width-height-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/responsive-conf-without-width-height-usage/responsive-conf-without-width-height-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-without-width-height-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-without-width-height-usage/responsive-conf-without-width-height-usage.data.ts')
-  }
+  // {
+  //   type: FileType.JSON,
+  //   name: 'sample-data.json',
+  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
+  // }
 ];
