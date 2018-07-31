@@ -11,17 +11,23 @@
   z-index: 2;
 
   @include breakpoint(max991) {
+    bottom: 0;
     box-shadow: none;
     left: -250px;
     position: fixed;
+    top: 56px;
     visibility: hidden;
 
-    &.nav-expanded {
-      @include transition(left 200ms ease-in);
-      bottom: 0;
+    &.expanded {
+      @include transition(all 200ms ease-in);
       left: 0;
-      top: 56px;
       visibility: visible;
+    }
+
+    &.collapsed {
+      @include transition(all 200ms ease-out);
+      left: -250px;
+      visibility: hidden;
     }
 
     .side-menu-overlay {
@@ -33,8 +39,14 @@
       top: 0;
       width: 100%;
 
-      &.show-overlay {
+      &.expanded {
+        @include transition(opacity 200ms ease-in);
         opacity: .5;
+      }
+
+      &.collapsed {
+        @include transition(opacity 200ms ease-out);
+        opacity: 0;
       }
     }
   }
@@ -52,19 +64,32 @@
     }
   }
 
+  %expand-icon {
+    background: url('../../../../assets/images/expand.svg') no-repeat;
+    background-size: contain;
+    content: '';
+    height: 10px;
+    padding: 0;
+    position: absolute;
+    right: 10px;
+    top: 17px;
+    transition: transform .5s ease;
+    width: 10px;
+  }
+
   .side-menu {
     -webkit-overflow-scrolling: touch;
-    background: $side-menu-background;
-    border: 1px solid $main-nav-bar-active-text;
-    height: calc(100vh - 88px);
+    background: $side-menu-background-light;
     left: 0;
+    max-height: calc(100vh - 88px);
     overflow-y: auto;
     padding: 0;
     position: relative;
     z-index: 2;
 
     @include breakpoint(max991) {
-      height: 100%;
+      border: 0;
+      max-height: 100%;
     }
 
     &::-webkit-scrollbar-track {
@@ -87,13 +112,57 @@
       background: $side-menu-background;
       height: 100%;
 
-      .main-nav-label {
+      nav {
+        border-bottom: 1px solid $main-nav-bar-active-text;
 
-        .main-menu-title {
-          background: $side-menu-dark-background;
-          display: block;
-          font-weight: 700;
-          padding: .5rem 1rem;
+        &:last-child {
+          border: 0;
+        }
+      }
+
+      .main-menu-title {
+        background: $side-menu-dark-background;
+        color: $side-menu-label-text;
+        cursor: pointer;
+        display: block;
+        font-weight: 600;
+        padding: .5rem 1rem;
+        position: relative;
+
+        &.expanded {
+
+          &::after {
+            @extend %expand-icon;
+            transform: rotate(-90deg);
+          }
+        }
+
+        &.collapsed {
+
+          &::after {
+            @extend %expand-icon;
+            transform: rotate(0deg);
+          }
+        }
+      }
+
+      .sub-menu-item-container {
+
+        &.expanded {
+          @include transition(visibility .5s, opacity .5s, max-height .5s ease-in-out);
+          max-height: 4000px;
+          opacity: 1;
+          visibility: visible;
+
+        }
+
+        &.collapsed {
+          @include transition(visibility 275ms, opacity 275ms, max-height 280ms ease-out);
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          visibility: hidden;
+
         }
       }
     }

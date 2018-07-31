@@ -1,0 +1,13 @@
+<div class="right-navigation" *ngIf="menuItem">
+  <ul>
+    <li>Content</li>
+    <li *ngFor="let navigationItem of menuItem.navigation">
+      <a [routerLink]="[ menuItem.routePath ]" [fragment]="navigationItem.anchor" (click)="scrollToHash(navigationItem)">{{navigationItem.title}}</a>
+      <ul>
+        <li *ngFor="let subNavigationItem of navigationItem.subNavigation">
+          <a [routerLink]="[ menuItem.routePath ]" [fragment]="navigationItem.anchor" (click)="scrollToHash(navigationItem)">{{subNavigationItem.title}}</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
