@@ -3,7 +3,7 @@ import {
   TabComponent,
   TabSetComponent,
   ExampleCodeComponent,
-  CopyContentComponent,
+  CopyContentComponent
 } from './components';
 
 // directives
@@ -19,7 +19,10 @@ export const COMPONENTS = [
   TabComponent,
   TabSetComponent,
   ExampleCodeComponent,
-  CopyContentComponent,
+  CopyContentComponent
+];
+
+export const DIRECTIVES = [
   ClipboardDirective
 ];
 

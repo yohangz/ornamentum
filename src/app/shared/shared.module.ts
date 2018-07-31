@@ -2,7 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
-import { COMPONENTS, SERVICES } from './index';
+import { COMPONENTS, DIRECTIVES, SERVICES } from './index';
 
 /**
  * Module class for containing shared components, directives & services.
@@ -15,9 +15,11 @@ import { COMPONENTS, SERVICES } from './index';
   ],
   declarations: [
     ...COMPONENTS,
+    ...DIRECTIVES
   ],
   exports: [
-    ...COMPONENTS
+    ...COMPONENTS,
+    ...DIRECTIVES
   ]
 })
 export class SharedModule {

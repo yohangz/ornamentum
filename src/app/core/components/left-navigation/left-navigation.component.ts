@@ -1,8 +1,10 @@
-import { Component, Input, OnDestroy } from '@angular/core';
+import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
+import { NavigationStart, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs/internal/Subscription';
+import { filter } from 'rxjs/operators';
 
-import { MenuGroup } from '../../models';
+import { MenuGroup, MenuItem } from '../../models';
 import { NavigationService } from '../../services';
 
 
@@ -13,21 +15,26 @@ import { NavigationService } from '../../services';
 })
 export class LeftNavigationComponent implements OnDestroy {
   private navigationToggleSubscription: Subscription;
+  private routeEventSubscription: Subscription;
 
   @Input()
   public menuGroups: MenuGroup[];
 
-  public containerHeight: number;
+  @Output()
+  public routeChange = new EventEmitter<MenuItem>();
+
   public expanded =  false;
 
-  constructor(private containerResponsive: NavigationService) {
+  constructor(private containerResponsive: NavigationService, private router: Router) {
     this.navigationToggleSubscription = this.containerResponsive.navigationToggle.subscribe(() => {
       this.expanded = !this.expanded;
     });
-  }
 
-  public get menuHeight(): number {
-    return this.containerHeight - 32;
+    this.routeEventSubscription = this.router.events.pipe(
+      filter(event => event instanceof NavigationStart)
+    ).subscribe(() => {
+      this.closeMenu();
+    });
   }
 
   public closeMenu(): void {
@@ -36,5 +43,18 @@ export class LeftNavigationComponent implements OnDestroy {
 
   public ngOnDestroy(): void {
     this.navigationToggleSubscription.unsubscribe();
+    this.routeEventSubscription.unsubscribe();
+  }
+
+  public getExpandedClass(state: boolean): string {
+    return state ? 'expanded' : 'collapsed';
+  }
+
+  public menuItemToggle(menuGroup: MenuGroup): void {
+    menuGroup.expanded = !menuGroup.expanded;
+  }
+
+  public onRouteChange(menuItem: MenuItem): void {
+    this.routeChange.next(menuItem);
   }
 }

@@ -3,12 +3,8 @@
 
 footer {
   background: linear-gradient(-120deg, $background-overlay-gradient-3, $background-overlay-gradient-4);
-  //bottom: 0;
   color: $primary-text-color;
-  margin-top: .5rem;
   padding: 2rem;
-  // position: relative;
-  //z-index: 2;
 
   h3 {
     @include font-size(1.1, 1.6);

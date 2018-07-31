@@ -1,18 +1,24 @@
 import {
   MainMenuComponent,
-  LeftNavigationComponent
+  LeftNavigationComponent,
+  RightNavigationComponent
 } from './components';
 
-import { NavigationService } from './services';
+import {
+  NavigationService,
+  ScrollService
+} from './services';
 
 /**
  * Export all core components.
  */
 export const COMPONENTS = [
   MainMenuComponent,
-  LeftNavigationComponent
+  LeftNavigationComponent,
+  RightNavigationComponent
 ];
 
 export const SERVICES = [
-  NavigationService
+  NavigationService,
+  ScrollService
 ];

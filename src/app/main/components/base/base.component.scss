@@ -1,2 +1,13 @@
 @import '../../../styles/variables';
 @import '../../../styles/mixins';
+
+.sw-update-prompt-holder {
+  background: $background-overlay;
+  border-top: $ornamentum-theme-color solid .5rem;
+  bottom: 0;
+  color: $main-nav-bar-active-text;
+  padding: .5rem;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
