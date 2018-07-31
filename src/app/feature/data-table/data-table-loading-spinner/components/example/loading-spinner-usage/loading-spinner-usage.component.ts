@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ExampleDataModel } from '../../../../../../shared/models';
+import { DataTableExampleDataModel } from '../../../../../../shared/models';
 
 import { TableDataFetchService } from '../../../../../../shared/services';
 
@@ -9,7 +9,7 @@ import { TableDataFetchService } from '../../../../../../shared/services';
   templateUrl: './loading-spinner-usage.component.html'
 })
 export class LoadingSpinnerUsageComponent {
-  public items: ExampleDataModel[];
+  public items: DataTableExampleDataModel[];
 
   constructor(private tableDataFetchService: TableDataFetchService) {
     setTimeout(() => {
