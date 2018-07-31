@@ -492,6 +492,20 @@
           content: url('../../../../assets/images/translate.svg');
         }
       }
+
+      .theme-icon {
+        &::before {
+          @extend %icon-placement;
+          content: url('../../../../assets/images/palette.svg');
+        }
+      }
+
+      .column-filter-icon {
+        &::before {
+          @extend %icon-placement;
+          content: url('../../../../assets/images/column-filter.svg');
+        }
+      }
     }
 
 
