@@ -1,74 +1,54 @@
 <ng-data-table
-  [title]="'Business Details'"
+  [title]="'Sales Products'"
   [items]="items"
   [minHeight]="200"
-  [minWidth]="1130"
-  [pageable]="true"
+  [minWidth]="1080"
   [showHeader]="true"
+  [pageable]="true"
   [showRefreshButton]="false"
   [showColumnSelector]="false">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
     [sortable]="true"
-    [width]="80">
+    [width]="70">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'symbol'"
-    [title]="'Symbol'"
-    [sortable]="true"
-    [width]="120">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'business_class'"
-    [title]="'Business Class'"
-    [sortable]="true"
-    [visible]="false">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'time_stamp'"
-    [title]="'Timestamp'"
+    [field]="'order_method_type'"
+    [title]="'Order Method Type'"
     [sortable]="true">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'confirmation_type'"
-    [title]="'Confirmation Type'"
+    [field]="'retailer_type'"
+    [title]="'Retailer Type'"
     [sortable]="true">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'side'"
-    [title]="'Side'"
-    [sortable]="true"
-    [width]="120">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'volume'"
-    [title]="'Volume'"
-    [sortable]="true"
-    [width]="100">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'price'"
-    [title]="'Price'"
+    [field]="'product_line'"
+    [title]="'Product Line'"
     [sortable]="true">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'market_order_id'"
-    [title]="'Market Order ID'"
-    [sortable]="true"
-    [visible]="false">
+    [field]="'product_type'"
+    [title]="'Product Type'"
+    [sortable]="true">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'market_id'"
-    [title]="'Market ID'"
+    [field]="'revenue'"
+    [title]="'Revenue'"
+    [sortable]="true"
+    [width]="150">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'quantity'"
+    [title]="'Quantity'"
     [sortable]="true"
     [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'broker_id'"
-    [title]="'Broker ID'"
+    [field]="'gross_margin'"
+    [title]="'Gross Margin'"
     [sortable]="true"
-    [visible]="false"
-    [width]="80">
+    [width]="150">
   </ng-data-table-column>
 </ng-data-table>
