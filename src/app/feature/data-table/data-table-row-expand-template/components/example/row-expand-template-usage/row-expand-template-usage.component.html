@@ -22,7 +22,8 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'business_class'"
-    [title]="'Business Class'">
+    [title]="'Business Class'"
+    [visible]="false">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'time_stamp'"
@@ -48,7 +49,8 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'market_order_id'"
-    [title]="'Market Order ID'">
+    [title]="'Market Order ID'"
+    [visible]="false">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'market_id'"
@@ -58,6 +60,7 @@
   <ng-data-table-column
     [field]="'broker_id'"
     [title]="'Broker ID'"
+    [visible]="false"
     [width]="80">
   </ng-data-table-column>
   <ng-template #ngDataTableRowExpand let-row="row">
