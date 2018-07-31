@@ -27,12 +27,12 @@ export class RealTimeDataBindingComponent {
     this.interval = setInterval(() => {
       this.dataSubscription = this.dataSource.subscribe((data: any[]) => {
         data.forEach((val, index) => {
-          let date = val.time_stamp;
+          let date = val.retailer_type;
           let newDate = new Date(date);
 
-          data[index].time_stamp = new Date(newDate.setDate(newDate.getDate() + 1)).toUTCString();
+          data[index].retailer_type = new Date(newDate.setDate(newDate.getDate() + 1)).toUTCString();
 
-          data[index].price = Number(val.price) + 0.25;
+          data[index].year = Number(val.year) + 0.25;
         });
       });
     }, 100);

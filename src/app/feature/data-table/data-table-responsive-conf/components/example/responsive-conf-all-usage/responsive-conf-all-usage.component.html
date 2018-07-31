@@ -1,5 +1,5 @@
 <ng-data-table
-  [title]="'Business Details'"
+  [title]="'Sales Products'"
   [items]="items"
   [minWidth]="650"
   [minHeight]="200"
@@ -12,37 +12,37 @@
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
+    [width]="70">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'order_method_type'"
+    [title]="'Order Method Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'retailer_type'"
+    [title]="'Retailer Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'product_line'"
+    [title]="'Product Line'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'product_type'"
+    [title]="'Product Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'revenue'"
+    [title]="'Revenue'"
+    [width]="150">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'quantity'"
+    [title]="'Quantity'"
     [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'symbol'"
-    [title]="'Symbol'"
-    [width]="120">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'business_class'"
-    [title]="'Business Class'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'time_stamp'"
-    [title]="'Timestamp'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'confirmation_type'"
-    [title]="'Confirmation Type'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'side'"
-    [title]="'Side'"
-    [width]="120">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'volume'"
-    [title]="'Volume'"
-    [width]="100">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'price'"
-    [title]="'Price'">
+    [field]="'gross_margin'"
+    [title]="'Gross Margin'"
+    [width]="150">
   </ng-data-table-column>
 </ng-data-table>
