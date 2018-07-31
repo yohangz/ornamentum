@@ -3,7 +3,7 @@
   [items]="items"
   [minHeight]="200"
   [minWidth]="1000"
-  [pageable]="false"
+  [pageable]="true"
   [showHeader]="true"
   [showRefreshButton]="false"
   [showColumnSelector]="false">
@@ -50,7 +50,7 @@
     [filterable]="true"
     [filterPlaceholder]="'Side Filter'"
     [showFilterClearButton]="true"
-    [width]="120">
+    [width]="100">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'volume'"
