@@ -16,9 +16,9 @@ export const filteringUsage: ExampleFile[] = [
     name: 'filtering-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/filtering-usage/filtering-usage.component.html')
   },
-  // {
-  //   type: FileType.TS,
-  //   name: 'filtering-usage.data.ts',
-  //   content: require('!!raw-loader?lang=typescript!./example/filtering-usage/filtering-usage.data.ts')
-  // }
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
 ];

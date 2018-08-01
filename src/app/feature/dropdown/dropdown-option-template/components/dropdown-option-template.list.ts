@@ -16,9 +16,9 @@ export const optionTemplateUsage: ExampleFile[] = [
     name: 'option-template-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/option-template-usage/option-template-usage.component.html')
   },
-  // {
-  //   type: FileType.TS,
-  //   name: 'option-template-usage.data.ts',
-  //   content: require('!!raw-loader?lang=typescript!./example/option-template-usage/option-template-usage.data.ts')
-  // }
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
 ];

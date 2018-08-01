@@ -16,10 +16,10 @@ export const rowExpandTemplateUsage: ExampleFile[] = [
     name: 'row-expand-template-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/row-expand-template-usage/row-expand-template-usage.component.html')
   },
-  // {
-  //   type: FileType.JSON,
-  //   name: 'sample-data.json',
-  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
-  // }
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
 ];
 

@@ -16,10 +16,10 @@ export const serverSideDataBindingUsage: ExampleFile[] = [
     name: 'server-side-data-binding.component.html',
     content: require('!!raw-loader?lang=html!./example/server-side-data-binding/server-side-data-binding.component.html')
   },
-  // {
-  //   type: FileType.TS,
-  //   name: 'server-side-data-binding.data.ts',
-  //   content: require('!!raw-loader?lang=typescript!./example/server-side-data-binding/server-side-data-binding.data.ts')
-  // }
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
 ];
 

@@ -16,9 +16,9 @@ export const itemDisablingUsage: ExampleFile[] = [
     name: 'item-disabling-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/item-disabling-usage/item-disabling-usage.component.html')
   },
-  // {
-  //   type: FileType.TS,
-  //   name: 'item-disabling-usage.data.ts',
-  //   content: require('!!raw-loader?lang=typescript!./example/item-disabling-usage/item-disabling-usage.data.ts')
-  // }
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
 ];

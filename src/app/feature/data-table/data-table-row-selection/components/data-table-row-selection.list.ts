@@ -16,11 +16,11 @@ export const singleRowSelectionUsage: ExampleFile[] = [
     name: 'single-row-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/single-row-selection-usage/single-row-selection-usage.component.html')
   },
-  // {
-  //   type: FileType.JSON,
-  //   name: 'sample-data.json',
-  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
-  // }
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
 ];
 
 export const singleToggleRowSelectionUsage: ExampleFile[] = [
@@ -32,18 +32,20 @@ export const singleToggleRowSelectionUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'single-toggle-row-selection-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/single-toggle-row-selection-usage/single-toggle-row-selection-usage.component.ts')
+    content:
+      require('!!raw-loader?lang=typescript!./example/single-toggle-row-selection-usage/single-toggle-row-selection-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'single-toggle-row-selection-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/single-toggle-row-selection-usage/single-toggle-row-selection-usage.component.html')
+    content:
+      require('!!raw-loader?lang=html!./example/single-toggle-row-selection-usage/single-toggle-row-selection-usage.component.html')
   },
-  // {
-  //   type: FileType.JSON,
-  //   name: 'sample-data.json',
-  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
-  // }
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
 ];
 
 export const multiRowSelectionUsage: ExampleFile[] = [
@@ -62,11 +64,11 @@ export const multiRowSelectionUsage: ExampleFile[] = [
     name: 'multi-row-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/multi-row-selection-usage/multi-row-selection-usage.component.html')
   },
-  // {
-  //   type: FileType.JSON,
-  //   name: 'sample-data.json',
-  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
-  // }
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
 ];
 
 
