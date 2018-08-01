@@ -16,32 +16,35 @@ export const responsiveConfAllUsage: ExampleFile[] = [
     name: 'responsive-conf-all-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/responsive-conf-all-usage/responsive-conf-all-usage.component.html')
   },
-  // {
-  //   type: FileType.JSON,
-  //   name: 'sample-data.json',
-  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
-  // }
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
 ];
 
 export const responsiveConfWithoutWidthHeightUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'responsive-conf-without-width-height-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-without-width-height-usage/responsive-conf-without-width-height-usage.module.md')
+    content:
+      require('!!raw-loader?lang=typescript!./example/responsive-conf-without-width-height-usage/responsive-conf-without-width-height-usage.module.md')
   },
   {
     type: FileType.TS,
     name: 'responsive-conf-without-width-height-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-without-width-height-usage/responsive-conf-without-width-height-usage.component.ts')
+    content:
+      require('!!raw-loader?lang=typescript!./example/responsive-conf-without-width-height-usage/responsive-conf-without-width-height-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'responsive-conf-without-width-height-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/responsive-conf-without-width-height-usage/responsive-conf-without-width-height-usage.component.html')
+    content:
+      require('!!raw-loader?lang=html!./example/responsive-conf-without-width-height-usage/responsive-conf-without-width-height-usage.component.html')
   },
-  // {
-  //   type: FileType.JSON,
-  //   name: 'sample-data.json',
-  //   content: require('!!raw-loader?lang=json!../../../../shared/data/sample-data.json')
-  // }
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
 ];

@@ -16,9 +16,9 @@ export const eventsUsage: ExampleFile[] = [
     name: 'events-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/events-usage/events-usage.component.html')
   },
-  // {
-  //   type: FileType.TS,
-  //   name: 'events-usage.data.ts',
-  //   content: require('!!raw-loader?lang=typescript!./example/events-usage/events-usage.data.ts')
-  // }
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
 ];
