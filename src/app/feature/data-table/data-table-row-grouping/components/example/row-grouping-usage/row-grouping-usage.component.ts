@@ -14,7 +14,7 @@ export class RowGroupingUsageComponent {
   public items: DataTableExampleDataModel[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.getTableData();
+    this.items = this.dataFetchService.fetchData();
   }
 
   public onDynamicRowSpanExtract(row: DataTableRow<any>): void {

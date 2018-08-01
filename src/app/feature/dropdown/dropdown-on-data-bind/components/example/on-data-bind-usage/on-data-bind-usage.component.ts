@@ -18,7 +18,7 @@ export class OnDataBindUsageComponent {
   public items: DropdownExampleDataModel[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.getDropDownData();
+    this.items = this.dataFetchService.dropDownData;
     this.onDataBind = this.onDataBind.bind(this);
   }
 

@@ -1,6 +1,6 @@
 export interface DropdownExampleDataModel {
   key: number;
-  product_line?: string;
-  product_type: string;
+  productLine?: string;
+  productType: string;
   disabled?: boolean;
 }
