@@ -40,7 +40,11 @@
           @include font-size(.9, 1.4);
           padding: 1rem;
           position: relative;
-          width: 100%;
+          width: calc(100% - 450px);
+
+          @include breakpoint(max991) {
+            width: 100%;
+          }
         }
       }
     }
