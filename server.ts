@@ -11,6 +11,10 @@ import * as express from 'express';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 
+process.on('uncaughtException', function (exception) {
+  console.log('node process crashed: ', exception);
+});
+
 // Faster server renders w/ Prod mode (dev mode never needed)
 enableProdMode();
 
