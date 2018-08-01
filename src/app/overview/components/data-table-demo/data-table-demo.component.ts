@@ -4,7 +4,7 @@ import { DataTableSelectMode } from 'ornamentum';
 
 import { Observable, of, Subscription } from 'rxjs/index';
 
-import data from '../../../shared/data/data-table-sample-data';
+import data from '../../../shared/data/sample-data';
 
 @Component({
   selector: 'app-data-table-demo',

@@ -1,6 +1,6 @@
-import { DataTableExampleDataModel } from '../models';
+import { ExampleData } from '../models';
 
-const data: DataTableExampleDataModel[] = [
+const data: ExampleData[] = [
   {
     retailerCountry: 'United States',
     orderMethodType: 'Fax',

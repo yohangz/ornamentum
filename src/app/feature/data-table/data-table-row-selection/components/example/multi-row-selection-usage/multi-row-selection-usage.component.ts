@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { DataTableSelectMode } from 'ornamentum';
 
-import { DataTableExampleDataModel } from '../../../../../../shared/models';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -13,7 +13,7 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class MultiRowSelectionUsageComponent {
   public DataTableSelectMode = DataTableSelectMode;
 
-  public items: DataTableExampleDataModel[];
+  public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchData();

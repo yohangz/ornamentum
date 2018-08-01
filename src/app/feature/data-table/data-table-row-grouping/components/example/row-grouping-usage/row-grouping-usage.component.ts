@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { DataTableRow } from 'ornamentum';
 
-import { DataTableExampleDataModel } from '../../../../../../shared/models';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -11,7 +11,7 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './row-grouping-usage.component.html'
 })
 export class RowGroupingUsageComponent {
-  public items: DataTableExampleDataModel[];
+  public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchData();

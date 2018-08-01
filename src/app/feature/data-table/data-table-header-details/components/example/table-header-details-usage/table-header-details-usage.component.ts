@@ -1,6 +1,6 @@
 import { Component, ElementRef, Input } from '@angular/core';
 
-import { DataTableExampleDataModel } from '../../../../../../shared/models';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -9,7 +9,7 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './table-header-details-usage.component.html'
 })
 export class TableHeaderDetailsUsageComponent {
-  public items: DataTableExampleDataModel[];
+  public items: ExampleData[];
 
   @Input()
   public parentElement: ElementRef;

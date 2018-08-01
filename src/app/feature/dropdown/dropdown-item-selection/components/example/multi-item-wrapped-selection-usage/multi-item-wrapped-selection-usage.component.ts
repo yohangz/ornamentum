@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { DropdownSelectMode } from 'ornamentum';
 
-import { DropdownExampleDataModel } from '../../../../../../shared/models';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -13,29 +13,12 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class MultiItemWrappedSelectionUsageComponent {
   public DropdownSelectMode = DropdownSelectMode;
 
-  public items: DropdownExampleDataModel[];
-  public selectedOptions: DropdownExampleDataModel[];
+  public items: ExampleData[];
+  public selectedOptions: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.dropDownData;
+    this.items = this.dataFetchService.fetchData();
 
-    this.selectedOptions = [
-      {
-        key: 17,
-        productType: 'Cooking Gear'
-      },
-      {
-        key: 22,
-        productType: 'Sleeping Bag'
-      },
-      {
-        key: 32,
-        productType: 'Safety'
-      },
-      {
-        key: 37,
-        productType: 'Climbing Accessories'
-      }
-    ];
+    this.selectedOptions = this.items.slice(10, 15);
   }
 }

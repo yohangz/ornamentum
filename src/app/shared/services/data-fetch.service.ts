@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { DataTableExampleDataModel, DropdownExampleDataModel } from '../models';
+import { ExampleData } from '../models';
 
-import fetchData from '../data/data-table-sample-data';
-import dropDownData from '../data/dropdown-sample-data';
+import fetchData from '../data/sample-data';
 
 /**
  * Class representing data table & dropdown data fetch service.
@@ -14,11 +13,7 @@ export class DataFetchService {
   constructor() {
   }
 
-  public fetchData(offset: number = 0, limit: number = 10): DataTableExampleDataModel[] {
+  public fetchData(offset: number = 0, limit: number = 10): ExampleData[] {
     return fetchData.slice(0, offset + limit);
-  }
-
-  public get dropDownData(): DropdownExampleDataModel[] {
-    return dropDownData;
   }
 }
