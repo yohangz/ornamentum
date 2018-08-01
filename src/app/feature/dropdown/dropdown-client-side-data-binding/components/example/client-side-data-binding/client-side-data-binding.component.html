@@ -3,6 +3,8 @@
     <ng-dropdown
       [relativeParentElement]="parentElement"
       [items]="items"
+      [selectTrackBy]="'key'"
+      [displayTrackBy]="'product_type'"
       [limit]="50">
     </ng-dropdown>
   </label>

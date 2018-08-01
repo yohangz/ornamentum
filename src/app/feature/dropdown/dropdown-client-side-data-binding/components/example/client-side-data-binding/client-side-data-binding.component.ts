@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 
-import { data } from './client-side-data-binding.data';
+import { DropdownExampleDataModel } from '../../../../../../shared/models';
+
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-client-side-data-binding',
   templateUrl: './client-side-data-binding.component.html'
 })
 export class ClientSideDataBindingComponent {
-  public items: any[];
+  public items: DropdownExampleDataModel[];
 
-  constructor() {
-    this.items = data;
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getDropDownData();
   }
 }

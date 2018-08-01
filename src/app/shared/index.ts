@@ -10,7 +10,7 @@ import {
 import { ClipboardDirective } from './directives';
 
 // services
-import { TableDataFetchService } from './services';
+import { DataFetchService } from './services';
 
 /**
  * Export all shared components.
@@ -30,5 +30,5 @@ export const DIRECTIVES = [
  * Export all shared services.
  */
 export const SERVICES = [
-  TableDataFetchService
+  DataFetchService
 ];

@@ -6,15 +6,19 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { data } from './on-data-bind-usage.data';
+import { DropdownExampleDataModel } from '../../../../../../shared/models';
+
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-on-data-bind-usage',
   templateUrl: './on-data-bind-usage.component.html'
 })
 export class OnDataBindUsageComponent {
+  public items: DropdownExampleDataModel[];
 
-  constructor() {
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getDropDownData();
     this.onDataBind = this.onDataBind.bind(this);
   }
 
@@ -23,7 +27,7 @@ export class OnDataBindUsageComponent {
 
     return of({
       count: 10,
-      data: data,
+      data: this.items,
       limit: 50,
       offset: 0
     }).pipe(map((response) => {

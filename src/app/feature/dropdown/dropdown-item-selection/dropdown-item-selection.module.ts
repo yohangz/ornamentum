@@ -32,7 +32,7 @@ import { SharedModule } from '../../../shared/shared.module';
   exports: [],
   imports: [
     CommonModule,
-    SharedModule,
+    SharedModule.forRoot(),
     DropdownModule.forRoot(),
     DropdownItemSelectionRoutingModule
   ],

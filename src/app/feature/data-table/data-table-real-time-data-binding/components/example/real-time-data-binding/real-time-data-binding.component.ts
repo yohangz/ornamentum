@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs/index';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
-import { TableDataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-real-time-data-binding',
@@ -19,8 +19,8 @@ export class RealTimeDataBindingComponent {
   @Input()
   public parentElement: ElementRef;
 
-  constructor(private tableDataFetchService: TableDataFetchService) {
-    this.dataSource = of(this.tableDataFetchService.getTableData());
+  constructor(private dataFetchService: DataFetchService) {
+    this.dataSource = of(this.dataFetchService.getTableData());
   }
 
   public ngOnInit(): void {

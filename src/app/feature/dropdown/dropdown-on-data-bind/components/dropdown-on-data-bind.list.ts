@@ -16,9 +16,9 @@ export const onDataBindUsage: ExampleFile[] = [
     name: 'on-data-bind-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/on-data-bind-usage/on-data-bind-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'on-data-bind-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/on-data-bind-usage/on-data-bind-usage.data.ts')
-  }
+  // {
+  //   type: FileType.TS,
+  //   name: 'on-data-bind-usage.data.ts',
+  //   content: require('!!raw-loader?lang=typescript!./example/on-data-bind-usage/on-data-bind-usage.data.ts')
+  // }
 ];

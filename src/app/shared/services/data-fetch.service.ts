@@ -1,16 +1,16 @@
-import {Injectable} from '@angular/core';
+import { Injectable } from '@angular/core';
 
-import {DataTableExampleDataModel, DropdownExampleDataModel} from '../models';
+import { DataTableExampleDataModel, DropdownExampleDataModel } from '../models';
 
 import * as tableData from '../data/data-table-sample-data.json';
 import * as dropDownData from '../data/dropdown-sample-data.json';
 
 /**
- * Class representing data table data fetch service.
- * @class TableDataFetchService.
+ * Class representing data table & dropdown data fetch service.
+ * @class DataFetchService.
  */
 @Injectable()
-export class TableDataFetchService {
+export class DataFetchService {
   constructor() {
   }
 

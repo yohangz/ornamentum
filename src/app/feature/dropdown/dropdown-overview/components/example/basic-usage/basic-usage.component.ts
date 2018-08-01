@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 
-import { data } from './basic-usage.data';
+import { DropdownExampleDataModel } from '../../../../../../shared/models';
+
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-basic-usage',
   templateUrl: './basic-usage.component.html'
 })
 export class BasicUsageComponent {
-  public items: any[];
+  public items: DropdownExampleDataModel[];
 
-  constructor() {
-    this.items = data;
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getDropDownData();
   }
 }

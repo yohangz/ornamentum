@@ -3,7 +3,7 @@
     "product_line": "Camping Equipment",
     "product_type": "Cooking Gear",
     "key": 17,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Camping Equipment",
@@ -15,7 +15,7 @@
     "product_line": "Camping Equipment",
     "product_type": "Lanterns",
     "key": 27,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Mountaineering Equipment",
@@ -27,7 +27,7 @@
     "product_line": "Mountaineering Equipment",
     "product_type": "Climbing Accessories",
     "key": 37,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Mountaineering Equipment",
@@ -39,7 +39,7 @@
     "product_line": "Mountaineering Equipment",
     "product_type": "Tools",
     "key": 47,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Personal Accessories",
@@ -51,7 +51,7 @@
     "product_line": "Outdoor Protection",
     "product_type": "First Aid",
     "key": 57,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Personal Accessories",
@@ -63,7 +63,7 @@
     "product_line": "Personal Accessories",
     "product_type": "Eyewear",
     "key": 67,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Personal Accessories",
@@ -75,7 +75,7 @@
     "product_line": "Golf Equipment",
     "product_type": "Irons",
     "key": 77,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Golf Equipment",
@@ -87,7 +87,7 @@
     "product_line": "Golf Equipment",
     "product_type": "Golf Accessories",
     "key": 87,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Camping Equipment",
@@ -99,7 +99,7 @@
     "product_line": "Camping Equipment",
     "product_type": "Cooking Gear",
     "key": 97,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Camping Equipment",
@@ -111,7 +111,7 @@
     "product_line": "Camping Equipment",
     "product_type": "Sleeping Bags",
     "key": 107,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Camping Equipment",
@@ -123,7 +123,7 @@
     "product_line": "Camping Equipment",
     "product_type": "Lanterns",
     "key": 117,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Personal Accessories",
@@ -135,7 +135,7 @@
     "product_line": "Personal Accessories",
     "product_type": "Watches",
     "key": 127,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Personal Accessories",
@@ -147,7 +147,7 @@
     "product_line": "Personal Accessories",
     "product_type": "Eyewear",
     "key": 137,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Personal Accessories",
@@ -159,7 +159,7 @@
     "product_line": "Personal Accessories",
     "product_type": "Knives",
     "key": 147,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Personal Accessories",
@@ -171,7 +171,7 @@
     "product_line": "Outdoor Protection",
     "product_type": "Insect Repellents",
     "key": 157,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Outdoor Protection",
@@ -183,7 +183,7 @@
     "product_line": "Outdoor Protection",
     "product_type": "First Aid",
     "key": 167,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Golf Equipment",
@@ -195,7 +195,7 @@
     "product_line": "Golf Equipment",
     "product_type": "Golf Accessories",
     "key": 177,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Camping Equipment",
@@ -207,7 +207,7 @@
     "product_line": "Camping Equipment",
     "product_type": "Lanterns",
     "key": 187,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Outdoor Protection",
@@ -219,7 +219,7 @@
     "product_line": "Camping Equipment",
     "product_type": "Cooking Gear",
     "key": 197,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Camping Equipment",
@@ -231,7 +231,7 @@
     "product_line": "Camping Equipment",
     "product_type": "Lanterns",
     "key": 207,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Mountaineering Equipment",
@@ -243,7 +243,7 @@
     "product_line": "Mountaineering Equipment",
     "product_type": "Climbing Accessories",
     "key": 217,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Mountaineering Equipment",
@@ -255,7 +255,7 @@
     "product_line": "Mountaineering Equipment",
     "product_type": "Tools",
     "key": 227,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Personal Accessories",
@@ -267,7 +267,7 @@
     "product_line": "Personal Accessories",
     "product_type": "Watches",
     "key": 237,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Personal Accessories",
@@ -279,7 +279,7 @@
     "product_line": "Personal Accessories",
     "product_type": "Eyewear",
     "key": 247,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Personal Accessories",
@@ -291,7 +291,7 @@
     "product_line": "Personal Accessories",
     "product_type": "Navigation",
     "key": 257,
-    "disabled": true
+    "disabled": false
   },
   {
     "product_line": "Personal Accessories",

@@ -4,7 +4,7 @@ import { DataTableTranslations } from 'ornamentum';
 
 import { DataTableExampleDataModel } from '../../../../../../shared/models';
 
-import { TableDataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-data-table-translations-pagination-usage',
@@ -20,7 +20,7 @@ export class DataTableTranslationsPaginationUsageComponent {
 
   public paginationItems: DataTableExampleDataModel[];
 
-  constructor(private tableDataFetchService: TableDataFetchService) {
-    this.paginationItems = this.tableDataFetchService.getTableData();
+  constructor(private dataFetchService: DataFetchService) {
+    this.paginationItems = this.dataFetchService.getTableData();
   }
 }

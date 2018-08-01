@@ -1,1 +1,1 @@
-export { TableDataFetchService } from './table-data-fetch.service';
+export { DataFetchService } from './data-fetch.service';

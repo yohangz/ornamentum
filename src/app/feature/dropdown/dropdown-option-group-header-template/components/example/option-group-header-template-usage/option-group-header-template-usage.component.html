@@ -2,10 +2,12 @@
   <label>
     <ng-dropdown
       [relativeParentElement]="parentElement"
+      [selectTrackBy]="'key'"
+      [displayTrackBy]="'product_type'"
+      [groupByField]="'product_line'"
       [items]="items"
       [limit]="50"
-      [filterable]="true"
-      [groupByField]="'group'">
+      [filterable]="true">
       <ng-template #ngDropdownOptionGroupHeader let-groupedItem="groupedItem">
         <h5 style="font-size:150%;color: red">{{groupedItem.groupName}}</h5>
       </ng-template>

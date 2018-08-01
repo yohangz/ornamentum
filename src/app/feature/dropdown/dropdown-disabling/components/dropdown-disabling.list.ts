@@ -16,9 +16,9 @@ export const disablingUsage: ExampleFile[] = [
     name: 'disabling-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/disabling-usage/disabling-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'disabling-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/disabling-usage/disabling-usage.data.ts')
-  }
+  // {
+  //   type: FileType.TS,
+  //   name: 'disabling-usage.data.ts',
+  //   content: require('!!raw-loader?lang=typescript!./example/disabling-usage/disabling-usage.data.ts')
+  // }
 ];

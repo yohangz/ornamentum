@@ -19,10 +19,10 @@ export const optionGroupHeaderTemplateUsage: ExampleFile[] = [
     content:
       require('!!raw-loader?lang=html!./example/option-group-header-template-usage/option-group-header-template-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'option-group-header-template-usage.data.ts',
-    content:
-      require('!!raw-loader?lang=typescript!./example/option-group-header-template-usage/option-group-header-template-usage.data.ts')
-  }
+  // {
+  //   type: FileType.TS,
+  //   name: 'option-group-header-template-usage.data.ts',
+  //   content:
+  //     require('!!raw-loader?lang=typescript!./example/option-group-header-template-usage/option-group-header-template-usage.data.ts')
+  // }
 ];

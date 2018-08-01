@@ -4,7 +4,7 @@ import { DataTableSelectMode } from 'ornamentum';
 
 import { DataTableExampleDataModel } from '../../../../../../shared/models';
 
-import { TableDataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-multi-row-selection-usage',
@@ -15,7 +15,7 @@ export class MultiRowSelectionUsageComponent {
 
   public items: DataTableExampleDataModel[];
 
-  constructor(private tableDataFetchService: TableDataFetchService) {
-    this.items = this.tableDataFetchService.getTableData();
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getTableData();
   }
 }

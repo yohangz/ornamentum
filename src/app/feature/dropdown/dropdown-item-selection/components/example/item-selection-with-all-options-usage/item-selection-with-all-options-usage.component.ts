@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 import { DropdownSelectMode } from 'ornamentum';
 
-import { data } from './item-selection-with-all-options-usage.data';
+import { DropdownExampleDataModel } from '../../../../../../shared/models';
+
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-item-selection-with-all-options-usage',
@@ -11,23 +13,28 @@ import { data } from './item-selection-with-all-options-usage.data';
 export class ItemSelectionWithAllOptionsUsageComponent {
   public DropdownSelectMode = DropdownSelectMode;
 
-  public items: any[];
-  public selectedOptions: any[];
+  public items: DropdownExampleDataModel[];
+  public selectedOptions: DropdownExampleDataModel[];
 
-  constructor() {
-    this.items = data;
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getDropDownData();
+
     this.selectedOptions = [
       {
-        key: 2,
-        value: 'test1'
+        key: 17,
+        product_type: 'Cooking Gear'
       },
       {
-        key: 4,
-        value: 'test3'
+        key: 22,
+        product_type: 'Sleeping Bag'
       },
       {
-        key: 5,
-        value: 'test4'
+        key: 32,
+        product_type: 'Safety'
+      },
+      {
+        key: 37,
+        product_type: 'Climbing Accessories'
       }
     ];
   }

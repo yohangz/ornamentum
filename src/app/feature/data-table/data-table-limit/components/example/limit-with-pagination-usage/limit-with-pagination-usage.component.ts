@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { DataTableExampleDataModel } from '../../../../../../shared/models';
 
-import { TableDataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-limit-with-pagination-usage',
@@ -11,7 +11,7 @@ import { TableDataFetchService } from '../../../../../../shared/services';
 export class LimitWithPaginationUsageComponent {
   public items: DataTableExampleDataModel[];
 
-  constructor(private tableDataFetchService: TableDataFetchService) {
-    this.items = this.tableDataFetchService.getTableData();
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getTableData();
   }
 }

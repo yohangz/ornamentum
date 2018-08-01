@@ -6,15 +6,19 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { data } from './load-on-scroll-usage.data';
+import { DropdownExampleDataModel } from '../../../../../../shared/models';
+
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-load-on-scroll-usage',
   templateUrl: './load-on-scroll-usage.component.html'
 })
 export class LoadOnScrollUsageComponent {
+  public items: DropdownExampleDataModel[];
 
-  constructor() {
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getDropDownData();
     this.onDataBind = this.onDataBind.bind(this);
   }
 
@@ -23,7 +27,7 @@ export class LoadOnScrollUsageComponent {
 
     return of({
       count: 10,
-      data: data,
+      data: this.items,
       limit: 50,
       offset: 0
     }).pipe(map((response) => {

@@ -16,11 +16,11 @@ export const translationsNoDataUsage: ExampleFile[] = [
     name: 'translations-no-data-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/translations-no-data-usage/translations-no-data-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'translations-no-data-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/translations-no-data-usage/translations-no-data-usage.data.ts')
-  }
+  // {
+  //   type: FileType.TS,
+  //   name: 'translations-no-data-usage.data.ts',
+  //   content: require('!!raw-loader?lang=typescript!./example/translations-no-data-usage/translations-no-data-usage.data.ts')
+  // }
 ];
 
 export const additionalTranslationsUsage: ExampleFile[] = [
@@ -39,9 +39,9 @@ export const additionalTranslationsUsage: ExampleFile[] = [
     name: 'additional-translations-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/additional-translations-usage/additional-translations-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'additional-translations-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/additional-translations-usage/additional-translations-usage.data.ts')
-  }
+  // {
+  //   type: FileType.TS,
+  //   name: 'additional-translations-usage.data.ts',
+  //   content: require('!!raw-loader?lang=typescript!./example/additional-translations-usage/additional-translations-usage.data.ts')
+  // }
 ];

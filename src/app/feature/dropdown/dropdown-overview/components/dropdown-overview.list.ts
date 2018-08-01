@@ -16,10 +16,10 @@ export const basicUsage: ExampleFile[] = [
     name: 'basic-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/basic-usage/basic-usage.component.html')
   },
-  {
-    type: FileType.TS,
-    name: 'basic-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/basic-usage/basic-usage.data.ts')
-  }
+  // {
+  //   type: FileType.TS,
+  //   name: 'basic-usage.data.ts',
+  //   content: require('!!raw-loader?lang=typescript!./example/basic-usage/basic-usage.data.ts')
+  // }
 ];
 
