@@ -21,6 +21,6 @@ export class DataTableTranslationsPaginationUsageComponent {
   public paginationItems: DataTableExampleDataModel[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.paginationItems = this.dataFetchService.getTableData();
+    this.paginationItems = this.dataFetchService.fetchData();
   }
 }

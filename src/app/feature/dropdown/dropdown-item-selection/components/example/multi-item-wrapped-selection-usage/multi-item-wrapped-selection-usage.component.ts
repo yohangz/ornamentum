@@ -17,24 +17,24 @@ export class MultiItemWrappedSelectionUsageComponent {
   public selectedOptions: DropdownExampleDataModel[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.getDropDownData();
+    this.items = this.dataFetchService.dropDownData;
 
     this.selectedOptions = [
       {
         key: 17,
-        product_type: 'Cooking Gear'
+        productType: 'Cooking Gear'
       },
       {
         key: 22,
-        product_type: 'Sleeping Bag'
+        productType: 'Sleeping Bag'
       },
       {
         key: 32,
-        product_type: 'Safety'
+        productType: 'Safety'
       },
       {
         key: 37,
-        product_type: 'Climbing Accessories'
+        productType: 'Climbing Accessories'
       }
     ];
   }

@@ -16,6 +16,6 @@ export class ColumnSortingUsageComponent {
   public items: DataTableExampleDataModel[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.getTableData();
+    this.items = this.dataFetchService.fetchData();
   }
 }

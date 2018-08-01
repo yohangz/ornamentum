@@ -15,6 +15,6 @@ export class TableHeaderDetailsUsageComponent {
   public parentElement: ElementRef;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.getTableData();
+    this.items = this.dataFetchService.fetchData();
   }
 }

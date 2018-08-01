@@ -12,6 +12,6 @@ export class ResponsiveConfWithoutWidthHeightUsageComponent {
   public items: DataTableExampleDataModel[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.getTableData();
+    this.items = this.dataFetchService.fetchData();
   }
 }

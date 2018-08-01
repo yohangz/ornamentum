@@ -15,7 +15,7 @@ export class ServerSideDataBindingComponent {
   public dataSource: Observable<DataTableExampleDataModel[]>;
 
   constructor(private dataFetchService: DataFetchService) {
-    const data: DataTableExampleDataModel[] = this.dataFetchService.getTableData();
+    const data: DataTableExampleDataModel[] = this.dataFetchService.fetchData();
     this.dataSource = of(data);
   }
 }

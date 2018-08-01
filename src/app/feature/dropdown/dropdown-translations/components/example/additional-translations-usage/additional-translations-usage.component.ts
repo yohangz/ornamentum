@@ -22,6 +22,6 @@ export class AdditionalTranslationsUsageComponent {
   public items: DropdownExampleDataModel[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.getDropDownData();
+    this.items = this.dataFetchService.dropDownData;
   }
 }

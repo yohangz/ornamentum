@@ -32,7 +32,7 @@
     </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'order_method_type'"
+    [field]="'orderMethodType'"
     [title]="'Order Method Type'"
     [sortable]="true"
     [filterable]="true"
@@ -45,7 +45,7 @@
     [width]="160">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'retailer_type'"
+    [field]="'retailerType'"
     [title]="'Retailer Type'"
     [sortable]="true"
     [filterable]="true"
@@ -58,19 +58,19 @@
     <ng-template #ngDataTableCell let-row="row">
       <td>
         <span><i class="zmdi zmdi-time"></i></span>
-        <span style="color: #4dc71f">{{row.item.retailer_type}}</span>
+        <span style="color: #4dc71f">{{row.item.retailerType}}</span>
       </td>
     </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'product_line'"
+    [field]="'productLine'"
     [title]="'Product Line'"
     [sortable]="true"
     [filterable]="true"
     [filterPlaceholder]="'Search'">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'product_type'"
+    [field]="'productType'"
     [title]="'Product Type'"
     [sortable]="true"
     [filterable]="true"
@@ -81,7 +81,7 @@
     [dropDownFilterShowOptionSelectCheckbox]="true">
     <ng-template #ngDataTableCell let-row="row">
       <td>
-        <span>{{row.item.product_type.toUpperCase()}}</span>
+        <span>{{row.item.productType.toUpperCase()}}</span>
       </td>
     </ng-template>
   </ng-data-table-column>
@@ -102,7 +102,7 @@
     [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'gross_margin'"
+    [field]="'grossMargin'"
     [title]="'Gross Margin'"
     [sortable]="true"
     [filterable]="true"

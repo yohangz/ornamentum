@@ -13,7 +13,7 @@ export class LoadingSpinnerTemplateUsageComponent {
 
   constructor(private dataFetchService: DataFetchService) {
     setTimeout(() => {
-      this.items = this.dataFetchService.getDropDownData();
+      this.items = this.dataFetchService.dropDownData;
     }, 5000);
   }
 }

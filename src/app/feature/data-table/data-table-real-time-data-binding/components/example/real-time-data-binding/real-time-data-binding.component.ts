@@ -20,17 +20,17 @@ export class RealTimeDataBindingComponent {
   public parentElement: ElementRef;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.dataSource = of(this.dataFetchService.getTableData());
+    this.dataSource = of(this.dataFetchService.fetchData());
   }
 
   public ngOnInit(): void {
     this.interval = setInterval(() => {
       this.dataSubscription = this.dataSource.subscribe((data: any[]) => {
         data.forEach((val, index) => {
-          let date = val.retailer_type;
+          let date = val.retailerType;
           let newDate = new Date(date);
 
-          data[index].retailer_type = new Date(newDate.setDate(newDate.getDate() + 1)).toUTCString();
+          data[index].retailerType = new Date(newDate.setDate(newDate.getDate() + 1)).toUTCString();
 
           data[index].year = Number(val.year) + 0.25;
         });
