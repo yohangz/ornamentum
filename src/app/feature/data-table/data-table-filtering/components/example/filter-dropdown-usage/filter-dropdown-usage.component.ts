@@ -2,7 +2,7 @@ import { Component, ElementRef, Input } from '@angular/core';
 
 import { DropdownMenuPosition } from 'ornamentum';
 
-import { DataTableExampleDataModel } from '../../../../../../shared/models';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -16,7 +16,7 @@ export class FilterDropdownUsageComponent {
   @Input()
   public parentElement: ElementRef;
 
-  public items: DataTableExampleDataModel[];
+  public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchData();

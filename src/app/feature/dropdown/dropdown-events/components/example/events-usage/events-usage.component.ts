@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { DropdownComponent } from 'ornamentum';
 
-import { DropdownExampleDataModel } from '../../../../../../shared/models';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -11,10 +11,10 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './events-usage.component.html'
 })
 export class EventsUsageComponent {
-  public items: DropdownExampleDataModel[];
+  public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.dropDownData;
+    this.items = this.dataFetchService.fetchData();
   }
 
   public onDropdownInit(dropdown: DropdownComponent): void {

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { DataTableTranslations } from 'ornamentum';
 
-import { DataTableExampleDataModel } from '../../../../../../shared/models';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -18,7 +18,7 @@ export class DataTableTranslationsPaginationUsageComponent {
     noDataMessageHeader: 'Customized No Data Message Header'
   };
 
-  public paginationItems: DataTableExampleDataModel[];
+  public paginationItems: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
     this.paginationItems = this.dataFetchService.fetchData();

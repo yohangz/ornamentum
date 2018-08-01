@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { DropdownExampleDataModel } from '../../../../../../shared/models';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -15,10 +15,10 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './on-data-bind-usage.component.html'
 })
 export class OnDataBindUsageComponent {
-  public items: DropdownExampleDataModel[];
+  public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.dropDownData;
+    this.items = this.dataFetchService.fetchData();
     this.onDataBind = this.onDataBind.bind(this);
   }
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DataTableExampleDataModel } from '../../../../../../shared/models';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -9,7 +9,7 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './pagination-without-limit-usage.component.html'
 })
 export class PaginationWithoutLimitUsageComponent {
-  public items: DataTableExampleDataModel[];
+  public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchData();

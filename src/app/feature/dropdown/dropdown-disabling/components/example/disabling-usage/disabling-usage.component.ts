@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DropdownExampleDataModel } from '../../../../../../shared/models';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -9,9 +9,9 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './disabling-usage.component.html'
 })
 export class DisablingUsageComponent {
-  public items: DropdownExampleDataModel[];
+  public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.dropDownData;
+    this.items = this.dataFetchService.fetchData();
   }
 }

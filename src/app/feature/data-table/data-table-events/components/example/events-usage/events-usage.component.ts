@@ -12,7 +12,7 @@ import {
   DataTableRow
 } from 'ornamentum';
 
-import { DataTableExampleDataModel } from '../../../../../../shared/models';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -23,7 +23,7 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class EventsUsageComponent {
   public DataTableSelectMode = DataTableSelectMode;
 
-  public items: DataTableExampleDataModel[];
+  public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchData();
