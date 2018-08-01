@@ -2,6 +2,8 @@
   <label>
     <ng-dropdown
       [relativeParentElement]="parentElement"
+      [selectTrackBy]="'key'"
+      [displayTrackBy]="'product_type'"
       [limit]="50"
       [loadOnScroll]="true"
       [onDataBind]="onDataBind">

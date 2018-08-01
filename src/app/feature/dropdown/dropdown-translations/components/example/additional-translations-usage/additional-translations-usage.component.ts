@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 import { DropdownSelectMode, DropdownTranslations } from 'ornamentum';
 
-import { data } from './additional-translations-usage.data';
+import { DropdownExampleDataModel } from '../../../../../../shared/models';
+
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-additional-translations-usage',
@@ -17,9 +19,9 @@ export class AdditionalTranslationsUsageComponent {
     selectPlaceholder: 'This is select place holder'
   };
 
-  public items: any[];
+  public items: DropdownExampleDataModel[];
 
-  constructor() {
-    this.items = data;
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getDropDownData();
   }
 }

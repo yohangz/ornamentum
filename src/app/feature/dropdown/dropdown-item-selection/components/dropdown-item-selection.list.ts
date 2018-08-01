@@ -15,12 +15,12 @@ export const singleItemSelectionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'single-item-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/single-item-selection-usage/single-item-selection-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'single-item-selection-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/single-item-selection-usage/single-item-selection-usage.data.ts')
   }
+  // {
+  //   type: FileType.TS,
+  //   name: 'single-item-selection-usage.data.ts',
+  //   content: require('!!raw-loader?lang=typescript!./example/single-item-selection-usage/single-item-selection-usage.data.ts')
+  // }
 ];
 
 export const singleToggleItemSelectionUsage: ExampleFile[] = [
@@ -40,12 +40,12 @@ export const singleToggleItemSelectionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'single-toggle-item-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/single-toggle-item-selection-usage/single-toggle-item-selection-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'single-toggle-item-selection-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/single-toggle-item-selection-usage/single-toggle-item-selection-usage.data.ts')
   }
+  // {
+  //   type: FileType.TS,
+  //   name: 'single-toggle-item-selection-usage.data.ts',
+  //   content: require('!!raw-loader?lang=typescript!./example/single-toggle-item-selection-usage/single-toggle-item-selection-usage.data.ts')
+  // }
 ];
 
 export const multiItemSelectionUsage: ExampleFile[] = [
@@ -63,12 +63,12 @@ export const multiItemSelectionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'multi-item-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/multi-item-selection-usage/multi-item-selection-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'multi-item-selection-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/multi-item-selection-usage/multi-item-selection-usage.data.ts')
   }
+  // {
+  //   type: FileType.TS,
+  //   name: 'multi-item-selection-usage.data.ts',
+  //   content: require('!!raw-loader?lang=typescript!./example/multi-item-selection-usage/multi-item-selection-usage.data.ts')
+  // }
 ];
 
 export const multiItemSelectionWithWrappedItemsUsage: ExampleFile[] = [
@@ -86,12 +86,12 @@ export const multiItemSelectionWithWrappedItemsUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'multi-item-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/multi-item-selection-usage/multi-item-selection-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'multi-item-selection-usage.data.ts',
-    content: require('!!raw-loader?lang=typescript!./example/multi-item-selection-usage/multi-item-selection-usage.data.ts')
   }
+  // {
+  //   type: FileType.TS,
+  //   name: 'multi-item-selection-usage.data.ts',
+  //   content: require('!!raw-loader?lang=typescript!./example/multi-item-selection-usage/multi-item-selection-usage.data.ts')
+  // }
 ];
 
 export const itemSelectionWithAllOptionsUsage: ExampleFile[] = [
@@ -112,13 +112,13 @@ export const itemSelectionWithAllOptionsUsage: ExampleFile[] = [
     name: 'item-selection-with-all-options-usage.component.html',
     content: require
     ('!!raw-loader?lang=html!./example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'item-selection-with-all-options-usage.data.ts',
-    content:
-      require('!!raw-loader?lang=typescript!./example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.data.ts')
   }
+  // {
+  //   type: FileType.TS,
+  //   name: 'item-selection-with-all-options-usage.data.ts',
+  //   content:
+  //     require('!!raw-loader?lang=typescript!./example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.data.ts')
+  // }
 ];
 
 

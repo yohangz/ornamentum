@@ -4,7 +4,7 @@ import { DataTableSelectMode } from 'ornamentum';
 
 import { Observable, of, Subscription } from 'rxjs/index';
 
-import { TableDataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-basic-usage',
@@ -21,8 +21,8 @@ export class BasicUsageComponent implements OnInit, OnDestroy {
   @Input()
   public parentElement: ElementRef;
 
-  constructor(private tableDataFetchService: TableDataFetchService) {
-    this.dataSource = of(this.tableDataFetchService.getTableData());
+  constructor(private dataFetchService: DataFetchService) {
+    this.dataSource = of(this.dataFetchService.getTableData());
   }
 
   public ngOnInit(): void {

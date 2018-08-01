@@ -14,7 +14,7 @@ import {
 
 import { DataTableExampleDataModel } from '../../../../../../shared/models';
 
-import { TableDataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-events-usage',
@@ -25,8 +25,8 @@ export class EventsUsageComponent {
 
   public items: DataTableExampleDataModel[];
 
-  constructor(private tableDataFetchService: TableDataFetchService) {
-    this.items = this.tableDataFetchService.getTableData();
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getTableData();
   }
 
   public onDataTableInit(dataTable: DataTableComponent): void {

@@ -2,7 +2,7 @@ import { Component, ElementRef, Input } from '@angular/core';
 
 import { DataTableExampleDataModel } from '../../../../../../shared/models';
 
-import { TableDataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-table-header-details-usage',
@@ -14,7 +14,7 @@ export class TableHeaderDetailsUsageComponent {
   @Input()
   public parentElement: ElementRef;
 
-  constructor(private tableDataFetchService: TableDataFetchService) {
-    this.items = this.tableDataFetchService.getTableData();
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getTableData();
   }
 }

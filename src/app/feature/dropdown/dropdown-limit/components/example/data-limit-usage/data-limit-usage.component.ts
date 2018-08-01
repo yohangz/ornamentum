@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 
-import { data } from './data-limit-usage.data';
+import { DropdownExampleDataModel } from '../../../../../../shared/models';
+
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-data-limit-usage',
   templateUrl: './data-limit-usage.component.html'
 })
 export class DataLimitUsageComponent {
-  public items: any[];
+  public items: DropdownExampleDataModel[];
 
-  constructor() {
-    this.items = data;
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getDropDownData();
   }
 }

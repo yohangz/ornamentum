@@ -2,7 +2,9 @@ import { Component } from '@angular/core';
 
 import { DropdownSelectMode } from 'ornamentum';
 
-import { data } from './single-item-selection-usage.data';
+import { DropdownExampleDataModel } from '../../../../../../shared/models';
+
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-single-item-selection-usage',
@@ -11,9 +13,9 @@ import { data } from './single-item-selection-usage.data';
 export class SingleItemSelectionUsageComponent {
   public DropdownSelectMode = DropdownSelectMode;
 
-  public items: any[];
+  public items: DropdownExampleDataModel[];
 
-  constructor() {
-    this.items = data;
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.getDropDownData();
   }
 }
