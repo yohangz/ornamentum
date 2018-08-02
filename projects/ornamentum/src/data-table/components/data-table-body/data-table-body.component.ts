@@ -129,7 +129,7 @@ export class DataTableBodyComponent {
    * @param {MouseEvent} event event event Mouse click event argument object.
    */
   public cellClicked(column: DataTableColumnComponent, row: DataTableRow<any>, event: MouseEvent): void {
-    this.eventStateService.cellClickStream.emit({row, column, event});
+    this.eventStateService.cellClickStream.emit({ row, column, event });
   }
 
   /**
@@ -138,7 +138,7 @@ export class DataTableBodyComponent {
    * @return {any[]} Row span dummy array.
    */
   public getRowSpanCollection(row: DataTableRow<any>): any[] {
-    return Array.from({length: this.dataStateService.onDynamicRowSpanExtract(row)});
+    return Array.from({ length: this.dataStateService.onDynamicRowSpanExtract(row) });
   }
 
   /**
@@ -242,7 +242,7 @@ export class DataTableBodyComponent {
       }
     }
 
-    this.eventStateService.rowClickStream.emit({row, event});
+    this.eventStateService.rowClickStream.emit({ row, event });
   }
 
   /**
@@ -251,7 +251,7 @@ export class DataTableBodyComponent {
    * @param {MouseEvent} event event Mouse click event argument object.
    */
   public rowDoubleClicked(row: DataTableRow<any>, event: MouseEvent): void {
-    this.eventStateService.rowDoubleClickStream.emit({row, event});
+    this.eventStateService.rowDoubleClickStream.emit({ row, event });
   }
 
   public get hasSubstituteRows(): boolean {

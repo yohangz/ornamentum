@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { Observable } from 'rxjs';
+import { of } from 'rxjs';
+
 import {
   DataTableComponent,
   DataTableCellBindEventArgs,
@@ -11,9 +14,6 @@ import {
   DataTableSelectMode,
   DataTableRow
 } from 'ornamentum';
-
-import { Observable } from 'rxjs';
-import { of } from 'rxjs';
 
 import { data } from './events-usage.data';
 

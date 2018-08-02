@@ -1,11 +1,13 @@
 import { Component, Injector, Input, OnDestroy } from '@angular/core';
 
+import { ComponentLoader } from '../../../utility/utility.module';
+
 import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnSelectorComponent } from '../data-table-column-selector/data-table-column-selector.component';
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
-import { PopoverComponentLoaderFactoryService, ComponentLoader } from '../../../utility/utility.module';
+import { PopoverComponentLoaderFactoryService } from '../../../utility/utility.module';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';

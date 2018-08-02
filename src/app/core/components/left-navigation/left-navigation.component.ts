@@ -4,8 +4,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 import { Subscription } from 'rxjs/internal/Subscription';
 
 import { MenuGroup, MenuItem, ResizeArgs } from '../../models';
-import { ContainerResponsiveService } from '../../services';
 
+import { ContainerResponsiveService } from '../../services';
 
 @Component({
   selector: 'app-left-navigation',

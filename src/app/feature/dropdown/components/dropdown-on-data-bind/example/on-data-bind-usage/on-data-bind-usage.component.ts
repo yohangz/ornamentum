@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
-import { DropdownRequestParams, DropdownQueryResult } from 'ornamentum';
-
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 import { map } from 'rxjs/operators';
+
+import { DropdownRequestParams, DropdownQueryResult } from 'ornamentum';
 
 import { data } from './on-data-bind-usage.data';
 

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { loadingSpinnerTemplateUsage } from './data-table-loading-spinner-template.list';
-
 import { demoSnippet } from './data-table-loading-spinner-template';
 
 @Component({

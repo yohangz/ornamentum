@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 export { DropdownOverviewComponent } from './dropdown-overview/dropdown-overview.component';
 export { BasicUsageComponent } from './dropdown-overview/example/basic-usage/basic-usage.component';
 
@@ -61,3 +63,5 @@ export { OptionGroupHeaderTemplateUsageComponent } from './dropdown-templates/dr
 export { DropdownOptionGroupHeaderTemplateComponent } from './dropdown-templates/dropdown-option-group-header-template/dropdown-option-group-header-template.component';
 export { LoadingSpinnerTemplateUsageComponent } from './dropdown-templates/dropdown-loading-spinner/example/loading-spinner-template-usage/loading-spinner-template-usage.component';
 export { DropdownLoadingSpinnerTemplateComponent } from './dropdown-templates/dropdown-loading-spinner/dropdown-loading-spinner-template.component';
+
+/* tslint:enable */

@@ -39,7 +39,8 @@ export const singleToggleItemSelectionUsage: ExampleFile[] = [
   {
     type: FileType.HTML,
     name: 'single-toggle-item-selection-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/single-toggle-item-selection-usage/single-toggle-item-selection-usage.component.html')
+    content: require(
+      '!!raw-loader?lang=html!./example/single-toggle-item-selection-usage/single-toggle-item-selection-usage.component.html')
   },
   {
     type: FileType.TS,
@@ -98,14 +99,14 @@ export const itemSelectionWithAllOptionsUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'item-selection-with-all-options-usage.module.ts',
-    content: require
-    ('!!raw-loader?lang=typescript!./example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.module.md')
+    content: require(
+      '!!raw-loader?lang=typescript!./example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.module.md')
   },
   {
     type: FileType.TS,
     name: 'item-selection-with-all-options-usage.component.ts',
-    content: require
-    ('!!raw-loader?lang=typescript!./example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.component.ts')
+    content: require(
+      '!!raw-loader?lang=typescript!./example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.component.ts')
   },
   {
     type: FileType.HTML,

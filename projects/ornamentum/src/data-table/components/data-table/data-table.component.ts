@@ -19,7 +19,6 @@ import { debounceTime, switchMap } from 'rxjs/operators';
 import get from 'lodash-es/get';
 
 import { DataTableFilterValueExtractCallback } from '../../models/data-table-filter-value-extract-callback.model';
-import { DataTableStorageMode } from '../../models/data-table-storage-mode.enum';
 import { DataTableCellBindEventArgs } from '../../models/data-table-cell-bind-event-args.model';
 import { DataTableCellClickEventArgs } from '../../models/data-table-cell-click-event-args.model';
 import { DataTableHeaderClickEventArgs } from '../../models/data-table-header-click-event-args.model';
@@ -33,6 +32,8 @@ import { DataTableQueryResult } from '../../models/data-table-query-result.model
 import { DataTableDataBindCallback } from '../../models/data-table-data-bind-callback.model';
 import { DataTableFilterOption } from '../../models/data-table-filter-option.model';
 import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
+
+import { DataTableStorageMode } from '../../models/data-table-storage-mode.enum';
 import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';

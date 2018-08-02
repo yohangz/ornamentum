@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 export { DataTableOverviewComponent } from './data-table-overview/data-table-overview.component';
 export { BasicUsageComponent } from './data-table-overview/example/basic-usage/basic-usage.component';
 
@@ -70,3 +72,5 @@ export { DataTableLoadingSpinnerTemplateComponent } from './data-table-templates
 export { LoadingSpinnerTemplateUsageComponent } from './data-table-templates/data-table-loading-spinner-template/example/loading-spinner-template-usage/loading-spinner-template-usage.component';
 export { DataTableNoRecordsTemplateComponent } from './data-table-templates/data-table-no-records-template/data-table-no-records-template.component';
 export { NoRecordsTemplateUsageComponent } from './data-table-templates/data-table-no-records-template/example/no-records-template-usage/no-records-template-usage.component';
+
+/* tslint:enable */

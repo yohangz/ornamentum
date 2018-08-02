@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-import { DataTableTranslations } from 'ornamentum';
-
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
+
+import { DataTableTranslations } from 'ornamentum';
 
 @Component({
   selector: 'app-data-table-translations-no-data-usage',

@@ -4,6 +4,7 @@ import { Subscription, Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 import { DataTableFilterEventArgs } from '../../models/data-table-filter-event-args.model';
+
 import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';

@@ -32,7 +32,8 @@ export const singleToggleRowSelectionUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'single-toggle-row-selection-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/single-toggle-row-selection-usage/single-toggle-row-selection-usage.component.ts')
+    content: require(
+      '!!raw-loader?lang=typescript!./example/single-toggle-row-selection-usage/single-toggle-row-selection-usage.component.ts')
   },
   {
     type: FileType.HTML,

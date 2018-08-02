@@ -1588,11 +1588,13 @@ export const data = [
     'other_names': [
       {
         'name': 'MIT',
-        'note': 'Because MIT has used many licenses for software, the Free Software Foundation considers MIT License ambiguous. The MIT License published on the OSI site is the same as the Expat License.'
+        'note': 'Because MIT has used many licenses for software, the Free Software Foundation considers MIT License ambiguous. ' +
+        'The MIT License published on the OSI site is the same as the Expat License.'
       },
       {
         'name': 'Expat',
-        'note': 'Because MIT has used many licenses for software, the Free Software Foundation considers MIT License ambiguous. The MIT License published on the OSI site is the same as the Expat License.'
+        'note': 'Because MIT has used many licenses for software, the Free Software Foundation considers MIT License ambiguous. ' +
+        'The MIT License published on the OSI site is the same as the Expat License.'
       }
     ],
     'superseded_by': null,
@@ -2203,7 +2205,8 @@ export const data = [
       {
         'media_type': 'application/pdf',
         'title': 'PDF',
-        'url': 'https://static1.squarespace.com/static/528d46a2e4b059766439fa8b/t/53236a37e4b0db70c9afdf14/1394829879761/OSETPublicLicense_v2.pdf'
+        'url': 'https://static1.squarespace.com/static/528d46a2e4b059766439fa8b/t/53236a37e4b0db70c9afdf14/1394829879761/' +
+        'OSETPublicLicense_v2.pdf'
       },
       {
         'media_type': 'text/html',

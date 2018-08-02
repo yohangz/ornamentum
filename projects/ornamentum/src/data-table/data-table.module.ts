@@ -95,11 +95,6 @@ export class DataTableModule {
 }
 
 // exports
-import { DataFetchMode } from './models/data-fetch-mode.enum';
-
-export { DataTableSortOrder } from './models/data-table-sort-order.enum';
-export { DataTableStorageMode } from './models/data-table-storage-mode.enum';
-
 export { DataTableCellBindEventArgs } from './models/data-table-cell-bind-event-args.model';
 export { DataTableQueryResult } from './models/data-table-query-result.model';
 export { DataTableFilterColumn } from './models/data-table-filter-column.model';
@@ -118,6 +113,10 @@ export { DataTableFilterValueExtractCallback } from './models/data-table-filter-
 export { DataTableFilterFieldMapperCallback } from './models/data-table-filter-field-mapper-callback.model';
 export { DataTableFilterExpressionCallback } from './models/data-table-filter-expression-callback.model';
 export { DataTableCellColorRenderCallback } from './models/data-table-cell-color-render-callback.model';
+
+import { DataFetchMode } from './models/data-fetch-mode.enum';
+export { DataTableSortOrder } from './models/data-table-sort-order.enum';
+export { DataTableStorageMode } from './models/data-table-storage-mode.enum';
 export { DataTableSelectMode } from './models/data-table-select-mode.model';
 export { DataFetchMode } from './models/data-fetch-mode.enum';
 
