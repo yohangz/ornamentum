@@ -1,19 +1,22 @@
-<h1>Dropdown Menu Position</h1>
-<ul class="main-pane-list">
-  <li><b>menuPosition</b> will allows users to configure the dropdown menu position.</li>
-  <li>Available values for this configuration can be seen as follows.</li>
+<div class="feature-container" #parent>
+  <h1>Dropdown Menu Position</h1>
   <ul class="main-pane-list">
-    <li><b>[menuPosition]="MenuPosition.BOTTOM_RIGHT" | "MenuPosition.BOTTOM_LEFT" | "MenuPosition.TOP_LEFT"
-      | "MenuPosition.TOP_RIGHT"</b> => Note that, there are
-      4 positions users can configure to align the dropdown. The default value for this config is
-      MenuPosition.BOTTOM_LEFT.
-    </li>
+    <li><b>menuPosition</b> will allows users to configure the dropdown menu position.</li>
+    <li>Available values for this configuration can be seen as follows.</li>
+    <ul class="main-pane-list">
+      <li><b>[menuPosition]="MenuPosition.BOTTOM_RIGHT" | "MenuPosition.BOTTOM_LEFT" | "MenuPosition.TOP_LEFT"
+        | "MenuPosition.TOP_RIGHT"</b> => Note that, there are
+        4 positions users can configure to align the dropdown. The default value for this config is
+        MenuPosition.BOTTOM_LEFT.
+      </li>
+    </ul>
   </ul>
-</ul>
 
-<app-menu-position-usage></app-menu-position-usage>
+  <app-menu-position-usage></app-menu-position-usage>
 
-<app-example-code [files]="menuPositionUsage"></app-example-code>
+  <app-example-code [files]="menuPositionUsage"></app-example-code>
 
-<h2>Suggested Links</h2>
-<a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#menuPosition">API Doc for Dropdown Menu Position</a>
+  <h2>Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#menuPosition">API Doc for Dropdown
+    Menu Position</a>
+</div>

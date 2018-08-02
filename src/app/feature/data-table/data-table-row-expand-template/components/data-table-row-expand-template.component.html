@@ -1,27 +1,32 @@
-<h1>Data Table Row Expand Template</h1>
-<p>This feature enables users to customize the table row expandable section by providing their own template. There are
-  set of configurations needs to be enabled to see and control the behaviour of this expandable template.</p>
+<div class="feature-container" #parent>
+  <h1>Data Table Row Expand Template</h1>
+  <p>This feature enables users to customize the table row expandable section by providing their own template. There are
+    set of configurations needs to be enabled to see and control the behaviour of this expandable template.</p>
 
-<ul class="main-pane-list">
-  <li><b>[expandableRows]="true or false"</b> => Determine whether to show/hide the expandable rows section.</li>
-  <li><b>[expandOnRowClick]="true or false"</b> => Tells data table to expand the table row on user row click event when
-    expandable rows feature is enabled.
-  </li>
-  <li><b>[showRowExpandLoadingSpinner]="true or false"</b> => Enables loading spinner when data is fetching to the table
-    row
-    expandable section.
-  </li>
-</ul>
+  <ul class="main-pane-list">
+    <li><b>[expandableRows]="true or false"</b> => Determine whether to show/hide the expandable rows section.</li>
+    <li><b>[expandOnRowClick]="true or false"</b> => Tells data table to expand the table row on user row click event
+      when
+      expandable rows feature is enabled.
+    </li>
+    <li><b>[showRowExpandLoadingSpinner]="true or false"</b> => Enables loading spinner when data is fetching to the
+      table
+      row
+      expandable section.
+    </li>
+  </ul>
 
-<label>The following code block shows how we use the template to show simple text output in row expand.
-  <pre class="prettyprint lang-html">{{demoSnippet.template}}</pre>
-</label>
+  <label>The following code block shows how we use the template to show simple text output in row expand.
+    <pre class="prettyprint lang-html">{{demoSnippet.template}}</pre>
+  </label>
 
-<p>Here is the table output after applying the above row expand template.</p>
+  <p>Here is the table output after applying the above row expand template.</p>
 
-<app-row-expand-template-usage></app-row-expand-template-usage>
+  <app-row-expand-template-usage></app-row-expand-template-usage>
 
-<app-example-code [files]="rowExpandTemplateUsage"></app-example-code>
+  <app-example-code [files]="rowExpandTemplateUsage"></app-example-code>
 
-<h2>Suggested Links</h2>
-<a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#rowExpandTemplate">API Doc for Data Table Row Expand Template</a>
+  <h2>Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#rowExpandTemplate">API Doc for
+    Data Table Row Expand Template</a>
+</div>

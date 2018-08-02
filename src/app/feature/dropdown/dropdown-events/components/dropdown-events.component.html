@@ -1,46 +1,51 @@
-<h1>Dropdown Events</h1>
+<div class="feature-container" #parent>
+  <h1>Dropdown Events</h1>
 
-<ul class="main-pane-list">
-  <li>There are several events types are available in this dropdown as follows.</li>
   <ul class="main-pane-list">
-    <li>
-      <label class="event-item">init: </label>
-      <ul>
-        <li>Triggers when initializing the dropdown.</li>
-      </ul>
-    </li>
-    <li><label class="event-item">selectChange: </label>
-      <ul class="main-pane-list">
-        <li>Triggers when dropdown item select state changes. To identify selected
-          items uniquely it is necessary to specify <b>[selectTrackBy]"</b> property. Therefore, a unique value key
-          name should be set as the value for this attribute. According to this example it is <b>'id'</b>. There are
-          set of configuration are introduced in the dropdown to work smoothly with the selected change event.
-          Those configurations can be seen as follows.
-          <ul class="main-pane-list">
-            <li><b>[triggerSelectChangeOnInit]="true or false"</b> => The default value for this config is false.</li>
-            <li><b>[triggerSelectChangeOnFirstOptionSelect]="true or false"</b> => The default value for this config is
-              false.
-            </li>
-            <li><b>[triggerSelectChangeOnModelUpdate]="true or false"</b> => The default value for this config is false.
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-    <li><label class="event-item">dataBound: </label>
-      <ul class="main-pane-list">
-        <li>This will trigger after completion of data binding.</li>
-      </ul>
+    <li>There are several events types are available in this dropdown as follows.</li>
+    <ul class="main-pane-list">
+      <li>
+        <label class="event-item">init: </label>
+        <ul>
+          <li>Triggers when initializing the dropdown.</li>
+        </ul>
+      </li>
+      <li><label class="event-item">selectChange: </label>
+        <ul class="main-pane-list">
+          <li>Triggers when dropdown item select state changes. To identify selected
+            items uniquely it is necessary to specify <b>[selectTrackBy]"</b> property. Therefore, a unique value key
+            name should be set as the value for this attribute. According to this example it is <b>'id'</b>. There are
+            set of configuration are introduced in the dropdown to work smoothly with the selected change event.
+            Those configurations can be seen as follows.
+            <ul class="main-pane-list">
+              <li><b>[triggerSelectChangeOnInit]="true or false"</b> => The default value for this config is false.</li>
+              <li><b>[triggerSelectChangeOnFirstOptionSelect]="true or false"</b> => The default value for this config
+                is
+                false.
+              </li>
+              <li><b>[triggerSelectChangeOnModelUpdate]="true or false"</b> => The default value for this config is
+                false.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><label class="event-item">dataBound: </label>
+        <ul class="main-pane-list">
+          <li>This will trigger after completion of data binding.</li>
+        </ul>
+      </li>
+    </ul>
+    <li>Please refer following example to see, how this event can be used and what types of data is passed to these
+      events.
     </li>
   </ul>
-  <li>Please refer following example to see, how this event can be used and what types of data is passed to these
-    events.
-  </li>
-</ul>
 
-<app-events-usage></app-events-usage>
+  <app-events-usage></app-events-usage>
 
-<app-example-code [files]="eventsUsage"></app-example-code>
+  <app-example-code [files]="eventsUsage"></app-example-code>
 
-<h2>Suggested Links</h2>
-<a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Events (refer outputs section)</a>
+  <h2>Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Events (refer
+    outputs section)</a>
+</div>

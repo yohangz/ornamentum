@@ -1,26 +1,30 @@
-<h1>Data Table Column Sorting</h1>
-<p>This feature enables users to sort the column data according to their requirement. Following configurations are
-  available when dealing with data table column sorting.</p>
+<div class="feature-container" #parent>
+  <h1>Data Table Column Sorting</h1>
+  <p>This feature enables users to sort the column data according to their requirement. Following configurations are
+    available when dealing with data table column sorting.</p>
 
-<ul class="main-pane-list">
-  <li>[sortable]="true or false" => Enables/disables column sorting configuration. The default value for this config is
-    false.
-  </li>
-  <li>[sortOrder]="SortOrder.ASC" | "SortOrder.DESC" | "SortOrder.NONE" => There are 3 types of sorting behaviours are
-    available. If sorting method is not mentioned by the user, then the default sorting mechanism(SortOrder.NONE) will
-    be applied for those columns.
-    According to this example this is how sorting is applied.
-    <ul class="main-pane-list">
-      <li>ID column: SortOrder.ASC</li>
-      <li>Station Name & Status Value columns: SortOrder.ASC</li>
-      <li>Available Bikes & Address columns: SortOrder.NONE</li>
-    </ul>
-  </li>
-</ul>
+  <ul class="main-pane-list">
+    <li>[sortable]="true or false" => Enables/disables column sorting configuration. The default value for this config
+      is
+      false.
+    </li>
+    <li>[sortOrder]="SortOrder.ASC" | "SortOrder.DESC" | "SortOrder.NONE" => There are 3 types of sorting behaviours are
+      available. If sorting method is not mentioned by the user, then the default sorting mechanism(SortOrder.NONE) will
+      be applied for those columns.
+      According to this example this is how sorting is applied.
+      <ul class="main-pane-list">
+        <li>ID column: SortOrder.ASC</li>
+        <li>Station Name & Status Value columns: SortOrder.ASC</li>
+        <li>Available Bikes & Address columns: SortOrder.NONE</li>
+      </ul>
+    </li>
+  </ul>
 
-<app-column-sorting-usage></app-column-sorting-usage>
+  <app-column-sorting-usage></app-column-sorting-usage>
 
-<app-example-code [files]="columnSortingUsage"></app-example-code>
+  <app-example-code [files]="columnSortingUsage"></app-example-code>
 
-<h2>Suggested Links</h2>
-<a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Column Sorting</a>
+  <h2>Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Column
+    Sorting</a>
+</div>

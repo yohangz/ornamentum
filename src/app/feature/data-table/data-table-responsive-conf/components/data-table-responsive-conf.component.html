@@ -1,39 +1,42 @@
-<h1>Data Table Responsive Configuration</h1>
+<div class="feature-container" #parent>
+  <h1>Data Table Responsive Configuration</h1>
 
-<p> The following configuration are available when setting data table responsiveness.</p>
+  <p> The following configuration are available when setting data table responsiveness.</p>
 
-<h6><b>
-  [minWidth]="650",
-  [minHeight]="200",
-  [contentHeight]="400",
-  [width]="800"
-</b></h6>
+  <h6><b>
+    [minWidth]="650",
+    [minHeight]="200",
+    [contentHeight]="400",
+    [width]="800"
+  </b></h6>
 
-<ul class="main-pane-list">
-  <li>Specifying minWidth & minHeight will enable horizontal & vertical scroll bars if the container width and height
-    met with the specified values.
-  </li>
-  <li>width configuration is used to specify the table width.</li>
-  <li>contentHeight configuration is used to specify the table content height.</li>
-</ul>
+  <ul class="main-pane-list">
+    <li>Specifying minWidth & minHeight will enable horizontal & vertical scroll bars if the container width and height
+      met with the specified values.
+    </li>
+    <li>width configuration is used to specify the table width.</li>
+    <li>contentHeight configuration is used to specify the table content height.</li>
+  </ul>
 
-<app-responsive-conf-all-usage></app-responsive-conf-all-usage>
+  <app-responsive-conf-all-usage></app-responsive-conf-all-usage>
 
-<app-example-code [files]="responsiveConfAllUsage"></app-example-code>
+  <app-example-code [files]="responsiveConfAllUsage"></app-example-code>
 
-<p>
-  [minWidth]="1130",
-  [minHeight]="200"
-</p>
+  <p>
+    [minWidth]="1130",
+    [minHeight]="200"
+  </p>
 
-<ul class="main-pane-list">
-  <li>if width is not specified data table will take the parent container width.</li>
-  <li>if contentHeight is not specified data table will take the parent container height.</li>
-</ul>
+  <ul class="main-pane-list">
+    <li>if width is not specified data table will take the parent container width.</li>
+    <li>if contentHeight is not specified data table will take the parent container height.</li>
+  </ul>
 
-<app-responsive-conf-without-width-height-usage></app-responsive-conf-without-width-height-usage>
+  <app-responsive-conf-without-width-height-usage></app-responsive-conf-without-width-height-usage>
 
-<app-example-code [files]="responsiveConfWithoutWidthHeightUsage"></app-example-code>
+  <app-example-code [files]="responsiveConfWithoutWidthHeightUsage"></app-example-code>
 
-<h2>Suggested Links</h2>
-<a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Responsive Configuration</a>
+  <h2>Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Responsive
+    Configuration</a>
+</div>
