@@ -26,6 +26,7 @@ $dropdown-selector-selected-color: #333 !default;
 $dropdown-selector-search-icon-background: #3b78e7 !default;
 $dropdown-selector-search-input-background: #fff !default;
 $dropdown-selector-search-input-border: #ddd !default;
+$dropdown-selector-search-input-text-color: #333 !default;
 
 //Dropdown Item Wrapper Styles
 $dropdown-item-wrapper-background: #fff !default;
@@ -41,6 +42,7 @@ $dropdown-item-container-wrapper-border: #ddd !default;
 
 $dropdown-item-container-item-background: #fff !default;
 $dropdown-item-container-item-text-color: #333 !default;
+$dropdown-item-container-item-border: transparent !default;
 
 $dropdown-item-container-item-hover-background:  #ddd !default;
 $dropdown-item-container-item-hover-text-color: #333 !default;
