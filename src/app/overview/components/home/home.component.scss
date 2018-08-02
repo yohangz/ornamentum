@@ -533,6 +533,20 @@
           content: url('../../../../assets/images/column-filter.svg');
         }
       }
+
+      .row-expand-icon {
+        &::before {
+          @extend %icon-placement;
+          content: url('../../../../assets/images/row-expand.svg');
+        }
+      }
+
+      .event-bind-icon {
+        &::before {
+          @extend %icon-placement;
+          content: url('../../../../assets/images/event-bind.svg');
+        }
+      }
     }
 
 
