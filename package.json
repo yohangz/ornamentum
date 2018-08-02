@@ -28,7 +28,7 @@
     "lint:lib:scss": "sass-lint --config projects/ornamentum/.scss-lint.yml --no-exit --verbose",
     "lint:lib": "npm run lint:lib:ts && lint:lib:scss",
     "build:lib:scss": "node-sass projects/ornamentum/src/styles/themes/ -o dist/ornamentum/prebuilt-themes/ --importer ./node_modules/node-sass-tilde-importer --source-map true --source-map-contents true",
-    "build:lib:scss:copy": "cpx ./projects/ornamentum/src/styles/**/* ./dist/ornamentum",
+    "build:lib:scss:copy": "cpx './projects/ornamentum/src/styles/**/*' './dist/ornamentum'",
     "build:lib:dev": "npm run build:lib:scss && npm run build:lib:scss:copy && ng build ornamentum",
     "build:lib:prod": "npm run build:lib:scss && npm run build:lib:scss:copy && ng build ornamentum --prod",
     "docs:lib": "compodoc -p projects/ornamentum/tsconfig.doc.json -d dist/ornamentum-demo/browser/api-docs -n 'Ornamentum' --customFavicon 'src/assets/favicon/favicon.ico' --assetsFolder 'documentation' --disableCoverage --disablePrivate --disableInternal --disableProtected",
