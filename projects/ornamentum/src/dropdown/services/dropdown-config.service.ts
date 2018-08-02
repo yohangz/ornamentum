@@ -3,9 +3,10 @@ import { Inject, Injectable, InjectionToken } from '@angular/core';
 import get from 'lodash-es/get';
 
 import { DropdownConfig } from '../models/dropdown-config.model';
-import { DropdownTranslations } from '../models/dropdown-translations.model';
-import { DropdownMenuPosition } from '../models/dropdown-menu-position.enum';
 import { DataTableConfig } from '../../data-table/models/data-table-config.model';
+import { DropdownTranslations } from '../models/dropdown-translations.model';
+
+import { DropdownMenuPosition } from '../models/dropdown-menu-position.enum';
 import { DropdownSelectMode } from '../models/dropdown-select-mode.enum';
 
 export const DROPDOWN_CONFIG = new InjectionToken<DataTableConfig>('dropdownConfig');

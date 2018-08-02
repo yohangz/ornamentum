@@ -52,7 +52,6 @@ export class DropdownModule {
   }
 }
 
-export { DropdownMenuPosition } from './models/dropdown-menu-position.enum';
 export { DropdownTranslations } from './models/dropdown-translations.model';
 export { DropdownItem } from './models/dropdown-item.model';
 export { DropdownRequestParams } from './models/dropdown-request-params.model';
@@ -60,6 +59,8 @@ export { DropdownFilter } from './models/dropdown-filter.model';
 export { DropdownDataBindCallback } from './models/dropdown-data-bind-callback.model';
 export { DropdownQueryResult } from './models/dropdown-query-result.model';
 export { DropdownConfig } from './models/dropdown-config.model';
+
+export { DropdownMenuPosition } from './models/dropdown-menu-position.enum';
 export { DropdownSelectMode } from './models/dropdown-select-mode.enum';
 
 export { DropdownComponent } from './components/dropdown/dropdown.component';

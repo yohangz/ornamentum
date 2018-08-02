@@ -4,8 +4,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 
 import { MenuGroup, ResizeArgs } from '../../../core/models';
-import { ContainerResponsiveService } from '../../../core/services';
 
+import { ContainerResponsiveService } from '../../../core/services';
 
 @Component({
   selector: 'app-feature',

@@ -7,12 +7,12 @@ import {
   Type
 } from '@angular/core';
 
-import { GlobalRefService } from './global-ref.service';
+import { fromEvent } from 'rxjs';
+import { take } from 'rxjs/operators';
 
 import { ComponentLoader } from './component-loader.interface';
 
-import { fromEvent } from 'rxjs';
-import { take } from 'rxjs/operators';
+import { GlobalRefService } from './global-ref.service';
 
 export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   private componentReference: ComponentRef<T>;

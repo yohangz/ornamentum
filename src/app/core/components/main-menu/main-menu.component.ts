@@ -1,13 +1,13 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 
-import { fromEvent, Subscription } from 'rxjs/index';
+import { fromEvent, Subscription } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
 import { GlobalRefService } from 'ornamentum';
 
-import { VERSION } from '../../../../environments/version';
-
 import { ContainerResponsiveService } from '../../services';
+
+import { VERSION } from '../../../../environments/version';
 
 @Component({
   selector: 'app-main-menu',

@@ -18,22 +18,23 @@ import get from 'lodash-es/get';
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { DropdownMenuPosition } from '../../models/dropdown-menu-position.enum';
 import { DropdownTranslations } from '../../models/dropdown-translations.model';
 import { DropdownItem } from '../../models/dropdown-item.model';
 import { DropdownItemGroup } from '../../models/dropdown-Item-group.model';
 import { DropdownRequestParams } from '../../models/dropdown-request-params.model';
 import { DropdownDataBindCallback } from '../../models/dropdown-data-bind-callback.model';
 import { DropdownQueryResult } from '../../models/dropdown-query-result.model';
+
+import { DropdownMenuPosition } from '../../models/dropdown-menu-position.enum';
 import { DropdownSelectMode } from '../../models/dropdown-select-mode.enum';
+
+import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component';
 
 import { PopoverComponentLoaderFactoryService } from '../../../utility/utility.module';
 import { DropdownConfigService } from '../../services/dropdown-config.service';
 import { DropdownDataStateService } from '../../services/dropdown-data-state.service';
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
 import { DropdownResourceService } from '../../services/dropdown-resource.service';
-
-import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component';
 
 /**
  * Component class to represent search dropdown.

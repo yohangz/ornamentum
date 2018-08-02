@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { optionTemplateUsage } from './dropdown-option-template.list';
-
 import { demoSnippet } from './dropdown-option-template';
 
 @Component({

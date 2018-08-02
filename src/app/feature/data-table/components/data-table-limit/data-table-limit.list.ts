@@ -73,17 +73,20 @@ export const withoutLimitAndPaginationUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'without-limit-and-pagination-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/without-limit-and-pagination-usage/without-limit-and-pagination-usage.module.md')
+    content:
+      require('!!raw-loader?lang=typescript!./example/without-limit-and-pagination-usage/without-limit-and-pagination-usage.module.md')
   },
   {
     type: FileType.TS,
     name: 'without-limit-and-pagination-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/without-limit-and-pagination-usage/without-limit-and-pagination-usage.component.ts')
+    content:
+      require('!!raw-loader?lang=typescript!./example/without-limit-and-pagination-usage/without-limit-and-pagination-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'without-limit-and-pagination-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/without-limit-and-pagination-usage/without-limit-and-pagination-usage.component.html')
+    content:
+      require('!!raw-loader?lang=html!./example/without-limit-and-pagination-usage/without-limit-and-pagination-usage.component.html')
   },
   {
     type: FileType.TS,

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { withSubstituteRowsUsage, withoutSubstituteRowsUsage } from './data-table-substitute-rows.list';
 
 @Component({

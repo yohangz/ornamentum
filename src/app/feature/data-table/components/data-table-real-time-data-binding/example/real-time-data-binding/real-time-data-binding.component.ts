@@ -1,21 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
 
-import { data } from './real-time-data-binding.data';
+import { data as bindingData } from './real-time-data-binding.data';
 
 @Component({
   selector: 'app-real-time-data-binding',
   templateUrl: './real-time-data-binding.component.html'
 })
-export class RealTimeDataBindingComponent {
+export class RealTimeDataBindingComponent implements OnInit, OnDestroy {
   public dataSource: Observable<any>;
 
   public interval: any;
 
   constructor() {
-    this.dataSource = of(data);
+    this.dataSource = of(bindingData);
   }
 
   public ngOnInit(): void {

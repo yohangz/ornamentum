@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
-import { DataTableSortOrder } from 'ornamentum';
-
 import { Observable } from 'rxjs';
 import { of } from 'rxjs';
+
+import { DataTableSortOrder } from 'ornamentum';
 
 import { data } from './column-sorting-usage.data';
 
