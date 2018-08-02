@@ -198,7 +198,7 @@
   background: $data-table-dropdown-background;
   max-height: 20rem;
   overflow: hidden;
-  padding: 1.5rem;
+  padding: 0;
   position: absolute;
   right: .2rem;
   top: 0;
@@ -207,17 +207,19 @@
 
   .ng-data-table-column-selector-box-heading {
     @include font-size(.9, 1.4);
+    background: $data-table-dropdown-heading-background;
     border: 0;
     border-bottom: .05rem solid $data-table-dropdown-border;
     color: $data-table-dropdown-heading-text-color;
     font-weight: 400;
     margin-bottom: .5rem;
-    padding-bottom: .3rem;
+    padding: .5rem;
     text-align: center;
   }
 
   .ng-data-table-column-selector-box {
     max-height: 15rem;
+    padding: .5rem 1rem 1rem;
     overflow: auto;
 
     .ng-data-table-column-selector-checkbox {
@@ -578,32 +580,28 @@
 
 
 .ng-data-table-loading-cover {
+  @include display-flex;
+  @include align-items(center);
+  @include justify-content(center);
   background: $data-table-loading-window-background;
   border: 0;
   border-top: .05rem solid $data-table-loading-window-border;
+  bottom: 0;
   height: 100%;
   left: 0;
   opacity: .8;
   pointer-events: none;
   position: absolute;
+  right: 0;
   top: 0;
   width: 100%;
   z-index: 1;
 }
 
 .ng-data-table-loading-animation {
-  animation: loader 1s infinite ease-in-out;
-  background-color: $data-table-loading-animation-color;
-  border-radius: 100%;
-  content: '';
-  display: block;
-  height: 40px;
-  left: 50%;
-  margin: 0 auto;
-  position: absolute;
-  top: 45%;
-  transform: translate(-50%, -50%);
-  width: 40px;
+  background: inline-svg($loading-animation) no-repeat;
+  height: 4rem;
+  width: 4rem;
 }
 
 
@@ -613,26 +611,29 @@
 .ng-data-table-no-records-message-container {
   @include display-flex;
   @include align-items(center);
+  @include flex-direction(column);
   @include justify-content(center);
   height: 100%;
   position: absolute;
   width: 100%;
-}
 
-.ng-data-table-no-records-message {
-  @include display-flex;
-  @include align-items(center);
-  @include justify-content(center);
-  @include flex-wrap(wrap);
-  @include flex-direction(column);
-  height: 100%;
+  .ng-data-table-no-records-message {
+    @include display-flex;
+    @include align-items(center);
+    @include justify-content(center);
+    @include flex-wrap(wrap);
+    @include flex-direction(column);
+    height: 100%;
+  }
 
+  h1,
   .ng-data-table-no-records-main-heading-message {
     @include font-size(1.2, 2);
     color: $ng-data-table-no-records-main-heading-message-text-color;
     margin-bottom: 0;
   }
 
+  h2,
   .ng-data-table-no-records-sub-heading-message {
     @include font-size(.8, 1.4);
     color: $ng-data-table-no-records-sub-heading-message-text-color;
