@@ -1,33 +1,35 @@
-<h1>Data Table Limit</h1>
-<p><b>Limit</b> will allows users to configure the number of items to be displayed in a particular page.</p>
+<div class="feature-container" #parent>
+  <h1>Data Table Limit</h1>
+  <p><b>Limit</b> will allows users to configure the number of items to be displayed in a particular page.</p>
 
-<h2>With limit when pagination is available</h2>
-<p>The specified value([limit]="30") will be applied as the limit.</p>
+  <h2>With limit when pagination is available</h2>
+  <p>The specified value([limit]="30") will be applied as the limit.</p>
 
-<app-limit-with-pagination-usage></app-limit-with-pagination-usage>
+  <app-limit-with-pagination-usage></app-limit-with-pagination-usage>
 
-<app-example-code [files]="limitWithPaginationUsage"></app-example-code>
+  <app-example-code [files]="limitWithPaginationUsage"></app-example-code>
 
-<h2>Without limit when pagination is available</h2>
-<p>Default value(10) will be applied as the limit.</p>
+  <h2>Without limit when pagination is available</h2>
+  <p>Default value(10) will be applied as the limit.</p>
 
-<app-pagination-without-limit-usage></app-pagination-without-limit-usage>
+  <app-pagination-without-limit-usage></app-pagination-without-limit-usage>
 
-<app-example-code [files]="paginationWithoutLimitUsage"></app-example-code>
+  <app-example-code [files]="paginationWithoutLimitUsage"></app-example-code>
 
-<h2>With limit when pagination is not available</h2>
-<p>The specified value([limit]="110") will be applied as the limit.</p>
+  <h2>With limit when pagination is not available</h2>
+  <p>The specified value([limit]="110") will be applied as the limit.</p>
 
-<app-limit-without-pagination-usage></app-limit-without-pagination-usage>
+  <app-limit-without-pagination-usage></app-limit-without-pagination-usage>
 
-<app-example-code [files]="limitWithoutPaginationUsage"></app-example-code>
+  <app-example-code [files]="limitWithoutPaginationUsage"></app-example-code>
 
-<h2>Without limit when pagination is not available</h2>
-<p>The total item count will be applied as the limit.</p>
+  <h2>Without limit when pagination is not available</h2>
+  <p>The total item count will be applied as the limit.</p>
 
-<app-without-limit-and-pagination-usage></app-without-limit-and-pagination-usage>
+  <app-without-limit-and-pagination-usage></app-without-limit-and-pagination-usage>
 
-<app-example-code [files]="withoutLimitAndPaginationUsage"></app-example-code>
+  <app-example-code [files]="withoutLimitAndPaginationUsage"></app-example-code>
 
-<h2>Suggested Links</h2>
-<a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#limit">API Doc for Data Limit</a>
+  <h2>Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#limit">API Doc for Data Limit</a>
+</div>

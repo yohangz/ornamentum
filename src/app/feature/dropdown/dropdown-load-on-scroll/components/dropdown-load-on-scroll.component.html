@@ -1,27 +1,34 @@
-<h1>DropDown Load Data On Scroll</h1>
+<div class="feature-container" #parent>
+  <h1>DropDown Load Data On Scroll</h1>
 
-<ul class="main-pane-list">
-  <li>Dropdown load on scroll feature is used to load data dynamically to the dropdown on user scroll event.</li>
-  <li>When the data set is huge without getting whole lot of data at once to the client side, we can use this feature to
-    get additional data only when user scrolled down to the last item.
-  </li>
-  <li>What happens is user send another request and get all the available next data.</li>
-  <li>To enable this users need to configure following properties.</li>
   <ul class="main-pane-list">
-    <li><b>[loadOnScroll]="true or false"</b> => Enable/Disable getting data on user scroll event. The default value for
-      this config is false.
+    <li>Dropdown load on scroll feature is used to load data dynamically to the dropdown on user scroll event.</li>
+    <li>When the data set is huge without getting whole lot of data at once to the client side, we can use this feature
+      to
+      get additional data only when user scrolled down to the last item.
     </li>
-    <li><b>[onDataBind]="onDataBind"</b> => Represents Dropdown data bind event callback. That means the function which
-      is provided via this will be called when it is needed to get next available data set. If this is specified initial
-      data set will also be fetched via this. Refer example to see how this can be implemented.
-    </li>
+    <li>What happens is user send another request and get all the available next data.</li>
+    <li>To enable this users need to configure following properties.</li>
+    <ul class="main-pane-list">
+      <li><b>[loadOnScroll]="true or false"</b> => Enable/Disable getting data on user scroll event. The default value
+        for
+        this config is false.
+      </li>
+      <li><b>[onDataBind]="onDataBind"</b> => Represents Dropdown data bind event callback. That means the function
+        which
+        is provided via this will be called when it is needed to get next available data set. If this is specified
+        initial
+        data set will also be fetched via this. Refer example to see how this can be implemented.
+      </li>
+    </ul>
+    <li>Please make sure to check the available data set size before using this feature.</li>
   </ul>
-  <li>Please make sure to check the available data set size before using this feature.</li>
-</ul>
 
-<app-load-on-scroll-usage></app-load-on-scroll-usage>
+  <app-load-on-scroll-usage></app-load-on-scroll-usage>
 
-<app-example-code [files]="loadOnScrollUsage"></app-example-code>
+  <app-example-code [files]="loadOnScrollUsage"></app-example-code>
 
-<h2>Suggested Links</h2>
-<a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#loadOnScroll">API Doc for Dropdown Load Data On Scroll</a>
+  <h2>Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#loadOnScroll">API Doc for Dropdown
+    Load Data On Scroll</a>
+</div>

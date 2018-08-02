@@ -1,31 +1,34 @@
-<h1>Data Table Data Persistence</h1>
+<div class="feature-container" #parent>
+  <h1>Data Table Data Persistence</h1>
 
-<ul class="main-pane-list">
-  <li>Data enables users to persist data they are doing state transitions. As an example navigating through the
-    routes.
-  </li>
-  <li>So in here when users do search results, filtering, sorting etc..</li>
-  <li>The updated state of the data table will be stored in the users's browser storage.</li>
-  <li>To enable data persistence users have to set the <b>persistTableState</b> property in to true. The default value
-    for this config is false.
-  </li>
-  <li>There are two types of storage modes can be configured when using this data table. Those are,
-    <ul class="main-pane-list">
-      <li>Local Storage</li>
-      <li>Session Storage</li>
-    </ul>
-    In here, we are using session storage as the default storage mode. The following configurations shows what are the
-    other things we need to use when persisting data.
-    <ul class="main-pane-list">
-      <li>[storageMode]="DataTableStorageMode.SESSION" or "DataTableStorageMode.LOCAL"</li>
-      <li>[id]="state saving key name in the browser storage"</li>
-    </ul>
-  </li>
-</ul>
+  <ul class="main-pane-list">
+    <li>Data enables users to persist data they are doing state transitions. As an example navigating through the
+      routes.
+    </li>
+    <li>So in here when users do search results, filtering, sorting etc..</li>
+    <li>The updated state of the data table will be stored in the users's browser storage.</li>
+    <li>To enable data persistence users have to set the <b>persistTableState</b> property in to true. The default value
+      for this config is false.
+    </li>
+    <li>There are two types of storage modes can be configured when using this data table. Those are,
+      <ul class="main-pane-list">
+        <li>Local Storage</li>
+        <li>Session Storage</li>
+      </ul>
+      In here, we are using session storage as the default storage mode. The following configurations shows what are the
+      other things we need to use when persisting data.
+      <ul class="main-pane-list">
+        <li>[storageMode]="DataTableStorageMode.SESSION" or "DataTableStorageMode.LOCAL"</li>
+        <li>[id]="state saving key name in the browser storage"</li>
+      </ul>
+    </li>
+  </ul>
 
-<app-data-persistence-usage></app-data-persistence-usage>
+  <app-data-persistence-usage></app-data-persistence-usage>
 
-<app-example-code [files]="dataPersistenceUsage"></app-example-code>
+  <app-example-code [files]="dataPersistenceUsage"></app-example-code>
 
-<h2>Suggested Links</h2>
-<a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#persistTableState">API Doc for Data Persistence</a>
+  <h2>Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#persistTableState">API Doc for
+    Data Persistence</a>
+</div>

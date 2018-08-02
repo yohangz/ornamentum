@@ -26,6 +26,7 @@
 
     > .ng-data-table-content-container {
       > .ng-data-table-content {
+        -webkit-overflow-scrolling: touch;
         overflow-y: scroll;
       }
     }
@@ -37,22 +38,23 @@
 
   //Data table content container styles
   .ng-data-table-content-container {
+    -webkit-overflow-scrolling: touch;
     background: $data-table-content-background;
     overflow-y: auto;
 
     // Data table content header container styles
     .ng-data-table-content-header-container {
+      background: $data-table-content-header-background;
       border: 0;
+      border-bottom: .05rem solid $data-table-content-header-border;
 
       .ng-data-table-content-header {
-        background: $data-table-content-header-background;
         border: 0;
         position: relative;
         width: 100%;
 
         .ng-data-table {
           border: 0;
-          border-bottom: .05rem solid $data-table-content-header-border;
           border-right: .05rem solid transparent;
         }
       }
@@ -77,43 +79,39 @@
       }
     }
   }
-}
 
-// ng-dropdown styles override to matching with data table styles.
-// ng-dropdown selected value styles.
+  // ng-dropdown styles override to matching with data table styles.
+  // ng-dropdown selected value styles.
 
-.ng-dropdown {
-  .ng-dropdown-toggle {
-    @include font-size(.7, 1.1);
-    margin: .2rem 0;
-    padding: .26rem .5rem;
-    text-align: left;
-    width: 100%;
+  .ng-dropdown {
+    .ng-dropdown-toggle {
+      font-size: inherit;
+      font-weight: normal;
+      margin: .2rem 0;
+      padding: .12rem 3rem .2rem .5rem;
+      width: 100%;
 
-    .ng-dropdown-selected-value {
-      background: none;
-      margin: 0;
-      padding: 0 1.5rem 0 .5rem;
-    }
+      .ng-dropdown-selected-value {
+        background: none;
+        margin: 0;
+        padding: 0 1.5rem 0 .5rem;
+      }
 
-    &::after {
-      position: absolute;
-      right: .5rem;
-      top: .7rem;
-    }
+      &::after {
+        position: absolute;
+        right: .5rem;
+        top: .7rem;
+      }
 
-    .ng-dropdown-loading {
-      right: .2rem;
-      top: .4rem;
-    }
+      .ng-dropdown-loading {
+        right: -.1rem;
+        top: -.2rem;
+      }
 
-    .ng-dropdown-down-arrow {
-      top: .3rem;
-    }
-
-    .ng-dropdown-input-group-btn {
-      right: 1.2rem;
-      top: .4rem;
+      .ng-dropdown-input-group-btn {
+        right: 1.2rem;
+        top: .4rem;
+      }
     }
   }
 }
@@ -359,14 +357,6 @@
 
           &:last-child {
             border-right: 0;
-          }
-
-          .ng-dropdown {
-            .ng-dropdown-toggle {
-              font-size: inherit;
-              font-weight: normal;
-              padding: .1rem 3rem .2rem .5rem;
-            }
           }
         }
       }
