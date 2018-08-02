@@ -47,12 +47,13 @@
       .ng-data-table-content-header {
         background: $data-table-content-header-background;
         border: 0;
-        border-right: .05rem solid $data-table-content-header-border;
         position: relative;
         width: 100%;
 
         .ng-data-table {
           border: 0;
+          border-bottom: .05rem solid $data-table-content-header-border;
+          border-right: .05rem solid transparent;
         }
       }
     }
@@ -60,7 +61,6 @@
     // Data table content styles
     .ng-data-table-content {
       border: 0;
-      border-top: .05rem solid $data-table-content-border;
       overflow: initial;
       position: relative;
       width: 100%;
@@ -267,7 +267,7 @@
         color: $data-table-content-header-text-color;
         padding: 0 .5rem;
         position: relative;
-        vertical-align: bottom;
+        vertical-align: baseline;
         word-break: break-all;
 
         .ng-data-table-header-input-box {
@@ -290,7 +290,7 @@
             outline: none;
             padding: .1rem .2rem;
             position: absolute;
-            right: .2em;
+            right: -.1rem;
             top: .5em;
             width: 1.2em;
           }
@@ -339,22 +339,32 @@
         th {
           border: 0;
           border-right: .05rem solid $data-table-content-header-border;
+          padding: 0 .2rem;
 
           input {
-            border: .05rem solid $data-table-content-header-border;
+            background: $data-table-input-background;
+            border: .05rem solid $data-table-input-border;
             box-sizing: border-box;
+            color: $data-table-input-text-color;
             font-family: inherit;
             font-size: inherit;
-            height: 2.4em;
             line-height: inherit;
             margin: .2rem 0;
             outline: 0;
-            padding: 0 .5rem;
+            padding: 0 .8rem 0 .3rem;
             width: 100%;
           }
 
           &:last-child {
             border-right: 0;
+          }
+
+          .ng-dropdown {
+            .ng-dropdown-toggle {
+              font-size: inherit;
+              font-weight: normal;
+              padding: .1rem 3rem .2rem .5rem;
+            }
           }
         }
       }
