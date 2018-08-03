@@ -687,7 +687,6 @@
       .ng-data-table-pagination-input-container {
         @include display-flex;
         @include align-items(stretch);
-        @include flex-wrap(wrap);
         height: 1.4rem;
         position: relative;
         width: 100%;
