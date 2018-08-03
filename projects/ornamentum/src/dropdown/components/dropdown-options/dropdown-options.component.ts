@@ -3,12 +3,12 @@ import { Component } from '@angular/core';
 import get from 'lodash-es/get';
 
 import { DropdownItem } from '../../models/dropdown-item.model';
+
 import { DropdownSelectMode } from '../../models/dropdown-select-mode.enum';
 
 import { DropdownDataStateService } from '../../services/dropdown-data-state.service';
 import { DropdownConfigService } from '../../services/dropdown-config.service';
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
-
 
 @Component({
   selector: 'ng-dropdown-options',
