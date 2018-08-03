@@ -448,6 +448,33 @@
         padding-bottom: .5rem;
       }
 
+      .data-client-icon {
+        @include text-shadow(0 0 1px $background-overlay-gradient-4);
+
+        &::before {
+          @extend %icon-placement;
+          content: url('../../../../assets/images/data-client.svg');
+        }
+      }
+
+      .data-server-icon {
+        @include text-shadow(0 0 1px $background-overlay-gradient-4);
+
+        &::before {
+          @extend %icon-placement;
+          content: url('../../../../assets/images/data-server.svg');
+        }
+      }
+
+      .data-realtime-icon {
+        @include text-shadow(0 0 1px $background-overlay-gradient-4);
+
+        &::before {
+          @extend %icon-placement;
+          content: url('../../../../assets/images/data-realtime.svg');
+        }
+      }
+
       .data-icon {
         @include text-shadow(0 0 1px $background-overlay-gradient-4);
 
