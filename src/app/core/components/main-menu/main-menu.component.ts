@@ -2,11 +2,11 @@ import { Component, ElementRef, EventEmitter, Inject, Input, Output, PLATFORM_ID
 
 import { GlobalRefService } from 'ornamentum';
 
-import { VERSION } from '../../../../environments/version';
+import { Theme } from '../../models/theme.enum';
 
 import { NavigationService } from '../../services';
 
-import { Theme } from '../../models/theme.enum';
+import { VERSION } from '../../../../environments/version';
 
 @Component({
   selector: 'app-main-menu',

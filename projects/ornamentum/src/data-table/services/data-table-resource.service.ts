@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject, Subscription, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-
 import orderBy from 'lodash-es/orderBy';
 import get from 'lodash-es/get';
 
@@ -12,6 +11,7 @@ import { DataTableQueryResult } from '../models/data-table-query-result.model';
 import { DataTableFilterColumn } from '../models/data-table-filter-column.model';
 import { DataTableFilterOption } from '../models/data-table-filter-option.model';
 import { DataTableSortColumn } from '../models/data-table-sort-column.model';
+
 import { DataTableSortOrder } from '../models/data-table-sort-order.enum';
 
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';

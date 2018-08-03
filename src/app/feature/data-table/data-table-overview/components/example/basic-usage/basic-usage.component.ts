@@ -2,7 +2,7 @@ import { Component, ElementRef, Input } from '@angular/core';
 
 import { DataTableSelectMode } from 'ornamentum';
 
-import { Observable, of } from 'rxjs/index';
+import { Observable, of } from 'rxjs';
 
 import { DataFetchService } from '../../../../../../shared/services';
 

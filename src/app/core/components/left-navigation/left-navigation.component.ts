@@ -5,8 +5,8 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { filter } from 'rxjs/operators';
 
 import { MenuGroup, MenuItem } from '../../models';
-import { NavigationService } from '../../services';
 
+import { NavigationService } from '../../services';
 
 @Component({
   selector: 'app-left-navigation',

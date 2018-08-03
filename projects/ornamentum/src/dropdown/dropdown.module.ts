@@ -2,7 +2,6 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { UtilityModule } from '../utility/utility.module';
 import { DropdownConfig } from './models/dropdown-config.model';
 
 import { DropdownComponent } from './components/dropdown/dropdown.component';
@@ -11,6 +10,8 @@ import { DropdownFilterComponent } from './components/dropdown-filter/dropdown-f
 import { DropdownOptionsComponent } from './components/dropdown-options/dropdown-options.component';
 
 import { DROPDOWN_CONFIG } from './services/dropdown-config.service';
+
+import { UtilityModule } from '../utility/utility.module';
 
 const COMPONENTS = [
   DropdownComponent,
@@ -52,7 +53,6 @@ export class DropdownModule {
   }
 }
 
-export { DropdownMenuPosition } from './models/dropdown-menu-position.enum';
 export { DropdownTranslations } from './models/dropdown-translations.model';
 export { DropdownItem } from './models/dropdown-item.model';
 export { DropdownRequestParams } from './models/dropdown-request-params.model';
@@ -60,6 +60,8 @@ export { DropdownFilter } from './models/dropdown-filter.model';
 export { DropdownDataBindCallback } from './models/dropdown-data-bind-callback.model';
 export { DropdownQueryResult } from './models/dropdown-query-result.model';
 export { DropdownConfig } from './models/dropdown-config.model';
+
 export { DropdownSelectMode } from './models/dropdown-select-mode.enum';
+export { DropdownMenuPosition } from './models/dropdown-menu-position.enum';
 
 export { DropdownComponent } from './components/dropdown/dropdown.component';

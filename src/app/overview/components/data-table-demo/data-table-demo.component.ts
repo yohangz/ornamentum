@@ -1,8 +1,8 @@
 import { Component, ElementRef, Input } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
+import { Observable, of } from 'rxjs';
 
-import { Observable, of } from 'rxjs/index';
+import { DataTableSelectMode } from 'ornamentum';
 
 import data from '../../../shared/data/sample-data';
 
