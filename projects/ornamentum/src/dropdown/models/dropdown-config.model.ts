@@ -1,5 +1,6 @@
-import { DropdownMenuPosition } from './dropdown-menu-position.enum';
 import { DropdownTranslations } from './dropdown-translations.model';
+
+import { DropdownMenuPosition } from './dropdown-menu-position.enum';
 import { DropdownSelectMode } from './dropdown-select-mode.enum';
 
 /**

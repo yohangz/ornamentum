@@ -27,20 +27,23 @@ export const responsiveConfWithoutWidthHeightUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'responsive-conf-without-width-height-usage.module.ts',
-    content:
-      require('!!raw-loader?lang=typescript!./example/responsive-conf-without-width-height-usage/responsive-conf-without-width-height-usage.module.md')
+    content: require(
+      '!!raw-loader?lang=typescript!./example/responsive-conf-without-width-height-usage/' +
+        'responsive-conf-without-width-height-usage.module.md')
   },
   {
     type: FileType.TS,
     name: 'responsive-conf-without-width-height-usage.component.ts',
-    content:
-      require('!!raw-loader?lang=typescript!./example/responsive-conf-without-width-height-usage/responsive-conf-without-width-height-usage.component.ts')
+    content: require(
+      '!!raw-loader?lang=typescript!./example/responsive-conf-without-width-height-usage/' +
+        'responsive-conf-without-width-height-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'responsive-conf-without-width-height-usage.component.html',
-    content:
-      require('!!raw-loader?lang=html!./example/responsive-conf-without-width-height-usage/responsive-conf-without-width-height-usage.component.html')
+    content: require(
+      '!!raw-loader?lang=html!./example/responsive-conf-without-width-height-usage/' +
+        'responsive-conf-without-width-height-usage.component.html')
   },
   {
     type: FileType.TS,

@@ -3,12 +3,13 @@ import { Component, ContentChild, Input, OnDestroy, OnInit, TemplateRef } from '
 import { Subscription } from 'rxjs';
 
 import { DataTableCellColorRenderCallback } from '../../models/data-table-cell-color-render-callback.model';
-import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
-import { DropdownMenuPosition } from '../../../dropdown/models/dropdown-menu-position.enum';
 import { DataTableRow } from '../../models/data-table-row.model';
 import { DataTableFilterFieldMapperCallback } from '../../models/data-table-filter-field-mapper-callback.model';
 import { DataTableFilterExpressionCallback } from '../../models/data-table-filter-expression-callback.model';
+
 import { DropdownSelectMode } from '../../../dropdown/dropdown.module';
+import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
+import { DropdownMenuPosition } from '../../../dropdown/models/dropdown-menu-position.enum';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';

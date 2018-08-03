@@ -4,12 +4,13 @@ import { APP_ID, Inject, NgModule, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { TransferHttpCacheModule } from '@nguniversal/common';
 
-import { environment } from '../environments/environment';
+import { AppComponent } from './app.component';
 
 import { AppMainModule } from './main/main.module';
+
 import { AppRoutingModule } from './app-routing.module';
 
-import { AppComponent } from './app.component';
+import { environment } from '../environments/environment';
 
 @NgModule({
   bootstrap: [AppComponent],

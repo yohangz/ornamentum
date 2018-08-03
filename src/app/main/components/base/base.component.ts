@@ -1,11 +1,10 @@
 import { AfterContentInit, Component, Inject, OnDestroy, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
+import { SwUpdate } from '@angular/service-worker';
 
 import { filter } from 'rxjs/operators';
 import { Subscription } from 'rxjs/internal/Subscription';
-
-import { SwUpdate } from '@angular/service-worker';
 
 /**
  * Component class for showing base view.

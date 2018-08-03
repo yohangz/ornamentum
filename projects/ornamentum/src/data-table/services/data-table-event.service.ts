@@ -8,6 +8,7 @@ import { DataTableRowClickEventArgs } from '../models/data-table-row-click-event
 import { DataTableDoubleClickEventArgs } from '../models/data-table-double-click-event-args.model';
 import { DataTableCellBindEventArgs } from '../models/data-table-cell-bind-event-args.model';
 import { DataTableCellClickEventArgs } from '../models/data-table-cell-click-event-args.model';
+
 import { DataFetchMode } from '../models/data-fetch-mode.enum';
 
 import { DataTableComponent } from '../components/data-table/data-table.component';
