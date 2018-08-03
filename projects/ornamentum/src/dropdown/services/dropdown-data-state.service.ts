@@ -3,7 +3,6 @@ import { Injectable, TemplateRef } from '@angular/core';
 import { DropdownItem } from '../models/dropdown-item.model';
 import { DropdownDataBindCallback } from '../models/dropdown-data-bind-callback.model';
 import { DropdownItemGroup } from '../models/dropdown-Item-group.model';
-
 import { ComponentLoader } from '../../utility/utility.module';
 
 /**

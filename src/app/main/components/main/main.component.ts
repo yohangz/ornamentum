@@ -1,8 +1,9 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Theme } from '../../../core/models/theme.enum';
 import { MenuGroup, MenuItem } from '../../../core/models';
+
+import { Theme } from '../../../core/models/theme.enum';
 
 /**
  * Component class for showing main view.
@@ -37,8 +38,8 @@ export class MainComponent {
               anchor: 'dependencies',
               subNavigation: [
                 {
-									title: 'Dependencies',
-									anchor: 'dependencies',
+                  title: 'Dependencies',
+                  anchor: 'dependencies',
                 }
               ]
             },

@@ -22,11 +22,11 @@ import { DataTableNoDataBodyComponent } from './components/data-table-no-data-bo
 import { DataTableHeadComponent } from './components/data-table-head/data-table-head.component';
 import { DataTableLoadingSpinnerComponent } from './components/data-table-loading-spinner/data-table-loading-spinner.component';
 
+import { DATA_TABLE_CONFIG } from './services/data-table-config.service';
+
 import { ScrollPositionDirective } from './directives/scroll-position.directive';
 import { ScrollElementDirective } from './directives/scroll-element.directive';
 import { ElementWidthDirective } from './directives/element-width.directive';
-
-import { DATA_TABLE_CONFIG } from './services/data-table-config.service';
 
 import { DropdownModule } from '../dropdown/dropdown.module';
 import { UtilityModule } from '../utility/utility.module';
@@ -95,11 +95,6 @@ export class DataTableModule {
 }
 
 // exports
-import { DataFetchMode } from './models/data-fetch-mode.enum';
-
-export { DataTableSortOrder } from './models/data-table-sort-order.enum';
-export { DataTableStorageMode } from './models/data-table-storage-mode.enum';
-
 export { DataTableCellBindEventArgs } from './models/data-table-cell-bind-event-args.model';
 export { DataTableQueryResult } from './models/data-table-query-result.model';
 export { DataTableFilterColumn } from './models/data-table-filter-column.model';
@@ -119,6 +114,9 @@ export { DataTableFilterFieldMapperCallback } from './models/data-table-filter-f
 export { DataTableFilterExpressionCallback } from './models/data-table-filter-expression-callback.model';
 export { DataTableCellColorRenderCallback } from './models/data-table-cell-color-render-callback.model';
 export { DataTableSelectMode } from './models/data-table-select-mode.model';
+
+export { DataTableSortOrder } from './models/data-table-sort-order.enum';
+export { DataTableStorageMode } from './models/data-table-storage-mode.enum';
 export { DataFetchMode } from './models/data-fetch-mode.enum';
 
 export { DataTableComponent } from './components/data-table/data-table.component';

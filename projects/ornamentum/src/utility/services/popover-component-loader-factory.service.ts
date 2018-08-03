@@ -1,9 +1,10 @@
 import { ApplicationRef, ComponentFactoryResolver, Injectable } from '@angular/core';
 
 import { ComponentLoader } from './component-loader.interface';
-import { PopoverComponentLoader } from './popover-component-loader.class';
 
 import { GlobalRefService } from './global-ref.service';
+
+import { PopoverComponentLoader } from './popover-component-loader.class';
 
 @Injectable()
 export class PopoverComponentLoaderFactoryService {
