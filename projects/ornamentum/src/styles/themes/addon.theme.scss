@@ -1,0 +1,46 @@
+@import '~compass-mixins/lib/_compass.scss';
+@import 'data-table/base.theme.variables';
+
+.ng-dropdown-checkbox-input,
+.ng-data-table-checkbox-input {
+  cursor: pointer;
+  margin: 0 .5rem 0 0;
+  position: relative;
+
+  &::before {
+    @include transition(transform .4s cubic-bezier(.45, 1.8, .5, .75));
+    @include transform(rotate(-45deg) scale(0, 0));
+    border: .09rem solid;
+    border-color: $data-table-top-header-text-color;
+    border-right-style: none;
+    border-top-style: none;
+    content: '';
+    height: .3rem;
+    left: .18rem;
+    position: absolute;
+    top: .05rem;
+    width: .55rem;
+    z-index: 1;
+
+  }
+
+  &:checked {
+    &::before {
+      @include transform(rotate(-45deg) scale(1, 1));
+    }
+  }
+
+  &::after {
+
+    background: $data-table-content-header-background;
+    border: .05rem solid;
+    border-color: $data-table-dropdown-border;
+    content: '';
+    cursor: pointer;
+    height: .9rem;
+    left: 0;
+    position: absolute;
+    top: -.12rem;
+    width: .9rem;
+  }
+}
