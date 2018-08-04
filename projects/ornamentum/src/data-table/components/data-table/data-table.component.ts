@@ -9,7 +9,9 @@ import {
   QueryList,
   TemplateRef,
   AfterContentInit,
-  forwardRef, ElementRef, ViewChild, AfterViewInit
+  forwardRef,
+  ElementRef,
+  ViewChild
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -66,7 +68,7 @@ import { DataTableResourceService } from '../../services/data-table-resource.ser
     }
   ]
 })
-export class DataTableComponent implements OnDestroy, AfterContentInit, AfterViewInit, ControlValueAccessor {
+export class DataTableComponent implements OnDestroy, AfterContentInit, ControlValueAccessor {
   private rowSelectChangeSubscription: Subscription;
   private dataFetchStreamSubscription: Subscription;
 
@@ -759,12 +761,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, AfterVie
 
     this.eventStateService.fetchFilterOptionsStream.next(true);
     this.eventStateService.initStream.emit(this);
-  }
-
-  public ngAfterViewInit(): void {
-    // if (!this.config.relativeParentElement) {
-    //   this.config.relativeParentElement = this.dataTableElement.nativeElement;
-    // }
   }
 
   /**
