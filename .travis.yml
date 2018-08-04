@@ -9,19 +9,13 @@ branches:
   - "/^v.*$/"
 cache: yarn
 before_install:
-  - openssl aes-256-cbc -K $encrypted_48bfcff1b99c_key -iv $encrypted_48bfcff1b99c_iv
-    -in deploy.key.enc -out deploy.key -d
+  - "./scripts/before-install.sh"
 install:
-  - yarn
-  - eval "$(ssh-agent -s)"
-  - chmod 600 ./deploy.key
-  - ssh-add ./deploy.key
-  - echo $DEPLOY_KNOWN_HOST | base64 --decode >> ~/.ssh/known_hosts
-  - chmod 644 ~/.ssh/known_hosts
+  - "./scripts/install.sh"
 script: yarn build
 deploy:
   skip_cleanup: true
   provider: script
-  script: "./deploy.sh"
+  script: "./scripts/deploy.sh"
 #  on:
 #    tags: true
