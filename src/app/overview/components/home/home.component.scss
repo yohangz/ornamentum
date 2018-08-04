@@ -218,31 +218,6 @@
       @include border-radius(2px);
       background: $background-overlay-gradient-3;
       padding: 1rem;
-
-      ::ng-deep {
-
-        .ng-data-table-container {
-          .ng-data-table-content-container {
-            padding: 0;
-
-            &::-webkit-scrollbar-track {
-              background-color: $scroll-bar-track-color;
-            }
-
-            &::-webkit-scrollbar {
-              background-color: $nav-bar-background;
-              height: 5px;
-              width: 5px;
-            }
-
-            &::-webkit-scrollbar-thumb {
-              @include border-radius(0);
-              background-color: $nav-bar-background;
-              opacity: .5;
-            }
-          }
-        }
-      }
     }
   }
 
