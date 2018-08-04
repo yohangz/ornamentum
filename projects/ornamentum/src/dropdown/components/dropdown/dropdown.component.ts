@@ -1,6 +1,6 @@
 import {
   Component,
-  ContentChild,
+  ContentChild, ElementRef,
   EventEmitter,
   forwardRef,
   Injector,
@@ -8,7 +8,8 @@ import {
   OnDestroy,
   OnInit,
   Output,
-  TemplateRef
+  TemplateRef,
+  ViewChild
 } from '@angular/core';
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -73,6 +74,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   public set dropdownOptionGroupHeaderTemplate(value: TemplateRef<any>) {
     this.dataStateService.dropdownOptionGroupHeaderTemplate = value;
   }
+
+  @ViewChild('dropdownElement')
+  public dropdownElement: ElementRef<HTMLDivElement>;
 
   // Outputs : Event Handlers
   /**
@@ -408,7 +412,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.dataStateService.componentLoaderRef
       .withFloatLeft(floatLeft)
       .withFloatTop(floatTop)
-      .withRelativeParentElement(this.relativeParentElement)
+      .withRelativeParentElement(this.relativeParentElement || this.dropdownElement.nativeElement)
       .toggle(DropdownViewComponent, element, this.injector);
   }
 
