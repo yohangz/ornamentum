@@ -11,6 +11,7 @@
 .ng-data-table-container {
   border: .07rem solid $data-table-container-border;
   overflow: hidden;
+  position: relative;
 
   //Scrollable table styles
   &.scrollable {
