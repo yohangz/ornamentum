@@ -39,8 +39,8 @@ export class DataTableHeaderComponent implements OnDestroy {
    */
   public toggleColumnSelector(element: HTMLElement): void {
     this.componentLoader
-      .withFloatLeft(element.offsetWidth + 25)
-      .withFloatTop(element.offsetHeight + 20)
+      .withFloatLeft(element.offsetWidth + 2)
+      .withFloatTop(element.offsetHeight)
       .withRelativeParentElement(this.config.relativeParentElement)
       .withContext({
         columns: this.columns

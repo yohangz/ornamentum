@@ -9,7 +9,7 @@ import {
   QueryList,
   TemplateRef,
   AfterContentInit,
-  forwardRef,
+  forwardRef, ElementRef, ViewChild, AfterViewInit
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -66,7 +66,7 @@ import { DataTableResourceService } from '../../services/data-table-resource.ser
     }
   ]
 })
-export class DataTableComponent implements OnDestroy, AfterContentInit, ControlValueAccessor {
+export class DataTableComponent implements OnDestroy, AfterContentInit, AfterViewInit, ControlValueAccessor {
   private rowSelectChangeSubscription: Subscription;
   private dataFetchStreamSubscription: Subscription;
 
@@ -88,6 +88,9 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   @ContentChild('ngDataTableRowExpandLoadingSpinner')
   public rowExpandLoadingSpinnerTemplate: TemplateRef<any>;
+
+  @ViewChild('dataTableElement')
+  public dataTableElement: ElementRef<HTMLDivElement>;
 
   // Event handlers
 
@@ -739,6 +742,10 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   public ngAfterContentInit(): void {
+    if (!this.config.relativeParentElement) {
+      this.config.relativeParentElement = this.dataTableElement.nativeElement;
+    }
+
     if (!this.dataStateService.onDataBind) {
       this.dataSource = this.eventStateService.staticDataSourceStream;
     }
@@ -752,6 +759,12 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
     this.eventStateService.fetchFilterOptionsStream.next(true);
     this.eventStateService.initStream.emit(this);
+  }
+
+  public ngAfterViewInit(): void {
+    // if (!this.config.relativeParentElement) {
+    //   this.config.relativeParentElement = this.dataTableElement.nativeElement;
+    // }
   }
 
   /**

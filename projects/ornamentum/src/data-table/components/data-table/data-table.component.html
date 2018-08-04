@@ -1,4 +1,4 @@
-<div class="ng-data-table-container" [class.scrollable]="config.contentHeight">
+<div class="ng-data-table-container" #dataTableElement [class.scrollable]="config.contentHeight">
   <ng-data-table-header *ngIf="config.showHeader" [columns]="columns">
   </ng-data-table-header>
   <div class="ng-data-table-content-container">
