@@ -12,9 +12,6 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class RealTimeDataBindingComponent {
   public dataSource: Observable<any>;
 
-  @Input()
-  public parentElement: ElementRef;
-
   constructor(private dataFetchService: DataFetchService) {
     this.dataSource = of(this.dataFetchService.fetchData());
   }

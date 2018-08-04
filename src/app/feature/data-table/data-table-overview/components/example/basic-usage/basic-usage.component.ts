@@ -15,9 +15,6 @@ export class BasicUsageComponent {
 
   public dataSource: Observable<any>;
 
-  @Input()
-  public parentElement: ElementRef;
-
   constructor(private dataFetchService: DataFetchService) {
     this.dataSource = of(this.dataFetchService.fetchData());
   }

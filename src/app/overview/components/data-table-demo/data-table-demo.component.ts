@@ -15,9 +15,6 @@ export class DataTableDemoComponent {
 
   public dataSource: Observable<any>;
 
-  @Input()
-  public parentElement: ElementRef;
-
   constructor() {
     this.dataSource = of(data);
   }

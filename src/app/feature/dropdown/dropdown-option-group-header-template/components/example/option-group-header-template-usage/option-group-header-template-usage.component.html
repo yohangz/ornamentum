@@ -1,16 +1,11 @@
-<div #parentElement style="position: relative;">
-  <label>
-    <ng-dropdown
-      [relativeParentElement]="parentElement"
-      [selectTrackBy]="'id'"
-      [displayTrackBy]="'productType'"
-      [groupByField]="'productLine'"
-      [items]="items"
-      [limit]="50"
-      [filterable]="true">
-      <ng-template #ngDropdownOptionGroupHeader let-groupedItem="groupedItem">
-        <h5 style="font-size:150%;color: red">{{groupedItem.groupName}}</h5>
-      </ng-template>
-    </ng-dropdown>
-  </label>
-</div>
+<ng-dropdown
+  [selectTrackBy]="'id'"
+  [displayTrackBy]="'productType'"
+  [groupByField]="'productLine'"
+  [items]="items"
+  [limit]="50"
+  [filterable]="true">
+  <ng-template #ngDropdownOptionGroupHeader let-groupedItem="groupedItem">
+    <h5 style="font-size:150%;color: red">{{groupedItem.groupName}}</h5>
+  </ng-template>
+</ng-dropdown>

@@ -13,9 +13,6 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class FilterDropdownUsageComponent {
   public DropdownMenuPosition = DropdownMenuPosition;
 
-  @Input()
-  public parentElement: ElementRef;
-
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
