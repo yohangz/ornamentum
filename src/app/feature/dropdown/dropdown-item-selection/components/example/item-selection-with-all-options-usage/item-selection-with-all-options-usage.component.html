@@ -1,17 +1,12 @@
-<div #parentElement style="position: relative;">
-  <label>
-    <ng-dropdown
-      [relativeParentElement]="parentElement"
-      [selectTrackBy]="'id'"
-      [displayTrackBy]="'productType'"
-      [selectMode]="DropdownSelectMode.MULTI"
-      [items]="items"
-      [limit]="50"
-      [selectedOptions]="selectedOptions"
-      [multiSelectOptionMaxWidth]="200"
-      [showOptionSelectCheckbox]="true"
-      [showSelectedOptionRemoveButton]="true"
-      [showClearSelectionButton]="true">
-    </ng-dropdown>
-  </label>
-</div>
+<ng-dropdown
+  [selectTrackBy]="'id'"
+  [displayTrackBy]="'productType'"
+  [selectMode]="DropdownSelectMode.MULTI"
+  [items]="items"
+  [limit]="50"
+  [selectedOptions]="selectedOptions"
+  [multiSelectOptionMaxWidth]="200"
+  [showOptionSelectCheckbox]="true"
+  [showSelectedOptionRemoveButton]="true"
+  [showClearSelectionButton]="true">
+</ng-dropdown>

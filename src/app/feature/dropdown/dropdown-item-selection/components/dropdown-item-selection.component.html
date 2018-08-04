@@ -1,132 +1,130 @@
-<div class="feature-container" #parent>
-  <h1>Dropdown Row Selection</h1>
+<h1>Dropdown Row Selection</h1>
+
+<ul class="main-pane-list">
+  <li>This help users to do the item selection in the dropdown.</li>
+  <li>There are several configurations are available when using item selection.</li>
 
   <ul class="main-pane-list">
-    <li>This help users to do the item selection in the dropdown.</li>
-    <li>There are several configurations are available when using item selection.</li>
-
-    <ul class="main-pane-list">
-      <li><b>[setFirstOptionSelected]="true or false"</b> => Enable/disable setting first option selected in dropdown.
-        The
-        default value for this config is false.
-      </li>
-      <li><b>[showOptionSelectCheckbox]="true or false"</b> => Enable/disable item selection check boxes. The default
-        value for this config is false.
-      </li>
-      <li><b>[selectedOption]="Option value to be selected"</b> => Used to set one option as selected in the dropdown.
-      </li>
-      <li><b>[selectedOptions]="Option values to be selected"</b> => Used to set multiple options as selected in the
-        dropdown.
-      </li>
-      <li><b>[selectMode]="DropdownSelectMode.SINGLE" | "DropdownSelectMode.SINGLE_TOGGLE" |
-        "DropdownSelectMode.MULTI" </b> => Enables users to configure the dropdown item selection type. There are 3 item
-        selection types are available in the dropdown. The default value for this config is
-        DropdownSelectMode.SINGLE_TOGGLE. The available types are,
-        <ul class="main-pane-list">
-          <li>Single item selection: DropdownSelectMode.SINGLE</li>
-          <li>Single toggle item selection: DropdownSelectMode.SINGLE_TOGGLE</li>
-          <li>Multi item selection: DropdownSelectMode.MULTI</li>
-        </ul>
-      </li>
-      <li><b>[showClearSelectionButton]="true or false"</b> => Enable/disable selected option(s) clear icon. The default
-        value for this config is false.
-      </li>
-      <li><b>[showSelectedOptionRemoveButton]="true or false"</b> => Enable/disable one particular selected option clear
-        icon. The default value for this config is false.
-      </li>
-      <li><b>[multiSelectOptionMaxWidth]="Maximum width to show selected option"</b> => Used to set maximum width value
-        for a particular selected value in the multi item selection mode. The default value for this config is 135px.
-      </li>
-      <li><b>[selectTrackBy]="'Unique Attribute Key Name'"</b> => This needs to specify when needs to identify selected
-        item(s) uniquely. The default value for this config is 'id'. Please refer dropdown events section for more
-        details.
-      </li>
-      <li><b>[wrapDisplaySelectLimit]="true or false"</b> => This is a configuration which needs to use in the multi
-        option selection mode. The default value for this config is false. Enabling this configuration will show user a
-        different text when there are 2 or more
-        selected options without showing all the selected items. If this is false, it will list all the selected
-        options.
-        As an example,
-        <ul class="main-pane-list">
-          <li>If 3 items are selected, it shows (3) Items</li>
-          <li>If 5 items are selected, it shows (5) Items</li>
-          <li>(3) Items, (5) Items, etc => In here the <b>'Items'</b> text can be configured via dropdown translations.
-            Refer <a routerLink="/feature/dropdown/translations">Dropdown Translations</a> section for more details.
-          </li>
-        </ul>
-      </li>
-    </ul>
-  </ul>
-
-  <h2>Single Item Selection</h2>
-  <ul class="main-pane-list">
-    <li>Users are only allowed to select one item at a time.</li>
-    <li>Once the selection is made, it can only be changed by selecting other item. That means, only one item can be
-      selected.
+    <li><b>[setFirstOptionSelected]="true or false"</b> => Enable/disable setting first option selected in dropdown.
+      The
+      default value for this config is false.
+    </li>
+    <li><b>[showOptionSelectCheckbox]="true or false"</b> => Enable/disable item selection check boxes. The default
+      value for this config is false.
+    </li>
+    <li><b>[selectedOption]="Option value to be selected"</b> => Used to set one option as selected in the dropdown.
+    </li>
+    <li><b>[selectedOptions]="Option values to be selected"</b> => Used to set multiple options as selected in the
+      dropdown.
+    </li>
+    <li><b>[selectMode]="DropdownSelectMode.SINGLE" | "DropdownSelectMode.SINGLE_TOGGLE" |
+      "DropdownSelectMode.MULTI" </b> => Enables users to configure the dropdown item selection type. There are 3 item
+      selection types are available in the dropdown. The default value for this config is
+      DropdownSelectMode.SINGLE_TOGGLE. The available types are,
+      <ul class="main-pane-list">
+        <li>Single item selection: DropdownSelectMode.SINGLE</li>
+        <li>Single toggle item selection: DropdownSelectMode.SINGLE_TOGGLE</li>
+        <li>Multi item selection: DropdownSelectMode.MULTI</li>
+      </ul>
+    </li>
+    <li><b>[showClearSelectionButton]="true or false"</b> => Enable/disable selected option(s) clear icon. The default
+      value for this config is false.
+    </li>
+    <li><b>[showSelectedOptionRemoveButton]="true or false"</b> => Enable/disable one particular selected option clear
+      icon. The default value for this config is false.
+    </li>
+    <li><b>[multiSelectOptionMaxWidth]="Maximum width to show selected option"</b> => Used to set maximum width value
+      for a particular selected value in the multi item selection mode. The default value for this config is 135px.
+    </li>
+    <li><b>[selectTrackBy]="'Unique Attribute Key Name'"</b> => This needs to specify when needs to identify selected
+      item(s) uniquely. The default value for this config is 'id'. Please refer dropdown events section for more
+      details.
+    </li>
+    <li><b>[wrapDisplaySelectLimit]="true or false"</b> => This is a configuration which needs to use in the multi
+      option selection mode. The default value for this config is false. Enabling this configuration will show user a
+      different text when there are 2 or more
+      selected options without showing all the selected items. If this is false, it will list all the selected
+      options.
+      As an example,
+      <ul class="main-pane-list">
+        <li>If 3 items are selected, it shows (3) Items</li>
+        <li>If 5 items are selected, it shows (5) Items</li>
+        <li>(3) Items, (5) Items, etc => In here the <b>'Items'</b> text can be configured via dropdown translations.
+          Refer <a routerLink="/feature/dropdown/translations">Dropdown Translations</a> section for more details.
+        </li>
+      </ul>
     </li>
   </ul>
+</ul>
 
-  <app-single-item-selection-usage></app-single-item-selection-usage>
+<h2>Single Item Selection</h2>
+<ul class="main-pane-list">
+  <li>Users are only allowed to select one item at a time.</li>
+  <li>Once the selection is made, it can only be changed by selecting other item. That means, only one item can be
+    selected.
+  </li>
+</ul>
 
-  <app-example-code [files]="singleItemSelectionUsage"></app-example-code>
+<app-single-item-selection-usage></app-single-item-selection-usage>
 
-  <h2>Single Toggle Item Selection</h2>
+<app-example-code [files]="singleItemSelectionUsage"></app-example-code>
+
+<h2>Single Toggle Item Selection</h2>
+<ul class="main-pane-list">
+  <li>Users are only allowed to select one item at a time.</li>
+  <li>Can toggle the item selection.</li>
+  <li>But in this type, once the selection is made, it can be removed by clicking the item itself or by unchecking the
+    checkbox(if check boxes enabled).
+  </li>
+</ul>
+
+<app-single-toggle-item-selection-usage></app-single-toggle-item-selection-usage>
+
+<app-example-code [files]="singleToggleItemSelectionUsage"></app-example-code>
+
+<h2>Multi Item Selection</h2>
+<ul class="main-pane-list">
+  <li>Users can select multiple items at a time.</li>
+  <li>Can toggle the item selection.</li>
+</ul>
+
+<app-multi-item-selection-usage></app-multi-item-selection-usage>
+
+<app-example-code [files]="multiItemSelectionUsage"></app-example-code>
+
+<h2>Multi Item Selection with Wrapping Selected Options</h2>
+<ul class="main-pane-list">
+  <li>The following configurations is enabled to wrap the selected items.</li>
+  <li><b>[wrapDisplaySelectLimit]="true"</b></li>
+</ul>
+
+<app-multi-item-wrapped-selection-usage></app-multi-item-wrapped-selection-usage>
+
+<app-example-code [files]="multiItemSelectionWithWrappedItemsUsage"></app-example-code>
+
+<h2>Item Selection With All Other options</h2>
+<ul class="main-pane-list">
+  <li>The following example shows how all the other options can be used with the row selection. Note that, for this
+    example multi selection mode is used and for the other selection types also, these additional configurations can
+    be configured in the same way.
+  </li>
+  <li>These are the configured properties in here.</li>
   <ul class="main-pane-list">
-    <li>Users are only allowed to select one item at a time.</li>
-    <li>Can toggle the item selection.</li>
-    <li>But in this type, once the selection is made, it can be removed by clicking the item itself or by unchecking the
-      checkbox(if check boxes enabled).
+    <li><b>[showOptionSelectCheckbox]="true"</b></li>
+    <li><b>[selectedOptions]="selectedOptions"</b> => Refer example to to see the provided value for selectedOptions.
+      If
+      user want to select one item, single object can be provided via selectedOption attribute.
     </li>
+    <li><b>[showClearSelectionButton]="true"</b></li>
+    <li><b>[showSelectedOptionRemoveButton]="true"</b></li>
+    <li><b>[multiSelectOptionMaxWidth]="200"</b></li>
   </ul>
+</ul>
 
-  <app-single-toggle-item-selection-usage></app-single-toggle-item-selection-usage>
+<app-item-selection-with-all-options-usage></app-item-selection-with-all-options-usage>
 
-  <app-example-code [files]="singleToggleItemSelectionUsage"></app-example-code>
+<app-example-code [files]="itemSelectionWithAllOptionsUsage"></app-example-code>
 
-  <h2>Multi Item Selection</h2>
-  <ul class="main-pane-list">
-    <li>Users can select multiple items at a time.</li>
-    <li>Can toggle the item selection.</li>
-  </ul>
-
-  <app-multi-item-selection-usage></app-multi-item-selection-usage>
-
-  <app-example-code [files]="multiItemSelectionUsage"></app-example-code>
-
-  <h2>Multi Item Selection with Wrapping Selected Options</h2>
-  <ul class="main-pane-list">
-    <li>The following configurations is enabled to wrap the selected items.</li>
-    <li><b>[wrapDisplaySelectLimit]="true"</b></li>
-  </ul>
-
-  <app-multi-item-wrapped-selection-usage></app-multi-item-wrapped-selection-usage>
-
-  <app-example-code [files]="multiItemSelectionWithWrappedItemsUsage"></app-example-code>
-
-  <h2>Item Selection With All Other options</h2>
-  <ul class="main-pane-list">
-    <li>The following example shows how all the other options can be used with the row selection. Note that, for this
-      example multi selection mode is used and for the other selection types also, these additional configurations can
-      be configured in the same way.
-    </li>
-    <li>These are the configured properties in here.</li>
-    <ul class="main-pane-list">
-      <li><b>[showOptionSelectCheckbox]="true"</b></li>
-      <li><b>[selectedOptions]="selectedOptions"</b> => Refer example to to see the provided value for selectedOptions.
-        If
-        user want to select one item, single object can be provided via selectedOption attribute.
-      </li>
-      <li><b>[showClearSelectionButton]="true"</b></li>
-      <li><b>[showSelectedOptionRemoveButton]="true"</b></li>
-      <li><b>[multiSelectOptionMaxWidth]="200"</b></li>
-    </ul>
-  </ul>
-
-  <app-item-selection-with-all-options-usage></app-item-selection-with-all-options-usage>
-
-  <app-example-code [files]="itemSelectionWithAllOptionsUsage"></app-example-code>
-
-  <h2>Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Item
-    Selection</a>
-</div>
+<h2>Suggested Links</h2>
+<a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Item
+  Selection</a>

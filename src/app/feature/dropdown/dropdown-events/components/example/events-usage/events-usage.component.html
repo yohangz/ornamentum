@@ -1,18 +1,13 @@
-<div #parentElement style="position: relative;">
-  <label>
-    <ng-dropdown
-      [relativeParentElement]="parentElement"
-      [selectTrackBy]="'id'"
-      [displayTrackBy]="'productType'"
-      [items]="items"
-      [limit]="50"
-      [triggerSelectChangeOnInit]="true"
-      [triggerSelectChangeOnFirstOptionSelect]="false"
-      [triggerSelectChangeOnModelUpdate]="true"
+<ng-dropdown
+  [selectTrackBy]="'id'"
+  [displayTrackBy]="'productType'"
+  [items]="items"
+  [limit]="50"
+  [triggerSelectChangeOnInit]="true"
+  [triggerSelectChangeOnFirstOptionSelect]="false"
+  [triggerSelectChangeOnModelUpdate]="true"
 
-      (init)="onDropdownInit($event)"
-      (selectChange)="onSelectChange($event)"
-      (dataBound)="onDataBound()">
-    </ng-dropdown>
-  </label>
-</div>
+  (init)="onDropdownInit($event)"
+  (selectChange)="onSelectChange($event)"
+  (dataBound)="onDataBound()">
+</ng-dropdown>

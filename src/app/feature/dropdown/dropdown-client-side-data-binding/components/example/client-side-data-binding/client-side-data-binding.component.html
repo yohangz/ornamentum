@@ -1,11 +1,6 @@
-<div #parentElement style="position: relative;">
-  <label>
-    <ng-dropdown
-      [relativeParentElement]="parentElement"
-      [items]="items"
-      [selectTrackBy]="'id'"
-      [displayTrackBy]="'productType'"
-      [limit]="50">
-    </ng-dropdown>
-  </label>
-</div>
+<ng-dropdown
+  [items]="items"
+  [selectTrackBy]="'id'"
+  [displayTrackBy]="'productType'"
+  [limit]="50">
+</ng-dropdown>
