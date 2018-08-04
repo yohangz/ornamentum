@@ -12,7 +12,7 @@
     "lint:demo:ts": "ng lint ornamentum-demo",
     "lint:demo:scss": "sass-lint --config src/.scss-lint.yml --no-exit --verbose",
     "lint:demo": "npm run lint:demo:ts && npm run lint:demo:scss",
-    "start:demo": "ng serve ornamentum-demo --open --port 4201",
+    "start:demo": "ng serve ornamentum-demo --open --port 4201 --host=0.0.0.0",
     "build:demo:dev": "ng build ornamentum-demo --stats-json",
     "build:demo:prod": "ng build ornamentum-demo --prod",
     "build:demo:server:bundle": "ng run ornamentum-demo:server",
