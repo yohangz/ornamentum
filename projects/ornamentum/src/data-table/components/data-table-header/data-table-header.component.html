@@ -5,7 +5,7 @@
             (click)="onReload()" *ngIf="config.showRefreshButton" [disabled]="dataStateService.dataLoading">
     </button>
     <button title="Select Column" type="button" class="ng-data-table-action-button ng-data-table-column-selector-button"
-            (click)="toggleColumnSelector(header)" (ngClickOutside)="closeColumnSelector()" *ngIf="config.showColumnSelector">
+            (click)="toggleColumnSelector(header)" *ngIf="config.showColumnSelector">
     </button>
   </div>
 </div>
