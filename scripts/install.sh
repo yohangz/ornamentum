@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "install dependencies"
-#yarn
+yarn
 
 if [ "$TRAVIS_PULL_REQUEST" = "false" ];
 then
