@@ -16,27 +16,27 @@ function handleError() {
     exit 1
   fi
 }
-
-print "start publish" "$Gre"
-
-print "build docker image" "$Gre"
-docker build --pull --cache-from ${IMAGE_NAME} -t ${IMAGE_NAME} ${TRAVIS_BUILD_DIR}
-handleError $? "docker image build successful" "docker image build failure"
-
-print "login to docker hub" "$Gre"
-echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
-handleError $? "docker login successful" "docker login failure"
-
-print "tag docker image" "$Gre"
-docker tag ${IMAGE_NAME} ${IMAGE_NAME}:latest
-handleError $? "docker tag successful" "docker tag failure"
+#
+#print "start publish" "$Gre"
+#
+#print "build docker image" "$Gre"
+#docker build --pull --cache-from ${IMAGE_NAME} -t ${IMAGE_NAME} ${TRAVIS_BUILD_DIR}
+#handleError $? "docker image build successful" "docker image build failure"
+#
+#print "login to docker hub" "$Gre"
+#echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
+#handleError $? "docker login successful" "docker login failure"
+#
+#print "tag docker image" "$Gre"
+#docker tag ${IMAGE_NAME} ${IMAGE_NAME}:latest
+#handleError $? "docker tag successful" "docker tag failure"
 
 #docker tag ${IMAGE_NAME} ${IMAGE_NAME}:${TRAVIS_TAG}
 #handleError $? "docker tag successful" "docker tag failure"
 
-print "push docker image" "$Gre"
-docker push ${IMAGE_NAME}:latest
-handleError $? "docker latest push successful" "docker latest push failure"
+#print "push docker image" "$Gre"
+#docker push ${IMAGE_NAME}:latest
+#handleError $? "docker latest push successful" "docker latest push failure"
 
 #docker push ${IMAGE_NAME}:${TRAVIS_TAG}
 #handleError $? "docker tag push successful" "docker tag push failure"
