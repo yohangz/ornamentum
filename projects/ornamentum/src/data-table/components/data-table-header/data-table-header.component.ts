@@ -1,6 +1,4 @@
-import { Component, EventEmitter, Injector, Input, OnDestroy, OnInit } from '@angular/core';
-
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Component, Injector, Input, OnDestroy, Renderer2 } from '@angular/core';
 
 import { ComponentLoader, PopoverComponentLoaderFactoryService } from '../../../utility/utility.module';
 
@@ -21,21 +19,19 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
   selector: 'ng-data-table-header',
   templateUrl: './data-table-header.component.html'
 })
-export class DataTableHeaderComponent implements OnDestroy, OnInit {
+export class DataTableHeaderComponent implements OnDestroy {
   private componentLoader: ComponentLoader<DataTableColumnSelectorComponent>;
 
   @Input()
   public columns: DataTableColumnComponent[];
 
-  private close = new EventEmitter<void>();
-  private closeSubscription: Subscription;
-
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
               private eventStateService: DataTableEventStateService,
+              private renderer: Renderer2,
               public dataStateService: DataTableDataStateService,
               public config: DataTableConfigService) {
-    this.componentLoader = this.componentLoaderFactory.createLoader<DataTableColumnSelectorComponent>();
+    this.componentLoader = this.componentLoaderFactory.createLoader<DataTableColumnSelectorComponent>(this.renderer);
   }
 
   /**
@@ -43,14 +39,15 @@ export class DataTableHeaderComponent implements OnDestroy, OnInit {
    */
   public toggleColumnSelector(element: HTMLElement): void {
     this.componentLoader
-      .withFloatLeft(element.offsetWidth + 2)
-      .withFloatTop(element.offsetHeight)
-      .withRelativeParentElement(this.config.relativeParentElement)
-      .withContext({
-        columns: this.columns,
-        close: this.close
-      })
-      .toggle(DataTableColumnSelectorComponent, element, this.injector);
+      .toggle(DataTableColumnSelectorComponent, element, this.injector, {
+        floatLeft: element.offsetWidth + 2 ,
+        floatTop: element.offsetHeight,
+        relativeParent: this.config.relativeParentElement,
+        context: {
+          columns: this.columns
+        },
+        closeOnOutsideClick: true
+      });
   }
 
   public onReload(): void {
@@ -59,15 +56,5 @@ export class DataTableHeaderComponent implements OnDestroy, OnInit {
 
   public ngOnDestroy(): void {
     this.componentLoader.dispose();
-
-    if (this.closeSubscription) {
-      this.closeSubscription.unsubscribe();
-    }
-  }
-
-  public ngOnInit(): void {
-    this.closeSubscription = this.close.subscribe(() => {
-      this.componentLoader.hide();
-    });
   }
 }

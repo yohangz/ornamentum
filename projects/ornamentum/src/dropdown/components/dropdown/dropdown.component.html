@@ -1,4 +1,4 @@
-<div #dropdownElement class="ng-dropdown" (ngClickOutside)="closeDropdown()">
+<div #dropdownElement class="ng-dropdown">
   <div class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)"
        [class.disabled]="dataStateService.disabled">
     <ng-container *ngIf="config.selectMode === DropdownSelectMode.MULTI">
