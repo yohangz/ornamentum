@@ -1,4 +1,4 @@
-import { ApplicationRef, ComponentFactoryResolver, Injectable } from '@angular/core';
+import { ApplicationRef, ComponentFactoryResolver, Injectable, Renderer2 } from '@angular/core';
 
 import { ComponentLoader } from './component-loader.interface';
 
@@ -13,7 +13,7 @@ export class PopoverComponentLoaderFactoryService {
               private globalRefService: GlobalRefService) {
   }
 
-  public createLoader<T>(): ComponentLoader<T> {
-    return new PopoverComponentLoader<T>(this.componentFactoryResolver, this.appRef, this.globalRefService);
+  public createLoader<T>(renderer: Renderer2): ComponentLoader<T> {
+    return new PopoverComponentLoader<T>(this.componentFactoryResolver, this.appRef, this.globalRefService, renderer);
   }
 }

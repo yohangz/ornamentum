@@ -8,6 +8,7 @@ import {
   OnDestroy,
   OnInit,
   Output,
+  Renderer2,
   TemplateRef,
   ViewChild
 } from '@angular/core';
@@ -372,9 +373,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
               private injector: Injector,
               private eventStateService: DropdownEventStateService,
               private dropdownResourceService: DropdownResourceService<any>,
+              private renderer: Renderer2,
               public dataStateService: DropdownDataStateService,
               public config: DropdownConfigService) {
-    this.dataStateService.componentLoaderRef = this.componentLoaderFactory.createLoader();
+    this.dataStateService.componentLoaderRef = this.componentLoaderFactory.createLoader(this.renderer);
 
     this.dataBound = this.eventStateService.dataBoundStream;
     this.selectChange = this.eventStateService.selectChangeStream;
@@ -410,10 +412,12 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     }
 
     this.dataStateService.componentLoaderRef
-      .withFloatLeft(floatLeft)
-      .withFloatTop(floatTop)
-      .withRelativeParentElement(this.relativeParentElement || this.dropdownElement.nativeElement)
-      .toggle(DropdownViewComponent, element, this.injector);
+      .toggle(DropdownViewComponent, element, this.injector, {
+        floatLeft: floatLeft,
+        floatTop: floatTop,
+        relativeParent: this.relativeParentElement || this.dropdownElement.nativeElement,
+        closeOnOutsideClick: true
+      });
   }
 
   /**

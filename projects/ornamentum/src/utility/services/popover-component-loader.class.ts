@@ -4,7 +4,7 @@ import {
   EmbeddedViewRef,
   ApplicationRef,
   ComponentRef,
-  Type
+  Type, Renderer2
 } from '@angular/core';
 
 import { fromEvent } from 'rxjs';
@@ -13,30 +13,40 @@ import { take } from 'rxjs/operators';
 import { ComponentLoader } from './component-loader.interface';
 
 import { GlobalRefService } from './global-ref.service';
+import { ComponentLoaderOptions } from '../models/component-loader-options.model';
 
 export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   private componentReference: ComponentRef<T>;
   private isVisible: boolean;
-
-  private floatLeft = 0;
-  private floatTop = 0;
-  private context: any;
-  private relativeParentElement: HTMLElement;
+  private clickListener: () => void;
+  private touchStartListener: () => void;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
               private appRef: ApplicationRef,
-              private globalRefService: GlobalRefService) {
+              private globalRefService: GlobalRefService,
+              private renderer: Renderer2) {
     this.isVisible = false;
   }
 
-  private setPosition(parentElement: HTMLElement): void {
-    const holderElement = this.relativeParentElement || this.globalRefService.window.document.documentElement;
+  private registerClickOutside(...elements: HTMLElement[]): void {
+    const trackOutsideClick = (event: Event) => {
+      if (!elements.some((el) => el.contains(event.target as HTMLElement))) {
+        this.hide();
+      }
+    };
+
+    this.clickListener = this.renderer.listen('document', 'click', trackOutsideClick);
+    this.touchStartListener = this.renderer.listen('document', 'touchstart', trackOutsideClick);
+  }
+
+  private setPosition(parentElement: HTMLElement, options: ComponentLoaderOptions): void {
+    const holderElement = options.relativeParent || this.globalRefService.window.document.documentElement;
     const bodyClientRect = holderElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
 
     const componentElement = this.componentReference.location.nativeElement as HTMLElement;
-    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + this.floatTop}px`;
-    componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + this.floatLeft}px`;
+    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + options.floatTop}px`;
+    componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + options.floatLeft}px`;
     componentElement.style.position = 'absolute';
     componentElement.style.display = 'block';
 
@@ -49,29 +59,13 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
       });
   }
 
-  public withFloatLeft(left: number): ComponentLoader<T> {
-    this.floatLeft = left;
-    return <ComponentLoader<T>>this;
-  }
-
-  public withFloatTop(top: number): ComponentLoader<T> {
-    this.floatTop = top;
-    return <ComponentLoader<T>>this;
-  }
-
-  public withRelativeParentElement(parent: HTMLElement): ComponentLoader<T> {
-    this.relativeParentElement = parent;
-    return <ComponentLoader<T>>this;
-  }
-
-  public withContext(context: any): ComponentLoader<T> {
-    this.context = context;
-    return <ComponentLoader<T>>this;
-  }
-
-  public show(component: Type<T>, parentElement: HTMLElement, injector: Injector): T {
+  public show(component: Type<T>, parentElement: HTMLElement, injector: Injector, options: ComponentLoaderOptions = {
+    closeOnOutsideClick: true,
+    floatLeft: 0,
+    floatTop: 0
+  }): T {
     if (this.componentReference) {
-      this.setPosition(parentElement);
+      this.setPosition(parentElement, options);
       this.isVisible = true;
       return;
     }
@@ -81,7 +75,9 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
       .resolveComponentFactory(component)
       .create(injector);
 
-    Object.assign(this.componentReference.instance, this.context);
+    if (options.context) {
+      Object.assign(this.componentReference.instance, options.context);
+    }
 
     // 2. Attach component to the appRef so that it's inside the ng component tree
     this.appRef.attachView(this.componentReference.hostView);
@@ -89,16 +85,21 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     // 3. Get DOM element from component
     const domElem = (this.componentReference.hostView as EmbeddedViewRef<any>).rootNodes[0] as HTMLElement;
 
-    this.setPosition(parentElement);
+    this.setPosition(parentElement, options);
 
     // 4. Append DOM element to the body
-    (this.relativeParentElement || this.globalRefService.window.document.body).appendChild(domElem);
+    (options.relativeParent || this.globalRefService.window.document.body).appendChild(domElem);
 
     // Trigger change detection
     this.componentReference.changeDetectorRef.markForCheck();
     this.componentReference.changeDetectorRef.detectChanges();
 
     this.isVisible = true;
+
+    if (options.closeOnOutsideClick) {
+      this.registerClickOutside(parentElement, this.componentReference.location.nativeElement);
+    }
+
     return this.componentReference.instance;
   }
 
@@ -110,8 +111,8 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     }
   }
 
-  public toggle(component: Type<T>, parentElement: HTMLElement, injector: Injector): T {
-    return this.isVisible ? this.hide() : this.show(component, parentElement, injector);
+  public toggle(component: Type<T>, parentElement: HTMLElement, injector: Injector, options?: ComponentLoaderOptions): T {
+    return this.isVisible ? this.hide() : this.show(component, parentElement, injector, options);
   }
 
   public dispose(): void {
@@ -120,7 +121,16 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
       this.componentReference.destroy();
     }
 
+    if (this.clickListener) {
+      this.clickListener();
+      this.clickListener = null;
+    }
+
+    if (this.touchStartListener) {
+      this.touchStartListener();
+      this.touchStartListener = null;
+    }
+
     this.componentReference = null;
   }
 }
-
