@@ -1,5 +1,8 @@
 @import '~compass-mixins/lib/_compass.scss';
-@import 'data-table/base.theme.variables';
+
+$checkbox-outer-border: #ccc !default;
+$checkbox-background: #fff !default;
+$checkbox-check-color: #ccc !default;
 
 .ng-dropdown-checkbox-input,
 .ng-data-table-checkbox-input {
@@ -11,7 +14,7 @@
     @include transition(transform .4s cubic-bezier(.45, 1.8, .5, .75));
     @include transform(rotate(-45deg) scale(0, 0));
     border: .09rem solid;
-    border-color: $data-table-top-header-text-color;
+    border-color: $checkbox-check-color;
     border-right-style: none;
     border-top-style: none;
     content: '';
@@ -32,9 +35,9 @@
 
   &::after {
 
-    background: $data-table-content-header-background;
+    background: $checkbox-background;
     border: .05rem solid;
-    border-color: $data-table-dropdown-border;
+    border-color: $checkbox-outer-border;
     content: '';
     cursor: pointer;
     height: 1.05rem;

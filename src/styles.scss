@@ -5,22 +5,27 @@
 
 .om-base-theme {
   @import '../dist/ornamentum/themes/base.theme';
+  @import '../dist/ornamentum/themes/addon.base.theme';
 }
 
 .om-dark-theme {
   @import '../dist/ornamentum/themes/dark.theme';
+  @import '../dist/ornamentum/themes/addon.dark.theme';
 }
 
 .om-flat-theme {
   @import '../dist/ornamentum/themes/flat.theme';
+  @import '../dist/ornamentum/themes/addon.flat.theme';
 }
 
 .om-material-theme {
   @import '../dist/ornamentum/themes/material.theme';
+  @import '../dist/ornamentum/themes/addon.material.theme';
 }
 
 .om-ornamentum-theme {
   @import '../dist/ornamentum/themes/ornamentum.theme';
+  @import '../dist/ornamentum/themes/addon.ornamentum.theme';
 }
 
 body {
