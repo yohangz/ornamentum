@@ -375,8 +375,13 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   @Input()
-  public set dynamicDimensionRatio(value: number) {
-    this.config.dynamicDimensionRatio = value;
+  public set dynamicWidthRatio(value: number) {
+    this.config.dynamicWidthRatio = value;
+  }
+
+  @Input()
+  public set dynamicHeightRatio(value: number) {
+    this.config.dynamicHeightRatio = value;
   }
 
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
@@ -417,7 +422,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       });
 
     if (this.config.dynamicDimensionCalculation) {
-      this.config.menuHeight = this.config.menuWidth = element.offsetWidth * this.config.dynamicDimensionRatio;
+      this.config.menuWidth = element.offsetWidth * this.config.dynamicWidthRatio;
+      this.config.menuHeight = element.offsetWidth * this.config.dynamicHeightRatio;
     }
   }
 

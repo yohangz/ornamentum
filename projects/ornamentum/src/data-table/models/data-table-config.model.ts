@@ -408,8 +408,16 @@ export interface DataTableConfig {
   dropdownFilterDynamicDimensionCalculation?: boolean;
 
   /**
-   * Dynamic dropdown view dimension ratio.
+   * Dynamic dropdown view width ratio.
+   * Used for dynamic dimension calculation.
    * @type {number}
    */
-  dropdownFilterDynamicDimensionRatio?: number;
+  dropdownFilterDynamicWidthRatio?: number;
+
+  /**
+   * Dynamic dropdown view height ratio.
+   * Used for dynamic dimension calculation.
+   * @type {number}
+   */
+  dropdownFilterDynamicHeightRatio?: number;
 }

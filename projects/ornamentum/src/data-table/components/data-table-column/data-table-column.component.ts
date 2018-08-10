@@ -297,7 +297,10 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   public dropdownFilterDynamicDimensionCalculation: boolean;
 
   @Input()
-  public dropdownFilterDynamicDimensionRatio: number;
+  public dropdownFilterDynamicWidthRatio: number;
+
+  @Input()
+  public dropdownFilterDynamicHeightRatio: number;
 
   constructor(private dataTableConfigService: DataTableConfigService,
               private eventStateService: DataTableEventStateService) {
@@ -326,7 +329,8 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     this.dropdownFilterMultiSelectOptionMaxWidth = dataTableConfigService.dropdownFilterMultiSelectOptionMaxWidth;
     this.dropdownFilterCloseMenuOnSelect = dataTableConfigService.dropdownFilterCloseMenuOnSelect;
     this.dropdownFilterDynamicDimensionCalculation = dataTableConfigService.dropdownFilterDynamicDimensionCalculation;
-    this.dropdownFilterDynamicDimensionRatio = dataTableConfigService.dropdownFilterDynamicDimensionRatio;
+    this.dropdownFilterDynamicWidthRatio = dataTableConfigService.dropdownFilterDynamicWidthRatio;
+    this.dropdownFilterDynamicHeightRatio = dataTableConfigService.dropdownFilterDynamicHeightRatio;
   }
 
   public resetSortOrder(): void {
