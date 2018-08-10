@@ -32,7 +32,8 @@
       [multiSelectOptionMaxWidth]="column.dropdownFilterMultiSelectOptionMaxWidth"
       [closeMenuOnSelect]="column.dropdownFilterCloseMenuOnSelect"
       [dynamicDimensionCalculation]="column.dropdownFilterDynamicDimensionCalculation"
-      [dynamicDimensionRatio]="column.dropdownFilterDynamicDimensionRatio"
+      [dynamicWidthRatio]="column.dropdownFilterDynamicWidthRatio"
+      [dynamicHeightRatio]="column.dropdownFilterDynamicHeightRatio"
 
       [(ngModel)]="column.filter"
       (selectChange)="filter.emit()">

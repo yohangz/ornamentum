@@ -49,8 +49,9 @@ export class DropdownConfigService implements DropdownConfig {
   public triggerSelectChangeOnInit = false;
   public triggerSelectChangeOnModelUpdate = false;
   public triggerSelectChangeOnFirstOptionSelect = false;
-  public dynamicDimensionCalculation = true;
-  public dynamicDimensionRatio = 1;
+  public dynamicDimensionCalculation = false;
+  public dynamicWidthRatio = 1;
+  public dynamicHeightRatio = .5;
 
   constructor(@Inject(DROPDOWN_CONFIG) private dropdownConfig: DropdownConfig) {
     if (dropdownConfig) {
