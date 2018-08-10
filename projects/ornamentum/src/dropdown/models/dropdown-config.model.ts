@@ -168,4 +168,11 @@ export interface DropdownConfig {
    * @type {boolean}
    */
   triggerSelectChangeOnFirstOptionSelect?: boolean;
+
+  /**
+   * Dynamically calculate dropdown view dimensions relative to dropdown button width.
+   * menuWith and menuHeight values are ignored when true.
+   * @type {boolean}
+   */
+  dynamicDimensionCalculation?: boolean;
 }

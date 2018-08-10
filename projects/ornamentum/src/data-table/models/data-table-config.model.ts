@@ -318,6 +318,12 @@ export interface DataTableConfig {
   // Column dropdown filter options
 
   /**
+   * Dynamically calculate Dropdown filter menu dimensions relative to column width.
+   * @type {boolean}
+   */
+  dropdownFilterDynamicDimensionCalculation?: boolean;
+
+  /**
    * Dropdown filter menu position.
    * Applicable only when showDropdownFilter is true.
    * @type {ViewPosition}

@@ -369,6 +369,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.config.triggerSelectChangeOnFirstOptionSelect = value;
   }
 
+  @Input()
+  public set dynamicDimensionCalculation(value: boolean) {
+    this.config.dynamicDimensionCalculation = value;
+  }
+
   constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
               private injector: Injector,
               private eventStateService: DropdownEventStateService,
@@ -405,6 +410,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
         relativeParent: this.relativeParentElement || this.dropdownElement.nativeElement,
         position: this.config.menuPosition
       });
+
+    if (this.config.dynamicDimensionCalculation) {
+      this.config.menuHeight = this.config.menuWidth = element.offsetWidth + (element.offsetWidth * .2);
+    }
   }
 
   /**
