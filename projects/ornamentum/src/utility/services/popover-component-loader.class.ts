@@ -40,7 +40,6 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   }
 
   private setPosition(parentElement: HTMLElement, options: ComponentLoaderOptions): void {
-    debugger;
     const holderElement = options.relativeParent || this.globalRefService.window.document.documentElement;
     const bodyClientRect = holderElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
