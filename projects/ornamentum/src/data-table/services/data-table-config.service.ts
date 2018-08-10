@@ -71,6 +71,7 @@ export class DataTableConfigService implements DataTableConfig {
   public showFilterClearButton = true;
 
   // Column dropdown filter options
+  public dropdownFilterDynamicDimensionCalculation = true;
   public dropdownFilterMenuPosition: ViewPosition = 'bottom-left';
   public dropdownFilterSelectMode = DropdownSelectMode.MULTI;
   public dropdownFilterSearchable = true;
