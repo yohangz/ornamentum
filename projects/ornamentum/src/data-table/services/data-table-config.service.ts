@@ -71,7 +71,6 @@ export class DataTableConfigService implements DataTableConfig {
   public showFilterClearButton = true;
 
   // Column dropdown filter options
-  public dropdownFilterDynamicDimensionCalculation = true;
   public dropdownFilterMenuPosition: ViewPosition = 'bottom-left';
   public dropdownFilterSelectMode = DropdownSelectMode.MULTI;
   public dropdownFilterSearchable = true;
@@ -85,6 +84,8 @@ export class DataTableConfigService implements DataTableConfig {
   public dropdownFilterMenuHeight = 250;
   public dropdownFilterMultiSelectOptionMaxWidth = 135;
   public dropdownFilterCloseMenuOnSelect = true;
+  public dropdownFilterDynamicDimensionCalculation = true;
+  public dropdownFilterDynamicDimensionRatio = 1.25;
 
   constructor(@Inject(DATA_TABLE_CONFIG) private dataTableConfig: DataTableConfig) {
     if (dataTableConfig) {
