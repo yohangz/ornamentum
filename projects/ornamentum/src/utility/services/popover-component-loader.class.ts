@@ -47,11 +47,11 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     let left = 0;
     let top = 0;
 
-    if (options.position === 'bottom-right' || options.position === 'top-right') {
-      left = parentElement.offsetWidth;
+    if (options.position.includes('right')) {
+     left = parentElement.offsetWidth;
     }
 
-    if (options.position === 'bottom-right' || options.position === 'bottom-left') {
+    if (options.position.includes('bottom')) {
       top = parentElement.offsetHeight;
     }
 
@@ -60,6 +60,19 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + left + options.floatLeft}px`;
     componentElement.style.position = 'absolute';
     componentElement.style.display = 'block';
+
+    const childElement = componentElement.firstElementChild as HTMLElement;
+    if (childElement) {
+      if (options.position.includes('right')) {
+        childElement.style.right = '0px';
+      }
+
+      if (options.position.includes('top')) {
+        childElement.style.bottom = '0px';
+      }
+
+      childElement.style.position = 'absolute';
+    }
 
     fromEvent(this.globalRefService.window, 'resize')
       .pipe(
