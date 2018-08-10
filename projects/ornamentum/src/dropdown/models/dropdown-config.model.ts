@@ -175,4 +175,10 @@ export interface DropdownConfig {
    * @type {boolean}
    */
   dynamicDimensionCalculation?: boolean;
+
+  /**
+   * Dynamic dropdown view dimensions calculation ratio.
+   * @type {number}
+   */
+  dynamicDimensionRatio?: number;
 }
