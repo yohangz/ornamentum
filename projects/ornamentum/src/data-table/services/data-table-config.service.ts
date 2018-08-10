@@ -6,7 +6,8 @@ import { DataTableConfig } from '../models/data-table-config.model';
 import { DataTableStorageMode } from '../models/data-table-storage-mode.enum';
 import { DataTableSortOrder } from '../models/data-table-sort-order.enum';
 import { DataTableSelectMode } from '../models/data-table-select-mode.model';
-import { DropdownMenuPosition, DropdownSelectMode } from '../../dropdown/dropdown.module';
+import { DropdownSelectMode } from '../../dropdown/dropdown.module';
+import { ViewPosition } from '../../utility/models/view-position.model';
 
 export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableConfig');
 
@@ -70,7 +71,7 @@ export class DataTableConfigService implements DataTableConfig {
   public showFilterClearButton = true;
 
   // Column dropdown filter options
-  public dropdownFilterMenuPosition = DropdownMenuPosition.BOTTOM_LEFT;
+  public dropdownFilterMenuPosition: ViewPosition = 'bottom-left';
   public dropdownFilterSelectMode = DropdownSelectMode.MULTI;
   public dropdownFilterSearchable = true;
   public dropdownFilterSearchDebounceTime = 500;

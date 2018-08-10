@@ -40,13 +40,12 @@ export class DataTableHeaderComponent implements OnDestroy {
   public toggleColumnSelector(element: HTMLElement): void {
     this.componentLoader
       .toggle(DataTableColumnSelectorComponent, element, this.injector, {
-        floatLeft: element.offsetWidth + 2 ,
-        floatTop: element.offsetHeight,
+        floatLeft: 2,
         relativeParent: this.config.relativeParentElement,
         context: {
           columns: this.columns
         },
-        closeOnOutsideClick: true
+        position: 'bottom-right'
       });
   }
 

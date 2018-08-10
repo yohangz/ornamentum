@@ -20,7 +20,6 @@ import { debounceTime, switchMap } from 'rxjs/operators';
 
 import get from 'lodash-es/get';
 
-import { DropdownMenuPosition } from '../../models/dropdown-menu-position.enum';
 import { DropdownTranslations } from '../../models/dropdown-translations.model';
 import { DropdownItem } from '../../models/dropdown-item.model';
 import { DropdownItemGroup } from '../../models/dropdown-Item-group.model';
@@ -37,6 +36,7 @@ import { DropdownConfigService } from '../../services/dropdown-config.service';
 import { DropdownDataStateService } from '../../services/dropdown-data-state.service';
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
 import { DropdownResourceService } from '../../services/dropdown-resource.service';
+import { ViewPosition } from '../../../utility/models/view-position.model';
 
 /**
  * Component class to represent search dropdown.
@@ -298,10 +298,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Menu open position.
-   * @type {DropdownMenuPosition}
+   * @type {ViewPosition}
    */
   @Input()
-  public set menuPosition(value: DropdownMenuPosition) {
+  public set menuPosition(value: ViewPosition) {
     this.config.menuPosition = value;
   }
 
@@ -400,23 +400,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @param {HTMLElement} element Dropdown button element.
    */
   public toggleDropdown(element: HTMLElement): void {
-    let floatLeft = 0;
-    let floatTop = 0;
-
-    if (this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT) {
-      floatLeft = element.offsetWidth;
-    }
-
-    if (this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.BOTTOM_LEFT) {
-      floatTop = element.offsetHeight;
-    }
-
     this.dataStateService.componentLoaderRef
       .toggle(DropdownViewComponent, element, this.injector, {
-        floatLeft: floatLeft,
-        floatTop: floatTop,
         relativeParent: this.relativeParentElement || this.dropdownElement.nativeElement,
-        closeOnOutsideClick: true
+        position: this.config.menuPosition
       });
   }
 

@@ -3,8 +3,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription, Subject } from 'rxjs';
 import { debounceTime } from 'rxjs/operators';
 
-import { DropdownMenuPosition } from '../../models/dropdown-menu-position.enum';
-
 import { DropdownConfigService } from '../../services/dropdown-config.service';
 import { DropdownDataStateService } from '../../services/dropdown-data-state.service';
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
@@ -20,22 +18,6 @@ export class DropdownViewComponent implements OnInit, OnDestroy {
   constructor(public config: DropdownConfigService,
               public dataStateService: DropdownDataStateService,
               private eventStateService: DropdownEventStateService) {
-  }
-
-  public positionRight(): number {
-    if (this.config.menuPosition === DropdownMenuPosition.BOTTOM_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT) {
-      return 0;
-    }
-
-    return;
-  }
-
-  public positionBottom(): number {
-    if (this.config.menuPosition === DropdownMenuPosition.TOP_RIGHT || this.config.menuPosition === DropdownMenuPosition.TOP_LEFT) {
-      return 0;
-    }
-
-    return;
   }
 
   public ngOnInit(): void {

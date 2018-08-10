@@ -1,6 +1,4 @@
-import { Component, ElementRef, Input } from '@angular/core';
-
-import { DropdownMenuPosition } from 'ornamentum';
+import { Component } from '@angular/core';
 
 import { ExampleData } from '../../../../../../shared/models';
 
@@ -11,7 +9,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './filter-dropdown-usage.component.html'
 })
 export class FilterDropdownUsageComponent {
-  public DropdownMenuPosition = DropdownMenuPosition;
 
   public items: ExampleData[];
 

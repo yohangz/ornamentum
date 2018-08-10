@@ -9,10 +9,10 @@ import { DataTableFilterExpressionCallback } from '../../models/data-table-filte
 
 import { DropdownSelectMode } from '../../../dropdown/dropdown.module';
 import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
-import { DropdownMenuPosition } from '../../../dropdown/models/dropdown-menu-position.enum';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
+import { ViewPosition } from '../../../utility/models/view-position.model';
 
 /**
  * Data table column component.
@@ -198,10 +198,10 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   /**
    * Dropdown filter menu position.
-   * @type DropdownMenuPosition
+   * @type ViewPosition
    */
   @Input()
-  public dropdownFilterMenuPosition: DropdownMenuPosition;
+  public dropdownFilterMenuPosition: ViewPosition;
 
   /**
    * Dropdown filter multi selectable state.
