@@ -62,6 +62,5 @@ export { DropdownQueryResult } from './models/dropdown-query-result.model';
 export { DropdownConfig } from './models/dropdown-config.model';
 
 export { DropdownSelectMode } from './models/dropdown-select-mode.enum';
-export { DropdownMenuPosition } from './models/dropdown-menu-position.enum';
 
 export { DropdownComponent } from './components/dropdown/dropdown.component';

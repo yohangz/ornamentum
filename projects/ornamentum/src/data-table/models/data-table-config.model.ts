@@ -3,7 +3,8 @@ import { DataTableTranslations } from './data-table-translations.model';
 import { DataTableStorageMode } from './data-table-storage-mode.enum';
 import { DataTableSortOrder } from './data-table-sort-order.enum';
 import { DataTableSelectMode } from './data-table-select-mode.model';
-import { DropdownMenuPosition, DropdownSelectMode } from '../../dropdown/dropdown.module';
+import { DropdownSelectMode } from '../../dropdown/dropdown.module';
+import { ViewPosition } from '../../utility/models/view-position.model';
 
 /**
  * Data table configuration.
@@ -319,9 +320,9 @@ export interface DataTableConfig {
   /**
    * Dropdown filter menu position.
    * Applicable only when showDropdownFilter is true.
-   * @type {DropdownMenuPosition}
+   * @type {ViewPosition}
    */
-  dropdownFilterMenuPosition?: DropdownMenuPosition;
+  dropdownFilterMenuPosition?: ViewPosition;
 
   /**
    * Dropdown select mode.

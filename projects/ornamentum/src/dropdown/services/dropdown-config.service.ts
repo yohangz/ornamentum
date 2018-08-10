@@ -6,8 +6,8 @@ import { DropdownConfig } from '../models/dropdown-config.model';
 import { DropdownTranslations } from '../models/dropdown-translations.model';
 import { DataTableConfig } from '../../data-table/models/data-table-config.model';
 
-import { DropdownMenuPosition } from '../models/dropdown-menu-position.enum';
 import { DropdownSelectMode } from '../models/dropdown-select-mode.enum';
+import { ViewPosition } from '../../utility/models/view-position.model';
 
 export const DROPDOWN_CONFIG = new InjectionToken<DataTableConfig>('dropdownConfig');
 
@@ -27,7 +27,7 @@ export class DropdownConfigService implements DropdownConfig {
   public selectTrackBy = 'key';
   public displayTrackBy = 'value';
   public disabledTrackBy = 'disabled';
-  public menuPosition = DropdownMenuPosition.BOTTOM_LEFT;
+  public menuPosition: ViewPosition = 'bottom-left';
   public selectMode = DropdownSelectMode.SINGLE_TOGGLE;
   public filterable = false;
   public filterDebounce = true;

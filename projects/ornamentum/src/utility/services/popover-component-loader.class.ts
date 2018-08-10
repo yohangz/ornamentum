@@ -40,13 +40,25 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   }
 
   private setPosition(parentElement: HTMLElement, options: ComponentLoaderOptions): void {
+    debugger;
     const holderElement = options.relativeParent || this.globalRefService.window.document.documentElement;
     const bodyClientRect = holderElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
 
+    let left = 0;
+    let top = 0;
+
+    if (options.position === 'bottom-right' || options.position === 'top-right') {
+      left = parentElement.offsetWidth;
+    }
+
+    if (options.position === 'bottom-right' || options.position === 'bottom-left') {
+      top = parentElement.offsetHeight;
+    }
+
     const componentElement = this.componentReference.location.nativeElement as HTMLElement;
-    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + options.floatTop}px`;
-    componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + options.floatLeft}px`;
+    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + top +  options.floatTop}px`;
+    componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + left + options.floatLeft}px`;
     componentElement.style.position = 'absolute';
     componentElement.style.display = 'block';
 
@@ -59,11 +71,14 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
       });
   }
 
-  public show(component: Type<T>, parentElement: HTMLElement, injector: Injector, options: ComponentLoaderOptions = {
-    closeOnOutsideClick: true,
-    floatLeft: 0,
-    floatTop: 0
-  }): T {
+  public show(component: Type<T>, parentElement: HTMLElement, injector: Injector, options: ComponentLoaderOptions): T {
+    options = Object.assign({
+      closeOnOutsideClick: true,
+      floatLeft: 0,
+      floatTop: 0,
+      position: 'bottom-left'
+    }, options);
+
     if (this.componentReference) {
       this.setPosition(parentElement, options);
       this.isVisible = true;

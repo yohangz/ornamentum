@@ -1,7 +1,7 @@
 import { DropdownTranslations } from './dropdown-translations.model';
 
-import { DropdownMenuPosition } from './dropdown-menu-position.enum';
 import { DropdownSelectMode } from './dropdown-select-mode.enum';
+import { ViewPosition } from '../../utility/models/view-position.model';
 
 /**
  * Dropdown configuration.
@@ -33,9 +33,9 @@ export interface DropdownConfig {
 
   /**
    * Menu position.
-   * @type {DropdownMenuPosition}
+   * @type {ViewPosition}
    */
-  menuPosition?: DropdownMenuPosition;
+  menuPosition?: ViewPosition;
 
   /**
    * Dropdown option select mode.
