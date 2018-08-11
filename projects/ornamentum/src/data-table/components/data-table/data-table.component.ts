@@ -35,7 +35,7 @@ import { DataTableDataBindCallback } from '../../models/data-table-data-bind-cal
 import { DataTableFilterOption } from '../../models/data-table-filter-option.model';
 
 import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
-import { DataTableStorageMode } from '../../models/data-table-storage-mode.enum';
+import { DataTableStorageMode } from '../../models/data-table-storage-mode.model';
 import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';

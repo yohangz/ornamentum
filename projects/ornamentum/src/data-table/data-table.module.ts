@@ -116,7 +116,7 @@ export { DataTableCellColorRenderCallback } from './models/data-table-cell-color
 export { DataTableSelectMode } from './models/data-table-select-mode.model';
 
 export { DataTableSortOrder } from './models/data-table-sort-order.enum';
-export { DataTableStorageMode } from './models/data-table-storage-mode.enum';
+export { DataTableStorageMode } from './models/data-table-storage-mode.model';
 export { DataFetchMode } from './models/data-fetch-mode.enum';
 
 export { DataTableComponent } from './components/data-table/data-table.component';
