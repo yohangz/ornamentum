@@ -6,7 +6,7 @@ import { DropdownConfig } from '../models/dropdown-config.model';
 import { DropdownTranslations } from '../models/dropdown-translations.model';
 import { DataTableConfig } from '../../data-table/models/data-table-config.model';
 
-import { DropdownSelectMode } from '../models/dropdown-select-mode.enum';
+import { DropdownSelectMode } from '../models/dropdown-select-mode.model';
 import { ViewPosition } from '../../utility/models/view-position.model';
 
 export const DROPDOWN_CONFIG = new InjectionToken<DataTableConfig>('dropdownConfig');
