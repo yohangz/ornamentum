@@ -1,5 +1,1 @@
-export enum DropdownSelectMode {
-  MULTI,
-  SINGLE,
-  SINGLE_TOGGLE
-}
+export type DropdownSelectMode = 'multi' | 'single' | 'single-toggle';

@@ -28,7 +28,7 @@ export class DropdownConfigService implements DropdownConfig {
   public displayTrackBy = 'value';
   public disabledTrackBy = 'disabled';
   public menuPosition: ViewPosition = 'bottom-left';
-  public selectMode = DropdownSelectMode.SINGLE_TOGGLE;
+  public selectMode: DropdownSelectMode = 'single-toggle';
   public filterable = false;
   public filterDebounce = true;
   public filterDebounceTime = 500;

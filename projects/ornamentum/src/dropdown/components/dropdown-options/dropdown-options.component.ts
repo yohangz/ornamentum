@@ -15,7 +15,6 @@ import { DropdownEventStateService } from '../../services/dropdown-event-state.s
   templateUrl: './dropdown-options.component.html'
 })
 export class DropdownOptionsComponent {
-  public DropdownSelectMode = DropdownSelectMode;
 
   constructor(public config: DropdownConfigService,
               public dataStateService: DropdownDataStateService,
@@ -23,7 +22,7 @@ export class DropdownOptionsComponent {
   }
 
   public getSelectedState(id: any): boolean {
-    if (this.config.selectMode === DropdownSelectMode.MULTI) {
+    if (this.config.selectMode === 'multi') {
       return this.dataStateService.selectedOptions.some((item: any) => {
         return get(item, this.config.selectTrackBy) === id;
       });
@@ -36,7 +35,7 @@ export class DropdownOptionsComponent {
     const id = get(option.item, this.config.selectTrackBy);
 
     switch (this.config.selectMode) {
-      case DropdownSelectMode.MULTI: {
+      case 'multi': {
         const selectedIndex = this.dataStateService.selectedOptions.findIndex((item: any) => {
           return get(item, this.config.selectTrackBy) === id;
         });
@@ -50,7 +49,7 @@ export class DropdownOptionsComponent {
         this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
         break;
       }
-      case DropdownSelectMode.SINGLE_TOGGLE: {
+      case 'single-toggle': {
         if (get(this.dataStateService.selectedOption, this.config.selectTrackBy) === id) {
           this.dataStateService.selectedOption = undefined;
         } else {
@@ -60,7 +59,7 @@ export class DropdownOptionsComponent {
         this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);
         break;
       }
-      case DropdownSelectMode.SINGLE: {
+      case 'single': {
         const selectedId = get(this.dataStateService.selectedOption, this.config.selectTrackBy);
         this.dataStateService.selectedOption = option.item;
 

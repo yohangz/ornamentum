@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { DropdownSelectMode } from 'ornamentum';
-
 import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
@@ -11,7 +9,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './multi-item-selection-usage.component.html'
 })
 export class MultiItemSelectionUsageComponent {
-  public DropdownSelectMode = DropdownSelectMode;
 
   public items: ExampleData[];
 

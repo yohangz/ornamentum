@@ -72,7 +72,7 @@ export class DataTableConfigService implements DataTableConfig {
 
   // Column dropdown filter options
   public dropdownFilterMenuPosition: ViewPosition = 'bottom-left';
-  public dropdownFilterSelectMode = DropdownSelectMode.MULTI;
+  public dropdownFilterSelectMode: DropdownSelectMode = 'multi';
   public dropdownFilterSearchable = true;
   public dropdownFilterSearchDebounceTime = 500;
   public dropdownFilterSearchDebounce = true;

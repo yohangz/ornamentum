@@ -59,8 +59,6 @@ import { ViewPosition } from '../../../utility/models/view-position.model';
   ]
 })
 export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccessor {
-  public DropdownSelectMode = DropdownSelectMode;
-
   private onSelectChangeSubscription: Subscription;
 
   @ContentChild('ngDropdownLoadingSpinner')
@@ -459,7 +457,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   public get hasSelectedItems(): boolean {
-    if (this.config.selectMode === DropdownSelectMode.MULTI) {
+    if (this.config.selectMode === 'multi') {
       return !!this.dataStateService.selectedOptions.length;
     }
 
@@ -467,7 +465,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   public triggerSelectChange(): void {
-    if (this.config.selectMode === DropdownSelectMode.MULTI) {
+    if (this.config.selectMode === 'multi') {
       this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
     } else {
       this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);
@@ -480,7 +478,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   public clearSelectedOptions(event: Event): void {
     event.stopPropagation();
 
-    if (this.config.selectMode === DropdownSelectMode.MULTI) {
+    if (this.config.selectMode === 'multi') {
       this.dataStateService.selectedOptions = [];
       this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
     } else {
@@ -506,7 +504,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @param value Selected value.
    */
   public writeValue(value: any): void {
-    if (this.config.selectMode === DropdownSelectMode.MULTI) {
+    if (this.config.selectMode === 'multi') {
       this.dataStateService.selectedOptions = value || [];
     } else {
       this.dataStateService.selectedOption = value;
@@ -591,7 +589,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     }
 
     if (this.config.setFirstOptionSelected && queryResult.items.length) {
-      if (this.config.selectMode === DropdownSelectMode.MULTI) {
+      if (this.config.selectMode === 'multi') {
         this.dataStateService.selectedOptions = [queryResult.items[0]];
       } else {
         this.dataStateService.selectedOption = queryResult.items[0];

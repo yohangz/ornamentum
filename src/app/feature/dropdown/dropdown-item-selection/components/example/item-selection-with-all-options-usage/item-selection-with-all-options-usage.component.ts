@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { DropdownSelectMode } from 'ornamentum';
-
 import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
@@ -11,8 +9,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './item-selection-with-all-options-usage.component.html'
 })
 export class ItemSelectionWithAllOptionsUsageComponent {
-  public DropdownSelectMode = DropdownSelectMode;
-
   public items: ExampleData[];
   public selectedOptions: ExampleData[];
 
