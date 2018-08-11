@@ -1,6 +1,6 @@
 import { DataTableTranslations } from './data-table-translations.model';
 
-import { DataTableStorageMode } from './data-table-storage-mode.enum';
+import { DataTableStorageMode } from './data-table-storage-mode.model';
 import { DataTableSortOrder } from './data-table-sort-order.enum';
 import { DataTableSelectMode } from './data-table-select-mode.model';
 import { DropdownSelectMode } from '../../dropdown/dropdown.module';
