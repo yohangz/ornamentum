@@ -17,7 +17,7 @@ export class DataTablePersistenceService {
 
   public set storageMode(value: DataTableStorageMode) {
     if (this.globalRefService.isBrowser) {
-      if (value === DataTableStorageMode.LOCAL) {
+      if (value === 'local') {
         this.storage = this.globalRefService.window.localStorage;
       } else {
         this.storage = this.globalRefService.window.sessionStorage;

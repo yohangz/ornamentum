@@ -18,7 +18,7 @@ export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableC
 export class DataTableConfigService implements DataTableConfig {
   // Table base config
   public persistTableState = false;
-  public storageMode = DataTableStorageMode.SESSION;
+  public storageMode: DataTableStorageMode = 'session';
   public multiColumnSortable = false;
   public showHeader = false;
   public title = '';
