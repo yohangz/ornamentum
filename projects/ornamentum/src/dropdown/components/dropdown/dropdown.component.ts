@@ -27,7 +27,7 @@ import { DropdownRequestParams } from '../../models/dropdown-request-params.mode
 import { DropdownDataBindCallback } from '../../models/dropdown-data-bind-callback.model';
 import { DropdownQueryResult } from '../../models/dropdown-query-result.model';
 
-import { DropdownSelectMode } from '../../models/dropdown-select-mode.enum';
+import { DropdownSelectMode } from '../../models/dropdown-select-mode.model';
 
 import { DropdownViewComponent } from '../dropdown-view/dropdown-view.component';
 

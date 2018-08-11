@@ -1,6 +1,6 @@
 import { DropdownTranslations } from './dropdown-translations.model';
 
-import { DropdownSelectMode } from './dropdown-select-mode.enum';
+import { DropdownSelectMode } from './dropdown-select-mode.model';
 import { ViewPosition } from '../../utility/models/view-position.model';
 
 /**
