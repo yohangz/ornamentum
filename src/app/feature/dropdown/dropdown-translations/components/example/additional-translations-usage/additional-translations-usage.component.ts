@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DropdownSelectMode, DropdownTranslations } from 'ornamentum';
+import { DropdownTranslations } from 'ornamentum';
 
 import { ExampleData } from '../../../../../../shared/models';
 
@@ -11,7 +11,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './additional-translations-usage.component.html'
 })
 export class AdditionalTranslationsUsageComponent {
-  public DropdownSelectMode = DropdownSelectMode;
 
   public dropdownTranslations: DropdownTranslations = {
     filterPlaceholder: 'This is filter place holder',

@@ -1,7 +1,7 @@
 <div #dropdownElement class="ng-dropdown">
   <div class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)"
        [class.disabled]="dataStateService.disabled">
-    <ng-container *ngIf="config.selectMode === DropdownSelectMode.MULTI">
+    <ng-container *ngIf="config.selectMode === 'multi'">
       <ng-container *ngIf="!wrapSelectedOptions">
          <span class="ng-dropdown-selected-value"
                *ngFor="let item of dataStateService.selectedOptions; let index = index"
@@ -19,7 +19,7 @@
         {{ config.translations.selectPlaceholder }}
       </span>
     </ng-container>
-    <ng-container *ngIf="config.selectMode !== DropdownSelectMode.MULTI">
+    <ng-container *ngIf="config.selectMode !== 'multi'">
       <span class="ng-dropdown-selected-item" *ngIf="dataStateService.selectedOption">
         {{ config.getDisplayText(dataStateService.selectedOption) }}
       </span>
