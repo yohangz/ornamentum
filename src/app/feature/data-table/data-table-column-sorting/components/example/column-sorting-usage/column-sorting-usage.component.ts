@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { DataTableSortOrder } from 'ornamentum';
-
 import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
@@ -11,8 +9,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './column-sorting-usage.component.html'
 })
 export class ColumnSortingUsageComponent {
-  public DataTableSortOrder = DataTableSortOrder;
-
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

@@ -1,8 +1,4 @@
 /**
  * Sort order.
  */
-export enum DataTableSortOrder {
-  NONE,
-  ASC,
-  DESC
-}
+export type DataTableSortOrder = '' | 'asc' | 'desc';
