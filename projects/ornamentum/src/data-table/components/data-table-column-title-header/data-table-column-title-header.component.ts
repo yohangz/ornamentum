@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 
 import get from 'lodash-es/get';
 
-import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
 import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
 import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
@@ -49,12 +48,12 @@ export class DataTableColumnTitleHeaderComponent {
           const sortColumns = this.columns.filter(item => item.sortable);
           sortColumns.forEach((sortColumn: DataTableColumnComponent) => {
             if (sortColumn !== column) {
-              sortColumn.sortOrder = DataTableSortOrder.NONE;
+              sortColumn.sortOrder = '';
             }
           });
         }
 
-        column.sortOrder = DataTableSortOrder.ASC;
+        column.sortOrder = 'asc';
       }
 
       this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);

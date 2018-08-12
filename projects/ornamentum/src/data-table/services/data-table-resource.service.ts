@@ -12,8 +12,6 @@ import { DataTableFilterColumn } from '../models/data-table-filter-column.model'
 import { DataTableFilterOption } from '../models/data-table-filter-option.model';
 import { DataTableSortColumn } from '../models/data-table-sort-column.model';
 
-import { DataTableSortOrder } from '../models/data-table-sort-order.enum';
-
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
 /**
@@ -82,25 +80,14 @@ export class DataTableResourceService<T> {
 
             if (params.sortColumns.length) {
               const sortColumns = params.sortColumns.filter((column: DataTableSortColumn) => {
-                return column.sortOrder !== DataTableSortOrder.NONE;
+                return column.sortOrder !== '';
               });
 
               if (sortColumns.length) {
                 const orderData = sortColumns.reduce((accumulator: any, column: DataTableSortColumn) => {
                   if (accumulator) {
                     accumulator.fields.push(column.field);
-
-                    let sortOrderValue = '';
-                    switch (column.sortOrder) {
-                      case DataTableSortOrder.ASC:
-                        sortOrderValue = 'asc';
-                        break;
-                      case DataTableSortOrder.DESC:
-                        sortOrderValue = 'desc';
-                        break;
-                    }
-
-                    accumulator.orders.push(sortOrderValue);
+                    accumulator.orders.push(column.sortOrder);
                   }
 
                   return accumulator;

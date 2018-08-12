@@ -25,8 +25,8 @@ import { ViewPosition } from '../../../utility/models/view-position.model';
 export class DataTableColumnComponent implements OnInit, OnDestroy {
   private filterValueExtractorSubscription: Subscription;
 
-  private _sortOrder: DataTableSortOrder = DataTableSortOrder.NONE;
-  private _baseSortOrder: DataTableSortOrder;
+  private _sortOrder: DataTableSortOrder = '';
+  private _baseSortOrder: DataTableSortOrder = '';
 
   public actualWidth: number;
 
@@ -355,14 +355,14 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   public getNewSortOrder(): DataTableSortOrder {
     let newSortOrder: DataTableSortOrder;
     switch (this.sortOrder) {
-      case DataTableSortOrder.ASC:
-        newSortOrder = DataTableSortOrder.DESC;
+      case 'asc':
+        newSortOrder = 'desc';
         break;
-      case DataTableSortOrder.DESC:
-        newSortOrder = DataTableSortOrder.NONE;
+      case 'desc':
+        newSortOrder = '';
         break;
-      case DataTableSortOrder.NONE:
-        newSortOrder = DataTableSortOrder.ASC;
+      case '':
+        newSortOrder = 'asc';
         break;
     }
 
@@ -371,9 +371,9 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   public getSortIconClass() {
     return {
-      'sort-asc': this.sortOrder === DataTableSortOrder.ASC,
-      'sort-dsc': this.sortOrder === DataTableSortOrder.DESC,
-      'sort-reset': this.sortOrder === undefined || this.sortOrder === DataTableSortOrder.NONE
+      'sort-asc': this.sortOrder === 'asc',
+      'sort-dsc': this.sortOrder === 'desc',
+      'sort-reset': !this.sortOrder
     };
   }
 

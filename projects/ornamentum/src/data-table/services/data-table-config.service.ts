@@ -62,7 +62,7 @@ export class DataTableConfigService implements DataTableConfig {
 
   // Table column config
   public sortable = false;
-  public sortOrder = DataTableSortOrder.NONE;
+  public sortOrder: DataTableSortOrder = '';
   public filterable = false;
   public filterPlaceholder = '';
   public columnResizable = false;
