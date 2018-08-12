@@ -10,6 +10,8 @@ import {
 import { fromEvent } from 'rxjs';
 import { take } from 'rxjs/operators';
 
+import { Subscription } from 'rxjs/internal/Subscription';
+
 import { ComponentLoader } from './component-loader.interface';
 
 import { GlobalRefService } from './global-ref.service';
@@ -20,6 +22,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   private isVisible: boolean;
   private clickListener: () => void;
   private touchStartListener: () => void;
+  private resizeEventSubscription: Subscription;
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
               private appRef: ApplicationRef,
@@ -74,7 +77,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
       childElement.style.position = 'absolute';
     }
 
-    fromEvent(this.globalRefService.window, 'resize')
+    this.resizeEventSubscription = fromEvent(this.globalRefService.window, 'resize')
       .pipe(
         take(1)
       )
@@ -143,6 +146,10 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   }
 
   public dispose(): void {
+    if (this.resizeEventSubscription) {
+      this.resizeEventSubscription.unsubscribe();
+    }
+
     if (this.componentReference) {
       this.appRef.detachView(this.componentReference.hostView);
       this.componentReference.destroy();
