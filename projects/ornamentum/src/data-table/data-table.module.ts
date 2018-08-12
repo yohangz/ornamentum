@@ -115,7 +115,7 @@ export { DataTableFilterExpressionCallback } from './models/data-table-filter-ex
 export { DataTableCellColorRenderCallback } from './models/data-table-cell-color-render-callback.model';
 export { DataTableSelectMode } from './models/data-table-select-mode.model';
 
-export { DataTableSortOrder } from './models/data-table-sort-order.enum';
+export { DataTableSortOrder } from './models/data-table-sort-order.model';
 export { DataTableStorageMode } from './models/data-table-storage-mode.model';
 export { DataFetchMode } from './models/data-fetch-mode.enum';
 

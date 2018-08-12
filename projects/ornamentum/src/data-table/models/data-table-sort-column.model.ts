@@ -1,4 +1,4 @@
-import { DataTableSortOrder } from './data-table-sort-order.enum';
+import { DataTableSortOrder } from './data-table-sort-order.model';
 
 /**
  * Sort column.
