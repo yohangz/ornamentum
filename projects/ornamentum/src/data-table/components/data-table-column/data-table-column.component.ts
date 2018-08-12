@@ -8,7 +8,7 @@ import { DataTableFilterFieldMapperCallback } from '../../models/data-table-filt
 import { DataTableFilterExpressionCallback } from '../../models/data-table-filter-expression-callback.model';
 
 import { DropdownSelectMode } from '../../../dropdown/dropdown.module';
-import { DataTableSortOrder } from '../../models/data-table-sort-order.enum';
+import { DataTableSortOrder } from '../../models/data-table-sort-order.model';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';

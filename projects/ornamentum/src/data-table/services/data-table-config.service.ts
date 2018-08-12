@@ -4,7 +4,7 @@ import { DataTableTranslations } from '../models/data-table-translations.model';
 import { DataTableConfig } from '../models/data-table-config.model';
 
 import { DataTableStorageMode } from '../models/data-table-storage-mode.model';
-import { DataTableSortOrder } from '../models/data-table-sort-order.enum';
+import { DataTableSortOrder } from '../models/data-table-sort-order.model';
 import { DataTableSelectMode } from '../models/data-table-select-mode.model';
 import { DropdownSelectMode } from '../../dropdown/dropdown.module';
 import { ViewPosition } from '../../utility/models/view-position.model';
