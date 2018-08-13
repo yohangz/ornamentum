@@ -11,6 +11,7 @@ import { UtilityConfigService } from './services/utility-config.service';
 import { DragAndDropService } from './services/drag-and-drop.service';
 import { GlobalRefService } from './services/global-ref.service';
 import { PopoverComponentLoaderFactoryService } from './services/popover-component-loader-factory.service';
+import { ResizeService } from './services/resize.service';
 
 const DIRECTIVES = [
   ClickOutsideDirective,
@@ -25,7 +26,8 @@ const PIPES = [
 const PROVIDERS = [
   DragAndDropService,
   GlobalRefService,
-  PopoverComponentLoaderFactoryService
+  PopoverComponentLoaderFactoryService,
+  ResizeService
 ];
 
 /**

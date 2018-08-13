@@ -7,7 +7,6 @@ import {
   Type, Renderer2
 } from '@angular/core';
 
-import { fromEvent } from 'rxjs';
 import { take } from 'rxjs/operators';
 
 import { Subscription } from 'rxjs/internal/Subscription';
@@ -15,6 +14,8 @@ import { Subscription } from 'rxjs/internal/Subscription';
 import { ComponentLoader } from './component-loader.interface';
 
 import { GlobalRefService } from './global-ref.service';
+import { ResizeService } from './resize.service';
+
 import { ComponentLoaderOptions } from '../models/component-loader-options.model';
 
 export class PopoverComponentLoader<T> implements ComponentLoader<T> {
@@ -27,7 +28,8 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   constructor(private componentFactoryResolver: ComponentFactoryResolver,
               private appRef: ApplicationRef,
               private globalRefService: GlobalRefService,
-              private renderer: Renderer2) {
+              private renderer: Renderer2,
+              private resizeService: ResizeService) {
     this.isVisible = false;
   }
 
@@ -77,8 +79,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
       childElement.style.position = 'absolute';
     }
 
-    this.resizeEventSubscription = fromEvent(this.globalRefService.window, 'resize')
-      .pipe(
+    this.resizeEventSubscription = this.resizeService.resize.pipe(
         take(1)
       )
       .subscribe(() => {

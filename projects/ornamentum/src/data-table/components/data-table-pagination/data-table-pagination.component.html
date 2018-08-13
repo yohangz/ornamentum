@@ -1,5 +1,5 @@
-<div class="ng-data-table-pagination-container">
-  <div class="ng-data-table-pagination-range">
+<div class="ng-data-table-pagination-container" #paginationContainer>
+  <div class="ng-data-table-pagination-range" [hidden]="isMobile">
     {{config.translations.paginationRange}}:
     <span [textContent]="startRowIndex"></span>-<span [textContent]="endRowIndex"></span>of<span [textContent]="dataStateService.itemCount"></span>
   </div>

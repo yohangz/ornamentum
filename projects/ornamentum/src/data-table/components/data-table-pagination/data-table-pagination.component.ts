@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+
+import { throttleTime } from 'rxjs/operators';
 
 import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
+import { ResizeService } from '../../../utility/services/resize.service';
 
 /**
  * Data table pagination component.
@@ -14,10 +17,16 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
   selector: 'ng-data-table-pagination',
   templateUrl: './data-table-pagination.component.html'
 })
-export class DataTablePaginationComponent {
+export class DataTablePaginationComponent implements OnInit {
+  @ViewChild('paginationContainer')
+  private paginationContainer: ElementRef<HTMLElement>;
+
+  public isMobile = false;
+
   constructor(public config: DataTableConfigService,
               public dataStateService: DataTableDataStateService,
-              private eventStateService: DataTableEventStateService) {
+              private eventStateService: DataTableEventStateService,
+              private resizeService: ResizeService) {
   }
 
   /**
@@ -179,5 +188,13 @@ export class DataTablePaginationComponent {
     if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode !== 14 && event.keyCode !== 27)) {
       event.preventDefault();
     }
+  }
+
+  public ngOnInit(): void {
+    this.resizeService.resize.pipe(
+      throttleTime(200)
+    ).subscribe(() => {
+      this.isMobile = this.paginationContainer.nativeElement.clientWidth < 450;
+    });
   }
 }
