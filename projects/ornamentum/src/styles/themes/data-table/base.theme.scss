@@ -677,6 +677,10 @@
     @include font-size(.7, 1.4);
     @include justify-content(space-between);
 
+    &.sm-controllers {
+      width: 100%;
+    }
+
     .ng-data-table-pagination-limit {
       margin-right: 2.5rem;
 

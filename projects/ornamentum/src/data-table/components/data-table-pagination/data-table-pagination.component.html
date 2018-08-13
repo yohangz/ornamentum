@@ -3,7 +3,7 @@
     {{config.translations.paginationRange}}:
     <span [textContent]="startRowIndex"></span>-<span [textContent]="endRowIndex"></span>of<span [textContent]="dataStateService.itemCount"></span>
   </div>
-  <div class="ng-data-table-pagination-controllers">
+  <div class="ng-data-table-pagination-controllers" [class.sm-controllers]="isMobile">
     <div class="ng-data-table-pagination-limit">
       <div class="ng-data-table-pagination-input-container">
         <label class="ng-data-table-pagination-input-label">{{config.translations.paginationLimit}}:</label>
