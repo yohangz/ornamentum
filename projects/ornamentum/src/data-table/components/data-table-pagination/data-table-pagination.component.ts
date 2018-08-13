@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
-import { throttleTime } from 'rxjs/operators';
+import { debounceTime } from 'rxjs/operators';
 
 import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
@@ -192,7 +192,7 @@ export class DataTablePaginationComponent implements OnInit {
 
   public ngOnInit(): void {
     this.resizeService.resize.pipe(
-      throttleTime(200)
+      debounceTime(200)
     ).subscribe(() => {
       this.isMobile = this.paginationContainer.nativeElement.clientWidth < 450;
     });
