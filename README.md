@@ -42,16 +42,22 @@ Via [NPM](https://www.npmjs.com/)
 
 ## Features
 
-<img src="./docs/images/data.svg" alt="Data bind"/> Client, server and realtime data binding support with observables </br>
+<img src="./docs/images/data-client.svg" alt="Client data bind"/> Client side data binding support </br>
+<img src="./docs/images/data-server.svg" alt="Server data bind"/> Server side data binding support </br>
+<img src="./docs/images/data-realtime.svg" alt="Real time data bind"/> Realtime data source support with observables </br>
 <img src="./docs/images/sort.svg" alt="Sorting"/> Single and multi column sorting </br>
 <img src="./docs/images/filter.svg" alt="Filtering"/> Single and multi value filtering </br>
 <img src="./docs/images/layout.svg" alt="Layouting"/> Custom layout templating support </br>
 <img src="./docs/images/persist.svg" alt="Persistence"/> Data table state persistence with session/local storage modes </br>
 <img src="./docs/images/paging.svg" alt="Paging"/> Client and server side pagination </br>
 <img src="./docs/images/select.svg" alt="Selection"/> Single, multi and single toggle row selection modes </br>
+<img src="./docs/images/palette.svg" alt="Theming"/> UI theme support </br>
+<img src="./docs/images/column-filter.svg" alt="Column FIlter"/> Column filter support </br>
+<img src="./docs/images/row-expand.svg" alt="Detail row"/> Detail row expand support </br>
 <img src="./docs/images/resize.svg" alt="Resizing"/> Experimental column resizing </br>
 <img src="./docs/images/group.svg" alt="Grouping"/> Experimental row grouping support </br>
-<img src="./docs/images/translate.svg" alt="Translation"/> Translation support and much more
+<img src="./docs/images/translate.svg" alt="Translation"/> Translation support and much more </br>
+<img src="./docs/images/event-bind.svg" alt="Global configuration"/> Global configuration overriding capability
 
 ## How to Contribute
 
