@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/ornamentum.svg" alt="ornamentum"/>
+  <img src="https://ornamentum.app/assets/docs/ornamentum.svg" alt="ornamentum"/>
   
   <a href="https://travis-ci.org/yohangz/ornamentum">
     <img src="https://travis-ci.org/yohangz/ornamentum.svg?branch=master" alt="travis build" height="18">
@@ -42,22 +42,22 @@ Via [NPM](https://www.npmjs.com/)
 
 ## Features
 
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/data-client.svg" alt="Client data bind"/> Client side data binding support </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/data-server.svg" alt="Server data bind"/> Server side data binding support </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/data-realtime.svg" alt="Real time data bind"/> Realtime data source support with observables </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/sort.svg" alt="Sorting"/> Single and multi column sorting </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/filter.svg" alt="Filtering"/> Single and multi value filtering </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/layout.svg" alt="Layouting"/> Custom layout templating support </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/persist.svg" alt="Persistence"/> Data table state persistence with session/local storage modes </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/paging.svg" alt="Paging"/> Client and server side pagination </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/select.svg" alt="Selection"/> Single, multi and single toggle row selection modes </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/palette.svg" alt="Theming"/> UI theme support </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/column-filter.svg" alt="Column FIlter"/> Column filter support </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/row-expand.svg" alt="Detail row"/> Detail row expand support </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/resize.svg" alt="Resizing"/> Experimental column resizing </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/group.svg" alt="Grouping"/> Experimental row grouping support </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/translate.svg" alt="Translation"/> Translation support and much more </br>
-<img src="https://raw.githubusercontent.com/yohangz/ornamentum/master/docs/images/event-bind.svg" alt="Global configuration"/> Global configuration overriding capability
+<img src="https://ornamentum.app/assets/docs/data-client.svg" alt="Client data bind"/> Client side data binding support </br>
+<img src="https://ornamentum.app/assets/docs/data-server.svg" alt="Server data bind"/> Server side data binding support </br>
+<img src="https://ornamentum.app/assets/docs/data-realtime.svg" alt="Real time data bind"/> Realtime data source support with observables </br>
+<img src="https://ornamentum.app/assets/docs/sort.svg" alt="Sorting"/> Single and multi column sorting </br>
+<img src="https://ornamentum.app/assets/docs/filter.svg" alt="Filtering"/> Single and multi value filtering </br>
+<img src="https://ornamentum.app/assets/docs/layout.svg" alt="Layouting"/> Custom layout templating support </br>
+<img src="https://ornamentum.app/assets/docs/persist.svg" alt="Persistence"/> Data table state persistence with session/local storage modes </br>
+<img src="https://ornamentum.app/assets/docs/paging.svg" alt="Paging"/> Client and server side pagination </br>
+<img src="https://ornamentum.app/assets/docs/select.svg" alt="Selection"/> Single, multi and single toggle row selection modes </br>
+<img src="https://ornamentum.app/assets/docs/palette.svg" alt="Theming"/> UI theme support </br>
+<img src="https://ornamentum.app/assets/docs/column-filter.svg" alt="Column FIlter"/> Column filter support </br>
+<img src="https://ornamentum.app/assets/docs/row-expand.svg" alt="Detail row"/> Detail row expand support </br>
+<img src="https://ornamentum.app/assets/docs/resize.svg" alt="Resizing"/> Experimental column resizing </br>
+<img src="https://ornamentum.app/assets/docs/group.svg" alt="Grouping"/> Experimental row grouping support </br>
+<img src="https://ornamentum.app/assets/docs/translate.svg" alt="Translation"/> Translation support and much more </br>
+<img src="https://ornamentum.app/assets/docs/event-bind.svg" alt="Global configuration"/> Global configuration overriding capability
 
 ## How to Contribute
 

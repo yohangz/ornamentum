@@ -30,6 +30,11 @@
                 "output": "/assets"
               },
               {
+                "glob": "docs/*",
+                "input": "src/assets",
+                "output": "/assets"
+              },
+              {
                 "glob": "manifest.json",
                 "input": "src",
                 "output": "/"
