@@ -214,6 +214,7 @@
 
 
 .ng-dropdown-menu-wrapper {
+  @include box-shadow(1px 1px 10px $box-shadow-color);
   background-clip: padding-box;
   background-color: $dropdown-item-wrapper-background;
   border: .05rem solid $dropdown-item-wrapper-border;
