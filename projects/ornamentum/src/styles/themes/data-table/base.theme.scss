@@ -190,7 +190,7 @@
 
 
 .ng-data-table-column-selector-wrapper {
-  @include box-shadow(1px 1px 10px $box-shadow-color);
+  @include box-shadow(0 5px 10px 2px $box-shadow-color);
   @include font-size(.8, 1.4);
   background: $data-table-dropdown-background;
   max-height: 20rem;
