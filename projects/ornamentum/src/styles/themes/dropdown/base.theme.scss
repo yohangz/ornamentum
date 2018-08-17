@@ -214,7 +214,7 @@
 
 
 .ng-dropdown-menu-wrapper {
-  @include box-shadow(1px 1px 10px $box-shadow-color);
+  @include box-shadow(0 5px 10px 2px $box-shadow-color);
   background-clip: padding-box;
   background-color: $dropdown-item-wrapper-background;
   border: .05rem solid $dropdown-item-wrapper-border;
@@ -224,7 +224,7 @@
   font-size: 1rem;
   height: 250px;
   list-style: none;
-  margin: .125rem 0 0;
+  margin: 0;
   padding: 1rem;
   position: absolute;
   text-align: left;
