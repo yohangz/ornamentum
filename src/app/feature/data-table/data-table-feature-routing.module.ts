@@ -68,8 +68,8 @@ const dataTableFeatureRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Pagination',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'Pagination, Pageable, Ornamentum, How to enable Pagination in Ornamentum',
+        description: 'How to enable pagination for the Ornamentum data table, everything to do with pagination and related properties, with examples.'
       }
     }
   },
