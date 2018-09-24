@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTablePaginationComponent, PaginationUsageComponent } from './index';
+import { DataTablePaginationComponent, PaginationUsageComponent, PaginationPageUsageComponent } from './index';
 
 import { DataTablePaginationRoutingModule } from './data-table-pagination-routing.module';
 
@@ -17,7 +17,8 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTablePaginationComponent,
-    PaginationUsageComponent
+    PaginationUsageComponent,
+    PaginationPageUsageComponent
   ],
   exports: [],
   imports: [
