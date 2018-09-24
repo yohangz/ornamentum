@@ -63,7 +63,25 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/pagination',
-          title: 'Pagination'
+          title: 'Pagination',
+          navigation: [
+            {
+              title: 'What you will see',
+              anchor: 'whatYouWillSee',
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage',
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks',
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/column/sorting',
