@@ -12,7 +12,7 @@
 
   <h2>Basic Usage</h2>
   <p>To enable pagination simply set pageable to true</p>
-  <pre>[pageable]="true"</pre>
+  <pre class="prettyprint lang-html">{{demoSnippet.pagination}}</pre>
   <p>By default the table doesn’t paginate it’s contents, even if properties like “limit” is set, more on that
     later.</p>
 
@@ -20,19 +20,21 @@
 
   <h2>Useful properties</h2>
   <p>A few other properties effect the way pagination behaves</p>
-  <ul>
-    <li>
-      <pre>[page] = number</pre>
-      Setting this property lets you control which page the table starts off showing
-    </li>
-    <li>
-      <pre>[limit] = number</pre>
-      Controls how many rows are shown per page
-    </li>
-  </ul>
+  <h4>Page</h4>
+  <pre>[page] = number</pre>
+  <p>Setting this property lets you control which page the table starts off showing, notice how this table starts off on
+  the second page</p>
+  <app-pagination-page-usage></app-pagination-page-usage>
+
+  <app-example-code [files]="paginationUsageWithPage"></app-example-code>
+  <h4>Limit</h4>
+  <pre>[limit] = number</pre>
+  <p>Controls how many rows are shown per page, for more information on this property see the Data Limit page</p>
 
   <h2>Suggested Links</h2>
   <a rel="noopener" target="_blank" href="/feature/data-table/limit">Data Limit property</a>
+  <br>
+  <a rel="noopener" target="_blank" href="/feature/data-table/translation">Data Table Translation </a>
   <br>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#pageable">API Doc for Data Table
     Pagination</a>
