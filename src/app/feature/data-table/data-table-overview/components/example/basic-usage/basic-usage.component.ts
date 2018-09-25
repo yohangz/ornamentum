@@ -1,6 +1,4 @@
-import { Component, ElementRef, Input } from '@angular/core';
-
-import { DataTableSelectMode } from 'ornamentum';
+import { Component } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 
@@ -11,7 +9,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './basic-usage.component.html'
 })
 export class BasicUsageComponent {
-  public DataTableSelectMode = DataTableSelectMode;
 
   public dataSource: Observable<any>;
 

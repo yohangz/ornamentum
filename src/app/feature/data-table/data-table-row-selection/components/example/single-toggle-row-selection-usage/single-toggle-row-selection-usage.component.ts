@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { DataTableSelectMode } from 'ornamentum';
-
 import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
@@ -11,7 +9,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './single-toggle-row-selection-usage.component.html'
 })
 export class SingleToggleRowSelectionUsageComponent {
-  public DataTableSelectMode = DataTableSelectMode;
 
   public items: ExampleData[];
 
