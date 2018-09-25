@@ -1,24 +1,41 @@
 <div class="feature-container">
   <h1>Data Table Pagination</h1>
+  <p>Most of the time it turns out that the amount of data to be displayed can’t fit on a single page, or the page
+    becomes ridiculously long. In such cases, you might want to turn pagination on.
+  </p>
 
-  <ul class="main-pane-list">
-    <li>This help users to show pagination options in the data table.</li>
-    <li>To enable pagination it is required to set the <b>pageable</b> property into <b>true</b>.</li>
-    <li>If the value if not specified for the above property pagination will not be shown to the user.</li>
-    <li>When the pagination is enabled users can specify the number of items to be shown in a specific page, by using
-      the
-      limit text box.
-    </li>
-    <li>Users can use the navigation arrows in the pagination bar to navigate to the other pages if there are more
-      pages.
-    </li>
-  </ul>
-
+  <h2>What you will see</h2>
   <app-pagination-usage></app-pagination-usage>
+  <br>
+  <p>Ornamentum will display some controls at the bottom so users can jump between pages and set how many rows they want
+    to display per page using the limit text box</p>
+
+  <h2>Basic Usage</h2>
+  <p>To enable pagination simply set pageable to true</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.pagination}}</pre>
+  <p>By default the table doesn’t paginate it’s contents, even if properties like “limit” is set, more on that
+    later.</p>
 
   <app-example-code [files]="paginationUsage"></app-example-code>
 
+  <h2>Useful properties</h2>
+  <p>A few other properties effect the way pagination behaves</p>
+  <h4>Page</h4>
+  <pre>[page] = number</pre>
+  <p>Setting this property lets you control which page the table starts off showing, notice how this table starts off on
+  the second page</p>
+  <app-pagination-page-usage></app-pagination-page-usage>
+
+  <app-example-code [files]="paginationUsageWithPage"></app-example-code>
+  <h4>Limit</h4>
+  <pre>[limit] = number</pre>
+  <p>Controls how many rows are shown per page, for more information on this property see the Data Limit page</p>
+
   <h2>Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="/feature/data-table/limit">Data Limit property</a>
+  <br>
+  <a rel="noopener" target="_blank" href="/feature/data-table/translation">Data Table Translation </a>
+  <br>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#pageable">API Doc for Data Table
     Pagination</a>
 </div>
