@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 
-import { paginationUsage } from './data-table-pagination.list';
+import {
+  paginationUsage,
+  paginationUsageWithPage
+} from './data-table-pagination.list';
+
+import { demoSnippet } from './data-table-pagination-usage'
 
 @Component({
   selector: 'app-data-table-pagination-component',
@@ -9,4 +14,6 @@ import { paginationUsage } from './data-table-pagination.list';
 })
 export class DataTablePaginationComponent {
   public paginationUsage = paginationUsage;
+  public paginationUsageWithPage = paginationUsageWithPage;
+  public demoSnippet = demoSnippet;
 }
