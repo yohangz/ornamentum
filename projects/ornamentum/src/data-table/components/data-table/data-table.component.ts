@@ -622,7 +622,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       return false;
     }
 
-    if (this.config.selectMode === DataTableSelectMode.MULTI) {
+    if (this.config.selectMode === 'multi') {
       return this.dataStateService.selectedRows.indexOf(id) > -1;
     }
 
@@ -648,7 +648,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       };
     });
 
-    if (this.config.selectMode === DataTableSelectMode.MULTI) {
+    if (this.config.selectMode === 'multi') {
       this.dataStateService.allRowSelected = this.dataStateService.dataRows.length !== 0
         && this.dataStateService.dataRows.every((dataRow: DataTableRow<any>) => {
           return dataRow.selected;
@@ -815,7 +815,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   public writeValue(value: any): void {
-    if (this.config.selectMode === DataTableSelectMode.MULTI) {
+    if (this.config.selectMode === 'multi') {
       this.selectedRows = value;
     } else {
       this.selectedRow = value;
