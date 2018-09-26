@@ -12,6 +12,6 @@ export class PaginationUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchData(0,20);
   }
 }
