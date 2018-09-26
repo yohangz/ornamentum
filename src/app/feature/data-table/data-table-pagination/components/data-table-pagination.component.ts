@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 import {
+  demoSnippet,
   paginationUsage,
   paginationUsageWithPage
 } from './data-table-pagination.list';
-
-import { demoSnippet } from './data-table-pagination-usage'
 
 @Component({
   selector: 'app-data-table-pagination-component',
