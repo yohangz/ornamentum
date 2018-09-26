@@ -1,38 +1,74 @@
 <div class="feature-container">
   <h1>Data Table Overview</h1>
-  <p>Full fledged data table component with extensive configuration support.</p>
+  <p>The Ornamentum full fledged data table is a component which is created with extensive configuration support for
+    Angular. This comes with several built in features such as data binding, pagination, sorting, filtering, searching,
+    etc.</p>
 
-  <h1 id="featureOverview">Feature Overview</h1>
-  <ul class="main-pane-list">
-    <li>Client/Server data binding</li>
-    <li>Live/real-time data binding</li>
-    <li>Pagination</li>
-    <li>Multi/Single column sorting</li>
-    <li>Row grouping</li>
-    <li>Multi/Single value filtering</li>
-    <li>Row selection</li>
-    <li>Expandable rows</li>
-    <li>Column resizing</li>
-    <li>Cell/Header templating</li>
-    <li>Translations</li>
-  </ul>
-  <h1 id="basicUsage">Basic Usage</h1>
-  <p>The following example demonstrates the Data Table basic usage.</p>
-
+  <h2 id="basicUsage">Basic Usage</h2>
+  <p>The following example shows how the Ornamentum Data Table looks like.</p>
 
   <app-basic-usage></app-basic-usage>
 
 
-  <app-example-code [files]="basicUsage">
-  </app-example-code>
+  Responsible code segment for the above data table can be seen as follows.
 
-  <h2 id="dependencies">Dependencies</h2>
+  <app-example-code [files]="basicUsage"></app-example-code>
+
+  <h2 id="installation">Installation</h2>
+  <ol class="main-pane-list">
+    <li>Note that, as a prerequisite it it necessary to have <b>Angular 6+.</b></li>
+
+    <li>Download & Install the Ornamentum package and its dependencies using the following command.
+    </li>
+
+    <ul class="main-pane-list">
+      <li> Via <b>Yarn</b></li>
+      <pre class="prettyprint lang-html">{{demoSnippet.yarn}}</pre>
+      <li> Via <b>NPM</b></li>
+      <pre class="prettyprint lang-html">{{demoSnippet.npm}}</pre>
+    </ul>
+
+    <li>After the Installation, you can add Data Table to your application root module as shown in below.</li>
+    <pre class="prettyprint lang-html">{{demoSnippet.import}}</pre>
+  </ol>
+
+  <h2 id="peerDependencies">Peer Dependencies</h2>
+  Ornamentum data table requires following dependencies to work.
   <ul class="main-pane-list">
     <li>@angular/common</li>
     <li>@angular/core</li>
     <li>@angular/forms</li>
     <li>lodash-es</li>
     <li>rxjs</li>
+  </ul>
+
+  <h2 id="functionality">Functionality</h2>
+  In the following it shows the available features & functionalities inside the Data Table.
+
+  <ul class="main-pane-list">
+    <li>Data binding</li>
+    <ul class="main-pane-list">
+      <li><a href="feature/data-table/client-side-data-binding">Client side data binding</a></li>
+      <li><a href="feature/data-table/server-side-data-binding">Server side data binding</a></li>
+      <li><a href="feature/data-table/real-time-data-binding">Real-time side data binding</a></li>
+    </ul>
+    <li><a href="feature/data-table/column/sorting">Sorting</a></li>
+    <li><a href="feature/data-table/column/filtering">Filtering</a></li>
+    <li><a href="feature/data-table/pagination">Pagination</a></li>
+    <li><a href="feature/data-table/row-selection">Row selection</a></li>
+    <li><a href="feature/data-table/templates/expand-template">Expandable rows</a></li>
+    <li><a href="feature/data-table/grouping">Row grouping</a></li>
+    <li><a href="feature/data-table/column/resizable">Column resizing</a></li>
+    <li>Templating</li>
+    <ul class="main-pane-list">
+      <li><a href="feature/data-table/templates/cell-template">Cell Template</a></li>
+      <li><a href="feature/data-table/templates/loading-spinner-template">Loading Spinner Template</a></li>
+      <li><a href="feature/data-table/templates/no-records-template">No Records Template</a></li>
+    </ul>
+    <li><a href="feature/data-table/translations">Translations</a></li>
+    <li><a href="feature/data-table/data-persistence">Data Persistence</a></li>
+    <li>UI Theming</li>
+    <li><a href="feature/data-table/events">Events</a></li>
   </ul>
 
   <h2 id="suggestedLinks">Suggested Links</h2>

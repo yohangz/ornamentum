@@ -26,22 +26,20 @@ export class MainComponent {
           title: 'Overview',
           navigation: [
             {
-              title: 'Feature Overview',
-              anchor: 'featureOverview',
-            },
-            {
               title: 'Basic Usage',
               anchor: 'basicUsage',
             },
             {
-              title: 'Dependencies',
-              anchor: 'dependencies',
-              subNavigation: [
-                {
-                  title: 'Dependencies',
-                  anchor: 'dependencies',
-                }
-              ]
+              title: 'Installation',
+              anchor: 'installation',
+            },
+            {
+              title: 'Peer Dependencies',
+              anchor: 'peerDependencies'
+            },
+            {
+              title: 'Functionality',
+              anchor: 'functionality',
             },
             {
               title: 'Suggested Links',

@@ -8,7 +8,6 @@ import {
   DataTableDoubleClickEventArgs,
   DataTableHeaderClickEventArgs,
   DataTableRowClickEventArgs,
-  DataTableSelectMode,
   DataTableRow
 } from 'ornamentum';
 
@@ -21,7 +20,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './events-usage.component.html'
 })
 export class EventsUsageComponent {
-  public DataTableSelectMode = DataTableSelectMode;
 
   public items: ExampleData[];
 

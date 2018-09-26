@@ -114,6 +114,6 @@ export class DataTableColumnTitleHeaderComponent {
   }
 
   public get showAllRowSelectCheckbox(): boolean {
-    return this.config.selectMode === DataTableSelectMode.MULTI && this.config.showRowSelectAllCheckbox;
+    return this.config.selectMode === 'multi' && this.config.showRowSelectAllCheckbox;
   }
 }
