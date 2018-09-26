@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 
 import {
   paginationUsage,
-  paginationUsageWithPage
+  paginationUsageWithPage,
+  paginationUsageWithLimit
 } from './data-table-pagination.list';
 
 import { demoSnippet } from './data-table-pagination-usage'
@@ -15,5 +16,6 @@ import { demoSnippet } from './data-table-pagination-usage'
 export class DataTablePaginationComponent {
   public paginationUsage = paginationUsage;
   public paginationUsageWithPage = paginationUsageWithPage;
+  public paginationUsageWithLimit = paginationUsageWithLimit;
   public demoSnippet = demoSnippet;
 }

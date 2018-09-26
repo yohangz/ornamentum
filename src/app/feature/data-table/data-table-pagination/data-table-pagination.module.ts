@@ -4,7 +4,12 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTablePaginationComponent, PaginationUsageComponent, PaginationPageUsageComponent } from './index';
+import {
+  DataTablePaginationComponent,
+  PaginationUsageComponent,
+  PaginationPageUsageComponent,
+  PaginationLimitUsageComponent
+} from './index';
 
 import { DataTablePaginationRoutingModule } from './data-table-pagination-routing.module';
 
@@ -18,7 +23,8 @@ import { SharedModule } from '../../../shared/shared.module';
   declarations: [
     DataTablePaginationComponent,
     PaginationUsageComponent,
-    PaginationPageUsageComponent
+    PaginationPageUsageComponent,
+    PaginationLimitUsageComponent,
   ],
   exports: [],
   imports: [
