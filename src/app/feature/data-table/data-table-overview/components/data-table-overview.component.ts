@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { basicUsage } from './data-table-overview.list';
+import { basicUsage, demoSnippet } from './data-table-overview.list';
 
 @Component({
   selector: 'app-data-table-overview-component',
@@ -9,4 +9,5 @@ import { basicUsage } from './data-table-overview.list';
 })
 export class DataTableOverviewComponent {
   public basicUsage = basicUsage;
+  public demoSnippet = demoSnippet;
 }
