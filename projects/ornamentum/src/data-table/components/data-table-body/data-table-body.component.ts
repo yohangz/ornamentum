@@ -164,7 +164,7 @@ export class DataTableBodyComponent {
    */
   public onRowSelectClick(row: DataTableRow<any>, event: Event): void {
     // Prevent single mode checkbox getting unchecked on tapping already selected.
-    if (this.config.selectMode === DataTableSelectMode.SINGLE) {
+    if (this.config.selectMode === 'single') {
       const id = get(row.item, this.config.selectTrackBy);
       const previousSelection = this.dataStateService.selectedRow;
       this.dataStateService.selectedRow = id;
@@ -185,7 +185,7 @@ export class DataTableBodyComponent {
     const id = get(row.item, this.config.selectTrackBy);
 
     switch (this.config.selectMode) {
-      case DataTableSelectMode.MULTI: {
+      case 'multi': {
         const index = this.dataStateService.selectedRows.indexOf(id);
         if (row.selected && index < 0) {
           this.dataStateService.selectedRows.push(id);
@@ -200,7 +200,7 @@ export class DataTableBodyComponent {
         this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRows);
         break;
       }
-      case DataTableSelectMode.SINGLE_TOGGLE: {
+      case'single_toggle': {
         if (row.selected) {
           this.dataStateService.selectedRow = id;
 
@@ -217,7 +217,7 @@ export class DataTableBodyComponent {
         this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRow);
         break;
       }
-      case DataTableSelectMode.SINGLE: {
+      case 'single': {
         const previousSelection = this.dataStateService.selectedRow;
         this.dataStateService.selectedRow = id;
         row.selected = true;

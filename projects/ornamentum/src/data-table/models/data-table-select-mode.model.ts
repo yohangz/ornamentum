@@ -1,8 +1,4 @@
 /**
  * Data table row select modes.
  */
-export enum DataTableSelectMode {
-  MULTI,
-  SINGLE,
-  SINGLE_TOGGLE
-}
+export type DataTableSelectMode = 'multi' | 'single' | 'single_toggle';
