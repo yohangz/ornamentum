@@ -31,7 +31,7 @@ else
 fi
 
 docker images -a |  grep -q "$IMAGE"
-if [ "$1" == "0" ]
+if [ "$?" == "0" ]
 then
         docker rmi "$IMAGE"
         handleError "$?" "Image removed" "Image remove failure"
