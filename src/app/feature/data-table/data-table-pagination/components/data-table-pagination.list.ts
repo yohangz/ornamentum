@@ -46,6 +46,29 @@ export const paginationUsageWithPage: ExampleFile[] = [
   }
 ];
 
+export const paginationUsageWithLimit: ExampleFile[] = [
+  {
+    type: FileType.HTML,
+    name: 'pagination-limit-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/pagination-limit-usage/pagination-limit-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'pagination-limit-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/pagination-limit-usage/pagination-limit-usage.module.md')
+  },
+  {
+    type: FileType.TS,
+    name: 'pagination-limit-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/pagination-limit-usage/pagination-limit-usage.component.ts')
+  },
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
+];
+
 export const demoSnippet: any = {
   pagination: require('!!raw-loader?lang=typescript!./docs/pagination.md')
 };
