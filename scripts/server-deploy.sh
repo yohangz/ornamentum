@@ -30,12 +30,8 @@ else
         print "Container '$CONTAINER' not found" "$Gre"
 fi
 
-docker images -a |  grep -q "$IMAGE"
-if [ "$?" == "0" ]
-then
-        docker rmi "$IMAGE"
-        handleError "$?" "Image removed" "Image remove failure"
-fi
+docker image prune -f -a
+handleError "$?" "Removed unused docker images" "Unused image removal failure"
 
 docker pull "$IMAGE"
 handleError "$?" "Image pull successful" "Image pull failure"
