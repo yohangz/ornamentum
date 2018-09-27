@@ -67,7 +67,7 @@
 
   // Dropdown Selector Styles
   .ng-dropdown-toggle {
-    @include border-radius(0);
+    @include border-radius($dropdown-selector-border-radius-value);
     @include display-flex;
     @include flex-wrap(no-wrap);
     @include font-size(.8, 1.4);
@@ -214,7 +214,7 @@
 
 
 .ng-dropdown-menu-wrapper {
-  @include box-shadow(0 5px 10px 2px $box-shadow-color);
+  @include box-shadow($dropdown-item-wrapper-box-shadow);
   background-clip: padding-box;
   background-color: $dropdown-item-wrapper-background;
   border: .05rem solid $dropdown-item-wrapper-border;

@@ -218,6 +218,10 @@
               background: $ornamentum-theme-color;
             }
 
+            &.aegean-theme {
+              background: $aegean-theme-color;
+            }
+
             &::before {
               @include transform(rotate(45deg));
               @include transform-origin(0);
