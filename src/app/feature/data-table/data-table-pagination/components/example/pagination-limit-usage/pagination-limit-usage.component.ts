@@ -5,10 +5,10 @@ import { ExampleData } from '../../../../../../shared/models';
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-pagination-usage',
-  templateUrl: './pagination-usage.component.html'
+  selector: 'app-pagination-limit-usage',
+  templateUrl: './pagination-limit-usage.component.html'
 })
-export class PaginationUsageComponent {
+export class PaginationLimitUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
