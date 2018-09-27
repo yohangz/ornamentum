@@ -1,0 +1,10 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins';
+
+ul {
+  li {
+    a {
+      text-decoration: underline;
+    }
+  }
+}
