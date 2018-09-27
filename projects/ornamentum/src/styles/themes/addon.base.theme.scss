@@ -13,7 +13,7 @@ $checkbox-check-color: #ccc !default;
   &::before {
     @include transition(transform .4s cubic-bezier(.45, 1.8, .5, .75));
     @include transform(rotate(-45deg) scale(0, 0));
-    border: .09rem solid;
+    border: .1rem solid;
     border-color: $checkbox-check-color;
     border-right-style: none;
     border-top-style: none;
@@ -36,7 +36,7 @@ $checkbox-check-color: #ccc !default;
   &::after {
 
     background: $checkbox-background;
-    border: .05rem solid;
+    border: .1rem solid;
     border-color: $checkbox-outer-border;
     content: '';
     cursor: pointer;

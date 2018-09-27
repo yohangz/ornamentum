@@ -20,6 +20,7 @@ $dropdown-loading-animation-color: #3b78e7 !default;
 //Dropdown Selector Styles
 $dropdown-selector-background: #2c232b !default;
 $dropdown-selector-border: #111 !default;
+$dropdown-selector-border-radius-value: 0 !default;
 $dropdown-selector-text-color: #fff !default;
 
 //Dropdown Selector Selected Styles
@@ -33,6 +34,7 @@ $dropdown-selector-search-input-border: #ddd !default;
 $dropdown-selector-search-input-text-color: #fff !default;
 
 //Dropdown Item Wrapper Styles
+$dropdown-item-wrapper-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2) !default;
 $dropdown-item-wrapper-background: #2c232b !default;
 $dropdown-item-wrapper-border: #111 !default;
 $dropdown-item-wrapper-text-color: #fff !default;

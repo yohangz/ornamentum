@@ -5,7 +5,7 @@
       <div class="ng-data-table-column-selector-column ng-data-table-column-selector-checkbox"
            *ngIf="column.showInColumnSelector">
         <label>
-          <input  type="checkbox" [(ngModel)]="column.visible"/>
+          <input class="ng-data-table-checkbox-input"  type="checkbox" [(ngModel)]="column.visible"/>
           <span [textContent]="column.title"></span>
         </label>
       </div>

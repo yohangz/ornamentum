@@ -28,6 +28,11 @@
   @import '../dist/ornamentum/themes/addon.ornamentum.theme';
 }
 
+.om-aegean-theme {
+  @import '../dist/ornamentum/themes/aegean.theme';
+  @import '../dist/ornamentum/themes/addon.aegean.theme';
+}
+
 body {
   background: $primary-background;
   font-family: $primary-font;

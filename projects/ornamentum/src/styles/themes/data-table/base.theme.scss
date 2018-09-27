@@ -7,7 +7,9 @@
 // Data table header styles
 // Data table content styles
 .ng-data-table-container {
-  border: .07rem solid $data-table-container-border;
+  @include border-radius($data-table-container-border-radius-value);
+  @include box-shadow($data-table-container-box-shadow-value);
+  border: $data-table-container-border;
   overflow: hidden;
   position: relative;
 
@@ -144,7 +146,6 @@
   .ng-data-table-top-header-title {
     @include font-size(1, 1.8);
     color: $data-table-top-header-text-color;
-    font-weight: 700;
     margin: 0;
   }
 
@@ -190,7 +191,8 @@
 
 
 .ng-data-table-column-selector-wrapper {
-  @include box-shadow(0 5px 10px 2px $box-shadow-color);
+  @include border-radius($data-table-dropdown-border-radius-value);
+  @include box-shadow($data-table-dropdown-box-shadow-value);
   @include font-size(.8, 1.4);
   background: $data-table-dropdown-background;
   max-height: 20rem;
@@ -338,6 +340,7 @@
           padding: 0 .2rem;
 
           input {
+            @include border-radius($data-table-input-border-radius-value);
             background: $data-table-input-background;
             border: .05rem solid $data-table-input-border;
             box-sizing: border-box;
@@ -732,9 +735,11 @@
       }
 
       .ng-data-table-action-button {
+        @include border-radius($data-table-pagination-action-button-border-radius-value);
         @include font-size(.7, .8);
         @include display-flex;
         @include justify-content(center);
+        @include transition(.5s all ease);
         background-color: $data-table-pagination-action-button-background;
         border: .05rem solid $data-table-pagination-action-button-border;
         cursor: pointer;
@@ -763,6 +768,11 @@
 
           &:hover {
             background-color: $data-table-pagination-first-page-action-button-background-hover;
+            border: .05rem solid $data-table-pagination-first-page-action-button-hover-border;
+
+            &::before {
+              background: inline-svg($first-page-icon-url-hover) no-repeat;
+            }
           }
         }
 
@@ -778,6 +788,11 @@
 
           &:hover {
             background-color: $data-table-pagination-previous-page-action-button-background-hover;
+            border: .05rem solid $data-table-pagination-previous-page-action-button-hover-border;
+
+            &::before {
+              background: inline-svg($previous-page-icon-url-hover) no-repeat;
+            }
           }
         }
 
@@ -792,6 +807,11 @@
 
           &:hover {
             background-color: $data-table-pagination-next-page-action-button-background-hover;
+            border: .05rem solid $data-table-pagination-next-page-action-button-hover-border;
+
+            &::before {
+              background: inline-svg($next-page-icon-url-hover) no-repeat;
+            }
           }
         }
 
@@ -806,11 +826,17 @@
 
           &:hover {
             background-color: $data-table-pagination-last-page-action-button-background-hover;
+            border: .05rem solid $data-table-pagination-last-page-action-button-hover-border;
+
+            &::before {
+              background: inline-svg($last-page-icon-url-hover) no-repeat;
+            }
           }
         }
 
         &:hover {
           background-color: $data-table-pagination-action-button-background-hover;
+          border: .05rem solid $data-table-pagination-action-button-hover-border;
         }
       }
 

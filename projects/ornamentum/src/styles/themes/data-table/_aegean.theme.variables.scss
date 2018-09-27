@@ -1,16 +1,17 @@
 
 //Data Table Icons
-$data-table-icon-color: #fff;
-$data-table-pagination-icon-color: #00529f;
-$data-table-pagination-icon-hover-color: #00529f;
+$data-table-icon-color: #444;
+$data-table-header-icon-color: #fff;
+$data-table-pagination-icon-color: #444;
+$data-table-pagination-icon-hover-color: #fff;
 $data-table-icon-close-color: #d32f2f;
 $data-table-loading-animation-color: #3b78e7;
 
 $close-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-close-color + '" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>';
 $collapsed-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.7 476.7"><path fill="' + $data-table-icon-color + '" d="M238.4 0C106.7 0 0 106.7 0 238.4c0 131.7 106.7 238.4 238.4 238.4 131.7 0 238.4-106.7 238.4-238.4C476.7 106.7 370 0 238.4 0zM352.7 210L249.7 313.1c-3.1 3.2-7.2 4.7-11.3 4.6 -4.1 0-8.2-1.5-11.3-4.6L124 210c-6.2-6.2-6.2-16.3 0-22.5 6.2-6.2 16.3-6.2 22.5 0l91.9 91.9 91.9-91.9c6.2-6.2 16.3-6.2 22.5 0C358.9 193.7 358.9 203.8 352.7 210z"/></svg>';
 $expand-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.7 476.7"><path fill="' + $data-table-icon-color + '" d="M238.4 0C106.7 0 0 106.7 0 238.4c0 131.7 106.7 238.4 238.4 238.4 131.7 0 238.4-106.7 238.4-238.4C476.7 106.7 370 0 238.4 0zM352.7 289.2c-6.2 6.2-16.3 6.2-22.5 0l-91.9-91.9 -91.9 91.9c-6.2 6.2-16.3 6.2-22.5 0 -6.2-6.2-6.2-16.3 0-22.5L227.1 163.7c3.1-3.1 7.2-4.6 11.3-4.6s8.2 1.5 11.3 4.6L352.7 266.8C358.9 272.9 358.9 283 352.7 289.2z"/></svg>';
-$refresh-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color + '" d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/></svg>';
-$list-view-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color + '" d="M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z"/></svg>';
+$refresh-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-header-icon-color + '" d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/></svg>';
+$list-view-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-header-icon-color + '" d="M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z"/></svg>';
 $sort-ascending-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"><path fill="' + $data-table-icon-color + '" d="M3 6 9 6 9 8 3 8 3 6Zm0 12 0-2 18 0 0 2-18 0zm0-7 12 0 0 2-12 0 0-2z"/></svg>';
 $sort-descending-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color + '" d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/></svg>';
 $sort-reset-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color + '" d="M6 7h2.5L5 3.5 1.5 7H4v10H1.5L5 20.5 8.5 17H6V7zm4-2v2h12V5H10zm0 14h12v-2H10v2zm0-6h12v-2H10v2z"/></svg>';
@@ -30,104 +31,114 @@ $box-shadow-color: rgba(0, 0, 0, .5) !default;
 $delete-color: #d32f2f !default;
 
 //Data Table Container Styles
-$data-table-container-border: .07rem solid #eaeaea !default;
-$data-table-container-border-radius-value: 0 !default;
-$data-table-container-box-shadow-value: none !default;
+$data-table-container-border: 0 !default;
+$data-table-container-border-radius-value: .2rem !default;
+$data-table-container-box-shadow-value: 0 0.1rem 0.2rem rgba(0, 0, 0, .3) !default;
 
 //Data Table Top Header Styles
-$data-table-top-header-background: #00529f !default;
-$data-table-top-header-border: #8aa7dc !default;
+$data-table-top-header-background: #396996 !default;
+$data-table-top-header-border: #ddd !default;
 $data-table-top-header-text-color: #fff !default;
 
 //Data Table Dropdown Styles
-$data-table-dropdown-background: #00529f !default;
+$data-table-dropdown-background: #fff !default;
 $data-table-dropdown-box-shadow-value: 2px 2px 10px rgba(0, 0, 0, 0.2) !default;
-$data-table-dropdown-border: #eaeaea !default;
-$data-table-dropdown-border-radius-value: 0 !default;
-$data-table-dropdown-heading-background: #064684 !default;
-$data-table-dropdown-heading-text-color: #fff !default;
-$data-table-dropdown-text-color: #fff !default;
+$data-table-dropdown-border: #ddd !default;
+$data-table-dropdown-border-radius-value: .2rem !default;
+$data-table-dropdown-heading-background: #fff !default;
+$data-table-dropdown-heading-text-color: #444 !default;
+$data-table-dropdown-text-color: #444 !default;
 
 
 //Data Table Content Header Styles
-$data-table-content-header-background: #009fe0 !default;
-$data-table-content-header-border: #8aa7dc !default;
-$data-table-content-header-text-color: #f5f5f5 !default;
+$data-table-content-header-background: #f1f1f1 !default;
+$data-table-content-header-border: #ddd !default;
+$data-table-content-header-text-color: #444 !default;
 
 //Data Table Input Styles
 $data-table-input-background: #fff !default;
-$data-table-input-border: #009fe0 !default;
-$data-table-input-border-radius-value: 0 !default;
+$data-table-input-border: #ddd !default;
+$data-table-input-border-radius-value: .2rem !default;
 $data-table-input-text-color: #444 !default;
 
 //Data Table Content Styles
 $data-table-content-background: #fff !default;
-$data-table-content-border: #eaeaea !default;
+$data-table-content-border: #ddd !default;
 
 //Common Data Table Styles
 
-$data-table-border: #eaeaea !default;
+$data-table-border: #ddd !default;
 $data-table-row-background: #fff !default;
-$data-table-cell-text-color: #f5f5f5 !default;
-$data-table-row-hover-background: #ccc !default;
-$data-table-row-hover-cell-text-color: #333 !default;
+$data-table-cell-text-color: #444 !default;
+$data-table-row-hover-background: #f1f5fd !default;
+$data-table-row-hover-cell-text-color: #444 !default;
 
 
 $data-table-odd-row-background: #fff !default;
-$data-table-odd-row-cell-text-color: #666 !default;
-$data-table-odd-row-hover-background: #ccc !default;
-$data-table-odd-row-hover-cell-text-color: #333 !default;
+$data-table-odd-row-cell-text-color: #444 !default;
+$data-table-odd-row-hover-background: #f1f5fd !default;
+$data-table-odd-row-hover-cell-text-color: #444 !default;
 
 
-$data-table-even-row-background: #f5f5f5 !default;
-$data-table-even-row-cell-text-color: #666 !default;
-$data-table-even-row-hover-background: #ccc !default;
-$data-table-even-row-hover-cell-text-color: #333 !default;
+$data-table-even-row-background: #f7f7f7 !default;
+$data-table-even-row-cell-text-color: #444 !default;
+$data-table-even-row-hover-background: #f1f5fd !default;
+$data-table-even-row-hover-cell-text-color: #444 !default;
 
 
-$data-table-selected-row-background:  #8e8989 !default;
-$data-table-selected-row-cell-text-color: #f5f5f5 !default;
-$data-table-selected-row-hover-background: #8e8989 !default;
-$data-table-selected-row-hover-cell-text-color: #333 !default;
+$data-table-selected-row-background:  #a8c2f1 !default;
+$data-table-selected-row-cell-text-color: #444 !default;
+$data-table-selected-row-hover-background: #a8c2f1 !default;
+$data-table-selected-row-hover-cell-text-color: #444 !default;
 
 
 //Data Table Loading Window Background
-$data-table-loading-window-background: #f1f1f1 !default;
-$data-table-loading-window-border: #eaeaea !default;
+$data-table-loading-window-background: #fff !default;
+$data-table-loading-window-border: #ddd !default;
 
 
 //No Record Message Text Color
-$ng-data-table-no-records-main-heading-message-text-color: #00529f !default;
+$ng-data-table-no-records-main-heading-message-text-color: #3b78e7 !default;
 $ng-data-table-no-records-sub-heading-message-text-color: #333 !default;
 
 //Data Table Pagination Style
-$data-table-pagination-background: #00529f !default;
-$data-table-pagination-border: #eaeaea !default;
-$data-table-pagination-range-text-color: #fff !default;
-$data-table-pagination-range-value-text-color: #fff !default;
-$data-table-pagination-text-color: #fff !default;
-$data-table-pagination-input-border: #fff !default;
-$data-table-pagination-input-label-border: #fff !default;
-$data-table-pagination-input-label-text-color: #fff !default;
+$data-table-pagination-background: #fff !default;
+$data-table-pagination-border: #ddd !default;
+$data-table-pagination-range-text-color: #444 !default;
+$data-table-pagination-range-value-text-color: #3b78e7 !default;
+$data-table-pagination-text-color: #444 !default;
+$data-table-pagination-input-border: #ddd !default;
+$data-table-pagination-input-label-border: #ddd !default;
+$data-table-pagination-input-label-text-color: #444 !default;
 $data-table-pagination-input-background: #fff !default;
-$data-table-pagination-input-text-color: #333 !default;
+$data-table-pagination-input-text-color: #444 !default;
 
 //Data Table Pagination Action Button Styles
 $data-table-pagination-action-button-background: #fff !default;
 $data-table-pagination-action-button-background-hover: #f5f5f5 !default;
-$data-table-pagination-action-button-border: #fff !default;
-$data-table-pagination-action-button-border-radius-value: 0 !default;
-$data-table-pagination-disabled-action-button-background: #ccc !default;
-$data-table-pagination-disabled-action-button-border: #ccc !default;;
+$data-table-pagination-action-button-border: #ddd !default;
+$data-table-pagination-action-button-border-radius-value: .15rem !default;
+$data-table-pagination-action-button-hover-border: #ddd !default;
+
+$data-table-pagination-disabled-action-button-background: #fff !default;
+$data-table-pagination-disabled-action-button-border: #ddd !default;
+
 $data-table-pagination-first-page-action-button-background: #fff !default;
-$data-table-pagination-first-page-action-button-background-hover: #f5f5f5 !default;
-$data-table-pagination-first-page-action-button-border: #fff !default;
+$data-table-pagination-first-page-action-button-background-hover: #144067 !default;
+$data-table-pagination-first-page-action-button-border: #ddd !default;
+$data-table-pagination-first-page-action-button-hover-border: #144067 !default;
+
 $data-table-pagination-previous-page-action-button-background: #fff !default;
-$data-table-pagination-previous-page-action-button-background-hover: #f5f5f5 !default;
-$data-table-pagination-previous-page-action-button-border: #fff !default;
+$data-table-pagination-previous-page-action-button-background-hover: #144067 !default;
+$data-table-pagination-previous-page-action-button-border: #ddd !default;
+$data-table-pagination-previous-page-action-button-hover-border: #144067 !default;
+
 $data-table-pagination-next-page-action-button-background: #fff !default;
-$data-table-pagination-next-page-action-button-background-hover: #f5f5f5 !default;
-$data-table-pagination-next-page-action-button-border: #fff !default;
+$data-table-pagination-next-page-action-button-background-hover: #144067 !default;
+$data-table-pagination-next-page-action-button-border: #ddd !default;
+$data-table-pagination-next-page-action-button-hover-border: #144067 !default;
+
 $data-table-pagination-last-page-action-button-background: #fff !default;
-$data-table-pagination-last-page-action-button-background-hover: #f5f5f5 !default;
-$data-table-pagination-last-page-action-button-border: #fff !default;
+$data-table-pagination-last-page-action-button-background-hover: #144067 !default;
+$data-table-pagination-last-page-action-button-border: #ddd !default;
+$data-table-pagination-last-page-action-button-hover-border: #144067 !default;
