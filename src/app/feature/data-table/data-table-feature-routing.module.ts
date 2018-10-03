@@ -110,18 +110,6 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-limit/data-table-limit.module#DataTableLimitModule',
-    path: 'limit',
-    canActivate: [SeoGuard],
-    data: {
-      seo: {
-        title: 'Ornamentum | Data Table | Functionality | Data Limit',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
-      }
-    }
-  },
-  {
     loadChildren: './data-table-substitute-rows/data-table-substitute-rows.module#DataTableSubstituteRowsModule',
     path: 'substitute-rows',
     canActivate: [SeoGuard],

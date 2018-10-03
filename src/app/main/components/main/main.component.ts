@@ -114,10 +114,6 @@ export class MainComponent {
           title: 'Data Loading Spinner'
         },
         {
-          routePath: '/feature/data-table/limit',
-          title: 'Data Limit'
-        },
-        {
           routePath: '/feature/data-table/header-details',
           title: 'Header Details'
         },
