@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
-import { cellTemplateUsage } from './data-table-cell-template.list';
-import { demoSnippet } from './data-table-cell-template';
+import { cellTemplateUsage, demoSnippet } from './data-table-cell-template.list';
 
 @Component({
   selector: 'app-data-table-cell-template-component',
@@ -10,6 +9,5 @@ import { demoSnippet } from './data-table-cell-template';
 })
 export class DataTableCellTemplateComponent {
   public cellTemplateUsage = cellTemplateUsage;
-
   public demoSnippet = demoSnippet;
 }

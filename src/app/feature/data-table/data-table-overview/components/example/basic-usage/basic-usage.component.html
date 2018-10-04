@@ -53,12 +53,6 @@
     [dropdownFilterSearchable]="true"
     [dropDownFilterShowOptionSelectCheckbox]="true"
     [filterPlaceholder]="'Search'">
-    <ng-template #ngDataTableCell let-row="row">
-      <td>
-        <span><i class="zmdi zmdi-time"></i></span>
-        <span style="color: #4dc71f">{{row.item.retailerType}}</span>
-      </td>
-    </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
