@@ -131,7 +131,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/templates/cell-template',
-          title: 'Cell Template'
+          title: 'Cell Template',
+          navigation: [
+            {
+              title: 'What you will see',
+              anchor: 'whatYouWillSee',
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage',
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks',
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/templates/expand-template',
