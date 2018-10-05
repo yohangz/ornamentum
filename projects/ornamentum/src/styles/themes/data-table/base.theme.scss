@@ -150,9 +150,9 @@
   }
 
   .ng-data-table-top-header-button-container {
-    position: absolute;
-    right: 0;
-    top: .7em;
+    @include display-flex;
+    @include align-items(center);
+
 
     .ng-data-table-action-button {
       border: 0;
@@ -163,7 +163,6 @@
         background-size: contain;
         height: 1.4em;
         margin-right: .5em;
-
       }
 
       &.ng-data-table-column-selector-button {
@@ -171,8 +170,6 @@
         background: inline-svg($list-view-icon-url) no-repeat;
         background-size: contain;
         height: 1.4em;
-        margin-right: .5em;
-
       }
 
       &:focus,
