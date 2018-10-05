@@ -7,29 +7,29 @@
   <h2 id="whatYouWillSee">What you will see</h2>
   <app-pagination-usage></app-pagination-usage>
   <br>
-  <p>Ornamentum will display some controls at the bottom so users can jump between pages and set how many rows they want
-    to display per page using the limit text box</p>
+  <p>The Pagination controls will be displayed on the bottom of the grid.User can set the number of
+    rows displayed on the grid page and navigation controls.</p>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To enable pagination simply set pageable to true</p>
+  <p>To enable pagination, simply set [pageable] to true</p>
   <pre class="prettyprint lang-html">{{demoSnippet.pagination}}</pre>
-  <p>By default the table doesn’t paginate it’s contents, even if properties like “limit” is set, more on that
+  <p>By default the table doesn’t paginate it’s contents; even if properties like “limit” is set. More on that will be explained
     later.</p>
 
   <app-example-code [files]="paginationUsage"></app-example-code>
 
   <h2 id="usefulProperties">Useful properties</h2>
-  <p>A few other properties effect the way pagination behaves</p>
+  <p>There are a few properties which effect the behaviour of Pagination controls.</p>
   <h4>Page</h4>
   <pre>[page] = number</pre>
-  <p>Setting this property lets you control which page the table starts off showing, notice how this table starts off on
-    the second page</p>
+  <p>The [page] property lets you control which page the table starts off showing, notice how this table starts off on
+  the second page</p>
   <app-pagination-page-usage></app-pagination-page-usage>
 
   <app-example-code [files]="paginationUsageWithPage"></app-example-code>
   <h4>Limit</h4>
   <pre>[limit] = number</pre>
-  <p>Controls how many rows are shown per page, for more information on this property see the Data Limit page</p>
+  <p>Controls how many rows are shown per page. Further information on this property is available in Data Limit page</p>
   <app-pagination-limit-usage></app-pagination-limit-usage>
 
   <app-example-code [files]="paginationUsageWithLimit"></app-example-code>
