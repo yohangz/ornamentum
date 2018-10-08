@@ -29,11 +29,14 @@ $dropdown-selector-selected-color: #444 !default;
 
 //Dropdown Search Box Styles
 $dropdown-selector-search-icon-background: #396996 !default;
+$dropdown-selector-search-icon-border-radius: .2rem 0 0 .2rem !default;
 $dropdown-selector-search-input-background: #fff !default;
 $dropdown-selector-search-input-border: #ddd !default;
+$dropdown-selector-search-input-border-radius: 0 .2rem .2rem 0 !default;
 $dropdown-selector-search-input-text-color: #444 !default;
 
 //Dropdown Item Wrapper Styles
+$dropdown-item-wrapper-border-radius-value: .2rem !default;
 $dropdown-item-wrapper-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2) !default;
 $dropdown-item-wrapper-background: #fff !default;
 $dropdown-item-wrapper-border: #ddd !default;
@@ -44,11 +47,12 @@ $dropdown-item-wrapper-divider-border: #ddd !default;
 $dropdown-no-data-message-text-color: #396996 !default;
 
 //Dropdown Item Container Styles
+$dropdown-item-container-border-radius-value: .2rem !default;
 $dropdown-item-container-wrapper-border: #eaeaea !default;
 
 $dropdown-item-container-item-background: #fff !default;
 $dropdown-item-container-item-text-color: #333 !default;
-$dropdown-item-container-item-border: transparent !default;
+$dropdown-item-container-item-border: #f5f5f5 !default;
 
 $dropdown-item-container-item-hover-background:  #f1f5fd !default;
 $dropdown-item-container-item-hover-text-color: #444 !default;

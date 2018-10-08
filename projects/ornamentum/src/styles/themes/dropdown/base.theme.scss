@@ -146,6 +146,7 @@
       @include display-flex;
       @include align-items(center);
       @include font-size(.875, 1.5);
+      @include border-radius($dropdown-selector-search-icon-border-radius);
       background: $dropdown-selector-search-icon-background;
       border: 0;
       margin-bottom: 0;
@@ -171,6 +172,7 @@
       @include display-flex;
       @include flex(1 1 auto);
       @include align-items(center);
+      @include border-radius($dropdown-selector-search-input-border-radius);
       background: $dropdown-selector-search-input-background;
       border: .05rem solid $dropdown-selector-search-input-border;
       color: $dropdown-selector-search-input-text-color;
@@ -215,10 +217,10 @@
 
 .ng-dropdown-menu-wrapper {
   @include box-shadow($dropdown-item-wrapper-box-shadow);
+  @include border-radius($dropdown-item-wrapper-border-radius-value);
   background-clip: padding-box;
   background-color: $dropdown-item-wrapper-background;
   border: .05rem solid $dropdown-item-wrapper-border;
-  border-radius: 0;
   color: $dropdown-item-wrapper-text-color;
   display: block;
   font-size: 1rem;
@@ -240,6 +242,7 @@
   }
 
   .ng-dropdown-item-container-wrapper {
+    @include border-radius($dropdown-item-container-border-radius-value);
     -webkit-overflow-scrolling: touch;
     border: .07rem solid $dropdown-item-container-wrapper-border;
     height: 100%;
@@ -317,7 +320,6 @@
           border-color: $dropdown-item-container-group-heading-border;
           color: $dropdown-item-container-group-heading-color;
           cursor: default;
-          font-weight: 700;
           padding: .3rem .3rem;
 
           &:hover {

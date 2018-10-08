@@ -45,9 +45,7 @@
 
     // Data table content header container styles
     .ng-data-table-content-header-container {
-      background: $data-table-content-header-background;
       border: 0;
-      border-bottom: .05rem solid $data-table-content-header-border;
 
       .ng-data-table-content-header {
         border: 0;
@@ -55,7 +53,9 @@
         width: 100%;
 
         .ng-data-table {
+          background: $data-table-content-header-background;
           border: 0;
+          border-bottom: .05rem solid $data-table-content-header-border;
           border-right: .05rem solid transparent;
         }
       }
@@ -402,6 +402,9 @@
           position: relative;
 
           %table-expand-icon {
+
+            background: inline-svg($expand-icon-url) no-repeat;
+            background-size: contain;
             content: '';
             cursor: pointer;
             height: 1.2em;
@@ -413,14 +416,13 @@
 
           .ng-data-table-expander-collapsed-icon {
             @extend %table-expand-icon;
-            background: inline-svg($collapsed-icon-url) no-repeat;
-            background-size: contain;
+            @include transform(rotate(90deg));
           }
 
           .ng-data-table-expander-expanded-icon {
             @extend %table-expand-icon;
-            background: inline-svg($expand-icon-url) no-repeat;
-            background-size: contain;
+            @include transform(rotate(180deg));
+
           }
 
 
