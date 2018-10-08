@@ -29,11 +29,14 @@ $dropdown-selector-selected-color: #f5f5f5 !default;
 
 //Dropdown Search Box Styles
 $dropdown-selector-search-icon-background: #424040 !default;
+$dropdown-selector-search-icon-border-radius: 0 !default;
 $dropdown-selector-search-input-background: #313335 !default;
 $dropdown-selector-search-input-border: #3e3e3e !default;
+$dropdown-selector-search-input-border-radius: 0 !default;
 $dropdown-selector-search-input-text-color: #cacaca !default;
 
 //Dropdown Item Wrapper Styles
+$dropdown-item-wrapper-border-radius-value: 0 !default;
 $dropdown-item-wrapper-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2) !default;
 $dropdown-item-wrapper-background: #333 !default;
 $dropdown-item-wrapper-border: #333 !default;
@@ -44,6 +47,7 @@ $dropdown-item-wrapper-divider-border: #333 !default;
 $dropdown-no-data-message-text-color: #cacaca !default;
 
 //Dropdown Item Container Styles
+$dropdown-item-container-border-radius-value: 0 !default;
 $dropdown-item-container-wrapper-border: #222 !default;
 
 $dropdown-item-container-item-background: #444 !default;
