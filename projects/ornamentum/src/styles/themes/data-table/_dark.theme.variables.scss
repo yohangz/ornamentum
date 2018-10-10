@@ -96,8 +96,12 @@ $data-table-loading-window-border: #222 !default;
 
 
 //No Record Message Text Color
-$ng-data-table-no-records-main-heading-message-text-color: #fff !default;
-$ng-data-table-no-records-sub-heading-message-text-color: #cacaca !default;
+$data-table-no-records-main-heading-message-text-color: #fff !default;
+$data-table-no-records-sub-heading-message-text-color: #cacaca !default;
+$data-table-no-records-button-background: #222 !default;
+$data-table-no-records-button-border: #fff !default;
+$data-table-no-records-button-text-color: #fff !default;
+$data-table-no-records-button-border-radius-value: .2rem !default;
 
 //Data Table Pagination Style
 $data-table-pagination-background: #3c3f41 !default;
