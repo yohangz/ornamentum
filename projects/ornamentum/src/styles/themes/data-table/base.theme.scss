@@ -392,7 +392,7 @@
         font-weight: 400;
         padding: .2rem .5rem;
         vertical-align: top;
-        word-break: break-all;
+        word-break: break-word;
 
         &:last-child {
           border-right: 0;
@@ -617,14 +617,29 @@
   h1,
   .ng-data-table-no-records-main-heading-message {
     @include font-size(1.2, 2);
-    color: $ng-data-table-no-records-main-heading-message-text-color;
+    color: $data-table-no-records-main-heading-message-text-color;
     margin-bottom: 0;
   }
 
   h2,
   .ng-data-table-no-records-sub-heading-message {
     @include font-size(.8, 1.4);
-    color: $ng-data-table-no-records-sub-heading-message-text-color;
+    color: $data-table-no-records-sub-heading-message-text-color;
+  }
+
+  .ng-data-table-no-records-message-button {
+    @include font-size(.8, 1.4);
+    @include border-radius($data-table-no-records-button-border-radius-value);
+    background: $data-table-no-records-button-background;
+    border: .1rem solid $data-table-no-records-button-border;
+    color: $data-table-no-records-button-text-color;
+    cursor: pointer;
+    font-weight: 700;
+
+    &:hover {
+      background: $data-table-no-records-button-text-color;
+      color: $data-table-no-records-button-background;
+    }
   }
 }
 
