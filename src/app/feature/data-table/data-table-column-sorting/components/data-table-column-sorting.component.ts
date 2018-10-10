@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 
-import { columnSortingUsage } from './data-table-column-sorting.list';
+import {
+  columnSortingUsage,
+  columnSortingUsageWithMultiColumnSortable,
+  columnSortingUsageWithSortField,
+  columnSortingUsageWithSortOrder,
+  demoSnippet
+} from './data-table-column-sorting.list';
 
 @Component({
   selector: 'app-data-table-column-sorting-component',
@@ -9,4 +15,8 @@ import { columnSortingUsage } from './data-table-column-sorting.list';
 })
 export class DataTableColumnSortingComponent {
   public columnSortingUsage = columnSortingUsage;
+  public columnSortingUsageWithSortOrder = columnSortingUsageWithSortOrder;
+  public columnSortingUsageWithSortField = columnSortingUsageWithSortField;
+  public columnSortingUsageWithMultiColumnSortable = columnSortingUsageWithMultiColumnSortable;
+  public demoSnippet = demoSnippet;
 }
