@@ -5,10 +5,10 @@ import { ExampleData } from '../../../../../../shared/models';
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-column-sorting-usage',
-  templateUrl: './column-sorting-usage.component.html'
+  selector: 'app-column-sorting-multi-column-sortable-usage',
+  templateUrl: './column-sorting-multi-column-sortable-usage.html'
 })
-export class ColumnSortingUsageComponent {
+export class ColumnSortingMultiColumnSortableUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
