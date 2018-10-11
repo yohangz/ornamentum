@@ -65,7 +65,7 @@ export class MainComponent {
           navigation: [
             {
               title: 'What you will see',
-              anchor: 'whatYouWillSee',
+              anchor: 'whatYouWillSee'
             },
             {
               title: 'Basic Usage',
@@ -83,7 +83,53 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/column/sorting',
-          title: 'Column Sorting'
+          title: 'Column Sorting',
+          navigation: [
+            {
+              title: 'Introduction',
+              anchor: 'introduction',
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage',
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Sort Order',
+                  anchor: 'sortOrder'
+                },
+                {
+                  title: 'Sort Field',
+                  anchor: 'sortField'
+                },
+                {
+                  title: 'Multi Column Sortable',
+                  anchor: 'multiColumnSortable'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks',
+              subNavigation: [
+                {
+                  title: 'Column Resizing',
+                  anchor: 'columnResizing'
+                },
+                {
+                  title: 'Pagination',
+                  anchor: 'pagination'
+                },
+                {
+                  title: 'API Doc for Data Table Column Sorting',
+                  anchor: 'aPIDocDataTableColumnSorting'
+                }
+              ]
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/grouping',
