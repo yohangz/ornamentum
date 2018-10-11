@@ -70,7 +70,6 @@
     @include border-radius($dropdown-selector-border-radius-value);
     @include display-flex;
     @include flex-wrap(no-wrap);
-    @include font-size(.8, 1.4);
     background: $dropdown-selector-background;
     border: .05rem solid $dropdown-selector-border;
     color: $dropdown-selector-text-color;
@@ -145,7 +144,6 @@
     .ng-dropdown-input-group-addon {
       @include display-flex;
       @include align-items(center);
-      @include font-size(.875, 1.5);
       @include border-radius($dropdown-selector-search-icon-border-radius);
       background: $dropdown-selector-search-icon-background;
       border: 0;
@@ -156,6 +154,7 @@
       width: 2em;
 
       &::after {
+        @include transform(translateY(-50%));
         background: inline-svg($search-icon-url);
         background-size: contain;
         content: '';
@@ -163,7 +162,7 @@
         height: 1.7em;
         left: .2em;
         position: absolute;
-        top: .2em;
+        top: 50%;
         width: 1.7em;
       }
     }
@@ -176,8 +175,8 @@
       background: $dropdown-selector-search-input-background;
       border: .05rem solid $dropdown-selector-search-input-border;
       color: $dropdown-selector-search-input-text-color;
-      font-size: .875rem;
-      line-height: 1.5;
+      //font-size: .875rem;
+      //line-height: 1.5;
       margin-bottom: 0;
       outline: none;
       padding: .25rem 1.5rem .25rem .5rem;
@@ -188,9 +187,12 @@
   }
 
   .ng-dropdown-input-group-btn {
+    @include transform(translateY(-50%));
+    height: 1.7em;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: .3em;
+    top: 50%;
+    width: 1.7em;
     z-index: 2;
 
     .ng-dropdown-delete-button {
@@ -198,13 +200,9 @@
       background-size: contain;
       border: 0;
       cursor: pointer;
-      height: 1.7em;
+      height: 100%;
       outline: none;
-      padding: .3rem .5rem;
-      position: absolute;
-      right: .1em;
-      top: .1em;
-      width: 1.7em;
+      width: 100%;
     }
   }
 }
@@ -223,7 +221,6 @@
   border: .05rem solid $dropdown-item-wrapper-border;
   color: $dropdown-item-wrapper-text-color;
   display: block;
-  font-size: 1rem;
   height: 250px;
   list-style: none;
   margin: 0;
@@ -256,7 +253,6 @@
       position: relative;
 
       .ng-dropdown-no-data {
-        @include font-size(1.2, 1.6);
         @include display-flex;
         @include align-items(center);
         @include justify-content(center);
@@ -274,7 +270,6 @@
       }
 
       li {
-        @include font-size(.8, 1);
         background: $dropdown-item-container-item-background;
         border-bottom: .05rem solid $dropdown-item-container-item-border;
         cursor: pointer;

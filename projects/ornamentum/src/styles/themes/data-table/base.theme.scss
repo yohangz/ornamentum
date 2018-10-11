@@ -89,7 +89,7 @@
       font-size: inherit;
       font-weight: normal;
       margin: .2rem 0;
-      padding: .12rem 3rem .2rem .5rem;
+      padding: .05rem 3rem .05rem .5rem;
       width: 100%;
 
       .ng-dropdown-selected-value {
@@ -114,6 +114,10 @@
         top: .4rem;
       }
     }
+  }
+
+  .ng-dropdown-menu-wrapper {
+    @include font-size(.7, 1.2)
   }
 }
 
@@ -347,7 +351,7 @@
             line-height: inherit;
             margin: .2rem 0;
             outline: 0;
-            padding: 0 .8rem 0 .3rem;
+            padding: .05rem .8rem .05rem .3rem;
             width: 100%;
           }
 
