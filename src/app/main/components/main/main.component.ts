@@ -86,8 +86,8 @@ export class MainComponent {
           title: 'Column Sorting',
           navigation: [
             {
-              title: 'Introduction',
-              anchor: 'introduction',
+              title: 'What you will see',
+              anchor: 'whatYouWillSee'
             },
             {
               title: 'Basic Usage',
@@ -113,21 +113,7 @@ export class MainComponent {
             },
             {
               title: 'Suggested Links',
-              anchor: 'suggestedLinks',
-              subNavigation: [
-                {
-                  title: 'Column Resizing',
-                  anchor: 'columnResizing'
-                },
-                {
-                  title: 'Pagination',
-                  anchor: 'pagination'
-                },
-                {
-                  title: 'API Doc for Data Table Column Sorting',
-                  anchor: 'aPIDocDataTableColumnSorting'
-                }
-              ]
+              anchor: 'suggestedLinks'
             }
           ]
         },

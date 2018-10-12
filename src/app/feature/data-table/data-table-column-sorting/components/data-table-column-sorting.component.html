@@ -1,7 +1,6 @@
 <div class="feature-container">
   <h1>Data Table Column Sorting</h1>
 
-  <h2 id="introduction">Introduction</h2>
   <p>This feature enables column data sorting according to the selected sorting order in specified column fields.
     Following configurations are available when dealing with data table column sorting.</p>
 
@@ -15,25 +14,29 @@
   After enabling the <b>sortable</b> users can simply change the sorting order to any above mentioned, by clicking on
   icon that appears on column top right side corner.
 
-  <h2 id="basicUsage">Basic Usage</h2>
-
+  <h2 id="whatYouWillSee">What You Will See</h2>
   <app-column-sorting-usage></app-column-sorting-usage>
   <br>
+
+  <h2 id="basicUsage">Basic Usage</h2>
   <p>Sortable can be enabled in any data table column. by default sortable is <b>false</b> to enable column sorting
     simply set sortable to <b>true</b>.</p>
   <pre class="prettyprint lang-html">{{demoSnippet.sorting}}</pre>
+
+  By default the table doesn’t sort it’s contents. Also there are set of additional properties can be used with this <b>Sortable</b>
+  option & those will be explained later.
 
   <app-example-code [files]="columnSortingUsage"></app-example-code>
 
   <h2 id="usefulProperties">Useful properties</h2>
   <p>There are few more properties that affects to the behaviour of column sorting.
-    all the available properties can be applied to each table column by independently excepts
+    All the available properties can be applied to each table column by independently excepts
     <a href="/feature/data-table/column/sorting#multiColumnSortable">Multi Column Sortable</a> property.</p>
 
   <h4 id="sortOrder">Sort Order</h4>
   <code>[sortOrder]: string = 'asc' | 'desc' | ''</code>
   <br>
-  <h5 class="badge badge-dark">Default Value: ''</h5>
+  <h5 class="badge badge-dark">Default Value: ' '</h5>
   <p>This property allow users to order the data that already fetched or fetching from a data source. If sorting order
     is not mentioned by the user, then the default sorting mechanism will be applied for those <b>sortable</b> enabled
     columns.</p>
