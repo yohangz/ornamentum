@@ -12,10 +12,11 @@
 
   // Dropdown Delete Button Container Styles
   .ng-dropdown-input-group-btn {
+    @include transform(translateY(-50%));
     height: 1.3em;
     position: absolute;
     right: 1.6rem;
-    top: .5rem;
+    top: 50%;
     width: 1.3em;
     z-index: 2;
 
@@ -23,28 +24,23 @@
     .ng-dropdown-delete-button {
       background: inline-svg($close-icon-url);
       background-size: contain;
-      border: 0;
       color: $delete-color;
       cursor: pointer;
       height: 100%;
-      left: 0;
-      outline: none;
-      padding: .1rem .5rem;
-      position: absolute;
-      top: 0;
       width: 100%;
     }
   }
 
   // Dropdown Arrow Styles
   .ng-dropdown-down-arrow {
+    @include transform(translateY(-50%));
     background: inline-svg($dropdown-arrow-icon-url);
     background-size: contain;
     cursor: pointer;
     height: 1.5em;
     position: absolute;
     right: .3rem;
-    top: .3rem;
+    top: 50%;
     width: 1.5em;
     z-index: 1;
   }
@@ -111,6 +107,7 @@
       }
 
       .ng-dropdown-remove-selected-value {
+        @include transform(translateY(-50%));
         background: inline-svg($close-icon-url);
         background-size: contain;
         content: '';
@@ -118,7 +115,7 @@
         height: 1.2em;
         position: absolute;
         right: .3em;
-        top: .3em;
+        top: 50%;
         width: 1.2em;
       }
     }
