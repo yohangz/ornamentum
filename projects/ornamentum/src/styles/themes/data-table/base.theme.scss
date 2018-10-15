@@ -26,9 +26,24 @@
     }
 
     > .ng-data-table-content-container {
+
+      .ng-data-table-content-header-container {
+
+        .ng-data-table-content-header {
+
+          .ng-data-table {
+            border-right: .05rem solid $data-table-content-header-border;
+          }
+        }
+      }
+
       > .ng-data-table-content {
         -webkit-overflow-scrolling: touch;
         overflow-y: scroll;
+
+        .ng-data-table {
+          border-right: .05rem solid $data-table-content-header-border;
+        }
       }
     }
 
@@ -77,7 +92,6 @@
       }
 
       .ng-data-table {
-        border-bottom: 0;
         border-right: .05rem solid transparent;
         border-top: 0;
         overflow: hidden;
@@ -729,6 +743,10 @@
       padding: .375rem .75rem;
       text-align: center;
       white-space: nowrap;
+
+      span {
+        padding-right: .3rem;
+      }
     }
 
     .ng-data-table-pagination-pages {
