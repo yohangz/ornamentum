@@ -4,38 +4,51 @@
     becomes ridiculously long. In such cases, you might want to turn pagination on.
   </p>
 
-  <h2 id="whatYouWillSee">What you will see</h2>
-  <app-pagination-usage></app-pagination-usage>
-  <br>
-  <p>The Pagination controls will be displayed on the bottom of the grid.User can set the number of
+  <p>The Pagination controls will be displayed on the bottom of the grid. user can set the number of
     rows displayed on the grid page and navigation controls.</p>
 
+  <h2 id="whatYouWillSee">What You Will See</h2>
+  <app-pagination-usage></app-pagination-usage>
+  <br>
+
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To enable pagination, simply set [pageable] to true</p>
+  <p>To enable pagination, simply set <b>pageable</b> to <b>true</b> and by default pageable is <b>false</b>.</p>
   <pre class="prettyprint lang-html">{{demoSnippet.pagination}}</pre>
-  <p>By default the table doesn’t paginate it’s contents; even if properties like “limit” is set. More on that will be explained
-    later.</p>
+
+  <p>In default the table doesn't paginate it’s contents, even if pageable depended properties are set. those properties
+    will be discuss on <a href="feature/data-table/pagination#usefulProperties">Useful Properties</a> section.</p>
 
   <app-example-code [files]="paginationUsage"></app-example-code>
 
   <h2 id="usefulProperties">Useful properties</h2>
-  <p>There are a few properties which effect the behaviour of Pagination controls.</p>
-  <h4>Page</h4>
-  <pre>[page] = number</pre>
-  <p>The [page] property lets you control which page the table starts off showing, notice how this table starts off on
-  the second page</p>
-  <app-pagination-page-usage></app-pagination-page-usage>
+  <p>There are few more properties which effect the behaviour of pagination controls and those are applicable in
+    global level of grid configuration after enabling the pageable.</p>
 
-  <app-example-code [files]="paginationUsageWithPage"></app-example-code>
-  <h4>Limit</h4>
-  <pre>[limit] = number</pre>
-  <p>Controls how many rows are shown per page. Further information on this property is available in Data Limit page</p>
-  <app-pagination-limit-usage></app-pagination-limit-usage>
-
-  <app-example-code [files]="paginationUsageWithLimit"></app-example-code>
-  <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="/feature/data-table/translations">Data Table Translations</a>
+  <h4 id="page">Page</h4>
+  <code>[page]: number = 'page number to view'</code>
   <br>
+  <h5 class="badge badge-secondary">Default Value: 1</h5>
+  <p>The page property lets you to control which page the table starts off showing, from the declared page users can
+    paginate into different data views with in the declared data <a href="feature/data-table/pagination#limit">limit</a>.
+  </p>
+
+  <app-pagination-page-usage></app-pagination-page-usage>
+  <app-example-code [files]="paginationUsageWithPage"></app-example-code>
+
+  <h4 id="limit">Limit</h4>
+  <code>[limit]: number = 'number of data rows'</code>
+  <br>
+  <h5 class="badge badge-secondary">Default Value: 10</h5>
+  <p>Controls how many rows are shown per page and the rest of the data row's will be paginate into
+    series of grid pages. if limit is not provided by the configuration the default limit will be applied.</p>
+
+  <app-pagination-limit-usage></app-pagination-limit-usage>
+  <app-example-code [files]="paginationUsageWithLimit"></app-example-code>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="/feature/data-table/translations">Data Table Translations</a><br>
+  <a rel="noopener" target="_blank" href="/feature/data-table/templates/no-records-template">No Records Template</a><br>
+  <a rel="noopener" target="_blank" href="/feature/data-table/column/filtering">Filtering</a><br>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#pageable">API Doc for Data Table
     Pagination</a>
 </div>
