@@ -64,7 +64,7 @@ export class MainComponent {
           title: 'Pagination',
           navigation: [
             {
-              title: 'What you will see',
+              title: 'What You Will See',
               anchor: 'whatYouWillSee'
             },
             {
@@ -73,7 +73,17 @@ export class MainComponent {
             },
             {
               title: 'Useful Properties',
-              anchor: 'usefulProperties'
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Page',
+                  anchor: 'page'
+                },
+                {
+                  title: 'Limit',
+                  anchor: 'limit'
+                }
+              ]
             },
             {
               title: 'Suggested Links',
@@ -86,7 +96,7 @@ export class MainComponent {
           title: 'Column Sorting',
           navigation: [
             {
-              title: 'What you will see',
+              title: 'What You Will See',
               anchor: 'whatYouWillSee'
             },
             {
