@@ -147,7 +147,39 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/header-details',
-          title: 'Header Details'
+          title: 'Header Details',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Title',
+                  anchor: 'title'
+                },
+                {
+                  title: 'Show Refresh Button',
+                  anchor: 'showRefreshButton'
+                },
+                {
+                  title: 'Show Column Selector',
+                  anchor: 'showColumnSelector'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/responsive-configuration',
