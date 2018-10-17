@@ -5,13 +5,13 @@ import { ExampleData } from '../../../../../../shared/models';
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-column-sorting-sort-field-usage',
-  templateUrl: './column-sorting-sort-field-usage.component.html'
+  selector: 'app-table-header-details-title-usage',
+  templateUrl: './table-header-details-title-usage.component.html'
 })
-export class ColumnSortingSortFieldUsageComponent {
+export class TableHeaderDetailsTitleUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData(0, 20);
+    this.items = this.dataFetchService.fetchData();
   }
 }

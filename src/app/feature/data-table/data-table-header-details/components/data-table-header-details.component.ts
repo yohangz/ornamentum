@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 
-import { tableHeaderDetailsUsage } from './data-table-header-details.list';
+import {
+  demoSnippet,
+  tableHeaderDetailsShowColumnSelectorUsage,
+  tableHeaderDetailsShowRefreshBtnUsage,
+  tableHeaderDetailsTitleUsage,
+  tableHeaderDetailsUsage
+} from './data-table-header-details.list';
 
 @Component({
   selector: 'app-data-table-header-details-component',
@@ -9,4 +15,8 @@ import { tableHeaderDetailsUsage } from './data-table-header-details.list';
 })
 export class DataTableHeaderDetailsComponent {
   public tableHeaderDetailsUsage = tableHeaderDetailsUsage;
+  public tableHeaderDetailsShowRefreshBtnUsage = tableHeaderDetailsShowRefreshBtnUsage;
+  public tableHeaderDetailsTitleUsage = tableHeaderDetailsTitleUsage;
+  public tableHeaderDetailsShowColumnSelectorUsage = tableHeaderDetailsShowColumnSelectorUsage;
+  public demoSnippet = demoSnippet;
 }
