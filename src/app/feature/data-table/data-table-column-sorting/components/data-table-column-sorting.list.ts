@@ -26,8 +26,8 @@ export const columnSortingUsage: ExampleFile[] = [
 export const columnSortingUsageWithSortOrder: ExampleFile[] = [
   {
     type: FileType.HTML,
-    name: 'column-sorting-sort-order-usage.html',
-    content: require('!!raw-loader?lang=html!./example/column-sorting-sort-order-usage/column-sorting-sort-order-usage.html')
+    name: 'column-sorting-sort-order-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/column-sorting-sort-order-usage/column-sorting-sort-order-usage.component.html')
   },
   {
     type: FileType.TS,
@@ -49,8 +49,8 @@ export const columnSortingUsageWithSortOrder: ExampleFile[] = [
 export const columnSortingUsageWithSortField: ExampleFile[] = [
   {
     type: FileType.HTML,
-    name: 'column-sorting-sort-field-usage.html',
-    content: require('!!raw-loader?lang=html!./example/column-sorting-sort-field-usage/column-sorting-sort-field-usage.html')
+    name: 'column-sorting-sort-field-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/column-sorting-sort-field-usage/column-sorting-sort-field-usage.component.html')
   },
   {
     type: FileType.TS,
@@ -73,8 +73,8 @@ export const columnSortingUsageWithMultiColumnSortable: ExampleFile[] = [
   {
     type: FileType.HTML,
     name: 'app-column-sorting-multi-column-sortable-usage.html',
-    content: require(
-      '!!raw-loader?lang=html!./example/column-sorting-multi-column-sortable-usage/column-sorting-multi-column-sortable-usage.html')
+    content: require('!!raw-loader?lang=html!./example/column-sorting-multi-column-sortable-usage/' +
+      'column-sorting-multi-column-sortable-usage.component.html')
   },
   {
     type: FileType.TS,
