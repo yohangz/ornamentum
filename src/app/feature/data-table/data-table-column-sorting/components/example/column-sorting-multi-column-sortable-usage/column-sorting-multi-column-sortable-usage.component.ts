@@ -6,7 +6,7 @@ import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-column-sorting-multi-column-sortable-usage',
-  templateUrl: './column-sorting-multi-column-sortable-usage.html'
+  templateUrl: './column-sorting-multi-column-sortable-usage.component.html'
 })
 export class ColumnSortingMultiColumnSortableUsageComponent {
   public items: ExampleData[];

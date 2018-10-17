@@ -4,7 +4,13 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableHeaderDetailsComponent, TableHeaderDetailsUsageComponent } from './index';
+import {
+  DataTableHeaderDetailsComponent,
+  TableHeaderDetailsUsageComponent,
+  TableHeaderDetailsShowRefreshBtnUsageComponent,
+  TableHeaderDetailsTitleUsageComponent,
+  TableHeaderDetailsShowColumnSelectorUsageComponent
+} from './index';
 
 import { DataTableHeaderDetailsRoutingModule } from './data-table-header-details-routing.module';
 
@@ -17,16 +23,17 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTableHeaderDetailsComponent,
-    TableHeaderDetailsUsageComponent
+    TableHeaderDetailsUsageComponent,
+    TableHeaderDetailsShowRefreshBtnUsageComponent,
+    TableHeaderDetailsTitleUsageComponent,
+    TableHeaderDetailsShowColumnSelectorUsageComponent
   ],
   exports: [],
   imports: [
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot({
-      showColumnSelector: true
-    }),
+    DataTableModule.forRoot(),
     DataTableHeaderDetailsRoutingModule
   ],
   providers: []

@@ -7,10 +7,10 @@ import { ExampleData } from '../../../../../../shared/models';
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-table-header-details-usage',
-  templateUrl: './table-header-details-usage.component.html'
+  selector: 'app-table-header-details-show-refresh-btn-usage',
+  templateUrl: './table-header-details-show-refresh-btn-usage.component.html'
 })
-export class TableHeaderDetailsUsageComponent {
+export class TableHeaderDetailsShowRefreshBtnUsageComponent {
   public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService) {

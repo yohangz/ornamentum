@@ -11,8 +11,8 @@
     <li><b>None</b> (Default Sorting Order) : column data will be displayed as it is.</li>
   </ul>
 
-  After enabling the <b>sortable</b> users can simply change the sorting order to any above mentioned, by clicking on
-  icon that appears on column top right side corner.
+  <p>After enabling the <b>sortable</b> users can simply change the sorting order to any above mentioned, by clicking on
+    icon that appears on column top right side corner.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
   <app-column-sorting-usage></app-column-sorting-usage>
@@ -23,8 +23,9 @@
     simply set sortable to <b>true</b>.</p>
   <pre class="prettyprint lang-html">{{demoSnippet.sorting}}</pre>
 
-  By default the table doesn’t sort it’s contents. Also there are set of additional properties can be used with this <b>Sortable</b>
-  option & those will be explained later.
+  <p>By default the table doesn’t sort it’s contents. Also there are set of additional properties can be used with this
+    <b>Sortable</b>
+    option & those will be explained later.</p>
 
   <app-example-code [files]="columnSortingUsage"></app-example-code>
 
@@ -36,7 +37,7 @@
   <h4 id="sortOrder">Sort Order</h4>
   <code>[sortOrder]: string = 'asc' | 'desc' | ''</code>
   <br>
-  <h5 class="badge badge-dark">Default Value: ' '</h5>
+  <h5 class="badge badge-secondary">Default Value: ''</h5>
   <p>This property allow users to order the data that already fetched or fetching from a data source. If sorting order
     is not mentioned by the user, then the default sorting mechanism will be applied for those <b>sortable</b> enabled
     columns.</p>
@@ -48,7 +49,7 @@
   <h4 id="sortField">Sort Field</h4>
   <code>[sortField]: string = 'column field name'</code>
   <br>
-  <h5 class="badge badge-dark">Default Value: 'sameColumnFieldName'</h5>
+  <h5 class="badge badge-secondary">Default Value: 'sameColumnFieldName'</h5>
   <p>Sort Field can be override by providing a column field name, by default sort field value is same to the column
     name.
     providing a different column name to sort field, ornamentum will start sorting according to the provided column
@@ -59,9 +60,9 @@
   <app-example-code [files]="columnSortingUsageWithSortField"></app-example-code>
 
   <h4 id="multiColumnSortable">Multi Column Sortable</h4>
-  <code>[multiColumnSortable]: boolean = 'true or false'</code>
+  <code>[multiColumnSortable]: boolean = true or false</code>
   <br>
-  <h5 class="badge badge-dark">Default Value: false</h5>
+  <h5 class="badge badge-secondary">Default Value: false</h5>
   <p>Multi column sortable can be only use inside the grid global properties defining scope (ng-data-table). If multi
     column sortable is enabled, data sorting will be process based on previously preserved column sorting order. </p>
 

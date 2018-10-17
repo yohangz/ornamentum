@@ -1,15 +1,15 @@
 <ng-data-table
   [title]="'Sales Products'"
-  [dataSource]="dataSource"
+  [items]="items"
   [minHeight]="200"
-  [minWidth]="1080"
+  [minWidth]="900"
   [pageable]="true"
-  [showHeader]="true"
-  [showRefreshButton]="true"
-  [showColumnSelector]="true">
+  [showHeader]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
+    [sortField]="'productType'"
+    [sortable]="true"
     [width]="70">
   </ng-data-table-column>
   <ng-data-table-column
@@ -31,7 +31,7 @@
   <ng-data-table-column
     [field]="'revenue'"
     [title]="'Revenue'"
-    [width]="150">
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
@@ -41,6 +41,6 @@
   <ng-data-table-column
     [field]="'grossMargin'"
     [title]="'Gross Margin'"
-    [width]="150">
+    [width]="100">
   </ng-data-table-column>
 </ng-data-table>

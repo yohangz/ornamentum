@@ -6,7 +6,7 @@ import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-column-sorting-sort-order-usage',
-  templateUrl: './column-sorting-sort-order-usage.html'
+  templateUrl: './column-sorting-sort-order-usage.component.html'
 })
 export class ColumnSortingSortOrderUsageComponent {
   public items: ExampleData[];
