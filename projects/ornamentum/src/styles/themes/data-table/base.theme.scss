@@ -60,6 +60,7 @@
 
     // Data table content header container styles
     .ng-data-table-content-header-container {
+      background: $data-table-content-header-background;
       border: 0;
 
       .ng-data-table-content-header {
@@ -92,6 +93,7 @@
       }
 
       .ng-data-table {
+        border-bottom: 0;
         border-right: .05rem solid transparent;
         border-top: 0;
         overflow: hidden;
@@ -99,6 +101,12 @@
 
       &.ng-data-table-loading {
         pointer-events: none;
+      }
+    }
+
+    + ng-data-table-pagination {
+      .ng-data-table-pagination-container {
+        border-top: .05rem solid $data-table-pagination-border;
       }
     }
   }
@@ -296,29 +304,26 @@
         }
 
         .ng-data-table-input-group-btn {
+          @include transform(translateY(-50%));
+          height: 1.3em;
           position: absolute;
           right: .2rem;
-          top: .3rem;
+          top: 50%;
+          width: 1.3em;
           z-index: 1;
 
           .ng-data-table-delete-button {
             background: inline-svg($close-icon-url);
             background-size: contain;
             border: 0;
-            color: $delete-color;
             cursor: pointer;
-            height: 1.2em;
+            height: 100%;
+            padding: 0;
             outline: none;
-            padding: .1rem .2rem;
-            position: absolute;
-            right: -.1rem;
-            top: .5em;
-            width: 1.2em;
-          }
-        }
+            vertical-align: top;
+            width: 100%;
 
-        .ng-data-table-clear-filter {
-          padding: 0 1.4rem 0 .5rem;
+          }
         }
 
         .ng-data-table-checkbox-input {
@@ -375,6 +380,10 @@
             outline: 0;
             padding: .05rem .8rem .05rem .3rem;
             width: 100%;
+
+            &.ng-data-table-clear-filter {
+              padding: 0 1.4rem 0 .5rem;
+            }
           }
 
           &:last-child {

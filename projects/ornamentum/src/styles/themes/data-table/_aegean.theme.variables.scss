@@ -69,7 +69,7 @@ $data-table-content-border: #ddd !default;
 $data-table-border: #ddd !default;
 $data-table-row-background: #fff !default;
 $data-table-cell-text-color: #444 !default;
-$data-table-row-hover-background: #f1f5fd !default;
+$data-table-row-hover-background: none !default;
 $data-table-row-hover-cell-text-color: #444 !default;
 
 
@@ -107,7 +107,7 @@ $data-table-no-records-button-border-radius-value: .2rem !default;
 
 //Data Table Pagination Style
 $data-table-pagination-background: #fff !default;
-$data-table-pagination-border: transparent !default;
+$data-table-pagination-border: #ddd !default;
 $data-table-pagination-range-text-color: #444 !default;
 $data-table-pagination-range-value-text-color: #3b78e7 !default;
 $data-table-pagination-text-color: #444 !default;
