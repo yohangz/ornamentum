@@ -247,19 +247,13 @@
       list-style-type: none;
       margin: 0;
       padding: 0;
-      position: relative;
 
       .ng-dropdown-no-data {
         @include display-flex;
         @include align-items(center);
         @include justify-content(center);
-        bottom: 0;
         color: $dropdown-no-data-message-text-color;
-        left: 0;
-        position: absolute;
-        right: 0;
-        text-align: center;
-        top: 0;
+        height: 100%;
 
         &:hover {
           background: none;
