@@ -6,6 +6,7 @@ import { DataTableModule } from 'ornamentum';
 
 import {
   DataTableTranslationsComponent,
+  DataTableTranslationsUsageComponent,
   DataTableTranslationsNoDataUsageComponent,
   DataTableTranslationsPaginationUsageComponent
 } from './index';
@@ -21,6 +22,7 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTableTranslationsComponent,
+    DataTableTranslationsUsageComponent,
     DataTableTranslationsNoDataUsageComponent,
     DataTableTranslationsPaginationUsageComponent
   ],
@@ -29,9 +31,7 @@ import { SharedModule } from '../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot({
-      showColumnSelector: true
-    }),
+    DataTableModule.forRoot(),
     DataTableTranslationsRoutingModule
   ],
   providers: []

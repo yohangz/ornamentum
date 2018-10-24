@@ -8,10 +8,8 @@ import { DataTableTranslations } from 'ornamentum';
 })
 export class DataTableTranslationsNoDataUsageComponent {
   public DataTableTranslations: DataTableTranslations = {
-    paginationLimit: 'This is the message for paginationLimit',
-    paginationRange: 'This is the message for paginationRange',
-    noDataMessageBody: 'Customized No Data Message Body',
-    noDataMessageHeader: 'Customized No Data Message Header'
+    noDataMessageHeader: 'Customized No Data Message Header',
+    noDataMessageBody: 'Customized No Data Message Body'
   };
 
   public emptyItemSet: any;

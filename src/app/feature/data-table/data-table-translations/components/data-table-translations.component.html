@@ -1,58 +1,103 @@
 <div class="feature-container">
   <h1>Data Table Translations</h1>
 
+  <p>Translations can be uses to override data table body properties in two special cases. those translatable properties
+    are required to binding
+    into <b>translations</b> property in table global level configuration (inside ng-data-table scope), in any user
+    preferred language. the properties that can be configure in translations are:
+  </p>
+
   <ul class="main-pane-list">
-    <li>Data table translations will allow users to configure the basic settings.</li>
-    <li>Those translations are required to passed via the <b>translations</b> attribute as follows.
-      <h5>[translations]="DataTableTranslations"</h5>
-    </li>
-    <li>Going through the following, shows the configurations can be passed via the translations.
+    <li>Translations for No Data
       <ul>
-        <li>noDataMessageHeader</li>
-        <li>noDataMessageBody</li>
-        <li>paginationLimit</li>
-        <li>paginationRange</li>
+        <li>No Data Message Header</li>
+        <li>No Data Message Body</li>
       </ul>
     </li>
-    <li>Let's see how these can be configured in different scenarios.</li>
-  </ul>
-
-  <h2>Data Table Translations for No Data Scenario</h2>
-  <p>The default template will be shown when data is not available. In that scenario, users can customized the message
-    needs to show using this translations property.</p>
-
-  <ul class="main-pane-list">
-    <li><b>noDataMessageBody: "Customized No Data Message Body"</b> => This configuration is used to set the message
-      header name on the message to be shown in the table body when there are no data to display. The default value for
-      this config is 'No data to display. Added data will appear here.'
-    </li>
-    <li><b>noDataMessageHeader: "Customized No Data Message Header"</b> => This configuration is used to set the message
-      to be shown in the table body when there are no data to display.The default value for this config is 'Whoops!'.
+    <li>Translations for Pagination
+      <ul>
+        <li>Pagination Limit</li>
+        <li>Pagination Range</li>
+      </ul>
     </li>
   </ul>
+
+  <p>Please note the below data table didn't show the full translations implementation, hence for Data table
+    translations for pagination usage refer <a href="feature/data-table/translations#translationsForPagination">Translations
+      for Pagination</a> section.</p>
+
+  <h1 id="whatYouWillSee">What You Will See</h1>
+  <app-data-table-translations-usage></app-data-table-translations-usage>
+  <br>
+
+  <h1 id="basicUsage">Basic Usage</h1>
+  <p>As mention in the above translations can be override in data table global level configuration. by default
+    translations are initialize to it's
+    default pre-set values.</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.translations}}</pre>
+
+  <p>Simply bind DataTableTranslations type of object into <b>translations</b> property is enough to take
+    the the control over translations.</p>
+
+  <app-example-code [files]="translationsUsage"></app-example-code>
+
+  <p>As mention in the above there are two scenarios that translations are useful. Let's see how we can configure each
+    demonstrated properties as we
+    want.</p>
+
+  <h2 id="translationsForNoData">Translations for No Data</h2>
+  <p>The default template will be shown when data is not available by mentioning a header and the message body. In no
+    data scenario, users can customize the message
+    needs to be appear using translations property.</p>
+
+  <h4 id="noDataMessageHeader">No Data Message Header</h4>
+  <code>translations: DataTableTranslations = {{ '{' }} noDataMessageHeader: 'Customized No Data Message Header' {{ '}'
+    }}</code>
+  <br>
+  <h5 class="badge badge-secondary">Default Value: 'Whoops!'</h5>
+  <p>This configuration is used to set the message header to be shown in the table body, when there are no data to
+    display. The
+    default value for this property is 'Whoops!'</p>
+
+  <h4 id="noDataMessageBody">No Data Message Body</h4>
+  <code>translations: DataTableTranslations = {{ '{' }} noDataMessageBody: 'Customized No Data Message Body' {{ '}'
+    }}</code>
+  <br>
+  <h5 class="badge badge-secondary">Default Value: 'No data to display. Added data will appear here.'</h5>
+  <p>This configuration is used to set the message
+    body on the message to be shown in the table body, when there are no data to display. The default value for
+    this property is 'No data to display. Added data will appear here.</p>
 
   <app-data-table-translations-no-data-usage></app-data-table-translations-no-data-usage>
 
   <app-example-code [files]="dataTableTranslationsNoDataUsage"></app-example-code>
 
-  <h2>Data Table Translations for Pagination</h2>
-  <p>Also this translations property can be used to customize the pagination naming. The following properties shows what
-    are those.</p>
+  <h2 id="translationsForPagination">Translations for Pagination</h2>
+  <p>Pagination translations property can be used to customize the pagination naming, which allow user to override the
+    pagination limit and range namings.</p>
 
-  <ul class="main-pane-list">
-    <li><b>paginationLimit: "This is the message for paginationLimit"</b> => This is used to customize the pagination
-      limit naming. The default value for this config is 'Limit'.
-    </li>
-    <li><b>paginationRange: "This is the message for paginationRange"</b> => This is used to customize the pagination
-      range naming. The default value for this config is 'Results'.
-    </li>
-  </ul>
+  <h4 id="paginationLimit">Pagination Limit</h4>
+  <code>translations: DataTableTranslations = {{ '{' }} paginationLimit: 'This is the message for paginationLimit' {{
+    '}' }}</code>
+  <br>
+  <h5 class="badge badge-secondary">Default Value: 'Limit'</h5>
+  <p>This is used to customize the pagination limit naming. The default value for this config is 'Limit'.</p>
+
+  <h4 id="paginationRange">Pagination Range</h4>
+  <code>translations: DataTableTranslations = {{ '{' }} paginationRange: 'This is the message for paginationRange' {{
+    '}' }}</code>
+  <br>
+  <h5 class="badge badge-secondary">Default Value: 'Results'</h5>
+  <p>This is used to customize the pagination range naming. The default value for this config is 'Results'.</p>
 
   <app-data-table-translations-pagination-usage></app-data-table-translations-pagination-usage>
 
   <app-example-code [files]="dataTableTranslationsPaginationUsage"></app-example-code>
 
-  <h2>Suggested Links</h2>
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="feature/data-table/templates/no-records-template">No Records Template</a><br>
+  <a rel="noopener" target="_blank" href="feature/data-table/pagination">Pagination</a><br>
+  <a rel="noopener" target="_blank" href="feature/data-table/loading-spinner">Data Loading Spinner</a><br>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#translations">API Doc for Data
     Table Translations</a>
 </div>
