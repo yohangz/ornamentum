@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 
-import { dataTableTranslationsNoDataUsage, dataTableTranslationsPaginationUsage } from './data-table-translations.list';
+import {
+  dataTableTranslationsUsage,
+  dataTableTranslationsNoDataUsage,
+  dataTableTranslationsPaginationUsage,
+  demoSnippet
+} from './data-table-translations.list';
 
 @Component({
   selector: 'app-data-table-translations-component',
@@ -8,6 +13,8 @@ import { dataTableTranslationsNoDataUsage, dataTableTranslationsPaginationUsage 
   styleUrls: ['./data-table-translations.component.scss']
 })
 export class DataTableTranslationsComponent {
+  public translationsUsage = dataTableTranslationsUsage;
   public dataTableTranslationsNoDataUsage = dataTableTranslationsNoDataUsage;
   public dataTableTranslationsPaginationUsage = dataTableTranslationsPaginationUsage;
+  public demoSnippet = demoSnippet;
 }

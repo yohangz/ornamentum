@@ -197,7 +197,49 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/translations',
-          title: 'Translations'
+          title: 'Translations',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Translations for No Data',
+              anchor: 'translationsForNoData',
+              subNavigation: [
+                {
+                  title: 'No Data Message Header',
+                  anchor: 'noDataMessageHeader'
+                },
+                {
+                  title: 'No Data Message Body',
+                  anchor: 'noDataMessageBody'
+                }
+              ]
+            },
+            {
+              title: 'Translations for Pagination',
+              anchor: 'translationsForPagination',
+              subNavigation: [
+                {
+                  title: 'Pagination Limit',
+                  anchor: 'paginationLimit'
+                },
+                {
+                  title: 'Pagination Range',
+                  anchor: 'paginationRange'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/events',

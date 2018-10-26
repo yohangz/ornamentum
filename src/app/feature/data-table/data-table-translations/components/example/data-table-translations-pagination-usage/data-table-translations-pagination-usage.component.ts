@@ -13,9 +13,7 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class DataTableTranslationsPaginationUsageComponent {
   public DataTableTranslations: DataTableTranslations = {
     paginationLimit: 'This is the message for paginationLimit',
-    paginationRange: 'This is the message for paginationRange',
-    noDataMessageBody: 'Customized No Data Message Body',
-    noDataMessageHeader: 'Customized No Data Message Header'
+    paginationRange: 'This is the message for paginationRange'
   };
 
   public paginationItems: ExampleData[];
