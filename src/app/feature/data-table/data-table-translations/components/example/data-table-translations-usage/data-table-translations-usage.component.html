@@ -1,11 +1,11 @@
 <ng-data-table
   [title]="'Sales Products'"
   [items]="emptyItemSet"
-  [translations]="DataTableTranslations"
   [minHeight]="200"
   [minWidth]="1080"
   [pageable]="true"
-  [showHeader]="true">
+  [showHeader]="true"
+  [translations]="DataTableTranslations">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
@@ -43,5 +43,3 @@
     [width]="150">
   </ng-data-table-column>
 </ng-data-table>
-
-

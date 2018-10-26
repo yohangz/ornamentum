@@ -1,5 +1,33 @@
 import { ExampleFile, FileType } from '../../../../shared/models';
 
+export const dataTableTranslationsUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'data-table-translations-usage.module.ts',
+    content:
+      require(
+        '!!raw-loader?lang=typescript!./example/data-table-translations-usage/data-table-translations-usage.module.md')
+  },
+  {
+    type: FileType.TS,
+    name: 'data-table-translations-usage.component.ts',
+    content:
+      require(
+        '!!raw-loader?lang=typescript!./example/data-table-translations-usage/data-table-translations-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'data-table-translations-usage.component.html',
+    content:
+      require('!!raw-loader?lang=html!./example/data-table-translations-usage/data-table-translations-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
+];
+
 export const dataTableTranslationsNoDataUsage: ExampleFile[] = [
   {
     type: FileType.TS,
@@ -58,4 +86,8 @@ export const dataTableTranslationsPaginationUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
+
+export const demoSnippet: any = {
+  translations: require('!!raw-loader?lang=typescript!./docs/translations.md')
+};
 
