@@ -11,12 +11,6 @@
     [field]="'id'"
     [title]="'ID'"
     [width]="50">
-    <ng-template #ngDataTableCell let-row="row">
-      <td>
-        <span><i class="zmdi zmdi-account"></i></span>
-        <span>{{row.item.id}}</span>
-      </td>
-    </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
@@ -25,11 +19,6 @@
   <ng-data-table-column
     [field]="'retailerType'"
     [title]="'Retailer Type'">
-    <ng-template #ngDataTableCell let-row="row">
-      <td style="color: #4dc71f;font-style: oblique">
-        {{row.item.retailerType.toUpperCase()}}
-      </td>
-    </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
@@ -38,9 +27,9 @@
   <ng-data-table-column
     [field]="'productType'"
     [title]="'Product Type'">
-    <ng-template #ngDataTableCell let-row="row">
-      <td>
-        <span>{{row.item.productType.toUpperCase()}}</span>
+    <ng-template #ngDataTableCell>
+      <td style="color: #4dc71f;font-style: oblique">
+        <span>Product Type</span>
       </td>
     </ng-template>
   </ng-data-table-column>

@@ -10,13 +10,40 @@
   <p>You can povide your own template as follows.</p>
   <pre class="prettyprint lang-html">{{demoSnippet.base_template}}</pre>
 
-  <p>In the above data table, the following template is applied to values in <b>Retailer Type</b> column.</p>
+  <p>In the above data table, the following template is applied to values in <b>Product Type</b> column.</p>
 
   <pre class="prettyprint lang-html">{{demoSnippet.cell_template}}</pre>
 
   <p>Use following files to see the relevant code segments for above data table example.</p>
 
   <app-example-code [files]="cellTemplateUsage"></app-example-code>
+
+  <h2 id="usefulProperties">Useful properties</h2>
+  <p>There are few more properties available when providing your own custom templates.</p>
+
+  <h4 id="column">column</h4>
+  <code>column: DataTableColumnComponent  -> 'Data table column component contains all column properties'</code>
+  <br>
+  <p>This property can be accessed as follows.</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.column_property_template}}</pre>
+
+  <h4 id="row">row</h4>
+  <code>row: DataTableRow  -> 'Data table row properties'</code>
+  <br>
+  <p>This property can be accessed as follows.</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.row_property_template}}</pre>
+
+  <h4 id="spanIndex">spanIndex</h4>
+  <code>spanIndex: number  -> 'Row span index'</code>
+  <br>
+  <p>This property can be accessed as follows.</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.span_index_property_template}}</pre>
+
+  <h4 id="rowSpan">rowSpan</h4>
+  <code>rowSpan: number  -> 'Row span count'</code>
+  <br>
+  <p>This property can be accessed as follows.</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.row_span_property_template}}</pre>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Cell
