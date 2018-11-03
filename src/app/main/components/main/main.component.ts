@@ -258,6 +258,28 @@ export class MainComponent {
               anchor: 'basicUsage',
             },
             {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Column',
+                  anchor: 'column'
+                },
+                {
+                  title: 'Row',
+                  anchor: 'row'
+                },
+                {
+                  title: 'Span Index',
+                  anchor: 'spanIndex'
+                },
+                {
+                  title: 'Row Span',
+                  anchor: 'rowSpan'
+                }
+              ]
+            },
+            {
               title: 'Suggested Links',
               anchor: 'suggestedLinks',
             }

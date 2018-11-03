@@ -25,6 +25,10 @@ export const cellTemplateUsage: ExampleFile[] = [
 
 export const demoSnippet: any = {
   base_template: require('!!raw-loader?lang=typescript!./docs/base_template.md'),
-  cell_template: require('!!raw-loader?lang=typescript!./docs/cell_template.md')
+  cell_template: require('!!raw-loader?lang=typescript!./docs/cell_template.md'),
+  column_property_template: require('!!raw-loader?lang=typescript!./docs/column_property_template.md'),
+  row_property_template: require('!!raw-loader?lang=typescript!./docs/row_property_template.md'),
+  row_span_property_template: require('!!raw-loader?lang=typescript!./docs/row_span_property_template.md'),
+  span_index_property_template: require('!!raw-loader?lang=typescript!./docs/span_index_property_template.md')
 };
 
