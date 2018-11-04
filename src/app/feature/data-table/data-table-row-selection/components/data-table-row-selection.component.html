@@ -1,66 +1,87 @@
 <div class="feature-container">
   <h1>Data Table Row Selection</h1>
 
-  <ul class="main-pane-list">
-    <li>This help users to do the row selection in the data table.</li>
-    <li>There are several configurations are available when using row selection.</li>
+  <p>Sometimes users may need to select specific set of data from the data table to run their own operations. In such
+    cases, you might want to turn row selectable on.
+  </p>
 
-    <ul class="main-pane-list">
-      <li><b>[rowSelectable]="true or false"</b> => Enable/disable table row selection.</li>
-      <li><b>[showRowSelectCheckbox]="true or false"</b> => Enable/disable table row selection check boxes.</li>
-      <li><b>[selectOnRowClick]="true or false"</b> => Enable/disable table row selection on row click event.</li>
-      <li><b>[selectMode]="'single'" | "'single_toggle'" |
-        "multi'" </b> => Enables users to configure the dropdown row selection type. There are 3 row
-        selection types are available in the data table. The default value for this config is
-        "single". The available types are,
-        <ul class="main-pane-list">
-          <li>Single row selection: "single"</li>
-          <li>Single toggle row selection: "single_toggle"</li>
-          <li>Multi row selection: "multi"</li>
-        </ul>
-      </li>
-      <li><b>[selectTrackBy]="'Unique_Value_Column_Name'"</b> => This needs to specify when needs to identify selected
-        row(s) uniquely. Please refer data table events section.
-      </li>
-    </ul>
-  </ul>
+  <h2 id="whatYouWillSee">What You Will See</h2>
+  <app-row-selection-usage></app-row-selection-usage>
+  <br>
 
-  <h2>Single Row Selection</h2>
-  <ul class="main-pane-list">
-    <li>Users are only allowed to select one row at a time.</li>
-    <li>Once the selection is made, it can only be changed by selecting other row. That means, only one row item can be
-      selected.
-    </li>
-  </ul>
+  <h2 id="basicUsage">Basic Usage</h2>
+  <p>To enable row selectable, simply set <b>rowSelectable</b> to <b>true</b> and by default rowSelectable is
+    <b>false</b>.</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.row_selectable}}</pre>
 
-  <app-single-row-selection-usage></app-single-row-selection-usage>
+  <p>In default the table doesn't allow you to select rows. But if you are going to select row(s), there are some
+    additional configurations available to do the job easily. Those properties will be discuss on <a
+      href="feature/data-table/row-selection#usefulProperties">Useful Properties</a> section.</p>
 
-  <app-example-code [files]="singleRowSelectionUsage"></app-example-code>
+  <app-example-code [files]="rowSelectionUsage"></app-example-code>
 
-  <h2>Single Toggle Row Selection</h2>
-  <ul class="main-pane-list">
-    <li>Users are only allowed to select one row at a time.</li>
-    <li>Can toggle the row selection.</li>
-    <li>But in this type, once the selection is made, it can be removed by clicking the row itself(if select on row
-      click is enabled) or by unchecking the checkbox(if check boxes enabled).
-    </li>
-  </ul>
+  <h2 id="usefulProperties">Useful properties</h2>
+  <p>As mentioned earlier, there are some additional configurations which helps users to control the row selection.</p>
 
-  <app-single-toggle-row-selection-usage></app-single-toggle-row-selection-usage>
+  <h4 id="selectMode">Row Selection Mode</h4>
+  <code>selectMode: string ="single" | "single_toggle" | "multi"</code>
+  <br>
+  <h5 class="badge badge-secondary">Default Value: "single"</h5>
+  <p>This control allows you to configure the dropdown row selection type. There are 3 types of row
+    selections are available in the data table. The available types are,</p>
 
-  <app-example-code [files]="singleToggleRowSelectionUsage"></app-example-code>
+  <ol class="main-pane-list">
+    <li><h6><b>Single Row Selection: "single"</b></h6></li>
 
-  <h2>Multi Row Selection</h2>
-  <ul class="main-pane-list">
-    <li>Users can select multiple rows at a time.</li>
-    <li>Can toggle the row selection.</li>
-  </ul>
+    <p>Users are only allowed to select one row at a time. Once the selection is made, it can only be changed by
+      selecting other row. That means, only one row item can be selected.</p>
 
-  <app-multi-row-selection-usage></app-multi-row-selection-usage>
+    <app-single-row-selection-usage></app-single-row-selection-usage>
+    <app-example-code [files]="singleRowSelectionUsage"></app-example-code>
 
-  <app-example-code [files]="multiRowSelectionUsage"></app-example-code>
+    <li><h6><b>Single Toggle Row Selection: "single_toggle"</b></h6></li>
 
-  <h2>Suggested Links</h2>
+    <p>Users are only allowed to select one row at a time. Can toggle the row selection. But in this type, once the
+      selection is made, it can be removed by clicking the row itself (if select on row
+      click is enabled) or by unchecking the checkbox (if check boxes enabled).</p>
+
+    <app-single-toggle-row-selection-usage></app-single-toggle-row-selection-usage>
+    <app-example-code [files]="singleToggleRowSelectionUsage"></app-example-code>
+
+    <li><h6><b>Multi Row Selection: "multi"</b></h6></li>
+
+    <p>Users can select multiple rows at a time. Can toggle the row selection.</p>
+
+    <app-multi-row-selection-usage></app-multi-row-selection-usage>
+    <app-example-code [files]="multiRowSelectionUsage"></app-example-code>
+  </ol>
+
+  <h4 id="showRowSelectCheckbox">Show Row Select Check Box</h4>
+  <code>showRowSelectCheckbox: boolean = "true or false"</code>
+  <br>
+  <h5 class="badge badge-secondary">Default Value: false</h5>
+  <p>The page property lets you to enable/disable table row selection check boxes as shown in the <a
+    href="feature/data-table/row-selection#selectMode">Row Selection Mode</a> section's examples. Selection checkboxes
+    are enabled in all those examples.</p>
+
+  <h4 id="selectOnRowClick">Select On Row Click</h4>
+  <code>selectOnRowClick: boolean = "true or false"</code>
+  <br>
+  <h5 class="badge badge-secondary">Default Value: false</h5>
+  <p>The page property lets you to enable/disable table row selection on row click event as shown in the <a
+    href="feature/data-table/row-selection#selectMode">Row Selection Mode</a> section's examples. Select on row click
+    is enabled in all those examples.</p>
+
+  <h4 id="selectTrackBy">Select Track By</h4>
+  <code>selectTrackBy: string = "Unique Value Column Name"</code>
+  <br>
+  <h5 class="badge badge-secondary">Default Value: "id"</h5>
+  <p>This control helps users to identify selected row(s) uniquely. When selecting row(s), data table will emit the
+    value of the column specified by the user. Please refer <a href="feature/data-table/events">Data Table Events</a>
+    section for more details. All the examples shown in <a href="feature/data-table/row-selection#selectMode">Row
+      Selection Mode</a> section has <b>"id"</b> as <b>selectTrackBy</b> property.</p>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Row
     Selection</a>
 </div>
