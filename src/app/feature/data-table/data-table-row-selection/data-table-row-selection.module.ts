@@ -8,7 +8,8 @@ import {
   DataTableRowSelectionComponent,
   MultiRowSelectionUsageComponent,
   SingleRowSelectionUsageComponent,
-  SingleToggleRowSelectionUsageComponent
+  SingleToggleRowSelectionUsageComponent,
+  RowSelectionUsageComponent
 } from './index';
 
 import { DataTableRowSelectionRoutingModule } from './data-table-row-selection-routing.module';
@@ -24,7 +25,8 @@ import { SharedModule } from '../../../shared/shared.module';
     DataTableRowSelectionComponent,
     MultiRowSelectionUsageComponent,
     SingleRowSelectionUsageComponent,
-    SingleToggleRowSelectionUsageComponent
+    SingleToggleRowSelectionUsageComponent,
+    RowSelectionUsageComponent
   ],
   exports: [],
   imports: [

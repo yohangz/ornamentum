@@ -1,15 +1,12 @@
 <ng-data-table
   [title]="'Sales Products'"
-  [selectTrackBy]="'id'"
   [items]="items"
   [minHeight]="200"
   [minWidth]="900"
   [pageable]="true"
   [showHeader]="true"
-  [showRowSelectCheckbox]="true"
   [rowSelectable]="true"
-  [selectOnRowClick]="true"
-  [selectMode]="'multi'">
+  [showRowSelectCheckbox]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
