@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableFilteringComponent, FilterDropdownUsageComponent, FilterTextBoxUsageComponent } from './index';
+import { DataTableFilteringComponent, FilterDropdownUsageComponent, FilteringUsageComponent, FilterTextBoxUsageComponent } from './index';
 
 import { DataTableFilteringRoutingModule } from './data-table-filtering-routing.module';
 
@@ -18,7 +18,8 @@ import { SharedModule } from '../../../shared/shared.module';
   declarations: [
     DataTableFilteringComponent,
     FilterDropdownUsageComponent,
-    FilterTextBoxUsageComponent
+    FilterTextBoxUsageComponent,
+    FilteringUsageComponent
   ],
   exports: [],
   imports: [
