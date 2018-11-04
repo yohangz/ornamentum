@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { filterDropdownUsage, filterTextBoxUsage } from './data-table-filtering.list';
+import { demoSnippet, filterDropdownUsage, filteringUsage, filterTextBoxUsage } from './data-table-filtering.list';
 
 @Component({
   selector: 'app-data-table-filtering-component',
@@ -10,4 +10,6 @@ import { filterDropdownUsage, filterTextBoxUsage } from './data-table-filtering.
 export class DataTableFilteringComponent {
   public filterDropdownUsage = filterDropdownUsage;
   public filterTextBoxUsage = filterTextBoxUsage;
+  public filteringUsage = filteringUsage;
+  public demoSnippet = demoSnippet;
 }

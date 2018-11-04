@@ -133,7 +133,109 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/column/filtering',
-          title: 'Filtering'
+          title: 'Filtering',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage',
+            },
+            {
+              title: 'Filter Text Box',
+              anchor: 'filterTextBox',
+            },
+            {
+              title: 'Filter Text Box Useful Properties',
+              anchor: 'filterTextBoxUsefulProperties',
+              subNavigation: [
+                {
+                  title: 'Filter Placeholder',
+                  anchor: 'filterPlaceholder'
+                },
+                {
+                  title: 'Show Filter Clear Button',
+                  anchor: 'showFilterClearButton'
+                }
+              ]
+            },
+            {
+              title: 'Filter Dropdown Useful Properties',
+              anchor: 'filterDropdownUsefulProperties',
+              subNavigation: [
+                {
+                  title: 'Dropdown Filter Menu Position',
+                  anchor: 'dropdownFilterMenuPosition'
+                },
+                {
+                  title: 'Dropdown Filter Show Option Select Check Box',
+                  anchor: 'dropdownFilterShowOptionSelectCheckbox'
+                },
+                {
+                  title: 'Dropdown Filter Close Menu OnSelect',
+                  anchor: 'dropdownFilterCloseMenuOnSelect'
+                },
+                {
+                  title: 'Dropdown Filter Show Select All',
+                  anchor: 'dropdownFilterShowSelectAll'
+                },
+                {
+                  title: 'Dropdown Filter Select Mode',
+                  anchor: 'dropdownFilterSelectMode'
+                },
+                {
+                  title: 'Dropdown Filter Wrap Display Select Limit',
+                  anchor: 'dropdownFilterWrapDisplaySelectLimit'
+                },
+                {
+                  title: 'Dropdown Filter Show Selected Option Remove Button',
+                  anchor: 'dropdownFilterShowSelectedOptionRemoveButton'
+                },
+                {
+                  title: 'Dropdown Filter Group By Field',
+                  anchor: 'dropdownFilterGroupByField'
+                },
+                {
+                  title: 'Dropdown Filter Menu Height',
+                  anchor: 'dropdownFilterMenuHeight'
+                },
+                {
+                  title: 'Dropdown Filter Menu Width',
+                  anchor: 'dropdownFilterMenuWidth'
+                },
+                {
+                  title: 'Dropdown Filter Multi Select Option Max Width',
+                  anchor: 'dropdownFilterMultiSelectOptionMaxWidth'
+                },
+                {
+                  title: 'Dropdown Filter Searchable',
+                  anchor: 'dropdownFilterSearchable'
+                },
+                {
+                  title: 'Dropdown Filter Search Debounce',
+                  anchor: 'dropdownFilterSearchDebounce'
+                },
+                {
+                  title: 'Dropdown Filter Search Debounce Time',
+                  anchor: 'dropdownFilterSearchDebounceTime'
+                },
+                {
+                  title: 'Column Value Filter',
+                  anchor: 'filter'
+                }
+              ]
+            },
+            {
+              title: 'Filter DropDown',
+              anchor: 'filterDropDown',
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/row-selection',
