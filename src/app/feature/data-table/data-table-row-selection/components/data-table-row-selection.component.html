@@ -57,7 +57,7 @@
   </ol>
 
   <h4 id="showRowSelectCheckbox">Show Row Select Check Box</h4>
-  <code>showRowSelectCheckbox: boolean = "true or false"</code>
+  <code>showRowSelectCheckbox: boolean = true or false</code>
   <br>
   <h5 class="badge badge-secondary">Default Value: false</h5>
   <p>The page property lets you to enable/disable table row selection check boxes as shown in the <a
@@ -65,7 +65,7 @@
     are enabled in all those examples.</p>
 
   <h4 id="selectOnRowClick">Select On Row Click</h4>
-  <code>selectOnRowClick: boolean = "true or false"</code>
+  <code>selectOnRowClick: boolean = true or false</code>
   <br>
   <h5 class="badge badge-secondary">Default Value: false</h5>
   <p>The page property lets you to enable/disable table row selection on row click event as shown in the <a
@@ -80,6 +80,26 @@
     value of the column specified by the user. Please refer <a href="feature/data-table/events">Data Table Events</a>
     section for more details. All the examples shown in <a href="feature/data-table/row-selection#selectMode">Row
       Selection Mode</a> section has <b>"id"</b> as <b>selectTrackBy</b> property.</p>
+
+  <h4 id="selectedRow">Set Selected Row</h4>
+  <code>selectedRow: any = The value of the id(selectTrackByProperty) of the specific row that you want to set
+    selected</code>
+  <br>
+  <p>The page property lets you to set specific row selected in the data table. This can be only used with the <b>single
+    & single_toggle</b> selection modes mentioned in the above. Refer following example,</p>
+
+  <app-selected-row-usage></app-selected-row-usage>
+  <app-example-code [files]="selectedRowUsage"></app-example-code>
+
+  <h4 id="selectedRows">Set Selected Rows</h4>
+  <code>selectedRows: any[] = The values of the ids(selectTrackByProperty) of the specific rows that you want to set
+    selected</code>
+  <br>
+  <p>The page property lets you to set specific rows selected in the data table. This can be only used with the
+    <b>multi</b> selection mode mentioned in the above. Refer following example,</p>
+
+  <app-selected-rows-usage></app-selected-rows-usage>
+  <app-example-code [files]="selectedRowsUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Row

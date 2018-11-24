@@ -94,6 +94,52 @@ export const multiRowSelectionUsage: ExampleFile[] = [
   }
 ];
 
+export const selectedRowUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'selected-row-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/selected-row-usage/selected-row-usage.module.md')
+  },
+  {
+    type: FileType.TS,
+    name: 'selected-row-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/selected-row-usage/selected-row-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'selected-row-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/selected-row-usage/selected-row-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
+];
+
+export const selectedRowsUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'selected-rows-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/selected-rows-usage/selected-rows-usage.module.md')
+  },
+  {
+    type: FileType.TS,
+    name: 'selected-rows-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/selected-rows-usage/selected-rows-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'selected-rows-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/selected-rows-usage/selected-rows-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'sample-data.ts',
+    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
+  }
+];
+
 export const demoSnippet: any = {
   row_selectable: require('!!raw-loader?lang=typescript!./docs/row_selectable.md')
 };

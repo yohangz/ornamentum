@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import {
-  demoSnippet, multiRowSelectionUsage, rowSelectionUsage, singleRowSelectionUsage,
+  demoSnippet, multiRowSelectionUsage, rowSelectionUsage, selectedRowsUsage, selectedRowUsage, singleRowSelectionUsage,
   singleToggleRowSelectionUsage
 } from './data-table-row-selection.list';
 
@@ -15,5 +15,7 @@ export class DataTableRowSelectionComponent {
   public singleToggleRowSelectionUsage = singleToggleRowSelectionUsage;
   public multiRowSelectionUsage = multiRowSelectionUsage;
   public rowSelectionUsage = rowSelectionUsage;
+  public selectedRowUsage = selectedRowUsage;
+  public selectedRowsUsage = selectedRowsUsage;
   public demoSnippet = demoSnippet;
 }
