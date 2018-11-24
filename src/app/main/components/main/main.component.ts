@@ -27,11 +27,11 @@ export class MainComponent {
           navigation: [
             {
               title: 'Basic Usage',
-              anchor: 'basicUsage',
+              anchor: 'basicUsage'
             },
             {
               title: 'Installation',
-              anchor: 'installation',
+              anchor: 'installation'
             },
             {
               title: 'Peer Dependencies',
@@ -39,11 +39,11 @@ export class MainComponent {
             },
             {
               title: 'Functionality',
-              anchor: 'functionality',
+              anchor: 'functionality'
             },
             {
               title: 'Suggested Links',
-              anchor: 'suggestedLinks',
+              anchor: 'suggestedLinks'
             }
           ]
         },
@@ -69,7 +69,7 @@ export class MainComponent {
             },
             {
               title: 'Basic Usage',
-              anchor: 'basicUsage',
+              anchor: 'basicUsage'
             },
             {
               title: 'Useful Properties',
@@ -87,7 +87,7 @@ export class MainComponent {
             },
             {
               title: 'Suggested Links',
-              anchor: 'suggestedLinks',
+              anchor: 'suggestedLinks'
             }
           ]
         },
@@ -101,7 +101,7 @@ export class MainComponent {
             },
             {
               title: 'Basic Usage',
-              anchor: 'basicUsage',
+              anchor: 'basicUsage'
             },
             {
               title: 'Useful Properties',
@@ -141,11 +141,11 @@ export class MainComponent {
             },
             {
               title: 'Basic Usage',
-              anchor: 'basicUsage',
+              anchor: 'basicUsage'
             },
             {
               title: 'Filter Text Box',
-              anchor: 'filterTextBox',
+              anchor: 'filterTextBox'
             },
             {
               title: 'Filter Text Box Useful Properties',
@@ -229,7 +229,7 @@ export class MainComponent {
             },
             {
               title: 'Filter DropDown',
-              anchor: 'filterDropDown',
+              anchor: 'filterDropDown'
             },
             {
               title: 'Suggested Links',
@@ -239,7 +239,51 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/row-selection',
-          title: 'Row Selection'
+          title: 'Row Selection',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Row Selection Mode',
+                  anchor: 'selectMode'
+                },
+                {
+                  title: 'Show Row Select Checkbox',
+                  anchor: 'showRowSelectCheckbox'
+                },
+                {
+                  title: 'Select On Row Click',
+                  anchor: 'selectOnRowClick'
+                },
+                {
+                  title: 'Select Track By',
+                  anchor: 'selectTrackBy'
+                },
+                {
+                  title: 'Set Selected Row',
+                  anchor: 'selectedRow'
+                },
+                {
+                  title: 'Set Selected Rows',
+                  anchor: 'selectedRows'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/column/resizable',
@@ -353,11 +397,11 @@ export class MainComponent {
           navigation: [
             {
               title: 'What you will see',
-              anchor: 'whatYouWillSee',
+              anchor: 'whatYouWillSee'
             },
             {
               title: 'Basic Usage',
-              anchor: 'basicUsage',
+              anchor: 'basicUsage'
             },
             {
               title: 'Useful Properties',
@@ -383,7 +427,7 @@ export class MainComponent {
             },
             {
               title: 'Suggested Links',
-              anchor: 'suggestedLinks',
+              anchor: 'suggestedLinks'
             }
           ]
         },
