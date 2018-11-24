@@ -5,11 +5,8 @@ import { CommonModule } from '@angular/common';
 import { DataTableModule } from 'ornamentum';
 
 import {
-  DataTableRowSelectionComponent,
-  MultiRowSelectionUsageComponent,
-  SingleRowSelectionUsageComponent,
-  SingleToggleRowSelectionUsageComponent,
-  RowSelectionUsageComponent
+  DataTableRowSelectionComponent, MultiRowSelectionUsageComponent, RowSelectionUsageComponent, SelectedRowsUsageComponent,
+  SelectedRowUsageComponent, SingleRowSelectionUsageComponent, SingleToggleRowSelectionUsageComponent
 } from './index';
 
 import { DataTableRowSelectionRoutingModule } from './data-table-row-selection-routing.module';
@@ -26,7 +23,9 @@ import { SharedModule } from '../../../shared/shared.module';
     MultiRowSelectionUsageComponent,
     SingleRowSelectionUsageComponent,
     SingleToggleRowSelectionUsageComponent,
-    RowSelectionUsageComponent
+    RowSelectionUsageComponent,
+    SelectedRowUsageComponent,
+    SelectedRowsUsageComponent
   ],
   exports: [],
   imports: [
