@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { loadingSpinnerUsage } from './data-table-loading-spinner.list';
+import { demoSnippet, loadingSpinnerUsage } from './data-table-loading-spinner.list';
 
 @Component({
   selector: 'app-data-table-loading-spinner-component',
@@ -9,4 +9,5 @@ import { loadingSpinnerUsage } from './data-table-loading-spinner.list';
 })
 export class DataTableLoadingSpinnerComponent {
   public loadingSpinnerUsage = loadingSpinnerUsage;
+  public demoSnippet = demoSnippet;
 }
