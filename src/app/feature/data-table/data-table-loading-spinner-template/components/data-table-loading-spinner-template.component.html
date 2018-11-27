@@ -1,22 +1,38 @@
 <div class="feature-container">
   <h1>Data Table Loading Spinner Template</h1>
-  <p>This feature enables users to customize the table data loading spinner by providing their own template when data
-    loading is in progress.</p>
 
-  <label>The following code block example shows the way of data table loading spinner template using. In here we used
-    simple text to override the native loading functionality. You can also provide your own custom templates with the
-    any
-    custom styles as you like.
-    <pre class="prettyprint lang-html">{{demoSnippet.template}}</pre>
-  </label>
+  <p>This feature enables users to customize the Data Loading Spinner by providing their
+    own template when data loading is in progress. for enabling Data loading spinner template it is <b>mandatory</b> to
+    enable showLoadingSpinner property in data
+    table
+    global level configuration. for learn more about show loading spinner please refer <a rel="noopener"
+                                                                                          href="feature/data-table/loading-spinner"
+                                                                                          target="_blank">Data Loading Spinner </a>section.</p>
 
-  <p>Here is the table output after applying the above loading spinner template.</p>
+  <h2 id="whatYouWillSee">What You Will See</h2>
+  <app-loading-spinner-template-stylish-usage></app-loading-spinner-template-stylish-usage>
 
-  <app-loading-spinner-template-usage></app-loading-spinner-template-usage>
+  <app-example-code [files]="loadingSpinnerTemplateStylishUsage"></app-example-code>
 
-  <app-example-code [files]="loadingSpinnerTemplateUsage"></app-example-code>
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>The following example code block demonstrate the way of data table loading spinner template can be using. In here
+    we uses
+    simple text to override the native loading functionality.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.template}}</pre>
+
+  <p>Or else you can provide your own custom templates with any custom styles as you preferred within the ng-template scope.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.stylishTemplate}}</pre>
+
+  <p>Loading spinner property can be override in module level. for more details about Module level property overriding
+    please refer <a rel="noopener" target="_blank" href="#">Module Level Property Override</a> section.</p>
 
   <h2>Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="feature/data-table/templates/no-records-template">No Records Template</a><br>
+  <a rel="noopener" target="_blank" href="feature/data-table/templates/cell-template-">Cell Template</a><br>
+  <a rel="noopener" target="_blank" href="feature/data-table/templates/row-expand-template">Row Expand Template</a><br>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#loadingSpinnerTemplate">API Doc
     for Data Table Loading Spinner Template</a>
 </div>

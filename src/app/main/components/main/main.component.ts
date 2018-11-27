@@ -299,7 +299,31 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/loading-spinner',
-          title: 'Data Loading Spinner'
+          title: 'Data Loading Spinner',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Show Loading Spinner',
+                  anchor: 'showLoadingSpinner'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/header-details',
@@ -437,7 +461,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/templates/loading-spinner-template',
-          title: 'Loading Spinner Template'
+          title: 'Loading Spinner Template',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/templates/no-records-template',
