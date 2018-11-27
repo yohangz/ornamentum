@@ -1,0 +1,3 @@
+<ng-data-table
+  ...
+  [showLoadingSpinner]="true">
