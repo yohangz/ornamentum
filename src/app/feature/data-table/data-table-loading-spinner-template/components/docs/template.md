@@ -1,3 +1,3 @@
 <ng-template #ngDataTableLoadingSpinner>
-  <h1>Data loading => In Progress</h1>
+  <h1>Data Loading, Please wait...</h1>
 </ng-template>
