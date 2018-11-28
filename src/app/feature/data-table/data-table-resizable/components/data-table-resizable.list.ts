@@ -23,3 +23,6 @@ export const columnResizableUsage: ExampleFile[] = [
   }
 ];
 
+export const demoSnippet: any = {
+  resizable: require('!!raw-loader?lang=typescript!./docs/resizable.md')
+};
