@@ -337,7 +337,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/substitute-rows',
-          title: 'Substitute Rows'
+          title: 'Substitute Rows',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/loading-spinner',
