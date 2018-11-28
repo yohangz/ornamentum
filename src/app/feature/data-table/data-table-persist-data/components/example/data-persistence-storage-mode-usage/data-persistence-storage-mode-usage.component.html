@@ -1,52 +1,58 @@
 <ng-data-table
+  [id]="'sales_products_detail_summery'"
   [title]="'Sales Products'"
+  [storageMode]="'local'"
   [items]="items"
   [minHeight]="200"
   [minWidth]="900"
   [pageable]="true"
-  [showHeader]="true">
+  [showHeader]="true"
+  [persistTableState]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [resizable]="true"
+    [filterable]="true"
+    [sortable]="true"
+    [filterPlaceholder]="'Search'"
     [width]="70">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
-    [title]="'Order Method Type'"
-    [resizable]="true">
+    [sortable]="true"
+    [title]="'Order Method Type'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
-    [title]="'Retailer Type'"
-    [resizable]="true">
+    [filterable]="true"
+    [sortable]="true"
+    [filterPlaceholder]="'Search'"
+    [title]="'Retailer Type'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
-    [title]="'Product Line'"
-    [resizable]="true">
+    [sortable]="true"
+    [title]="'Product Line'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
-    [title]="'Product Type'"
-    [resizable]="true">
+    [title]="'Product Type'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'revenue'"
     [title]="'Revenue'"
-    [resizable]="true"
     [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
-    [resizable]="true"
+    [filterable]="true"
+    [sortable]="true"
+    [filterPlaceholder]="'Search'"
     [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"
     [title]="'Gross Margin'"
-    [resizable]="true"
     [width]="100">
   </ng-data-table-column>
 </ng-data-table>
