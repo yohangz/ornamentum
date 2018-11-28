@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { columnResizableUsage } from './data-table-resizable.list';
+import { columnResizableUsage, demoSnippet } from './data-table-resizable.list';
 
 @Component({
   selector: 'app-data-table-resizable-component',
@@ -9,4 +9,5 @@ import { columnResizableUsage } from './data-table-resizable.list';
 })
 export class DataTableResizableComponent {
   public columnResizableUsage = columnResizableUsage;
+  public demoSnippet = demoSnippet;
 }
