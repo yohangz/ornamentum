@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { withSubstituteRowsUsage, withoutSubstituteRowsUsage } from './data-table-substitute-rows.list';
+import { demoSnippet, withoutSubstituteRowsUsage, withSubstituteRowsUsage } from './data-table-substitute-rows.list';
 
 @Component({
   selector: 'app-data-table-substitute-rows-component',
@@ -10,4 +10,5 @@ import { withSubstituteRowsUsage, withoutSubstituteRowsUsage } from './data-tabl
 export class DataTableSubstituteRowsComponent {
   public withSubstituteRowsUsage = withSubstituteRowsUsage;
   public withoutSubstituteRowsUsage = withoutSubstituteRowsUsage;
+  public demoSnippet = demoSnippet;
 }

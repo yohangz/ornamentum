@@ -1,23 +1,36 @@
 <div class="feature-container">
   <h1>Data Table Substitute Rows</h1>
-  <p>This configuration will allows users give some indication to the users by showing empty rows when the data set is
-    less for the specified limit. In the following, shows how this can be configured.</p>
+  <p>Sometimes you might want to show empty rows in the data table when there are less amount of data is available than
+    the specified limit. Therefore, in such cases, you might need to turn the <b>showSubstituteRows</b> on.</p>
 
-  <h2>With Substitute Rows</h2>
-  <p>[showSubstituteRows]="true"</p>
-
+  <h2 id="whatYouWillSee">What You Will See</h2>
   <app-with-substitute-rows-usage></app-with-substitute-rows-usage>
+  <br>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+  <p>To enable showSubstituteRows, simply set <b>showSubstituteRows</b> to <b>true</b> and by default showSubstituteRows
+    is <b>false</b>.</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.showSubstituteRows}}</pre>
+
+  <p>In default the table doesn't show substitute rows although data limit is less than the specified limit.</p>
+
+  <p>In the above example limit is specified as 15. But it is showing 5 additional rows due to unavailability of 5 data
+    items.</p>
 
   <app-example-code [files]="withSubstituteRowsUsage"></app-example-code>
 
-  <h2>Without Substitute Rows</h2>
-  <p>[showSubstituteRows]="false"</p>
+  <h5>Without Substitute Rows</h5>
+
+  <p>Substitute rows will not be shown although data limit is less than the specified limit, if
+    <b>showSubstituteRows</b> property is set to false.</p>
+
+  <p>In the following example limit is specified as 15. But it is not showing 5 additional rows. Because
+    showSubstituteRows is set to false.</p>
 
   <app-without-substitute-rows-usage></app-without-substitute-rows-usage>
-
   <app-example-code [files]="withoutSubstituteRowsUsage"></app-example-code>
 
-  <h2>Suggested Links</h2>
+  <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#showSubstituteRows">API Doc for
     Data Table Substitute Rows</a>
 </div>

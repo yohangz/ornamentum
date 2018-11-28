@@ -46,3 +46,6 @@ export const withoutSubstituteRowsUsage: ExampleFile[] = [
   }
 ];
 
+export const demoSnippet: any = {
+  showSubstituteRows: require('!!raw-loader?lang=typescript!./docs/substitue_rows.md')
+};
