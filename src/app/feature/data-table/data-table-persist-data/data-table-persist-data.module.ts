@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTablePersistDataComponent, DataPersistenceUsageComponent } from './index';
+import { DataPersistenceStorageModeUsageComponent, DataPersistenceUsageComponent, DataTablePersistDataComponent } from './index';
 
 import { DataTablePersistDataRoutingModule } from './data-table-persist-data-routing.module';
 
@@ -17,7 +17,8 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTablePersistDataComponent,
-    DataPersistenceUsageComponent
+    DataPersistenceUsageComponent,
+    DataPersistenceStorageModeUsageComponent
   ],
   exports: [],
   imports: [

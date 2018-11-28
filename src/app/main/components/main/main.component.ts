@@ -305,7 +305,35 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/data-persistence',
-          title: 'Data Persistence'
+          title: 'Data Persistence',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Storage Mode',
+                  anchor: 'storageMode'
+                },
+                {
+                  title: 'State Saving ID',
+                  anchor: 'stateId'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks',
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/substitute-rows',

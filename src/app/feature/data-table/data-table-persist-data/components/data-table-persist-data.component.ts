@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { dataPersistenceUsage } from './data-table-persist-data.list';
+import { dataPersistenceUsage, demoSnippet, dataPersistenceUsageWithStorageMode } from './data-table-persist-data.list';
 
 @Component({
   selector: 'app-data-table-persist-data-component',
@@ -9,4 +9,6 @@ import { dataPersistenceUsage } from './data-table-persist-data.list';
 })
 export class DataTablePersistDataComponent {
   public dataPersistenceUsage = dataPersistenceUsage;
+  public dataPersistenceUsageWithStorageMode = dataPersistenceUsageWithStorageMode;
+  public demoSnippet = demoSnippet;
 }
