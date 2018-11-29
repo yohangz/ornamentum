@@ -535,7 +535,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/templates/no-records-template',
-          title: 'No Records Template'
+          title: 'No Records Template',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         }
       ]
     },

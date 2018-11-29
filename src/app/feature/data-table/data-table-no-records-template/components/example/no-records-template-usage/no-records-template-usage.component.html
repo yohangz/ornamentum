@@ -5,8 +5,8 @@
   [minWidth]="1080"
   [pageable]="false"
   [showHeader]="true"
-  [showRefreshButton]="false"
-  [showColumnSelector]="false">
+  [showLoadingSpinner]="true"
+  [expandableRows]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
@@ -44,8 +44,8 @@
     [width]="150">
   </ng-data-table-column>
   <ng-template #ngDataTableNoRecords>
-    <h1>No data have been added</h1>
-    <h2>Please add data.</h2>
+    <h1 style="font-family: 'Helvetica Neue'; color: #8f893f;">No data have been detected.</h1>
+    <h2>Please read our <a href="#">documentation</a> about data retrieval process</h2>
   </ng-template>
 </ng-data-table>
 
