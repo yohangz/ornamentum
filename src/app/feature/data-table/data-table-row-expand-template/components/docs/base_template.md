@@ -1,3 +1,3 @@
 <ng-template #ngDataTableRowExpand let-row="row">
-  <span>This is row expand template</span>
+  // your template goes here
 </ng-template>
