@@ -4,7 +4,10 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableRowExpandTemplateComponent, RowExpandTemplateUsageComponent } from './index';
+import {
+  DataTableRowExpandTemplateComponent, RowExpandExpandableDetailViewComponent, RowExpandLoadingSpinnerUsageComponent,
+  RowExpandOnClickUsageComponent, RowExpandTemplateUsageComponent
+} from './index';
 
 import { DataTableRowExpandTemplateRoutingModule } from './data-table-row-expand-template-routing.module';
 
@@ -17,7 +20,10 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTableRowExpandTemplateComponent,
-    RowExpandTemplateUsageComponent
+    RowExpandTemplateUsageComponent,
+    RowExpandOnClickUsageComponent,
+    RowExpandLoadingSpinnerUsageComponent,
+    RowExpandExpandableDetailViewComponent
   ],
   exports: [],
   imports: [

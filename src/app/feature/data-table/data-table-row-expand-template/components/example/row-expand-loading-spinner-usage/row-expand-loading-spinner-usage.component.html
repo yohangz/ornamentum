@@ -5,7 +5,8 @@
   [minWidth]="900"
   [pageable]="true"
   [showHeader]="true"
-  [expandableRows]="true">
+  [expandableRows]="true"
+  [showRowExpandLoadingSpinner]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
@@ -44,6 +45,7 @@
     [width]="100">
   </ng-data-table-column>
   <ng-template #ngDataTableRowExpand let-row="row">
-    <span>Product => <b style="color: #4dc71f">{{row.item.product}}</b></span>
+    <app-expand-expandable-detail-view *ngIf="row.expanded || row.dataLoaded"
+                                       [row]="row"></app-expand-expandable-detail-view>
   </ng-template>
 </ng-data-table>

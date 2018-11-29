@@ -1,32 +1,69 @@
 <div class="feature-container">
   <h1>Data Table Row Expand Template</h1>
-  <p>This feature enables users to customize the table row expandable section by providing their own template. There are
-    set of configurations needs to be enabled to see and control the behaviour of this expandable template.</p>
 
-  <ul class="main-pane-list">
-    <li><b>[expandableRows]="true or false"</b> => Determine whether to show/hide the expandable rows section.</li>
-    <li><b>[expandOnRowClick]="true or false"</b> => Tells data table to expand the table row on user row click event
-      when
-      expandable rows feature is enabled.
-    </li>
-    <li><b>[showRowExpandLoadingSpinner]="true or false"</b> => Enables loading spinner when data is fetching to the
-      table
-      row
-      expandable section.
-    </li>
-  </ul>
+  <p>Sometimes you might want to customize the table row expandable section by your their own template. Now this table
+    allows you to provide you own table by simply enabling <b>expandableRows</b> property.</p>
 
-  <label>The following code block shows how we use the template to show simple text output in row expand.
-    <pre class="prettyprint lang-html">{{demoSnippet.template}}</pre>
-  </label>
-
-  <p>Here is the table output after applying the above row expand template.</p>
-
+  <h2 id="whatYouWillSee">What you will see</h2>
   <app-row-expand-template-usage></app-row-expand-template-usage>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p> To enable expandable rows, simply set <b>expandableRows</b> to <b>true</b> and by default expandableRows is false.
+  </p>
+
+  <p> Data table will not show anything although you have provided true for expandableRows property due to
+    unavailability of a custom template. That means data table doesn't contain any default expandable row template.
+    Therefore, you should provide your own template when you set expandableRows value into true.</p>
+
+  <p>You can provide your own template as follows.</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.base_template}}</pre>
+
+  <p>In the above data table, the following template is applied for all expandable rows.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.expand_template}}</pre>
+
+  <p>Use following files to see the relevant code segments for above data table example.</p>
 
   <app-example-code [files]="rowExpandTemplateUsage"></app-example-code>
 
-  <h2>Suggested Links</h2>
+  <h2 id="usefulProperties">Useful properties</h2>
+  <p>There are few more properties available when providing your own custom templates.</p>
+
+  <h4 id="row">Row</h4>
+  <code>row: DataTableRow -> "Data table row properties"</code>
+  <br>
+  <p>This property can be accessed as shown in the above basic usage sections's example.</p>
+
+  <h4 id="expandOnRowClick">Expand On Row Click</h4>
+  <code>expandOnRowClick: boolean -> true or false</code>
+  <br>
+  <p>Tells data table to expand the table row on user row click event when expandable rows feature is enabled.</p>
+
+  <app-row-expand-on-click-usage></app-row-expand-on-click-usage>
+  <app-example-code [files]="rowExpandOnClickUsage"></app-example-code>
+
+  <h4 id="showRowExpandLoadingSpinner">Show Row Expand Loading Spinner</h4>
+  <code>showRowExpandLoadingSpinner: boolean -> true or false</code>
+  <br>
+  <p>Enables loading spinner when data is fetching to the table row expandable section. This can be clear seen when
+    there is scenario to show data by calling a REST API to the expandable row in a slow network.</p>
+
+  <app-row-expand-loading-spinner-usage></app-row-expand-loading-spinner-usage>
+  <app-example-code [files]="rowExpandLoadingSpinnerUsage"></app-example-code>
+
+  <p>In the above data table, the following template is applied for all expandable rows to see the loading spinner
+    behaviour.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.loading_spinner_template}}</pre>
+
+  <p>In the following you can see the code base relevant to above template.</p>
+
+  <app-example-code [files]="rowExpandLoadingSpinnerDetailView"></app-example-code>
+
+  <p>You can use row properties to control the behaviour of the loading spinner as shown in the above.</p>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#rowExpandTemplate">API Doc for
     Data Table Row Expand Template</a>
 </div>
