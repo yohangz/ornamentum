@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
-import { rowExpandTemplateUsage } from './data-table-row-expand-template.list';
-
-import { demoSnippet } from './data-table-row-expand-template';
+import {
+  demoSnippet, rowExpandLoadingSpinnerDetailView, rowExpandLoadingSpinnerUsage, rowExpandOnClickUsage,
+  rowExpandTemplateUsage
+} from './data-table-row-expand-template.list';
 
 @Component({
   selector: 'app-data-table-row-expand-template-component',
@@ -11,6 +12,8 @@ import { demoSnippet } from './data-table-row-expand-template';
 })
 export class DataTableRowExpandTemplateComponent {
   public rowExpandTemplateUsage = rowExpandTemplateUsage;
-
+  public rowExpandOnClickUsage = rowExpandOnClickUsage;
+  public rowExpandLoadingSpinnerUsage = rowExpandLoadingSpinnerUsage;
+  public rowExpandLoadingSpinnerDetailView = rowExpandLoadingSpinnerDetailView;
   public demoSnippet = demoSnippet;
 }
