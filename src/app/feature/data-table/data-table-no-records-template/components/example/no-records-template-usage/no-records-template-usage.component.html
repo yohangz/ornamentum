@@ -2,7 +2,7 @@
   [title]="'Sales Products'"
   [items]="items"
   [minHeight]="200"
-  [minWidth]="1080"
+  [minWidth]="900"
   [pageable]="false"
   [showHeader]="true"
   [showLoadingSpinner]="true"
@@ -31,17 +31,17 @@
   <ng-data-table-column
     [field]="'revenue'"
     [title]="'Revenue'"
-    [width]="150">
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
-    [width]="80">
+    [width]="70">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"
     [title]="'Gross Margin'"
-    [width]="150">
+    [width]="100">
   </ng-data-table-column>
   <ng-template #ngDataTableNoRecords>
     <h1 style="font-family: 'Helvetica Neue'; color: #8f893f;">No data have been detected.</h1>
