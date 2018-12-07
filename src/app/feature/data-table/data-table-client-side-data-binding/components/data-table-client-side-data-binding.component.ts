@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { clientSideDataBindingUsage } from './data-table-client-side-data-binding.list';
+import { clientSideDataBindingUsage, demoSnippet } from './data-table-client-side-data-binding.list';
 
 @Component({
   selector: 'app-data-table-client-side-data-binding-component',
@@ -9,4 +9,5 @@ import { clientSideDataBindingUsage } from './data-table-client-side-data-bindin
 })
 export class DataTableClientSideDataBindingComponent {
   public clientSideDataBindingUsage = clientSideDataBindingUsage;
+  public demoSnippet = demoSnippet;
 }
