@@ -49,7 +49,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/client-side-data-binding',
-          title: 'Client Side Data Binding'
+          title: 'Client Side Data Binding',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/server-side-data-binding',

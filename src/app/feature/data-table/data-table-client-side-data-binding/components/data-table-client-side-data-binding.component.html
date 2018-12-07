@@ -1,27 +1,20 @@
 <div class="feature-container">
-  <h1>Data Table Data Binding</h1>
-  <ul class="main-pane-list">
-    <li>The main objective of data table is to show data in tabular format.</li>
-    <li>In order to show data we need to bind the data to the data table. There are several types of bindings are
-      available, when binding data to the ornamentum data table.
-      <ul>
-        <li>Client Side Data Binding</li>
-        <li>Server Side Data Biding</li>
-        <li>Real-time Data Biding</li>
-      </ul>
-    </li>
-    <li>Depending on the requirement users can select the best data binding method.</li>
-  </ul>
+  <h1>Client Side Data Table Data Binding</h1>
 
-  <h2>Client Side Data Binding</h2>
-  <p>In client side data binding, source data should be passed via the <b>items</b> attribute => [items]="data"</p>
+  <p>Client side data binding allows users to bind data to the data table directly when data is available in the client
+    side.</p>
 
+  <h2 id="whatYouWillSee">What You Will See</h2>
   <app-client-side-data-binding></app-client-side-data-binding>
+  <br>
 
-  <app-example-code [files]="clientSideDataBindingUsage">
-  </app-example-code>
+  <h2 id="basicUsage">Basic Usage</h2>
+  <p>To support client side data binding, simply set <b>available data</b> to <b>items</b> attribute.</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.client_side_data_biding}}</pre>
 
-  <h2>Suggested Links</h2>
+  <app-example-code [files]="clientSideDataBindingUsage"></app-example-code>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#items">API Doc for Client Side
     Data Binding</a>
 </div>
