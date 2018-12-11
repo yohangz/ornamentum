@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableLoadingSpinnerTemplateComponent, LoadingSpinnerTemplateUsageComponent } from './index';
+import { DataTableLoadingSpinnerTemplateComponent, LoadingSpinnerTemplateStylishUsageComponent } from './index';
 
 import { DataTableLoadingSpinnerTemplateRoutingModule } from './data-table-loading-spinner-template-routing.module';
 
@@ -17,7 +17,7 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTableLoadingSpinnerTemplateComponent,
-    LoadingSpinnerTemplateUsageComponent
+    LoadingSpinnerTemplateStylishUsageComponent
   ],
   exports: [],
   imports: [

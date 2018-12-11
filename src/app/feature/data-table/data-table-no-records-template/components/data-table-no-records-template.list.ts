@@ -22,3 +22,4 @@ export const noRecordsTemplateUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
+

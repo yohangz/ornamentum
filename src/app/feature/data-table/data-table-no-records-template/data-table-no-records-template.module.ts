@@ -24,7 +24,9 @@ import { SharedModule } from '../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot(),
+    DataTableModule.forRoot({
+      showColumnSelector: true
+    }),
     DataTableNoRecordsTemplateRoutingModule
   ],
   providers: []
