@@ -1,16 +1,26 @@
 <div class="feature-container">
-  <h1>Data Table No Records Template</h1>
+  <h1>No Records Template</h1>
+
   <p>This feature enables users to customize the table body by providing their own template to show when the data is not
     available, by providing respective mandatory fields for no records template end-user can be notify in a preferred
     manner in no data scenario.</p>
 
   <p>No records template can be integrate into expandable rows as well. for more details about expandable row
-    configurations please refer <a rel="noopener" target="_blank" href="feature/data-table/templates/expand-template">Row Expand Template</a> section.</p>
+    configurations please refer <a rel="noopener" target="_blank" href="feature/data-table/templates/expand-template">
+      Row Expand Template</a> section.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
+
   <app-no-records-template-usage></app-no-records-template-usage>
 
+  <p>The below demo snippet will demonstrate a sample no data scenario. until a success data response, we have enabled
+    <a rel="noopener" target="_blank" href="feature/data-table/data-loading-spinner">Data Loading
+      Spinner</a> for purpose of visible the process of data retrieval and make the data table more attractive.</p>
+
+  <app-example-code [files]="noRecordsTemplateUsage"></app-example-code>
+
   <h2 id="basicUsage">Basic Usage</h2>
+
   <p>As same as the all other templates, we can bind a specific property <code>#ngDataTableNoRecords</code> into
     <b>ng-template</b> to indicates we are going to define a template to show when no data is retrieved on
     data fetch call.</p>
@@ -21,12 +31,6 @@
     scope.</p>
 
   <pre class="prettyprint lang-html">{{demoSnippet.stylishTemplate}}</pre>
-
-  <p>The below demo snippet will demonstrate a sample no data scenario. until a success data response, we have enabled
-    <a rel="noopener" target="_blank" href="feature/data-table/data-loading-spinner">Data Loading
-      Spinner</a> for purpose of visible the process of data retrieval and make the data table more attractive.</p>
-
-  <app-example-code [files]="noRecordsTemplateUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="feature/data-table/templates/loading-spinner-template">Loading Spinner
