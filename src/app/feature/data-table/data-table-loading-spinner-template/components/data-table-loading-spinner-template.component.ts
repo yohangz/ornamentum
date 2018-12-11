@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { demoSnippet, loadingSpinnerTemplateUsage } from './data-table-loading-spinner-template.list';
+import { demoSnippet, loadingSpinnerTemplateStylishUsage } from './data-table-loading-spinner-template.list';
 
 @Component({
   selector: 'app-data-table-loading-spinner-template-component',
@@ -8,6 +8,6 @@ import { demoSnippet, loadingSpinnerTemplateUsage } from './data-table-loading-s
   styleUrls: ['./data-table-loading-spinner-template.component.scss']
 })
 export class DataTableLoadingSpinnerTemplateComponent {
-  public loadingSpinnerTemplateUsage = loadingSpinnerTemplateUsage;
+  public loadingSpinnerTemplateStylishUsage = loadingSpinnerTemplateStylishUsage;
   public demoSnippet = demoSnippet;
 }

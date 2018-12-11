@@ -1,23 +1,23 @@
 import { ExampleFile, FileType } from '../../../../shared/models';
 
-export const loadingSpinnerTemplateUsage: ExampleFile[] = [
+export const loadingSpinnerTemplateStylishUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'loading-spinner-template-usage.module.ts',
+    name: 'loading-spinner-template-stylish-usage.module.ts',
     content: require(
-      '!!raw-loader?lang=typescript!./example/loading-spinner-template-usage/loading-spinner-template-usage.module.md')
+      '!!raw-loader?lang=typescript!./example/loading-spinner-template-stylish-usage/loading-spinner-template-stylish-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'loading-spinner-template-usage.component.ts',
+    name: 'loading-spinner-template-stylish-usage.component.ts',
     content: require(
-      '!!raw-loader?lang=typescript!./example/loading-spinner-template-usage/loading-spinner-template-usage.component.ts')
+      '!!raw-loader?lang=typescript!./example/loading-spinner-template-stylish-usage/loading-spinner-template-stylish-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'loading-spinner-template-usage.component.html',
+    name: 'loading-spinner-template-stylish-usage.component.html',
     content: require(
-      '!!raw-loader?lang=html!./example/loading-spinner-template-usage/loading-spinner-template-usage.component.html')
+      '!!raw-loader?lang=html!./example/loading-spinner-template-stylish-usage/loading-spinner-template-stylish-usage.component.html')
   },
   {
     type: FileType.TS,
