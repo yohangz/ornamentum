@@ -49,15 +49,15 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/client-side-data-binding',
-          title: 'Client Side Data Binding'
+          title: 'Client-side Data Binding'
         },
         {
           routePath: '/feature/data-table/server-side-data-binding',
-          title: 'Server Side Data Binding'
+          title: 'Server-side Data Binding'
         },
         {
           routePath: '/feature/data-table/real-time-data-binding',
-          title: 'Real Time Data Binding'
+          title: 'Realtime Data Binding'
         },
         {
           routePath: '/feature/data-table/pagination',
@@ -559,15 +559,37 @@ export class MainComponent {
       menuItems: [
         {
           routePath: '/feature/dropdown/overview',
-          title: 'Basic Usage'
+          title: 'Overview',
+          navigation: [
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Installation',
+              anchor: 'installation'
+            },
+            {
+              title: 'Peer Dependencies',
+              anchor: 'peerDependencies'
+            },
+            {
+              title: 'Functionality',
+              anchor: 'functionality'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/client-side-data-binding',
-          title: 'Client Side Data Binding'
+          title: 'Client-side Data Binding'
         },
         {
           routePath: '/feature/dropdown/server-side-data-binding',
-          title: 'Server Side Data Binding'
+          title: 'Server-side Data Binding'
         },
         {
           routePath: '/feature/dropdown/real-time-data-binding',
