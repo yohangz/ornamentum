@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 
-import { filteringUsage } from './dropdown-filtering.list';
+import {
+  filteringUsage,
+  filterDebounceUsage,
+  filterDebounceTimeUsage,
+  filterTextUsage,
+  demoSnippet
+} from './dropdown-filtering.list';
 
 @Component({
   selector: 'app-dropdown-filtering-component',
@@ -9,4 +15,8 @@ import { filteringUsage } from './dropdown-filtering.list';
 })
 export class DropdownFilteringComponent {
   public filteringUsage = filteringUsage;
+  public filterDebounceUsage = filterDebounceUsage;
+  public filterDebounceTimeUsage = filterDebounceTimeUsage;
+  public filterTextUsage = filterTextUsage;
+  public demoSnippet = demoSnippet;
 }

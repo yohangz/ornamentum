@@ -22,3 +22,8 @@ export const disablingUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
+
+export const demoSnippet: any = {
+  dropdownDisabling: require('!!raw-loader?lang=typescript!./docs/dropdown-disabling.md')
+};
+
