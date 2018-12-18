@@ -635,11 +635,57 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/grouping',
-          title: 'Grouping'
+          title: 'Grouping',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/filtering',
-          title: 'Filtering'
+          title: 'Filtering',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Filter Debounce',
+                  anchor: 'filterDebounce'
+                },
+                {
+                  title: 'Filter Debounce Time',
+                  anchor: 'filterDebounceTime'
+                },
+                {
+                  title: 'Filter Text',
+                  anchor: 'filterText'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/item-selection',
@@ -651,7 +697,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/disable',
-          title: 'Dropdown Disabling'
+          title: 'Dropdown Disabling',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/item-disabling',
