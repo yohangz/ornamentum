@@ -13,6 +13,20 @@ const data: ExampleData[] = [
     revenue: 59628.66,
     quantity: 489,
     grossMargin: 0.34754797,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     id: 10
   },
   {
@@ -27,6 +41,12 @@ const data: ExampleData[] = [
     revenue: 87728.96,
     quantity: 352,
     grossMargin: 0.39814629,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      }
+    ],
     id: 15
   },
   {
@@ -41,6 +61,16 @@ const data: ExampleData[] = [
     revenue: 6940.03,
     quantity: 109,
     grossMargin: 0.36186587,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     id: 20
   },
   {
@@ -55,6 +85,16 @@ const data: ExampleData[] = [
     revenue: 62464.88,
     quantity: 898,
     grossMargin: 0.24468085,
+    availableStores: [
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     id: 25
   },
   {
@@ -69,6 +109,12 @@ const data: ExampleData[] = [
     revenue: 19476.8,
     quantity: 296,
     grossMargin: 0.47613982,
+    availableStores: [
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      }
+    ],
     id: 30
   },
   {
@@ -83,6 +129,12 @@ const data: ExampleData[] = [
     revenue: 4621.68,
     quantity: 262,
     grossMargin: 0.51643991,
+    availableStores: [
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      }
+    ],
     id: 35
   },
   {
@@ -97,6 +149,16 @@ const data: ExampleData[] = [
     revenue: 32870.4,
     quantity: 856,
     grossMargin: 0.49166667,
+    availableStores: [
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      }
+    ],
     id: 40
   },
   {
@@ -111,6 +173,12 @@ const data: ExampleData[] = [
     revenue: 30940.25,
     quantity: 275,
     grossMargin: 0.28895209,
+    availableStores: [
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      }
+    ],
     id: 45
   },
   {
@@ -125,6 +193,12 @@ const data: ExampleData[] = [
     revenue: 4057.2,
     quantity: 180,
     grossMargin: 0.60070985,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      }
+    ],
     id: 50
   },
   {
@@ -139,6 +213,12 @@ const data: ExampleData[] = [
     revenue: 7939.8,
     quantity: 66,
     grossMargin: 0.44272652,
+    availableStores: [
+      {
+        storeName: 'Stage Stores',
+        website: 'https://www.stage.com/'
+      }
+    ],
     id: 55
   },
   {
@@ -153,6 +233,12 @@ const data: ExampleData[] = [
     revenue: 12935,
     quantity: 199,
     grossMargin: 0.39374952,
+    availableStores: [
+      {
+        storeName: 'Stage Stores',
+        website: 'https://www.stage.com/'
+      }
+    ],
     id: 60
   },
   {
@@ -223,6 +309,12 @@ const data: ExampleData[] = [
     revenue: 21434.73,
     quantity: 6134,
     grossMargin: 0.75675458,
+    availableStores: [
+      {
+        storeName: 'Stage Stores',
+        website: 'https://www.stage.com/'
+      }
+    ],
     id: 85
   },
   {
@@ -699,6 +791,20 @@ const data: ExampleData[] = [
     revenue: 39812.66,
     quantity: 668,
     grossMargin: 0.56124007,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     id: 255
   },
   {
@@ -741,6 +847,20 @@ const data: ExampleData[] = [
     revenue: 31278.8,
     quantity: 40,
     grossMargin: 0.3733775,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     id: 270
   },
   {
@@ -853,6 +973,20 @@ const data: ExampleData[] = [
     revenue: 34745.76,
     quantity: 432,
     grossMargin: 0.50267313,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     id: 310
   },
   {
@@ -895,6 +1029,20 @@ const data: ExampleData[] = [
     revenue: 40579.81,
     quantity: 239,
     grossMargin: 0.45933212,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     id: 325
   },
   {
@@ -937,6 +1085,20 @@ const data: ExampleData[] = [
     revenue: 6068.48,
     quantity: 128,
     grossMargin: 0.36722211,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     id: 340
   },
   {
@@ -1021,6 +1183,20 @@ const data: ExampleData[] = [
     revenue: 16623.86,
     quantity: 451,
     grossMargin: 0.50217037,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     id: 370
   },
   {

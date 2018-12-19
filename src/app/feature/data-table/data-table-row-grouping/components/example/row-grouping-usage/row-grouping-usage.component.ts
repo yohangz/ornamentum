@@ -17,15 +17,16 @@ export class RowGroupingUsageComponent {
     this.items = this.dataFetchService.fetchData();
   }
 
-  public onDynamicRowSpanExtract(row: DataTableRow<any>): void {
-    // if (row.item.links && row.item.links.length) {
-    //   return row.item.links.length;
-    // }
-    //
-    // return 1;
+  public onDynamicRowSpanExtract(row: DataTableRow<any>): number {
+
+    if (row.item.availableStores && row.item.availableStores.length) {
+      return row.item.availableStores.length;
+    }
+
+    return 1;
   }
 
-  // public getUrlLinkValue(item: any, index: number, field: string) {
-  //   return item.links && item.links[index] ? item.links[index][field] : '-';
-  // }
+  public getStoreName(item: any, index: number, field: string) {
+    return item.availableStores && item.availableStores[index] ? item.availableStores[index][field] : '-';
+  }
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { rowGroupingUsage } from './data-table-row-grouping.list';
+import { demoSnippet, rowGroupingUsage } from './data-table-row-grouping.list';
 
 @Component({
   selector: 'app-data-table-row-grouping-component',
@@ -9,4 +9,5 @@ import { rowGroupingUsage } from './data-table-row-grouping.list';
 })
 export class DataTableRowGroupingComponent {
   public rowGroupingUsage = rowGroupingUsage;
+  public demoSnippet = demoSnippet;
 }
