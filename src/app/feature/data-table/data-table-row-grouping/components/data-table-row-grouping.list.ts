@@ -23,3 +23,6 @@ export const rowGroupingUsage: ExampleFile[] = [
   }
 ];
 
+export const demoSnippet: any = {
+  rowGrouping: require('!!raw-loader?lang=typescript!./docs/row-grouping.md')
+};

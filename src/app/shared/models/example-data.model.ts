@@ -1,4 +1,5 @@
 export interface ExampleData {
+  availableStores?: any[];
   id: number;
   retailerType: string;
   retailerCountry: string;

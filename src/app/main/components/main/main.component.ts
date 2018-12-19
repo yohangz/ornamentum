@@ -143,7 +143,31 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/grouping',
-          title: 'Row Grouping'
+          title: 'Row Grouping',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'On Dynamic Row Span Extract',
+                  anchor: 'onDynamicRowSpanExtract'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/column/filtering',
