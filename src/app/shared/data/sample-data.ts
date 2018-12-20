@@ -2,6 +2,21 @@ import { ExampleData } from '../models';
 
 const data: ExampleData[] = [
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Fax',
     retailerType: 'Outdoors Shop',
@@ -13,23 +28,16 @@ const data: ExampleData[] = [
     revenue: 59628.66,
     quantity: 489,
     grossMargin: 0.34754797,
+    id: 10
+  },
+  {
+    availability: true,
     availableStores: [
       {
         storeName: 'Barneys New York',
         website: 'https://www.barneys.com/'
-      },
-      {
-        storeName: 'J. C. Penney',
-        website: 'https://jcp.com/'
-      },
-      {
-        storeName: 'Von Maur',
-        website: 'http://www.vonmaur.com/'
       }
     ],
-    id: 10
-  },
-  {
     retailerCountry: 'United States',
     orderMethodType: 'Fax',
     retailerType: 'Outdoors Shop',
@@ -41,15 +49,20 @@ const data: ExampleData[] = [
     revenue: 87728.96,
     quantity: 352,
     grossMargin: 0.39814629,
+    id: 15
+  },
+  {
+    availability: true,
     availableStores: [
       {
         storeName: 'Barneys New York',
         website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
       }
     ],
-    id: 15
-  },
-  {
     retailerCountry: 'United States',
     orderMethodType: 'Fax',
     retailerType: 'Outdoors Shop',
@@ -61,19 +74,20 @@ const data: ExampleData[] = [
     revenue: 6940.03,
     quantity: 109,
     grossMargin: 0.36186587,
+    id: 20
+  },
+  {
+    availability: true,
     availableStores: [
       {
-        storeName: 'Barneys New York',
-        website: 'https://www.barneys.com/'
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
       },
       {
         storeName: 'Von Maur',
         website: 'http://www.vonmaur.com/'
       }
     ],
-    id: 20
-  },
-  {
     retailerCountry: 'United States',
     orderMethodType: 'Fax',
     retailerType: 'Outdoors Shop',
@@ -85,19 +99,16 @@ const data: ExampleData[] = [
     revenue: 62464.88,
     quantity: 898,
     grossMargin: 0.24468085,
+    id: 25
+  },
+  {
+    availability: true,
     availableStores: [
       {
         storeName: 'J. C. Penney',
         website: 'https://jcp.com/'
-      },
-      {
-        storeName: 'Von Maur',
-        website: 'http://www.vonmaur.com/'
       }
     ],
-    id: 25
-  },
-  {
     retailerCountry: 'United States',
     orderMethodType: 'Fax',
     retailerType: 'Outdoors Shop',
@@ -109,15 +120,16 @@ const data: ExampleData[] = [
     revenue: 19476.8,
     quantity: 296,
     grossMargin: 0.47613982,
+    id: 30
+  },
+  {
+    availability: true,
     availableStores: [
       {
         storeName: 'J. C. Penney',
         website: 'https://jcp.com/'
       }
     ],
-    id: 30
-  },
-  {
     retailerCountry: 'United States',
     orderMethodType: 'Fax',
     retailerType: 'Outdoors Shop',
@@ -129,15 +141,20 @@ const data: ExampleData[] = [
     revenue: 4621.68,
     quantity: 262,
     grossMargin: 0.51643991,
+    id: 35
+  },
+  {
+    availability: true,
     availableStores: [
       {
         storeName: 'J. C. Penney',
         website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
       }
     ],
-    id: 35
-  },
-  {
     retailerCountry: 'United States',
     orderMethodType: 'Fax',
     retailerType: 'Outdoors Shop',
@@ -149,19 +166,16 @@ const data: ExampleData[] = [
     revenue: 32870.4,
     quantity: 856,
     grossMargin: 0.49166667,
+    id: 40
+  },
+  {
+    availability: true,
     availableStores: [
       {
         storeName: 'J. C. Penney',
         website: 'https://jcp.com/'
-      },
-      {
-        storeName: 'Barneys New York',
-        website: 'https://www.barneys.com/'
       }
     ],
-    id: 40
-  },
-  {
     retailerCountry: 'United States',
     orderMethodType: 'Fax',
     retailerType: 'Outdoors Shop',
@@ -173,15 +187,16 @@ const data: ExampleData[] = [
     revenue: 30940.25,
     quantity: 275,
     grossMargin: 0.28895209,
-    availableStores: [
-      {
-        storeName: 'J. C. Penney',
-        website: 'https://jcp.com/'
-      }
-    ],
     id: 45
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Fax',
     retailerType: 'Outdoors Shop',
@@ -193,15 +208,16 @@ const data: ExampleData[] = [
     revenue: 4057.2,
     quantity: 180,
     grossMargin: 0.60070985,
-    availableStores: [
-      {
-        storeName: 'Barneys New York',
-        website: 'https://www.barneys.com/'
-      }
-    ],
     id: 50
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Stage Stores',
+        website: 'https://www.stage.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Golf Shop',
@@ -213,15 +229,16 @@ const data: ExampleData[] = [
     revenue: 7939.8,
     quantity: 66,
     grossMargin: 0.44272652,
+    id: 55
+  },
+  {
+    availability: true,
     availableStores: [
       {
         storeName: 'Stage Stores',
         website: 'https://www.stage.com/'
       }
     ],
-    id: 55
-  },
-  {
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Golf Shop',
@@ -233,15 +250,11 @@ const data: ExampleData[] = [
     revenue: 12935,
     quantity: 199,
     grossMargin: 0.39374952,
-    availableStores: [
-      {
-        storeName: 'Stage Stores',
-        website: 'https://www.stage.com/'
-      }
-    ],
     id: 60
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Golf Shop',
@@ -256,6 +269,13 @@ const data: ExampleData[] = [
     id: 65
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Williams Hills',
+        website: 'https://williams.h.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Golf Shop',
@@ -270,6 +290,17 @@ const data: ExampleData[] = [
     id: 70
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Sendora Mall',
+        website: 'https://sendora.com/'
+      },
+      {
+        storeName: 'High Octane',
+        website: 'https://high.octane.us/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Golf Shop',
@@ -284,6 +315,8 @@ const data: ExampleData[] = [
     id: 75
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Golf Shop',
@@ -298,6 +331,13 @@ const data: ExampleData[] = [
     id: 80
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Stage Stores',
+        website: 'https://www.stage.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -309,15 +349,11 @@ const data: ExampleData[] = [
     revenue: 21434.73,
     quantity: 6134,
     grossMargin: 0.75675458,
-    availableStores: [
-      {
-        storeName: 'Stage Stores',
-        website: 'https://www.stage.com/'
-      }
-    ],
     id: 85
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -332,6 +368,13 @@ const data: ExampleData[] = [
     id: 90
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Wen Brother Stores',
+        website: 'https://www.wen.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -346,6 +389,13 @@ const data: ExampleData[] = [
     id: 95
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Soeges Pan',
+        website: 'https://www.soeges.us/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -360,6 +410,8 @@ const data: ExampleData[] = [
     id: 100
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -374,6 +426,17 @@ const data: ExampleData[] = [
     id: 105
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Grama Unicorn',
+        website: 'https://www.unicorn.g.com/'
+      },
+      {
+        storeName: 'Pesta Rico',
+        website: 'https://www.pesta.rico.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -388,6 +451,8 @@ const data: ExampleData[] = [
     id: 110
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -402,6 +467,8 @@ const data: ExampleData[] = [
     id: 115
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -416,6 +483,8 @@ const data: ExampleData[] = [
     id: 120
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -430,6 +499,8 @@ const data: ExampleData[] = [
     id: 125
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -444,6 +515,8 @@ const data: ExampleData[] = [
     id: 130
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -458,6 +531,8 @@ const data: ExampleData[] = [
     id: 135
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -472,6 +547,17 @@ const data: ExampleData[] = [
     id: 140
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Bellugas',
+        website: 'https://www.bellugas.com/'
+      },
+      {
+        storeName: 'Rima Desta',
+        website: 'https://www.rima.desta.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -486,6 +572,13 @@ const data: ExampleData[] = [
     id: 145
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Simon Brothers & Sons',
+        website: 'https://www.simons.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -500,6 +593,8 @@ const data: ExampleData[] = [
     id: 150
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -514,6 +609,8 @@ const data: ExampleData[] = [
     id: 155
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -528,6 +625,8 @@ const data: ExampleData[] = [
     id: 160
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -542,6 +641,8 @@ const data: ExampleData[] = [
     id: 165
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Department Store',
@@ -556,6 +657,8 @@ const data: ExampleData[] = [
     id: 170
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Warehouse Store',
@@ -570,6 +673,13 @@ const data: ExampleData[] = [
     id: 175
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Pearso run',
+        website: 'https://www.pearso.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Warehouse Store',
@@ -584,6 +694,8 @@ const data: ExampleData[] = [
     id: 180
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Warehouse Store',
@@ -598,6 +710,13 @@ const data: ExampleData[] = [
     id: 185
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Costa Rica',
+        website: 'https://www.costa.rica.us/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -612,6 +731,13 @@ const data: ExampleData[] = [
     id: 190
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Barman',
+        website: 'https://www.barman.us/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -626,6 +752,13 @@ const data: ExampleData[] = [
     id: 195
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Troy Mall',
+        website: 'https://www.troy.mall.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -640,6 +773,8 @@ const data: ExampleData[] = [
     id: 200
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -654,6 +789,17 @@ const data: ExampleData[] = [
     id: 205
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Joy Singer',
+        website: 'https://www.joy.singer.com/'
+      },
+      {
+        storeName: 'Philip Mall',
+        website: 'https://www.philip.us/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -668,6 +814,8 @@ const data: ExampleData[] = [
     id: 210
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -682,6 +830,8 @@ const data: ExampleData[] = [
     id: 215
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -696,6 +846,8 @@ const data: ExampleData[] = [
     id: 220
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -710,6 +862,8 @@ const data: ExampleData[] = [
     id: 225
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -724,6 +878,8 @@ const data: ExampleData[] = [
     id: 230
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -738,6 +894,8 @@ const data: ExampleData[] = [
     id: 235
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -752,6 +910,8 @@ const data: ExampleData[] = [
     id: 240
   },
   {
+    availability: true,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -766,6 +926,13 @@ const data: ExampleData[] = [
     id: 245
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Siku US',
+        website: 'https://www.siku.us/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Outdoors Shop',
@@ -780,6 +947,13 @@ const data: ExampleData[] = [
     id: 250
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Gosh Super',
+        website: 'https://www.gosh.s.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Eyewear Store',
@@ -791,6 +965,10 @@ const data: ExampleData[] = [
     revenue: 39812.66,
     quantity: 668,
     grossMargin: 0.56124007,
+    id: 255
+  },
+  {
+    availability: true,
     availableStores: [
       {
         storeName: 'Barneys New York',
@@ -805,9 +983,6 @@ const data: ExampleData[] = [
         website: 'http://www.vonmaur.com/'
       }
     ],
-    id: 255
-  },
-  {
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Eyewear Store',
@@ -822,6 +997,8 @@ const data: ExampleData[] = [
     id: 260
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Sports Store',
@@ -836,17 +1013,7 @@ const data: ExampleData[] = [
     id: 265
   },
   {
-    retailerCountry: 'United States',
-    orderMethodType: 'Telephone',
-    retailerType: 'Sports Store',
-    productLine: 'Camping Equipment',
-    productType: 'Tents',
-    product: 'Star Gazer 6',
-    year: 2012,
-    quarter: 'Q1 2012',
-    revenue: 31278.8,
-    quantity: 40,
-    grossMargin: 0.3733775,
+    availability: true,
     availableStores: [
       {
         storeName: 'Barneys New York',
@@ -861,9 +1028,27 @@ const data: ExampleData[] = [
         website: 'http://www.vonmaur.com/'
       }
     ],
+    retailerCountry: 'United States',
+    orderMethodType: 'Telephone',
+    retailerType: 'Sports Store',
+    productLine: 'Camping Equipment',
+    productType: 'Tents',
+    product: 'Star Gazer 6',
+    year: 2012,
+    quarter: 'Q1 2012',
+    revenue: 31278.8,
+    quantity: 40,
+    grossMargin: 0.3733775,
     id: 270
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Siku US',
+        website: 'https://www.siku.us/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Sports Store',
@@ -878,6 +1063,13 @@ const data: ExampleData[] = [
     id: 275
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Grama Unicorn',
+        website: 'https://www.unicorn.g.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Sports Store',
@@ -892,6 +1084,8 @@ const data: ExampleData[] = [
     id: 280
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Sports Store',
@@ -906,6 +1100,8 @@ const data: ExampleData[] = [
     id: 285
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Sports Store',
@@ -920,6 +1116,8 @@ const data: ExampleData[] = [
     id: 290
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Sports Store',
@@ -927,6 +1125,7 @@ const data: ExampleData[] = [
     productType: 'Eyewear',
     product: 'Polar Sun',
     year: 2012,
+
     quarter: 'Q1 2012',
     revenue: 17360.42,
     quantity: 288,
@@ -934,6 +1133,17 @@ const data: ExampleData[] = [
     id: 295
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Sports Store',
@@ -948,6 +1158,17 @@ const data: ExampleData[] = [
     id: 300
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      },
+      {
+        storeName: 'Von Maur',
+        website: 'http://www.vonmaur.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Sports Store',
@@ -962,17 +1183,7 @@ const data: ExampleData[] = [
     id: 305
   },
   {
-    retailerCountry: 'United States',
-    orderMethodType: 'Telephone',
-    retailerType: 'Sports Store',
-    productLine: 'Personal Accessories',
-    productType: 'Binoculars',
-    product: 'Seeker Mini',
-    year: 2012,
-    quarter: 'Q1 2012',
-    revenue: 34745.76,
-    quantity: 432,
-    grossMargin: 0.50267313,
+    availability: true,
     availableStores: [
       {
         storeName: 'Barneys New York',
@@ -987,9 +1198,22 @@ const data: ExampleData[] = [
         website: 'http://www.vonmaur.com/'
       }
     ],
+    retailerCountry: 'United States',
+    orderMethodType: 'Telephone',
+    retailerType: 'Sports Store',
+    productLine: 'Personal Accessories',
+    productType: 'Binoculars',
+    product: 'Seeker Mini',
+    year: 2012,
+    quarter: 'Q1 2012',
+    revenue: 34745.76,
+    quantity: 432,
+    grossMargin: 0.50267313,
     id: 310
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Sports Store',
@@ -1004,6 +1228,8 @@ const data: ExampleData[] = [
     id: 315
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Telephone',
     retailerType: 'Sports Store',
@@ -1018,17 +1244,7 @@ const data: ExampleData[] = [
     id: 320
   },
   {
-    retailerCountry: 'United States',
-    orderMethodType: 'Telephone',
-    retailerType: 'Sports Store',
-    productLine: 'Golf Equipment',
-    productType: 'Putters',
-    product: 'Blue Steel Max Putter',
-    year: 2012,
-    quarter: 'Q1 2012',
-    revenue: 40579.81,
-    quantity: 239,
-    grossMargin: 0.45933212,
+    availability: true,
     availableStores: [
       {
         storeName: 'Barneys New York',
@@ -1043,9 +1259,22 @@ const data: ExampleData[] = [
         website: 'http://www.vonmaur.com/'
       }
     ],
+    retailerCountry: 'United States',
+    orderMethodType: 'Telephone',
+    retailerType: 'Sports Store',
+    productLine: 'Golf Equipment',
+    productType: 'Putters',
+    product: 'Blue Steel Max Putter',
+    year: 2012,
+    quarter: 'Q1 2012',
+    revenue: 40579.81,
+    quantity: 239,
+    grossMargin: 0.45933212,
     id: 325
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Department Store',
@@ -1060,6 +1289,8 @@ const data: ExampleData[] = [
     id: 330
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Department Store',
@@ -1074,17 +1305,7 @@ const data: ExampleData[] = [
     id: 335
   },
   {
-    retailerCountry: 'United States',
-    orderMethodType: 'Mail',
-    retailerType: 'Department Store',
-    productLine: 'Personal Accessories',
-    productType: 'Watches',
-    product: 'Mountain Man Analog',
-    year: 2012,
-    quarter: 'Q1 2012',
-    revenue: 6068.48,
-    quantity: 128,
-    grossMargin: 0.36722211,
+    availability: false,
     availableStores: [
       {
         storeName: 'Barneys New York',
@@ -1099,9 +1320,31 @@ const data: ExampleData[] = [
         website: 'http://www.vonmaur.com/'
       }
     ],
+    retailerCountry: 'United States',
+    orderMethodType: 'Mail',
+    retailerType: 'Department Store',
+    productLine: 'Personal Accessories',
+    productType: 'Watches',
+    product: 'Mountain Man Analog',
+    year: 2012,
+    quarter: 'Q1 2012',
+    revenue: 6068.48,
+    quantity: 128,
+    grossMargin: 0.36722211,
     id: 340
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Sendora Mall',
+        website: 'https://sendora.com/'
+      },
+      {
+        storeName: 'High Octane',
+        website: 'https://high.octane.us/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Department Store',
@@ -1116,11 +1359,14 @@ const data: ExampleData[] = [
     id: 345
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Department Store',
     productLine: 'Golf Equipment',
     productType: 'Putters',
+
     product: 'Course Pro Putter',
     year: 2012,
     quarter: 'Q1 2012',
@@ -1130,6 +1376,8 @@ const data: ExampleData[] = [
     id: 350
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Department Store',
@@ -1144,6 +1392,17 @@ const data: ExampleData[] = [
     id: 355
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Bellugas',
+        website: 'https://www.bellugas.com/'
+      },
+      {
+        storeName: 'Rima Desta',
+        website: 'https://www.rima.desta.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Outdoors Shop',
@@ -1158,6 +1417,13 @@ const data: ExampleData[] = [
     id: 360
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Rima Desta',
+        website: 'https://www.rima.desta.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Outdoors Shop',
@@ -1172,17 +1438,7 @@ const data: ExampleData[] = [
     id: 365
   },
   {
-    retailerCountry: 'United States',
-    orderMethodType: 'Mail',
-    retailerType: 'Outdoors Shop',
-    productLine: 'Mountaineering Equipment',
-    productType: 'Climbing Accessories',
-    product: 'Granite Pulley',
-    year: 2012,
-    quarter: 'Q1 2012',
-    revenue: 16623.86,
-    quantity: 451,
-    grossMargin: 0.50217037,
+    availability: true,
     availableStores: [
       {
         storeName: 'Barneys New York',
@@ -1197,9 +1453,27 @@ const data: ExampleData[] = [
         website: 'http://www.vonmaur.com/'
       }
     ],
+    retailerCountry: 'United States',
+    orderMethodType: 'Mail',
+    retailerType: 'Outdoors Shop',
+    productLine: 'Mountaineering Equipment',
+    productType: 'Climbing Accessories',
+    product: 'Granite Pulley',
+    year: 2012,
+    quarter: 'Q1 2012',
+    revenue: 16623.86,
+    quantity: 451,
+    grossMargin: 0.50217037,
     id: 370
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Outdoors Shop',
@@ -1214,6 +1488,13 @@ const data: ExampleData[] = [
     id: 375
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Outdoors Shop',
@@ -1228,6 +1509,8 @@ const data: ExampleData[] = [
     id: 380
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Outdoors Shop',
@@ -1242,6 +1525,17 @@ const data: ExampleData[] = [
     id: 385
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      },
+      {
+        storeName: 'Barneys New York',
+        website: 'https://www.barneys.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Outdoors Shop',
@@ -1256,6 +1550,13 @@ const data: ExampleData[] = [
     id: 390
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'J. C. Penney',
+        website: 'https://jcp.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Mail',
     retailerType: 'Eyewear Store',
@@ -1270,6 +1571,13 @@ const data: ExampleData[] = [
     id: 395
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Williams Hills',
+        website: 'https://williams.h.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Golf Shop',
@@ -1284,6 +1592,8 @@ const data: ExampleData[] = [
     id: 400
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Golf Shop',
@@ -1298,6 +1608,21 @@ const data: ExampleData[] = [
     id: 405
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Williams Hills',
+        website: 'https://williams.h.com/'
+      },
+      {
+        storeName: 'Grama Unicorn',
+        website: 'https://www.unicorn.g.com/'
+      },
+      {
+        storeName: 'Pesta Rico',
+        website: 'https://www.pesta.rico.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Golf Shop',
@@ -1312,6 +1637,17 @@ const data: ExampleData[] = [
     id: 410
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Grama Unicorn',
+        website: 'https://www.unicorn.g.com/'
+      },
+      {
+        storeName: 'Pesta Rico',
+        website: 'https://www.pesta.rico.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Golf Shop',
@@ -1326,6 +1662,13 @@ const data: ExampleData[] = [
     id: 415
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Pesta Rico',
+        website: 'https://www.pesta.rico.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Golf Shop',
@@ -1340,6 +1683,8 @@ const data: ExampleData[] = [
     id: 420
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Golf Shop',
@@ -1354,6 +1699,8 @@ const data: ExampleData[] = [
     id: 425
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Golf Shop',
@@ -1368,6 +1715,8 @@ const data: ExampleData[] = [
     id: 430
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1382,6 +1731,17 @@ const data: ExampleData[] = [
     id: 435
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Grama Unicorn',
+        website: 'https://www.unicorn.g.com/'
+      },
+      {
+        storeName: 'Pesta Rico',
+        website: 'https://www.pesta.rico.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1396,6 +1756,8 @@ const data: ExampleData[] = [
     id: 440
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1410,6 +1772,13 @@ const data: ExampleData[] = [
     id: 445
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Prankton Silvy',
+        website: 'https://www.prankton.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1424,6 +1793,17 @@ const data: ExampleData[] = [
     id: 450
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Grama Unicorn',
+        website: 'https://www.unicorn.g.com/'
+      },
+      {
+        storeName: 'Host Super',
+        website: 'https://www.host-super.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1438,6 +1818,13 @@ const data: ExampleData[] = [
     id: 455
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Grama Unicorn',
+        website: 'https://www.unicorn.g.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1452,6 +1839,8 @@ const data: ExampleData[] = [
     id: 460
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1466,6 +1855,13 @@ const data: ExampleData[] = [
     id: 465
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Williams Hills',
+        website: 'https://williams.h.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1480,6 +1876,8 @@ const data: ExampleData[] = [
     id: 470
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1494,6 +1892,8 @@ const data: ExampleData[] = [
     id: 475
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1508,6 +1908,17 @@ const data: ExampleData[] = [
     id: 480
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Grama Unicorn',
+        website: 'https://www.unicorn.g.com/'
+      },
+      {
+        storeName: 'Pesta Rico',
+        website: 'https://www.pesta.rico.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1522,6 +1933,13 @@ const data: ExampleData[] = [
     id: 485
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Pesta Rico',
+        website: 'https://www.pesta.rico.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1536,6 +1954,8 @@ const data: ExampleData[] = [
     id: 490
   },
   {
+    availability: false,
+    availableStores: [],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1550,6 +1970,13 @@ const data: ExampleData[] = [
     id: 495
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Grama Unicorn',
+        website: 'https://www.unicorn.g.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Department Store',
@@ -1564,6 +1991,17 @@ const data: ExampleData[] = [
     id: 500
   },
   {
+    availability: true,
+    availableStores: [
+      {
+        storeName: 'Grama Unicorn',
+        website: 'https://www.unicorn.g.com/'
+      },
+      {
+        storeName: 'Pesta Rico',
+        website: 'https://www.pesta.rico.com/'
+      }
+    ],
     retailerCountry: 'United States',
     orderMethodType: 'Web',
     retailerType: 'Direct Marketing',

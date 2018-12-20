@@ -669,7 +669,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/client-side-data-binding',
-          title: 'Client-side Data Binding'
+          title: 'Client-side Data Binding',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/server-side-data-binding',
