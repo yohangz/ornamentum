@@ -1,20 +1,20 @@
 <div class="feature-container">
-  <h1>Data Table Column Resizable</h1>
+  <h1>Column Resizing</h1>
   <p>Column resizable property lets users to manually resize specific columns as they need.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
-  <app-column-resizable-usage></app-column-resizable-usage>
-  <br>
+
+  <app-column-resizing-usage></app-column-resizing-usage>
+  <app-example-code [files]="columnResizingUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To enable resizable, simply set <b>resizable</b> to <b>true</b> in the specific columns and by default resizable is
+  <p>To enable resizable option, simply set <code>resizable</code> to <b>true</b> in the specific columns and by default resizable is
     <b>false</b>.</p>
+
   <pre class="prettyprint lang-html">{{demoSnippet.resizable}}</pre>
 
   <p>According to the above example resizable is enabled for all columns.</p>
-
-  <app-example-code [files]="columnResizableUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Column

@@ -1,32 +1,34 @@
 <div class="feature-container">
-  <h1>Data Table Row Selection</h1>
+  <h1>Row Selection</h1>
 
   <p>Sometimes users may need to select specific set of data from the data table to run their own operations. In such
     cases, you might want to turn row selectable on.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
+
   <app-row-selection-usage></app-row-selection-usage>
-  <br>
+  <app-example-code [files]="rowSelectionUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To enable row selectable, simply set <b>rowSelectable</b> to <b>true</b> and by default rowSelectable is
+  <p>To enable row selectable option, simply set <code>rowSelectable</code> to <b>true</b> and by default rowSelectable
+    is
     <b>false</b>.</p>
+
   <pre class="prettyprint lang-html">{{demoSnippet.row_selectable}}</pre>
 
   <p>In default the table doesn't allow you to select rows. But if you are going to select row(s), there are some
     additional configurations available to do the job easily. Those properties will be discuss on <a
       href="feature/data-table/row-selection#usefulProperties">Useful Properties</a> section.</p>
 
-  <app-example-code [files]="rowSelectionUsage"></app-example-code>
-
   <h2 id="usefulProperties">Useful properties</h2>
   <p>As mentioned earlier, there are some additional configurations which helps users to control the row selection.</p>
 
   <h4 id="selectMode">Row Selection Mode</h4>
-  <code>selectMode: string ="single" | "single_toggle" | "multi"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: "single"</h5>
+
+  <code>selectMode: string = 'single' | 'single_toggle' | 'multi'</code> &nbsp; <h5
+  class="badge badge-pill badge-warning">Default Value: 'single'</h5>
+
   <p>This control allows you to configure the dropdown row selection type. There are 3 types of row
     selections are available in the data table. The available types are,</p>
 
@@ -57,34 +59,34 @@
   </ol>
 
   <h4 id="showRowSelectCheckbox">Show Row Select Check Box</h4>
-  <code>showRowSelectCheckbox: boolean = true or false</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: false</h5>
+
+  <code>showRowSelectCheckbox: boolean</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
+  false</h5>
+
   <p>The page property lets you to enable/disable table row selection check boxes as shown in the <a
     href="feature/data-table/row-selection#selectMode">Row Selection Mode</a> section's examples. Selection checkboxes
     are enabled in all those examples.</p>
 
   <h4 id="selectOnRowClick">Select On Row Click</h4>
-  <code>selectOnRowClick: boolean = true or false</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: false</h5>
+
+  <code>selectOnRowClick: boolean</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
+
   <p>The page property lets you to enable/disable table row selection on row click event as shown in the <a
     href="feature/data-table/row-selection#selectMode">Row Selection Mode</a> section's examples. Select on row click
     is enabled in all those examples.</p>
 
   <h4 id="selectTrackBy">Select Track By</h4>
-  <code>selectTrackBy: string = "Unique Value Column Name"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: "id"</h5>
+
+  <code>selectTrackBy: string</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: 'id'</h5>
+
   <p>This control helps users to identify selected row(s) uniquely. When selecting row(s), data table will emit the
     value of the column specified by the user. Please refer <a href="feature/data-table/events">Data Table Events</a>
     section for more details. All the examples shown in <a href="feature/data-table/row-selection#selectMode">Row
       Selection Mode</a> section has <b>"id"</b> as <b>selectTrackBy</b> property.</p>
 
   <h4 id="selectedRow">Set Selected Row</h4>
-  <code>selectedRow: any = The value of the id(selectTrackByProperty) of the specific row that you want to set
-    selected</code>
-  <br>
+
+  <code>selectedRow: any</code>
   <p>The page property lets you to set specific row selected in the data table. This can be only used with the <b>single
     & single_toggle</b> selection modes mentioned in the above. Refer following example,</p>
 
@@ -92,9 +94,8 @@
   <app-example-code [files]="selectedRowUsage"></app-example-code>
 
   <h4 id="selectedRows">Set Selected Rows</h4>
-  <code>selectedRows: any[] = The values of the ids(selectTrackByProperty) of the specific rows that you want to set
-    selected</code>
-  <br>
+
+  <code>selectedRows: any[]</code>
   <p>The page property lets you to set specific rows selected in the data table. This can be only used with the
     <b>multi</b> selection mode mentioned in the above. Refer following example,</p>
 

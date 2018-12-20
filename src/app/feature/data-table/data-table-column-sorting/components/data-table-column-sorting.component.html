@@ -11,23 +11,24 @@
     <li><b>None</b> (Default Sorting Order) : column data will be displayed as it is.</li>
   </ul>
 
-  <p>After enabling the <b>sortable</b> users can simply change the sorting order to any above mentioned, by clicking on
-    icon that appears on column top right side corner.</p>
-
   <h2 id="whatYouWillSee">What You Will See</h2>
+
   <app-column-sorting-usage></app-column-sorting-usage>
-  <br>
+  <app-example-code [files]="columnSortingUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>Sortable can be enabled in any data table column. by default sortable is <b>false</b> to enable column sorting
-    simply set sortable to <b>true</b>.</p>
+
+  <p>Column sorting can be enabled in any data table column by declaring <code>sortable</code> to <b>true</b>
+    otherwise it will be <b>false</b> by default. </p>
+
   <pre class="prettyprint lang-html">{{demoSnippet.sorting}}</pre>
 
-  <p>By default the table doesn’t sort it’s contents. Also there are set of additional properties can be used with this
-    <b>Sortable</b>
-    option & those will be explained later.</p>
+  <p>By default the table does not sort it’s contents. Also there are set of additional properties can be used with
+    <code>sortable</code> property and those will be explained later.</p>
 
-  <app-example-code [files]="columnSortingUsage"></app-example-code>
+  <p>After enabling the <code>sortable</code> users can simply change the sorting order to any above mentioned, by
+    clicking on
+    icon that appears on column top right side corner.</p>
 
   <h2 id="usefulProperties">Useful properties</h2>
   <p>There are few more properties that affects to the behaviour of column sorting.
@@ -35,46 +36,37 @@
     <a href="/feature/data-table/column/sorting#multiColumnSortable">Multi Column Sortable</a> property.</p>
 
   <h4 id="sortOrder">Sort Order</h4>
-  <code>sortOrder: string = 'asc' | 'desc' | ''</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: ''</h5>
+  <code>sortOrder: string = asc | desc | ''</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: ''</h5>
+
   <p>This property allow users to order the data that already fetched or fetching from a data source. If sorting order
-    is not mentioned by the user, then the default sorting mechanism will be applied for those <b>sortable</b> enabled
+    is not mentioned by the user, then the default sorting mechanism will be applied for those <code>sortable</code> enabled
     columns.</p>
 
   <app-column-sorting-sort-order-usage></app-column-sorting-sort-order-usage>
-
   <app-example-code [files]="columnSortingUsageWithSortOrder"></app-example-code>
 
   <h4 id="sortField">Sort Field</h4>
-  <code>sortField: string = 'column field name'</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: 'sameColumnFieldName'</h5>
+  <code>sortField: string</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
+  'sameColumnFieldName'</h5>
+
   <p>Sort Field can be override by providing a column field name, by default sort field value is same to the column
-    name.
-    providing a different column name to sort field, ornamentum will start sorting according to the provided column
-    data.</p>
+    name. providing a different column name to sort field, ornamentum will start sorting according to the provided
+    column data.</p>
 
   <app-column-sorting-sort-field-usage></app-column-sorting-sort-field-usage>
-
   <app-example-code [files]="columnSortingUsageWithSortField"></app-example-code>
 
   <h4 id="multiColumnSortable">Multi Column Sortable</h4>
-  <code>multiColumnSortable: boolean = true or false</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: false</h5>
+  <code>multiColumnSortable: boolean</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
+
   <p>Multi column sortable can be only use inside the grid global properties defining scope (ng-data-table). If multi
     column sortable is enabled, data sorting will be process based on previously preserved column sorting order. </p>
 
   <app-column-sorting-multi-column-sortable-usage></app-column-sorting-multi-column-sortable-usage>
-
   <app-example-code [files]="columnSortingUsageWithMultiColumnSortable"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="feature/data-table/column/resizable" id="columnResizing">Column Resizing</a>
-  <br>
-  <a rel="noopener" target="_blank" href="feature/data-table/pagination" id="pagination">Pagination</a>
-  <br>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html"
-     id="aPIDocDataTableColumnSorting">API Doc for Data Table Column Sorting</a>
+  <a rel="noopener" target="_blank" href="feature/data-table/column/resizing" id="columnResizing">Column Resizing</a><br>
+  <a rel="noopener" target="_blank" href="feature/data-table/pagination" id="pagination">Pagination</a><br>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Column Sorting</a>
 </div>

@@ -2,45 +2,46 @@
   <h1>Cell Template</h1>
   <p>Users can customize table cells based on their personalized and detailed preference.</p>
 
-  <h2 id="whatYouWillSee">What you will see</h2>
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
   <app-cell-template-usage></app-cell-template-usage>
+  <app-example-code [files]="cellTemplateUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>Initially You set your own Cell Template as follows.</p>
   <pre class="prettyprint lang-html">{{demoSnippet.base_template}}</pre>
 
-  <p>Once the template is done, You can apply it to one or more columns In the above data table, the following template is applied to values in <b>Retailer Type</b> column.</p>
-
+  <p>Once the template is done, You can apply it to one or more columns In the above data table, the following template
+    is applied to values in <b>Retailer Type</b> column.</p>
   <pre class="prettyprint lang-html">{{demoSnippet.cell_template}}</pre>
 
   <p>Use following files to see the relevant code segments for above data table example.</p>
 
-  <app-example-code [files]="cellTemplateUsage"></app-example-code>
-
-  <h2 id="usefulProperties">Useful properties</h2>
+  <h2 id="usefulProperties">Useful Properties</h2>
   <p>There are few more properties available when providing your own custom templates.</p>
 
   <h4 id="column">Column</h4>
-  <code>column: DataTableColumnComponent  -> "Data table column component contains all column properties"</code>
-  <br>
-  <p>This property can be accessed as follows.</p>
+  <code>column: DataTableColumnComponent</code>
+
+  <p>This property can be accessed as follows and Data table column component contains all column properties that
+    required.</p>
   <pre class="prettyprint lang-html">{{demoSnippet.column_property_template}}</pre>
 
   <h4 id="row">Row</h4>
-  <code>row: DataTableRow  -> "Data table row properties"</code>
-  <br>
+  <code>row: DataTableRow</code>
+
   <p>This property can be accessed as follows.</p>
   <pre class="prettyprint lang-html">{{demoSnippet.row_property_template}}</pre>
 
   <h4 id="spanIndex">Row Span Index</h4>
-  <code>spanIndex: number  -> "Row span index"</code>
+  <code>spanIndex: number</code>
   <br>
-  <p>This property can be accessed as follows.</p>
+  <p>This property can be accessed as follows. and represents row span index value.</p>
   <pre class="prettyprint lang-html">{{demoSnippet.span_index_property_template}}</pre>
 
   <h4 id="rowSpan">Row Span Count</h4>
-  <code>rowSpan: number  -> "Row span count"</code>
+  <code>rowSpan: number</code>
   <br>
   <p>This property can be accessed as follows.</p>
   <pre class="prettyprint lang-html">{{demoSnippet.row_span_property_template}}</pre>

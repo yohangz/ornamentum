@@ -70,5 +70,5 @@ export const filterTextBoxUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  filterable: require('!!raw-loader?lang=typescript!./docs/filterable.md')
+  filterable: require('!!raw-loader?lang=typescript!./docs/filtering.md')
 };

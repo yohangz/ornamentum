@@ -96,6 +96,6 @@ export const filterTextUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  dropdownFiltering: require('!!raw-loader?lang=typescript!./docs/dropdown-filtering.md')
+  dropdownFiltering: require('!!raw-loader?lang=typescript!./docs/filterable.md')
 };
 

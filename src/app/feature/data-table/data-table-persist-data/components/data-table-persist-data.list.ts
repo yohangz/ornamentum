@@ -50,5 +50,5 @@ export const dataPersistenceUsageWithStorageMode: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  persistTableState: require('!!raw-loader?lang=typescript!./docs/persist_table_state.md')
+  persistTableState: require('!!raw-loader?lang=typescript!./docs/persist-table-state.md')
 };

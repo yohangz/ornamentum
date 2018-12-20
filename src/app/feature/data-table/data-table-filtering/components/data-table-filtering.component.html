@@ -1,5 +1,5 @@
 <div class="feature-container">
-  <h1>Data Table Filtering</h1>
+  <h1>Filtering</h1>
 
   <p>Filtering lets users to choose a smaller part of your data set which belongs to a specified criteria. This smaller
     data set may use for viewing or analysis purposes. In such cases, you might want to turn filterable on.
@@ -9,11 +9,15 @@
     header level of the grid.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
+
   <app-filtering-usage></app-filtering-usage>
-  <br>
+  <app-example-code [files]="filteringUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To enable filterable, simply set <b>filterable</b> to <b>true</b> and by default filterable is <b>false</b>.</p>
+
+  <p>To enable filterable, simply set <code>filterable</code> to <b>true</b> and by default filterable is <b>false</b>.
+  </p>
+
   <pre class="prettyprint lang-html">{{demoSnippet.filterable}}</pre>
 
   <p>This property is designed to configure & filter data in the table column level. In default the table doesn't filter
@@ -23,47 +27,48 @@
   <app-example-code [files]="filteringUsage"></app-example-code>
 
   <h2 id="filterTextBox">Filter Text Box</h2>
+
   <p>The following content shows the available configurations when using column search filter text box. When users turns
     on filterable, text box filtering will be enabled as default filtering mechanism.</p>
 
   <app-filter-text-box-usage></app-filter-text-box-usage>
   <app-example-code [files]="filterTextBoxUsage"></app-example-code>
 
-  <h2 id="filterTextBoxUsefulProperties">Filter Text Box Useful properties</h2>
+  <h2 id="filterTextBoxUsefulProperties">Useful Properties</h2>
   <p>There are few more properties which effect the behaviour of filterable controls and those also applicable in
     column level of table configuration after enabling the filterable text box.</p>
 
   <h4 id="filterPlaceholder">Filter Place Holder</h4>
-  <code>filterPlaceholder: string = "Filter place holder text to display"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: " "</h5>
+  <code>filterPlaceholder: string</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: ''</h5>
+
   <p>The page property lets you to specify placeholder name for search text box. In the above example, <b>ID</b> & <b>Order
     Method Type</b> columns don't have placeholder name configured.</p>
 
   <h4 id="showFilterClearButton">Show Filter Clear Button</h4>
-  <code>showFilterClearButton: boolean = "true or false"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: true</h5>
+  <code>showFilterClearButton: boolean</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: true</h5>
+
   <p>The page property lets you to show/hide text box search filter clear button. Refer above example to see how this
     works.
 
   <h2 id="filterDropdown">Filter Dropdown</h2>
+
   <p>This will allows users to configure drop down filter instead of text box search filter for the columns as they
     want.</p>
 
-  <p>To enable this simply set <b>true</b> to <b>showDropdownFilter</b> property.</p>
+  <p>To enable this simply set <b>true</b> to <code>showDropdownFilter</code> property.</p>
 
   <app-filter-dropdown-usage></app-filter-dropdown-usage>
   <app-example-code [files]="filterDropdownUsage"></app-example-code>
 
-  <h2 id="filterDropdownUsefulProperties">Filter Dropdown Useful properties</h2>
+
+  <h2 id="filterDropdownUsefulProperties">Useful properties</h2>
   <p>There are few more properties which effect the behaviour of filter dropdown and those also applicable in
     column level of table configuration after enabling the filter dropdown.</p>
 
   <h4 id="dropdownFilterMenuPosition">Dropdown Filter Menu Position</h4>
-  <code>dropdownFilterMenuPosition: string = "bottom-right" | "bottom-left" | "top-left" | "top-right"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: "bottom-left"</h5>
+  <code>dropdownFilterMenuPosition: string = 'bottom-right' | 'bottom-left' | 'top-left' | 'top-right'</code> &nbsp; <h5
+  class="badge badge-pill badge-warning">Default Value: 'bottom-left'</h5>
+
   <p>Enables users to configure the dropdown filter position. Note that, there are 4 positions users can configure to
     align the dropdown. According to the following example,</p>
 
@@ -75,95 +80,94 @@
   </ul>
 
   <h4 id="dropdownFilterShowOptionSelectCheckbox">Dropdown Filter Show Option Select Check Box</h4>
-  <code>dropDownFilterShowOptionSelectCheckbox: boolean = "true or false"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: false </h5>
+  <code>dropDownFilterShowOptionSelectCheckbox: boolean</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default
+  Value: false</h5>
+
   <p>Enabled users to controls the visibility of dropdown filter's option selection check boxes.</p>
 
   <h4 id="dropdownFilterCloseMenuOnSelect">Dropdown Filter Close Menu OnSelect</h4>
-  <code>dropdownFilterCloseMenuOnSelect: boolean = "true or false"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: true </h5>
+  <code>dropdownFilterCloseMenuOnSelect: boolean</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
+  true</h5>
+
   <p>Enable/disable dropdown filter close after an option is selected.</p>
 
   <h4 id="dropdownFilterShowSelectAll">Dropdown Filter Show Select All</h4>
-  <code>dropdownFilterShowSelectAll: boolean = "true or false"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: false </h5>
+  <code>dropdownFilterShowSelectAll: boolean</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
+  false</h5>
+
   <p>Show/hide dropdown filter all option selection check box.</p>
 
   <h4 id="dropdownFilterSelectMode">Dropdown Filter Select Mode</h4>
-  <code>dropdownFilterSelectMode: string = "multi" | "single" | "single-toggle"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: "multi" </h5>
+
+  <code>dropdownFilterSelectMode: string = 'multi' | 'single' | 'single-toggle'</code> &nbsp; <h5
+  class="badge badge-pill badge-warning">Default Value: 'multi'</h5>
+
   <p>Enables users to configure the dropdown filter option selection type. There are 3 types of selection types
     available in ornamentum data table dropdown filter.</p>
 
   <h4 id="dropdownFilterWrapDisplaySelectLimit">Dropdown Filter Wrap Display Select Limit</h4>
-  <code>dropdownFilterWrapDisplaySelectLimit: number = "options display limit"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: 1 </h5>
+  <code>dropdownFilterWrapDisplaySelectLimit: number</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default
+  Value: 1</h5>
+
   <p>Used to configure the number of options to be shown in the dropdown at a time.</p>
 
   <h4 id="dropdownFilterShowSelectedOptionRemoveButton">Dropdown Filter Show Selected Option Remove Button</h4>
-  <code>dropdownFilterShowSelectedOptionRemoveButton: boolean = "true or false"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: false </h5>
+  <code>dropdownFilterShowSelectedOptionRemoveButton: boolean</code> &nbsp; <h5 class="badge badge-pill badge-warning">
+  Default Value: false</h5>
+
   <p>Used to show/hide the filtered option removal from the dropdown.</p>
 
   <h4 id="dropdownFilterGroupByField">Dropdown Filter Group By Field</h4>
-  <code>dropdownFilterGroupByField: string = "group field name"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: " " </h5>
+
+  <code>dropdownFilterGroupByField: string</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
+  ''</h5>
+
   <p>Enable dropdown filter options grouping under a specified name. If the group name is not specified all the values
     are shown as a single group.</p>
 
   <h4 id="dropdownFilterMenuHeight">Dropdown Filter Menu Height</h4>
-  <code>dropdownFilterMenuHeight: number = "filter menu height"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: 250 </h5>
+
+  <code>dropdownFilterMenuHeight: number</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
+  250</h5>
+
   <p>Used to specify the column dropdown filter menu height.</p>
 
   <h4 id="dropdownFilterMenuWidth">Dropdown Filter Menu Width</h4>
-  <code>dropdownFilterMenuWidth: number = "filter menu height"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: 320 </h5>
+  <code>dropdownFilterMenuWidth: number</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: 320</h5>
+
   <p>Used to specify the column dropdown filter menu width.</p>
 
   <h4 id="dropdownFilterMultiSelectOptionMaxWidth">Dropdown Filter Multi Select Option Max Width</h4>
-  <code>dropdownFilterMultiSelectOptionMaxWidth: number = "filter select option max width"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: 135 </h5>
+  <code>dropdownFilterMultiSelectOptionMaxWidth: number</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default
+  Value: 135</h5>
+
   <p>Used to specify the multiple option selection dropdown option max width.</p>
 
   <h4 id="dropdownFilterSearchable">Dropdown Filter Searchable</h4>
-  <code>dropdownFilterSearchable: boolean = "true or false"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: true </h5>
+  <code>dropdownFilterSearchable: boolean</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
+  true</h5>
+
   <p>Used to show/hide dropdown filter search box.</p>
 
   <h4 id="dropdownFilterSearchDebounce">Dropdown Filter Search Debounce</h4>
-  <code>dropdownFilterSearchDebounce: boolean = "true or false"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: true </h5>
+  <code>dropdownFilterSearchDebounce: boolean</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
+  true</h5>
+
   <p>Used to enable/disable dropdown filter debounce.</p>
 
   <h4 id="dropdownFilterSearchDebounceTime">Dropdown Filter Search Debounce Time</h4>
-  <code>dropdownFilterSearchDebounceTime: number = "search debounce time in milliseconds"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: 500 </h5>
-  <p>Used to specify the dropdown filter search debounce time.</p>
+  <code>dropdownFilterSearchDebounceTime: number</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
+  500</h5>
 
   <h4 id="dropdownFilterShowClearSelectionButton">Dropdown Filter Show Clear Selection Button</h4>
-  <code>dropdownFilterShowClearSelectionButton: boolean = "true or false"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: true </h5>
+  <code>dropdownFilterShowClearSelectionButton: boolean</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default
+  Value: true</h5>
+
   <p>Used to show/hide drop down filter selection clear button.</p>
 
   <h4 id="filter">Column Value Filter</h4>
-  <code>filter: any = "Column value filter"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: " " </h5>
+  <code>filter: any</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: ''</h5>
+
   <p>Used to provide a filter to see the values matched for specified criteria.</p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
