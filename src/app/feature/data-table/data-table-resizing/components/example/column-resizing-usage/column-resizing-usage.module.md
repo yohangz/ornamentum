@@ -3,12 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DataTableModule } from 'ornamentum';
   
-import { ColumnResizableUsageComponent } from './column-resizable-usage.component';
+import { ColumnResizingUsageComponent } from './column-resizing-usage.component';
 
 @NgModule({
- bootstrap: [ColumnResizableUsageComponent],
- declarations: [ColumnResizableUsageComponent],
+ bootstrap: [ColumnResizingUsageComponent],
+ declarations: [ColumnResizingUsageComponent],
  imports: [BrowserModule, DataTableModule.forRoot()]
 })
-export class ColumnResizableUsageModule {
+export class ColumnResizingUsageModule {
 }

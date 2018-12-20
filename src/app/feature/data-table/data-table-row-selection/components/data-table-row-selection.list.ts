@@ -141,5 +141,5 @@ export const selectedRowsUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  row_selectable: require('!!raw-loader?lang=typescript!./docs/row_selectable.md')
+  row_selectable: require('!!raw-loader?lang=typescript!./docs/row-selectable.md')
 };

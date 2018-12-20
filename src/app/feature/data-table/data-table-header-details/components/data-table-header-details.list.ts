@@ -101,6 +101,6 @@ export const tableHeaderDetailsShowColumnSelectorUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  headerDetails: require('!!raw-loader?lang=typescript!./docs/header-details.md')
+  headerDetails: require('!!raw-loader?lang=typescript!./docs/show-header.md')
 };
 

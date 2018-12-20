@@ -51,14 +51,14 @@ export interface DropdownConfig {
   filterable?: boolean;
 
   /**
-   * Enable filter debounce with provided filterDebounceTime if true.
+   * Enable filter debounce with provided searchDebounceTime if true.
    * @type {boolean}
    */
   filterDebounce?: boolean;
 
   /**
    * Filter debounce time in milliseconds.
-   * Applicable only when filterDebounce is true.
+   * Applicable only when searchDebounce is true.
    * @type {number}
    */
   filterDebounceTime?: number;

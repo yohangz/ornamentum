@@ -24,6 +24,6 @@ export const itemGroupingUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  itemGrouping: require('!!raw-loader?lang=typescript!./docs/item-grouping.md')
+  itemGrouping: require('!!raw-loader?lang=typescript!./docs/group-by-field.md')
 };
 

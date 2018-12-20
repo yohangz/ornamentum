@@ -1,5 +1,5 @@
 <div class="feature-container">
-  <h1>Data Table Pagination</h1>
+  <h1>Pagination</h1>
   <p>Most of the time it turns out that the amount of data to be displayed can’t fit on a single page, or the page
     becomes ridiculously long. In such cases, you might want to turn pagination on.
   </p>
@@ -8,26 +8,25 @@
     rows displayed on the grid page and navigation controls.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
+
   <app-pagination-usage></app-pagination-usage>
-  <br>
+  <app-example-code [files]="paginationUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To enable pagination, simply set <b>pageable</b> to <b>true</b> and by default pageable is <b>false</b>.</p>
+  <p>To enable pagination, simply set <code>pageable</code> to <b>true</b> and by default pageable is <b>false</b>.</p>
+
   <pre class="prettyprint lang-html">{{demoSnippet.pagination}}</pre>
 
   <p>In default the table doesn't paginate it’s contents, even if pageable depended properties are set. Those properties
     will be discuss on <a href="feature/data-table/pagination#usefulProperties">Useful Properties</a> section.</p>
-
-  <app-example-code [files]="paginationUsage"></app-example-code>
 
   <h2 id="usefulProperties">Useful properties</h2>
   <p>There are few more properties which effect the behaviour of pagination controls and those are applicable in
     global level of grid configuration after enabling the pageable.</p>
 
   <h4 id="page">Page</h4>
-  <code>page: number = "page number to view"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: 1</h5>
+  <code>page: number</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: 1</h5>
+
   <p>The page property lets you to control which page the table starts off showing, from the declared page users can
     paginate into different data views with in the declared data <a href="feature/data-table/pagination#limit">limit</a>.
   </p>
@@ -36,9 +35,8 @@
   <app-example-code [files]="paginationUsageWithPage"></app-example-code>
 
   <h4 id="limit">Limit</h4>
-  <code>limit: number = "number of data rows"</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: 10</h5>
+  <code>limit: number</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: 10</h5>
+
   <p>Controls how many rows are shown per page and the rest of the data row's will be paginate into
     series of grid pages. if limit is not provided by the configuration the default limit will be applied.</p>
 
