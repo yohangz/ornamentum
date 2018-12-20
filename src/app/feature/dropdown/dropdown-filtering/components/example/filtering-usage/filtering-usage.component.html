@@ -1,7 +1,8 @@
 <ng-dropdown
   [selectTrackBy]="'id'"
   [displayTrackBy]="'productType'"
-  [items]="items"
+  [dataSource]="dataSource"
   [limit]="50"
-  [filterable]="true">
+  [filterable]="true"
+  [filterText]="'Cooking'">
 </ng-dropdown>

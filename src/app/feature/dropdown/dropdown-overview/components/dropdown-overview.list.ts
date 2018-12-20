@@ -23,3 +23,8 @@ export const basicUsage: ExampleFile[] = [
   }
 ];
 
+export const demoSnippet: any = {
+  npm: require('!!raw-loader?lang=typescript!./docs/yarn-install.md'),
+  yarn: require('!!raw-loader?lang=typescript!./docs/yarn-install.md'),
+  import: require('!!raw-loader?lang=typescript!./docs/import.md')
+};

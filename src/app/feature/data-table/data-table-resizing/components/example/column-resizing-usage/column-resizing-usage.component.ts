@@ -5,10 +5,10 @@ import { ExampleData } from '../../../../../../shared/models';
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-column-resizable-usage',
-  templateUrl: './column-resizable-usage.component.html'
+  selector: 'app-column-resizing-usage',
+  templateUrl: './column-resizing-usage.component.html'
 })
-export class ColumnResizableUsageComponent {
+export class ColumnResizingUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
