@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { clientSideDataBindingUsage } from './dropdown-client-side-data-binding.list';
+import { clientSideDataBindingUsage, demoSnippet } from './dropdown-client-side-data-binding.list';
 
 @Component({
   selector: 'app-dropdown-client-side-data-binding-component',
@@ -9,4 +9,5 @@ import { clientSideDataBindingUsage } from './dropdown-client-side-data-binding.
 })
 export class DropdownClientSideDataBindingComponent {
   public clientSideDataBindingUsage = clientSideDataBindingUsage;
+  public demoSnippet = demoSnippet;
 }
