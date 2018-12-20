@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { itemGroupingUsage } from './dropdown-item-grouping.list';
+import { itemGroupingUsage, demoSnippet } from './dropdown-item-grouping.list';
 
 @Component({
   selector: 'app-dropdown-item-grouping-component',
@@ -9,4 +9,5 @@ import { itemGroupingUsage } from './dropdown-item-grouping.list';
 })
 export class DropdownItemGroupingComponent {
   public itemGroupingUsage = itemGroupingUsage;
+  public demoSnippet = demoSnippet;
 }

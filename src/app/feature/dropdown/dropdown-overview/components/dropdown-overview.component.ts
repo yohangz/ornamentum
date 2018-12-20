@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { basicUsage } from './dropdown-overview.list';
+import { basicUsage, demoSnippet } from './dropdown-overview.list';
 
 @Component({
   selector: 'app-dropdown-overview-component',
@@ -9,4 +9,5 @@ import { basicUsage } from './dropdown-overview.list';
 })
 export class DropdownOverviewComponent {
   public basicUsage = basicUsage;
+  public demoSnippet = demoSnippet;
 }

@@ -49,7 +49,7 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/client-side-data-binding',
-          title: 'Client Side Data Binding',
+          title: 'Client-side Data Binding',
           navigation: [
             {
               title: 'What You Will See',
@@ -67,11 +67,11 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/server-side-data-binding',
-          title: 'Server Side Data Binding'
+          title: 'Server-side Data Binding'
         },
         {
           routePath: '/feature/data-table/real-time-data-binding',
-          title: 'Real Time Data Binding'
+          title: 'Realtime Data Binding'
         },
         {
           routePath: '/feature/data-table/pagination',
@@ -183,91 +183,95 @@ export class MainComponent {
             },
             {
               title: 'Filter Text Box',
-              anchor: 'filterTextBox'
-            },
-            {
-              title: 'Filter Text Box Useful Properties',
-              anchor: 'filterTextBoxUsefulProperties',
+              anchor: 'filterTextBox',
               subNavigation: [
                 {
-                  title: 'Filter Placeholder',
-                  anchor: 'filterPlaceholder'
-                },
-                {
-                  title: 'Show Filter Clear Button',
-                  anchor: 'showFilterClearButton'
+                  title: 'Useful Properties',
+                  anchor: 'filterTextBoxUsefulProperties',
+                  subNavigation: [
+                    {
+                      title: 'Filter Placeholder',
+                      anchor: 'filterPlaceholder'
+                    },
+                    {
+                      title: 'Show Filter Clear Button',
+                      anchor: 'showFilterClearButton'
+                    }
+                  ]
                 }
               ]
             },
             {
-              title: 'Filter Dropdown Useful Properties',
-              anchor: 'filterDropdownUsefulProperties',
+              title: 'Filter Dropdown',
+              anchor: 'filterDropdown',
               subNavigation: [
                 {
-                  title: 'Dropdown Filter Menu Position',
-                  anchor: 'dropdownFilterMenuPosition'
-                },
-                {
-                  title: 'Dropdown Filter Show Option Select Check Box',
-                  anchor: 'dropdownFilterShowOptionSelectCheckbox'
-                },
-                {
-                  title: 'Dropdown Filter Close Menu OnSelect',
-                  anchor: 'dropdownFilterCloseMenuOnSelect'
-                },
-                {
-                  title: 'Dropdown Filter Show Select All',
-                  anchor: 'dropdownFilterShowSelectAll'
-                },
-                {
-                  title: 'Dropdown Filter Select Mode',
-                  anchor: 'dropdownFilterSelectMode'
-                },
-                {
-                  title: 'Dropdown Filter Wrap Display Select Limit',
-                  anchor: 'dropdownFilterWrapDisplaySelectLimit'
-                },
-                {
-                  title: 'Dropdown Filter Show Selected Option Remove Button',
-                  anchor: 'dropdownFilterShowSelectedOptionRemoveButton'
-                },
-                {
-                  title: 'Dropdown Filter Group By Field',
-                  anchor: 'dropdownFilterGroupByField'
-                },
-                {
-                  title: 'Dropdown Filter Menu Height',
-                  anchor: 'dropdownFilterMenuHeight'
-                },
-                {
-                  title: 'Dropdown Filter Menu Width',
-                  anchor: 'dropdownFilterMenuWidth'
-                },
-                {
-                  title: 'Dropdown Filter Multi Select Option Max Width',
-                  anchor: 'dropdownFilterMultiSelectOptionMaxWidth'
-                },
-                {
-                  title: 'Dropdown Filter Searchable',
-                  anchor: 'dropdownFilterSearchable'
-                },
-                {
-                  title: 'Dropdown Filter Search Debounce',
-                  anchor: 'dropdownFilterSearchDebounce'
-                },
-                {
-                  title: 'Dropdown Filter Search Debounce Time',
-                  anchor: 'dropdownFilterSearchDebounceTime'
-                },
-                {
-                  title: 'Column Value Filter',
-                  anchor: 'filter'
+                  title: 'Useful Properties',
+                  anchor: 'filterDropdownUsefulProperties',
+                  subNavigation: [
+                    {
+                      title: 'Dropdown Filter Menu Position',
+                      anchor: 'dropdownFilterMenuPosition'
+                    },
+                    {
+                      title: 'Dropdown Filter Show Option Select Check Box',
+                      anchor: 'dropdownFilterShowOptionSelectCheckbox'
+                    },
+                    {
+                      title: 'Dropdown Filter Close Menu OnSelect',
+                      anchor: 'dropdownFilterCloseMenuOnSelect'
+                    },
+                    {
+                      title: 'Dropdown Filter Show Select All',
+                      anchor: 'dropdownFilterShowSelectAll'
+                    },
+                    {
+                      title: 'Dropdown Filter Select Mode',
+                      anchor: 'dropdownFilterSelectMode'
+                    },
+                    {
+                      title: 'Dropdown Filter Wrap Display Select Limit',
+                      anchor: 'dropdownFilterWrapDisplaySelectLimit'
+                    },
+                    {
+                      title: 'Dropdown Filter Show Selected Option Remove Button',
+                      anchor: 'dropdownFilterShowSelectedOptionRemoveButton'
+                    },
+                    {
+                      title: 'Dropdown Filter Group By Field',
+                      anchor: 'dropdownFilterGroupByField'
+                    },
+                    {
+                      title: 'Dropdown Filter Menu Height',
+                      anchor: 'dropdownFilterMenuHeight'
+                    },
+                    {
+                      title: 'Dropdown Filter Menu Width',
+                      anchor: 'dropdownFilterMenuWidth'
+                    },
+                    {
+                      title: 'Dropdown Filter Multi Select Option Max Width',
+                      anchor: 'dropdownFilterMultiSelectOptionMaxWidth'
+                    },
+                    {
+                      title: 'Dropdown Filter Searchable',
+                      anchor: 'dropdownFilterSearchable'
+                    },
+                    {
+                      title: 'Dropdown Filter Search Debounce',
+                      anchor: 'dropdownFilterSearchDebounce'
+                    },
+                    {
+                      title: 'Dropdown Filter Search Debounce Time',
+                      anchor: 'dropdownFilterSearchDebounceTime'
+                    },
+                    {
+                      title: 'Column Value Filter',
+                      anchor: 'filter'
+                    }
+                  ]
                 }
               ]
-            },
-            {
-              title: 'Filter DropDown',
-              anchor: 'filterDropDown'
             },
             {
               title: 'Suggested Links',
@@ -324,7 +328,7 @@ export class MainComponent {
           ]
         },
         {
-          routePath: '/feature/data-table/column/resizable',
+          routePath: '/feature/data-table/column/resizing',
           title: 'Column Resizing',
           navigation: [
             {
@@ -383,7 +387,17 @@ export class MainComponent {
             },
             {
               title: 'Basic Usage',
-              anchor: 'basicUsage'
+              anchor: 'basicUsage',
+              subNavigation: [
+                {
+                  title: 'With Substitute Rows',
+                  anchor: 'withSubstituteRows'
+                },
+                {
+                  title: 'Without Substitute Rows',
+                  anchor: 'withoutSubstituteRows'
+                }
+              ]
             },
             {
               title: 'Suggested Links',
@@ -514,7 +528,7 @@ export class MainComponent {
           title: 'Cell Template',
           navigation: [
             {
-              title: 'What you will see',
+              title: 'What You Will See',
               anchor: 'whatYouWillSee'
             },
             {
@@ -551,7 +565,39 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/templates/expand-template',
-          title: 'Row Expand Template'
+          title: 'Row Expand Template',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Row',
+                  anchor: 'row'
+                },
+                {
+                  title: 'Expand On Row Click',
+                  anchor: 'expandOnRowClick'
+                },
+                {
+                  title: 'Show Row Expand Loading Spinner',
+                  anchor: 'showRowExpandLoadingSpinner'
+                },
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/templates/loading-spinner-template',
@@ -573,7 +619,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/templates/no-records-template',
-          title: 'No Records Template'
+          title: 'No Records Template',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         }
       ]
     },
@@ -583,15 +643,37 @@ export class MainComponent {
       menuItems: [
         {
           routePath: '/feature/dropdown/overview',
-          title: 'Basic Usage'
+          title: 'Overview',
+          navigation: [
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Installation',
+              anchor: 'installation'
+            },
+            {
+              title: 'Peer Dependencies',
+              anchor: 'peerDependencies'
+            },
+            {
+              title: 'Functionality',
+              anchor: 'functionality'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/client-side-data-binding',
-          title: 'Client Side Data Binding'
+          title: 'Client-side Data Binding'
         },
         {
           routePath: '/feature/dropdown/server-side-data-binding',
-          title: 'Server Side Data Binding'
+          title: 'Server-side Data Binding'
         },
         {
           routePath: '/feature/dropdown/real-time-data-binding',
@@ -599,11 +681,57 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/grouping',
-          title: 'Grouping'
+          title: 'Grouping',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/filtering',
-          title: 'Filtering'
+          title: 'Filtering',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Filter Debounce',
+                  anchor: 'filterDebounce'
+                },
+                {
+                  title: 'Filter Debounce Time',
+                  anchor: 'filterDebounceTime'
+                },
+                {
+                  title: 'Filter Text',
+                  anchor: 'filterText'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/item-selection',
@@ -615,7 +743,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/disable',
-          title: 'Dropdown Disabling'
+          title: 'Dropdown Disabling',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/item-disabling',

@@ -4,20 +4,20 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { ColumnResizableUsageComponent, DataTableResizableComponent } from './index';
+import { ColumnResizingUsageComponent, DataTableResizingComponent } from './index';
 
-import { DataTableResizableRoutingModule } from './data-table-resizable-routing.module';
+import { DataTableResizingRoutingModule } from './data-table-resizing-routing.module';
 
 import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table resizable module.
- * @class DataTableResizableModule
+ * @class DataTableResizingModule
  */
 @NgModule({
   declarations: [
-    ColumnResizableUsageComponent,
-    DataTableResizableComponent
+    ColumnResizingUsageComponent,
+    DataTableResizingComponent
   ],
   exports: [],
   imports: [
@@ -27,9 +27,9 @@ import { SharedModule } from '../../../shared/shared.module';
     DataTableModule.forRoot({
       showColumnSelector: true
     }),
-    DataTableResizableRoutingModule
+    DataTableResizingRoutingModule
   ],
   providers: []
 })
-export class DataTableResizableModule {
+export class DataTableResizingModule {
 }

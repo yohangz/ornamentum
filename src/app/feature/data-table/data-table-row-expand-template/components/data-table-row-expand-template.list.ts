@@ -75,18 +75,22 @@ export const rowExpandLoadingSpinnerDetailView: ExampleFile[] = [
     type: FileType.TS,
     name: 'row-expand-expandable-detail-view.component.ts',
     content:
-      require('!!raw-loader?lang=typescript!./example/row-expand-loading-spinner-usage/row-expand-expandable-detail-view/row-expand-expandable-detail-view.component.ts')
+      require(
+        '!!raw-loader?lang=typescript!./example/row-expand-loading-spinner-usage/row-expand-expandable-detail-view/' +
+        'row-expand-expandable-detail-view.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'row-expand-loading-spinner-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/row-expand-loading-spinner-usage/row-expand-expandable-detail-view/row-expand-expandable-detail-view.component.html')
+    content: require(
+      '!!raw-loader?lang=html!./example/row-expand-loading-spinner-usage/row-expand-expandable-detail-view/' +
+      'row-expand-expandable-detail-view.component.html')
   }
 ];
 
 export const demoSnippet: any = {
-  base_template: require('!!raw-loader?lang=typescript!./docs/base_template.md'),
-  expand_template: require('!!raw-loader?lang=typescript!./docs/expand_template.md'),
-  loading_spinner_template: require('!!raw-loader?lang=typescript!./docs/loading_spinner_template.md')
+  base_template: require('!!raw-loader?lang=typescript!./docs/base-template.md'),
+  expand_template: require('!!raw-loader?lang=typescript!./docs/expand-template.md'),
+  loading_spinner_template: require('!!raw-loader?lang=typescript!./docs/loading-spinner-template.md')
 };
 
