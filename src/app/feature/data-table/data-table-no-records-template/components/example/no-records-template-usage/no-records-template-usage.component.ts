@@ -10,6 +10,8 @@ export class NoRecordsTemplateUsageComponent {
   public items: ExampleData[];
 
   constructor() {
-    this.items = [];
+    setTimeout(() => {
+      this.items = [];
+    }, 5000);
   }
 }

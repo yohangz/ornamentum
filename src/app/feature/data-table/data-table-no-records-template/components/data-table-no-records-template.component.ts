@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 
-import { noRecordsTemplateUsage } from './data-table-no-records-template.list';
+import { noRecordsTemplateUsage, demoSnippet } from './data-table-no-records-template.list';
 
-import { demoSnippet } from './data-table-no-records-template';
 
 @Component({
   selector: 'app-data-table-no-records-template-component',
@@ -11,6 +10,5 @@ import { demoSnippet } from './data-table-no-records-template';
 })
 export class DataTableNoRecordsTemplateComponent {
   public noRecordsTemplateUsage = noRecordsTemplateUsage;
-
   public demoSnippet = demoSnippet;
 }
