@@ -14,6 +14,6 @@ export class DataFetchService {
   }
 
   public fetchData(offset: number = 0, limit: number = 10): ExampleData[] {
-    return fetchData.slice(0, offset + limit);
+    return fetchData.slice(offset, offset + limit);
   }
 }

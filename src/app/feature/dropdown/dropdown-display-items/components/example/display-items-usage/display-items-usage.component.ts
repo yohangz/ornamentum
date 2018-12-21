@@ -5,10 +5,10 @@ import { ExampleData } from '../../../../../../shared/models';
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-display-tracked-by-usage',
-  templateUrl: './display-tracked-by-usage.component.html'
+  selector: 'app-display-items-usage',
+  templateUrl: './display-items-usage.component.html'
 })
-export class DisplayTrackedByUsageComponent {
+export class DisplayItemsUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
