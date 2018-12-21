@@ -775,11 +775,39 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/item-disabling',
-          title: 'Item Disabling'
+          title: 'Item Disabling',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
-          routePath: '/feature/dropdown/display-tracked-by',
-          title: 'Display Tracked By'
+          routePath: '/feature/dropdown/display-items',
+          title: 'Display Items',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/load-on-scroll',
@@ -803,7 +831,43 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/translations',
-          title: 'Translations'
+          title: 'Translations',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'No Data Message',
+                  anchor: 'noDataMessage'
+                },
+                {
+                  title: 'Filter Placeholder',
+                  anchor: 'filterPlaceholder'
+                },
+                {
+                  title: 'Selected Item Wrap Placeholder',
+                  anchor: 'selectedItemWrapPlaceholder'
+                },
+                {
+                  title: 'Select Placeholder',
+                  anchor: 'selectPlaceholder'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            },
+          ]
         },
         {
           routePath: '/feature/dropdown/events',

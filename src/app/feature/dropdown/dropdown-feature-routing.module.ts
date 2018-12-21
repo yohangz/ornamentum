@@ -134,12 +134,12 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-display-tracked-by/dropdown-display-tracked-by.module#DropdownDisplayTrackedByModule',
-    path: 'display-tracked-by',
+    loadChildren: './dropdown-display-items/dropdown-display-items.module#DropdownDisplayItemsModule',
+    path: 'display-items',
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Functionality | Display Tracking',
+        title: 'Ornamentum | Dropdown | Functionality | Display Items',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -242,7 +242,8 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-option-group-header-template/dropdown-option-group-header-template.module#DropdownOptionGroupHeaderTemplateModule',
+    loadChildren: './dropdown-option-group-header-template/' +
+      'dropdown-option-group-header-template.module#DropdownOptionGroupHeaderTemplateModule',
     path: 'templates/dropdown-option-group-header-template',
     canActivate: [SeoGuard],
     data: {
