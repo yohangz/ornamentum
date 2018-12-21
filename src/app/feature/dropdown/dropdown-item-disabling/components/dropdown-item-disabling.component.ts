@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { itemDisablingUsage } from './dropdown-item-disabling.list';
+import { itemDisablingUsage, demoSnippet } from './dropdown-item-disabling.list';
 
 @Component({
   selector: 'app-dropdown-item-disabling-component',
@@ -9,4 +9,5 @@ import { itemDisablingUsage } from './dropdown-item-disabling.list';
 })
 export class DropdownItemDisablingComponent {
   public itemDisablingUsage = itemDisablingUsage;
+  public demoSnippet = demoSnippet;
 }

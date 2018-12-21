@@ -1,5 +1,6 @@
 export interface ExampleData {
-  availableStores?: any[];
+  availability: boolean;
+  availableStores: Store[];
   id: number;
   retailerType: string;
   retailerCountry: string;
@@ -12,4 +13,9 @@ export interface ExampleData {
   revenue: number;
   quantity: number;
   grossMargin: number;
+}
+
+export interface Store {
+  storeName: string;
+  website: string;
 }

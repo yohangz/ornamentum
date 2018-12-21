@@ -1,25 +1,28 @@
 <div class="feature-container">
-  <h1>DropDown Item Disabling</h1>
+  <h1>Item Disabling</h1>
 
-  <ul class="main-pane-list">
-    <li>Disabling lets users to disable the dropdown items when it is necessary.</li>
-    <li>To disable dropdown item(s), it is required to provide the boolean valued (to indicate whether an item needs to
-      be
-      disable or not) key name for <b>disabledTrackBy</b> attribute.
-    </li>
-    <li>According to following example above property is set as follows.</li>
-    <ul>
-      <li>[disabledTrackBy]="'disabled'" => This 'disabled' key contains boolean value which is used to control the
-        disable state of an item.
-      </li>
-    </ul>
-  </ul>
+  <p>This feature can be uses to disable dropdown items by individually and after disabling a specific field ornamentum
+    will disabled
+    the particular field by UI level and restricting to perform any events on disabled fields.</p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <p>The below example will demonstrates a dropdown item disabling functionality by using <a
+    href="feature/data-table/client-side-data-binding">Client-side Data Binding</a> operations and hard coded sample data set.</p>
 
   <app-item-disabling-usage></app-item-disabling-usage>
-
   <app-example-code [files]="itemDisablingUsage"></app-example-code>
 
-  <h2>Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#disabledTrackBy">API Doc for
-    Dropdown Item Disabling</a>
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>For disable dropdown item, it is required to provide a <b>true</b> or <b>not empty string</b> field for <code>disabledTrackBy</code>
+    attribute on particular field whether to indicate an item needs to be disabled. by default <code>disabledTrackBy</code> field is
+    set it's field name to <b>disabled</b>.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.disabledTrackBy}}</pre>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="feature/dropdown/events">Events</a><br>
+  <a rel="noopener" target="_blank" href="feature/dropdown/disable">Dropdown Disabling</a><br>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#disabledTrackBy">API Doc for Dropdown Item Disabling</a>
 </div>
