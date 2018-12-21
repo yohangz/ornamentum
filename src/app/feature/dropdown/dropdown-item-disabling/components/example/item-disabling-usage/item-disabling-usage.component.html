@@ -1,7 +1,6 @@
 <ng-dropdown
   [selectTrackBy]="'id'"
-  [displayTrackBy]="'productType'"
-  [disabledTrackBy]="'disabled'"
-  [items]="items"
-  [limit]="50">
+  [displayTrackBy]="'product'"
+  [disabledTrackBy]="'availability'"
+  [items]="checkProductAvailability()">
 </ng-dropdown>

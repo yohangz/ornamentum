@@ -22,3 +22,7 @@ export const itemDisablingUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
+
+export const demoSnippet: any = {
+  disabledTrackBy: require('!!raw-loader?lang=typescript!./docs/disabled-track-by.md')
+};

@@ -12,6 +12,18 @@ export class ItemDisablingUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+  }
+
+  public checkProductAvailability(): ExampleData[] {
+    const items = this.dataFetchService.fetchData(20, 10);
+
+    if (items) {
+      items.map((value: ExampleData) => {
+        if (!value.availability) {
+          return !value.availability;
+        }
+      });
+      return items;
+    }
   }
 }
