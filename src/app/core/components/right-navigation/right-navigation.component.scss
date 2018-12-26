@@ -30,11 +30,11 @@
         li {
           padding-left: 1rem;
 
-            &::before {
-              content: '-';
-              left: 1rem;
-              position: absolute;
-            }
+          &::before {
+            content: '-';
+            left: 1rem;
+            position: absolute;
+          }
         }
       }
     }

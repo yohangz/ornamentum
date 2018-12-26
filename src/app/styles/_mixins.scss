@@ -1,4 +1,4 @@
-@import '~compass-mixins/lib/compass';
+@import '~compass-mixins/lib/_compass.scss';
 
 @mixin clearfix {
   &::before,
@@ -28,7 +28,7 @@
       @content;
     }
   } @else if $point == max812 {
-    @media only screen and (min-device-width : 310px) and (max-device-width : 823px) and (orientation : landscape) {
+    @media only screen and (min-device-width: 310px) and (max-device-width: 823px) and (orientation: landscape) {
       @content;
     }
   } @else if $point == max480 {
