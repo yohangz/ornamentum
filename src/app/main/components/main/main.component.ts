@@ -815,11 +815,53 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/menu-position',
-          title: 'Menu Position'
+          title: 'Menu Position',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/menu-width-height',
-          title: 'Menu Width & Height'
+          title: 'Menu Width & Height',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Menu Height',
+                  anchor: 'menuHeight'
+                },
+                {
+                  title: 'Menu Width',
+                  anchor: 'menuWidth'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ],
         },
         {
           routePath: '/feature/dropdown/load-data-on-init',
@@ -854,12 +896,12 @@ export class MainComponent {
                   anchor: 'filterPlaceholder'
                 },
                 {
-                  title: 'Selected Item Wrap Placeholder',
-                  anchor: 'selectedItemWrapPlaceholder'
-                },
-                {
                   title: 'Select Placeholder',
                   anchor: 'selectPlaceholder'
+                },
+                {
+                  title: 'Selected Item Wrap Placeholder',
+                  anchor: 'selectedItemWrapPlaceholder'
                 }
               ]
             },
@@ -875,15 +917,57 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/templates/dropdown-option-template',
-          title: 'Option Template'
+          title: 'Option Template',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/templates/dropdown-option-group-header-template',
-          title: 'Group Header Template'
+          title: 'Option Group Header Template',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/templates/loading-spinner-template',
-          title: 'Loading Template'
+          title: 'Loading Spinner Template',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         }
       ]
     }

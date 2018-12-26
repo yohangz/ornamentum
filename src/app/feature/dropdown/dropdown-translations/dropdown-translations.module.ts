@@ -6,7 +6,10 @@ import { DropdownModule } from 'ornamentum';
 import {
   DropdownTranslationsComponent,
   AdditionalTranslationsUsageComponent,
-  TranslationsNoDataUsageComponent
+  TranslationsNoDataMessageUsageComponent,
+  TranslationsFilterPlaceholderUsageComponent,
+  TranslationsSelectPlaceholderUsageComponent,
+  TranslationsSelectedItemWrapPlaceholderUsageComponent
 } from './index';
 
 import { DropdownTranslationsRoutingModule } from './dropdown-translations-routing.module';
@@ -21,7 +24,10 @@ import { SharedModule } from '../../../shared/shared.module';
   declarations: [
     DropdownTranslationsComponent,
     AdditionalTranslationsUsageComponent,
-    TranslationsNoDataUsageComponent
+    TranslationsNoDataMessageUsageComponent,
+    TranslationsFilterPlaceholderUsageComponent,
+    TranslationsSelectPlaceholderUsageComponent,
+    TranslationsSelectedItemWrapPlaceholderUsageComponent
   ],
   exports: [],
   imports: [

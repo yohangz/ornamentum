@@ -1,23 +1,30 @@
 <div class="feature-container">
-  <h1>Dropdown Option Template</h1>
+  <h1>Option Template</h1>
 
-  <p>This feature enables users to customize the dropdown option view by providing their own template.</p>
+  <p>This feature enables users to customize the dropdown options by providing their own templates to override native
+    dropdown template. for it's basic usages and examples please refer <a
+      href="feature/dropdown/templates/dropdown-option-template#basicUsage">Basic Usage</a> section.</p>
 
-  <label>The following code block example shows the way of dropdown option template using. In here we used
-    simple text to override the native loading functionality. You can also provide your own custom templates with the
-    any
-    custom styles as you like.
-
-    <pre class="prettyprint lang-html">{{demoSnippet.template}}</pre>
-  </label>
-
-  <p>Click dropdown to see the output after applying the above option template.</p>
+  <h2 id="whatYouWillSee">What You Will See</h2>
 
   <app-option-template-usage></app-option-template-usage>
-
   <app-example-code [files]="optionTemplateUsage"></app-example-code>
 
-  <h2>Suggested Links</h2>
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>As same as the all other templates, we can bind a specific property <code>#ngDropdownOption</code> into
+    <b>ng-template</b> to indicates customize dropdown options are need to be applied.</p>
+
+  <p>The following code block example shows the way of dropdown option template using. In here we used
+    simple text to override the native dropdown item view. You can also provide your own custom template with any custom
+    styles as you want.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.template}}</pre>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="feature/dropdown/filtering">Filtering</a><br>
+  <a rel="noopener" target="_blank" href="feature/dropdown/on-data-bind">On Data Bind</a><br>
+  <a rel="noopener" target="_blank" href="feature/dropdown/display-items">Display Items</a><br>
   <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#dropdownOptionTemplate">API Doc for
     Dropdown Option Template</a>
 </div>
