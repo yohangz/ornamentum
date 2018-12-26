@@ -22,3 +22,7 @@ export const optionTemplateUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
+
+export const demoSnippet: any = {
+  template: require('!!raw-loader?lang=typescript!./docs/template.md')
+};

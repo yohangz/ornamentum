@@ -1,68 +1,112 @@
 <div class="feature-container">
-  <h1>DropDown Translations</h1>
+  <h1>Translations</h1>
+
+  <p>Translations can be uses to override dropdown native property labels. those translatable properties
+    are required to binding into <code>translations</code> property in dropdown global level configuration (within
+    ng-dropdown scope), in any developer preferred language. the properties that can be configure in translations are:
+  </p>
 
   <ul class="main-pane-list">
-    <li>Dropdown translations will allow users to configure the basic settings.</li>
-    <li>Those translations are required to passed via the <b>translations</b> attribute as follows.
-      <h5>[translations]="dropdownTranslations"</h5>
-    </li>
-    <li>Going through the following, shows the configurations can be passed via the translations.
-      <ul class="main-pane-list">
-        <li>noDataMessage</li>
-        <li>filterPlaceholder</li>
-        <li>selectedItemWrapPlaceholder</li>
-        <li>selectPlaceholder</li>
-      </ul>
-    </li>
-    <li>Let's see how these can be configured in different scenarios.</li>
-  </ul>
-
-  <h2>Dropdown Translations for No Data Scenario</h2>
-  <ul class="main-pane-list">
-    <li>In this scenario, when data is not available users can provide customized message needs to show, via this
-      translations property.
-    </li>
-    <li><b>noDataMessage: "Customized No Data Message"</b> => This configuration is used to set the message
-      header name on the message to be shown in the dropdown body when there are no data to display. The default value
-      for
-      this config is 'No Results Available'
-    </li>
-  </ul>
-
-  <app-translations-no-data-usage></app-translations-no-data-usage>
-
-  <app-example-code [files]="translationsNoDataUsage"></app-example-code>
-
-  <h2>Dropdown Additional Translations</h2>
-  <ul>
-    <li>The other translations properties can be considered in this section.</li>
+    <li><b>Translations for No Data Scenario</b></li>
     <ul>
-      <li><b>filterPlaceholder: "This is filter place holder"</b> => This configuration is used to customize the place
-        holder text for dropdown value filtering text box when filtering is enabled. The default value for this config
-        is
-        'Search'.
-      </li>
-      <li><b>selectPlaceholder: "This is select place holder"</b> => This configuration is used to customize the select
-        place holder text in the dropdown. The default value for this config is 'Select'.
-      </li>
-      <li><b>selectedItemWrapPlaceholder: "Wrapped Items"</b> => This works only when multi selection mode enabled in
-        the
-        dropdown. For this purpose in here, selection mode is set for Multi. Also to enable selected items wrapping, it
-        is
-        required to set true for wrapDisplaySelectLimit. Refer <a routerLink="/feature/dropdown/item-selection">Dropdown
-          Item Selection</a>'s Multi Item Selection with Wrapping Selected Options section for more details. This
-        configuration is used to customize the text which shows to indicate the wrapped items. The default value for
-        this
-        config is 'Item'. Please select multiple options from the drop down to see how this actually works.
-      </li>
+      <li>No Data Message</li>
+    </ul>
+    <li><b>Additional Translations</b></li>
+    <ul>
+      <li>Selected Item Wrap Placeholder</li>
+      <li>Select Placeholder</li>
+      <li>Filter Placeholder</li>
     </ul>
   </ul>
 
-  <app-additional-translations-usage></app-additional-translations-usage>
+  <p>Let's see how each properties are behaves on different conditions in below <a
+    href="feature/dropdown/translations#usefulProperties">Useful Properties</a> section.</p>
 
-  <app-example-code [files]="additionalTranslationsUsage"></app-example-code>
+  <h2 id="whatYouWillSee">What You Will See</h2>
 
-  <h2>Suggested Links</h2>
+  <ol>
+    <li><h5>Translations for No Data</h5></li>
+
+    <app-translations-no-data-message-usage></app-translations-no-data-message-usage>
+    <app-example-code [files]="translationsNoDataMessageUsage"></app-example-code>
+
+    <li><h5>Additional Translations</h5></li>
+
+    <app-additional-translations-usage></app-additional-translations-usage>
+    <app-example-code [files]="additionalTranslationsUsage"></app-example-code>
+  </ol>
+
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>As mention in the introduction, translations can be override. by default translations are initialize to it's
+    default pre-set values. simply bind <code>DropdownTranslations</code> type of object into translations property is
+    enough to take the the control over translations.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.translations}}</pre>
+
+  <h2 id="usefulProperties">Useful Properties</h2>
+
+  <p>Properties that can be uses with dropdown translations will be discuss in this section in more details each by
+    each.</p>
+
+  <h4 id="noDataMessage">No Data Message</h4>
+  <code>noDataMessage: DropdownTranslations</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: 'No
+  Results Available'</h5>
+
+  <p>This configuration is uses to set a message to show in dropdown body when on no data is available to display. by
+    providing a value to <code>noDataMessage</code> will override the default no data message.</p>
+
+  <app-translations-no-data-message-usage></app-translations-no-data-message-usage>
+  <app-example-code [files]="translationsNoDataMessageUsage"></app-example-code>
+
+  <h4 id="filterPlaceholder">Filter Placeholder</h4>
+  <code>filterPlaceholder: DropdownTranslations</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
+  'Search'</h5>
+
+  <p>This configuration is uses to customize the placeholder text for dropdown when <code>filterable</code> is <b>enabled</b>.
+    translation can be override by binding <code>filterPlaceholder</code> string into
+    <code>DropdownTranslations</code> type of object.</p>
+
+  <app-translations-filter-placeholder-usage></app-translations-filter-placeholder-usage>
+  <app-example-code [files]="translationsFilterPlaceholderUsage"></app-example-code>
+
+  <h4 id="selectPlaceholder">Select Placeholder</h4>
+  <code>selectPlaceholder: DropdownTranslations</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
+  'Select'</h5>
+
+  <p>This configuration is uses to customize the main text on top of the dropdown (select placeholder).
+    translation can be override by binding <code>selectPlaceholder</code> string into
+    <code>DropdownTranslations</code> type of object.</p>
+
+  <app-translations-select-placeholder-usage></app-translations-select-placeholder-usage>
+  <app-example-code [files]="translationsSelectPlaceholderUsage"></app-example-code>
+
+  <h4 id="selectedItemWrapPlaceholder">Selected Item Wrap Placeholder</h4>
+  <code>selectedItemWrapPlaceholder: DropdownTranslations</code> &nbsp; <h5 class="badge badge-pill badge-warning">
+  Default Value: 'Items'</h5>
+
+  <p>This configuration is uses to customize text which shows to indicate the selected wrapped items count. it can be
+    configure by binding a <code>filterPlaceholder</code> string into <code>DropdownTranslations</code> type of object.
+  </p>
+
+
+  <p>For enable selected items wrapping, it is <b>mandatory</b> to set <code>selectMode</code> to <b>'multi'</b>
+    and <code>wrapDisplaySelectLimit</code> should be less than the available item count. for more details about wrap
+    display
+    selection limit please refer Item Selection's <a rel="noopener" target="_blank"
+                                                     href="feature/dropdown/item-selection">Multi Item
+      Selection with Wrapping Selected Options</a> section.</p>
+
+  <p>Please select two or more items from the dropdown to manipulate it's usages.</p>
+
+  <app-translations-selected-item-wrap-placeholder-usage></app-translations-selected-item-wrap-placeholder-usage>
+  <app-example-code [files]="translationsSelectedItemWrapPlaceholderUsage"></app-example-code>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="feature/dropdown/item-selection">Item Selection</a><br>
+  <a rel="noopener" target="_blank" href="feature/dropdown/templates/dropdown-option-template">Option Template</a><br>
+  <a rel="noopener" target="_blank" href="feature/dropdown/events">Events</a><br>
   <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#translations">API Doc for Dropdown
     Translations</a>
 </div>

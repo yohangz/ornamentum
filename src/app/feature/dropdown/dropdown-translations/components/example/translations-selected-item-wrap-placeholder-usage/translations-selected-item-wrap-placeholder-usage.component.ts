@@ -7,19 +7,17 @@ import { ExampleData } from '../../../../../../shared/models';
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-additional-translations-usage',
-  templateUrl: './additional-translations-usage.component.html'
+  selector: 'app-translations-selected-item-wrap-placeholder-usage',
+  templateUrl: './translations-selected-item-wrap-placeholder-usage.component.html'
 })
-export class AdditionalTranslationsUsageComponent {
+export class TranslationsSelectedItemWrapPlaceholderUsageComponent {
   public items: ExampleData[];
-
-  public dropdownTranslations: DropdownTranslations = {
-    filterPlaceholder: 'This is filter place holder',
-    selectedItemWrapPlaceholder: 'Wrapped Items',
-    selectPlaceholder: 'This is select place holder'
-  };
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchData();
   }
+
+  public dropdownTranslations: DropdownTranslations = {
+    selectedItemWrapPlaceholder: 'Wrapped Items'
+  };
 }
