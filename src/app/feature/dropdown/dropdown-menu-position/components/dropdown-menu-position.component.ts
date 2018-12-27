@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { menuPositionUsage} from './dropdown-menu-position.list';
+import { menuPositionUsage, demoSnippet } from './dropdown-menu-position.list';
 
 @Component({
   selector: 'app-dropdown-menu-position-component',
@@ -9,4 +9,5 @@ import { menuPositionUsage} from './dropdown-menu-position.list';
 })
 export class DropdownMenuPositionComponent {
   public menuPositionUsage = menuPositionUsage;
+  public demoSnippet = demoSnippet;
 }

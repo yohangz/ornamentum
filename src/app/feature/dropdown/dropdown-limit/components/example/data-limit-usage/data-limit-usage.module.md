@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
   
-import { DataTableModule } from 'ornamentum';
+import { DropdownModule } from 'ornamentum';
   
 import { DataLimitUsageComponent } from './data-limit-usage.component';
 
 @NgModule({
  bootstrap: [DataLimitUsageComponent],
  declarations: [DataLimitUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [BrowserModule, DropdownModule.forRoot()]
 })
 export class DataLimitUsageModule {
 }
