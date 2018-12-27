@@ -38,7 +38,7 @@
       }
 
       > .ng-data-table-content {
-        -webkit-overflow-scrolling: touch;
+        -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
         overflow-y: scroll;
 
         .ng-data-table {
@@ -54,7 +54,7 @@
 
   //Data table content container styles
   .ng-data-table-content-container {
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
     background: $data-table-content-background;
     overflow-y: auto;
 
@@ -130,7 +130,7 @@
       .ng-dropdown-selected-value {
         background: none;
         margin: 0;
-        padding: 0 .5rem 0 .5rem;
+        padding: 0 .5rem;
       }
 
       &::after {
@@ -246,8 +246,8 @@
 
   .ng-data-table-column-selector-box {
     max-height: 15rem;
-    padding: .5rem 1rem 1rem;
     overflow: auto;
+    padding: .5rem 1rem 1rem;
 
     .ng-data-table-column-selector-checkbox {
       @include font-size(.8, 1.4);
@@ -318,8 +318,8 @@
             border: 0;
             cursor: pointer;
             height: 100%;
-            padding: 0;
             outline: none;
+            padding: 0;
             vertical-align: top;
             width: 100%;
 
