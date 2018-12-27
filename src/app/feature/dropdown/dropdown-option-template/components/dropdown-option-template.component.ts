@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 
-import { optionTemplateUsage } from './dropdown-option-template.list';
-
-import { demoSnippet } from './dropdown-option-template';
+import { optionTemplateUsage, demoSnippet } from './dropdown-option-template.list';
 
 @Component({
   selector: 'app-dropdown-option-template-component',
@@ -11,6 +9,5 @@ import { demoSnippet } from './dropdown-option-template';
 })
 export class DropdownOptionTemplateComponent {
   public optionTemplateUsage = optionTemplateUsage;
-
   public demoSnippet = demoSnippet;
 }

@@ -1,3 +1,3 @@
 <ng-template #ngDropdownOptionGroupHeader let-groupedItem="groupedItem">
-  <h5 style="font-size:150%;color: red">{{groupedItem.groupName}}</h5>
+  <h4 style="font-size:150%; color: #9eff93">{{groupedItem.groupName}}</h4>
 </ng-template>

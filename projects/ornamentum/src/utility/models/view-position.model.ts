@@ -1,1 +1,1 @@
-export type ViewPosition = 'top-right' | 'top-left' | 'bottom-left' | 'bottom-right';
+export type ViewPosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';

@@ -22,3 +22,7 @@ export const menuPositionUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
+
+export const demoSnippet: any = {
+  menuPosition: require('!!raw-loader?lang=typescript!./docs/menu-position.md')
+};

@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
   
-import { DataTableModule } from 'ornamentum';
+import { DropdownModule } from 'ornamentum';
   
 import { EventsUsageComponent } from './events-usage.component';
 
 @NgModule({
  bootstrap: [EventsUsageComponent],
  declarations: [EventsUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [BrowserModule, DropdownModule.forRoot()]
 })
 export class EventsUsageModule {
 }
