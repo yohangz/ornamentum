@@ -521,7 +521,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/events',
-          title: 'Events'
+          title: 'Events',
+          navigation: [
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Events List',
+              anchor: 'eventsList'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/templates/cell-template',
