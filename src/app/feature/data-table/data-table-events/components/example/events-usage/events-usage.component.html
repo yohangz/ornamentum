@@ -9,8 +9,9 @@
   [showRefreshButton]="false"
   [showColumnSelector]="false"
   [rowSelectable]="true"
-  [selectOnRowClick]="true"
+  [selectOnRowClick]="false"
   [showRowSelectCheckbox]="true"
+  [showRowSelectAllCheckbox]="true"
   [selectMode]="'multi'"
 
   (init)="onDataTableInit($event)"
@@ -27,7 +28,7 @@
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [width]="70">
+    [width]="50">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
@@ -36,7 +37,8 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
-    [title]="'Retailer Type'">
+    [title]="'Retailer Type'"
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
@@ -62,4 +64,3 @@
     [width]="100">
   </ng-data-table-column>
 </ng-data-table>
-
