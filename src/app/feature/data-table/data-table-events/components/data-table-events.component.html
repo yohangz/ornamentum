@@ -1,79 +1,147 @@
 <div class="feature-container">
   <h1>Data Table Events</h1>
 
-  <ul class="main-pane-list">
-    <li>There are several events types are available in this data table as follows.</li>
-    <ul class="main-pane-list">
-      <li>
-        <label class="event-item">init: </label>
-        <ul class="main-pane-list">
-          <li>Triggers when initializing the data table.</li>
-        </ul>
-      </li>
-      <li><label class="event-item">allRowSelectChange:</label>
-        <ul class="main-pane-list">
-          <li>This will trigger when row select change happen for all rows.</li>
-        </ul>
-      </li>
-      <li><label class="event-item">rowBind: </label>
-        <ul class="main-pane-list">
-          <li>For each table row this will trigger when binding row data.</li>
-        </ul>
-      </li>
-      <li><label class="event-item">rowSelectChange: </label>
-        <ul class="main-pane-list">
-          <li>Triggers when row select state changes. To identify selected
-            rows uniquely it is necessary to specify <b>[selectTrackBy]"</b> property. Therefore, a unique value column
-            name should be set as the value for this attribute. According to this example it is <b>'id'.</b>
-          </li>
-        </ul>
-      </li>
-      <li><label class="event-item">cellBind: </label>
-        <ul class="main-pane-list">
-          <li>For each table row cell this will trigger when binding cell data.</li>
-        </ul>
-      </li>
-      <li><label class="event-item">cellClick: </label>
-        <ul class="main-pane-list">
-          <li>Triggers when clicks on table cell.</li>
-        </ul>
-      </li>
-      <li><label class="event-item">columnBind: </label>
-        <ul class="main-pane-list">
-          <li>Triggers for each column before all the other events to set column configurations.</li>
-        </ul>
-      </li>
-      <li><label class="event-item">dataBound: </label>
-        <ul class="main-pane-list">
-          <li>This will trigger after completion of data binding.</li>
-        </ul>
-      </li>
-      <li><label class="event-item">headerClick: </label>
-        <ul class="main-pane-list">
-          <li>Triggers when clicking table column header row.</li>
-        </ul>
-      </li>
-      <li><label class="event-item">rowClick: </label>
-        <ul class="main-pane-list">
-          <li>Triggers when user clicks on table row.</li>
-        </ul>
-      </li>
-      <li><label class="event-item">rowDoubleClick: </label>
-        <ul class="main-pane-list">
-          <li>Triggers when user double clicks on table row.</li>
-        </ul>
-      </li>
-    </ul>
-    <li>Please refer following example to see, how this event can be used and what types of data is passed to these
-      events.
-    </li>
-  </ul>
+  <p>There are whole lot of events have introduced within the data table to serve & fulfill different user
+    requirements.</p>
 
-  <app-events-usage></app-events-usage>
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>Events can be bind to the data table as follows.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.eventBinding}}</pre>
+
+  <p>Please refer following example to see, how these events can be used and what types of data is passed to these
+    events. 
+  </p>
+
+  <app-events-usage (dataTableInit)="onDataTableInit($event)"
+                    (allRowSelectChange)="onAllRowSelectChange($event)"
+                    (rowBind)="onRowBind($event)"
+                    (rowSelectChange)="onRowSelectChange($event)"
+                    (cellBind)="onCellBind($event)"
+                    (cellClick)="onCellClick($event)"
+                    (columnBind)="onColumnBind($event)"
+                    (dataBound)="onDataBound($event)"
+                    (headerClick)="onHeaderClick($event)"
+                    (rowClick)="onRowClick($event)"
+                    (rowDoubleClick)="onRowDoubleClick($event)">
+  </app-events-usage>
+
+  <br>
+  <p><b>events-usage.component.html</b> and <b>events-usage.component.ts</b> shows all the method bindings and results
+    of the available different events.</p>
 
   <app-example-code [files]="eventsUsage"></app-example-code>
 
-  <h2>Suggested Links</h2>
+  <h2 id="eventList">Event List</h2>
+  <p>All the available data table events can be detailed as follows. Please interact with the above example to see the
+    outputs of the below mentioned events.</p>
+
+  <ul class="main-pane-list">
+    <li>
+      <label class="event-item">init: </label>
+      <ul class="main-pane-list">
+        <li>Triggers when initializing the data table.</li>
+        <p class="event-output"><b>{{dataTableInitData}}</b></p>
+      </ul>
+    </li>
+    <li><label class="event-item">allRowSelectChange:</label>
+      <ul class="main-pane-list">
+        <li>This will trigger when row select change happen for all rows.</li>
+        <li>Click on the select all check box to see the output.</li>
+        <p class="event-output"><b>{{allRowSelectChangeEventData}}</b></p>
+        <li>Also this will emit all the selected row ids as an array if the <b>rowSelectChange</b> event is bind.</li>
+      </ul>
+    </li>
+    <li><label class="event-item">rowBind: </label>
+      <ul class="main-pane-list">
+        <li>For each table row this will trigger when binding data for the available rows. That is the only occasion
+          this event will be fired. Refer following output,
+        </li>
+        <p class="event-output">
+          <b><span *ngFor="let id of rowBindEventData">{{id}}<br></span></b>
+        </p>
+        <li>This event will be called after the <b>columnBind</b>, <b>init</b> & <b>dataBound</b> events.</li>
+      </ul>
+    </li>
+    <li><label class="event-item">rowSelectChange: </label>
+      <ul class="main-pane-list">
+        <li>Triggers when row select state changes. To identify selected
+          rows uniquely it is necessary to specify <b>[selectTrackBy]"</b> property. Therefore, a unique value column
+          name should be set as the value for this attribute. According to this example it is <b>'id'.</b>
+        </li>
+        <li>Click on the row select check box to see the output.</li>
+        <p class="event-output">
+          <b *ngIf="!rowSelectChangeEventData;else showEventData">// click on the any row select box(es) to
+            see the output</b>
+
+          <ng-template #showEventData>
+            <b>{{rowSelectChangeEventData|json}}</b>
+          </ng-template>
+        </p>
+        <li>If multi row selection option is enabled, the output is shown as an array of ids. Else it will be a single
+          value(id).
+        </li>
+      </ul>
+    </li>
+    <li><label class="event-item">cellBind: </label>
+      <ul class="main-pane-list">
+        <li>For each table row cell this will trigger when binding cell data.</li>
+        <li>That means after a each <b>rowBind</b> event, this event will be called again & again for all the
+          available cells in a given row.
+        </li>
+        <li>That's why following output shows the same string(ex: cell bind event is called for row id => 10) <b>8</b>
+          (available cells in a particular row in the following example) times per row.
+        </li>
+        <p class="event-output">
+          <b><span *ngFor="let item of cellBindEventData">{{item}}<br></span></b>
+        </p>
+      </ul>
+    </li>
+    <li><label class="event-item">cellClick: </label>
+      <ul class="main-pane-list">
+        <li>Triggers when clicks on table cell.</li>
+        <li>Click on the <b>cell</b> to see the output.</li>
+        <p class="event-output"><b>{{cellClickEventData}}</b></p>
+      </ul>
+    </li>
+    <li><label class="event-item">columnBind: </label>
+      <ul class="main-pane-list">
+        <li>Triggers for each column before all the other events to set column configurations.</li>
+        <p class="event-output">
+          <b><span *ngFor="let item of columnBindEventData">{{item}}<br></span></b>
+        </p>
+        <li>As mentioned earlier, this is the first which called before all the other events.</li>
+      </ul>
+    </li>
+    <li><label class="event-item">dataBound: </label>
+      <ul class="main-pane-list">
+        <li>This will trigger after completion of data binding.</li>
+        <p class="event-output"><b>{{dataBoundEventData}}</b></p>
+        <li>This event will be called after the <b>columnBind</b> and <b>init</b> events.</li>
+      </ul>
+    </li>
+    <li><label class="event-item">headerClick: </label>
+      <ul class="main-pane-list">
+        <li>Triggers when clicking table column header row.</li>
+        <p class="event-output"><b>{{headerClickEventData}}</b></p>
+      </ul>
+    </li>
+    <li><label class="event-item">rowClick: </label>
+      <ul class="main-pane-list">
+        <li>Triggers when user clicks on table row.</li>
+        <p class="event-output"><b>{{rowClickData}}</b></p>
+      </ul>
+    </li>
+    <li><label class="event-item">rowDoubleClick: </label>
+      <ul class="main-pane-list">
+        <li>Triggers when user double clicks on table row.</li>
+        <p class="event-output"><b>{{rowDoubleClickData}}</b></p>
+      </ul>
+    </li>
+  </ul>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Events
     (refer outputs section)</a>
 </div>

@@ -1,0 +1,14 @@
+<ng-data-table
+  ...
+    (init)="onDataTableInit($event)"
+    (allRowSelectChange)="onAllRowSelectChange($event)"
+    (rowBind)="onRowBind($event)"
+    (rowSelectChange)="onRowSelectChange($event)"
+    (cellBind)="onCellBind($event)"
+    (cellClick)="onCellClick($event)"
+    (columnBind)="onColumnBind($event)"
+    (dataBound)="onDataBound()"
+    (headerClick)="onHeaderClick($event)"
+    (rowClick)="onRowClick($event)"
+    (rowDoubleClick)="onRowDoubleClick($event)">
+</ng-data-table>

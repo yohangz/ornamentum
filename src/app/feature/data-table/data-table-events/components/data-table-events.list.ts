@@ -23,3 +23,6 @@ export const eventsUsage: ExampleFile[] = [
   }
 ];
 
+export const demoSnippet: any = {
+  eventBinding: require('!!raw-loader?lang=typescript!./docs/event-binding.md')
+};
