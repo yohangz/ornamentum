@@ -185,7 +185,10 @@ export class DataTablePaginationComponent implements OnInit {
    * @param {KeyboardEvent} event Keyboard event object.
    */
   public preventInvalidKeyPress(event: KeyboardEvent): void {
-    if ((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode !== 14 && event.keyCode !== 27)) {
+    if ((event.key >= '0' && event.key <= '9') || event.key === 'ArrowLeft' || event.key === 'ArrowRight'
+    || event.key === 'Delete' || event.key === 'Backspace' || event.key === 'Escape' || event.key === 'Enter') {
+      return;
+    } else {
       event.preventDefault();
     }
   }

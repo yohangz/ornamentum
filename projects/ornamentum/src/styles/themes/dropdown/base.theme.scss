@@ -237,7 +237,7 @@
 
   .ng-dropdown-item-container-wrapper {
     @include border-radius($dropdown-item-container-border-radius-value);
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
     border: .07rem solid $dropdown-item-container-wrapper-border;
     height: 100%;
     overflow-y: auto;
@@ -306,7 +306,7 @@
           border-color: $dropdown-item-container-group-heading-border;
           color: $dropdown-item-container-group-heading-color;
           cursor: default;
-          padding: .3rem .3rem;
+          padding: .3rem;
 
           &:hover {
             background: $dropdown-item-container-group-heading-hover-background;
@@ -331,6 +331,3 @@
     }
   }
 }
-
-
-
