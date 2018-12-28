@@ -5,6 +5,9 @@ import { fromEvent, Subject } from 'rxjs/index';
 
 import { GlobalRefService } from './global-ref.service';
 
+/**
+ * Resize handler service.
+ */
 @Injectable()
 export class ResizeService {
   public resize: Observable<Event>;
