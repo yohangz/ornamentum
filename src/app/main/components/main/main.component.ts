@@ -71,7 +71,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/real-time-data-binding',
-          title: 'Realtime Data Binding'
+          title: 'Realtime Data Binding',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/pagination',
@@ -373,7 +387,7 @@ export class MainComponent {
             },
             {
               title: 'Suggested Links',
-              anchor: 'suggestedLinks',
+              anchor: 'suggestedLinks'
             }
           ]
         },
@@ -604,7 +618,7 @@ export class MainComponent {
                 {
                   title: 'Show Row Expand Loading Spinner',
                   anchor: 'showRowExpandLoadingSpinner'
-                },
+                }
               ]
             },
             {
@@ -875,7 +889,7 @@ export class MainComponent {
               title: 'Suggested Links',
               anchor: 'suggestedLinks'
             }
-          ],
+          ]
         },
         {
           routePath: '/feature/dropdown/load-data-on-init',
@@ -922,7 +936,7 @@ export class MainComponent {
             {
               title: 'Suggested Links',
               anchor: 'suggestedLinks'
-            },
+            }
           ]
         },
         {

@@ -24,5 +24,5 @@ export const clientSideDataBindingUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  client_side_data_biding: require('!!raw-loader?lang=typescript!./docs/items.md')
+  clientSideDataBinding: require('!!raw-loader?lang=typescript!./docs/items.md')
 };

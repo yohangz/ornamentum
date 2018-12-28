@@ -9,7 +9,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './basic-usage.component.html'
 })
 export class BasicUsageComponent {
-
   public dataSource: Observable<any>;
 
   constructor(private dataFetchService: DataFetchService) {

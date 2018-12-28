@@ -1,7 +1,6 @@
-import { Component, ElementRef, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Observable } from 'rxjs';
-import { of } from 'rxjs';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -9,10 +8,18 @@ import { DataFetchService } from '../../../../../../shared/services';
   selector: 'app-real-time-data-binding',
   templateUrl: './real-time-data-binding.component.html'
 })
-export class RealTimeDataBindingComponent {
+export class RealTimeDataBindingComponent implements OnInit {
   public dataSource: Observable<any>;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.dataSource = of(this.dataFetchService.fetchData());
+  }
+
+  public ngOnInit(): void {
+    let offset = 0;
+    this.dataSource = Observable.create((observer) => {
+      setInterval(() => {
+        observer.next(this.dataFetchService.fetchData(offset++));
+      }, 2000);
+    });
   }
 }

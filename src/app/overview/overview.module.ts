@@ -4,6 +4,7 @@ import { DataTableModule } from 'ornamentum';
 
 import { COMPONENTS } from './index';
 
+import { SharedModule } from '../shared/shared.module';
 import { OverviewRoutingModule } from './overview-routing.module';
 
 /**
@@ -15,9 +16,10 @@ import { OverviewRoutingModule } from './overview-routing.module';
   exports: [],
   imports: [
     OverviewRoutingModule,
+    SharedModule.forRoot(),
     DataTableModule.forRoot({
       showColumnSelector: true
-    }),
+    })
   ],
   providers: []
 })

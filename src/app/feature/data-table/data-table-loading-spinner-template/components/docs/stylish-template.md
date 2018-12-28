@@ -1,3 +1,3 @@
 <ng-template #ngDataTableLoadingSpinner>
-  <h1 style="font-family: 'Helvetica Neue'; color: #10508f;">Data Loading, Please wait...</h1>
+  <h2 style="font-family: 'Helvetica Neue'; color: #8f893f;">Data Loading, Please wait...</h2>
 </ng-template>

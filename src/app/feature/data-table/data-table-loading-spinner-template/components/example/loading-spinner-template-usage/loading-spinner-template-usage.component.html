@@ -4,6 +4,7 @@
   [minHeight]="200"
   [minWidth]="900"
   [pageable]="true"
+  [showLoadingSpinner]="true"
   [showHeader]="true">
   <ng-data-table-column
     [field]="'id'"
@@ -42,6 +43,6 @@
     [width]="100">
   </ng-data-table-column>
   <ng-template #ngDataTableLoadingSpinner>
-    <h1 style="font-family: 'Helvetica Neue'; color: #10508f;">Data Loading, Please wait...</h1>
+    <h2 style="font-family: 'Helvetica Neue'; color: #8f893f;">Data Loading, Please wait...</h2>
   </ng-template>
 </ng-data-table>

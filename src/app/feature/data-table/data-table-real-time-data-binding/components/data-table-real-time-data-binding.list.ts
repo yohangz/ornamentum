@@ -23,3 +23,6 @@ export const realTimeDataBindingUsage: ExampleFile[] = [
   }
 ];
 
+export const demoSnippet: any = {
+  realTimeSideDataBinding: require('!!raw-loader?lang=typescript!./docs/items.md')
+};
