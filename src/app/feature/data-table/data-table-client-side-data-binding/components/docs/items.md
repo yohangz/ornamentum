@@ -1,4 +1,4 @@
 <ng-data-table
   ...
-  [items]="<--data list-->">
+  [items]="<-- data list -->">
 </ng-data-table>
