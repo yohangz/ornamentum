@@ -67,7 +67,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/data-table/server-side-data-binding',
-          title: 'Server-side Data Binding'
+          title: 'Server-side Data Binding',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/real-time-data-binding',
