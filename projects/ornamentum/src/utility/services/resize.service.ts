@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/internal/Observable';
-import { fromEvent } from 'rxjs/index';
+import { fromEvent, Subject } from 'rxjs/index';
 
 import { GlobalRefService } from './global-ref.service';
 
@@ -10,6 +10,10 @@ export class ResizeService {
   public resize: Observable<Event>;
 
   constructor(private globalRefService: GlobalRefService) {
-    this.resize = fromEvent(this.globalRefService.window, 'resize');
+    if (this.globalRefService.isBrowser) {
+      this.resize = fromEvent(this.globalRefService.window, 'resize');
+    } else {
+      this.resize = new Subject();
+    }
   }
 }
