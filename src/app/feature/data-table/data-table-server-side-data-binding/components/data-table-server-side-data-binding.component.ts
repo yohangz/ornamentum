@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { serverSideDataBindingUsage } from './data-table-server-side-data-binding.list';
+import { demoSnippet, serverSideDataBindingUsage } from './data-table-server-side-data-binding.list';
 
 @Component({
   selector: 'app-data-table-server-side-data-binding-component',
@@ -9,4 +9,5 @@ import { serverSideDataBindingUsage } from './data-table-server-side-data-bindin
 })
 export class DataTableServerSideDataBindingComponent {
   public serverSideDataBindingUsage = serverSideDataBindingUsage;
+  public demoSnippet = demoSnippet;
 }

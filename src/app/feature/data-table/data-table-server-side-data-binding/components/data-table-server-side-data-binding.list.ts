@@ -23,3 +23,6 @@ export const serverSideDataBindingUsage: ExampleFile[] = [
   }
 ];
 
+export const demoSnippet: any = {
+  serverSideDataBinding: require('!!raw-loader?lang=typescript!./docs/items.md')
+};
