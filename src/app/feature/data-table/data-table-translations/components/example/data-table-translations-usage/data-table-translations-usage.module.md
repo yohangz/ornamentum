@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DataTableModule } from 'ornamentum';
   
-import { DataTableTranslationsUsageComponent } from './data-table-translations-no-data-usage.component';
+import { DataTableTranslationsUsageComponent } from './data-table-translations-usage.component';
 
 @NgModule({
  bootstrap: [DataTableTranslationsUsageComponent],
