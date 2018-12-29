@@ -265,6 +265,18 @@ const dataTableFeatureRoutes: Routes = [
         description: '<--add description here-->'
       }
     }
+  },
+  {
+    loadChildren: './data-table-styling-and-themes/data-table-styling-and-themes.module#DataTableStylingAndThemesModule',
+    path: 'styling-and-themes',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Data Table | Styling | Themes | User Experience',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   }
 ];
 
