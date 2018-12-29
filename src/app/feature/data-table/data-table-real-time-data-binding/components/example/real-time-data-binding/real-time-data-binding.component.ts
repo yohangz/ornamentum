@@ -7,7 +7,6 @@ import { GlobalRefService } from 'ornamentum';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
-
 @Component({
   selector: 'app-real-time-data-binding',
   templateUrl: './real-time-data-binding.component.html'
