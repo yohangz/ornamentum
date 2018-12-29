@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { timer, of, Observable } from 'rxjs';
+import { Observable, of, timer } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { DataFetchService } from '../../../shared/services';
-import { ExampleData } from '../../../shared/models';
 import { GlobalRefService } from 'ornamentum';
+
+import { ExampleData } from '../../../shared/models';
+
+import { DataFetchService } from '../../../shared/services';
 
 @Component({
   selector: 'app-data-table-demo',
