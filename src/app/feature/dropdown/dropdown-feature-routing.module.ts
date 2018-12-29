@@ -265,6 +265,18 @@ const dropdownFeatureRoutes: Routes = [
         description: '<--add description here-->'
       }
     }
+  },
+  {
+    loadChildren: './dropdown-styling-and-themes/dropdown-styling-and-themes.module#DropdownStylingAndThemesModule',
+    path: 'styling-and-themes',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum |Dropdown | Styling | Themes | User Experience',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   }
 ];
 

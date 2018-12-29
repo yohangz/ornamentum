@@ -1042,6 +1042,38 @@ export class MainComponent {
               anchor: 'suggestedLinks'
             }
           ]
+        },
+        {
+          routePath: '/feature/dropdown/styling-and-themes',
+          title: 'Styling & Themes',
+          navigation: [
+            {
+              title: 'Including Theme Support',
+              anchor: 'themeSupport',
+              subNavigation: [
+                {
+                  title: 'Base Theme',
+                  anchor: 'baseTheme'
+                },
+                {
+                  title: 'Dark Theme',
+                  anchor: 'darkTheme'
+                },
+                {
+                  title: 'Flat Theme',
+                  anchor: 'flatTheme'
+                },
+                {
+                  title: 'Ornamentum Theme',
+                  anchor: 'ornamentumTheme'
+                },
+                {
+                  title: 'Aegean Theme',
+                  anchor: 'aegeanTheme'
+                }
+              ]
+            }
+          ]
         }
       ]
     }
