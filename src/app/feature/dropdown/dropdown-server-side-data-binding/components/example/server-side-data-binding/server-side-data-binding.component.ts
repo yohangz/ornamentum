@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
 import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
@@ -9,9 +12,11 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './server-side-data-binding.component.html'
 })
 export class ServerSideDataBindingComponent {
-  public items: ExampleData[];
+  public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.dataSource = this.dataFetchService.fetchDataFromServer().pipe(map(resource => {
+      return resource.data;
+    }));
   }
 }

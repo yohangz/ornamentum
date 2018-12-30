@@ -1,13 +1,31 @@
 <div class="feature-container">
   <h2>Server Side Data Biding</h2>
-  <p>In server side data binding, data should be passed via the <b>dataSource</b> attribute => [dataSource]="dataSource"
-  </p>
+
+  <p>Sometimes, you might want to bind a direct data source coming from the different server to the dropdown without
+    binding it as a static data source.</p>
+
+  <p>in such cases, now you can easily use ornamentum server side data binding facility.</p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
 
   <app-server-side-data-binding></app-server-side-data-binding>
-
   <app-example-code [files]="serverSideDataBindingUsage"></app-example-code>
 
-  <h2>Suggested Links</h2>
+  <h2 id="basicUsage">Basic Usage</h2>
+  <p>To support server side data binding, simply set available observable data source to <code>dataSource</code>
+    attribute.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.serverSideDataBinding}}</pre>
+
+  <p>Please refer <b>server-side-data-binding.component.ts</b> file to see the example of server side data
+    binding via data source.</p>
+
+  <p>Following code snippet will be represent the implementation of the <b>fetchDataFromServer</b> method that used to
+    call the example data api.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.dataFetchMethod}}</pre>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#dataSource">API Doc for Server Side
     Data Binding</a>
 </div>
