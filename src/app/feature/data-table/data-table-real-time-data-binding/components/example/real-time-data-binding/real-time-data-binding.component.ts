@@ -5,6 +5,8 @@ import { map } from 'rxjs/operators';
 
 import { GlobalRefService } from 'ornamentum';
 
+import { ExampleData } from '../../../../../../shared/models';
+
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
@@ -12,7 +14,7 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './real-time-data-binding.component.html'
 })
 export class RealTimeDataBindingComponent implements OnInit {
-  public dataSource: Observable<any>;
+  public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService, private globalRefService: GlobalRefService) {
   }

@@ -23,3 +23,7 @@ export const realTimeDataBindingUsage: ExampleFile[] = [
   }
 ];
 
+export const demoSnippet: any = {
+  realTimeDataBinding: require('!!raw-loader?lang=typescript!./docs/real-time-data-binding.md')
+};
+
