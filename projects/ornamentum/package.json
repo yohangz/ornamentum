@@ -1,6 +1,6 @@
 {
   "name": "ornamentum",
-  "version": "2.3.2",
+  "version": "3.0.0",
   "peerDependencies": {
     "@angular/common": "^7.0.0-rc.0 || ^7.0.0",
     "@angular/core": "^7.0.0-rc.0 || ^7.0.0",
