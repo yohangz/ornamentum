@@ -1,113 +1,71 @@
-import { Component, EventEmitter, Output } from '@angular/core';
-
-import {
-  DataTableCellBindEventArgs,
-  DataTableCellClickEventArgs,
-  DataTableColumnComponent,
-  DataTableComponent,
-  DataTableDoubleClickEventArgs,
-  DataTableHeaderClickEventArgs,
-  DataTableRow,
-  DataTableRowClickEventArgs
-} from 'ornamentum';
+import { Component } from '@angular/core';
 
 import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
+import {
+  DataTableCellBindEventArgs,
+  DataTableCellClickEventArgs,
+  DataTableColumnComponent, DataTableComponent,
+  DataTableDoubleClickEventArgs,
+  DataTableHeaderClickEventArgs,
+  DataTableRow, DataTableRowClickEventArgs
+} from '../../../../../../../../projects/ornamentum/src';
 
 @Component({
   selector: 'app-events-usage',
-  templateUrl: './events-usage.component.html'
+  templateUrl: './events-usage.component.html',
+  styleUrls: ['../../data-table-events.component.scss']
 })
 export class EventsUsageComponent {
-  public rowData: string[] = [];
-  public cellData: string[] = [];
-  public columnData: string[] = [];
-
-  @Output()
-  public dataTableInit: EventEmitter<string> = new EventEmitter<string>();
-
-  @Output()
-  public allRowSelectChange: EventEmitter<string> = new EventEmitter<string>();
-
-  @Output()
-  public rowBind: EventEmitter<string[]> = new EventEmitter<string[]>();
-
-  @Output()
-  public rowSelectChange: EventEmitter<ExampleData | ExampleData[]> = new EventEmitter<ExampleData | ExampleData[]>();
-
-  @Output()
-  public cellBind: EventEmitter<string[]> = new EventEmitter<string[]>();
-
-  @Output()
-  public cellClick: EventEmitter<string> = new EventEmitter<string>();
-
-  @Output()
-  public columnBind: EventEmitter<string[]> = new EventEmitter<string[]>();
-
-  @Output()
-  public dataBound: EventEmitter<string> = new EventEmitter<string>();
-
-  @Output()
-  public headerClick: EventEmitter<string> = new EventEmitter<string>();
-
-  @Output()
-  public rowClick: EventEmitter<string> = new EventEmitter<string>();
-
-  @Output()
-  public rowDoubleClick: EventEmitter<string> = new EventEmitter<string>();
-
   public items: ExampleData[];
+  public allEventsData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchData();
   }
 
   public onDataTableInit(dataTable: DataTableComponent): void {
-    this.dataTableInit.emit('Data table init event is called');
+    this.allEventsData.push('Data table init event is called');
   }
 
   public onAllRowSelectChange(allRowSelectedChanged: boolean): void {
-    this.allRowSelectChange.emit(`Is select all check box clicked: ${allRowSelectedChanged}`);
+    this.allEventsData.push(`Select All Rows Checkbox Status: ${allRowSelectedChanged}`);
   }
 
   public onRowBind(dataRow: DataTableRow<ExampleData>): void {
-    this.rowData.push(`row bind event is called for row id => ${dataRow.item.id}`);
-    this.rowBind.emit(this.rowData);
+    this.allEventsData.push(`Row bind event is called for row ID - ${dataRow.item.id}`);
   }
 
   public onRowSelectChange(selectedData: ExampleData | ExampleData[]): void {
-    this.rowSelectChange.emit(selectedData);
+    this.allEventsData.push(JSON.stringify(selectedData));
   }
 
   public onCellBind(cellBindEventArgs: DataTableCellBindEventArgs<any>): void {
-    this.cellData.push(`cell bind event is called for row id => ${cellBindEventArgs.row.item.id}`);
-    this.cellBind.emit(this.cellData);
+    this.allEventsData.push(`Cell bind event is called for row ID - ${cellBindEventArgs.row.item.id}`);
   }
 
   public onCellClick(cellClickEventArgs: DataTableCellClickEventArgs<any>): void {
-    const cellDetail = `Cell Detail: Column => ${cellClickEventArgs.column.title} & Row ID => ${cellClickEventArgs.row.item.id}`;
-    this.cellClick.emit(cellDetail);
+    this.allEventsData.push(`Selected Column is ${cellClickEventArgs.column.title} & Row ID is - ${cellClickEventArgs.row.item.id}`);
   }
 
   public onColumnBind(dataTableColumnComponent: DataTableColumnComponent): void {
-    this.columnData.push(`column bind event is called for column => ${dataTableColumnComponent.title}`);
-    this.columnBind.emit(this.columnData);
+    this.allEventsData.push(`Column bind event is called for column - ${dataTableColumnComponent.title}`);
   }
 
   public onDataBound(): void {
-    this.dataBound.emit('Data bound is called');
+    this.allEventsData.push('Data bound is called');
   }
 
   public onHeaderClick(headerClickEventArgs: DataTableHeaderClickEventArgs): void {
-    this.headerClick.emit(`${headerClickEventArgs.column.title} column header clicked`);
+    this.allEventsData.push(`${headerClickEventArgs.column.title} column header clicked`);
   }
 
   public onRowClick(clickEventArgs: DataTableRowClickEventArgs<any>): void {
-    this.rowClick.emit(`Clicked row ID: ${clickEventArgs.row.item.id}`);
+    this.allEventsData.push(`Single clicked perform on row ID - ${clickEventArgs.row.item.id}`);
   }
 
   public onRowDoubleClick(doubleClickEventArgs: DataTableDoubleClickEventArgs<any>): void {
-    this.rowDoubleClick.emit(`Double clicked row ID: ${doubleClickEventArgs.row.item.id}`);
+    this.allEventsData.push(`Double clicked perform on row ID - ${doubleClickEventArgs.row.item.id}`);
   }
 }

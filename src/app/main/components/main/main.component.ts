@@ -552,12 +552,62 @@ export class MainComponent {
           title: 'Events',
           navigation: [
             {
+              title: 'Events Hierarchy',
+              anchor: 'eventsHierarchy'
+            },
+            {
               title: 'Basic Usage',
               anchor: 'basicUsage'
             },
             {
-              title: 'Events List',
-              anchor: 'eventsList'
+              title: 'Useful Events',
+              anchor: 'usefulEvents',
+              subNavigation: [
+                {
+                  title: 'Init',
+                  anchor: 'init'
+                },
+                {
+                  title: 'All Row Select Change',
+                  anchor: 'allRowSelectChange'
+                },
+                {
+                  title: 'Row Bind',
+                  anchor: 'rowBind'
+                },
+                {
+                  title: 'Row Select Change',
+                  anchor: 'rowSelectChange'
+                },
+                {
+                  title: 'Cell Bind',
+                  anchor: 'cellBind'
+                },
+                {
+                  title: 'Cell Click',
+                  anchor: 'cellClick'
+                },
+                {
+                  title: 'Column Bind',
+                  anchor: 'columnBind'
+                },
+                {
+                  title: 'Data Bound',
+                  anchor: 'dataBound'
+                },
+                {
+                  title: 'Header Click',
+                  anchor: 'headerClick'
+                },
+                {
+                  title: 'Row Click',
+                  anchor: 'rowClick'
+                },
+                {
+                  title: 'Row Double Click',
+                  anchor: 'rowDoubleClick'
+                }
+              ]
             },
             {
               title: 'Suggested Links',
@@ -851,7 +901,63 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/item-selection',
-          title: 'Item Selection'
+          title: 'Item Selection',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Set First Option Selected',
+                  anchor: 'setFirstOptionSelected'
+                },
+                {
+                  title: 'Show Option Select Checkbox',
+                  anchor: 'showOptionSelectCheckbox'
+                },
+                {
+                  title: 'Selected Option',
+                  anchor: 'selectedOption'
+                },
+                {
+                  title: 'Selected Options',
+                  anchor: 'selectedOptions'
+                },
+                {
+                  title: 'Select Mode',
+                  anchor: 'selectMode'
+                },
+                {
+                  title: 'Show Clear Selection Button',
+                  anchor: 'showClearSelectionButton'
+                },
+                {
+                  title: 'Show Selected Option Remove Button',
+                  anchor: 'showSelectedOptionRemoveButton'
+                },
+                {
+                  title: 'Multi Select Option Max Width',
+                  anchor: 'multiSelectOptionMaxWidth'
+                },
+                {
+                  title: 'Wrap Display Select Limit',
+                  anchor: 'wrapDisplaySelectLimit'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/limit',

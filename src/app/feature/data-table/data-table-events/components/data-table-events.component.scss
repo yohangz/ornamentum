@@ -1,11 +1,25 @@
-.event-item {
-  font-weight: bold;
-}
-
 .event-output {
-  border-left: 10px solid #dc3545;
-  background-color: black;
+  font-weight: bold;
+  max-height: 125px;
+  overflow-y: auto;
+  border-left: 10px solid #7b2222;
+  background-color: #2f3640;
   min-height: 30px;
   padding: 10px;
   color: lightgrey;
 }
+
+.event-output::first-line {
+  color: #2c90e7;
+}
+
+.hierarchy-main {
+  color: #7b2222;
+  font-weight: bold;
+}
+
+.event-types {
+  color: #1c797b;
+  font-weight: bold;
+}
+

@@ -7,9 +7,16 @@ import {
   DropdownItemSelectionComponent,
   ItemSelectionWithAllOptionsUsageComponent,
   MultiItemSelectionUsageComponent,
-  MultiItemWrappedSelectionUsageComponent,
   SingleItemSelectionUsageComponent,
-  SingleToggleItemSelectionUsageComponent
+  SingleToggleItemSelectionUsageComponent,
+  ItemSelectionSetFirstOptionSelectedUsageComponent,
+  ItemSelectionShowOptionSelectCheckboxUsageComponent,
+  ItemSelectionSelectedOptionUsageComponent,
+  ItemSelectionSelectedOptionsUsageComponent,
+  ItemSelectionShowClearSelectionBtnUsageComponent,
+  ItemSelectionShowSelectedOptionRemoveBtnUsageComponent,
+  ItemSelectionMultiSelectOptionMaxWidthUsageComponent,
+  ItemSelectionWrapDisplaySelectLimitUsageComponent,
 } from './index';
 
 import { DropdownItemSelectionRoutingModule } from './dropdown-item-selection-routing.module';
@@ -25,9 +32,16 @@ import { SharedModule } from '../../../shared/shared.module';
     DropdownItemSelectionComponent,
     ItemSelectionWithAllOptionsUsageComponent,
     MultiItemSelectionUsageComponent,
-    MultiItemWrappedSelectionUsageComponent,
     SingleItemSelectionUsageComponent,
-    SingleToggleItemSelectionUsageComponent
+    SingleToggleItemSelectionUsageComponent,
+    ItemSelectionSetFirstOptionSelectedUsageComponent,
+    ItemSelectionShowOptionSelectCheckboxUsageComponent,
+    ItemSelectionSelectedOptionUsageComponent,
+    ItemSelectionSelectedOptionsUsageComponent,
+    ItemSelectionShowClearSelectionBtnUsageComponent,
+    ItemSelectionShowSelectedOptionRemoveBtnUsageComponent,
+    ItemSelectionMultiSelectOptionMaxWidthUsageComponent,
+    ItemSelectionWrapDisplaySelectLimitUsageComponent
   ],
   exports: [],
   imports: [

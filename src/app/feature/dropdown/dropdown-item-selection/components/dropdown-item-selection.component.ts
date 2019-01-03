@@ -3,9 +3,17 @@ import { Component } from '@angular/core';
 import {
   itemSelectionWithAllOptionsUsage,
   multiItemSelectionUsage,
-  multiItemSelectionWithWrappedItemsUsage,
   singleItemSelectionUsage,
-  singleToggleItemSelectionUsage
+  singleToggleItemSelectionUsage,
+  itemSelectionSetFirstOptionSelectedUsage,
+  itemSelectionShowOptionSelectCheckboxUsage,
+  itemSelectionSelectedOptionUsage,
+  itemSelectionSelectedOptionsUsage,
+  itemSelectionShowClearSelectionBtnUsage,
+  itemSelectionShowSelectedOptionRemoveBtnUsage,
+  itemSelectionMultiSelectOptionMaxWidthUsage,
+  itemSelectionWrapDisplaySelectLimitUsage,
+  demoSnippet
 } from './dropdown-item-selection.list';
 
 @Component({
@@ -17,6 +25,14 @@ export class DropdownItemSelectionComponent {
   public singleItemSelectionUsage = singleItemSelectionUsage;
   public singleToggleItemSelectionUsage = singleToggleItemSelectionUsage;
   public multiItemSelectionUsage = multiItemSelectionUsage;
-  public multiItemSelectionWithWrappedItemsUsage = multiItemSelectionWithWrappedItemsUsage;
   public itemSelectionWithAllOptionsUsage = itemSelectionWithAllOptionsUsage;
+  public itemSelectionSetFirstOptionSelectedUsage = itemSelectionSetFirstOptionSelectedUsage;
+  public itemSelectionShowOptionSelectCheckboxUsage = itemSelectionShowOptionSelectCheckboxUsage;
+  public itemSelectionSelectedOptionUsage = itemSelectionSelectedOptionUsage;
+  public itemSelectionSelectedOptionsUsage = itemSelectionSelectedOptionsUsage;
+  public itemSelectionShowClearSelectionBtnUsage = itemSelectionShowClearSelectionBtnUsage;
+  public itemSelectionShowSelectedOptionRemoveBtnUsage = itemSelectionShowSelectedOptionRemoveBtnUsage;
+  public itemSelectionMultiSelectOptionMaxWidthUsage = itemSelectionMultiSelectOptionMaxWidthUsage;
+  public itemSelectionWrapDisplaySelectLimitUsage = itemSelectionWrapDisplaySelectLimitUsage;
+  public demoSnippet = demoSnippet;
 }
