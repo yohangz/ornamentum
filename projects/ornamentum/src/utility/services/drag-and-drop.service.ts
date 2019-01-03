@@ -14,14 +14,14 @@ export class DragAndDropService {
    * @param move - Mouse move event handler.
    * @param up - Mouse up Event handler.
    */
-  public drag(event: MouseEvent, { move, up }: { move: MoveHandler, up?: UpHandler }) {
+  public drag(event: MouseEvent, { move, up }: { move: MoveHandler, up?: UpHandler }): void {
     const startX = event.pageX;
     const startY = event.pageY;
     let x = startX;
     let y = startY;
     let moved = false;
 
-    const mouseMoveHandler = (mouseMoveEvent: MouseEvent) => {
+    const mouseMoveHandler = (mouseMoveEvent: MouseEvent): void => {
       const dx = mouseMoveEvent.pageX - x;
       const dy = mouseMoveEvent.pageY - y;
       x = mouseMoveEvent.pageX;
@@ -35,7 +35,7 @@ export class DragAndDropService {
       mouseMoveEvent.preventDefault(); // to avoid text selection
     };
 
-    const mouseUpHandler = (mouseUpEvent: MouseEvent) => {
+    const mouseUpHandler = (mouseUpEvent: MouseEvent): void => {
       x = mouseUpEvent.pageX;
       y = mouseUpEvent.pageY;
 
