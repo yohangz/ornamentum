@@ -197,7 +197,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Number of items to display when selected.
-   * Used to limit itm count shown when more items are selected.
+   * Used to limit item count shown when more items are selected.
    * @type {number}
    */
   @Input()

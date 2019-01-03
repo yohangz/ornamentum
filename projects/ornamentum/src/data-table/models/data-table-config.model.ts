@@ -137,7 +137,7 @@ export interface DataTableConfig {
 
   /**
    * Show select all row checkbox on column header if true.
-   * Only applicable when showRowSelectCheckbox and rowSelectable is true.
+   * Only applicable when showRowSelectCheckbox, rowSelectable is true & item selectMode is  multi.
    * @type {boolean}
    */
   showRowSelectAllCheckbox?: boolean;

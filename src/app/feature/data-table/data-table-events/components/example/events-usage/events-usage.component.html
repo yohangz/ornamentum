@@ -1,15 +1,13 @@
 <ng-data-table
   [title]="'Sales Products'"
   [selectTrackBy]="'id'"
-  [items]="items"
-  [minHeight]="200"
+  [minHeight]="180"
   [minWidth]="900"
+  [items]="items"
+  [limit]="5"
   [pageable]="true"
   [showHeader]="true"
-  [showRefreshButton]="false"
-  [showColumnSelector]="false"
   [rowSelectable]="true"
-  [selectOnRowClick]="false"
   [showRowSelectCheckbox]="true"
   [showRowSelectAllCheckbox]="true"
   [selectMode]="'multi'"
@@ -64,3 +62,9 @@
     [width]="100">
   </ng-data-table-column>
 </ng-data-table>
+
+<br>
+<p class="event-output">
+  <span *ngFor="let item of allEventsData.reverse()">{{item}}<br></span>
+</p>
+

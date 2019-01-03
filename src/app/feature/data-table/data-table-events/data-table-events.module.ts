@@ -4,7 +4,21 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableEventsComponent, EventsUsageComponent } from './index';
+import {
+  DataTableEventsComponent,
+  EventsUsageComponent,
+  EventsInitUsageComponent,
+  EventsAllRowSelectChangeUsageComponent,
+  EventsCellBindUsageComponent,
+  EventsCellClickUsageComponent,
+  EventsColumnBindUsageComponent,
+  EventsDataBoundUsageComponent,
+  EventsHeaderClickUsageComponent,
+  EventsRowBindUsageComponent,
+  EventsRowClickUsageComponent,
+  EventsRowDoubleClickUsageComponent,
+  EventsRowSelectChangeUsageComponent
+} from './index';
 
 import { DataTableEventsRoutingModule } from './data-table-events-routing.module';
 
@@ -17,7 +31,18 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTableEventsComponent,
-    EventsUsageComponent
+    EventsUsageComponent,
+    EventsInitUsageComponent,
+    EventsAllRowSelectChangeUsageComponent,
+    EventsCellBindUsageComponent,
+    EventsCellClickUsageComponent,
+    EventsColumnBindUsageComponent,
+    EventsDataBoundUsageComponent,
+    EventsHeaderClickUsageComponent,
+    EventsRowBindUsageComponent,
+    EventsRowClickUsageComponent,
+    EventsRowDoubleClickUsageComponent,
+    EventsRowSelectChangeUsageComponent
   ],
   exports: [],
   imports: [
