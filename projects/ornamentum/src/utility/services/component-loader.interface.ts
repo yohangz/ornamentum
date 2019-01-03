@@ -8,6 +8,7 @@ import { ComponentLoaderOptions } from '../models/component-loader-options.model
 export interface ComponentLoader<T> {
   /**
    * Hide component if visible.
+   * @return Rendered component reference.
    */
   hide(): T;
 
@@ -17,6 +18,7 @@ export interface ComponentLoader<T> {
    * @param parentElement - Parent element to append the target component.
    * @param injector - Component injector reference.
    * @param options - Component loader options object.
+   * @return Rendered component reference.
    */
   show(component: Type<T>, parentElement: HTMLElement, injector: Injector, options?: ComponentLoaderOptions): T;
 
@@ -26,6 +28,7 @@ export interface ComponentLoader<T> {
    * @param parentElement - Parent element to append the target component.
    * @param injector - Component injector reference.
    * @param options - Component loader options object.
+   * @return Rendered component reference.
    */
   toggle(component: Type<T>, parentElement: HTMLElement, injector: Injector, options?: ComponentLoaderOptions): T;
 
