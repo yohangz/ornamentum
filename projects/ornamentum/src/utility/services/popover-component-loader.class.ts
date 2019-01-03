@@ -18,6 +18,10 @@ import { ResizeService } from './resize.service';
 
 import { ComponentLoaderOptions } from '../models/component-loader-options.model';
 
+/**
+ * Popover dynamic component loader.
+ * Responsible of dynamically rendering angular components to show popover layout.
+ */
 export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   private componentReference: ComponentRef<T>;
   private isVisible: boolean;
@@ -33,9 +37,13 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     this.isVisible = false;
   }
 
-  private registerClickOutside(...elements: HTMLElement[]): void {
+  /**
+   * Register close on click outside event. Hide event is triggered only if click target is not included in exclusion elements collection.
+   * @param exclude - Exclude DOM element reference collection.
+   */
+  private registerClickOutside(...exclude: HTMLElement[]): void {
     const trackOutsideClick = (event: Event) => {
-      if (!elements.some((el) => el.contains(event.target as HTMLElement))) {
+      if (!exclude.some((el) => el.contains(event.target as HTMLElement))) {
         this.hide();
       }
     };
@@ -44,6 +52,11 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     this.touchStartListener = this.renderer.listen('document', 'touchstart', trackOutsideClick);
   }
 
+  /**
+   * Set dynamic popover position relative to parent.
+   * @param parentElement - Parent element reference.
+   * @param options - Component loader options.
+   */
   private setPosition(parentElement: HTMLElement, options: ComponentLoaderOptions): void {
     const holderElement = options.relativeParent || this.globalRefService.window.document.documentElement;
     const bodyClientRect = holderElement.getBoundingClientRect();
@@ -87,6 +100,13 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
       });
   }
 
+  /**
+   * Render component if not available, else display hidden component.
+   * @param component - Component class type.
+   * @param parentElement - Parent element to append the target component.
+   * @param injector - Component injector reference.
+   * @param options - Component loader options object.
+   */
   public show(component: Type<T>, parentElement: HTMLElement, injector: Injector, options: ComponentLoaderOptions): T {
     options = Object.assign({
       closeOnOutsideClick: true,
@@ -134,6 +154,9 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     return this.componentReference.instance;
   }
 
+  /**
+   * Hide component if visible.
+   */
   public hide(): T {
     if (this.componentReference) {
       this.componentReference.location.nativeElement.style.display = 'none';
@@ -142,10 +165,20 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     }
   }
 
+  /**
+   * Toggle component display state or render if not available.
+   * @param component - Component class type.
+   * @param parentElement - Parent element to append the target component.
+   * @param injector - Component injector reference.
+   * @param options - Component loader options object.
+   */
   public toggle(component: Type<T>, parentElement: HTMLElement, injector: Injector, options?: ComponentLoaderOptions): T {
     return this.isVisible ? this.hide() : this.show(component, parentElement, injector, options);
   }
 
+  /**
+   * Dispose rendered component reference and bindings.
+   */
   public dispose(): void {
     if (this.resizeEventSubscription) {
       this.resizeEventSubscription.unsubscribe();
