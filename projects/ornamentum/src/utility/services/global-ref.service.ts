@@ -12,6 +12,10 @@ export class GlobalRefService {
     this.setScrollbarWidth();
   }
 
+  /**
+   * Set scrollbar width of current browser environment.
+   * Ony set on browser environment to support SSR.
+   */
   public setScrollbarWidth(): void {
     if (this._scrollbarWidth !== undefined) {
       return;
@@ -58,6 +62,10 @@ export class GlobalRefService {
     return window;
   }
 
+  /**
+   * Is browser environment.
+   * @return {boolean} Return true if current environment is browser.
+   */
   public get isBrowser(): boolean {
     return typeof window !== 'undefined';
   }
