@@ -106,6 +106,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
    * @param parentElement - Parent element to append the target component.
    * @param injector - Component injector reference.
    * @param options - Component loader options object.
+   * @return Rendered component reference.
    */
   public show(component: Type<T>, parentElement: HTMLElement, injector: Injector, options: ComponentLoaderOptions): T {
     options = Object.assign({
@@ -156,6 +157,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
 
   /**
    * Hide component if visible.
+   * @return Rendered component reference.
    */
   public hide(): T {
     if (this.componentReference) {
@@ -171,6 +173,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
    * @param parentElement - Parent element to append the target component.
    * @param injector - Component injector reference.
    * @param options - Component loader options object.
+   * @return Rendered component reference.
    */
   public toggle(component: Type<T>, parentElement: HTMLElement, injector: Injector, options?: ComponentLoaderOptions): T {
     return this.isVisible ? this.hide() : this.show(component, parentElement, injector, options);
