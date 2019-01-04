@@ -14,13 +14,13 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class EventsCellClickUsageComponent {
   public items: ExampleData[];
 
-  public cellClickEventData: string[] = [];
+  public cellClickEventData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchData();
   }
 
   public onCellClick(cellClickEventArgs: DataTableCellClickEventArgs<any>): void {
-    this.cellClickEventData.push(`Selected Column is ${cellClickEventArgs.column.title} & Row ID is - ${cellClickEventArgs.row.item.id}`);
+    this.cellClickEventData = `Selected Column is ${cellClickEventArgs.column.title} & Row ID is - ${cellClickEventArgs.row.item.id}`;
   }
 }

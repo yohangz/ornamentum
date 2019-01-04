@@ -13,13 +13,13 @@ import { DataFetchService } from '../../../../../../shared/services';
 })
 export class EventsHeaderClickUsageComponent {
   public items: ExampleData[];
-  public headerClickEventData: string[] = [];
+  public headerClickEventData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchData();
   }
 
   public onHeaderClick(headerClickEventArgs: DataTableHeaderClickEventArgs): void {
-    this.headerClickEventData.push(`${headerClickEventArgs.column.title} column header clicked`);
+    this.headerClickEventData = `${headerClickEventArgs.column.title} column header clicked`;
   }
 }

@@ -1,7 +1,7 @@
 <ng-data-table
   [title]="'Sales Products'"
   [selectTrackBy]="'id'"
-  [minHeight]="180"
+  [minHeight]="140"
   [minWidth]="900"
   [items]="items"
   [limit]="5"
@@ -54,8 +54,8 @@
 </ng-data-table>
 
 <br>
-<p class="event-output" *ngIf="headerClickEventData.length; else noDataAvailable">
-  <span *ngFor="let item of headerClickEventData.reverse()">{{item}}<br></span>
+<p class="event-output" *ngIf="headerClickEventData; else noDataAvailable">
+  <span>{{headerClickEventData}}</span>
 </p>
 <ng-template #noDataAvailable>
   <p class="event-output">Click on any column header to see the output</p>

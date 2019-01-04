@@ -1,16 +1,12 @@
 <ng-data-table
   [title]="'Sales Products'"
   [selectTrackBy]="'id'"
-  [minHeight]="180"
+  [minHeight]="140"
   [minWidth]="900"
   [items]="items"
   [limit]="5"
   [pageable]="true"
   [showHeader]="true"
-  [rowSelectable]="true"
-  [showRowSelectCheckbox]="true"
-  [showRowSelectAllCheckbox]="true"
-  [selectMode]="'multi'"
 
   (rowClick)="onRowClick($event)">
   <ng-data-table-column
@@ -54,8 +50,8 @@
 </ng-data-table>
 
 <br>
-<p class="event-output" *ngIf="rowClickEventData.length; else noDataAvailable">
-  <span *ngFor="let item of rowClickEventData.reverse()">{{item}}<br></span>
+<p class="event-output" *ngIf="rowClickEventData; else noDataAvailable">
+  <span>{{rowClickEventData}}</span>
 </p>
 <ng-template #noDataAvailable>
   <p class="event-output">Click on any row to see the output</p>

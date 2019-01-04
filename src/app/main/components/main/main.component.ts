@@ -564,40 +564,32 @@ export class MainComponent {
               anchor: 'usefulEvents',
               subNavigation: [
                 {
-                  title: 'Init',
-                  anchor: 'init'
-                },
-                {
-                  title: 'All Row Select Change',
-                  anchor: 'allRowSelectChange'
-                },
-                {
-                  title: 'Row Bind',
-                  anchor: 'rowBind'
-                },
-                {
-                  title: 'Row Select Change',
-                  anchor: 'rowSelectChange'
-                },
-                {
-                  title: 'Cell Bind',
-                  anchor: 'cellBind'
-                },
-                {
-                  title: 'Cell Click',
-                  anchor: 'cellClick'
-                },
-                {
                   title: 'Column Bind',
                   anchor: 'columnBind'
+                },
+                {
+                  title: 'Init',
+                  anchor: 'init'
                 },
                 {
                   title: 'Data Bound',
                   anchor: 'dataBound'
                 },
                 {
-                  title: 'Header Click',
-                  anchor: 'headerClick'
+                  title: 'Row Bind',
+                  anchor: 'rowBind'
+                },
+                {
+                  title: 'Cell Bind',
+                  anchor: 'cellBind'
+                },
+                {
+                  title: 'Row Select Change',
+                  anchor: 'rowSelectChange'
+                },
+                {
+                  title: 'All Row Select Change',
+                  anchor: 'allRowSelectChange'
                 },
                 {
                   title: 'Row Click',
@@ -606,7 +598,15 @@ export class MainComponent {
                 {
                   title: 'Row Double Click',
                   anchor: 'rowDoubleClick'
-                }
+                },
+                {
+                  title: 'Cell Click',
+                  anchor: 'cellClick'
+                },
+                {
+                  title: 'Header Click',
+                  anchor: 'headerClick'
+                },
               ]
             },
             {
