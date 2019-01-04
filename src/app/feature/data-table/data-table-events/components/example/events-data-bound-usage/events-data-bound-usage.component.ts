@@ -11,13 +11,13 @@ import { DataFetchService } from '../../../../../../shared/services';
 })
 export class EventsDataBoundUsageComponent {
   public items: ExampleData[];
-  public dataBoundEventData: string[] = [];
+  public dataBoundEventData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
       this.items = this.dataFetchService.fetchData();
   }
 
   public onDataBound(): void {
-    this.dataBoundEventData.push('Data bound is called');
+    this.dataBoundEventData = 'Data bound event is called';
   }
 }

@@ -1,7 +1,7 @@
 <ng-data-table
   [title]="'Sales Products'"
   [selectTrackBy]="'id'"
-  [minHeight]="180"
+  [minHeight]="140"
   [minWidth]="900"
   [items]="items"
   [limit]="5"
@@ -55,5 +55,5 @@
 
 <br>
 <p class="event-output">
-  <span *ngFor="let item of dataTableInitData.reverse()">{{item}}<br></span>
+  <span>{{dataTableInitData}}</span>
 </p>

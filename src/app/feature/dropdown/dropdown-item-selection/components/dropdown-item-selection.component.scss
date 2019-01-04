@@ -1,14 +1,17 @@
 .event-output {
+  display: block;
   font-weight: bold;
   max-height: 125px;
+  min-height: 30px;
   overflow-y: auto;
+  overflow-x: auto;
+  white-space: nowrap;
   border-left: 10px solid #7b2222;
   background-color: #2f3640;
-  min-height: 30px;
   padding: 10px;
   color: lightgrey;
 }
 
 .event-output::first-line {
-  color: #2c90e7;
+  color: #e7c12c;
 }

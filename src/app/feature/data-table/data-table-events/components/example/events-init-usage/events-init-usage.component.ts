@@ -16,13 +16,13 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class EventsInitUsageComponent {
   public items: ExampleData[];
 
-  public dataTableInitData: string[] = [];
+  public dataTableInitData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchData();
   }
 
   public onDataTableInit(dataTable: DataTableComponent): void {
-    this.dataTableInitData.push('Data table init event is called');
+    this.dataTableInitData = 'Data table init event is called';
   }
 }

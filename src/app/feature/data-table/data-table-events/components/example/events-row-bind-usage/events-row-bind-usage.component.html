@@ -1,7 +1,7 @@
 <ng-data-table
   [title]="'Sales Products'"
   [selectTrackBy]="'id'"
-  [minHeight]="180"
+  [minHeight]="140"
   [minWidth]="900"
   [items]="items"
   [limit]="5"
@@ -55,7 +55,7 @@
 
 <br>
 <p class="event-output" *ngIf="rowBindEventData.length; else noDataAvailable">
-  <span *ngFor="let item of rowBindEventData.reverse()">{{item}}<br></span>
+  <span *ngFor="let item of rowBindEventData.slice().reverse()">{{item}}<br></span>
 </p>
 <ng-template #noDataAvailable>
   <p class="event-output">Please wait... Row binding is in progress</p>
