@@ -5,8 +5,7 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 import { DataTableConfigService } from '../../services/data-table-config.service';
 
 /**
- * Data table column group component.
- * @class DataTableColGroup
+ * Data table column group component
  */
 @Component({
   exportAs: 'ngDataTableColGroup',

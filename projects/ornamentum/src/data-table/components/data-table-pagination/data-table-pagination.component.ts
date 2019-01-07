@@ -30,7 +30,7 @@ export class DataTablePaginationComponent implements OnInit {
   }
 
   /**
-   * First page click handler.
+   * First page click event handler
    */
   public firstPageClick(): void {
     this.config.offset = 0;
@@ -38,7 +38,7 @@ export class DataTablePaginationComponent implements OnInit {
   }
 
   /**
-   * Previous page click handler.
+   * Previous page click event handler
    */
   public previousPageClick(): void {
     this.config.offset = this.config.offset - Math.min(this.config.limit, this.config.offset);
@@ -46,7 +46,7 @@ export class DataTablePaginationComponent implements OnInit {
   }
 
   /**
-   * Next page click handler.
+   * Next page click event handler
    */
   public nextPageClick(): void {
     this.config.offset = this.config.offset + this.config.limit;
@@ -54,7 +54,7 @@ export class DataTablePaginationComponent implements OnInit {
   }
 
   /**
-   * Last page click handler.
+   * Last page click event handler
    */
   public lastPageClick(): void {
     this.config.offset = (this.maxPage - 1) * this.config.limit;
@@ -62,25 +62,25 @@ export class DataTablePaginationComponent implements OnInit {
   }
 
   /**
-   * Get maximum page count.
-   * @return {number} Page count.
+   * Get maximum page count
+   * @return Max page count
    */
   public get maxPage(): number {
     return Math.ceil(this.dataStateService.itemCount / this.config.limit);
   }
 
   /**
-   * Get page number.
-   * @return {number}
+   * Get page number
+   * @return Current page number
    */
   public get page(): number {
     return Math.floor(this.config.offset / this.config.limit) + 1;
   }
 
   /**
-   * Check limit invalid status. True if limit is invalid.
-   * @param {HTMLInputElement} element - Limit input DOM element.
-   * @return {boolean} - Invalid status.
+   * Check limit invalid status. True if limit is invalid
+   * @param element Limit input DOM element
+   * @return Invalid status
    */
   public isInvalidLimit(element: HTMLInputElement): boolean {
     const limit = Number(element.value);
@@ -88,8 +88,8 @@ export class DataTablePaginationComponent implements OnInit {
   }
 
   /**
-   * On page size change.
-   * @param {HTMLInputElement} element HTML input element.
+   * On page size change event handler
+   * @param element HTML input element
    */
   public onPageSizeChange(element: HTMLInputElement): void {
     if (this.isInvalidLimit(element)) {
@@ -106,17 +106,17 @@ export class DataTablePaginationComponent implements OnInit {
   }
 
   /**
-   * On page size revert.
-   * @param {HTMLInputElement} element HTML input element.
+   * On page size revert event handler
+   * @param element HTML input element
    */
   public onPageSizeRevert(element: HTMLInputElement): void {
     element.value = String(this.config.limit);
   }
 
   /**
-   * Is invalid page index. True if page index is invalid.
-   * @param {HTMLInputElement} element - Page index DOM element.
-   * @return {boolean} - Invalid status.
+   * Is invalid page index; True if page index is invalid
+   * @param element Page index DOM element
+   * @return Invalid status
    */
   public isInvalidPageIndex(element: HTMLInputElement): boolean {
     const page = Number(element.value);
@@ -124,8 +124,8 @@ export class DataTablePaginationComponent implements OnInit {
   }
 
   /**
-   * On page size change.
-   * @param {HTMLInputElement} element HTML input element.
+   * On page size change event handler
+   * @param element HTML input element
    */
   public onPageIndexChange(element: HTMLInputElement): void {
     if (this.isInvalidPageIndex(element)) {
@@ -141,48 +141,48 @@ export class DataTablePaginationComponent implements OnInit {
   }
 
   /**
-   * On page size revert.
-   * @param {HTMLInputElement} element HTML input element.
+   * On page size revert event handler.
+   * @param element HTML input element.
    */
   public onPageIndexRevert(element: HTMLInputElement): void {
     element.value = String(this.page);
   }
 
   /**
-   * Get has previous page state.
-   * @return {boolean} True if there is a previous page.
+   * Get previous page availability status
+   * @return True if there is a previous page.
    */
   public get hasPrevious(): boolean {
     return this.config.offset <= 0;
   }
 
   /**
-   * Get has next page state.
-   * @return {boolean} True if there is a next page.
+   * Get next page availability status
+   * @return True if there is a next page
    */
   public get hasNext(): boolean {
     return (this.config.offset + this.config.limit) >= this.dataStateService.itemCount;
   }
 
   /**
-   * Get start roq index.
-   * @return {number} Row index.
+   * Get start row index
+   * @return Start row index
    */
   public get startRowIndex(): number {
     return this.config.offset + 1;
   }
 
   /**
-   * Get end row index.
-   * @return {number} End row index.
+   * Get end row index
+   * @return End row index
    */
   public get endRowIndex(): number {
     return Math.min(this.config.offset + this.config.limit, this.dataStateService.itemCount);
   }
 
   /**
-   * Prevent invalid key press.
-   * @param {KeyboardEvent} event Keyboard event object.
+   * Prevent invalid key press
+   * @param event Keyboard event argument object
    */
   public preventInvalidKeyPress(event: KeyboardEvent): void {
     if ((event.key >= '0' && event.key <= '9') || event.key === 'ArrowLeft' || event.key === 'ArrowRight'
@@ -193,6 +193,9 @@ export class DataTablePaginationComponent implements OnInit {
     }
   }
 
+  /**
+   * component init lifecycle event handler
+   */
   public ngOnInit(): void {
     this.resizeService.resize.pipe(
       debounceTime(200)

@@ -3,6 +3,9 @@ import { Component, Input, TemplateRef } from '@angular/core';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
+/**
+ * Data loading spinner component
+ */
 @Component({
   selector: 'ng-data-table-loading-spinner',
   templateUrl: './data-table-loading-spinner.component.html'
