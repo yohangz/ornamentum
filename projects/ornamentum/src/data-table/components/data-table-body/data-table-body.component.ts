@@ -3,7 +3,6 @@ import { Component, Input, TemplateRef } from '@angular/core';
 import get from 'lodash-es/get';
 
 import { DataTableRow } from '../../models/data-table-row.model';
-import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
@@ -12,8 +11,7 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 
 /**
- * Data table body component.
- * @class DataTableBodyComponent
+ * Data table body component
  */
 @Component({
   exportAs: 'ngDataTableBody',
@@ -37,8 +35,9 @@ export class DataTableBodyComponent {
   }
 
   /**
-   * Get current page index.
-   * @return {number} Page index.
+   * Get index identifier by data row
+   * @param dataRow Data row object
+   * @return Dat row index identifier
    */
   public getDisplayIndex(dataRow: DataTableRow<any>): number {
     if (this.config.pageable) {
@@ -49,45 +48,45 @@ export class DataTableBodyComponent {
   }
 
   /**
-   * Is odd row.
-   * @param {DataTableRow} row Data row object.
-   * @return {boolean} True if odd row.
+   * Odd row status; True if row index is a odd number
+   * @param {DataTableRow} row Data row object
+   * @return {boolean} True if odd row
    */
   public isOddRow(row: DataTableRow<any>): boolean {
     return row.index % 2 === 0;
   }
 
   /**
-   * Is even row
-   * @param {DataTableRow} row Data row object.
-   * @return {boolean} True if even row.
+   * Even row status; True if row index is a even number
+   * @param {DataTableRow} row Data row object
+   * @return {boolean} True if even row
    */
   public isEvenRow(row: DataTableRow<any>): boolean {
     return row.index % 2 === 1;
   }
 
   /**
-   * Is odd substitute row
-   * @param {number} index Row index.
-   * @return {boolean} True if odd row.
+   * Odd substitute row status by row index; True if row index is an odd substitute row
+   * @param index Row index
+   * @return True if odd substitute row
    */
   public isOddSubstituteRow(index: number): boolean {
     return (index + this.dataStateService.substituteRows.length) % 2 === 0;
   }
 
   /**
-   * Is even substitute row
-   * @param {number} index Row index.
-   * @return {boolean} True if even row.
+   * Even substitute row status by row index; True if row index is an even substitute row
+   * @param index Row index
+   * @return True if even substitute row
    */
   public isEvenSubstituteRow(index: number): boolean {
     return (index + this.dataStateService.substituteRows.length) % 2 === 1;
   }
 
   /**
-   * On row expand event handler.
-   * @param {Event} $event Click event arguments.
-   * @param {DataTableRow} dataRow Data row object.
+   * On row expand event handler
+   * @param $event Click event argument reference
+   * @param dataRow Data row object
    */
   public onRowExpand($event: Event, dataRow: DataTableRow<any>): void {
     dataRow.expanded = !dataRow.expanded;
@@ -98,8 +97,8 @@ export class DataTableBodyComponent {
   }
 
   /**
-   * On row initialize event handler.
-   * @param dataRow Data table row.
+   * On row initialize event handler
+   * @param dataRow Data table row
    */
   public onRowInit(dataRow): void {
     setTimeout(() => {
@@ -108,9 +107,9 @@ export class DataTableBodyComponent {
   }
 
   /**
-   * On cell initialize event handler.
-   * @param {DataTableColumnComponent} column Data table column component.
-   * @param {DataTableRow} row Data table row.
+   * On cell initialize event handler
+   * @param column Data table column component reference
+   * @param row Data table row object
    */
   public onCellInit(column: DataTableColumnComponent, row: DataTableRow<any>): void {
     setTimeout(() => {
@@ -122,28 +121,27 @@ export class DataTableBodyComponent {
   }
 
   /**
-   * Cell clicked event handler.
-   * @param {DataTableColumnComponent} column Column data table component object.
-   * @param {DataTableRow} row Data row object.
-   * @param {MouseEvent} event event event Mouse click event argument object.
+   * Cell clicked event handler
+   * @param column Column data table component reference
+   * @param row Data table row reference
+   * @param event Mouse click event argument reference
    */
   public cellClicked(column: DataTableColumnComponent, row: DataTableRow<any>, event: MouseEvent): void {
     this.eventStateService.cellClickStream.emit({row, column, event});
   }
 
   /**
-   * Get row span collection
-   * @param {DataTableRow} row Data row.
-   * @return {any[]} Row span dummy array.
+   * Get row span collection by data row
+   * @param row Data row reference
+   * @return Dummy row span collection
    */
   public getRowSpanCollection(row: DataTableRow<any>): any[] {
     return Array.from({length: this.dataStateService.onDynamicRowSpanExtract(row)});
   }
 
   /**
-   * Get total column count.
-   * Used for substitute row generation.
-   * @return {number} Number of columns.
+   * Get total column count used for substitute row generation
+   * @return Number of columns
    */
   public get totalColumnCount(): number {
     let count = 0;
@@ -158,9 +156,9 @@ export class DataTableBodyComponent {
   }
 
   /**
-   * On row click event.
-   * @param {DataTableRow} row Data row object.
-   * @param {Event} event Row click event.
+   * On row select click event handler
+   * @param row Data row reference
+   * @param event Row click event
    */
   public onRowSelectClick(row: DataTableRow<any>, event: Event): void {
     // Prevent single mode checkbox getting unchecked on tapping already selected.
@@ -177,9 +175,8 @@ export class DataTableBodyComponent {
   }
 
   /**
-   * On row selection change event.
-   * Maintain selected row state.
-   * @param {DataTableRow} row Data row object.
+   * On row selection change event handler
+   * @param row Data row reference
    */
   public onRowSelectChange(row: DataTableRow<any>): void {
     const id = get(row.item, this.config.selectTrackBy);
@@ -238,9 +235,9 @@ export class DataTableBodyComponent {
   }
 
   /**
-   * Row clicked event handler.
-   * @param {DataTableRow} row Data row object.
-   * @param event Mouse click event argument object.
+   * Row clicked event handler
+   * @param row Data row object
+   * @param event Mouse click event argument object
    */
   public rowClicked(row: DataTableRow<any>, event: MouseEvent): void {
     if (this.config.selectOnRowClick || (this.config.expandableRows && this.config.expandOnRowClick)) {
@@ -264,26 +261,43 @@ export class DataTableBodyComponent {
   }
 
   /**
-   * Row double clicked event handler.
-   * @param {DataTableRow} row Data row object.
-   * @param {MouseEvent} event event Mouse click event argument object.
+   * Row double clicked event handler
+   * @param row Data row object
+   * @param event Event Mouse click event argument object
    */
   public rowDoubleClicked(row: DataTableRow<any>, event: MouseEvent): void {
     this.eventStateService.rowDoubleClickStream.emit({row, event});
   }
 
+  /**
+   * Get substitute row availability status
+   * @return True if substitute rows are available
+   */
   public get hasSubstituteRows(): boolean {
     return this.config.showSubstituteRows && this.dataStateService.dataRows.length && !this.dataStateService.showNoDataOverlay;
   }
 
+  /**
+   * Get cell value by data field
+   * @param row Data row reference
+   * @param column Data table column component reference
+   */
   public getFieldValue(row: DataTableRow<any>, column: DataTableColumnComponent) {
     return get(row.item, column.field);
   }
 
+  /**
+   * Get row select checkbox display status
+   * @return True if row selector checkbox should be displayed
+   */
   public get showRowSelectCheckbox(): boolean {
     return this.config.rowSelectable && this.config.showRowSelectCheckbox;
   }
 
+  /**
+   * Get row expend view loading status; Used to display loading spinner on expand column while data fetching
+   * @param row Data row object reference
+   */
   public isRowExpanderLoading(row: DataTableRow<any>): boolean {
     return row.expanded && !row.dataLoaded;
   }

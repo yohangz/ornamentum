@@ -15,8 +15,7 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
 import { ViewPosition } from '../../../utility/models/view-position.model';
 
 /**
- * Data table column component.
- * @class DataTableColumnComponent
+ * Data table column component
  */
 @Component({
   selector: 'ng-data-table-column',
@@ -44,23 +43,22 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   // Callback event handlers
 
   /**
-   * Filter expression callback function.
-   * @type DataTableFilterExpressionCallback
+   * Filter expression callback function
+   * @type {DataTableFilterExpressionCallback}
    */
   @Input()
   public filterExpression: DataTableFilterExpressionCallback;
 
   /**
-   * Custom filter field mapper.
-   * Used to extract filter field when showDropdownFilter option is true.
-   * @type DataTableFilterFieldMapperCallback
+   * Custom filter field mapper; Used to extract filter field when showDropdownFilter option is true
+   * @type {DataTableFilterFieldMapperCallback}
    */
   @Input()
   public filterFieldMapper: DataTableFilterFieldMapperCallback;
 
   /**
-   * Cell color render event handler callback function.
-   * @type DataTableCellColorRenderCallback
+   * Cell color render event handler callback function
+   * @type {DataTableCellColorRenderCallback}
    */
   @Input()
   public onCellColorRender: DataTableCellColorRenderCallback<any>;
@@ -68,22 +66,22 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   // Inputs
 
   /**
-   * Column title.
-   * @type string
+   * Column title
+   * @type {string}
    */
   @Input()
   public title: string;
 
   /**
-   * Sortable state.
-   * @type boolean
+   * Columns sortable if true; Show sort indicator on column title
+   * @type {boolean}
    */
   @Input()
   public sortable = false;
 
   /**
-   * Set Data sort oder.
-   * @type DataTableSortOrder
+   * Set initial column sort order
+   * @param value Data sort order
    */
   @Input()
   public set sortOrder(value: DataTableSortOrder) {
@@ -92,213 +90,228 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Get data sort order.
-   * @returns {DataTableSortOrder}
+   * Get initial column sort order
+   * @return Data sort order
    */
   public get sortOrder(): DataTableSortOrder {
     return this._sortOrder;
   }
 
   /**
-   * Filterable state.
-   * @type boolean
+   * Column filterable if true; Show filter options bar when enabled
+   * @type {boolean}
    */
   @Input()
   public filterable = false;
 
   /**
-   * Resizeable state.
-   * @type boolean
+   * Column resizeable if true; Show column resize indicator on column right corner
+   * @type {boolean}
    */
   @Input()
   public resizable = false;
 
   /**
-   * Data table item mapping field name.
-   * @type string
+   * Data table item mapping field name
+   * @type {string}
    */
   @Input()
   public field: string;
 
   /**
-   * Filter field identifier.
-   * Fallback to field if not provided.
-   * @type string
+   * Filter field identifier; Fallback to field if not provided
+   * @type {string}
    */
   @Input()
   public filterField: string;
 
   /**
-   * Sort field identifier.
-   * Fallback to field if not provided.
-   * @type string
+   * Sort field identifier; Fallback to field if not provided
+   * @type {string}
    */
   @Input()
   public sortField: string;
 
   /**
-   * Column title space separated CSS class names.
-   * @type string
+   * Column title space separated CSS class names
+   * @type {string}
    */
   @Input()
   public cssClass: string;
 
   /**
-   * Column width.
-   * @type string | number
+   * Column width
+   * @type {string|number}
    */
   @Input()
   public width: number | string;
 
   /**
-   * Visible state.
-   * @type boolean
+   * Render column if true
+   * @type {boolean}
    */
   @Input()
   public visible = true;
 
   /**
-   * Show filed in column selector.
+   * Show filed in column selector
    * @type {boolean}
    */
   @Input()
   public showInColumnSelector = true;
 
   /**
-   * Filter placeholder value.
-   * @type string
+   * Filter placeholder value
+   * @type {string}
    */
   @Input()
   public filterPlaceholder = '';
 
   /**
-   * Filter value.
-   * @type any
+   * Applied filter value
+   * @type {any}
    */
   @Input()
   public filter: any;
 
+  /**
+   * Show filter clear button if true; Applicable only for none dropdown filter mode
+   * @type {boolean}
+   */
   @Input()
   public showFilterClearButton: any;
 
   /**
-   * Resize minimum limit.
-   * @type number
+   * Resize minimum limit
+   * @type {number}
    */
   @Input()
   public resizeMinLimit: number;
 
   /**
-   * Enable multi select filtering.
-   * Show multi select dropdown for filtering.
-   * @type boolean
+   * Show dropdown filter if true
+   * @type {boolean}
    */
   @Input()
   public showDropdownFilter: boolean;
 
   /**
-   * Dropdown filter menu position.
-   * @type ViewPosition
+   * Dropdown filter menu position; Applicable only when showDropdownFilter is true
+   * @type {ViewPosition}
    */
   @Input()
   public dropdownFilterMenuPosition: ViewPosition;
 
   /**
-   * Dropdown filter multi selectable state.
-   * @type boolean
+   * Dropdown select mode; Applicable only when showDropdownFilter is true
+   * @type {boolean}
    */
   @Input()
   public dropdownFilterSelectMode: DropdownSelectMode;
 
   /**
-   * Dropdown filter searchable state.
-   * @type boolean
+   * Dropdown filter searchable if true; Show dropdown filter search input
+   * @type {boolean}
    */
   @Input()
   public dropdownFilterSearchable: boolean;
 
   /**
-   * Dropdown filter search debounce time.
-   * @type number
+   * Dropdown filter search debounce time in milliseconds; Applicable only when dropdownFilterSearchDebounce is true
+   * @type {number}
    */
   @Input()
   public dropdownFilterSearchDebounceTime: number;
 
   /**
-   * Dropdown filter  search debounced.
-   * @type boolean
+   * Enable dropdown filter data search debounce with provided dropdownFilterSearchDebounceTime if true
+   * @type {boolean}
    */
   @Input()
   public dropdownFilterSearchDebounce: boolean;
 
   /**
-   * Dropdown filter show select all checkbox.
-   * @type boolean
-   */
-  @Input()
-  public dropdownFilterShowSelectAll: boolean;
-
-  /**
-   * Dropdown filter show option select checkbox.
-   * @type boolean
+   * Dropdown filter show option select checkbox
+   * @type {boolean}
    */
   @Input()
   public dropDownFilterShowOptionSelectCheckbox: boolean;
 
   /**
-   * Dropdown filter selected items display limit.
-   * @type number
+   * Dropdown filter selected items display limit
+   * @type {number}
    */
   @Input()
   public dropdownFilterWrapDisplaySelectLimit: number;
 
   /**
-   * Dropdown filter group by field.
-   * @type string
+   * Dropdown filter group by field name in item schema
+   * @type {string}
    */
   @Input()
   public dropdownFilterGroupByField: string;
 
   /**
-   * Dropdown filter show selected option remove button.
-   * @type boolean
+   * Dropdown filter show selected option remove button if true
+   * @type {boolean}
    */
   @Input()
   public dropdownFilterShowSelectedOptionRemoveButton: boolean;
 
   /**
-   * Dropdown filter show selected option remove button.
-   * @type boolean
+   * Dropdown filter show all select options clear button if true
+   * @type {boolean}
    */
   @Input()
   public dropdownFilterShowClearSelectionButton: boolean;
 
   /**
-   * Dropdown filter drop menu width.
-   * @type number
+   * Dropdown filter menu width in pixels
+   * @type {number}
    */
   @Input()
   public dropdownFilterMenuWidth: number;
 
   /**
-   * Dropdown filter drop menu height.
-   * @type number
+   * Dropdown filter menu height in pixels
+   * @type {number}
    */
   @Input()
   public dropdownFilterMenuHeight: number;
 
+  /**
+   * Dropdown filter multi select option max width
+   * @type {number}
+   */
   @Input()
   public dropdownFilterMultiSelectOptionMaxWidth: number;
 
+  /**
+   * Dropdown filter close menu on select if true
+   * @type {boolean}
+   */
   @Input()
   public dropdownFilterCloseMenuOnSelect: boolean;
 
+  /**
+   * Dynamically calculate Dropdown filter menu dimensions relative to column width; dropdownFilterMenuWidth and
+   * dropdownFilterMenuHeight configuration are ignored when true
+   * @type {boolean}
+   */
   @Input()
   public dropdownFilterDynamicDimensionCalculation: boolean;
 
+  /**
+   * Dynamic dropdown view width ratio; Used for dynamic dimension calculation
+   * @type {number}
+   */
   @Input()
   public dropdownFilterDynamicWidthRatio: number;
 
+  /**
+   * Dynamic dropdown view height ratio; Used for dynamic dimension calculation
+   * @type {number}
+   */
   @Input()
   public dropdownFilterDynamicHeightRatio: number;
 
@@ -333,14 +346,17 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     this.dropdownFilterDynamicHeightRatio = dataTableConfigService.dropdownFilterDynamicHeightRatio;
   }
 
+  /**
+   * Reset data sort order
+   */
   public resetSortOrder(): void {
     this._sortOrder = this._baseSortOrder;
   }
 
   /**
-   * Get cell color.
-   * @param {DataTableRow} row Data row object.
-   * @return {string} Cell color string.
+   * Get dynamic cell color
+   * @param row Data row object
+   * @return Cell color string
    */
   public getCellColor(row: DataTableRow<any>) {
     if (this.onCellColorRender !== undefined) {
@@ -349,8 +365,8 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Get new sort order upon sort click.
-   * @return {DataTableSortOrder} New sort order enum value.
+   * Get new sort order upon sort click
+   * @return New sort order enum value
    */
   public getNewSortOrder(): DataTableSortOrder {
     let newSortOrder: DataTableSortOrder;
@@ -369,7 +385,11 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     return newSortOrder;
   }
 
-  public getSortIconClass() {
+  /**
+   * Get current sort state icon css class enabled state
+   * @return Sort order icon css class collection object
+   */
+  public getSortIconClass(): any {
     return {
       'sort-asc': this.sortOrder === 'asc',
       'sort-dsc': this.sortOrder === 'desc',
@@ -377,6 +397,9 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     };
   }
 
+  /**
+   * Component destroy lifecycle event handler
+   */
   public ngOnDestroy(): void {
     if (this.filterValueExtractorSubscription) {
       this.filterValueExtractorSubscription.unsubscribe();
@@ -384,7 +407,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Lifecycle hook that is called after data-bound properties of a directive are initialized.
+   * Component initialize lifecycle event handler
    */
   public ngOnInit(): void {
     if (!this.cssClass && this.field) {

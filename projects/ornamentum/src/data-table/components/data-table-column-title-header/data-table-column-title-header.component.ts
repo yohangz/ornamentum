@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 
 import get from 'lodash-es/get';
 
-import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
 import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
@@ -12,6 +11,9 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
+/**
+ * Column title header component
+ */
 @Component({
   exportAs: 'ngDataTableColumnTitleHeader',
   // tslint:disable-next-line
@@ -30,6 +32,11 @@ export class DataTableColumnTitleHeaderComponent {
               public config: DataTableConfigService) {
   }
 
+  /**
+   * Header click event handler
+   * @param column Data table column component reference
+   * @param event Mouse event arguments object
+   */
   public onHeaderClick(column: DataTableColumnComponent, event: MouseEvent): void {
     if (!this.resizeInProgress) {
       this.sortData(column);
@@ -39,6 +46,10 @@ export class DataTableColumnTitleHeaderComponent {
     }
   }
 
+  /**
+   * Sort data event handler
+   * @param column Data table column component reference
+   */
   private sortData(column: DataTableColumnComponent): void {
     if (column.sortable) {
       if (column.sortOrder) {
@@ -60,11 +71,22 @@ export class DataTableColumnTitleHeaderComponent {
     }
   }
 
-  public setColumnWidth(width: number, column: DataTableColumnComponent) {
+  /**
+   * Set column width
+   * @param width Width value in pixels
+   * @param column Data table column component reference
+   */
+  public setColumnWidth(width: number, column: DataTableColumnComponent): void {
     column.actualWidth = width;
   }
 
-  public onColumnResize(event: MouseEvent, column: DataTableColumnComponent, columnElement: HTMLTableHeaderCellElement) {
+  /**
+   * Column resize event handler
+   * @param event Resize mouse event
+   * @param column Data table column component
+   * @param columnElement Table header cell element DOM reference
+   */
+  public onColumnResize(event: MouseEvent, column: DataTableColumnComponent, columnElement: HTMLTableHeaderCellElement): void {
     this.resizeInProgress = true;
 
     this.dragAndDropService.drag(event, {
@@ -87,16 +109,27 @@ export class DataTableColumnTitleHeaderComponent {
     });
   }
 
+  /**
+   * Set all row selected state
+   * @param value All row selected status
+   */
   public set allRowSelected(value: boolean) {
     this.dataStateService.allRowSelected = value;
     this.allRowSelectedChanged(this.dataStateService.allRowSelected);
     this.eventStateService.allRowSelectChangeStream.emit(this.dataStateService.allRowSelected);
   }
 
+  /**
+   * Get all row selected state.
+   */
   public get allRowSelected(): boolean {
     return this.dataStateService.allRowSelected;
   }
 
+  /**
+   * All row select change event handler
+   * @param selectedState Row selected status
+   */
   private allRowSelectedChanged(selectedState: boolean): void {
     this.dataStateService.dataRows.forEach(row => {
       const id = get(row.item, this.config.selectTrackBy);
@@ -113,6 +146,10 @@ export class DataTableColumnTitleHeaderComponent {
     this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRows);
   }
 
+  /**
+   * Get all row select checkbox display status.
+   * @return True if all row select checkbox should be displayed
+   */
   public get showAllRowSelectCheckbox(): boolean {
     return this.config.selectMode === 'multi' && this.config.showRowSelectAllCheckbox;
   }

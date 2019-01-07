@@ -11,6 +11,9 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
+/**
+ * Column filter template component.
+ */
 @Component({
   selector: 'ng-data-table-column-filter-template',
   templateUrl: './data-table-column-filter-template.component.html'
@@ -35,6 +38,9 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
               private eventStateService: DataTableEventStateService) {
   }
 
+  /**
+   * Component initialize lifecycle event
+   */
   public ngOnInit(): void {
     if (this.column.showDropdownFilter && this.dataStateService.onFilterValueExtract) {
       this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream
@@ -52,6 +58,9 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
     }
   }
 
+  /**
+   * Component destroy lifecycle event
+   */
   public ngOnDestroy(): void {
     if (this.fetchFilterOptionsStreamSubscription) {
       this.fetchFilterOptionsStreamSubscription.unsubscribe();
@@ -64,6 +73,9 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
     this.filterDataStream.complete();
   }
 
+  /**
+   * Clear current column filter value
+   */
   public clearFilter(): void {
     this.column.filter = '';
     this.filter.emit();

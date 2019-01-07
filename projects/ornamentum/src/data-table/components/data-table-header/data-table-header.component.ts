@@ -12,8 +12,7 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
- * Data table header component.
- * @class DataTableHeaderComponent
+ * Data table header component
  */
 @Component({
   selector: 'ng-data-table-header',
@@ -35,7 +34,8 @@ export class DataTableHeaderComponent implements OnDestroy {
   }
 
   /**
-   * Toggle column selector.
+   * Toggle column selector
+   * @param element DOM element reference
    */
   public toggleColumnSelector(element: HTMLElement): void {
     this.componentLoader
@@ -49,10 +49,16 @@ export class DataTableHeaderComponent implements OnDestroy {
       });
   }
 
+  /**
+   * On data reload click event handler
+   */
   public onReload(): void {
     this.eventStateService.dataFetchStream.next(DataFetchMode.HARD_RELOAD);
   }
 
+  /**
+   * Component destroy lifecycle event handler
+   */
   public ngOnDestroy(): void {
     this.componentLoader.dispose();
   }

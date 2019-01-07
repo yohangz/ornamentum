@@ -12,6 +12,9 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 
+/**
+ * Column filter header component
+ */
 @Component({
   exportAs: 'ngDataTableColumnFilterHeader',
   // tslint:disable-next-line
@@ -33,11 +36,17 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
               private eventStateService: DataTableEventStateService) {
   }
 
+  /**
+   * Component initialize lifecycle event handler
+   */
   public ngOnInit(): void {
     this.initCustomFilterEvent();
     this.initDebounceDefaultFilterEvent();
   }
 
+  /**
+   * Component destroy lifecycle event handler
+   */
   public ngOnDestroy(): void {
     if (this.customFilterSubscription) {
       this.customFilterSubscription.unsubscribe();
@@ -48,6 +57,9 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
     }
   }
 
+  /**
+   * Initialize custom filter event
+   */
   private initCustomFilterEvent(): void {
     this.customFilterSubscription = this.customFilterStream
       .subscribe((filterEventArgs: DataTableFilterEventArgs) => {
@@ -56,6 +68,9 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
       });
   }
 
+  /**
+   * Initialize debounce default filtering logic
+   */
   private initDebounceDefaultFilterEvent(): void {
     this.columnFilterSubscription = this.columnFilterStream
       .pipe(
@@ -66,6 +81,9 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
       });
   }
 
+  /**
+   * Filter event handler
+   */
   public onFilter(): void {
     if (this.config.filterDebounce) {
       this.columnFilterStream.next();
