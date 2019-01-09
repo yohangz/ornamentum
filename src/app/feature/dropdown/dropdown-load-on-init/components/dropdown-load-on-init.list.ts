@@ -22,3 +22,8 @@ export const loadOnInitUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
+
+export const demoSnippet: any = {
+  loadDataOnInit: require('!!raw-loader?lang=typescript!./docs/load-data-on-init.md')
+};
+
