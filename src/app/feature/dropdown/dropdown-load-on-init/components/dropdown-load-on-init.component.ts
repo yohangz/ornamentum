@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { loadOnInitUsage } from './dropdown-load-on-init.list';
+import { loadOnInitUsage, demoSnippet } from './dropdown-load-on-init.list';
 
 @Component({
   selector: 'app-dropdown-load-on-init-component',
@@ -9,4 +9,5 @@ import { loadOnInitUsage } from './dropdown-load-on-init.list';
 })
 export class DropdownLoadOnInitComponent {
   public loadOnInitUsage = loadOnInitUsage;
+  public demoSnippet = demoSnippet;
 }

@@ -1069,7 +1069,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/load-data-on-init',
-          title: 'Load Data On Init'
+          title: 'Load Data On Init',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/on-data-bind',
