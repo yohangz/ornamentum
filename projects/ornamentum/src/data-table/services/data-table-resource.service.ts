@@ -15,14 +15,17 @@ import { DataTableSortColumn } from '../models/data-table-sort-column.model';
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
 /**
- * Data table resource manager class
- * @class DataTableResourceService
+ * Data table resource service; Manage data table client side data querying
  */
 @Injectable()
 export class DataTableResourceService<T> {
   private itemDataStream: ReplaySubject<T[]>;
   private dataSourceSubscription: Subscription;
 
+  /**
+   * Set data source stream to query
+   * @param dataSource Data source stream
+   */
   public setDataSource(dataSource: Observable<T[]>): void {
     this.dispose();
 
@@ -37,9 +40,9 @@ export class DataTableResourceService<T> {
   }
 
   /**
-   * Query data table items collection.
-   * @param {DataTableRequestParams} params Data table parameters.
-   * @return {Observable<DataTableQueryResult<T>>} Item query resolver.
+   * Query items by data table request params
+   * @param params Data table parameters object
+   * @return Query result stream
    */
   public query(params: DataTableRequestParams): Observable<DataTableQueryResult<T>> {
     return this.itemDataStream
@@ -119,9 +122,9 @@ export class DataTableResourceService<T> {
   }
 
   /**
-   * Extract data table filter options.
-   * @param {DataTableColumnComponent} filterColumn Data table column component.
-   * @return {Observable<DataTableFilterOption[]>} Filter options array observable.
+   * Extract data table filter options
+   * @param filterColumn Data table column component
+   * @return Filter options collection stream
    */
   public extractFilterOptions(filterColumn: DataTableColumnComponent): Observable<DataTableFilterOption[]> {
     return this.itemDataStream
@@ -148,6 +151,9 @@ export class DataTableResourceService<T> {
       );
   }
 
+  /**
+   * Dispose client data source streams
+   */
   public dispose(): void {
     if (this.dataSourceSubscription) {
       this.dataSourceSubscription.unsubscribe();
