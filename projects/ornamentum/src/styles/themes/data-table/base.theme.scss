@@ -365,7 +365,6 @@
         th {
           border: 0;
           border-right: .05rem solid $data-table-content-header-border;
-          padding: 0 .2rem;
 
           input {
             @include border-radius($data-table-input-border-radius-value);
