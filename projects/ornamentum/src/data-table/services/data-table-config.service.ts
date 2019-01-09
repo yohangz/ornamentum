@@ -12,7 +12,7 @@ import { ViewPosition } from '../../utility/models/view-position.model';
 export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableConfig');
 
 /**
- * This service class hold all the global configurations of grid which can be overridden while importing the module.
+ * Data table config service; Manage all the global configurations of grid which can be overridden while importing the module.
  */
 @Injectable()
 export class DataTableConfigService implements DataTableConfig {

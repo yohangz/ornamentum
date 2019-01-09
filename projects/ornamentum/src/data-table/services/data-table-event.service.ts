@@ -14,6 +14,9 @@ import { DataFetchMode } from '../models/data-fetch-mode.enum';
 import { DataTableComponent } from '../components/data-table/data-table.component';
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
+/**
+ * Data table event state service; Manage all internal data tale event streams
+ */
 @Injectable()
 export class DataTableEventStateService {
   public allRowSelectChangeStream = new EventEmitter<boolean>();

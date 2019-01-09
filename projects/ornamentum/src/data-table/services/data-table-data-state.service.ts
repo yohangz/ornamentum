@@ -5,6 +5,9 @@ import { DataTableDynamicRowSpanExtractorCallback } from '../models/data-table-g
 import { DataTableFilterValueExtractCallback } from '../models/data-table-filter-value-extract-callback.model';
 import { DataTableDataBindCallback } from '../models/data-table-data-bind-callback.model';
 
+/**
+ * Data table state manager service; Manage current data table state snapshot
+ */
 @Injectable()
 export class DataTableDataStateService {
   public allRowSelected = false;
@@ -21,6 +24,10 @@ export class DataTableDataStateService {
   public onFilterValueExtract: DataTableFilterValueExtractCallback;
   public onDataBind: DataTableDataBindCallback;
 
+  /**
+   * Get show no data overlay status
+   * @return True if no data overlay should be shown
+   */
   public get showNoDataOverlay(): boolean {
     return !this.dataRows.length && !this.dataLoading;
   }
