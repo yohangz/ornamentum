@@ -1,17 +1,17 @@
 import { DataTableSortOrder } from './data-table-sort-order.model';
 
 /**
- * Sort column.
+ * Sort column
  */
 export interface DataTableSortColumn {
   /**
-   * Target column filed name.
+   * Target column filed name
    * @type {string}
    */
   field: string;
 
   /**
-   * Sort order.
+   * Sort order
    * @type {DataTableSortOrder}
    */
   sortOrder: DataTableSortOrder;

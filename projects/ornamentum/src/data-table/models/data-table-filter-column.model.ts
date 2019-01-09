@@ -5,25 +5,25 @@ import { DataTableFilterExpressionCallback } from './data-table-filter-expressio
  */
 export interface DataTableFilterColumn {
   /**
-   * Filter field property name.
+   * Filter field property name
    * @type {string}
    */
   field: string;
 
   /**
-   * Filter value.
+   * Filter value
    * @type {any}
    */
   filterValue: any;
 
   /**
-   * Filter expression.
+   * Filter expression
    * @type {DataTableFilterExpressionCallback}
    */
   filterExpression: DataTableFilterExpressionCallback;
 
   /**
-   * Show dropdown filter state.
+   * Show dropdown filter state
    * @type {boolean}
    */
   showDropdownFilter: boolean;

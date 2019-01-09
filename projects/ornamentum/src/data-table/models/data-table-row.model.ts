@@ -3,55 +3,55 @@
  */
 export interface DataTableRow<T> {
   /**
-   * Source data item reference.
+   * Source data item reference
    * @type {any}
    */
   item: T;
 
   /**
-   * Row selected state.
+   * Row selected state
    * @type {boolean}
    */
   selected: boolean;
 
   /**
-   * Row disabled state.
+   * Row disabled state
    * @type {boolean}
    */
   disabled: boolean;
 
   /**
-   * Row color hex.
+   * Row color hex
    * @type {string}
    */
   color: string;
 
   /**
-   * Row CSS class name.
+   * Row CSS class name
    * @type {string}
    */
   cssClass: string;
 
   /**
-   * Row tooltip text.
+   * Row tooltip text
    * @type {string}
    */
   tooltip: string;
 
   /**
-   * Row auto generated index.
+   * Row auto generated index
    * @type {number}
    */
   index: number;
 
   /**
-   * Row expanded state.
+   * Row expanded state
    * @type {boolean}
    */
   expanded: boolean;
 
   /**
-   * Row data loaded state.
+   * Row data loaded state
    * @type {boolean}
    */
   dataLoaded: boolean;
