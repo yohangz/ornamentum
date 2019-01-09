@@ -1,17 +1,17 @@
 import { DataTableRow } from './data-table-row.model';
 
 /**
- * Row click event arguments.
+ * Row click event arguments
  */
 export interface DataTableRowClickEventArgs<T> {
   /**
-   * Target data row.
+   * Target data row
    * @type {DataTableRow}
    */
   row: DataTableRow<T>;
 
   /**
-   * Target mouse event.
+   * Target mouse event
    * @type {MouseEvent}
    */
   event: MouseEvent;
