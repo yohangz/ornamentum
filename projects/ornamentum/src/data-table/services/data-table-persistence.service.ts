@@ -22,7 +22,7 @@ export class DataTablePersistenceService {
    * Set table state storage mode
    * @param value Storage mode
    */
-  public set storageMode(value: DataTableStorageMode): void {
+  public set storageMode(value: DataTableStorageMode) {
     if (this.globalRefService.isBrowser) {
       if (value === 'local') {
         this.storage = this.globalRefService.window.localStorage;
