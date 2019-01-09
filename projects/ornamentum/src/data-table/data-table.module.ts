@@ -56,7 +56,7 @@ const DIRECTIVES = [
 const PROVIDERS = [];
 
 /**
- * Module representing grid component.
+ * Data table module
  */
 @NgModule({
   imports: [
@@ -81,7 +81,12 @@ const PROVIDERS = [];
   ]
 })
 export class DataTableModule {
-  static forRoot(dataTableConfig?: DataTableConfig): ModuleWithProviders {
+  /**
+   * Set module root configuration overrides
+   * @param dataTableConfig Data table configuration object
+   * @return Module with custom providers
+   */
+  public static forRoot(dataTableConfig?: DataTableConfig): ModuleWithProviders {
     return {
       ngModule: DataTableModule,
       providers: [
