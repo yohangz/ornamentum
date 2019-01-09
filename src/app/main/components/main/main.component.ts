@@ -250,10 +250,6 @@ export class MainComponent {
                       anchor: 'dropdownFilterCloseMenuOnSelect'
                     },
                     {
-                      title: 'Dropdown Filter Show Select All',
-                      anchor: 'dropdownFilterShowSelectAll'
-                    },
-                    {
                       title: 'Dropdown Filter Select Mode',
                       anchor: 'dropdownFilterSelectMode'
                     },
