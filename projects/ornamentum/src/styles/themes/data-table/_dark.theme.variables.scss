@@ -28,7 +28,7 @@ $box-shadow-color: rgba(0, 0, 0, .5) !default;
 $delete-color: #d32f2f !default;
 
 //Data Table Container Styles
-$data-table-container-border: 0 !default;
+$data-table-container-border: 1px solid #333 !default;
 $data-table-container-border-radius-value: 0 !default;
 $data-table-container-box-shadow-value: none !default;
 
@@ -64,7 +64,7 @@ $data-table-content-border: #333 !default;
 
 //Common Data Table Styles
 
-$data-table-border: #3e3e3e !default;
+$data-table-border: #353434 !default;
 $data-table-row-background: #121212 !default;
 $data-table-cell-text-color: #cacaca !default;
 $data-table-row-hover-background: #555 !default;
