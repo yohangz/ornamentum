@@ -93,7 +93,6 @@
       }
 
       .ng-data-table {
-        border-bottom: 0;
         border-right: .05rem solid transparent;
         border-top: 0;
         overflow: hidden;
@@ -691,6 +690,7 @@
   border: 0;
   border-top: .05rem solid $data-table-pagination-border;
   margin-bottom: -.05rem;
+  margin-top: -.05rem;
   padding: .5rem;
 
   .ng-data-table-input-error,
