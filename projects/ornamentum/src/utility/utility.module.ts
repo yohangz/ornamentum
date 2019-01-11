@@ -31,7 +31,7 @@ const PROVIDERS = [
 ];
 
 /**
- * Module representing utility components
+ * Module representing utility providers, directives and pipes
  */
 @NgModule({
   imports: [
