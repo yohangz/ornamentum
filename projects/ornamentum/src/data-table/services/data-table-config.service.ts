@@ -12,7 +12,7 @@ import { ViewPosition } from '../../utility/models/view-position.model';
 export const DATA_TABLE_CONFIG = new InjectionToken<DataTableConfig>('dataTableConfig');
 
 /**
- * Data table config service; Manage all the global configurations of grid which can be overridden while importing the module.
+ * Data table config service; Manage all the global configurations of grid which can be overridden while importing the module
  */
 @Injectable()
 export class DataTableConfigService implements DataTableConfig {
@@ -99,13 +99,15 @@ export class DataTableConfigService implements DataTableConfig {
   }
 
   /**
-   * Returns translations.
-   * @returns {DataTableTranslations}
+   * Returns translations
    */
   public get translations(): DataTableTranslations {
     return this.baseTranslations;
   }
 
+  /**
+   * Get row select checkbox column
+   */
   public get showRowSelectCheckboxColumn(): boolean {
     return this.rowSelectable && this.showRowSelectCheckbox;
   }

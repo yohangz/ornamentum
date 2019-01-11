@@ -6,13 +6,11 @@ import { DataTableColumnComponent } from '../components/data-table-column/data-t
 export interface DataTableHeaderClickEventArgs {
   /**
    * Target column
-   * @type {DataTableColumnComponent}
    */
   column: DataTableColumnComponent;
 
   /**
    * Target mouse event
-   * @type {MouseEvent}
    */
   event: MouseEvent;
 }
