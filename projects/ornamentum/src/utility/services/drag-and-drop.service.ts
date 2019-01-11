@@ -4,15 +4,15 @@ export type MoveHandler = (event: MouseEvent, dx: number, dy: number, x: number,
 export type UpHandler = (event: MouseEvent, x: number, y: number, moved: boolean) => void;
 
 /**
- * Element drag and drop service.
+ * Element drag and drop service
  */
 @Injectable()
 export class DragAndDropService {
   /**
-   * Register drag and drop event.
-   * @param event - Mouse event reference.
-   * @param move - Mouse move event handler.
-   * @param up - Mouse up Event handler.
+   * Register drag and drop event
+   * @param event Mouse event reference
+   * @param move Mouse move event handler
+   * @param up Mouse up Event handler
    */
   public drag(event: MouseEvent, { move, up }: { move: MoveHandler, up?: UpHandler }): void {
     const startX = event.pageX;
