@@ -12,25 +12,21 @@ export interface DataTableRequestParams {
 
   /**
    * Data offset value
-   * @type {number}
    */
   offset?: number;
 
   /**
    * Data limit value (page size)
-   * @type {number}
    */
   limit?: number;
 
   /**
    * Sort columns
-   * @type {DataTableSortColumn[]}
    */
   sortColumns?: DataTableSortColumn[];
 
   /**
    * Filter columns
-   * @type {DataTableFilterColumn[]}
    */
   filterColumns?: DataTableFilterColumn[];
 }

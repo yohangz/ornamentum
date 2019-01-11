@@ -6,13 +6,11 @@ import { DataTableColumnComponent } from '../components/data-table-column/data-t
 export interface DataTableFilterEventArgs {
   /**
    * Target column
-   * @type {DataTableColumnComponent}
    */
   column: DataTableColumnComponent;
 
   /**
    * Filter value
-   * @type {any}
    */
   filter: any;
 }
