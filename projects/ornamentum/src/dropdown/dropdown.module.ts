@@ -21,7 +21,7 @@ const COMPONENTS = [
 ];
 
 /**
- * Module representing dropdown component.
+ * Module representing dropdown component
  */
 @NgModule({
   imports: [
@@ -40,6 +40,11 @@ const COMPONENTS = [
   ]
 })
 export class DropdownModule {
+  /**
+   * Set module root configuration overrides
+   * @param dropdownConfig Dropdown configuration object
+   * @return Module with custom providers
+   */
   static forRoot(dropdownConfig?: DropdownConfig): ModuleWithProviders {
     return {
       ngModule: DropdownModule,

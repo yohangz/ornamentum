@@ -56,7 +56,7 @@ const DIRECTIVES = [
 const PROVIDERS = [];
 
 /**
- * Data table module
+ * Module representing data table component
  */
 @NgModule({
   imports: [
