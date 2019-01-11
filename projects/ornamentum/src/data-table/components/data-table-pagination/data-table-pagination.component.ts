@@ -10,8 +10,7 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
 import { ResizeService } from '../../../utility/services/resize.service';
 
 /**
- * Data table pagination component.
- * @class DataTablePaginationComponent
+ * Data table pagination component; Render data table paginator widget
  */
 @Component({
   selector: 'ng-data-table-pagination',

@@ -15,7 +15,7 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
 import { ViewPosition } from '../../../utility/models/view-position.model';
 
 /**
- * Data table column component
+ * Data table column component; Data table columns associated data is captured via this component
  */
 @Component({
   selector: 'ng-data-table-column',
