@@ -12,7 +12,7 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
- * Column title header component
+ * Column title header component; Render data table column headers
  */
 @Component({
   exportAs: 'ngDataTableColumnTitleHeader',

@@ -4,7 +4,7 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
- * Data loading spinner component
+ * Data loading spinner component; Displayed within table body while fetching data
  */
 @Component({
   selector: 'ng-data-table-loading-spinner',

@@ -13,7 +13,7 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 
 /**
- * Column filter header component
+ * Data table column filter header component; Apply columns associated data filtering
  */
 @Component({
   exportAs: 'ngDataTableColumnFilterHeader',
