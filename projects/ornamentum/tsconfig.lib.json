@@ -9,9 +9,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "types": [
-      "node"
-    ]
+    "types": []
   },
   "angularCompilerOptions": {
     "annotateForClosureCompiler": false,
