@@ -1,4 +1,4 @@
 /**
- * View position type model.
+ * View position type model
  */
 export type ViewPosition = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
