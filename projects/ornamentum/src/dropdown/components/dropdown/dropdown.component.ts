@@ -39,9 +39,7 @@ import { DropdownResourceService } from '../../services/dropdown-resource.servic
 import { ViewPosition } from '../../../utility/models/view-position.model';
 
 /**
- * Component class to represent search dropdown.
- * @implements OnInit, OnDestroy, ControlValueAccessor
- * @class SearchDropdownComponent
+ * Dropdown component; Dropdown entry component
  */
 @Component({
   selector: 'ng-dropdown',
@@ -79,25 +77,29 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   // Outputs : Event Handlers
   /**
-   * On dropdown initialize.
-   * @type {EventEmitter<DropdownComponent>}
+   * Dropdown initialize event handler
    */
   @Output()
   public init: EventEmitter<DropdownComponent>;
 
   /**
-   * On select change handler.
-   * @type {EventEmitter<DropdownItem[] | DropdownItem>}
+   * Dropdown option select change event handler
    */
   @Output()
   public selectChange: EventEmitter<any[] | any>;
 
-
+  /**
+   * Dropdown data bind event handler
+   */
   @Output()
   public dataBound: EventEmitter<void>;
 
   // Input - Event handlers
 
+  /**
+   * Set data bind callback; This handler is fired on each data fetch request
+   * @param value Dropdown data bind callback function reference
+   */
   @Input()
   public set onDataBind(value: DropdownDataBindCallback) {
     this.dataStateService.onDataBind = value;
@@ -105,6 +107,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   // Inputs
 
+  /**
+   * Set static data item collection; No need to set data source when static items collection is provided
+   * @param value Any array of objects containing dropdown data
+   */
   @Input()
   public set items(value: any[]) {
     if (!value) {
@@ -114,26 +120,32 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.eventStateService.staticDataSourceStream.next(value);
   }
 
+  /**
+   * Set data source observable; This stream is used to retrieve dropdown binding data
+   * @param source Any object collecting of observable
+   */
   @Input()
   public set dataSource(source: Observable<any[]>) {
     this.initDataSource(source);
   }
 
   /**
-   * Search dropdown display text key translations.
-   * @type {DropdownTranslations}
+   * Set translation data object; Used to localize table display text labels
+   * @param value Translation data object
    */
   @Input()
   public set translations(value: DropdownTranslations) {
     this.config.translations = value;
   }
 
+  /**
+   *
+   */
   @Input()
   public relativeParentElement: HTMLElement;
 
   /**
    * Represents the name of the attribute used for selection tracking.
-   * @type {string}
    */
   @Input()
   public set selectTrackBy(value: string) {
@@ -142,7 +154,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Represents the name of the attribute used to show the selected item's display text.
-   * @type {string}
    */
   @Input()
   public set displayTrackBy(value: string) {
@@ -152,7 +163,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   /**
    * Represent field name to group data by.
    * Group data only if provided.
-   * @type {string}
    */
   @Input()
   public set groupByField(value: string) {
@@ -161,7 +171,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Represents the name of the attribute used to disable the selection of dropdown item.
-   * @type {string}
    */
   @Input()
   public set disabledTrackBy(value: string) {
@@ -170,7 +179,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Set previously selected dropdown items.
-   * @param {any[]} value The selected dropdown item list.
+   * @param value The selected dropdown item list.
    */
   @Input()
   public set selectedOptions(value: any[]) {
@@ -179,7 +188,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Set previously selected dropdown item.
-   * @param {any} value The selected dropdown item.
    */
   @Input()
   public set selectedOption(value: any) {
@@ -188,7 +196,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Represents the limit of the items that can be shown in the dropdown at a single time.
-   * @type {number}
    */
   @Input()
   public set limit(value: number) {
@@ -198,7 +205,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   /**
    * Number of items to display when selected.
    * Used to limit item count shown when more items are selected.
-   * @type {number}
    */
   @Input()
   public set wrapDisplaySelectLimit(value: number) {
@@ -207,7 +213,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Enable/Disable dropdown data loading on scrolling.
-   * @type {boolean}
    */
   @Input()
   public set loadOnScroll(value: boolean) {
@@ -216,7 +221,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Sets the point which needs to trigger additional data loading functionality when scrolling.
-   * @type {number}
    */
   @Input()
   public set loadViewDistance(value: number) {
@@ -225,7 +229,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Filter option for dropdown search.
-   * @type {string}
    */
   @Input()
   public set filterText(value: string) {
@@ -234,7 +237,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Dropdown select mode.
-   * @type {DropdownSelectMode}
    */
   @Input()
   public set selectMode(value: DropdownSelectMode) {
@@ -243,7 +245,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Enable/Disable dropdown items filtering.
-   * @type {boolean}
    */
   @Input()
   public set filterable(value: boolean) {
@@ -252,7 +253,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Enable/Disable load data in the on initStream event.
-   * @type {boolean}
    */
   @Input()
   public set loadDataOnInit(value: boolean) {
@@ -261,7 +261,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Enable/Disable show selected items remove icon.
-   * @type {boolean}
    */
   @Input()
   public set showSelectedOptionRemoveButton(value: boolean) {
@@ -278,7 +277,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Dropdown menu width.
-   * @type {number}
    */
   @Input()
   public set menuWidth(value: number) {
@@ -287,7 +285,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Dropdown menu height.
-   * @type {number}
    */
   @Input()
   public set menuHeight(value: number) {
@@ -296,7 +293,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Menu open position.
-   * @type {ViewPosition}
    */
   @Input()
   public set menuPosition(value: ViewPosition) {
@@ -305,8 +301,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Filter de-bounce enabled state.
-   * @default false
-   * @type {boolean}
    */
   @Input()
   public set filterDebounce(value: boolean) {
@@ -315,8 +309,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Filter de-bounce time milliseconds.
-   * @default 500
-   * @type {number}
    */
   @Input()
   public set filterDebounceTime(value: number) {
@@ -325,7 +317,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Control disabled state
-   * @param {boolean} value Disabled if true.
+   * @param value Disabled if true.
    */
   @Input()
   public set disabled(value: boolean) {
@@ -410,7 +402,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Performs dropdown toggle event.
-   * @param {HTMLElement} element Dropdown button element.
+   * @param element Dropdown button element.
    */
   public toggleDropdown(element: HTMLElement): void {
     this.dataStateService.componentLoaderRef

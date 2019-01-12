@@ -6,8 +6,7 @@ import { DropdownItemGroup } from '../models/dropdown-Item-group.model';
 import { ComponentLoader } from '../../utility/utility.module';
 
 /**
- * Dropdown data state service.
- * Manage dropdown state data.
+ * Dropdown data state service; Manage dropdown state data
  */
 @Injectable()
 export class DropdownDataStateService {

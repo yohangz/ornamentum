@@ -4,8 +4,6 @@ import get from 'lodash-es/get';
 
 import { DropdownItem } from '../../models/dropdown-item.model';
 
-import { DropdownSelectMode } from '../../models/dropdown-select-mode.model';
-
 import { DropdownDataStateService } from '../../services/dropdown-data-state.service';
 import { DropdownConfigService } from '../../services/dropdown-config.service';
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
