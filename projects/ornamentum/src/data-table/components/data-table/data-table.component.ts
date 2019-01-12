@@ -49,7 +49,7 @@ import { DataTableScrollPositionService } from '../../services/data-table-scroll
 import { DataTableResourceService } from '../../services/data-table-resource.service';
 
 /**
- * Data table component; Main data table component
+ * Data table component; Data table entry component
  */
 @Component({
   selector: 'ng-data-table',
@@ -179,7 +179,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   // Input Events
 
   /**
-   * Set on data load event handler; this handler is fired on each data fetch request
+   * Set on data load event handler; This handler is fired on each data fetch request
    * @param value Data bind callback function reference
    */
   @Input()

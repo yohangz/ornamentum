@@ -186,7 +186,7 @@ export interface DataTableConfig {
   maxLimit?: number;
 
   /**
-   * Base display text translations
+   * Base display text translations; Used to localize label default text values
    */
   baseTranslations?: DataTableTranslations;
 

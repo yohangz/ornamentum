@@ -8,7 +8,7 @@ import { ViewPosition } from '../../utility/models/view-position.model';
  */
 export interface DropdownConfig {
   /**
-   * Dropdown base display text translations
+   * Base display text translations; Used to localize label default text values
    */
   baseTranslations?: DropdownTranslations;
 
@@ -28,7 +28,7 @@ export interface DropdownConfig {
   disabledTrackBy?: string;
 
   /**
-   * Menu position
+   * Popup options menu display position relative to dropdown component
    */
   menuPosition?: ViewPosition;
 
@@ -38,7 +38,7 @@ export interface DropdownConfig {
   selectMode?: DropdownSelectMode;
 
   /**
-   * Filterable if true; Show dropdown search input
+   * Filterable if true; Show dropdown option search filter text-box
    */
   filterable?: boolean;
 
@@ -73,12 +73,12 @@ export interface DropdownConfig {
   showClearSelectionButton?: boolean;
 
   /**
-   * Menu width in pixels
+   * Options menu width in pixels
    */
   menuWidth?: number;
 
   /**
-   * Menu height in pixels
+   * Options menu height in pixels
    */
   menuHeight?: number;
 
@@ -98,12 +98,12 @@ export interface DropdownConfig {
   limit?: number;
 
   /**
-   * Load data on component initialize
+   * Load data on component initialize if true
    */
   loadDataOnInit?: boolean;
 
   /**
-   * Close dropdown menu on option select
+   * Close dropdown menu on option select if true
    */
   closeMenuOnSelect?: boolean;
 
@@ -113,7 +113,7 @@ export interface DropdownConfig {
   showOptionSelectCheckbox?: boolean;
 
   /**
-   * Multi select option maximum width
+   * Multi select option selected item maximum width; Wrap the selected option display text if exceeding the max width
    */
   multiSelectOptionMaxWidth?: number;
 
@@ -143,12 +143,12 @@ export interface DropdownConfig {
   dynamicDimensionCalculation?: boolean;
 
   /**
-   * Dynamic dropdown view dimensions calculation width ratio.
+   * Dynamic dropdown options view dimensions calculation width ratio relative to dropdown selector
    */
   dynamicWidthRatio?: number;
 
   /**
-   * Dynamic dropdown view dimensions calculation height ratio.
+   * Dynamic dropdown options view dimensions calculation height ratio relative to dropdown selector
    */
   dynamicHeightRatio?: number;
 }
