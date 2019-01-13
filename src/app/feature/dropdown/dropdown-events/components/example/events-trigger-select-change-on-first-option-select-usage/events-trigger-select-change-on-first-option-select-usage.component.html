@@ -3,16 +3,11 @@
   [displayTrackBy]="'productType'"
   [items]="items"
   [setFirstOptionSelected]="true"
-  [triggerSelectChangeOnInit]="true"
   [triggerSelectChangeOnFirstOptionSelect]="true"
-  [triggerSelectChangeOnModelUpdate]="true"
-
-  (dataBound)="onDataBound()"
-  (init)="onDropdownInit($event)"
   (selectChange)="onSelectChange($event)">
 </ng-dropdown>
 
 <br>
-<p class="event-output">
-  <span *ngFor="let item of getAllEventsData()">{{item}}<br></span>
+<p class="event-output" *ngIf="selectChangeEventData">
+  <span>{{selectChangeEventData|json}}<br></span>
 </p>

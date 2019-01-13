@@ -1131,7 +1131,51 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/events',
-          title: 'Events'
+          title: 'Events',
+          navigation: [
+            {
+              title: 'Events Hierarchy',
+              anchor: 'eventsHierarchy'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Useful Events',
+              anchor: 'usefulEvents',
+              subNavigation: [
+                {
+                  title: 'Init',
+                  anchor: 'init'
+                },
+                {
+                  title: 'Data Bound',
+                  anchor: 'dataBound'
+                },
+                {
+                  title: 'Select Change',
+                  anchor: 'selectChange'
+                },
+                {
+                  title: 'Trigger Select Change On Init',
+                  anchor: 'triggerSelectChangeOnInit'
+                },
+                {
+                  title: 'Trigger Select Change on First Option Select',
+                  anchor: 'triggerSelectChangeOnFirstOptionSelect'
+                },
+                {
+                  title: 'Trigger Select Change On Model Update',
+                  anchor: 'triggerSelectChangeOnModelUpdate'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/templates/dropdown-option-template',
