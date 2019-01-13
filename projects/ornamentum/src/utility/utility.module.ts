@@ -31,7 +31,7 @@ const PROVIDERS = [
 ];
 
 /**
- * Module representing utility components.
+ * Module representing utility providers, directives and pipes
  */
 @NgModule({
   imports: [
@@ -50,7 +50,11 @@ const PROVIDERS = [
   ]
 })
 export class UtilityModule {
-  static forRoot(): ModuleWithProviders {
+  /**
+   * Set module root configuration overrides
+   * @return Module with custom providers
+   */
+  public static forRoot(): ModuleWithProviders {
     return {
       ngModule: UtilityModule,
       providers: [UtilityConfigService]

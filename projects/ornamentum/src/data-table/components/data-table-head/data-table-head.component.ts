@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
 /**
- * Header component
+ * Data table header component; Render data table column title and filter header rows
  */
 @Component({
   exportAs: 'ngDataTableHead',

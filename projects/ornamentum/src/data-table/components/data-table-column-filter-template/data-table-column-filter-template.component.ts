@@ -12,7 +12,7 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
- * Column filter template component.
+ * Column filter template component; Render column filter template via this component
  */
 @Component({
   selector: 'ng-data-table-column-filter-template',

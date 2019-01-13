@@ -49,7 +49,7 @@ import { DataTableScrollPositionService } from '../../services/data-table-scroll
 import { DataTableResourceService } from '../../services/data-table-resource.service';
 
 /**
- * Data table component
+ * Data table component; Data table entry component
  */
 @Component({
   selector: 'ng-data-table',
@@ -74,42 +74,36 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   /**
    * Data table column collection
-   * @type {QueryList<DataTableColumnComponent>}
    */
   @ContentChildren(DataTableColumnComponent)
   public columns: QueryList<DataTableColumnComponent>;
 
   /**
-   * Template to display when data row ex expanded for detail view
-   * @type {TemplateRef}
+   * Template to display when data row is expanded for detail view
    */
   @ContentChild('ngDataTableRowExpand')
   public rowExpandTemplate: TemplateRef<any>;
 
   /**
    * Template to display when data set is empty
-   * @type {TemplateRef}
    */
   @ContentChild('ngDataTableNoRecords')
   public noRecordsTemplate: TemplateRef<any>;
 
   /**
    * Template to display while loading data
-   * @type {TemplateRef}
    */
   @ContentChild('ngDataTableLoadingSpinner')
   public loadingSpinnerTemplate: TemplateRef<any>;
 
   /**
    * Template to display while row is expanding to load detail view
-   * @type {TemplateRef}
    */
   @ContentChild('ngDataTableRowExpandLoadingSpinner')
   public rowExpandLoadingSpinnerTemplate: TemplateRef<any>;
 
   /**
-   * Raw data table element reference
-   * @type {ElementRef}
+   * Raw data table self DOM element reference
    */
   @ViewChild('dataTableElement')
   public dataTableElement: ElementRef<HTMLDivElement>;
@@ -117,78 +111,67 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   // Event handlers
 
   /**
-   * On data table initStream event handler
-   * @type {EventEmitter<DataTableComponent>}
+   * On data table initialize event handler; Triggered after data table initialize
    */
   @Output()
   public init: EventEmitter<DataTableComponent>;
 
   /**
-   * On row selected state change event handler
-   * @type {EventEmitter<any>}
+   * On row selected state change event handler; Triggered when table row selected state change
    */
   @Output()
   public rowSelectChange: EventEmitter<any | any[]>;
 
   /**
-   * On row click event handler
-   * @type {EventEmitter<any>}
+   * On row click event handler; Triggered when data row is clicked
    */
   @Output()
   public rowClick: EventEmitter<DataTableRowClickEventArgs<any>>;
 
   /**
-   * On row double click event handler
-   * @type {EventEmitter<any>}
+   * On row double click event handler; Triggered when data row is double clicked
    */
   @Output()
   public rowDoubleClick: EventEmitter<DataTableDoubleClickEventArgs<any>>;
 
   /**
-   * On header click event handler
-   * @type {EventEmitter<DataTableHeaderClickEventArgs>}
+   * On header click event handler; Triggered when header column clicked
    */
   @Output()
   public headerClick: EventEmitter<DataTableHeaderClickEventArgs>;
 
   /**
-   * On all row select change event handler
-   * @type {EventEmitter<boolean>}
+   * On all row select change event handler; Triggered when all row select state changed
    */
   @Output()
   public allRowSelectChange: EventEmitter<boolean>;
 
   /**
-   * On cell click event handler
-   * @type {EventEmitter<any>}
+   * On cell click event handler; Triggered when clicked on a cell
    */
   @Output()
   public cellClick: EventEmitter<DataTableCellClickEventArgs<any>>;
 
   /**
-   * Data bound event handler
-   * @type {EventEmitter<any>}
+   * Data bound event handler; Triggered after data bind
    */
   @Output()
   public dataBound: EventEmitter<void>;
 
   /**
-   * On row bind event handler
-   * @type {EventEmitter<DataTableRow>}
+   * On row bind event handler; Trigger on each row data bind
    */
   @Output()
   public rowBind: EventEmitter<DataTableRow<any>>;
 
   /**
-   * On column bind event handler
-   * @type {EventEmitter<DataTableColumnComponent>}
+   * On column bind event handler; Triggered after column data bind
    */
   @Output()
   public columnBind: EventEmitter<DataTableColumnComponent>;
 
   /**
-   * On cell bind event handler
-   * @type {EventEmitter<DataTableCellBindEventArgs>}
+   * On cell bind event handler; Triggered after data table cell data bind
    */
   @Output()
   public cellBind: EventEmitter<DataTableCellBindEventArgs<any>>;
@@ -196,7 +179,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   // Input Events
 
   /**
-   * Set on data load event handler; this handler is fired on each data fetch request but not on hard reload
+   * Set on data load event handler; This handler is fired on each data fetch request
    * @param value Data bind callback function reference
    */
   @Input()
@@ -205,7 +188,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set on filter value extract event handler callback
+   * Set on filter value extract event handler callback; Used to extract filter value collection dynamically
    * @param value Data table filter value callback function reference
    */
   @Input()
@@ -225,7 +208,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   // Input parameters
 
   /**
-   * Set static data item collection
+   * Set static data item collection; No need to set data source when static items collection is provided
    * @param value Any array of objects containing table data
    */
   @Input()
@@ -238,7 +221,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set data source observable; Source will be subscribed by grid to get data stream
+   * Set data source observable; This stream is used to retrieve table binding data
    * @param source Any object collecting of observable
    */
   @Input()
@@ -248,7 +231,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   /**
    * Set data table identifier; Required if persist table state is enabled
-   * @type {string}
    */
   @Input()
   public id: string;
@@ -281,7 +263,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set show header state; display header if true
+   * Set show header state; Display header if true
    * @param value Show header state
    */
   @Input()
@@ -290,7 +272,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set header title text
+   * Set table header title text
    * @param value Header title
    */
   @Input()
@@ -299,7 +281,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set data table width
+   * Set data table static width
    * @param value Width value in pixels
    */
   @Input()
@@ -308,7 +290,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set table min height; Used to set overlay height when not pageable
+   * Set table min height; Used to set overlay height when paging is disabled
    * @param value Table min height in pixels
    */
   @Input()
@@ -398,7 +380,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set show substitute rows status; Show substitute rows if true (Only applicable when paging is enabled)
+   * Set show substitute rows status; Show substitute rows depending on the data limit if true
    * @param value Show substitute rows status
    */
   @Input()
@@ -416,7 +398,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set select checkbox on row click status; Select row on click if true
+   * Set select checkbox on row click status; Select row on click of any associated cell if true
    * @param value Select on row click status
    */
   @Input()
@@ -425,7 +407,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set expand detail row on row click status; Expand detail row on click if true
+   * Set expand detail row on row click status; Expand detail view on row associated any cell click if true
    * @param value Expand on row click status
    */
   @Input()
@@ -434,7 +416,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set auto fetch status; Auto data bind on table init.
+   * Set auto fetch status; Automatically data bind on table initialize
    * @param value Auto fetch status
    */
   @Input()
@@ -443,7 +425,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set show loading spinner status; Show loading spinner if true
+   * Set show loading spinner status; Show loading spinner while loading data if true
    * @param value Show loading spinner status
    */
   @Input()
@@ -461,7 +443,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set selected row identifier; Applicable when row select mode is SINGLE or SINGLE_TOGGLE.
+   * Set selected row identifier; Select specified row on initial load; Applicable when row select mode is SINGLE or SINGLE_TOGGLE
    * @param value Selected row identifier.
    */
   @Input()
@@ -471,7 +453,8 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set selected row identifiers collection; Applicable when selectMode is SINGLE or SINGLE_TOGGLE true.
+   * Set selected row identifiers collection; Select specified rows on initial load;
+   * Applicable when selectMode is SINGLE or SINGLE_TOGGLE true.
    * @param value Selected row identifiers collection.
    */
   @Input()
@@ -481,7 +464,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set filter de-bounce time milliseconds
+   * Set filter de-bounce time interval milliseconds
    * @param value Filter debounce time
    */
   @Input()
@@ -490,7 +473,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set filter de-bounce enabled state
+   * Set filter de-bounce enabled state; De-bounce filter request to improve filter query performance
    * @param value Filter debounce enable status
    */
   @Input()
@@ -499,7 +482,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set show data reload button display status. Show refresh button if true
+   * Set show data reload button display status; Show refresh button if true
    * @param value Display data reload button enable status
    */
   @Input()
@@ -508,7 +491,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set display column selector status; Display column selector if true
+   * Set display column selector status; Display column selector checkbox if true
    * @param value Display column selector status
    */
   @Input()
@@ -517,7 +500,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set expander column width in pixels; Applicable only when expandable column is enabled.
+   * Set expander icon column width in pixels; Applicable only when expandable column is enabled.
    * @param value Expandable column width
    */
   @Input()
@@ -526,7 +509,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set index column width in pixels. Applicable only when index column is enabled.
+   * Set index auto increment number column width in pixels; Applicable only when index column is enabled
    * @param value Index column width
    */
   @Input()
@@ -535,7 +518,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set row selector column width in pixels. Applicable only when row selection is enabled.
+   * Set row selector checkbox column width in pixels; Applicable only when row selection is enabled
    * @param value Row selector column width
    */
   @Input()
@@ -544,7 +527,8 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set relative parent element. Grid positioning will be handled relative to this element.
+   * Set relative parent element; Table positioning will be handled relative to this element;
+   * Use this to render table in dynamically positioned container
    * @param value Relative parent DOM element
    */
   @Input()
@@ -553,7 +537,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set translation data object; Used to localize grid display text labels
+   * Set translation data object; Used to localize table display text labels
    * @param data Translation data object
    */
   @Input()
@@ -562,7 +546,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set show row expand loading spinner state; Display row expand loading spinner if true
+   * Set show row expander loading spinner state; Display row expanding loading spinner while detail row is loading if true
    * @param value Display row expand loading spinner if true
    */
   @Input()
@@ -571,7 +555,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set data fetch offset; Start fetching data from provided offset onwards.
+   * Set data fetch offset; Start fetching data from provided offset onwards
    * @param value Data fetch offset
    */
   @Input()
@@ -581,7 +565,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set data limit to fetch per page; Applicable only when pageable
+   * Set data limit to fetch per page; Applicable only when pagination is enabled
    * @param value Data limit
    */
   @Input()
@@ -608,7 +592,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Get data table header padding
+   * Get data table header padding in pixels
    * @return Header padding size
    */
   public get headerPadding(): number {
@@ -669,7 +653,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   /**
    * Get data item selected state
    * @param item Data item object
-   * @return True if item is selected.
+   * @return True if item is selected
    */
   private getSelectedState(item: any): boolean {
     const id = get(item, this.config.selectTrackBy);
@@ -810,7 +794,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * After component initialize lifecycle event handler.
+   * After component initialize lifecycle event handler
    */
   public ngAfterContentInit(): void {
     if (!this.config.relativeParentElement) {

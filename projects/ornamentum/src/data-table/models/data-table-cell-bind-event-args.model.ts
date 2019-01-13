@@ -8,13 +8,11 @@ import { DataTableColumnComponent } from '../components/data-table-column/data-t
 export interface DataTableCellBindEventArgs<T> {
   /**
    * Target column
-   * @type {DataTableColumnComponent}
    */
   column: DataTableColumnComponent;
 
   /**
    * Target row
-   * @type {DataTableRow}
    */
   row: DataTableRow<T>;
 }

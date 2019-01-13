@@ -8,6 +8,9 @@ import get from 'lodash-es/get';
 import { DropdownQueryResult } from '../models/dropdown-query-result.model';
 import { DropdownRequestParams } from '../models/dropdown-request-params.model';
 
+/**
+ * Dropdown resource service; Dropdown client side data query is handled via this service
+ */
 @Injectable()
 export class DropdownResourceService<T> {
   private itemDataStream: ReplaySubject<T[]>;

@@ -1,14 +1,11 @@
 export interface DropdownQueryResult<T> {
   /**
-   * Items collection.
-   * @type {T[]}
-   * @template T - Generic item type.
+   * Items collection
    */
   items: T[];
 
   /**
-   * Item count.
-   * @type {number}
+   * Item count
    */
   count: number;
 }
