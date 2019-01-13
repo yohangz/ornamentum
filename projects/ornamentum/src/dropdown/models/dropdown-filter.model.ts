@@ -1,14 +1,14 @@
 /**
- * Dropdown filter.
+ * Dropdown filter
  */
 export interface DropdownFilter {
   /**
-   * Filter key.
+   * Filter key
    */
   key: string;
 
   /**
-   * Filter value.
+   * Filter value
    */
   value: string;
 }

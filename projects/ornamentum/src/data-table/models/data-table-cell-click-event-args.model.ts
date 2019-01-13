@@ -8,19 +8,16 @@ import { DataTableColumnComponent } from '../components/data-table-column/data-t
 export interface DataTableCellClickEventArgs<T> {
   /**
    * Target column
-   * {DataTableColumnComponent}
    */
   column: DataTableColumnComponent;
 
   /**
    * Target data row
-   * @type {DataTableRow}
    */
   row: DataTableRow<T>;
 
   /**
    * Mouse event arguments
-   * @type {MouseEvent}
    */
   event: MouseEvent;
 }

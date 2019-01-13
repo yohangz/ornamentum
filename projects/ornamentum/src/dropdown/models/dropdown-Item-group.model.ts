@@ -1,18 +1,16 @@
 import { DropdownItem } from './dropdown-item.model';
 
 /**
- * Dropdown item group.
+ * Dropdown item group
  */
 export interface DropdownItemGroup {
   /**
-   * Group name.
-   * @type {string}
+   * Group name
    */
   groupName: string;
 
   /**
-   * Group items.
-   * @type {DropdownItem[]}
+   * Group items
    */
   items: DropdownItem[];
 }

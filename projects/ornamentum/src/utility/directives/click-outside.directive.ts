@@ -1,16 +1,14 @@
 import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
 
 /**
- * Click outside directive.
- * Notify when outside of the self DOM element is clicked.
+ * Click outside directive; Notify when clicked on a DOM element out of target DOM tree
  */
 @Directive({
   selector: '[ngClickOutside]'
 })
 export class ClickOutsideDirective {
   /**
-   * Click outside event emitter.
-   * @type {EventEmitter<Event>}
+   * Click outside event emitter
    */
   @Output()
   public ngClickOutside = new EventEmitter<Event>();
@@ -19,7 +17,7 @@ export class ClickOutsideDirective {
   }
 
   /**
-   * Track and compare the click event at the document root.
+   * Track and compare the click event at the document root
    * @param event Click event
    */
   @HostListener('document:click', ['$event'])

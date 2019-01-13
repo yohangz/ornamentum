@@ -12,8 +12,8 @@ import { ViewPosition } from '../../utility/models/view-position.model';
 export const DROPDOWN_CONFIG = new InjectionToken<DataTableConfig>('dropdownConfig');
 
 /**
- * This service class hold all the global configurations of dropdown which can be overridden while importing the module.
- * Used to manage dropdown base configuration state.
+ * Dropdown config service; Holds all the global configurations of dropdown which can be overridden while importing the module;
+ * Used to manage dropdown base configuration state
  */
 @Injectable()
 export class DropdownConfigService implements DropdownConfig {
@@ -61,24 +61,24 @@ export class DropdownConfigService implements DropdownConfig {
 
   /**
    * Set dropdown translations.
-   * @param {DropdownTranslations} value - Dropdown translations object.
+   * @param value Dropdown translations object.
    */
   public set translations(value: DropdownTranslations) {
     this.baseTranslations = {...this.baseTranslations, ...value};
   }
 
   /**
-   * Get dropdown translations.
-   * @return {DropdownTranslations} - Dropdown translations.
+   * Get dropdown translations
+   * @return Dropdown translations
    */
   public get translations(): DropdownTranslations {
     return this.baseTranslations;
   }
 
   /**
-   * Get display text from source item.
-   * @param {any} item - Source item object.
-   * @return {string} - Display text.
+   * Get display text by source item
+   * @param item Source item object
+   * @return Display text
    */
   public getDisplayText(item: any): string {
     return get(item, this.displayTrackBy);

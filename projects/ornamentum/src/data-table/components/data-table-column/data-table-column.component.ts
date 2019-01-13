@@ -15,7 +15,7 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
 import { ViewPosition } from '../../../utility/models/view-position.model';
 
 /**
- * Data table column component
+ * Data table column component; Data table columns associated data is captured via this component
  */
 @Component({
   selector: 'ng-data-table-column',
@@ -43,22 +43,19 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   // Callback event handlers
 
   /**
-   * Filter expression callback function
-   * @type {DataTableFilterExpressionCallback}
+   * Filter expression callback function; Used to apply custom data filter expression logic
    */
   @Input()
   public filterExpression: DataTableFilterExpressionCallback;
 
   /**
    * Custom filter field mapper; Used to extract filter field when showDropdownFilter option is true
-   * @type {DataTableFilterFieldMapperCallback}
    */
   @Input()
   public filterFieldMapper: DataTableFilterFieldMapperCallback;
 
   /**
    * Cell color render event handler callback function
-   * @type {DataTableCellColorRenderCallback}
    */
   @Input()
   public onCellColorRender: DataTableCellColorRenderCallback<any>;
@@ -67,21 +64,18 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   /**
    * Column title
-   * @type {string}
    */
   @Input()
   public title: string;
 
   /**
    * Columns sortable if true; Show sort indicator on column title
-   * @type {boolean}
    */
   @Input()
   public sortable = false;
 
   /**
    * Set initial column sort order
-   * @param value Data sort order
    */
   @Input()
   public set sortOrder(value: DataTableSortOrder) {
@@ -98,197 +92,171 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Column filterable if true; Show filter options bar when enabled
-   * @type {boolean}
+   * Column filterable if true; Show filter options on filter header row when enabled
    */
   @Input()
   public filterable = false;
 
   /**
    * Column resizeable if true; Show column resize indicator on column right corner
-   * @type {boolean}
    */
   @Input()
   public resizable = false;
 
   /**
-   * Data table item mapping field name
-   * @type {string}
+   * Data item mapping field name
    */
   @Input()
   public field: string;
 
   /**
    * Filter field identifier; Fallback to field if not provided
-   * @type {string}
    */
   @Input()
   public filterField: string;
 
   /**
    * Sort field identifier; Fallback to field if not provided
-   * @type {string}
    */
   @Input()
   public sortField: string;
 
   /**
-   * Column title space separated CSS class names
-   * @type {string}
+   * Column title CSS class names; Use space delimiter to separate class names
    */
   @Input()
   public cssClass: string;
 
   /**
    * Column width
-   * @type {string|number}
    */
   @Input()
   public width: number | string;
 
   /**
-   * Render column if true
-   * @type {boolean}
+   * Render column if true; Else include in column selector but not rendered
    */
   @Input()
   public visible = true;
 
   /**
-   * Show filed in column selector
-   * @type {boolean}
+   * Show filed in column selector popup if true
    */
   @Input()
   public showInColumnSelector = true;
 
   /**
-   * Filter placeholder value
-   * @type {string}
+   * Filter placeholder value; Placeholder text to show on filter text box; Applicable only for none dropdown filter mode
    */
   @Input()
   public filterPlaceholder = '';
 
   /**
-   * Applied filter value
-   * @type {any}
+   * Applied filter value on initialize
    */
   @Input()
   public filter: any;
 
   /**
    * Show filter clear button if true; Applicable only for none dropdown filter mode
-   * @type {boolean}
    */
   @Input()
   public showFilterClearButton: any;
 
   /**
-   * Resize minimum limit
-   * @type {number}
+   * Resize minimum limit; Column cannot be resized to fit less than the number of pixels specified here
    */
   @Input()
   public resizeMinLimit: number;
 
+  // Dropdown filter properties
+
   /**
-   * Show dropdown filter if true
-   * @type {boolean}
+   * Show dropdown filter if true; Filter data using dropdown filter
    */
   @Input()
   public showDropdownFilter: boolean;
 
   /**
-   * Dropdown filter menu position; Applicable only when showDropdownFilter is true
-   * @type {ViewPosition}
+   * Dropdown filter menu position; Placement of filter popup menu
    */
   @Input()
   public dropdownFilterMenuPosition: ViewPosition;
 
   /**
-   * Dropdown select mode; Applicable only when showDropdownFilter is true
-   * @type {boolean}
+   * Dropdown select mode; Filter option select mode
    */
   @Input()
   public dropdownFilterSelectMode: DropdownSelectMode;
 
   /**
-   * Dropdown filter searchable if true; Show dropdown filter search input
-   * @type {boolean}
+   * Dropdown filter searchable if true; Display search box within filter option menu
    */
   @Input()
   public dropdownFilterSearchable: boolean;
 
   /**
    * Dropdown filter search debounce time in milliseconds; Applicable only when dropdownFilterSearchDebounce is true
-   * @type {number}
    */
   @Input()
   public dropdownFilterSearchDebounceTime: number;
 
   /**
    * Enable dropdown filter data search debounce with provided dropdownFilterSearchDebounceTime if true
-   * @type {boolean}
    */
   @Input()
   public dropdownFilterSearchDebounce: boolean;
 
   /**
    * Dropdown filter show option select checkbox
-   * @type {boolean}
    */
   @Input()
   public dropDownFilterShowOptionSelectCheckbox: boolean;
 
   /**
    * Dropdown filter selected items display limit
-   * @type {number}
    */
   @Input()
   public dropdownFilterWrapDisplaySelectLimit: number;
 
   /**
    * Dropdown filter group by field name in item schema
-   * @type {string}
    */
   @Input()
   public dropdownFilterGroupByField: string;
 
   /**
    * Dropdown filter show selected option remove button if true
-   * @type {boolean}
    */
   @Input()
   public dropdownFilterShowSelectedOptionRemoveButton: boolean;
 
   /**
    * Dropdown filter show all select options clear button if true
-   * @type {boolean}
    */
   @Input()
   public dropdownFilterShowClearSelectionButton: boolean;
 
   /**
    * Dropdown filter menu width in pixels
-   * @type {number}
    */
   @Input()
   public dropdownFilterMenuWidth: number;
 
   /**
    * Dropdown filter menu height in pixels
-   * @type {number}
    */
   @Input()
   public dropdownFilterMenuHeight: number;
 
   /**
    * Dropdown filter multi select option max width
-   * @type {number}
    */
   @Input()
   public dropdownFilterMultiSelectOptionMaxWidth: number;
 
   /**
    * Dropdown filter close menu on select if true
-   * @type {boolean}
    */
   @Input()
   public dropdownFilterCloseMenuOnSelect: boolean;
@@ -296,21 +264,18 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   /**
    * Dynamically calculate Dropdown filter menu dimensions relative to column width; dropdownFilterMenuWidth and
    * dropdownFilterMenuHeight configuration are ignored when true
-   * @type {boolean}
    */
   @Input()
   public dropdownFilterDynamicDimensionCalculation: boolean;
 
   /**
    * Dynamic dropdown view width ratio; Used for dynamic dimension calculation
-   * @type {number}
    */
   @Input()
   public dropdownFilterDynamicWidthRatio: number;
 
   /**
    * Dynamic dropdown view height ratio; Used for dynamic dimension calculation
-   * @type {number}
    */
   @Input()
   public dropdownFilterDynamicHeightRatio: number;

@@ -1,28 +1,24 @@
 /**
- * Dropdown item.
+ * Dropdown item
  */
 export interface DropdownItem {
   /**
-   * Item identifier.
-   * @type {any}
+   * Item identifier
    */
   id: any;
 
   /**
-   * Item text.
-   * @type {string}
+   * Item text
    */
   text: string;
 
   /**
-   * Disabled state.
-   * @type {boolean}
+   * Disabled state
    */
   disabled: boolean;
 
   /**
-   * Source item data reference.
-   * @type {any}
+   * Source item data reference
    */
   item: any;
 }

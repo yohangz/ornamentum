@@ -5,8 +5,7 @@ import { ReplaySubject } from 'rxjs';
 import { DropdownComponent } from '../components/dropdown/dropdown.component';
 
 /**
- * Dropdown event state service.
- * Manage dropdown event handler state.
+ * Dropdown event state service; Manage dropdown event handler state
  */
 @Injectable()
 export class DropdownEventStateService {

@@ -11,7 +11,7 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 
 /**
- * Data table body component
+ * Data table body component; Data table body table definition rendering is handled by this component
  */
 @Component({
   exportAs: 'ngDataTableBody',
@@ -35,7 +35,7 @@ export class DataTableBodyComponent {
   }
 
   /**
-   * Get index identifier by data row
+   * Get row index identifier by data row
    * @param dataRow Data row object
    * @return Dat row index identifier
    */
@@ -49,8 +49,8 @@ export class DataTableBodyComponent {
 
   /**
    * Odd row status; True if row index is a odd number
-   * @param {DataTableRow} row Data row object
-   * @return {boolean} True if odd row
+   * @param row Data row object
+   * @return True if odd row
    */
   public isOddRow(row: DataTableRow<any>): boolean {
     return row.index % 2 === 0;
@@ -58,8 +58,8 @@ export class DataTableBodyComponent {
 
   /**
    * Even row status; True if row index is a even number
-   * @param {DataTableRow} row Data row object
-   * @return {boolean} True if even row
+   * @param row Data row object
+   * @return True if even row
    */
   public isEvenRow(row: DataTableRow<any>): boolean {
     return row.index % 2 === 1;
