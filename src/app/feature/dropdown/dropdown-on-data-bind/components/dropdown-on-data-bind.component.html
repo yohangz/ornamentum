@@ -1,18 +1,27 @@
 <div class="feature-container">
-  <h1>DropDown On Data Bind</h1>
+  <h1>On Data Bind</h1>
 
-  <ul class="main-pane-list">
-    <li><b>onDataBind</b> => This property is used to bind data with the on data bind callback.</li>
-    <li>Users can provide their own way of data binding inside this callback. Refer following example to see how this is
-      implemented.
-    </li>
-  </ul>
+  <p>This property is uses to bind data with the on data bind callback. from using on data bind it allows to provide
+    customize own way of data binding inside this callback. refer <a href="feature/dropdown/on-data-bind#basicUsage">Basic
+      Usage</a> example to see how this can be implement and about more information's.</p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
 
   <app-on-data-bind-usage></app-on-data-bind-usage>
-
   <app-example-code [files]="onDataBindUsage"></app-example-code>
 
-  <h2>Suggested Links</h2>
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>Bind a specific call back function that accepts <code>DropdownRequestParams</code> parameter (optional) and returns any
+    generic type of item set as a Observable <code>DropdownQueryResult&lt;T&gt;</code> is enough to take the control
+    over data binding without defining <a rel="noopener" target="_blank"
+                                          href="feature/data-table/client-side-data-binding">Item</a> or <a
+      rel="noopener" target="_blank" href="feature/data-table/server-side-data-binding">Data Source</a> properties in
+    dropdown template.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.onDataBind}}</pre>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#onDataBind">API Doc for Dropdown On
     Data Bind</a>
 </div>
