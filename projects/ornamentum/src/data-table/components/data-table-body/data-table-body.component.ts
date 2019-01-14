@@ -190,11 +190,16 @@ export class DataTableBodyComponent {
           this.dataStateService.selectedRows.splice(index, 1);
         }
 
+        const previousAllRowSelectedState = this.dataStateService.allRowSelected;
         this.dataStateService.allRowSelected = this.dataStateService.dataRows.every((dataRow: DataTableRow<any>) => {
           return dataRow.selected;
         });
 
         this.eventStateService.rowSelectChangeStream.emit(this.dataStateService.selectedRows);
+
+        if (previousAllRowSelectedState !== this.dataStateService.allRowSelected) {
+          this.eventStateService.allRowSelectChangeStream.emit(this.dataStateService.allRowSelected);
+        }
         break;
       }
       case'single_toggle': {
