@@ -3,11 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule } from 'ornamentum';
 
-import { DropdownEventsComponent, EventsUsageComponent } from './index';
+import {
+  DropdownEventsComponent,
+  EventsUsageComponent,
+  EventsDataBoundUsageComponent,
+  EventsInitUsageComponent,
+  EventsSelectChangeUsageComponent,
+  EventsTriggerSelectChangeOnFirstOptionSelectUsageComponent,
+  EventsTriggerSelectChangeOnInitUsageComponent,
+  EventsTriggerSelectChangeOnModelUpdateUsageComponent
+} from './index';
 
 import { DropdownEventsRoutingModule } from './dropdown-events-routing.module';
 
 import { SharedModule } from '../../../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 /**
  * Module class for containing dropdown events module.
@@ -16,11 +26,18 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DropdownEventsComponent,
-    EventsUsageComponent
+    EventsUsageComponent,
+    EventsDataBoundUsageComponent,
+    EventsInitUsageComponent,
+    EventsSelectChangeUsageComponent,
+    EventsTriggerSelectChangeOnFirstOptionSelectUsageComponent,
+    EventsTriggerSelectChangeOnInitUsageComponent,
+    EventsTriggerSelectChangeOnModelUpdateUsageComponent
   ],
   exports: [],
   imports: [
     CommonModule,
+    FormsModule,
     SharedModule.forRoot(),
     DropdownModule.forRoot(),
     DropdownEventsRoutingModule

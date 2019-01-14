@@ -1,0 +1,16 @@
+<ng-dropdown
+  [selectTrackBy]="'id'"
+  [displayTrackBy]="'productType'"
+  [items]="items"
+  [triggerSelectChangeOnModelUpdate]="true"
+  [(ngModel)]="selectChangeOnModelUpdateEventData">
+</ng-dropdown>
+
+<br>
+<p class="event-output" *ngIf="selectChangeOnModelUpdateEventData; else noDataAvailable">
+  <span>{{selectChangeOnModelUpdateEventData|json}}</span>
+</p>
+<ng-template #noDataAvailable>
+  <p class="event-output">Click on any dropdown item</p>
+</ng-template>
+
