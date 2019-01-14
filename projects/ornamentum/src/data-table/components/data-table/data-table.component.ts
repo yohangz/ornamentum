@@ -528,7 +528,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
   /**
    * Set relative parent element; Table positioning will be handled relative to this element;
-   * Use this to render table in dynamically positioned container
+   * Use this to render table in a dynamically positioned container
    * @param value Relative parent DOM element
    */
   @Input()

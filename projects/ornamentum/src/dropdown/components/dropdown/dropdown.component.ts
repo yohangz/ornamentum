@@ -139,13 +139,16 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   *
+   * Set relative parent element; Dropdown positioning will be handled relative to this element;
+   * Use this to render dropdown in a dynamically positioned container
+   * @param value Relative parent DOM element
    */
   @Input()
   public relativeParentElement: HTMLElement;
 
   /**
-   * Represents the name of the attribute used for selection tracking.
+   * Selected option track by field; Key to tack selected options uniquely
+   * @param value Select track by field key
    */
   @Input()
   public set selectTrackBy(value: string) {
@@ -153,7 +156,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Represents the name of the attribute used to show the selected item's display text.
+   * Display value track by field; Key to track display value of a given dropdown option
+   * @param value Display track by field key
    */
   @Input()
   public set displayTrackBy(value: string) {
@@ -161,8 +165,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Represent field name to group data by.
-   * Group data only if provided.
+   * Group data by field; This key will be used to group the options list
+   * @param value Group by field key
    */
   @Input()
   public set groupByField(value: string) {
@@ -170,7 +174,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Represents the name of the attribute used to disable the selection of dropdown item.
+   * Represents the name of the attribute used to disable the select options
+   * @param value Disabled state track by field key
    */
   @Input()
   public set disabledTrackBy(value: string) {
@@ -178,8 +183,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Set previously selected dropdown items.
-   * @param value The selected dropdown item list.
+   * Selected options collection; These options will be set selected by default on initial load;
+   * Applicable only when multi select mode is enabled
+   * @param value The selected dropdown item value collection
    */
   @Input()
   public set selectedOptions(value: any[]) {
@@ -187,7 +193,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Set previously selected dropdown item.
+   * Selected option; These option will be set selected by default on initial load; Applicable for single select mode only
+   * @param value The selected dropdown option item value
    */
   @Input()
   public set selectedOption(value: any) {
@@ -195,7 +202,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Represents the limit of the items that can be shown in the dropdown at a single time.
+   * Number of options to fetch on a single load when loadOnScroll is true
+   * @param value Data fetch limit
    */
   @Input()
   public set limit(value: number) {
@@ -203,8 +211,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Number of items to display when selected.
-   * Used to limit item count shown when more items are selected.
+   * Wrap selected options and show the number of options selected instead when this limit is met or exceeded.
+   * Applicable only when multi select mode is enabled.
+   * @param value Wrap display selected options limit
    */
   @Input()
   public set wrapDisplaySelectLimit(value: number) {
@@ -212,7 +221,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Enable/Disable dropdown data loading on scrolling.
+   * Load additional dropdown options on scroll if true
+   * @param value Load on scroll state.
    */
   @Input()
   public set loadOnScroll(value: boolean) {
@@ -220,7 +230,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Sets the point which needs to trigger additional data loading functionality when scrolling.
+   * Additional dropdown options fetch call is initiated when user scroll to this point.
+   * Distance is calculated from bottom of the options list. Applicable only when load on scroll mode is enabled.
+   * @param value Load view distance value in pixels.
    */
   @Input()
   public set loadViewDistance(value: number) {
@@ -228,15 +240,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Filter option for dropdown search.
-   */
-  @Input()
-  public set filterText(value: string) {
-    this.dataStateService.filterText = value;
-  }
-
-  /**
-   * Dropdown select mode.
+   * Dropdown option select mode.
+   * - 'multi' : Support selecting multiple options.
+   * - 'single' : Support selecting a single item from options collection.
+   * - 'single-toggle' : Support selecting a single item from options collection.
+   * Selection can not be removed but only toggled by tapping on another option.
    */
   @Input()
   public set selectMode(value: DropdownSelectMode) {
@@ -244,7 +252,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Enable/Disable dropdown items filtering.
+   * Display dropdown options filter search input if true. This will filter dropdown options by display text field.
+   * @param value Dropdown options filterable state.
    */
   @Input()
   public set filterable(value: boolean) {
@@ -252,7 +261,32 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Enable/Disable load data in the on initStream event.
+   * Default options filter applied on initial load. All options are displayed when filter text value is empty.
+   * @param value Filter text value.
+   */
+  @Input()
+  public set filterText(value: string) {
+    this.dataStateService.filterText = value;
+  }
+
+  /**
+   * Filter de-bounce enabled state.v 
+   */
+  @Input()
+  public set filterDebounce(value: boolean) {
+    this.config.filterDebounce = value;
+  }
+
+  /**
+   * Filter de-bounce time milliseconds.
+   */
+  @Input()
+  public set filterDebounceTime(value: number) {
+    this.config.filterDebounceTime = value;
+  }
+
+  /**
+   *
    */
   @Input()
   public set loadDataOnInit(value: boolean) {
@@ -297,22 +331,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   @Input()
   public set menuPosition(value: ViewPosition) {
     this.config.menuPosition = value;
-  }
-
-  /**
-   * Filter de-bounce enabled state.
-   */
-  @Input()
-  public set filterDebounce(value: boolean) {
-    this.config.filterDebounce = value;
-  }
-
-  /**
-   * Filter de-bounce time milliseconds.
-   */
-  @Input()
-  public set filterDebounceTime(value: number) {
-    this.config.filterDebounceTime = value;
   }
 
   /**
