@@ -65,6 +65,7 @@
               "extractLicenses": true,
               "vendorChunk": true,
               "buildOptimizer": true,
+              "serviceWorker": true,
               "budgets": [
                 {
                   "type": "initial",
