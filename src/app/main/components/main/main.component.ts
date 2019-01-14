@@ -1087,7 +1087,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/on-data-bind',
-          title: 'On Data Bind'
+          title: 'On Data Bind',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/translations',

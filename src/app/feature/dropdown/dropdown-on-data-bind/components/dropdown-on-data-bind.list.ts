@@ -22,3 +22,7 @@ export const onDataBindUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
+
+export const demoSnippet: any = {
+  onDataBind: require('!!raw-loader?lang=typescript!./docs/on-data-bind.md')
+};

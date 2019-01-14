@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { onDataBindUsage } from './dropdown-on-data-bind.list';
+import { onDataBindUsage, demoSnippet } from './dropdown-on-data-bind.list';
 
 @Component({
   selector: 'app-dropdown-on-data-bind-component',
@@ -9,4 +9,5 @@ import { onDataBindUsage } from './dropdown-on-data-bind.list';
 })
 export class DropdownOnDataBindComponent {
   public onDataBindUsage = onDataBindUsage;
+  public demoSnippet = demoSnippet;
 }
