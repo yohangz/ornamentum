@@ -1,0 +1,14 @@
+<ng-dropdown
+  [selectTrackBy]="'id'"
+  [displayTrackBy]="'productType'"
+  [items]="items"
+  (selectChange)="onSelectChange($event)">
+</ng-dropdown>
+
+<br>
+<p class="event-output" *ngIf="selectChangeEventData; else noDataAvailable">
+  <span>{{selectChangeEventData|json}}<br></span>
+</p>
+<ng-template #noDataAvailable>
+  <p class="event-output">Select on any dropdown item to see the output</p>
+</ng-template>

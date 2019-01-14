@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 
 import { DropdownComponent } from 'ornamentum';
 
@@ -8,25 +8,35 @@ import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-events-usage',
-  templateUrl: './events-usage.component.html'
+  templateUrl: './events-usage.component.html',
+  styleUrls: ['../../dropdown-events.component.scss']
 })
-export class EventsUsageComponent {
+export class EventsUsageComponent implements AfterViewInit {
   public items: ExampleData[];
+  public allEventsData: string[] = [];
 
-  constructor(private dataFetchService: DataFetchService) {
+  constructor(private dataFetchService: DataFetchService, private cdRef: ChangeDetectorRef) {
     this.items = this.dataFetchService.fetchData();
   }
 
-  public onDropdownInit(dropdown: DropdownComponent): void {
-    // goes your implementation
-  }
-
-  public onSelectChange(selectedData: any | any[]): void {
-    // if selectTrackBy property is specified, the selected item id or ids will be passed as a parameter to this method.
-    // goes your implementation
+  public ngAfterViewInit(): void {
+    this.cdRef.detectChanges();
   }
 
   public onDataBound(): void {
-    // goes your implementation
+    this.allEventsData.push('Data bound event is called');
+  }
+
+  public onDropdownInit(dropdown: DropdownComponent): void {
+    this.allEventsData.push('Dropdown init event is called');
+  }
+
+  public onSelectChange(selectedData: ExampleData | ExampleData[]): void {
+    // if selectTrackBy property is specified, the selected item id or ids will be passed as a parameter to this method.
+    this.allEventsData.push(JSON.stringify(selectedData));
+  }
+
+  public getAllEventsData(): string[] {
+    return this.allEventsData.slice().reverse();
   }
 }
