@@ -93,7 +93,7 @@ export interface DropdownConfig {
   loadViewDistance?: number;
 
   /**
-   * Dropdown items to fetch on a single load when loadOnScroll is true
+   * Number of options to fetch on a single load when loadOnScroll is true
    */
   limit?: number;
 
