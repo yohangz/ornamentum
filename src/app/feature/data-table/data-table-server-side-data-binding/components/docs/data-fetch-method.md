@@ -1,3 +1,4 @@
+
 /**
  * Fetch data from server to demo server side data binding.
  * @param offset
@@ -8,3 +9,4 @@ public fetchDataFromServer(offset: number = 0, limit: number = 10): Observable<a
   params = params.set('offset', String(offset)).set('limit', String(offset + limit));
   return this.http.get<any>('/api/data', {params: params});
 }
+ 
