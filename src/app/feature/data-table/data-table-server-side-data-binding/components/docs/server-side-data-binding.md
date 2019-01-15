@@ -1,4 +1,4 @@
 <ng-data-table
   ...
-  [dataSource]="<-- observable data source -->"
+  [dataSource]="dataSource">
 </ng-data-table>

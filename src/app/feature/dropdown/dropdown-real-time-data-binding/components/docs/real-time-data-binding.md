@@ -1,4 +1,4 @@
 <ng-dropdown
   ...
-  [dataSource]="<-- observable data source -->"
+  [dataSource]="dataSource">
 </ng-dropdown>

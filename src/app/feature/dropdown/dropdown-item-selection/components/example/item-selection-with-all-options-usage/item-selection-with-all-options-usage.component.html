@@ -17,6 +17,6 @@
 <div *ngIf="selectedItems.length">
   <h5>Selected Item(s)</h5>
   <p class="event-output">
-    <span *ngFor="let selectedItem of selectedItems.reverse()">{{selectedItem}}<br></span>
+    <span *ngFor="let selectedItem of selectedItems.slice().reverse()">{{selectedItem}}<br></span>
   </p>
 </div>
