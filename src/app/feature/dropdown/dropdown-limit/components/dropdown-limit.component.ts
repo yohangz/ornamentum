@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { dataLimitUsage} from './dropdown-limit.list';
+import { dataLimitUsage, demoSnippet } from './dropdown-limit.list';
 
 @Component({
   selector: 'app-dropdown-limit-component',
@@ -9,4 +9,5 @@ import { dataLimitUsage} from './dropdown-limit.list';
 })
 export class DropdownLimitComponent {
   public dataLimitUsage = dataLimitUsage;
+  public demoSnippet = demoSnippet;
 }

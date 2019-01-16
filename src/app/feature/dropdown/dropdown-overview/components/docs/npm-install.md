@@ -1,1 +1,1 @@
-npm add install lodash-es --save
+npm install ornamentum lodash-es --save

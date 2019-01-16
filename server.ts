@@ -29,7 +29,6 @@ const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./dist/ornamentum-d
 
 // Fetch data and cache
 const data: Array<any> = JSON.parse(readFileSync(join(DIST_FOLDER, 'server/data.json'), 'utf8'));
-const dataCount = data.length;
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
 app.engine('html', ngExpressEngine({
@@ -46,12 +45,14 @@ app.set('views', join(DIST_FOLDER, 'browser'));
 app.get('/api/data', (req: Request, res: Response) => {
   const offset = Number(req.query.offset);
   const limit = Number(req.query.limit);
+  const selected = data.slice(offset, offset + limit);
+  const count = selected.length;
 
   res.status(200).json({
-    data: data.slice(offset, offset + limit),
+    data: selected,
     offset: offset,
     limit: limit,
-    count: dataCount
+    count: count
   });
 });
 

@@ -1,32 +1,27 @@
 <div class="feature-container">
-  <h1>Data Table Row Grouping</h1>
+  <h1>Row Grouping</h1>
 
-  <p>Sometimes, you might want to show array of data under one specific column. In such scenarios, you will need to user
+  <p>Row Grouping are allows to show array of data under one specific single cell. in such situations, you can use
     row grouping functionality.</p>
 
-  <h2 id="whatYouWillSee">What You Will See</h2>
-  <app-row-grouping-usage></app-row-grouping-usage>
-  <br>
-
-  <h2 id="basicUsage">Basic Usage</h2>
-  <p>As mention in the above, when there is a requirement to group rows, you have to find out how many rows needed be
-    span & how do you structure the data in those new rows. By default data table doesn't group any rows & users have to
+  <p>As mention in the above, when there is a requirement to group rows, you have to find out how many rows needed to be
+    span and how do you structure the data in those rows. by default data table doesn't group any rows and users have to
     set it explicitly.</p>
 
-  <pre class="prettyprint lang-html">{{demoSnippet.rowGrouping}}</pre>
+  <h2 id="whatYouWillSee">What You Will See</h2>
 
-  <p>Sample code base for the above example,</p>
+  <app-row-grouping-usage></app-row-grouping-usage>
   <app-example-code [files]="rowGroupingUsage"></app-example-code>
 
-  <h2 id="usefulProperties">Useful properties</h2>
-  <p>There are some additional properties which are depended with this functionality.</p>
+  <h2 id="basicUsage">Basic Usage</h2>
 
-  <h4 id="onDynamicRowSpanExtract">On Dynamic Row Span Extract</h4>
-  <code>onDynamicRowSpanExtract: Function = Call Back function to derive the number of rows to be grouped</code>
-  <br>
-  <h5 class="badge badge-secondary">Default Value: -</h5>
-  <p>The page property lets you to set a call back function to determine the number of rows to be grouped when those
-    kind of data is available.</p>
+  <p>The <code>onDynamicRowSpanExtract</code> property let you to set a call back function to determine the number of
+    rows to be grouped when specific kind of data is available or else default value <b>1</b> will be applied.</p>
+
+  <p>Row Grouping can be enables by binding a <code>DataTableDynamicRowSpanExtractorCallback&lt;any&gt;</code> type of
+    callback function to <code>onDynamicRowSpanExtract</code> event handler.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.onDynamicRowSpanExtract}}</pre>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Row

@@ -1,15 +1,17 @@
-<h1>Dropdown Limit</h1>
-<ul class="main-pane-list">
-  <li><b>Limit</b> will allows users to configure the number of items to be displayed in dropdown.</li>
-  <li>The default value for this config is 30. If limit is not specified by the the user, this value will be set as
-    the
-    data limit.
-  </li>
-</ul>
+<h1>Data Limit</h1>
+
+<p>Limit will allow users to define a number of items to be fetch on a single load when <a
+  href="feature/dropdown/load-on-scroll">Load On Scroll</a> is <b>true</b>. if limit is not specified by the user,
+  default value will be set as the dropdown data limit.</p>
+
+<h2 id="whatYouWillSee">What You Will See</h2>
 
 <app-data-limit-usage></app-data-limit-usage>
-
 <app-example-code [files]="dataLimitUsage"></app-example-code>
+
+<h2 id="basicUsage">Basic Usage</h2>
+
+<pre class="prettyprint lang-html">{{demoSnippet.limit}}</pre>
 
 <h2>Suggested Links</h2>
 <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#limit">API Doc for Data Limit</a>

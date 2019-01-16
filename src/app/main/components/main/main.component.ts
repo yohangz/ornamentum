@@ -182,16 +182,6 @@ export class MainComponent {
               anchor: 'basicUsage'
             },
             {
-              title: 'Useful Properties',
-              anchor: 'usefulProperties',
-              subNavigation: [
-                {
-                  title: 'On Dynamic Row Span Extract',
-                  anchor: 'onDynamicRowSpanExtract'
-                }
-              ]
-            },
-            {
               title: 'Suggested Links',
               anchor: 'suggestedLinks'
             }
@@ -754,6 +744,10 @@ export class MainComponent {
               ]
             }
           ]
+        },
+        {
+          routePath: '/feature/data-table/custom-theming',
+          title: 'Custom Theming'
         }
       ]
     },
@@ -957,7 +951,21 @@ export class MainComponent {
         },
         {
           routePath: '/feature/dropdown/limit',
-          title: 'Data Limit'
+          title: 'Data Limit',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/dropdown/disable',
@@ -1276,6 +1284,10 @@ export class MainComponent {
               ]
             }
           ]
+        },
+        {
+          routePath: '/feature/dropdown/custom-theming',
+          title: 'Custom Theming'
         }
       ]
     }

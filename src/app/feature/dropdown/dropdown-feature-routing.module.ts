@@ -277,6 +277,18 @@ const dropdownFeatureRoutes: Routes = [
         description: '<--add description here-->'
       }
     }
+  },
+  {
+    loadChildren: './dropdown-custom-theming/dropdown-custom-theming.module#DropdownCustomThemingModule',
+    path: 'custom-theming',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum |Dropdown | Customization | Themes | User Experience',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   }
 ];
 

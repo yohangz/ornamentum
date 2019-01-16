@@ -1,11 +1,11 @@
 <div class="feature-container">
-  <h1>Pagination</h1>
-  <p>Most of the time it turns out that the amount of data to be displayed can’t fit on a single page, or the page
-    becomes ridiculously long. In such cases, you might want to turn pagination on.
-  </p>
+  <h1 class="d-inline-block">Pagination</h1>
 
-  <p>The Pagination controls will be displayed on the bottom of the grid. user can set the number of
-    rows displayed on the grid page and navigation controls.</p>
+  <p>Most of the time it turns out when amount of data to be displayed didn't fit on a single page, or the page
+    becomes ridiculously long. In such cases, you might want to turn on pagination.</p>
+
+  <p>The Pagination controls will be displayed on the bottom of the data table. you can set the number of
+    rows to be displayed on the grid page and navigation controls.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -13,23 +13,28 @@
   <app-example-code [files]="paginationUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To enable pagination, simply set <code>pageable</code> to <b>true</b> and by default pageable is <b>false</b>.</p>
+
+  <p>Depends on offset and limit values Pagination can be enable by binding a <b>true</b> into <code>pageable</code>
+    property.</p>
 
   <pre class="prettyprint lang-html">{{demoSnippet.pagination}}</pre>
 
-  <p>In default the table doesn't paginate it’s contents, even if pageable depended properties are set. Those properties
-    will be discuss on <a href="feature/data-table/pagination#usefulProperties">Useful Properties</a> section.</p>
+  <p>In default, <code>pageable</code> property is configured to <b>false</b> therefore, data table doesn't paginate
+    it’s contents, even <code>pageable</code> depended properties are defined. Those properties will be discuss on next
+    section.</p>
 
   <h2 id="usefulProperties">Useful properties</h2>
-  <p>There are few more properties which effect the behaviour of pagination controls and those are applicable in
-    global level of grid configuration after enabling the pageable.</p>
+
+  <p>There are few more properties which effect to behaviour of pagination controls and those are applicable in
+    global level of data table configuration after configuring the <code>pageable</code> property.</p>
 
   <h4 id="page">Page</h4>
   <code>page: number</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: 1</h5>
 
-  <p>The page property lets you to control which page the table starts off showing, from the declared page users can
-    paginate into different data views with in the declared data <a href="feature/data-table/pagination#limit">limit</a>.
-  </p>
+  <p>The <code>page</code> property allow to control which page the table starts off showing by calculate offset
+    depending on provided page number, from the declared page users can paginate into different data views with in the
+    declared page <a href="feature/data-table/pagination#limit">Limit</a>. make sure to not set offset explicitly when
+    page is in used.</p>
 
   <app-pagination-page-usage></app-pagination-page-usage>
   <app-example-code [files]="paginationUsageWithPage"></app-example-code>
@@ -38,7 +43,7 @@
   <code>limit: number</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: 10</h5>
 
   <p>Controls how many rows are shown per page and the rest of the data row's will be paginate into
-    series of grid pages. if limit is not provided by the configuration the default limit will be applied.</p>
+    next page(s). If <code>limit</code> is not provided by the configuration the default value will be applied.</p>
 
   <app-pagination-limit-usage></app-pagination-limit-usage>
   <app-example-code [files]="paginationUsageWithLimit"></app-example-code>

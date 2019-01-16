@@ -17,8 +17,7 @@ export class RowGroupingUsageComponent {
     this.items = this.dataFetchService.fetchData();
   }
 
-  public onDynamicRowSpanExtract(row: DataTableRow<any>): number {
-
+  public onDynamicRowSpanExtract(row: DataTableRow<ExampleData>): number {
     if (row.item.availableStores && row.item.availableStores.length) {
       return row.item.availableStores.length;
     }
@@ -26,7 +25,7 @@ export class RowGroupingUsageComponent {
     return 1;
   }
 
-  public getStoreName(item: any, index: number, field: string) {
+  public getStoreName(item: ExampleData, index: number, field: string) {
     return item.availableStores && item.availableStores[index] ? item.availableStores[index][field] : '-';
   }
 }

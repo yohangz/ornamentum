@@ -1,9 +1,9 @@
 <div class="feature-container">
-  <h1>Server-side Data Table Data Binding</h1>
-  <p>Sometimes, you might want to bind a direct data source coming from the different server to the data table without
-    binding it as a static data source.</p>
+  <h1>Server-side Data Binding</h1>
 
-  <p>in such cases, now you can easily use ornamentum server side data binding facility.</p>
+  <p>Server side data binding allow users to bind a data set that are not available in client side as a static data set
+    but available in external data source with dynamic features. in these type of situations server side data binding
+    technique is come to the action.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -11,20 +11,20 @@
   <app-example-code [files]="serverSideDataBindingUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To support server side data binding, simply set available observable data source to <code>dataSource</code>
-    attribute.</p>
 
-  <pre class="prettyprint lang-html">{{demoSnippet.serverSideDataBinding}}</pre>
+  <p>Server side data binding can be configure by providing a any object collecting of observable. bind a available
+    specific data source into <code>dataSource</code> property.</p>
 
-  <p>Please refer <b>server-side-data-binding.component.ts</b> file to see the example of server side data
-    binding via data source.</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.dataSource}}</pre>
 
-  <p>Following code snippet will be represent the implementation of the <b>fetchDataFromServer</b> method that used to
+  <p>Following code snippet will be represent the implementation of the <code>fetchDataFromServer</code> method that used to
     call the example data api.</p>
 
   <pre class="prettyprint lang-js">{{demoSnippet.dataFetchMethod}}</pre>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="feature/data-table/client-side-data-binding">Client-side Data Binding</a><br>
+  <a rel="noopener" target="_blank" href="feature/data-table/real-time-data-binding">Realtime Data Binding</a><br>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server
     Side Data Binding</a>
 </div>
