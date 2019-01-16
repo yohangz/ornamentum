@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of, timer } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { GlobalRefService } from 'ornamentum';
+import { GlobalRefService, DataTableRow } from 'ornamentum';
 
 import { ExampleData } from '../../../shared/models';
 
@@ -11,6 +11,7 @@ import { DataFetchService } from '../../../shared/services';
 
 @Component({
   selector: 'app-data-table-demo',
+  styleUrls: ['./data-table-demo.component.scss'],
   templateUrl: './data-table-demo.component.html'
 })
 export class DataTableDemoComponent implements OnInit {
@@ -36,5 +37,13 @@ export class DataTableDemoComponent implements OnInit {
     } else {
       this.dataSource = of(this.dataFetchService.fetchData(offset, 20));
     }
+  }
+
+  public isHighMargin(row: DataTableRow<ExampleData>): boolean {
+    return row.item.grossMargin > .5;
+  }
+
+  public isLowMargin(row: DataTableRow<ExampleData>): boolean {
+    return row.item.grossMargin < .5;
   }
 }
