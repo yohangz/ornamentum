@@ -1,0 +1,17 @@
+.high-margin {
+  color: #FD0E35;
+
+  &::before {
+    content: url("../../../../assets/images/angle-arrow-up.svg");
+    padding-right: 5px;
+  }
+}
+
+.low-margin {
+  color: #4dc71f;
+
+  &::before {
+    content: url("../../../../assets/images/angle-arrow-down.svg");
+    padding-right: 5px;
+  }
+}

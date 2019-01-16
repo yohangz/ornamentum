@@ -10,21 +10,25 @@ import fetchData from '../data/sample-data';
 
 /**
  * Class representing data table & dropdown data fetch service.
- * @class DataFetchService.
  */
 @Injectable()
 export class DataFetchService {
   constructor(private http: HttpClient) {
   }
 
+  /**
+   * Fetch data from client source for demo client side data binding.
+   * @param offset Data fetch offset.
+   * @param limit Data limit to fetch.
+   */
   public fetchData(offset: number = 0, limit: number = 10): ExampleData[] {
     return fetchData.slice(offset, offset + limit);
   }
 
   /**
-   * Fetch data from server to demo server side data binding.
-   * @param offset
-   * @param limit
+   * Fetch data from server for server side data binding.
+   * @param offset Data fetch offset.
+   * @param limit Data limit to fetch.
    */
   public fetchDataFromServer(offset: number = 0, limit: number = 10): Observable<ResourceData<ExampleData[]>> {
     let params = new HttpParams();
