@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
+
+import { ResourceData } from '../../../../../../shared/models/resource-data.model';
+import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -9,9 +13,11 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './basic-usage.component.html'
 })
 export class BasicUsageComponent {
-  public dataSource: Observable<any>;
+  public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.dataSource = of(this.dataFetchService.fetchData());
+    this.dataSource = this.dataFetchService.fetchDataFromServer().pipe(map((resource: ResourceData<ExampleData>) => {
+      return resource.data;
+    }));
   }
 }

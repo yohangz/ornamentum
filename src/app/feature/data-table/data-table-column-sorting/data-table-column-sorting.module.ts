@@ -33,7 +33,11 @@ import { SharedModule } from '../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot(),
+    DataTableModule.forRoot({
+      showColumnSelector: true,
+      showHeader: true,
+      pageable: true
+    }),
     DataTableColumnSortingRoutingModule
   ],
   providers: []

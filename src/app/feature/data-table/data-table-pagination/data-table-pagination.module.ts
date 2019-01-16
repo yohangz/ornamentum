@@ -31,7 +31,10 @@ import { SharedModule } from '../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot(),
+    DataTableModule.forRoot({
+      showHeader: true,
+      showColumnSelector: true
+    }),
     DataTablePaginationRoutingModule
   ],
   providers: []

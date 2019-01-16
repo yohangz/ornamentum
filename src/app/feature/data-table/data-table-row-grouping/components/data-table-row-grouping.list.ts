@@ -24,5 +24,5 @@ export const rowGroupingUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  rowGrouping: require('!!raw-loader?lang=typescript!./docs/row-grouping.md')
+  onDynamicRowSpanExtract: require('!!raw-loader?lang=typescript!./docs/on-dynamic-row-span-extract.md')
 };

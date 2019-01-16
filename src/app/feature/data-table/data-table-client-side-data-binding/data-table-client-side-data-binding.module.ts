@@ -25,7 +25,9 @@ import { SharedModule } from '../../../shared/shared.module';
     FormsModule,
     SharedModule.forRoot(),
     DataTableModule.forRoot({
-      showColumnSelector: true
+      showColumnSelector: true,
+      showHeader: true,
+      pageable: true
     }),
     DataTableClientSideDataBindingRoutingModule
   ],

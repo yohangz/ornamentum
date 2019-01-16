@@ -22,3 +22,8 @@ export const dataLimitUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
+
+export const demoSnippet: any = {
+  limit: require('!!raw-loader?lang=typescript!./docs/limit.md')
+};
+

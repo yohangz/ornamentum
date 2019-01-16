@@ -1,19 +1,24 @@
 <div class="feature-container">
-  <h1>Client-side Data Table Data Binding</h1>
+  <h1>Client-side Data Binding</h1>
 
-  <p>Client side data binding allows users to bind data to the data table directly when data is available in the client
-    side.</p>
+  <p>Client side data binding allow users to bind static data set to data table directly without fetching data from a
+    external source, when data is available in the client side.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
+
   <app-client-side-data-binding></app-client-side-data-binding>
   <app-example-code [files]="clientSideDataBindingUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To support client side data binding, simply set available data to <code>items</code> attribute.</p>
 
-  <pre class="prettyprint lang-html">{{demoSnippet.clientSideDataBinding}}</pre>
+  <p>Client side binding can be configure by providing a any array of objects containing table data into
+    <code>items</code> property.</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.items}}</pre>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="feature/data-table/row-selection">Row Selection</a><br>
+  <a rel="noopener" target="_blank" href="feature/data-table/column/filtering">Filtering</a><br>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#items">API Doc for Client Side
     Data Binding</a>
 </div>

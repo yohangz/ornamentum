@@ -277,6 +277,18 @@ const dataTableFeatureRoutes: Routes = [
         description: '<--add description here-->'
       }
     }
+  },
+  {
+    loadChildren: './data-table-custom-theming/data-table-custom-theming.module#DataTableCustomThemingModule',
+    path: 'custom-theming',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Data Table | Customize | Themes | User Experience',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   }
 ];
 
