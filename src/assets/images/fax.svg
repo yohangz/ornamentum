@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 360 360" version="1.1" viewBox="0 0 360 360" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+	<rect x="120" y="15" width="100" height="60" fill="#DEDDE0"/>
+	<rect x="220" y="15" width="100" height="60" fill="#CDCDD0"/>
+	<path d="m220 225v-30h-15v-30h15v-30h-75v-30h75v-30h-140v210h40v-60h100zm-75-60h30v30h-30v-30z" fill="#00A1A7"/>
+	<path d="m360 75h-140v30h75v30h-75v30h15v30h-15v30h100v60h40v-210zm-65 120h-30v-30h30v30z" fill="#006C70"/>
+	<polygon points="220 225 120 225 120 285 120 345 220 345 220 285" fill="#DEDDE0"/>
+	<polygon points="220 225 220 285 220 345 320 345 320 285 320 225" fill="#CDCDD0"/>
+	<polygon points="145 135 220 135 295 135 295 105 220 105 145 105" fill="#CCF7F9"/>
+	<polygon points="205 195 220 195 235 195 235 165 220 165 205 165" fill="#fff"/>
+	<rect x="265" y="165" width="30" height="30" fill="#fff"/>
+	<rect x="145" y="165" width="30" height="30" fill="#fff"/>
+	<path d="m40 35c-22.091 0-40 17.908-40 40v210c0 22.092 17.909 40 40 40s40-17.908 40-40v-210c0-22.092-17.909-40-40-40z" fill="#006C70"/>
+</svg>
