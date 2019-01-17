@@ -40,6 +40,11 @@
     [dropdownFilterSearchable]="true"
     [dropDownFilterShowOptionSelectCheckbox]="true"
     [filterPlaceholder]="'Search'">
+    <ng-template #ngDataTableCell let-row="row">
+      <td>
+        <span class="fax-icon">{{row.item.orderMethodType}}</span>
+      </td>
+    </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
@@ -102,5 +107,6 @@
         <span [class.low-margin]="isLowMargin(row)" [class.high-margin]="isHighMargin(row)">{{row.item.grossMargin.toFixed(5)}}</span>
       </td>
     </ng-template>
+
   </ng-data-table-column>
 </ng-data-table>

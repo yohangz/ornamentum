@@ -1,9 +1,28 @@
+%icon-position {
+  padding-right: 5px;
+  position: relative;
+  top: 3px;
+}
+
+%color-icon-position {
+  align-items: center;
+  display: flex;
+}
+
+%color-icons {
+  content: '';
+  display: inline-block;
+  height: 20px;
+  margin-right: 5px;
+  width: 20px;
+}
+
 .high-margin {
   color: #FD0E35;
 
   &::before {
+    @extend %icon-position;
     content: url("../../../../assets/images/angle-arrow-up.svg");
-    padding-right: 5px;
   }
 }
 
@@ -11,7 +30,43 @@
   color: #4dc71f;
 
   &::before {
+    @extend %icon-position;
     content: url("../../../../assets/images/angle-arrow-down.svg");
-    padding-right: 5px;
+  }
+}
+
+.web-icon {
+  @extend %color-icon-position;
+
+  &::before {
+    @extend %color-icons;
+    background: url("../../../../assets/images/www.svg");
+  }
+}
+
+.email-icon {
+  @extend %color-icon-position;
+
+  &::before {
+    @extend %color-icons;
+    background: url("../../../../assets/images/email.svg");
+  }
+}
+
+.telephone-icon {
+  @extend %color-icon-position;
+
+  &::before {
+    @extend %color-icons;
+    background: url("../../../../assets/images/telephone.svg");
+  }
+}
+
+.fax-icon {
+  @extend %color-icon-position;
+
+  &::before {
+    @extend %color-icons;
+    background: url("../../../../assets/images/fax.svg");
   }
 }
