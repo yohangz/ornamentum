@@ -60,13 +60,13 @@ export class DataTableDemoComponent implements OnInit {
   public orderMethodType(row: DataTableRow<ExampleData>): string {
     switch (row.item.orderMethodType) {
       case 'Mail':
-        return 'order-method-mail';
+        return 'email-icon';
       case 'Web':
-        return 'order-method-web';
+        return 'web-icon';
       case 'Telephone':
-        return 'order-method-telephone';
+        return 'telephone-icon';
       case 'Fax':
-        return 'order-method-fax';
+        return 'fax-icon';
     }
   }
 }
