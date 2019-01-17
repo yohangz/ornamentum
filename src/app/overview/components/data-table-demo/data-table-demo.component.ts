@@ -9,6 +9,9 @@ import { ExampleData } from '../../../shared/models';
 
 import { DataFetchService } from '../../../shared/services';
 
+/**
+ * Data table demo component.
+ */
 @Component({
   selector: 'app-data-table-demo',
   styleUrls: ['./data-table-demo.component.scss'],
@@ -20,6 +23,9 @@ export class DataTableDemoComponent implements OnInit {
   constructor(private dataFetchService: DataFetchService, private globalRefService: GlobalRefService) {
   }
 
+  /**
+   * Component initialize lifecycle event.
+   */
   public ngOnInit(): void {
     let offset = 0;
     if (this.globalRefService.isBrowser) {
@@ -39,11 +45,28 @@ export class DataTableDemoComponent implements OnInit {
     }
   }
 
+  /**
+   * High margin value if true.
+   * @param row Data table row.
+   */
   public isHighMargin(row: DataTableRow<ExampleData>): boolean {
     return row.item.grossMargin > .5;
   }
 
-  public isLowMargin(row: DataTableRow<ExampleData>): boolean {
-    return row.item.grossMargin < .5;
+  /**
+   * Order method type CSS class.
+   * @param row Data table row.
+   */
+  public orderMethodType(row: DataTableRow<ExampleData>): string {
+    switch (row.item.orderMethodType) {
+      case 'Mail':
+        return 'order-method-mail';
+      case 'Web':
+        return 'order-method-web';
+      case 'Telephone':
+        return 'order-method-telephone';
+      case 'Fax':
+        return 'order-method-fax';
+    }
   }
 }
