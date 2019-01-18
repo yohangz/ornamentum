@@ -4,13 +4,418 @@
   <table>
     <tr>
       <th>Variable</th>
-      <th>Value</th>
+      <th>Default Value</th>
       <th>Description</th>
     </tr>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td><code>$data-table-icon-color</code></td>
+      <td><code>#333</code></td>
+      <td>Icon color used in data table ( Row Expand, Refresh Table, Column Selector Menu, Table Header Sorting, Pagination )</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-icon-close-color</code></td>
+      <td><code>#d32f2f</code></td>
+      <td>Icon color of remove search criteria in table header</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-loading-animation-color</code></td>
+      <td><code>#333</code></td>
+      <td>Data table Loading spinner icon color</td>
+    </tr>
+    <tr>
+      <td><code>$delete-color</code></td>
+      <td><code>#d32f2f</code></td>
+      <td>Border color of the invalid data input in pagination input boxes </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-container-border</code></td>
+      <td><code>.07rem solid #ddd</code></td>
+      <td>Border width, style and color of the data table outer-edge </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-container-border-radius-value</code></td>
+      <td><code>0</code></td>
+      <td>Specify the radius value of the data table outer-edge </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-container-box-shadow-value</code></td>
+      <td><code>none</code></td>
+      <td>Box shadow value of the data table </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-top-header-background</code></td>
+      <td><code>#ddd</code></td>
+      <td>Data table main title container background color </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-top-header-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>Bottom Border color of the main title container </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-top-header-text-color</code></td>
+      <td><code>#222</code></td>
+      <td>Text color of the main title </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-dropdown-background</code></td>
+      <td><code>#fff</code></td>
+      <td>Background color of the Data table column selector menu </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-dropdown-box-shadow-value</code></td>
+      <td><code>2px 2px 10px rgba(0, 0, 0, .2)</code></td>
+      <td>Box shadow value of the data table column selector menu </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-dropdown-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>Border color of Data table column selector menu</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-dropdown-border-radius-value</code></td>
+      <td><code>#ccc</code></td>
+      <td>Specify the radius of the outer-edge of data table column selector menu  </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-dropdown-heading-background</code></td>
+      <td><code>#f5f5f5</code></td>
+      <td>Background color of the data table column selector menu title</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-dropdown-heading-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Text color of the data table column selector menu title </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-dropdown-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Text color of the data table column selector menu items </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-content-header-background</code></td>
+      <td><code>#f1f1f1</code></td>
+      <td>Background color of the data table column title container and column filter container</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-content-header-border</code></td>
+      <td><code>#ddd</code></td>
+      <td>Border color of the data table column title container and column filter container </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-content-header-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Text color of the data table column title container and column filter container</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-input-background</code></td>
+      <td><code>#fff</code></td>
+      <td>Background color of the data table column filter input boxes</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-input-border</code></td>
+      <td><code>#ddd</code></td>
+      <td>Border color of the data table column filter input boxes </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-input-border-radius-value</code></td>
+      <td><code>0</code></td>
+      <td>Specify the radius of the outer-edge of data table column filter input boxes</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-input-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Text color of the data table column filter input boxes</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-content-background</code></td>
+      <td><code>#f1f1f1</code></td>
+      <td>Main background color of the data table rows container</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-border</code></td>
+      <td><code>#ddd</code></td>
+      <td>Border color of the data table rows</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-row-background</code></td>
+      <td><code>#ccc</code></td>
+      <td>Main background color of the data table rows </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-cell-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Main text color of the data table cells</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-row-hover-background</code></td>
+      <td><code>#333</code></td>
+      <td>Mouse over background color of the data table rows</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-row-hover-cell-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Text color of the data table cells when mouse over each row</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-odd-row-background</code></td>
+      <td><code>#fff</code></td>
+      <td>Background color of the data table odd number rows </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-odd-row-cell-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Text color of the data table odd number rows </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-odd-row-hover-background</code></td>
+      <td><code>#eee</code></td>
+      <td>Mouse over background color of the data table odd number rows </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-odd-row-hover-cell-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Mouse over text color of the data table odd number rows</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-even-row-background</code></td>
+      <td><code>#f5f5f5</code></td>
+      <td>Background color of the data table even number rows </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-even-row-cell-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Text color of the data table even number rows</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-even-row-hover-background</code></td>
+      <td><code>#eee</code></td>
+      <td>Mouse over background color of the data table even number rows </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-even-row-hover-cell-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Mouse over text color of the data table even number rows</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-selected-row-background</code></td>
+      <td><code>#a8c2f1</code></td>
+      <td>Background color of the data table selected row</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-selected-row-cell-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Text color of the data table selected row</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-selected-row-hover-background</code></td>
+      <td><code>#a8c2f1</code></td>
+      <td>Mouse over background color of the data table selected row</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-selected-row-hover-cell-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Mouse over text color of the data table selected row</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-loading-window-background</code></td>
+      <td><code>#f1f1f1</code></td>
+      <td>Background color of the data table loading spinner window</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-loading-window-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>Border color of the data table loading spinner window</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-no-records-main-heading-message-text-color</code></td>
+      <td><code>#3b78e7</code></td>
+      <td>Main Heading Text color of the data table no records message window</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-no-records-sub-heading-message-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Sub Heading Text color of the data table no records message window </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-no-records-button-background</code></td>
+      <td><code>#fff</code></td>
+      <td>background color of the data table no records message window reload button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-no-records-button-border</code></td>
+      <td><code>#3b78e</code></td>
+      <td>border color of the data table no records message window reload button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-no-records-button-text-color</code></td>
+      <td><code>#3b78e7</code></td>
+      <td>text color of the data table no records message window reload button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-no-records-button-border-radius-value</code></td>
+      <td><code>.2rem</code></td>
+      <td>Specify the radius of the outer-edge of data table no records message window reload button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-background</code></td>
+      <td><code>#fff</code></td>
+      <td>Main background color of the pagination container</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-border</code></td>
+      <td><code>#ddd</code></td>
+      <td>Border color of the pagination container </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-range-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Text color of the pagination range</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-range-value-text-color</code></td>
+      <td><code>#3b78e7</code></td>
+      <td>Text color of the pagination range values</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-input-border</code></td>
+      <td><code>#333</code></td>
+      <td>Border color of the pagination input boxes ( Limit, Current Page Number )</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-input-label-border</code></td>
+      <td><code>#ddd</code></td>
+      <td>Border color of the pagination input label ( Total number of pages )</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-input-label-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>text color of the pagination input label ( Total number of pages )</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-input-background</code></td>
+      <td><code>#fff</code></td>
+      <td>Background color of the pagination input boxes ( Limit, Current Page Number )</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-input-text-color</code></td>
+      <td><code>#333</code></td>
+      <td>Text color of the pagination input boxes ( Limit, Current Page Number )</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-action-button-background</code></td>
+      <td><code>#f5f5f5</code></td>
+      <td>Background color of the data table pagination Previous, First, Next, Last buttons</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-action-button-background-hover</code></td>
+      <td><code>#f5f5f5</code></td>
+      <td>Mouse over background color of the data table pagination Previous, First, Next, Last buttons</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-action-button-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>Border color of the data table pagination Previous, First, Next, Last buttons</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-action-button-border-radius-value</code></td>
+      <td><code>0</code></td>
+      <td>Border radius value of the data table pagination Previous, First, Next, Last buttons outer-edge </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-action-button-hover-border</code></td>
+      <td><code>#fff</code></td>
+      <td>Mouse over border color of the data table pagination Previous, First, Next, Last buttons</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-disabled-action-button-background</code></td>
+      <td><code>#f5f5f5</code></td>
+      <td>Background color of the data table pagination Previous, First, Next, Last buttons when disabled state</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-disabled-action-button-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>Border color of the data table pagination Previous, First, Next, Last buttons when disabled state </td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-first-page-action-button-background</code></td>
+      <td><code>#f5f5f5</code></td>
+      <td>Background color of the data table pagination first page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-first-page-action-button-background-hover</code></td>
+      <td><code>#f5f5f5</code></td>
+      <td>Mouse over background color of the data table pagination first page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-first-page-action-button-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>border color of the data table pagination first page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-first-page-action-button-hover-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>Mouse over border color of the data table pagination first page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-previous-page-action-button-background</code></td>
+      <td><code>#f5f5f5</code></td>
+      <td>Background color of the data table pagination previous page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-previous-page-action-button-background-hover</code></td>
+      <td><code>#f5f5f5</code></td>
+      <td>Mouse over background color of the data table pagination previous page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-previous-page-action-button-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>border color of the data table pagination previous page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-previous-page-action-button-hover-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>Mouse over border color of the data table pagination previous page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-next-page-action-button-background</code></td>
+      <td><code>#ccc</code></td>
+      <td>Background color of the data table pagination next page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-next-page-action-button-background-hover</code></td>
+      <td><code>#ccc</code></td>
+      <td>Mouse over background color of the data table pagination next page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-next-page-action-button-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>border color of the data table pagination next page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-next-page-action-button-hover-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>Mouse over border color of the data table pagination next page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-last-page-action-button-background</code></td>
+      <td><code>#ccc</code></td>
+      <td>Background color of the data table pagination last page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-last-page-action-button-background-hover</code></td>
+      <td><code>#ccc</code></td>
+      <td>Mouse over background color of the data table pagination last page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-last-page-action-button-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>border color of the data table pagination last page navigation button</td>
+    </tr>
+    <tr>
+      <td><code>$data-table-pagination-last-page-action-button-hover-border</code></td>
+      <td><code>#ccc</code></td>
+      <td>Mouse over border color of the data table pagination last page navigation button</td>
     </tr>
   </table>
 

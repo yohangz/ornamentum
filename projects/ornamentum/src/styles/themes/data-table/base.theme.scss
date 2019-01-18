@@ -693,7 +693,6 @@
   margin-top: -.05rem;
   padding: .5rem;
 
-  .ng-data-table-input-error,
   .ng-invalid {
     border-color: $delete-color;
   }
@@ -739,6 +738,10 @@
     .ng-data-table-pagination-input {
       @extend %form-styles;
       background: $data-table-pagination-input-background;
+
+      &.ng-data-table-input-error {
+        border-color: $delete-color;
+      }
     }
 
     .ng-data-table-pagination-input-label {
