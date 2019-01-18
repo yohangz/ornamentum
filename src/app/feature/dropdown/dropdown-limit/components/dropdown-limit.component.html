@@ -1,8 +1,8 @@
 <h1>Data Limit</h1>
 
-<p>Limit will allow users to define a number of items to be fetch on a single load when <a
-  href="feature/dropdown/load-on-scroll">Load On Scroll</a> is <b>true</b>. if limit is not specified by the user,
-  default value will be set as the dropdown data limit.</p>
+<p>This property is useful when on request data from external data source. Limit will allow users to define a number of
+  items to be fetch on a single load and when on user view all the fetched dropdown display items, again request a data
+  set from data source recursively until all the data receives.</p>
 
 <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -10,6 +10,10 @@
 <app-example-code [files]="dataLimitUsage"></app-example-code>
 
 <h2 id="basicUsage">Basic Usage</h2>
+
+<p>For enable limit in dropdown, it is mandatory to set, <a href="feature/dropdown/load-on-scroll">Load On
+  Scroll</a> to <b>true</b>. if limit is not specified by the user, default value (30) will be set as the dropdown
+  data limit.</p>
 
 <pre class="prettyprint lang-html">{{demoSnippet.limit}}</pre>
 
