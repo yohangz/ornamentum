@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 
-import { ExampleData } from '../../../../../../shared/models';
-
-import { DataFetchService } from '../../../../../../shared/services';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { DropdownTranslations } from '../../../../../../../../projects/ornamentum/src';
+
+import { ExampleData } from '../../../../../../shared/models';
+import { ResourceData } from '../../../../../../shared/models/resource-data.model';
+
+import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
   selector: 'app-data-limit-usage',
@@ -13,12 +14,9 @@ import { DropdownTranslations } from '../../../../../../../../projects/ornamentu
 })
 export class DataLimitUsageComponent {
   public dataSource: Observable<ExampleData[]>;
-  public translations: DropdownTranslations = {
-    noDataMessage: 'No Data Available.'
-  };
 
   constructor(private dataFetchService: DataFetchService) {
-    this.dataSource = this.dataFetchService.fetchDataFromServer(0, 20).pipe(map((resource) => {
+    this.dataSource = this.dataFetchService.fetchDataFromServer().pipe(map((resource: ResourceData<ExampleData>) => {
       return resource.data;
     }));
   }

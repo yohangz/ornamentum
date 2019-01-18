@@ -1,4 +1,4 @@
 <ng-dropdown
   ...
-  [limit]="50">
+  [limit]="10">
 </ng-dropdown>
