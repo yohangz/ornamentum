@@ -40,3 +40,20 @@
   background: url('../../../../../assets/images/dt-aegean-theme.png') no-repeat;
   background-size: 100% 100%;
 }
+
+table {
+  border: 1px solid #ddd;
+  font-size: 13px;
+  tr {
+    th {
+      background-color: #333;
+      color: #fff;
+      padding: .5rem;
+    }
+
+    td {
+      border: 1px solid #ddd;
+      padding: .3rem;
+    }
+  }
+}
