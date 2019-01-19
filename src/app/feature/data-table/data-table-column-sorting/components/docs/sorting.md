@@ -1,4 +1,4 @@
-<ng-data-table
-  ...
-  [sortable]="true">
-</ng-data-table>
+  <ng-data-table
+    ...
+    [sortable]="true">
+  </ng-data-table>

@@ -1,10 +1,23 @@
-/**
- * Fetch data from server to demo server side data binding.
- * @param offset
- * @param limit
- */
-public fetchDataFromServer(offset: number = 0, limit: number = 10): Observable<any> {
-  let params = new HttpParams();
-  params = params.set('offset', String(offset)).set('limit', String(offset + limit));
-  return this.http.get<any>('/api/data', {params: params});
-}
+ 
+  /**
+   * Fetch data stream from server for server side data binding for Dropdown.
+   * @param params DataTableRequestParams
+   */
+  public fetchDataOnBindForDropdown(params?: DropdownRequestParams): Observable<ResourceData<ExampleData[]>> {
+    let queryParams = new HttpParams();
+    if (params) {
+      if (params.filter !== undefined && params.filter.value !== '') {
+        queryParams = queryParams.append('keyword', params.filter.value.toString());
+      }
+
+      if (params.limit !== undefined) {
+        queryParams = queryParams.append('limit', params.limit.toString());
+      }
+
+      if (params.offset !== undefined) {
+        queryParams = queryParams.append('offset', params.offset.toString());
+      }
+    }
+
+    return this.http.get<ResourceData<ExampleData[]>>('/api/data', {params: queryParams});
+  }

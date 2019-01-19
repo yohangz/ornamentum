@@ -24,5 +24,5 @@ export const onDataBindUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  onDataBind: require('!!raw-loader?lang=typescript!./docs/on-data-bind.md')
+  serverSideDataBinding: require('!!raw-loader?lang=typescript!./docs/on-data-bind.md')
 };

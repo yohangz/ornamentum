@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
-import { DataTableFilterColumn, DataTableRequestParams } from 'ornamentum';
+import { DataTableFilterColumn, DataTableRequestParams, DropdownRequestParams } from 'ornamentum';
 
 import { Observable } from 'rxjs';
 
@@ -19,7 +19,7 @@ export class DataFetchService {
   }
 
   /**
-   * Fetch data from client source for demo client side data binding.
+   * Fetch data from client source for demo client side data binding with items property.
    * @param offset Data fetch offset.
    * @param limit Data limit to fetch.
    */
@@ -28,7 +28,18 @@ export class DataFetchService {
   }
 
   /**
-   * Fetch data from server for server side data binding.
+   * Fetch data stream from server for demo client side data binding with data source.
+   * @param offset Data fetch offset.
+   * @param limit Data limit to fetch.
+   */
+  public fetchExampleDataFromServer(offset: number = 0, limit: number = 10): Observable<ResourceData<ExampleData[]>> {
+    let params = new HttpParams();
+    params = params.set('offset', String(offset)).set('limit', String(offset + limit));
+    return this.http.get<ResourceData<ExampleData[]>>('/api/data', {params: params});
+  }
+
+  /**
+   * Fetch data stream from server for server side data binding for Datatable.
    * @param params DataTableRequestParams
    */
   public fetchDataOnBindForDataTable(params?: DataTableRequestParams): Observable<ResourceData<ExampleData[]>> {
@@ -58,9 +69,27 @@ export class DataFetchService {
     }
   }
 
-  public fetchExampleDataFromServer(offset: number = 0, limit: number = 10): Observable<ResourceData<ExampleData[]>> {
-    let params = new HttpParams();
-    params = params.set('offset', String(offset)).set('limit', String(offset + limit));
-    return this.http.get<ResourceData<ExampleData[]>>('/api/data', {params: params});
+  /**
+   * Fetch data stream from server for server side data binding for Dropdown.
+   * @param params DropdownRequestParams
+   */
+  public fetchDataOnBindForDropdown(params?: DropdownRequestParams): Observable<ResourceData<ExampleData[]>> {
+    let queryParams = new HttpParams();
+
+    if (params) {
+      if (params.filter !== undefined && params.filter.value !== '') {
+        queryParams = queryParams.append('keyword', params.filter.value.toString());
+      }
+
+      if (params.limit !== undefined) {
+        queryParams = queryParams.append('limit', params.limit.toString());
+      }
+
+      if (params.offset !== undefined) {
+        queryParams = queryParams.append('offset', params.offset.toString());
+      }
+    }
+
+    return this.http.get<ResourceData<ExampleData[]>>('/api/data', {params: queryParams});
   }
 }

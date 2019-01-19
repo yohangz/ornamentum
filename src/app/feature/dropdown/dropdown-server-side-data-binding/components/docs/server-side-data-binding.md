@@ -1,4 +1,5 @@
-<ng-dropdown
-  ...
-  [dataSource]="dataSource">
-</ng-dropdown>
+  <ng-dropdown
+    ...
+    [loadOnScroll]="true"
+    [onDataBind]="onDataBind">
+  </ng-dropdown>

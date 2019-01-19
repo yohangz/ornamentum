@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DropdownModule } from 'ornamentum';
   
-import { ClientSideDataBindingComponent } from './client-side-data-binding.component';
+import { ClientSideDataBindingComponent } from './client-side-data-binding-with-items.component';
 
 @NgModule({
  bootstrap: [ClientSideDataBindingComponent],

@@ -1,4 +1,4 @@
-<ng-data-table
-  ...
-  [showLoadingSpinner]="true">
-</ng-data-table
+  <ng-data-table
+    ...
+    [showLoadingSpinner]="true">
+  </ng-data-table

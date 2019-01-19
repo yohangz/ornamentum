@@ -1,4 +1,4 @@
-<ng-dropdown
-  ...
-  [loadDataOnInit]="false">
-</ng-dropdown>
+  <ng-dropdown
+    ...
+    [loadDataOnInit]="false">
+  </ng-dropdown>

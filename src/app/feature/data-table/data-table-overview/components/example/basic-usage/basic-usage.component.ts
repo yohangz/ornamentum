@@ -16,7 +16,7 @@ export class BasicUsageComponent {
   public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.dataSource = this.dataFetchService.fetchExampleDataFromServer().pipe(map((resource: ResourceData<ExampleData>) => {
+    this.dataSource = this.dataFetchService.fetchExampleDataFromServer().pipe(map((resource: ResourceData<ExampleData[]>) => {
       return resource.data;
     }));
   }

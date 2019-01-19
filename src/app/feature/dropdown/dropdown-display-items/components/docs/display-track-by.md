@@ -1,4 +1,4 @@
-<ng-dropdown
-  ...
-  [displayTrackBy]="'productType'">
-</ng-dropdown>
+  <ng-dropdown
+    ...
+    [displayTrackBy]="'productType'">
+  </ng-dropdown>

@@ -1,4 +1,4 @@
-<ng-dropdown
-  ...
-  [menuPosition]="'bottom-right'">
-</ng-dropdown>
+  <ng-dropdown
+    ...
+    [menuPosition]="'bottom-right'">
+  </ng-dropdown>

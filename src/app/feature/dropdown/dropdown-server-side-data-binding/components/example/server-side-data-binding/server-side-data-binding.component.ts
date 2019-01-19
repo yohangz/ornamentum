@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 
+import { DropdownQueryResult, DropdownRequestParams } from 'ornamentum';
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { ExampleData } from '../../../../../../shared/models';
+import { ResourceData } from '../../../../../../shared/models/resource-data.model';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -12,11 +15,17 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './server-side-data-binding.component.html'
 })
 export class ServerSideDataBindingComponent {
-  public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.dataSource = this.dataFetchService.fetchExampleDataFromServer().pipe(map(resource => {
-      return resource.data;
+    this.onDataBind = this.onDataBind.bind(this);
+  }
+
+  public onDataBind(params: DropdownRequestParams): Observable<DropdownQueryResult<ExampleData>> {
+    return this.dataFetchService.fetchDataOnBindForDropdown(params).pipe(map((response: ResourceData<ExampleData[]>) => {
+      return {
+        count: response.count,
+        items: response.data
+      };
     }));
   }
 }

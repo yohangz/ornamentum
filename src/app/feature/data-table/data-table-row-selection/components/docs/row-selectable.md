@@ -1,4 +1,4 @@
-<ng-data-table
-  ...
-  [rowSelectable]="true">
-</ng-data-table>
+  <ng-data-table
+    ...
+    [rowSelectable]="true">
+  </ng-data-table>

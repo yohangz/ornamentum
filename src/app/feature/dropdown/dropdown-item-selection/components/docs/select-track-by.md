@@ -1,4 +1,4 @@
-<ng-dropdown
-  ...
-  [selectTrackBy]="'id'">
-</ng-dropdown>
+  <ng-dropdown
+    ...
+    [selectTrackBy]="'id'">
+  </ng-dropdown>
