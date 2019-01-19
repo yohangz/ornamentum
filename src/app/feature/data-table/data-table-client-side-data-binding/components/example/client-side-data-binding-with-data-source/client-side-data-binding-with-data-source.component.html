@@ -1,61 +1,42 @@
 <ng-data-table
   [title]="'Sales Products'"
+  [dataSource]="dataSource"
   [minHeight]="200"
-  [minWidth]="900"
-  [limit]="10"
-  [pageable]="true"
-
-  [onDataBind]="onDataBind">
+  [minWidth]="900">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [filterable]="true"
-    [filterPlaceholder]="'Search'"
-    [width]="80">
+    [width]="70">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
-    [title]="'Order Method Type'"
-    [filterPlaceholder]="'Search'"
-    [filterable]="true">
+    [title]="'Order Method Type'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
-    [title]="'Retailer Type'"
-    [filterPlaceholder]="'Search'"
-    [filterable]="true">
+    [title]="'Retailer Type'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
-    [title]="'Product Line'"
-    [filterPlaceholder]="'Search'"
-    [filterable]="true">
+    [title]="'Product Line'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
-    [title]="'Product Type'"
-    [filterPlaceholder]="'Search'"
-    [filterable]="true">
+    [title]="'Product Type'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'revenue'"
     [title]="'Revenue'"
-    [filterPlaceholder]="'Search'"
-    [filterable]="true"
     [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
-    [filterPlaceholder]="'Search'"
-    [filterable]="true"
-    [width]="80">
+    [width]="70">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"
     [title]="'Gross Margin'"
-    [filterPlaceholder]="'Search'"
-    [filterable]="true"
     [width]="100">
   </ng-data-table-column>
 </ng-data-table>

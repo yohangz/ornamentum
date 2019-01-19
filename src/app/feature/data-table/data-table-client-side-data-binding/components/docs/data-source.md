@@ -1,4 +1,4 @@
   <ng-data-table
     ...
-    [items]="items">
+    [dataSource]="dataSource">
   </ng-data-table>

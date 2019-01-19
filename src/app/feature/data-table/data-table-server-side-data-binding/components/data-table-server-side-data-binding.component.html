@@ -2,8 +2,14 @@
   <h1>Server-side Data Binding</h1>
 
   <p>Server side data binding allow users to bind a data set that are not available in client side as a static data set
-    but available in external data source with dynamic features. in these type of situations server side data binding
-    technique is come to the action.</p>
+    but available in external data source with dynamic features. Now, server side data binding
+    technique is available to handle and process data in this kind of scenarios.</p>
+
+  <p>Server side data binding allows users to get dynamic data stream from the server which matches to the filter or a
+    particular search.</p>
+
+  <p>That means, unlike the client side data binding, whenever user performs a filtering, sorting, data pagination
+    action a new api request will be initiated to fetch data from the server which matches to the particular action.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -12,13 +18,16 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>Server side data binding can be configure by providing a any object collecting of observable. bind a available
-    specific data source into <code>dataSource</code> property.</p>
+  <p>Server side data binding lets users to bind a stream of dynamic data set which can be filtered in the server side
+    via <code>onDataBind</code> property.</p>
 
-  <pre class="prettyprint lang-html">{{demoSnippet.dataSource}}</pre>
+  <p>In the above example, open Network tab in the chrome developer tools and change pagination, search something to see
+    the initiated request as described earlier.</p>
 
-  <p>Following code snippet will be represent the implementation of the <code>fetchDataFromServer</code> method that used to
-    call the example data api.</p>
+  <pre class="prettyprint lang-html">{{demoSnippet.onDataBind}}</pre>
+
+  <p>Following code snippet will be represent the implementation of the <code>fetchDataOnBindForDataTable</code> method
+    that used to call the example data api.</p>
 
   <pre class="prettyprint lang-js">{{demoSnippet.dataFetchMethod}}</pre>
 
