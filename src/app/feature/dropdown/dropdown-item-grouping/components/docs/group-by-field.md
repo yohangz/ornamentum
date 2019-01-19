@@ -1,4 +1,4 @@
-<ng-dropdown
-   ...
-  [groupByField]="'productLine'">
-</ng-dropdown>
+  <ng-dropdown
+     ...
+    [groupByField]="'productLine'">
+  </ng-dropdown>

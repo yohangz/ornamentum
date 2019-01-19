@@ -1,4 +1,4 @@
-<ng-data-table
-  ...
-  [translations]=dataTableTranslations>
-</ng-data-table>
+  <ng-data-table
+    ...
+    [translations]=dataTableTranslations>
+  </ng-data-table>

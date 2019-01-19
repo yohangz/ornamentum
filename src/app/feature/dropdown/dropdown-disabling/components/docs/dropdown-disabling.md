@@ -1,4 +1,4 @@
-<ng-dropdown
-  ...
-  [disabled]="true">
-</ng-dropdown>
+  <ng-dropdown
+    ...
+    [disabled]="true">
+  </ng-dropdown>

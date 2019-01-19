@@ -1,4 +1,4 @@
-<ng-dropdown
-  ...
-  [filterable]="true">
-</ng-dropdown>
+  <ng-dropdown
+    ...
+    [filterable]="true">
+  </ng-dropdown>

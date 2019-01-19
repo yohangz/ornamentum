@@ -1,4 +1,4 @@
-<ng-dropdown
-  ...
-  [translations]="dropdownTranslations">
-</ng-dropdown>
+  <ng-dropdown
+    ...
+    [translations]="dropdownTranslations">
+  </ng-dropdown>

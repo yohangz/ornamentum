@@ -1,4 +1,4 @@
-<ng-dropdown
-  ...
-  [onDataBind]="onDataBind">
-</ng-dropdown>
+  <ng-dropdown
+    ...
+    [onDataBind]="onDataBind">
+  </ng-dropdown>

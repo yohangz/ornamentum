@@ -1,4 +1,4 @@
-<ng-dropdown
-  ...
-  [items]="items">
-</ng-dropdown>
+  <ng-dropdown
+    ...
+    [items]="items">
+  </ng-dropdown>

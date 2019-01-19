@@ -1,4 +1,4 @@
-<ng-data-table
-  ...
-  [showSubstituteRows]="true">
-</ng-data-table>
+  <ng-data-table
+    ...
+    [showSubstituteRows]="true">
+  </ng-data-table>

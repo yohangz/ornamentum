@@ -1,4 +1,4 @@
-<ng-dropdown
-  ...
-  [disabledTrackBy]="'availability'">
-</ng-dropdown>
+  <ng-dropdown
+    ...
+    [disabledTrackBy]="'availability'">
+  </ng-dropdown>
