@@ -146,18 +146,6 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-load-on-scroll/dropdown-load-on-scroll.module#DropdownLoadOnScrollModule',
-    path: 'load-on-scroll',
-    canActivate: [SeoGuard],
-    data: {
-      seo: {
-        title: 'Ornamentum | Dropdown | Functionality | Load On Scroll',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
-      }
-    }
-  },
-  {
     loadChildren: './dropdown-menu-position/dropdown-menu-position.module#DropdownMenuPositionModule',
     path: 'menu-position',
     canActivate: [SeoGuard],
@@ -188,18 +176,6 @@ const dropdownFeatureRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Dropdown | Functionality | Load Data On Init',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
-      }
-    }
-  },
-  {
-    loadChildren: './dropdown-on-data-bind/dropdown-on-data-bind.module#DropdownOnDataBindModule',
-    path: 'on-data-bind',
-    canActivate: [SeoGuard],
-    data: {
-      seo: {
-        title: 'Ornamentum | Dropdown | Functionality | On Data Bind',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -294,7 +270,6 @@ const dropdownFeatureRoutes: Routes = [
 
 /**
  * Application dropdown feature routing module.
- * @class DropdownFeatureRoutingModule
  */
 @NgModule({
   exports: [RouterModule],

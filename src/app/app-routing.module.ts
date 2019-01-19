@@ -39,7 +39,6 @@ const appRoutes: Routes = [
 
 /**
  * Application routing module.
- * @class AppRoutingModule
  */
 @NgModule({
   exports: [RouterModule],

@@ -1022,10 +1022,6 @@ export class MainComponent {
           ]
         },
         {
-          routePath: '/feature/dropdown/load-on-scroll',
-          title: 'Load Data On Scroll'
-        },
-        {
           routePath: '/feature/dropdown/menu-position',
           title: 'Menu Position',
           navigation: [
@@ -1078,24 +1074,6 @@ export class MainComponent {
         {
           routePath: '/feature/dropdown/load-data-on-init',
           title: 'Load Data On Init',
-          navigation: [
-            {
-              title: 'What You Will See',
-              anchor: 'whatYouWillSee'
-            },
-            {
-              title: 'Basic Usage',
-              anchor: 'basicUsage'
-            },
-            {
-              title: 'Suggested Links',
-              anchor: 'suggestedLinks'
-            }
-          ]
-        },
-        {
-          routePath: '/feature/dropdown/on-data-bind',
-          title: 'On Data Bind',
           navigation: [
             {
               title: 'What You Will See',
