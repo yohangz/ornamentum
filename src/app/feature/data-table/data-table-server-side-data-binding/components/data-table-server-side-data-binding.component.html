@@ -5,10 +5,9 @@
     but available in external data source with dynamic features. Now, server side data binding
     technique is available to handle and process data in this kind of scenarios.</p>
 
-  <p>Server side data binding allows users to get dynamic data stream from the server which matches to the filter or a
-    particular search.</p>
+  <p>Server side data binding allow users to bind a larger data stream which is available in the server side.</p>
 
-  <p>That means, unlike the client side data binding, whenever user performs a filtering, sorting, data pagination
+  <p>Unlike the client side data binding, whenever user performs a filtering, sorting, data pagination
     action a new api request will be initiated to fetch data from the server which matches to the particular action.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -18,8 +17,10 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>Server side data binding lets users to bind a stream of dynamic data set which can be filtered in the server side
-    via <code>onDataBind</code> property.</p>
+  <p>Server side data binding is handled via <code>onDataBind</code> callback property which is available within the
+    data table features. This property allows users to customize the way of data binding inside a callback function. This
+    call back function accepts <code>DataTableRequestParams</code> parameter (optional) and returns any generic type(T)
+    of item set as an Observable(Data stream) <code>DataTableQueryResult&lt;T&gt;</code>.</p>
 
   <p>In the above example, open Network tab in the chrome developer tools and change pagination, search something to see
     the initiated request as described earlier.</p>
