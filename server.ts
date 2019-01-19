@@ -46,7 +46,7 @@ app.get('/api/data', (req: Request, res: Response) => {
   const offset = Number(req.query.offset);
   const limit = Number(req.query.limit);
   const selected = data.slice(offset, offset + limit);
-  const count = selected.length;
+  const count = data.length;
 
   res.status(200).json({
     data: selected,

@@ -3,16 +3,16 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { ResourceData } from '../../../../../../shared/models/resource-data.model';
 import { ExampleData } from '../../../../../../shared/models';
+import { ResourceData } from '../../../../../../shared/models/resource-data.model';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-basic-usage',
-  templateUrl: './basic-usage.component.html'
+  selector: 'app-client-side-data-binding-with-data-source',
+  templateUrl: './client-side-data-binding-with-data-source.component.html'
 })
-export class BasicUsageComponent {
+export class ClientSideDataBindingWithDataSourceComponent {
   public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService) {

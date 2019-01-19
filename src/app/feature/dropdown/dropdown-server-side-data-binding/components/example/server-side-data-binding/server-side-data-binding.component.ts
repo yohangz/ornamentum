@@ -15,7 +15,7 @@ export class ServerSideDataBindingComponent {
   public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.dataSource = this.dataFetchService.fetchDataFromServer().pipe(map(resource => {
+    this.dataSource = this.dataFetchService.fetchExampleDataFromServer().pipe(map(resource => {
       return resource.data;
     }));
   }

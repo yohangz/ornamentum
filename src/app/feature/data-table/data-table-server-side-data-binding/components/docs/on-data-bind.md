@@ -1,4 +1,4 @@
   <ng-data-table
     ...
-    [items]="items">
+    [onDataBind]="onDataBind">
   </ng-data-table>

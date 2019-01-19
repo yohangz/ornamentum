@@ -1,20 +1,43 @@
 <div class="feature-container">
   <h1>Client-side Data Binding</h1>
 
-  <p>Client side data binding allow users to bind static data set to data table directly without fetching data from a
-    external source, when data is available in the client side.</p>
+  <p>Client side data binding allow users to bind static data set to data table when data is available in the client
+    side.</p>
+
+  <p>Client side binding can be configure by providing any array of objects into <code>items</code> property or
+    providing a data stream to the <code>dataSource</code> property.</p>
+
+  <p>In this data binding technique, data set will be fetched at once and all the filtering, sorting, data pagination
+    things handled in the client side.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
-  <app-client-side-data-binding></app-client-side-data-binding>
-  <app-example-code [files]="clientSideDataBindingUsage"></app-example-code>
+  <app-client-side-data-binding-with-items></app-client-side-data-binding-with-items>
+  <app-example-code [files]="clientSideDataBindingWithItemsUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>Client side binding can be configure by providing a any array of objects containing table data into
-    <code>items</code> property.</p>
+  <p>Client side data binding can be configured by using the two ways mentioned in the below.</p>
 
   <pre class="prettyprint lang-html">{{demoSnippet.items}}</pre>
+
+  <p>The complete set of code segments for the data binding via <code>items</code> property can be seen in the example
+    shown in the <a href="feature/data-table/client-side-data-binding#whatYouWillSee">What You Will See</a> section.</p>
+
+  <p>or</p>
+
+  <pre class="prettyprint lang-html">{{demoSnippet.dataSource}}</pre>
+
+  <p>Refer following example to see actual usage of the <code>dataSource</code> property in the client side data
+    binding.</p>
+
+  <app-client-side-data-binding-with-data-source></app-client-side-data-binding-with-data-source>
+  <app-example-code [files]="clientSideDataBindingWithDataSourceUsage"></app-example-code>
+
+  <p>Following code snippet will be represent the implementation of the <b>fetchDataFromServer</b> method used in the
+    <b>client-side-data-binding-with-data-source.component.ts</b> to fetch the data from the server.</p>
+
+  <pre class="prettyprint lang-js">{{demoSnippet.dataFetchMethod}}</pre>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="feature/data-table/row-selection">Row Selection</a><br>
@@ -22,4 +45,3 @@
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#items">API Doc for Client Side
     Data Binding</a>
 </div>
-
