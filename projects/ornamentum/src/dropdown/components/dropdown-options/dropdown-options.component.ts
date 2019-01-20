@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import get from 'lodash-es/get';
+import get from 'lodash/get';
 
 import { DropdownItem } from '../../models/dropdown-item.model';
 

@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import get from 'lodash-es/get';
+import get from 'lodash/get';
 
 import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
