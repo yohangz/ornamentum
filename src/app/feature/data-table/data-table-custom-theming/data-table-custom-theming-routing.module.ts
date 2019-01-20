@@ -5,7 +5,6 @@ import { DataTableCustomThemingComponent } from './index';
 
 /**
  * Represent data table custom theming routes.
- * @type Routes
  */
 const dataTableCustomThemingRoutes: Routes = [
   {
@@ -16,7 +15,6 @@ const dataTableCustomThemingRoutes: Routes = [
 
 /**
  * Data table custom theming routing module.
- * @class DataTableCustomThemingRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
