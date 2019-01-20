@@ -22,7 +22,7 @@ export class EventsUsageComponent implements AfterViewInit {
   public allEventsData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService, private cd: ChangeDetectorRef) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public ngAfterViewInit(): void {

@@ -14,7 +14,7 @@ export class TableHeaderDetailsShowRefreshBtnUsageComponent {
   public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService) {
-    const data: ExampleData[] = this.dataFetchService.fetchData();
+    const data: ExampleData[] = this.dataFetchService.fetchStaticData();
     this.dataSource = of(data);
   }
 }

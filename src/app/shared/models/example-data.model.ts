@@ -1,3 +1,14 @@
+/**
+ * Example data store model.
+ */
+export interface Store {
+  storeName: string;
+  website: string;
+}
+
+/**
+ * Example data model.
+ */
 export interface ExampleData {
   availability: boolean;
   availableStores: Store[];
@@ -13,9 +24,4 @@ export interface ExampleData {
   revenue: number;
   quantity: number;
   grossMargin: number;
-}
-
-export interface Store {
-  storeName: string;
-  website: string;
 }

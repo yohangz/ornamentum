@@ -17,7 +17,7 @@ export class EventsCellClickUsageComponent {
   public cellClickEventData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onCellClick(cellClickEventArgs: DataTableCellClickEventArgs<any>): void {

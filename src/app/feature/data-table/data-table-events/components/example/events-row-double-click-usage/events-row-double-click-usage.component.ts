@@ -16,7 +16,7 @@ export class EventsRowDoubleClickUsageComponent {
   public rowDoubleClickEventData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onRowDoubleClick(doubleClickEventArgs: DataTableDoubleClickEventArgs<any>): void {

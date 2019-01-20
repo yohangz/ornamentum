@@ -13,7 +13,6 @@ import { BaseComponent } from './components';
 
 /**
  * Module class for containing main module.
- * @class AppMainModule
  */
 @NgModule({
   declarations: [

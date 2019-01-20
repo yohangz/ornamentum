@@ -13,6 +13,6 @@ export class FilteringFilterDebounceTimeUsageComponent {
   public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.dataSource = of(this.dataFetchService.fetchData());
+    this.dataSource = of(this.dataFetchService.fetchStaticData());
   }
 }

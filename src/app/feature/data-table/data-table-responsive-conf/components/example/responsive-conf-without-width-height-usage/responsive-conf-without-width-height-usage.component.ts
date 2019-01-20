@@ -12,6 +12,6 @@ export class ResponsiveConfWithoutWidthHeightUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 }

@@ -1,23 +1,20 @@
 import { Component } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { ExampleData } from 'helper-models';
+import { DataFetchService } from 'helper-services';
 
-import { ResourceData } from '../../../../../../shared/models/resource-data.model';
-import { ExampleData } from '../../../../../../shared/models';
-
-import { DataFetchService } from '../../../../../../shared/services';
-
+/**
+ * Basic usage example component controller.
+ */
 @Component({
   selector: 'app-basic-usage',
   templateUrl: './basic-usage.component.html'
 })
 export class BasicUsageComponent {
-  public dataSource: Observable<ExampleData[]>;
+  public data: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.dataSource = this.dataFetchService.fetchExampleDataFromServer().pipe(map((resource: ResourceData<ExampleData[]>) => {
-      return resource.data;
-    }));
+    // This method will set a array of 20 example data items to data variable.
+    this.data = this.dataFetchService.fetchStaticData(0, 20);
   }
 }

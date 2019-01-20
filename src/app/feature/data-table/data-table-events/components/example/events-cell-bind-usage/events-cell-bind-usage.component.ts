@@ -17,7 +17,7 @@ export class EventsCellBindUsageComponent {
   public cellBindEventData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onCellBind(cellBindEventArgs: DataTableCellBindEventArgs<any>): void {

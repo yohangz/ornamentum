@@ -15,7 +15,7 @@ export class ItemSelectionWithAllOptionsUsageComponent {
   public selectedItems: any[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
     this.selectedOptions = this.items.slice(5, 8);
   }
 

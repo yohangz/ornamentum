@@ -13,7 +13,7 @@ export class ItemSelectionSelectedOptionUsageComponent {
   public selectedOption: ExampleData;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
     this.selectedOption = this.items[1];
   }
 }

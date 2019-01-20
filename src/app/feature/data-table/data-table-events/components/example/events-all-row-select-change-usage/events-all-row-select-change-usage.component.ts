@@ -15,7 +15,7 @@ export class EventsAllRowSelectChangeUsageComponent {
   public allRowSelectChangeEventData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onAllRowSelectChange(allRowSelectedChanged: boolean): void {

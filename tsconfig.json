@@ -21,6 +21,12 @@
     "paths": {
       "ornamentum": [
         "dist/ornamentum"
+      ],
+      "helper-models": [
+        "src/app/shared/models"
+      ],
+      "helper-services": [
+        "src/app/shared/services"
       ]
     }
   }

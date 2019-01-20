@@ -1,49 +1,85 @@
 <div class="feature-container">
   <h1>Data Table Overview</h1>
-
-  <p>Ornamentum Data Grid is an simple data table with extended features that a conventional data table not supports. as
-    same as the <a rel="noopener" target="_blank" href="feature/dropdown/overview">Dropdown</a> it was built for
-    focusing on deliver a feature rich, highly configurable,UI framework agnostic, fully responsive and minimal peer
-    dependency support data table in top of the
-    <a rel="noopener" target="_blank" href="https://angular.io/docs">Angular</a> Framework.
+  <p>
+    Ornamentum Data Table is a highly configurable <a rel="noopener" target="_blank" href="https://angular.io">Angular</a>
+    component which support table view data representation. This component support client/server/realtime data binding
+    along with data filtering, sorting, grouping, pagination, selection, templating, state persistence, theming and much more.
+  </p>
+  <p>
+    This component can be integrated with any UI framework and fully responsive dynamic mobile friendly component user
+    interface design will deliver best user experience in any device resolution. Built with pure angular components and
+    minimal peer dependencies to minimize overall bundle size. Guaranteed seamless integration via developer friendly
+    component API along with rich example code based documentation. This component support all angular supported browsers
+    out of the box.
   </p>
 
   <h2 id="basicUsage">Basic Usage</h2>
-
-  <p>The following example shows how Ornamentum Data Table is looks like and attach a sample responsible code segment
-    for the
-    data table is shown down below.</p>
+  <p>
+    Following example depicts the outer appearance of the Ornamentum Data Table along with sample integration code snippets.
+  </p>
 
   <app-basic-usage></app-basic-usage>
   <app-example-code [files]="basicUsage"></app-example-code>
 
   <h2 id="installation">Installation</h2>
+  <p>
+    <a rel="noopener" target="_blank" href="https://angular.io">Angular 7</a> or higher version is required to use the
+    latest version of Ornamentum.
+  </p>
 
   <ol class="main-pane-list">
-    <li>Note that, as a prerequisite it necessary to have <b><a href="https://angular.io/docs">Angular 7</a></b>
-      or higher version to be run.
-    </li>
-    <li>Download & Install the Ornamentum package and its dependencies using the following command.</li>
-    <ul class="main-pane-list">
-      <li> Via <b>Yarn</b></li>
-      <pre class="prettyprint lang-html">{{demoSnippet.yarn}}</pre>
-      <li> Via <b>NPM</b></li>
+    <li>
+      <p>
+        Download and install the Ornamentum packages and it's peer dependencies using either of following command depending
+        on your package manager.
+      </p>
       <pre class="prettyprint lang-html">{{demoSnippet.npm}}</pre>
-    </ul>
-    <li>After success installation, you can add ornamentum data table module to your application <b>root module</b> as
-      shown in the
-      below.
+      <p>or</p>
+      <pre class="prettyprint lang-html">{{demoSnippet.yarn}}</pre>
     </li>
-    <pre class="prettyprint lang-js">{{demoSnippet.import}}</pre>
-    <li>As the final step you have to import <a rel="noopener" target="_blank"
-                                                href="feature/data-table/styling-and-themes">Ornamentum Theme Styles</a>
-      reference(s) to imply the necessary styling into your project as your preference.
+    <li>
+      <p>
+        Once the installation is successful, add the Ornamentum Data Table component to your application Root Module as
+        depicted below.
+      </p>
+      <pre class="prettyprint linenums lang-js">{{demoSnippet.moduleImport}}</pre>
+    </li>
+    <li>
+      <p>
+        Import the Ornamentum theme style sheet reference to apply theming of your preference. Refer
+        <a [routerLink]="[ '/feature/data-table/styling-and-themes' ]">Styles & Theming</a> section for more details.
+      </p>
+      <p>
+        <b>CSS</b>: Include Ornamentum prebuilt CSS theme style sheets in
+        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+      </p>
+      <pre class="prettyprint linenums lang-json">{{demoSnippet.cssImport}}</pre>
+      <p>
+        <b>SCSS</b>: Include Ornamentum theme SCSS style sheets in
+        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a>  config "<b>styles</b>".
+      </p>
+      <pre class="prettyprint linenums lang-json">{{demoSnippet.scssImport}}</pre>
+    </li>
+    <li>
+      <p>
+        Finally, use Ornamentum data table component.
+      <p>
+      <p>
+        Example usage component markup (basic-usage.component.html)
+      <p>
+      <pre class="prettyprint linenums lang-html">{{demoSnippet.componentMarkup}}</pre>
+      <p>
+        Example usage component controller class (basic-usage.component.ts)
+      </p>
+      <pre class="prettyprint linenums lang-js">{{demoSnippet.componentController}}</pre>
     </li>
   </ol>
 
   <h2 id="peerDependencies">Peer Dependencies</h2>
-  <p>Ornamentum data table was depend on set of peer dependencies. before library usage, those dependencies need to
-    pre-installed.</p>
+  <p>
+    Following dependencies are required to be installed along with Ornamentum.
+  </p>
+
   <ul class="main-pane-list">
     <li><a rel="noopener" target="_blank" href="https://www.npmjs.com/package/@angular/common">@angular/common</a></li>
     <li><a rel="noopener" target="_blank" href="https://www.npmjs.com/package/@angular/core">@angular/core</a></li>
@@ -53,68 +89,63 @@
   </ul>
 
   <h2 id="functionality">Functionality</h2>
-  <p>Below structure shows the available features and it's functionality that allows to configure on data table. in
-    each section explain and describes particular feature or functionality in depth with sample illustrations.</p>
+  <p>
+    Refer below sections for available feature/functionality usage in detail.
+  </p>
 
   <ul class="main-pane-list">
     <li><b>Data Binding & Events</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/data-table/client-side-data-binding">Client-side Data
-        binding</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/server-side-data-binding">Server-side Data
-        binding</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/real-time-data-binding">Realtime Data binding</a>
-      </li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/events">Events</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/client-side-data-binding' ]">Client-side Data binding</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/server-side-data-binding' ]">Server-side Data binding</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/real-time-data-binding' ]">Realtime Data binding</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/events' ]">Events</a></li>
     </ul>
 
     <li><b>Responsive Configurations</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/data-table/responsive-configuration">Responsive
-        Configuration</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/column/resizing">Column Resizing</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/responsive-configuration' ]">Responsive Configuration</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/column/resizing' ]">Column Resizing</a></li>
     </ul>
 
     <li><b>Data Ordering</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/data-table/column/sorting">Column Sorting</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/column/filtering">Filtering</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/column/sorting' ]">Column Sorting</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/column/filtering' ]">Filtering</a></li>
     </ul>
 
     <li><b>Data Loading</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/data-table/data-persistence">Data Persistence</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/loading-spinner">Data Loading Spinner</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/data-persistence' ]">Data Persistence</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/loading-spinner' ]">Data Loading Spinner</a></li>
     </ul>
 
     <li><b>Customizations</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/data-table/pagination">Pagination</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/grouping">Row Grouping</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/row-selection">Row Selection</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/header-details">Header Details</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/translations">Translations</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/substitute-rows">Substitute Rows</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/pagination' ]">Pagination</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/grouping' ]">Row Grouping</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/row-selection' ]">Row Selection</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/header-details' ]">Header Details</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/translations' ]">Translations</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/substitute-rows' ]">Substitute Rows</a></li>
     </ul>
 
     <li><b>Templates</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/data-table/templates/cell-template">Cell Template</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/templates/row-expand-template">Row Expand
-        Template</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/templates/loading-spinner-template">Loading Spinner
-        Template</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/data-table/templates/no-records-template">No Records
-        Template</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/templates/cell-template' ]">Cell Template</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/templates/row-expand-template' ]">Row Expand Template</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/templates/loading-spinner-template' ]">Loading Spinner Template</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/templates/no-records-template' ]">No Records Template</a></li>
     </ul>
 
     <li><b>Styling & Themes</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/data-table/styling-and-themes">Styling & Themes</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/styling-and-themes' ]">Styling & Themes</a></li>
+      <li><a [routerLink]="[ '/feature/data-table/custom-theming' ]">Custom Themes</a></li>
     </ul>
   </ul>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="feature/dropdown/overview">Dropdown Overview</a><br>
+  <a [routerLink]="[ '/feature/dropdown/overview' ]">Dropdown Overview</a><br>
   <a rel="noopener" target="_blank" href="api-docs/modules/DataTableModule.html">API Doc for DataTable Module</a>
 </div>

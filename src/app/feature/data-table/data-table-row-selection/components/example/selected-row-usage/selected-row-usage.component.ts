@@ -13,7 +13,7 @@ export class SelectedRowUsageComponent implements OnInit {
   public selectedRow: any;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public ngOnInit() {
