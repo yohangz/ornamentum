@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 
 import { basicUsage, demoSnippet } from './data-table-overview.list';
 
+/**
+ * Data table overview component controller.
+ */
 @Component({
   selector: 'app-data-table-overview-component',
   templateUrl: './data-table-overview.component.html',

@@ -16,7 +16,7 @@ export class EventsInitUsageComponent {
   public initEventData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onDropdownInit(dropdown: DropdownComponent): void {

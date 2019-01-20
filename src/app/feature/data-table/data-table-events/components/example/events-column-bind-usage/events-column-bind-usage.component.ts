@@ -17,7 +17,7 @@ export class EventsColumnBindUsageComponent {
   public columnBindEventData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onColumnBind(dataTableColumnComponent: DataTableColumnComponent): void {

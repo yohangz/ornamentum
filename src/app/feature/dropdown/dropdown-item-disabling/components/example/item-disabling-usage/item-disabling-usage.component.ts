@@ -15,7 +15,7 @@ export class ItemDisablingUsageComponent {
   }
 
   public checkProductAvailability(): ExampleData[] {
-    const items = this.dataFetchService.fetchData(20, 10);
+    const items = this.dataFetchService.fetchStaticData(20, 10);
 
     if (items) {
       items.map((value: ExampleData) => {

@@ -15,16 +15,15 @@ export const basicUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'basic-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/basic-usage/basic-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
 export const demoSnippet: any = {
   npm: require('!!raw-loader?lang=typescript!./docs/npm-install.md'),
   yarn: require('!!raw-loader?lang=typescript!./docs/yarn-install.md'),
-  import: require('!!raw-loader?lang=typescript!./docs/import.md')
+  moduleImport: require('!!raw-loader?lang=typescript!./docs/module-import.md'),
+  componentMarkup: require('!!raw-loader?lang=html!./docs/basic-usage.component.html.md'),
+  componentController: require('!!raw-loader?lang=typescript!./docs/basic-usage.component.ts.md'),
+  cssImport: require('!!raw-loader?lang=json!./docs/style-css-import.json.md'),
+  scssImport: require('!!raw-loader?lang=json!./docs/style-scss-import.json.md')
 };

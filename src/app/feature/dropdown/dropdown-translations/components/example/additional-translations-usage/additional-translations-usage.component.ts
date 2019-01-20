@@ -20,6 +20,6 @@ export class AdditionalTranslationsUsageComponent {
   };
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 }

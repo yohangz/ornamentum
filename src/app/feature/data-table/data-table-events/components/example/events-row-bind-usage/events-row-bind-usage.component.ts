@@ -17,7 +17,7 @@ export class EventsRowBindUsageComponent {
   public rowBindEventData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onRowBind(dataRow: DataTableRow<ExampleData>): void {

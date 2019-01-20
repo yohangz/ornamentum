@@ -4,8 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DataTableOverviewComponent } from './index';
 
 /**
- * Represent data table overview routes.
- * @type Routes
+ * Data table overview routes.
  */
 const dataTableOverviewRoutes: Routes = [
   {
@@ -16,7 +15,6 @@ const dataTableOverviewRoutes: Routes = [
 
 /**
  * Data table overview routing module.
- * @class DataTableOverviewRoutingModule
  */
 @NgModule({
   exports: [RouterModule],

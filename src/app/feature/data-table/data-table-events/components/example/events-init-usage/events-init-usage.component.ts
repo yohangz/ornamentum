@@ -19,7 +19,7 @@ export class EventsInitUsageComponent {
   public dataTableInitData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onDataTableInit(dataTable: DataTableComponent): void {

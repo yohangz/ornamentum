@@ -11,8 +11,7 @@ import { DataTableOverviewRoutingModule } from './data-table-overview-routing.mo
 import { SharedModule } from '../../../shared/shared.module';
 
 /**
- * Module class for containing data table overview module.
- * @class DataTableOverviewModule
+ * Data table overview feature module.
  */
 @NgModule({
   declarations: [

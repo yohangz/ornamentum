@@ -23,19 +23,8 @@ export class DataFetchService {
    * @param offset Data fetch offset.
    * @param limit Data limit to fetch.
    */
-  public fetchData(offset: number = 0, limit: number = 10): ExampleData[] {
+  public fetchStaticData(offset: number = 0, limit: number = 10): ExampleData[] {
     return fetchData.slice(offset, offset + limit);
-  }
-
-  /**
-   * Fetch data stream from server for demo client side data binding with data source.
-   * @param offset Data fetch offset.
-   * @param limit Data limit to fetch.
-   */
-  public fetchExampleDataFromServer(offset: number = 0, limit: number = 10): Observable<ResourceData<ExampleData[]>> {
-    let params = new HttpParams();
-    params = params.set('offset', String(offset)).set('limit', String(offset + limit));
-    return this.http.get<ResourceData<ExampleData[]>>('/api/data', {params: params});
   }
 
   /**

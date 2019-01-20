@@ -14,7 +14,7 @@ export class EventsSelectChangeUsageComponent {
   public selectChangeEventData: ExampleData | ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onSelectChange(selectedData: ExampleData | ExampleData[]): void {

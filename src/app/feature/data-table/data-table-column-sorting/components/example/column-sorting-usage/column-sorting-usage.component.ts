@@ -12,6 +12,6 @@ export class ColumnSortingUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData(0, 20);
+    this.items = this.dataFetchService.fetchStaticData(0, 20);
   }
 }

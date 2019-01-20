@@ -16,7 +16,7 @@ export class EventsHeaderClickUsageComponent {
   public headerClickEventData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onHeaderClick(headerClickEventArgs: DataTableHeaderClickEventArgs): void {

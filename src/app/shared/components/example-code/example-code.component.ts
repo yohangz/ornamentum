@@ -3,8 +3,7 @@ import { Component, Input } from '@angular/core';
 import { ExampleFile, FileType } from '../../models';
 
 /**
- * Component class to represent application footer.
- * @class ExampleCodeComponent
+ * Dynamic example demo code viewer component
  */
 @Component({
   selector: 'app-example-code',

@@ -13,7 +13,7 @@ export class LoadingSpinnerTemplateUsageComponent {
 
   constructor(private dataFetchService: DataFetchService) {
     setTimeout(() => {
-      this.items = this.dataFetchService.fetchData();
+      this.items = this.dataFetchService.fetchStaticData();
     }, 5000);
   }
 }

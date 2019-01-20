@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
 
 import { ExampleData } from '../../../../../../shared/models';
-import { ResourceData } from '../../../../../../shared/models/resource-data.model';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
@@ -16,8 +14,6 @@ export class ClientSideDataBindingWithDataSourceComponent {
   public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.dataSource = this.dataFetchService.fetchExampleDataFromServer().pipe(map((resource: ResourceData<ExampleData[]>) => {
-      return resource.data;
-    }));
+    this.dataSource = of(this.dataFetchService.fetchStaticData(0, 20));
   }
 }

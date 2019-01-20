@@ -37,11 +37,11 @@ export class DataTableDemoComponent implements OnInit {
               offset = 0;
             }
 
-            return this.dataFetchService.fetchData(offset, 20);
+            return this.dataFetchService.fetchStaticData(offset, 20);
           })
         );
     } else {
-      this.dataSource = of(this.dataFetchService.fetchData(offset, 20));
+      this.dataSource = of(this.dataFetchService.fetchStaticData(offset, 20));
     }
   }
 
