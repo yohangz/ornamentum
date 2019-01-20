@@ -16,11 +16,7 @@ import { environment } from '../environments/environment';
   bootstrap: [AppComponent],
   declarations: [AppComponent],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'ornamentum' }),
-    TransferHttpCacheModule,
-    AppMainModule,
-    AppRoutingModule,
-    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
+    BrowserModule.withServerTransition({ appId: 'ornamentum' }), TransferHttpCacheModule, AppMainModule, AppRoutingModule, ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: []
 })
