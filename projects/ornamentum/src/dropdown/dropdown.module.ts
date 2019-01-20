@@ -13,31 +13,16 @@ import { DROPDOWN_CONFIG } from './services/dropdown-config.service';
 
 import { UtilityModule } from '../utility/utility.module';
 
-const COMPONENTS = [
-  DropdownComponent,
-  DropdownViewComponent,
-  DropdownFilterComponent,
-  DropdownOptionsComponent
-];
+const COMPONENTS = [DropdownComponent, DropdownViewComponent, DropdownFilterComponent, DropdownOptionsComponent];
 
 /**
  * Module representing dropdown component
  */
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    UtilityModule.forRoot()
-  ],
-  declarations: [
-    ...COMPONENTS
-  ],
-  exports: [
-    DropdownComponent
-  ],
-  entryComponents: [
-    DropdownViewComponent
-  ]
+  imports: [CommonModule, FormsModule, UtilityModule.forRoot()],
+  declarations: [...COMPONENTS],
+  exports: [DropdownComponent],
+  entryComponents: [DropdownViewComponent]
 })
 export class DropdownModule {
   /**

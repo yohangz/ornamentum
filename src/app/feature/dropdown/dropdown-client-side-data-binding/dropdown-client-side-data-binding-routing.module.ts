@@ -5,7 +5,6 @@ import { DropdownClientSideDataBindingComponent } from './index';
 
 /**
  * Represent dropdown client side data binding routes.
- * @type Routes
  */
 const dropdownClientSideDataBindingRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownClientSideDataBindingRoutes: Routes = [
 
 /**
  * Dropdown client side data binding routing module.
- * @class DropdownClientSideDataBindingRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownClientSideDataBindingRoutes)]
 })
-export class DropdownClientSideDataBindingRoutingModule {
-}
+export class DropdownClientSideDataBindingRoutingModule {}

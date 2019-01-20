@@ -11,21 +11,11 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown item disabling module.
- * @class DropdownItemDisablingModule
  */
 @NgModule({
-  declarations: [
-    DropdownItemDisablingComponent,
-    ItemDisablingUsageComponent
-  ],
+  declarations: [DropdownItemDisablingComponent, ItemDisablingUsageComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownItemDisablingRoutingModule
-  ],
+  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownItemDisablingRoutingModule],
   providers: []
 })
-export class DropdownItemDisablingModule {
-}
+export class DropdownItemDisablingModule {}

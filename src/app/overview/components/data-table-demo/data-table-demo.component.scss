@@ -18,11 +18,11 @@
 }
 
 .high-margin {
-  color: #FD0E35;
+  color: #fd0e35;
 
   &::before {
     @extend %icon-position;
-    content: url("../../../../assets/images/angle-arrow-up.svg");
+    content: url('../../../../assets/images/angle-arrow-up.svg');
   }
 }
 
@@ -31,7 +31,7 @@
 
   &::before {
     @extend %icon-position;
-    content: url("../../../../assets/images/angle-arrow-down.svg");
+    content: url('../../../../assets/images/angle-arrow-down.svg');
   }
 }
 
@@ -40,7 +40,7 @@
 
   &::before {
     @extend %color-icons;
-    background: url("../../../../assets/images/www.svg");
+    background: url('../../../../assets/images/www.svg');
   }
 }
 
@@ -49,7 +49,7 @@
 
   &::before {
     @extend %color-icons;
-    background: url("../../../../assets/images/email.svg");
+    background: url('../../../../assets/images/email.svg');
   }
 }
 
@@ -58,7 +58,7 @@
 
   &::before {
     @extend %color-icons;
-    background: url("../../../../assets/images/telephone.svg");
+    background: url('../../../../assets/images/telephone.svg');
   }
 }
 
@@ -67,6 +67,6 @@
 
   &::before {
     @extend %color-icons;
-    background: url("../../../../assets/images/fax.svg");
+    background: url('../../../../assets/images/fax.svg');
   }
 }

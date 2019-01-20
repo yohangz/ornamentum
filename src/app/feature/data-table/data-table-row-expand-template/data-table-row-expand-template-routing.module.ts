@@ -5,7 +5,6 @@ import { DataTableRowExpandTemplateComponent } from './index';
 
 /**
  * Represent data table row expand template routes.
- * @type Routes
  */
 const dataTableRowExpandTemplateRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableRowExpandTemplateRoutes: Routes = [
 
 /**
  * Data table row expand template  routing module.
- * @class DataTableRowExpandTemplateRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableRowExpandTemplateRoutes)]
 })
-export class DataTableRowExpandTemplateRoutingModule {
-}
+export class DataTableRowExpandTemplateRoutingModule {}

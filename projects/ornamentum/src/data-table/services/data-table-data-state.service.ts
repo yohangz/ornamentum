@@ -20,9 +20,9 @@ export class DataTableDataStateService {
   public substituteRows: any[] = [];
   public heardReload = false;
 
-  public onDynamicRowSpanExtract: DataTableDynamicRowSpanExtractorCallback<any> = (() => 1);
   public onFilterValueExtract: DataTableFilterValueExtractCallback;
   public onDataBind: DataTableDataBindCallback;
+  public onDynamicRowSpanExtract: DataTableDynamicRowSpanExtractorCallback<any> = () => 1;
 
   /**
    * Get show no data overlay status

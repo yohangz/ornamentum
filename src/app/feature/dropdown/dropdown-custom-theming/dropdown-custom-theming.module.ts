@@ -11,20 +11,11 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown custom theming module.
- * @class DropdownCustomThemingModule
  */
 @NgModule({
-  declarations: [
-    DropdownCustomThemingComponent
-  ],
+  declarations: [DropdownCustomThemingComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownCustomThemingRoutingModule
-  ],
+  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownCustomThemingRoutingModule],
   providers: []
 })
-export class DropdownCustomThemingModule {
-}
+export class DropdownCustomThemingModule {}

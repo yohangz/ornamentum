@@ -280,8 +280,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   @Input()
   public dropdownFilterDynamicHeightRatio: number;
 
-  constructor(private dataTableConfigService: DataTableConfigService,
-              private eventStateService: DataTableEventStateService) {
+  constructor(private dataTableConfigService: DataTableConfigService, private eventStateService: DataTableEventStateService) {
     // Table column config
     this.sortable = dataTableConfigService.sortable;
     this._sortOrder = dataTableConfigService.sortOrder;

@@ -21,7 +21,6 @@ import { FormsModule } from '@angular/forms';
 
 /**
  * Module class for containing dropdown events module.
- * @class DropdownEventsModule
  */
 @NgModule({
   declarations: [
@@ -35,14 +34,7 @@ import { FormsModule } from '@angular/forms';
     EventsTriggerSelectChangeOnModelUpdateUsageComponent
   ],
   exports: [],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownEventsRoutingModule
-  ],
+  imports: [CommonModule, FormsModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownEventsRoutingModule],
   providers: []
 })
-export class DropdownEventsModule {
-}
+export class DropdownEventsModule {}

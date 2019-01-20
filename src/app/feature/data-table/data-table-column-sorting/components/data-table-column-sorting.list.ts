@@ -73,15 +73,13 @@ export const columnSortingUsageWithMultiColumnSortable: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'column-sorting-multi-column-sortable-usage.module.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/column-sorting-multi-column-sortable-usage/' +
+    content: require('!!raw-loader?lang=typescript!./example/column-sorting-multi-column-sortable-usage/' +
       'column-sorting-multi-column-sortable-usage.module.md')
   },
   {
     type: FileType.TS,
     name: 'column-sorting-multi-column-sortable-usage.component.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/column-sorting-multi-column-sortable-usage/' +
+    content: require('!!raw-loader?lang=typescript!./example/column-sorting-multi-column-sortable-usage/' +
       'column-sorting-multi-column-sortable-usage.component.ts')
   },
   {
@@ -100,5 +98,3 @@ export const columnSortingUsageWithMultiColumnSortable: ExampleFile[] = [
 export const demoSnippet: any = {
   sorting: require('!!raw-loader?lang=typescript!./docs/sorting.md')
 };
-
-

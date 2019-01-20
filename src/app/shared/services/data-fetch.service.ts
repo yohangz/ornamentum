@@ -15,8 +15,7 @@ import fetchData from '../data/sample-data';
  */
 @Injectable()
 export class DataFetchService {
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   /**
    * Fetch data from client source for demo client side data binding with items property.
@@ -54,7 +53,7 @@ export class DataFetchService {
         }
       });
 
-      return this.http.get<ResourceData<ExampleData[]>>('/api/data', {params: queryParams});
+      return this.http.get<ResourceData<ExampleData[]>>('/api/data', { params: queryParams });
     }
   }
 
@@ -79,6 +78,6 @@ export class DataFetchService {
       }
     }
 
-    return this.http.get<ResourceData<ExampleData[]>>('/api/data', {params: queryParams});
+    return this.http.get<ResourceData<ExampleData[]>>('/api/data', { params: queryParams });
   }
 }

@@ -7,7 +7,6 @@ import { Theme } from '../../../core/models/theme.enum';
 
 /**
  * Component class for showing main view.
- * @class MainComponent
  */
 @Component({
   selector: 'app-main',
@@ -592,7 +591,7 @@ export class MainComponent {
                 {
                   title: 'Header Click',
                   anchor: 'headerClick'
-                },
+                }
               ]
             },
             {
@@ -1299,4 +1298,3 @@ export class MainComponent {
     this.pageWrapper.nativeElement.scrollTop = 0;
   }
 }
-

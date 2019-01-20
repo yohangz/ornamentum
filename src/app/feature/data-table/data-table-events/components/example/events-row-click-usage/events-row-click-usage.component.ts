@@ -6,7 +6,6 @@ import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
-
 @Component({
   selector: 'app-events-row-click-usage',
   templateUrl: './events-row-click-usage.component.html',

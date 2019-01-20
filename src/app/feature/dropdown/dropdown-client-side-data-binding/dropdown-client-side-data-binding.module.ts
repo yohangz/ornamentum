@@ -17,19 +17,9 @@ import { SharedModule } from '../../../shared/shared.module';
  * Module class for containing dropdown client side data binding module.
  */
 @NgModule({
-  declarations: [
-    DropdownClientSideDataBindingComponent,
-    ClientSideDataBindingWithItemsComponent,
-    ClientSideDataBindingWithDataSourceComponent
-  ],
+  declarations: [DropdownClientSideDataBindingComponent, ClientSideDataBindingWithItemsComponent, ClientSideDataBindingWithDataSourceComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownClientSideDataBindingRoutingModule
-  ],
+  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownClientSideDataBindingRoutingModule],
   providers: []
 })
-export class DropdownClientSideDataBindingModule {
-}
+export class DropdownClientSideDataBindingModule {}

@@ -1,62 +1,93 @@
 <ng-container *ngFor="let row of dataStateService.dataRows">
   <ng-container *ngFor="let ignored of getRowSpanCollection(row); let rowSpanIndex = index; let rowSpanCount = count">
-      <tr class="ng-data-table-row"
-          (ngInit)="onRowInit(row)"
-          [attr.title]="row.tooltip"
-          [class.row-odd]="isOddRow(row)"
-          [class.row-even]="isEvenRow(row)"
-          [class.selected]="row.selected"
-          [class.clickable]="config.selectOnRowClick"
-          [class.disabled]="row.disabled"
-          [ngClass]="row.cssClass"
-          (dblclick)="rowDoubleClicked(row, $event)"
-          (click)="rowClicked(row, $event)">
-        <td class="ng-data-table-row-expand-button ng-ignore-propagation" [style.background-color]="row.color"
-            *ngIf="config.expandableRows && !rowSpanIndex"
-            (click)="onRowExpand($event, row)" [attr.rowspan]="rowSpanCount">
-          <div [hidden]="config.showRowExpandLoadingSpinner && isRowExpanderLoading(row)">
-            <span class="ng-data-table-expander-collapsed-icon ng-ignore-propagation" *ngIf="!row.expanded"></span>
-            <span class="ng-data-table-expander-expanded-icon ng-ignore-propagation" *ngIf="row.expanded"></span>
-          </div>
-          <ng-data-table-loading-spinner *ngIf="config.showRowExpandLoadingSpinner"
-                                         [loadingSpinnerTemplate]="rowExpandLoadingSpinnerTemplate"
-                                         [isLoading]="isRowExpanderLoading(row)" [showOverlay]="false">
-          </ng-data-table-loading-spinner>
-        </td>
-        <td class="index-column" [style.background-color]="row.color"
-            *ngIf="config.showIndexColumn && !rowSpanIndex"
-            [textContent]="getDisplayIndex(row)" [attr.rowspan]="rowSpanCount">
-        </td>
-        <td class="ng-data-table-select-column ng-ignore-propagation" [style.background-color]="row.color"
-            *ngIf="showRowSelectCheckbox && !rowSpanIndex" [attr.rowspan]="rowSpanCount">
-          <input class="ng-data-table-checkbox-input ng-ignore-propagation" type="checkbox" [(ngModel)]="row.selected"
-               (click)="onRowSelectClick(row, $event)"  (change)="onRowSelectChange(row)"/>
-        </td>
-        <ng-container *ngFor="let column of columns">
-          <ng-container *ngIf="column.visible">
-            <td class="ng-data-table-data-column" *ngIf="!column.cellTemplate && !rowSpanIndex"
-                (ngInit)="onCellInit(column, row)" [ngClass]="column.cssClass" [attr.rowspan]="rowSpanCount"
-                [style.background-color]="column.getCellColor(row) || row.color"
-                (click)="cellClicked(column, row, $event)">
-              <span>{{ getFieldValue(row, column) }}</span>
-            </td>
-            <ng-container *ngIf="column.cellTemplate" [ngTemplateOutlet]="column.cellTemplate"
-                          [ngTemplateOutletContext]="{ column: column, row: row, spanIndex: rowSpanIndex, rowSpan: rowSpanCount  }">
-            </ng-container>
+    <tr
+      class="ng-data-table-row"
+      (ngInit)="onRowInit(row)"
+      [attr.title]="row.tooltip"
+      [class.row-odd]="isOddRow(row)"
+      [class.row-even]="isEvenRow(row)"
+      [class.selected]="row.selected"
+      [class.clickable]="config.selectOnRowClick"
+      [class.disabled]="row.disabled"
+      [ngClass]="row.cssClass"
+      (dblclick)="rowDoubleClicked(row, $event)"
+      (click)="rowClicked(row, $event)"
+    >
+      <td
+        class="ng-data-table-row-expand-button ng-ignore-propagation"
+        [style.background-color]="row.color"
+        *ngIf="config.expandableRows && !rowSpanIndex"
+        (click)="onRowExpand($event, row)"
+        [attr.rowspan]="rowSpanCount"
+      >
+        <div [hidden]="config.showRowExpandLoadingSpinner && isRowExpanderLoading(row)">
+          <span class="ng-data-table-expander-collapsed-icon ng-ignore-propagation" *ngIf="!row.expanded"></span>
+          <span class="ng-data-table-expander-expanded-icon ng-ignore-propagation" *ngIf="row.expanded"></span>
+        </div>
+        <ng-data-table-loading-spinner
+          *ngIf="config.showRowExpandLoadingSpinner"
+          [loadingSpinnerTemplate]="rowExpandLoadingSpinnerTemplate"
+          [isLoading]="isRowExpanderLoading(row)"
+          [showOverlay]="false"
+        >
+        </ng-data-table-loading-spinner>
+      </td>
+      <td
+        class="index-column"
+        [style.background-color]="row.color"
+        *ngIf="config.showIndexColumn && !rowSpanIndex"
+        [textContent]="getDisplayIndex(row)"
+        [attr.rowspan]="rowSpanCount"
+      ></td>
+      <td
+        class="ng-data-table-select-column ng-ignore-propagation"
+        [style.background-color]="row.color"
+        *ngIf="showRowSelectCheckbox && !rowSpanIndex"
+        [attr.rowspan]="rowSpanCount"
+      >
+        <input
+          class="ng-data-table-checkbox-input ng-ignore-propagation"
+          type="checkbox"
+          [(ngModel)]="row.selected"
+          (click)="onRowSelectClick(row, $event)"
+          (change)="onRowSelectChange(row)"
+        />
+      </td>
+      <ng-container *ngFor="let column of columns">
+        <ng-container *ngIf="column.visible">
+          <td
+            class="ng-data-table-data-column"
+            *ngIf="!column.cellTemplate && !rowSpanIndex"
+            (ngInit)="onCellInit(column, row)"
+            [ngClass]="column.cssClass"
+            [attr.rowspan]="rowSpanCount"
+            [style.background-color]="column.getCellColor(row) || row.color"
+            (click)="cellClicked(column, row, $event)"
+          >
+            <span>{{ getFieldValue(row, column) }}</span>
+          </td>
+          <ng-container
+            *ngIf="column.cellTemplate"
+            [ngTemplateOutlet]="column.cellTemplate"
+            [ngTemplateOutletContext]="{ column: column, row: row, spanIndex: rowSpanIndex, rowSpan: rowSpanCount }"
+          >
           </ng-container>
         </ng-container>
-      </tr>
-    </ng-container>
+      </ng-container>
+    </tr>
+  </ng-container>
   <tr *ngIf="config.expandableRows" [hidden]="!row.expanded" class="ng-data-table-row-expansion">
     <td [attr.colspan]="totalColumnCount">
-      <ng-container [ngTemplateOutlet]="rowExpandTemplate" [ngTemplateOutletContext]="{ row: row }">
-      </ng-container>
+      <ng-container [ngTemplateOutlet]="rowExpandTemplate" [ngTemplateOutletContext]="{ row: row }"> </ng-container>
     </td>
   </tr>
 </ng-container>
 <ng-container *ngIf="hasSubstituteRows">
-  <tr *ngFor="let ignored of dataStateService.substituteRows, let index = index"
-      [class.row-odd]="isOddSubstituteRow(index)" [class.row-even]="isEvenSubstituteRow(index)">
+  <tr
+    *ngFor="let ignored of dataStateService.substituteRows; let index = index"
+    [class.row-odd]="isOddSubstituteRow(index)"
+    [class.row-even]="isEvenSubstituteRow(index)"
+  >
     <td *ngIf="config.expandableRows">&nbsp;</td>
     <td *ngIf="config.showIndexColumn">&nbsp;</td>
     <td *ngIf="showRowSelectCheckbox">&nbsp;</td>

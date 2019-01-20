@@ -14,7 +14,7 @@ export class DragAndDropService {
    * @param move Mouse move event handler
    * @param up Mouse up Event handler
    */
-  public drag(event: MouseEvent, { move, up }: { move: MoveHandler, up?: UpHandler }): void {
+  public drag(event: MouseEvent, { move, up }: { move: MoveHandler; up?: UpHandler }): void {
     const startX = event.pageX;
     const startY = event.pageY;
     let x = startX;

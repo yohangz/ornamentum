@@ -96,22 +96,19 @@ export const eventsTriggerSelectChangeOnFirstOptionSelectUsage: ExampleFile[] = 
   {
     type: FileType.TS,
     name: 'events-trigger-select-change-on-first-option-select-usage.module.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-first-option-select-usage/' +
+    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-first-option-select-usage/' +
       'events-trigger-select-change-on-first-option-select-usage.module.md')
   },
   {
     type: FileType.TS,
     name: 'events-trigger-select-change-on-first-option-select-usage.component.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-first-option-select-usage/' +
+    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-first-option-select-usage/' +
       'events-trigger-select-change-on-first-option-select-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'events-trigger-select-change-on-first-option-select-usage.component.html',
-    content: require(
-      '!!raw-loader?lang=html!./example/events-trigger-select-change-on-first-option-select-usage/' +
+    content: require('!!raw-loader?lang=html!./example/events-trigger-select-change-on-first-option-select-usage/' +
       'events-trigger-select-change-on-first-option-select-usage.component.html')
   },
   {
@@ -125,22 +122,19 @@ export const eventsTriggerSelectChangeOnInitUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'events-trigger-select-change-on-init-usage.module.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-init-usage/' +
+    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-init-usage/' +
       'events-trigger-select-change-on-init-usage.module.md')
   },
   {
     type: FileType.TS,
     name: 'events-usage.component.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-init-usage/' +
+    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-init-usage/' +
       'events-trigger-select-change-on-init-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'events-trigger-select-change-on-init-usage.component.html',
-    content: require(
-      '!!raw-loader?lang=html!./example/events-trigger-select-change-on-init-usage/' +
+    content: require('!!raw-loader?lang=html!./example/events-trigger-select-change-on-init-usage/' +
       'events-trigger-select-change-on-init-usage.component.html')
   },
   {
@@ -154,22 +148,19 @@ export const eventsTriggerSelectChangeOnModelUpdateUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'events-trigger-select-change-on-model-update-usage.module.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-model-update-usage/' +
+    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-model-update-usage/' +
       'events-trigger-select-change-on-model-update-usage.module.md')
   },
   {
     type: FileType.TS,
     name: 'events-trigger-select-change-on-model-update-usage.component.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-model-update-usage' +
+    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-model-update-usage' +
       '/events-trigger-select-change-on-model-update-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'events-trigger-select-change-on-model-update-usage.component.html',
-    content: require(
-      '!!raw-loader?lang=html!./example/events-trigger-select-change-on-model-update-usage/' +
+    content: require('!!raw-loader?lang=html!./example/events-trigger-select-change-on-model-update-usage/' +
       'events-trigger-select-change-on-model-update-usage.component.html')
   },
   {

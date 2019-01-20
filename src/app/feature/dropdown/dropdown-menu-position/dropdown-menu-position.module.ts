@@ -11,21 +11,11 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown menu position module.
- * @class DropdownMenuPositionModule
  */
 @NgModule({
-  declarations: [
-    DropdownMenuPositionComponent,
-    MenuPositionUsageComponent
-  ],
+  declarations: [DropdownMenuPositionComponent, MenuPositionUsageComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownMenuPositionRoutingModule
-  ],
+  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownMenuPositionRoutingModule],
   providers: []
 })
-export class DropdownMenuPositionModule {
-}
+export class DropdownMenuPositionModule {}

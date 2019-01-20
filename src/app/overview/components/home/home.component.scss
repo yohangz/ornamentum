@@ -2,7 +2,6 @@
 @import '../../../styles/mixins';
 
 .home-container {
-
   %header-background {
     @include display-flex;
     @include flex-direction(column);
@@ -13,7 +12,6 @@
     padding: 2rem;
     position: absolute;
     width: 100%;
-
   }
 
   header {
@@ -28,7 +26,6 @@
       border-bottom: 20px solid $background-overlay-gradient-1;
       min-height: 100vh;
     }
-
 
     .intro {
       @include display-flex;
@@ -57,12 +54,12 @@
       }
 
       @include breakpoint(max360) {
-        @include transform(scale(.8));
+        @include transform(scale(0.8));
         top: 40px;
       }
 
       @include breakpoint(max812) {
-        @include transform(scale(.7));
+        @include transform(scale(0.7));
         top: 20px;
       }
 
@@ -86,7 +83,6 @@
         @include breakpoint(max480) {
           width: 20rem;
         }
-
       }
 
       .intro-description {
@@ -95,7 +91,7 @@
         color: $main-nav-bar-active-text;
         font-weight: 300;
         left: 13.5rem;
-        letter-spacing: .05rem;
+        letter-spacing: 0.05rem;
         position: absolute;
         top: 8rem;
         width: 40rem;
@@ -119,7 +115,6 @@
           left: 4.5rem;
           width: 15rem;
         }
-
       }
 
       .button-container {
@@ -140,14 +135,14 @@
         }
 
         @include breakpoint(max640) {
-          @include transform(scale(.9));
+          @include transform(scale(0.9));
           left: 2rem;
           top: 18rem;
           width: 25rem;
         }
 
         @include breakpoint(max480) {
-          @include transform(scale(.7));
+          @include transform(scale(0.7));
           left: 0;
           top: 20rem;
           width: 25rem;
@@ -160,19 +155,18 @@
           @include transition(all 1s ease);
           @include text-shadow(0 0 3px $background-overlay-gradient-4);
           background: $background-overlay-gradient-1;
-          border:  1px solid $background-overlay-gradient-1;
+          border: 1px solid $background-overlay-gradient-1;
           color: $primary-text-color;
           cursor: pointer;
           font-weight: 300;
-          letter-spacing: .05rem;
+          letter-spacing: 0.05rem;
           outline: 0;
-          padding: .4rem 3rem;
+          padding: 0.4rem 3rem;
           text-decoration: none;
 
           &:hover {
             @include box-shadow(4px 4px 8px $background-overlay-gradient-4);
             background: $background-overlay-gradient-2;
-
           }
         }
 
@@ -183,14 +177,14 @@
           @include transition(all 1s ease);
           @include text-shadow(0 0 1px $side-menu-background);
           background: $primary-text-color;
-          border:  1px solid $primary-text-color;
+          border: 1px solid $primary-text-color;
           color: $background-overlay-gradient-4;
           cursor: pointer;
           font-weight: 300;
-          letter-spacing: .05rem;
+          letter-spacing: 0.05rem;
           margin-left: 1rem;
           outline: 0;
-          padding: .4rem 3rem;
+          padding: 0.4rem 3rem;
           text-decoration: none;
 
           &:hover {
@@ -280,7 +274,7 @@
     .section-image-container,
     .description-container {
       @include font-size(1, 1.6);
-      letter-spacing: .05rem;
+      letter-spacing: 0.05rem;
       width: 50%;
 
       @include breakpoint(max767) {
@@ -319,15 +313,12 @@
       max-width: 1000px;
       min-height: 300px;
 
-
       @include breakpoint(max480) {
         min-height: 200px;
       }
     }
 
     .section-image {
-
-
       &.rich-data-table {
         @extend %section-images;
         @extend %smaller-window-image;
@@ -391,7 +382,6 @@
         background-position: 50%;
         background-size: contain;
       }
-
     }
 
     .icon-list {
@@ -403,9 +393,8 @@
       font-weight: 300;
 
       @include breakpoint(max575) {
-        margin-bottom: .2rem;
+        margin-bottom: 0.2rem;
       }
-
 
       .icon-box {
         padding: 1rem;
@@ -415,12 +404,12 @@
         }
 
         .icon-description {
-          margin-left: .5rem;
+          margin-left: 0.5rem;
         }
       }
 
       %icon-placement {
-        padding-bottom: .5rem;
+        padding-bottom: 0.5rem;
       }
 
       .data-client-icon {
@@ -550,7 +539,6 @@
         }
       }
     }
-
 
     &.last-section {
       border-bottom: 0;

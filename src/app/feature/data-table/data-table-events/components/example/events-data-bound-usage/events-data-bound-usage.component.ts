@@ -14,7 +14,7 @@ export class EventsDataBoundUsageComponent {
   public dataBoundEventData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
-      this.items = this.dataFetchService.fetchStaticData();
+    this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onDataBound(): void {

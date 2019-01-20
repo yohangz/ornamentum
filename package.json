@@ -41,7 +41,8 @@
     "version": "node version.js && npm run build && git add src/environments/version.ts projects/ornamentum/package.json",
     "postversion": "git push && git push --tags",
     "prerelease": "npm run build && cp README.md dist/ornamentum",
-    "release": "npm publish dist/ornamentum"
+    "release": "npm publish dist/ornamentum",
+    "pretty": "prettier --write \"{,!(node_modules|coverage|dist|.idea)/**/}*.{ts,html,scss}\""
   },
   "repository": {
     "type": "git",
@@ -136,6 +137,7 @@
     "karma-jasmine-html-reporter": "^1.4.0",
     "ng-packagr": "^4.4.5",
     "node-sass-tilde-importer": "^1.0.2",
+    "prettier": "^1.16.0",
     "protractor": "^5.4.2",
     "rimraf": "^2.6.2",
     "sass-lint": "^1.12.1",

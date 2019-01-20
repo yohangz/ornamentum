@@ -20,7 +20,7 @@ export const paginationUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'pagination-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/pagination-usage/pagination-usage.component.html')
-  },
+  }
 ];
 
 export const paginationUsageWithPage: ExampleFile[] = [
@@ -43,7 +43,7 @@ export const paginationUsageWithPage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'pagination-page-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/pagination-page-usage/pagination-page-usage.component.html')
-  },
+  }
 ];
 
 export const paginationUsageWithLimit: ExampleFile[] = [

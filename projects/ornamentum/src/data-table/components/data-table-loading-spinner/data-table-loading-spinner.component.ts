@@ -20,6 +20,5 @@ export class DataTableLoadingSpinnerComponent {
   @Input()
   public showOverlay: boolean;
 
-  constructor(public config: DataTableConfigService, public dataStateService: DataTableDataStateService) {
-  }
+  constructor(public config: DataTableConfigService, public dataStateService: DataTableDataStateService) {}
 }

@@ -16,9 +16,7 @@ export class DataTableNoDataBodyComponent {
   @Input()
   public noRecordsTemplate: TemplateRef<any>;
 
-  constructor(public config: DataTableConfigService,
-              public eventStateService: DataTableEventStateService) {
-  }
+  constructor(public config: DataTableConfigService, public eventStateService: DataTableEventStateService) {}
 
   /**
    * Reset all applied filters

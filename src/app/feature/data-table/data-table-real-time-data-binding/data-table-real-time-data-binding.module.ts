@@ -12,13 +12,9 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table real time data binding module.
- * @class DataTableRealTimeDataBindingModule
  */
 @NgModule({
-  declarations: [
-    DataTableRealTimeDataBindingComponent,
-    RealTimeDataBindingComponent
-  ],
+  declarations: [DataTableRealTimeDataBindingComponent, RealTimeDataBindingComponent],
   exports: [],
   imports: [
     CommonModule,
@@ -33,5 +29,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableRealTimeDataBindingModule {
-}
+export class DataTableRealTimeDataBindingModule {}

@@ -11,7 +11,6 @@
   [showRowSelectCheckbox]="true"
   [showRowSelectAllCheckbox]="true"
   [selectMode]="'multi'"
-
   (init)="onDataTableInit($event)"
   (allRowSelectChange)="onAllRowSelectChange($event)"
   (rowBind)="onRowBind($event)"
@@ -22,49 +21,19 @@
   (dataBound)="onDataBound()"
   (headerClick)="onHeaderClick($event)"
   (rowClick)="onRowClick($event)"
-  (rowDoubleClick)="onRowDoubleClick($event)">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [width]="50">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'orderMethodType'"
-    [title]="'Order Method Type'"
-    [width]="120">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'retailerType'"
-    [title]="'Retailer Type'"
-    [width]="120">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'productLine'"
-    [title]="'Product Line'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'productType'"
-    [title]="'Product Type'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'revenue'"
-    [title]="'Revenue'"
-    [width]="120">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'quantity'"
-    [title]="'Quantity'"
-    [width]="70">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'grossMargin'"
-    [title]="'Gross Margin'"
-    [width]="100">
-  </ng-data-table-column>
+  (rowDoubleClick)="onRowDoubleClick($event)"
+>
+  <ng-data-table-column [field]="'id'" [title]="'ID'" [width]="50"> </ng-data-table-column>
+  <ng-data-table-column [field]="'orderMethodType'" [title]="'Order Method Type'" [width]="120"> </ng-data-table-column>
+  <ng-data-table-column [field]="'retailerType'" [title]="'Retailer Type'" [width]="120"> </ng-data-table-column>
+  <ng-data-table-column [field]="'productLine'" [title]="'Product Line'"> </ng-data-table-column>
+  <ng-data-table-column [field]="'productType'" [title]="'Product Type'"> </ng-data-table-column>
+  <ng-data-table-column [field]="'revenue'" [title]="'Revenue'" [width]="120"> </ng-data-table-column>
+  <ng-data-table-column [field]="'quantity'" [title]="'Quantity'" [width]="70"> </ng-data-table-column>
+  <ng-data-table-column [field]="'grossMargin'" [title]="'Gross Margin'" [width]="100"> </ng-data-table-column>
 </ng-data-table>
 
-<br>
+<br />
 <p class="event-output">
-  <span *ngFor="let item of getAllEventsData()">{{item}}<br></span>
+  <span *ngFor="let item of getAllEventsData()">{{ item }}<br /></span>
 </p>
-

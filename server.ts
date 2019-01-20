@@ -11,7 +11,7 @@ import * as express from 'express';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 
-process.on('uncaughtException', function (exception) {
+process.on('uncaughtException', function(exception) {
   console.log('node process crashed: ', exception);
 });
 
@@ -25,18 +25,19 @@ const PORT = process.env.PORT || 8080;
 const DIST_FOLDER = process.env.DIST_FOLDER ? join(process.cwd(), process.env.DIST_FOLDER) : process.cwd();
 
 // * NOTE :: leave this as require() since this file is built Dynamically from webpack
-const {AppServerModuleNgFactory, LAZY_MODULE_MAP} = require('./dist/ornamentum-demo/server/main');
+const { AppServerModuleNgFactory, LAZY_MODULE_MAP } = require('./dist/ornamentum-demo/server/main');
 
 // Fetch data and cache
 const data: Array<any> = JSON.parse(readFileSync(join(DIST_FOLDER, 'server/data.json'), 'utf8'));
 
 // Our Universal express-engine (found @ https://github.com/angular/universal/tree/master/modules/express-engine)
-app.engine('html', ngExpressEngine({
-  bootstrap: AppServerModuleNgFactory,
-  providers: [
-    provideModuleMap(LAZY_MODULE_MAP)
-  ]
-}));
+app.engine(
+  'html',
+  ngExpressEngine({
+    bootstrap: AppServerModuleNgFactory,
+    providers: [provideModuleMap(LAZY_MODULE_MAP)]
+  })
+);
 
 app.set('view engine', 'html');
 app.set('views', join(DIST_FOLDER, 'browser'));
@@ -57,9 +58,12 @@ app.get('/api/data', (req: Request, res: Response) => {
 });
 
 // Server static files from /browser
-app.get('*.*', express.static(join(DIST_FOLDER, 'browser'), {
-  maxAge: '30d'
-}));
+app.get(
+  '*.*',
+  express.static(join(DIST_FOLDER, 'browser'), {
+    maxAge: '30d'
+  })
+);
 
 // All regular routes use the Universal engine
 app.get('*', (req: Request, res: Response) => {

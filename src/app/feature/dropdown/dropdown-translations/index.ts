@@ -1,10 +1,8 @@
 export { DropdownTranslationsComponent } from './components/dropdown-translations.component';
 export {
   TranslationsNoDataMessageUsageComponent
-}from './components/example/translations-no-data-message-usage/translations-no-data-message-usage.component';
-export {
-  AdditionalTranslationsUsageComponent
-}from './components/example/additional-translations-usage/additional-translations-usage.component';
+} from './components/example/translations-no-data-message-usage/translations-no-data-message-usage.component';
+export { AdditionalTranslationsUsageComponent } from './components/example/additional-translations-usage/additional-translations-usage.component';
 export {
   TranslationsFilterPlaceholderUsageComponent
 } from './components/example/translations-filter-placeholder-usage/translations-filter-placeholder-usage.component';

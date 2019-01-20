@@ -18,7 +18,7 @@ footer {
     padding-left: 0;
 
     li {
-      @include font-size(.9, 2);
+      @include font-size(0.9, 2);
 
       a {
         color: $main-nav-bar-active-text;
@@ -27,15 +27,15 @@ footer {
   }
 
   .copyrights {
-    @include font-size(.8, 1);
-    border-top: 1px solid  $main-nav-bar-active-background;
+    @include font-size(0.8, 1);
+    border-top: 1px solid $main-nav-bar-active-background;
     color: $main-nav-bar-active-text;
     padding: 1rem 0;
     text-align: center;
 
     span {
       display: block;
-      padding: .2rem 0;
+      padding: 0.2rem 0;
     }
   }
 }

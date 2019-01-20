@@ -11,51 +11,21 @@
   [showRowSelectCheckbox]="true"
   [showRowSelectAllCheckbox]="true"
   [selectMode]="'multi'"
-
-  (dataBound)="onDataBound()">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [width]="50">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'orderMethodType'"
-    [title]="'Order Method Type'"
-    [width]="120">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'retailerType'"
-    [title]="'Retailer Type'"
-    [width]="120">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'productLine'"
-    [title]="'Product Line'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'productType'"
-    [title]="'Product Type'">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'revenue'"
-    [title]="'Revenue'"
-    [width]="120">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'quantity'"
-    [title]="'Quantity'"
-    [width]="70">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'grossMargin'"
-    [title]="'Gross Margin'"
-    [width]="100">
-  </ng-data-table-column>
+  (dataBound)="onDataBound()"
+>
+  <ng-data-table-column [field]="'id'" [title]="'ID'" [width]="50"> </ng-data-table-column>
+  <ng-data-table-column [field]="'orderMethodType'" [title]="'Order Method Type'" [width]="120"> </ng-data-table-column>
+  <ng-data-table-column [field]="'retailerType'" [title]="'Retailer Type'" [width]="120"> </ng-data-table-column>
+  <ng-data-table-column [field]="'productLine'" [title]="'Product Line'"> </ng-data-table-column>
+  <ng-data-table-column [field]="'productType'" [title]="'Product Type'"> </ng-data-table-column>
+  <ng-data-table-column [field]="'revenue'" [title]="'Revenue'" [width]="120"> </ng-data-table-column>
+  <ng-data-table-column [field]="'quantity'" [title]="'Quantity'" [width]="70"> </ng-data-table-column>
+  <ng-data-table-column [field]="'grossMargin'" [title]="'Gross Margin'" [width]="100"> </ng-data-table-column>
 </ng-data-table>
 
-<br>
+<br />
 <p class="event-output" *ngIf="dataBoundEventData; else noDataAvailable">
-  <span>{{dataBoundEventData}}</span>
+  <span>{{ dataBoundEventData }}</span>
 </p>
 <ng-template #noDataAvailable>
   <p class="event-output">Please wait... Data binding is in progress</p>

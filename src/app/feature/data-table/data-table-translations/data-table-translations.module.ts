@@ -17,7 +17,6 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table translations module.
- * @class DataTableTranslationsModule
  */
 @NgModule({
   declarations: [
@@ -27,14 +26,7 @@ import { SharedModule } from '../../../shared/shared.module';
     DataTableTranslationsPaginationUsageComponent
   ],
   exports: [],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule.forRoot(),
-    DataTableModule.forRoot(),
-    DataTableTranslationsRoutingModule
-  ],
+  imports: [CommonModule, FormsModule, SharedModule.forRoot(), DataTableModule.forRoot(), DataTableTranslationsRoutingModule],
   providers: []
 })
-export class DataTableTranslationsModule {
-}
+export class DataTableTranslationsModule {}

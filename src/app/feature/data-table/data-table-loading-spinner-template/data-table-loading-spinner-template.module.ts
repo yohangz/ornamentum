@@ -12,22 +12,11 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table loading spinner template module.
- * @class DataTableLoadingSpinnerTemplateModule
  */
 @NgModule({
-  declarations: [
-    DataTableLoadingSpinnerTemplateComponent,
-    LoadingSpinnerTemplateUsageComponent
-  ],
+  declarations: [DataTableLoadingSpinnerTemplateComponent, LoadingSpinnerTemplateUsageComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule.forRoot(),
-    DataTableModule.forRoot(),
-    DataTableLoadingSpinnerTemplateRoutingModule
-  ],
+  imports: [CommonModule, FormsModule, SharedModule.forRoot(), DataTableModule.forRoot(), DataTableLoadingSpinnerTemplateRoutingModule],
   providers: []
 })
-export class DataTableLoadingSpinnerTemplateModule {
-}
+export class DataTableLoadingSpinnerTemplateModule {}

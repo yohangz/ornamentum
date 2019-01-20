@@ -11,8 +11,7 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class ItemDisablingUsageComponent {
   public items: ExampleData[];
 
-  constructor(private dataFetchService: DataFetchService) {
-  }
+  constructor(private dataFetchService: DataFetchService) {}
 
   public checkProductAvailability(): ExampleData[] {
     const items = this.dataFetchService.fetchStaticData(20, 10);

@@ -9,7 +9,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './multi-row-selection-usage.component.html'
 })
 export class MultiRowSelectionUsageComponent {
-
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

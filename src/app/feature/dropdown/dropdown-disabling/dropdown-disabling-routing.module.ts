@@ -5,7 +5,6 @@ import { DropdownDisablingComponent } from './index';
 
 /**
  * Represent dropdown disabling routes.
- * @type Routes
  */
 const dropdownDisablingRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownDisablingRoutes: Routes = [
 
 /**
  * Dropdown disabling routing module.
- * @class DropdownDisablingRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownDisablingRoutes)]
 })
-export class DropdownDisablingRoutingModule {
-}
+export class DropdownDisablingRoutingModule {}

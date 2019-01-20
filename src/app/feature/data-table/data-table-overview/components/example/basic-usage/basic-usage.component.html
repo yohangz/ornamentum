@@ -15,7 +15,8 @@
   [showColumnSelector]="true"
   [expandableRows]="false"
   [showRowExpandLoadingSpinner]="false"
-  [selectMode]="'multi'">
+  [selectMode]="'multi'"
+>
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
@@ -23,11 +24,12 @@
     [sortable]="true"
     [filterable]="true"
     [filterPlaceholder]="'Search'"
-    [width]="70">
+    [width]="70"
+  >
     <ng-template #ngDataTableCell let-row="row">
       <td>
         <span><i class="zmdi zmdi-account"></i></span>
-        <span>{{row.item.id}}</span>
+        <span>{{ row.item.id }}</span>
       </td>
     </ng-template>
   </ng-data-table-column>
@@ -41,7 +43,8 @@
     [dropdownFilterSearchable]="true"
     [dropDownFilterShowOptionSelectCheckbox]="true"
     [filterPlaceholder]="'Search'"
-    [width]="130">
+    [width]="130"
+  >
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
@@ -52,14 +55,10 @@
     [dropdownFilterShowClearSelectionButton]="true"
     [dropdownFilterSearchable]="true"
     [dropDownFilterShowOptionSelectCheckbox]="true"
-    [filterPlaceholder]="'Search'">
+    [filterPlaceholder]="'Search'"
+  >
   </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'productLine'"
-    [title]="'Product Line'"
-    [sortable]="true"
-    [filterable]="true"
-    [filterPlaceholder]="'Search'">
+  <ng-data-table-column [field]="'productLine'" [title]="'Product Line'" [sortable]="true" [filterable]="true" [filterPlaceholder]="'Search'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
@@ -69,28 +68,17 @@
     [showDropdownFilter]="true"
     [dropdownFilterShowClearSelectionButton]="true"
     [dropdownFilterSearchable]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+  >
     <ng-template #ngDataTableCell let-row="row">
       <td>
-        <span>{{row.item.productType.toUpperCase()}}</span>
+        <span>{{ row.item.productType.toUpperCase() }}</span>
       </td>
     </ng-template>
   </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'revenue'"
-    [title]="'Revenue'"
-    [sortable]="true"
-    [filterable]="true"
-    [filterPlaceholder]="'Search'"
-    [width]="90">
+  <ng-data-table-column [field]="'revenue'" [title]="'Revenue'" [sortable]="true" [filterable]="true" [filterPlaceholder]="'Search'" [width]="90">
   </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'quantity'"
-    [title]="'Quantity'"
-    [sortable]="true"
-    [filterable]="true"
-    [filterPlaceholder]="'Search'"
-    [width]="80">
+  <ng-data-table-column [field]="'quantity'" [title]="'Quantity'" [sortable]="true" [filterable]="true" [filterPlaceholder]="'Search'" [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"
@@ -98,6 +86,7 @@
     [sortable]="true"
     [filterable]="true"
     [filterPlaceholder]="'Search'"
-    [width]="100">
+    [width]="100"
+  >
   </ng-data-table-column>
 </ng-data-table>

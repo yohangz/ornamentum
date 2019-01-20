@@ -22,11 +22,12 @@ export class DataTablePaginationComponent implements OnInit {
 
   public isMobile = false;
 
-  constructor(public config: DataTableConfigService,
-              public dataStateService: DataTableDataStateService,
-              private eventStateService: DataTableEventStateService,
-              private resizeService: ResizeService) {
-  }
+  constructor(
+    public config: DataTableConfigService,
+    public dataStateService: DataTableDataStateService,
+    private eventStateService: DataTableEventStateService,
+    private resizeService: ResizeService
+  ) {}
 
   /**
    * First page click event handler
@@ -160,7 +161,7 @@ export class DataTablePaginationComponent implements OnInit {
    * @return True if there is a next page
    */
   public get hasNext(): boolean {
-    return (this.config.offset + this.config.limit) >= this.dataStateService.itemCount;
+    return this.config.offset + this.config.limit >= this.dataStateService.itemCount;
   }
 
   /**
@@ -184,8 +185,15 @@ export class DataTablePaginationComponent implements OnInit {
    * @param event Keyboard event argument object
    */
   public preventInvalidKeyPress(event: KeyboardEvent): void {
-    if ((event.key >= '0' && event.key <= '9') || event.key === 'ArrowLeft' || event.key === 'ArrowRight'
-    || event.key === 'Delete' || event.key === 'Backspace' || event.key === 'Escape' || event.key === 'Enter') {
+    if (
+      (event.key >= '0' && event.key <= '9') ||
+      event.key === 'ArrowLeft' ||
+      event.key === 'ArrowRight' ||
+      event.key === 'Delete' ||
+      event.key === 'Backspace' ||
+      event.key === 'Escape' ||
+      event.key === 'Enter'
+    ) {
       return;
     } else {
       event.preventDefault();
@@ -196,9 +204,7 @@ export class DataTablePaginationComponent implements OnInit {
    * component init lifecycle event handler
    */
   public ngOnInit(): void {
-    this.resizeService.resize.pipe(
-      debounceTime(200)
-    ).subscribe(() => {
+    this.resizeService.resize.pipe(debounceTime(200)).subscribe(() => {
       this.isMobile = this.paginationContainer.nativeElement.clientWidth < 450;
     });
   }

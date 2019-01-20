@@ -5,7 +5,6 @@ import { DataTableColumnSortingComponent } from './index';
 
 /**
  * Represent data table column sorting routes.
- * @type Routes
  */
 const dataTableSortingRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableSortingRoutes: Routes = [
 
 /**
  * Data table column sorting routing module.
- * @class DataTableColumnSortingRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableSortingRoutes)]
 })
-export class DataTableColumnSortingRoutingModule {
-}
+export class DataTableColumnSortingRoutingModule {}

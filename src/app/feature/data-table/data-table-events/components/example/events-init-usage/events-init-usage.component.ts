@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 
-import {
-  DataTableComponent,
-} from 'ornamentum';
+import { DataTableComponent } from 'ornamentum';
 
 import { ExampleData } from '../../../../../../shared/models';
 

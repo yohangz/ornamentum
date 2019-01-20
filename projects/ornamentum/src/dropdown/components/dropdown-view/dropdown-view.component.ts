@@ -18,22 +18,19 @@ export class DropdownViewComponent implements OnInit, OnDestroy {
   public scrollEvent = new Subject<any>();
   private scrollEventSubscription: Subscription;
 
-  constructor(public config: DropdownConfigService,
-              public dataStateService: DropdownDataStateService,
-              private eventStateService: DropdownEventStateService) {
-  }
+  constructor(
+    public config: DropdownConfigService,
+    public dataStateService: DropdownDataStateService,
+    private eventStateService: DropdownEventStateService
+  ) {}
 
   /**
    * Component initialize lifecycle event handler
    */
   public ngOnInit(): void {
-    this.scrollEventSubscription = this.scrollEvent
-      .pipe(
-        debounceTime(100)
-      )
-      .subscribe((event: any) => {
-        this.checkScrollPosition(event);
-      });
+    this.scrollEventSubscription = this.scrollEvent.pipe(debounceTime(100)).subscribe((event: any) => {
+      this.checkScrollPosition(event);
+    });
   }
 
   /**
@@ -57,8 +54,11 @@ export class DropdownViewComponent implements OnInit, OnDestroy {
     const roundingPixel = 1;
     const gutterPixel = 1;
 
-    if (scrollTop >= scrollHeight - (1 + this.config.loadViewDistance) * scrollElementHeight - roundingPixel - gutterPixel
-      && this.dataStateService.currentItemCount < this.dataStateService.totalOptionCount && !this.dataStateService.dataLoading) {
+    if (
+      scrollTop >= scrollHeight - (1 + this.config.loadViewDistance) * scrollElementHeight - roundingPixel - gutterPixel &&
+      this.dataStateService.currentItemCount < this.dataStateService.totalOptionCount &&
+      !this.dataStateService.dataLoading
+    ) {
       this.dataStateService.offset = this.dataStateService.offset + this.config.limit;
       this.eventStateService.dataFetchStream.emit(false);
     }

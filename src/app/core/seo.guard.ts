@@ -4,8 +4,7 @@ import { Meta, Title } from '@angular/platform-browser';
 
 @Injectable()
 export class SeoGuard implements CanActivate {
-  constructor(private router: Router, private meta: Meta, private title: Title) {
-  }
+  constructor(private router: Router, private meta: Meta, private title: Title) {}
 
   public canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const seo: SeoData = route.data.seo;

@@ -50,20 +50,17 @@ export const filterDebounceTimeUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'filtering-filter-debounce-time-usage.module.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/filtering-filter-debounce-time-usage/filtering-filter-debounce-time-usage.module.md')
+    content: require('!!raw-loader?lang=typescript!./example/filtering-filter-debounce-time-usage/filtering-filter-debounce-time-usage.module.md')
   },
   {
     type: FileType.TS,
     name: 'filtering-filter-debounce-time-usage.component.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/filtering-filter-debounce-time-usage/filtering-filter-debounce-time-usage.component.ts')
+    content: require('!!raw-loader?lang=typescript!./example/filtering-filter-debounce-time-usage/filtering-filter-debounce-time-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'filtering-filter-debounce-time-usage.component.html',
-    content: require(
-      '!!raw-loader?lang=html!./example/filtering-filter-debounce-time-usage/filtering-filter-debounce-time-usage.component.html')
+    content: require('!!raw-loader?lang=html!./example/filtering-filter-debounce-time-usage/filtering-filter-debounce-time-usage.component.html')
   },
   {
     type: FileType.TS,
@@ -98,4 +95,3 @@ export const filterTextUsage: ExampleFile[] = [
 export const demoSnippet: any = {
   dropdownFiltering: require('!!raw-loader?lang=typescript!./docs/filterable.md')
 };
-

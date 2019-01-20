@@ -29,10 +29,11 @@ export class DataTableBodyComponent {
   @Input()
   public rowExpandLoadingSpinnerTemplate: TemplateRef<any>;
 
-  constructor(public config: DataTableConfigService,
-              public dataStateService: DataTableDataStateService,
-              private eventStateService: DataTableEventStateService) {
-  }
+  constructor(
+    public config: DataTableConfigService,
+    public dataStateService: DataTableDataStateService,
+    private eventStateService: DataTableEventStateService
+  ) {}
 
   /**
    * Get row index identifier by data row
@@ -127,7 +128,7 @@ export class DataTableBodyComponent {
    * @param event Mouse click event argument reference
    */
   public cellClicked(column: DataTableColumnComponent, row: DataTableRow<any>, event: MouseEvent): void {
-    this.eventStateService.cellClickStream.emit({row, column, event});
+    this.eventStateService.cellClickStream.emit({ row, column, event });
   }
 
   /**
@@ -136,7 +137,9 @@ export class DataTableBodyComponent {
    * @return Dummy row span collection
    */
   public getRowSpanCollection(row: DataTableRow<any>): any[] {
-    return Array.from({length: this.dataStateService.onDynamicRowSpanExtract(row)});
+    return Array.from({
+      length: this.dataStateService.onDynamicRowSpanExtract(row)
+    });
   }
 
   /**
@@ -202,7 +205,7 @@ export class DataTableBodyComponent {
         }
         break;
       }
-      case'single_toggle': {
+      case 'single_toggle': {
         if (row.selected) {
           this.dataStateService.selectedRow = id;
 
@@ -256,13 +259,12 @@ export class DataTableBodyComponent {
         this.onRowSelectChange(row);
       }
 
-
       if (this.config.expandOnRowClick) {
         row.expanded = !row.expanded;
       }
     }
 
-    this.eventStateService.rowClickStream.emit({row, event});
+    this.eventStateService.rowClickStream.emit({ row, event });
   }
 
   /**
@@ -271,7 +273,7 @@ export class DataTableBodyComponent {
    * @param event Event Mouse click event argument object
    */
   public rowDoubleClicked(row: DataTableRow<any>, event: MouseEvent): void {
-    this.eventStateService.rowDoubleClickStream.emit({row, event});
+    this.eventStateService.rowDoubleClickStream.emit({ row, event });
   }
 
   /**

@@ -9,7 +9,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './single-toggle-row-selection-usage.component.html'
 })
 export class SingleToggleRowSelectionUsageComponent {
-
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

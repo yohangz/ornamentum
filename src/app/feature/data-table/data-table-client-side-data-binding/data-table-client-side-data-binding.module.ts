@@ -15,11 +15,7 @@ import { DataTableClientSideDataBindingRoutingModule } from './data-table-client
 import { SharedModule } from '../../../shared/shared.module';
 
 @NgModule({
-  declarations: [
-    ClientSideDataBindingWithItemsComponent,
-    ClientSideDataBindingWithDataSourceComponent,
-    DataTableClientSideDataBindingComponent
-  ],
+  declarations: [ClientSideDataBindingWithItemsComponent, ClientSideDataBindingWithDataSourceComponent, DataTableClientSideDataBindingComponent],
   exports: [],
   imports: [
     CommonModule,
@@ -34,5 +30,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableClientSideDataBindingModule {
-}
+export class DataTableClientSideDataBindingModule {}

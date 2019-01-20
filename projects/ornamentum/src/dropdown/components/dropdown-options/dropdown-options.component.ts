@@ -13,11 +13,11 @@ import { DropdownEventStateService } from '../../services/dropdown-event-state.s
   templateUrl: './dropdown-options.component.html'
 })
 export class DropdownOptionsComponent {
-
-  constructor(public config: DropdownConfigService,
-              public dataStateService: DropdownDataStateService,
-              private eventStateService: DropdownEventStateService) {
-  }
+  constructor(
+    public config: DropdownConfigService,
+    public dataStateService: DropdownDataStateService,
+    private eventStateService: DropdownEventStateService
+  ) {}
 
   public getSelectedState(id: any): boolean {
     if (this.config.selectMode === 'multi') {

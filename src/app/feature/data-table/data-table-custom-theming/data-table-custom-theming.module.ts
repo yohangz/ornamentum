@@ -14,18 +14,9 @@ import { SharedModule } from '../../../shared/shared.module';
  * Module class for containing data table custom theming module.
  */
 @NgModule({
-  declarations: [
-    DataTableCustomThemingComponent
-  ],
+  declarations: [DataTableCustomThemingComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule.forRoot(),
-    DataTableModule.forRoot(),
-    DataTableCustomThemingRoutingModule
-  ],
+  imports: [CommonModule, FormsModule, SharedModule.forRoot(), DataTableModule.forRoot(), DataTableCustomThemingRoutingModule],
   providers: []
 })
-export class DataTableCustomThemingModule {
-}
+export class DataTableCustomThemingModule {}

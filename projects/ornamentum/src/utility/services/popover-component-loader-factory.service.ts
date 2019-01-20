@@ -12,11 +12,12 @@ import { PopoverComponentLoader } from './popover-component-loader.class';
  */
 @Injectable()
 export class PopoverComponentLoaderFactoryService {
-  constructor(private componentFactoryResolver: ComponentFactoryResolver,
-              private appRef: ApplicationRef,
-              private globalRefService: GlobalRefService,
-              private resizeService: ResizeService) {
-  }
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private appRef: ApplicationRef,
+    private globalRefService: GlobalRefService,
+    private resizeService: ResizeService
+  ) {}
 
   /**
    * Create new component loader

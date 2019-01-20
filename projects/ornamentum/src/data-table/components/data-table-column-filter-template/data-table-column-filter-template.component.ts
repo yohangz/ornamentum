@@ -33,28 +33,29 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
   private filterValueExtractorSubscription: Subscription;
   private fetchFilterOptionsStreamSubscription: Subscription;
 
-  constructor(public config: DataTableConfigService,
-              public dataStateService: DataTableDataStateService,
-              private eventStateService: DataTableEventStateService) {
-  }
+  constructor(
+    public config: DataTableConfigService,
+    public dataStateService: DataTableDataStateService,
+    private eventStateService: DataTableEventStateService
+  ) {}
 
   /**
    * Component initialize lifecycle event
    */
   public ngOnInit(): void {
     if (this.column.showDropdownFilter && this.dataStateService.onFilterValueExtract) {
-      this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream
-        .subscribe(() => {
-          if (this.filterValueExtractorSubscription) {
-            this.filterValueExtractorSubscription.unsubscribe();
-            this.filterValueExtractorSubscription = null;
-          }
+      this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream.subscribe(() => {
+        if (this.filterValueExtractorSubscription) {
+          this.filterValueExtractorSubscription.unsubscribe();
+          this.filterValueExtractorSubscription = null;
+        }
 
-          this.filterValueExtractorSubscription = this.dataStateService.onFilterValueExtract(this.column)
-            .subscribe((options: DataTableFilterOption[]) => {
-              setTimeout(() => this.filterDataStream.next(options), 0);
-            });
-        });
+        this.filterValueExtractorSubscription = this.dataStateService
+          .onFilterValueExtract(this.column)
+          .subscribe((options: DataTableFilterOption[]) => {
+            setTimeout(() => this.filterDataStream.next(options), 0);
+          });
+      });
     }
   }
 

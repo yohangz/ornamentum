@@ -16,7 +16,7 @@ import {
   ItemSelectionShowClearSelectionBtnUsageComponent,
   ItemSelectionShowSelectedOptionRemoveBtnUsageComponent,
   ItemSelectionMultiSelectOptionMaxWidthUsageComponent,
-  ItemSelectionWrapDisplaySelectLimitUsageComponent,
+  ItemSelectionWrapDisplaySelectLimitUsageComponent
 } from './index';
 
 import { DropdownItemSelectionRoutingModule } from './dropdown-item-selection-routing.module';
@@ -25,7 +25,6 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown item selection module.
- * @class DropdownItemSelectionModule
  */
 @NgModule({
   declarations: [
@@ -44,13 +43,7 @@ import { SharedModule } from '../../../shared/shared.module';
     ItemSelectionWrapDisplaySelectLimitUsageComponent
   ],
   exports: [],
-  imports: [
-    CommonModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownItemSelectionRoutingModule
-  ],
+  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownItemSelectionRoutingModule],
   providers: []
 })
-export class DropdownItemSelectionModule {
-}
+export class DropdownItemSelectionModule {}

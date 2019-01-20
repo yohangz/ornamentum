@@ -5,7 +5,6 @@ import { HomeComponent } from './components';
 
 /**
  * Represent application overview module routes.
- * @type Routes
  */
 const overviewRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const overviewRoutes: Routes = [
 
 /**
  * Application overview routing module.
- * @class OverviewRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(overviewRoutes)]
 })
-export class OverviewRoutingModule {
-}
+export class OverviewRoutingModule {}

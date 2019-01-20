@@ -8,7 +8,6 @@ import { Subscription } from 'rxjs/internal/Subscription';
 
 /**
  * Component class for showing base view.
- * @class BaseComponent
  */
 @Component({
   selector: 'app-base',
@@ -21,10 +20,7 @@ export class BaseComponent implements AfterContentInit, OnDestroy {
 
   public showWorkerUpdateBanner = false;
 
-  constructor(private route: ActivatedRoute,
-              private router: Router,
-              private updates: SwUpdate,
-              @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(private route: ActivatedRoute, private router: Router, private updates: SwUpdate, @Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
       this.swSubscription = this.updates.available.subscribe(() => {
         this.showWorkerUpdateBanner = true;
@@ -52,13 +48,9 @@ export class BaseComponent implements AfterContentInit, OnDestroy {
       this.previousUrl = this.getUrl();
       setTimeout(() => PR.prettyPrint(), 50);
 
-      this.router.events
-        .pipe(
-          filter(event => event instanceof NavigationEnd)
-        )
-        .subscribe(() => {
-          setTimeout(() => this.prettyPrint(), 50);
-        });
+      this.router.events.pipe(filter(event => event instanceof NavigationEnd)).subscribe(() => {
+        setTimeout(() => this.prettyPrint(), 50);
+      });
     }
   }
 

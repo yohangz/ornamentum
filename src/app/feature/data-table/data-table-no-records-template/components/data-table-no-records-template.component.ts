@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { noRecordsTemplateUsage, demoSnippet } from './data-table-no-records-template.list';
 
-
 @Component({
   selector: 'app-data-table-no-records-template-component',
   templateUrl: './data-table-no-records-template.component.html',

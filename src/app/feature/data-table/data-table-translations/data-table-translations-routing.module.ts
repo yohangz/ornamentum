@@ -5,7 +5,6 @@ import { DataTableTranslationsComponent } from './index';
 
 /**
  * Represent data table translations routes.
- * @type Routes
  */
 const dataTableTranslationsRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableTranslationsRoutes: Routes = [
 
 /**
  * Data table translations routing module.
- * @class DataTableTranslationsRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableTranslationsRoutes)]
 })
-export class DataTableTranslationsRoutingModule {
-}
+export class DataTableTranslationsRoutingModule {}

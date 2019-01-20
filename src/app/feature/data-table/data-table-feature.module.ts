@@ -4,15 +4,11 @@ import { DataTableFeatureRoutingModule } from './data-table-feature-routing.modu
 
 /**
  * Module class for containing data table feature module.
- * @class DataTableFeatureModule
  */
 @NgModule({
   declarations: [],
   exports: [],
-  imports: [
-    DataTableFeatureRoutingModule
-  ],
+  imports: [DataTableFeatureRoutingModule],
   providers: []
 })
-export class DataTableFeatureModule {
-}
+export class DataTableFeatureModule {}

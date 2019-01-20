@@ -1,31 +1,31 @@
 <div class="ng-data-table-container" #dataTableElement [class.scrollable]="config.contentHeight">
-  <ng-data-table-header *ngIf="config.showHeader" [columns]="columns">
-  </ng-data-table-header>
+  <ng-data-table-header *ngIf="config.showHeader" [columns]="columns"> </ng-data-table-header>
   <div class="ng-data-table-content-container">
     <div class="ng-data-table-content-header-container" [style.paddingRight]="headerPadding | ngPx">
       <div class="ng-data-table-content-header" ngScrollElement>
         <table class="ng-data-table" [style.width]="tableWidth | ngPx" [style.minWidth]="config.minWidth | ngPx">
-          <colgroup ngDataTableColGroup [columns]="columns">
-          </colgroup>
-          <thead ngDataTableHead [columns]="columns">
-          </thead>
+          <colgroup ngDataTableColGroup [columns]="columns"></colgroup>
+          <thead ngDataTableHead [columns]="columns"></thead>
         </table>
       </div>
     </div>
-    <div class="ng-data-table-content" ngScrollPosition [style.height]="config.contentHeight | ngPx"
-         [style.minHeight]="config.minHeight | ngPx">
-      <ng-data-table-loading-spinner [loadingSpinnerTemplate]="loadingSpinnerTemplate"
-                                     [isLoading]="isLoading" [showOverlay]="true">
+    <div class="ng-data-table-content" ngScrollPosition [style.height]="config.contentHeight | ngPx" [style.minHeight]="config.minHeight | ngPx">
+      <ng-data-table-loading-spinner [loadingSpinnerTemplate]="loadingSpinnerTemplate" [isLoading]="isLoading" [showOverlay]="true">
       </ng-data-table-loading-spinner>
-      <table class="ng-data-table" [style.width]="tableWidth | ngPx" [style.minWidth]="config.minWidth | ngPx"
-             [hidden]="isLoading">
-        <colgroup ngDataTableColGroup [columns]="columns">
-        </colgroup>
-        <tbody ngDataTableBody [columns]="columns" [rowExpandTemplate]="rowExpandTemplate"
-               [rowExpandLoadingSpinnerTemplate]="rowExpandLoadingSpinnerTemplate">
-        </tbody>
+      <table class="ng-data-table" [style.width]="tableWidth | ngPx" [style.minWidth]="config.minWidth | ngPx" [hidden]="isLoading">
+        <colgroup ngDataTableColGroup [columns]="columns"></colgroup>
+        <tbody
+          ngDataTableBody
+          [columns]="columns"
+          [rowExpandTemplate]="rowExpandTemplate"
+          [rowExpandLoadingSpinnerTemplate]="rowExpandLoadingSpinnerTemplate"
+        ></tbody>
       </table>
-      <ng-data-table-no-data-body class="ng-data-table-no-records-message-container" *ngIf="dataStateService.showNoDataOverlay" [noRecordsTemplate]="noRecordsTemplate">
+      <ng-data-table-no-data-body
+        class="ng-data-table-no-records-message-container"
+        *ngIf="dataStateService.showNoDataOverlay"
+        [noRecordsTemplate]="noRecordsTemplate"
+      >
       </ng-data-table-no-data-body>
     </div>
   </div>

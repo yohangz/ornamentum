@@ -5,7 +5,6 @@ import { DropdownMenuPositionComponent } from './index';
 
 /**
  * Represent dropdown menu position routes.
- * @type Routes
  */
 const dropdownMenuPositionRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownMenuPositionRoutes: Routes = [
 
 /**
  * Dropdown menu position routing module.
- * @class DropdownMenuPositionRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownMenuPositionRoutes)]
 })
-export class DropdownMenuPositionRoutingModule {
-}
+export class DropdownMenuPositionRoutingModule {}

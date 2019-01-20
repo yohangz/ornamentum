@@ -23,16 +23,14 @@ export class LeftNavigationComponent implements OnDestroy {
   @Output()
   public routeChange = new EventEmitter<MenuItem>();
 
-  public expanded =  false;
+  public expanded = false;
 
   constructor(private containerResponsive: NavigationService, private router: Router) {
     this.navigationToggleSubscription = this.containerResponsive.navigationToggle.subscribe(() => {
       this.expanded = !this.expanded;
     });
 
-    this.routeEventSubscription = this.router.events.pipe(
-      filter(event => event instanceof NavigationStart)
-    ).subscribe(() => {
+    this.routeEventSubscription = this.router.events.pipe(filter(event => event instanceof NavigationStart)).subscribe(() => {
       this.closeMenu();
     });
   }

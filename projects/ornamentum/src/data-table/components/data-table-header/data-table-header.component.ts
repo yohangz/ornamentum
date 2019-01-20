@@ -24,12 +24,14 @@ export class DataTableHeaderComponent implements OnDestroy {
   @Input()
   public columns: DataTableColumnComponent[];
 
-  constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
-              private injector: Injector,
-              private eventStateService: DataTableEventStateService,
-              private renderer: Renderer2,
-              public dataStateService: DataTableDataStateService,
-              public config: DataTableConfigService) {
+  constructor(
+    private componentLoaderFactory: PopoverComponentLoaderFactoryService,
+    private injector: Injector,
+    private eventStateService: DataTableEventStateService,
+    private renderer: Renderer2,
+    public dataStateService: DataTableDataStateService,
+    public config: DataTableConfigService
+  ) {
     this.componentLoader = this.componentLoaderFactory.createLoader<DataTableColumnSelectorComponent>(this.renderer);
   }
 
@@ -38,15 +40,14 @@ export class DataTableHeaderComponent implements OnDestroy {
    * @param element DOM element reference
    */
   public toggleColumnSelector(element: HTMLElement): void {
-    this.componentLoader
-      .toggle(DataTableColumnSelectorComponent, element, this.injector, {
-        floatLeft: 2,
-        relativeParent: this.config.relativeParentElement,
-        context: {
-          columns: this.columns
-        },
-        position: 'bottom-right'
-      });
+    this.componentLoader.toggle(DataTableColumnSelectorComponent, element, this.injector, {
+      floatLeft: 2,
+      relativeParent: this.config.relativeParentElement,
+      context: {
+        columns: this.columns
+      },
+      position: 'bottom-right'
+    });
   }
 
   /**

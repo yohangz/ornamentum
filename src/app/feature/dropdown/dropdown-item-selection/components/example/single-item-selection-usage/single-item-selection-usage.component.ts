@@ -9,7 +9,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './single-item-selection-usage.component.html'
 })
 export class SingleItemSelectionUsageComponent {
-
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

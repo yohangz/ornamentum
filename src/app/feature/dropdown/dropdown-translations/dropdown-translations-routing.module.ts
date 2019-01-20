@@ -5,7 +5,6 @@ import { DropdownTranslationsComponent } from './index';
 
 /**
  * Represent dropdown translations routes.
- * @type Routes
  */
 const dropdownTranslationsRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownTranslationsRoutes: Routes = [
 
 /**
  * Dropdown translations routing module.
- * @class DropdownTranslationsRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownTranslationsRoutes)]
 })
-export class DropdownTranslationsRoutingModule {
-}
+export class DropdownTranslationsRoutingModule {}

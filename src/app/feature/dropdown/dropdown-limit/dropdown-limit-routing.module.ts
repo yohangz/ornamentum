@@ -5,7 +5,6 @@ import { DropdownLimitComponent } from './index';
 
 /**
  * Represent dropdown limit routes.
- * @type Routes
  */
 const dropdownLimitRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownLimitRoutes: Routes = [
 
 /**
  * Dropdown limit routing module.
- * @class DropdownLimitRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownLimitRoutes)]
 })
-export class DropdownLimitRoutingModule {
-}
+export class DropdownLimitRoutingModule {}

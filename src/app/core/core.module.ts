@@ -12,25 +12,12 @@ import { SeoGuard } from './seo.guard';
 
 /**
  * Module class for containing core module.
- * @class AppCoreModule
  */
 @NgModule({
-  declarations: [
-    ...COMPONENTS
-  ],
-  exports: [
-    ...COMPONENTS
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    HttpClientModule,
-    UtilityModule.forRoot()
-  ],
-  providers: [
-    ...SERVICES,
-    SeoGuard
-  ]
+  declarations: [...COMPONENTS],
+  exports: [...COMPONENTS],
+  imports: [CommonModule, RouterModule, HttpClientModule, UtilityModule.forRoot()],
+  providers: [...SERVICES, SeoGuard]
 })
 export class AppCoreModule {
   constructor(@Optional() @SkipSelf() parentModule: AppCoreModule) {

@@ -12,14 +12,9 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table persist data module.
- * @class DataTablePersistDataModule
  */
 @NgModule({
-  declarations: [
-    DataTablePersistDataComponent,
-    DataPersistenceUsageComponent,
-    DataPersistenceStorageModeUsageComponent
-  ],
+  declarations: [DataTablePersistDataComponent, DataPersistenceUsageComponent, DataPersistenceStorageModeUsageComponent],
   exports: [],
   imports: [
     CommonModule,
@@ -32,5 +27,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTablePersistDataModule {
-}
+export class DataTablePersistDataModule {}

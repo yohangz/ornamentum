@@ -12,13 +12,9 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table resizable module.
- * @class DataTableResizingModule
  */
 @NgModule({
-  declarations: [
-    ColumnResizingUsageComponent,
-    DataTableResizingComponent
-  ],
+  declarations: [ColumnResizingUsageComponent, DataTableResizingComponent],
   exports: [],
   imports: [
     CommonModule,
@@ -31,5 +27,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableResizingModule {
-}
+export class DataTableResizingModule {}

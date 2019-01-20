@@ -5,7 +5,6 @@ import { DataTableClientSideDataBindingComponent } from './index';
 
 /**
  * Represent data table client side data binding routes.
- * @type Routes
  */
 const dataTableClientSideDataBindingRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableClientSideDataBindingRoutes: Routes = [
 
 /**
  * Data table client side data binding routing module.
- * @class DataTableClientSideDataBindingRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableClientSideDataBindingRoutes)]
 })
-export class DataTableClientSideDataBindingRoutingModule {
-}
+export class DataTableClientSideDataBindingRoutingModule {}

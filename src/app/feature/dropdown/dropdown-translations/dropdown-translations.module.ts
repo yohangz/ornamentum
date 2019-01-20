@@ -18,7 +18,6 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown translations module.
- * @class DropdownTranslationsModule
  */
 @NgModule({
   declarations: [
@@ -30,13 +29,7 @@ import { SharedModule } from '../../../shared/shared.module';
     TranslationsSelectedItemWrapPlaceholderUsageComponent
   ],
   exports: [],
-  imports: [
-    CommonModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownTranslationsRoutingModule
-  ],
+  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownTranslationsRoutingModule],
   providers: []
 })
-export class DropdownTranslationsModule {
-}
+export class DropdownTranslationsModule {}

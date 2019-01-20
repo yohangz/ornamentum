@@ -5,7 +5,6 @@ import { DropdownRealTimeDataBindingComponent } from './index';
 
 /**
  * Represent dropdown real time data binding routes.
- * @type Routes
  */
 const dropdownRealTimeDataBindingRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownRealTimeDataBindingRoutes: Routes = [
 
 /**
  * Dropdown real time data binding routing module.
- * @class DropdownRealTimeDataBindingRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownRealTimeDataBindingRoutes)]
 })
-export class DropdownRealTimeDataBindingRoutingModule {
-}
+export class DropdownRealTimeDataBindingRoutingModule {}

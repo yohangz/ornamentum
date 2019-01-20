@@ -5,7 +5,6 @@ import { DataTableNoRecordsTemplateComponent } from './index';
 
 /**
  * Represent data table no records template routes.
- * @type Routes
  */
 const dataTableNoRecordsTemplateRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableNoRecordsTemplateRoutes: Routes = [
 
 /**
  * Data table no records template routing module.
- * @class DataTableNoRecordsTemplateRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableNoRecordsTemplateRoutes)]
 })
-export class DataTableNoRecordsTemplateRoutingModule {
-}
+export class DataTableNoRecordsTemplateRoutingModule {}

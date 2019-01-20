@@ -18,7 +18,6 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table column sorting module.
- * @class DataTableColumnSortingModule
  */
 @NgModule({
   declarations: [
@@ -42,5 +41,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableColumnSortingModule {
-}
+export class DataTableColumnSortingModule {}

@@ -9,4 +9,3 @@ export {
 export {
   TableHeaderDetailsShowColumnSelectorUsageComponent
 } from './components/example/table-header-details-show-column-selector-usage/table-header-details-show-column-selector-usage.component';
-

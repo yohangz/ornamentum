@@ -6,9 +6,7 @@ import { isPlatformBrowser, PlatformLocation } from '@angular/common';
  */
 @Injectable()
 export class ScrollService {
-  constructor(private location: PlatformLocation,
-              @Inject(PLATFORM_ID) private platformId: Object) {
-  }
+  constructor(private location: PlatformLocation, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   public scroll(parent: Element): void {
     if (isPlatformBrowser(this.platformId)) {

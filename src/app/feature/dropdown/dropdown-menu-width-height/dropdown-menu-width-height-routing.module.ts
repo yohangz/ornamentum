@@ -5,7 +5,6 @@ import { DropdownMenuWidthHeightComponent } from './index';
 
 /**
  * Represent dropdown menu width height routes.
- * @type Routes
  */
 const dropdownMenuWidthHeightRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownMenuWidthHeightRoutes: Routes = [
 
 /**
  * Dropdown menu width height routing module.
- * @class DropdownMenuWidthHeightRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownMenuWidthHeightRoutes)]
 })
-export class DropdownMenuWidthHeightRoutingModule {
-}
+export class DropdownMenuWidthHeightRoutingModule {}

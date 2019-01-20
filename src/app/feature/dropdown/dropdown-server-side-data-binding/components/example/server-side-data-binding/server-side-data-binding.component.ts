@@ -15,17 +15,18 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './server-side-data-binding.component.html'
 })
 export class ServerSideDataBindingComponent {
-
   constructor(private dataFetchService: DataFetchService) {
     this.onDataBind = this.onDataBind.bind(this);
   }
 
   public onDataBind(params: DropdownRequestParams): Observable<DropdownQueryResult<ExampleData>> {
-    return this.dataFetchService.fetchDataOnBindForDropdown(params).pipe(map((response: ResourceData<ExampleData[]>) => {
-      return {
-        count: response.count,
-        items: response.data
-      };
-    }));
+    return this.dataFetchService.fetchDataOnBindForDropdown(params).pipe(
+      map((response: ResourceData<ExampleData[]>) => {
+        return {
+          count: response.count,
+          items: response.data
+        };
+      })
+    );
   }
 }

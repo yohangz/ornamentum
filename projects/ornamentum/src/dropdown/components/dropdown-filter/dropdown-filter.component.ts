@@ -15,10 +15,11 @@ export class DropdownFilterComponent implements OnDestroy, OnInit {
   private dataFilterStream = new Subject();
   private dataFilterSubscription: Subscription;
 
-  constructor(public config: DropdownConfigService,
-              public dataStateService: DropdownDataStateService,
-              public eventStateService: DropdownEventStateService) {
-  }
+  constructor(
+    public config: DropdownConfigService,
+    public dataStateService: DropdownDataStateService,
+    public eventStateService: DropdownEventStateService
+  ) {}
 
   public clearFilter(): void {
     this.dataStateService.offset = 0;
@@ -36,14 +37,10 @@ export class DropdownFilterComponent implements OnDestroy, OnInit {
   }
 
   private initFilterDebounceEvent(): void {
-    this.dataFilterSubscription = this.dataFilterStream
-      .pipe(
-        debounceTime(this.config.filterDebounceTime)
-      )
-      .subscribe(() => {
-        this.dataStateService.offset = 0;
-        this.eventStateService.dataFetchStream.emit(false);
-      });
+    this.dataFilterSubscription = this.dataFilterStream.pipe(debounceTime(this.config.filterDebounceTime)).subscribe(() => {
+      this.dataStateService.offset = 0;
+      this.eventStateService.dataFetchStream.emit(false);
+    });
   }
 
   public ngOnDestroy(): void {

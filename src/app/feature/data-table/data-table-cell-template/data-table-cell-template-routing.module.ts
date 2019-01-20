@@ -5,7 +5,6 @@ import { DataTableCellTemplateComponent } from './index';
 
 /**
  * Represent data table cell template routes.
- * @type Routes
  */
 const dataTableCellTemplateRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableCellTemplateRoutes: Routes = [
 
 /**
  * Data table cell template routing module.
- * @class DataTableCellTemplateRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableCellTemplateRoutes)]
 })
-export class DataTableCellTemplateRoutingModule {
-}
+export class DataTableCellTemplateRoutingModule {}

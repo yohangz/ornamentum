@@ -12,15 +12,9 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table filtering module.
- * @class DataTableFilteringModule
  */
 @NgModule({
-  declarations: [
-    DataTableFilteringComponent,
-    FilterDropdownUsageComponent,
-    FilterTextBoxUsageComponent,
-    FilteringUsageComponent
-  ],
+  declarations: [DataTableFilteringComponent, FilterDropdownUsageComponent, FilterTextBoxUsageComponent, FilteringUsageComponent],
   exports: [],
   imports: [
     CommonModule,
@@ -33,5 +27,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableFilteringModule {
-}
+export class DataTableFilteringModule {}

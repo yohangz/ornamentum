@@ -1,27 +1,51 @@
-
 //Data Table Icons
 $data-table-icon-color: #cacaca;
 $data-table-pagination-icon-hover-color: #cacaca;
 $data-table-icon-close-color: #d32f2f;
 $data-table-loading-animation-color: #3b78e7;
 
-$close-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-close-color + '" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>';
-$expand-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.7 476.7"><path fill="' + $data-table-icon-color + '" d="M238.4 0C106.7 0 0 106.7 0 238.4c0 131.7 106.7 238.4 238.4 238.4 131.7 0 238.4-106.7 238.4-238.4C476.7 106.7 370 0 238.4 0zM352.7 289.2c-6.2 6.2-16.3 6.2-22.5 0l-91.9-91.9 -91.9 91.9c-6.2 6.2-16.3 6.2-22.5 0 -6.2-6.2-6.2-16.3 0-22.5L227.1 163.7c3.1-3.1 7.2-4.6 11.3-4.6s8.2 1.5 11.3 4.6L352.7 266.8C358.9 272.9 358.9 283 352.7 289.2z"/></svg>';
-$refresh-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color + '" d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/></svg>';
-$list-view-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color + '" d="M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z"/></svg>';
-$sort-ascending-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"><path fill="' + $data-table-icon-color + '" d="M3 6 9 6 9 8 3 8 3 6Zm0 12 0-2 18 0 0 2-18 0zm0-7 12 0 0 2-12 0 0-2z"/></svg>';
-$sort-descending-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color + '" d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/></svg>';
-$sort-reset-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color + '" d="M6 7h2.5L5 3.5 1.5 7H4v10H1.5L5 20.5 8.5 17H6V7zm4-2v2h12V5H10zm0 14h12v-2H10v2zm0-6h12v-2H10v2z"/></svg>';
-$first-page-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><path fill="' + $data-table-icon-color + '" d="M39.6 122.5l84.2-95.2c6.2-6.2 6.2-16.4 0-22.6 -6.2-6.2-16.4-6.2-22.6 0L7.2 111c-3.2 3.2-4.7 7.3-4.6 11.5 0 4.2 1.5 8.4 4.6 11.5l94 106.3c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L39.6 122.5z"/><path fill="' + $data-table-icon-color + '" d="M153.6 122.5l84.2-95.2c6.3-6.3 6.3-16.4 0.1-22.6 -6.2-6.2-16.4-6.2-22.6 0l-94 106.3c-3.2 3.2-4.7 7.3-4.6 11.5 0 4.2 1.5 8.4 4.6 11.5l94 106.3c6.3 6.2 16.4 6.2 22.6 0 6.3-6.2 6.3-16.4 0-22.6L153.6 122.5z"/></svg>';
-$previous-page-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 237.9 237.9"><path fill="' + $data-table-icon-color + '" d="M89.9 119l91.9-91.9c6.2-6.2 6.2-16.3 0-22.5s-16.3-6.2-22.5 0L56.2 107.7c-3.1 3.1-4.6 7.2-4.6 11.3s1.5 8.2 4.6 11.3L159.3 233.3c6.2 6.2 16.3 6.2 22.5 0 6.2-6.2 6.2-16.3 0-22.5L89.9 119z"/></svg>';
-$next-page-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238 238"><path fill="' + $data-table-icon-color + '" d="M181.8 107.7L78.7 4.6c-6.2-6.2-16.3-6.2-22.5 0s-6.2 16.3 0 22.5l91.9 91.9 -91.9 91.9c-6.2 6.2-6.2 16.3 0 22.5s16.3 6.2 22.5 0l103.1-103c3.1-3.1 4.7-7.2 4.6-11.3C186.4 114.9 184.9 110.8 181.8 107.7z"/></svg>';
-$last-page-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><path fill="' + $data-table-icon-color + '" d="M237.9 111L143.8 4.7c-6.2-6.2-16.4-6.2-22.6 0 -6.2 6.2-6.2 16.4 0 22.6l84.2 95.2 -84.2 95.2c-6.2 6.2-6.2 16.4 0 22.6 6.2 6.2 16.4 6.2 22.6 0l94-106.3c3.2-3.2 4.6-7.3 4.6-11.5S241 114.2 237.9 111z"/><path fill="' + $data-table-icon-color + '" d="M128.5 122.5c0.1-4.2-1.5-8.4-4.6-11.5L29.8 4.7c-6.2-6.2-16.4-6.2-22.6 0 -6.2 6.2-6.2 16.4 0 22.6l84.2 95.2L7.2 217.7c-6.3 6.3-6.3 16.4 0 22.7 6.2 6.2 16.4 6.2 22.6 0l94-106.3C127 130.8 128.5 126.7 128.5 122.5z"/></svg>';
-$first-page-icon-url-hover: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><path fill="' + $data-table-pagination-icon-hover-color + '" d="M39.6 122.5l84.2-95.2c6.2-6.2 6.2-16.4 0-22.6 -6.2-6.2-16.4-6.2-22.6 0L7.2 111c-3.2 3.2-4.7 7.3-4.6 11.5 0 4.2 1.5 8.4 4.6 11.5l94 106.3c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L39.6 122.5z"/><path fill="' + $data-table-pagination-icon-hover-color + '" d="M153.6 122.5l84.2-95.2c6.3-6.3 6.3-16.4 0.1-22.6 -6.2-6.2-16.4-6.2-22.6 0l-94 106.3c-3.2 3.2-4.7 7.3-4.6 11.5 0 4.2 1.5 8.4 4.6 11.5l94 106.3c6.3 6.2 16.4 6.2 22.6 0 6.3-6.2 6.3-16.4 0-22.6L153.6 122.5z"/></svg>';
-$previous-page-icon-url-hover: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 237.9 237.9"><path fill="' + $data-table-pagination-icon-hover-color + '" d="M89.9 119l91.9-91.9c6.2-6.2 6.2-16.3 0-22.5s-16.3-6.2-22.5 0L56.2 107.7c-3.1 3.1-4.6 7.2-4.6 11.3s1.5 8.2 4.6 11.3L159.3 233.3c6.2 6.2 16.3 6.2 22.5 0 6.2-6.2 6.2-16.3 0-22.5L89.9 119z"/></svg>';
-$next-page-icon-url-hover: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238 238"><path fill="' + $data-table-pagination-icon-hover-color + '" d="M181.8 107.7L78.7 4.6c-6.2-6.2-16.3-6.2-22.5 0s-6.2 16.3 0 22.5l91.9 91.9 -91.9 91.9c-6.2 6.2-6.2 16.3 0 22.5s16.3 6.2 22.5 0l103.1-103c3.1-3.1 4.7-7.2 4.6-11.3C186.4 114.9 184.9 110.8 181.8 107.7z"/></svg>';
-$last-page-icon-url-hover: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><path fill="' + $data-table-pagination-icon-hover-color + '" d="M237.9 111L143.8 4.7c-6.2-6.2-16.4-6.2-22.6 0 -6.2 6.2-6.2 16.4 0 22.6l84.2 95.2 -84.2 95.2c-6.2 6.2-6.2 16.4 0 22.6 6.2 6.2 16.4 6.2 22.6 0l94-106.3c3.2-3.2 4.6-7.3 4.6-11.5S241 114.2 237.9 111z"/><path fill="' + $data-table-pagination-icon-hover-color + '" d="M128.5 122.5c0.1-4.2-1.5-8.4-4.6-11.5L29.8 4.7c-6.2-6.2-16.4-6.2-22.6 0 -6.2 6.2-6.2 16.4 0 22.6l84.2 95.2L7.2 217.7c-6.3 6.3-6.3 16.4 0 22.7 6.2 6.2 16.4 6.2 22.6 0l94-106.3C127 130.8 128.5 126.7 128.5 122.5z"/></svg>';
-$loading-animation: '<svg enable-background="new 0 0 0 0" version="1.1" viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m73 50c0-12.7-10.3-23-23-23s-23 10.3-23 23m3.9 0c0-10.5 8.5-19.1 19.1-19.1s19.1 8.6 19.1 19.1" fill="' + $data-table-loading-animation-color + '"><animateTransform attributeName="transform" attributeType="XML" dur="1s" from="0 50 50" repeatCount="indefinite" to="360 50 50" type="rotate"/></path></svg>' !default;
-
+$close-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-close-color +
+  '" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>';
+$expand-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 476.7 476.7"><path fill="' + $data-table-icon-color +
+  '" d="M238.4 0C106.7 0 0 106.7 0 238.4c0 131.7 106.7 238.4 238.4 238.4 131.7 0 238.4-106.7 238.4-238.4C476.7 106.7 370 0 238.4 0zM352.7 289.2c-6.2 6.2-16.3 6.2-22.5 0l-91.9-91.9 -91.9 91.9c-6.2 6.2-16.3 6.2-22.5 0 -6.2-6.2-6.2-16.3 0-22.5L227.1 163.7c3.1-3.1 7.2-4.6 11.3-4.6s8.2 1.5 11.3 4.6L352.7 266.8C358.9 272.9 358.9 283 352.7 289.2z"/></svg>';
+$refresh-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color +
+  '" d="M12 6v3l4-4-4-4v3c-4.42 0-8 3.58-8 8 0 1.57.46 3.03 1.24 4.26L6.7 14.8c-.45-.83-.7-1.79-.7-2.8 0-3.31 2.69-6 6-6zm6.76 1.74L17.3 9.2c.44.84.7 1.79.7 2.8 0 3.31-2.69 6-6 6v-3l-4 4 4 4v-3c4.42 0 8-3.58 8-8 0-1.57-.46-3.03-1.24-4.26z"/></svg>';
+$list-view-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color +
+  '" d="M4 14h4v-4H4v4zm0 5h4v-4H4v4zM4 9h4V5H4v4zm5 5h12v-4H9v4zm0 5h12v-4H9v4zM9 5v4h12V5H9z"/></svg>';
+$sort-ascending-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"><path fill="' + $data-table-icon-color +
+  '" d="M3 6 9 6 9 8 3 8 3 6Zm0 12 0-2 18 0 0 2-18 0zm0-7 12 0 0 2-12 0 0-2z"/></svg>';
+$sort-descending-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color +
+  '" d="M3 18h6v-2H3v2zM3 6v2h18V6H3zm0 7h12v-2H3v2z"/></svg>';
+$sort-reset-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="' + $data-table-icon-color +
+  '" d="M6 7h2.5L5 3.5 1.5 7H4v10H1.5L5 20.5 8.5 17H6V7zm4-2v2h12V5H10zm0 14h12v-2H10v2zm0-6h12v-2H10v2z"/></svg>';
+$first-page-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><path fill="' + $data-table-icon-color +
+  '" d="M39.6 122.5l84.2-95.2c6.2-6.2 6.2-16.4 0-22.6 -6.2-6.2-16.4-6.2-22.6 0L7.2 111c-3.2 3.2-4.7 7.3-4.6 11.5 0 4.2 1.5 8.4 4.6 11.5l94 106.3c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L39.6 122.5z"/><path fill="' +
+  $data-table-icon-color +
+  '" d="M153.6 122.5l84.2-95.2c6.3-6.3 6.3-16.4 0.1-22.6 -6.2-6.2-16.4-6.2-22.6 0l-94 106.3c-3.2 3.2-4.7 7.3-4.6 11.5 0 4.2 1.5 8.4 4.6 11.5l94 106.3c6.3 6.2 16.4 6.2 22.6 0 6.3-6.2 6.3-16.4 0-22.6L153.6 122.5z"/></svg>';
+$previous-page-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 237.9 237.9"><path fill="' + $data-table-icon-color +
+  '" d="M89.9 119l91.9-91.9c6.2-6.2 6.2-16.3 0-22.5s-16.3-6.2-22.5 0L56.2 107.7c-3.1 3.1-4.6 7.2-4.6 11.3s1.5 8.2 4.6 11.3L159.3 233.3c6.2 6.2 16.3 6.2 22.5 0 6.2-6.2 6.2-16.3 0-22.5L89.9 119z"/></svg>';
+$next-page-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238 238"><path fill="' + $data-table-icon-color +
+  '" d="M181.8 107.7L78.7 4.6c-6.2-6.2-16.3-6.2-22.5 0s-6.2 16.3 0 22.5l91.9 91.9 -91.9 91.9c-6.2 6.2-6.2 16.3 0 22.5s16.3 6.2 22.5 0l103.1-103c3.1-3.1 4.7-7.2 4.6-11.3C186.4 114.9 184.9 110.8 181.8 107.7z"/></svg>';
+$last-page-icon-url: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><path fill="' + $data-table-icon-color +
+  '" d="M237.9 111L143.8 4.7c-6.2-6.2-16.4-6.2-22.6 0 -6.2 6.2-6.2 16.4 0 22.6l84.2 95.2 -84.2 95.2c-6.2 6.2-6.2 16.4 0 22.6 6.2 6.2 16.4 6.2 22.6 0l94-106.3c3.2-3.2 4.6-7.3 4.6-11.5S241 114.2 237.9 111z"/><path fill="' +
+  $data-table-icon-color +
+  '" d="M128.5 122.5c0.1-4.2-1.5-8.4-4.6-11.5L29.8 4.7c-6.2-6.2-16.4-6.2-22.6 0 -6.2 6.2-6.2 16.4 0 22.6l84.2 95.2L7.2 217.7c-6.3 6.3-6.3 16.4 0 22.7 6.2 6.2 16.4 6.2 22.6 0l94-106.3C127 130.8 128.5 126.7 128.5 122.5z"/></svg>';
+$first-page-icon-url-hover: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><path fill="' + $data-table-pagination-icon-hover-color +
+  '" d="M39.6 122.5l84.2-95.2c6.2-6.2 6.2-16.4 0-22.6 -6.2-6.2-16.4-6.2-22.6 0L7.2 111c-3.2 3.2-4.7 7.3-4.6 11.5 0 4.2 1.5 8.4 4.6 11.5l94 106.3c6.2 6.2 16.4 6.2 22.6 0 6.2-6.2 6.2-16.4 0-22.6L39.6 122.5z"/><path fill="' +
+  $data-table-pagination-icon-hover-color +
+  '" d="M153.6 122.5l84.2-95.2c6.3-6.3 6.3-16.4 0.1-22.6 -6.2-6.2-16.4-6.2-22.6 0l-94 106.3c-3.2 3.2-4.7 7.3-4.6 11.5 0 4.2 1.5 8.4 4.6 11.5l94 106.3c6.3 6.2 16.4 6.2 22.6 0 6.3-6.2 6.3-16.4 0-22.6L153.6 122.5z"/></svg>';
+$previous-page-icon-url-hover: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 237.9 237.9"><path fill="' +
+  $data-table-pagination-icon-hover-color +
+  '" d="M89.9 119l91.9-91.9c6.2-6.2 6.2-16.3 0-22.5s-16.3-6.2-22.5 0L56.2 107.7c-3.1 3.1-4.6 7.2-4.6 11.3s1.5 8.2 4.6 11.3L159.3 233.3c6.2 6.2 16.3 6.2 22.5 0 6.2-6.2 6.2-16.3 0-22.5L89.9 119z"/></svg>';
+$next-page-icon-url-hover: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 238 238"><path fill="' + $data-table-pagination-icon-hover-color +
+  '" d="M181.8 107.7L78.7 4.6c-6.2-6.2-16.3-6.2-22.5 0s-6.2 16.3 0 22.5l91.9 91.9 -91.9 91.9c-6.2 6.2-6.2 16.3 0 22.5s16.3 6.2 22.5 0l103.1-103c3.1-3.1 4.7-7.2 4.6-11.3C186.4 114.9 184.9 110.8 181.8 107.7z"/></svg>';
+$last-page-icon-url-hover: '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 245 245"><path fill="' + $data-table-pagination-icon-hover-color +
+  '" d="M237.9 111L143.8 4.7c-6.2-6.2-16.4-6.2-22.6 0 -6.2 6.2-6.2 16.4 0 22.6l84.2 95.2 -84.2 95.2c-6.2 6.2-6.2 16.4 0 22.6 6.2 6.2 16.4 6.2 22.6 0l94-106.3c3.2-3.2 4.6-7.3 4.6-11.5S241 114.2 237.9 111z"/><path fill="' +
+  $data-table-pagination-icon-hover-color +
+  '" d="M128.5 122.5c0.1-4.2-1.5-8.4-4.6-11.5L29.8 4.7c-6.2-6.2-16.4-6.2-22.6 0 -6.2 6.2-6.2 16.4 0 22.6l84.2 95.2L7.2 217.7c-6.3 6.3-6.3 16.4 0 22.7 6.2 6.2 16.4 6.2 22.6 0l94-106.3C127 130.8 128.5 126.7 128.5 122.5z"/></svg>';
+$loading-animation: '<svg enable-background="new 0 0 0 0" version="1.1" viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path d="m73 50c0-12.7-10.3-23-23-23s-23 10.3-23 23m3.9 0c0-10.5 8.5-19.1 19.1-19.1s19.1 8.6 19.1 19.1" fill="' +
+  $data-table-loading-animation-color +
+  '"><animateTransform attributeName="transform" attributeType="XML" dur="1s" from="0 50 50" repeatCount="indefinite" to="360 50 50" type="rotate"/></path></svg>' !default;
 
 //Common Styles
 $delete-color: #d32f2f !default;
@@ -38,16 +62,15 @@ $data-table-top-header-text-color: #cacaca !default;
 
 //Data Table Dropdown Styles
 $data-table-dropdown-background: #3c3f41 !default;
-$data-table-dropdown-box-shadow-value: 2px 2px 10px rgba(0, 0, 0, .2) !default;
+$data-table-dropdown-box-shadow-value: 2px 2px 10px rgba(0, 0, 0, 0.2) !default;
 $data-table-dropdown-border: #555 !default;
 $data-table-dropdown-border-radius-value: 0 !default;
 $data-table-dropdown-heading-background: #333 !default;
 $data-table-dropdown-heading-text-color: #cacaca !default;
 $data-table-dropdown-text-color: #cacaca !default;
 
-
 //Data Table Content Header Styles
-$data-table-content-header-background: #333 !default;;
+$data-table-content-header-background: #333 !default;
 $data-table-content-header-border: #3a3737 !default;
 $data-table-content-header-text-color: #cacaca !default;
 
@@ -68,30 +91,24 @@ $data-table-cell-text-color: #cacaca !default;
 $data-table-row-hover-background: #555 !default;
 $data-table-row-hover-cell-text-color: #cacaca !default;
 
-
 $data-table-odd-row-background: #3c3f41 !default;
 $data-table-odd-row-cell-text-color: #cacaca !default;
 $data-table-odd-row-hover-background: #444 !default;
 $data-table-odd-row-hover-cell-text-color: #cacaca !default;
-
 
 $data-table-even-row-background: #515658 !default;
 $data-table-even-row-cell-text-color: #cacaca !default;
 $data-table-even-row-hover-background: #444 !default;
 $data-table-even-row-hover-cell-text-color: #cacaca !default;
 
-
-$data-table-selected-row-background:  #777 !default;
+$data-table-selected-row-background: #777 !default;
 $data-table-selected-row-cell-text-color: #cacaca !default;
 $data-table-selected-row-hover-background: #777 !default;
 $data-table-selected-row-hover-cell-text-color: #cacaca !default;
 
-
-
 //Data Table Loading Window Background
 $data-table-loading-window-background: #111 !default;
 $data-table-loading-window-border: #222 !default;
-
 
 //No Record Message Text Color
 $data-table-no-records-main-heading-message-text-color: #fff !default;
@@ -99,7 +116,7 @@ $data-table-no-records-sub-heading-message-text-color: #cacaca !default;
 $data-table-no-records-button-background: #222 !default;
 $data-table-no-records-button-border: #fff !default;
 $data-table-no-records-button-text-color: #fff !default;
-$data-table-no-records-button-border-radius-value: .2rem !default;
+$data-table-no-records-button-border-radius-value: 0.2rem !default;
 
 //Data Table Pagination Style
 $data-table-pagination-background: #3c3f41 !default;
@@ -118,7 +135,7 @@ $data-table-pagination-action-button-background-hover: #3e3e3e !default;
 $data-table-pagination-action-button-border: #333 !default;
 $data-table-pagination-action-button-border-radius-value: 0 !default;
 $data-table-pagination-disabled-action-button-background: #3e3e3e !default;
-$data-table-pagination-disabled-action-button-border: #333 !default;;
+$data-table-pagination-disabled-action-button-border: #333 !default;
 $data-table-pagination-first-page-action-button-background: #3e3e3e !default;
 $data-table-pagination-first-page-action-button-background-hover: #333 !default;
 $data-table-pagination-first-page-action-button-border: #333 !default;

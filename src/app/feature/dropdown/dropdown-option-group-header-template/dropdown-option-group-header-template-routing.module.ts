@@ -5,7 +5,6 @@ import { DropdownOptionGroupHeaderTemplateComponent } from './index';
 
 /**
  * Represent dropdown option group header template routes.
- * @type Routes
  */
 const dropdownOptionGroupHeaderTemplateRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownOptionGroupHeaderTemplateRoutes: Routes = [
 
 /**
  * Dropdown option group header template routing module.
- * @class DropdownOptionGroupHeaderTemplateRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownOptionGroupHeaderTemplateRoutes)]
 })
-export class DropdownOptionGroupHeaderTemplateRoutingModule {
-}
+export class DropdownOptionGroupHeaderTemplateRoutingModule {}

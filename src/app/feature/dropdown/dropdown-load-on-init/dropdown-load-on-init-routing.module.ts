@@ -5,7 +5,6 @@ import { DropdownLoadOnInitComponent } from './index';
 
 /**
  * Represent dropdown load on init routes.
- * @type Routes
  */
 const dropdownLoadOnInitRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownLoadOnInitRoutes: Routes = [
 
 /**
  * Dropdown load on init routing module.
- * @class DropdownLoadOnInitRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownLoadOnInitRoutes)]
 })
-export class DropdownLoadOnInitRoutingModule {
-}
+export class DropdownLoadOnInitRoutingModule {}

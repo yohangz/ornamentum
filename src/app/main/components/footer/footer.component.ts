@@ -12,7 +12,7 @@ export class FooterComponent {
   public packageVersion: string;
 
   constructor() {
-    this.currentYear = (new Date()).getFullYear();
+    this.currentYear = new Date().getFullYear();
     this.packageVersion = VERSION;
   }
 }

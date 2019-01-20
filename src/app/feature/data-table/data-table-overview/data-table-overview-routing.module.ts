@@ -20,5 +20,4 @@ const dataTableOverviewRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableOverviewRoutes)]
 })
-export class DataTableOverviewRoutingModule {
-}
+export class DataTableOverviewRoutingModule {}

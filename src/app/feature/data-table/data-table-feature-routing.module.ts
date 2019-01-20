@@ -5,7 +5,6 @@ import { SeoGuard } from '../../core/seo.guard';
 
 /**
  * Represent application data table feature module routes.
- * @type Routes
  */
 const dataTableFeatureRoutes: Routes = [
   {
@@ -69,8 +68,8 @@ const dataTableFeatureRoutes: Routes = [
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Pagination',
         keywords: 'Pagination, Pageable, Ornamentum, How to enable Pagination in Ornamentum',
-        description: 'How to enable pagination for the Ornamentum data table, everything to do with pagination and related properties, ' +
-          'with examples.'
+        description:
+          'How to enable pagination for the Ornamentum data table, everything to do with pagination and related properties, ' + 'with examples.'
       }
     }
   },
@@ -294,11 +293,9 @@ const dataTableFeatureRoutes: Routes = [
 
 /**
  * Application data table feature routing module.
- * @class DataTableFeatureRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableFeatureRoutes)]
 })
-export class DataTableFeatureRoutingModule {
-}
+export class DataTableFeatureRoutingModule {}

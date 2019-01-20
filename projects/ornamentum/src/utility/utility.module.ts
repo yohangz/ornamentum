@@ -13,41 +13,20 @@ import { GlobalRefService } from './services/global-ref.service';
 import { PopoverComponentLoaderFactoryService } from './services/popover-component-loader-factory.service';
 import { ResizeService } from './services/resize.service';
 
-const DIRECTIVES = [
-  ClickOutsideDirective,
-  InitDirective,
-  FocusDirective
-];
+const DIRECTIVES = [ClickOutsideDirective, InitDirective, FocusDirective];
 
-const PIPES = [
-  PixelConverterPipe
-];
+const PIPES = [PixelConverterPipe];
 
-const PROVIDERS = [
-  DragAndDropService,
-  GlobalRefService,
-  PopoverComponentLoaderFactoryService,
-  ResizeService
-];
+const PROVIDERS = [DragAndDropService, GlobalRefService, PopoverComponentLoaderFactoryService, ResizeService];
 
 /**
  * Module representing utility providers, directives and pipes
  */
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [
-    ...DIRECTIVES,
-    ...PIPES
-  ],
-  providers: [
-    ...PROVIDERS
-  ],
-  exports: [
-    ...DIRECTIVES,
-    ...PIPES
-  ]
+  imports: [CommonModule],
+  declarations: [...DIRECTIVES, ...PIPES],
+  providers: [...PROVIDERS],
+  exports: [...DIRECTIVES, ...PIPES]
 })
 export class UtilityModule {
   /**
@@ -70,4 +49,3 @@ export { UtilityConfigService } from './services/utility-config.service';
 export { PopoverComponentLoaderFactoryService } from './services/popover-component-loader-factory.service';
 
 export { PopoverComponentLoader } from './services/popover-component-loader.class';
-

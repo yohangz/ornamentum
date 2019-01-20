@@ -1,36 +1,29 @@
-<ng-data-table
-  [title]="'Sales Products'"
-  [items]="items"
-  [minHeight]="200"
-  [minWidth]="900"
-  [pageable]="true"
-  [showHeader]="true">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [width]="60">
-  </ng-data-table-column>
+<ng-data-table [title]="'Sales Products'" [items]="items" [minHeight]="200" [minWidth]="900" [pageable]="true" [showHeader]="true">
+  <ng-data-table-column [field]="'id'" [title]="'ID'" [width]="60"> </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
     [title]="'Order Method Type'"
     [dropdownFilterMenuPosition]="'bottom-right'"
     [filterable]="true"
     [showDropdownFilter]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+  >
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
     [title]="'Retailer Type'"
     [filterable]="true"
     [showDropdownFilter]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+  >
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
     [title]="'Product Line'"
     [filterable]="true"
     [filterPlaceholder]="'Product Line Filter'"
-    [showFilterClearButton]="true">
+    [showFilterClearButton]="true"
+  >
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
@@ -38,7 +31,8 @@
     [dropdownFilterMenuPosition]="'bottom-left'"
     [filterable]="true"
     [showDropdownFilter]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+  >
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'revenue'"
@@ -46,16 +40,9 @@
     [filterable]="true"
     [filterPlaceholder]="'Revenue Filter'"
     [showFilterClearButton]="true"
-    [width]="120">
+    [width]="120"
+  >
   </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'quantity'"
-    [title]="'Quantity'"
-    [width]="80">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'grossMargin'"
-    [title]="'Gross Margin'"
-    [width]="100">
-  </ng-data-table-column>
+  <ng-data-table-column [field]="'quantity'" [title]="'Quantity'" [width]="80"> </ng-data-table-column>
+  <ng-data-table-column [field]="'grossMargin'" [title]="'Gross Margin'" [width]="100"> </ng-data-table-column>
 </ng-data-table>

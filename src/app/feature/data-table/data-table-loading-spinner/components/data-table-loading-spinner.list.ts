@@ -26,5 +26,3 @@ export const loadingSpinnerUsage: ExampleFile[] = [
 export const demoSnippet: any = {
   loadingSpinner: require('!!raw-loader?lang=typescript!./docs/show-loading-spinner.md')
 };
-
-

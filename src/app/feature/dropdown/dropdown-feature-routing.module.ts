@@ -5,7 +5,6 @@ import { SeoGuard } from '../../core/seo.guard';
 
 /**
  * Represent application dropdown feature module routes.
- * @type Routes
  */
 const dropdownFeatureRoutes: Routes = [
   {
@@ -218,8 +217,7 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-option-group-header-template/' +
-      'dropdown-option-group-header-template.module#DropdownOptionGroupHeaderTemplateModule',
+    loadChildren: './dropdown-option-group-header-template/' + 'dropdown-option-group-header-template.module#DropdownOptionGroupHeaderTemplateModule',
     path: 'templates/dropdown-option-group-header-template',
     canActivate: [SeoGuard],
     data: {
@@ -275,5 +273,4 @@ const dropdownFeatureRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownFeatureRoutes)]
 })
-export class DropdownFeatureRoutingModule {
-}
+export class DropdownFeatureRoutingModule {}

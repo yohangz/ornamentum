@@ -5,7 +5,6 @@ import { DropdownStylingAndThemesComponent } from './index';
 
 /**
  * Represent dropdown styling and themes routes.
- * @type Routes
  */
 const dropdownStylingAndThemesRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownStylingAndThemesRoutes: Routes = [
 
 /**
  * Dropdown styling and themes routing module.
- * @class DropdownStylingAndThemesRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownStylingAndThemesRoutes)]
 })
-export class DropdownStylingAndThemesRoutingModule {
-}
+export class DropdownStylingAndThemesRoutingModule {}

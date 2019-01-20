@@ -1,7 +1,6 @@
 @import 'base.theme.variables';
 @import '../mixins';
 
-
 // Dropdown wrapper styles
 // Dropdown Selector Delete Icon styles
 // Dropdown Selector Arrow styles
@@ -39,7 +38,7 @@
     cursor: pointer;
     height: 1.5em;
     position: absolute;
-    right: .3rem;
+    right: 0.3rem;
     top: 50%;
     width: 1.5em;
     z-index: 1;
@@ -49,9 +48,8 @@
   .ng-dropdown-loading {
     position: absolute;
     right: 0;
-    top: -.1rem;
+    top: -0.1rem;
     z-index: 10;
-
 
     .ng-dropdown-loading-animation {
       background: inline-svg($loading-animation);
@@ -60,27 +58,25 @@
     }
   }
 
-
   // Dropdown Selector Styles
   .ng-dropdown-toggle {
     @include border-radius($dropdown-selector-border-radius-value);
     @include display-flex;
     @include flex-wrap(no-wrap);
     background: $dropdown-selector-background;
-    border: .05rem solid $dropdown-selector-border;
+    border: 0.05rem solid $dropdown-selector-border;
     color: $dropdown-selector-text-color;
     cursor: pointer;
     outline: 0;
-    padding: .2rem 3rem .2rem .5rem;
+    padding: 0.2rem 3rem 0.2rem 0.5rem;
     position: relative;
     text-align: left;
     width: 100%;
 
     &.disabled {
       cursor: not-allowed;
-      opacity: .6;
+      opacity: 0.6;
       pointer-events: none;
-
     }
 
     .ng-dropdown-selected-item,
@@ -95,15 +91,15 @@
       background: $dropdown-selector-selected-background;
       color: $dropdown-selector-selected-color;
       display: inline-block;
-      margin: 0 .2rem 0 .1rem;
+      margin: 0 0.2rem 0 0.1rem;
       overflow: hidden;
-      padding: 0 .5rem;
+      padding: 0 0.5rem;
       position: relative;
       text-overflow: ellipsis;
       white-space: nowrap;
 
       &.ng-dropdown-option-close-enabled {
-        padding: 0 1.5rem 0 .5rem;
+        padding: 0 1.5rem 0 0.5rem;
       }
 
       .ng-dropdown-remove-selected-value {
@@ -114,7 +110,7 @@
         cursor: pointer;
         height: 1.2em;
         position: absolute;
-        right: .3em;
+        right: 0.3em;
         top: 50%;
         width: 1.2em;
       }
@@ -122,15 +118,12 @@
   }
 }
 
-
 // Dropdown Search Field Style
 // Search Icon box Styles
 // Search Input Filed Styles
 // Delete Icon Styles
 
-
 .ng-dropdown-search {
-
   .ng-dropdown-input-group {
     @include display-flex;
     @include flex-wrap(wrap);
@@ -145,7 +138,7 @@
       background: $dropdown-selector-search-icon-background;
       border: 0;
       margin-bottom: 0;
-      padding: .25rem .5rem;
+      padding: 0.25rem 0.5rem;
       text-align: center;
       white-space: nowrap;
       width: 2em;
@@ -157,7 +150,7 @@
         content: '';
         cursor: pointer;
         height: 1.7em;
-        left: .2em;
+        left: 0.2em;
         position: absolute;
         top: 50%;
         width: 1.7em;
@@ -170,13 +163,13 @@
       @include align-items(center);
       @include border-radius($dropdown-selector-search-input-border-radius);
       background: $dropdown-selector-search-input-background;
-      border: .05rem solid $dropdown-selector-search-input-border;
+      border: 0.05rem solid $dropdown-selector-search-input-border;
       color: $dropdown-selector-search-input-text-color;
       //font-size: .875rem;
       //line-height: 1.5;
       margin-bottom: 0;
       outline: none;
-      padding: .25rem 1.5rem .25rem .5rem;
+      padding: 0.25rem 1.5rem 0.25rem 0.5rem;
       position: relative;
       width: 1%;
       z-index: 2;
@@ -187,7 +180,7 @@
     @include transform(translateY(-50%));
     height: 1.7em;
     position: absolute;
-    right: .3em;
+    right: 0.3em;
     top: 50%;
     width: 1.7em;
     z-index: 2;
@@ -204,18 +197,16 @@
   }
 }
 
-
 // Dropdown Item List Styles
 // Dropdown Item List Group Heading Styles
 // Dropdown Item List Selected Items styles
-
 
 .ng-dropdown-menu-wrapper {
   @include box-shadow($dropdown-item-wrapper-box-shadow);
   @include border-radius($dropdown-item-wrapper-border-radius-value);
   background-clip: padding-box;
   background-color: $dropdown-item-wrapper-background;
-  border: .05rem solid $dropdown-item-wrapper-border;
+  border: 0.05rem solid $dropdown-item-wrapper-border;
   color: $dropdown-item-wrapper-text-color;
   display: block;
   height: 250px;
@@ -230,7 +221,7 @@
   .ng-dropdown-divider {
     border-top: 1px solid $dropdown-item-wrapper-divider-border;
     height: 0;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     overflow: hidden;
     padding: 0;
   }
@@ -238,7 +229,7 @@
   .ng-dropdown-item-container-wrapper {
     @include border-radius($dropdown-item-container-border-radius-value);
     -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
-    border: .07rem solid $dropdown-item-container-wrapper-border;
+    border: 0.07rem solid $dropdown-item-container-wrapper-border;
     height: 100%;
     overflow-y: auto;
 
@@ -262,10 +253,10 @@
 
       li {
         background: $dropdown-item-container-item-background;
-        border-bottom: .05rem solid $dropdown-item-container-item-border;
+        border-bottom: 0.05rem solid $dropdown-item-container-item-border;
         cursor: pointer;
         overflow: hidden;
-        padding: .25rem .5rem;
+        padding: 0.25rem 0.5rem;
         text-overflow: ellipsis;
         white-space: nowrap;
 
@@ -282,13 +273,11 @@
         }
 
         &.disabled {
-          opacity: .6;
+          opacity: 0.6;
           pointer-events: none;
-
         }
 
         &.ng-item-selected {
-
           background: $dropdown-item-container-selected-item-background;
 
           a {
@@ -302,11 +291,11 @@
 
         &.ng-dropdown-group-heading {
           background: $dropdown-item-container-group-heading-background;
-          border-bottom: .05rem solid;
+          border-bottom: 0.05rem solid;
           border-color: $dropdown-item-container-group-heading-border;
           color: $dropdown-item-container-group-heading-color;
           cursor: default;
-          padding: .3rem;
+          padding: 0.3rem;
 
           &:hover {
             background: $dropdown-item-container-group-heading-hover-background;
@@ -316,9 +305,8 @@
         }
 
         span {
-          padding-left: .5rem;
+          padding-left: 0.5rem;
         }
-
       }
     }
   }

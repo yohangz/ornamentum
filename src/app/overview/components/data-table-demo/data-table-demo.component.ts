@@ -20,8 +20,7 @@ import { DataFetchService } from '../../../shared/services';
 export class DataTableDemoComponent implements OnInit {
   public dataSource: Observable<ExampleData[]>;
 
-  constructor(private dataFetchService: DataFetchService, private globalRefService: GlobalRefService) {
-  }
+  constructor(private dataFetchService: DataFetchService, private globalRefService: GlobalRefService) {}
 
   /**
    * Component initialize lifecycle event.
@@ -29,17 +28,16 @@ export class DataTableDemoComponent implements OnInit {
   public ngOnInit(): void {
     let offset = 0;
     if (this.globalRefService.isBrowser) {
-      this.dataSource = timer(0, 2000)
-        .pipe(
-          map(() => {
-            offset += 20;
-            if (offset >= 100) {
-              offset = 0;
-            }
+      this.dataSource = timer(0, 2000).pipe(
+        map(() => {
+          offset += 20;
+          if (offset >= 100) {
+            offset = 0;
+          }
 
-            return this.dataFetchService.fetchStaticData(offset, 20);
-          })
-        );
+          return this.dataFetchService.fetchStaticData(offset, 20);
+        })
+      );
     } else {
       this.dataSource = of(this.dataFetchService.fetchStaticData(offset, 20));
     }
@@ -50,7 +48,7 @@ export class DataTableDemoComponent implements OnInit {
    * @param row Data table row.
    */
   public isHighMargin(row: DataTableRow<ExampleData>): boolean {
-    return row.item.grossMargin > .5;
+    return row.item.grossMargin > 0.5;
   }
 
   /**

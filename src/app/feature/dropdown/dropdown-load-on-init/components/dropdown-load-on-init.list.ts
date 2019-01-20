@@ -26,4 +26,3 @@ export const loadOnInitUsage: ExampleFile[] = [
 export const demoSnippet: any = {
   loadDataOnInit: require('!!raw-loader?lang=typescript!./docs/load-data-on-init.md')
 };
-

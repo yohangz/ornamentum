@@ -17,7 +17,7 @@ export class EventsTriggerSelectChangeOnFirstOptionSelectUsageComponent {
     this.items = this.dataFetchService.fetchStaticData();
   }
 
-  public onSelectChange(selectedData: ExampleData | ExampleData []) {
+  public onSelectChange(selectedData: ExampleData | ExampleData[]) {
     this.selectChangeEventData = selectedData;
   }
 }

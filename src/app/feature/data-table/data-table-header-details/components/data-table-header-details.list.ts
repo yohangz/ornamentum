@@ -32,14 +32,12 @@ export const tableHeaderDetailsTitleUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'table-header-details-title-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/table-header-details-title-usage/' +
-      'table-header-details-title-usage.component.ts')
+    content: require('!!raw-loader?lang=typescript!./example/table-header-details-title-usage/' + 'table-header-details-title-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'table-header-details-title-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/table-header-details-title-usage/' +
-      'table-header-details-title-usage.component.html')
+    content: require('!!raw-loader?lang=html!./example/table-header-details-title-usage/' + 'table-header-details-title-usage.component.html')
   },
   {
     type: FileType.TS,
@@ -103,4 +101,3 @@ export const tableHeaderDetailsShowColumnSelectorUsage: ExampleFile[] = [
 export const demoSnippet: any = {
   headerDetails: require('!!raw-loader?lang=typescript!./docs/show-header.md')
 };
-

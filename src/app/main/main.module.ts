@@ -15,12 +15,8 @@ import { BaseComponent } from './components';
  * Module class for containing main module.
  */
 @NgModule({
-  declarations: [
-    ...COMPONENTS
-  ],
-  exports: [
-    BaseComponent
-  ],
+  declarations: [...COMPONENTS],
+  exports: [BaseComponent],
   imports: [
     AppCoreModule,
     RouterModule,
@@ -28,8 +24,7 @@ import { BaseComponent } from './components';
     FormsModule,
     DataTableModule.forRoot({
       showColumnSelector: true
-    }),
+    })
   ]
 })
-export class AppMainModule {
-}
+export class AppMainModule {}

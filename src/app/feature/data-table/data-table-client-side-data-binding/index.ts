@@ -5,4 +5,3 @@ export {
 export {
   ClientSideDataBindingWithDataSourceComponent
 } from './components/example/client-side-data-binding-with-data-source/client-side-data-binding-with-data-source.component';
-

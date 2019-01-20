@@ -57,7 +57,7 @@ export class DataTableConfigService implements DataTableConfig {
     noDataMessageHeader: 'Whoops!',
     noDataMessageBody: 'No data to display. Added data will appear here.',
     paginationLimit: 'Limit',
-    paginationRange: 'Results',
+    paginationRange: 'Results'
   };
 
   // Table column config
@@ -95,7 +95,7 @@ export class DataTableConfigService implements DataTableConfig {
   }
 
   public set translations(value: DataTableTranslations) {
-    this.baseTranslations = {...this.baseTranslations, ...value};
+    this.baseTranslations = { ...this.baseTranslations, ...value };
   }
 
   /**
