@@ -32,9 +32,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
   @Input()
   public columns: DataTableColumnComponent[];
 
-  constructor(public config: DataTableConfigService,
-              private eventStateService: DataTableEventStateService) {
-  }
+  constructor(public config: DataTableConfigService, private eventStateService: DataTableEventStateService) {}
 
   /**
    * Component initialize lifecycle event handler
@@ -61,24 +59,19 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
    * Initialize custom filter event
    */
   private initCustomFilterEvent(): void {
-    this.customFilterSubscription = this.customFilterStream
-      .subscribe((filterEventArgs: DataTableFilterEventArgs) => {
-        filterEventArgs.column.filter = filterEventArgs.filter;
-        this.onFilter();
-      });
+    this.customFilterSubscription = this.customFilterStream.subscribe((filterEventArgs: DataTableFilterEventArgs) => {
+      filterEventArgs.column.filter = filterEventArgs.filter;
+      this.onFilter();
+    });
   }
 
   /**
    * Initialize debounce default filtering logic
    */
   private initDebounceDefaultFilterEvent(): void {
-    this.columnFilterSubscription = this.columnFilterStream
-      .pipe(
-        debounceTime(this.config.filterDebounceTime)
-      )
-      .subscribe(() => {
-        this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);
-      });
+    this.columnFilterSubscription = this.columnFilterStream.pipe(debounceTime(this.config.filterDebounceTime)).subscribe(() => {
+      this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);
+    });
   }
 
   /**
@@ -92,4 +85,3 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
     }
   }
 }
-

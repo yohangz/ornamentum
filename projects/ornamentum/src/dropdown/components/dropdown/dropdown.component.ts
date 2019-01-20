@@ -1,6 +1,7 @@
 import {
   Component,
-  ContentChild, ElementRef,
+  ContentChild,
+  ElementRef,
   EventEmitter,
   forwardRef,
   Injector,
@@ -392,13 +393,15 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.config.dynamicHeightRatio = value;
   }
 
-  constructor(private componentLoaderFactory: PopoverComponentLoaderFactoryService,
-              private injector: Injector,
-              private eventStateService: DropdownEventStateService,
-              private dropdownResourceService: DropdownResourceService<any>,
-              private renderer: Renderer2,
-              public dataStateService: DropdownDataStateService,
-              public config: DropdownConfigService) {
+  constructor(
+    private componentLoaderFactory: PopoverComponentLoaderFactoryService,
+    private injector: Injector,
+    private eventStateService: DropdownEventStateService,
+    private dropdownResourceService: DropdownResourceService<any>,
+    private renderer: Renderer2,
+    public dataStateService: DropdownDataStateService,
+    public config: DropdownConfigService
+  ) {
     this.dataStateService.componentLoaderRef = this.componentLoaderFactory.createLoader(this.renderer);
 
     this.dataBound = this.eventStateService.dataBoundStream;
@@ -423,11 +426,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @param element Dropdown button element.
    */
   public toggleDropdown(element: HTMLElement): void {
-    this.dataStateService.componentLoaderRef
-      .toggle(DropdownViewComponent, element, this.injector, {
-        relativeParent: this.relativeParentElement || this.dropdownElement.nativeElement,
-        position: this.config.menuPosition
-      });
+    this.dataStateService.componentLoaderRef.toggle(DropdownViewComponent, element, this.injector, {
+      relativeParent: this.relativeParentElement || this.dropdownElement.nativeElement,
+      position: this.config.menuPosition
+    });
 
     if (this.config.dynamicDimensionCalculation) {
       this.config.menuWidth = element.offsetWidth * this.config.dynamicWidthRatio;
@@ -528,10 +530,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   /**
    * Register on change event.
    * ControlValueAccessor implementation.
-   * @param {(value: (DropdownItem[] | DropdownItem)) => void} onSelectChange On select change callback function.
+   * @param onSelectChange On select change callback function.
    */
   public registerOnChange(onSelectChange: (value: any[] | any) => void): void {
-    this.onSelectChangeSubscription = this.selectChange.subscribe((value) => {
+    this.onSelectChangeSubscription = this.selectChange.subscribe(value => {
       onSelectChange(value);
     });
   }
@@ -576,26 +578,32 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   private setDropdownOptions(queryResult: DropdownQueryResult<any>) {
     if (this.config.groupByField) {
-      this.dataStateService.dropdownItemGroups = queryResult.items.reduce((accumulator: DropdownItemGroup[], item: any) => {
-        const groupFieldValue = get(item, this.config.groupByField);
-        const currentGroup = accumulator.find((group: DropdownItemGroup) => group.groupName === groupFieldValue);
+      this.dataStateService.dropdownItemGroups = queryResult.items.reduce(
+        (accumulator: DropdownItemGroup[], item: any) => {
+          const groupFieldValue = get(item, this.config.groupByField);
+          const currentGroup = accumulator.find((group: DropdownItemGroup) => group.groupName === groupFieldValue);
 
-        if (currentGroup) {
-          currentGroup.items.push(this.extractDropdownItem(item));
-        } else {
-          accumulator.push({
-            groupName: groupFieldValue,
-            items: [this.extractDropdownItem(item)]
-          });
-        }
+          if (currentGroup) {
+            currentGroup.items.push(this.extractDropdownItem(item));
+          } else {
+            accumulator.push({
+              groupName: groupFieldValue,
+              items: [this.extractDropdownItem(item)]
+            });
+          }
 
-        return accumulator;
-      }, this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownItemGroups : []);
+          return accumulator;
+        },
+        this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownItemGroups : []
+      );
     } else {
-      this.dataStateService.dropdownItems = queryResult.items.reduce((accumulator: DropdownItem[], item: any) => {
-        accumulator.push(this.extractDropdownItem(item));
-        return accumulator;
-      }, this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownItems : []);
+      this.dataStateService.dropdownItems = queryResult.items.reduce(
+        (accumulator: DropdownItem[], item: any) => {
+          accumulator.push(this.extractDropdownItem(item));
+          return accumulator;
+        },
+        this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownItems : []
+      );
     }
 
     if (this.config.setFirstOptionSelected && queryResult.items.length) {

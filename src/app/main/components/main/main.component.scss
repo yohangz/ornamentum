@@ -7,36 +7,36 @@
   .page-wrapper {
     @include display-flex;
     @include flex-direction(column);
-    bottom:  0;
-    left:  0;
-    position:  fixed;
-    right:  0;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    right: 0;
     top: 56px;
 
     header {
-      left:  0;
-      position:  fixed;
-      right:  0;
-      top:  0;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
       z-index: 3;
     }
 
     .page-wrapper-content {
       -webkit-overflow-scrolling: touch;
       display: block;
-      overflow:  auto;
-      position:  relative;
+      overflow: auto;
+      position: relative;
       width: 100%;
 
       .page-wrapper-inner-content {
         @include display-flex;
         background: $side-menu-background-light;
         font-family: $primary-font;
-        padding-bottom: .2rem;
+        padding-bottom: 0.2rem;
         position: relative;
 
         .main-pane {
-          @include font-size(.9, 1.4);
+          @include font-size(0.9, 1.4);
           padding: 1rem;
           position: relative;
           width: calc(100% - 450px);

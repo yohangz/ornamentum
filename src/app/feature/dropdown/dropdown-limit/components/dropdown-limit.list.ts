@@ -26,4 +26,3 @@ export const dataLimitUsage: ExampleFile[] = [
 export const demoSnippet: any = {
   limit: require('!!raw-loader?lang=typescript!./docs/limit.md')
 };
-

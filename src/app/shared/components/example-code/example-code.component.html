@@ -1,20 +1,20 @@
 <app-tab-set [ngSwitch]="">
   <ng-container *ngFor="let file of files; index as i">
-    <app-tab [ngSwitch]="file.type"   [id]="'tab-' + i" [title]="file.name">
+    <app-tab [ngSwitch]="file.type" [id]="'tab-' + i" [title]="file.name">
       <ng-template #tabTitle>
         <i *ngSwitchCase="FileType.TS" class="ts-icon"></i>
         <i *ngSwitchCase="FileType.CSS" class="css-icon"></i>
         <i *ngSwitchCase="FileType.HTML" class="html-icon"></i>
         <i *ngSwitchCase="FileType.JSON" class="json-icon"></i>
-        <span>{{file.name}}</span>
+        <span>{{ file.name }}</span>
       </ng-template>
       <ng-template #tabContent>
         <app-copy-content [data]="file.content"></app-copy-content>
         <a rel="noopener" href="https://codesandbox.io/s/6z14zk7n3w" target="_blank" title="Edit on Sandbox" class="edit-on-sandbox"></a>
-        <pre *ngSwitchCase="FileType.TS" class="prettyprint linenums lang-js">{{file.content}}</pre>
-        <pre *ngSwitchCase="FileType.CSS" class="prettyprint linenums lang-css">{{file.content}}</pre>
-        <pre *ngSwitchCase="FileType.HTML" class="prettyprint linenums lang-html">{{file.content}}</pre>
-        <pre *ngSwitchCase="FileType.JSON" class="prettyprint linenums lang-json">{{file.content}}</pre>
+        <pre *ngSwitchCase="FileType.TS" class="prettyprint linenums lang-js">{{ file.content }}</pre>
+        <pre *ngSwitchCase="FileType.CSS" class="prettyprint linenums lang-css">{{ file.content }}</pre>
+        <pre *ngSwitchCase="FileType.HTML" class="prettyprint linenums lang-html">{{ file.content }}</pre>
+        <pre *ngSwitchCase="FileType.JSON" class="prettyprint linenums lang-json">{{ file.content }}</pre>
       </ng-template>
     </app-tab>
   </ng-container>

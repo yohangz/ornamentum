@@ -11,21 +11,11 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown load on init module.
- * @class DropdownLoadOnInitModule
  */
 @NgModule({
-  declarations: [
-    DropdownLoadOnInitComponent,
-    LoadOnInitUsageComponent
-  ],
+  declarations: [DropdownLoadOnInitComponent, LoadOnInitUsageComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownLoadOnInitRoutingModule
-  ],
+  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownLoadOnInitRoutingModule],
   providers: []
 })
-export class DropdownLoadOnInitModule {
-}
+export class DropdownLoadOnInitModule {}

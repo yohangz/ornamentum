@@ -16,23 +16,21 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class RealTimeDataBindingComponent implements OnInit {
   public dataSource: Observable<ExampleData[]>;
 
-  constructor(private dataFetchService: DataFetchService, private globalRefService: GlobalRefService) {
-  }
+  constructor(private dataFetchService: DataFetchService, private globalRefService: GlobalRefService) {}
 
   public ngOnInit(): void {
     let offset = 0;
     if (this.globalRefService.isBrowser) {
-      this.dataSource = timer(0, 2000)
-        .pipe(
-          map(() => {
-            offset += 20;
-            if (offset >= 100) {
-              offset = 0;
-            }
+      this.dataSource = timer(0, 2000).pipe(
+        map(() => {
+          offset += 20;
+          if (offset >= 100) {
+            offset = 0;
+          }
 
-            return this.dataFetchService.fetchStaticData(offset, 20);
-          })
-        );
+          return this.dataFetchService.fetchStaticData(offset, 20);
+        })
+      );
     } else {
       this.dataSource = of(this.dataFetchService.fetchStaticData(offset, 20));
     }

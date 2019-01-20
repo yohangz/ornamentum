@@ -14,9 +14,7 @@ import { environment } from '../environments/environment';
 
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ornamentum' }),
     TransferHttpCacheModule,
@@ -27,8 +25,7 @@ import { environment } from '../environments/environment';
   providers: []
 })
 export class AppModule {
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,
-              @Inject(APP_ID) private appId: string) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object, @Inject(APP_ID) private appId: string) {
     const platform = isPlatformBrowser(platformId) ? 'in the browser' : 'on the server';
     console.log(`Running ${platform} with appId=${appId}`);
   }

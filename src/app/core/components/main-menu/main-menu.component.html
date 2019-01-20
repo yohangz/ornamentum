@@ -1,6 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-inverse bg-inverse sticky-top" #menuElement>
-  <button class="navbar-toggler navbar-toggle-button" type="button" (click)="toggleNavigation($event)"
-          aria-label="Toggle side navigation">
+  <button class="navbar-toggler navbar-toggle-button" type="button" (click)="toggleNavigation($event)" aria-label="Toggle side navigation">
     <span class="navbar-toggler-icon toggler-icon"></span>
   </button>
   <a class="navbar-brand nav-brand-lg app-name-lg" [routerLink]="'/'" title="Ornamentum"></a>
@@ -8,7 +7,7 @@
     <ul class="navbar-nav ml-auto icon-menu">
       <li class="nav-item">
         <a class="nav-link" rel="noopener" target="_blank" href="https://www.npmjs.com/package/ornamentum">
-          <span class="main-nav-label package-version">v{{packageVersion}}</span>
+          <span class="main-nav-label package-version">v{{ packageVersion }}</span>
         </a>
       </li>
       <li class="nav-item">
@@ -16,32 +15,32 @@
           <span class="main-nav-label theme-switcher">
             <span class="theme"></span>
             <div class="theme-selector-container">
-            <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.base)">
-              <a (click)="onThemeChange(Theme.base)" title="Base Theme">
-                <span class="base-theme"></span>
-              </a>
+              <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.base)">
+                <a (click)="onThemeChange(Theme.base)" title="Base Theme">
+                  <span class="base-theme"></span>
+                </a>
+              </div>
+              <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.dark)">
+                <a (click)="onThemeChange(Theme.dark)" title="Dark Theme">
+                  <span class="dark-theme"></span>
+                </a>
+              </div>
+              <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.flat)">
+                <a (click)="onThemeChange(Theme.flat)" title="Flat Theme">
+                  <span class="flat-theme"></span>
+                </a>
+              </div>
+              <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.ornamentum)">
+                <a (click)="onThemeChange(Theme.ornamentum)" title="Ornamentum Theme">
+                  <span class="ornamentum-theme"></span>
+                </a>
+              </div>
+              <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.aegean)">
+                <a (click)="onThemeChange(Theme.aegean)" title="Aegean Theme">
+                  <span class="aegean-theme"></span>
+                </a>
+              </div>
             </div>
-            <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.dark)">
-              <a (click)="onThemeChange(Theme.dark)" title="Dark Theme">
-                <span class="dark-theme"></span>
-              </a>
-            </div>
-            <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.flat)">
-              <a (click)="onThemeChange(Theme.flat)" title="Flat Theme">
-                <span class="flat-theme"></span>
-              </a>
-            </div>
-            <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.ornamentum)">
-              <a (click)="onThemeChange(Theme.ornamentum)" title="Ornamentum Theme">
-                <span class="ornamentum-theme"></span>
-              </a>
-            </div>
-            <div class="themes-selector" [class.selected]="isSelectedTheme(Theme.aegean)">
-              <a (click)="onThemeChange(Theme.aegean)" title="Aegean Theme">
-                <span class="aegean-theme"></span>
-              </a>
-            </div>
-          </div>
           </span>
         </div>
       </li>

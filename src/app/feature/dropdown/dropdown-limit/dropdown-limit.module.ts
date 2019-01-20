@@ -11,21 +11,11 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown limit module.
- * @class DropdownLimitModule
  */
 @NgModule({
-  declarations: [
-    DropdownLimitComponent,
-    DataLimitUsageComponent
-  ],
+  declarations: [DropdownLimitComponent, DataLimitUsageComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownLimitRoutingModule
-  ],
+  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownLimitRoutingModule],
   providers: []
 })
-export class DropdownLimitModule {
-}
+export class DropdownLimitModule {}

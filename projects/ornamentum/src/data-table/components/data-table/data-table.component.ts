@@ -607,13 +607,15 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     return this.config.showLoadingSpinner && this.dataStateService.dataLoading;
   }
 
-  constructor(private dragAndDropService: DragAndDropService,
-              private dataTableStateService: DataTablePersistenceService,
-              private globalRefService: GlobalRefService,
-              private eventStateService: DataTableEventStateService,
-              private dataTableResourceService: DataTableResourceService<any>,
-              public dataStateService: DataTableDataStateService,
-              public config: DataTableConfigService) {
+  constructor(
+    private dragAndDropService: DragAndDropService,
+    private dataTableStateService: DataTablePersistenceService,
+    private globalRefService: GlobalRefService,
+    private eventStateService: DataTableEventStateService,
+    private dataTableResourceService: DataTableResourceService<any>,
+    public dataStateService: DataTableDataStateService,
+    public config: DataTableConfigService
+  ) {
     this.storageMode = config.storageMode;
 
     this.headerClick = this.eventStateService.headerClickStream;
@@ -688,14 +690,17 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     });
 
     if (this.config.selectMode === 'multi') {
-      this.dataStateService.allRowSelected = this.dataStateService.dataRows.length !== 0
-        && this.dataStateService.dataRows.every((dataRow: DataTableRow<any>) => {
+      this.dataStateService.allRowSelected =
+        this.dataStateService.dataRows.length !== 0 &&
+        this.dataStateService.dataRows.every((dataRow: DataTableRow<any>) => {
           return dataRow.selected;
         });
     }
 
     const substituteRowCount = this.config.limit - this.dataStateService.dataRows.length;
-    this.dataStateService.substituteRows = Array.from({length: substituteRowCount});
+    this.dataStateService.substituteRows = Array.from({
+      length: substituteRowCount
+    });
   }
 
   /**
@@ -731,15 +736,17 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     };
 
     if (this.columns) {
-      params.sortColumns = this.columns.filter(column => column.sortable)
+      params.sortColumns = this.columns
+        .filter(column => column.sortable)
         .map((column: DataTableColumnComponent) => {
           return {
             field: column.sortField || column.field,
-            sortOrder: column.sortOrder,
+            sortOrder: column.sortOrder
           };
         });
 
-      params.filterColumns = this.columns.filter(column => column.filterable)
+      params.filterColumns = this.columns
+        .filter(column => column.filterable)
         .map((column: DataTableColumnComponent) => {
           return {
             field: column.filterField || column.field,
@@ -769,12 +776,12 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     if (this.config.persistTableState) {
       const dataTableState = this.dataTableStateService.getState(this.id);
       if (dataTableState) {
-        this.columns.forEach((column) => {
-          const filterColumn = dataTableState.filterColumns.find((col) => {
+        this.columns.forEach(column => {
+          const filterColumn = dataTableState.filterColumns.find(col => {
             return col.field === column.field;
           });
 
-          const sortColumn = dataTableState.sortColumns.find((col) => {
+          const sortColumn = dataTableState.sortColumns.find(col => {
             return col.field === column.field;
           });
 
@@ -894,18 +901,16 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @param onSelectChange Select change event handler callback
    */
   public registerOnChange(onSelectChange: (value: any) => void): void {
-    this.rowSelectChangeSubscription = this.eventStateService.rowSelectChangeStream
-      .subscribe((selectedIds: any | any[]) => {
-        onSelectChange(selectedIds);
-      });
+    this.rowSelectChangeSubscription = this.eventStateService.rowSelectChangeStream.subscribe((selectedIds: any | any[]) => {
+      onSelectChange(selectedIds);
+    });
   }
 
   /**
    * Register on touch event handler; Form control support implementation
    * @param fn Touch event callback handler
    */
-  public registerOnTouched(fn: any): void {
-  }
+  public registerOnTouched(fn: any): void {}
 
   /**
    * Get table width in pixels

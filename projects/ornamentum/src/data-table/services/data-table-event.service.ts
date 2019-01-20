@@ -25,7 +25,7 @@ export class DataTableEventStateService {
   public rowBindStream = new EventEmitter<DataTableRow<any>>();
   public rowClickStream = new EventEmitter<DataTableRowClickEventArgs<any>>();
   public rowDoubleClickStream = new EventEmitter<DataTableDoubleClickEventArgs<any>>();
-  public rowSelectChangeStream = new EventEmitter<any|any[]>();
+  public rowSelectChangeStream = new EventEmitter<any | any[]>();
   public cellBindStream = new EventEmitter<DataTableCellBindEventArgs<any>>();
   public cellClickStream = new EventEmitter<DataTableCellClickEventArgs<any>>();
   public initStream = new EventEmitter<DataTableComponent>();

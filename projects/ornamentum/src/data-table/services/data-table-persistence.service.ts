@@ -14,9 +14,7 @@ import { DataTableConfigService } from './data-table-config.service';
 export class DataTablePersistenceService {
   private storage: Storage;
 
-  constructor(private globalRefService: GlobalRefService,
-              private config: DataTableConfigService) {
-  }
+  constructor(private globalRefService: GlobalRefService, private config: DataTableConfigService) {}
 
   /**
    * Set table state storage mode

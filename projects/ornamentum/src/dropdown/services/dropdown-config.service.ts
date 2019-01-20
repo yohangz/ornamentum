@@ -51,7 +51,7 @@ export class DropdownConfigService implements DropdownConfig {
   public triggerSelectChangeOnFirstOptionSelect = false;
   public dynamicDimensionCalculation = false;
   public dynamicWidthRatio = 1;
-  public dynamicHeightRatio = .5;
+  public dynamicHeightRatio = 0.5;
 
   constructor(@Inject(DROPDOWN_CONFIG) private dropdownConfig: DropdownConfig) {
     if (dropdownConfig) {
@@ -64,7 +64,7 @@ export class DropdownConfigService implements DropdownConfig {
    * @param value Dropdown translations object.
    */
   public set translations(value: DropdownTranslations) {
-    this.baseTranslations = {...this.baseTranslations, ...value};
+    this.baseTranslations = { ...this.baseTranslations, ...value };
   }
 
   /**

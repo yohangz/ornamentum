@@ -5,7 +5,6 @@ import { DataTablePaginationComponent } from './index';
 
 /**
  * Represent data table pagination routes.
- * @type Routes
  */
 const dataTablePaginationRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTablePaginationRoutes: Routes = [
 
 /**
  * Data table pagination routing module.
- * @class DataTablePaginationRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTablePaginationRoutes)]
 })
-export class DataTablePaginationRoutingModule {
-}
+export class DataTablePaginationRoutingModule {}

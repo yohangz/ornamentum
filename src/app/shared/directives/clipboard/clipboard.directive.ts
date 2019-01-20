@@ -3,7 +3,7 @@ import { Directive, HostListener, Input } from '@angular/core';
 @Directive({
   selector: '[appClipboard]'
 })
-export class ClipboardDirective  {
+export class ClipboardDirective {
   @Input()
   public appClipboard: string;
 

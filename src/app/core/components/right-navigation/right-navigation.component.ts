@@ -16,8 +16,7 @@ export class RightNavigationComponent implements AfterContentInit {
   @Input()
   public menuItem: MenuItem;
 
-  constructor(private scrollService: ScrollService) {
-  }
+  constructor(private scrollService: ScrollService) {}
 
   public ngAfterContentInit(): void {
     this.scrollService.scroll(this.parent);

@@ -1,12 +1,4 @@
-import {
-  AfterContentInit,
-  Component,
-  ContentChildren,
-  EventEmitter,
-  Input,
-  Output,
-  QueryList
-} from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
 
 import { TabChangeEvent } from '../../models';
 import { TabComponent } from './tab/tab.component';
@@ -61,7 +53,7 @@ export class TabSetComponent implements AfterContentInit {
   }
 
   private setActiveTab(tabComponent: TabComponent): void {
-    this.tabCollection.forEach((tab: TabComponent) => tab.active = false);
+    this.tabCollection.forEach((tab: TabComponent) => (tab.active = false));
     tabComponent.active = true;
   }
 

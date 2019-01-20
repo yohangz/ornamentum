@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 
-import {
-  filteringUsage,
-  filterDebounceUsage,
-  filterDebounceTimeUsage,
-  filterTextUsage,
-  demoSnippet
-} from './dropdown-filtering.list';
+import { filteringUsage, filterDebounceUsage, filterDebounceTimeUsage, filterTextUsage, demoSnippet } from './dropdown-filtering.list';
 
 @Component({
   selector: 'app-dropdown-filtering-component',

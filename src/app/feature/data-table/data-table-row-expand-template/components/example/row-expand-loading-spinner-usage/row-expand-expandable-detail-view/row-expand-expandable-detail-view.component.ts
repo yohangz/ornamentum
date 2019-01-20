@@ -9,7 +9,6 @@ import { ExampleData } from '../../../../../../../shared/models';
   templateUrl: './row-expand-expandable-detail-view.component.html'
 })
 export class RowExpandExpandableDetailViewComponent implements OnInit {
-
   @Input()
   public row: DataTableRow<ExampleData>;
 

@@ -5,7 +5,6 @@ import { DropdownDisplayItemsComponent } from './index';
 
 /**
  * Represent dropdown display tracked by routes.
- * @type Routes
  */
 const dropdownDisplayItemsRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownDisplayItemsRoutes: Routes = [
 
 /**
  * Dropdown display items routing module.
- * @class DropdownDisplayItemsRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownDisplayItemsRoutes)]
 })
-export class DropdownDisplayItemsRoutingModule {
-}
+export class DropdownDisplayItemsRoutingModule {}

@@ -9,7 +9,6 @@ import { OverviewRoutingModule } from './overview-routing.module';
 
 /**
  * Module class for containing overview module.
- * @class overview
  */
 @NgModule({
   declarations: [...COMPONENTS],
@@ -23,5 +22,4 @@ import { OverviewRoutingModule } from './overview-routing.module';
   ],
   providers: []
 })
-export class OverviewModule {
-}
+export class OverviewModule {}

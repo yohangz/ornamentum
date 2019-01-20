@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 
-import {
-  menuWidthHeightUsage,
-  menuHeightUsage,
-  menuWidthUsage,
-  demoSnippet
-} from './dropdown-menu-width-height.list';
+import { menuWidthHeightUsage, menuHeightUsage, menuWidthUsage, demoSnippet } from './dropdown-menu-width-height.list';
 
 @Component({
   selector: 'app-dropdown-menu-width-height-component',

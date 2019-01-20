@@ -13,14 +13,13 @@ import { DataTableScrollPositionService } from '../services/data-table-scroll-po
 export class ScrollElementDirective implements AfterViewInit, OnDestroy {
   private scrollPositionSubscription: Subscription;
 
-  constructor(private el: ElementRef, private scrollPositionService: DataTableScrollPositionService) {
-  }
+  constructor(private el: ElementRef, private scrollPositionService: DataTableScrollPositionService) {}
 
   /**
    * After component initialize lifecycle event handler
    */
   public ngAfterViewInit(): void {
-    this.scrollPositionSubscription = this.scrollPositionService.scrollPositionStream.subscribe((value) => {
+    this.scrollPositionSubscription = this.scrollPositionService.scrollPositionStream.subscribe(value => {
       this.el.nativeElement.scrollLeft = value.scrollLeft;
     });
   }

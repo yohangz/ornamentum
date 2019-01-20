@@ -5,7 +5,6 @@ import { DataTableRowGroupingComponent } from './index';
 
 /**
  * Represent data table row grouping routes.
- * @type Routes
  */
 const dataTableRowGroupingRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableRowGroupingRoutes: Routes = [
 
 /**
  * Data table row grouping routing module.
- * @class DataTableRowGroupingRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableRowGroupingRoutes)]
 })
-export class DataTableRowGroupingRoutingModule {
-}
+export class DataTableRowGroupingRoutingModule {}

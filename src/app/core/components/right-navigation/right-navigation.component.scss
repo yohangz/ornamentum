@@ -12,7 +12,7 @@
   }
 
   ul {
-    padding-left: .5rem;
+    padding-left: 0.5rem;
 
     li {
       @include font-size(1, 1.8);
@@ -21,7 +21,7 @@
       list-style-type: none;
 
       a {
-        @include font-size(.8, 1.6);
+        @include font-size(0.8, 1.6);
         color: $side-menu-label-text;
         font-weight: 400;
       }

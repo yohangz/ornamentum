@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 
-import {
-  demoSnippet,
-  paginationUsage,
-  paginationUsageWithPage,
-  paginationUsageWithLimit
-} from './data-table-pagination.list';
+import { demoSnippet, paginationUsage, paginationUsageWithPage, paginationUsageWithLimit } from './data-table-pagination.list';
 
 @Component({
   selector: 'app-data-table-pagination-component',

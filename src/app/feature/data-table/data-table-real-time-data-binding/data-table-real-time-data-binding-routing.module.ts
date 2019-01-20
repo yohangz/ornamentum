@@ -5,7 +5,6 @@ import { DataTableRealTimeDataBindingComponent } from './index';
 
 /**
  * Represent data table real time data binding routes.
- * @type Routes
  */
 const dataTableRealTimeDataBindingRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableRealTimeDataBindingRoutes: Routes = [
 
 /**
  * Data table real time data binding routing module.
- * @class DataTableRealTimeDataBindingRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableRealTimeDataBindingRoutes)]
 })
-export class DataTableRealTimeDataBindingRoutingModule {
-}
+export class DataTableRealTimeDataBindingRoutingModule {}

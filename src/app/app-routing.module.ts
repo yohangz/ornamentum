@@ -1,15 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {
-  MainComponent,
-  PageNotFoundComponent,
-  OverviewComponent
-} from './main/components';
+import { MainComponent, PageNotFoundComponent, OverviewComponent } from './main/components';
 
 /**
  * Represent application main routes.
- * @type Routes
  */
 const appRoutes: Routes = [
   {
@@ -42,10 +37,10 @@ const appRoutes: Routes = [
  */
 @NgModule({
   exports: [RouterModule],
-  imports: [RouterModule.forRoot(appRoutes, {
-    initialNavigation: 'enabled'
-  })]
+  imports: [
+    RouterModule.forRoot(appRoutes, {
+      initialNavigation: 'enabled'
+    })
+  ]
 })
-export class AppRoutingModule {
-}
-
+export class AppRoutingModule {}

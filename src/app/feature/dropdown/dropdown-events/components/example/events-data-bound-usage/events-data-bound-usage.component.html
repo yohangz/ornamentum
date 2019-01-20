@@ -1,13 +1,8 @@
-<ng-dropdown
-  [selectTrackBy]="'id'"
-  [displayTrackBy]="'productType'"
-  [items]="items"
-  (dataBound)="onDataBound()">
-</ng-dropdown>
+<ng-dropdown [selectTrackBy]="'id'" [displayTrackBy]="'productType'" [items]="items" (dataBound)="onDataBound()"> </ng-dropdown>
 
-<br>
+<br />
 <p class="event-output" *ngIf="dataBoundEventData; else noDataAvailable">
-  <span>{{dataBoundEventData}}</span>
+  <span>{{ dataBoundEventData }}</span>
 </p>
 <ng-template #noDataAvailable>
   <p class="event-output">Please wait... Data binding is in progress</p>

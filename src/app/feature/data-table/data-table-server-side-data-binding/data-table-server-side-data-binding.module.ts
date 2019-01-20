@@ -12,13 +12,9 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table server side data binding module.
- * @class DataTableServerSideDataBindingModule
  */
 @NgModule({
-  declarations: [
-    DataTableServerSideDataBindingComponent,
-    ServerSideDataBindingComponent
-  ],
+  declarations: [DataTableServerSideDataBindingComponent, ServerSideDataBindingComponent],
   exports: [],
   imports: [
     CommonModule,
@@ -33,5 +29,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableServerSideDataBindingModule {
-}
+export class DataTableServerSideDataBindingModule {}

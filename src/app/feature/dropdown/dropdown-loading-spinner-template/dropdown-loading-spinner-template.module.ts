@@ -11,21 +11,11 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown loading spinner template module.
- * @class DropdownLoadingSpinnerTemplateModule
  */
 @NgModule({
-  declarations: [
-    DropdownLoadingSpinnerTemplateComponent,
-    LoadingSpinnerTemplateUsageComponent
-  ],
+  declarations: [DropdownLoadingSpinnerTemplateComponent, LoadingSpinnerTemplateUsageComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownLoadingSpinnerTemplateRoutingModule
-  ],
+  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownLoadingSpinnerTemplateRoutingModule],
   providers: []
 })
-export class DropdownLoadingSpinnerTemplateModule {
-}
+export class DropdownLoadingSpinnerTemplateModule {}

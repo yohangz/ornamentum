@@ -11,7 +11,6 @@
 }
 
 .error-page {
-
   @include transform(translateY(-50%));
   bottom: 0;
   left: 0;
@@ -42,9 +41,8 @@
     a {
       //background: $secondary-background-color;
       //color: lighten($secondary-background-color, 100%);
-      padding: .5rem 1rem;
+      padding: 0.5rem 1rem;
       text-transform: uppercase;
     }
   }
-
 }

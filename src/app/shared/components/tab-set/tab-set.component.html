@@ -1,22 +1,33 @@
 <ul class="nav nav-tabs justify-content-start" role="tablist">
   <li class="nav-item" *ngFor="let tab of tabCollection" [class.active]="tab.active">
-    <a [id]="tab.id" class="nav-link" [class.active]="tab.active" [class.disabled]="tab.disabled"
-       (click)="onTabClick(tab)" role="tab" [attr.aria-expanded]="tab.active"
-       [attr.aria-disabled]="tab.disabled">
-      <span *ngIf="!tab.tabTitle">{{tab.title}}</span>
+    <a
+      [id]="tab.id"
+      class="nav-link"
+      [class.active]="tab.active"
+      [class.disabled]="tab.disabled"
+      (click)="onTabClick(tab)"
+      role="tab"
+      [attr.aria-expanded]="tab.active"
+      [attr.aria-disabled]="tab.disabled"
+    >
+      <span *ngIf="!tab.tabTitle">{{ tab.title }}</span>
       <ng-container [ngTemplateOutlet]="tab.tabTitle"></ng-container>
     </a>
   </li>
 </ul>
 <div class="tab-content">
   <ng-container *ngFor="let tab of tabCollection">
-    <div *ngIf="!lazyLoad || !tab.initialLoad" [hidden]="!tab.active" class="tab-pane" role="tabpanel"
-         [class.active]="tab.active"
-         [attr.aria-labelledby]="tab.id"
-         [attr.aria-expanded]="tab.active"
-         id="{{tab.id}}-panel">
-      <ng-container [ngTemplateOutlet]="tab.tabContent"
-                    [ngTemplateOutletContext]="{ tab: tab }"></ng-container>
+    <div
+      *ngIf="!lazyLoad || !tab.initialLoad"
+      [hidden]="!tab.active"
+      class="tab-pane"
+      role="tabpanel"
+      [class.active]="tab.active"
+      [attr.aria-labelledby]="tab.id"
+      [attr.aria-expanded]="tab.active"
+      id="{{ tab.id }}-panel"
+    >
+      <ng-container [ngTemplateOutlet]="tab.tabContent" [ngTemplateOutletContext]="{ tab: tab }"></ng-container>
     </div>
   </ng-container>
 </div>

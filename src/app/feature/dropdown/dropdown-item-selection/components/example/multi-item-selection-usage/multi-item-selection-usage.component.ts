@@ -9,7 +9,6 @@ import { DataFetchService } from '../../../../../../shared/services';
   templateUrl: './multi-item-selection-usage.component.html'
 })
 export class MultiItemSelectionUsageComponent {
-
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

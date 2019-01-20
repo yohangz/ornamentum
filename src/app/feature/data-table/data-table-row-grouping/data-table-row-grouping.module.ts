@@ -12,13 +12,9 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table row grouping module.
- * @class DataTableRowGroupingModule
  */
 @NgModule({
-  declarations: [
-    DataTableRowGroupingComponent,
-    RowGroupingUsageComponent
-  ],
+  declarations: [DataTableRowGroupingComponent, RowGroupingUsageComponent],
   exports: [],
   imports: [
     CommonModule,
@@ -31,5 +27,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableRowGroupingModule {
-}
+export class DataTableRowGroupingModule {}

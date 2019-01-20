@@ -41,7 +41,7 @@
 
       &.expanded {
         @include transition(opacity 200ms ease-in);
-        opacity: .5;
+        opacity: 0.5;
       }
 
       &.collapsed {
@@ -73,7 +73,7 @@
     position: absolute;
     right: 10px;
     top: 17px;
-    transition: transform .5s ease;
+    transition: transform 0.5s ease;
     width: 10px;
   }
 
@@ -105,7 +105,7 @@
     &::-webkit-scrollbar-thumb {
       @include border-radius(0);
       background-color: $scroll-bar-color;
-      opacity: .5;
+      opacity: 0.5;
     }
 
     .side-menu-navigation {
@@ -126,11 +126,10 @@
         cursor: pointer;
         display: block;
         font-weight: 600;
-        padding: .5rem 1rem;
+        padding: 0.5rem 1rem;
         position: relative;
 
         &.expanded {
-
           &::after {
             @extend %expand-icon;
             transform: rotate(-90deg);
@@ -138,7 +137,6 @@
         }
 
         &.collapsed {
-
           &::after {
             @extend %expand-icon;
             transform: rotate(0deg);
@@ -147,13 +145,11 @@
       }
 
       .sub-menu-item-container {
-
         &.expanded {
-          @include transition(visibility .5s, opacity .5s, max-height .5s ease-in-out);
+          @include transition(visibility 0.5s, opacity 0.5s, max-height 0.5s ease-in-out);
           max-height: 4000px;
           opacity: 1;
           visibility: visible;
-
         }
 
         &.collapsed {
@@ -162,7 +158,6 @@
           opacity: 0;
           overflow: hidden;
           visibility: hidden;
-
         }
       }
     }
@@ -179,23 +174,21 @@
 
     ul {
       margin-bottom: 0;
-      padding: .5rem 0;
-
+      padding: 0.5rem 0;
 
       li {
         @include font-size(1, 1);
         list-style-type: none;
 
         a {
-          @include font-size(.8, 1);
+          @include font-size(0.8, 1);
           color: $side-menu-link-color;
-          padding: .4rem 1rem;
+          padding: 0.4rem 1rem;
           position: relative;
 
           &:hover {
             background: $primary-text-color;
           }
-
         }
 
         &.active {

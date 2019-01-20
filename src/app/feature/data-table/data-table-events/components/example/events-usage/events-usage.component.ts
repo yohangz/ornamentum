@@ -6,10 +6,12 @@ import { DataFetchService } from '../../../../../../shared/services';
 import {
   DataTableCellBindEventArgs,
   DataTableCellClickEventArgs,
-  DataTableColumnComponent, DataTableComponent,
+  DataTableColumnComponent,
+  DataTableComponent,
   DataTableDoubleClickEventArgs,
   DataTableHeaderClickEventArgs,
-  DataTableRow, DataTableRowClickEventArgs
+  DataTableRow,
+  DataTableRowClickEventArgs
 } from '../../../../../../../../projects/ornamentum/src';
 
 @Component({

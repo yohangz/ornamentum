@@ -17,7 +17,5 @@ export class DataTableColGroupComponent {
   @Input()
   public columns: DataTableColumnComponent;
 
-  constructor(public config: DataTableConfigService) {
-  }
+  constructor(public config: DataTableConfigService) {}
 }
-

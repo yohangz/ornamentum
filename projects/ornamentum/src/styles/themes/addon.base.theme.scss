@@ -7,24 +7,23 @@ $checkbox-check-color: #ccc !default;
 .ng-dropdown-checkbox-input,
 .ng-data-table-checkbox-input {
   cursor: pointer;
-  margin: 0 .5rem 0 0;
+  margin: 0 0.5rem 0 0;
   position: relative;
 
   &::before {
-    @include transition(transform .4s cubic-bezier(.45, 1.8, .5, .75));
+    @include transition(transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75));
     @include transform(rotate(-45deg) scale(0, 0));
-    border: .1rem solid;
+    border: 0.1rem solid;
     border-color: $checkbox-check-color;
     border-right-style: none;
     border-top-style: none;
     content: '';
-    height: .3rem;
-    left: .1rem;
+    height: 0.3rem;
+    left: 0.1rem;
     position: absolute;
-    top: .2rem;
-    width: .55rem;
+    top: 0.2rem;
+    width: 0.55rem;
     z-index: 1;
-
   }
 
   &:checked {
@@ -34,16 +33,15 @@ $checkbox-check-color: #ccc !default;
   }
 
   &::after {
-
     background: $checkbox-background;
-    border: .1rem solid;
+    border: 0.1rem solid;
     border-color: $checkbox-outer-border;
     content: '';
     cursor: pointer;
     height: 1.05rem;
-    left: -.1rem;
+    left: -0.1rem;
     position: absolute;
-    top: -.1rem;
+    top: -0.1rem;
     width: 1.05rem;
   }
 }

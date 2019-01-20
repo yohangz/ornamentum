@@ -26,7 +26,6 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table events module.
- * @class DataTableEventsModule
  */
 @NgModule({
   declarations: [
@@ -56,5 +55,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableEventsModule {
-}
+export class DataTableEventsModule {}

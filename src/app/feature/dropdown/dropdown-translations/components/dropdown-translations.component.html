@@ -1,9 +1,10 @@
 <div class="feature-container">
   <h1>Translations</h1>
 
-  <p>Translations can be uses to override dropdown native property labels. those translatable properties
-    are required to binding into <code>translations</code> property in dropdown global level configuration (within
-    ng-dropdown scope), in any developer preferred language. the properties that can be configure in translations are:
+  <p>
+    Translations can be uses to override dropdown native property labels. those translatable properties are required to binding into
+    <code>translations</code> property in dropdown global level configuration (within ng-dropdown scope), in any developer preferred language. the
+    properties that can be configure in translations are:
   </p>
 
   <ul class="main-pane-list">
@@ -19,8 +20,10 @@
     </ul>
   </ul>
 
-  <p>Let's see how each properties are behaves on different conditions in below <a
-    href="feature/dropdown/translations#usefulProperties">Useful Properties</a> section.</p>
+  <p>
+    Let's see how each properties are behaves on different conditions in below
+    <a href="feature/dropdown/translations#usefulProperties">Useful Properties</a> section.
+  </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -36,66 +39,73 @@
     <app-example-code [files]="additionalTranslationsUsage"></app-example-code>
   </ol>
 
-
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>As mention in the introduction, translations can be override. by default translations are initialize to it's
-    default pre-set values. simply bind <code>DropdownTranslations</code> type of object into translations property is
-    enough to take the the control over translations.</p>
+  <p>
+    As mention in the introduction, translations can be override. by default translations are initialize to it's default pre-set values. simply bind
+    <code>DropdownTranslations</code> type of object into translations property is enough to take the the control over translations.
+  </p>
 
-  <pre class="prettyprint lang-html">{{demoSnippet.translations}}</pre>
+  <pre class="prettyprint lang-html">{{ demoSnippet.translations }}</pre>
 
   <h2 id="usefulProperties">Useful Properties</h2>
 
-  <p>Properties that can be uses with dropdown translations will be discuss in this section in more details each by
-    each.</p>
+  <p>Properties that can be uses with dropdown translations will be discuss in this section in more details each by each.</p>
 
   <h4 id="noDataMessage">No Data Message</h4>
-  <code>noDataMessage: DropdownTranslations</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value: 'No
-  Results Available'</h5>
+  <code>noDataMessage: DropdownTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'No Results Available'</h5>
 
-  <p>This configuration is uses to set a message to show in dropdown body when on no data is available to display. by
-    providing a value to <code>noDataMessage</code> will override the default no data message.</p>
+  <p>
+    This configuration is uses to set a message to show in dropdown body when on no data is available to display. by providing a value to
+    <code>noDataMessage</code> will override the default no data message.
+  </p>
 
   <app-translations-no-data-message-usage></app-translations-no-data-message-usage>
   <app-example-code [files]="translationsNoDataMessageUsage"></app-example-code>
 
   <h4 id="filterPlaceholder">Filter Placeholder</h4>
-  <code>filterPlaceholder: DropdownTranslations</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
-  'Search'</h5>
+  <code>filterPlaceholder: DropdownTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'Search'</h5>
 
-  <p>This configuration is uses to customize the placeholder text for dropdown when <code>filterable</code> is <b>enabled</b>.
-    translation can be override by binding <code>filterPlaceholder</code> string into
-    <code>DropdownTranslations</code> type of object.</p>
+  <p>
+    This configuration is uses to customize the placeholder text for dropdown when <code>filterable</code> is <b>enabled</b>. translation can be
+    override by binding <code>filterPlaceholder</code> string into <code>DropdownTranslations</code> type of object.
+  </p>
 
   <app-translations-filter-placeholder-usage></app-translations-filter-placeholder-usage>
   <app-example-code [files]="translationsFilterPlaceholderUsage"></app-example-code>
 
   <h4 id="selectPlaceholder">Select Placeholder</h4>
-  <code>selectPlaceholder: DropdownTranslations</code> &nbsp; <h5 class="badge badge-pill badge-warning">Default Value:
-  'Select'</h5>
+  <code>selectPlaceholder: DropdownTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'Select'</h5>
 
-  <p>This configuration is uses to customize the main text on top of the dropdown (select placeholder).
-    translation can be override by binding <code>selectPlaceholder</code> string into
-    <code>DropdownTranslations</code> type of object.</p>
+  <p>
+    This configuration is uses to customize the main text on top of the dropdown (select placeholder). translation can be override by binding
+    <code>selectPlaceholder</code> string into <code>DropdownTranslations</code> type of object.
+  </p>
 
   <app-translations-select-placeholder-usage></app-translations-select-placeholder-usage>
   <app-example-code [files]="translationsSelectPlaceholderUsage"></app-example-code>
 
   <h4 id="selectedItemWrapPlaceholder">Selected Item Wrap Placeholder</h4>
-  <code>selectedItemWrapPlaceholder: DropdownTranslations</code> &nbsp; <h5 class="badge badge-pill badge-warning">
-  Default Value: 'Items'</h5>
+  <code>selectedItemWrapPlaceholder: DropdownTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">
+    Default Value: 'Items'
+  </h5>
 
-  <p>This configuration is uses to customize text which shows to indicate the selected wrapped items count. it can be
-    configure by binding a <code>filterPlaceholder</code> string into <code>DropdownTranslations</code> type of object.
+  <p>
+    This configuration is uses to customize text which shows to indicate the selected wrapped items count. it can be configure by binding a
+    <code>filterPlaceholder</code> string into <code>DropdownTranslations</code> type of object.
   </p>
 
-  <p>For enable selected items wrapping, it is <b>mandatory</b> to set <code>selectMode</code> to <b>'multi'</b>
-    and <code>wrapDisplaySelectLimit</code> should be less than the available item count. for more details about wrap
-    display
-    selection limit please refer Item Selection <a rel="noopener" target="_blank"
-                                                     href="feature/dropdown/item-selection">feature/dropdown/item-selection#wrapDisplaySelectLimit</a>
-    section.</p>
+  <p>
+    For enable selected items wrapping, it is <b>mandatory</b> to set <code>selectMode</code> to <b>'multi'</b> and
+    <code>wrapDisplaySelectLimit</code> should be less than the available item count. for more details about wrap display selection limit please refer
+    Item Selection
+    <a rel="noopener" target="_blank" href="feature/dropdown/item-selection">feature/dropdown/item-selection#wrapDisplaySelectLimit</a>
+    section.
+  </p>
 
   <p>Please select two or more items from the dropdown to manipulate it's usages.</p>
 
@@ -103,9 +113,8 @@
   <app-example-code [files]="translationsSelectedItemWrapPlaceholderUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="feature/dropdown/item-selection">Item Selection</a><br>
-  <a rel="noopener" target="_blank" href="feature/dropdown/templates/dropdown-option-template">Option Template</a><br>
-  <a rel="noopener" target="_blank" href="feature/dropdown/events">Events</a><br>
-  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#translations">API Doc for Dropdown
-    Translations</a>
+  <a rel="noopener" target="_blank" href="feature/dropdown/item-selection">Item Selection</a><br />
+  <a rel="noopener" target="_blank" href="feature/dropdown/templates/dropdown-option-template">Option Template</a><br />
+  <a rel="noopener" target="_blank" href="feature/dropdown/events">Events</a><br />
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#translations">API Doc for Dropdown Translations</a>
 </div>

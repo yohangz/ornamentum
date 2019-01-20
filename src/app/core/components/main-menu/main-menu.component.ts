@@ -26,9 +26,11 @@ export class MainMenuComponent {
   @Output()
   public themeChange = new EventEmitter<string>();
 
-  constructor(private containerResponsive: NavigationService,
-              private globalRefService: GlobalRefService,
-              @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(
+    private containerResponsive: NavigationService,
+    private globalRefService: GlobalRefService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
     this.packageVersion = VERSION;
   }
 

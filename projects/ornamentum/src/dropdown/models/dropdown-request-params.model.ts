@@ -4,7 +4,6 @@ import { DropdownFilter } from './dropdown-filter.model';
  * Dropdown data requesting parameters.
  */
 export interface DropdownRequestParams {
-
   /**
    * Hard re-fetch data from source if true (used with client data source: dataBind)
    */

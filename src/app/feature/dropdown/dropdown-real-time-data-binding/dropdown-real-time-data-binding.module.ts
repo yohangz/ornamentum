@@ -11,21 +11,11 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown real time data binding module.
- * @class DropdownRealTimeDataBindingModule
  */
 @NgModule({
-  declarations: [
-    DropdownRealTimeDataBindingComponent,
-    RealTimeDataBindingComponent
-  ],
+  declarations: [DropdownRealTimeDataBindingComponent, RealTimeDataBindingComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownRealTimeDataBindingRoutingModule
-  ],
+  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownRealTimeDataBindingRoutingModule],
   providers: []
 })
-export class DropdownRealTimeDataBindingModule {
-}
+export class DropdownRealTimeDataBindingModule {}

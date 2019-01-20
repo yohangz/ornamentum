@@ -7,7 +7,6 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'ngPx'
 })
 export class PixelConverterPipe implements PipeTransform {
-
   /**
    * Pipe transform implementation.
    * @param value Source value.

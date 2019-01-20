@@ -1,9 +1,8 @@
 <div class="ng-data-table-loading-spinner" [hidden]="!isLoading">
-  <div *ngIf="loadingSpinnerTemplate"  class="ng-data-table-loading-cover">
+  <div *ngIf="loadingSpinnerTemplate" class="ng-data-table-loading-cover">
     <div [ngTemplateOutlet]="loadingSpinnerTemplate"></div>
   </div>
-  <div class="ng-data-table-loading-cover" [class.ng-data-table-show-overlay]="showOverlay"
-       *ngIf="!loadingSpinnerTemplate">
+  <div class="ng-data-table-loading-cover" [class.ng-data-table-show-overlay]="showOverlay" *ngIf="!loadingSpinnerTemplate">
     <div class="ng-data-table-loading-animation"></div>
   </div>
 </div>

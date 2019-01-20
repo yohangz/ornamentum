@@ -5,7 +5,6 @@ import { DropdownCustomThemingComponent } from './index';
 
 /**
  * Represent dropdown custom theming routes.
- * @type Routes
  */
 const dropdownCustomThemingRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownCustomThemingRoutes: Routes = [
 
 /**
  * Dropdown styling and themes routing module.
- * @class DropdownCustomThemingRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownCustomThemingRoutes)]
 })
-export class DropdownCustomThemingRoutingModule {
-}
+export class DropdownCustomThemingRoutingModule {}

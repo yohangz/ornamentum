@@ -13,8 +13,7 @@ export class ClickOutsideDirective {
   @Output()
   public ngClickOutside = new EventEmitter<Event>();
 
-  constructor(private el: ElementRef) {
-  }
+  constructor(private el: ElementRef) {}
 
   /**
    * Track and compare the click event at the document root

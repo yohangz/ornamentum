@@ -1,14 +1,17 @@
 <div class="feature-container">
   <h1>Server-side Data Binding</h1>
 
-  <p>Server side data binding allow users to bind a data set that are not available in client side as a static data set
-    but available in external data source with dynamic features. Now, server side data binding
-    technique is available to handle and process data in this kind of scenarios.</p>
+  <p>
+    Server side data binding allow users to bind a data set that are not available in client side as a static data set but available in external data
+    source with dynamic features. Now, server side data binding technique is available to handle and process data in this kind of scenarios.
+  </p>
 
   <p>Server side data binding allow users to bind a larger data stream which is available in the server side.</p>
 
-  <p>Unlike the client side data binding, whenever user performs a filtering, sorting, data pagination
-    action a new api request will be initiated to fetch data from the server which matches to the particular action.</p>
+  <p>
+    Unlike the client side data binding, whenever user performs a filtering, sorting, data pagination action a new api request will be initiated to
+    fetch data from the server which matches to the particular action.
+  </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -17,24 +20,29 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>Server side data binding is handled via <code>onDataBind</code> callback property which is available within the
-    data table features. This property allows users to customize the way of data binding inside a callback function. This
-    call back function accepts <code>DataTableRequestParams</code> parameter (optional) and returns any generic type(T)
-    of item set as an Observable(Data stream) <code>DataTableQueryResult&lt;T&gt;</code>.</p>
+  <p>
+    Server side data binding is handled via <code>onDataBind</code> callback property which is available within the data table features. This property
+    allows users to customize the way of data binding inside a callback function. This call back function accepts
+    <code>DataTableRequestParams</code> parameter (optional) and returns any generic type(T) of item set as an Observable(Data stream)
+    <code>DataTableQueryResult&lt;T&gt;</code>.
+  </p>
 
-  <p>In the above example, open Network tab in the chrome developer tools and change pagination, search something to see
-    the initiated request as described earlier.</p>
+  <p>
+    In the above example, open Network tab in the chrome developer tools and change pagination, search something to see the initiated request as
+    described earlier.
+  </p>
 
-  <pre class="prettyprint lang-html">{{demoSnippet.serverSideDataBinding}}</pre>
+  <pre class="prettyprint lang-html">{{ demoSnippet.serverSideDataBinding }}</pre>
 
-  <p>Following code snippet will be represent the implementation of the <code>fetchDataOnBindForDataTable</code> method
-    that used inside the <b>server-side-data-binding.component.ts</b> file to bind dynamic data stream.</p>
+  <p>
+    Following code snippet will be represent the implementation of the <code>fetchDataOnBindForDataTable</code> method that used inside the
+    <b>server-side-data-binding.component.ts</b> file to bind dynamic data stream.
+  </p>
 
-  <pre class="prettyprint lang-js">{{demoSnippet.dataFetchMethod}}</pre>
+  <pre class="prettyprint lang-js">{{ demoSnippet.dataFetchMethod }}</pre>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="feature/data-table/client-side-data-binding">Client-side Data Binding</a><br>
-  <a rel="noopener" target="_blank" href="feature/data-table/real-time-data-binding">Realtime Data Binding</a><br>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server
-    Side Data Binding</a>
+  <a rel="noopener" target="_blank" href="feature/data-table/client-side-data-binding">Client-side Data Binding</a><br />
+  <a rel="noopener" target="_blank" href="feature/data-table/real-time-data-binding">Realtime Data Binding</a><br />
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server Side Data Binding</a>
 </div>

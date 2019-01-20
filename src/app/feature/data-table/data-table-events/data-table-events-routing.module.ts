@@ -5,7 +5,6 @@ import { DataTableEventsComponent } from './index';
 
 /**
  * Represent data table events routes.
- * @type Routes
  */
 const dataTableEventRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableEventRoutes: Routes = [
 
 /**
  * Data table events routing module.
- * @class DataTableEventsRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableEventRoutes)]
 })
-export class DataTableEventsRoutingModule {
-}
+export class DataTableEventsRoutingModule {}

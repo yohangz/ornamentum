@@ -8,16 +8,18 @@ files:
   ignore: 'node_modules/**/*'
 
 rules:
-
+  leading-zero:
+    - 1
+    - include: true
   no-duplicate-properties:
     - 0
-
   nesting-depth:
     - 1
     - max-depth: 5
-
   no-vendor-prefixes:
     - 1
     -
-        excluded-identifiers:
-          - webkit
+      excluded-identifiers:
+        - webkit
+
+

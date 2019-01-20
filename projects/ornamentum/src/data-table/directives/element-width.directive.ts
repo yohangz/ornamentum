@@ -1,6 +1,4 @@
-import {
-  AfterViewInit, Directive, ElementRef, EventEmitter, Output
-} from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, EventEmitter, Output } from '@angular/core';
 
 /**
  * Element width directive; Emit target element width after view init
@@ -12,8 +10,7 @@ export class ElementWidthDirective implements AfterViewInit {
   @Output()
   public ngElementWidth = new EventEmitter();
 
-  constructor(private el: ElementRef) {
-  }
+  constructor(private el: ElementRef) {}
 
   /**
    * After component view initialize lifecycle event handler

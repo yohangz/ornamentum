@@ -1,17 +1,19 @@
 <div class="feature-container">
   <h1>Client-side Dropdown Data Binding</h1>
 
-  <p>Client side data binding allow users to bind data set to data table when those are available in the client side
-    side.</p>
+  <p>Client side data binding allow users to bind data set to data table when those are available in the client side side.</p>
 
-  <p>Client side binding can be configure by providing any array of objects into <code>items</code> property or
-    providing a data stream to the <code>dataSource</code> property.</p>
+  <p>
+    Client side binding can be configure by providing any array of objects into <code>items</code> property or providing a data stream to the
+    <code>dataSource</code> property.
+  </p>
 
-  <p>In this data binding technique, data set will be fetched at once and item search filtering happens in the client
-    side.</p>
+  <p>In this data binding technique, data set will be fetched at once and item search filtering happens in the client side.</p>
 
-  <p>If the data stream is very large and can't perform filtering in the client side, <a
-    href="feature/dropdown/server-side-data-binding">Server Side Data Binding</a> can be used.</p>
+  <p>
+    If the data stream is very large and can't perform filtering in the client side,
+    <a href="feature/dropdown/server-side-data-binding">Server Side Data Binding</a> can be used.
+  </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -20,30 +22,31 @@
 
   <p>Client side data binding can be configured by using the two ways mentioned in the below.</p>
 
-  <pre class="prettyprint lang-html">{{demoSnippet.items}}</pre>
+  <pre class="prettyprint lang-html">{{ demoSnippet.items }}</pre>
 
-  <p>The complete set of code segments for the data binding via <code>items</code> property can be seen in the example
-    shown in the <a href="feature/dropdown/client-side-data-binding#whatYouWillSee">What You Will See</a> section.</p>
+  <p>
+    The complete set of code segments for the data binding via <code>items</code> property can be seen in the example shown in the
+    <a href="feature/dropdown/client-side-data-binding#whatYouWillSee">What You Will See</a> section.
+  </p>
 
   <p>or</p>
 
-  <pre class="prettyprint lang-html">{{demoSnippet.dataSource}}</pre>
+  <pre class="prettyprint lang-html">{{ demoSnippet.dataSource }}</pre>
 
-  <p>Refer following example to see actual usage of the <code>dataSource</code> property in the client side data
-    binding.</p>
+  <p>Refer following example to see actual usage of the <code>dataSource</code> property in the client side data binding.</p>
 
   <app-client-side-data-binding-with-data-source></app-client-side-data-binding-with-data-source>
   <app-example-code [files]="clientSideDataBindingWithDataSourceUsage"></app-example-code>
 
-  <p>Following code snippet will be represent the implementation of the <b>fetchDataFromServer</b> method used in the
-    <b>client-side-data-binding-with-data-source.component.ts</b> to fetch the data from the server.</p>
+  <p>
+    Following code snippet will be represent the implementation of the <b>fetchDataFromServer</b> method used in the
+    <b>client-side-data-binding-with-data-source.component.ts</b> to fetch the data from the server.
+  </p>
 
-  <pre class="prettyprint lang-js">{{demoSnippet.dataFetchMethod}}</pre>
+  <pre class="prettyprint lang-js">{{ demoSnippet.dataFetchMethod }}</pre>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="feature/dropdown/server-side-data-binding">Server-side Data Binding</a><br>
-  <a rel="noopener" target="_blank" href="feature/dropdown/real-time-data-binding">Client-side Data Binding</a><br>
-  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#items">API Doc for Client Side Data
-    Binding</a>
+  <a rel="noopener" target="_blank" href="feature/dropdown/server-side-data-binding">Server-side Data Binding</a><br />
+  <a rel="noopener" target="_blank" href="feature/dropdown/real-time-data-binding">Client-side Data Binding</a><br />
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#items">API Doc for Client Side Data Binding</a>
 </div>
-

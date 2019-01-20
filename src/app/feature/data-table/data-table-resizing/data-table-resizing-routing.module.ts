@@ -5,7 +5,6 @@ import { DataTableResizingComponent } from './index';
 
 /**
  * Represent data table resizable routes.
- * @type Routes
  */
 const dataTableResizingRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableResizingRoutes: Routes = [
 
 /**
  * Data table resizable routing module.
- * @class DataTableResizingRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableResizingRoutes)]
 })
-export class DataTableResizingRoutingModule {
-}
+export class DataTableResizingRoutingModule {}

@@ -12,13 +12,9 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table cell template module.
- * @class DataTableCellTemplateModule
  */
 @NgModule({
-  declarations: [
-    CellTemplateUsageComponent,
-    DataTableCellTemplateComponent
-  ],
+  declarations: [CellTemplateUsageComponent, DataTableCellTemplateComponent],
   exports: [],
   imports: [
     CommonModule,
@@ -31,5 +27,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableCellTemplateModule {
-}
+export class DataTableCellTemplateModule {}

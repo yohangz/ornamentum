@@ -20,9 +20,7 @@
   line-height: $line + rem;
 }
 
-
 @mixin breakpoint($point) {
-
   @if $point == max360 {
     @media only screen and (max-width: 360px) {
       @content;
@@ -35,7 +33,7 @@
     @media only screen and (max-width: 480px) {
       @content;
     }
-  }@else if $point == max575 {
+  } @else if $point == max575 {
     @media only screen and (max-width: 575px) {
       @content;
     }
@@ -53,4 +51,3 @@
     }
   }
 }
-

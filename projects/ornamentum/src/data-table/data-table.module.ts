@@ -5,12 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { DataTableConfig } from './models/data-table-config.model';
 
 import { DataTableColumnComponent } from './components/data-table-column/data-table-column.component';
-import {
-  DataTableColumnFilterHeaderComponent
-} from './components/data-table-column-filter-header/data-table-column-filter-header.component';
-import {
-  DataTableColumnFilterTemplateComponent
-} from './components/data-table-column-filter-template/data-table-column-filter-template.component';
+import { DataTableColumnFilterHeaderComponent } from './components/data-table-column-filter-header/data-table-column-filter-header.component';
+import { DataTableColumnFilterTemplateComponent } from './components/data-table-column-filter-template/data-table-column-filter-template.component';
 import { DataTableColumnTitleHeaderComponent } from './components/data-table-column-title-header/data-table-column-title-header.component';
 import { DataTableHeaderComponent } from './components/data-table-header/data-table-header.component';
 import { DataTableColGroupComponent } from './components/data-table-col-group/data-table-col-group.component';
@@ -47,11 +43,7 @@ const COMPONENTS = [
   DataTableLoadingSpinnerComponent
 ];
 
-const DIRECTIVES = [
-  ScrollPositionDirective,
-  ScrollElementDirective,
-  ElementWidthDirective
-];
+const DIRECTIVES = [ScrollPositionDirective, ScrollElementDirective, ElementWidthDirective];
 
 const PROVIDERS = [];
 
@@ -59,26 +51,11 @@ const PROVIDERS = [];
  * Module representing data table component
  */
 @NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    UtilityModule.forRoot(),
-    DropdownModule.forRoot()
-  ],
-  declarations: [
-    ...COMPONENTS,
-    ...DIRECTIVES,
-  ],
-  providers: [
-    ...PROVIDERS
-  ],
-  exports: [
-    DataTableColumnComponent,
-    DataTableComponent
-  ],
-  entryComponents: [
-    DataTableColumnSelectorComponent
-  ]
+  imports: [CommonModule, FormsModule, UtilityModule.forRoot(), DropdownModule.forRoot()],
+  declarations: [...COMPONENTS, ...DIRECTIVES],
+  providers: [...PROVIDERS],
+  exports: [DataTableColumnComponent, DataTableComponent],
+  entryComponents: [DataTableColumnSelectorComponent]
 })
 export class DataTableModule {
   /**

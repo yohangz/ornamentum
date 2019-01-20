@@ -1,12 +1,6 @@
-import {
-  DataTableDemoComponent,
-  HomeComponent
-} from './components';
+import { DataTableDemoComponent, HomeComponent } from './components';
 
 /**
  * Export all main components.
  */
-export const COMPONENTS = [
-  DataTableDemoComponent,
-  HomeComponent
-];
+export const COMPONENTS = [DataTableDemoComponent, HomeComponent];

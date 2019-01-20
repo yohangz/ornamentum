@@ -1,40 +1,23 @@
-<ng-data-table
-  [title]="'Sales Products'"
-  [items]="items"
-  [minHeight]="200"
-  [minWidth]="900"
-  [pageable]="true"
-  [showHeader]="true">
-  <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [filterable]="true"
-    [width]="70">
-  </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'orderMethodType'"
-    [title]="'Order Method Type'"
-    [filterable]="true">
-  </ng-data-table-column>
+<ng-data-table [title]="'Sales Products'" [items]="items" [minHeight]="200" [minWidth]="900" [pageable]="true" [showHeader]="true">
+  <ng-data-table-column [field]="'id'" [title]="'ID'" [filterable]="true" [width]="70"> </ng-data-table-column>
+  <ng-data-table-column [field]="'orderMethodType'" [title]="'Order Method Type'" [filterable]="true"> </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
     [title]="'Retailer Type'"
     [filterable]="true"
     [filterPlaceholder]="'Retailer Type Filter'"
-    [showFilterClearButton]="true">
+    [showFilterClearButton]="true"
+  >
   </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'productLine'"
-    [title]="'Product Line'"
-    [filterable]="true"
-    [filterPlaceholder]="'Product Line Filter'">
+  <ng-data-table-column [field]="'productLine'" [title]="'Product Line'" [filterable]="true" [filterPlaceholder]="'Product Line Filter'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
     [title]="'Product Type'"
     [filterable]="true"
     [filterPlaceholder]="'Product Type Filter'"
-    [showFilterClearButton]="true">
+    [showFilterClearButton]="true"
+  >
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'revenue'"
@@ -42,7 +25,8 @@
     [filterable]="true"
     [filterPlaceholder]="'Revenue Filter'"
     [showFilterClearButton]="true"
-    [width]="100">
+    [width]="100"
+  >
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
@@ -50,7 +34,8 @@
     [filterable]="true"
     [filterPlaceholder]="'Quantity Filter'"
     [showFilterClearButton]="true"
-    [width]="80">
+    [width]="80"
+  >
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"
@@ -58,6 +43,7 @@
     [filterable]="true"
     [filterPlaceholder]="'Gross Margin Filter'"
     [showFilterClearButton]="true"
-    [width]="100">
+    [width]="100"
+  >
   </ng-data-table-column>
 </ng-data-table>

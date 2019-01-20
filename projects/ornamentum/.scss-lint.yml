@@ -8,10 +8,13 @@ files:
   ignore: 'node_modules/src/**/*'
 
 rules:
-
+  indentation:
+    - 0
+  leading-zero:
+    - 1
+    - include: true
   no-duplicate-properties:
     - 0
-
   nesting-depth:
     - 1
     - max-depth: 5

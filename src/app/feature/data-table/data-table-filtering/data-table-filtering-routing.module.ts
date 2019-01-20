@@ -5,7 +5,6 @@ import { DataTableFilteringComponent } from './index';
 
 /**
  * Represent data table filtering routes.
- * @type Routes
  */
 const dataTableFilteringRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableFilteringRoutes: Routes = [
 
 /**
  * Data table filtering routing module.
- * @class DataTableFilteringRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableFilteringRoutes)]
 })
-export class DataTableFilteringRoutingModule {
-}
+export class DataTableFilteringRoutingModule {}

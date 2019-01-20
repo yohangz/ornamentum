@@ -31,4 +31,3 @@ export const demoSnippet: any = {
   row_span_property_template: require('!!raw-loader?lang=typescript!./docs/row-span-property-template.md'),
   span_index_property_template: require('!!raw-loader?lang=typescript!./docs/span-index-property-template.md')
 };
-

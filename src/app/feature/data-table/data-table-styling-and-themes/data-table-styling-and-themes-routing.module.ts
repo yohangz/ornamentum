@@ -5,7 +5,6 @@ import { DataTableStylingAndThemesComponent } from './index';
 
 /**
  * Represent data table styling and themes routes.
- * @type Routes
  */
 const dataTableStylingAndThemesRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableStylingAndThemesRoutes: Routes = [
 
 /**
  * Data table styling and themes routing module.
- * @class DataTableStylingAndThemesRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableStylingAndThemesRoutes)]
 })
-export class DataTableStylingAndThemesRoutingModule {
-}
+export class DataTableStylingAndThemesRoutingModule {}

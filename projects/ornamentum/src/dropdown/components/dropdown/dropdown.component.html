@@ -1,15 +1,19 @@
 <div #dropdownElement class="ng-dropdown">
-  <div class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)"
-       [class.disabled]="dataStateService.disabled">
+  <div class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [class.disabled]="dataStateService.disabled">
     <ng-container *ngIf="config.selectMode === 'multi'">
       <ng-container *ngIf="!wrapSelectedOptions">
-         <span class="ng-dropdown-selected-value"
-               *ngFor="let item of dataStateService.selectedOptions; let index = index"
-               [style.max-width]="config.multiSelectOptionMaxWidth | ngPx"
-               [class.ng-dropdown-option-close-enabled]="config.showSelectedOptionRemoveButton">
+        <span
+          class="ng-dropdown-selected-value"
+          *ngFor="let item of dataStateService.selectedOptions; let index = index"
+          [style.max-width]="config.multiSelectOptionMaxWidth | ngPx"
+          [class.ng-dropdown-option-close-enabled]="config.showSelectedOptionRemoveButton"
+        >
           {{ config.getDisplayText(item) }}
-           <i class="ng-dropdown-remove-selected-value" *ngIf="config.showSelectedOptionRemoveButton"
-              (click)="onSelectOptionRemove($event, index)"></i>
+          <i
+            class="ng-dropdown-remove-selected-value"
+            *ngIf="config.showSelectedOptionRemoveButton"
+            (click)="onSelectOptionRemove($event, index)"
+          ></i>
         </span>
       </ng-container>
       <span class="ng-dropdown-selected-item" *ngIf="wrapSelectedOptions">
@@ -33,9 +37,7 @@
     <span class="ng-dropdown-down-arrow" *ngIf="!dataStateService.dataLoading"></span>
     <span class="ng-dropdown-loading" [hidden]="!dataStateService.dataLoading">
       <div class="ng-dropdown-loading-animation" *ngIf="!loadingSpinnerTemplate"></div>
-      <div *ngIf="loadingSpinnerTemplate" [ngTemplateOutlet]="loadingSpinnerTemplate">
-      </div>
+      <div *ngIf="loadingSpinnerTemplate" [ngTemplateOutlet]="loadingSpinnerTemplate"></div>
     </span>
   </div>
 </div>
-

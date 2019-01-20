@@ -4,12 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import {
-  DataTablePaginationComponent,
-  PaginationUsageComponent,
-  PaginationPageUsageComponent,
-  PaginationLimitUsageComponent
-} from './index';
+import { DataTablePaginationComponent, PaginationUsageComponent, PaginationPageUsageComponent, PaginationLimitUsageComponent } from './index';
 
 import { DataTablePaginationRoutingModule } from './data-table-pagination-routing.module';
 
@@ -17,15 +12,9 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table pagination module.
- * @class DataTablePaginationModule
  */
 @NgModule({
-  declarations: [
-    DataTablePaginationComponent,
-    PaginationUsageComponent,
-    PaginationPageUsageComponent,
-    PaginationLimitUsageComponent,
-  ],
+  declarations: [DataTablePaginationComponent, PaginationUsageComponent, PaginationPageUsageComponent, PaginationLimitUsageComponent],
   exports: [],
   imports: [
     CommonModule,
@@ -39,5 +28,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTablePaginationModule {
-}
+export class DataTablePaginationModule {}

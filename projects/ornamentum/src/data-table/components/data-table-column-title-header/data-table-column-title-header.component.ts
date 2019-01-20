@@ -26,11 +26,12 @@ export class DataTableColumnTitleHeaderComponent {
   @Input()
   public columns: DataTableColumnComponent[];
 
-  constructor(private dragAndDropService: DragAndDropService,
-              private eventStateService: DataTableEventStateService,
-              private dataStateService: DataTableDataStateService,
-              public config: DataTableConfigService) {
-  }
+  constructor(
+    private dragAndDropService: DragAndDropService,
+    private eventStateService: DataTableEventStateService,
+    private dataStateService: DataTableDataStateService,
+    public config: DataTableConfigService
+  ) {}
 
   /**
    * Header click event handler
@@ -40,7 +41,7 @@ export class DataTableColumnTitleHeaderComponent {
   public onHeaderClick(column: DataTableColumnComponent, event: MouseEvent): void {
     if (!this.resizeInProgress) {
       this.sortData(column);
-      this.eventStateService.headerClickStream.emit({column, event});
+      this.eventStateService.headerClickStream.emit({ column, event });
     } else {
       this.resizeInProgress = false; // this is because I can't prevent click from mousup of the drag end
     }
@@ -99,7 +100,7 @@ export class DataTableColumnTitleHeaderComponent {
         column.actualWidth = newWidth;
         let totalWidth = 0;
 
-        this.columns.forEach((col) => {
+        this.columns.forEach(col => {
           col.width = col.actualWidth;
           totalWidth += col.width;
         });

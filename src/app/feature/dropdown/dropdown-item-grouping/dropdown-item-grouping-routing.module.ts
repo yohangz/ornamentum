@@ -5,7 +5,6 @@ import { DropdownItemGroupingComponent } from './index';
 
 /**
  * Represent dropdown item grouping routes.
- * @type Routes
  */
 const dropdownItemGroupingRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownItemGroupingRoutes: Routes = [
 
 /**
  * Dropdown item grouping routing module.
- * @class DropdownItemGroupingRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownItemGroupingRoutes)]
 })
-export class DropdownItemGroupingRoutingModule {
-}
+export class DropdownItemGroupingRoutingModule {}

@@ -1,7 +1,9 @@
 <div class="feature-container">
   <h1>Substitute Rows</h1>
-  <p>Sometimes you might want to show empty rows in the data table when there are less amount of data is available than
-    the specified limit. Therefore, in such cases, you might need to turn the <code>showSubstituteRows</code> on.</p>
+  <p>
+    Sometimes you might want to show empty rows in the data table when there are less amount of data is available than the specified limit. Therefore,
+    in such cases, you might need to turn the <code>showSubstituteRows</code> on.
+  </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -9,32 +11,32 @@
   <app-example-code [files]="withSubstituteRowsUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To enable showSubstituteRows, simply set <code>showSubstituteRows</code> to <b>true</b> and by default the property
-    is <b>false</b>.</p>
+  <p>To enable showSubstituteRows, simply set <code>showSubstituteRows</code> to <b>true</b> and by default the property is <b>false</b>.</p>
 
-  <pre class="prettyprint lang-html">{{demoSnippet.showSubstituteRows}}</pre>
+  <pre class="prettyprint lang-html">{{ demoSnippet.showSubstituteRows }}</pre>
 
-  <p>In default the table doesn't show substitute rows although data limit is less than the specified limit. In the
-    above example limit is specified as 15. But it is showing 5 additional rows due to unavailability of 5 data
-    items.</p>
+  <p>
+    In default the table doesn't show substitute rows although data limit is less than the specified limit. In the above example limit is specified as
+    15. But it is showing 5 additional rows due to unavailability of 5 data items.
+  </p>
 
   <h5 id="withSubstituteRows">With Substitute Rows</h5>
 
-  <p>Please refer the <a href="feature/data-table/substitute-rows#whatYouWillSee">What You Will See</a> section
-    example
-    for explore about substitute row usages.</p>
+  <p>
+    Please refer the <a href="feature/data-table/substitute-rows#whatYouWillSee">What You Will See</a> section example for explore about substitute
+    row usages.
+  </p>
 
   <h5 id="withoutSubstituteRows">Without Substitute Rows</h5>
 
-  <p>Substitute rows will not be shown although data limit is less than the specified limit, if
-    <code>showSubstituteRows</code> property is set to false. In the following example limit is specified as 15. But
-    it
-    is not showing 5 additional rows because showing substitute rows is set to false.</p>
+  <p>
+    Substitute rows will not be shown although data limit is less than the specified limit, if <code>showSubstituteRows</code> property is set to
+    false. In the following example limit is specified as 15. But it is not showing 5 additional rows because showing substitute rows is set to false.
+  </p>
 
   <app-without-substitute-rows-usage></app-without-substitute-rows-usage>
   <app-example-code [files]="withoutSubstituteRowsUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#showSubstituteRows">API Doc for
-    Data Table Substitute Rows</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#showSubstituteRows">API Doc for Data Table Substitute Rows</a>
 </div>

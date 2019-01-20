@@ -12,21 +12,11 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table styling and themes module.
- * @class DataTableStylingAndThemesModule
  */
 @NgModule({
-  declarations: [
-    DataTableStylingAndThemesComponent
-  ],
+  declarations: [DataTableStylingAndThemesComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule.forRoot(),
-    DataTableModule.forRoot(),
-    DataTableStylingAndThemesRoutingModule
-  ],
+  imports: [CommonModule, FormsModule, SharedModule.forRoot(), DataTableModule.forRoot(), DataTableStylingAndThemesRoutingModule],
   providers: []
 })
-export class DataTableStylingAndThemesModule {
-}
+export class DataTableStylingAndThemesModule {}

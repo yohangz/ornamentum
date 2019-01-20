@@ -1,7 +1,10 @@
 import { Component } from '@angular/core';
 
 import {
-  demoSnippet, rowExpandLoadingSpinnerDetailView, rowExpandLoadingSpinnerUsage, rowExpandOnClickUsage,
+  demoSnippet,
+  rowExpandLoadingSpinnerDetailView,
+  rowExpandLoadingSpinnerUsage,
+  rowExpandOnClickUsage,
   rowExpandTemplateUsage
 } from './data-table-row-expand-template.list';
 

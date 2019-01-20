@@ -7,8 +7,7 @@ import { Directive, ElementRef, OnInit } from '@angular/core';
   selector: '[ngFocus]'
 })
 export class FocusDirective implements OnInit {
-  constructor(private el: ElementRef) {
-  }
+  constructor(private el: ElementRef) {}
 
   /**
    * On directive initialize

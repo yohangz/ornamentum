@@ -12,13 +12,9 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table no records template module.
- * @class DataTableNoRecordsTemplateModule
  */
 @NgModule({
-  declarations: [
-    DataTableNoRecordsTemplateComponent,
-    NoRecordsTemplateUsageComponent
-  ],
+  declarations: [DataTableNoRecordsTemplateComponent, NoRecordsTemplateUsageComponent],
   exports: [],
   imports: [
     CommonModule,
@@ -31,5 +27,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableNoRecordsTemplateModule {
-}
+export class DataTableNoRecordsTemplateModule {}

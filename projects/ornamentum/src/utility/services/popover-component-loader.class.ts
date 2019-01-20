@@ -1,11 +1,4 @@
-import {
-  Injector,
-  ComponentFactoryResolver,
-  EmbeddedViewRef,
-  ApplicationRef,
-  ComponentRef,
-  Type, Renderer2
-} from '@angular/core';
+import { Injector, ComponentFactoryResolver, EmbeddedViewRef, ApplicationRef, ComponentRef, Type, Renderer2 } from '@angular/core';
 
 import { take } from 'rxjs/operators';
 
@@ -28,11 +21,13 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   private touchStartListener: () => void;
   private resizeEventSubscription: Subscription;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver,
-              private appRef: ApplicationRef,
-              private globalRefService: GlobalRefService,
-              private renderer: Renderer2,
-              private resizeService: ResizeService) {
+  constructor(
+    private componentFactoryResolver: ComponentFactoryResolver,
+    private appRef: ApplicationRef,
+    private globalRefService: GlobalRefService,
+    private renderer: Renderer2,
+    private resizeService: ResizeService
+  ) {
     this.isVisible = false;
   }
 
@@ -42,7 +37,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
    */
   private registerClickOutside(...exclude: HTMLElement[]): void {
     const trackOutsideClick = (event: Event) => {
-      if (!exclude.some((el) => el.contains(event.target as HTMLElement))) {
+      if (!exclude.some(el => el.contains(event.target as HTMLElement))) {
         this.hide();
       }
     };
@@ -65,7 +60,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     let top = 0;
 
     if (options.position.includes('right')) {
-     left = parentElement.offsetWidth;
+      left = parentElement.offsetWidth;
     }
 
     if (options.position.includes('bottom')) {
@@ -73,7 +68,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     }
 
     const componentElement = this.componentReference.location.nativeElement as HTMLElement;
-    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + top +  options.floatTop}px`;
+    componentElement.style.top = `${elementClientRect.top - bodyClientRect.top + top + options.floatTop}px`;
     componentElement.style.left = `${elementClientRect.left - bodyClientRect.left + left + options.floatLeft}px`;
     componentElement.style.position = 'absolute';
     componentElement.style.display = 'block';
@@ -91,12 +86,9 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
       childElement.style.position = 'absolute';
     }
 
-    this.resizeEventSubscription = this.resizeService.resize.pipe(
-        take(1)
-      )
-      .subscribe(() => {
-        this.hide();
-      });
+    this.resizeEventSubscription = this.resizeService.resize.pipe(take(1)).subscribe(() => {
+      this.hide();
+    });
   }
 
   /**
@@ -108,12 +100,15 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
    * @return Rendered component reference
    */
   public show(component: Type<T>, parentElement: HTMLElement, injector: Injector, options: ComponentLoaderOptions): T {
-    options = Object.assign({
-      closeOnOutsideClick: true,
-      floatLeft: 0,
-      floatTop: 0,
-      position: 'bottom-left'
-    }, options);
+    options = Object.assign(
+      {
+        closeOnOutsideClick: true,
+        floatLeft: 0,
+        floatTop: 0,
+        position: 'bottom-left'
+      },
+      options
+    );
 
     if (this.componentReference) {
       this.setPosition(parentElement, options);
@@ -122,9 +117,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     }
 
     // 1. Create a component reference from the component
-    this.componentReference = this.componentFactoryResolver
-      .resolveComponentFactory(component)
-      .create(injector);
+    this.componentReference = this.componentFactoryResolver.resolveComponentFactory(component).create(injector);
 
     if (options.context) {
       Object.assign(this.componentReference.instance, options.context);

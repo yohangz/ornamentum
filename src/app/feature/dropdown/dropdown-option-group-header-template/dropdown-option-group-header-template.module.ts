@@ -11,21 +11,11 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown option group header template module.
- * @class DropdownOptionGroupHeaderTemplateModule
  */
 @NgModule({
-  declarations: [
-    DropdownOptionGroupHeaderTemplateComponent,
-    OptionGroupHeaderTemplateUsageComponent
-  ],
+  declarations: [DropdownOptionGroupHeaderTemplateComponent, OptionGroupHeaderTemplateUsageComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    SharedModule.forRoot(),
-    DropdownModule.forRoot(),
-    DropdownOptionGroupHeaderTemplateRoutingModule
-  ],
+  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownOptionGroupHeaderTemplateRoutingModule],
   providers: []
 })
-export class DropdownOptionGroupHeaderTemplateModule {
-}
+export class DropdownOptionGroupHeaderTemplateModule {}

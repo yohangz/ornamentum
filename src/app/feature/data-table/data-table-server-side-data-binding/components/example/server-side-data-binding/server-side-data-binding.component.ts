@@ -15,17 +15,18 @@ import { ResourceData } from '../../../../../../shared/models/resource-data.mode
   templateUrl: './server-side-data-binding.component.html'
 })
 export class ServerSideDataBindingComponent {
-
   constructor(private dataFetchService: DataFetchService) {
     this.onDataBind = this.onDataBind.bind(this);
   }
 
   public onDataBind(params: DataTableRequestParams): Observable<DataTableQueryResult<ExampleData>> {
-    return this.dataFetchService.fetchDataOnBindForDataTable(params).pipe(map((response: ResourceData<ExampleData[]>) => {
-      return {
-        count: response.count,
-        items: response.data
-      };
-    }));
+    return this.dataFetchService.fetchDataOnBindForDataTable(params).pipe(
+      map((response: ResourceData<ExampleData[]>) => {
+        return {
+          count: response.count,
+          items: response.data
+        };
+      })
+    );
   }
 }

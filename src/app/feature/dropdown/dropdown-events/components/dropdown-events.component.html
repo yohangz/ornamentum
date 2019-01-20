@@ -1,13 +1,16 @@
 <div class="feature-container">
   <h1>Events</h1>
 
-  <p>There are set of events have introduced for the dropdown to serve & fulfill different user requirements to manage
-    events that perform on top of data table. all the events are triggers based on pre-defined events hierarchy.</p>
+  <p>
+    There are set of events have introduced for the dropdown to serve & fulfill different user requirements to manage events that perform on top of
+    data table. all the events are triggers based on pre-defined events hierarchy.
+  </p>
 
   <h2 id="eventsHierarchy">Events Hierarchy</h2>
 
-  <p>All available dropdown events are initialize to the following sequence depends on it's invoking behaviour
-    (Automatic / User Triggers).</p>
+  <p>
+    All available dropdown events are initialize to the following sequence depends on it's invoking behaviour (Automatic / User Triggers).
+  </p>
 
   <pre>
     |__ <span class="hierarchy-main">Ornamentum Events</span>
@@ -31,9 +34,10 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>As mention in the Events Hierarchy, all available events can be bind to the dropdown as follows try by yourself
-    to get familiar. for individual event usages refer <a href="feature/dropdown/events#usefulEvents">Useful Events</a>
-    section.</p>
+  <p>
+    As mention in the Events Hierarchy, all available events can be bind to the dropdown as follows try by yourself to get familiar. for individual
+    event usages refer <a href="feature/dropdown/events#usefulEvents">Useful Events</a> section.
+  </p>
 
   <app-events-usage></app-events-usage>
   <app-example-code [files]="eventsUsage"></app-example-code>
@@ -43,8 +47,10 @@
   <h4 id="init">Init</h4>
   <code>init: EventEmitter&lt;DropdownComponent&gt;</code>
 
-  <p>Event that responsible to trigger dropdown component initialization life cycle hook. in dropdown this will be
-    the first event invoked before all other events.</p>
+  <p>
+    Event that responsible to trigger dropdown component initialization life cycle hook. in dropdown this will be the first event invoked before all
+    other events.
+  </p>
 
   <app-events-init-usage></app-events-init-usage>
   <app-example-code [files]="eventsInitUsage"></app-example-code>
@@ -60,21 +66,24 @@
   <h4 id="selectChange">Select Change</h4>
   <code>selectChange: EventEmitter&lt;any[] | any&gt;</code>
 
-  <p>Triggers when dropdown item select state changes based on defined dropdown <a href="">Select Mode</a>. To identify
-    selected items uniquely it is necessary to specify <a href="feature/dropdown/item-selection">selectTrackBy</a>
-    property. Therefore, a unique value key name should be set as the value for this attribute. According to this
-    example it is <b>'id'</b>. There are set of configuration are introduced in the dropdown to work smoothly with the
-    selected change event. Those configurations can be seen as follows.</p>
+  <p>
+    Triggers when dropdown item select state changes based on defined dropdown <a href="">Select Mode</a>. To identify selected items uniquely it is
+    necessary to specify <a href="feature/dropdown/item-selection">selectTrackBy</a> property. Therefore, a unique value key name should be set as the
+    value for this attribute. According to this example it is <b>'id'</b>. There are set of configuration are introduced in the dropdown to work
+    smoothly with the selected change event. Those configurations can be seen as follows.
+  </p>
 
-  <p>Dropdown item use selection can be select according to the defined dropdown <a href="">Select Mode</a>. for trigger
-    select change event that perform by end-user and returns the unique data object.</p>
+  <p>
+    Dropdown item use selection can be select according to the defined dropdown <a href="">Select Mode</a>. for trigger select change event that
+    perform by end-user and returns the unique data object.
+  </p>
 
   <app-events-select-change-usage></app-events-select-change-usage>
   <app-example-code [files]="eventsSelectChangeUsage"></app-example-code>
 
   <h4 id="triggerSelectChangeOnInit">Trigger Select Change On Init</h4>
-  <code>triggerSelectChangeOnInit: boolean</code> &nbsp; <h5
-  class="badge badge-pill badge-warning">Default Value: false</h5>
+  <code>triggerSelectChangeOnInit: boolean</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
 
   <p>Select change event can be manually trigger when on dropdown initialization.</p>
 
@@ -82,24 +91,24 @@
   <app-example-code [files]="eventsTriggerSelectChangeOnInitUsage"></app-example-code>
 
   <h4 id="triggerSelectChangeOnFirstOptionSelect">Trigger Select Change On First Option Select</h4>
-  <code>triggerSelectChangeOnFirstOptionSelect: boolean</code> &nbsp; <h5
-  class="badge badge-pill badge-warning">Default Value: false</h5>
+  <code>triggerSelectChangeOnFirstOptionSelect: boolean</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
 
-  <p>Triggers select change event when first item is selected by default. for use this property it is <b>mandatory</b>
-    to define dropdown <a href="feature/dropdown/item-selection#setFirstOptionSelected">Set First Option Selected</a> to
-    <code>true</code>.</p>
+  <p>
+    Triggers select change event when first item is selected by default. for use this property it is <b>mandatory</b> to define dropdown
+    <a href="feature/dropdown/item-selection#setFirstOptionSelected">Set First Option Selected</a> to <code>true</code>.
+  </p>
 
   <app-events-trigger-select-change-on-first-option-select-usage></app-events-trigger-select-change-on-first-option-select-usage>
   <app-example-code [files]="eventsTriggerSelectChangeOnFirstOptionSelectUsage"></app-example-code>
 
   <h4 id="triggerSelectChangeOnModelUpdate">Trigger Select Change On Model Update</h4>
-  <code>triggerSelectChangeOnModelUpdate: boolean</code> &nbsp; <h5
-  class="badge badge-pill badge-warning">Default Value: false</h5>
+  <code>triggerSelectChangeOnModelUpdate: boolean</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
 
   <app-events-trigger-select-change-on-model-update-usage></app-events-trigger-select-change-on-model-update-usage>
   <app-example-code [files]="eventsTriggerSelectChangeOnModelUpdateUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Events (refer
-    outputs section)</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Events (refer outputs section)</a>
 </div>

@@ -5,7 +5,6 @@ import { DropdownEventsComponent } from './index';
 
 /**
  * Represent dropdown events routes.
- * @type Routes
  */
 const dropdownEventsRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownEventsRoutes: Routes = [
 
 /**
  * dropdown events routing module.
- * @class DropdownEventsRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownEventsRoutes)]
 })
-export class DropdownEventsRoutingModule {
-}
+export class DropdownEventsRoutingModule {}

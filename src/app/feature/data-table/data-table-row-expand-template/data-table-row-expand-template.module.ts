@@ -5,8 +5,11 @@ import { CommonModule } from '@angular/common';
 import { DataTableModule } from 'ornamentum';
 
 import {
-  DataTableRowExpandTemplateComponent, RowExpandExpandableDetailViewComponent, RowExpandLoadingSpinnerUsageComponent,
-  RowExpandOnClickUsageComponent, RowExpandTemplateUsageComponent
+  DataTableRowExpandTemplateComponent,
+  RowExpandExpandableDetailViewComponent,
+  RowExpandLoadingSpinnerUsageComponent,
+  RowExpandOnClickUsageComponent,
+  RowExpandTemplateUsageComponent
 } from './index';
 
 import { DataTableRowExpandTemplateRoutingModule } from './data-table-row-expand-template-routing.module';
@@ -15,7 +18,6 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table row expand template module.
- * @class DataTableRowExpandTemplateModule
  */
 @NgModule({
   declarations: [
@@ -37,5 +39,4 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableRowExpandTemplateModule {
-}
+export class DataTableRowExpandTemplateModule {}

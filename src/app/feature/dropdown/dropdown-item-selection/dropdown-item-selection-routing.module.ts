@@ -5,7 +5,6 @@ import { DropdownItemSelectionComponent } from './index';
 
 /**
  * Represent dropdown item selection routes.
- * @type Routes
  */
 const dropdownItemSelectionRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dropdownItemSelectionRoutes: Routes = [
 
 /**
  * Dropdown item selection routing module.
- * @class DropdownItemSelectionRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownItemSelectionRoutes)]
 })
-export class DropdownItemSelectionRoutingModule {
-}
+export class DropdownItemSelectionRoutingModule {}

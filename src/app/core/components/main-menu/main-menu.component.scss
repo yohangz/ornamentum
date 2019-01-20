@@ -9,14 +9,13 @@
   height: 56px;
   padding: 0 1rem 0 1.5rem;
 
-
   .navbar-toggle-button {
     cursor: pointer;
     display: none;
     left: -1rem;
     outline: none;
     position: relative;
-    top: .5rem;
+    top: 0.5rem;
 
     @include breakpoint(max991) {
       display: block;
@@ -31,7 +30,7 @@
   }
 
   .app-name-lg {
-    @include transition(.5s all ease);
+    @include transition(0.5s all ease);
     background: url('../../../../assets/images/ornamentum.svg') no-repeat;
     background-size: 100% 100%;
     display: inline-block;
@@ -46,7 +45,7 @@
       height: 2.5rem;
       left: 4rem;
       position: absolute;
-      top: .5rem;
+      top: 0.5rem;
       width: 5rem;
     }
 
@@ -69,7 +68,7 @@
     position: relative;
 
     @include breakpoint(max480) {
-      padding: 0 .5rem;
+      padding: 0 0.5rem;
     }
 
     > .nav-link {
@@ -78,19 +77,19 @@
       color: $primary-text-color;
       cursor: pointer;
       font-weight: 300;
-      letter-spacing: .03rem;
+      letter-spacing: 0.03rem;
       padding-left: 0;
       padding-right: 0;
 
       @include breakpoint(max991) {
-        @include font-size(.8, 2);
+        @include font-size(0.8, 2);
       }
 
       .main-nav-label {
         padding: 0;
 
         &.package-version {
-          @include font-size(.8, 2);
+          @include font-size(0.8, 2);
           font-weight: 700;
         }
 
@@ -102,12 +101,10 @@
           display: inline-block;
           position: relative;
 
-
-
           &:hover {
             > .theme-selector-container {
               @include display-flex;
-              @include transition(all .3s ease);
+              @include transition(all 0.3s ease);
               @include scale(1);
               height: 50px;
               width: 170px;
@@ -117,7 +114,6 @@
                 height: 25px;
                 width: 25px;
               }
-
             }
           }
         }
@@ -125,13 +121,13 @@
 
       .menu-icon {
         @include font-size(1, 1.4);
-        padding-right: .5rem;
+        padding-right: 0.5rem;
         vertical-align: middle;
       }
 
       .menu-title {
         font-weight: 700;
-        padding: 0 .5rem;
+        padding: 0 0.5rem;
       }
 
       .github-icon {
@@ -139,12 +135,12 @@
         background-size: 100% 100%;
         display: inline-block;
         height: 2rem;
-        left: .2rem;
+        left: 0.2rem;
         position: absolute;
         width: 2rem;
 
         &:hover {
-          opacity: .7;
+          opacity: 0.7;
         }
       }
 
@@ -158,7 +154,7 @@
         width: 2rem;
 
         &:hover {
-          opacity: .7;
+          opacity: 0.7;
         }
       }
 
@@ -175,7 +171,7 @@
       .theme-selector-container {
         @include box-shadow(1px 2px 3px $nav-bar-background);
         @include justify-content(center);
-        @include transition(all .2s ease);
+        @include transition(all 0.2s ease);
         @include scale(0);
         background: $nav-bar-background;
         height: 0;
@@ -234,7 +230,6 @@
               position: absolute;
               top: 10px;
               width: 0;
-
             }
 
             &::after {
@@ -272,9 +267,8 @@
     }
 
     &.active {
-
       .nav-link {
-        @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, .1));
+        @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, 0.1));
         border-bottom: 5px solid $primary-text-color;
         color: $main-nav-bar-active-text;
         display: block;
@@ -287,7 +281,7 @@
     @include breakpoint(max991) {
       padding-top: 0;
       position: absolute;
-      right: .5rem;
+      right: 0.5rem;
       top: 0;
     }
 
@@ -307,4 +301,3 @@
     }
   }
 }
-

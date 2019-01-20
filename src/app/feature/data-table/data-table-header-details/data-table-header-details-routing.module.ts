@@ -5,7 +5,6 @@ import { DataTableHeaderDetailsComponent } from './index';
 
 /**
  * Represent data table header details  routes.
- * @type Routes
  */
 const dataTableHeaderDetailsRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableHeaderDetailsRoutes: Routes = [
 
 /**
  * Data table header details routing module.
- * @class DataTableHeaderDetailsRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableHeaderDetailsRoutes)]
 })
-export class DataTableHeaderDetailsRoutingModule {
-}
+export class DataTableHeaderDetailsRoutingModule {}

@@ -7,7 +7,7 @@
   margin-top: 1rem;
 
   .nav-item {
-    margin-right: .1rem;
+    margin-right: 0.1rem;
 
     &.active {
       .nav-link {
@@ -23,7 +23,7 @@
   }
 
   .nav-link {
-    @include font-size(.7, 1.4);
+    @include font-size(0.7, 1.4);
     @include border-radius(0);
     border: 0;
     border-bottom: 3px solid transparent;
@@ -31,7 +31,7 @@
     cursor: pointer;
     font-weight: 700;
     height: 100%;
-    padding: .5rem .7rem .5rem 2.2rem;
+    padding: 0.5rem 0.7rem 0.5rem 2.2rem;
     position: relative;
 
     &:hover {

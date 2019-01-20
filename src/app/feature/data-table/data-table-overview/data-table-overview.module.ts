@@ -14,19 +14,9 @@ import { SharedModule } from '../../../shared/shared.module';
  * Data table overview feature module.
  */
 @NgModule({
-  declarations: [
-    DataTableOverviewComponent,
-    BasicUsageComponent
-  ],
+  declarations: [DataTableOverviewComponent, BasicUsageComponent],
   exports: [],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule.forRoot(),
-    DataTableModule.forRoot(),
-    DataTableOverviewRoutingModule
-  ],
+  imports: [CommonModule, FormsModule, SharedModule.forRoot(), DataTableModule.forRoot(), DataTableOverviewRoutingModule],
   providers: []
 })
-export class DataTableOverviewModule {
-}
+export class DataTableOverviewModule {}

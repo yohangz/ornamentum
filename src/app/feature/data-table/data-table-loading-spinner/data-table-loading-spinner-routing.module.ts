@@ -5,7 +5,6 @@ import { DataTableLoadingSpinnerComponent } from './index';
 
 /**
  * Represent data table loading spinner routes.
- * @type Routes
  */
 const dataTableOverviewRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTableOverviewRoutes: Routes = [
 
 /**
  * Data table loading spinner routing module.
- * @class DataTableLoadingSpinnerRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableOverviewRoutes)]
 })
-export class DataTableLoadingSpinnerRoutingModule {
-}
+export class DataTableLoadingSpinnerRoutingModule {}

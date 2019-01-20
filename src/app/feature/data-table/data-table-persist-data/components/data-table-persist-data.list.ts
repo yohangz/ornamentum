@@ -27,20 +27,17 @@ export const dataPersistenceUsageWithStorageMode: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'data-persistence-storage-mode-usage.module.ts',
-    content:
-      require('!!raw-loader?lang=typescript!./example/data-persistence-storage-mode-usage/data-persistence-storage-mode-usage.module.md')
+    content: require('!!raw-loader?lang=typescript!./example/data-persistence-storage-mode-usage/data-persistence-storage-mode-usage.module.md')
   },
   {
     type: FileType.TS,
     name: 'data-persistence-storage-mode-usage.component.ts',
-    content:
-      require('!!raw-loader?lang=typescript!./example/data-persistence-storage-mode-usage/data-persistence-storage-mode-usage.component.ts')
+    content: require('!!raw-loader?lang=typescript!./example/data-persistence-storage-mode-usage/data-persistence-storage-mode-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'data-persistence-storage-mode-usage.component.html',
-    content:
-      require('!!raw-loader?lang=html!./example/data-persistence-storage-mode-usage/data-persistence-storage-mode-usage.component.html')
+    content: require('!!raw-loader?lang=html!./example/data-persistence-storage-mode-usage/data-persistence-storage-mode-usage.component.html')
   },
   {
     type: FileType.TS,

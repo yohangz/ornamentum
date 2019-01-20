@@ -6,7 +6,6 @@ import { PageNotFoundComponent } from './page-not-found.component';
 import { RouterTestingModule } from '@angular/router/testing';
 
 describe('Page not found component tests', () => {
-
   let component: PageNotFoundComponent;
   let fixture: ComponentFixture<PageNotFoundComponent>;
   let debugElement: DebugElement;
@@ -30,6 +29,3 @@ describe('Page not found component tests', () => {
     expect(htmlElement.textContent).toContain('400');
   });
 });
-
-
-

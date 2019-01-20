@@ -5,7 +5,6 @@ import { DataTablePersistDataComponent } from './index';
 
 /**
  * Represent data table persist data routes.
- * @type Routes
  */
 const dataTablePersistDataRoutes: Routes = [
   {
@@ -16,11 +15,9 @@ const dataTablePersistDataRoutes: Routes = [
 
 /**
  * Data table persist data routing module.
- * @class DataTablePersistDataRoutingModule
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTablePersistDataRoutes)]
 })
-export class DataTablePersistDataRoutingModule {
-}
+export class DataTablePersistDataRoutingModule {}

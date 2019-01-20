@@ -18,7 +18,6 @@ import { SharedModule } from '../../../shared/shared.module';
 
 /**
  * Module class for containing data table header details module.
- * @class DataTableHeaderDetailsModule
  */
 @NgModule({
   declarations: [
@@ -29,14 +28,7 @@ import { SharedModule } from '../../../shared/shared.module';
     TableHeaderDetailsShowColumnSelectorUsageComponent
   ],
   exports: [],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule.forRoot(),
-    DataTableModule.forRoot(),
-    DataTableHeaderDetailsRoutingModule
-  ],
+  imports: [CommonModule, FormsModule, SharedModule.forRoot(), DataTableModule.forRoot(), DataTableHeaderDetailsRoutingModule],
   providers: []
 })
-export class DataTableHeaderDetailsModule {
-}
+export class DataTableHeaderDetailsModule {}
