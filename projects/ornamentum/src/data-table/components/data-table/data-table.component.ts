@@ -18,7 +18,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subscription, Observable } from 'rxjs';
 import { debounceTime, switchMap } from 'rxjs/operators';
 
-import get from 'lodash-es/get';
+import get from 'lodash/get';
 
 import { DataTableFilterValueExtractCallback } from '../../models/data-table-filter-value-extract-callback.model';
 import { DataTableCellBindEventArgs } from '../../models/data-table-cell-bind-event-args.model';

@@ -106,7 +106,7 @@
     "color-themes-for-google-code-prettify": "^2.0.4",
     "compass-mixins": "^0.12.10",
     "core-js": "^2.5.4",
-    "lodash-es": "^4.17.11",
+    "lodash": "^4.17.11",
     "rxjs": "^6.3.3",
     "tslib": "^1.9.3",
     "zone.js": "^0.8.26"
@@ -121,7 +121,7 @@
     "@types/express": "^4.16.0",
     "@types/jasmine": "^3.3.5",
     "@types/jasminewd2": "^2.0.6",
-    "@types/lodash-es": "^4.17.1",
+    "@types/lodash": "^4.14.120",
     "@types/node": "^10.12.18",
     "codelyzer": "^4.5.0",
     "cpx": "^1.5.0",

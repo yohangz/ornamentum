@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { ReplaySubject, Observable, of, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import get from 'lodash-es/get';
+import get from 'lodash/get';
 
 import { DropdownQueryResult } from '../models/dropdown-query-result.model';
 import { DropdownRequestParams } from '../models/dropdown-request-params.model';

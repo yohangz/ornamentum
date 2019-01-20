@@ -3,8 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject, Subscription, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import orderBy from 'lodash-es/orderBy';
-import get from 'lodash-es/get';
+import orderBy from 'lodash/orderBy';
+import get from 'lodash/get';
 
 import { DataTableRequestParams } from '../models/data-table-request-params.model';
 import { DataTableQueryResult } from '../models/data-table-query-result.model';

@@ -7,8 +7,8 @@
     "languageLevel": ["dom", "es2017"],
     "cssUrl": "inline",
     "umdModuleIds": {
-      "lodash-es/get": "_.get",
-      "lodash-es/orderBy": "_.orderBy",
+      "lodash/get": "_.get",
+      "lodash/orderBy": "_.orderBy",
       "rxjs": "Rx"
     }
   }
