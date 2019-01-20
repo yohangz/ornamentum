@@ -39,7 +39,7 @@ import { DropdownResourceService } from '../../services/dropdown-resource.servic
 import { ViewPosition } from '../../../utility/models/view-position.model';
 
 /**
- * Dropdown component; Dropdown entry component
+ * Dropdown main component.
  */
 @Component({
   selector: 'ng-dropdown',
@@ -77,19 +77,19 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   // Outputs : Event Handlers
   /**
-   * Dropdown initialize event handler
+   * Dropdown initialize event handler.
    */
   @Output()
   public init: EventEmitter<DropdownComponent>;
 
   /**
-   * Dropdown option select change event handler
+   * Dropdown option select change event handler.
    */
   @Output()
   public selectChange: EventEmitter<any[] | any>;
 
   /**
-   * Dropdown data bind event handler
+   * Dropdown data bind event handler.
    */
   @Output()
   public dataBound: EventEmitter<void>;
@@ -270,7 +270,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Filter de-bounce enabled state.v 
+   * Filter de-bounce enabled state.v
    */
   @Input()
   public set filterDebounce(value: boolean) {
@@ -502,7 +502,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   /**
    * Set disabled state.
    * ControlValueAccessor implementation.
-   * @param {boolean} isDisabled True if disabled.
+   * @param isDisabled True if disabled.
    */
   public setDisabledState?(isDisabled: boolean): void {
     this.dataStateService.disabled = isDisabled;
