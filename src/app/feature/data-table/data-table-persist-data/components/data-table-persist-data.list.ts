@@ -15,11 +15,6 @@ export const dataPersistenceUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'data-persistence-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/data-persistence-usage/data-persistence-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -38,11 +33,6 @@ export const dataPersistenceUsageWithStorageMode: ExampleFile[] = [
     type: FileType.HTML,
     name: 'data-persistence-storage-mode-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/data-persistence-storage-mode-usage/data-persistence-storage-mode-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 

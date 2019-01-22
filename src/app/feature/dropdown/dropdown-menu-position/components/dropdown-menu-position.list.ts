@@ -15,11 +15,6 @@ export const menuPositionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'menu-position-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/menu-position-usage/menu-position-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 

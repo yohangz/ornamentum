@@ -15,11 +15,6 @@ export const dataTableTranslationsUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'data-table-translations-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/data-table-translations-usage/data-table-translations-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -38,11 +33,6 @@ export const dataTableTranslationsNoDataUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'data-table-translations-no-data-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/data-table-translations-no-data-usage/data-table-translations-no-data-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -63,11 +53,6 @@ export const dataTableTranslationsPaginationUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'data-table-translations-pagination-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/data-table-translations-pagination-usage/data-table-translations-pagination-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 

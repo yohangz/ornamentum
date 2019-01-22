@@ -15,11 +15,6 @@ export const translationsNoDataMessageUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'translations-no-data-message-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/translations-no-data-message-usage/translations-no-data-message-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -38,11 +33,6 @@ export const additionalTranslationsUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'additional-translations-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/additional-translations-usage/additional-translations-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -61,11 +51,6 @@ export const translationsFilterPlaceholderUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'translations-filter-placeholder-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/translations-filter-placeholder-usage/translations-filter-placeholder-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -84,11 +69,6 @@ export const translationsSelectPlaceholderUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'translations-select-placeholder-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/translations-select-placeholder-usage/translations-select-placeholder-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -110,11 +90,6 @@ export const translationsSelectedItemWrapPlaceholderUsage: ExampleFile[] = [
     name: 'translations-selected-item-wrap-placeholder-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/translations-selected-item-wrap-placeholder-usage/' +
       'translations-selected-item-wrap-placeholder-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 

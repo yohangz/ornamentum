@@ -15,11 +15,6 @@ export const clientSideDataBindingWithItemsUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'client-side-data-binding-with-items.component.html',
     content: require('!!raw-loader?lang=html!./example/client-side-data-binding-with-items/client-side-data-binding-with-items.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -38,11 +33,6 @@ export const clientSideDataBindingWithDataSourceUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'client-side-data-binding-with-data-source.component.html',
     content: require('!!raw-loader?lang=html!./example/client-side-data-binding-with-data-source/client-side-data-binding-with-data-source.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 

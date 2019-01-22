@@ -15,11 +15,6 @@ export const menuWidthHeightUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'menu-width-height-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/menu-width-height-usage/menu-width-height-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -38,11 +33,6 @@ export const menuHeightUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'menu-height-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/menu-height-usage/menu-height-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -61,11 +51,6 @@ export const menuWidthUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'menu-width-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/menu-width-usage/menu-width-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 

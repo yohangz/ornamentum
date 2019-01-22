@@ -15,11 +15,6 @@ export const singleItemSelectionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'single-item-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/single-item-selection-usage/single-item-selection-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -38,11 +33,6 @@ export const singleToggleItemSelectionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'single-toggle-item-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/single-toggle-item-selection-usage/single-toggle-item-selection-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -61,11 +51,6 @@ export const multiItemSelectionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'multi-item-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/multi-item-selection-usage/multi-item-selection-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -84,11 +69,6 @@ export const itemSelectionWithAllOptionsUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'item-selection-with-all-options-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -110,11 +90,6 @@ export const itemSelectionSetFirstOptionSelectedUsage: ExampleFile[] = [
     name: 'item-selection-set-first-option-selected-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/item-selection-set-first-option-selected-usage/' +
       'item-selection-set-first-option-selected-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -136,11 +111,6 @@ export const itemSelectionShowOptionSelectCheckboxUsage: ExampleFile[] = [
     name: 'item-selection-show-option-select-checkbox-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/item-selection-show-option-select-checkbox-usage/' +
       'item-selection-show-option-select-checkbox-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -161,11 +131,6 @@ export const itemSelectionSelectedOptionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'item-selection-selected-option-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/item-selection-selected-option-usage/' + 'item-selection-selected-option-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -187,11 +152,6 @@ export const itemSelectionSelectedOptionsUsage: ExampleFile[] = [
     name: 'item-selection-selected-options-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/item-selection-selected-options-usage/' +
       'item-selection-selected-options-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -213,11 +173,6 @@ export const itemSelectionShowClearSelectionBtnUsage: ExampleFile[] = [
     name: 'item-selection-show-clear-selection-btn-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/item-selection-show-clear-selection-btn-usage/' +
       'item-selection-show-clear-selection-btn-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -239,11 +194,6 @@ export const itemSelectionShowSelectedOptionRemoveBtnUsage: ExampleFile[] = [
     name: 'item-selection-show-selected-option-remove-btn-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/item-selection-show-selected-option-remove-btn-usage/' +
       'item-selection-show-selected-option-remove-btn-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -265,11 +215,6 @@ export const itemSelectionMultiSelectOptionMaxWidthUsage: ExampleFile[] = [
     name: 'item-selection-multi-select-option-max-width-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/item-selection-multi-select-option-max-width-usage/' +
       'item-selection-multi-select-option-max-width-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -291,11 +236,6 @@ export const itemSelectionWrapDisplaySelectLimitUsage: ExampleFile[] = [
     name: 'item-selection-wrap-display-select-limit-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/item-selection-wrap-display-select-limit-usage/' +
       'item-selection-wrap-display-select-limit-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
