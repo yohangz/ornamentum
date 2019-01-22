@@ -15,11 +15,6 @@ export const tableHeaderDetailsUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'table-header-details-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/table-header-details-usage/table-header-details-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -38,11 +33,6 @@ export const tableHeaderDetailsTitleUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'table-header-details-title-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/table-header-details-title-usage/' + 'table-header-details-title-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -64,11 +54,6 @@ export const tableHeaderDetailsShowRefreshBtnUsage: ExampleFile[] = [
     name: 'table-header-details-show-refresh-btn-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/table-header-details-show-refresh-btn-usage/' +
       'table-header-details-show-refresh-btn-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -90,11 +75,6 @@ export const tableHeaderDetailsShowColumnSelectorUsage: ExampleFile[] = [
     name: 'table-header-details-show-column-selector-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/table-header-details-show-column-selector-usage/' +
       'table-header-details-show-column-selector-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 

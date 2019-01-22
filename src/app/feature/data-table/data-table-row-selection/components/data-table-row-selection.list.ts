@@ -15,11 +15,6 @@ export const rowSelectionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'row-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/row-selection-usage/row-selection-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -38,11 +33,6 @@ export const singleRowSelectionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'single-row-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/single-row-selection-usage/single-row-selection-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -61,11 +51,6 @@ export const singleToggleRowSelectionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'single-toggle-row-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/single-toggle-row-selection-usage/single-toggle-row-selection-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -84,11 +69,6 @@ export const multiRowSelectionUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'multi-row-selection-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/multi-row-selection-usage/multi-row-selection-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -107,11 +87,6 @@ export const selectedRowUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'selected-row-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/selected-row-usage/selected-row-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -130,11 +105,6 @@ export const selectedRowsUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'selected-rows-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/selected-rows-usage/selected-rows-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 

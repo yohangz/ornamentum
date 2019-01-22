@@ -15,11 +15,6 @@ export const rowExpandTemplateUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'row-expand-template-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/row-expand-template-usage/row-expand-template-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -38,11 +33,6 @@ export const rowExpandOnClickUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'row-expand-on-click-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/row-expand-on-click-usage/row-expand-on-click-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
@@ -61,11 +51,6 @@ export const rowExpandLoadingSpinnerUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'row-expand-loading-spinner-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/row-expand-loading-spinner-usage/row-expand-loading-spinner-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 

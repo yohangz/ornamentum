@@ -12,11 +12,6 @@ export const columnSortingUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=typescript!./example/column-sorting-usage/column-sorting-usage.component.ts')
   },
   {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
-  },
-  {
     type: FileType.HTML,
     name: 'column-sorting-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/column-sorting-usage/column-sorting-usage.component.html')
@@ -33,11 +28,6 @@ export const columnSortingUsageWithSortOrder: ExampleFile[] = [
     type: FileType.TS,
     name: 'column-sorting-sort-order-usage.component.ts',
     content: require('!!raw-loader?lang=typescript!./example/column-sorting-sort-order-usage/column-sorting-sort-order-usage.component.ts')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   },
   {
     type: FileType.HTML,
@@ -58,11 +48,6 @@ export const columnSortingUsageWithSortField: ExampleFile[] = [
     content: require('!!raw-loader?lang=typescript!./example/column-sorting-sort-field-usage/column-sorting-sort-field-usage.component.ts')
   },
   {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
-  },
-  {
     type: FileType.HTML,
     name: 'column-sorting-sort-field-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/column-sorting-sort-field-usage/column-sorting-sort-field-usage.component.html')
@@ -81,11 +66,6 @@ export const columnSortingUsageWithMultiColumnSortable: ExampleFile[] = [
     name: 'column-sorting-multi-column-sortable-usage.component.ts',
     content: require('!!raw-loader?lang=typescript!./example/column-sorting-multi-column-sortable-usage/' +
       'column-sorting-multi-column-sortable-usage.component.ts')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   },
   {
     type: FileType.HTML,

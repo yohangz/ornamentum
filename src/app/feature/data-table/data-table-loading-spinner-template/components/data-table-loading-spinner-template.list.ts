@@ -15,11 +15,6 @@ export const loadingSpinnerTemplateUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'loading-spinner-template-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/loading-spinner-template-usage/loading-spinner-template-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 

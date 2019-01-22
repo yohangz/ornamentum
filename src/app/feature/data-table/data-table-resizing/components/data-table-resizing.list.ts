@@ -15,11 +15,6 @@ export const columnResizingUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'column-resizing-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/column-resizing-usage/column-resizing-usage.component.html')
-  },
-  {
-    type: FileType.TS,
-    name: 'sample-data.ts',
-    content: require('!!raw-loader?lang=typescript!../../../../shared/data/sample-data.ts')
   }
 ];
 
