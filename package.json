@@ -42,7 +42,7 @@
     "postversion": "git push && git push --tags",
     "prerelease": "npm run build && cp README.md dist/ornamentum",
     "release": "npm publish dist/ornamentum",
-    "pretty": "prettier --write \"{,!(node_modules|coverage|dist|.idea)/**/}*.{js,ts,html,scss,json,yml,md}\""
+    "pretty": "prettier --write \"{,!(node_modules|coverage|dist|.idea)/**/}*.{js,ts,html,scss,json}\""
   },
   "repository": {
     "type": "git",
