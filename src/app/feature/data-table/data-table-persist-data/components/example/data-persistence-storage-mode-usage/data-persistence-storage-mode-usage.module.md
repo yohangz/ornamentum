@@ -8,7 +8,10 @@ import { DataPersistenceStorageModeUsageComponent } from './data-persistence-usa
 @NgModule({
  bootstrap: [DataPersistenceStorageModeUsageComponent],
  declarations: [DataPersistenceStorageModeUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class DataPersistenceUsageWithStorageModeModule {
 }

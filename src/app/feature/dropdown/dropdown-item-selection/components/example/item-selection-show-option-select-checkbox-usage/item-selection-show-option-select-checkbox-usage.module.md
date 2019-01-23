@@ -8,7 +8,10 @@ import { ItemSelectionShowOptionSelectCheckboxUsageComponent } from './item-sele
 @NgModule({
  bootstrap: [ItemSelectionShowOptionSelectCheckboxUsageComponent],
  declarations: [ItemSelectionShowOptionSelectCheckboxUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class ItemSelectionShowOptionSelectCheckboxUsageModule {
 }

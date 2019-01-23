@@ -8,7 +8,10 @@ import { RealTimeDataBindingComponent } from './real-time-data-binding.component
 @NgModule({
  bootstrap: [RealTimeDataBindingComponent],
  declarations: [RealTimeDataBindingComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class RealTimeDataBindingModule {
 }

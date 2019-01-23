@@ -25,11 +25,11 @@
     the native loading functionality.
   </p>
 
-  <pre class="prettyprint lang-html">{{ demoSnippet.template }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.template"></app-code-snippet>
 
   <p>Or else you can provide your own custom templates with any custom styles as you preferred within the ng-template scope.</p>
 
-  <pre class="prettyprint lang-html">{{ demoSnippet.stylishTemplate }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.stylishTemplate"></app-code-snippet>
 
   <!--<p>Loading spinner property can be override in module level. for more details about Module level property overriding-->
   <!--please refer <a rel="noopener" target="_blank" href="#">Module Level Property Override</a> section.</p>-->

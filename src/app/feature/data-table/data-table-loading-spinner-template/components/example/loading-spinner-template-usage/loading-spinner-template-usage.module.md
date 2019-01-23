@@ -8,7 +8,10 @@ import { LoadingSpinnerTemplateUsageComponent } from './loading-spinner-template
 @NgModule({
  bootstrap: [LoadingSpinnerTemlateUsageComponent],
  declarations: [LoadingSpinnerTemplateUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class LoadingSpinnerTemplateUsageModule {
 }

@@ -8,7 +8,10 @@ import { ResponsiveConfAllUsageComponent } from './responsive-conf-all-usage.com
 @NgModule({
  bootstrap: [ResponsiveConfAllUsageComponent],
  declarations: [ResponsiveConfAllUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class ResponsiveConfAllUsageModule {
 }

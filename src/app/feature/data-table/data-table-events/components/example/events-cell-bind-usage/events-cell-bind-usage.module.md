@@ -8,7 +8,10 @@ import { EventsCellBindUsageComponent } from './events-cell-bind-usage.component
 @NgModule({
  bootstrap: [EventsCellBindUsageComponent],
  declarations: [EventsCellBindUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class EventsCellBindUsageModule {
 }

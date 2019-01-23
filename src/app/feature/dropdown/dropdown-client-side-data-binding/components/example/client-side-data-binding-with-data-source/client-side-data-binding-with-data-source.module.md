@@ -8,7 +8,10 @@ import { ClientSideDataBindingWithDataSourceComponent } from './client-side-data
 @NgModule({
  bootstrap: [ClientSideDataBindingWithDataSourceComponent],
  declarations: [ClientSideDataBindingWithDataSourceComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class ClientSideDataBindingWithDataSourceModule {
 }

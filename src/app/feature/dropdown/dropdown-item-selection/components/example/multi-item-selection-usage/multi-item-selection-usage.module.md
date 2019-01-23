@@ -8,7 +8,10 @@ import { MultiItemSelectionUsageComponent } from './multi-item-selection-usage.c
 @NgModule({
  bootstrap: [MultiItemSelectionUsageComponent],
  declarations: [MultiItemSelectionUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class MultiItemSelectionUsageModule {
 }

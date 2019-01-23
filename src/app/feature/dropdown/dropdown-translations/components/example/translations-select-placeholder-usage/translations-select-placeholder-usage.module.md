@@ -8,7 +8,10 @@ import { TranslationsSelectPlaceholderUsageComponent } from './translations-sele
 @NgModule({
  bootstrap: [TranslationsSelectPlaceholderUsageComponent],
  declarations: [TranslationsSelectPlaceholderUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class TranslationsSelectPlaceholderUsageModule {
 }

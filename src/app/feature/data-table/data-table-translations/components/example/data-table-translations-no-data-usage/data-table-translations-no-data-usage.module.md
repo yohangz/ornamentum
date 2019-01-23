@@ -8,7 +8,10 @@ import { DataTableTranslationsNoDataUsageComponent } from './data-table-translat
 @NgModule({
  bootstrap: [DataTableTranslationsNoDataUsageComponent],
  declarations: [DataTableTranslationsNoDataUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class DataTableTranslationsNoDataUsageModule {
 }

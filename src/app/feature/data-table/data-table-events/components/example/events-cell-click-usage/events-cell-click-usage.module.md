@@ -8,7 +8,10 @@ import { EventsCellClickUsageComponent } from './events-cell-click-usage.compone
 @NgModule({
  bootstrap: [EventsCellClickUsageComponent],
  declarations: [EventsCellClickUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class EventsCellClickUsageModule {
 }

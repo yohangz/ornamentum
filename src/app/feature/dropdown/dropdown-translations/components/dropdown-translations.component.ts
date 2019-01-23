@@ -9,12 +9,16 @@ import {
   demoSnippet
 } from './dropdown-translations.list';
 
+import { FileType } from 'helper-models';
+
 @Component({
   selector: 'app-dropdown-translations-component',
   templateUrl: './dropdown-translations.component.html',
   styleUrls: ['./dropdown-translations.component.scss']
 })
 export class DropdownTranslationsComponent {
+  public FileType = FileType;
+
   public translationsNoDataMessageUsage = translationsNoDataMessageUsage;
   public additionalTranslationsUsage = additionalTranslationsUsage;
   public translationsFilterPlaceholderUsage = translationsFilterPlaceholderUsage;

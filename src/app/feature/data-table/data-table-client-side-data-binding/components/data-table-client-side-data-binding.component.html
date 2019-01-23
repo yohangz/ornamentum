@@ -27,7 +27,7 @@
 
   <p>Client side data binding can be configured by using the two ways mentioned in the below.</p>
 
-  <pre class="prettyprint lang-html">{{ demoSnippet.items }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items">{{ demoSnippet.items }}</app-code-snippet>
 
   <p>
     The complete set of code segments for the data binding via <code>items</code> property can be seen in the example shown in the
@@ -36,7 +36,7 @@
 
   <p>or</p>
 
-  <pre class="prettyprint lang-html">{{ demoSnippet.dataSource }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
   <p>Refer following example to see actual usage of the <code>dataSource</code> property in the client side data binding.</p>
 

@@ -8,7 +8,10 @@ import { ItemSelectionSelectedOptionUsageComponent } from './item-selection-sele
 @NgModule({
  bootstrap: [ItemSelectionSelectedOptionUsageComponent],
  declarations: [ItemSelectionSelectedOptionUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class ItemSelectionSelectedOptionUsageModule {
 }

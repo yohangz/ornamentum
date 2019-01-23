@@ -8,7 +8,10 @@ import { TableHeaderDetailsUsageComponent } from './table-header-details-usage.c
 @NgModule({
  bootstrap: [TableHeaderDetailsUsageComponent],
  declarations: [TableHeaderDetailsUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class TableHeaderDetailsUsageModule {
 }

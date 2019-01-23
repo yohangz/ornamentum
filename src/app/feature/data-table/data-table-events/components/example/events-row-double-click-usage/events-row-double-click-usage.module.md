@@ -8,7 +8,10 @@ import { EventsRowDoubleClickUsageComponent } from './events-row-double-click-us
 @NgModule({
  bootstrap: [EventsRowDoubleClickUsageComponent],
  declarations: [EventsRowDoubleClickUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class EventsRowDoubleClickUsageModule {
 }

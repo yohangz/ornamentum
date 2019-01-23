@@ -8,7 +8,10 @@ import { FilterDropdownUsageComponent } from './filtering-usage.component';
 @NgModule({
  bootstrap: [FilteringUsageComponent],
  declarations: [FilteringUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+   ]
 })
 export class FilteringUsageModule {
 }

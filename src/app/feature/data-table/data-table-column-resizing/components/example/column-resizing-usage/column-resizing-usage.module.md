@@ -8,7 +8,10 @@ import { ColumnResizingUsageComponent } from './column-resizing-usage.component'
 @NgModule({
  bootstrap: [ColumnResizingUsageComponent],
  declarations: [ColumnResizingUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class ColumnResizingUsageModule {
 }

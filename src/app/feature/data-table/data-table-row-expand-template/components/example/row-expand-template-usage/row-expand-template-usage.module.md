@@ -8,7 +8,10 @@ import { RowExpandTemplateUsageComponent } from './row-expand-template-usage.com
 @NgModule({
  bootstrap: [RowExpandTemplateUsageComponent],
  declarations: [RowExpandTemplateUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class RowExpandTemplateUsageModule {
 }

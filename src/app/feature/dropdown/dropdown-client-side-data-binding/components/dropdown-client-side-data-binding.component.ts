@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 
-import { clientSideDataBindingWithDataSourceUsage, clientSideDataBindingWithItemsUsage, demoSnippet } from './dropdown-client-side-data-binding.list';
+import {
+  clientSideDataBindingWithDataSourceUsage,
+  clientSideDataBindingWithItemsUsage,
+  demoSnippet
+} from './dropdown-client-side-data-binding.list';
+
+import { FileType } from 'helper-models';
 
 @Component({
   selector: 'app-dropdown-client-side-data-binding-component',
@@ -8,6 +14,8 @@ import { clientSideDataBindingWithDataSourceUsage, clientSideDataBindingWithItem
   styleUrls: ['./dropdown-client-side-data-binding.component.scss']
 })
 export class DropdownClientSideDataBindingComponent {
+  public FileType = FileType;
+
   public clientSideDataBindingWithItemsUsage = clientSideDataBindingWithItemsUsage;
   public clientSideDataBindingWithDataSourceUsage = clientSideDataBindingWithDataSourceUsage;
   public demoSnippet = demoSnippet;

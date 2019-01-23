@@ -8,7 +8,10 @@ import { MenuWidthUsageComponent } from './menu-width-usage.component';
 @NgModule({
  bootstrap: [MenuWidthUsageComponent],
  declarations: [MenuWidthUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class MenuWidthUsageModule {
 }

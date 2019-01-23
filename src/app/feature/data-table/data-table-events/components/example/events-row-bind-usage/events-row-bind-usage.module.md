@@ -8,7 +8,10 @@ import { EventsRowBindUsageComponent } from './events-row-bind-usage.component';
 @NgModule({
  bootstrap: [EventsRowBindUsageComponent],
  declarations: [EventsRowBindUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class EventsRowBindUsageModule {
 }

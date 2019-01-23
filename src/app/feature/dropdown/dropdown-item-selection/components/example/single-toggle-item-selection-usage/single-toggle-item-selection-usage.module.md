@@ -8,7 +8,10 @@ import { SingleToggleItemSelectionUsageComponent } from './single-toggle-item-se
 @NgModule({
  bootstrap: [SingleToggleItemSelectionUsageComponent],
  declarations: [SingleToggleItemSelectionUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class SingleToggleItemSelectionUsageModule {
 }

@@ -8,7 +8,10 @@ import { DataLimitUsageComponent } from './data-limit-usage.component';
 @NgModule({
  bootstrap: [DataLimitUsageComponent],
  declarations: [DataLimitUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class DataLimitUsageModule {
 }

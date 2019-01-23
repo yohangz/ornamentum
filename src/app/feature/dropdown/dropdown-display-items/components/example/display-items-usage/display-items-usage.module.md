@@ -8,7 +8,10 @@ import { DisplayItemsUsageComponent } from './display-items-usage.component';
 @NgModule({
  bootstrap: [DisplayItemsUsageComponent],
  declarations: [DisplayItemsUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class DisplayItemsUsageModule {
 }

@@ -8,7 +8,10 @@ import { EventsHeaderClickUsageComponent } from './events-header-click-usage.com
 @NgModule({
  bootstrap: [EventsHeaderClickUsageComponent],
  declarations: [EventsHeaderClickUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class EventsHeaderClickUsageModule {
 }

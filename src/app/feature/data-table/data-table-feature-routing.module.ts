@@ -194,7 +194,7 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-resizing/data-table-resizing.module#DataTableResizingModule',
+    loadChildren: './data-table-column-resizing/data-table-column-resizing.module#DataTableColumnResizingModule',
     path: 'column/resizing',
     canActivate: [SeoGuard],
     data: {

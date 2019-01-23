@@ -8,7 +8,10 @@ import { MenuPositionUsageComponent } from './menu-position-usage.component';
 @NgModule({
  bootstrap: [MenuPositionUsageComponent],
  declarations: [MenuPositionUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class MenuPositionUsageModule {
 }

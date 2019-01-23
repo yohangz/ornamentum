@@ -8,7 +8,10 @@ import { ItemSelectionWithAllOptionsUsageComponent } from './item-selection-with
 @NgModule({
  bootstrap: [ItemSelectionWithAllOptionsUsageComponent],
  declarations: [ItemSelectionWithAllOptionsUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class ItemSelectionWithAllOptionsUsageModule {
 }

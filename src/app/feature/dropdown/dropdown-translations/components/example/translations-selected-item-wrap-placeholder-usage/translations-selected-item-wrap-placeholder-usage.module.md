@@ -8,7 +8,10 @@ import { TranslationsSelectedItemWrapPlaceholderUsageComponent } from './transla
 @NgModule({
  bootstrap: [TranslationsSelectedItemWrapPlaceholderUsageComponent],
  declarations: [TranslationsSelectedItemWrapPlaceholderUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class TranslationsSelectedItemWrapPlaceholderUsageModule {
 }

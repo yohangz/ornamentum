@@ -8,7 +8,10 @@ import { EventsSelectChangeUsageComponent } from './events-select-change-usage.c
 @NgModule({
  bootstrap: [EventsSelectChangeUsageComponent],
  declarations: [EventsSelectChangeUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class EventsSelectChangeUsageModule {
 }

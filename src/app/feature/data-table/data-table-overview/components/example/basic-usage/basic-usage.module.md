@@ -1,16 +1,17 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { DropdownModule } from 'ornamentum';
+import { DataTableModule } from 'ornamentum';
 
 import { BasicUsageComponent } from './basic-usage.component';
 
+// Basic usage example module.
 @NgModule({
   bootstrap: [BasicUsageComponent],
   declarations: [BasicUsageComponent],
   imports: [
     BrowserModule,
-    DropdownModule.forRoot() // Import dropdown module with root configuration.
+    DataTableModule.forRoot() // Import data table module with root configuration.
   ]
 })
 export class BasicUsageModule {

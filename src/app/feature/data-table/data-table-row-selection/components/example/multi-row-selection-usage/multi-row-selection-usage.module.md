@@ -8,7 +8,10 @@ import { MultiRowSelectionUsageComponent } from './multi-row-selection-usage.com
 @NgModule({
  bootstrap: [MultiRowSelectionUsageComponent],
  declarations: [MultiRowSelectionUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class MultiRowSelectionUsageModule {
 }

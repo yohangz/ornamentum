@@ -8,7 +8,10 @@ import { EventsRowSelectChangeUsageComponent } from './events-row-select-change-
 @NgModule({
  bootstrap: [EventsRowSelectChangeUsageComponent],
  declarations: [EventsRowSelectChangeUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class EventsRowSelectChangeUsageModule {
 }

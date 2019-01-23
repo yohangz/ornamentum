@@ -8,7 +8,10 @@ import { PaginationPageUsageComponent } from './pagination-page-usage.component'
 @NgModule({
  bootstrap: [PaginationLimitUsageComponent],
  declarations: [PaginationLimitUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class PaginationLimitUsageModule {
 }

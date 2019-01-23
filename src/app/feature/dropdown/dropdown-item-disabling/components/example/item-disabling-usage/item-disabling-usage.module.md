@@ -8,7 +8,10 @@ import { ItemDisablingUsageComponent } from './item-disabling-usage.component';
 @NgModule({
  bootstrap: [ItemDisablingUsageComponent],
  declarations: [ItemDisablingUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class ItemDisablingUsageModule {
 }

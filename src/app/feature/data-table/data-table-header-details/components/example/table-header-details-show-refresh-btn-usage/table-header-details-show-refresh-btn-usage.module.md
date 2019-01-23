@@ -8,7 +8,10 @@ import { TableHeaderDetailsShowRefreshBtnUsageComponent } from './table-header-d
 @NgModule({
   bootstrap: [TableHeaderDetailsShowRefreshBtnUsageComponent],
   declarations: [TableHeaderDetailsShowRefreshBtnUsageComponent],
-  imports: [BrowserModule, DataTableModule.forRoot()]
+  imports: [
+      BrowserModule, 
+      DataTableModule.forRoot()
+    ]
 })
 export class TableHeaderDetailsShowRefreshBtnUsageModule {
 }

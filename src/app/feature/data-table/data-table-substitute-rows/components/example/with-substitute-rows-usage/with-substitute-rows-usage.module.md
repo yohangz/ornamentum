@@ -8,7 +8,10 @@ import { WithSubstituteRowsUsageComponent } from './with-substitute-rows-usage.c
 @NgModule({
  bootstrap: [WithSubstituteRowsUsageComponent],
  declarations: [WithSubstituteRowsUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+   ]
 })
 export class WithSubstituteRowsUsageModule {
 }

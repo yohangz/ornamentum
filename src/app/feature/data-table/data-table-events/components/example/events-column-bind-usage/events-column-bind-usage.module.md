@@ -8,7 +8,10 @@ import { EventsColumnBindUsageComponent } from './events-column-bind-usage.compo
 @NgModule({
  bootstrap: [EventsColumnBindUsageComponent],
  declarations: [EventsColumnBindUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class EventsColumnBindUsageModule {
 }

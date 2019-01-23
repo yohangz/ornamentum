@@ -8,7 +8,10 @@ import { ColumnSortingSortFieldUsageComponent } from './column-sorting-sort-fiel
 @NgModule({
   bootstrap: [ColumnSortingSortFieldUsageComponent],
   declarations: [ColumnSortingSortFieldUsageComponent],
-  imports: [BrowserModule, DataTableModule.forRoot()]
+  imports: [
+      BrowserModule, 
+      DataTableModule.forRoot()
+    ]
 })
 export class ColumnSortingSortFieldUsageModule {
 }

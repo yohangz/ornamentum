@@ -8,7 +8,10 @@ import { TranslationsNoDataMessageUsageComponent } from './translations-no-data-
 @NgModule({
  bootstrap: [TranslationsNoDataMessageUsageComponent],
  declarations: [TranslationsNoDataMessageUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class TranslationsNoDataMessageUsageModule {
 }

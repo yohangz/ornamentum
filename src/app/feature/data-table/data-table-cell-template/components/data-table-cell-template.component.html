@@ -10,13 +10,13 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>Initially You set your own Cell Template as follows.</p>
-  <pre class="prettyprint lang-html">{{ demoSnippet.base_template }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.base_template"></app-code-snippet>
 
   <p>
     Once the template is done, You can apply it to one or more columns In the above data table, the following template is applied to values in
     <b>Retailer Type</b> column.
   </p>
-  <pre class="prettyprint lang-html">{{ demoSnippet.cell_template }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.cell_template"></app-code-snippet>
 
   <p>Use following files to see the relevant code segments for above data table example.</p>
 
@@ -27,25 +27,25 @@
   <code>column: DataTableColumnComponent</code>
 
   <p>This property can be accessed as follows and Data table column component contains all column properties that required.</p>
-  <pre class="prettyprint lang-html">{{ demoSnippet.column_property_template }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.column_property_template"></app-code-snippet>
 
   <h4 id="row">Row</h4>
   <code>row: DataTableRow</code>
 
   <p>This property can be accessed as follows.</p>
-  <pre class="prettyprint lang-html">{{ demoSnippet.row_property_template }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.row_property_template"></app-code-snippet>
 
   <h4 id="spanIndex">Row Span Index</h4>
   <code>spanIndex: number</code>
   <br />
   <p>This property can be accessed as follows. and represents row span index value.</p>
-  <pre class="prettyprint lang-html">{{ demoSnippet.span_index_property_template }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.span_index_property_template"></app-code-snippet>
 
   <h4 id="rowSpan">Row Span Count</h4>
   <code>rowSpan: number</code>
   <br />
   <p>This property can be accessed as follows.</p>
-  <pre class="prettyprint lang-html">{{ demoSnippet.row_span_property_template }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.row_span_property_template"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Cell Template</a>

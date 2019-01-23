@@ -8,7 +8,10 @@ import { NoRecordsTemplateUsageComponent } from './no-records-template-usage.com
 @NgModule({
  bootstrap: [NoRecordsTemplateUsageComponent],
  declarations: [NoRecordsTemplateUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class NoRecordsTemplateUsageModule {
 }

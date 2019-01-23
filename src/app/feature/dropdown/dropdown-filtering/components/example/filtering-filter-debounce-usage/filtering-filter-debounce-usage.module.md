@@ -8,7 +8,10 @@ import { FilteringFilterDebounceUsageComponent } from './filtering-filter-deboun
 @NgModule({
  bootstrap: [FilteringFilterDebounceUsageComponent],
  declarations: [FilteringFilterDebounceUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class FilteringFilterDebounceUsageModule {
 }

@@ -24,51 +24,57 @@
   <ol class="main-pane-list">
     <li>
       <p>Download & Install the Ornamentum package and its dependencies using the following command.</p>
-      <pre class="prettyprint lang-html">{{ demoSnippet.npm }}</pre>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npm" [showLineNumbers]="false"></app-code-snippet>
       <p>or</p>
-      <pre class="prettyprint lang-html">{{ demoSnippet.yarn }}</pre>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarn" [showLineNumbers]="false"></app-code-snippet>
     </li>
     <li>
       <p>Once the installation is successful, add the Ornamentum Dropdown component to your application Root Module as depicted below.</p>
-      <pre class="prettyprint linenums lang-js">{{ demoSnippet.moduleImport }}</pre>
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.moduleImport"></app-code-snippet>
     </li>
     <li>
       <p>Add style sheet library references to your dev dependencies using either of following command depending on your package manager.</p>
-      <pre class="prettyprint lang-html">{{ demoSnippet.npmCompassImport }}</pre>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport" [showLineNumbers]="false"></app-code-snippet>
       <p>or</p>
-      <pre class="prettyprint lang-html">{{ demoSnippet.yarnCompassImport }}</pre>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport" [showLineNumbers]="false"></app-code-snippet>
     </li>
     <li>
       <p>
         Import the Ornamentum theme style sheet reference to apply theming of your preference. Refer
         <a [routerLink]="['/feature/dropdown/styling-and-themes']">Styles & Theming</a> section for more details.
       </p>
-      <p>
-        <b>CSS</b>: Include Ornamentum prebuilt CSS theme style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
-      </p>
-      <pre class="prettyprint linenums lang-json">{{ demoSnippet.cssImport }}</pre>
-      <p>
-        <b>SCSS</b>: Include Ornamentum theme SCSS style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
-      </p>
-      <pre class="prettyprint linenums lang-json">{{ demoSnippet.scssImport }}</pre>
-      <p>
-        Add style sheet library references to your dev dependencies if you selected style pre processor as
-        <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> using either of following command depending on your package manager.
-      </p>
-      <pre class="prettyprint lang-html">{{ demoSnippet.npmCompassImport }}</pre>
-      <p>or</p>
-      <pre class="prettyprint lang-html">{{ demoSnippet.yarnCompassImport }}</pre>
+      <ul class="main-pane-list">
+        <li>
+          <p>
+            <b>CSS</b>: Include Ornamentum prebuilt CSS theme style sheets in
+            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+          </p>
+          <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.cssImport"></app-code-snippet>
+        </li>
+        <li>
+          <p>
+            <b>SCSS</b>: Include Ornamentum theme SCSS style sheets in
+            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+          </p>
+          <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
+        </li>
+        <p>
+          Install <a rel="noopener" target="_blank" href="http://compass-style.org/">compass</a> mixins via using either of following command
+          depending on your package manager.
+        </p>
+        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport" [showLineNumbers]="false"></app-code-snippet>
+        <p>or</p>
+        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport" [showLineNumbers]="false"></app-code-snippet>
+      </ul>
     </li>
     <li>
       <p>Finally, use Ornamentum dropdown component.</p>
 
-      <p>Example usage component markup file</p>
-      <pre class="prettyprint linenums lang-html">{{ demoSnippet.componentMarkup }}</pre>
+      <b>Example usage component markup file</b>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.componentMarkup"></app-code-snippet>
 
-      <p>Example usage component controller class</p>
-      <pre class="prettyprint linenums lang-js">{{ demoSnippet.componentController }}</pre>
+      <b>Example usage component controller class</b>
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.componentController"></app-code-snippet>
     </li>
   </ol>
 

@@ -8,7 +8,10 @@ import { DataTableTranslationsPaginationUsageComponent } from './data-table-tran
 @NgModule({
  bootstrap: [DataTableTranslationsPaginationUsageComponent],
  declarations: [DataTableTranslationsPaginationUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class DataTableTranslationsPaginationUsageModule {
 }

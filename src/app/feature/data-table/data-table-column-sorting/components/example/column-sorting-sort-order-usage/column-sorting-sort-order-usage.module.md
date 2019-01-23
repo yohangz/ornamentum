@@ -8,7 +8,10 @@ import { ColumnSortingSortOrderUsageComponent } from './pagination-page-usage.co
 @NgModule({
  bootstrap: [ColumnSortingSortOrderUsageComponent],
  declarations: [ColumnSortingSortOrderUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule,
+    DataTableModule.forRoot()
+  ]
 })
 export class ColumnSortingSortOrderUsageModule {
 }

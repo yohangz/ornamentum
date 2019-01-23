@@ -8,7 +8,10 @@ import { SingleRowSelectionUsageComponent } from './single-row-selection-usage.c
 @NgModule({
  bootstrap: [SingleRowSelectionUsageComponent],
  declarations: [SingleRowSelectionUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class SingleRowSelectionUsageModule {
 }
