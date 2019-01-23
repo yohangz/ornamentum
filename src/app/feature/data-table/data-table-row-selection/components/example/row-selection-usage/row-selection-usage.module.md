@@ -8,7 +8,10 @@ import { RowSelectionUsageComponent } from './row-selection-usage.component';
 @NgModule({
  bootstrap: [RowSelectionUsageComponent],
  declarations: [RowSelectionUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class RowSelectionUsageModule {
 }

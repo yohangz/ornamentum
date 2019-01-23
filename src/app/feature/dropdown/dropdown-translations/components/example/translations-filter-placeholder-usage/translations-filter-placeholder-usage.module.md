@@ -8,7 +8,10 @@ import { TranslationsFilterPlaceholderUsageComponent } from './translations-filt
 @NgModule({
  bootstrap: [TranslationsFilterPlaceholderUsageComponent],
  declarations: [TranslationsFilterPlaceholderUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class TranslationsFilterPlaceholderUsageModule {
 }

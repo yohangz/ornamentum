@@ -8,7 +8,10 @@ import { ItemSelectionWrapDisplaySelectLimitUsageComponent } from './item-select
 @NgModule({
  bootstrap: [ItemSelectionWrapDisplaySelectLimitUsageComponent],
  declarations: [ItemSelectionWrapDisplaySelectLimitUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class ItemSelectionWrapDisplaySelectLimitUsageModule {
 }

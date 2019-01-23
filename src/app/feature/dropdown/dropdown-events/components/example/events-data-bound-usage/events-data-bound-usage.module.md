@@ -8,7 +8,10 @@ import { EventsDataBoundUsageComponent } from './events-data-bound-usage.compone
 @NgModule({
  bootstrap: [EventsDataBoundUsageComponent],
  declarations: [EventsDataBoundUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class EventsDataBoundUsageModule {
 }

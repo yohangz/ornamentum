@@ -8,7 +8,10 @@ import { PaginationUsageComponent } from './pagination-usage.component';
 @NgModule({
  bootstrap: [PaginationUsageComponent],
  declarations: [PaginationUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class PaginationUsageModule {
 }

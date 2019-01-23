@@ -8,7 +8,10 @@ import { AdditionalTranslationsUsageComponent } from './additional-translations-
 @NgModule({
  bootstrap: [AdditionalTranslationsUsageComponent],
  declarations: [AdditionalTranslationsUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class AdditionalTranslationsUsageModule {
 }

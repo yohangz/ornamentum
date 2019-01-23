@@ -8,7 +8,10 @@ import { ResponsiveConfWithoutWidthHeightUsageComponent } from './responsive-con
 @NgModule({
  bootstrap: [ResponsiveConfWithoutWidthHeightUsageComponent],
  declarations: [ResponsiveConfWithoutWidthHeightUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class ResponsiveConfWithoutWidthHeightUsageModule {
 }

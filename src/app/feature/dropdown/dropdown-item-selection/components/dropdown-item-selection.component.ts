@@ -16,12 +16,16 @@ import {
   demoSnippet
 } from './dropdown-item-selection.list';
 
+import { FileType } from 'helper-models';
+
 @Component({
   selector: 'app-dropdown-item-selection-component',
   templateUrl: './dropdown-item-selection.component.html',
   styleUrls: ['./dropdown-item-selection.component.scss']
 })
 export class DropdownItemSelectionComponent {
+  public FileType = FileType;
+
   public singleItemSelectionUsage = singleItemSelectionUsage;
   public singleToggleItemSelectionUsage = singleToggleItemSelectionUsage;
   public multiItemSelectionUsage = multiItemSelectionUsage;

@@ -8,7 +8,10 @@ import { ItemGroupingUsageComponent } from './item-grouping-usage.component';
 @NgModule({
  bootstrap: [ItemGroupingUsageComponent],
  declarations: [ItemGroupingUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class ItemGroupingUsageModule {
 }

@@ -8,7 +8,10 @@ import { SingleToggleRowSelectionUsageComponent } from './single-toggle-row-sele
 @NgModule({
  bootstrap: [SingleToggleRowSelectionUsageComponent],
  declarations: [SingleToggleRowSelectionUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class SingleToggleRowSelectionUsageModule {
 }

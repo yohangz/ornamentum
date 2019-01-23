@@ -24,13 +24,13 @@
     any object collecting of observable. bind a available specific data source into <code>dataSource</code> property.
   </p>
 
-  <pre class="prettyprint lang-html">{{ demoSnippet.dataSource }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
   <p>
     Following code snippet will be represent the implementation of the <code>fetchDataFromServer</code> method that used to call the example data api.
   </p>
 
-  <pre class="prettyprint lang-js">{{ demoSnippet.dataFetchMethod }}</pre>
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataFetchMethod"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/client-side-data-binding']">Client-side Data Binding</a><br />

@@ -8,7 +8,10 @@ import { RowGroupingUsageComponent } from './row-grouping-usage.component';
 @NgModule({
  bootstrap: [RowGroupingUsageComponent],
  declarations: [RowGroupingUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class RowGroupingUsageModule {
 }

@@ -8,7 +8,10 @@ import { ClientSideDataBindingWithDataSourceComponent } from './client-side-data
 @NgModule({
  bootstrap: [ClientSideDataBindingWithDataSourceComponent],
  declarations: [ClientSideDataBindingWithDataSourceComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class ClientSideDataBindingWithDataSourceModule {
 }

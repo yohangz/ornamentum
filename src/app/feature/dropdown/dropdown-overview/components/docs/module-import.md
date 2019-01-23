@@ -11,10 +11,11 @@ import { AppComponent } from './app.component';
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [AppComponent],
+  // Refer https://angular.io/guide/frequent-ngmodules about module usages.
   imports: [
-    BrowserModule,
-    CommonModule,
-    FormsModule,
+    BrowserModule, // Optional module
+    CommonModule, // Optional module
+    FormsModule, // Optional module
     DropdownModule.forRoot() // Import dropdown module with root configuration.
   ]
 })

@@ -8,7 +8,10 @@ import { FilteringFilterDebounceTimeUsageComponent } from './filtering-filter-de
 @NgModule({
  bootstrap: [FilteringFilterDebounceTimeUsageComponent],
  declarations: [FilteringFilterDebounceTimeUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class FilteringFilterDebounceTimeUsageModule {
 }

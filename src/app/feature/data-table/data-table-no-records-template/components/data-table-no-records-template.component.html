@@ -30,11 +30,11 @@
     going to define a template to show when no data is retrieved on data fetch call.
   </p>
 
-  <pre class="prettyprint lang-html">{{ demoSnippet.template }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.template"></app-code-snippet>
 
   <p>Or else you can provide your own custom templates with any custom styles as you preferred within the ng-template scope.</p>
 
-  <pre class="prettyprint lang-html">{{ demoSnippet.stylishTemplate }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.stylishTemplate"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/templates/loading-spinner-template']">Loading Spinner Template</a><br />

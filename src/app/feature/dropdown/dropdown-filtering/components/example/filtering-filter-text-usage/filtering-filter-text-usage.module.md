@@ -8,7 +8,10 @@ import { FilteringFilterTextUsageComponent } from './filtering-filter-text-usage
 @NgModule({
  bootstrap: [FilteringFilterTextUsageComponent],
  declarations: [FilteringFilterTextUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class FilteringFilterTextUsageModule {
 }

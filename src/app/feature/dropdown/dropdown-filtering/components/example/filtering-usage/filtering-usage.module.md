@@ -8,7 +8,10 @@ import { FilteringUsageComponent } from './filtering-usage.component';
 @NgModule({
  bootstrap: [FilteringUsageComponent],
  declarations: [FilteringUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class FilteringUsageModule {
 }

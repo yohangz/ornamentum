@@ -8,7 +8,10 @@ import { EventsInitUsageComponent } from './events-init-usage.component';
 @NgModule({
  bootstrap: [EventsInitUsageComponent],
  declarations: [EventsInitUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class EventsInitUsageModule {
 }

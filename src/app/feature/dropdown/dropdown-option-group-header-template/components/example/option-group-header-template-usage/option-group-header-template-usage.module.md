@@ -8,7 +8,10 @@ import { OptionGroupHeaderTemplateUsageComponent } from './option-group-header-t
 @NgModule({
  bootstrap: [OptionGroupHeaderTemplateUsageComponent],
  declarations: [OptionGroupHeaderTemplateUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class OptionGroupHeaderTemplateUsageModule {
 }

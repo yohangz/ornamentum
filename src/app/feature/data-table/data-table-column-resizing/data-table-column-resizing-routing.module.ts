@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DataTableResizingComponent } from './index';
+import { DataTableColumnResizingComponent } from './index';
 
 /**
  * Represent data table resizable routes.
  */
 const dataTableResizingRoutes: Routes = [
   {
-    component: DataTableResizingComponent,
+    component: DataTableColumnResizingComponent,
     path: ''
   }
 ];
@@ -20,4 +20,4 @@ const dataTableResizingRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableResizingRoutes)]
 })
-export class DataTableResizingRoutingModule {}
+export class DataTableColumnResizingRoutingModule {}

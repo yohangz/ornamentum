@@ -8,7 +8,10 @@ import { EventsTriggerSelectChangeOnModelUpdateUsageComponent } from './events-t
 @NgModule({
  bootstrap: [EventsTriggerSelectChangeOnModelUpdateUsageComponent],
  declarations: [EventsTriggerSelectChangeOnModelUpdateUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class EventsTriggerSelectChangeOnModelUpdateUsageModule {
 }

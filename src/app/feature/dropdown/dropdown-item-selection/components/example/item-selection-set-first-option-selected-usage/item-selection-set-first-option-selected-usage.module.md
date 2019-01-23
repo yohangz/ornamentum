@@ -8,7 +8,10 @@ import { ItemSelectionSetFirstOptionSelectedUsageComponent } from './item-select
 @NgModule({
  bootstrap: [ItemSelectionSetFirstOptionSelectedUsageComponent],
  declarations: [ItemSelectionSetFirstOptionSelectedUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class ItemSelectionSetFirstOptionSelectedUsageModule {
 }

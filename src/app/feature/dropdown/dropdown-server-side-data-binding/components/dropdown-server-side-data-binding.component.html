@@ -1,5 +1,5 @@
 <div class="feature-container">
-  <h1>Server-side Dropdown Data Binding</h1>
+  <h1>Server-side Data Binding</h1>
 
   <p>Server side data binding allow users to bind a larger data stream which is available in the server side.</p>
 
@@ -37,14 +37,14 @@
     earlier.
   </p>
 
-  <pre class="prettyprint lang-html">{{ demoSnippet.serverSideDataBinding }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBinding"></app-code-snippet>
 
   <p>
     Following code snippet will be represent the implementation of the <code>fetchDataOnBindForDropdown</code> method that used inside the
     <b>server-side-data-binding.component.ts</b> file to bind dynamic data stream.
   </p>
 
-  <pre class="prettyprint lang-js">{{ demoSnippet.dataFetchMethod }}</pre>
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataFetchMethod"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#dataSource">API Doc for Server Side Data Binding</a>

@@ -21,11 +21,11 @@
   </p>
 
   <p>You can provide your own template as follows.</p>
-  <pre class="prettyprint lang-html">{{ demoSnippet.base_template }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.base_template"></app-code-snippet>
 
   <p>In the above data table, the following template is applied for all expandable rows.</p>
 
-  <pre class="prettyprint lang-html">{{ demoSnippet.expand_template }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.expand_template"></app-code-snippet>
 
   <p>Use following files to see the relevant code segments for above data table example.</p>
 
@@ -60,7 +60,7 @@
 
   <p>In the above data table, the following template is applied for all expandable rows to see the loading spinner behaviour.</p>
 
-  <pre class="prettyprint lang-html">{{ demoSnippet.loading_spinner_template }}</pre>
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.loading_spinner_template"></app-code-snippet>
 
   <p>In the following you can see the code base relevant to above template.</p>
 

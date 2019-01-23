@@ -8,7 +8,10 @@ import { ServerSideDataBindingComponent } from './server-side-data-binding.compo
 @NgModule({
  bootstrap: [ServerSideDataBindingComponent],
  declarations: [ServerSideDataBindingComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class ServerSideDataBindingModule {
 }

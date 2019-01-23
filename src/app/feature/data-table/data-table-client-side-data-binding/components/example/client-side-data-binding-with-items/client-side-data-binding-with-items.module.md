@@ -8,7 +8,10 @@ import { ClientSideDataBindingWithItemsComponent } from './client-side-data-bind
 @NgModule({
  bootstrap: [ClientSideDataBindingWithItemsComponent],
  declarations: [ClientSideDataBindingWithItemsComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class ClientSideDataBindingWithItemsModule {
 }

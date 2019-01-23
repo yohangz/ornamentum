@@ -8,7 +8,10 @@ import { ItemSelectionShowClearSelectionBtnUsageComponent } from './item-selecti
 @NgModule({
  bootstrap: [ItemSelectionShowClearSelectionBtnUsageComponent],
  declarations: [ItemSelectionShowClearSelectionBtnUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class ItemSelectionShowClearSelectionBtnUsageModule {
 }

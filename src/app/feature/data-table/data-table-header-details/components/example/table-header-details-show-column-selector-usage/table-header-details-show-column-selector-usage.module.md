@@ -8,7 +8,10 @@ import { TableHeaderDetailsShowColumnSelectorUsageComponent } from './table-head
 @NgModule({
   bootstrap: [TableHeaderDetailsShowColumnSelectorUsageComponent],
   declarations: [TableHeaderDetailsShowColumnSelectorUsageComponent],
-  imports: [BrowserModule, DataTableModule.forRoot()]
+  imports: [
+      BrowserModule, 
+      DataTableModule.forRoot()
+    ]
 })
 export class TableHeaderDetailsShowColumnSelectorUsageModule {
 }

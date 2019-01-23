@@ -8,7 +8,10 @@ import { WithoutSubstituteRowsUsageComponent } from './without-substitute-rows-u
 @NgModule({
  bootstrap: [WithoutSubstituteRowsUsageComponent],
  declarations: [WithoutSubstituteRowsUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class WithoutSubstituteRowsUsageModule {
 }

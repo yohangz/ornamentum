@@ -8,7 +8,10 @@ import { FilterTextBoxUsageComponent } from './filter-text-box-usage.component';
 @NgModule({
  bootstrap: [FilterTextBoxUsageComponent],
  declarations: [FilterTextBoxUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+   ]
 })
 export class FilterTextBoxUsageModule {
 }

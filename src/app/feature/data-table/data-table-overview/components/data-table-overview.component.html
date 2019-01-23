@@ -46,29 +46,35 @@
         Import the Ornamentum theme style sheet reference to apply theming of your preference. Refer
         <a [routerLink]="['/feature/data-table/styling-and-themes']">Styles & Theming</a> section for more details.
       </p>
-      <p>
-        <b>CSS</b>: Include Ornamentum prebuilt CSS theme style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
-      </p>
-      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.cssImport"></app-code-snippet>
-      <p>
-        <b>SCSS</b>: Include Ornamentum theme SCSS style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
-      </p>
-      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
-      <p>
-        Install <a rel="noopener" target="_blank" href="http://compass-style.org/">compass</a> mixins via using either of following command depending
-        on your package manager.
-      </p>
-      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport" [showLineNumbers]="false"></app-code-snippet>
-      <p>or</p>
-      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport" [showLineNumbers]="false"></app-code-snippet>
+      <ul class="main-pane-list">
+        <li>
+          <p>
+            <b>CSS</b>: Include Ornamentum prebuilt CSS theme style sheets in
+            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+          </p>
+          <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.cssImport"></app-code-snippet>
+        </li>
+        <li>
+          <p>
+            <b>SCSS</b>: Include Ornamentum theme SCSS style sheets in
+            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+          </p>
+          <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
+        </li>
+        <p>
+          Install <a rel="noopener" target="_blank" href="http://compass-style.org/">compass</a> mixins via using either of following command
+          depending on your package manager.
+        </p>
+        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport" [showLineNumbers]="false"></app-code-snippet>
+        <p>or</p>
+        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport" [showLineNumbers]="false"></app-code-snippet>
+      </ul>
     </li>
     <li>
       <p>Finally, use Ornamentum data table component.</p>
-      <p>Example usage component markup file</p>
+      <b>Example usage component markup file</b>
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.componentMarkup"></app-code-snippet>
-      <p>Example usage component controller class</p>
+      <b>Example usage component controller class</b>
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.componentController"></app-code-snippet>
     </li>
   </ol>

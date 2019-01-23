@@ -8,7 +8,10 @@ import { RowExpandLoadingSpinnerUsageComponent } from './row-expand-template-usa
 @NgModule({
  bootstrap: [RowExpandLoadingSpinnerUsageComponent],
  declarations: [RowExpandLoadingSpinnerUsageComponent],
- imports: [BrowserModule, DataTableModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class RowExpandLoadingSpinnerUsageModule {
 }

@@ -8,7 +8,10 @@ import { OptionTemplateUsageComponent } from './option-template-usage.component'
 @NgModule({
  bootstrap: [OptionTemplateUsageComponent],
  declarations: [OptionTemplateUsageComponent],
- imports: [BrowserModule, DropdownModule.forRoot()]
+ imports: [
+    BrowserModule, 
+    DropdownModule.forRoot()
+  ]
 })
 export class OptionTemplateUsageModule {
 }
