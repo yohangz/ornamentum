@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { basicUsage, demoSnippet } from './data-table-overview.list';
 
+import { VERSION } from '../../../../../environments/version';
+
 /**
  * Data table overview component controller.
  */
@@ -13,4 +15,5 @@ import { basicUsage, demoSnippet } from './data-table-overview.list';
 export class DataTableOverviewComponent {
   public basicUsage = basicUsage;
   public demoSnippet = demoSnippet;
+  public packageVersion = VERSION;
 }

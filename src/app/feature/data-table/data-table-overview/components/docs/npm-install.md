@@ -1,1 +1,1 @@
-  npm install ornamentum lodash --save
+ npm install ornamentum lodash --save

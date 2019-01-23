@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { DataTableModule } from 'ornamentum';
 
 import { AppComponent } from './app.component';
-  
+
+// App component module  
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [AppComponent],
@@ -14,7 +15,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     CommonModule,
     FormsModule,
-    DataTableModule.forRoot() // Import data table module
+    DataTableModule.forRoot() // Import data table module with root configuration.
   ]
 })
 export class AppModule {
