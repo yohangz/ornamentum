@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { ExampleFile, FileType } from '../../models';
 
 /**
- * Dynamic example demo code viewer component
+ * Dynamic example demo code viewer controller.
  */
 @Component({
   selector: 'app-example-code',

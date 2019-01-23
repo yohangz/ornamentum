@@ -2,7 +2,7 @@
   <h1>Data Table Overview</h1>
   <p>
     Ornamentum Data Table is a highly configurable <a rel="noopener" target="_blank" href="https://angular.io">Angular</a> component which support
-    table view data representation. This component support client/server/realtime data binding along with data filtering, sorting, grouping,
+    table view data representation. This component supports client/server/realtime data binding along with data filtering, sorting, grouping,
     pagination, selection, templating, state persistence, theming and much more.
   </p>
 
@@ -31,11 +31,11 @@
   <ol class="main-pane-list">
     <li>
       <p>
-        Install the Ornamentum packages and it's peer dependencies using either of following command depending on your package manager.
+        Install Ornamentum packages and it's peer dependencies using either of following command depending on your package manager.
       </p>
-      <pre class="prettyprint lang-html">{{ demoSnippet.npm }}</pre>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npm" [showLineNumbers]="false"></app-code-snippet>
       <p>or</p>
-      <pre class="prettyprint lang-html">{{ demoSnippet.yarn }}</pre>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarn" [showLineNumbers]="false"></app-code-snippet>
     </li>
     <li>
       <p>Once the installation is successful, add the Ornamentum Data Table component to your application Root Module as depicted below.</p>
@@ -50,26 +50,26 @@
         <b>CSS</b>: Include Ornamentum prebuilt CSS theme style sheets in
         <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
       </p>
-      <pre class="prettyprint linenums lang-json">{{ demoSnippet.cssImport }}</pre>
+      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.cssImport"></app-code-snippet>
       <p>
         <b>SCSS</b>: Include Ornamentum theme SCSS style sheets in
         <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
       </p>
-      <pre class="prettyprint linenums lang-json">{{ demoSnippet.scssImport }}</pre>
+      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
       <p>
         Install <a rel="noopener" target="_blank" href="http://compass-style.org/">compass</a> mixins via using either of following command depending
         on your package manager.
       </p>
-      <pre class="prettyprint lang-html">{{ demoSnippet.npmCompassImport }}</pre>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport" [showLineNumbers]="false"></app-code-snippet>
       <p>or</p>
-      <pre class="prettyprint lang-html">{{ demoSnippet.yarnCompassImport }}</pre>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport" [showLineNumbers]="false"></app-code-snippet>
     </li>
     <li>
       <p>Finally, use Ornamentum data table component.</p>
       <p>Example usage component markup file</p>
-      <pre class="prettyprint linenums lang-html">{{ demoSnippet.componentMarkup }}</pre>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.componentMarkup"></app-code-snippet>
       <p>Example usage component controller class</p>
-      <pre class="prettyprint linenums lang-js">{{ demoSnippet.componentController }}</pre>
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.componentController"></app-code-snippet>
     </li>
   </ol>
 

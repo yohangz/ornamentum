@@ -32,17 +32,3 @@
   @extend %pretty-icons;
   background: url('../../../../assets/images/css-3.svg') no-repeat;
 }
-
-.prettyprint {
-  background: $nav-tabs-border-color;
-  color: $primary-text-color;
-  white-space: pre-wrap;
-
-  ol {
-    padding-left: 3.5rem;
-
-    li {
-      background-color: $nav-tabs-border-color;
-    }
-  }
-}

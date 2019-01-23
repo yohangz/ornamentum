@@ -4,6 +4,8 @@ import { demoSnippet } from './data-table-overview.list';
 
 import { VERSION } from '../../../../../environments/version';
 
+import { FileType } from 'helper-models';
+
 /**
  * Data table overview component controller.
  */
@@ -13,6 +15,8 @@ import { VERSION } from '../../../../../environments/version';
   styleUrls: ['./data-table-overview.component.scss']
 })
 export class DataTableOverviewComponent {
+  public FileType = FileType;
+
   public demoSnippet = demoSnippet;
   public packageVersion = VERSION;
 }

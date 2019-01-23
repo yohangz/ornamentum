@@ -9,11 +9,7 @@
         <span>{{ file.name }}</span>
       </ng-template>
       <ng-template #tabContent>
-        <app-copy-content [data]="file.content"></app-copy-content>
-        <pre *ngSwitchCase="FileType.TS" class="prettyprint linenums lang-js">{{ file.content }}</pre>
-        <pre *ngSwitchCase="FileType.CSS" class="prettyprint linenums lang-css">{{ file.content }}</pre>
-        <pre *ngSwitchCase="FileType.HTML" class="prettyprint linenums lang-html">{{ file.content }}</pre>
-        <pre *ngSwitchCase="FileType.JSON" class="prettyprint linenums lang-json">{{ file.content }}</pre>
+       <app-code-snippet [type]="file.type" [content]="file.content"></app-code-snippet>
       </ng-template>
     </app-tab>
   </ng-container>
