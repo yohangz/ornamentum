@@ -1,23 +1,25 @@
 <div class="feature-container">
   <h1>Dropdown Overview</h1>
 
-  <p>Ornamentum dropdown is an simple dropdown with extended features that a conventional dropdown not supports. As same
-    as the
-    <a [routerLink]="['/feature/data-table/overview']">Data Table</a> it was built for focusing on deliver a feature
-    rich, highly configurable, UI
+  <p>
+    Ornamentum dropdown is an simple dropdown with extended features that a conventional dropdown not supports. As same as the
+    <a [routerLink]="['/feature/data-table/overview']">Data Table</a> it was built for focusing on deliver a feature rich, highly configurable, UI
     framework agnostic, fully responsive and minimal peer dependency support dropdown on top of the
-    <a rel="noopener" target="_blank" href="https://angular.io/docs">Angular</a> Framework.</p>
+    <a rel="noopener" target="_blank" href="https://angular.io/docs">Angular</a> Framework.
+  </p>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>Following example depicts the outer appearance of the Ornamentum Dropdown along with sample integration code
-    snippets.</p>
+  <p>Following example depicts the outer appearance of the Ornamentum Dropdown along with sample integration code snippets.</p>
 
   <app-basic-usage></app-basic-usage>
   <app-example-code [files]="basicUsage"></app-example-code>
 
   <h2 id="installation">Installation</h2>
-  <p><a rel="noopener" target="_blank" href="https://angular.io">Angular 7</a> or higher version is required to use the
-    latest version ({{packageVersion}}) of Ornamentum.</p>
+  <p>
+    <a rel="noopener" target="_blank" href="https://angular.io">Angular 7</a> or higher version is required to use the latest version ({{
+      packageVersion
+    }}) of Ornamentum.
+  </p>
 
   <ol class="main-pane-list">
     <li>
@@ -27,30 +29,34 @@
       <pre class="prettyprint lang-html">{{ demoSnippet.yarn }}</pre>
     </li>
     <li>
-      <p>Once the installation is successful, add the Ornamentum Dropdown component to your application Root Module as
-        depicted below.</p>
+      <p>Once the installation is successful, add the Ornamentum Dropdown component to your application Root Module as depicted below.</p>
       <pre class="prettyprint linenums lang-js">{{ demoSnippet.moduleImport }}</pre>
     </li>
     <li>
-      <p>Add style sheet library references to your dev dependencies using either of following command depending on your
-        package manager.</p>
+      <p>Add style sheet library references to your dev dependencies using either of following command depending on your package manager.</p>
       <pre class="prettyprint lang-html">{{ demoSnippet.npmCompassImport }}</pre>
       <p>or</p>
       <pre class="prettyprint lang-html">{{ demoSnippet.yarnCompassImport }}</pre>
     </li>
     <li>
-      <p>Import the Ornamentum theme style sheet reference to apply theming of your preference. Refer <a
-        [routerLink]="['/feature/dropdown/styling-and-themes']">Styles & Theming</a> section for more details.</p>
-      <p><b>CSS</b>: Include Ornamentum prebuilt CSS theme style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".</p>
+      <p>
+        Import the Ornamentum theme style sheet reference to apply theming of your preference. Refer
+        <a [routerLink]="['/feature/dropdown/styling-and-themes']">Styles & Theming</a> section for more details.
+      </p>
+      <p>
+        <b>CSS</b>: Include Ornamentum prebuilt CSS theme style sheets in
+        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+      </p>
       <pre class="prettyprint linenums lang-json">{{ demoSnippet.cssImport }}</pre>
-      <p><b>SCSS</b>: Include Ornamentum theme SCSS style sheets in <a rel="noopener" target="_blank"
-                                                                       href="https://cli.angular.io">Angular CLI</a>
-        config "<b>styles</b>".</p>
+      <p>
+        <b>SCSS</b>: Include Ornamentum theme SCSS style sheets in
+        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+      </p>
       <pre class="prettyprint linenums lang-json">{{ demoSnippet.scssImport }}</pre>
-      <p>Add style sheet library references to your dev dependencies if you selected style pre processor as
-        <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> using either of following command
-        depending on your package manager.</p>
+      <p>
+        Add style sheet library references to your dev dependencies if you selected style pre processor as
+        <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> using either of following command depending on your package manager.
+      </p>
       <pre class="prettyprint lang-html">{{ demoSnippet.npmCompassImport }}</pre>
       <p>or</p>
       <pre class="prettyprint lang-html">{{ demoSnippet.yarnCompassImport }}</pre>
@@ -124,8 +130,7 @@
     <ul class="main-pane-list">
       <li><a [routerLink]="['/feature/dropdown/templates/dropdown-option-template']">Option Template</a></li>
       <li>
-        <a [routerLink]="['/feature/dropdown/templates/dropdown-option-group-header-template']">Group Header
-          Template</a>
+        <a [routerLink]="['/feature/dropdown/templates/dropdown-option-group-header-template']">Group Header Template</a>
       </li>
       <li><a [routerLink]="['/feature/dropdown/templates/loading-spinner-template']">Loading Template</a></li>
     </ul>
@@ -138,6 +143,6 @@
   </ul>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/data-table/overview']">Data Table Overview</a><br/>
+  <a [routerLink]="['/feature/data-table/overview']">Data Table Overview</a><br />
   <a rel="noopener" target="_blank" href="api-docs/modules/DropdownModule.html">API Doc for Dropdown Module</a>
 </div>
