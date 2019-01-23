@@ -2,47 +2,78 @@
   <h1>Dropdown Overview</h1>
 
   <p>
-    Ornamentum dropdown is an simple dropdown with extended features that a conventional dropdown not supports. as same as the
-    <a rel="noopener" target="_blank" href="feature/data-table/overview">Data Table</a> it was built for focusing on deliver a feature rich, highly
-    configurable,UI framework agnostic, fully responsive and minimal peer dependency support dropdown in top of the
+    Ornamentum dropdown is an simple dropdown with extended features that a conventional dropdown not supports. As same as the
+    <a [routerLink]="['/feature/data-table/overview']">Data Table</a> it was built for focusing on deliver a feature rich, highly configurable, UI
+    framework agnostic, fully responsive and minimal peer dependency support dropdown on top of the
     <a rel="noopener" target="_blank" href="https://angular.io/docs">Angular</a> Framework.
   </p>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>The following example shows how Ornamentum Dropdown looks like and responsible code segment for the dropdown is shown down below.</p>
+  <p>
+    Following example depicts the outer appearance of the Ornamentum Dropdown along with sample integration code snippets.
+  </p>
 
   <app-basic-usage></app-basic-usage>
   <app-example-code [files]="basicUsage"></app-example-code>
 
   <h2 id="installation">Installation</h2>
+  <p>
+    <a rel="noopener" target="_blank" href="https://angular.io">Angular 7</a> or higher version is required to use the latest version of Ornamentum.
+  </p>
+
   <ol class="main-pane-list">
     <li>
-      Note that, as a prerequisite it necessary to have <b><a href="https://angular.io/docs">Angular 7</a></b>
-      or higher version to be run.
-    </li>
-
-    <li>Download & Install the Ornamentum package and its dependencies using the following command.</li>
-
-    <ul class="main-pane-list">
-      <li>Via <b>Yarn</b></li>
-      <pre class="prettyprint lang-html">{{ demoSnippet.yarn }}</pre>
-      <li>Via <b>NPM</b></li>
+      <p>
+        Download & Install the Ornamentum package and its dependencies using the following command.
+      </p>
       <pre class="prettyprint lang-html">{{ demoSnippet.npm }}</pre>
-    </ul>
-
-    <li>After success installation, you can add Dropdown to your application <b>root module</b> as shown in the below.</li>
-    <pre class="prettyprint lang-js">{{ demoSnippet.import }}</pre>
+      <p>or</p>
+      <pre class="prettyprint lang-html">{{ demoSnippet.yarn }}</pre>
+    </li>
     <li>
-      As the final step you have to import
-      <a rel="noopener" target="_blank" href="feature/dropdown/styling-and-themes">Ornamentum theme style</a>
-      reference to your project to imply the necessary styling into your project as you like.
+      <p>
+        Once the installation is successful, add the Ornamentum Dropdown component to your application Root Module as depicted below.
+      </p>
+      <pre class="prettyprint linenums lang-js">{{ demoSnippet.import }}</pre>
+    </li>
+    <li>
+      <p>
+        Import the Ornamentum theme style sheet reference to apply theming of your preference. Refer
+        <a [routerLink]="['/feature/dropdown/styling-and-themes']">Styles & Theming</a> section for more details.
+      </p>
+      <p>
+        <b>CSS</b>: Include Ornamentum prebuilt CSS theme style sheets in
+        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+      </p>
+      <pre class="prettyprint linenums lang-json">{{ demoSnippet.cssImport }}</pre>
+      <p>
+        <b>SCSS</b>: Include Ornamentum theme SCSS style sheets in
+        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+      </p>
+      <pre class="prettyprint linenums lang-json">{{ demoSnippet.scssImport }}</pre>
+    </li>
+    <li>
+      <p>
+        Finally, use Ornamentum dropdown component.
+      </p>
+
+      <p></p>
+      <p>
+        Example usage component markup (basic-usage.component.html)
+      </p>
+
+      <p></p>
+      <pre class="prettyprint linenums lang-html">{{ demoSnippet.componentMarkup }}</pre>
+      <p>
+        Example usage component controller class (basic-usage.component.ts)
+      </p>
+      <pre class="prettyprint linenums lang-js">{{ demoSnippet.componentController }}</pre>
     </li>
   </ol>
 
   <h2 id="peerDependencies">Peer Dependencies</h2>
   <p>
-    Ornamentum data table was depend of set of peer dependencies. before library usage, those dependencies need to pre-installed before use. which
-    are,
+    Following dependencies are required to be installed along with Ornamentum.
   </p>
   <ul class="main-pane-list">
     <li><a rel="noopener" target="_blank" href="https://www.npmjs.com/package/@angular/common">@angular/common</a></li>
@@ -54,65 +85,66 @@
 
   <h2 id="functionality">Functionality</h2>
   <p>
-    Below structure shows the available features and functionalities that user allows to configure on dropdown. in each section explain and describes
-    particular feature or functionality in depth with examples.
+    Refer below sections for available feature/functionality usage in detail.
   </p>
 
   <ul class="main-pane-list">
     <li><b>Data Binding & Events</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/client-side-data-binding">Client-side Data binding</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/server-side-data-binding">Server-side Data binding</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/real-time-data-binding">Realtime Data binding</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/events">Events</a></li>
-    </ul>
-
-    <li><b>Disabling</b></li>
-    <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/disable">Dropdown Disabling</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/item-disabling">Item Disabling</a></li>
+      <li><a [routerLink]="['/feature/dropdown/client-side-data-binding']">Client-side Data binding</a></li>
+      <li><a [routerLink]="['/feature/dropdown/server-side-data-binding']">Server-side Data binding</a></li>
+      <li><a [routerLink]="['/feature/dropdown/real-time-data-binding']">Realtime Data binding</a></li>
+      <li><a [routerLink]="['/feature/dropdown/events']">Events</a></li>
     </ul>
 
     <li><b>Responsive Configurations</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/menu-position">Menu Position</a></li>
-      <li><a href="feature/dropdown/menu-width-height">Menu Width & Height</a></li>
+      <li><a [routerLink]="['/feature/dropdown/menu-position']">Menu Position</a></li>
+      <li><a [routerLink]="['/feature/dropdown/menu-width-height']">Menu Width & Height</a></li>
+    </ul>
+
+    <li><b>Disabling</b></li>
+    <ul class="main-pane-list">
+      <li><a [routerLink]="['/feature/dropdown/disable']">Dropdown Disabling</a></li>
+      <li><a [routerLink]="['/feature/dropdown/item-disabling']">Item Disabling</a></li>
     </ul>
 
     <li><b>Data Ordering</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/filtering">Filtering</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/grouping">Grouping</a></li>
+      <li><a [routerLink]="['/feature/dropdown/filtering']">Filtering</a></li>
+      <li><a [routerLink]="['/feature/dropdown/grouping']">Grouping</a></li>
     </ul>
 
     <li><b>Data Loading</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/load-data-on-init">Load Data On Init</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/display-tracked-by">Display Track By Attribute</a></li>
+      <li><a [routerLink]="['/feature/dropdown/load-data-on-init']">Load Data On Init</a></li>
+      <li><a [routerLink]="['/feature/dropdown/display-tracked-by']">Display Track By Attribute</a></li>
     </ul>
 
     <li><b>Customizations</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/item-selection">Item Selection</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/limit">Data Limit</a></li>
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/translations">Translations</a></li>
+      <li><a [routerLink]="['/feature/dropdown/item-selection']">Item Selection</a></li>
+      <li><a [routerLink]="['/feature/dropdown/limit']">Data Limit</a></li>
+      <li><a [routerLink]="['/feature/dropdown/translations']">Translations</a></li>
     </ul>
 
     <li><b>Templates</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/templates/dropdown-option-template">Option Template</a></li>
+      <li><a [routerLink]="['/feature/dropdown/templates/dropdown-option-template']">Option Template</a></li>
       <li>
-        <a rel="noopener" target="_blank" href="feature/dropdown/templates/dropdown-option-group-header-template">Group Header Template</a>
+        <a [routerLink]="['/feature/dropdown/templates/dropdown-option-group-header-template']">Group Header Template</a>
       </li>
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/templates/loading-spinner-template">Loading Template</a></li>
+      <li><a [routerLink]="['/feature/dropdown/templates/loading-spinner-template']">Loading Template</a></li>
     </ul>
 
     <li><b>Styling & Themes</b></li>
     <ul class="main-pane-list">
-      <li><a rel="noopener" target="_blank" href="feature/dropdown/styling-and-themes">Styling & Themes</a></li>
+      <li><a [routerLink]="['/feature/dropdown/styling-and-themes']">Styling & Themes</a></li>
+      <!--<li><a [routerLink]="['/feature/dropdown/custom-theming']">Custom Themes</a></li>-->
     </ul>
   </ul>
+
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="feature/data-table/overview">Data Table Overview</a><br />
+  <a [routerLink]="['/feature/data-table/overview']">Data Table Overview</a><br />
   <a rel="noopener" target="_blank" href="api-docs/modules/DropdownModule.html">API Doc for Dropdown Module</a>
 </div>

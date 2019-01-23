@@ -4,6 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { DataTableModule } from 'ornamentum';
+
+import { AppComponent } from './app.component';
   
 @NgModule({
   bootstrap: [AppComponent],
@@ -17,4 +19,3 @@ import { DataTableModule } from 'ornamentum';
 })
 export class AppModule {
 }
- 
