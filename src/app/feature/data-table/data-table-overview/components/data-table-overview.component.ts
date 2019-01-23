@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { basicUsage, demoSnippet } from './data-table-overview.list';
+import { demoSnippet } from './data-table-overview.list';
 
 import { VERSION } from '../../../../../environments/version';
 
@@ -13,7 +13,6 @@ import { VERSION } from '../../../../../environments/version';
   styleUrls: ['./data-table-overview.component.scss']
 })
 export class DataTableOverviewComponent {
-  public basicUsage = basicUsage;
   public demoSnippet = demoSnippet;
   public packageVersion = VERSION;
 }
