@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs/internal/Observable';
-import { fromEvent, Subject } from 'rxjs/index';
+import { fromEvent, Subject, Observable } from 'rxjs';
 
 import { GlobalRefService } from './global-ref.service';
 

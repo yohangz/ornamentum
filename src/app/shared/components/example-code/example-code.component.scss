@@ -33,21 +33,6 @@
   background: url('../../../../assets/images/css-3.svg') no-repeat;
 }
 
-.edit-on-sandbox {
-  background: url('../../../../assets/images/edit-on-sandbox.svg') no-repeat;
-  background-size: 100% 100%;
-  display: inline-block;
-  height: 1.5rem;
-  position: absolute;
-  right: 2.5rem;
-  top: 0.5rem;
-  width: 1.5rem;
-
-  &:hover {
-    opacity: 0.6;
-  }
-}
-
 .prettyprint {
   background: $nav-tabs-border-color;
   color: $primary-text-color;

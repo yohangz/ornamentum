@@ -51,26 +51,18 @@
 - [@angular/common](https://www.npmjs.com/package/@angular/common): ^7.0.0-rc.0 || ^7.0.0
 - [@angular/core](https://www.npmjs.com/package/@angular/core): ^7.0.0-rc.0 || ^7.0.0
 - [@angular/forms](https://www.npmjs.com/package/@angular/forms): ^7.0.0-rc.0 || ^7.0.0
-- [lodash-es](https://www.npmjs.com/package/lodash-es): ^4.0.0
-- [rxjs](https://rxjs-dev.firebaseapp.com/): ^6.0.0
+- [lodash-es](https://www.npmjs.com/package/lodash): ^4.0.0
+- [rxjs](https://www.npmjs.com/package/rxjs): ^6.0.0
 
 ## :rocket: Installation
 
-Proceed with installation if your system meet following prerequisites.
+Install the Ornamentum packages and it's peer dependencies using either of following command depending on your package manager.
 
-- Install [Node.js](https://nodejs.org/en/) on your device.
-- [Angular 6](https://angular.io/) or higher version support.
-- Optional: Install [Yarn](https://yarnpkg.com/en/) Package Manager  
+```npm install ornamentum lodash --save```
 
-Install the Ornamentum package and its [dependencies](#peer-dependencies) using the following command.
+or
 
-Via [Yarn](https://yarnpkg.com/lang/en/)
-
-```yarn add ornamentum lodash-es --save```
-
-Via [NPM](https://www.npmjs.com/)
-
-```npm install ornamentum lodash-es --save```
+```yarn add ornamentum lodash```
 
 ## :palm_tree: Contributions
 
