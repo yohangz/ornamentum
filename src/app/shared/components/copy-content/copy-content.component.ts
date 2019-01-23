@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 /**
- * Component class to represent application footer.
+ * Copy code snippet controller.
  */
 @Component({
   selector: 'app-copy-content',
