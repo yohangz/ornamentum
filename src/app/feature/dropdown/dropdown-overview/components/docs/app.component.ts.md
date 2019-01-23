@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 
-/**
- * Basic usage example component controller.
- */
+// App component controller.
 @Component({
-  selector: 'app-basic-usage',
-  templateUrl: './basic-usage.component.html'
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class BasicUsageComponent {
+export class AppComponent {
   public data: any[] = [
     {
       productType: 'Cooking Gear',

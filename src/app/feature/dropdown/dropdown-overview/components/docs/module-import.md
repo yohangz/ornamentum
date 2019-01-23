@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 
 import { DropdownModule } from 'ornamentum';
 
 import { AppComponent } from './app.component';
-  
+
+// import app component module  
 @NgModule({
   bootstrap: [AppComponent],
   declarations: [AppComponent],
@@ -14,7 +15,7 @@ import { AppComponent } from './app.component';
     BrowserModule,
     CommonModule,
     FormsModule,
-    DropdownModule.forRoot() // Import dropdown module
+    DropdownModule.forRoot() // Import dropdown module with root configuration.
   ]
 })
 export class AppModule {

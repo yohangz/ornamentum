@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { basicUsage, demoSnippet } from './dropdown-overview.list';
 
+import { VERSION } from '../../../../../environments/version';
+
 @Component({
   selector: 'app-dropdown-overview-component',
   templateUrl: './dropdown-overview.component.html',
@@ -10,4 +12,5 @@ import { basicUsage, demoSnippet } from './dropdown-overview.list';
 export class DropdownOverviewComponent {
   public basicUsage = basicUsage;
   public demoSnippet = demoSnippet;
+  public packageVersion = VERSION;
 }
