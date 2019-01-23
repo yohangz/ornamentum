@@ -1,11 +1,10 @@
 <ng-dropdown
   [selectTrackBy]="'id'"
   [displayTrackBy]="'productType'"
-  [items]="data"
+  [items]="items"
   [filterable]="true"
   [showClearSelectionButton]="true"
   [showSelectedOptionRemoveButton]="true"
   [closeMenuOnSelect]="true"
-  [limit]="50"
->
+  [limit]="50">
 </ng-dropdown>
