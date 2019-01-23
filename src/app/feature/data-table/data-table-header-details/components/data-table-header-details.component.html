@@ -59,7 +59,7 @@
 
   <p>
     Also this property is useful in no data retrieval scenario. for more about no data please refer the
-    <a href="feature/data-table/templates/no-records-template">No Records Template</a>.
+    <a [routerLink]="['/feature/data-table/templates/no-records-template']">No Records Template</a>.
   </p>
 
   <app-table-header-details-show-refresh-btn-usage></app-table-header-details-show-refresh-btn-usage>
@@ -78,8 +78,7 @@
   <app-example-code [files]="tableHeaderDetailsShowColumnSelectorUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="">Column Width</a><br />
-  <a rel="noopener" target="_blank" href="feature/data-table/translations">Translations</a><br />
-  <a rel="noopener" target="_blank" href="feature/data-table/loading-spinner">Data Loading Spinner</a><br />
+  <a [routerLink]="['/feature/data-table/translations']">Translations</a><br />
+  <a [routerLink]="['/feature/data-table/loading-spinner']">Data Loading Spinner</a><br />
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Header</a>
 </div>
