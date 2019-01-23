@@ -1,1 +1,1 @@
- yarn add ornamentum lodash --save
+ yarn add ornamentum lodash
