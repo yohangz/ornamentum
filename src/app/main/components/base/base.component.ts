@@ -4,7 +4,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { SwUpdate } from '@angular/service-worker';
 
 import { filter } from 'rxjs/operators';
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Subscription } from 'rxjs';
 
 /**
  * Component class for showing base view.

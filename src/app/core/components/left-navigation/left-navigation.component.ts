@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
 import { NavigationStart, Router } from '@angular/router';
 
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 import { MenuGroup, MenuItem } from '../../models';
