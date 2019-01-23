@@ -38,6 +38,5 @@ export const clientSideDataBindingWithDataSourceUsage: ExampleFile[] = [
 
 export const demoSnippet: any = {
   items: require('!!raw-loader?lang=typescript!./docs/items.md'),
-  dataSource: require('!!raw-loader?lang=typescript!./docs/data-source.md'),
-  dataFetchMethod: require('!!raw-loader?lang=typescript!./docs/data-fetch-method.md')
+  dataSource: require('!!raw-loader?lang=typescript!./docs/data-source.md')
 };

@@ -15,7 +15,7 @@
   <pre>
     |__ <span class="hierarchy-main">Ornamentum Events</span>
        |
-       |___ <a href="feature/dropdown/events" class="event-types">Dropdown Events</a>
+       |___ <a [routerLink]="['/feature/dropdown/events']" class="event-types">Dropdown Events</a>
        |     |
        |     |___ <strong>Automatically Triggers</strong>
        |     |     |
@@ -68,9 +68,9 @@
 
   <p>
     Triggers when dropdown item select state changes based on defined dropdown <a href="">Select Mode</a>. To identify selected items uniquely it is
-    necessary to specify <a href="feature/dropdown/item-selection">selectTrackBy</a> property. Therefore, a unique value key name should be set as the
-    value for this attribute. According to this example it is <b>'id'</b>. There are set of configuration are introduced in the dropdown to work
-    smoothly with the selected change event. Those configurations can be seen as follows.
+    necessary to specify <a [routerLink]="['/feature/dropdown/item-selection']">selectTrackBy</a> property. Therefore, a unique value key name should
+    be set as the value for this attribute. According to this example it is <b>'id'</b>. There are set of configuration are introduced in the dropdown
+    to work smoothly with the selected change event. Those configurations can be seen as follows.
   </p>
 
   <p>

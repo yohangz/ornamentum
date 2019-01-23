@@ -8,7 +8,7 @@
 
   <p>
     No records template can be integrate into expandable rows as well. for more details about expandable row configurations please refer
-    <a rel="noopener" target="_blank" href="feature/data-table/templates/expand-template"> Row Expand Template</a> section.
+    <a [routerLink]="['/feature/data-table/templates/expand-template']"> Row Expand Template</a> section.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -17,8 +17,8 @@
 
   <p>
     The below demo snippet will demonstrate a sample no data scenario. until a success data response, we have enabled
-    <a rel="noopener" target="_blank" href="feature/data-table/data-loading-spinner">Data Loading Spinner</a> for purpose of visible the process of
-    data retrieval and make the data table more attractive.
+    <a [routerLink]="['/feature/data-table/data-loading-spinner']">Data Loading Spinner</a> for purpose of visible the process of data retrieval and
+    make the data table more attractive.
   </p>
 
   <app-example-code [files]="noRecordsTemplateUsage"></app-example-code>
@@ -37,11 +37,11 @@
   <pre class="prettyprint lang-html">{{ demoSnippet.stylishTemplate }}</pre>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="feature/data-table/templates/loading-spinner-template">Loading Spinner Template</a><br />
-  <a rel="noopener" target="_blank" href="feature/data-table/header-details">Header Details</a><br />
-  <a rel="noopener" target="_blank" href="feature/data-table/translations">Translations</a><br />
-  <a rel="noopener" target="_blank" href="feature/data-table/client-side-data-binding">Client Side Data Binding</a><br />
-  <a rel="noopener" target="_blank" href="feature/data-table/server-side-data-binding">Server Side Data Binding</a><br />
+  <a [routerLink]="['/feature/data-table/templates/loading-spinner-template']">Loading Spinner Template</a><br />
+  <a [routerLink]="['/feature/data-table/header-details']">Header Details</a><br />
+  <a [routerLink]="['/feature/data-table/translations']">Translations</a><br />
+  <a [routerLink]="['/feature/data-table/client-side-data-binding']">Client Side Data Binding</a><br />
+  <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server Side Data Binding</a><br />
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#noRecordsTemplate"
     >API Doc for Data Table No Records Template</a
   >

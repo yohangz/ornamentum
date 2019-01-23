@@ -15,7 +15,7 @@
 
   <p>
     If the data stream is very large and can't perform data handling operations(such as filtering, searching, etc.) in the client side,
-    <a href="feature/data-table/server-side-data-binding">Server Side Data Binding</a> can be used.
+    <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server Side Data Binding</a> can be used.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -43,15 +43,8 @@
   <app-client-side-data-binding-with-data-source></app-client-side-data-binding-with-data-source>
   <app-example-code [files]="clientSideDataBindingWithDataSourceUsage"></app-example-code>
 
-  <p>
-    Following code snippet will be represent the implementation of the <b>fetchDataFromServer</b> method used in the
-    <b>client-side-data-binding-with-data-source.component.ts</b> to fetch the data from the server.
-  </p>
-
-  <pre class="prettyprint lang-js">{{ demoSnippet.dataFetchMethod }}</pre>
-
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="feature/data-table/row-selection">Row Selection</a><br />
-  <a rel="noopener" target="_blank" href="feature/data-table/column/filtering">Filtering</a><br />
+  <a [routerLink]="['/feature/data-table/row-selection']">Row Selection</a><br />
+  <a [routerLink]="['/feature/data-table/column/filtering']">Filtering</a><br />
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#items">API Doc for Client Side Data Binding</a>
 </div>
