@@ -2,14 +2,16 @@
   <h1>Real-time Data Binding</h1>
 
   <p>
-    In some situations, you might want to update the existing data in the data table recursively, due to a dynamic nature of different data sets such
-    as weather data, analytics data, etc. those type of data's are possible to change in a small time of period.
+    Using real-time data binding feature users can update the existing data in the data table recursively to represent
+    very dynamic data such as traffic, weather, analytics and etc without having a manual refresh. Refer Show Refresh
+    Button section for more details on table refresh.
   </p>
 
   <p>
-    In such cases you can use this real time data binding technique to binding data, when data changes in real time those changes will be reflect
-    without data table refresh, and immediately effect to the data table as well. for more about data table refresh refer
-    <a rel="noopener" target="_blank" href="feature/data-table/header-details#showRefreshButton">Show Refresh Button</a> section.
+    In such cases you can use this real time data binding technique to binding data, when data changes in real time
+    those changes will be reflect
+    without data table refresh, and immediately effect to the data table as well. for more about data table refresh
+    refer <a [routerLink]="['/feature/data-table/header-details']" fragment="showRefreshButton">Show Refresh Button</a> section.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -20,14 +22,15 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    As same as the <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server-side Data Binding</a> you can be configure by providing a
-    any object collecting of observable. bind a available specific data source into <code>dataSource</code> property.
+    Similar to <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server-side Data Binding</a> user can
+    configure this table by providing any object collecting of observable into <code>dataSource</code> property.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
   <p>
-    Following code snippet will be represent the implementation of the <code>fetchDataFromServer</code> method that used to call the example data api.
+    Following code snippet represents the implementation of the <code>fetchDataFromServer</code> method that will be
+    used to call the example data API.
   </p>
 
   <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataFetchMethod"></app-code-snippet>

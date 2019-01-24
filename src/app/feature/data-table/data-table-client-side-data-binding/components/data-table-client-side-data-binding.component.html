@@ -1,21 +1,18 @@
 <div class="feature-container">
   <h1>Client-side Data Binding</h1>
 
-  <p>Client side data binding allow users to bind static data set to data table when data is available in the client side.</p>
+  <p>Client side data binding allow users to bind static data set to data table when data is available in the client
+    side. It can be configure by providing any array of objects into <code>items</code> property or providing a data
+    stream to the <code>dataSource</code> property.</p>
+
+  <p>In this data binding technique, data set will be fetched at once and all the filtering, sorting, data pagination
+    operations handle in the client
+    side.</p>
 
   <p>
-    Client side binding can be configure by providing any array of objects into <code>items</code> property or providing a data stream to the
-    <code>dataSource</code> property.
-  </p>
-
-  <p>
-    In this data binding technique, data set will be fetched at once and all the filtering, sorting, data pagination things handled in the client
-    side.
-  </p>
-
-  <p>
-    If the data stream is very large and can't perform data handling operations(such as filtering, searching, etc.) in the client side,
-    <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server Side Data Binding</a> can be used.
+    If the data stream is very large and can't perform data handling operations(such as filtering, searching, etc.) in
+    client side, <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server Side Data Binding</a> can be
+    use instead of client side data binding.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -30,15 +27,17 @@
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items">{{ demoSnippet.items }}</app-code-snippet>
 
   <p>
-    The complete set of code segments for the data binding via <code>items</code> property can be seen in the example shown in the
-    <a href="feature/data-table/client-side-data-binding#whatYouWillSee">What You Will See</a> section.
+    The complete set of code segments for the data binding via <code>items</code> property can be seen in the example
+    shown in the <a [routerLink]="['/feature/data-table/client-side-data-binding']" fragment="whatYouWillSee">What You
+    Will See</a> section.
   </p>
 
   <p>or</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
-  <p>Refer following example to see actual usage of the <code>dataSource</code> property in the client side data binding.</p>
+  <p>Refer following example to see actual usage of the <code>dataSource</code> property in the client side data
+    binding.</p>
 
   <app-client-side-data-binding-with-data-source></app-client-side-data-binding-with-data-source>
   <app-example-code [files]="clientSideDataBindingWithDataSourceUsage"></app-example-code>
