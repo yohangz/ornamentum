@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
   
 import { DropdownModule } from 'ornamentum';
   
@@ -9,7 +10,8 @@ import { EventsTriggerSelectChangeOnModelUpdateUsageComponent } from './events-t
  bootstrap: [EventsTriggerSelectChangeOnModelUpdateUsageComponent],
  declarations: [EventsTriggerSelectChangeOnModelUpdateUsageComponent],
  imports: [
-    BrowserModule, 
+    BrowserModule,
+    FormsModule, 
     DropdownModule.forRoot()
   ]
 })

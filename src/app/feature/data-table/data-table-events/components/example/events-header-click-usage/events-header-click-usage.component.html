@@ -24,8 +24,8 @@
 </ng-data-table>
 
 <br />
-<p class="event-output" *ngIf="headerClickEventData; else noDataAvailable">
-  <span>{{ headerClickEventData }}</span>
+<p class="event-output" *ngIf="headerClickEventData.length; else noDataAvailable">
+  <span *ngFor="let item of headerClickEventData.slice().reverse()">{{ item }}<br /></span>
 </p>
 <ng-template #noDataAvailable>
   <p class="event-output">Click on any column header to see the output</p>

@@ -12,13 +12,13 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class EventsAllRowSelectChangeUsageComponent {
   public items: ExampleData[];
 
-  public allRowSelectChangeEventData: string = null;
+  public allRowSelectChangeEventData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onAllRowSelectChange(allRowSelectedChanged: boolean): void {
-    this.allRowSelectChangeEventData = `Select All Rows Checkbox Status: ${allRowSelectedChanged}`;
+    this.allRowSelectChangeEventData.push(`Select All Rows Checkbox Status: ${allRowSelectedChanged}`);
   }
 }

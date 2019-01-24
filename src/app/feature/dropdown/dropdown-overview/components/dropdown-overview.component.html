@@ -2,22 +2,32 @@
   <h1>Dropdown Overview</h1>
 
   <p>
-    Ornamentum dropdown is an simple dropdown with extended features that a conventional dropdown not supports. As same as the
-    <a [routerLink]="['/feature/data-table/overview']">Data Table</a> it was built for focusing on deliver a feature rich, highly configurable, UI
-    framework agnostic, fully responsive and minimal peer dependency support dropdown on top of the
-    <a rel="noopener" target="_blank" href="https://angular.io/docs">Angular</a> Framework.
+    Ornamentum Dropdown is a highly configurable <a rel="noopener" target="_blank" href="https://angular.io">Angular</a>
+    component which support dropdown data representation. This component supports client/server/realtime data binding
+    along with data filtering, grouping, selection, templating, theming and much more.
+  </p>
+
+  <p>
+    This component can be integrated with any UI framework and fully responsive dynamic mobile friendly component user
+    interface design will deliver best user experience in any device resolution. Built with pure angular components and
+    minimal peer dependencies to minimize overall bundle size. Guaranteed seamless integration via developer friendly
+    component API along with rich example code based documentation. This component support all angular supported
+    browsers out of the box.
   </p>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>Following example depicts the outer appearance of the Ornamentum Dropdown along with sample integration code snippets.</p>
+  <p>
+    Following example depicts the outer appearance of the Ornamentum Dropdown along with sample integration code snippets. Try out yourself in
+    <a rel="noopener" target="_blank" href="#">Code Sandbox</a>.
+  </p>
 
   <app-basic-usage></app-basic-usage>
-  <app-example-code [files]="basicUsage"></app-example-code>
 
   <h2 id="installation">Installation</h2>
   <p>
-    <a rel="noopener" target="_blank" href="https://angular.io">Angular 7</a> or higher version is required to use the latest version ({{
-      packageVersion
+    <a rel="noopener" target="_blank" href="https://angular.io">Angular 7</a> or higher version is required to use the
+    latest version ({{
+    packageVersion
     }}) of Ornamentum.
   </p>
 
@@ -26,17 +36,13 @@
       <p>Download & Install the Ornamentum package and its dependencies using the following command.</p>
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npm" [showLineNumbers]="false"></app-code-snippet>
       <p>or</p>
-      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarn" [showLineNumbers]="false"></app-code-snippet>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarn"
+                        [showLineNumbers]="false"></app-code-snippet>
     </li>
     <li>
-      <p>Once the installation is successful, add the Ornamentum Dropdown component to your application Root Module as depicted below.</p>
+      <p>Once the installation is successful, add the Ornamentum Dropdown component to your application Root Module as
+        depicted below.</p>
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.moduleImport"></app-code-snippet>
-    </li>
-    <li>
-      <p>Add style sheet library references to your dev dependencies using either of following command depending on your package manager.</p>
-      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport" [showLineNumbers]="false"></app-code-snippet>
-      <p>or</p>
-      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport" [showLineNumbers]="false"></app-code-snippet>
     </li>
     <li>
       <p>
@@ -59,12 +65,15 @@
           <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
         </li>
         <p>
-          Install <a rel="noopener" target="_blank" href="http://compass-style.org/">compass</a> mixins via using either of following command
+          Install <a rel="noopener" target="_blank" href="http://compass-style.org/">compass</a> mixins via using either
+          of following command
           depending on your package manager.
         </p>
-        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport" [showLineNumbers]="false"></app-code-snippet>
+        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport"
+                          [showLineNumbers]="false"></app-code-snippet>
         <p>or</p>
-        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport" [showLineNumbers]="false"></app-code-snippet>
+        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport"
+                          [showLineNumbers]="false"></app-code-snippet>
       </ul>
     </li>
     <li>

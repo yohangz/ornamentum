@@ -11,7 +11,7 @@ import { DataFetchService } from '../../../../../../shared/services';
 })
 export class EventsSelectChangeUsageComponent {
   public items: ExampleData[];
-  public selectChangeEventData: ExampleData | ExampleData[];
+  public selectChangeEventData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchStaticData();
@@ -19,6 +19,6 @@ export class EventsSelectChangeUsageComponent {
 
   public onSelectChange(selectedData: ExampleData | ExampleData[]): void {
     // if selectTrackBy property is specified, the selected item id or ids will be passed as a parameter to this method.
-    this.selectChangeEventData = selectedData;
+    this.selectChangeEventData.push(JSON.stringify(selectedData));
   }
 }

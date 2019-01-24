@@ -13,13 +13,13 @@ import { DataFetchService } from '../../../../../../shared/services';
 })
 export class EventsRowDoubleClickUsageComponent {
   public items: ExampleData[];
-  public rowDoubleClickEventData: string = null;
+  public rowDoubleClickEventData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onRowDoubleClick(doubleClickEventArgs: DataTableDoubleClickEventArgs<any>): void {
-    this.rowDoubleClickEventData = `Double click event perform on row ID - ${doubleClickEventArgs.row.item.id}`;
+    this.rowDoubleClickEventData.push(`Double click event perform on row ID - ${doubleClickEventArgs.row.item.id}`);
   }
 }

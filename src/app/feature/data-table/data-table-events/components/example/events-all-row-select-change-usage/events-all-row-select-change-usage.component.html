@@ -24,8 +24,8 @@
 </ng-data-table>
 
 <br />
-<p class="event-output" *ngIf="allRowSelectChangeEventData; else noDataAvailable">
-  <span>{{ allRowSelectChangeEventData }}</span>
+<p class="event-output" *ngIf="allRowSelectChangeEventData.length; else noDataAvailable">
+  <span *ngFor="let item of allRowSelectChangeEventData.slice().reverse()">{{ item }}<br /></span>
 </p>
 <ng-template #noDataAvailable>
   <p class="event-output">Click on the row select all check box or select all checkboxes on current view one by one</p>
