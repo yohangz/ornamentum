@@ -1,10 +1,9 @@
 <div class="feature-container">
   <h1>Row Selection</h1>
 
-  <p>
-    Sometimes users may need to select specific set of data from the data table to run their own operations. In such cases, you might want to turn row
-    selectable on.
-  </p>
+  <p>Row selection will add a additional column which contains check box(es) when users need to select specific data or
+    data set from the data table to perform their operations. In these type of situations you might want to turn on the
+    row selectable check box(es).</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -12,18 +11,19 @@
   <app-example-code [files]="rowSelectionUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To enable row selectable option, simply set <code>rowSelectable</code> to <b>true</b> and by default rowSelectable is <b>false</b>.</p>
+  <p>To enable row selectable option, simply set <code>rowSelectable</code> to <b>true</b> and by default rowSelectable
+    is <b>false</b>.</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.row_selectable"></app-code-snippet>
 
   <p>
-    In default the table doesn't allow you to select rows. But if you are going to select row(s), there are some additional configurations available
-    to do the job easily. Those properties will be discuss on
-    <a href="feature/data-table/row-selection#usefulProperties">Useful Properties</a> section.
+    In default the table does not displays to selectable rows. But if you enabled selection row(s), there
+    are some additional configurations available to do the row selection more easily. Those properties will be discuss
+    on next section.
   </p>
 
-  <h2 id="usefulProperties">Useful properties</h2>
-  <p>As mentioned earlier, there are some additional configurations which helps users to control the row selection.</p>
+  <h2 id="usefulProperties">Useful Properties</h2>
+  <p>As mention in earlier, there are some additional configurations which helps users to control the row selection.</p>
 
   <h4 id="selectMode">Row Selection Mode</h4>
 
@@ -31,8 +31,8 @@
   <h5 class="badge badge-pill badge-warning">Default Value: 'single'</h5>
 
   <p>
-    This control allows you to configure the dropdown row selection type. There are 3 types of row selections are available in the data table. The
-    available types are,
+    This control allows you to configure the row selection type. There are 3 types of row selections are
+    available in the data table. available types are,
   </p>
 
   <ol class="main-pane-list">
@@ -41,8 +41,8 @@
     </li>
 
     <p>
-      Users are only allowed to select one row at a time. Once the selection is made, it can only be changed by selecting other row. That means, only
-      one row item can be selected.
+      User will be allowed to select only one row at a time. If the second row also been selected, firstly selected row
+      will be automatically deselected.
     </p>
 
     <app-single-row-selection-usage></app-single-row-selection-usage>
@@ -53,8 +53,9 @@
     </li>
 
     <p>
-      Users are only allowed to select one row at a time. Can toggle the row selection. But in this type, once the selection is made, it can be
-      removed by clicking the row itself (if select on row click is enabled) or by unchecking the checkbox (if check boxes enabled).
+      User will be allowed to select only one row at a time. If the second row also been selected, firstly selected row
+      will be automatically deselected. Additionally, user will be facilitated to remove the selection once its been
+      selected.
     </p>
 
     <app-single-toggle-row-selection-usage></app-single-toggle-row-selection-usage>
@@ -64,7 +65,8 @@
       <h6><b>Multi Row Selection: "multi"</b></h6>
     </li>
 
-    <p>Users can select multiple rows at a time. Can toggle the row selection.</p>
+    <p>User will be allowed to select multiple rows and user is facilitated to remove the selection once its been
+      selected.</p>
 
     <app-multi-row-selection-usage></app-multi-row-selection-usage>
     <app-example-code [files]="multiRowSelectionUsage"></app-example-code>
@@ -76,9 +78,7 @@
   <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
 
   <p>
-    The page property lets you to enable/disable table row selection check boxes as shown in the
-    <a href="feature/data-table/row-selection#selectMode">Row Selection Mode</a> section's examples. Selection checkboxes are enabled in all those
-    examples.
+    This property lets the user to enable/disable the row selection checkbox to be shown/hidden.
   </p>
 
   <h4 id="selectOnRowClick">Select On Row Click</h4>
@@ -87,9 +87,7 @@
   <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
 
   <p>
-    The page property lets you to enable/disable table row selection on row click event as shown in the
-    <a href="feature/data-table/row-selection#selectMode">Row Selection Mode</a> section's examples. Select on row click is enabled in all those
-    examples.
+    This property lets the user to select the raw by clicking on anywhere on the row.
   </p>
 
   <h4 id="selectTrackBy">Select Track By</h4>
@@ -98,17 +96,24 @@
   <h5 class="badge badge-pill badge-warning">Default Value: 'id'</h5>
 
   <p>
-    This control helps users to identify selected row(s) uniquely. When selecting row(s), data table will emit the value of the column specified by
-    the user. Please refer <a [routerLink]="['/feature/data-table/events']">Data Table Events</a> section for more details. All the examples shown in
-    <a href="feature/data-table/row-selection#selectMode">Row Selection Mode</a> section has <b>"id"</b> as <b>selectTrackBy</b> property.
+    This property let the users to identify selected row(s) uniquely. When selecting row(s), data table will emit the
+    value of the column specified by the user. Please refer Data Table <a [routerLink]="['/feature/data-table/events']">Events</a>
+    section for more details. All the examples shown in <a
+    [routerLink]="['/feature/data-table/row-selection']" fragment="selectMode">Row Selection Mode</a> section have set
+    <code>selectTrackBy</code> property as <b>id</b>.
   </p>
 
   <h4 id="selectedRow">Set Selected Row</h4>
 
   <code>selectedRow: any</code>
+
   <p>
-    The page property lets you to set specific row selected in the data table. This can be only used with the
-    <b>single & single_toggle</b> selection modes mentioned in the above. Refer following example,
+    This property let user to set a specific selected row in the data table by automatically right after the
+    data table <a [routerLink]="['/feature/data-table/events']" fragment="init">Initialization</a>. This can only be
+    used with the <b>single</b>
+    and <b>single_toggle</b> selection modes as mentioned in the <a [routerLink]="['/feature/data-table/row-selection']"
+                                                                    fragment="selectMode">Row Selection Mode</a>
+    section.
   </p>
 
   <app-selected-row-usage></app-selected-row-usage>
@@ -117,9 +122,11 @@
   <h4 id="selectedRows">Set Selected Rows</h4>
 
   <code>selectedRows: any[]</code>
+
   <p>
-    The page property lets you to set specific rows selected in the data table. This can be only used with the <b>multi</b> selection mode mentioned
-    in the above. Refer following example,
+    This property let user to set specific rows to be selected in the data table by automatically right after the data
+    table <a [routerLink]="['/feature/data-table/events']" fragment="init">Initialization</a>. This can only be used
+    with the multi selection mode.
   </p>
 
   <app-selected-rows-usage></app-selected-rows-usage>

@@ -2,15 +2,15 @@
   <h1>Column Sorting</h1>
 
   <p>
-    This feature enables column data sorting according to the selected sorting order in specified column fields. Following configuration types are
-    available when working with data table column sorting.
+    This feature enables column data sorting according to the selected sorting order in specified column fields.
+    Following configuration types are available when working with data table column sorting.
   </p>
 
   <p>There are 03 types of sorting orders, which are:</p>
   <ol class="main-pane-list">
-    <li><b>Ascending</b> : column data will be sort according to ascending order.</li>
-    <li><b>Descending</b> : column data will be sort according to descending order.</li>
-    <li><b>None</b> (Default Sorting Order) : column data will be displayed as it is.</li>
+    <li><b>Ascending</b> : Column data will be sorted in ascending order</li>
+    <li><b>Descending</b> : Column data will be sorted in descending order</li>
+    <li><b>None</b> (default order) : Column data will be displayed in the order of received</li>
   </ol>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -21,8 +21,8 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Column sorting can be enabled in any data table column by declaring <code>sortable</code> to <b>true</b> otherwise it will be <b>false</b> by
-    default.
+    Column sorting can be enabled by setting the <code>sortable</code> property as <b>true</b>. By default this property
+    will be in <b>false</b> state. Sorting can be perform by clicking on the sorting icon placed on each column heading.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.sorting"></app-code-snippet>
@@ -33,15 +33,16 @@
   </p>
 
   <p>
-    After enabling the <code>sortable</code> users can simply change the sorting order to any above mention 3 types, by clicking on icon that appears
-    on data table column top right side corner.
+    After enabling the <code>sortable</code> users can simply change the sorting order to any above mention 3 types, by
+    clicking on icon that appears on data table column top right side corner.
   </p>
 
   <h2 id="usefulProperties">Useful properties</h2>
 
   <p>
-    There are few more properties that affects to the behaviour of column sorting. All the available properties can be applied to each table column by
-    independently excepts <a href="/feature/data-table/column/sorting#multiColumnSortable">Multi Column Sortable</a> property.
+    There are other useful additional properties where the behaviour of the column sorting can be applied independently
+    except for <a [routerLink]="['/feature/data-table/column/sorting']" fragment="multiColumnSortable">Multi Column
+    Sortable</a> property.
   </p>
 
   <h4 id="sortOrder">Sort Order</h4>
@@ -49,8 +50,9 @@
   <h5 class="badge badge-pill badge-warning">Default Value: ''</h5>
 
   <p>
-    This property allow users to order the data that already fetched or fetching from a data source. If sorting order is not mentioned by the user,
-    then the default sorting mechanism will be applied for those <code>sortable</code> enabled columns.
+    Using the <code>sortOrder</code> property users can order the data that already fetched or being fetched from a data
+    source. If the sorting order has not been defined by the user, default sorting mechanism will be applied for <code>sortable</code>
+    enabled columns.
   </p>
 
   <app-column-sorting-sort-order-usage></app-column-sorting-sort-order-usage>
@@ -61,8 +63,9 @@
   <h5 class="badge badge-pill badge-warning">Default Value: 'same column field name'</h5>
 
   <p>
-    Sort Field can be override by providing a different column field name, by default sort field value is same to it's column name. providing a
-    different column name to the sort field, ornamentum will start sorting according to the provided column's data.
+    Sort Field can be overridden by providing a different column field name, by default sort field value is same as the
+    column name. Providing a different column name to the <code>sortField</code>, Ornamentum will start sorting
+    according to the provided column's data.
   </p>
 
   <app-column-sorting-sort-field-usage></app-column-sorting-sort-field-usage>
@@ -73,8 +76,8 @@
   <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
 
   <p>
-    Multi column sortable can be only use inside the data table global level configuration. If multi column sortable is enabled, data sorting will be
-    process based on previously preserved column sorting order.
+    Multi column sortable can be used only inside the data table global level configuration. If multi column sortable
+    is been enabled, data sorting will be processed based on the previously preserved column sorting order.
   </p>
 
   <app-column-sorting-multi-column-sortable-usage></app-column-sorting-multi-column-sortable-usage>

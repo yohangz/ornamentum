@@ -2,14 +2,16 @@
   <h1>Data Persistence</h1>
 
   <p>
-    Assume that you are navigating from one page to another. After sometime due to some other reason you might want to come back to the same page
-    which you were initially & want to see some filtered data in the table. But when you come back to that previous page you might see that all the
-    changes that you did has gone. So in these type of scenarios, you might want to save the previous state of the table.
+    Assume that you are navigating from one page to another. After sometime due to some other reason you might want to
+    come back to the same page which you were initially & want to see some filtered data in the table. But when you come
+    back to that previous page you might see that all the changes that you did has gone. So in these type of scenarios,
+    you might want to save the previous state of the table.
   </p>
 
   <p>
-    Data table allows users to save the state in the scenarios such as filtering, sorting, etc. you can tryout the mentioned behaviour by doing
-    sorting, filtering, etc. data and coming back to the same page after navigating to other sections.
+    Data table allows users to save the state in the scenarios such as filtering, sorting, etc. you can tryout the
+    mentioned behaviour by doing sorting, filtering, etc. data and coming back to the same page after navigating to
+    other sections.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -18,13 +20,14 @@
   <app-example-code [files]="dataPersistenceUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>To enable data persistence, simply set <code>persistTableState</code> to <b>true</b> and by default persistTableState is <b>false</b>.</p>
+  <p>To enable data persistence, simply set <code>persistTableState</code> to <b>true</b> and by default
+    persistTableState is <b>false</b>.</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.persistTableState"></app-code-snippet>
 
   <p>
-    The updated state of the data table will be stored in the users's browser storage. In default the table store data in the
-    <b>session storage</b>.
+    The updated state of the data table will be stored in the users's browser storage. In default the table store data
+    in the <b>session storage</b>.
   </p>
 
   <h2 id="usefulProperties">Useful properties</h2>
@@ -36,13 +39,13 @@
   <h5 class="badge badge-pill badge-warning">Default Value: 'session'</h5>
 
   <p>
-    The page property lets you to control the browser storage type that you want to save the data table state. There are two types of storage modes
-    are available.
+    This property let you to control the browser storage type that you want to use to save the data table state. There
+    are two types of storage modes are available.
   </p>
 
   <ul class="main-pane-list">
-    <li>"local" - Browser Local Storage</li>
-    <li>"session" - Browser Session Storage</li>
+    <li><b>local</b> - Browser Local Storage</li>
+    <li><b>session</b> - Browser Session Storage</li>
   </ul>
 
   <p>The following example shows storing data in the local storage.</p>
@@ -56,16 +59,17 @@
   <h5 class="badge badge-pill badge-warning">Default Value: ''</h5>
 
   <p>
-    The page property lets you to assign a name for the state that you are saving in the browser storage. Please note that, the provided id value will
-    be added with the prefix of <b>grid_state_</b>. Assume that you provided id as "table_details". Then the state will be saved with the key name of
-    "grid_state_<b>table_details</b>".
+    The page property lets you to assign a name for the state that you are saving in the browser storage. Please note
+    that, the provided id value will be added with the prefix of <b>"grid_state_"</b>. Assume that you provided id as
+    "table_details". Then the state will be saved with the key name of <b>"grid_state_table_details"</b>.
   </p>
 
   <p>
     In the previous section example has id named "sales_products_detail_summery". So that will be saved in the storage
-    "grid_state_sales_products_detail_summery"
+    as "grid_state_sales_products_detail_summery"
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#persistTableState">API Doc for Data Persistence</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#persistTableState">API Doc for
+    Data Persistence</a>
 </div>

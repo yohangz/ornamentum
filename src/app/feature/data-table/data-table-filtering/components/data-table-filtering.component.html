@@ -2,12 +2,15 @@
   <h1>Filtering</h1>
 
   <p>
-    Filtering lets users to choose a smaller part of your data set which belongs to a specified criteria. This smaller data set may use for viewing or
-    analysis purposes. In such cases, you might want to turn filterable on.
+    Filtering option facilitates the users to filter out data on a data grid based on a specific criteria. Filtering
+    data would help the users to view and analyse data within a short period of time.
   </p>
 
   <p>
-    Data table allows users to filter data via dropdown or text box. The Filterable controls will be displayed on the header level of the grid.
+    In order to filter data in Data Table, <a [routerLink]="['/feature/data-table/column/filtering']"
+                                              fragment="filterDropdown">Dropdown</a> or <a
+    [routerLink]="['/feature/data-table/column/filtering']" fragment="filterTextBox">Text Box</a> can be used.
+    Those filtering controls will be displayed on the header level of the data table.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -17,23 +20,24 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>To enable filterable, simply set <code>filterable</code> to <b>true</b> and by default filterable is <b>false</b>.</p>
-
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.filterable"></app-code-snippet>
-
   <p>
-    This property is designed to configure & filter data in the table column level. In default the table doesn't filter it’s contents. There are
-    various additional properties are available out of the box to enhance the filtering capability. Those properties will be discuss on following
-    sections.
+    To enable the filtering option user should make the <code>filterable</code> property <b>true</b>. However the
+    default status of the property is <b>false</b>.
   </p>
 
-  <app-example-code [files]="filteringUsage"></app-example-code>
+  <p>
+    This property is used to configure and filter the data in the table column level. The default form of data tables
+    does not filter it’s content however users can enhance the filtering capabilities with the use of multiple
+    properties.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.filterable"></app-code-snippet>
 
   <h2 id="filterTextBox">Filter Text Box</h2>
 
   <p>
-    The following content shows the available configurations when using column search filter text box. When users turns on filterable, text box
-    filtering will be enabled as default filtering mechanism.
+    There are few more properties which affect the behaviour of filter text box and those are applicable in column level
+    of table configuration after enabling the filtering.
   </p>
 
   <app-filter-text-box-usage></app-filter-text-box-usage>
@@ -41,8 +45,8 @@
 
   <h2 id="filterTextBoxUsefulProperties">Useful Properties</h2>
   <p>
-    There are few more properties which effect the behaviour of filterable controls and those also applicable in column level of table configuration
-    after enabling the filterable text box.
+    There are few more properties which effect the behaviour of filterable controls and those are applicable in column
+    level of table configuration after enabling the column filtering text box.
   </p>
 
   <h4 id="filterPlaceholder">Filter Place Holder</h4>
@@ -50,29 +54,34 @@
   <h5 class="badge badge-pill badge-warning">Default Value: ''</h5>
 
   <p>
-    The page property lets you to specify placeholder name for search text box. In the above example, <b>ID</b> & <b>Order Method Type</b> columns
-    don't have placeholder name configured.
+    The filter place holder property facilitates the user to specify the placeholder name for the column filtering text
+    box. As depicted in the above data table filter place holder names are configured only for Retailer Type, Product
+    Line, Product Type, Revenue, Quantity and Gross Margin columns.
   </p>
 
   <h4 id="showFilterClearButton">Show Filter Clear Button</h4>
   <code>showFilterClearButton: boolean</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">Default Value: true</h5>
 
-  <p>The page property lets you to show/hide text box search filter clear button. Refer above example to see how this works.</p>
+  <p>
+    Show filter clear button property facilitates the user to show/hide the column filtering text box clear button.
+  </p>
 
   <h2 id="filterDropdown">Filter Dropdown</h2>
 
-  <p>This will allows users to configure drop down filter instead of text box search filter for the columns as they want.</p>
-
-  <p>To enable this simply set <b>true</b> to <code>showDropdownFilter</code> property.</p>
+  <p>
+    Apart from the filter text box the users are facilitated to use a dropdown filtration option to filter out data
+    from a data table. In order to enable the filter dropdown the users required to make <code>showDropdownFilter</code>
+    property <b>true</b>.
+  </p>
 
   <app-filter-dropdown-usage></app-filter-dropdown-usage>
   <app-example-code [files]="filterDropdownUsage"></app-example-code>
 
-  <h2 id="filterDropdownUsefulProperties">Useful properties</h2>
+  <h2 id="filterDropdownUsefulProperties">Useful Properties</h2>
   <p>
-    There are few more properties which effect the behaviour of filter dropdown and those also applicable in column level of table configuration after
-    enabling the filter dropdown.
+    There are few more properties which affect the behaviour of filter dropdown and those are applicable in column level
+    of table configuration after enabling the dropdown filtering.
   </p>
 
   <h4 id="dropdownFilterMenuPosition">Dropdown Filter Menu Position</h4>
@@ -80,15 +89,15 @@
   <h5 class="badge badge-pill badge-warning">Default Value: 'bottom-left'</h5>
 
   <p>
-    Enables users to configure the dropdown filter position. Note that, there are 4 positions users can configure to align the dropdown. According to
-    the following example,
+    Enables users to configure the dropdown filter position. Note that, there are 4 positions users can configure to
+    align the dropdown. According to the following example,
   </p>
 
   <ul class="sub-ul">
-    <li>Order Method Type column filter has the position of BOTTOM_RIGHT</li>
-    <li>Retailer Type column filter has the position of BOTTOM_LEFT</li>
-    <li>Product Line column filter has the position of TOP_RIGHT</li>
-    <li>Product Type column filter has the position of TOP_LEFT</li>
+    <li>Order Method Type column filter has the position of bottom right</li>
+    <li>Retailer Type column filter has the position of bottom left</li>
+    <li>Product Line column filter has the position of top right</li>
+    <li>Product Type column filter has the position of top left</li>
   </ul>
 
   <h4 id="dropdownFilterShowOptionSelectCheckbox">Dropdown Filter Show Option Select Check Box</h4>
@@ -109,8 +118,8 @@
   <h5 class="badge badge-pill badge-warning">Default Value: 'multi'</h5>
 
   <p>
-    Enables users to configure the dropdown filter option selection type. There are 3 types of selection types available in ornamentum data table
-    dropdown filter.
+    Enables users to configure the dropdown filter option selection type. There are 3 types of selection types available
+    in ornamentum data table dropdown filter.
   </p>
 
   <h4 id="dropdownFilterWrapDisplaySelectLimit">Dropdown Filter Wrap Display Select Limit</h4>
@@ -133,7 +142,8 @@
   <h5 class="badge badge-pill badge-warning">Default Value: ''</h5>
 
   <p>
-    Enable dropdown filter options grouping under a specified name. If the group name is not specified all the values are shown as a single group.
+    Enable dropdown filter options grouping under a specified name. If the group name is not specified all the values
+    are shown as a single group.
   </p>
 
   <h4 id="dropdownFilterMenuHeight">Dropdown Filter Menu Height</h4>
