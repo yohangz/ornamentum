@@ -24,8 +24,8 @@
 </ng-data-table>
 
 <br />
-<p class="event-output" *ngIf="rowSelectChangeEventData; else noDataAvailable">
-  <span>{{ rowSelectChangeEventData | json }}<br /></span>
+<p class="event-output" *ngIf="rowSelectChangeEventData.length; else noDataAvailable">
+  <span *ngFor="let item of rowSelectChangeEventData.slice().reverse()">{{ item }}<br/></span>
 </p>
 <ng-template #noDataAvailable>
   <p class="event-output">Select on any row check box to see the output</p>

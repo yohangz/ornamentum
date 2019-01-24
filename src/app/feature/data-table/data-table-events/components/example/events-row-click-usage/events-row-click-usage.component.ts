@@ -13,13 +13,13 @@ import { DataFetchService } from '../../../../../../shared/services';
 })
 export class EventsRowClickUsageComponent {
   public items: ExampleData[];
-  public rowClickEventData: string = null;
+  public rowClickEventData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onRowClick(clickEventArgs: DataTableRowClickEventArgs<any>): void {
-    this.rowClickEventData = `Single click event perform on row ID - ${clickEventArgs.row.item.id}`;
+    this.rowClickEventData.push(`Single click event perform on row ID - ${clickEventArgs.row.item.id}`);
   }
 }

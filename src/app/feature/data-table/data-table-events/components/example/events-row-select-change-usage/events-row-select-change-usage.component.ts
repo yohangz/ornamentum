@@ -12,13 +12,13 @@ import { DataFetchService } from '../../../../../../shared/services';
 export class EventsRowSelectChangeUsageComponent {
   public items: ExampleData[];
 
-  public rowSelectChangeEventData: ExampleData | ExampleData[];
+  public rowSelectChangeEventData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchStaticData();
   }
 
   public onRowSelectChange(selectedData: ExampleData | ExampleData[]): void {
-    this.rowSelectChangeEventData = selectedData;
+    this.rowSelectChangeEventData.push(JSON.stringify(selectedData));
   }
 }

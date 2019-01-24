@@ -20,8 +20,8 @@
 </ng-data-table>
 
 <br />
-<p class="event-output" *ngIf="rowDoubleClickEventData; else noDataAvailable">
-  <span>{{ rowDoubleClickEventData }}</span>
+<p class="event-output" *ngIf="rowDoubleClickEventData.length; else noDataAvailable">
+  <span *ngFor="let item of rowDoubleClickEventData.slice().reverse()">{{ item }}<br /></span>
 </p>
 <ng-template #noDataAvailable>
   <p class="event-output">Double click on any row to see the output</p>
