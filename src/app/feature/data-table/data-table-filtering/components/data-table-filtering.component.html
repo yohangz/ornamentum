@@ -13,6 +13,8 @@
     Those filtering controls will be displayed on the header level of the data table.
   </p>
 
+  <div class="filtering-types"></div>
+
   <h2 id="whatYouWillSee">What You Will See</h2>
 
   <app-filtering-usage></app-filtering-usage>
@@ -43,12 +45,6 @@
   <app-filter-text-box-usage></app-filter-text-box-usage>
   <app-example-code [files]="filterTextBoxUsage"></app-example-code>
 
-  <h2 id="filterTextBoxUsefulProperties">Useful Properties</h2>
-  <p>
-    There are few more properties which effect the behaviour of filterable controls and those are applicable in column
-    level of table configuration after enabling the column filtering text box.
-  </p>
-
   <h4 id="filterPlaceholder">Filter Place Holder</h4>
   <code>filterPlaceholder: string</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">Default Value: ''</h5>
@@ -77,12 +73,6 @@
 
   <app-filter-dropdown-usage></app-filter-dropdown-usage>
   <app-example-code [files]="filterDropdownUsage"></app-example-code>
-
-  <h2 id="filterDropdownUsefulProperties">Useful Properties</h2>
-  <p>
-    There are few more properties which affect the behaviour of filter dropdown and those are applicable in column level
-    of table configuration after enabling the dropdown filtering.
-  </p>
 
   <h4 id="dropdownFilterMenuPosition">Dropdown Filter Menu Position</h4>
   <code>dropdownFilterMenuPosition: string = 'bottom-right' | 'bottom-left' | 'top-left' | 'top-right'</code> &nbsp;
@@ -194,7 +184,6 @@
   <p>Used to provide a filter to see the values matched for specified criteria.</p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html"
-    >API Doc for Data Filtering (refer filtering associated configurations)</a
-  >
+  <a [routerLink]="['/feature/data-table/events']">Events</a><br>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Filtering (refer filtering associated configurations)</a>
 </div>

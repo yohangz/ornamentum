@@ -203,18 +203,12 @@ export class MainComponent {
               anchor: 'filterTextBox',
               subNavigation: [
                 {
-                  title: 'Useful Properties',
-                  anchor: 'filterTextBoxUsefulProperties',
-                  subNavigation: [
-                    {
-                      title: 'Filter Placeholder',
-                      anchor: 'filterPlaceholder'
-                    },
-                    {
-                      title: 'Show Filter Clear Button',
-                      anchor: 'showFilterClearButton'
-                    }
-                  ]
+                  title: 'Filter Placeholder',
+                  anchor: 'filterPlaceholder'
+                },
+                {
+                  title: 'Show Filter Clear Button',
+                  anchor: 'showFilterClearButton'
                 }
               ]
             },
@@ -223,66 +217,60 @@ export class MainComponent {
               anchor: 'filterDropdown',
               subNavigation: [
                 {
-                  title: 'Useful Properties',
-                  anchor: 'filterDropdownUsefulProperties',
-                  subNavigation: [
-                    {
-                      title: 'Dropdown Filter Menu Position',
-                      anchor: 'dropdownFilterMenuPosition'
-                    },
-                    {
-                      title: 'Dropdown Filter Show Option Select Check Box',
-                      anchor: 'dropdownFilterShowOptionSelectCheckbox'
-                    },
-                    {
-                      title: 'Dropdown Filter Close Menu OnSelect',
-                      anchor: 'dropdownFilterCloseMenuOnSelect'
-                    },
-                    {
-                      title: 'Dropdown Filter Select Mode',
-                      anchor: 'dropdownFilterSelectMode'
-                    },
-                    {
-                      title: 'Dropdown Filter Wrap Display Select Limit',
-                      anchor: 'dropdownFilterWrapDisplaySelectLimit'
-                    },
-                    {
-                      title: 'Dropdown Filter Show Selected Option Remove Button',
-                      anchor: 'dropdownFilterShowSelectedOptionRemoveButton'
-                    },
-                    {
-                      title: 'Dropdown Filter Group By Field',
-                      anchor: 'dropdownFilterGroupByField'
-                    },
-                    {
-                      title: 'Dropdown Filter Menu Height',
-                      anchor: 'dropdownFilterMenuHeight'
-                    },
-                    {
-                      title: 'Dropdown Filter Menu Width',
-                      anchor: 'dropdownFilterMenuWidth'
-                    },
-                    {
-                      title: 'Dropdown Filter Multi Select Option Max Width',
-                      anchor: 'dropdownFilterMultiSelectOptionMaxWidth'
-                    },
-                    {
-                      title: 'Dropdown Filter Searchable',
-                      anchor: 'dropdownFilterSearchable'
-                    },
-                    {
-                      title: 'Dropdown Filter Search Debounce',
-                      anchor: 'dropdownFilterSearchDebounce'
-                    },
-                    {
-                      title: 'Dropdown Filter Search Debounce Time',
-                      anchor: 'dropdownFilterSearchDebounceTime'
-                    },
-                    {
-                      title: 'Column Value Filter',
-                      anchor: 'filter'
-                    }
-                  ]
+                  title: 'Dropdown Filter Menu Position',
+                  anchor: 'dropdownFilterMenuPosition'
+                },
+                {
+                  title: 'Dropdown Filter Show Option Select Check Box',
+                  anchor: 'dropdownFilterShowOptionSelectCheckbox'
+                },
+                {
+                  title: 'Dropdown Filter Close Menu OnSelect',
+                  anchor: 'dropdownFilterCloseMenuOnSelect'
+                },
+                {
+                  title: 'Dropdown Filter Select Mode',
+                  anchor: 'dropdownFilterSelectMode'
+                },
+                {
+                  title: 'Dropdown Filter Wrap Display Select Limit',
+                  anchor: 'dropdownFilterWrapDisplaySelectLimit'
+                },
+                {
+                  title: 'Dropdown Filter Show Selected Option Remove Button',
+                  anchor: 'dropdownFilterShowSelectedOptionRemoveButton'
+                },
+                {
+                  title: 'Dropdown Filter Group By Field',
+                  anchor: 'dropdownFilterGroupByField'
+                },
+                {
+                  title: 'Dropdown Filter Menu Height',
+                  anchor: 'dropdownFilterMenuHeight'
+                },
+                {
+                  title: 'Dropdown Filter Menu Width',
+                  anchor: 'dropdownFilterMenuWidth'
+                },
+                {
+                  title: 'Dropdown Filter Multi Select Option Max Width',
+                  anchor: 'dropdownFilterMultiSelectOptionMaxWidth'
+                },
+                {
+                  title: 'Dropdown Filter Searchable',
+                  anchor: 'dropdownFilterSearchable'
+                },
+                {
+                  title: 'Dropdown Filter Search Debounce',
+                  anchor: 'dropdownFilterSearchDebounce'
+                },
+                {
+                  title: 'Dropdown Filter Search Debounce Time',
+                  anchor: 'dropdownFilterSearchDebounceTime'
+                },
+                {
+                  title: 'Column Value Filter',
+                  anchor: 'filter'
                 }
               ]
             },
@@ -403,10 +391,6 @@ export class MainComponent {
               anchor: 'basicUsage',
               subNavigation: [
                 {
-                  title: 'With Substitute Rows',
-                  anchor: 'withSubstituteRows'
-                },
-                {
                   title: 'Without Substitute Rows',
                   anchor: 'withoutSubstituteRows'
                 }
@@ -429,16 +413,6 @@ export class MainComponent {
             {
               title: 'Basic Usage',
               anchor: 'basicUsage'
-            },
-            {
-              title: 'Useful Properties',
-              anchor: 'usefulProperties',
-              subNavigation: [
-                {
-                  title: 'Show Loading Spinner',
-                  anchor: 'showLoadingSpinner'
-                }
-              ]
             },
             {
               title: 'Suggested Links',
@@ -483,8 +457,52 @@ export class MainComponent {
           ]
         },
         {
-          routePath: '/feature/data-table/responsive-configuration',
-          title: 'Responsive Configuration'
+          routePath: '/feature/data-table/responsive-configurations',
+          title: 'Responsive Configurations',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Useful Properties',
+              anchor: 'usefulProperties',
+              subNavigation: [
+                {
+                  title: 'Content Height',
+                  anchor: 'contentHeight'
+                },
+                {
+                  title: 'Width',
+                  anchor: 'width'
+                },
+                {
+                  title: 'Min Height',
+                  anchor: 'minHeight'
+                },
+                {
+                  title: 'Min Width',
+                  anchor: 'minWidth'
+                },
+                {
+                  title: 'Expander Column Width',
+                  anchor: 'expanderColumnWidth'
+                },
+                {
+                  title: 'Index Column Width',
+                  anchor: 'indexColumnWidth'
+                },
+                {
+                  title: 'Selection Column Width',
+                  anchor: 'selectionColumnWidth'
+                }
+              ]
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
         },
         {
           routePath: '/feature/data-table/translations',

@@ -5,13 +5,13 @@ import { ExampleData } from '../../../../../../shared/models';
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-responsive-conf-all-usage',
-  templateUrl: './responsive-conf-all-usage.component.html'
+  selector: 'app-responsive-conf-content-height-usage',
+  templateUrl: './responsive-conf-content-height-usage.component.html'
 })
-export class ResponsiveConfAllUsageComponent {
+export class ResponsiveConfContentHeightUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.items = this.dataFetchService.fetchStaticData(0, 20);
   }
 }

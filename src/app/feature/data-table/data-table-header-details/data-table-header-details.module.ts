@@ -28,7 +28,15 @@ import { SharedModule } from '../../../shared/shared.module';
     TableHeaderDetailsShowColumnSelectorUsageComponent
   ],
   exports: [],
-  imports: [CommonModule, FormsModule, SharedModule.forRoot(), DataTableModule.forRoot(), DataTableHeaderDetailsRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    SharedModule.forRoot(),
+    DataTableModule.forRoot({
+      showColumnSelector: true
+    }),
+    DataTableHeaderDetailsRoutingModule],
   providers: []
 })
-export class DataTableHeaderDetailsModule {}
+export class DataTableHeaderDetailsModule {
+}

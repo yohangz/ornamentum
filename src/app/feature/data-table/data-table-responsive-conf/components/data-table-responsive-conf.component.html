@@ -1,39 +1,102 @@
+<script src="data-table-responsive-conf.list.ts"></script>
 <div class="feature-container">
-  <h1>Data Table Responsive Configuration</h1>
+  <h1>Responsive Configurations</h1>
 
-  <p>The following configuration are available when setting data table responsiveness.</p>
+  <p>Ornamentum allows you to set-up data table responsive configurations in few ways, by overriding available
+    default configurations you can customize data table responsiveness and make the data table supports for different
+    device resolutions and viewports.</p>
 
-  <h6>
-    <b>
-      [minWidth]="650", [minHeight]="200", [contentHeight]="400", [width]="800"
-    </b>
-  </h6>
+  <h2 id="whatYouWillSee">What You Will See</h2>
 
-  <ul class="main-pane-list">
-    <li>
-      Specifying minWidth & minHeight will enable horizontal & vertical scroll bars if the container width and height met with the specified values.
-    </li>
-    <li>width configuration is used to specify the table width.</li>
-    <li>contentHeight configuration is used to specify the table content height.</li>
-  </ul>
+  <app-responsive-conf-usage></app-responsive-conf-usage>
+  <app-example-code [files]="responsiveConfUsage"></app-example-code>
 
-  <app-responsive-conf-all-usage></app-responsive-conf-all-usage>
 
-  <app-example-code [files]="responsiveConfAllUsage"></app-example-code>
+  <h4 id="contentHeight">Content Height</h4>
+  <code>contentHeight: string | number</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
 
-  <p>
-    [minWidth]="1130", [minHeight]="200"
+  <p>This property was responsible to enable static content height and vertical scrolling in data table. provide height
+    in pixels to override the default content height and if content height is not defined by explicitly, ornamentum will
+    takes parent container height as the data table content height.</p>
+
+  <app-responsive-conf-content-height-usage></app-responsive-conf-content-height-usage>
+  <app-example-code [files]="responsiveConfContentHeightUsage"></app-example-code>
+
+  <h4 id="width">Width</h4>
+  <code>width: string | number</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+
+  <p>This property can be uses to define a static data table content width. it was accepts pixels as any number or
+    string and if width is not defined by explicitly, ornamentum will takes the parent container width as the data table
+    width.</p>
+
+  <app-responsive-conf-width-usage></app-responsive-conf-width-usage>
+  <app-example-code [files]="responsiveConfWidthUsage"></app-example-code>
+
+  <h4 id="minHeight">Min Height</h4>
+  <code>minHeight: string | number</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+
+  <p>This property was uses to set minimum height which act as a overlay height when <code>pageable</code> is disabled.
+    provide pixels as a number or string to see the property in action. for more about data table pagination
+    and it's options refer <a [routerLink]="['/feature/data-table/pagination']">Pagination</a> section.</p>
+
+  <app-responsive-conf-min-height-usage></app-responsive-conf-min-height-usage>
+  <app-example-code [files]="responsiveConfMinHeightUsage"></app-example-code>
+
+  <h4 id="minWidth">Min Width</h4>
+  <code>minWidth: string | number</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+
+  <p>This property was uses to enable horizontal scroll bar when after container width meet defined minimum
+    width. this was useful when building mobile responsive grid without scattering data on data table. provide pixels as
+    a number or string to see the property in action.</p>
+
+  <app-responsive-conf-min-width-usage></app-responsive-conf-min-width-usage>
+  <app-example-code [files]="responsiveConfMinWidthUsage"></app-example-code>
+
+  <h4 id="expanderColumnWidth">Expander Column Width</h4>
+  <code>expanderColumnWidth: string | number</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 30</h5>
+
+  <p>This property was allowing expander icon column width, by providing a string or number in pixels you can
+    customize the responsiveness of the expander column. this property can be uses when <code>expandableRows</code> is
+    enabled. for more details about expander column details refer <a
+      [routerLink]="['/feature/data-table/templates/expand-template']">Row Expand Template</a> section.</p>
+
+  <app-responsive-conf-expander-column-width-usage></app-responsive-conf-expander-column-width-usage>
+  <app-example-code [files]="responsiveConfExpanderColumnWidthUsage"></app-example-code>
+
+  <h4 id="indexColumnWidth">Index Column Width</h4>
+  <code>indexColumnWidth: string | number</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 30</h5>
+
+  <p>Using index column width, you can set static data row auto incrementing number column width by manually.
+    it was accepts pixels as a type of number or string and this property can be uses when
+    <code>showIndexColumn</code> is enabled. for more details about auto increment column details refer <a
+      [routerLink]="['/feature/data-table/row-indexing']">Row Indexing</a> section.</p>
+
+  <app-responsive-conf-index-column-width-usage></app-responsive-conf-index-column-width-usage>
+  <app-example-code [files]="responsiveConfIndexColumnWidthUsage"></app-example-code>
+
+  <h4 id="selectionColumnWidth">Selection Column Width</h4>
+  <code>selectionColumnWidth: string | number</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 30</h5>
+
+  <p>This property can be uses to set row selector checkbox column width. it can be uses when only
+    <code>rowSelectable</code> and <code>showRowSelectAllCheckbox</code> properties are enabled. for more details about
+    data selection refer <a [routerLink]="['/feature/data-table/row-selection']">Row Selection</a> section.
   </p>
 
-  <ul class="main-pane-list">
-    <li>if width is not specified data table will take the parent container width.</li>
-    <li>if contentHeight is not specified data table will take the parent container height.</li>
-  </ul>
+  <app-responsive-conf-selection-column-width-usage></app-responsive-conf-selection-column-width-usage>
+  <app-example-code [files]="responsiveConfSelectionColumnWidthUsage"></app-example-code>
 
-  <app-responsive-conf-without-width-height-usage></app-responsive-conf-without-width-height-usage>
-
-  <app-example-code [files]="responsiveConfWithoutWidthHeightUsage"></app-example-code>
-
-  <h2>Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Responsive Configuration</a>
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/data-table/row-selection']">Row Selection</a><br>
+  <a [routerLink]="['/feature/data-table/templates/row-expand-template']">Row Expand Template</a><br>
+  <a [routerLink]="['/feature/data-table/events']">Events</a><br>
+  <a [routerLink]="['/feature/data-table/row-indexing']">Row Indexing</a><br>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Responsive
+    Configuration</a>
 </div>

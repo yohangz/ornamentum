@@ -1,6 +1,7 @@
 <div class="feature-container">
   <h1>Cell Template</h1>
-  <p>Users can customize table cells based on their personalized and detailed preference.</p>
+
+  <p>Cell template will allow users to customize table cells based on their personalized and detailed preference.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -9,44 +10,45 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>Initially You set your own Cell Template as follows.</p>
+  <p>Initially you can set your own cell template all configuration as follows.</p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.base_template"></app-code-snippet>
 
   <p>
-    Once the template is done, You can apply it to one or more columns In the above data table, the following template is applied to values in
-    <b>Retailer Type</b> column.
+    Once the template configuring is done, You can apply one or more columns In the above data table, the following
+    template is applied values in <b>Retailer Type</b> column.
   </p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.cell_template"></app-code-snippet>
 
-  <p>Use following files to see the relevant code segments for above data table example.</p>
 
   <h2 id="usefulProperties">Useful Properties</h2>
-  <p>There are few more properties available when providing your own custom templates.</p>
+  <p>There are few more configurations available which affects the cell templating behaviours.</p>
 
   <h4 id="column">Column</h4>
   <code>column: DataTableColumnComponent</code>
 
-  <p>This property can be accessed as follows and Data table column component contains all column properties that required.</p>
+  <p>Cell responsible column can be accessed as follows and Data table column component contains all column properties
+    that required.</p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.column_property_template"></app-code-snippet>
 
   <h4 id="row">Row</h4>
   <code>row: DataTableRow</code>
 
-  <p>This property can be accessed as follows.</p>
+  <p>Cell responsible specific data table row field can be accessed as follows.</p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.row_property_template"></app-code-snippet>
 
-  <h4 id="spanIndex">Row Span Index</h4>
+  <h4 id="spanIndex">Span Index</h4>
   <code>spanIndex: number</code>
-  <br />
-  <p>This property can be accessed as follows. and represents row span index value.</p>
+  <br/>
+  <p>Cell responsible specific data table row span index can be accessed as follows.</p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.span_index_property_template"></app-code-snippet>
 
-  <h4 id="rowSpan">Row Span Count</h4>
+  <h4 id="rowSpan">Row Span</h4>
   <code>rowSpan: number</code>
-  <br />
-  <p>This property can be accessed as follows.</p>
+  <br/>
+  <p>Row span count can be accessed as follows.</p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.row_span_property_template"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Cell Template</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Cell
+    Template</a>
 </div>

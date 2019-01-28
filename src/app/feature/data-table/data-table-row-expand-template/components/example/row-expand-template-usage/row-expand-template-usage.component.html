@@ -16,8 +16,6 @@
   <ng-data-table-column [field]="'quantity'" [title]="'Quantity'" [width]="80"> </ng-data-table-column>
   <ng-data-table-column [field]="'grossMargin'" [title]="'Gross Margin'" [width]="100"> </ng-data-table-column>
   <ng-template #ngDataTableRowExpand let-row="row">
-    <span
-      >Product => <b style="color: #4dc71f">{{ row.item.product }}</b></span
-    >
+    <span>Product --> <b style="color: #46c79f">{{ row.item.product }}</b></span>
   </ng-template>
 </ng-data-table>
