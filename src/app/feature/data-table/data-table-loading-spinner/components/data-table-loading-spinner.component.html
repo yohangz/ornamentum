@@ -1,16 +1,16 @@
 <div class="feature-container">
-  <h1>Loading Spinner</h1>
+  <h1>Data Loading Spinner</h1>
 
   <p>
-    Loading Spinner is responsible to display a spinner on data table body while on data fetch operation, once after the success data retrieval
-    process it will disappear and data will be displayed on the table body.
+    Data loading spinner is responsible to display a spinner on data table body while on data fetch operation, once
+    after the success data retrieval process it will disappear and data will be displayed on the table body.
   </p>
 
   <p>
-    Loading spinner is very useful when on
-    <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server Side Data Binding</a> and
-    <a [routerLink]="['/feature/data-table/real-time-data-binding']">Real Time Data Binding</a> operations. from enabling data loading spinner
-    ornamentum will keep updates the end user that the data retrieval process is still going on and preventing affect to user experience negatively.
+    Loading spinner is very useful when on <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server
+    Side Data Binding</a> and <a [routerLink]="['/feature/data-table/real-time-data-binding']">Real Time Data
+    Binding</a> operations. from enabling data loading spinner ornamentum will keep updates the end user that the data
+    retrieval process is still going on and preventing affect to user experience negatively.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -21,35 +21,22 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Loading spinner can be enable by binding <b>true</b> to <code>showLoadingSpinner</code> property in global level of data table configuration
-    (ng-data-table).
+    Loading spinner can be enable by binding <b>true</b> to <code>showLoadingSpinner</code> property in table level of
+    data table configuration, by default configuration property was in <b>false</b> state.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.loadingSpinner"></app-code-snippet>
 
   <p>
-    Please note to display the loading spinner it is <b>mandatory</b> to enabling <code>showLoadingSpinner</code> property and after enabling, you can
-    bind a custom template into the data loading scenario if you want. for loading spinner templates please refer
-    <a rel="noopener" target="_blank" href="feature/data-table/templates/loading-spinner-template">Loading Spinner Template</a> section.
-  </p>
-
-  <!--<p>Loading spinner property can be override in module level. for more details about Module level property overriding-->
-  <!--please refer <a rel="noopener" target="_blank" href="#">Module Level Property Override</a> section.</p>-->
-
-  <h2 id="usefulProperties">Useful Properties</h2>
-
-  <p>As explain in the above, there is a property that affect to the behaviour of table loading spinner.</p>
-
-  <h4 id="showLoadingSpinner">Show Loading Spinner</h4>
-  <code>showLoadingSpinner: boolean</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
-
-  <p>
-    Show Loading Spinner is responsible to continuously display default spinner on data table body until the data fetch operation is complete.
+    Please note to display the loading spinner, it is <b>mandatory</b> to enable <code>showLoadingSpinner</code>
+    property and after enabling, you can bind a custom template into the data loading scenario if you prefer. for
+    loading spinner templates please refer <a [routerLink]="['/feature/data-table/templates/loading-spinner-template']">Loading
+    Spinner Template</a> section.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
 
-  <a [routerLink]="['/feature/data-table/templates/no-records-template']">No Records Template</a><br />
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#showLoadingSpinner">API Doc for Data Table Loading Spinner</a>
+  <a [routerLink]="['/feature/data-table/templates/no-records-template']">No Records Template</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#showLoadingSpinner">API Doc for
+    Data Table Loading Spinner</a>
 </div>

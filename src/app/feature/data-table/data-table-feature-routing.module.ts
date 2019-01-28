@@ -123,11 +123,11 @@ const dataTableFeatureRoutes: Routes = [
   },
   {
     loadChildren: './data-table-responsive-conf/data-table-responsive-conf.module#DataTableResponsiveConfModule',
-    path: 'responsive-configuration',
+    path: 'responsive-configurations',
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Responsive Configuration',
+        title: 'Ornamentum | Data Table | Functionality | Responsive Configurations',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

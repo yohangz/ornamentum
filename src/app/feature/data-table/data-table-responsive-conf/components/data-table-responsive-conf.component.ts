@@ -1,6 +1,15 @@
 import { Component } from '@angular/core';
 
-import { responsiveConfAllUsage, responsiveConfWithoutWidthHeightUsage } from './data-table-responsive-conf.list';
+import {
+  responsiveConfContentHeightUsage,
+  responsiveConfExpanderColumnWidthUsage,
+  responsiveConfIndexColumnWidthUsage,
+  responsiveConfMinHeightUsage,
+  responsiveConfMinWidthUsage,
+  responsiveConfSelectionColumnWidthUsage,
+  responsiveConfUsage,
+  responsiveConfWidthUsage,
+} from './data-table-responsive-conf.list';
 
 @Component({
   selector: 'app-data-table-responsive-conf-component',
@@ -8,6 +17,12 @@ import { responsiveConfAllUsage, responsiveConfWithoutWidthHeightUsage } from '.
   styleUrls: ['./data-table-responsive-conf.component.scss']
 })
 export class DataTableResponsiveConfComponent {
-  public responsiveConfAllUsage = responsiveConfAllUsage;
-  public responsiveConfWithoutWidthHeightUsage = responsiveConfWithoutWidthHeightUsage;
+  public responsiveConfContentHeightUsage = responsiveConfContentHeightUsage;
+  public responsiveConfExpanderColumnWidthUsage = responsiveConfExpanderColumnWidthUsage;
+  public responsiveConfIndexColumnWidthUsage = responsiveConfIndexColumnWidthUsage;
+  public responsiveConfMinHeightUsage = responsiveConfMinHeightUsage;
+  public responsiveConfMinWidthUsage = responsiveConfMinWidthUsage;
+  public responsiveConfSelectionColumnWidthUsage = responsiveConfSelectionColumnWidthUsage;
+  public responsiveConfUsage = responsiveConfUsage;
+  public responsiveConfWidthUsage = responsiveConfWidthUsage;
 }

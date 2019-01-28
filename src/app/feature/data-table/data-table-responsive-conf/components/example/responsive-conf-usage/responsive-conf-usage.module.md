@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DataTableModule } from 'ornamentum';
   
-import { ResponsiveConfAllUsageComponent } from './responsive-conf-all-usage.component';
+import { ResponsiveConfUsageComponent } from './responsive-conf-usage.component';
 
 @NgModule({
- bootstrap: [ResponsiveConfAllUsageComponent],
- declarations: [ResponsiveConfAllUsageComponent],
+ bootstrap: [ResponsiveConfUsageComponent],
+ declarations: [ResponsiveConfUsageComponent],
  imports: [
     BrowserModule, 
     DataTableModule.forRoot()
   ]
 })
-export class ResponsiveConfAllUsageModule {
+export class ResponsiveConfUsageModule {
 }

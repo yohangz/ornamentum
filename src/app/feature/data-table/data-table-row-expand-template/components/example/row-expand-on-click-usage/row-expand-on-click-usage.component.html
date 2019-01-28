@@ -6,19 +6,45 @@
   [pageable]="true"
   [showHeader]="true"
   [expandableRows]="true"
-  [expandOnRowClick]="true"
->
-  <ng-data-table-column [field]="'id'" [title]="'ID'" [width]="50"> </ng-data-table-column>
-  <ng-data-table-column [field]="'orderMethodType'" [title]="'Order Method Type'" [width]="120"> </ng-data-table-column>
-  <ng-data-table-column [field]="'retailerType'" [title]="'Retailer Type'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'productLine'" [title]="'Product Line'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'productType'" [title]="'Product Type'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'revenue'" [title]="'Revenue'" [width]="120"> </ng-data-table-column>
-  <ng-data-table-column [field]="'quantity'" [title]="'Quantity'" [width]="80"> </ng-data-table-column>
-  <ng-data-table-column [field]="'grossMargin'" [title]="'Gross Margin'" [width]="100"> </ng-data-table-column>
+  [expandOnRowClick]="true">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [width]="50">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'orderMethodType'"
+    [title]="'Order Method Type'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'retailerType'"
+    [title]="'Retailer Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productLine'"
+    [title]="'Product Line'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productType'"
+    [title]="'Product Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'revenue'"
+    [title]="'Revenue'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'quantity'"
+    [title]="'Quantity'"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'grossMargin'"
+    [title]="'Gross Margin'"
+    [width]="100">
+  </ng-data-table-column>
   <ng-template #ngDataTableRowExpand let-row="row">
-    <span
-      >Product => <b style="color: #4dc71f">{{ row.item.product }}</b></span
-    >
+    <span>Product => <b style="color: #4dc71f">{{ row.item.product }}</b></span>
   </ng-template>
 </ng-data-table>

@@ -2,32 +2,37 @@
   <h1>Row Expand Template</h1>
 
   <p>
-    Sometimes you might want to customize the table row expandable section by your their own template. for more details about row expanding usages
-    please refer <a href="feature/data-table/templates/expand-template#basicUsage">Basic Usage</a> section.
+    Assume, if you want to show additional table view in below the data table each rows. These type of situations you
+    can use additional expandable view and ornamentum will allows to customize the table row expandable section by
+    your own templates.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
+
   <app-row-expand-template-usage></app-row-expand-template-usage>
   <app-example-code [files]="rowExpandTemplateUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>To enable expandable rows, simply set <code>expandableRows</code> to <b>true</b> and by default expandableRows is false.</p>
-
   <p>
-    Data table will not show anything although you have provided true for expandableRows property due to unavailability of a custom template. That
-    means data table doesn't contain any default expandable row template. Therefore, you should provide your own template when you set expandableRows
-    value into true.
+    This feature can be enabled by setting the <code>expandableRows</code> as true. Default status of this property is
+    <b>false</b>.
   </p>
 
-  <p>You can provide your own template as follows.</p>
+  <p>
+    Data table will not show anything although it has been set as <b>true</b> for <code>expandableRows</code> property
+    due to unavailability of a custom template. Therefore, it is <b>essential</b> to provide a custom template if this
+    property is set to true.
+  </p>
+
+  <p>Following code snippet depicts how to set a customer template.</p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.base_template"></app-code-snippet>
 
-  <p>In the above data table, the following template is applied for all expandable rows.</p>
+  <p>In <a [routerLink]="['/feature/data-table/templates/expand-template']" fragment="whatYouWillSee">What You Will
+    See</a> section , Following code snippet depicts how to setup expandable row for as expandable customer template.
+  </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.expand_template"></app-code-snippet>
-
-  <p>Use following files to see the relevant code segments for above data table example.</p>
 
   <h2 id="usefulProperties">Useful Properties</h2>
   <p>There are few more properties available when providing your own custom templates.</p>
@@ -35,13 +40,16 @@
   <h4 id="row">Row</h4>
   <code>row: DataTableRow</code>
 
-  <p>This property can be accessed as shown in the above basic usage sections's example.</p>
+  <p>This property can be accessed as shown in the above <a
+    [routerLink]="['/feature/data-table/templates/expand-template']" fragment="whatYouWillSee">What You Will
+    See</a> sections's example.</p>
 
   <h4 id="expandOnRowClick">Expand On Row Click</h4>
   <code>expandOnRowClick: boolean</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
 
-  <p>Tells data table to expand the table row on user row click event when expandable rows feature is enabled.</p>
+  <p>Tells data table to expand the table row on user row click or row expand click event when expandable rows feature
+    is enabled.</p>
 
   <app-row-expand-on-click-usage></app-row-expand-on-click-usage>
   <app-example-code [files]="rowExpandOnClickUsage"></app-example-code>
@@ -51,25 +59,25 @@
   <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
 
   <p>
-    Enables loading spinner when data is fetching to the table row expandable section. This can be clear seen when there is scenario to show data by
-    calling a REST API to the expandable row in a slow network.
+    Enables loading spinner when data is fetching to the table row expandable section. This can be clear seen when there
+    is scenario to show data by calling a REST API to the expandable row in a slow network.
   </p>
 
   <app-row-expand-loading-spinner-usage></app-row-expand-loading-spinner-usage>
   <app-example-code [files]="rowExpandLoadingSpinnerUsage"></app-example-code>
 
-  <p>In the above data table, the following template is applied for all expandable rows to see the loading spinner behaviour.</p>
+  <p>In the above data table, the following template (app-expand-expandable-detail-view) is applied for all expandable
+    rows to see the loading spinner behaviour.</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.loading_spinner_template"></app-code-snippet>
 
-  <p>In the following you can see the code base relevant to above template.</p>
+  <p>In the following you can see the code base relevant to the expandable template.</p>
 
   <app-example-code [files]="rowExpandLoadingSpinnerDetailView"></app-example-code>
 
   <p>You can use <b>data row</b> properties to control the behaviour of the loading spinner as shown in the above.</p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#rowExpandTemplate"
-    >API Doc for Data Table Row Expand Template</a
-  >
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#rowExpandTemplate">API Doc for
+    Data Table Row Expand Template</a>
 </div>

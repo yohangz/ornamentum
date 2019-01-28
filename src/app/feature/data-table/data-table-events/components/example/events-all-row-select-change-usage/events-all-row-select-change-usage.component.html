@@ -11,21 +11,50 @@
   [showRowSelectCheckbox]="true"
   [showRowSelectAllCheckbox]="true"
   [selectMode]="'multi'"
-  (allRowSelectChange)="onAllRowSelectChange($event)"
->
-  <ng-data-table-column [field]="'id'" [title]="'ID'" [width]="50"> </ng-data-table-column>
-  <ng-data-table-column [field]="'orderMethodType'" [title]="'Order Method Type'" [width]="120"> </ng-data-table-column>
-  <ng-data-table-column [field]="'retailerType'" [title]="'Retailer Type'" [width]="120"> </ng-data-table-column>
-  <ng-data-table-column [field]="'productLine'" [title]="'Product Line'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'productType'" [title]="'Product Type'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'revenue'" [title]="'Revenue'" [width]="120"> </ng-data-table-column>
-  <ng-data-table-column [field]="'quantity'" [title]="'Quantity'" [width]="70"> </ng-data-table-column>
-  <ng-data-table-column [field]="'grossMargin'" [title]="'Gross Margin'" [width]="100"> </ng-data-table-column>
+  (allRowSelectChange)="onAllRowSelectChange($event)">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [width]="50">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'orderMethodType'"
+    [title]="'Order Method Type'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'retailerType'"
+    [title]="'Retailer Type'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productLine'"
+    [title]="'Product Line'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productType'"
+    [title]="'Product Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'revenue'"
+    [title]="'Revenue'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'quantity'"
+    [title]="'Quantity'"
+    [width]="70">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'grossMargin'"
+    [title]="'Gross Margin'"
+    [width]="100">
+  </ng-data-table-column>
 </ng-data-table>
 
-<br />
+<br/>
 <p class="event-output" *ngIf="allRowSelectChangeEventData.length; else noDataAvailable">
-  <span *ngFor="let item of allRowSelectChangeEventData.slice().reverse()">{{ item }}<br /></span>
+  <span *ngFor="let item of allRowSelectChangeEventData.slice().reverse()">{{ item }}<br/></span>
 </p>
 <ng-template #noDataAvailable>
   <p class="event-output">Click on the row select all check box or select all checkboxes on current view one by one</p>

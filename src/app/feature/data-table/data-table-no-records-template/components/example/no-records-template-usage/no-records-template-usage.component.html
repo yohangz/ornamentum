@@ -6,16 +6,43 @@
   [pageable]="false"
   [showHeader]="true"
   [showLoadingSpinner]="true"
-  [expandableRows]="true"
->
-  <ng-data-table-column [field]="'id'" [title]="'ID'" [width]="70"> </ng-data-table-column>
-  <ng-data-table-column [field]="'orderMethodType'" [title]="'Order Method Type'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'retailerType'" [title]="'Retailer Type'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'productLine'" [title]="'Product Line'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'productType'" [title]="'Product Type'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'revenue'" [title]="'Revenue'" [width]="120"> </ng-data-table-column>
-  <ng-data-table-column [field]="'quantity'" [title]="'Quantity'" [width]="70"> </ng-data-table-column>
-  <ng-data-table-column [field]="'grossMargin'" [title]="'Gross Margin'" [width]="100"> </ng-data-table-column>
+  [expandableRows]="true">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [width]="70">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'orderMethodType'"
+    [title]="'Order Method Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'retailerType'"
+    [title]="'Retailer Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productLine'"
+    [title]="'Product Line'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productType'"
+    [title]="'Product Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'revenue'"
+    [title]="'Revenue'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'quantity'"
+    [title]="'Quantity'"
+    [width]="70">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'grossMargin'"
+    [title]="'Gross Margin'"
+    [width]="100">
+  </ng-data-table-column>
   <ng-template #ngDataTableNoRecords>
     <h1 style="font-family: 'Helvetica Neue'; color: #8f893f;">No data have been detected.</h1>
     <h2>Please read our <a href="#">documentation</a> about data retrieval process</h2>

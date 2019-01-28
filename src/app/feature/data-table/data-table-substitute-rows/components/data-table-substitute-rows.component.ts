@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 
-import { demoSnippet, withoutSubstituteRowsUsage, withSubstituteRowsUsage } from './data-table-substitute-rows.list';
+import {
+  demoSnippet,
+  substituteRowsUsage,
+  withoutSubstituteRowsUsage
+} from './data-table-substitute-rows.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,7 +16,7 @@ import { FileType } from 'helper-models';
 export class DataTableSubstituteRowsComponent {
   public FileType = FileType;
 
-  public withSubstituteRowsUsage = withSubstituteRowsUsage;
+  public substituteRowsUsage = substituteRowsUsage;
   public withoutSubstituteRowsUsage = withoutSubstituteRowsUsage;
   public demoSnippet = demoSnippet;
 }
