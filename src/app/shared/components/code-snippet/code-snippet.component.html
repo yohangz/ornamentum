@@ -1,7 +1,9 @@
-<ng-container [ngSwitch]="type">
-  <app-copy-content [data]="content"></app-copy-content>
-  <pre *ngSwitchCase="FileType.TS" class="prettyprint lang-js" [class.linenums]="showLineNumbers">{{ content }}</pre>
-  <pre *ngSwitchCase="FileType.CSS" class="prettyprint lang-css" [class.linenums]="showLineNumbers">{{ content }}</pre>
-  <pre *ngSwitchCase="FileType.HTML" class="prettyprint lang-html" [class.linenums]="showLineNumbers">{{ content }}</pre>
-  <pre *ngSwitchCase="FileType.JSON" class="prettyprint lang-json" [class.linenums]="showLineNumbers">{{ content }}</pre>
-</ng-container>
+<div class="code-snippet-container">
+  <ng-container [ngSwitch]="type">
+    <app-copy-content [data]="content"></app-copy-content>
+    <pre *ngSwitchCase="FileType.TS" class="prettyprint lang-js" [class.linenums]="showLineNumbers">{{ content }}</pre>
+    <pre *ngSwitchCase="FileType.CSS" class="prettyprint lang-css" [class.linenums]="showLineNumbers">{{ content }}</pre>
+    <pre *ngSwitchCase="FileType.HTML" class="prettyprint lang-html" [class.linenums]="showLineNumbers">{{ content }}</pre>
+    <pre *ngSwitchCase="FileType.JSON" class="prettyprint lang-json" [class.linenums]="showLineNumbers">{{ content }}</pre>
+  </ng-container>
+</div>

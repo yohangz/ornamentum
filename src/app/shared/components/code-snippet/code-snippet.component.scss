@@ -1,4 +1,14 @@
 @import '../../../styles/variables';
+.code-snippet-container {
+  display: block;
+  position: relative;
+
+  app-copy-content {
+    position: absolute;
+    right: -5px;
+    top: -5px;
+  }
+}
 
 .prettyprint {
   background: $nav-tabs-border-color;
