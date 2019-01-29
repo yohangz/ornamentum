@@ -15,13 +15,14 @@
     padding-left: 0.5rem;
 
     li {
-      @include font-size(1, 1.8);
+      @include font-size(0.8, 1.1);
       color: $side-menu-link-color;
       font-weight: 600;
       list-style-type: none;
+      padding: .3rem 0;
 
       a {
-        @include font-size(0.8, 1.6);
+        @include font-size(0.7, 1.1);
         color: $side-menu-label-text;
         font-weight: 400;
       }
