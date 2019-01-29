@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 
 import {
   demoSnippet,
-  rowExpandLoadingSpinnerDetailView,
+  rowExpandTemplateUsage,
+  rowExpandTemplateDetailView,
   rowExpandLoadingSpinnerUsage,
-  rowExpandOnClickUsage,
-  rowExpandTemplateUsage
+  rowExpandLoadingSpinnerDetailView,
+  rowExpandOnClickUsage
 } from './data-table-row-expand-template.list';
 
 import { FileType } from 'helper-models';
@@ -21,6 +22,7 @@ export class DataTableRowExpandTemplateComponent {
   public rowExpandTemplateUsage = rowExpandTemplateUsage;
   public rowExpandOnClickUsage = rowExpandOnClickUsage;
   public rowExpandLoadingSpinnerUsage = rowExpandLoadingSpinnerUsage;
+  public rowExpandTemplateDetailView = rowExpandTemplateDetailView;
   public rowExpandLoadingSpinnerDetailView = rowExpandLoadingSpinnerDetailView;
   public demoSnippet = demoSnippet;
 }

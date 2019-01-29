@@ -6,10 +6,11 @@ import { DataTableModule } from 'ornamentum';
 
 import {
   DataTableRowExpandTemplateComponent,
-  RowExpandExpandableDetailViewComponent,
+  RowExpandTemplateUsageComponent,
+  RowExpandTemplateDetailViewComponent,
   RowExpandLoadingSpinnerUsageComponent,
+  RowExpandLoadingSpinnerDetailViewComponent,
   RowExpandOnClickUsageComponent,
-  RowExpandTemplateUsageComponent
 } from './index';
 
 import { DataTableRowExpandTemplateRoutingModule } from './data-table-row-expand-template-routing.module';
@@ -23,9 +24,10 @@ import { SharedModule } from '../../../shared/shared.module';
   declarations: [
     DataTableRowExpandTemplateComponent,
     RowExpandTemplateUsageComponent,
+    RowExpandTemplateDetailViewComponent,
     RowExpandOnClickUsageComponent,
     RowExpandLoadingSpinnerUsageComponent,
-    RowExpandExpandableDetailViewComponent
+    RowExpandLoadingSpinnerDetailViewComponent
   ],
   exports: [],
   imports: [

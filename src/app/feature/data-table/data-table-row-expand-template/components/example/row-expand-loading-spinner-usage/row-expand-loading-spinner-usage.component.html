@@ -45,7 +45,7 @@
     [width]="100">
   </ng-data-table-column>
   <ng-template #ngDataTableRowExpand let-row="row">
-    <app-expand-expandable-detail-view *ngIf="row.expanded || row.dataLoaded"
-                                       [row]="row"></app-expand-expandable-detail-view>
+    <app-row-expand-loading-spinner-detail-view *ngIf="row.expanded || row.dataLoaded"
+                                       [row]="row"></app-row-expand-loading-spinner-detail-view>
   </ng-template>
 </ng-data-table>
