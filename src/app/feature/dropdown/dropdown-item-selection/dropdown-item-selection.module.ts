@@ -43,7 +43,13 @@ import { SharedModule } from '../../../shared/shared.module';
     ItemSelectionWrapDisplaySelectLimitUsageComponent
   ],
   exports: [],
-  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownItemSelectionRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule.forRoot(),
+    DropdownModule.forRoot(),
+    DropdownItemSelectionRoutingModule
+  ],
   providers: []
 })
-export class DropdownItemSelectionModule {}
+export class DropdownItemSelectionModule {
+}

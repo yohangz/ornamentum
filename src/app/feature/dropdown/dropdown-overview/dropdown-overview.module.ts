@@ -13,9 +13,18 @@ import { SharedModule } from '../../../shared/shared.module';
  * Module class for containing dropdown overview module.
  */
 @NgModule({
-  declarations: [DropdownOverviewComponent, BasicUsageComponent],
+  declarations: [
+    DropdownOverviewComponent,
+    BasicUsageComponent
+  ],
   exports: [],
-  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownOverviewRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule.forRoot(),
+    DropdownModule.forRoot(),
+    DropdownOverviewRoutingModule
+  ],
   providers: []
 })
-export class DropdownOverviewModule {}
+export class DropdownOverviewModule {
+}

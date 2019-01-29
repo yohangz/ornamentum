@@ -15,7 +15,13 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [DropdownItemDisablingComponent, ItemDisablingUsageComponent],
   exports: [],
-  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownItemDisablingRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule.forRoot(),
+    DropdownModule.forRoot(),
+    DropdownItemDisablingRoutingModule
+  ],
   providers: []
 })
-export class DropdownItemDisablingModule {}
+export class DropdownItemDisablingModule {
+}

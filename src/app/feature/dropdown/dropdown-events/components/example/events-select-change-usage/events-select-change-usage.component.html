@@ -1,6 +1,12 @@
-<ng-dropdown [selectTrackBy]="'id'" [displayTrackBy]="'productType'" [items]="items" [selectMode]="'multi'" (selectChange)="onSelectChange($event)"> </ng-dropdown>
+<ng-dropdown
+  [selectTrackBy]="'id'"
+  [displayTrackBy]="'productType'"
+  [items]="items"
+  [selectMode]="'multi'"
+  (selectChange)="onSelectChange($event)">
+</ng-dropdown>
 
-<br />
+<br/>
 <p class="event-output" *ngIf="selectChangeEventData.length; else noDataAvailable">
   <span *ngFor="let item of selectChangeEventData.slice().reverse()">{{ item }}<br/></span>
 </p>

@@ -15,7 +15,13 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [DropdownCustomThemingComponent],
   exports: [],
-  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownCustomThemingRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule.forRoot(),
+    DropdownModule.forRoot(),
+    DropdownCustomThemingRoutingModule
+  ],
   providers: []
 })
-export class DropdownCustomThemingModule {}
+export class DropdownCustomThemingModule {
+}

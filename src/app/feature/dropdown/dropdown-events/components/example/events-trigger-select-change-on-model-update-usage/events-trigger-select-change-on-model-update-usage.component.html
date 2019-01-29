@@ -3,11 +3,10 @@
   [displayTrackBy]="'productType'"
   [items]="items"
   [triggerSelectChangeOnModelUpdate]="true"
-  [(ngModel)]="selectChangeOnModelUpdateEventData"
->
+  [(ngModel)]="selectChangeOnModelUpdateEventData">
 </ng-dropdown>
 
-<br />
+<br/>
 <p class="event-output" *ngIf="selectChangeOnModelUpdateEventData; else noDataAvailable">
   <span>{{ selectChangeOnModelUpdateEventData | json }}</span>
 </p>
