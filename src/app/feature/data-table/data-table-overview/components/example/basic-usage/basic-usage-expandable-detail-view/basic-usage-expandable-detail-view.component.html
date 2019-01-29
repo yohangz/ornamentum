@@ -1,8 +1,6 @@
 <ng-data-table
   [title]="'Available Stores'"
   [items]="stores"
-  [minHeight]="200"
-  [minWidth]="900"
   [showHeader]="true"
   [showColumnSelector]="false"
   [showIndexColumn]="true"
@@ -16,6 +14,6 @@
     [title]="'Website'">
   </ng-data-table-column>
   <ng-template #ngDataTableNoRecords>
-    <h1 style="font-family: 'Helvetica Neue'; color: #8f893f;">{{this.row.item.product}} was currently out of stock...</h1>
+    <h1 style="font-family: 'Helvetica Neue'; color: #8f893f;">{{row.item.product}} was currently out of stock...</h1>
   </ng-template>
 </ng-data-table>

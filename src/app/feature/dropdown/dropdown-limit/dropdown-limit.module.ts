@@ -15,7 +15,13 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [DropdownLimitComponent, DataLimitUsageComponent],
   exports: [],
-  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownLimitRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule.forRoot(),
+    DropdownModule.forRoot(),
+    DropdownLimitRoutingModule
+  ],
   providers: []
 })
-export class DropdownLimitModule {}
+export class DropdownLimitModule {
+}

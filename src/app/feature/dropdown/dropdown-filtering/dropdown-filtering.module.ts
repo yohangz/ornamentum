@@ -27,7 +27,13 @@ import { SharedModule } from '../../../shared/shared.module';
     FilteringUsageComponent
   ],
   exports: [],
-  imports: [CommonModule, SharedModule.forRoot(), DropdownModule.forRoot(), DropdownFilteringRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule.forRoot(),
+    DropdownModule.forRoot(),
+    DropdownFilteringRoutingModule
+  ],
   providers: []
 })
-export class DropdownFilteringModule {}
+export class DropdownFilteringModule {
+}

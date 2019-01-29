@@ -4,11 +4,10 @@
   [items]="items"
   [setFirstOptionSelected]="true"
   [triggerSelectChangeOnFirstOptionSelect]="true"
-  (selectChange)="onSelectChange($event)"
->
+  (selectChange)="onSelectChange($event)">
 </ng-dropdown>
 
-<br />
+<br/>
 <p class="event-output" *ngIf="selectChangeEventData">
-  <span>{{ selectChangeEventData | json }}<br /></span>
+  <span>{{ selectChangeEventData | json }}<br/></span>
 </p>

@@ -1,6 +1,11 @@
-<ng-dropdown [selectTrackBy]="'id'" [displayTrackBy]="'productType'" [items]="items" (init)="onDropdownInit($event)"> </ng-dropdown>
+<ng-dropdown
+  [selectTrackBy]="'id'"
+  [displayTrackBy]="'productType'"
+  [items]="items"
+  (init)="onDropdownInit($event)">
+</ng-dropdown>
 
-<br />
+<br/>
 <p class="event-output">
   <span>{{ initEventData }}</span>
 </p>
