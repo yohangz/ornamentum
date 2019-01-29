@@ -1,18 +1,14 @@
 <div class="feature-container">
   <h1>Client-side Data Binding</h1>
 
-  <p>Client side data binding allow users to bind static data set to data table when data is available in the client
-    side. It can be configure by providing any array of objects into <code>items</code> property or providing a data
-    stream to the <code>dataSource</code> property.</p>
+  <p>Client side data binding allow users to bind static data sets to data table when full data collection is available in the client
+    side. It can be configure via setting an array of data objects to <code>items</code> input property or via setting a RxJS Observable stream to <code>dataSource</code> input property.</p>
 
-  <p>In this data binding technique, data set will be fetched at once and all the filtering, sorting, data pagination
-    operations handle in the client
-    side.</p>
+  <p>In this data binding technique, data table operations like filtering, sorting, data pagination, etc are performed in client side via an internal data source manager service.</p>
 
   <p>
-    If the data stream is very large and can't perform data handling operations(such as filtering, searching, etc.) in
-    client side, <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server Side Data Binding</a> can be
-    use instead of client side data binding.
+    However, it might affect the overall site performance if the data set is significantly larger. Consider using <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server Side Data Binding</a> in such cases where
+    all the computation heavy operations are handled in server side and only page level data is sent to client side for on demand data binding.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -22,22 +18,23 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>Client side data binding can be configured by using the two ways mentioned in the below.</p>
+  <p>Client side data binding can be configured by using either of two approaches described below. Data emitted after
+    initial data binding will re-initialize data table with the new data set and drop previously bound data items collection.</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items">{{ demoSnippet.items }}</app-code-snippet>
 
   <p>
-    The complete set of code segments for the data binding via <code>items</code> property can be seen in the example
+    The complete set of code snippet for the data binding via <code>items</code> input property can be seen in the example
     shown in the <a [routerLink]="['/feature/data-table/client-side-data-binding']" fragment="whatYouWillSee">What You
-    Will See</a> section.
+    Will See</a> section above. Mutations to items collection will automatically get reflected in data table.
   </p>
 
   <p>or</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
-  <p>Refer following example to see actual usage of the <code>dataSource</code> property in the client side data
-    binding.</p>
+  <p>Refer following example code snippet for complete usage of the <code>dataSource</code> property in the client side data
+    binding. Latest data collection emitted via data source stream will get reflected in data table.</p>
 
   <app-client-side-data-binding-with-data-source></app-client-side-data-binding-with-data-source>
   <app-example-code [files]="clientSideDataBindingWithDataSourceUsage"></app-example-code>
