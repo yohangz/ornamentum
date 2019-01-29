@@ -15,11 +15,7 @@ $loading-animation: '<svg enable-background="new 0 0 0 0" version="1.1" viewBox=
   '"><animateTransform attributeName="transform" attributeType="XML" dur="1s" from="0 50 50" repeatCount="indefinite" to="360 50 50" type="rotate"/></path></svg>' !default;
 
 //Common Styles
-$box-shadow-color: rgba(0, 0, 0, 0.5);
-$delete-color: #d32f2f;
-
-//Dropdown Loading Styles
-$dropdown-loading-animation-color: #396996 !default;
+$delete-color: #d32f2f !default;
 
 //Dropdown Selector Styles
 $dropdown-selector-background: #fff !default;
