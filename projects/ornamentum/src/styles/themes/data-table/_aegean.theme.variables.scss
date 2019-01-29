@@ -60,6 +60,7 @@ $data-table-container-box-shadow-value: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.3) !defa
 //Data Table Top Header Styles
 $data-table-top-header-background: #396996 !default;
 $data-table-top-header-border: #ddd !default;
+$data-table-top-header-border-radius-value: 0 !default;
 $data-table-top-header-text-color: #fff !default;
 
 //Data Table Dropdown Styles
@@ -123,6 +124,7 @@ $data-table-no-records-button-border-radius-value: 0.2rem !default;
 //Data Table Pagination Style
 $data-table-pagination-background: #fff !default;
 $data-table-pagination-border: #ddd !default;
+$data-table-pagination-border-radius-value: 0 !default;
 $data-table-pagination-range-text-color: #444 !default;
 $data-table-pagination-range-value-text-color: #3b78e7 !default;
 $data-table-pagination-input-border: #ddd !default;

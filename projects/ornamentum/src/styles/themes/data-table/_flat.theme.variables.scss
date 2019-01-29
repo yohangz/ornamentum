@@ -53,13 +53,14 @@ $loading-animation: '<svg enable-background="new 0 0 0 0" version="1.1" viewBox=
 $delete-color: #d32f2f !default;
 
 //Data Table Container Styles
-$data-table-container-border: 0.07rem solid #eaeaea !default;
-$data-table-container-border-radius-value: 0 !default;
-$data-table-container-box-shadow-value: none !default;
+$data-table-container-border: 0.07rem solid #c1c1c1 !default;
+$data-table-container-border-radius-value: 5px !default;
+$data-table-container-box-shadow-value: 1px 2px 5px rgba(0, 0, 0, .5) !default;
 
 //Data Table Top Header Styles
 $data-table-top-header-background: #00529f !default;
 $data-table-top-header-border: #8aa7dc !default;
+$data-table-top-header-border-radius-value: 5px 5px 0 0 !default;
 $data-table-top-header-text-color: #fff !default;
 
 //Data Table Dropdown Styles
@@ -123,6 +124,7 @@ $data-table-no-records-button-border-radius-value: 0.2rem !default;
 //Data Table Pagination Style
 $data-table-pagination-background: #00529f !default;
 $data-table-pagination-border: transparent !default;
+$data-table-pagination-border-radius-value: 0 0 5px 5px !default;
 $data-table-pagination-range-text-color: #fff !default;
 $data-table-pagination-range-value-text-color: #fff !default;
 $data-table-pagination-input-border: #fff !default;
