@@ -2,18 +2,17 @@
   <h1>Server-side Data Binding</h1>
 
   <p>
-    Server side data binding allow users to bind a data set that are not available in client side as a static data set
-    but available in external data
-    source with dynamic features. Now, server side data binding technique is available to handle and process data in
-    this kind of scenarios.
+    Server side data binding allow users to bind large data sets that are not directly accessible as a full collection
+    in client side due to various reasons. Server side data binding can improve performance drastically for large data sets
+    but integration is fairly complex compared to client side direct data binding.
   </p>
 
   <p>Server side data binding allow users to bind a larger data stream which is available in the server side.</p>
 
   <p>
-    Unlike in <a [routerLink]="['/feature/data-table/client-side-data-binding']">Client-side Data Binding</a>, whenever
-    user performs a filtering, sorting, data pagination action a new API request will be initiated to fetch data from
-    the server which matches to the particular action.
+    Unlike in <a [routerLink]="['/feature/data-table/client-side-data-binding']">Client-side Data Binding</a>, server side
+    rendering will request for data on table initialize and whenever user performs filtering, sorting, page change, etc. operations.
+    Integration party has to write the logic to fetch data via a backend service depending on the request context.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -24,24 +23,18 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Server side data binding is handled via <code>onDataBind</code> callback property which is available within the data
-    table features. This property allows users to customize the way of data binding inside a callback function. This
-    call back function accepts <code>DataTableRequestParams</code> parameter (optional) and returns any generic type (T)
-    of item set as an <a rel="noopener" target="_blank"
-                         href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">Observable</a> (Data
-    stream) <code>DataTableQueryResult&lt;T&gt;</code>.
-  </p>
-
-  <p>
-    In the above example, open Network tab in chrome developer tools and change pagination, search something to see
-    the initiated request as described earlier.
+    Server side data binding is handled via <code>onDataBind</code> callback input property. This property allows users
+    to customize the data binding logic within the callback function. This callback function will be triggered on table initialize and on
+    dynamic data table operations. This function will receive <code>DataTableRequestParams</code> argument and expect to return
+    <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS Observable</a> query result
+    <code>DataTableQueryResult&lt;T&gt;</code> object stream. Data returned from this callback function will be directly bound to table assuming
+    that it matches the on demand request context.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBinding"></app-code-snippet>
 
   <p>
-    Following code snippet will be represent the implementation of the <code>fetchDataOnBindForDataTable</code> method
-    that used inside the <b>server-side-data-binding.component.ts</b> file to bind dynamic data stream.
+    Following code snippet represent an example implementation of <code>onDataBind</code> callback.
   </p>
 
   <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataFetchMethod"></app-code-snippet>
