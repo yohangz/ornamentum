@@ -9,7 +9,7 @@
   @include border-radius($data-table-container-border-radius-value);
   @include box-shadow($data-table-container-box-shadow-value);
   border: $data-table-container-border;
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
 
   //Scrollable table styles
