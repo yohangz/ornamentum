@@ -123,7 +123,7 @@ const dataTableFeatureRoutes: Routes = [
   },
   {
     loadChildren: './data-table-responsive-conf/data-table-responsive-conf.module#DataTableResponsiveConfModule',
-    path: 'responsive-configurations',
+    path: 'responsive-configuration',
     canActivate: [SeoGuard],
     data: {
       seo: {

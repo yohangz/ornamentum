@@ -5,17 +5,46 @@
   [minWidth]="900"
   [pageable]="true"
   [showHeader]="true"
-  [expandableRows]="true"
->
-  <ng-data-table-column [field]="'id'" [title]="'ID'" [width]="50"> </ng-data-table-column>
-  <ng-data-table-column [field]="'orderMethodType'" [title]="'Order Method Type'" [width]="120"> </ng-data-table-column>
-  <ng-data-table-column [field]="'retailerType'" [title]="'Retailer Type'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'productLine'" [title]="'Product Line'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'productType'" [title]="'Product Type'"> </ng-data-table-column>
-  <ng-data-table-column [field]="'revenue'" [title]="'Revenue'" [width]="120"> </ng-data-table-column>
-  <ng-data-table-column [field]="'quantity'" [title]="'Quantity'" [width]="80"> </ng-data-table-column>
-  <ng-data-table-column [field]="'grossMargin'" [title]="'Gross Margin'" [width]="100"> </ng-data-table-column>
+  [expandableRows]="true">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [width]="50">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'orderMethodType'"
+    [title]="'Order Method Type'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'retailerType'"
+    [title]="'Retailer Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productLine'"
+    [title]="'Product Line'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productType'"
+    [title]="'Product Type'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'revenue'"
+    [title]="'Revenue'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'quantity'"
+    [title]="'Quantity'"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'grossMargin'"
+    [title]="'Gross Margin'"
+    [width]="100">
+  </ng-data-table-column>
   <ng-template #ngDataTableRowExpand let-row="row">
-    <span>Product --> <b style="color: #46c79f">{{ row.item.product }}</b></span>
+    <app-row-expand-template-detail-view *ngIf="row.expanded || row.dataLoaded"
+                                       [row]="row"></app-row-expand-template-detail-view>
   </ng-template>
 </ng-data-table>

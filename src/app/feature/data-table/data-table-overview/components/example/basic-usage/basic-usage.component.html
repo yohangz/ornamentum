@@ -13,9 +13,10 @@
   [showSubstituteRows]="true"
   [persistTableState]="true"
   [showColumnSelector]="true"
-  [expandableRows]="false"
+  [expandableRows]="true"
   [showRowExpandLoadingSpinner]="false"
-  [selectMode]="'multi'">
+  [selectMode]="'multi'"
+  [showRowSelectAllCheckbox]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
@@ -100,4 +101,8 @@
     [filterPlaceholder]="'Search'"
     [width]="95">
   </ng-data-table-column>
+  <ng-template #ngDataTableRowExpand let-row="row">
+    <app-basic-usage-expandable-detail-view *ngIf="row.expanded || row.dataLoaded"
+                                            [row]="row"></app-basic-usage-expandable-detail-view>
+  </ng-template>
 </ng-data-table>

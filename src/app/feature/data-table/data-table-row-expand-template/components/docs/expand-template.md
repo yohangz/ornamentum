@@ -1,3 +1,4 @@
   <ng-template #ngDataTableRowExpand let-row="row">
-    <span>Product => <b style="color: #4dc71f">{{row.item.product}}</b></span>
+    <app-row-expand-template-detail-view *ngIf="row.expanded || row.dataLoaded"
+                                       [row]="row"></app-row-expand-template-detail-view>
   </ng-template>

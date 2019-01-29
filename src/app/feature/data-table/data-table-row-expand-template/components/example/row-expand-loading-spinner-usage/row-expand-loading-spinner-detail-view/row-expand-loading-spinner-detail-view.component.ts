@@ -5,10 +5,10 @@ import { DataTableRow } from 'ornamentum';
 import { ExampleData } from '../../../../../../../shared/models';
 
 @Component({
-  selector: 'app-expand-expandable-detail-view',
-  templateUrl: './row-expand-expandable-detail-view.component.html'
+  selector: 'app-row-expand-loading-spinner-detail-view',
+  templateUrl: './row-expand-loading-spinner-detail-view.component.html'
 })
-export class RowExpandExpandableDetailViewComponent implements OnInit {
+export class RowExpandLoadingSpinnerDetailViewComponent implements OnInit {
   @Input()
   public row: DataTableRow<ExampleData>;
 

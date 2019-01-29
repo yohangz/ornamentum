@@ -1,45 +1,50 @@
 <div class="feature-container">
   <h1>Data Table Overview</h1>
   <p>
-    Ornamentum Data Table is a highly configurable <a rel="noopener" target="_blank" href="https://angular.io">Angular</a> component which support
-    table view data representation. This component supports client/server/realtime data binding along with data filtering, sorting, grouping,
-    pagination, selection, templating, state persistence, theming and much more.
+    Ornamentum Data Table is a highly configurable <a rel="noopener" target="_blank"
+                                                      href="https://angular.io">Angular</a> component which support
+    table view data representation. This component supports client/server/realtime data binding along with data
+    filtering, sorting, grouping, pagination, selection, templating, state persistence, theming and much more.
   </p>
 
   <p>
-    This component can be integrated with any UI framework and fully responsive dynamic mobile friendly component user interface design will deliver
-    best user experience in any device resolution. Built with pure angular components and minimal peer dependencies to minimize overall bundle size.
-    Guaranteed seamless integration via developer friendly component API along with rich example code based documentation. This component support all
-    angular supported browsers out of the box.
+    This component can be integrated with any UI framework and fully responsive dynamic mobile friendly component user
+    interface design will deliver best user experience in any device resolution. Built with pure angular components and
+    minimal peer dependencies to minimize overall bundle size. Guaranteed seamless integration via developer friendly
+    component API along with rich example code based documentation. This component support all angular supported
+    browsers out of the box.
   </p>
 
-  <h2 id="basicUsage">Basic Usage</h2>
+  <h2 id="advancedUsage">Advanced Usage</h2>
   <p>
-    Following example depicts the outer appearance of the Ornamentum Data Table along with sample integration code snippets. Try out yourself in
-    <a rel="noopener" target="_blank" href="#">Code Sandbox</a>.
+    Following example depicts the outer appearance of the Ornamentum Data Table along with sample integration code
+    snippets. Try out yourself in <a rel="noopener" target="_blank" href="#">Code Sandbox</a>.
   </p>
 
   <app-basic-usage></app-basic-usage>
 
-  <h2 id="installation">Installation</h2>
+  <h2 id="basicInstallation">Basic Installation</h2>
   <p>
-    <a rel="noopener" target="_blank" href="https://angular.io">Angular 7</a> or higher version is required to use the latest version ({{
-      packageVersion
-    }}) of Ornamentum.
+    <a rel="noopener" target="_blank" href="https://angular.io">Angular 7</a> or higher version is required to use the
+    latest version ({{packageVersion}}) of Ornamentum.
   </p>
 
   <ol class="main-pane-list">
     <li>
       <p>
-        Install Ornamentum packages and it's peer dependencies using either of following command depending on your package manager.
+        Install Ornamentum packages and it's peer dependencies using either of following command depending on your
+        package manager.
       </p>
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npm" [showLineNumbers]="false"></app-code-snippet>
       <p>or</p>
-      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarn" [showLineNumbers]="false"></app-code-snippet>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarn"
+                        [showLineNumbers]="false"></app-code-snippet>
     </li>
     <li>
-      <p>Once the installation is successful, add the Ornamentum Data Table component to your application Root Module as depicted below.</p>
-      <pre class="prettyprint linenums lang-js">{{ demoSnippet.moduleImport }}</pre>
+      <p>Once the installation is successful, add the Ornamentum Data Table component to your application Root Module as
+        depicted below.
+      </p>
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.moduleImport"></app-code-snippet>
     </li>
     <li>
       <p>
@@ -62,12 +67,14 @@
           <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
         </li>
         <p>
-          Install <a rel="noopener" target="_blank" href="http://compass-style.org/">compass</a> mixins via using either of following command
-          depending on your package manager.
+          Install <a rel="noopener" target="_blank" href="http://compass-style.org/">compass</a> mixins via using either
+          of following command depending on your package manager.
         </p>
-        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport" [showLineNumbers]="false"></app-code-snippet>
+        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport"
+                          [showLineNumbers]="false"></app-code-snippet>
         <p>or</p>
-        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport" [showLineNumbers]="false"></app-code-snippet>
+        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport"
+                          [showLineNumbers]="false"></app-code-snippet>
       </ul>
     </li>
     <li>
@@ -141,11 +148,11 @@
     <li><b>Styling & Themes</b></li>
     <ul class="main-pane-list">
       <li><a [routerLink]="['/feature/data-table/styling-and-themes']">Styling & Themes</a></li>
-      <li><a [routerLink]="['/feature/data-table/custom-theming']">Custom Themes</a></li>
+      <li><a [routerLink]="['/feature/data-table/custom-theming']">Custom Theming</a></li>
     </ul>
   </ul>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/dropdown/overview']">Dropdown Overview</a><br />
+  <a [routerLink]="['/feature/dropdown/overview']">Dropdown Overview</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/modules/DataTableModule.html">API Doc for DataTable Module</a>
 </div>

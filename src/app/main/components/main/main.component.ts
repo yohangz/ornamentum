@@ -25,12 +25,12 @@ export class MainComponent {
           title: 'Overview',
           navigation: [
             {
-              title: 'Basic Usage',
-              anchor: 'basicUsage'
+              title: 'Advanced Usage',
+              anchor: 'advancedUsage'
             },
             {
-              title: 'Installation',
-              anchor: 'installation'
+              title: 'Basic Installation',
+              anchor: 'basicInstallation'
             },
             {
               title: 'Peer Dependencies',
@@ -457,8 +457,8 @@ export class MainComponent {
           ]
         },
         {
-          routePath: '/feature/data-table/responsive-configurations',
-          title: 'Responsive Configurations',
+          routePath: '/feature/data-table/responsive-configuration',
+          title: 'Responsive Configuration',
           navigation: [
             {
               title: 'What You Will See',
@@ -777,12 +777,12 @@ export class MainComponent {
           title: 'Overview',
           navigation: [
             {
-              title: 'Basic Usage',
-              anchor: 'basicUsage'
+              title: 'Advanced Usage',
+              anchor: 'advancedUsage'
             },
             {
-              title: 'Installation',
-              anchor: 'installation'
+              title: 'Basic Installation',
+              anchor: 'basicInstallation'
             },
             {
               title: 'Peer Dependencies',

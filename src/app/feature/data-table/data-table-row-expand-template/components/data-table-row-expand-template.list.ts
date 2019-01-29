@@ -18,6 +18,21 @@ export const rowExpandTemplateUsage: ExampleFile[] = [
   }
 ];
 
+export const rowExpandTemplateDetailView: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'row-expand-template-detail-view.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/row-expand-template-usage/row-expand-template-detail-view/' +
+      'row-expand-template-detail-view.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'row-expand-template-detail-view.component.html',
+    content: require('!!raw-loader?lang=html!./example/row-expand-template-usage/row-expand-template-detail-view/' +
+      'row-expand-template-detail-view.component.html')
+  }
+];
+
 export const rowExpandOnClickUsage: ExampleFile[] = [
   {
     type: FileType.TS,
@@ -57,15 +72,15 @@ export const rowExpandLoadingSpinnerUsage: ExampleFile[] = [
 export const rowExpandLoadingSpinnerDetailView: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'row-expand-expandable-detail-view.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/row-expand-loading-spinner-usage/row-expand-expandable-detail-view/' +
-      'row-expand-expandable-detail-view.component.ts')
+    name: 'row-expand-loading-spinner-detail-view.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/row-expand-loading-spinner-usage/row-expand-loading-spinner-detail-view/' +
+      'row-expand-loading-spinner-detail-view.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'row-expand-loading-spinner-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/row-expand-loading-spinner-usage/row-expand-expandable-detail-view/' +
-      'row-expand-expandable-detail-view.component.html')
+    name: 'row-expand-loading-spinner-detail-view.component.html',
+    content: require('!!raw-loader?lang=html!./example/row-expand-loading-spinner-usage/row-expand-loading-spinner-detail-view/' +
+      'row-expand-loading-spinner-detail-view.component.html')
   }
 ];
 
