@@ -155,6 +155,7 @@
 }
 
 .ng-data-table-top-header-container {
+  @include border-radius($data-table-top-header-border-radius-value);
   @include display-flex;
   @include align-items(center);
   @include justify-content(space-between);
@@ -651,7 +652,7 @@
   @include display-flex;
   @include font-size(0.7, 1.4);
   @include justify-content(space-between);
-
+  @include border-radius($data-table-pagination-border-radius-value);
   background: $data-table-pagination-background;
   border: 0;
   border-top: 0.05rem solid $data-table-pagination-border;
