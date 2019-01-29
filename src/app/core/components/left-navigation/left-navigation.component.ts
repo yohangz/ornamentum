@@ -1,10 +1,9 @@
 import { Component, EventEmitter, Input, OnDestroy, Output } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 
 import { Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
 
-import { MenuGroup, MenuItem } from '../../models';
+import { MenuGroup } from '../../models';
 
 import { NavigationService } from '../../services';
 
@@ -21,7 +20,7 @@ export class LeftNavigationComponent implements OnDestroy {
   public menuGroups: MenuGroup[];
 
   @Output()
-  public routeChange = new EventEmitter<MenuItem>();
+  public routeChange = new EventEmitter<void>();
 
   public expanded = false;
 
@@ -30,8 +29,14 @@ export class LeftNavigationComponent implements OnDestroy {
       this.expanded = !this.expanded;
     });
 
-    this.routeEventSubscription = this.router.events.pipe(filter(event => event instanceof NavigationStart)).subscribe(() => {
-      this.closeMenu();
+    this.routeEventSubscription = this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.closeMenu();
+      }
+
+      if (event instanceof NavigationEnd) {
+        this.routeChange.next();
+      }
     });
   }
 
@@ -50,9 +55,5 @@ export class LeftNavigationComponent implements OnDestroy {
 
   public menuItemToggle(menuGroup: MenuGroup): void {
     menuGroup.expanded = !menuGroup.expanded;
-  }
-
-  public onRouteChange(menuItem: MenuItem): void {
-    this.routeChange.next(menuItem);
   }
 }

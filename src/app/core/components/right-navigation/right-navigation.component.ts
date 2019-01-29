@@ -1,4 +1,4 @@
-import { AfterContentInit, Component, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 import { MenuItem, Navigation } from '../../models';
 
@@ -9,7 +9,7 @@ import { ScrollService } from '../../services';
   templateUrl: './right-navigation.component.html',
   styleUrls: ['./right-navigation.component.scss']
 })
-export class RightNavigationComponent implements AfterContentInit {
+export class RightNavigationComponent {
   @Input()
   public parent: Element;
 
@@ -17,10 +17,6 @@ export class RightNavigationComponent implements AfterContentInit {
   public menuItem: MenuItem;
 
   constructor(private scrollService: ScrollService) {}
-
-  public ngAfterContentInit(): void {
-    this.scrollService.scroll(this.parent);
-  }
 
   public scrollToHash(navigation: Navigation): void {
     this.scrollService.scrollToHash(this.parent, navigation.anchor);

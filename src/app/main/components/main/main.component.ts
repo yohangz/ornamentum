@@ -1,9 +1,11 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, Inject, PLATFORM_ID, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { MenuGroup, MenuItem } from '../../../core/models';
 
 import { Theme } from '../../../core/models/theme.enum';
+import { ScrollService } from '../../../core/services';
+import { isPlatformBrowser } from '@angular/common';
 
 /**
  * Component class for showing main view.
@@ -1293,11 +1295,23 @@ export class MainComponent {
   @ViewChild('pageWrapper')
   public pageWrapper: ElementRef;
 
-  constructor(private router: Router) {
-    const path = router.url.split('#')[0];
+  constructor(private router: Router, private scrollService: ScrollService, @Inject(PLATFORM_ID) private platformId: Object) {
+  }
+
+  public onThemeChange(cssClass: string): void {
+    this.themeCssClass = cssClass;
+  }
+
+  public onRouteChange(): void {
+    this.setActiveMenuItem();
+    this.pageWrapper.nativeElement.scrollTop = 0;
+  }
+
+  private setActiveMenuItem(): void {
+    const pathSegments = this.router.url.split('#');
     for (const menuGroup of this.menuGroups) {
       const item = menuGroup.menuItems.find((menuItem: MenuItem) => {
-        return menuItem.routePath === path;
+        return menuItem.routePath === pathSegments[0];
       });
 
       if (item) {
@@ -1305,14 +1319,11 @@ export class MainComponent {
         break;
       }
     }
-  }
 
-  public onThemeChange(cssClass: string): void {
-    this.themeCssClass = cssClass;
-  }
-
-  public onRouteChange(menuItem: MenuItem): void {
-    this.activeMenuItem = menuItem;
-    this.pageWrapper.nativeElement.scrollTop = 0;
+    if (isPlatformBrowser(this.platformId) && this.pageWrapper && pathSegments.length > 1) {
+      window.setTimeout(() => {
+        this.scrollService.scrollToHash(this.pageWrapper.nativeElement, pathSegments[1]);
+      });
+    }
   }
 }

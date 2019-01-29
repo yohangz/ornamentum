@@ -5,7 +5,7 @@
     </header>
     <div class="page-wrapper-content" #pageWrapper>
       <div class="page-wrapper-inner-content">
-        <app-left-navigation [menuGroups]="menuGroups" (routeChange)="onRouteChange($event)"></app-left-navigation>
+        <app-left-navigation [menuGroups]="menuGroups" (routeChange)="onRouteChange()"></app-left-navigation>
         <div class="main-pane">
           <router-outlet></router-outlet>
         </div>
