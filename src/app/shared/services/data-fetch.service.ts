@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 
-import { DataTableFilterColumn, DataTableRequestParams, DropdownRequestParams } from 'ornamentum';
+import { DataTableFilterColumn, DataTableRequestParams, DataTableSortColumn, DropdownRequestParams } from 'ornamentum';
 
 import { Observable } from 'rxjs';
 
@@ -15,7 +15,8 @@ import fetchData from '../data/sample-data';
  */
 @Injectable()
 export class DataFetchService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
   /**
    * Fetch data from client source for demo client side data binding with items property.
@@ -52,6 +53,17 @@ export class DataFetchService {
           return;
         }
       });
+
+      if (params.sortColumns && params.sortColumns.length) {
+        const sortExpressions = params.sortColumns.filter((column: DataTableSortColumn) => {
+          return column.sortOrder !== '';
+        });
+        if (sortExpressions.length) {
+          const firstExpression = sortExpressions[0];
+          queryParams = queryParams.append('sortBy', firstExpression.field);
+          queryParams = queryParams.append('sortOrder', firstExpression.sortOrder);
+        }
+      }
 
       return this.http.get<ResourceData<ExampleData[]>>('/api/data', { params: queryParams });
     }
