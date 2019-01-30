@@ -10,17 +10,22 @@ import { ExampleData } from '../../../../../../shared/models';
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-real-time-data-binding',
-  templateUrl: './real-time-data-binding.component.html'
+  selector: 'app-client-side-real-time-data-binding',
+  templateUrl: './client-side-real-time-data-binding.component.html'
 })
-export class RealTimeDataBindingComponent implements OnInit {
+export class ClientSideRealTimeDataBindingComponent implements OnInit {
   public dataSource: Observable<ExampleData[]>;
 
   constructor(private dataFetchService: DataFetchService, private globalRefService: GlobalRefService) {}
 
   public ngOnInit(): void {
     let offset = 0;
+
+    // This is an internal service used to check the execution environment.
+    // Checks whether it is browser or not.
     if (this.globalRefService.isBrowser) {
+
+      // Code segment used to emulate the realtime data binding.
       this.dataSource = timer(0, 2000).pipe(
         map(() => {
           offset += 20;
@@ -28,10 +33,12 @@ export class RealTimeDataBindingComponent implements OnInit {
             offset = 0;
           }
 
+          // Bind data in the client-side.
           return this.dataFetchService.fetchStaticData(offset, 20);
         })
       );
     } else {
+      // Bind data in the server-side.
       this.dataSource = of(this.dataFetchService.fetchStaticData(offset, 20));
     }
   }
