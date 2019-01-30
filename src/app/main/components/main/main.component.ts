@@ -85,8 +85,8 @@ export class MainComponent {
           ]
         },
         {
-          routePath: '/feature/data-table/real-time-data-binding',
-          title: 'Realtime Data Binding',
+          routePath: '/feature/data-table/client-side-real-time-data-binding',
+          title: 'Client-side Realtime Data Binding',
           navigation: [
             {
               title: 'What You Will See',

@@ -49,8 +49,8 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-real-time-data-binding/data-table-real-time-data-binding.module#DataTableRealTimeDataBindingModule',
-    path: 'real-time-data-binding',
+    loadChildren: './data-table-client-side-real-time-data-binding/data-table-client-side-real-time-data-binding.module#DataTableClientSideRealTimeDataBindingModule',
+    path: 'client-side-real-time-data-binding',
     canActivate: [SeoGuard],
     data: {
       seo: {
@@ -298,4 +298,5 @@ const dataTableFeatureRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableFeatureRoutes)]
 })
-export class DataTableFeatureRoutingModule {}
+export class DataTableFeatureRoutingModule {
+}

@@ -1,0 +1,51 @@
+<div class="feature-container">
+  <h1>Client-side Real-time Data Binding</h1>
+
+  <p>
+    Using client-side real-time data binding feature users can update the existing data in the data table recursively to represent
+    very dynamic data such as traffic, weather, analytics and etc without having a manual refresh. Refer Show Refresh
+    Button section for more details on table refresh.
+  </p>
+
+  <p>
+    In such cases you can use this client-side real-time data binding technique to binding data, when data changes in real time
+    those changes will be reflect
+    without data table refresh, and immediately effect to the data table as well. for more about data table refresh
+    refer <a [routerLink]="['/feature/data-table/header-details']" fragment="showRefreshButton">Show Refresh Button</a> section.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-client-side-real-time-data-binding></app-client-side-real-time-data-binding>
+  <app-example-code [files]="realTimeDataBindingUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    This can be configure via setting an array of data objects to <code>items</code> input property or via setting a RxJS Observable stream to
+    <code>dataSource</code> input property as the same way discussed in the <a [routerLink]="['/feature/data-table/client-side-data-binding']">Client-side Data Binding</a> section.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
+
+  <p>or</p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
+
+  <p>
+    The complete set of code snippet for the client side real time data binding via <code>datasource</code> input property can be seen in the example
+    shown in the <a [routerLink]="['/feature/data-table/client-side-real-time-data-binding']" fragment="whatYouWillSee">What You
+    Will See</a> section above.
+  </p>
+
+  <p>
+    Let's modify the sample code segment shown in the <b>client-side-real-time-data-binding.component.ts</b> to emulate the same behaviour with the use of <code>items</code> property.
+  </p>
+
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataBindingWithItems"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/data-table/client-side-data-binding']">Client-side Data Binding</a><br />
+  <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server-side Data Binding</a><br />
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Real-time Data Binding</a>
+</div>
