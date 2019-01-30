@@ -837,8 +837,8 @@ export class MainComponent {
           ]
         },
         {
-          routePath: '/feature/dropdown/real-time-data-binding',
-          title: 'Realtime Data Binding',
+          routePath: '/feature/dropdown/client-side-real-time-data-binding',
+          title: 'Client-side Realtime Data Binding',
           navigation: [
             {
               title: 'What You Will See',

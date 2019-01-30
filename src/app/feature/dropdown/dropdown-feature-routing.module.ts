@@ -49,8 +49,8 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-real-time-data-binding/dropdown-real-time-data-binding.module#DropdownRealTimeDataBindingModule',
-    path: 'real-time-data-binding',
+    loadChildren: './dropdown-client-side-real-time-data-binding/dropdown-client-side-real-time-data-binding.module#DropdownClientSideRealTimeDataBindingModule',
+    path: 'client-side-real-time-data-binding',
     canActivate: [SeoGuard],
     data: {
       seo: {
