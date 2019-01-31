@@ -4,9 +4,13 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataPersistenceStorageModeUsageComponent, DataPersistenceUsageComponent, DataTablePersistDataComponent } from './index';
+import {
+  StorageModeUsageComponent,
+  StatePersistenceUsageComponent,
+  DataTableStatePersistenceComponent
+} from './index';
 
-import { DataTablePersistDataRoutingModule } from './data-table-persist-data-routing.module';
+import { DataTableStatePersistenceRoutingModule } from './data-table-state-persistence-routing.module';
 
 import { SharedModule } from '../../../shared/shared.module';
 
@@ -14,7 +18,11 @@ import { SharedModule } from '../../../shared/shared.module';
  * Module class for containing data table persist data module.
  */
 @NgModule({
-  declarations: [DataTablePersistDataComponent, DataPersistenceUsageComponent, DataPersistenceStorageModeUsageComponent],
+  declarations: [
+    DataTableStatePersistenceComponent,
+    StatePersistenceUsageComponent,
+    StorageModeUsageComponent
+  ],
   exports: [],
   imports: [
     CommonModule,
@@ -23,8 +31,9 @@ import { SharedModule } from '../../../shared/shared.module';
     DataTableModule.forRoot({
       showColumnSelector: true
     }),
-    DataTablePersistDataRoutingModule
+    DataTableStatePersistenceRoutingModule
   ],
   providers: []
 })
-export class DataTablePersistDataModule {}
+export class DataTableStatePersistenceModule {
+}

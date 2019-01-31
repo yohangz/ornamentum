@@ -325,6 +325,10 @@ export class MainComponent {
                   anchor: 'showRowSelectCheckbox'
                 },
                 {
+                  title: 'Show Row Select All Checkbox',
+                  anchor: 'showRowSelectAllCheckbox'
+                },
+                {
                   title: 'Select On Row Click',
                   anchor: 'selectOnRowClick'
                 },
@@ -367,8 +371,8 @@ export class MainComponent {
           ]
         },
         {
-          routePath: '/feature/data-table/data-persistence',
-          title: 'Data Persistence',
+          routePath: '/feature/data-table/state-persistence',
+          title: 'State Persistence',
           navigation: [
             {
               title: 'What You Will See',

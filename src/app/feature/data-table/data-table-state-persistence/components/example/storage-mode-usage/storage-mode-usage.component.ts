@@ -1,22 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { ExampleData } from '../../../../../../shared/models';
 
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-selected-row-usage',
-  templateUrl: './selected-row-usage.component.html'
+  selector: 'app-storage-mode-usage',
+  templateUrl: './storage-mode-usage.component.html'
 })
-export class SelectedRowUsageComponent implements OnInit {
+export class StorageModeUsageComponent {
   public items: ExampleData[];
-  public selectedRow: any;
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchStaticData();
-  }
-
-  public ngOnInit() {
-    this.selectedRow = 10;
   }
 }

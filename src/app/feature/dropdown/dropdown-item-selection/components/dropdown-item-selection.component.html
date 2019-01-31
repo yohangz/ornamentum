@@ -3,7 +3,7 @@
 <p>
   Item selection can be done in various ways with different available options. basically this functionality will helps to select specific item or item
   set from the dropdown. available configuration options will be discuss on
-  <a href="feature/dropdown/item-selection#usefulProperties">Useful Properties</a> section in-detail.
+  <a [routerLink]="['/feature/dropdown/item-selection']" fragment="usefulProperties">Useful Properties</a> section in-detail.
 </p>
 
 <h2 id="whatYouWillSee">What You Will See</h2>
@@ -18,7 +18,7 @@
 <p>
   For enable basic item selection on dropdown, simply provide a <b>unique</b> data field name to <code>selectTrackBy</code> property otherwise select
   item tracking will not function properly. by default it value was <b>'key'</b>. for more details about capturing user click events on dropdown items
-  please refer Events <a rel="noopener" target="_blank" href="feature/dropdown/events#selectChange">Select Change</a> section.
+  please refer Events <a [routerLink]="['/feature/dropdown/events']" fragment="selectChange">Select Change</a> section.
 </p>
 
 <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.selectTrackBy"></app-code-snippet>
@@ -51,7 +51,7 @@
 
 <p>
   Property was responsible for select a specific property immediately after a success data retrieval and view on top of dropdown. process is similar
-  to <a href="feature/dropdown/item-selection#setFirstOptionSelected">Set First Option Selected</a> but in here user allows to select any preferred
+  to <a [routerLink]="['/feature/dropdown/item-selection']" fragment="setFirstOptionSelected">Set First Option Selected</a> but in here user allows to select any preferred
   single item from dropdown.
 </p>
 
@@ -100,9 +100,9 @@
     <h5>Single Toggle Item Selection</h5>
 
     <p>
-      This property functionality was similar to <a href="feature/dropdown/item-selection#selectMode">Select Mode</a> Single Item Selection, only
+      This property functionality was similar to <a [routerLink]="['/feature/dropdown/item-selection']" fragment="selectMode">Select Mode</a> Single Item Selection, only
       difference is user can toggle item selection but in this type, once the selection is made it can be removed by clicking the item itself or by
-      unchecking the checkbox (if <a href="feature/dropdown/item-selection#showOptionSelectCheckbox">Show Option Select Checkbox</a> is enabled).
+      un-checking the checkbox (if <a [routerLink]="['/feature/dropdown/item-selection']" fragment="showOptionSelectCheckbox">Show Option Select Checkbox</a> is enabled).
     </p>
 
     <app-single-toggle-item-selection-usage></app-single-toggle-item-selection-usage>
@@ -136,7 +136,7 @@
 
 <p>
   Property was responsible for enable de-select symbol on each and every selected items when <code>selectMode</code> is on <b>'multi'</b>. for more
-  details about item selection modes please refer <a href="feature/dropdown/item-selection#selectMode">Select Mode</a> section.
+  details about item selection modes please refer <a [routerLink]="['/feature/dropdown/item-selection']" fragment="selectMode">Select Mode</a> section.
 </p>
 
 <app-item-selection-show-selected-option-remove-btn-usage></app-item-selection-show-selected-option-remove-btn-usage>
@@ -166,7 +166,7 @@
 
 <p>
   User can provide their own wrap display message by using translations. please refer Translations
-  <a href="#">Selected Item Wrap Placeholder</a> section for more details.
+  <a [routerLink]="['#']">Selected Item Wrap Placeholder</a> section for more details.
 </p>
 
 <app-item-selection-wrap-display-select-limit-usage></app-item-selection-wrap-display-select-limit-usage>
