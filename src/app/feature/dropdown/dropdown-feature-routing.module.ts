@@ -42,7 +42,7 @@ const dropdownFeatureRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Data Binding |  Server Side Data Binding',
+        title: 'Ornamentum | Dropdown | Data Binding | Server Side Data Binding',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -54,7 +54,19 @@ const dropdownFeatureRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Data Binding |  Realtime Data Binding',
+        title: 'Ornamentum | Dropdown | Data Binding | Client SIde Data Binding | Realtime Data Binding',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
+  },
+  {
+    loadChildren: './dropdown-server-side-real-time-data-binding/dropdown-server-side-real-time-data-binding.module#DropdownServerSideRealTimeDataBindingModule',
+    path: 'server-side-real-time-data-binding',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Data Binding | Server Side Data Binding | Realtime Data Binding',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

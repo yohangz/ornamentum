@@ -54,7 +54,19 @@ const dataTableFeatureRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Data Binding | Real Time Data Binding',
+        title: 'Ornamentum | Data Table | Data Binding | Client SIde Data Binding | Real Time Data Binding',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
+  },
+  {
+    loadChildren: './data-table-server-side-real-time-data-binding/data-table-server-side-real-time-data-binding.module#DataTableServerSideRealTimeDataBindingModule',
+    path: 'server-side-real-time-data-binding',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Data Table | Data Binding | Server Side Data Binding | Real Time Data Binding',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

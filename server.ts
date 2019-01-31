@@ -7,11 +7,12 @@ import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 
 import { Request, Response } from 'express-serve-static-core';
 import * as express from 'express';
+import * as WSS from 'ws';
 
 import { join } from 'path';
 import { readFileSync } from 'fs';
 
-process.on('uncaughtException', function(exception) {
+process.on('uncaughtException', function (exception) {
   console.log('node process crashed: ', exception);
 });
 
@@ -20,6 +21,8 @@ enableProdMode();
 
 // Express server
 const app = express();
+
+const wss = new WSS.Server({ port: 40510 });
 
 const PORT = process.env.PORT || 8080;
 const DIST_FOLDER = process.env.DIST_FOLDER ? join(process.cwd(), process.env.DIST_FOLDER) : process.cwd();
@@ -73,4 +76,20 @@ app.get('*', (req: Request, res: Response) => {
 // Start up the Node server
 app.listen(PORT, () => {
   console.log(`Node Express server listening on http://localhost:${PORT}`);
+});
+
+wss.on('connection', (ws: WSS) => {
+  let offset = 0;
+
+  // connection is up.
+  // sample data will be emitted to the client side in a 2000ms interval
+  setInterval(() => {
+    offset += 20;
+    if (offset >= 100) {
+      offset = 0;
+    }
+
+    const selected = data.slice(offset, offset + 20);
+    ws.send(JSON.stringify(selected));
+  }, 2000);
 });

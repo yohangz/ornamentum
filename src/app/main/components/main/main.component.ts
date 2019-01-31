@@ -103,6 +103,24 @@ export class MainComponent {
           ]
         },
         {
+          routePath: '/feature/data-table/server-side-real-time-data-binding',
+          title: 'Server-side Realtime Data Binding',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
+        },
+        {
           routePath: '/feature/data-table/pagination',
           title: 'Pagination',
           navigation: [
@@ -839,6 +857,24 @@ export class MainComponent {
         {
           routePath: '/feature/dropdown/client-side-real-time-data-binding',
           title: 'Client-side Realtime Data Binding',
+          navigation: [
+            {
+              title: 'What You Will See',
+              anchor: 'whatYouWillSee'
+            },
+            {
+              title: 'Basic Usage',
+              anchor: 'basicUsage'
+            },
+            {
+              title: 'Suggested Links',
+              anchor: 'suggestedLinks'
+            }
+          ]
+        },
+        {
+          routePath: '/feature/dropdown/server-side-real-time-data-binding',
+          title: 'Server-side Realtime Data Binding',
           navigation: [
             {
               title: 'What You Will See',
