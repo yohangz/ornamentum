@@ -49,7 +49,9 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-client-side-real-time-data-binding/data-table-client-side-real-time-data-binding.module#DataTableClientSideRealTimeDataBindingModule',
+    loadChildren:
+      './data-table-client-side-real-time-data-binding/data-table-client-side-real-time-data-binding.module' +
+      '#DataTableClientSideRealTimeDataBindingModule',
     path: 'client-side-real-time-data-binding',
     canActivate: [SeoGuard],
     data: {
@@ -61,7 +63,9 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-server-side-real-time-data-binding/data-table-server-side-real-time-data-binding.module#DataTableServerSideRealTimeDataBindingModule',
+    loadChildren:
+      './data-table-server-side-real-time-data-binding/data-table-server-side-real-time-data-binding.module' +
+      '#DataTableServerSideRealTimeDataBindingModule',
     path: 'server-side-real-time-data-binding',
     canActivate: [SeoGuard],
     data: {
@@ -81,7 +85,7 @@ const dataTableFeatureRoutes: Routes = [
         title: 'Ornamentum | Data Table | Functionality | Pagination',
         keywords: 'Pagination, Pageable, Ornamentum, How to enable Pagination in Ornamentum',
         description:
-          'How to enable pagination for the Ornamentum data table, everything to do with pagination and related properties, ' + 'with examples.'
+          'How to enable pagination for the Ornamentum data table, everything to do with pagination and related properties, with examples.'
       }
     }
   },
@@ -110,12 +114,12 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-persist-data/data-table-persist-data.module#DataTablePersistDataModule',
-    path: 'data-persistence',
+    loadChildren: './data-table-state-persistence/data-table-state-persistence.module#DataTableStatePersistenceModule',
+    path: 'state-persistence',
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Data Persistence',
+        title: 'Ornamentum | Data Table | Functionality | State Persistence',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

@@ -5,10 +5,10 @@ import { ExampleData } from '../../../../../../shared/models';
 import { DataFetchService } from '../../../../../../shared/services';
 
 @Component({
-  selector: 'app-data-persistence-usage',
-  templateUrl: './data-persistence-usage.component.html'
+  selector: 'app-select-on-row-click-usage',
+  templateUrl: './select-on-row-click-usage.component.html'
 })
-export class DataPersistenceUsageComponent {
+export class SelectOnRowClickUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

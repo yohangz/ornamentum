@@ -2,12 +2,16 @@ import { Component } from '@angular/core';
 
 import {
   demoSnippet,
-  multiRowSelectionUsage,
   rowSelectionUsage,
-  selectedRowsUsage,
-  selectedRowUsage,
   singleRowSelectionUsage,
-  singleToggleRowSelectionUsage
+  singleToggleRowSelectionUsage,
+  multiRowSelectionUsage,
+  showRowSelectCheckboxUsage,
+  showRowSelectAllCheckboxUsage,
+  selectOnRowClickUsage,
+  selectTrackByUsage,
+  setSelectedRowUsage,
+  setSelectedRowsUsage
 } from './data-table-row-selection.list';
 
 import { FileType } from 'helper-models';
@@ -20,11 +24,16 @@ import { FileType } from 'helper-models';
 export class DataTableRowSelectionComponent {
   public FileType = FileType;
 
+  public demoSnippet = demoSnippet;
+
+  public rowSelectionUsage = rowSelectionUsage;
   public singleRowSelectionUsage = singleRowSelectionUsage;
   public singleToggleRowSelectionUsage = singleToggleRowSelectionUsage;
   public multiRowSelectionUsage = multiRowSelectionUsage;
-  public rowSelectionUsage = rowSelectionUsage;
-  public selectedRowUsage = selectedRowUsage;
-  public selectedRowsUsage = selectedRowsUsage;
-  public demoSnippet = demoSnippet;
+  public showRowSelectCheckboxUsage = showRowSelectCheckboxUsage;
+  public showRowSelectAllCheckboxUsage = showRowSelectAllCheckboxUsage;
+  public selectOnRowClickUsage = selectOnRowClickUsage;
+  public selectTrackByUsage = selectTrackByUsage;
+  public setSelectedRowUsage = setSelectedRowUsage;
+  public setSelectedRowsUsage = setSelectedRowsUsage;
 }

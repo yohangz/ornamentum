@@ -6,12 +6,16 @@ import { DataTableModule } from 'ornamentum';
 
 import {
   DataTableRowSelectionComponent,
-  MultiRowSelectionUsageComponent,
   RowSelectionUsageComponent,
-  SelectedRowsUsageComponent,
-  SelectedRowUsageComponent,
   SingleRowSelectionUsageComponent,
-  SingleToggleRowSelectionUsageComponent
+  SingleToggleRowSelectionUsageComponent,
+  MultiRowSelectionUsageComponent,
+  ShowRowSelectCheckboxUsageComponent,
+  ShowRowSelectAllCheckboxUsageComponent,
+  SelectOnRowClickUsageComponent,
+  SelectTrackByUsageComponent,
+  SetSelectedRowUsageComponent,
+  SetSelectedRowsUsageComponent
 } from './index';
 
 import { DataTableRowSelectionRoutingModule } from './data-table-row-selection-routing.module';
@@ -24,12 +28,16 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTableRowSelectionComponent,
-    MultiRowSelectionUsageComponent,
+    RowSelectionUsageComponent,
     SingleRowSelectionUsageComponent,
     SingleToggleRowSelectionUsageComponent,
-    RowSelectionUsageComponent,
-    SelectedRowUsageComponent,
-    SelectedRowsUsageComponent
+    MultiRowSelectionUsageComponent,
+    ShowRowSelectCheckboxUsageComponent,
+    ShowRowSelectAllCheckboxUsageComponent,
+    SelectOnRowClickUsageComponent,
+    SelectTrackByUsageComponent,
+    SetSelectedRowUsageComponent,
+    SetSelectedRowsUsageComponent
   ],
   exports: [],
   imports: [
@@ -37,10 +45,13 @@ import { SharedModule } from '../../../shared/shared.module';
     FormsModule,
     SharedModule.forRoot(),
     DataTableModule.forRoot({
-      showColumnSelector: true
+      showColumnSelector: true,
+      pageable: true,
+      showHeader: true
     }),
     DataTableRowSelectionRoutingModule
   ],
   providers: []
 })
-export class DataTableRowSelectionModule {}
+export class DataTableRowSelectionModule {
+}

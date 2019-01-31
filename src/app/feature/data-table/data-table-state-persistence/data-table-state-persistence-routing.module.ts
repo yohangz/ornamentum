@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DataTablePersistDataComponent } from './index';
+import { DataTableStatePersistenceComponent } from './index';
 
 /**
  * Represent data table persist data routes.
  */
 const dataTablePersistDataRoutes: Routes = [
   {
-    component: DataTablePersistDataComponent,
+    component: DataTableStatePersistenceComponent,
     path: ''
   }
 ];
@@ -20,4 +20,4 @@ const dataTablePersistDataRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTablePersistDataRoutes)]
 })
-export class DataTablePersistDataRoutingModule {}
+export class DataTableStatePersistenceRoutingModule {}

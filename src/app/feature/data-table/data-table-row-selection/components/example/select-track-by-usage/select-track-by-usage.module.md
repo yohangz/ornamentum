@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DataTableModule } from 'ornamentum';
   
-import { DataPersistenceUsageComponent } from './data-persistence-usage.component';
+import { SelectTrackByUsageComponent } from './select-track-by-usage.component';
 
 @NgModule({
- bootstrap: [DataPersistenceUsageComponent],
- declarations: [DataPersistenceUsageComponent],
+ bootstrap: [SelectTrackByUsageComponent],
+ declarations: [SelectTrackByUsageComponent],
  imports: [
     BrowserModule, 
     DataTableModule.forRoot()
   ]
 })
-export class DataPersistenceUsageModule {
+export class SelectTrackByUsageModule {
 }
