@@ -1,7 +1,7 @@
 <ng-dropdown
   [selectTrackBy]="'id'"
   [displayTrackBy]="'productType'"
-  [items]="items"
+  [dataSource]="dataSource"
   [limit]="50">
   <ng-template #ngDropdownLoadingSpinner let-option="option">
     <h4 style="font-size:150%; color: #9eff93">Loading...</h4>
