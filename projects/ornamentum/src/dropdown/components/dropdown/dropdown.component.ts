@@ -17,7 +17,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 import { Subscription, Observable } from 'rxjs';
-import { debounceTime, switchMap } from 'rxjs/operators';
+import { catchError, debounceTime, switchMap } from 'rxjs/operators';
 
 import get from 'lodash/get';
 
@@ -38,6 +38,7 @@ import { DropdownDataStateService } from '../../services/dropdown-data-state.ser
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
 import { DropdownResourceService } from '../../services/dropdown-resource.service';
 import { ViewPosition } from '../../../utility/models/view-position.model';
+import { of } from 'rxjs/internal/observable/of';
 
 /**
  * Dropdown main component.
@@ -657,13 +658,23 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   // Do not emit dataFetchStream true unless it is required to hard reload the dropdown options.
   private initDataFetchEvent(): void {
+    const noop = {
+      items: [],
+      count: 0
+    };
+
     this.eventStateService.dataFetchStream
       .pipe(
         debounceTime(20),
-        switchMap((hardReload: boolean) => this.mapToDataBindRequest(hardReload))
+        switchMap((hardReload: boolean) => this.mapToDataBindRequest(hardReload)),
+        catchError(() => {
+          return of(noop);
+        })
       )
       .subscribe((queryResult: DropdownQueryResult<any>) => {
         this.onAfterDataBind(queryResult);
+      }, () => {
+        this.onAfterDataBind(noop);
       });
   }
 

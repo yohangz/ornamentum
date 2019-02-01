@@ -19,6 +19,7 @@ import { DataTableHeadComponent } from './components/data-table-head/data-table-
 import { DataTableLoadingSpinnerComponent } from './components/data-table-loading-spinner/data-table-loading-spinner.component';
 
 import { DATA_TABLE_CONFIG } from './services/data-table-config.service';
+import { HttpDataFetchService } from './services/data-table-http-resource.service';
 
 import { ScrollPositionDirective } from './directives/scroll-position.directive';
 import { ScrollElementDirective } from './directives/scroll-element.directive';
@@ -45,7 +46,7 @@ const COMPONENTS = [
 
 const DIRECTIVES = [ScrollPositionDirective, ScrollElementDirective, ElementWidthDirective];
 
-const PROVIDERS = [];
+const PROVIDERS = [HttpDataFetchService];
 
 /**
  * Module representing data table component
@@ -96,6 +97,7 @@ export { DataTableFilterFieldMapperCallback } from './models/data-table-filter-f
 export { DataTableFilterExpressionCallback } from './models/data-table-filter-expression-callback.model';
 export { DataTableCellColorRenderCallback } from './models/data-table-cell-color-render-callback.model';
 export { DataTableSelectMode } from './models/data-table-select-mode.model';
+export { DataTableDataBindCallback } from './models/data-table-data-bind-callback.model';
 
 export { DataTableSortOrder } from './models/data-table-sort-order.model';
 export { DataTableStorageMode } from './models/data-table-storage-mode.model';
@@ -103,3 +105,5 @@ export { DataFetchMode } from './models/data-fetch-mode.enum';
 
 export { DataTableComponent } from './components/data-table/data-table.component';
 export { DataTableColumnComponent } from './components/data-table-column/data-table-column.component';
+
+export { HttpDataFetchService };

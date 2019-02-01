@@ -15,8 +15,8 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { Subscription, Observable } from 'rxjs';
-import { debounceTime, switchMap } from 'rxjs/operators';
+import { Subscription, Observable, of } from 'rxjs';
+import { catchError, debounceTime, switchMap } from 'rxjs/operators';
 
 import get from 'lodash/get';
 
@@ -707,13 +707,23 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * Initialize data fetch event
    */
   private initDataFetchEvent(): void {
+    const noop = {
+      items: [],
+      count: 0
+    };
+
     this.dataFetchStreamSubscription = this.eventStateService.dataFetchStream
       .pipe(
         debounceTime(20),
-        switchMap((fetchMode: DataFetchMode) => this.mapDataBind(fetchMode))
+        switchMap((fetchMode: DataFetchMode) => this.mapDataBind(fetchMode)),
+        catchError(() => {
+          return of(noop);
+        })
       )
       .subscribe((queryResult: DataTableQueryResult<any>) => {
         this.onAfterDataBind(queryResult);
+      }, () => {
+        this.onAfterDataBind(noop);
       });
   }
 
