@@ -15,8 +15,7 @@ import fetchData from '../data/sample-data';
  */
 @Injectable()
 export class DataFetchService {
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   /**
    * Fetch data from client source for demo client side data binding with items property.
@@ -49,21 +48,23 @@ export class DataFetchService {
         }
 
         if (typeof dataTableColumnComponent.filterValue === 'string') {
-          queryParams = queryParams.append(dataTableColumnComponent.field, dataTableColumnComponent.filterValue);
+          const filter = Array.isArray(dataTableColumnComponent.filterValue) ? dataTableColumnComponent.filterValue.join(',') :
+            dataTableColumnComponent.filterValue;
+          queryParams = queryParams.append(dataTableColumnComponent.field, filter);
           return;
         }
       });
 
-      if (params.sortColumns && params.sortColumns.length) {
-        const sortExpressions = params.sortColumns.filter((column: DataTableSortColumn) => {
-          return column.sortOrder !== '';
-        });
-        if (sortExpressions.length) {
-          const firstExpression = sortExpressions[0];
-          queryParams = queryParams.append('sortBy', firstExpression.field);
-          queryParams = queryParams.append('sortOrder', firstExpression.sortOrder);
+      params.sortColumns.filter((column: DataTableSortColumn) => {
+        return column.sortOrder !== '';
+      }).forEach((dataTableColumnComponent: DataTableSortColumn) => {
+        const filterValue = queryParams.get(dataTableColumnComponent.field);
+
+        if (filterValue) {
+          queryParams = queryParams.append(dataTableColumnComponent.field, `${filterValue}|${dataTableColumnComponent.sortOrder}`);
         }
-      }
+
+      });
 
       return this.http.get<ResourceData<ExampleData[]>>('/api/data', { params: queryParams });
     }
