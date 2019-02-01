@@ -5,9 +5,9 @@ import { GlobalRefService } from 'ornamentum';
 import { webSocket } from 'rxjs/webSocket';
 import { Observable, of } from 'rxjs';
 
-import { ExampleData } from '../../../../../../shared/models';
+import { ExampleData } from 'helper-models';
 
-import { DataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from 'helper-services';
 
 @Component({
   selector: 'app-server-side-real-time-data-binding',
@@ -23,7 +23,7 @@ export class ServerSideRealTimeDataBindingComponent implements OnInit {
     // This is an internal service used to check the execution environment.
     // Checks whether it is browser or not.
     if (this.globalRefService.isBrowser) {
-      this.dataSource = webSocket(`wss://${window.location.hostname}:40510`);
+      this.dataSource = webSocket(`wss://${window.location.hostname}`);
     } else {
       this.dataSource = of(this.dataFetchService.fetchStaticData(0, 20));
     }
