@@ -8,6 +8,7 @@ import { provideModuleMap } from '@nguniversal/module-map-ngfactory-loader';
 import { Request, Response } from 'express-serve-static-core';
 import * as express from 'express';
 import * as WSS from 'ws';
+import * as http from 'http';
 
 import { join } from 'path';
 import { readFileSync } from 'fs';
@@ -25,8 +26,9 @@ enableProdMode();
 
 // Express server
 const app = express();
+const server = http.createServer(app);
 
-const wss = new WSS.Server({ port: 40510 });
+const wss = new WSS.Server({ server });
 
 const PORT = process.env.PORT || 8080;
 const DIST_FOLDER = process.env.DIST_FOLDER ? join(process.cwd(), process.env.DIST_FOLDER) : process.cwd();
@@ -123,23 +125,33 @@ app.get('*', (req: Request, res: Response) => {
   res.render('index', { req });
 });
 
-// Start up the Node server
-app.listen(PORT, () => {
-  console.log(`Node Express server listening on http://localhost:${PORT}`);
+wss.on('connection', (ws: WSS) => {
+  try {
+    let offset = 0;
+    const interval = setInterval(() => {
+      console.log('[WS] running broadcast');
+
+      offset += 20;
+      if (offset >= 100) {
+        offset = 0;
+      }
+
+      const selected = data.slice(offset, offset + 20);
+      if (ws.readyState === ws.OPEN) {
+        ws.send(JSON.stringify(selected));
+      }
+    }, 2000);
+
+    ws.on('close', () => {
+      console.log('[WS] closing connection');
+      clearInterval(interval);
+    });
+  } catch (e) {
+    console.log('[WS] connection crash');
+  }
 });
 
-wss.on('connection', (ws: WSS) => {
-  let offset = 0;
-
-  // connection is up.
-  // sample data will be emitted to the client side in a 2000ms interval
-  setInterval(() => {
-    offset += 20;
-    if (offset >= 100) {
-      offset = 0;
-    }
-
-    const selected = data.slice(offset, offset + 20);
-    ws.send(JSON.stringify(selected));
-  }, 2000);
+// Start up the Node server
+server.listen(PORT, () => {
+  console.log(`Node Express server listening on http://localhost:${PORT}`);
 });
