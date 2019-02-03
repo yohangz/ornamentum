@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { DataTableModule } from 'ornamentum';
+import { DataTableModule, DataTableResourceModule } from 'ornamentum';
 
 import { DataTableServerSideDataBindingComponent, ServerSideDataBindingComponent } from './index';
 
@@ -25,6 +25,7 @@ import { SharedModule } from '../../../shared/shared.module';
       showHeader: true,
       pageable: true
     }),
+    DataTableResourceModule,
     DataTableServerSideDataBindingRoutingModule
   ],
   providers: []

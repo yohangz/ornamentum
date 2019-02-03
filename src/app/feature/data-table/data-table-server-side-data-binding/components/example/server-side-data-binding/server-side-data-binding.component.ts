@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { HttpDataFetchService, DataTableDataBindCallback } from 'ornamentum';
+import { DataTableHttpDataFetchService, DataTableDataBindCallback } from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
 
@@ -11,7 +11,7 @@ import { ExampleData } from 'helper-models';
 export class ServerSideDataBindingComponent {
   public onDataBind: DataTableDataBindCallback;
 
-  constructor(private dataFetchService: HttpDataFetchService<ExampleData>) {
+  constructor(private dataFetchService: DataTableHttpDataFetchService<ExampleData>) {
     this.onDataBind = this.dataFetchService.onDataBind('/api/data');
   }
 }

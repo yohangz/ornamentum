@@ -19,7 +19,6 @@ import { DataTableHeadComponent } from './components/data-table-head/data-table-
 import { DataTableLoadingSpinnerComponent } from './components/data-table-loading-spinner/data-table-loading-spinner.component';
 
 import { DATA_TABLE_CONFIG } from './services/data-table-config.service';
-import { HttpDataFetchService } from './services/data-table-http-resource.service';
 
 import { ScrollPositionDirective } from './directives/scroll-position.directive';
 import { ScrollElementDirective } from './directives/scroll-element.directive';
@@ -46,7 +45,7 @@ const COMPONENTS = [
 
 const DIRECTIVES = [ScrollPositionDirective, ScrollElementDirective, ElementWidthDirective];
 
-const PROVIDERS = [HttpDataFetchService];
+const PROVIDERS = [];
 
 /**
  * Module representing data table component
@@ -105,5 +104,3 @@ export { DataFetchMode } from './models/data-fetch-mode.enum';
 
 export { DataTableComponent } from './components/data-table/data-table.component';
 export { DataTableColumnComponent } from './components/data-table-column/data-table-column.component';
-
-export { HttpDataFetchService };
