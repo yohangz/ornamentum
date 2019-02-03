@@ -105,9 +105,7 @@ app.get('/api/data', (req: Request, res: Response) => {
   const count = result.length;
 
   res.status(200).json({
-    data: selected,
-    offset: parsedOffset,
-    limit: parsedLimit,
+    items: selected,
     count: count
   });
 });

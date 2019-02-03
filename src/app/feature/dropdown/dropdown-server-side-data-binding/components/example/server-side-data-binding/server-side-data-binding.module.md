@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
   
-import { DropdownModule } from 'ornamentum';
+import { DropdownModule, DropdownResourceModule } from 'ornamentum';
   
 import { ServerSideDataBindingComponent } from './server-side-data-binding.component';
 
@@ -10,7 +10,8 @@ import { ServerSideDataBindingComponent } from './server-side-data-binding.compo
  declarations: [ServerSideDataBindingComponent],
  imports: [
     BrowserModule, 
-    DropdownModule.forRoot()
+    DropdownModule.forRoot(),
+    DropdownResourceModule
   ]
 })
 export class ServerSideDataBindingModule {

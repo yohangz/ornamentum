@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
   
-import { DataTableModule } from 'ornamentum';
+import { DataTableModule, DataTableResourceModule } from 'ornamentum';
   
 import { ServerSideDataBindingComponent } from './server-side-data-binding.component';
 
@@ -10,7 +10,8 @@ import { ServerSideDataBindingComponent } from './server-side-data-binding.compo
  declarations: [ServerSideDataBindingComponent],
  imports: [
     BrowserModule, 
-    DataTableModule.forRoot()
+    DataTableModule.forRoot(),
+    DataTableResourceModule
   ]
 })
 export class ServerSideDataBindingModule {

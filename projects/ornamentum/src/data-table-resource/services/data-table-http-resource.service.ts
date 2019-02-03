@@ -4,17 +4,17 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { DataTableRequestParams } from '../models/data-table-request-params.model';
-import { DataTableQueryResult } from '../models/data-table-query-result.model';
-import { DataTableFilterColumn } from '../models/data-table-filter-column.model';
-import { DataTableSortColumn } from '../models/data-table-sort-column.model';
-import { DataTableDataBindCallback } from '../models/data-table-data-bind-callback.model';
+import { DataTableRequestParams } from '../../data-table/models/data-table-request-params.model';
+import { DataTableQueryResult } from '../../data-table/models/data-table-query-result.model';
+import { DataTableFilterColumn } from '../../data-table/models/data-table-filter-column.model';
+import { DataTableSortColumn } from '../../data-table/models/data-table-sort-column.model';
+import { DataTableDataBindCallback } from '../../data-table/models/data-table-data-bind-callback.model';
 
 /**
- * HTTP data fetch service.
+ * Data table HTTP data fetch service.
  */
 @Injectable()
-export class HttpDataFetchService<T> {
+export class DataTableHttpDataFetchService<T> {
   constructor(private http: HttpClient) {}
 
   /**
