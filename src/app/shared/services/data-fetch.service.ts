@@ -1,12 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
-
-import { DataTableFilterColumn, DataTableRequestParams, DataTableSortColumn, DropdownRequestParams } from 'ornamentum';
-
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 import { ExampleData } from '../models';
-import { ResourceData } from '../models/resource-data.model';
 
 import fetchData from '../data/sample-data';
 
@@ -24,73 +19,5 @@ export class DataFetchService {
    */
   public fetchStaticData(offset: number = 0, limit: number = 10): ExampleData[] {
     return fetchData.slice(offset, offset + limit);
-  }
-
-  /**
-   * Fetch data stream from server for server side data binding for Datatable.
-   * @param params DataTableRequestParams
-   */
-  public fetchDataOnBindForDataTable(params?: DataTableRequestParams): Observable<ResourceData<ExampleData[]>> {
-    let queryParams = new HttpParams();
-
-    if (params) {
-      if (params.limit !== undefined) {
-        queryParams = queryParams.append('limit', String(params.limit));
-      }
-
-      if (params.offset !== undefined) {
-        queryParams = queryParams.append('offset', String(params.offset));
-      }
-
-      params.filterColumns.forEach((dataTableColumnComponent: DataTableFilterColumn) => {
-        if (dataTableColumnComponent.filterValue === undefined || dataTableColumnComponent.filterValue === '') {
-          return;
-        }
-
-        if (typeof dataTableColumnComponent.filterValue === 'string') {
-          const filter = Array.isArray(dataTableColumnComponent.filterValue) ? dataTableColumnComponent.filterValue.join(',') :
-            dataTableColumnComponent.filterValue;
-          queryParams = queryParams.append(dataTableColumnComponent.field, filter);
-          return;
-        }
-      });
-
-      params.sortColumns.filter((column: DataTableSortColumn) => {
-        return column.sortOrder !== '';
-      }).forEach((dataTableColumnComponent: DataTableSortColumn) => {
-        const filterValue = queryParams.get(dataTableColumnComponent.field);
-
-        if (filterValue) {
-          queryParams = queryParams.append(dataTableColumnComponent.field, `${filterValue}|${dataTableColumnComponent.sortOrder}`);
-        }
-
-      });
-
-      return this.http.get<ResourceData<ExampleData[]>>('/api/data', { params: queryParams });
-    }
-  }
-
-  /**
-   * Fetch data stream from server for server side data binding for Dropdown.
-   * @param params DropdownRequestParams
-   */
-  public fetchDataOnBindForDropdown(params?: DropdownRequestParams): Observable<ResourceData<ExampleData[]>> {
-    let queryParams = new HttpParams();
-
-    if (params) {
-      if (params.filter !== undefined && params.filter.value !== '') {
-        queryParams = queryParams.append('keyword', params.filter.value.toString());
-      }
-
-      if (params.limit !== undefined) {
-        queryParams = queryParams.append('limit', params.limit.toString());
-      }
-
-      if (params.offset !== undefined) {
-        queryParams = queryParams.append('offset', params.offset.toString());
-      }
-    }
-
-    return this.http.get<ResourceData<ExampleData[]>>('/api/data', { params: queryParams });
   }
 }
