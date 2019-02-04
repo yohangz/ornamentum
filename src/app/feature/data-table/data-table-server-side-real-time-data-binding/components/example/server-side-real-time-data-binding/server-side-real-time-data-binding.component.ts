@@ -1,10 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { GlobalRefService, DataTableWebSocketDataFetchService, DataTableDataBindCallback } from 'ornamentum';
-
+import { GlobalRefService, DataTableWebsocketDataFetchService, DataTableDataBindCallback } from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
-
 import { DataFetchService } from 'helper-services';
 
 /**
@@ -19,7 +17,7 @@ export class ServerSideRealTimeDataBindingComponent implements OnInit, OnDestroy
 
   constructor(private dataFetchService: DataFetchService,
               private globalRefService: GlobalRefService,
-              private dataTableWebSocketDataFetchService: DataTableWebSocketDataFetchService<ExampleData>) {
+              private dataTableWebSocketDataFetchService: DataTableWebsocketDataFetchService<ExampleData>) {
   }
 
   /**
