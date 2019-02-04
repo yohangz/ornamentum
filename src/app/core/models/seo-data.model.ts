@@ -1,4 +1,4 @@
-interface SeoData {
+export interface SeoData {
   title: string;
   keywords: string;
   description: string;
