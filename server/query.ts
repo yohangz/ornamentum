@@ -4,14 +4,15 @@ import orderBy from 'lodash/orderBy';
 
 import { DataTableQueryField, DropdownFilter } from 'ornamentum';
 
-export const queryDataByFieldExpression = (data: any[], offset: number, limit: number, fields: any = {}): any => {
+export const queryDataByFieldExpression = (data: any[], offset: number = 0, limit: number = 10, fields: any = {}): any => {
   let result = data;
 
   if ('filter' in fields) {
-    if (fields.filter.key && fields.filter.value) {
-      const value = String(fields.filter.value).toLowerCase();
+    const filter = fields.filter.split('|');
+    if (filter.length === 2) {
+      const value = String(filter[1]).toLowerCase();
       result = result.filter((item) => {
-        const key = String(get(item, fields.filter.key)).toLowerCase();
+        const key = String(get(item, filter[0])).toLowerCase();
         return key.includes(value);
       });
     }
@@ -72,7 +73,8 @@ export const queryDataByFieldExpression = (data: any[], offset: number, limit: n
   };
 };
 
-export const queryDataByFieldCollection = (data: any[], offset: number, limit: number, params: DataTableQueryField[]|DropdownFilter): any => {
+export const queryDataByFieldCollection = (data: any[], offset: number = 0, limit: number = 10,
+                                           params: DataTableQueryField[]|DropdownFilter): any => {
   let result = data;
 
   if (Array.isArray(params)) {
@@ -122,7 +124,7 @@ export const queryDataByFieldCollection = (data: any[], offset: number, limit: n
       result = orderBy(result, orderData.fields, orderData.orders);
     }
   } else {
-    if (params.key && params.value) {
+    if (params && params.key && params.value) {
       result = result.filter((item) => {
         const key = String(get(item, params.key)).toLowerCase();
         const value = String(params.value).toLowerCase();
