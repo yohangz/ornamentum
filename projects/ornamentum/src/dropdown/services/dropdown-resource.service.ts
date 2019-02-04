@@ -35,9 +35,9 @@ export class DropdownResourceService<T> {
         let result: T[] = items.slice();
 
         if (params.filter && params.filter.value) {
+          const value = String(params.filter.value).toLowerCase();
           result = result.filter((item: T) => {
             const key = String(get(item, params.filter.key)).toLowerCase();
-            const value = String(params.filter.value).toLowerCase();
             return key.includes(value);
           });
         }

@@ -4,45 +4,44 @@ import { Subscription, Subject, Observable,  } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { webSocket, WebSocketSubject, WebSocketSubjectConfig } from 'rxjs/webSocket';
 
-import { DataTableRequestParams } from '../../data-table/models/data-table-request-params.model';
-import { DataTableQueryResult } from '../../data-table/models/data-table-query-result.model';
-import { DataTableDataBindCallback } from '../../data-table/models/data-table-data-bind-callback.model';
-
+import { DropdownDataBindCallback } from '../../dropdown/models/dropdown-data-bind-callback.model';
+import { DropdownQueryResult } from '../../dropdown/models/dropdown-query-result.model';
+import { DropdownRequestParams } from '../../dropdown/models/dropdown-request-params.model';
 
 /**
- * Data table Web Socket data fetch service.
+ * Dropdown websocket data fetch service.
  */
 @Injectable()
-export class DataTableWebSocketDataFetchService<T> {
-  private socket: WebSocketSubject<DataTableQueryResult<T[]>>;
-  private subject: Subject<DataTableQueryResult<T[]>>;
+export class DropdownWebsocketDataFetchService<T> {
+  private socket: WebSocketSubject<DropdownQueryResult<T[]>>;
+  private subject: Subject<DropdownQueryResult<T[]>>;
   private socketSubscription: Subscription;
 
   constructor() {
   }
 
   /**
-   * Initialize socket connection.
-   * @param config Socket configuration parameters.
+   * Initialize websocket connection.
+   * @param config Websocket configuration object reference.
    */
-  public init(config?: WebSocketSubjectConfig<DataTableQueryResult<T[]>>): void {
+  public init(config?: WebSocketSubjectConfig<DropdownQueryResult<T[]>>): void {
     this.socket = webSocket<any>(config);
-    this.subject = new Subject<DataTableQueryResult<T[]>>();
+    this.subject = new Subject<DropdownQueryResult<T[]>>();
   }
 
   /**
-   * Web socket data bind event handler.
+   * Websocket data bind event handler.
    * Must call init prior to calling this function.
    * @param responseMapper Response data mapper callback.
    */
-  public onDataBind(responseMapper?: <Q>(response: Q) => DataTableQueryResult<T[]>): DataTableDataBindCallback {
+  public onDataBind(responseMapper?: <Q>(response: Q) => DropdownQueryResult<T[]>): DropdownDataBindCallback {
     if (!this.socket) {
       throw Error('Initialize socket data source before data bind.');
     }
 
     this.socketSubscription = this.socket.subscribe(this.subject);
 
-    return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T[]>> => {
+    return (params?: DropdownRequestParams): Observable<DropdownQueryResult<T[]>> => {
       if (params) {
         this.socket.next(params as any);
 
@@ -56,7 +55,7 @@ export class DataTableWebSocketDataFetchService<T> {
   }
 
   /**
-   * Dispose socket connection.
+   * Dispose websocket connection.
    */
   public dispose(): void {
     if (this.socket) {
