@@ -74,30 +74,13 @@ app.get('*', (req: Request, res: Response) => {
 wss.on('connection', (ws: WSS) => {
   try {
     ws.on('message', (message: string) => {
-      // let offset = 0;
-      // const interval = setInterval(() => {
-      //   console.log('[WS] running broadcast');
-      //
-      //   offset += 20;
-      //   if (offset >= 100) {
-      //     offset = 0;
-      //   }
-      //
-      //   const selected = data.slice(offset, offset + 20);
-      //   if (ws.readyState === ws.OPEN) {
-      //     ws.send(JSON.stringify(selected));
-      //   }
-      // }, 2000);
-
       const query = JSON.parse(message);
-      const result = queryDataByFieldCollection(data, query['offset'], query['limit'], query['fields']);
+      const result = queryDataByFieldCollection(data, query['offset'], query['limit'], query['fields'] || query['filter']);
       ws.send(JSON.stringify(result));
-      console.log('[WS] data sent');
     });
 
     ws.on('close', () => {
       console.log('[WS] closing connection');
-      // clearInterval(interval);
     });
   } catch (e) {
     console.log('[WS] connection crash');
