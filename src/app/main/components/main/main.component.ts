@@ -367,7 +367,7 @@ export class MainComponent {
           ]
         },
         {
-          name: 'Templates',
+          name: 'Templating',
           menuItems: [
             {
               routePath: '/feature/data-table/templates/cell-template',
