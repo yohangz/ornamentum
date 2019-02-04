@@ -6,8 +6,7 @@ import { map } from 'rxjs/operators';
 
 import { DataTableRequestParams } from '../../data-table/models/data-table-request-params.model';
 import { DataTableQueryResult } from '../../data-table/models/data-table-query-result.model';
-import { DataTableFilterColumn } from '../../data-table/models/data-table-filter-column.model';
-import { DataTableSortColumn } from '../../data-table/models/data-table-sort-column.model';
+import { DataTableQueryField } from '../../data-table/models/data-table-query-field.model';
 import { DataTableDataBindCallback } from '../../data-table/models/data-table-data-bind-callback.model';
 
 /**
@@ -20,7 +19,8 @@ export class DataTableHttpDataFetchService<T> {
   /**
    * HTTP data bind event handler.
    */
-  public onDataBind(resourcePath: string, responseMapper?: <Q>(response: Q) => DataTableQueryResult<T[]>, requestOptions?: any): DataTableDataBindCallback {
+  public onDataBind(resourcePath: string, responseMapper?: <Q>(response: Q) => DataTableQueryResult<T[]>,
+                    requestOptions?: any): DataTableDataBindCallback {
     return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T[]>> => {
       let queryParams = new HttpParams();
 
@@ -33,30 +33,22 @@ export class DataTableHttpDataFetchService<T> {
           queryParams = queryParams.append('offset', String(params.offset));
         }
 
-        params.filterColumns.forEach((dataTableColumnComponent: DataTableFilterColumn) => {
-          if (dataTableColumnComponent.filterValue === undefined || dataTableColumnComponent.filterValue === '') {
-            return;
+        params.fields.forEach((column: DataTableQueryField, index: number) => {
+          let query = '';
+
+          if (column.filterable) {
+            if (typeof column.filterValue === 'string' && column.filterValue === '') {
+              query += column.filterValue;
+            } else if (Array.isArray(column.filterValue) && column.filterValue.length) {
+              query += column.filterValue.join(',');
+            }
           }
 
-          if (typeof dataTableColumnComponent.filterValue === 'string') {
-            const filter = Array.isArray(dataTableColumnComponent.filterValue) ? dataTableColumnComponent.filterValue.join(',') :
-              dataTableColumnComponent.filterValue;
-            queryParams = queryParams.append(dataTableColumnComponent.field, filter);
-            return;
-          }
-        });
-
-        params.sortColumns.filter((column: DataTableSortColumn) => {
-          return column.sortOrder !== '';
-        }).forEach((dataTableColumnComponent: DataTableSortColumn, index: number) => {
-          const filterValue = queryParams.get(dataTableColumnComponent.field);
-
-          if (filterValue) {
-            queryParams = queryParams.append(dataTableColumnComponent.field, `${filterValue}|${dataTableColumnComponent.sortOrder}|${index}`);
-          } else {
-            queryParams = queryParams.append(dataTableColumnComponent.field, `|${dataTableColumnComponent.sortOrder}|${index}`);
+          if (column.sortable && column.sortOrder !== '') {
+            query += `|${column.sortOrder}|${index}`;
           }
 
+          queryParams = queryParams.append(column.field, query);
         });
 
         const resource = this.http.get<any>(resourcePath, { params: queryParams, ...requestOptions }) as Observable<any>;

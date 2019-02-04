@@ -746,23 +746,28 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     };
 
     if (this.columns) {
-      params.sortColumns = this.columns
-        .filter(column => column.sortable)
+      params.fields = this.columns.filter(column => {
+        return (column.sortable || column.filterable);
+      })
         .map((column: DataTableColumnComponent) => {
+          let filter;
+          if (column.showDropdownFilter) {
+            if (column.dropdownFilterSelectMode === 'multi') {
+              filter = column.filter && column.filter.map((filterValue) => filterValue.key);
+            } else {
+              filter = column.filter && column.filter.key;
+            }
+          } else {
+            filter = column.filter;
+          }
+
           return {
             field: column.sortField || column.field,
-            sortOrder: column.sortOrder
-          };
-        });
-
-      params.filterColumns = this.columns
-        .filter(column => column.filterable)
-        .map((column: DataTableColumnComponent) => {
-          return {
-            field: column.filterField || column.field,
-            filterValue: column.filter,
-            filterExpression: column.filterExpression,
-            showDropdownFilter: column.showDropdownFilter
+            sortable: column.sortable,
+            filterable: column.filterable,
+            sortOrder: column.sortOrder,
+            filterValue: filter,
+            filterExpression: column.filterExpression
           };
         });
     }
@@ -787,20 +792,16 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       const dataTableState = this.dataTableStateService.getState(this.id);
       if (dataTableState) {
         this.columns.forEach(column => {
-          const filterColumn = dataTableState.filterColumns.find(col => {
+          const field = dataTableState.fields.find(col => {
             return col.field === column.field;
           });
 
-          const sortColumn = dataTableState.sortColumns.find(col => {
-            return col.field === column.field;
-          });
-
-          if (filterColumn) {
-            column.filter = filterColumn.filterValue;
+          if (column.filterable && field.filterable) {
+            column.filter = field.filterValue;
           }
 
-          if (sortColumn) {
-            column.sortOrder = sortColumn.sortOrder;
+          if (column.sortable && field.sortable) {
+            column.sortOrder = field.sortOrder;
           }
         });
 

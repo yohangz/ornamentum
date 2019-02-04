@@ -8,9 +8,8 @@ import get from 'lodash/get';
 
 import { DataTableRequestParams } from '../models/data-table-request-params.model';
 import { DataTableQueryResult } from '../models/data-table-query-result.model';
-import { DataTableFilterColumn } from '../models/data-table-filter-column.model';
 import { DataTableFilterOption } from '../models/data-table-filter-option.model';
-import { DataTableSortColumn } from '../models/data-table-sort-column.model';
+import { DataTableQueryField } from '../models/data-table-query-field.model';
 
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
@@ -50,47 +49,47 @@ export class DataTableResourceService<T> {
         let itemCount = items.length;
         let result: T[] = items.slice();
 
-        if (params.filterColumns.length) {
-          result = items.filter(item => {
-            return params.filterColumns.every((filterColumn: DataTableFilterColumn) => {
-              if (filterColumn.filterExpression) {
-                return filterColumn.filterExpression(item, filterColumn.field, filterColumn.filterValue);
-              }
+        if (params.fields.length) {
+          const filterFields = params.fields.filter(field => field.filterable);
 
-              if (filterColumn.filterValue === undefined || filterColumn.filterValue === '') {
-                return true;
-              }
+          if (filterFields.length) {
+            result = items.filter(item => {
+              return filterFields.every((filterColumn: DataTableQueryField) => {
+                if (filterColumn.filterExpression) {
+                  return filterColumn.filterExpression(item, filterColumn.field, filterColumn.filterValue);
+                }
 
-              const fieldValue = get(item, filterColumn.field);
-              if (fieldValue === undefined) {
-                return true;
-              }
+                if (filterColumn.filterValue === undefined || filterColumn.filterValue === '') {
+                  return true;
+                }
 
-              if (Array.isArray(filterColumn.filterValue)) {
-                return (
-                  filterColumn.filterValue.length === 0 ||
-                  filterColumn.filterValue.some((option: DataTableFilterOption) => {
-                    return fieldValue === option.key;
-                  })
-                );
-              }
+                const fieldValue = get(item, filterColumn.field);
+                if (fieldValue === undefined) {
+                  return true;
+                }
 
-              const value = String(fieldValue).toLowerCase();
-              const filterValue = String(filterColumn.filterValue).toLowerCase();
-              return value.includes(filterValue);
+                if (Array.isArray(filterColumn.filterValue)) {
+                  return (
+                    filterColumn.filterValue.length === 0 ||
+                    filterColumn.filterValue.includes(fieldValue)
+                  );
+                }
+
+                const value = String(fieldValue).toLowerCase();
+                const filterValue = String(filterColumn.filterValue).toLowerCase();
+                return value.includes(filterValue);
+              });
             });
-          });
-          itemCount = result.length;
-        }
+            itemCount = result.length;
+          }
 
-        if (params.sortColumns.length) {
-          const sortColumns = params.sortColumns.filter((column: DataTableSortColumn) => {
-            return column.sortOrder !== '';
+          const sortColumns = params.fields.filter((column: DataTableQueryField) => {
+            return column.sortable && column.sortOrder !== '';
           });
 
           if (sortColumns.length) {
             const orderData = sortColumns.reduce(
-              (accumulator: any, column: DataTableSortColumn) => {
+              (accumulator: any, column: DataTableQueryField) => {
                 if (accumulator) {
                   accumulator.fields.push(column.field);
                   accumulator.orders.push(column.sortOrder);
