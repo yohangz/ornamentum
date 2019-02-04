@@ -33,22 +33,32 @@ export class DataTablePersistenceService {
   /**
    * Set table state by identifier
    * @param id Table identifier
+   * @param version Data version
    * @param value Data table request parameters object
    */
-  public setState(id: string, value: DataTableRequestParams): void {
+  public setState(id: string, value: DataTableRequestParams, version: string = 'v1'): void {
     if (this.globalRefService.isBrowser) {
-      this.storage.setItem(`${this.config.stateKeyPrefix}${id}`, JSON.stringify(value));
+      const data = {
+        ver: version,
+        val: value
+      };
+      this.storage.setItem(`${this.config.stateKeyPrefix}${id}`, JSON.stringify(data));
     }
   }
 
   /**
    * Get table state by identifier
    * @param id Table identifier
+   * @param version Data version
    * @return Data table request params object
    */
-  public getState(id: string): DataTableRequestParams {
+  public getState(id: string, version: string = 'v1'): DataTableRequestParams {
     if (this.globalRefService.isBrowser) {
-      return JSON.parse(this.storage.getItem(`${this.config.stateKeyPrefix}${id}`));
+      const data = JSON.parse(this.storage.getItem(`${this.config.stateKeyPrefix}${id}`));
+
+      if (data && data.ver === version) {
+        return data.val;
+      }
     }
 
     return null;

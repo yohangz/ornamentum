@@ -79,8 +79,7 @@ export class DataTableModule {
 // exports
 export { DataTableCellBindEventArgs } from './models/data-table-cell-bind-event-args.model';
 export { DataTableQueryResult } from './models/data-table-query-result.model';
-export { DataTableFilterColumn } from './models/data-table-filter-column.model';
-export { DataTableSortColumn } from './models/data-table-sort-column.model';
+export { DataTableQueryField } from './models/data-table-query-field.model';
 export { DataTableFilterOption } from './models/data-table-filter-option.model';
 export { DataTableCellClickEventArgs } from './models/data-table-cell-click-event-args.model';
 export { DataTableHeaderClickEventArgs } from './models/data-table-header-click-event-args.model';

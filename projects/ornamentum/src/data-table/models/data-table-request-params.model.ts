@@ -1,5 +1,4 @@
-import { DataTableSortColumn } from './data-table-sort-column.model';
-import { DataTableFilterColumn } from './data-table-filter-column.model';
+import { DataTableQueryField } from './data-table-query-field.model';
 
 /**
  * Data table parameters
@@ -23,10 +22,5 @@ export interface DataTableRequestParams {
   /**
    * Sort columns
    */
-  sortColumns?: DataTableSortColumn[];
-
-  /**
-   * Filter columns
-   */
-  filterColumns?: DataTableFilterColumn[];
+  fields?: DataTableQueryField[];
 }
