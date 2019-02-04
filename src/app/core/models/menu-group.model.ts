@@ -1,7 +1,7 @@
-import { MenuItem } from './menu-item.model';
+import { MenuSubGroup } from './menu-sub-group.model';
 
 export interface MenuGroup {
   name: string;
-  menuItems?: MenuItem[];
+  menuSubGroup: MenuSubGroup[];
   expanded: boolean;
 }

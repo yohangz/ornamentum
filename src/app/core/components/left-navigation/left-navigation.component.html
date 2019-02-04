@@ -8,12 +8,19 @@
           }}</span>
           <div class="sub-menu-item-container" [ngClass]="getExpandedClass(group.expanded)">
             <ul>
-              <li *ngFor="let menuItem of group.menuItems" [routerLinkActive]="'active'">
-                <a class="nav-link" [routerLink]="menuItem.routePath">
-                  <span class="main-nav-label">
-                    <span class="menu-title">{{ menuItem.title }}</span>
-                  </span>
-                </a>
+              <li *ngFor="let subGroup of group.menuSubGroup" class="sub-menu-group-container">
+                <span class="main-nav-label">
+                  <span class="menu-title">{{ subGroup.name }}</span>
+                </span>
+                <ul>
+                  <li *ngFor="let menuItem of subGroup.menuItems" [routerLinkActive]="'active'">
+                    <a class="nav-link" [routerLink]="menuItem.routePath">
+                      <span class="main-nav-label">
+                        <span class="menu-title">{{ menuItem.title }}</span>
+                      </span>
+                    </a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
