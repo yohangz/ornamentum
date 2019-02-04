@@ -54,7 +54,7 @@ app.get('/api/data', (req: Request, res: Response) => {
   const { offset = 0, limit = 10, ...fields } = req.query;
   const parsedOffset = Number(offset);
   const parsedLimit = Number(limit);
-  res.status(200).json(queryDataByFieldExpression(data, parsedOffset, parsedLimit, fields));
+  res.status(200).json(queryDataByFieldExpression(data, parsedOffset || 0, parsedLimit || 10, fields));
 });
 
 // Server static files from /browser
@@ -75,7 +75,8 @@ wss.on('connection', (ws: WSS) => {
   try {
     ws.on('message', (message: string) => {
       const query = JSON.parse(message);
-      const result = queryDataByFieldCollection(data, query['offset'], query['limit'], query['fields'] || query['filter']);
+      const result = queryDataByFieldCollection(data, query['offset'] || 0, query['limit'] || 10,
+        query['fields'] || query['filter']);
       ws.send(JSON.stringify(result));
     });
 
