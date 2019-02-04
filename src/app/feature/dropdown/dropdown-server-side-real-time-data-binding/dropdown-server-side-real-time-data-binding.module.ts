@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { DropdownModule } from 'ornamentum';
+import { DropdownModule, DropdownResourceModule } from 'ornamentum';
 
 import { DropdownServerSideRealTimeDataBindingComponent, ServerSideRealTimeDataBindingComponent } from './index';
 
@@ -22,6 +22,7 @@ import { SharedModule } from '../../../shared/shared.module';
     CommonModule,
     SharedModule.forRoot(),
     DropdownModule.forRoot(),
+    DropdownResourceModule,
     DropdownServerSideRealTimeDataBindingRoutingModule
   ],
   providers: []
