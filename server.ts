@@ -13,9 +13,7 @@ import * as http from 'http';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 
-import forOwn from 'lodash/forOwn';
-import get from 'lodash/get';
-import orderBy from 'lodash/orderBy';
+import { queryDataByFieldExpression, queryDataByFieldCollection } from './server/query';
 
 process.on('uncaughtException', function (exception) {
   console.log('node process crashed: ', exception);
@@ -56,58 +54,7 @@ app.get('/api/data', (req: Request, res: Response) => {
   const { offset = 0, limit = 10, ...fields } = req.query;
   const parsedOffset = Number(offset);
   const parsedLimit = Number(limit);
-
-  const filters = [];
-  const sort = {
-    fields: [],
-    orders: []
-  };
-
-  forOwn(fields, (value: string, key: string): void => {
-    if (value === '') {
-      return;
-    }
-
-    const fieldPair = value.split('|');
-
-    const filterValue = fieldPair[0];
-    if (filterValue !== '') {
-      filters.push({
-        field: key,
-        values: String(filterValue).split(',')
-      });
-    }
-
-    const sortOrder = fieldPair[1];
-    if (sortOrder) {
-      sort.fields.push(key);
-      sort.orders.push(sortOrder);
-    }
-  });
-
-  let result = data.filter((item) => {
-    return filters.every((filter) => {
-      const value = get(item, filter.field);
-
-      return filter.values.some((filterItem) => {
-        const filterValue = String(filterItem).toLowerCase();
-        const fieldValue = String(value).toLowerCase();
-        return fieldValue.includes(filterValue);
-      });
-    });
-  });
-
-  if (sort.orders.length) {
-    result = orderBy(result, sort.fields, sort.orders);
-  }
-
-  const selected = result.slice(parsedOffset, parsedOffset + parsedLimit);
-  const count = result.length;
-
-  res.status(200).json({
-    items: selected,
-    count: count
-  });
+  res.status(200).json(queryDataByFieldExpression(data, parsedOffset, parsedLimit, fields));
 });
 
 // Server static files from /browser
@@ -123,26 +70,34 @@ app.get('*', (req: Request, res: Response) => {
   res.render('index', { req });
 });
 
+// Web socket endpoint
 wss.on('connection', (ws: WSS) => {
   try {
-    let offset = 0;
-    const interval = setInterval(() => {
-      console.log('[WS] running broadcast');
+    ws.on('message', (message: string) => {
+      // let offset = 0;
+      // const interval = setInterval(() => {
+      //   console.log('[WS] running broadcast');
+      //
+      //   offset += 20;
+      //   if (offset >= 100) {
+      //     offset = 0;
+      //   }
+      //
+      //   const selected = data.slice(offset, offset + 20);
+      //   if (ws.readyState === ws.OPEN) {
+      //     ws.send(JSON.stringify(selected));
+      //   }
+      // }, 2000);
 
-      offset += 20;
-      if (offset >= 100) {
-        offset = 0;
-      }
-
-      const selected = data.slice(offset, offset + 20);
-      if (ws.readyState === ws.OPEN) {
-        ws.send(JSON.stringify(selected));
-      }
-    }, 2000);
+      const query = JSON.parse(message);
+      const result = queryDataByFieldCollection(data, query['offset'], query['limit'], query['fields']);
+      ws.send(JSON.stringify(result));
+      console.log('[WS] data sent');
+    });
 
     ws.on('close', () => {
       console.log('[WS] closing connection');
-      clearInterval(interval);
+      // clearInterval(interval);
     });
   } catch (e) {
     console.log('[WS] connection crash');
