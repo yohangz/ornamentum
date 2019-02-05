@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 
 import { DataTableRow } from 'ornamentum';
 
-import { ExampleData } from '../../../../../../../shared/models';
+import { ExampleData } from 'helper-models';
 
 @Component({
   selector: 'app-show-row-expand-loading-spinner-detail-view',

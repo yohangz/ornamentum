@@ -2,7 +2,7 @@ import { Component, ElementRef, EventEmitter, Inject, Input, Output, PLATFORM_ID
 
 import { GlobalRefService } from 'ornamentum';
 
-import { Theme } from '../../models/theme.enum';
+import { Theme } from '../../models';
 
 import { NavigationService } from '../../services';
 

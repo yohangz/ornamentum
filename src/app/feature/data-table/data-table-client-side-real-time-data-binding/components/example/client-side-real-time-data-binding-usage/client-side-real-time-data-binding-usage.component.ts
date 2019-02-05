@@ -5,9 +5,9 @@ import { map } from 'rxjs/operators';
 
 import { GlobalRefService } from 'ornamentum';
 
-import { ExampleData } from '../../../../../../shared/models';
+import { ExampleData } from 'helper-models';
 
-import { DataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from 'helper-services';
 
 @Component({
   selector: 'app-client-side-real-time-data-binding-usage',
@@ -25,7 +25,7 @@ export class ClientSideRealTimeDataBindingUsageComponent implements OnInit {
     // Checks whether it is browser or not.
     if (this.globalRefService.isBrowser) {
 
-      // Code segment used to emulate the realtime data binding.
+      // Code segment used to emulate the real-time data binding.
       this.dataSource = timer(0, 2000).pipe(
         map(() => {
           offset += 20;

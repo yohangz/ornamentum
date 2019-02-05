@@ -1,8 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { GlobalRefService, DropdownWebsocketDataFetchService, DropdownDataBindCallback } from 'ornamentum';
+import {
+  GlobalRefService,
+  DropdownWebsocketDataFetchService,
+  DropdownDataBindCallback
+} from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
+
 import { DataFetchService } from 'helper-services';
 
 /**
@@ -24,7 +29,7 @@ export class ServerSideRealTimeDataBindingComponent implements OnInit, OnDestroy
    * Component initialize lifecycle event handler.
    */
   public ngOnInit(): void {
-    // Create websocket connection on browser environment only to support server side rendering.
+    // Create web-socket connection on browser environment only to support server side rendering.
     if (this.globalRefService.isBrowser) {
       this.dataTableWebSocketDataFetchService.init({
         url: `wss://${window.location.hostname}` // websocket endpoint

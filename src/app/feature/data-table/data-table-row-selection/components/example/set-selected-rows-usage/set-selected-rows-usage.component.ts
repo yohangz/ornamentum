@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ExampleData } from '../../../../../../shared/models';
+import { ExampleData } from 'helper-models';
 
-import { DataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from 'helper-services';
 
 @Component({
   selector: 'app-set-selected-rows-usage',

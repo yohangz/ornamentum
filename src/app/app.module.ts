@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { APP_ID, Inject, NgModule, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+
 import { TransferHttpCacheModule } from '@nguniversal/common';
 
 import { AppComponent } from './app.component';

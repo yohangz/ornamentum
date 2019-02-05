@@ -1,8 +1,9 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnChanges, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 
-import { ExampleData } from '../../../../../../shared/models';
+import { ExampleData } from 'helper-models';
 
-import { DataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from 'helper-services';
+
 import {
   DataTableCellBindEventArgs,
   DataTableCellClickEventArgs,

@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
 
-import { ExampleData } from '../../../../../../shared/models';
+import { ExampleData } from 'helper-models';
 
-import { DataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from 'helper-services';
 
 @Component({
   selector: 'app-filter-debounce-usage',

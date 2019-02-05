@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
-import { demoSnippet } from './data-table-overview.list';
-
 import { VERSION } from '../../../../../environments/version';
 
 import { FileType } from 'helper-models';
+
+import { demoSnippet } from './data-table-overview.list';
 
 /**
  * Data table overview component controller.

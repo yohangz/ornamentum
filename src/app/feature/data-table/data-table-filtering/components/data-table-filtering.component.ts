@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 
-import { demoSnippet, filterDropdownUsage, filteringUsage, filterTextBoxUsage } from './data-table-filtering.list';
+import {
+  demoSnippet,
+  filterDropdownUsage,
+  filteringUsage,
+  filterTextBoxUsage
+} from './data-table-filtering.list';
 
 import { FileType } from 'helper-models';
 
