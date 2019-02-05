@@ -37,8 +37,10 @@ export class DataTableHttpDataFetchService<T> {
           let query = '';
 
           if (column.filterable) {
-            if (typeof column.filterValue === 'string' && column.filterValue === '') {
-              query += column.filterValue;
+            if (typeof column.filterValue === 'string') {
+              if (column.filterValue !== '') {
+                query += column.filterValue;
+              }
             } else if (Array.isArray(column.filterValue) && column.filterValue.length) {
               query += column.filterValue.join(',');
             }
