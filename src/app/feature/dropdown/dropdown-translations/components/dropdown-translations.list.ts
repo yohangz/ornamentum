@@ -1,4 +1,4 @@
-import { ExampleFile, FileType } from '../../../../shared/models';
+import { ExampleFile, FileType } from 'helper-models';
 
 export const translationsNoDataMessageUsage: ExampleFile[] = [
   {
@@ -45,7 +45,8 @@ export const translationsFilterPlaceholderUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'translations-filter-placeholder-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/translations-filter-placeholder-usage/translations-filter-placeholder-usage.component.ts')
+    content: require(
+      '!!raw-loader?lang=typescript!./example/translations-filter-placeholder-usage/translations-filter-placeholder-usage.component.ts')
   },
   {
     type: FileType.HTML,
@@ -63,7 +64,8 @@ export const translationsSelectPlaceholderUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'translations-select-placeholder-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/translations-select-placeholder-usage/translations-select-placeholder-usage.component.ts')
+    content: require(
+      '!!raw-loader?lang=typescript!./example/translations-select-placeholder-usage/translations-select-placeholder-usage.component.ts')
   },
   {
     type: FileType.HTML,

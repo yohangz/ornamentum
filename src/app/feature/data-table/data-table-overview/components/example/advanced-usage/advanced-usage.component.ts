@@ -5,7 +5,7 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 /**
- * Basic usage example component controller.
+ * Advanced usage example component controller.
  */
 @Component({
   selector: 'app-advanced-usage',

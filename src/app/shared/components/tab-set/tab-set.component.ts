@@ -1,4 +1,11 @@
-import { AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  ContentChildren,
+  EventEmitter, Input,
+  Output,
+  QueryList
+} from '@angular/core';
 
 import { TabChangeEvent } from '../../models';
 import { TabComponent } from './tab/tab.component';

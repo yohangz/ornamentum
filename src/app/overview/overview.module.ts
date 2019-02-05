@@ -2,10 +2,10 @@ import { NgModule } from '@angular/core';
 
 import { DataTableModule } from 'ornamentum';
 
-import { COMPONENTS } from './index';
-
 import { SharedModule } from '../shared/shared.module';
 import { OverviewRoutingModule } from './overview-routing.module';
+
+import { COMPONENTS } from './index';
 
 /**
  * Module class for containing overview module.

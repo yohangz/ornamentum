@@ -3,7 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DataTableRow } from 'ornamentum';
 
 import { Store } from '../../../../../../../shared/models/example-data.model';
-import { ExampleData } from '../../../../../../../shared/models';
+
+import { ExampleData } from 'helper-models';
 
 @Component({
   selector: 'app-row-expand-template-detail-view',

@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 import { DropdownTranslations } from 'ornamentum';
 
-import { ExampleData } from '../../../../../../shared/models';
+import { ExampleData } from 'helper-models';
 
-import { DataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from 'helper-services';
 
 @Component({
   selector: 'app-translations-filter-placeholder-usage',

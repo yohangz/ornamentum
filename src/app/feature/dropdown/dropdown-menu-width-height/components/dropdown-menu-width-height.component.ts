@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 
-import { demoSnippet, menuWidthHeightUsage, menuHeightUsage, menuWidthUsage } from './dropdown-menu-width-height.list';
+import {
+  demoSnippet,
+  menuWidthHeightUsage,
+  menuHeightUsage,
+  menuWidthUsage
+} from './dropdown-menu-width-height.list';
 
 import { FileType } from 'helper-models';
 

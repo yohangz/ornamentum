@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 
 import { DataTableHeaderClickEventArgs } from '../../../../../../../../projects/ornamentum/src';
 
-import { ExampleData } from '../../../../../../shared/models';
+import { ExampleData } from 'helper-models';
 
-import { DataFetchService } from '../../../../../../shared/services';
+import { DataFetchService } from 'helper-services';
 
 @Component({
   selector: 'app-events-header-click-usage',

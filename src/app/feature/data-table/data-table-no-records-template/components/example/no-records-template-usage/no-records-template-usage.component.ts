@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { ExampleData } from '../../../../../../shared/models';
+import { ExampleData } from 'helper-models';
 
 @Component({
   selector: 'app-no-records-template-usage',

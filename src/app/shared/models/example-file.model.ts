@@ -1,4 +1,4 @@
-import { FileType } from './file-type.enum';
+import { FileType } from 'helper-models';
 
 export interface ExampleFile {
   name: string;
