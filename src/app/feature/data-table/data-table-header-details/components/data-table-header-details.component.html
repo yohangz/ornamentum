@@ -8,8 +8,8 @@
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
-  <app-table-header-details-usage></app-table-header-details-usage>
-  <app-example-code [files]="tableHeaderDetailsUsage"></app-example-code>
+  <app-header-details-usage></app-header-details-usage>
+  <app-example-code [files]="headerDetailsUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
 
@@ -41,8 +41,8 @@
     about the showing data for the users from the first impression.
   </p>
 
-  <app-table-header-details-title-usage></app-table-header-details-title-usage>
-  <app-example-code [files]="tableHeaderDetailsTitleUsage"></app-example-code>
+  <app-title-usage></app-title-usage>
+  <app-example-code [files]="titleUsage"></app-example-code>
 
   <h4 id="showRefreshButton">Show Refresh Button</h4>
   <code>showRefreshButton: boolean</code> &nbsp;
@@ -54,18 +54,18 @@
   </p>
 
   <p>
-    When dealing with <a href="feature/data-table/server-side-data-binding">Server Side Data Binding</a> this property
+    When dealing with <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server Side Data Binding</a> this property
     is very useful. In here, after a users click on refresh button it will trigger the particular event and ornamentum
     will re-send a request by invoking the respective service call and render the data with newly arrived response.
   </p>
 
   <p>
     Also this property is useful in no data retrieval scenario. for more about no data please refer the
-    <a [routerLink]="['/feature/data-table/templates/no-records-template']">No Records Template</a>.
+    <a [routerLink]="['/feature/data-table/templates/no-records-template']">No Records Template</a> section.
   </p>
 
-  <app-table-header-details-show-refresh-btn-usage></app-table-header-details-show-refresh-btn-usage>
-  <app-example-code [files]="tableHeaderDetailsShowRefreshBtnUsage"></app-example-code>
+  <app-show-refresh-button-usage></app-show-refresh-button-usage>
+  <app-example-code [files]="showRefreshButtonUsage"></app-example-code>
 
   <h4 id="showColumnSelector">Show Column Selector</h4>
   <code>showColumnSelector: boolean</code> &nbsp;
@@ -73,12 +73,12 @@
 
   <p>
     This property is uses to show or hide the column selector button. by enabling the column selector property, users
-    can select/unselect the available columns that need to be shown in grid table. selected columns will be displays
+    can select/deselect the available columns that need to be shown in grid table. selected columns will be displays
     with available or default column width.
   </p>
 
-  <app-table-header-details-show-column-selector-usage></app-table-header-details-show-column-selector-usage>
-  <app-example-code [files]="tableHeaderDetailsShowColumnSelectorUsage"></app-example-code>
+  <app-show-column-selector-usage></app-show-column-selector-usage>
+  <app-example-code [files]="showColumnSelectorUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/translations']">Translations</a><br/>

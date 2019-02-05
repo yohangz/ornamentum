@@ -1,4 +1,4 @@
 export { DataTablePaginationComponent } from './components/data-table-pagination.component';
 export { PaginationUsageComponent } from './components/example/pagination-usage/pagination-usage.component';
-export { PaginationPageUsageComponent } from './components/example/pagination-page-usage/pagination-page-usage.component';
-export { PaginationLimitUsageComponent } from './components/example/pagination-limit-usage/pagination-limit-usage.component';
+export { PageUsageComponent } from './components/example/page-usage/page-usage.component';
+export { LimitUsageComponent } from './components/example/limit-usage/limit-usage.component';

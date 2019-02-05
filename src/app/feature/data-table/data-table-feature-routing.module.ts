@@ -282,8 +282,8 @@ const dataTableFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-styling-and-themes/data-table-styling-and-themes.module#DataTableStylingAndThemesModule',
-    path: 'styling-and-themes',
+    loadChildren: './data-table-themes/data-table-themes.module#DataTableThemesModule',
+    path: 'themes',
     canActivate: [SeoGuard],
     data: {
       seo: {

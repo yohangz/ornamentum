@@ -5,18 +5,18 @@ import { DropdownModule } from 'ornamentum';
 
 import {
   DropdownItemSelectionComponent,
-  ItemSelectionWithAllOptionsUsageComponent,
+  ItemSelectionUsageComponent,
   MultiItemSelectionUsageComponent,
   SingleItemSelectionUsageComponent,
   SingleToggleItemSelectionUsageComponent,
-  ItemSelectionSetFirstOptionSelectedUsageComponent,
-  ItemSelectionShowOptionSelectCheckboxUsageComponent,
-  ItemSelectionSelectedOptionUsageComponent,
-  ItemSelectionSelectedOptionsUsageComponent,
-  ItemSelectionShowClearSelectionBtnUsageComponent,
-  ItemSelectionShowSelectedOptionRemoveBtnUsageComponent,
-  ItemSelectionMultiSelectOptionMaxWidthUsageComponent,
-  ItemSelectionWrapDisplaySelectLimitUsageComponent
+  SetFirstOptionSelectedUsageComponent,
+  ShowOptionSelectCheckboxUsageComponent,
+  SelectedOptionUsageComponent,
+  SelectedOptionsUsageComponent,
+  ShowClearSelectionButtonUsageComponent,
+  ShowSelectedOptionRemoveButtonUsageComponent,
+  MultiSelectOptionMaxWidthUsageComponent,
+  WrapDisplaySelectLimitUsageComponent
 } from './index';
 
 import { DropdownItemSelectionRoutingModule } from './dropdown-item-selection-routing.module';
@@ -29,18 +29,18 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DropdownItemSelectionComponent,
-    ItemSelectionWithAllOptionsUsageComponent,
+    ItemSelectionUsageComponent,
     MultiItemSelectionUsageComponent,
     SingleItemSelectionUsageComponent,
     SingleToggleItemSelectionUsageComponent,
-    ItemSelectionSetFirstOptionSelectedUsageComponent,
-    ItemSelectionShowOptionSelectCheckboxUsageComponent,
-    ItemSelectionSelectedOptionUsageComponent,
-    ItemSelectionSelectedOptionsUsageComponent,
-    ItemSelectionShowClearSelectionBtnUsageComponent,
-    ItemSelectionShowSelectedOptionRemoveBtnUsageComponent,
-    ItemSelectionMultiSelectOptionMaxWidthUsageComponent,
-    ItemSelectionWrapDisplaySelectLimitUsageComponent
+    SetFirstOptionSelectedUsageComponent,
+    ShowOptionSelectCheckboxUsageComponent,
+    SelectedOptionUsageComponent,
+    SelectedOptionsUsageComponent,
+    ShowClearSelectionButtonUsageComponent,
+    ShowSelectedOptionRemoveButtonUsageComponent,
+    MultiSelectOptionMaxWidthUsageComponent,
+    WrapDisplaySelectLimitUsageComponent
   ],
   exports: [],
   imports: [

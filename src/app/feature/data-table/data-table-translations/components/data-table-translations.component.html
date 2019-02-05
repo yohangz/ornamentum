@@ -27,12 +27,12 @@
   <p>
     Please note the below data table didn't show the full translations implementation, hence for Data table translations
     for pagination usage refer <a [routerLink]="['/feature/data-table/translations']"
-                                  fragment="translationsForPagination">Translations for Pagination</a> section.
+                                  [fragment]="'translationsForPagination'">Translations for Pagination</a> section.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
-  <app-data-table-translations-usage></app-data-table-translations-usage>
+  <app-translations-usage></app-translations-usage>
   <app-example-code [files]="translationsUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
@@ -76,8 +76,8 @@
     data to display. The default value for this property is 'No data to display. Added data will appear here.
   </p>
 
-  <app-data-table-translations-no-data-usage></app-data-table-translations-no-data-usage>
-  <app-example-code [files]="dataTableTranslationsNoDataUsage"></app-example-code>
+  <app-translations-no-data-usage></app-translations-no-data-usage>
+  <app-example-code [files]="translationsNoDataUsage"></app-example-code>
 
   <h2 id="translationsForPagination">Translations for Pagination</h2>
   <p>
@@ -97,8 +97,8 @@
 
   <p>This is used to customize the pagination range naming. The default value for this config is 'Results'.</p>
 
-  <app-data-table-translations-pagination-usage></app-data-table-translations-pagination-usage>
-  <app-example-code [files]="dataTableTranslationsPaginationUsage"></app-example-code>
+  <app-translations-pagination-usage></app-translations-pagination-usage>
+  <app-example-code [files]="translationsPaginationUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/templates/no-records-template']">No Records Template</a><br/>

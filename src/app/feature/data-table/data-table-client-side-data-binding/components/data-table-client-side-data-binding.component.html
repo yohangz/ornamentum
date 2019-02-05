@@ -13,8 +13,8 @@
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
-  <app-client-side-data-binding-with-items></app-client-side-data-binding-with-items>
-  <app-example-code [files]="clientSideDataBindingWithItemsUsage"></app-example-code>
+  <app-items-usage></app-items-usage>
+  <app-example-code [files]="itemsUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
 
@@ -25,7 +25,7 @@
 
   <p>
     The complete set of code snippet for the data binding via <code>items</code> input property can be seen in the example
-    shown in the <a [routerLink]="['/feature/data-table/client-side-data-binding']" fragment="whatYouWillSee">What You
+    shown in the <a [routerLink]="['/feature/data-table/client-side-data-binding']" [fragment]="'whatYouWillSee'">What You
     Will See</a> section above. Mutations to items collection will automatically get reflected in data table.
   </p>
 
@@ -36,8 +36,8 @@
   <p>Refer following example code snippet for complete usage of the <code>dataSource</code> property in the client side data
     binding. Latest data collection emitted via data source stream will get reflected in data table.</p>
 
-  <app-client-side-data-binding-with-data-source></app-client-side-data-binding-with-data-source>
-  <app-example-code [files]="clientSideDataBindingWithDataSourceUsage"></app-example-code>
+  <app-data-source-usage></app-data-source-usage>
+  <app-example-code [files]="dataSourceUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/row-selection']">Row Selection</a><br />

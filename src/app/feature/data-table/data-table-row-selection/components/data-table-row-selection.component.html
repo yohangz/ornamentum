@@ -120,9 +120,9 @@
   <p>
     This property let users to identify selected row(s) uniquely. When selecting row(s), data table will emit the
     value of the column specified by the user. Please refer <a [routerLink]="['/feature/data-table/events']"
-                                                               fragment="rowSelectChange">Row Select
+                                                               [fragment]="'rowSelectChange'">Row Select
     Change</a> section for about event binding details. All the examples shown in <a
-    [routerLink]="['/feature/data-table/row-selection']" fragment="selectMode">Row Selection Mode</a> section have set
+    [routerLink]="['/feature/data-table/row-selection']" [fragment]="'selectMode'">Row Selection Mode</a> section have set
     <code>selectTrackBy</code> property as <b>id</b>.
   </p>
 
@@ -135,9 +135,9 @@
 
   <p>
     This property let user to set a specific selected row in the data table by automatically right after the
-    data table <a [routerLink]="['/feature/data-table/events']" fragment="init">Initialization</a>. This can only be
+    data table <a [routerLink]="['/feature/data-table/events']" [fragment]="'init'">Initialization</a>. This can only be
     uses when selection mode is <b>single</b> or <b>single_toggle</b> as mentioned in the <a
-    [routerLink]="['/feature/data-table/row-selection']" fragment="selectMode">Row Selection Mode</a> section.
+    [routerLink]="['/feature/data-table/row-selection']" [fragment]="'selectMode'">Row Selection Mode</a> section.
   </p>
 
   <app-set-selected-row-usage></app-set-selected-row-usage>
@@ -149,7 +149,7 @@
 
   <p>
     This property let user to set specific rows to be selected in the data table by automatically right after the data
-    table <a [routerLink]="['/feature/data-table/events']" fragment="init">Initialization</a>. This can only be use
+    table <a [routerLink]="['/feature/data-table/events']" [fragment]="'init'">Initialization</a>. This can only be use
     when selection mode is <b>multi</b>.
   </p>
 

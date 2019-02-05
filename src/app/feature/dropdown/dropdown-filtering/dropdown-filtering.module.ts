@@ -6,9 +6,9 @@ import { DropdownModule } from 'ornamentum';
 import {
   DropdownFilteringComponent,
   FilteringUsageComponent,
-  FilteringFilterDebounceUsageComponent,
-  FilteringFilterDebounceTimeUsageComponent,
-  FilteringFilterTextUsageComponent
+  FilterDebounceUsageComponent,
+  FilterDebounceTimeUsageComponent,
+  FilterTextUsageComponent
 } from './index';
 
 import { DropdownFilteringRoutingModule } from './dropdown-filtering-routing.module';
@@ -21,9 +21,9 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DropdownFilteringComponent,
-    FilteringFilterDebounceUsageComponent,
-    FilteringFilterDebounceTimeUsageComponent,
-    FilteringFilterTextUsageComponent,
+    FilterDebounceUsageComponent,
+    FilterDebounceTimeUsageComponent,
+    FilterTextUsageComponent,
     FilteringUsageComponent
   ],
   exports: [],

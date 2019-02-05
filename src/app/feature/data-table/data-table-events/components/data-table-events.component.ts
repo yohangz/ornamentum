@@ -26,6 +26,8 @@ import { FileType } from 'helper-models';
 export class DataTableEventsComponent {
   public FileType = FileType;
 
+  public demoSnippet = demoSnippet;
+
   public eventsUsage = eventsUsage;
   public eventsInitUsage = eventsInitUsage;
   public eventsAllRowSelectChangeUsage = eventsAllRowSelectChangeUsage;
@@ -38,6 +40,4 @@ export class DataTableEventsComponent {
   public eventsHeaderClickUsage = eventsHeaderClickUsage;
   public eventsRowClickUsage = eventsRowClickUsage;
   public eventsRowDoubleClickUsage = eventsRowDoubleClickUsage;
-
-  public demoSnippet = demoSnippet;
 }

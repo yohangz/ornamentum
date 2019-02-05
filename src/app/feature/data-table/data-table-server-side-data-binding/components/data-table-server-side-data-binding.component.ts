@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DataTableServerSideDataBindingComponent {
   public FileType = FileType;
 
-  public serverSideDataBindingUsage = serverSideDataBindingUsage;
   public demoSnippet = demoSnippet;
+
+  public serverSideDataBindingUsage = serverSideDataBindingUsage;
 }

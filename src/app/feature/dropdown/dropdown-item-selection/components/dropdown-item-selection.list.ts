@@ -54,188 +54,169 @@ export const multiItemSelectionUsage: ExampleFile[] = [
   }
 ];
 
-export const itemSelectionWithAllOptionsUsage: ExampleFile[] = [
+export const itemSelectionUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'item-selection-with-all-options-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.module.md')
+    name: 'item-selection-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/item-selection-usage/item-selection-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'item-selection-with-all-options-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.component.ts')
+    name: 'item-selection-usage.component.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/item-selection-usage/item-selection-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'item-selection-with-all-options-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/item-selection-with-all-options-usage/item-selection-with-all-options-usage.component.html')
+    name: 'item-selection-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/item-selection-usage/item-selection-usage.component.html')
   }
 ];
 
-export const itemSelectionSetFirstOptionSelectedUsage: ExampleFile[] = [
+export const setFirstOptionSelectedUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'item-selection-set-first-option-selected-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-set-first-option-selected-usage/' +
-      'item-selection-set-first-option-selected-usage.module.md')
+    name: 'set-first-option-selected-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/set-first-option-selected-usage/set-first-option-selected-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'item-selection-set-first-option-selected-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-set-first-option-selected-usage/' +
-      'item-selection-set-first-option-selected-usage.component.ts')
+    name: 'set-first-option-selected-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/set-first-option-selected-usage/set-first-option-selected-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'item-selection-set-first-option-selected-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/item-selection-set-first-option-selected-usage/' +
-      'item-selection-set-first-option-selected-usage.component.html')
+    name: 'set-first-option-selected-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/set-first-option-selected-usage/set-first-option-selected-usage.component.html')
   }
 ];
 
-export const itemSelectionShowOptionSelectCheckboxUsage: ExampleFile[] = [
+export const showOptionSelectCheckboxUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'item-selection-show-option-select-checkbox-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-show-option-select-checkbox-usage/' +
-      'item-selection-show-option-select-checkbox-usage.module.md')
+    name: 'show-option-select-checkbox-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/show-option-select-checkbox-usage/show-option-select-checkbox-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'item-selection-show-option-select-checkbox-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-show-option-select-checkbox-usage/' +
-      'item-selection-show-option-select-checkbox-usage.component.ts')
+    name: 'show-option-select-checkbox-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/show-option-select-checkbox-usage/show-option-select-checkbox-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'item-selection-show-option-select-checkbox-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/item-selection-show-option-select-checkbox-usage/' +
-      'item-selection-show-option-select-checkbox-usage.component.html')
+    name: 'show-option-select-checkbox-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/show-option-select-checkbox-usage/show-option-select-checkbox-usage.component.html')
   }
 ];
 
-export const itemSelectionSelectedOptionUsage: ExampleFile[] = [
+export const selectedOptionUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'item-selection-selected-option-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-selected-option-usage/' +
-      'item-selection-selected-option-usage.module.md')
+    name: 'selected-option-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/selected-option-usage/selected-option-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'item-selection-selected-option-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-selected-option-usage/' +
-      'item-selection-selected-option-usage.component.ts')
+    name: 'selected-option-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/selected-option-usage/selected-option-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'item-selection-selected-option-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/item-selection-selected-option-usage/' + 'item-selection-selected-option-usage.component.html')
+    name: 'selected-option-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/selected-option-usage/selected-option-usage.component.html')
   }
 ];
 
-export const itemSelectionSelectedOptionsUsage: ExampleFile[] = [
+export const selectedOptionsUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'item-selection-selected-options-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-selected-options-usage/' +
-      'item-selection-selected-options-usage.module.md')
+    name: 'selected-options-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/selected-options-usage/selected-options-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'item-selection-selected-options-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-selected-options-usage/' +
-      'item-selection-selected-options-usage.component.ts')
+    name: 'selected-options-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/selected-options-usage/selected-options-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'item-selection-selected-options-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/item-selection-selected-options-usage/' +
-      'item-selection-selected-options-usage.component.html')
+    name: 'selected-options-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/selected-options-usage/selected-options-usage.component.html')
   }
 ];
 
-export const itemSelectionShowClearSelectionBtnUsage: ExampleFile[] = [
+export const showClearSelectionButtonUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'item-selection-show-clear-selection-btn-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-show-clear-selection-btn-usage/' +
-      'item-selection-show-clear-selection-btn-usage.module.md')
+    name: 'show-clear-selection-button-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/show-clear-selection-button-usage/show-clear-selection-button-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'item-selection-show-clear-selection-btn-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-show-clear-selection-btn-usage/' +
-      'item-selection-show-clear-selection-btn-usage.component.ts')
+    name: 'show-clear-selection-button-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/show-clear-selection-button-usage/show-clear-selection-button-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'item-selection-show-clear-selection-btn-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/item-selection-show-clear-selection-btn-usage/' +
-      'item-selection-show-clear-selection-btn-usage.component.html')
+    name: 'show-clear-selection-button-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/show-clear-selection-button-usage/show-clear-selection-button-usage.component.html')
   }
 ];
 
-export const itemSelectionShowSelectedOptionRemoveBtnUsage: ExampleFile[] = [
+export const showSelectedOptionRemoveButtonUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'item-selection-show-selected-option-remove-btn-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-show-selected-option-remove-btn-usage/' +
-      'item-selection-show-selected-option-remove-btn-usage.module.md')
+    name: 'show-selected-option-remove-button-usage.module.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/show-selected-option-remove-button-usage/show-selected-option-remove-button-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'item-selection-show-selected-option-remove-btn-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-show-selected-option-remove-btn-usage/' +
-      'item-selection-show-selected-option-remove-btn-usage.component.ts')
+    name: 'show-selected-option-remove-button-usage.component.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/show-selected-option-remove-button-usage/show-selected-option-remove-button-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'item-selection-show-selected-option-remove-btn-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/item-selection-show-selected-option-remove-btn-usage/' +
-      'item-selection-show-selected-option-remove-btn-usage.component.html')
+    name: 'show-selected-option-remove-button-usage.component.html',
+    content: require(
+      '!!raw-loader?lang=html!./example/show-selected-option-remove-button-usage/show-selected-option-remove-button-usage.component.html')
   }
 ];
 
-export const itemSelectionMultiSelectOptionMaxWidthUsage: ExampleFile[] = [
+export const multiSelectOptionMaxWidthUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'item-selection-multi-select-option-max-width-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-multi-select-option-max-width-usage/' +
-      'item-selection-multi-select-option-max-width-usage.module.md')
+    name: 'multi-select-option-max-width-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/multi-select-option-max-width-usage/multi-select-option-max-width-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'item-selection-multi-select-option-max-width-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-multi-select-option-max-width-usage/' +
-      'item-selection-multi-select-option-max-width-usage.component.ts')
+    name: 'multi-select-option-max-width-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/multi-select-option-max-width-usage/multi-select-option-max-width-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'item-selection-multi-select-option-max-width-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/item-selection-multi-select-option-max-width-usage/' +
-      'item-selection-multi-select-option-max-width-usage.component.html')
+    name: 'multi-select-option-max-width-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/multi-select-option-max-width-usage/multi-select-option-max-width-usage.component.html')
   }
 ];
 
-export const itemSelectionWrapDisplaySelectLimitUsage: ExampleFile[] = [
+export const wrapDisplaySelectLimitUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'item-selection-wrap-display-select-limit-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-wrap-display-select-limit-usage/' +
-      'item-selection-wrap-display-select-limit-usage.module.md')
+    name: 'wrap-display-select-limit-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/wrap-display-select-limit-usage/wrap-display-select-limit-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'item-selection-wrap-display-select-limit-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/item-selection-wrap-display-select-limit-usage/' +
-      'item-selection-wrap-display-select-limit-usage.component.ts')
+    name: 'wrap-display-select-limit-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/wrap-display-select-limit-usage/wrap-display-select-limit-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'item-selection-wrap-display-select-limit-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/item-selection-wrap-display-select-limit-usage/' +
-      'item-selection-wrap-display-select-limit-usage.component.html')
+    name: 'wrap-display-select-limit-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/wrap-display-select-limit-usage/wrap-display-select-limit-usage.component.html')
   }
 ];
 

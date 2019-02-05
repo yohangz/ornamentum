@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
 import { DataTableModule } from 'ornamentum';
 
 import {
-  ClientSideDataBindingWithDataSourceComponent,
-  ClientSideDataBindingWithItemsComponent,
+  ItemsUsageComponent,
+  DataSourceUsageComponent,
   DataTableClientSideDataBindingComponent
 } from './index';
 
@@ -15,7 +15,11 @@ import { DataTableClientSideDataBindingRoutingModule } from './data-table-client
 import { SharedModule } from '../../../shared/shared.module';
 
 @NgModule({
-  declarations: [ClientSideDataBindingWithItemsComponent, ClientSideDataBindingWithDataSourceComponent, DataTableClientSideDataBindingComponent],
+  declarations: [
+    ItemsUsageComponent,
+    DataTableClientSideDataBindingComponent,
+    DataSourceUsageComponent
+  ],
   exports: [],
   imports: [
     CommonModule,
@@ -30,4 +34,5 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableClientSideDataBindingModule {}
+export class DataTableClientSideDataBindingModule {
+}

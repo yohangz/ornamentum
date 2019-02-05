@@ -1,7 +1,3 @@
-export {
-  ClientSideDataBindingWithItemsComponent
-} from './components/example/client-side-data-binding-with-items/client-side-data-binding-with-items.component';
 export { DropdownClientSideDataBindingComponent } from './components/dropdown-client-side-data-binding.component';
-export {
-  ClientSideDataBindingWithDataSourceComponent
-} from './components/example/client-side-data-binding-with-data-source/client-side-data-binding-with-data-source.component';
+export { ItemsUsageComponent } from './components/example/items-usage/items-usage.component';
+export { DataSourceUsageComponent } from './components/example/data-source-usage/data-source-usage.component';

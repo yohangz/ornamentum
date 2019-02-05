@@ -41,7 +41,7 @@
 
   <p>
     There are other useful additional properties where the behaviour of the column sorting can be applied independently
-    except for <a [routerLink]="['/feature/data-table/column/sorting']" fragment="multiColumnSortable">Multi Column
+    except for <a [routerLink]="['/feature/data-table/column/sorting']" [fragment]="'multiColumnSortable'">Multi Column
     Sortable</a> property.
   </p>
 
@@ -55,8 +55,8 @@
     enabled columns.
   </p>
 
-  <app-column-sorting-sort-order-usage></app-column-sorting-sort-order-usage>
-  <app-example-code [files]="columnSortingUsageWithSortOrder"></app-example-code>
+  <app-sort-order-usage></app-sort-order-usage>
+  <app-example-code [files]="sortOrderUsage"></app-example-code>
 
   <h4 id="sortField">Sort Field</h4>
   <code>sortField: string</code> &nbsp;
@@ -68,8 +68,8 @@
     according to the provided column's data.
   </p>
 
-  <app-column-sorting-sort-field-usage></app-column-sorting-sort-field-usage>
-  <app-example-code [files]="columnSortingUsageWithSortField"></app-example-code>
+  <app-sort-field-usage></app-sort-field-usage>
+  <app-example-code [files]="sortFieldUsage"></app-example-code>
 
   <h4 id="multiColumnSortable">Multi Column Sortable</h4>
   <code>multiColumnSortable: boolean</code> &nbsp;
@@ -80,8 +80,8 @@
     is been enabled, data sorting will be processed based on the previously preserved column sorting order.
   </p>
 
-  <app-column-sorting-multi-column-sortable-usage></app-column-sorting-multi-column-sortable-usage>
-  <app-example-code [files]="columnSortingUsageWithMultiColumnSortable"></app-example-code>
+  <app-multi-column-sortable-usage></app-multi-column-sortable-usage>
+  <app-example-code [files]="multiColumnSortableUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/column/resizing']" id="columnResizing">Column Resizing</a><br />

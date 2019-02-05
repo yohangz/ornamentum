@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { optionTemplateUsage, demoSnippet } from './dropdown-option-template.list';
+import { demoSnippet, optionTemplateUsage } from './dropdown-option-template.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DropdownOptionTemplateComponent {
   public FileType = FileType;
 
-  public optionTemplateUsage = optionTemplateUsage;
   public demoSnippet = demoSnippet;
+
+  public optionTemplateUsage = optionTemplateUsage;
 }

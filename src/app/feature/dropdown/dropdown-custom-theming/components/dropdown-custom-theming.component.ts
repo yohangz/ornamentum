@@ -5,4 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './dropdown-custom-theming.component.html',
   styleUrls: ['./dropdown-custom-theming.component.scss']
 })
-export class DropdownCustomThemingComponent {}
+export class DropdownCustomThemingComponent {
+}

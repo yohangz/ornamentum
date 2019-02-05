@@ -17,8 +17,8 @@
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
-  <app-client-side-data-binding-with-items></app-client-side-data-binding-with-items>
-  <app-example-code [files]="clientSideDataBindingWithItemsUsage"></app-example-code>
+  <app-items-usage></app-items-usage>
+  <app-example-code [files]="itemsUsage"></app-example-code>
 
   <p>Client side data binding can be configured by using the two ways mentioned in the below.</p>
 
@@ -26,7 +26,7 @@
 
   <p>
     The complete set of code segments for the data binding via <code>items</code> property can be seen in the example shown in the
-    <a href="feature/dropdown/client-side-data-binding#whatYouWillSee">What You Will See</a> section.
+    <a [routerLink]="['/feature/dropdown/client-side-data-binding']" [fragment]="'whatYouWillSee'">What You Will See</a> section.
   </p>
 
   <p>or</p>
@@ -35,8 +35,8 @@
 
   <p>Refer following example to see actual usage of the <code>dataSource</code> property in the client side data binding.</p>
 
-  <app-client-side-data-binding-with-data-source></app-client-side-data-binding-with-data-source>
-  <app-example-code [files]="clientSideDataBindingWithDataSourceUsage"></app-example-code>
+  <app-data-source-usage></app-data-source-usage>
+  <app-example-code [files]="dataSourceUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/dropdown/server-side-data-binding']">Server-side Data Binding</a><br />

@@ -21,54 +21,54 @@ export const filteringUsage: ExampleFile[] = [
 export const filterDebounceUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'filtering-filter-debounce-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/filtering-filter-debounce-usage/filtering-filter-debounce-usage.module.md')
+    name: 'filter-debounce-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/filter-debounce-usage/filter-debounce-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'filtering-filter-debounce-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/filtering-filter-debounce-usage/filtering-filter-debounce-usage.component.ts')
+    name: 'filter-debounce-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/filter-debounce-usage/filter-debounce-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'filtering-filter-debounce-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/filtering-filter-debounce-usage/filtering-filter-debounce-usage.component.html')
+    name: 'filter-debounce-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/filter-debounce-usage/filter-debounce-usage.component.html')
   }
 ];
 
 export const filterDebounceTimeUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'filtering-filter-debounce-time-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/filtering-filter-debounce-time-usage/filtering-filter-debounce-time-usage.module.md')
+    name: 'filter-debounce-time-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/filter-debounce-time-usage/filter-debounce-time-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'filtering-filter-debounce-time-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/filtering-filter-debounce-time-usage/filtering-filter-debounce-time-usage.component.ts')
+    name: 'filter-debounce-time-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/filter-debounce-time-usage/filter-debounce-time-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'filtering-filter-debounce-time-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/filtering-filter-debounce-time-usage/filtering-filter-debounce-time-usage.component.html')
+    name: 'filter-debounce-time-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/filter-debounce-time-usage/filter-debounce-time-usage.component.html')
   }
 ];
 
 export const filterTextUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'filtering-filter-text-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/filtering-filter-text-usage/filtering-filter-text-usage.module.md')
+    name: 'filter-text-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/filter-text-usage/filter-text-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'filtering-filter-text-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/filtering-filter-text-usage/filtering-filter-text-usage.component.ts')
+    name: 'filter-text-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/filter-text-usage/filter-text-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'filtering-filter-text-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/filtering-filter-text-usage/filtering-filter-text-usage.component.html')
+    name: 'filter-text-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/filter-text-usage/filter-text-usage.component.html')
   }
 ];
 

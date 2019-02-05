@@ -1,11 +1,5 @@
 export { DataTableHeaderDetailsComponent } from './components/data-table-header-details.component';
-export { TableHeaderDetailsUsageComponent } from './components/example/table-header-details-usage/table-header-details-usage.component';
-export {
-  TableHeaderDetailsShowRefreshBtnUsageComponent
-} from './components/example/table-header-details-show-refresh-btn-usage/table-header-details-show-refresh-btn-usage.component';
-export {
-  TableHeaderDetailsTitleUsageComponent
-} from './components/example/table-header-details-title-usage/table-header-details-title-usage.component';
-export {
-  TableHeaderDetailsShowColumnSelectorUsageComponent
-} from './components/example/table-header-details-show-column-selector-usage/table-header-details-show-column-selector-usage.component';
+export { HeaderDetailsUsageComponent } from './components/example/header-details-usage/header-details-usage.component';
+export { ShowRefreshButtonUsageComponent } from './components/example/show-refresh-button-usage/show-refresh-button-usage.component';
+export { TitleUsageComponent } from './components/example/title-usage/title-usage.component';
+export { ShowColumnSelectorUsageComponent } from './components/example/show-column-selector-usage/show-column-selector-usage.component';

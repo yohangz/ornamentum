@@ -18,60 +18,60 @@ export const columnSortingUsage: ExampleFile[] = [
   }
 ];
 
-export const columnSortingUsageWithSortOrder: ExampleFile[] = [
+export const sortOrderUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'column-sorting-sort-order-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/column-sorting-sort-order-usage/column-sorting-sort-order-usage.module.md')
+    name: 'sort-order-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/sort-order-usage/sort-order-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'column-sorting-sort-order-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/column-sorting-sort-order-usage/column-sorting-sort-order-usage.component.ts')
+    name: 'sort-order-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/sort-order-usage/sort-order-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'column-sorting-sort-order-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/column-sorting-sort-order-usage/column-sorting-sort-order-usage.component.html')
+    name: 'sort-order-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/sort-order-usage/sort-order-usage.component.html')
   }
 ];
 
-export const columnSortingUsageWithSortField: ExampleFile[] = [
+export const sortFieldUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'column-sorting-sort-field-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/column-sorting-sort-field-usage/column-sorting-sort-field-usage.module.md')
+    name: 'sort-field-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/sort-field-usage/sort-field-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'column-sorting-sort-field-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/column-sorting-sort-field-usage/column-sorting-sort-field-usage.component.ts')
+    name: 'sort-field-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/sort-field-usage/sort-field-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'column-sorting-sort-field-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/column-sorting-sort-field-usage/column-sorting-sort-field-usage.component.html')
+    name: 'sort-field-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/sort-field-usage/sort-field-usage.component.html')
   }
 ];
 
-export const columnSortingUsageWithMultiColumnSortable: ExampleFile[] = [
+export const multiColumnSortableUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'column-sorting-multi-column-sortable-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/column-sorting-multi-column-sortable-usage/' +
-      'column-sorting-multi-column-sortable-usage.module.md')
+    name: 'multi-column-sortable-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/multi-column-sortable-usage/' +
+      'multi-column-sortable-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'column-sorting-multi-column-sortable-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/column-sorting-multi-column-sortable-usage/' +
-      'column-sorting-multi-column-sortable-usage.component.ts')
+    name: 'multi-column-sortable-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/multi-column-sortable-usage/' +
+      'multi-column-sortable-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'app-column-sorting-multi-column-sortable-usage.html',
-    content: require('!!raw-loader?lang=html!./example/column-sorting-multi-column-sortable-usage/' +
-      'column-sorting-multi-column-sortable-usage.component.html')
+    name: 'multi-column-sortable-usage.html',
+    content: require('!!raw-loader?lang=html!./example/multi-column-sortable-usage/' +
+      'multi-column-sortable-usage.component.html')
   }
 ];
 

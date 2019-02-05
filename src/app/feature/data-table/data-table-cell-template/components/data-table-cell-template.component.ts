@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { cellTemplateUsage, demoSnippet } from './data-table-cell-template.list';
+import { demoSnippet, cellTemplateUsage } from './data-table-cell-template.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DataTableCellTemplateComponent {
   public FileType = FileType;
 
-  public cellTemplateUsage = cellTemplateUsage;
   public demoSnippet = demoSnippet;
+
+  public cellTemplateUsage = cellTemplateUsage;
 }

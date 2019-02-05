@@ -16,7 +16,8 @@ import { FileType } from 'helper-models';
 export class DataTableSubstituteRowsComponent {
   public FileType = FileType;
 
+  public demoSnippet = demoSnippet;
+
   public substituteRowsUsage = substituteRowsUsage;
   public withoutSubstituteRowsUsage = withoutSubstituteRowsUsage;
-  public demoSnippet = demoSnippet;
 }

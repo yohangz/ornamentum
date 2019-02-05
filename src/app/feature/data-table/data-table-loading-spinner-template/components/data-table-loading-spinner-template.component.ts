@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DataTableLoadingSpinnerTemplateComponent {
   public FileType = FileType;
 
-  public loadingSpinnerTemplateUsage = loadingSpinnerTemplateUsage;
   public demoSnippet = demoSnippet;
+
+  public loadingSpinnerTemplateUsage = loadingSpinnerTemplateUsage;
 }

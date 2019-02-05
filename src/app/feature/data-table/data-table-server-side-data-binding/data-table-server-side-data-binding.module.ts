@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule, DataTableResourceModule } from 'ornamentum';
 
-import { DataTableServerSideDataBindingComponent, ServerSideDataBindingComponent } from './index';
+import { DataTableServerSideDataBindingComponent, ServerSideDataBindingUsageComponent } from './index';
 
 import { DataTableServerSideDataBindingRoutingModule } from './data-table-server-side-data-binding-routing.module';
 
@@ -14,7 +14,7 @@ import { SharedModule } from '../../../shared/shared.module';
  * Module class for containing data table server side data binding module.
  */
 @NgModule({
-  declarations: [DataTableServerSideDataBindingComponent, ServerSideDataBindingComponent],
+  declarations: [DataTableServerSideDataBindingComponent, ServerSideDataBindingUsageComponent],
   exports: [],
   imports: [
     CommonModule,

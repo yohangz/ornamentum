@@ -1,4 +1,4 @@
 export { DataTableOverviewComponent } from './components/data-table-overview.component';
-export { BasicUsageComponent } from './components/example/basic-usage/basic-usage.component';
+export { AdvancedUsageComponent } from './components/example/advanced-usage/advanced-usage.component';
 // tslint:disable-next-line
-export { BasicUsageExpandableDetailViewComponent } from './components/example/basic-usage/basic-usage-expandable-detail-view/basic-usage-expandable-detail-view.component';
+export { AdvancedUsageExpandableDetailViewComponent } from './components/example/advanced-usage/advanced-usage-expandable-detail-view/advanced-usage-expandable-detail-view.component';

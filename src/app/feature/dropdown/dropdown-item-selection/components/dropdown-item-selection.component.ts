@@ -1,19 +1,19 @@
 import { Component } from '@angular/core';
 
 import {
-  itemSelectionWithAllOptionsUsage,
+  demoSnippet,
+  itemSelectionUsage,
   multiItemSelectionUsage,
   singleItemSelectionUsage,
   singleToggleItemSelectionUsage,
-  itemSelectionSetFirstOptionSelectedUsage,
-  itemSelectionShowOptionSelectCheckboxUsage,
-  itemSelectionSelectedOptionUsage,
-  itemSelectionSelectedOptionsUsage,
-  itemSelectionShowClearSelectionBtnUsage,
-  itemSelectionShowSelectedOptionRemoveBtnUsage,
-  itemSelectionMultiSelectOptionMaxWidthUsage,
-  itemSelectionWrapDisplaySelectLimitUsage,
-  demoSnippet
+  setFirstOptionSelectedUsage,
+  showOptionSelectCheckboxUsage,
+  selectedOptionUsage,
+  selectedOptionsUsage,
+  showClearSelectionButtonUsage,
+  showSelectedOptionRemoveButtonUsage,
+  multiSelectOptionMaxWidthUsage,
+  wrapDisplaySelectLimitUsage,
 } from './dropdown-item-selection.list';
 
 import { FileType } from 'helper-models';
@@ -26,17 +26,18 @@ import { FileType } from 'helper-models';
 export class DropdownItemSelectionComponent {
   public FileType = FileType;
 
+  public demoSnippet = demoSnippet;
+
   public singleItemSelectionUsage = singleItemSelectionUsage;
   public singleToggleItemSelectionUsage = singleToggleItemSelectionUsage;
   public multiItemSelectionUsage = multiItemSelectionUsage;
-  public itemSelectionWithAllOptionsUsage = itemSelectionWithAllOptionsUsage;
-  public itemSelectionSetFirstOptionSelectedUsage = itemSelectionSetFirstOptionSelectedUsage;
-  public itemSelectionShowOptionSelectCheckboxUsage = itemSelectionShowOptionSelectCheckboxUsage;
-  public itemSelectionSelectedOptionUsage = itemSelectionSelectedOptionUsage;
-  public itemSelectionSelectedOptionsUsage = itemSelectionSelectedOptionsUsage;
-  public itemSelectionShowClearSelectionBtnUsage = itemSelectionShowClearSelectionBtnUsage;
-  public itemSelectionShowSelectedOptionRemoveBtnUsage = itemSelectionShowSelectedOptionRemoveBtnUsage;
-  public itemSelectionMultiSelectOptionMaxWidthUsage = itemSelectionMultiSelectOptionMaxWidthUsage;
-  public itemSelectionWrapDisplaySelectLimitUsage = itemSelectionWrapDisplaySelectLimitUsage;
-  public demoSnippet = demoSnippet;
+  public itemSelectionUsage = itemSelectionUsage;
+  public setFirstOptionSelectedUsage = setFirstOptionSelectedUsage;
+  public showOptionSelectCheckboxUsage = showOptionSelectCheckboxUsage;
+  public selectedOptionUsage = selectedOptionUsage;
+  public selectedOptionsUsage = selectedOptionsUsage;
+  public showClearSelectionButtonUsage = showClearSelectionButtonUsage;
+  public showSelectedOptionRemoveButtonUsage = showSelectedOptionRemoveButtonUsage;
+  public multiSelectOptionMaxWidthUsage = multiSelectOptionMaxWidthUsage;
+  public wrapDisplaySelectLimitUsage = wrapDisplaySelectLimitUsage;
 }

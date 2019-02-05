@@ -19,17 +19,17 @@
        |     |
        |     |___ <strong>Automatically Triggers</strong>
        |     |     |
-       |     |     |-- <a href="feature/dropdown/events#init">Init</a> // triggers dropdown initialization.
-       |     |     |-- <a href="feature/dropdown/events#dataBound">Data Bound</a> // triggers after the data binding completion.
-       |     |     |-- <a href="feature/dropdown/events#selectChange">Select Change</a> // triggers dropdown item select change.
+       |     |     |-- <a [routerLink]="['/feature/dropdown/events']" [fragment]="'init'">Init</a> // triggers dropdown initialization.
+       |     |     |-- <a [routerLink]="['/feature/dropdown/events']" [fragment]="'dataBound'">Data Bound</a> // triggers after the data binding completion.
+       |     |     |-- <a [routerLink]="['/feature/dropdown/events']" [fragment]="'selectChange'">Select Change</a> // triggers dropdown item select change.
        |     |
        |     |___ <strong>User Triggers</strong>
        |           |
-       |           |-- <a href="feature/dropdown/events#triggerSelectChangeOnInit">Trigger Select Change On Init</a> // triggers select change event on dropdown init.
-       |           |-- <a href="feature/dropdown/events#triggerSelectChangeOnFirstOptionSelect">Trigger Select Change On First Option Select</a> // triggers select change when dropdown first item is selected.
-       |           |-- <a href="feature/dropdown/events#triggerSelectChangeOnModelUpdate">Trigger Select Change On Model Update</a> // triggers select change on model update.
+       |           |-- <a [routerLink]="['/feature/dropdown/events']" [fragment]="'triggerSelectChangeOnInit'">Trigger Select Change On Init</a> // triggers select change event on dropdown init.
+       |           |-- <a [routerLink]="['/feature/dropdown/events']" [fragment]="'triggerSelectChangeOnFirstOptionSelect'">Trigger Select Change On First Option Select</a> // triggers select change when dropdown first item is selected.
+       |           |-- <a [routerLink]="['/feature/dropdown/events']" [fragment]="'triggerSelectChangeOnModelUpdate'">Trigger Select Change On Model Update</a> // triggers select change on model update.
        |
-       |___ <a href="feature/data-table/events" class="event-types">Data Table Events</a>
+       |___ <a [routerLink]="['/feature/data-table/events']" class="event-types">Data Table Events</a>
        |
       \/
   </pre>
@@ -38,7 +38,7 @@
 
   <p>
     As mention in the Events Hierarchy, all available events can be bind to the dropdown as follows try by yourself to get familiar. for individual
-    event usages refer <a href="feature/dropdown/events#usefulEvents">Useful Events</a> section.
+    event usages refer <a [routerLink]="['/feature/dropdown/events']" [fragment]="'usefulEvents'">Useful Events</a> section.
   </p>
 
   <app-events-usage></app-events-usage>
@@ -54,7 +54,7 @@
     other events.
   </p>
 
-  <app-events-init-usage></app-events-init-usage>
+  <app-init-usage></app-init-usage>
   <app-example-code [files]="eventsInitUsage"></app-example-code>
 
   <h4 id="columnBind">Data Bound</h4>
@@ -62,26 +62,26 @@
 
   <p>Data bound property will triggers right after completion of data binding to the dropdown.</p>
 
-  <app-events-data-bound-usage></app-events-data-bound-usage>
-  <app-example-code [files]="eventsDataBoundUsage"></app-example-code>
+  <app-data-bound-usage></app-data-bound-usage>
+  <app-example-code [files]="dataBoundUsage"></app-example-code>
 
   <h4 id="selectChange">Select Change</h4>
   <code>selectChange: EventEmitter&lt;any[] | any&gt;</code>
 
   <p>
-    Triggers when dropdown item select state changes based on defined dropdown <a href="">Select Mode</a>. To identify selected items uniquely it is
-    necessary to specify <a [routerLink]="['/feature/dropdown/item-selection']">selectTrackBy</a> property. Therefore, a unique value key name should
+    Triggers when dropdown item select state changes based on defined dropdown <a [routerLink]="['/feature/dropdown/item-selection']" [fragment]="'selectMode'">Select Mode</a>. To identify selected items uniquely it is
+    necessary to specify <a [routerLink]="['/feature/dropdown/item-selection']" [fragment]="'selectTrackBy'">selectTrackBy</a> property. Therefore, a unique value key name should
     be set as the value for this attribute. According to this example it is <b>'id'</b>. There are set of configuration are introduced in the dropdown
     to work smoothly with the selected change event. Those configurations can be seen as follows.
   </p>
 
   <p>
-    Dropdown item use selection can be select according to the defined dropdown <a href="">Select Mode</a>. for trigger select change event that
+    Dropdown item use selection can be select according to the defined dropdown <a [routerLink]="['/feature/dropdown/item-selection']" [fragment]="'selectMode'">Select Mode</a>. for trigger select change event that
     perform by end-user and returns the unique data object.
   </p>
 
-  <app-events-select-change-usage></app-events-select-change-usage>
-  <app-example-code [files]="eventsSelectChangeUsage"></app-example-code>
+  <app-select-change-usage></app-select-change-usage>
+  <app-example-code [files]="selectChangeUsage"></app-example-code>
 
   <h4 id="triggerSelectChangeOnInit">Trigger Select Change On Init</h4>
   <code>triggerSelectChangeOnInit: boolean</code> &nbsp;
@@ -89,8 +89,8 @@
 
   <p>Select change event can be manually trigger when on dropdown initialization.</p>
 
-  <app-events-trigger-select-change-on-init-usage></app-events-trigger-select-change-on-init-usage>
-  <app-example-code [files]="eventsTriggerSelectChangeOnInitUsage"></app-example-code>
+  <app-trigger-select-change-on-init-usage></app-trigger-select-change-on-init-usage>
+  <app-example-code [files]="triggerSelectChangeOnInitUsage"></app-example-code>
 
   <h4 id="triggerSelectChangeOnFirstOptionSelect">Trigger Select Change On First Option Select</h4>
   <code>triggerSelectChangeOnFirstOptionSelect: boolean</code> &nbsp;
@@ -98,18 +98,18 @@
 
   <p>
     Triggers select change event when first item is selected by default. for use this property it is <b>mandatory</b> to define dropdown
-    <a href="feature/dropdown/item-selection#setFirstOptionSelected">Set First Option Selected</a> to <code>true</code>.
+    <a [routerLink]="['/feature/dropdown/item-selection']" [fragment]="'setFirstOptionSelected'">Set First Option Selected</a> to <code>true</code>.
   </p>
 
-  <app-events-trigger-select-change-on-first-option-select-usage></app-events-trigger-select-change-on-first-option-select-usage>
-  <app-example-code [files]="eventsTriggerSelectChangeOnFirstOptionSelectUsage"></app-example-code>
+  <app-trigger-select-change-on-first-option-select-usage></app-trigger-select-change-on-first-option-select-usage>
+  <app-example-code [files]="triggerSelectChangeOnFirstOptionSelectUsage"></app-example-code>
 
   <h4 id="triggerSelectChangeOnModelUpdate">Trigger Select Change On Model Update</h4>
   <code>triggerSelectChangeOnModelUpdate: boolean</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
 
-  <app-events-trigger-select-change-on-model-update-usage></app-events-trigger-select-change-on-model-update-usage>
-  <app-example-code [files]="eventsTriggerSelectChangeOnModelUpdateUsage"></app-example-code>
+  <app-trigger-select-change-on-model-update-usage></app-trigger-select-change-on-model-update-usage>
+  <app-example-code [files]="triggerSelectChangeOnModelUpdateUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Events (refer outputs section)</a>

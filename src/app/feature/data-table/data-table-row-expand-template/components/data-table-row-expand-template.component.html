@@ -29,7 +29,7 @@
   <p>Following code snippet depicts how to set a custom template.</p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.base_template"></app-code-snippet>
 
-  <p>In <a [routerLink]="['/feature/data-table/templates/expand-template']" fragment="whatYouWillSee">What You Will
+  <p>In <a [routerLink]="['/feature/data-table/templates/expand-template']" [fragment]="'whatYouWillSee'">What You Will
     See</a> section , Following code snippet depicts how to setup expandable row for as expandable customer template.
   </p>
 
@@ -48,7 +48,7 @@
   <code>row: DataTableRow</code>
 
   <p>This property can be accessed as shown in the above <a
-    [routerLink]="['/feature/data-table/templates/expand-template']" fragment="whatYouWillSee">What You Will
+    [routerLink]="['/feature/data-table/templates/expand-template']" [fragment]="'whatYouWillSee'">What You Will
     See</a> sections's example.</p>
 
   <h4 id="expandOnRowClick">Expand On Row Click</h4>
@@ -58,8 +58,8 @@
   <p>Enable/disable ability to expand the table row on user row click or row expand button click event when <code>expandableRows</code>
     is enabled.</p>
 
-  <app-row-expand-on-click-usage></app-row-expand-on-click-usage>
-  <app-example-code [files]="rowExpandOnClickUsage"></app-example-code>
+  <app-expand-on-row-click-usage></app-expand-on-row-click-usage>
+  <app-example-code [files]="expandOnRowClickUsage"></app-example-code>
 
   <h4 id="showRowExpandLoadingSpinner">Show Row Expand Loading Spinner</h4>
   <code>showRowExpandLoadingSpinner: boolean</code> &nbsp;
@@ -70,8 +70,8 @@
     is scenario to show data by calling a REST API to a expandable row in a slow network.
   </p>
 
-  <app-row-expand-loading-spinner-usage></app-row-expand-loading-spinner-usage>
-  <app-example-code [files]="rowExpandLoadingSpinnerUsage"></app-example-code>
+  <app-show-row-expand-loading-spinner-usage></app-show-row-expand-loading-spinner-usage>
+  <app-example-code [files]="showRowExpandLoadingSpinnerUsage"></app-example-code>
 
   <p>In the above data table, following template selector and properties are applied for all expandable
     rows to see the loading spinner behaviour.</p>
@@ -81,7 +81,7 @@
   <p>Below code snippet will show the respective code segments for row expanding detail view and you can use
     <code>row</code> property to control the behaviour of the loading spinner as shown in the below snippet.</p>
 
-  <app-example-code [files]="rowExpandLoadingSpinnerDetailView"></app-example-code>
+  <app-example-code [files]="showRowExpandLoadingSpinnerDetailView"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/responsive-configurations']">Responsive Configuration</a><br>

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 
-import { loadingSpinnerTemplateUsage } from './dropdown-loading-spinner-template.list';
-
-import { demoSnippet } from './dropdown-loading-spinner-template';
+import { demoSnippet, loadingSpinnerTemplateUsage } from './dropdown-loading-spinner-template.list';
 
 import { FileType } from 'helper-models';
 
@@ -14,7 +12,7 @@ import { FileType } from 'helper-models';
 export class DropdownLoadingSpinnerTemplateComponent {
   public FileType = FileType;
 
-  public loadingSpinnerTemplateUsage = loadingSpinnerTemplateUsage;
-
   public demoSnippet = demoSnippet;
+
+  public loadingSpinnerTemplateUsage = loadingSpinnerTemplateUsage;
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { dataLimitUsage, demoSnippet } from './dropdown-limit.list';
+import { demoSnippet, dataLimitUsage } from './dropdown-limit.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DropdownLimitComponent {
   public FileType = FileType;
 
-  public dataLimitUsage = dataLimitUsage;
   public demoSnippet = demoSnippet;
+
+  public dataLimitUsage = dataLimitUsage;
 }

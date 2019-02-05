@@ -1,122 +1,5 @@
 import { ExampleFile, FileType } from '../../../../shared/models';
 
-export const responsiveConfContentHeightUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-content-height-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-content-height-usage/responsive-conf-content-height-usage.module.md')
-  },
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-content-height-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-content-height-usage/responsive-conf-content-height-usage.component.ts')
-  },
-  {
-    type: FileType.HTML,
-    name: 'responsive-conf-content-height-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/responsive-conf-content-height-usage/responsive-conf-content-height-usage.component.html')
-  }
-];
-
-export const responsiveConfExpanderColumnWidthUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-expander-column-width-usage.module.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/responsive-conf-expander-column-width-usage/responsive-conf-expander-column-width-usage.module.md')
-  },
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-expander-column-width-usage.component.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/responsive-conf-expander-column-width-usage/responsive-conf-expander-column-width-usage.component.ts')
-  },
-  {
-    type: FileType.HTML,
-    name: 'responsive-conf-expander-column-width-usage.component.html',
-    content: require(
-      '!!raw-loader?lang=html!./example/responsive-conf-expander-column-width-usage/responsive-conf-expander-column-width-usage.component.html')
-  }
-];
-
-export const responsiveConfIndexColumnWidthUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-index-column-width-usage.module.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/responsive-conf-index-column-width-usage/responsive-conf-index-column-width-usage.module.md')
-  },
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-index-column-width-usage.component.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/responsive-conf-index-column-width-usage/responsive-conf-index-column-width-usage.component.ts')
-  },
-  {
-    type: FileType.HTML,
-    name: 'responsive-conf-index-column-width-usage.component.html',
-    content: require(
-      '!!raw-loader?lang=html!./example/responsive-conf-index-column-width-usage/responsive-conf-index-column-width-usage.component.html')
-  }
-];
-
-export const responsiveConfMinHeightUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-min-height-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-min-height-usage/responsive-conf-min-height-usage.module.md')
-  },
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-min-height-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-min-height-usage/responsive-conf-min-height-usage.component.ts')
-  },
-  {
-    type: FileType.HTML,
-    name: 'responsive-conf-min-height-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/responsive-conf-min-height-usage/responsive-conf-min-height-usage.component.html')
-  }
-];
-
-export const responsiveConfMinWidthUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-min-width-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-min-width-usage/responsive-conf-min-width-usage.module.md')
-  },
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-min-width-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-min-width-usage/responsive-conf-min-width-usage.component.ts')
-  },
-  {
-    type: FileType.HTML,
-    name: 'responsive-conf-min-width-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/responsive-conf-min-width-usage/responsive-conf-min-width-usage.component.html')
-  }
-];
-
-export const responsiveConfSelectionColumnWidthUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-selection-column-width-usage.module.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/responsive-conf-selection-column-width-usage/responsive-conf-selection-column-width-usage.module.md')
-  },
-  {
-    type: FileType.TS,
-    name: 'responsive-conf-selection-column-width-usage.component.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/responsive-conf-selection-column-width-usage/responsive-conf-selection-column-width-usage.component.ts')
-  },
-  {
-    type: FileType.HTML,
-    name: 'responsive-conf-selection-column-width-usage.component.html',
-    content: require(
-      '!!raw-loader?lang=html!./example/responsive-conf-selection-column-width-usage/responsive-conf-selection-column-width-usage.component.html')
-  }
-];
-
 export const responsiveConfUsage: ExampleFile[] = [
   {
     type: FileType.TS,
@@ -135,21 +18,138 @@ export const responsiveConfUsage: ExampleFile[] = [
   }
 ];
 
-export const responsiveConfWidthUsage: ExampleFile[] = [
+
+export const contentHeightUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'responsive-conf-width-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-width-usage/responsive-conf-width-usage.module.md')
+    name: 'content-height-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/content-height-usage/content-height-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'responsive-conf-width-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/responsive-conf-width-usage/responsive-conf-width-usage.component.ts')
+    name: 'content-height-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/content-height-usage/content-height-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'responsive-conf-width-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/responsive-conf-width-usage/responsive-conf-width-usage.component.html')
+    name: 'content-height-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/content-height-usage/content-height-usage.component.html')
+  }
+];
+
+export const expanderColumnWidthUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'expander-column-width-usage.module.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/expander-column-width-usage/expander-column-width-usage.module.md')
+  },
+  {
+    type: FileType.TS,
+    name: 'expander-column-width-usage.component.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/expander-column-width-usage/expander-column-width-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'expander-column-width-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/expander-column-width-usage/expander-column-width-usage.component.html')
+  }
+];
+
+export const indexColumnWidthUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'index-column-width-usage.module.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/index-column-width-usage/index-column-width-usage.module.md')
+  },
+  {
+    type: FileType.TS,
+    name: 'index-column-width-usage.component.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/index-column-width-usage/index-column-width-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'index-column-width-usage.component.html',
+    content: require(
+      '!!raw-loader?lang=html!./example/index-column-width-usage/index-column-width-usage.component.html')
+  }
+];
+
+export const minHeightUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'min-height-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/min-height-usage/min-height-usage.module.md')
+  },
+  {
+    type: FileType.TS,
+    name: 'min-height-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/min-height-usage/min-height-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'min-height-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/min-height-usage/min-height-usage.component.html')
+  }
+];
+
+export const minWidthUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'min-width-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/min-width-usage/min-width-usage.module.md')
+  },
+  {
+    type: FileType.TS,
+    name: 'min-width-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/min-width-usage/min-width-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'min-width-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/min-width-usage/min-width-usage.component.html')
+  }
+];
+
+export const selectionColumnWidthUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'selection-column-width-usage.module.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/selection-column-width-usage/selection-column-width-usage.module.md')
+  },
+  {
+    type: FileType.TS,
+    name: 'selection-column-width-usage.component.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/selection-column-width-usage/selection-column-width-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'selection-column-width-usage.component.html',
+    content: require(
+      '!!raw-loader?lang=html!./example/selection-column-width-usage/selection-column-width-usage.component.html')
+  }
+];
+
+export const widthUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'width-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/width-usage/width-usage.module.md')
+  },
+  {
+    type: FileType.TS,
+    name: 'width-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/width-usage/width-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'width-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/width-usage/width-usage.component.html')
   }
 ];
 

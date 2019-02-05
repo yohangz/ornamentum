@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { basicUsage, demoSnippet } from './dropdown-overview.list';
+import { demoSnippet, basicUsage } from './dropdown-overview.list';
 
 import { VERSION } from '../../../../../environments/version';
 
@@ -14,7 +14,9 @@ import { FileType } from 'helper-models';
 export class DropdownOverviewComponent {
   public FileType = FileType;
 
-  public basicUsage = basicUsage;
   public demoSnippet = demoSnippet;
+
+  public basicUsage = basicUsage;
+
   public packageVersion = VERSION;
 }

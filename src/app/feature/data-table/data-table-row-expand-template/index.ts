@@ -2,8 +2,8 @@ export { DataTableRowExpandTemplateComponent } from './components/data-table-row
 export { RowExpandTemplateUsageComponent } from './components/example/row-expand-template-usage/row-expand-template-usage.component';
 // tslint:disable-next-line
 export { RowExpandTemplateDetailViewComponent } from './components/example/row-expand-template-usage/row-expand-template-detail-view/row-expand-template-detail-view.component';
-export { RowExpandOnClickUsageComponent } from './components/example/row-expand-on-click-usage/row-expand-on-click-usage.component';
+export { ExpandOnRowClickUsageComponent } from './components/example/expand-on-row-click-usage/expand-on-row-click-usage.component';
 // tslint:disable-next-line
-export { RowExpandLoadingSpinnerUsageComponent } from './components/example/row-expand-loading-spinner-usage/row-expand-loading-spinner-usage.component';
+export { ShowRowExpandLoadingSpinnerUsageComponent } from './components/example/show-row-expand-loading-spinner-usage/show-row-expand-loading-spinner-usage.component';
 // tslint:disable-next-line
-export { RowExpandLoadingSpinnerDetailViewComponent } from './components/example/row-expand-loading-spinner-usage/row-expand-loading-spinner-detail-view/row-expand-loading-spinner-detail-view.component';
+export { ShowRowExpandLoadingSpinnerDetailViewComponent } from './components/example/show-row-expand-loading-spinner-usage/show-row-expand-loading-spinner-detail-view/show-row-expand-loading-spinner-detail-view.component';

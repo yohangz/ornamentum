@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 
 import {
   eventsUsage,
-  eventsDataBoundUsage,
-  eventsInitUsage,
-  eventsSelectChangeUsage,
-  eventsTriggerSelectChangeOnFirstOptionSelectUsage,
-  eventsTriggerSelectChangeOnInitUsage,
-  eventsTriggerSelectChangeOnModelUpdateUsage
+  dataBoundUsage,
+  initUsage,
+  selectChangeUsage,
+  triggerSelectChangeOnFirstOptionSelectUsage,
+  triggerSelectChangeOnInitUsage,
+  triggerSelectChangeOnModelUpdateUsage
 } from './dropdown-events.list';
 
 @Component({
@@ -17,10 +17,10 @@ import {
 })
 export class DropdownEventsComponent {
   public eventsUsage = eventsUsage;
-  public eventsDataBoundUsage = eventsDataBoundUsage;
-  public eventsInitUsage = eventsInitUsage;
-  public eventsSelectChangeUsage = eventsSelectChangeUsage;
-  public eventsTriggerSelectChangeOnFirstOptionSelectUsage = eventsTriggerSelectChangeOnFirstOptionSelectUsage;
-  public eventsTriggerSelectChangeOnInitUsage = eventsTriggerSelectChangeOnInitUsage;
-  public eventsTriggerSelectChangeOnModelUpdateUsage = eventsTriggerSelectChangeOnModelUpdateUsage;
+  public dataBoundUsage = dataBoundUsage;
+  public initUsage = initUsage;
+  public selectChangeUsage = selectChangeUsage;
+  public triggerSelectChangeOnFirstOptionSelectUsage = triggerSelectChangeOnFirstOptionSelectUsage;
+  public triggerSelectChangeOnInitUsage = triggerSelectChangeOnInitUsage;
+  public triggerSelectChangeOnModelUpdateUsage = triggerSelectChangeOnModelUpdateUsage;
 }

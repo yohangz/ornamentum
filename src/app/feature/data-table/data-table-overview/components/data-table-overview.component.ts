@@ -18,5 +18,6 @@ export class DataTableOverviewComponent {
   public FileType = FileType;
 
   public demoSnippet = demoSnippet;
+
   public packageVersion = VERSION;
 }

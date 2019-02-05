@@ -1,80 +1,74 @@
 import { ExampleFile, FileType } from '../../../../shared/models';
 
-export const tableHeaderDetailsUsage: ExampleFile[] = [
+export const headerDetailsUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'table-header-details-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/table-header-details-usage/table-header-details-usage.module.md')
+    name: 'header-details-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/header-details-usage/header-details-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'table-header-details-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/table-header-details-usage/table-header-details-usage.component.ts')
+    name: 'header-details-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/header-details-usage/header-details-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'table-header-details-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/table-header-details-usage/table-header-details-usage.component.html')
+    name: 'header-details-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/header-details-usage/header-details-usage.component.html')
   }
 ];
 
-export const tableHeaderDetailsTitleUsage: ExampleFile[] = [
+export const titleUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'table-header-details-title-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/table-header-details-title-usage/table-header-details-title-usage.module.md')
+    name: 'title-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/title-usage/title-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'table-header-details-title-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/table-header-details-title-usage/' + 'table-header-details-title-usage.component.ts')
+    name: 'title-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/title-usage/title-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'table-header-details-title-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/table-header-details-title-usage/' + 'table-header-details-title-usage.component.html')
+    name: 'title-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/title-usage/title-usage.component.html')
   }
 ];
 
-export const tableHeaderDetailsShowRefreshBtnUsage: ExampleFile[] = [
+export const showRefreshButtonUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'table-header-details-show-refresh-btn-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/table-header-details-show-refresh-btn-usage/' +
-      'table-header-details-show-refresh-btn-usage.module.md')
+    name: 'show-refresh-btn-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/show-refresh-button-usage/show-refresh-button-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'table-header-details-show-refresh-btn-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/table-header-details-show-refresh-btn-usage/' +
-      'table-header-details-show-refresh-btn-usage.component.ts')
+    name: 'show-refresh-btn-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/show-refresh-button-usage/show-refresh-button-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'table-header-details-show-refresh-btn-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/table-header-details-show-refresh-btn-usage/' +
-      'table-header-details-show-refresh-btn-usage.component.html')
+    name: 'show-refresh-btn-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/show-refresh-button-usage/show-refresh-button-usage.component.html')
   }
 ];
 
-export const tableHeaderDetailsShowColumnSelectorUsage: ExampleFile[] = [
+export const showColumnSelectorUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'table-header-details-show-column-selector-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/table-header-details-show-column-selector-usage/' +
-      'table-header-details-show-column-selector-usage.module.md')
+    name: 'show-column-selector-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/show-column-selector-usage/show-column-selector-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'table-header-details-show-column-selector-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/table-header-details-show-column-selector-usage/' +
-      'table-header-details-show-column-selector-usage.component.ts')
+    name: 'show-column-selector-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/show-column-selector-usage/show-column-selector-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'table-header-details-show-column-selector-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/table-header-details-show-column-selector-usage/' +
-      'table-header-details-show-column-selector-usage.component.html')
+    name: 'show-column-selector-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/show-column-selector-usage/show-column-selector-usage.component.html')
   }
 ];
 

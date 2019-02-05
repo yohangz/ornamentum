@@ -41,12 +41,12 @@
   <p>
     Using the page property user can define the page number which the table should display/focus by default. From the
     declared ‘page’ users can paginate into different data views with in the declared page <a
-    [routerLink]="['/feature/data-table/pagination']" fragment="limit">Limit</a>. It is recommended not
+    [routerLink]="['/feature/data-table/pagination']" [fragment]="'limit'">Limit</a>. It is recommended not
     to set offset explicitly if the ‘page’ property is in use.
   </p>
 
-  <app-pagination-page-usage></app-pagination-page-usage>
-  <app-example-code [files]="paginationUsageWithPage"></app-example-code>
+  <app-page-usage></app-page-usage>
+  <app-example-code [files]="pageUsage"></app-example-code>
 
   <h4 id="limit">Limit</h4>
   <code>limit: number</code> &nbsp;
@@ -57,8 +57,8 @@
     been provided, default value will be applied.
   </p>
 
-  <app-pagination-limit-usage></app-pagination-limit-usage>
-  <app-example-code [files]="paginationUsageWithLimit"></app-example-code>
+  <app-limit-usage></app-limit-usage>
+  <app-example-code [files]="limitUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/translations']">Data Table Translations</a><br />

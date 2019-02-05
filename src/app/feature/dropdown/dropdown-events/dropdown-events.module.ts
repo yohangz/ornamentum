@@ -6,12 +6,12 @@ import { DropdownModule } from 'ornamentum';
 import {
   DropdownEventsComponent,
   EventsUsageComponent,
-  EventsDataBoundUsageComponent,
-  EventsInitUsageComponent,
-  EventsSelectChangeUsageComponent,
-  EventsTriggerSelectChangeOnFirstOptionSelectUsageComponent,
-  EventsTriggerSelectChangeOnInitUsageComponent,
-  EventsTriggerSelectChangeOnModelUpdateUsageComponent
+  DataBoundUsageComponent,
+  InitUsageComponent,
+  SelectChangeUsageComponent,
+  TriggerSelectChangeOnFirstOptionSelectUsageComponent,
+  TriggerSelectChangeOnInitUsageComponent,
+  TriggerSelectChangeOnModelUpdateUsageComponent
 } from './index';
 
 import { DropdownEventsRoutingModule } from './dropdown-events-routing.module';
@@ -26,12 +26,12 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     DropdownEventsComponent,
     EventsUsageComponent,
-    EventsDataBoundUsageComponent,
-    EventsInitUsageComponent,
-    EventsSelectChangeUsageComponent,
-    EventsTriggerSelectChangeOnFirstOptionSelectUsageComponent,
-    EventsTriggerSelectChangeOnInitUsageComponent,
-    EventsTriggerSelectChangeOnModelUpdateUsageComponent
+    DataBoundUsageComponent,
+    InitUsageComponent,
+    SelectChangeUsageComponent,
+    TriggerSelectChangeOnFirstOptionSelectUsageComponent,
+    TriggerSelectChangeOnInitUsageComponent,
+    TriggerSelectChangeOnModelUpdateUsageComponent
   ],
   exports: [],
   imports: [

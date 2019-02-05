@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DataTableClientSideRealTimeDataBindingComponent {
   public FileType = FileType;
 
-  public realTimeDataBindingUsage = clientSideRealTimeDataBindingUsage;
   public demoSnippet = demoSnippet;
+
+  public clientSideRealTimeDataBindingUsage = clientSideRealTimeDataBindingUsage;
 }

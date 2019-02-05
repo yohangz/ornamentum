@@ -1,6 +1,12 @@
 import { Component } from '@angular/core';
 
-import { filteringUsage, filterDebounceUsage, filterDebounceTimeUsage, filterTextUsage, demoSnippet } from './dropdown-filtering.list';
+import {
+  demoSnippet,
+  filteringUsage,
+  filterDebounceUsage,
+  filterDebounceTimeUsage,
+  filterTextUsage
+} from './dropdown-filtering.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,9 +18,10 @@ import { FileType } from 'helper-models';
 export class DropdownFilteringComponent {
   public FileType = FileType;
 
+  public demoSnippet = demoSnippet;
+
   public filteringUsage = filteringUsage;
   public filterDebounceUsage = filterDebounceUsage;
   public filterDebounceTimeUsage = filterDebounceTimeUsage;
   public filterTextUsage = filterTextUsage;
-  public demoSnippet = demoSnippet;
 }
