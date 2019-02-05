@@ -50,7 +50,9 @@ export class DataTableHttpDataFetchService<T> {
             query += `|${column.sortOrder}|${index}`;
           }
 
-          queryParams = queryParams.append(column.field, query);
+          if (query) {
+            queryParams = queryParams.append(column.field, query);
+          }
         });
 
         const resource = this.http.get<any>(resourcePath, { params: queryParams, ...requestOptions }) as Observable<any>;
