@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableClientSideRealTimeDataBindingComponent, ClientSideRealTimeDataBindingComponent } from './index';
+import { DataTableClientSideRealTimeDataBindingComponent, ClientSideRealTimeDataBindingUsageComponent } from './index';
 
 import { DataTableClientSideRealTimeDataBindingRoutingModule } from './data-table-client-side-real-time-data-binding-routing.module';
 
@@ -14,7 +14,7 @@ import { SharedModule } from '../../../shared/shared.module';
  * Module class for containing data table client side real time data binding module.
  */
 @NgModule({
-  declarations: [DataTableClientSideRealTimeDataBindingComponent, ClientSideRealTimeDataBindingComponent],
+  declarations: [DataTableClientSideRealTimeDataBindingComponent, ClientSideRealTimeDataBindingUsageComponent],
   exports: [],
   imports: [
     CommonModule,
@@ -29,4 +29,5 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableClientSideRealTimeDataBindingModule {}
+export class DataTableClientSideRealTimeDataBindingModule {
+}

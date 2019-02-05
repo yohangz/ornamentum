@@ -6,14 +6,14 @@ import { DataTableModule } from 'ornamentum';
 
 import {
   DataTableResponsiveConfComponent,
-  ResponsiveConfContentHeightUsageComponent,
-  ResponsiveConfExpanderColumnWidthUsageComponent,
-  ResponsiveConfIndexColumnWidthUsageComponent,
-  ResponsiveConfMinHeightUsageComponent,
-  ResponsiveConfMinWidthUsageComponent,
-  ResponsiveConfSelectionColumnWidthUsageComponent,
   ResponsiveConfUsageComponent,
-  ResponsiveConfWidthUsageComponent
+  ContentHeightUsageComponent,
+  ExpanderColumnWidthUsageComponent,
+  IndexColumnWidthUsageComponent,
+  MinHeightUsageComponent,
+  MinWidthUsageComponent,
+  SelectionColumnWidthUsageComponent,
+  WidthUsageComponent
 } from './index';
 
 import { DataTableResponsiveConfRoutingModule } from './data-table-responsive-conf-routing.module';
@@ -26,14 +26,14 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTableResponsiveConfComponent,
-    ResponsiveConfContentHeightUsageComponent,
-    ResponsiveConfExpanderColumnWidthUsageComponent,
-    ResponsiveConfIndexColumnWidthUsageComponent,
-    ResponsiveConfMinHeightUsageComponent,
-    ResponsiveConfMinWidthUsageComponent,
-    ResponsiveConfSelectionColumnWidthUsageComponent,
     ResponsiveConfUsageComponent,
-    ResponsiveConfWidthUsageComponent
+    ContentHeightUsageComponent,
+    ExpanderColumnWidthUsageComponent,
+    IndexColumnWidthUsageComponent,
+    MinHeightUsageComponent,
+    MinWidthUsageComponent,
+    SelectionColumnWidthUsageComponent,
+    WidthUsageComponent
   ],
   exports: [],
   imports: [

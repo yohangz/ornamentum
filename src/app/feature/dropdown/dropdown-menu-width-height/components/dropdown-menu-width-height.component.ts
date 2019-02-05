@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { menuWidthHeightUsage, menuHeightUsage, menuWidthUsage, demoSnippet } from './dropdown-menu-width-height.list';
+import { demoSnippet, menuWidthHeightUsage, menuHeightUsage, menuWidthUsage } from './dropdown-menu-width-height.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,8 +12,9 @@ import { FileType } from 'helper-models';
 export class DropdownMenuWidthHeightComponent {
   public FileType = FileType;
 
+  public demoSnippet = demoSnippet;
+
   public menuWidthHeightUsage = menuWidthHeightUsage;
   public menuHeightUsage = menuHeightUsage;
   public menuWidthUsage = menuWidthUsage;
-  public demoSnippet = demoSnippet;
 }

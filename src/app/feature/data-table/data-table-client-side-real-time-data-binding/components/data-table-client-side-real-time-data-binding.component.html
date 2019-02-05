@@ -11,13 +11,13 @@
     In such cases you can use this client-side real-time data binding technique to binding data, when data changes in real time
     those changes will be reflect
     without data table refresh, and immediately effect to the data table as well. for more about data table refresh
-    refer <a [routerLink]="['/feature/data-table/header-details']" fragment="showRefreshButton">Show Refresh Button</a> section.
+    refer <a [routerLink]="['/feature/data-table/header-details']" [fragment]="'showRefreshButton'">Show Refresh Button</a> section.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
-  <app-client-side-real-time-data-binding></app-client-side-real-time-data-binding>
-  <app-example-code [files]="realTimeDataBindingUsage"></app-example-code>
+  <app-client-side-real-time-data-binding-usage></app-client-side-real-time-data-binding-usage>
+  <app-example-code [files]="clientSideRealTimeDataBindingUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
 
@@ -34,7 +34,7 @@
 
   <p>
     The complete set of code snippet for the client side real time data binding via <code>datasource</code> input property can be seen in the example
-    shown in the <a [routerLink]="['/feature/data-table/client-side-real-time-data-binding']" fragment="whatYouWillSee">What You
+    shown in the <a [routerLink]="['/feature/data-table/client-side-real-time-data-binding']" [fragment]="'whatYouWillSee'">What You
     Will See</a> section above.
   </p>
 

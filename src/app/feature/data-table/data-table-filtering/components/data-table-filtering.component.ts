@@ -12,8 +12,9 @@ import { FileType } from 'helper-models';
 export class DataTableFilteringComponent {
   public FileType = FileType;
 
+  public demoSnippet = demoSnippet;
+
   public filterDropdownUsage = filterDropdownUsage;
   public filterTextBoxUsage = filterTextBoxUsage;
   public filteringUsage = filteringUsage;
-  public demoSnippet = demoSnippet;
 }

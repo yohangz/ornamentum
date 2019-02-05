@@ -18,39 +18,39 @@ export const paginationUsage: ExampleFile[] = [
   }
 ];
 
-export const paginationUsageWithPage: ExampleFile[] = [
+export const pageUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'pagination-page-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/pagination-page-usage/pagination-page-usage.module.md')
+    name: 'page-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/page-usage/page-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'pagination-page-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/pagination-page-usage/pagination-page-usage.component.ts')
+    name: 'page-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/page-usage/page-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'pagination-page-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/pagination-page-usage/pagination-page-usage.component.html')
+    name: 'page-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/page-usage/page-usage.component.html')
   }
 ];
 
-export const paginationUsageWithLimit: ExampleFile[] = [
+export const limitUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'pagination-limit-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/pagination-limit-usage/pagination-limit-usage.module.md')
+    name: 'limit-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/limit-usage/limit-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'pagination-limit-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/pagination-limit-usage/pagination-limit-usage.component.ts')
+    name: 'limit-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/limit-usage/limit-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'pagination-limit-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/pagination-limit-usage/pagination-limit-usage.component.html')
+    name: 'limit-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/limit-usage/limit-usage.component.html')
   }
 ];
 

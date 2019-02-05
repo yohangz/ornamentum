@@ -1,58 +1,58 @@
 import { ExampleFile, FileType } from '../../../../shared/models';
 
-export const dataTableTranslationsUsage: ExampleFile[] = [
+export const translationsUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'data-table-translations-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/data-table-translations-usage/data-table-translations-usage.module.md')
+    name: 'translations-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/translations-usage/translations-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'data-table-translations-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/data-table-translations-usage/data-table-translations-usage.component.ts')
+    name: 'translations-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/translations-usage/translations-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'data-table-translations-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/data-table-translations-usage/data-table-translations-usage.component.html')
+    name: 'translations-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/translations-usage/translations-usage.component.html')
   }
 ];
 
-export const dataTableTranslationsNoDataUsage: ExampleFile[] = [
+export const translationsNoDataUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'data-table-translations-no-data-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/data-table-translations-no-data-usage/data-table-translations-no-data-usage.module.md')
+    name: 'translations-no-data-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/translations-no-data-usage/translations-no-data-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'data-table-translations-no-data-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/data-table-translations-no-data-usage/data-table-translations-no-data-usage.component.ts')
+    name: 'translations-no-data-usage.component.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/translations-no-data-usage/translations-no-data-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'data-table-translations-no-data-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/data-table-translations-no-data-usage/data-table-translations-no-data-usage.component.html')
+    name: 'translations-no-data-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/translations-no-data-usage/translations-no-data-usage.component.html')
   }
-];
+]
 
-export const dataTableTranslationsPaginationUsage: ExampleFile[] = [
+export const translationsPaginationUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'data-table-translations-pagination-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/data-table-translations-pagination-usage/' +
-      'data-table-translations-pagination-usage.module.md')
+    name: 'translations-pagination-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/translations-pagination-usage/translations-pagination-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'data-table-translations-pagination-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/data-table-translations-pagination-usage/' +
-      'data-table-translations-pagination-usage.component.ts')
+    name: 'translations-pagination-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/translations-pagination-usage/translations-pagination-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'data-table-translations-pagination-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/data-table-translations-pagination-usage/data-table-translations-pagination-usage.component.html')
+    name: 'translations-pagination-usage.component.html',
+    content: require(
+      '!!raw-loader?lang=html!./example/translations-pagination-usage/translations-pagination-usage.component.html')
   }
 ];
 

@@ -8,8 +8,8 @@
 
   <p>
     In order to filter data in Data Table, <a [routerLink]="['/feature/data-table/column/filtering']"
-                                              fragment="filterDropdown">Dropdown</a> or <a
-    [routerLink]="['/feature/data-table/column/filtering']" fragment="filterTextBox">Text Box</a> can be used.
+                                              [fragment]="'filterDropdown'">Dropdown</a> or <a
+    [routerLink]="['/feature/data-table/column/filtering']" [fragment]="'filterTextBox'">Text Box</a> can be used.
     Those filtering controls will be displayed on the header level of the data table.
   </p>
 

@@ -17,3 +17,7 @@ export const optionGroupHeaderTemplateUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=html!./example/option-group-header-template-usage/option-group-header-template-usage.component.html')
   }
 ];
+
+export const demoSnippet: any = {
+  template: require('!!raw-loader?lang=typescript!./docs/template.md')
+};

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { menuPositionUsage, demoSnippet } from './dropdown-menu-position.list';
+import { demoSnippet, menuPositionUsage } from './dropdown-menu-position.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DropdownMenuPositionComponent {
   public FileType = FileType;
 
-  public menuPositionUsage = menuPositionUsage;
   public demoSnippet = demoSnippet;
+
+  public menuPositionUsage = menuPositionUsage;
 }

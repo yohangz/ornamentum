@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
 import {
+  demoSnippet,
   columnSortingUsage,
-  columnSortingUsageWithMultiColumnSortable,
-  columnSortingUsageWithSortField,
-  columnSortingUsageWithSortOrder,
-  demoSnippet
+  multiColumnSortableUsage,
+  sortFieldUsage,
+  sortOrderUsage
 } from './data-table-column-sorting.list';
 
 import { FileType } from 'helper-models';
@@ -18,9 +18,10 @@ import { FileType } from 'helper-models';
 export class DataTableColumnSortingComponent {
   public FileType = FileType;
 
-  public columnSortingUsage = columnSortingUsage;
-  public columnSortingUsageWithSortOrder = columnSortingUsageWithSortOrder;
-  public columnSortingUsageWithSortField = columnSortingUsageWithSortField;
-  public columnSortingUsageWithMultiColumnSortable = columnSortingUsageWithMultiColumnSortable;
   public demoSnippet = demoSnippet;
+
+  public columnSortingUsage = columnSortingUsage;
+  public sortOrderUsage = sortOrderUsage;
+  public sortFieldUsage = sortFieldUsage;
+  public multiColumnSortableUsage = multiColumnSortableUsage;
 }

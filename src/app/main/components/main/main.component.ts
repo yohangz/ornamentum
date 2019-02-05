@@ -618,12 +618,12 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/styling-and-themes',
+              routePath: '/feature/data-table/themes',
               title: 'Themes',
               navigation: [
                 {
                   title: 'Including Theme Support',
-                  anchor: 'themeSupport',
+                  anchor: 'includingThemeSupport',
                   subNavigation: [
                     {
                       title: 'Base Theme',
@@ -1252,12 +1252,12 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/styling-and-themes',
+              routePath: '/feature/dropdown/themes',
               title: 'Themes',
               navigation: [
                 {
                   title: 'Including Theme Support',
-                  anchor: 'themeSupport',
+                  anchor: 'includingThemeSupport',
                   subNavigation: [
                     {
                       title: 'Base Theme',

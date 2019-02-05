@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { itemDisablingUsage, demoSnippet } from './dropdown-item-disabling.list';
+import { demoSnippet, itemDisablingUsage } from './dropdown-item-disabling.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DropdownItemDisablingComponent {
   public FileType = FileType;
 
-  public itemDisablingUsage = itemDisablingUsage;
   public demoSnippet = demoSnippet;
+
+  public itemDisablingUsage = itemDisablingUsage;
 }

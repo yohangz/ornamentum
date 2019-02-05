@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+
+import { ExampleData } from '../../../../../../shared/models';
+
+import { DataFetchService } from '../../../../../../shared/services';
+
+@Component({
+  selector: 'app-trigger-select-change-on-model-update-usage',
+  templateUrl: './trigger-select-change-on-model-update-usage.component.html',
+  styleUrls: ['../../dropdown-events.component.scss']
+})
+export class TriggerSelectChangeOnModelUpdateUsageComponent {
+  public items: ExampleData[];
+  public selectChangeOnModelUpdateEventData: string = null;
+
+  constructor(private dataFetchService: DataFetchService) {
+    this.items = this.dataFetchService.fetchStaticData();
+  }
+}

@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DropdownClientSideRealTimeDataBindingComponent {
   public FileType = FileType;
 
-  public realTimeDataBindingUsage = clientSideRealTimeDataBindingUsage;
   public demoSnippet = demoSnippet;
+
+  public realTimeDataBindingUsage = clientSideRealTimeDataBindingUsage;
 }

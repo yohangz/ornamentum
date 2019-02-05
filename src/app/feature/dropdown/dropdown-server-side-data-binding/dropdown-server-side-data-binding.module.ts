@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule, DropdownResourceModule } from 'ornamentum';
 
-import { DropdownServerSideDataBindingComponent, ServerSideDataBindingComponent } from './index';
+import { DropdownServerSideDataBindingComponent, ServerSideDataBindingUsageComponent } from './index';
 
 import { DropdownServerSideDataBindingRoutingModule } from './dropdown-server-side-data-binding-routing.module';
 
@@ -15,7 +15,7 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DropdownServerSideDataBindingComponent,
-    ServerSideDataBindingComponent
+    ServerSideDataBindingUsageComponent
   ],
   exports: [],
   imports: [

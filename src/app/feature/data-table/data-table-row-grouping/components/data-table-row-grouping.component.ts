@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DataTableRowGroupingComponent {
   public FileType = FileType;
 
-  public rowGroupingUsage = rowGroupingUsage;
   public demoSnippet = demoSnippet;
+
+  public rowGroupingUsage = rowGroupingUsage;
 }

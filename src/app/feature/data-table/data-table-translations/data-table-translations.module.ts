@@ -6,9 +6,9 @@ import { DataTableModule } from 'ornamentum';
 
 import {
   DataTableTranslationsComponent,
-  DataTableTranslationsUsageComponent,
-  DataTableTranslationsNoDataUsageComponent,
-  DataTableTranslationsPaginationUsageComponent
+  TranslationsUsageComponent,
+  TranslationsNoDataUsageComponent,
+  TranslationsPaginationUsageComponent
 } from './index';
 
 import { DataTableTranslationsRoutingModule } from './data-table-translations-routing.module';
@@ -21,12 +21,19 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTableTranslationsComponent,
-    DataTableTranslationsUsageComponent,
-    DataTableTranslationsNoDataUsageComponent,
-    DataTableTranslationsPaginationUsageComponent
+    TranslationsUsageComponent,
+    TranslationsNoDataUsageComponent,
+    TranslationsPaginationUsageComponent
   ],
   exports: [],
-  imports: [CommonModule, FormsModule, SharedModule.forRoot(), DataTableModule.forRoot(), DataTableTranslationsRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    SharedModule.forRoot(),
+    DataTableModule.forRoot(),
+    DataTableTranslationsRoutingModule
+  ],
   providers: []
 })
-export class DataTableTranslationsModule {}
+export class DataTableTranslationsModule {
+}

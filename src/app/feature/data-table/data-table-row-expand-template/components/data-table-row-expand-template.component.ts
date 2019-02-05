@@ -4,9 +4,9 @@ import {
   demoSnippet,
   rowExpandTemplateUsage,
   rowExpandTemplateDetailView,
-  rowExpandLoadingSpinnerUsage,
-  rowExpandLoadingSpinnerDetailView,
-  rowExpandOnClickUsage
+  showRowExpandLoadingSpinnerUsage,
+  showRowExpandLoadingSpinnerDetailView,
+  expandOnRowClickUsage
 } from './data-table-row-expand-template.list';
 
 import { FileType } from 'helper-models';
@@ -19,10 +19,11 @@ import { FileType } from 'helper-models';
 export class DataTableRowExpandTemplateComponent {
   public FileType = FileType;
 
-  public rowExpandTemplateUsage = rowExpandTemplateUsage;
-  public rowExpandOnClickUsage = rowExpandOnClickUsage;
-  public rowExpandLoadingSpinnerUsage = rowExpandLoadingSpinnerUsage;
-  public rowExpandTemplateDetailView = rowExpandTemplateDetailView;
-  public rowExpandLoadingSpinnerDetailView = rowExpandLoadingSpinnerDetailView;
   public demoSnippet = demoSnippet;
+
+  public rowExpandTemplateUsage = rowExpandTemplateUsage;
+  public rowExpandTemplateDetailView = rowExpandTemplateDetailView;
+  public expandOnRowClickUsage = expandOnRowClickUsage;
+  public showRowExpandLoadingSpinnerUsage = showRowExpandLoadingSpinnerUsage;
+  public showRowExpandLoadingSpinnerDetailView = showRowExpandLoadingSpinnerDetailView;
 }

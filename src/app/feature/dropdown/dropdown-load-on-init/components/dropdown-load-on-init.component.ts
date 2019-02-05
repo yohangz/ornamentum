@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { loadOnInitUsage, demoSnippet } from './dropdown-load-on-init.list';
+import { demoSnippet, loadOnInitUsage } from './dropdown-load-on-init.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DropdownLoadOnInitComponent {
   public FileType = FileType;
 
-  public loadOnInitUsage = loadOnInitUsage;
   public demoSnippet = demoSnippet;
+
+  public loadOnInitUsage = loadOnInitUsage;
 }

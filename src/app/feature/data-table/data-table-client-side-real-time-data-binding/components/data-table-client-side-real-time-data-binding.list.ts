@@ -3,18 +3,21 @@ import { ExampleFile, FileType } from '../../../../shared/models';
 export const clientSideRealTimeDataBindingUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'client-side-real-time-data-binding.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/client-side-real-time-data-binding/client-side-real-time-data-binding.module.md')
+    name: 'client-side-real-time-data-binding-usage.module.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/client-side-real-time-data-binding-usage/client-side-real-time-data-binding-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'client-side-real-time-data-binding.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/client-side-real-time-data-binding/client-side-real-time-data-binding.component.ts')
+    name: 'client-side-real-time-data-binding-usage.component.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/client-side-real-time-data-binding-usage/client-side-real-time-data-binding-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'client-side-real-time-data-binding.component.html',
-    content: require('!!raw-loader?lang=html!./example/client-side-real-time-data-binding/client-side-real-time-data-binding.component.html')
+    name: 'client-side-real-time-data-binding-usage.component.html',
+    content: require(
+      '!!raw-loader?lang=html!./example/client-side-real-time-data-binding-usage/client-side-real-time-data-binding-usage.component.html')
   }
 ];
 

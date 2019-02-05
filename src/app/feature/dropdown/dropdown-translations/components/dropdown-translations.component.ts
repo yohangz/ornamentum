@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 
 import {
+  demoSnippet,
   additionalTranslationsUsage,
   translationsNoDataMessageUsage,
   translationsFilterPlaceholderUsage,
   translationsSelectPlaceholderUsage,
-  translationsSelectedItemWrapPlaceholderUsage,
-  demoSnippet
+  translationsSelectedItemWrapPlaceholderUsage
 } from './dropdown-translations.list';
 
 import { FileType } from 'helper-models';
@@ -19,10 +19,11 @@ import { FileType } from 'helper-models';
 export class DropdownTranslationsComponent {
   public FileType = FileType;
 
+  public demoSnippet = demoSnippet;
+
   public translationsNoDataMessageUsage = translationsNoDataMessageUsage;
   public additionalTranslationsUsage = additionalTranslationsUsage;
   public translationsFilterPlaceholderUsage = translationsFilterPlaceholderUsage;
   public translationsSelectPlaceholderUsage = translationsSelectPlaceholderUsage;
   public translationsSelectedItemWrapPlaceholderUsage = translationsSelectedItemWrapPlaceholderUsage;
-  public demoSnippet = demoSnippet;
 }

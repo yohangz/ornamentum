@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DropdownServerSideDataBindingComponent {
   public FileType = FileType;
 
-  public serverSideDataBindingUsage = serverSideDataBindingUsage;
   public demoSnippet = demoSnippet;
+
+  public serverSideDataBindingUsage = serverSideDataBindingUsage;
 }

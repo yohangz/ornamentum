@@ -6,10 +6,10 @@ import { DataTableModule } from 'ornamentum';
 
 import {
   DataTableHeaderDetailsComponent,
-  TableHeaderDetailsUsageComponent,
-  TableHeaderDetailsShowRefreshBtnUsageComponent,
-  TableHeaderDetailsTitleUsageComponent,
-  TableHeaderDetailsShowColumnSelectorUsageComponent
+  HeaderDetailsUsageComponent,
+  ShowRefreshButtonUsageComponent,
+  TitleUsageComponent,
+  ShowColumnSelectorUsageComponent
 } from './index';
 
 import { DataTableHeaderDetailsRoutingModule } from './data-table-header-details-routing.module';
@@ -22,10 +22,10 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTableHeaderDetailsComponent,
-    TableHeaderDetailsUsageComponent,
-    TableHeaderDetailsShowRefreshBtnUsageComponent,
-    TableHeaderDetailsTitleUsageComponent,
-    TableHeaderDetailsShowColumnSelectorUsageComponent
+    HeaderDetailsUsageComponent,
+    ShowRefreshButtonUsageComponent,
+    TitleUsageComponent,
+    ShowColumnSelectorUsageComponent
   ],
   exports: [],
   imports: [

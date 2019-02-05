@@ -20,20 +20,20 @@
        |     |
        |     |___ <strong>Automatically Triggers</strong>
        |     |     |
-       |     |     |-- <a href="feature/data-table/events#columnBind">Column Bind</a> // triggers for each column binding.
-       |     |     |-- <a href="feature/data-table/events#init">Init</a> // trigger data table initialization.
-       |     |     |-- <a href="feature/data-table/events#dataBound">Data Bound</a> // triggers after the data binding completion.
-       |     |     |-- <a href="feature/data-table/events#rowBind">Row Bind</a> // triggers when binding data for available rows.
-       |     |     |-- <a href="feature/data-table/events#cellBind">Cell Bind</a> // triggers when binding cell data.
+       |     |     |-- <a [routerLink]="['/feature/data-table/events']" [fragment]="'columnBind'">Column Bind</a> // triggers for each column binding.
+       |     |     |-- <a [routerLink]="['/feature/data-table/events']" [fragment]="'init'">Init</a> // trigger data table initialization.
+       |     |     |-- <a [routerLink]="['/feature/data-table/events']" [fragment]="'dataBound'">Data Bound</a> // triggers after the data binding completion.
+       |     |     |-- <a [routerLink]="['/feature/data-table/events']" [fragment]="'rowBind'">Row Bind</a> // triggers when binding data for available rows.
+       |     |     |-- <a [routerLink]="['/feature/data-table/events']" [fragment]="'cellBind'">Cell Bind</a> // triggers when binding cell data.
        |     |
        |     |___ <strong>User Triggers</strong>
        |           |
-       |           |-- <a href="feature/data-table/events#rowSelectChange">Row Select Change</a> // triggers when row select state is changes.
-       |           |-- <a href="feature/data-table/events#allRowSelectChange">All Row Select Change</a> // trigger all row select mouse click event.
-       |           |-- <a href="feature/data-table/events#rowClick">Row Click</a> // triggers user row single click events on data table.
-       |           |-- <a href="feature/data-table/events#rowDoubleClick">Row Double Click</a>  // triggers user row double click events on data table.
-       |           |-- <a href="feature/data-table/events#cellClick">Cell Click</a> // triggers when click on table cell.
-       |           |-- <a href="feature/data-table/events#headerClick">Header Click</a> // triggers table column header click mouse event.
+       |           |-- <a [routerLink]="['/feature/data-table/events']" [fragment]="'rowSelectChange'">Row Select Change</a> // triggers when row select state is changes.
+       |           |-- <a [routerLink]="['/feature/data-table/events']" [fragment]="'allRowSelectChange'">All Row Select Change</a> // trigger all row select mouse click event.
+       |           |-- <a [routerLink]="['/feature/data-table/events']" [fragment]="'rowClick'">Row Click</a> // triggers user row single click events on data table.
+       |           |-- <a [routerLink]="['/feature/data-table/events']" [fragment]="'rowDoubleClick'">Row Double Click</a>  // triggers user row double click events on data table.
+       |           |-- <a [routerLink]="['/feature/data-table/events']" [fragment]="'cellClick'">Cell Click</a> // triggers when click on table cell.
+       |           |-- <a [routerLink]="['/feature/data-table/events']" [fragment]="'headerClick'">Header Click</a> // triggers table column header click mouse event.
        |
        |___ <a [routerLink]="['/feature/dropdown/events']" class="event-types">Dropdown Events</a>
        |
@@ -43,9 +43,9 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    As mention in the <a [routerLink]="['/feature/dropdown/events']" fragment="eventsHierarchy">Events Hierarchy</a>,
+    As mention in the <a [routerLink]="['/feature/dropdown/events']" [fragment]="'eventsHierarchy'">Events Hierarchy</a>,
     all available events can be bind to the data table as follows try by yourself to get familiar. for individual event
-    usages refer <a [routerLink]="['feature/data-table/events']" fragment="usefulEvents">Useful Events</a> section.
+    usages refer <a [routerLink]="['feature/data-table/events']" [fragment]="'usefulEvents'">Useful Events</a> section.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.eventBinding"></app-code-snippet>
@@ -57,7 +57,7 @@
 
   <p>
     All the available data table events can be detailed as follows. In here, the above
-    <a [routerLink]="['/feature/data-table/events']" fragment="basicUsage">Basic Usage</a> example will separate into
+    <a [routerLink]="['/feature/data-table/events']" [fragment]="'basicUsage'">Basic Usage</a> example will separate into
     individual events and discuss in detail with live examples.
   </p>
 
@@ -118,10 +118,9 @@
   </p>
 
   <p>
-    In <a rel="noopener" target="_blank" href="feature/data-table/pagination#basicUsage">Pageable</a> enabled pages,
+    In <a [routerLink]="['/feature/data-table/pagination']" [fragment]="'basicUsage'">Pageable</a> enabled pages,
     cell binding will perform on current table view only, for rest of paginated pages will only perform if user paginate
-    into next available pages. for more details about table pagination, please refer <a rel="noopener" target="_blank"
-                                                                                        href="feature/data-table/pagination">Pagination</a>
+    into next available pages. for more details about table pagination, please refer <a [routerLink]="['/feature/data-table/pagination']">Pagination</a>
     section.
   </p>
 
@@ -195,6 +194,6 @@
   <a [routerLink]="['/feature/data-table/client-side-data-binding']">Client-side Data Binding</a><br/>
   <a [routerLink]="['/feature/data-table/server-side-data-binding']">Server-side Data Binding</a><br/>
   <a [routerLink]="['/feature/data-table/real-time-data-binding']">Realtime Data Binding</a><br/>
-  <a [routerLink]="['/feature/data-table/styling-and-themes']">Styling & Themes</a><br/>
+  <a [routerLink]="['/feature/data-table/themes']">Themes</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Events</a>
 </div>

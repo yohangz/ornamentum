@@ -1,14 +1,11 @@
 export { DataTableResponsiveConfComponent } from './components/data-table-responsive-conf.component';
 export { ResponsiveConfUsageComponent } from './components/example/responsive-conf-usage/responsive-conf-usage.component';
+export { ContentHeightUsageComponent } from './components/example/content-height-usage/content-height-usage.component';
 // tslint:disable-next-line
-export {ResponsiveConfContentHeightUsageComponent} from './components/example/responsive-conf-content-height-usage/responsive-conf-content-height-usage.component';
+export { ExpanderColumnWidthUsageComponent } from './components/example/expander-column-width-usage/expander-column-width-usage.component';
+export { IndexColumnWidthUsageComponent } from './components/example/index-column-width-usage/index-column-width-usage.component';
+export { MinHeightUsageComponent } from './components/example/min-height-usage/min-height-usage.component';
+export { MinWidthUsageComponent } from './components/example/min-width-usage/min-width-usage.component';
 // tslint:disable-next-line
-export {ResponsiveConfExpanderColumnWidthUsageComponent} from './components/example/responsive-conf-expander-column-width-usage/responsive-conf-expander-column-width-usage.component';
-// tslint:disable-next-line
-export {ResponsiveConfIndexColumnWidthUsageComponent} from './components/example/responsive-conf-index-column-width-usage/responsive-conf-index-column-width-usage.component';
-// tslint:disable-next-line
-export {ResponsiveConfMinHeightUsageComponent} from './components/example/responsive-conf-min-height-usage/responsive-conf-min-height-usage.component';
-export {ResponsiveConfMinWidthUsageComponent} from './components/example/responsive-conf-min-width-usage/responsive-conf-min-width-usage.component';
-// tslint:disable-next-line
-export {ResponsiveConfSelectionColumnWidthUsageComponent} from './components/example/responsive-conf-selection-column-width-usage/responsive-conf-selection-column-width-usage.component';
-export {ResponsiveConfWidthUsageComponent} from './components/example/responsive-conf-width-usage/responsive-conf-width-usage.component';
+export { SelectionColumnWidthUsageComponent } from './components/example/selection-column-width-usage/selection-column-width-usage.component';
+export { WidthUsageComponent } from './components/example/width-usage/width-usage.component';

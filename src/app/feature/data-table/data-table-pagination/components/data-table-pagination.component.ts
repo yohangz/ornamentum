@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 
-import { demoSnippet, paginationUsage, paginationUsageWithPage, paginationUsageWithLimit } from './data-table-pagination.list';
+import {
+  demoSnippet,
+  paginationUsage,
+  pageUsage,
+  limitUsage
+} from './data-table-pagination.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,8 +17,9 @@ import { FileType } from 'helper-models';
 export class DataTablePaginationComponent {
   public FileType = FileType;
 
-  public paginationUsage = paginationUsage;
-  public paginationUsageWithPage = paginationUsageWithPage;
-  public paginationUsageWithLimit = paginationUsageWithLimit;
   public demoSnippet = demoSnippet;
+
+  public paginationUsage = paginationUsage;
+  public pageUsage = pageUsage;
+  public limitUsage = limitUsage;
 }

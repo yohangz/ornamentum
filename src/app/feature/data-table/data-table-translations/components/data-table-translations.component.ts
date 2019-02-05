@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 
 import {
-  dataTableTranslationsUsage,
-  dataTableTranslationsNoDataUsage,
-  dataTableTranslationsPaginationUsage,
-  demoSnippet
+  demoSnippet,
+  translationsUsage,
+  translationsNoDataUsage,
+  translationsPaginationUsage
 } from './data-table-translations.list';
 
 import { FileType } from 'helper-models';
@@ -17,8 +17,9 @@ import { FileType } from 'helper-models';
 export class DataTableTranslationsComponent {
   public FileType = FileType;
 
-  public translationsUsage = dataTableTranslationsUsage;
-  public dataTableTranslationsNoDataUsage = dataTableTranslationsNoDataUsage;
-  public dataTableTranslationsPaginationUsage = dataTableTranslationsPaginationUsage;
   public demoSnippet = demoSnippet;
+
+  public translationsUsage = translationsUsage;
+  public translationsNoDataUsage = translationsNoDataUsage;
+  public translationsPaginationUsage = translationsPaginationUsage;
 }

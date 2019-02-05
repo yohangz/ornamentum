@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 
-import { optionGroupHeaderTemplateUsage } from './dropdown-option-group-header-template.list';
-
-import { demoSnippet } from './dropdown-option-group-header-template';
+import { demoSnippet, optionGroupHeaderTemplateUsage } from './dropdown-option-group-header-template.list';
 
 import { FileType } from 'helper-models';
 
@@ -14,7 +12,7 @@ import { FileType } from 'helper-models';
 export class DropdownOptionGroupHeaderTemplateComponent {
   public FileType = FileType;
 
-  public optionGroupHeaderTemplateUsage = optionGroupHeaderTemplateUsage;
-
   public demoSnippet = demoSnippet;
+
+  public optionGroupHeaderTemplateUsage = optionGroupHeaderTemplateUsage;
 }

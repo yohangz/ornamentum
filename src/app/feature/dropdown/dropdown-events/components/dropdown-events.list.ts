@@ -18,119 +18,118 @@ export const eventsUsage: ExampleFile[] = [
   }
 ];
 
-export const eventsDataBoundUsage: ExampleFile[] = [
+export const dataBoundUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'events-data-bound-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-data-bound-usage/events-data-bound-usage.module.md')
+    content: require('!!raw-loader?lang=typescript!./example/data-bound-usage/data-bound-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'events-data-bound-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-data-bound-usage/events-data-bound-usage.component.ts')
+    name: 'data-bound-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/data-bound-usage/data-bound-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'events-data-bound-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/events-data-bound-usage/events-data-bound-usage.component.html')
+    name: 'data-bound-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/data-bound-usage/data-bound-usage.component.html')
   }
 ];
 
-export const eventsInitUsage: ExampleFile[] = [
+export const initUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'events-init-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-init-usage/events-init-usage.module.md')
+    name: 'init-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/init-usage/init-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'events-init-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-init-usage/events-init-usage.component.ts')
+    name: 'init-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/init-usage/init-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'events-init-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/events-init-usage/events-init-usage.component.html')
+    name: 'init-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/init-usage/init-usage.component.html')
   }
 ];
 
-export const eventsSelectChangeUsage: ExampleFile[] = [
+export const selectChangeUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'events-select-change-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-select-change-usage/events-select-change-usage.module.md')
+    name: 'select-change-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/select-change-usage/select-change-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'events-select-change-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-select-change-usage/events-select-change-usage.component.ts')
+    name: 'select-change-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/select-change-usage/select-change-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'events-select-change-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/events-select-change-usage/events-select-change-usage.component.html')
+    name: 'select-change-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/select-change-usage/select-change-usage.component.html')
   }
 ];
 
-export const eventsTriggerSelectChangeOnFirstOptionSelectUsage: ExampleFile[] = [
+export const triggerSelectChangeOnFirstOptionSelectUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'events-trigger-select-change-on-first-option-select-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-first-option-select-usage/' +
-      'events-trigger-select-change-on-first-option-select-usage.module.md')
+    name: 'trigger-select-change-on-first-option-select-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/trigger-select-change-on-first-option-select-usage/' +
+      'trigger-select-change-on-first-option-select-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'events-trigger-select-change-on-first-option-select-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-first-option-select-usage/' +
-      'events-trigger-select-change-on-first-option-select-usage.component.ts')
+    name: 'trigger-select-change-on-first-option-select-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/trigger-select-change-on-first-option-select-usage/' +
+      'trigger-select-change-on-first-option-select-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'events-trigger-select-change-on-first-option-select-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/events-trigger-select-change-on-first-option-select-usage/' +
-      'events-trigger-select-change-on-first-option-select-usage.component.html')
+    name: 'trigger-select-change-on-first-option-select-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/trigger-select-change-on-first-option-select-usage/' +
+      'trigger-select-change-on-first-option-select-usage.component.html')
   }
 ];
 
-export const eventsTriggerSelectChangeOnInitUsage: ExampleFile[] = [
+export const triggerSelectChangeOnInitUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'events-trigger-select-change-on-init-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-init-usage/' +
-      'events-trigger-select-change-on-init-usage.module.md')
+    name: 'trigger-select-change-on-init-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/trigger-select-change-on-init-usage/trigger-select-change-on-init-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'events-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-init-usage/' +
-      'events-trigger-select-change-on-init-usage.component.ts')
+    name: 'trigger-select-change-on-init-usage.component.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/trigger-select-change-on-init-usage/trigger-select-change-on-init-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'events-trigger-select-change-on-init-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/events-trigger-select-change-on-init-usage/' +
-      'events-trigger-select-change-on-init-usage.component.html')
+    name: 'trigger-select-change-on-init-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/trigger-select-change-on-init-usage/trigger-select-change-on-init-usage.component.html')
   }
 ];
 
-export const eventsTriggerSelectChangeOnModelUpdateUsage: ExampleFile[] = [
+export const triggerSelectChangeOnModelUpdateUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'events-trigger-select-change-on-model-update-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-model-update-usage/' +
-      'events-trigger-select-change-on-model-update-usage.module.md')
+    name: 'trigger-select-change-on-model-update-usage.module.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/trigger-select-change-on-model-update-usage/' +
+      'trigger-select-change-on-model-update-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'events-trigger-select-change-on-model-update-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/events-trigger-select-change-on-model-update-usage' +
-      '/events-trigger-select-change-on-model-update-usage.component.ts')
+    name: 'trigger-select-change-on-model-update-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/trigger-select-change-on-model-update-usage' +
+      '/trigger-select-change-on-model-update-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'events-trigger-select-change-on-model-update-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/events-trigger-select-change-on-model-update-usage/' +
-      'events-trigger-select-change-on-model-update-usage.component.html')
+    name: 'trigger-select-change-on-model-update-usage.component.html',
+    content: require(
+      '!!raw-loader?lang=html!./example/trigger-select-change-on-model-update-usage/trigger-select-change-on-model-update-usage.component.html')
   }
 ];

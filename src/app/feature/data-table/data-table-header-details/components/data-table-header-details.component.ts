@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 import {
   demoSnippet,
-  tableHeaderDetailsShowColumnSelectorUsage,
-  tableHeaderDetailsShowRefreshBtnUsage,
-  tableHeaderDetailsTitleUsage,
-  tableHeaderDetailsUsage
+  headerDetailsUsage,
+  showColumnSelectorUsage,
+  showRefreshButtonUsage,
+  titleUsage
 } from './data-table-header-details.list';
 
 import { FileType } from 'helper-models';
@@ -18,9 +18,10 @@ import { FileType } from 'helper-models';
 export class DataTableHeaderDetailsComponent {
   public FileType = FileType;
 
-  public tableHeaderDetailsUsage = tableHeaderDetailsUsage;
-  public tableHeaderDetailsShowRefreshBtnUsage = tableHeaderDetailsShowRefreshBtnUsage;
-  public tableHeaderDetailsTitleUsage = tableHeaderDetailsTitleUsage;
-  public tableHeaderDetailsShowColumnSelectorUsage = tableHeaderDetailsShowColumnSelectorUsage;
   public demoSnippet = demoSnippet;
+
+  public headerDetailsUsage = headerDetailsUsage;
+  public showRefreshButtonUsage = showRefreshButtonUsage;
+  public titleUsage = titleUsage;
+  public showColumnSelectorUsage = showColumnSelectorUsage;
 }

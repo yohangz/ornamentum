@@ -27,4 +27,5 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableCellTemplateModule {}
+export class DataTableCellTemplateModule {
+}

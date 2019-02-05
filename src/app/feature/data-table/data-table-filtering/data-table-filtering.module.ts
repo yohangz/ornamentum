@@ -4,7 +4,12 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableFilteringComponent, FilterDropdownUsageComponent, FilteringUsageComponent, FilterTextBoxUsageComponent } from './index';
+import {
+  DataTableFilteringComponent,
+  FilterDropdownUsageComponent,
+  FilteringUsageComponent,
+  FilterTextBoxUsageComponent
+} from './index';
 
 import { DataTableFilteringRoutingModule } from './data-table-filtering-routing.module';
 
@@ -14,7 +19,12 @@ import { SharedModule } from '../../../shared/shared.module';
  * Module class for containing data table filtering module.
  */
 @NgModule({
-  declarations: [DataTableFilteringComponent, FilterDropdownUsageComponent, FilterTextBoxUsageComponent, FilteringUsageComponent],
+  declarations: [
+    DataTableFilteringComponent,
+    FilterDropdownUsageComponent,
+    FilterTextBoxUsageComponent,
+    FilteringUsageComponent
+  ],
   exports: [],
   imports: [
     CommonModule,
@@ -27,4 +37,5 @@ import { SharedModule } from '../../../shared/shared.module';
   ],
   providers: []
 })
-export class DataTableFilteringModule {}
+export class DataTableFilteringModule {
+}

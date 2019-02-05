@@ -6,8 +6,8 @@ import { DataTableModule } from 'ornamentum';
 
 import {
   DataTableOverviewComponent,
-  BasicUsageComponent,
-  BasicUsageExpandableDetailViewComponent
+  AdvancedUsageComponent,
+  AdvancedUsageExpandableDetailViewComponent
 } from './index';
 
 import { DataTableOverviewRoutingModule } from './data-table-overview-routing.module';
@@ -20,8 +20,8 @@ import { SharedModule } from '../../../shared/shared.module';
 @NgModule({
   declarations: [
     DataTableOverviewComponent,
-    BasicUsageComponent,
-    BasicUsageExpandableDetailViewComponent
+    AdvancedUsageComponent,
+    AdvancedUsageExpandableDetailViewComponent
   ],
   exports: [],
   imports: [

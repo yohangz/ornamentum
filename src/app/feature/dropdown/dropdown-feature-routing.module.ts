@@ -253,8 +253,8 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-styling-and-themes/dropdown-styling-and-themes.module#DropdownStylingAndThemesModule',
-    path: 'styling-and-themes',
+    loadChildren: './dropdown-themes/dropdown-themes.module#DropdownThemesModule',
+    path: 'themes',
     canActivate: [SeoGuard],
     data: {
       seo: {

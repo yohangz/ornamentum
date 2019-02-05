@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { displayItemsUsage, demoSnippet } from './dropdown-display-items.list';
+import { demoSnippet, displayItemsUsage } from './dropdown-display-items.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DropdownDisplayItemsComponent {
   public FileType = FileType;
 
-  public displayTrackedByUsage = displayItemsUsage;
   public demoSnippet = demoSnippet;
+
+  public displayTrackedByUsage = displayItemsUsage;
 }

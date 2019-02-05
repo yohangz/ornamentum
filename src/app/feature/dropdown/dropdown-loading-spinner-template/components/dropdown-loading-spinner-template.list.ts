@@ -17,3 +17,7 @@ export const loadingSpinnerTemplateUsage: ExampleFile[] = [
     content: require('!!raw-loader?lang=html!./example/loading-spinner-template-usage/loading-spinner-template-usage.component.html')
   }
 ];
+
+export const demoSnippet: any = {
+  template: require('!!raw-loader?lang=typescript!./docs/template.md')
+};

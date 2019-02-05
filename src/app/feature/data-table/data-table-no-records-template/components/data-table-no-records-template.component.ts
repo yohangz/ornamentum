@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { noRecordsTemplateUsage, demoSnippet } from './data-table-no-records-template.list';
+import { demoSnippet, noRecordsTemplateUsage } from './data-table-no-records-template.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DataTableNoRecordsTemplateComponent {
   public FileType = FileType;
 
-  public noRecordsTemplateUsage = noRecordsTemplateUsage;
   public demoSnippet = demoSnippet;
+
+  public noRecordsTemplateUsage = noRecordsTemplateUsage;
 }

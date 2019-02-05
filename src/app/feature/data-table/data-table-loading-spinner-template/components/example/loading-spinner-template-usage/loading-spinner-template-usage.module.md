@@ -6,7 +6,7 @@ import { DataTableModule } from 'ornamentum';
 import { LoadingSpinnerTemplateUsageComponent } from './loading-spinner-template-usage.component';
 
 @NgModule({
- bootstrap: [LoadingSpinnerTemlateUsageComponent],
+ bootstrap: [LoadingSpinnerTemplateUsageComponent],
  declarations: [LoadingSpinnerTemplateUsageComponent],
  imports: [
     BrowserModule, 

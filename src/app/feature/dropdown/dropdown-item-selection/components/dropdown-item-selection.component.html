@@ -3,22 +3,22 @@
 <p>
   Item selection can be done in various ways with different available options. basically this functionality will helps to select specific item or item
   set from the dropdown. available configuration options will be discuss on
-  <a [routerLink]="['/feature/dropdown/item-selection']" fragment="usefulProperties">Useful Properties</a> section in-detail.
+  <a [routerLink]="['/feature/dropdown/item-selection']" [fragment]="'usefulProperties'">Useful Properties</a> section in-detail.
 </p>
 
 <h2 id="whatYouWillSee">What You Will See</h2>
 
 <p>Below example will demonstrate how</p>
 
-<app-item-selection-with-all-options-usage></app-item-selection-with-all-options-usage>
-<app-example-code [files]="itemSelectionWithAllOptionsUsage"></app-example-code>
+<app-item-selection-usage></app-item-selection-usage>
+<app-example-code [files]="itemSelectionUsage"></app-example-code>
 
 <h2 id="basicUsage">Basic Usage</h2>
 
 <p>
   For enable basic item selection on dropdown, simply provide a <b>unique</b> data field name to <code>selectTrackBy</code> property otherwise select
   item tracking will not function properly. by default it value was <b>'key'</b>. for more details about capturing user click events on dropdown items
-  please refer Events <a [routerLink]="['/feature/dropdown/events']" fragment="selectChange">Select Change</a> section.
+  please refer Events <a [routerLink]="['/feature/dropdown/events']" [fragment]="'selectChange'">Select Change</a> section.
 </p>
 
 <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.selectTrackBy"></app-code-snippet>
@@ -33,8 +33,8 @@
 
 <p>Property was responsible for select the first property immediately after success data retrieval and view on top of dropdown.</p>
 
-<app-item-selection-set-first-option-selected-usage></app-item-selection-set-first-option-selected-usage>
-<app-example-code [files]="itemSelectionSetFirstOptionSelectedUsage"></app-example-code>
+<app-set-first-option-selected-usage></app-set-first-option-selected-usage>
+<app-example-code [files]="setFirstOptionSelectedUsage"></app-example-code>
 
 <h4 id="showOptionSelectCheckbox">Show Option Select Checkbox</h4>
 <code>showOptionSelectCheckbox: boolean</code> &nbsp;
@@ -42,8 +42,8 @@
 
 <p>Property was responsible for enable checkbox for each item on dropdown item selection.</p>
 
-<app-item-selection-show-option-select-checkbox-usage></app-item-selection-show-option-select-checkbox-usage>
-<app-example-code [files]="itemSelectionShowOptionSelectCheckboxUsage"></app-example-code>
+<app-show-option-select-checkbox-usage></app-show-option-select-checkbox-usage>
+<app-example-code [files]="showOptionSelectCheckboxUsage"></app-example-code>
 
 <h4 id="selectedOption">Selected Option</h4>
 <code>selectedOption: any</code> &nbsp;
@@ -51,12 +51,12 @@
 
 <p>
   Property was responsible for select a specific property immediately after a success data retrieval and view on top of dropdown. process is similar
-  to <a [routerLink]="['/feature/dropdown/item-selection']" fragment="setFirstOptionSelected">Set First Option Selected</a> but in here user allows to select any preferred
+  to <a [routerLink]="['/feature/dropdown/item-selection']" [fragment]="'setFirstOptionSelected'">Set First Option Selected</a> but in here user allows to select any preferred
   single item from dropdown.
 </p>
 
-<app-item-selection-selected-option-usage></app-item-selection-selected-option-usage>
-<app-example-code [files]="itemSelectionSelectedOptionUsage"></app-example-code>
+<app-selected-option-usage></app-selected-option-usage>
+<app-example-code [files]="selectedOptionUsage"></app-example-code>
 
 <h4 id="selectedOptions">Selected Options</h4>
 <code>selectedOptions: any[]</code> &nbsp;
@@ -67,8 +67,8 @@
   <code>selectMode</code> was <b>'multi'</b> unless it won't be functional properly.
 </p>
 
-<app-item-selection-selected-options-usage></app-item-selection-selected-options-usage>
-<app-example-code [files]="itemSelectionSelectedOptionsUsage"></app-example-code>
+<app-selected-options-usage></app-selected-options-usage>
+<app-example-code [files]="selectedOptionsUsage"></app-example-code>
 
 <h4 id="selectMode">Select Mode</h4>
 <code>selectMode: DropdownSelectMode = 'multi' | 'single' | 'single-toggle'</code> &nbsp;
@@ -100,9 +100,9 @@
     <h5>Single Toggle Item Selection</h5>
 
     <p>
-      This property functionality was similar to <a [routerLink]="['/feature/dropdown/item-selection']" fragment="selectMode">Select Mode</a> Single Item Selection, only
+      This property functionality was similar to <a [routerLink]="['/feature/dropdown/item-selection']" [fragment]="'selectMode'">Select Mode</a> Single Item Selection, only
       difference is user can toggle item selection but in this type, once the selection is made it can be removed by clicking the item itself or by
-      un-checking the checkbox (if <a [routerLink]="['/feature/dropdown/item-selection']" fragment="showOptionSelectCheckbox">Show Option Select Checkbox</a> is enabled).
+      un-checking the checkbox (if <a [routerLink]="['/feature/dropdown/item-selection']" [fragment]="'showOptionSelectCheckbox'">Show Option Select Checkbox</a> is enabled).
     </p>
 
     <app-single-toggle-item-selection-usage></app-single-toggle-item-selection-usage>
@@ -127,8 +127,8 @@
   side corner of dropdown. simply set it <b>true</b> to enable clear all selections symbol on dropdown.
 </p>
 
-<app-item-selection-show-clear-selection-btn-usage></app-item-selection-show-clear-selection-btn-usage>
-<app-example-code [files]="itemSelectionShowClearSelectionBtnUsage"></app-example-code>
+<app-show-clear-selection-button-usage></app-show-clear-selection-button-usage>
+<app-example-code [files]="showClearSelectionButtonUsage"></app-example-code>
 
 <h4 id="showSelectedOptionRemoveButton">Show Selected Option Remove Button</h4>
 <code>showSelectedOptionRemoveButton: boolean</code> &nbsp;
@@ -136,11 +136,11 @@
 
 <p>
   Property was responsible for enable de-select symbol on each and every selected items when <code>selectMode</code> is on <b>'multi'</b>. for more
-  details about item selection modes please refer <a [routerLink]="['/feature/dropdown/item-selection']" fragment="selectMode">Select Mode</a> section.
+  details about item selection modes please refer <a [routerLink]="['/feature/dropdown/item-selection']" [fragment]="'selectMode'">Select Mode</a> section.
 </p>
 
-<app-item-selection-show-selected-option-remove-btn-usage></app-item-selection-show-selected-option-remove-btn-usage>
-<app-example-code [files]="itemSelectionShowSelectedOptionRemoveBtnUsage"></app-example-code>
+<app-show-selected-option-remove-button-usage></app-show-selected-option-remove-button-usage>
+<app-example-code [files]="showSelectedOptionRemoveButtonUsage"></app-example-code>
 
 <h4 id="multiSelectOptionMaxWidth">Multi Select Option Max Width</h4>
 <code>multiSelectOptionMaxWidth: boolean</code> &nbsp;
@@ -151,8 +151,8 @@
   option max width property it is <b>mandatory</b> to set <code>selectMode</code> to <b>'multi'</b> otherwise it will not function properly.
 </p>
 
-<app-item-selection-multi-select-option-max-width-usage></app-item-selection-multi-select-option-max-width-usage>
-<app-example-code [files]="itemSelectionMultiSelectOptionMaxWidthUsage"></app-example-code>
+<app-multi-select-option-max-width-usage></app-multi-select-option-max-width-usage>
+<app-example-code [files]="multiSelectOptionMaxWidthUsage"></app-example-code>
 
 <h4 id="wrapDisplaySelectLimit">Wrap Display Select Limit</h4>
 <code>wrapDisplaySelectLimit: number</code> &nbsp;
@@ -166,11 +166,11 @@
 
 <p>
   User can provide their own wrap display message by using translations. please refer Translations
-  <a [routerLink]="['#']">Selected Item Wrap Placeholder</a> section for more details.
+  <a [routerLink]="['/feature/dropdown/translations']" [fragment]="'selectedItemWrapPlaceholder'">Selected Item Wrap Placeholder</a> section for more details.
 </p>
 
-<app-item-selection-wrap-display-select-limit-usage></app-item-selection-wrap-display-select-limit-usage>
-<app-example-code [files]="itemSelectionWrapDisplaySelectLimitUsage"></app-example-code>
+<app-wrap-display-select-limit-usage></app-wrap-display-select-limit-usage>
+<app-example-code [files]="wrapDisplaySelectLimitUsage"></app-example-code>
 
 <h2 id="suggestedLinks">Suggested Links</h2>
 <a [routerLink]="['/feature/dropdown/events']">Events</a><br />

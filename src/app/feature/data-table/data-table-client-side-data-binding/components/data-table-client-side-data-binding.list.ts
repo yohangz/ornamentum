@@ -1,38 +1,38 @@
 import { ExampleFile, FileType } from '../../../../shared/models';
 
-export const clientSideDataBindingWithItemsUsage: ExampleFile[] = [
+export const itemsUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'client-side-data-binding-with-items.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/client-side-data-binding-with-items/client-side-data-binding-with-items.module.md')
+    name: 'items-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/items-usage/items-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'client-side-data-binding-with-items.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/client-side-data-binding-with-items/client-side-data-binding-with-items.component.ts')
+    name: 'items-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/items-usage/items-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'client-side-data-binding-with-items.component.html',
-    content: require('!!raw-loader?lang=html!./example/client-side-data-binding-with-items/client-side-data-binding-with-items.component.html')
+    name: 'items-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/items-usage/items-usage.component.html')
   }
 ];
 
-export const clientSideDataBindingWithDataSourceUsage: ExampleFile[] = [
+export const dataSourceUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'client-side-data-binding-with-data-source.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/client-side-data-binding-with-data-source/client-side-data-binding-with-data-source.module.md')
+    name: 'data-source-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/data-source-usage/data-source-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'client-side-data-binding-with-data-source.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/client-side-data-binding-with-data-source/client-side-data-binding-with-data-source.component.ts')
+    name: 'data-source-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/data-source-usage/data-source-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'client-side-data-binding-with-data-source.component.html',
-    content: require('!!raw-loader?lang=html!./example/client-side-data-binding-with-data-source/client-side-data-binding-with-data-source.component.html')
+    name: 'data-source-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/data-source-usage/data-source-usage.component.html')
   }
 ];
 

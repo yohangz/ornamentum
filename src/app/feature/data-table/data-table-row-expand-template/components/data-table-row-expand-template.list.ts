@@ -33,54 +33,55 @@ export const rowExpandTemplateDetailView: ExampleFile[] = [
   }
 ];
 
-export const rowExpandOnClickUsage: ExampleFile[] = [
+export const expandOnRowClickUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'row-expand-on-click-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/row-expand-on-click-usage/row-expand-on-click-usage.module.md')
+    name: 'expand-on-row-click-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/expand-on-row-click-usage/expand-on-row-click-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'row-expand-on-click-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/row-expand-on-click-usage/row-expand-on-click-usage.component.ts')
+    name: 'expand-on-row-click-usage.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/expand-on-row-click-usage/expand-on-row-click-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'row-expand-on-click-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/row-expand-on-click-usage/row-expand-on-click-usage.component.html')
+    name: 'expand-on-row-click-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/expand-on-row-click-usage/expand-on-row-click-usage.component.html')
   }
 ];
 
-export const rowExpandLoadingSpinnerUsage: ExampleFile[] = [
+export const showRowExpandLoadingSpinnerUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'row-expand-loading-spinner-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/row-expand-loading-spinner-usage/row-expand-loading-spinner-usage.module.md')
+    name: 'show-row-expand-loading-spinner-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/show-row-expand-loading-spinner-usage/show-row-expand-loading-spinner-usage.module.md')
   },
   {
     type: FileType.TS,
-    name: 'row-expand-loading-spinner-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/row-expand-loading-spinner-usage/row-expand-loading-spinner-usage.component.ts')
+    name: 'show-row-expand-loading-spinner-usage.component.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/show-row-expand-loading-spinner-usage/show-row-expand-loading-spinner-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'row-expand-loading-spinner-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/row-expand-loading-spinner-usage/row-expand-loading-spinner-usage.component.html')
+    name: 'show-row-expand-loading-spinner-usage.component.html',
+    content: require('!!raw-loader?lang=html!./example/show-row-expand-loading-spinner-usage/show-row-expand-loading-spinner-usage.component.html')
   }
 ];
 
-export const rowExpandLoadingSpinnerDetailView: ExampleFile[] = [
+export const showRowExpandLoadingSpinnerDetailView: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'row-expand-loading-spinner-detail-view.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/row-expand-loading-spinner-usage/row-expand-loading-spinner-detail-view/' +
-      'row-expand-loading-spinner-detail-view.component.ts')
+    name: 'show-row-expand-loading-spinner-detail-view.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/show-row-expand-loading-spinner-usage/show-row-expand-loading-spinner-detail-view/' +
+      'show-row-expand-loading-spinner-detail-view.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'row-expand-loading-spinner-detail-view.component.html',
-    content: require('!!raw-loader?lang=html!./example/row-expand-loading-spinner-usage/row-expand-loading-spinner-detail-view/' +
-      'row-expand-loading-spinner-detail-view.component.html')
+    name: 'show-row-expand-loading-spinner-detail-view.component.html',
+    content: require('!!raw-loader?lang=html!./example/show-row-expand-loading-spinner-usage/show-row-expand-loading-spinner-detail-view/' +
+      'show-row-expand-loading-spinner-detail-view.component.html')
   }
 ];
 

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { columnResizingUsage, demoSnippet } from './data-table-resizing.list';
+import { demoSnippet, columnResizingUsage } from './data-table-resizing.list';
 
 import { FileType } from 'helper-models';
 
@@ -12,6 +12,7 @@ import { FileType } from 'helper-models';
 export class DataTableColumnResizingComponent {
   public FileType = FileType;
 
-  public columnResizingUsage = columnResizingUsage;
   public demoSnippet = demoSnippet;
+
+  public columnResizingUsage = columnResizingUsage;
 }

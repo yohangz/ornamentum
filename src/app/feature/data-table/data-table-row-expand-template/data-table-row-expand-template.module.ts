@@ -8,9 +8,9 @@ import {
   DataTableRowExpandTemplateComponent,
   RowExpandTemplateUsageComponent,
   RowExpandTemplateDetailViewComponent,
-  RowExpandLoadingSpinnerUsageComponent,
-  RowExpandLoadingSpinnerDetailViewComponent,
-  RowExpandOnClickUsageComponent,
+  ShowRowExpandLoadingSpinnerUsageComponent,
+  ShowRowExpandLoadingSpinnerDetailViewComponent,
+  ExpandOnRowClickUsageComponent,
 } from './index';
 
 import { DataTableRowExpandTemplateRoutingModule } from './data-table-row-expand-template-routing.module';
@@ -25,9 +25,9 @@ import { SharedModule } from '../../../shared/shared.module';
     DataTableRowExpandTemplateComponent,
     RowExpandTemplateUsageComponent,
     RowExpandTemplateDetailViewComponent,
-    RowExpandOnClickUsageComponent,
-    RowExpandLoadingSpinnerUsageComponent,
-    RowExpandLoadingSpinnerDetailViewComponent
+    ExpandOnRowClickUsageComponent,
+    ShowRowExpandLoadingSpinnerUsageComponent,
+    ShowRowExpandLoadingSpinnerDetailViewComponent
   ],
   exports: [],
   imports: [
