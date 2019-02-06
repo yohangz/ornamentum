@@ -15,9 +15,6 @@ export class AdvancedUsageComponent {
   public data: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    // This method will set a array of 20 example data items to data variable.
-    setTimeout(() => {
-      this.data = this.dataFetchService.fetchStaticData(0, 20);
-    }, 3000);
+    this.data = this.dataFetchService.fetchStaticData(0, 20);
   }
 }
