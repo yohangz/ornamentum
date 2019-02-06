@@ -17,8 +17,8 @@
 
   <h2 id="advancedUsage">Advanced Usage</h2>
   <p>
-    Following example depicts the outer appearance of the Ornamentum Dropdown along with sample integration code snippets. Try out yourself in
-    <a rel="noopener" target="_blank" href="https://stackblitz.com/edit/ornametum-basic-usage-dropdown">Stack Blitz</a>.
+    Following example depicts the outer appearance of the Ornamentum Dropdown. Try out yourself in
+    <a rel="noopener" target="_blank" href="https://stackblitz.com/edit/ornametum-basic-usage-dropdown">Stack Blitz Demo</a>.
   </p>
 
   <app-basic-usage></app-basic-usage>
@@ -52,28 +52,27 @@
       <ul class="main-pane-list">
         <li>
           <p>
+            <b>SCSS</b>: Include Ornamentum theme SCSS style sheets in
+            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+          </p>
+          <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
+          <p>
+            You must install <a rel="noopener" target="_blank" href="https://www.npmjs.com/package/compass-mixins">compass mixins</a> if you are using scss style sheets. Install using either
+            of following command depending on your package manager.
+          </p>
+          <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport"
+                            [showLineNumbers]="false"></app-code-snippet>
+          <p>or</p>
+          <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport"
+                            [showLineNumbers]="false"></app-code-snippet>
+        </li>
+        <li>
+          <p>
             <b>CSS</b>: Include Ornamentum prebuilt CSS theme style sheets in
             <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
           </p>
           <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.cssImport"></app-code-snippet>
         </li>
-        <li>
-          <p>
-            <b>SCSS</b>: Include Ornamentum theme SCSS style sheets in
-            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
-          </p>
-          <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
-        </li>
-        <p>
-          Install <a rel="noopener" target="_blank" href="http://compass-style.org/">compass</a> mixins via using either
-          of following command
-          depending on your package manager.
-        </p>
-        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport"
-                          [showLineNumbers]="false"></app-code-snippet>
-        <p>or</p>
-        <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarnCompassImport"
-                          [showLineNumbers]="false"></app-code-snippet>
       </ul>
     </li>
     <li>
