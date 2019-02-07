@@ -1,0 +1,200 @@
+<div class="feature-container">
+  <h1>Events</h1>
+
+  <p>
+    Set of events introduced to the data table to serve & fulfill different user requirements and to manage events
+    performed on top of the data table. All the events are triggers based on predefined events hierarchy.
+  </p>
+
+  <h2 id="eventsHierarchy">Events Hierarchy</h2>
+
+  <p>
+    All available data table events are initialize to the following sequence depends on it's invoking behaviour
+    (Automatic / User Triggers).
+  </p>
+
+  <pre>
+    |__ <span class="hierarchy-main">Ornamentum Events</span>
+       |
+       |___ <a [routerLink]="['/feature/data-table/advanced/events']" class="event-types">Data Table Events</a>
+       |     |
+       |     |___ <strong>Automatically Triggers</strong>
+       |     |     |
+       |     |     |-- <a [routerLink]="['/feature/data-table/advanced/events']"
+                          [fragment]="'columnBind'">Column Bind</a> // triggers for each column binding.
+       |     |     |-- <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'init'">Init</a> // trigger data table initialization.
+       |     |     |-- <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'dataBound'">Data Bound</a> // triggers after the data binding completion.
+       |     |     |-- <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'rowBind'">Row Bind</a> // triggers when binding data for available rows.
+       |     |     |-- <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'cellBind'">Cell Bind</a> // triggers when binding cell data.
+       |     |
+       |     |___ <strong>User Triggers</strong>
+       |           |
+       |           |-- <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'rowSelectChange'">Row Select Change</a> // triggers when row select state is changes.
+       |           |-- <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'allRowSelectChange'">All Row Select Change</a> // trigger all row select mouse click event.
+       |           |-- <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'rowClick'">Row Click</a> // triggers user row single click events on data table.
+       |           |-- <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'rowDoubleClick'">Row Double Click</a>  // triggers user row double click events on data table.
+       |           |-- <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'cellClick'">Cell Click</a> // triggers when click on table cell.
+       |           |-- <a [routerLink]="['/feature/data-table/advanced/events']"
+                          [fragment]="'headerClick'">Header Click</a> // triggers table column header click mouse event.
+       |
+       |___ <a [routerLink]="['/feature/dropdown/advanced/events']" class="event-types">Dropdown Events</a>
+       |
+      \/
+  </pre>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    As mention in the <a [routerLink]="['/feature/dropdown/advanced/events']" [fragment]="'eventsHierarchy'">Events
+    Hierarchy</a>, all available events can be bind to the data table as follows try by yourself to get familiar. for
+    individual event usages refer <a [routerLink]="['feature/data-table/advanced/events']" [fragment]="'usefulEvents'">Useful
+    Events</a> section.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.eventBinding"></app-code-snippet>
+
+  <app-events-usage></app-events-usage>
+  <app-example-code [files]="eventsUsage"></app-example-code>
+
+  <h2 id="usefulEvents">Useful Events</h2>
+
+  <p>
+    All the available data table events can be detailed as follows. In here, the above <a
+    [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'basicUsage'">Basic Usage</a> example will
+    separate into individual events and discuss in detail with live examples.
+  </p>
+
+  <h4 id="columnBind">Column Bind</h4>
+  <code>columnBind: EventEmitter&lt;DataTableColumnComponent&gt;</code>
+
+  <p>
+    Triggers for each column before all other event configurations. As mentioned earlier, this is the <b>first event</b>
+    which called before all the other events.
+  </p>
+
+  <app-events-column-bind-usage></app-events-column-bind-usage>
+  <app-example-code [files]="eventsColumnBindUsage"></app-example-code>
+
+  <h4 id="init">Init</h4>
+  <code>init: EventEmitter &lt;DataTableComponent&gt;</code>
+
+  <p>
+    Data table initialization can be track using by binding a event to <code>init</code> property. below example and
+    code snippet will demonstrate a sample usage.
+  </p>
+
+  <app-events-init-usage></app-events-init-usage>
+  <app-example-code [files]="eventsInitUsage"></app-example-code>
+
+  <h4 id="dataBound">Data Bound</h4>
+  <code>dataBound: EventEmitter&lt;void&gt;</code>
+
+  <p>
+    Data bound property will trigger after completion of data binding. This event will be called right after the <code>columnBind</code>
+    and <code>init</code> events.
+  </p>
+
+  <app-events-data-bound-usage></app-events-data-bound-usage>
+  <app-example-code [files]="eventDataBoundUsage"></app-example-code>
+
+  <h4 id="rowBind">Row Bind</h4>
+  <code>rowBind: EventEmitter&lt;DataTableRow&lt;any&gt;&gt;</code>
+
+  <p>
+    For each table row this will trigger when binding data for the available rows. That is the only occasion this event
+    will be fired. Refer following output. please note row bind event will be called after the <code>columnBind</code>,
+    <code>init</code> & <code>dataBound</code> events.
+  </p>
+
+  <app-events-row-bind-usage></app-events-row-bind-usage>
+  <app-example-code [files]="eventsRowBindUsage"></app-example-code>
+
+  <h4 id="cellBind">Cell Bind</h4>
+  <code>cellBind: EventEmitter&lt;DataTableCellBindEventArgs&lt;any&gt;&gt;</code>
+
+  <p>
+    For each table row cell this will trigger when binding cell data. That means after a each <code>rowBind</code>
+    event, this event will be called again & again for all the available cells in a given row. That's why following
+    output shows the same string (eg: cell bind event is called for row id => 10) 8 times per row.
+  </p>
+
+  <p>
+    In <a [routerLink]="['/feature/data-table/functionality/pagination']" [fragment]="'basicUsage'">Pageable</a> enabled
+    pages, cell binding will perform on current table view only, for rest of paginated pages will only perform if user
+    paginate into next available pages. for more details about table pagination, please refer <a
+    [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a> section.
+  </p>
+
+  <app-events-cell-bind-usage></app-events-cell-bind-usage>
+  <app-example-code [files]="eventsCellBindUsage"></app-example-code>
+
+  <h4 id="rowSelectChange">Row Select Change</h4>
+  <code>rowSelectChange: EventEmitter&lt;any | any[]&gt;</code>
+
+  <p>
+    Triggers when row select state changes. To identify selected rows uniquely it is necessary to specify
+    <a [routerLink]="['feature/data-table/functionality/row/selection']" [fragment]="'selectTrackBy'">Select Track
+      By</a> property. Therefore, a unique value column name should be set as the value for this attribute. According to
+    this example it is <b>'id'</b>.
+  </p>
+
+  <app-events-row-select-change-usage></app-events-row-select-change-usage>
+  <app-example-code [files]="eventsRowSelectChangeUsage"></app-example-code>
+
+  <h4 id="allRowSelectChange">All Row Select Change</h4>
+  <code>allRowSelectChange: EventEmitter&lt;boolean&gt;</code>
+
+  <p>
+    This event is responsible to trigger when row select change is perform on all the rows or click on the select all
+    checkbox on row select column. all row select change will emits all the selected row id's as an array if the
+    <code>rowSelectChange</code> event is bind.
+  </p>
+
+  <p>
+    Please note by using select all checkbox will only checking all rows on current page. each paginated page views have
+    separate select all check boxes.
+  </p>
+
+  <app-events-all-row-select-change-usage></app-events-all-row-select-change-usage>
+  <app-example-code [files]="eventsAllRowSelectChangeUsage"></app-example-code>
+
+  <h4 id="rowClick">Row Click</h4>
+  <code>rowClick: EventEmitter&lt;DataTableRowClickEventArgs&lt;any&gt;&gt;</code>
+
+  <p>This property can be uses to triggers user single click event on table specific data row.</p>
+
+  <app-events-row-click-usage></app-events-row-click-usage>
+  <app-example-code [files]="eventsRowClickUsage"></app-example-code>
+
+  <h4 id="rowDoubleClick">Row Double Click</h4>
+  <code>rowDoubleClick: EventEmitter&lt;DataTableDoubleClickEventArgs&lt;any&gt;&gt;</code>
+
+  <p>This property can be uses to triggers user double click event on table specific data row.</p>
+
+  <app-events-row-double-click-usage></app-events-row-double-click-usage>
+  <app-example-code [files]="eventsRowDoubleClickUsage"></app-example-code>
+
+  <h4 id="cellClick">Cell Click</h4>
+  <code>cellClick: EventEmitter&lt;DataTableCellClickEventArgs&lt;any&gt;&gt;</code>
+
+  <p>This event can uses to triggers users clicked specific cell on data table. for sample demonstration refer the below
+    example.</p>
+
+  <app-events-cell-click-usage></app-events-cell-click-usage>
+  <app-example-code [files]="eventsCellClickUsage"></app-example-code>
+
+  <h4 id="headerClick">Header Click</h4>
+  <code>headerClick: EventEmitter&lt;DataTableHeaderClickEventArgs&gt;</code>
+
+  <p>Header click can be uses to track user click event on data table column headers.</p>
+
+  <app-events-header-click-usage></app-events-header-click-usage>
+  <app-example-code [files]="eventsHeaderClickUsage"></app-example-code>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server-side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server-side Web Socket Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/styling/themes']">Themes</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Events</a>
+</div>

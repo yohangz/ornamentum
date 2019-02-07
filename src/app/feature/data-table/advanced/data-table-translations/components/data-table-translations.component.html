@@ -1,0 +1,108 @@
+<div class="feature-container">
+  <h1>Translations</h1>
+
+  <p>
+    Translations can be uses to override data table visible properties in two special cases. those translatable
+    properties are required to binding into <code>translations</code> property in table level configuration, in any
+    developer preferred language. the properties that can be configure in translations are:
+  </p>
+
+  <ul class="main-pane-list">
+    <li>
+      Translations for No Data
+      <ul>
+        <li>No Data Message Header</li>
+        <li>No Data Message Body</li>
+      </ul>
+    </li>
+    <li>
+      Translations for Pagination
+      <ul>
+        <li>Pagination Limit</li>
+        <li>Pagination Range</li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>
+    Please note the below data table didn't show the full translations implementation, hence for Data table translations
+    for pagination usage refer <a [routerLink]="['/feature/data-table/advanced/translations']"
+                                  [fragment]="'translationsForPagination'">Translations for Pagination</a> section.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-translations-usage></app-translations-usage>
+  <app-example-code [files]="translationsUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+  <p>
+    As mention in the above translations can be override in data table global level configuration. by default
+    translations are initialize to it's default pre-set values.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.translations"></app-code-snippet>
+
+  <p>Simply bind <code>DataTableTranslations</code> type of object into <b>translations</b> property is enough to take
+    the the control over translations.</p>
+
+  <p>
+    As mention in the above there are two scenarios that translations are useful. Let's see how we can configure each
+    demonstrated properties as we want.
+  </p>
+
+  <h2 id="translationsForNoData">Translations for No Data</h2>
+  <p>
+    The default template will be shown when data is not available by mentioning a header and the message body. In no
+    data scenario, users can customize the message needs to be appear using translations property.
+  </p>
+
+  <h4 id="noDataMessageHeader">No Data Message Header</h4>
+  <code>noDataMessageHeader: DataTableTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'Whoops!'</h5>
+
+  <p>
+    This configuration is used to set the message header to be shown in the table body, when there are no data to
+    display. The default value for this property is 'Whoops!'
+  </p>
+
+  <h4 id="noDataMessageBody">No Data Message Body</h4>
+  <code>noDataMessageBody: DataTableTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'No data to display. Added data will appear here.'</h5>
+
+  <p>
+    This configuration is used to set the message body on the message to be shown in the table body, when there are no
+    data to display. The default value for this property is 'No data to display. Added data will appear here.
+  </p>
+
+  <app-translations-no-data-usage></app-translations-no-data-usage>
+  <app-example-code [files]="translationsNoDataUsage"></app-example-code>
+
+  <h2 id="translationsForPagination">Translations for Pagination</h2>
+  <p>
+    Pagination translations property can be used to customize the pagination naming, which allow user to override the
+    pagination limit and range namings.
+  </p>
+
+  <h4 id="paginationLimit">Pagination Limit</h4>
+  <code>paginationLimit: DataTableTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'Limit'</h5>
+
+  <p>This is used to customize the pagination limit naming. The default value for this config is 'Limit'.</p>
+
+  <h4 id="paginationRange">Pagination Range</h4>
+  <code>paginationRange: DataTableTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'Results'</h5>
+
+  <p>This is used to customize the pagination range naming. The default value for this config is 'Results'.</p>
+
+  <app-translations-pagination-usage></app-translations-pagination-usage>
+  <app-example-code [files]="translationsPaginationUsage"></app-example-code>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/data-table/templating/no-records-template']">No Records Template</a><br/>
+  <a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a><br/>
+  <a [routerLink]="['/feature/data-table/options/data-loading-spinner']">Data Loading Spinner</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#translations">API Doc for Data
+    Table Translations</a>
+</div>

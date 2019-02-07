@@ -1,0 +1,38 @@
+<div class="feature-container">
+  <h1>Row Grouping</h1>
+
+  <p>
+    Row Grouping can be used to show array of data under one specific single cell. in such situations, you can use row
+    grouping functionality.
+  </p>
+
+  <p>
+    As mention in the above, when there is a requirement to group rows, you have to find out how many rows needed to be
+    span and how do you structure the data in those rows. by default data table doesn't group any rows and users have to
+    set it explicitly.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-row-grouping-usage></app-row-grouping-usage>
+  <app-example-code [files]="rowGroupingUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    The <code>onDynamicRowSpanExtract</code> property let the user to set a call back function to determine the number
+    of rows to be grouped or else default value <b>1</b> will be applied.
+  </p>
+
+  <p>
+    Row grouping can be enabled by binding a <code>DataTableDynamicRowSpanExtractorCallback&lt;any&gt;</code> type of
+    callback function to <code>onDynamicRowSpanExtract</code> event handler.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.onDynamicRowSpanExtract"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/data-table/experimental/column/resizing']">Column Resizing</a><br>
+  <a [routerLink]="['/feature/data-table/styling/responsive-configuration']">Responsive Configuration</a><br>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Row Grouping</a>
+</div>

@@ -17,6 +17,11 @@ const appRoutes: Routes = [
     path: 'feature',
     children: [
       {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'data-table'
+      },
+      {
         loadChildren: './feature/data-table/data-table-feature.module#DataTableFeatureModule',
         path: 'data-table'
       },

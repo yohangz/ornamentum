@@ -1,0 +1,47 @@
+<div class="feature-container">
+  <h1>No Records Template</h1>
+
+  <p>
+    No Records Template, facilitate the users to customize the table body by providing their own template to show
+    when the data is not available, by providing respective mandatory fields for no records template end-user can be
+    notify in a preferred manner in no data scenarios.
+  </p>
+
+  <p>
+    No records template can be integrated into expandable rows. For about row expanding template configurations please
+    refer <a [routerLink]="['/feature/data-table/templating/expand-template']"> Row Expand Template</a> section.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-no-records-template-usage></app-no-records-template-usage>
+  <app-example-code [files]="noRecordsTemplateUsage"></app-example-code>
+
+  <p>
+    The above demo snippet will demonstrate a sample no data scenario. until a success data response, we have enabled
+    <a [routerLink]="['/feature/data-table/templating/data-loading-spinner']">Data Loading Spinner</a> for purpose of
+    visible the process of data retrieval and make the data table more attractive.
+  </p>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    Similar to the other templates, it is possible to bind a specific property <code>#ngDataTableNoRecords</code> into
+    ng-template to indicate that there is no data available to be retrieved on data fetch call.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.template"></app-code-snippet>
+
+  <p>Apart from the predefined messages users are facilitated with to define own custom template as preferred if no data
+    available to be retrieved on data fetch call.</p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.stylishTemplate"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/data-table/templating/loading-spinner-template']">Loading Spinner Template</a><br/>
+  <a [routerLink]="['/feature/data-table/options/header-details']">Header Details</a><br/>
+  <a [routerLink]="['/feature/data-table/advanced/translations']">Translations</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#noRecordsTemplate">API Doc for Data Table No Records Template</a>
+</div>
