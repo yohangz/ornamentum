@@ -10,15 +10,15 @@ const dataTableOptionsRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'loading-spinner'
+    redirectTo: 'data-loading-spinner'
   },
   {
-    loadChildren: './data-table-header-details/data-table-header-details.module#DataTableHeaderDetailsModule',
-    path: 'header-details',
+    loadChildren: './data-table-data-loading-spinner/data-table-data-loading-spinner.module#DataTableDataLoadingSpinnerModule',
+    path: 'data-loading-spinner',
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Header Details',
+        title: 'Ornamentum | Data Table | Functionality | Data Loading Spinner',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -37,12 +37,12 @@ const dataTableOptionsRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-data-loading-spinner/data-table-data-loading-spinner.module#DataTableDataLoadingSpinnerModule',
-    path: 'data-loading-spinner',
+    loadChildren: './data-table-header-details/data-table-header-details.module#DataTableHeaderDetailsModule',
+    path: 'header-details',
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Data Loading Spinner',
+        title: 'Ornamentum | Data Table | Functionality | Header Details',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

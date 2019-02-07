@@ -10,7 +10,7 @@ const dataTableStylingRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'loading-spinner'
+    redirectTo: 'responsive-configuration'
   },
   {
     loadChildren: './data-table-responsive-conf/data-table-responsive-conf.module#DataTableResponsiveConfModule',
