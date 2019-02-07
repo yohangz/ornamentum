@@ -1,0 +1,23 @@
+@import '../../../../../styles/variables';
+@import '../../../../../styles/mixins';
+
+li {
+  padding-bottom: 10px;
+}
+
+.sub-ul {
+  li {
+    color: $side-menu-label-text;
+    padding-bottom: 2px;
+  }
+}
+
+.filtering-types {
+  background: url('../../../../../../assets/images/filtering-types.png') no-repeat;
+  height: 65px;
+  width: 870px;
+  background-size: 100% 100%;
+  display: inline-block;
+  left: 0;
+  position: relative;
+}

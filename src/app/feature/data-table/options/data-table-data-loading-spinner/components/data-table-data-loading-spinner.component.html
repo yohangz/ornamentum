@@ -1,0 +1,41 @@
+<div class="feature-container">
+  <h1>Data Loading Spinner</h1>
+
+  <p>
+    Data loading spinner is responsible to display a spinner on data table body while on data fetch operation, once
+    after the success data retrieval process it will disappear and data will be displayed on the table body.
+  </p>
+
+  <p>
+    Loading spinner is very useful when on <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server
+    Side Basic Data Binding</a> and <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server
+    Side Web Socket Data Binding</a> operations. from enabling data loading spinner ornamentum will keep updates the end
+    user that the data retrieval process is still going on and preventing affect to user experience negatively.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-data-loading-spinner-usage></app-data-loading-spinner-usage>
+  <app-example-code [files]="dataLoadingSpinnerUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    Loading spinner can be enable by binding <b>true</b> to <code>showLoadingSpinner</code> property in table level of
+    data table configuration, by default configuration property was in <b>false</b> state.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.showLoadingSpinner"></app-code-snippet>
+
+  <p>
+    Please note to display the loading spinner, it is <b>mandatory</b> to enable <code>showLoadingSpinner</code>
+    property and after enabling, you can bind a custom template into the data loading scenario if you prefer. for
+    loading spinner templates please refer <a
+    [routerLink]="['/feature/data-table/templating/loading-spinner-template']">Loading Spinner Template</a> section.
+  </p>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+
+  <a [routerLink]="['/feature/data-table/templating/no-records-template']">No Records Template</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#showLoadingSpinner">API Doc for Data Table Loading Spinner</a>
+</div>

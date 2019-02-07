@@ -1,0 +1,49 @@
+<div class="feature-container">
+  <h1>Server-side Basic Data Binding</h1>
+
+  <p>
+    Server side data binding allow users to bind large data sets that are not directly accessible as a full collection
+    in client side due to various reasons. Server side data binding can improve performance drastically for large data
+    sets but integration is fairly complex compared to client side direct data binding.
+  </p>
+
+  <p>Server side data binding allow users to bind a larger data stream which is available in the server side.</p>
+
+  <p>
+    Unlike in <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data
+    Binding</a>, server side rendering will request for data on table initialize and whenever user performs filtering,
+    sorting, page change, etc. operations. Integration party has to write the logic to fetch data via a backend service
+    depending on the request context.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-server-side-basic-usage></app-server-side-basic-usage>
+  <app-example-code [files]="serverSideBasicUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    Server side data binding is handled via <code>onDataBind</code> callback input property. This property allows users
+    to customize the data binding logic within the callback function. This callback function will be triggered on table
+    initialize and on dynamic data table operations. This function will receive <code>DataTableRequestParams</code>
+    argument and expect to return
+    <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
+      Observable</a> query result <code>DataTableQueryResult&lt;T&gt;</code> object stream. Data returned from this
+    callback function will be directly bound to table assuming that it matches the on demand request context.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBinding"></app-code-snippet>
+
+  <p>
+    Following code snippet represent an example implementation of <code>onDataBind</code> callback.
+  </p>
+
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataFetchMethod"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server-side Web Socket Data Binding</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server
+    Side Data Binding</a>
+</div>

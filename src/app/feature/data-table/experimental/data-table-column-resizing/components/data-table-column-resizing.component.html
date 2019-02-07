@@ -1,0 +1,23 @@
+<div class="feature-container">
+  <h1>Column Resizing</h1>
+
+  <p>Column resizing property facilitates the users to manually resize the columns as per their desire.</p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-column-resizing-usage></app-column-resizing-usage>
+  <app-example-code [files]="columnResizingUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+  <p>
+    In order to enable column resizing property the <code>resizable</code> property should mark as <b>true</b> and the
+    default value of the property is <b>false</b>. As per the above example the <code>resizable</code> property is
+    enabled for all the columns.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.resizable"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/data-table/functionality/column/sorting']">Column Sorting</a><br>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Column Resizable</a>
+</div>

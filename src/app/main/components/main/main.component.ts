@@ -25,7 +25,7 @@ export class MainComponent {
           name: 'Overview',
           menuItems: [
             {
-              routePath: '/feature/data-table/overview',
+              routePath: '/feature/data-table/overview/basic-usage',
               title: 'Basic Usage',
               navigation: [
                 {
@@ -56,8 +56,8 @@ export class MainComponent {
           name: 'Data Binding',
           menuItems: [
             {
-              routePath: '/feature/data-table/client-side-data-binding',
-              title: 'Client Side',
+              routePath: '/feature/data-table/data-binding/client-side/basic',
+              title: 'Client Side Basic',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -74,7 +74,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/client-side-real-time-data-binding',
+              routePath: '/feature/data-table/data-binding/client-side/stream',
               title: 'Client Side Stream',
               navigation: [
                 {
@@ -92,8 +92,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/server-side-data-binding',
-              title: 'Servers Side HTTP',
+              routePath: '/feature/data-table/data-binding/server-side/basic',
+              title: 'Servers Side Basic',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -110,8 +110,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/server-side-real-time-data-binding',
-              title: 'Server Side Websocket',
+              routePath: '/feature/data-table/data-binding/server-side/web-socket',
+              title: 'Server Side Web Socket',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -133,7 +133,7 @@ export class MainComponent {
           name: 'Functionality',
           menuItems: [
             {
-              routePath: '/feature/data-table/pagination',
+              routePath: '/feature/data-table/functionality/pagination',
               title: 'Pagination',
               navigation: [
                 {
@@ -165,7 +165,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/column/sorting',
+              routePath: '/feature/data-table/functionality/column/sorting',
               title: 'Column Sorting',
               navigation: [
                 {
@@ -201,7 +201,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/grouping',
+              routePath: '/feature/data-table/functionality/row/grouping',
               title: 'Row Grouping',
               navigation: [
                 {
@@ -219,8 +219,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/column/filtering',
-              title: 'Filtering',
+              routePath: '/feature/data-table/functionality/column/filtering',
+              title: 'Column Filtering',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -313,7 +313,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/row-selection',
+              routePath: '/feature/data-table/functionality/row/selection',
               title: 'Row Selection',
               navigation: [
                 {
@@ -370,7 +370,7 @@ export class MainComponent {
           name: 'Templating',
           menuItems: [
             {
-              routePath: '/feature/data-table/templates/cell-template',
+              routePath: '/feature/data-table/templating/cell-template',
               title: 'Cell Template',
               navigation: [
                 {
@@ -410,7 +410,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/templates/expand-template',
+              routePath: '/feature/data-table/templating/row-expand-template',
               title: 'Row Expand Template',
               navigation: [
                 {
@@ -446,7 +446,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/templates/loading-spinner-template',
+              routePath: '/feature/data-table/templating/loading-spinner-template',
               title: 'Loading Spinner Template',
               navigation: [
                 {
@@ -464,7 +464,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/templates/no-records-template',
+              routePath: '/feature/data-table/templating/no-records-template',
               title: 'No Records Template',
               navigation: [
                 {
@@ -487,7 +487,7 @@ export class MainComponent {
           name: 'Options',
           menuItems: [
             {
-              routePath: '/feature/data-table/loading-spinner',
+              routePath: '/feature/data-table/options/data-loading-spinner',
               title: 'Data Loading Spinner',
               navigation: [
                 {
@@ -505,7 +505,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/substitute-rows',
+              routePath: '/feature/data-table/options/substitute-rows',
               title: 'Substitute Rows',
               navigation: [
                 {
@@ -529,7 +529,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/header-details',
+              routePath: '/feature/data-table/options/header-details',
               title: 'Header Details',
               navigation: [
                 {
@@ -570,7 +570,7 @@ export class MainComponent {
           name: 'Styling',
           menuItems: [
             {
-              routePath: '/feature/data-table/responsive-configuration',
+              routePath: '/feature/data-table/styling/responsive-configuration',
               title: 'Responsive Configuration',
               navigation: [
                 {
@@ -618,7 +618,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/themes',
+              routePath: '/feature/data-table/styling/themes',
               title: 'Themes',
               navigation: [
                 {
@@ -650,7 +650,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/custom-theming',
+              routePath: '/feature/data-table/styling/custom-theming',
               title: 'Custom Theming'
             }
           ]
@@ -659,7 +659,7 @@ export class MainComponent {
           name: 'Advanced',
           menuItems: [
             {
-              routePath: '/feature/data-table/events',
+              routePath: '/feature/data-table/advanced/events',
               title: 'Events',
               navigation: [
                 {
@@ -727,7 +727,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/state-persistence',
+              routePath: '/feature/data-table/advanced/state-persistence',
               title: 'State Persistence',
               navigation: [
                 {
@@ -759,7 +759,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/translations',
+              routePath: '/feature/data-table/advanced/translations',
               title: 'Translations',
               navigation: [
                 {
@@ -810,7 +810,7 @@ export class MainComponent {
           name: 'Experimental',
           menuItems: [
             {
-              routePath: '/feature/data-table/column/resizing',
+              routePath: '/feature/data-table/experimental/column/resizing',
               title: 'Column Resizing',
               navigation: [
                 {
