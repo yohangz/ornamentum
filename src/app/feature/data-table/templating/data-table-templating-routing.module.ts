@@ -10,7 +10,7 @@ const dataTableTemplatingRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'templates/cell-template'
+    redirectTo: 'cell-template'
   },
   {
     loadChildren: './data-table-cell-template/data-table-cell-template.module#DataTableCellTemplateModule',
@@ -37,24 +37,24 @@ const dataTableTemplatingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-no-records-template/data-table-no-records-template.module#DataTableNoRecordsTemplateModule',
-    path: 'no-records-template',
-    canActivate: [SeoGuard],
-    data: {
-      seo: {
-        title: 'Ornamentum | Data Table | Templating | No Records Template',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
-      }
-    }
-  },
-  {
     loadChildren: './data-table-loading-spinner-template/data-table-loading-spinner-template.module#DataTableLoadingSpinnerTemplateModule',
     path: 'loading-spinner-template',
     canActivate: [SeoGuard],
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Templating | Loading Spinner Template',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
+  },
+  {
+    loadChildren: './data-table-no-records-template/data-table-no-records-template.module#DataTableNoRecordsTemplateModule',
+    path: 'no-records-template',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Data Table | Templating | No Records Template',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

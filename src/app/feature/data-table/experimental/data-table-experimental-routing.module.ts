@@ -10,7 +10,7 @@ const dataTableExperimentalRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'column-resizing'
+    redirectTo: 'column/resizing'
   },
   {
     loadChildren: './data-table-column-resizing/data-table-column-resizing.module#DataTableColumnResizingModule',
