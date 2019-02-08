@@ -839,7 +839,7 @@ export class MainComponent {
           name: 'Overview',
           menuItems: [
             {
-              routePath: '/feature/dropdown/overview',
+              routePath: '/feature/dropdown/overview/basic-usage',
               title: 'Basic Usage',
               navigation: [
                 {
@@ -870,7 +870,7 @@ export class MainComponent {
           name: 'Data Binding',
           menuItems: [
             {
-              routePath: '/feature/dropdown/client-side-data-binding',
+              routePath: '/feature/dropdown/data-binding/client-side/basic',
               title: 'Client Side Basic',
               navigation: [
                 {
@@ -888,7 +888,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/client-side-real-time-data-binding',
+              routePath: '/feature/dropdown/data-binding/client-side/stream',
               title: 'Client Side Stream',
               navigation: [
                 {
@@ -906,8 +906,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/server-side-data-binding',
-              title: 'Server Side',
+              routePath: '/feature/dropdown/data-binding/server-side/basic',
+              title: 'Server Side Basic',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -924,8 +924,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/server-side-real-time-data-binding',
-              title: 'Server Side Websocket',
+              routePath: '/feature/dropdown/data-binding/server-side/web-socket',
+              title: 'Server Side Web Socket',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -947,7 +947,7 @@ export class MainComponent {
           name: 'Options',
           menuItems: [
             {
-              routePath: '/feature/dropdown/limit',
+              routePath: '/feature/dropdown/options/data-limit',
               title: 'Data Limit',
               navigation: [
                 {
@@ -965,7 +965,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/disable',
+              routePath: '/feature/dropdown/options/disabling',
               title: 'Dropdown Disabling',
               navigation: [
                 {
@@ -983,7 +983,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/item-disabling',
+              routePath: '/feature/dropdown/options/item/disabling',
               title: 'Item Disabling',
               navigation: [
                 {
@@ -1006,8 +1006,8 @@ export class MainComponent {
           name: 'Features',
           menuItems: [
             {
-              routePath: '/feature/dropdown/display-items',
-              title: 'Display Items',
+              routePath: '/feature/dropdown/features/item/display',
+              title: 'Item Display',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -1024,7 +1024,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/item-selection',
+              routePath: '/feature/dropdown/features/item/selection',
               title: 'Item Selection',
               navigation: [
                 {
@@ -1084,8 +1084,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/filtering',
-              title: 'Filtering',
+              routePath: '/feature/dropdown/features/item/filtering',
+              title: 'Item Filtering',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -1120,8 +1120,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/grouping',
-              title: 'Grouping',
+              routePath: '/feature/dropdown/features/item/grouping',
+              title: 'Item Grouping',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -1143,7 +1143,7 @@ export class MainComponent {
           name: 'Templating',
           menuItems: [
             {
-              routePath: '/feature/dropdown/templates/dropdown-option-template',
+              routePath: '/feature/dropdown/templating/option-template',
               title: 'Option Template',
               navigation: [
                 {
@@ -1161,7 +1161,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/templates/dropdown-option-group-header-template',
+              routePath: '/feature/dropdown/templating/option-group-header-template',
               title: 'Option Group Header Template',
               navigation: [
                 {
@@ -1179,7 +1179,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/templates/loading-spinner-template',
+              routePath: '/feature/dropdown/templating/loading-spinner-template',
               title: 'Loading Spinner Template',
               navigation: [
                 {
@@ -1202,7 +1202,7 @@ export class MainComponent {
           name: 'Styling',
           menuItems: [
             {
-              routePath: '/feature/dropdown/menu-position',
+              routePath: '/feature/dropdown/styling/menu-position',
               title: 'Menu Position',
               navigation: [
                 {
@@ -1220,7 +1220,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/menu-width-height',
+              routePath: '/feature/dropdown/styling/menu-width-height',
               title: 'Menu Width & Height',
               navigation: [
                 {
@@ -1252,7 +1252,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/themes',
+              routePath: '/feature/dropdown/styling/themes',
               title: 'Themes',
               navigation: [
                 {
@@ -1284,7 +1284,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/custom-theming',
+              routePath: '/feature/dropdown/styling/custom-theming',
               title: 'Custom Theming'
             }
           ]
@@ -1293,7 +1293,7 @@ export class MainComponent {
           name: 'Advanced',
           menuItems: [
             {
-              routePath: '/feature/dropdown/load-data-on-init',
+              routePath: '/feature/dropdown/advanced/load-data-on-init',
               title: 'Load Data On Init',
               navigation: [
                 {
@@ -1311,7 +1311,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/events',
+              routePath: '/feature/dropdown/advanced/events',
               title: 'Events',
               navigation: [
                 {
@@ -1359,7 +1359,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/translations',
+              routePath: '/feature/dropdown/advanced/translations',
               title: 'Translations',
               navigation: [
                 {

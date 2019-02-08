@@ -1,0 +1,28 @@
+<div class="feature-container">
+  <h1>Load Data On Init</h1>
+
+  <p>
+    Dropdown load data on init feature can be uses to take over the control of data binding when on component initialization. If this configuration is
+    set to <code>false</code>, data won't be loaded as expected and user must provide their own way of data loading mechanism by explicitly.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-load-data-on-init-usage></app-load-data-on-init-usage>
+  <app-example-code [files]="loadDataOnInitUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    For enable/disable the data load on init configuration, simply bind a specific boolean value into <b>ng-dropdown</b>. the default value for this
+    configuration is <code>true</code>.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.loadDataOnInit"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+
+  <a [routerLink]="['/feature/dropdown/features/item/display']">Item Display</a><br />
+  <a [routerLink]="['/feature/dropdown/features/item/selection']">Item Selection</a><br />
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#loadDataOnInit">API Doc for Dropdown Load Data On Init</a>
+</div>

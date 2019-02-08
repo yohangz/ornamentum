@@ -1,0 +1,53 @@
+<div class="feature-container">
+  <h1>Client-side Stream Data Binding</h1>
+
+  <p>
+    Using client-side real-time data binding feature users can update the existing data in the dropdown recursively to
+    represent very dynamic data such as traffic, weather, analytics and etc without having a manual refresh.
+  </p>
+
+  <p>
+    In such cases you can use this client-side real-time data binding technique to binding data, when data changes in
+    real time those changes will be reflect without dropdown manual refresh, and immediately effect to the dropdown as
+    well.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-client-side-stream-usage></app-client-side-stream-usage>
+  <app-example-code [files]="clientSideStreamUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    This can be configure via setting an array of data objects to <code>items</code> input property or via setting a
+    <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
+      Observable</a> stream to <code>dataSource</code> input property as the same way discussed in the <a
+    [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client-side Basic Data Binding</a> section.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
+
+  <p>or</p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
+
+  <p>
+    The complete set of code snippet for the client side real time data binding via <code>datasource</code> input
+    property can be seen in the example shown in the <a
+    [routerLink]="['/feature/dropdown/data-binding/client-side/stream']" [fragment]="'whatYouWillSee'">What You
+    Will See</a> section above.
+  </p>
+
+  <p>
+    Let's modify the sample code segment shown in the <b>client-side-real-time-data-binding.component.ts</b> to emulate
+    the same behaviour with the use of <code>items</code> property.
+  </p>
+
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataBindingWithItems"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client-side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']">Server-side Web Socket Data Binding</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Client Side Stream Data Binding</a>
+</div>

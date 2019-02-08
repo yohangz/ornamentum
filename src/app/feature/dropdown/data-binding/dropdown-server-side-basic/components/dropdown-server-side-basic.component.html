@@ -1,0 +1,51 @@
+<div class="feature-container">
+  <h1>Server-side Basic Data Binding</h1>
+
+  <p>Server side data binding allow users to bind a larger data stream which is available in the server side.</p>
+
+  <p>
+    Unlike the client side data binding, whenever user performs a keyword search or user scrolls down to see more items, a new api request will be
+    initiated to fetch data from the server which matches to the particular action.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-server-side-basic-usage></app-server-side-basic-usage>
+  <app-example-code [files]="serverSideBasicUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    Server side data binding is handled via <code>onDataBind</code> callback property which is available within the dropdown features. This property
+    allows users to customize the way of data binding inside a callback function. This call back function accepts
+    <code>DropdownRequestParams</code> parameter (optional) and returns any generic type(T) of item set as an Observable(Data stream)
+    <code>DropdownQueryResult&lt;T&gt;</code>.
+  </p>
+
+  <p>
+    When the data set is huge, without getting whole lot of data at once to the client side, data will be fetched chunk by chunk when user scrolled
+    down to the last item.
+  </p>
+
+  <p>
+    Whenever user scrolls down to the last item to see more data, a new request will be sent to server. Therefore, it is mandatory to set
+    <b>true</b> for <code>loadOnScroll</code> property when server side data binding is used.
+  </p>
+
+  <p>
+    In the above example, open Network tab in the chrome developer tools and search for item or scroll down, to see the initiated request as described
+    earlier.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBinding"></app-code-snippet>
+
+  <p>
+    Following code snippet will be represent the implementation of the <code>fetchDataOnBindForDropdown</code> method that used inside the
+    <b>server-side-data-binding.component.ts</b> file to bind dynamic data stream.
+  </p>
+
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataFetchMethod"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#dataSource">API Doc for Server Side Basic Data Binding</a>
+</div>

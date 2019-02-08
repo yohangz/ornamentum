@@ -1,0 +1,34 @@
+<div class="feature-container">
+  <h1>Menu Position</h1>
+
+  <p>
+    Menu position will allow users to configure how dropdown view should be position when on dropdown expand. the
+    following four types are available to configure dropdown, which are:
+  </p>
+
+  <ul class="main-pane-list">
+    <li><b>Top Left</b> - Dropdown view appears on top left of the dropdown</li>
+    <li><b>Top Right</b> - Dropdown view appears on top right of the dropdown</li>
+    <li><b>Bottom Left</b> - Dropdown view appears on bottom left of the dropdown</li>
+    <li><b>Bottom Right</b> - Dropdown view appears on top right of the dropdown</li>
+  </ul>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-menu-position-usage></app-menu-position-usage>
+  <app-example-code [files]="menuPositionUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    For change the default dropdown menu position simply bind, <code>menuPosition</code> string into <b>ng-dropdown</b>
+    with any above mention type. default value for this configuration is <b>bottom-left</b>.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.menuPosition"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/dropdown/styling/menu-width-height']">Menu Width & Height</a><br/>
+  <a [routerLink]="['/feature/dropdown/features/item/filtering']">Item Filtering</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#menuPosition">API Doc for Dropdown Menu Position</a>
+</div>
