@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule } from 'ornamentum';
 
-import { DropdownDataLimitComponent, DataLimitUsageComponent } from './index';
-
 import { DropdownDataLimitRoutingModule } from './dropdown-data-limit-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { DropdownDataLimitComponent, DataLimitUsageComponent } from './index';
 
 /**
  * Module class for containing dropdown limit module.

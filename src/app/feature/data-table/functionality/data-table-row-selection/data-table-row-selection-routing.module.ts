@@ -20,4 +20,5 @@ const dataTableRowSelectionRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableRowSelectionRoutes)]
 })
-export class DataTableRowSelectionRoutingModule {}
+export class DataTableRowSelectionRoutingModule {
+}

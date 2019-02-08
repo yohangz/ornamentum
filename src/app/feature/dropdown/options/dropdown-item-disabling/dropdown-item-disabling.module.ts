@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule } from 'ornamentum';
 
-import { DropdownItemDisablingComponent, ItemDisablingUsageComponent } from './index';
-
 import { DropdownItemDisablingRoutingModule } from './dropdown-item-disabling-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { DropdownItemDisablingComponent, ItemDisablingUsageComponent } from './index';
 
 /**
  * Module class for containing dropdown item disabling module.

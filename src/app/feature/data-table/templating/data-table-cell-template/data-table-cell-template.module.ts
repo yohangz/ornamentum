@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { CellTemplateUsageComponent, DataTableCellTemplateComponent } from './index';
-
 import { DataTableCellTemplateRoutingModule } from './data-table-cell-template-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { CellTemplateUsageComponent, DataTableCellTemplateComponent } from './index';
 
 /**
  * Module class for containing data table cell template module.
@@ -20,9 +20,7 @@ import { SharedModule } from '../../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot({
-      showColumnSelector: true
-    }),
+    DataTableModule.forRoot(),
     DataTableCellTemplateRoutingModule
   ],
   providers: []

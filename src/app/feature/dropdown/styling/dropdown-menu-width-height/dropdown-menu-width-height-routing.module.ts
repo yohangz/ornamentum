@@ -20,4 +20,5 @@ const dropdownMenuWidthHeightRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownMenuWidthHeightRoutes)]
 })
-export class DropdownMenuWidthHeightRoutingModule {}
+export class DropdownMenuWidthHeightRoutingModule {
+}

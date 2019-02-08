@@ -20,4 +20,5 @@ const dataTableTranslationsRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableTranslationsRoutes)]
 })
-export class DataTableTranslationsRoutingModule {}
+export class DataTableTranslationsRoutingModule {
+}

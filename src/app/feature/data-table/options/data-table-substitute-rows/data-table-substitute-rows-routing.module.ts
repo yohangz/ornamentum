@@ -20,4 +20,5 @@ const dataTableSubstituteRowsRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableSubstituteRowsRoutes)]
 })
-export class DataTableSubstituteRowsRoutingModule {}
+export class DataTableSubstituteRowsRoutingModule {
+}

@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableClientSideStreamComponent, ClientSideStreamUsageComponent } from './index';
-
 import { DataTableClientSideStreamRoutingModule } from './data-table-client-side-stream-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { DataTableClientSideStreamComponent, ClientSideStreamUsageComponent } from './index';
 
 /**
  * Module class for containing data table client side stream data binding module.
@@ -20,11 +20,7 @@ import { SharedModule } from '../../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot({
-      showColumnSelector: true,
-      showHeader: true,
-      pageable: true
-    }),
+    DataTableModule.forRoot(),
     DataTableClientSideStreamRoutingModule
   ],
   providers: []

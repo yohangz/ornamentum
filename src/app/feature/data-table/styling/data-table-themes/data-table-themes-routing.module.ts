@@ -20,4 +20,5 @@ const dataTableThemesRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableThemesRoutes)]
 })
-export class DataTableThemesRoutingModule {}
+export class DataTableThemesRoutingModule {
+}

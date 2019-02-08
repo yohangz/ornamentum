@@ -11,4 +11,5 @@ import { DataTableTemplatingRoutingModule } from './data-table-templating-routin
   imports: [DataTableTemplatingRoutingModule],
   providers: []
 })
-export class DataTableTemplatingModule {}
+export class DataTableTemplatingModule {
+}

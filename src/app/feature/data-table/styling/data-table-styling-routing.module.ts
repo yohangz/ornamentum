@@ -57,4 +57,5 @@ const dataTableStylingRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableStylingRoutes)]
 })
-export class DataTableStylingRoutingModule {}
+export class DataTableStylingRoutingModule {
+}

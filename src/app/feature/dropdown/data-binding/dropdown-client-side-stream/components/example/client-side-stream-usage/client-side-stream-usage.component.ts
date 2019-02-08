@@ -16,7 +16,8 @@ import { DataFetchService } from 'helper-services';
 export class ClientSideStreamUsageComponent implements OnInit {
   public dataSource: Observable<ExampleData[]>;
 
-  constructor(private dataFetchService: DataFetchService, private globalRefService: GlobalRefService) {}
+  constructor(private dataFetchService: DataFetchService, private globalRefService: GlobalRefService) {
+  }
 
   public ngOnInit(): void {
     let offset = 0;

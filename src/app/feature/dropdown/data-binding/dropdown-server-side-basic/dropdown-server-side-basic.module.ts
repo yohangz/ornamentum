@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule, DropdownResourceModule } from 'ornamentum';
 
-import { DropdownServerSideBasicComponent, ServerSideBasicUsageComponent } from './index';
-
 import { DropdownServerSideBasicRoutingModule } from './dropdown-server-side-basic-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { DropdownServerSideBasicComponent, ServerSideBasicUsageComponent } from './index';
 
 /**
  * Module class for containing dropdown server side basic data binding module.

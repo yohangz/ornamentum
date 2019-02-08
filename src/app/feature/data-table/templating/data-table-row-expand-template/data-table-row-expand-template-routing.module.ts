@@ -20,4 +20,5 @@ const dataTableRowExpandTemplateRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableRowExpandTemplateRoutes)]
 })
-export class DataTableRowExpandTemplateRoutingModule {}
+export class DataTableRowExpandTemplateRoutingModule {
+}

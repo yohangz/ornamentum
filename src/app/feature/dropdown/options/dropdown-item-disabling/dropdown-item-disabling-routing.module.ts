@@ -20,4 +20,5 @@ const dropdownItemDisablingRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownItemDisablingRoutes)]
 })
-export class DropdownItemDisablingRoutingModule {}
+export class DropdownItemDisablingRoutingModule {
+}

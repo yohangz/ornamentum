@@ -4,6 +4,10 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
+import { DataTableColumnSortingRoutingModule } from './data-table-column-sorting-routing.module';
+
+import { SharedModule } from '../../../../shared/shared.module';
+
 import {
   DataTableColumnSortingComponent,
   ColumnSortingUsageComponent,
@@ -11,10 +15,6 @@ import {
   SortFieldUsageComponent,
   MultiColumnSortableUsageComponent,
 } from './index';
-
-import { DataTableColumnSortingRoutingModule } from './data-table-column-sorting-routing.module';
-
-import { SharedModule } from '../../../../shared/shared.module';
 
 /**
  * Module class for containing data table column sorting module.
@@ -32,13 +32,10 @@ import { SharedModule } from '../../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot({
-      showColumnSelector: true,
-      showHeader: true,
-      pageable: true
-    }),
+    DataTableModule.forRoot(),
     DataTableColumnSortingRoutingModule
   ],
   providers: []
 })
-export class DataTableColumnSortingModule {}
+export class DataTableColumnSortingModule {
+}

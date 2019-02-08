@@ -69,4 +69,5 @@ const dataTableTemplatingRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableTemplatingRoutes)]
 })
-export class DataTableTemplatingRoutingModule {}
+export class DataTableTemplatingRoutingModule {
+}

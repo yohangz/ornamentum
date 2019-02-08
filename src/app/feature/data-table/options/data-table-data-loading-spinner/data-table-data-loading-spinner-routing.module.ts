@@ -20,4 +20,5 @@ const dataTableDataLoadingSpinnerRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableDataLoadingSpinnerRoutes)]
 })
-export class DataTableDataLoadingSpinnerRoutingModule {}
+export class DataTableDataLoadingSpinnerRoutingModule {
+}

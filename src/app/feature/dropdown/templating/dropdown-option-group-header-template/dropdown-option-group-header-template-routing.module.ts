@@ -20,4 +20,5 @@ const dropdownOptionGroupHeaderTemplateRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownOptionGroupHeaderTemplateRoutes)]
 })
-export class DropdownOptionGroupHeaderTemplateRoutingModule {}
+export class DropdownOptionGroupHeaderTemplateRoutingModule {
+}

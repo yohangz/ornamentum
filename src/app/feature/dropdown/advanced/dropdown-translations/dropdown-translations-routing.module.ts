@@ -20,4 +20,5 @@ const dropdownTranslationsRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownTranslationsRoutes)]
 })
-export class DropdownTranslationsRoutingModule {}
+export class DropdownTranslationsRoutingModule {
+}

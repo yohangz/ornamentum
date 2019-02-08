@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule } from 'ornamentum';
 
-import { DropdownThemesComponent } from './index';
-
 import { DropdownThemesRoutingModule } from './dropdown-themes-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { DropdownThemesComponent } from './index';
 
 /**
  * Module class for containing dropdown themes module.

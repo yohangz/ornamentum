@@ -11,4 +11,5 @@ import { DataTableExperimentalRoutingModule } from './data-table-experimental-ro
   imports: [DataTableExperimentalRoutingModule],
   providers: []
 })
-export class DataTableExperimentalModule {}
+export class DataTableExperimentalModule {
+}

@@ -20,4 +20,5 @@ const dropdownLoadDataOnInitRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownLoadDataOnInitRoutes)]
 })
-export class DropdownLoadDataOnInitRoutingModule {}
+export class DropdownLoadDataOnInitRoutingModule {
+}

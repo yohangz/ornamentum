@@ -20,4 +20,5 @@ const dataTablePaginationRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTablePaginationRoutes)]
 })
-export class DataTablePaginationRoutingModule {}
+export class DataTablePaginationRoutingModule {
+}

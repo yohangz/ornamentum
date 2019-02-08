@@ -11,4 +11,5 @@ import { DataTableStylingRoutingModule } from './data-table-styling-routing.modu
   imports: [DataTableStylingRoutingModule],
   providers: []
 })
-export class DataTableStylingModule {}
+export class DataTableStylingModule {
+}

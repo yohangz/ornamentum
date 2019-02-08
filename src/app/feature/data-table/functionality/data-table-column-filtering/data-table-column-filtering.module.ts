@@ -4,16 +4,16 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
+import { DataTableColumnFilteringRoutingModule } from './data-table-column-filtering-routing.module';
+
+import { SharedModule } from '../../../../shared/shared.module';
+
 import {
   DataTableColumnFilteringComponent,
   ColumnFilteringDropdownUsageComponent,
   ColumnFilteringUsageComponent,
   ColumnFilteringTextBoxUsageComponent
 } from './index';
-
-import { DataTableColumnFilteringRoutingModule } from './data-table-column-filtering-routing.module';
-
-import { SharedModule } from '../../../../shared/shared.module';
 
 /**
  * Module class for containing data table column filtering module.
@@ -30,9 +30,7 @@ import { SharedModule } from '../../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot({
-      showColumnSelector: true
-    }),
+    DataTableModule.forRoot(),
     DataTableColumnFilteringRoutingModule
   ],
   providers: []

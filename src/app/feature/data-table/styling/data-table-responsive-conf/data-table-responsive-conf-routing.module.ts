@@ -20,4 +20,5 @@ const dataTableResponsiveConfRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableResponsiveConfRoutes)]
 })
-export class DataTableResponsiveConfRoutingModule {}
+export class DataTableResponsiveConfRoutingModule {
+}

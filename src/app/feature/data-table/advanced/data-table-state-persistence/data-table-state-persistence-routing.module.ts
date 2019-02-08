@@ -20,4 +20,5 @@ const dataTableStatePersistRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableStatePersistRoutes)]
 })
-export class DataTableStatePersistenceRoutingModule {}
+export class DataTableStatePersistenceRoutingModule {
+}

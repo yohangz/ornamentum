@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { DataTableOptionsRoutingModule } from './data-table-options-routing.module';
 
 /**
- * Module class for containing data table functionality module.
+ * Module class for containing data table options module.
  */
 @NgModule({
   declarations: [],
@@ -11,4 +11,5 @@ import { DataTableOptionsRoutingModule } from './data-table-options-routing.modu
   imports: [DataTableOptionsRoutingModule],
   providers: []
 })
-export class DataTableOptionsModule {}
+export class DataTableOptionsModule {
+}

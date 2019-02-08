@@ -20,4 +20,5 @@ const dataTableClientSideStreamRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableClientSideStreamRoutes)]
 })
-export class DataTableClientSideStreamRoutingModule {}
+export class DataTableClientSideStreamRoutingModule {
+}

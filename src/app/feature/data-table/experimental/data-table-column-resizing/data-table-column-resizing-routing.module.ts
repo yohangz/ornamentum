@@ -20,4 +20,5 @@ const dataTableResizingRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableResizingRoutes)]
 })
-export class DataTableColumnResizingRoutingModule {}
+export class DataTableColumnResizingRoutingModule {
+}

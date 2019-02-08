@@ -70,4 +70,5 @@ const dataTableDataBindingRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableDataBindingRoutes)]
 })
-export class DataTableDataBindingRoutingModule {}
+export class DataTableDataBindingRoutingModule {
+}

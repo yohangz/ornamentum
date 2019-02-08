@@ -20,4 +20,5 @@ const dataTableNoRecordsTemplateRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableNoRecordsTemplateRoutes)]
 })
-export class DataTableNoRecordsTemplateRoutingModule {}
+export class DataTableNoRecordsTemplateRoutingModule {
+}

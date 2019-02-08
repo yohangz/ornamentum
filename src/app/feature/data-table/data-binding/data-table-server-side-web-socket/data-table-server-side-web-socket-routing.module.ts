@@ -20,4 +20,5 @@ const dataTableServerSideWebSocketRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableServerSideWebSocketRoutes)]
 })
-export class DataTableServerSideWebSocketRoutingModule {}
+export class DataTableServerSideWebSocketRoutingModule {
+}

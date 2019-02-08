@@ -11,4 +11,5 @@ import { DataTableFeatureRoutingModule } from './data-table-feature-routing.modu
   imports: [DataTableFeatureRoutingModule],
   providers: []
 })
-export class DataTableFeatureModule {}
+export class DataTableFeatureModule {
+}

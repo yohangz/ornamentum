@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableRowGroupingComponent, RowGroupingUsageComponent } from './index';
-
 import { DataTableRowGroupingRoutingModule } from './data-table-row-grouping-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { DataTableRowGroupingComponent, RowGroupingUsageComponent } from './index';
 
 /**
  * Module class for containing data table row grouping module.
@@ -20,11 +20,10 @@ import { SharedModule } from '../../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot({
-      showColumnSelector: true
-    }),
+    DataTableModule.forRoot(),
     DataTableRowGroupingRoutingModule
   ],
   providers: []
 })
-export class DataTableRowGroupingModule {}
+export class DataTableRowGroupingModule {
+}
