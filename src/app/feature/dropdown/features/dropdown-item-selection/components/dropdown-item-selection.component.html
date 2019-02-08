@@ -1,0 +1,192 @@
+<h1>Item Selection</h1>
+
+<p>
+  Item selection can be done in various ways with different available options. basically this functionality will helps
+  to select specific item or item set from the dropdown. available configuration options will be discuss on
+  <a [routerLink]="['/feature/dropdown/features/item/selection']" [fragment]="'usefulProperties'">Useful Properties</a>
+  section in-detail.
+</p>
+
+<h2 id="whatYouWillSee">What You Will See</h2>
+
+<p>Below example will demonstrate how</p>
+
+<app-item-selection-usage></app-item-selection-usage>
+<app-example-code [files]="itemSelectionUsage"></app-example-code>
+
+<h2 id="basicUsage">Basic Usage</h2>
+
+<p>
+  For enable basic item selection on dropdown, simply provide a <b>unique</b> data field name to
+  <code>selectTrackBy</code> property otherwise select item tracking will not function properly. by default it value was
+  <b>'key'</b>. for more details about capturing user click events on dropdown items please refer Events <a
+  [routerLink]="['/feature/dropdown/advanced/events']" [fragment]="'selectChange'">Select Change</a> section.
+</p>
+
+<app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.selectTrackBy"></app-code-snippet>
+
+<h2 id="usefulProperties">Useful Properties</h2>
+
+<p>There are set of useful properties that can be uses when on item select on dropdown.</p>
+
+<h4 id="setFirstOptionSelected">Set First Option Selected</h4>
+<code>setFirstOptionSelected: boolean</code> &nbsp;
+<h5 class="badge badge-pill badge-warning">Default Value: false</h5>
+
+<p>Property was responsible for select the first property immediately after success data retrieval and view on top of
+  dropdown.</p>
+
+<app-set-first-option-selected-usage></app-set-first-option-selected-usage>
+<app-example-code [files]="setFirstOptionSelectedUsage"></app-example-code>
+
+<h4 id="showOptionSelectCheckbox">Show Option Select Checkbox</h4>
+<code>showOptionSelectCheckbox: boolean</code> &nbsp;
+<h5 class="badge badge-pill badge-warning">Default Value: false</h5>
+
+<p>Property was responsible for enable checkbox for each item on dropdown item selection.</p>
+
+<app-show-option-select-checkbox-usage></app-show-option-select-checkbox-usage>
+<app-example-code [files]="showOptionSelectCheckboxUsage"></app-example-code>
+
+<h4 id="selectedOption">Selected Option</h4>
+<code>selectedOption: any</code> &nbsp;
+<h5 class="badge badge-pill badge-warning">Default Value: N/A</h5>
+
+<p>
+  Property was responsible for select a specific property immediately after a success data retrieval and view on top of
+  dropdown. process is similar to <a [routerLink]="['/feature/dropdown/features/item/selection']"
+                                     [fragment]="'setFirstOptionSelected'">Set First Option Selected</a> but in here
+  user allows to select any preferred single item from dropdown.
+</p>
+
+<app-selected-option-usage></app-selected-option-usage>
+<app-example-code [files]="selectedOptionUsage"></app-example-code>
+
+<h4 id="selectedOptions">Selected Options</h4>
+<code>selectedOptions: any[]</code> &nbsp;
+<h5 class="badge badge-pill badge-warning">Default Value: []</h5>
+
+<p>
+  Property was responsible for select a specific data set immediately after success data retrieval and view on top of
+  dropdown if <code>selectMode</code> was <b>'multi'</b> unless it won't be functional properly.
+</p>
+
+<app-selected-options-usage></app-selected-options-usage>
+<app-example-code [files]="selectedOptionsUsage"></app-example-code>
+
+<h4 id="selectMode">Select Mode</h4>
+<code>selectMode: DropdownSelectMode = 'multi' | 'single' | 'single-toggle'</code> &nbsp;
+<h5 class="badge badge-pill badge-warning">Default Value: 'single-toggle'</h5>
+
+<p>
+  Enable for users to configure the dropdown item selection type. there are three major item selection types are
+  available for dropdown, which are:
+</p>
+
+<ol class="main-pane-list">
+  <li><b>single</b>: single item selection</li>
+  <li><b>single-toggle</b>: single toggle item selection</li>
+  <li><b>multi</b>: multiple item selection</li>
+</ol>
+
+<ol class="main-pane-list">
+  <li>
+    <h5>Single Item Selection</h5>
+
+    <p>
+      In Single item selection user allow to select one specific item from dropdown view and they can be change their
+      preference or de-select the item by select on another value field if it is available.
+    </p>
+
+    <app-single-item-selection-usage></app-single-item-selection-usage>
+    <app-example-code [files]="singleItemSelectionUsage"></app-example-code>
+  </li>
+  <li>
+    <h5>Single Toggle Item Selection</h5>
+
+    <p>
+      This property functionality was similar to <a [routerLink]="['/feature/dropdown/features/item/selection']"
+                                                    [fragment]="'selectMode'">Select Mode</a> Single Item Selection,
+      only difference is user can toggle item selection but in this type, once the selection is made it can be removed
+      by clicking the item itself or by un-checking the checkbox (if <a
+      [routerLink]="['/feature/dropdown/features/item/selection']" [fragment]="'showOptionSelectCheckbox'">Show Option
+      Select
+      Checkbox</a> is enabled).
+    </p>
+
+    <app-single-toggle-item-selection-usage></app-single-toggle-item-selection-usage>
+    <app-example-code [files]="singleToggleItemSelectionUsage"></app-example-code>
+  </li>
+  <li>
+    <h5>Multiple Item Selection</h5>
+
+    <p>In Multiple item selection user allow to selects multiple items from the dropdown view.</p>
+
+    <app-multi-item-selection-usage></app-multi-item-selection-usage>
+    <app-example-code [files]="multiItemSelectionUsage"></app-example-code>
+  </li>
+</ol>
+
+<h4 id="showClearSelectionButton">Show Clear Selection Button</h4>
+<code>showClearSelectionButton: boolean</code> &nbsp;
+<h5 class="badge badge-pill badge-warning">Default Value: false</h5>
+
+<p>
+  Show clear selection button was responsible for de-selecting all the selected items on dropdown which will be
+  displaying a cross symbol on right
+  side corner of dropdown. simply set it <b>true</b> to enable clear all selections symbol on dropdown.
+</p>
+
+<app-show-clear-selection-button-usage></app-show-clear-selection-button-usage>
+<app-example-code [files]="showClearSelectionButtonUsage"></app-example-code>
+
+<h4 id="showSelectedOptionRemoveButton">Show Selected Option Remove Button</h4>
+<code>showSelectedOptionRemoveButton: boolean</code> &nbsp;
+<h5 class="badge badge-pill badge-warning">Default Value: false</h5>
+
+<p>
+  Property was responsible for enable de-select symbol on each and every selected items when <code>selectMode</code> is
+  on <b>'multi'</b>. for more details about item selection modes please refer <a
+  [routerLink]="['/feature/dropdown/features/item/selection']" [fragment]="'selectMode'">Select Mode</a> section.
+</p>
+
+<app-show-selected-option-remove-button-usage></app-show-selected-option-remove-button-usage>
+<app-example-code [files]="showSelectedOptionRemoveButtonUsage"></app-example-code>
+
+<h4 id="multiSelectOptionMaxWidth">Multi Select Option Max Width</h4>
+<code>multiSelectOptionMaxWidth: boolean</code> &nbsp;
+<h5 class="badge badge-pill badge-warning">Default Value: 135</h5>
+
+<p>
+  This property was uses to configure selected dropdown item(s) label maximum width allocation on dropdown. please note,
+  before use multi select option max width property it is <b>mandatory</b> to set <code>selectMode</code> to
+  <b>'multi'</b> otherwise it will not function properly.
+</p>
+
+<app-multi-select-option-max-width-usage></app-multi-select-option-max-width-usage>
+<app-example-code [files]="multiSelectOptionMaxWidthUsage"></app-example-code>
+
+<h4 id="wrapDisplaySelectLimit">Wrap Display Select Limit</h4>
+<code>wrapDisplaySelectLimit: number</code> &nbsp;
+<h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+
+<p>
+  This configuration is uses to limit selected item labels shown on dropdown when more items are selected and display a
+  common string and selected item count to represent all the selected fields. for use of this configuration it is <b>mandatory</b>
+  to use <code>selectMode</code> in <b>'multi'</b> and available item count should be more than given wrap display
+  selection limit.
+</p>
+
+<p>
+  User can provide their own wrap display message by using translations. please refer Translations
+  <a [routerLink]="['/feature/dropdown/advanced/translations']" [fragment]="'selectedItemWrapPlaceholder'">Selected Item
+    Wrap Placeholder</a> section for more details.
+</p>
+
+<app-wrap-display-select-limit-usage></app-wrap-display-select-limit-usage>
+<app-example-code [files]="wrapDisplaySelectLimitUsage"></app-example-code>
+
+<h2 id="suggestedLinks">Suggested Links</h2>
+<a [routerLink]="['/feature/dropdown/advanced/events']">Events</a><br/>
+<a [routerLink]="['/feature/dropdown/advanced/translations']">Translations</a><br/>
+<a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Item Selection</a>

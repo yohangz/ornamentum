@@ -1,0 +1,48 @@
+<div class="feature-container">
+  <h1>Server-side Web Socket Data Binding</h1>
+
+  <p>
+    <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client-side Basic Data Binding</a> is now
+    capable of updating dynamic data without having a manual refresh in the client side. But assume, what happen if
+    these dynamic data is available in the server side and time to time that server emitting a new dynamic stream of
+    data. So can we bind these kind of data to the dropdown. To fulfill such cases, Server-side Data Binding is
+    introduced.
+  </p>
+
+  <p>
+    In such cases you can use this server-side real-time data binding technique to bind data, when data changes in
+    real time from the server side.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-server-side-web-socket-usage></app-server-side-web-socket-usage>
+  <app-example-code [files]="serverSideWebSocketUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    This can be configure via setting an array of data objects to <code>items</code> input property or via setting a
+    RxJS Observable stream to <code>dataSource</code> input property as the same way discussed in the previous data
+    binding sections.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
+
+  <p>or</p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
+
+  <p>
+    The complete set of code snippet for the server side real time data binding via <code>items</code> input
+    property can be seen in the example shown in the <a
+    [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']" [fragment]="'whatYouWillSee'">What
+    You Will See</a> section above.
+  </p>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client-side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/dropdown/data-binding/client-side/stream']">Client-side Stream Data Binding</a><br/>
+  <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server-side Basic Data Binding</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Real-time Data Binding</a>
+</div>

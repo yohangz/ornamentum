@@ -11,4 +11,5 @@ import { DropdownFeatureRoutingModule } from './dropdown-feature-routing.module'
   imports: [DropdownFeatureRoutingModule],
   providers: []
 })
-export class DropdownFeatureModule {}
+export class DropdownFeatureModule {
+}
