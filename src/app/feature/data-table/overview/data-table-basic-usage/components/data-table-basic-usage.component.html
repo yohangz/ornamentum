@@ -48,7 +48,7 @@
     <li>
       <p>
         Import the Ornamentum theme style sheet reference to apply theming of your preference. Refer
-        <a [routerLink]="['/feature/data-table/themes']">Themes</a> section for more details.
+        <a [routerLink]="['/feature/data-table/styling/themes']">Themes</a> section for more details.
       </p>
       <ul class="main-pane-list">
         <li>
@@ -104,52 +104,53 @@
   <ul class="main-pane-list">
     <li><b>Data Binding & Events</b></li>
     <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/data-table/client-side-data-binding']">Client-side Data binding</a></li>
-      <li><a [routerLink]="['/feature/data-table/server-side-data-binding']">Server-side Data binding</a></li>
-      <li><a [routerLink]="['/feature/data-table/real-time-data-binding']">Realtime Data binding</a></li>
-      <li><a [routerLink]="['/feature/data-table/events']">Events</a></li>
+      <li><a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data binding</a></li>
+      <li><a [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client-side Stream Data binding</a></li>
+      <li><a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server-side Basic Data binding</a></li>
+      <li><a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server-side Web Socket Data binding</a></li>
+      <li><a [routerLink]="['/feature/data-table/advanced/events']">Events</a></li>
     </ul>
 
     <li><b>Responsive Configurations</b></li>
     <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/data-table/responsive-configuration']">Responsive Configuration</a></li>
-      <li><a [routerLink]="['/feature/data-table/column/resizing']">Column Resizing</a></li>
+      <li><a [routerLink]="['/feature/data-table/styling/responsive-configuration']">Responsive Configuration</a></li>
+      <li><a [routerLink]="['/feature/data-table/experimental/column/resizing']">Column Resizing</a></li>
     </ul>
 
     <li><b>Data Ordering</b></li>
     <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/data-table/column/sorting']">Column Sorting</a></li>
-      <li><a [routerLink]="['/feature/data-table/column/filtering']">Filtering</a></li>
+      <li><a [routerLink]="['/feature/data-table/functionality/column/sorting']">Column Sorting</a></li>
+      <li><a [routerLink]="['/feature/data-table/functionality/column/filtering']">Column Filtering</a></li>
     </ul>
 
     <li><b>Data Loading</b></li>
     <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/data-table/state-persistence']">State Persistence</a></li>
-      <li><a [routerLink]="['/feature/data-table/loading-spinner']">Data Loading Spinner</a></li>
+      <li><a [routerLink]="['/feature/data-table/advanced/state-persistence']">State Persistence</a></li>
+      <li><a [routerLink]="['/feature/data-table/options/data-loading-spinner']">Data Loading Spinner</a></li>
     </ul>
 
     <li><b>Customizations</b></li>
     <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/data-table/pagination']">Pagination</a></li>
-      <li><a [routerLink]="['/feature/data-table/grouping']">Row Grouping</a></li>
-      <li><a [routerLink]="['/feature/data-table/row-selection']">Row Selection</a></li>
-      <li><a [routerLink]="['/feature/data-table/header-details']">Header Details</a></li>
-      <li><a [routerLink]="['/feature/data-table/translations']">Translations</a></li>
-      <li><a [routerLink]="['/feature/data-table/substitute-rows']">Substitute Rows</a></li>
+      <li><a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a></li>
+      <li><a [routerLink]="['/feature/data-table/functionality/row/grouping']">Row Grouping</a></li>
+      <li><a [routerLink]="['/feature/data-table/functionality/row/selection']">Row Selection</a></li>
+      <li><a [routerLink]="['/feature/data-table/options/header-details']">Header Details</a></li>
+      <li><a [routerLink]="['/feature/data-table/advanced/translations']">Translations</a></li>
+      <li><a [routerLink]="['/feature/data-table/options/substitute-rows']">Substitute Rows</a></li>
     </ul>
 
     <li><b>Templates</b></li>
     <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/data-table/templates/cell-template']">Cell Template</a></li>
-      <li><a [routerLink]="['/feature/data-table/templates/row-expand-template']">Row Expand Template</a></li>
-      <li><a [routerLink]="['/feature/data-table/templates/loading-spinner-template']">Loading Spinner Template</a></li>
-      <li><a [routerLink]="['/feature/data-table/templates/no-records-template']">No Records Template</a></li>
+      <li><a [routerLink]="['/feature/data-table/templating/cell-template']">Cell Template</a></li>
+      <li><a [routerLink]="['/feature/data-table/templating/row-expand-template']">Row Expand Template</a></li>
+      <li><a [routerLink]="['/feature/data-table/templating/loading-spinner-template']">Loading Spinner Template</a></li>
+      <li><a [routerLink]="['/feature/data-table/templating/no-records-template']">No Records Template</a></li>
     </ul>
 
     <li><b>Styling & Themes</b></li>
     <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/data-table/themes']">Themes</a></li>
-      <li><a [routerLink]="['/feature/data-table/custom-theming']">Custom Theming</a></li>
+      <li><a [routerLink]="['/feature/data-table/styling/themes']">Themes</a></li>
+      <li><a [routerLink]="['/feature/data-table/styling/custom-theming']">Custom Theming</a></li>
     </ul>
   </ul>
 
