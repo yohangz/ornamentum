@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule } from 'ornamentum';
 
-import { DropdownLoadDataOnInitComponent, LoadDataOnInitUsageComponent } from './index';
-
 import { DropdownLoadDataOnInitRoutingModule } from './dropdown-load-data-on-init-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
 
+import { DropdownLoadDataOnInitComponent, LoadDataOnInitUsageComponent } from './index';
+
 /**
- * Module class for containing dropdown load on init module.
+ * Module class for containing dropdown load data on init module.
  */
 @NgModule({
   declarations: [

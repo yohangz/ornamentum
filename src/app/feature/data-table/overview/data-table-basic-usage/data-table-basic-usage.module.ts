@@ -4,18 +4,18 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
+import { DataTableBasicUsageRoutingModule } from './data-table-basic-usage-routing.module';
+
+import { SharedModule } from '../../../../shared/shared.module';
+
 import {
   DataTableBasicUsageComponent,
   AdvancedUsageComponent,
   AdvancedUsageExpandableDetailViewComponent
 } from './index';
 
-import { DataTableBasicUsageRoutingModule } from './data-table-basic-usage-routing.module';
-
-import { SharedModule } from '../../../../shared/shared.module';
-
 /**
- * Data table overview feature module.
+ * Data table basic usage module.
  */
 @NgModule({
   declarations: [

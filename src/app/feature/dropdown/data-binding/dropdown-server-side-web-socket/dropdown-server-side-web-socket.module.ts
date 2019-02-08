@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule, DropdownResourceModule } from 'ornamentum';
 
-import { DropdownServerSideWebSocketComponent, ServerSideWebSocketUsageComponent } from './index';
-
 import { DropdownServerSideWebSocketRoutingModule } from './dropdown-server-side-web-socket-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { DropdownServerSideWebSocketComponent, ServerSideWebSocketUsageComponent } from './index';
 
 /**
  * Module class for containing dropdown server side web socket data binding module.

@@ -20,4 +20,5 @@ const dataTableEventRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableEventRoutes)]
 })
-export class DataTableEventsRoutingModule {}
+export class DataTableEventsRoutingModule {
+}

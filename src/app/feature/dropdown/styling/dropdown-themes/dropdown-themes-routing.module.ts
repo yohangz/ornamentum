@@ -14,10 +14,11 @@ const dropdownThemesRoutes: Routes = [
 ];
 
 /**
- * Dropdown themesrouting module.
+ * Dropdown themes routing module.
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownThemesRoutes)]
 })
-export class DropdownThemesRoutingModule {}
+export class DropdownThemesRoutingModule {
+}

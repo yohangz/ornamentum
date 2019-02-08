@@ -20,4 +20,5 @@ const dataTableColumnFilteringRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableColumnFilteringRoutes)]
 })
-export class DataTableColumnFilteringRoutingModule {}
+export class DataTableColumnFilteringRoutingModule {
+}

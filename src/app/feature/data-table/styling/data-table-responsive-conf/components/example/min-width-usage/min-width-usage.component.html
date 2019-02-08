@@ -2,7 +2,10 @@
   [title]="'Sales Products'"
   [items]="items"
   [minWidth]="1500"
-  [minHeight]="200">
+  [minHeight]="200"
+  [pageable]="true"
+  [showHeader]="true"
+  [showColumnSelector]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"

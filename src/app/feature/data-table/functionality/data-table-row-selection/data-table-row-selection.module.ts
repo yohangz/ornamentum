@@ -4,6 +4,10 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
+import { DataTableRowSelectionRoutingModule } from './data-table-row-selection-routing.module';
+
+import { SharedModule } from '../../../../shared/shared.module';
+
 import {
   DataTableRowSelectionComponent,
   RowSelectionUsageComponent,
@@ -17,10 +21,6 @@ import {
   SetSelectedRowUsageComponent,
   SetSelectedRowsUsageComponent
 } from './index';
-
-import { DataTableRowSelectionRoutingModule } from './data-table-row-selection-routing.module';
-
-import { SharedModule } from '../../../../shared/shared.module';
 
 /**
  * Module class for containing data table row selection module.
@@ -44,11 +44,7 @@ import { SharedModule } from '../../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot({
-      showColumnSelector: true,
-      pageable: true,
-      showHeader: true
-    }),
+    DataTableModule.forRoot(),
     DataTableRowSelectionRoutingModule
   ],
   providers: []

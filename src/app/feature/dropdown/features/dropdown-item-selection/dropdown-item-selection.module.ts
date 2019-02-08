@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule } from 'ornamentum';
 
+import { DropdownItemSelectionRoutingModule } from './dropdown-item-selection-routing.module';
+
+import { SharedModule } from '../../../../shared/shared.module';
+
 import {
   DropdownItemSelectionComponent,
   ItemSelectionUsageComponent,
@@ -18,10 +22,6 @@ import {
   MultiSelectOptionMaxWidthUsageComponent,
   WrapDisplaySelectLimitUsageComponent
 } from './index';
-
-import { DropdownItemSelectionRoutingModule } from './dropdown-item-selection-routing.module';
-
-import { SharedModule } from '../../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown item selection module.

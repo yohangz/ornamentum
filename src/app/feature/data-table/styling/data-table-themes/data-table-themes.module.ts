@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableThemesComponent } from './index';
-
 import { DataTableThemesRoutingModule } from './data-table-themes-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { DataTableThemesComponent } from './index';
 
 /**
  * Module class for containing data table themes module.

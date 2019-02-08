@@ -57,4 +57,5 @@ const dropdownAdvancedRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownAdvancedRoutes)]
 })
-export class DropdownAdvancedRoutingModule {}
+export class DropdownAdvancedRoutingModule {
+}

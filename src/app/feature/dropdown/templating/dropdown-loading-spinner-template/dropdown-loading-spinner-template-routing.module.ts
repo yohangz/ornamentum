@@ -20,4 +20,5 @@ const dropdownLoadingSpinnerTemplateRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownLoadingSpinnerTemplateRoutes)]
 })
-export class DropdownLoadingSpinnerTemplateRoutingModule {}
+export class DropdownLoadingSpinnerTemplateRoutingModule {
+}

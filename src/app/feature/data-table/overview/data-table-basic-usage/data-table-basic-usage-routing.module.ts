@@ -20,4 +20,5 @@ const dataTableBasicUsageRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableBasicUsageRoutes)]
 })
-export class DataTableBasicUsageRoutingModule {}
+export class DataTableBasicUsageRoutingModule {
+}

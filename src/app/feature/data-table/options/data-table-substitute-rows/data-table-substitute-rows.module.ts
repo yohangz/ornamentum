@@ -4,15 +4,15 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
+import { DataTableSubstituteRowsRoutingModule } from './data-table-substitute-rows-routing.module';
+
+import { SharedModule } from '../../../../shared/shared.module';
+
 import {
   DataTableSubstituteRowsComponent,
   WithoutSubstituteRowsUsageComponent,
   SubstituteRowsUsageComponent
 } from './index';
-
-import { DataTableSubstituteRowsRoutingModule } from './data-table-substitute-rows-routing.module';
-
-import { SharedModule } from '../../../../shared/shared.module';
 
 /**
  * Module class for containing data table substitute rows module.
@@ -27,9 +27,7 @@ import { SharedModule } from '../../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot({
-      showColumnSelector: true
-    }),
+    DataTableModule.forRoot(),
     DataTableSubstituteRowsRoutingModule
   ],
   providers: []

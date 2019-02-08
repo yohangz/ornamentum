@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule } from 'ornamentum';
 
+import { DropdownItemFilteringRoutingModule } from './dropdown-item-filtering-routing.module';
+
+import { SharedModule } from '../../../../shared/shared.module';
+
 import {
   DropdownItemFilteringComponent,
   ItemFilteringUsageComponent,
@@ -11,12 +15,8 @@ import {
   FilterTextUsageComponent
 } from './index';
 
-import { DropdownItemFilteringRoutingModule } from './dropdown-item-filtering-routing.module';
-
-import { SharedModule } from '../../../../shared/shared.module';
-
 /**
- * Module class for containing dropdown filtering module.
+ * Module class for containing dropdown item filtering module.
  */
 @NgModule({
   declarations: [

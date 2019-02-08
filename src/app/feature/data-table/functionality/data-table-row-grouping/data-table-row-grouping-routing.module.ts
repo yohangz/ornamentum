@@ -20,4 +20,5 @@ const dataTableRowGroupingRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableRowGroupingRoutes)]
 })
-export class DataTableRowGroupingRoutingModule {}
+export class DataTableRowGroupingRoutingModule {
+}

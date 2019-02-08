@@ -5,6 +5,7 @@
   [minWidth]="900"
   [pageable]="true"
   [showHeader]="true"
+  [showColumnSelector]="true"
   [expandableRows]="true">
   <ng-data-table-column
     [field]="'id'"
@@ -45,6 +46,6 @@
   </ng-data-table-column>
   <ng-template #ngDataTableRowExpand let-row="row">
     <app-row-expand-template-detail-view *ngIf="row.expanded || row.dataLoaded"
-                                       [row]="row"></app-row-expand-template-detail-view>
+                                         [row]="row"></app-row-expand-template-detail-view>
   </ng-template>
 </ng-data-table>

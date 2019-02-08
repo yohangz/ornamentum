@@ -20,4 +20,5 @@ const dataTableServerSideBasicRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableServerSideBasicRoutes)]
 })
-export class DataTableServerSideBasicRoutingModule {}
+export class DataTableServerSideBasicRoutingModule {
+}

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { DropdownModule } from 'ornamentum';
 
@@ -17,7 +18,6 @@ import {
 import { DropdownEventsRoutingModule } from './dropdown-events-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
-import { FormsModule } from '@angular/forms';
 
 /**
  * Module class for containing dropdown events module.

@@ -3,6 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule } from 'ornamentum';
 
+import { DropdownTranslationsRoutingModule } from './dropdown-translations-routing.module';
+
+import { SharedModule } from '../../../../shared/shared.module';
+
 import {
   DropdownTranslationsComponent,
   AdditionalTranslationsUsageComponent,
@@ -11,10 +15,6 @@ import {
   TranslationsSelectPlaceholderUsageComponent,
   TranslationsSelectedItemWrapPlaceholderUsageComponent
 } from './index';
-
-import { DropdownTranslationsRoutingModule } from './dropdown-translations-routing.module';
-
-import { SharedModule } from '../../../../shared/shared.module';
 
 /**
  * Module class for containing dropdown translations module.

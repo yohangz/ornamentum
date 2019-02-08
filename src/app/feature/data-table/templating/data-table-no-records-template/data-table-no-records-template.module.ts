@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule } from 'ornamentum';
 
-import { DataTableNoRecordsTemplateComponent, NoRecordsTemplateUsageComponent } from './index';
-
 import { DataTableNoRecordsTemplateRoutingModule } from './data-table-no-records-template-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { DataTableNoRecordsTemplateComponent, NoRecordsTemplateUsageComponent } from './index';
 
 /**
  * Module class for containing data table no records template module.
@@ -20,11 +20,10 @@ import { SharedModule } from '../../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot({
-      showColumnSelector: true
-    }),
+    DataTableModule.forRoot(),
     DataTableNoRecordsTemplateRoutingModule
   ],
   providers: []
 })
-export class DataTableNoRecordsTemplateModule {}
+export class DataTableNoRecordsTemplateModule {
+}

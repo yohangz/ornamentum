@@ -33,4 +33,5 @@ const dataTableExperimentalRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableExperimentalRoutes)]
 })
-export class DataTableExperimentalRoutingModule {}
+export class DataTableExperimentalRoutingModule {
+}

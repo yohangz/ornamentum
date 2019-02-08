@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule } from 'ornamentum';
 
-import { DropdownClientSideStreamComponent, ClientSideStreamUsageComponent } from './index';
-
 import { DropdownClientSideStreamRoutingModule } from './dropdown-client-side-stream-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
 
+import { DropdownClientSideStreamComponent, ClientSideStreamUsageComponent } from './index';
+
 /**
- * Module class for containing dropdown client real time data binding module.
+ * Module class for containing dropdown client side stream data binding module.
  */
 @NgModule({
   declarations: [DropdownClientSideStreamComponent, ClientSideStreamUsageComponent],

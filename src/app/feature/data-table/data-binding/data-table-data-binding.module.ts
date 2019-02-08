@@ -11,4 +11,5 @@ import { DataTableDataBindingRoutingModule } from './data-table-data-binding.rou
   imports: [DataTableDataBindingRoutingModule],
   providers: []
 })
-export class DataTableDataBindingModule {}
+export class DataTableDataBindingModule {
+}

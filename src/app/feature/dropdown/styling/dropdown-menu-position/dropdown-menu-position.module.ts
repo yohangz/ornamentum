@@ -3,11 +3,11 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule } from 'ornamentum';
 
-import { DropdownMenuPositionComponent, MenuPositionUsageComponent } from './index';
-
 import { DropdownMenuPositionRoutingModule } from './dropdown-menu-position-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { DropdownMenuPositionComponent, MenuPositionUsageComponent } from './index';
 
 /**
  * Module class for containing dropdown menu position module.

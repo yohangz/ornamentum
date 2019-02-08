@@ -20,4 +20,5 @@ const dropdownEventsRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownEventsRoutes)]
 })
-export class DropdownEventsRoutingModule {}
+export class DropdownEventsRoutingModule {
+}

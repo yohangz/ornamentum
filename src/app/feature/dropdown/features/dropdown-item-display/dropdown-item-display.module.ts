@@ -3,14 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { DropdownModule } from 'ornamentum';
 
-import { DropdownItemDisplayComponent, ItemDisplayUsageComponent } from './index';
-
 import { DropdownItemDisplayRoutingModule } from './dropdown-item-display-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
 
+import { DropdownItemDisplayComponent, ItemDisplayUsageComponent } from './index';
+
 /**
- * Module class for containing dropdown display items module.
+ * Module class for containing dropdown item display module.
  */
 @NgModule({
   declarations: [

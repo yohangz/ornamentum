@@ -3,7 +3,10 @@
   [items]="items"
   [minWidth]="650"
   [minHeight]="200"
-  [contentHeight]="200">
+  [contentHeight]="200"
+  [pageable]="true"
+  [showHeader]="true"
+  [showColumnSelector]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"

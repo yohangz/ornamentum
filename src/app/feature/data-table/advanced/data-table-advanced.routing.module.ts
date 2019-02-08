@@ -57,4 +57,5 @@ const dataTableAdvancedRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableAdvancedRoutes)]
 })
-export class DataTableAdvancedRoutingModule {}
+export class DataTableAdvancedRoutingModule {
+}

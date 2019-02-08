@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule, DataTableResourceModule } from 'ornamentum';
 
-import { DataTableServerSideWebSocketComponent, ServerSideWebSocketUsageComponent } from './index';
-
 import { DataTableServerSideWebSocketRoutingModule } from './data-table-server-side-web-socket-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
+
+import { DataTableServerSideWebSocketComponent, ServerSideWebSocketUsageComponent } from './index';
 
 /**
  * Module class for containing data table server side web socket data binding module.
@@ -20,14 +20,11 @@ import { SharedModule } from '../../../../shared/shared.module';
     CommonModule,
     FormsModule,
     SharedModule.forRoot(),
-    DataTableModule.forRoot({
-      showColumnSelector: true,
-      showHeader: true,
-      pageable: true
-    }),
+    DataTableModule.forRoot(),
     DataTableResourceModule,
     DataTableServerSideWebSocketRoutingModule
   ],
   providers: []
 })
-export class DataTableServerSideWebSocketModule {}
+export class DataTableServerSideWebSocketModule {
+}

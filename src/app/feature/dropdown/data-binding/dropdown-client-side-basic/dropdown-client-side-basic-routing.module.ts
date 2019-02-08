@@ -20,4 +20,5 @@ const dropdownClientSideBasicRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownClientSideBasicRoutes)]
 })
-export class DropdownClientSideBasicRoutingModule {}
+export class DropdownClientSideBasicRoutingModule {
+}

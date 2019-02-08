@@ -11,4 +11,5 @@ import { DataTableAdvancedRoutingModule } from './data-table-advanced.routing.mo
   imports: [DataTableAdvancedRoutingModule],
   providers: []
 })
-export class DataTableAdvancedModule {}
+export class DataTableAdvancedModule {
+}

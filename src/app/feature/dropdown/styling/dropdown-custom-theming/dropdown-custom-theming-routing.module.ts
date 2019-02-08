@@ -14,10 +14,11 @@ const dropdownCustomThemingRoutes: Routes = [
 ];
 
 /**
- * Dropdown styling and themes routing module.
+ * Dropdown custom theming routing module.
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownCustomThemingRoutes)]
 })
-export class DropdownCustomThemingRoutingModule {}
+export class DropdownCustomThemingRoutingModule {
+}

@@ -20,4 +20,5 @@ const dropdownMenuPositionRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownMenuPositionRoutes)]
 })
-export class DropdownMenuPositionRoutingModule {}
+export class DropdownMenuPositionRoutingModule {
+}

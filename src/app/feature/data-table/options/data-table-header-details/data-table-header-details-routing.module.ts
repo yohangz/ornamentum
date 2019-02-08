@@ -20,4 +20,5 @@ const dataTableHeaderDetailsRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableHeaderDetailsRoutes)]
 })
-export class DataTableHeaderDetailsRoutingModule {}
+export class DataTableHeaderDetailsRoutingModule {
+}

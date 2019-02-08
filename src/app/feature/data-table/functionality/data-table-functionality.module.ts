@@ -11,4 +11,5 @@ import { DataTableFunctionalityRoutingModule } from './data-table-functionality-
   imports: [DataTableFunctionalityRoutingModule],
   providers: []
 })
-export class DataTableFunctionalityModule {}
+export class DataTableFunctionalityModule {
+}

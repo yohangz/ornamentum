@@ -20,4 +20,5 @@ const dropdownItemGroupingRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownItemGroupingRoutes)]
 })
-export class DropdownItemGroupingRoutingModule {}
+export class DropdownItemGroupingRoutingModule {
+}

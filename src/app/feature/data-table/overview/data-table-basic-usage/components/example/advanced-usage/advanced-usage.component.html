@@ -4,15 +4,15 @@
   [items]="data"
   [minHeight]="200"
   [minWidth]="900"
-  [showHeader]="true"
   [pageable]="true"
+  [showHeader]="true"
+  [showColumnSelector]="true"
   [showRefreshButton]="true"
   [showRowSelectCheckbox]="true"
   [rowSelectable]="true"
   [selectOnRowClick]="true"
   [showSubstituteRows]="true"
   [persistTableState]="true"
-  [showColumnSelector]="true"
   [expandableRows]="true"
   [showLoadingSpinner]="true"
   [selectMode]="'multi'"
@@ -104,6 +104,6 @@
   </ng-data-table-column>
   <ng-template #ngDataTableRowExpand let-row="row">
     <app-advanced-usage-expandable-detail-view *ngIf="row.expanded || row.dataLoaded"
-                                            [row]="row"></app-advanced-usage-expandable-detail-view>
+                                               [row]="row"></app-advanced-usage-expandable-detail-view>
   </ng-template>
 </ng-data-table>
