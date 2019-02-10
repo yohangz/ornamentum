@@ -8,6 +8,9 @@ import { DataTableRequestParams } from '../../data-table/models/data-table-reque
 import { DataTableQueryResult } from '../../data-table/models/data-table-query-result.model';
 import { DataTableQueryField } from '../../data-table/models/data-table-query-field.model';
 import { DataTableDataBindCallback } from '../../data-table/models/data-table-data-bind-callback.model';
+import { DataTableFilterValueExtractCallback } from '../../data-table/models/data-table-filter-value-extract-callback.model';
+import { DataTableFilterOption } from '../../data-table/models/data-table-filter-option.model';
+import { DataTableColumnComponent } from '../../data-table/components/data-table-column/data-table-column.component';
 
 /**
  * Data table HTTP data fetch service.
@@ -17,7 +20,11 @@ export class DataTableHttpDataFetchService<T> {
   constructor(private http: HttpClient) {}
 
   /**
-   * HTTP data bind event handler.
+   * Get data bind event handler.
+   * @param resourcePath Request resource path to extract table data.
+   * @param responseMapper Custom response mapper. Use when response data does not match expected schema.
+   * @param requestOptions Advanced request options.
+   * @return Data table bind event handler.
    */
   public onDataBind(resourcePath: string, responseMapper?: <Q>(response: Q) => DataTableQueryResult<T[]>,
                     requestOptions?: any): DataTableDataBindCallback {
@@ -26,11 +33,11 @@ export class DataTableHttpDataFetchService<T> {
 
       if (params) {
         if (params.limit !== undefined) {
-          queryParams = queryParams.append('limit', String(params.limit));
+          queryParams = queryParams.set('limit', String(params.limit));
         }
 
         if (params.offset !== undefined) {
-          queryParams = queryParams.append('offset', String(params.offset));
+          queryParams = queryParams.set('offset', String(params.offset));
         }
 
         params.fields.forEach((column: DataTableQueryField, index: number) => {
@@ -51,7 +58,7 @@ export class DataTableHttpDataFetchService<T> {
           }
 
           if (query) {
-            queryParams = queryParams.append(column.field, query);
+            queryParams = queryParams.set(column.field, query);
           }
         });
 
@@ -63,6 +70,30 @@ export class DataTableHttpDataFetchService<T> {
 
         return resource;
       }
+    };
+  }
+
+  /**
+   * Get filter value extract event handler.
+   * @param resourcePath Request resource path to extract column filter options data.
+   * @param responseMapper Custom response mapper. Use when response data does not match expected schema.
+   * @param requestOptions Advanced request options.
+   * @return Data table filter options event handler.
+   */
+  public onFilterValueExtract(resourcePath: string, responseMapper?: <Q>(response: Q) => DataTableFilterOption[],
+                              requestOptions?: any): DataTableFilterValueExtractCallback {
+    return (column: DataTableColumnComponent): Observable<DataTableFilterOption[]> => {
+      let queryParams = new HttpParams();
+      const filterField = column.filterField || column.field;
+      queryParams = queryParams.set('field', filterField);
+
+      const resource = this.http.get<any>(resourcePath, { params: queryParams, ...requestOptions }) as Observable<any>;
+
+      if (responseMapper) {
+        return resource.pipe(map(responseMapper));
+      }
+
+      return resource;
     };
   }
 }
