@@ -34,6 +34,7 @@ export class DataTableWebsocketDataFetchService<T> {
    * Websocket data bind event handler.
    * Must call init prior to calling this function.
    * @param responseMapper Response data mapper callback.
+   * @return Data table bind event handler.
    */
   public onDataBind(responseMapper?: <Q>(response: Q) => DataTableQueryResult<T[]>): DataTableDataBindCallback {
     if (!this.socket) {
