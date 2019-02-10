@@ -8,7 +8,6 @@ import { DataTableRequestParams } from '../../data-table/models/data-table-reque
 import { DataTableQueryResult } from '../../data-table/models/data-table-query-result.model';
 import { DataTableDataBindCallback } from '../../data-table/models/data-table-data-bind-callback.model';
 
-
 /**
  * Data table websocket data fetch service.
  */
@@ -45,7 +44,11 @@ export class DataTableWebsocketDataFetchService<T> {
 
     return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T[]>> => {
       if (params) {
-        this.socket.next(params as any);
+        this.socket.next({
+          offset: params.offset,
+          limit: params.limit,
+          fields: params.fields
+        } as any);
 
         if (responseMapper) {
           return this.subject.pipe(map(responseMapper));
