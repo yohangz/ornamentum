@@ -17,23 +17,28 @@ export class DropdownHttpResourceService<T> {
   }
 
   /**
-   * HTTP data bind event handler.
+   * Get data bind event handler.
+   * @param resourcePath Request resource path to extract dropdown data.
+   * @param responseMapper Custom response mapper. Use when response data does not match expected schema.
+   * @param requestOptions Advanced request options.
+   * @return Dropdown bind event handler.
    */
-  public onDataBind(resourcePath: string, responseMapper?: <Q>(response: Q) => DropdownQueryResult<T[]>, requestOptions?: any): DropdownDataBindCallback {
+  public onDataBind(resourcePath: string, responseMapper?: <Q>(response: Q) => DropdownQueryResult<T[]>,
+                    requestOptions?: any): DropdownDataBindCallback {
     return (params?: DropdownRequestParams): Observable<DropdownQueryResult<T[]>> => {
       let queryParams = new HttpParams();
 
       if (params) {
         if (params.limit !== undefined) {
-          queryParams = queryParams.append('limit', String(params.limit));
+          queryParams = queryParams.set('limit', String(params.limit));
         }
 
         if (params.offset !== undefined) {
-          queryParams = queryParams.append('offset', String(params.offset));
+          queryParams = queryParams.set('offset', String(params.offset));
         }
 
         if (params.filter && params.filter.value) {
-          queryParams = queryParams.append('filter', `${params.filter.key}|${params.filter.value}`);
+          queryParams = queryParams.set('filter', `${params.filter.key}|${params.filter.value}`);
         }
 
         const resource = this.http.get<any>(resourcePath, { params: queryParams, ...requestOptions }) as Observable<any>;

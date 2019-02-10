@@ -33,6 +33,7 @@ export class DropdownWebsocketDataFetchService<T> {
    * Websocket data bind event handler.
    * Must call init prior to calling this function.
    * @param responseMapper Response data mapper callback.
+   * @return Dropdown bind event handler.
    */
   public onDataBind(responseMapper?: <Q>(response: Q) => DropdownQueryResult<T[]>): DropdownDataBindCallback {
     if (!this.socket) {
