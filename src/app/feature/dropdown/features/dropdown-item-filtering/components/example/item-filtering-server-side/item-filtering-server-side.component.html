@@ -1,6 +1,9 @@
 <ng-dropdown
   [selectTrackBy]="'id'"
   [displayTrackBy]="'productType'"
+  [filterable]="true"
   [loadOnScroll]="true"
-  [onDataBind]="onDataBind">
+  [onDataBind]="onDataBind"
+  [filterDebounce]="true"
+  [filterDebounceTime]="2000">
 </ng-dropdown>

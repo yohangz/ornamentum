@@ -85,6 +85,19 @@
   <app-filter-text-usage></app-filter-text-usage>
   <app-example-code [files]="filterTextUsage"></app-example-code>
 
+  <h2 id="serverSideFiltering">Server-side Item Filtering</h2>
+
+  <p>
+    Unlike the client side data filtering, server side filtering uses the mechanism to initiate a new API request to fetch data from the server which matches to the particular action whenever a user performs a keyword search.
+  </p>
+
+  <p>
+    Also all the properties described in the <a [routerLink]="['/feature/dropdown/features/item/filtering']" [fragment]="'usefulProperties'">Useful Properties</a> section, can be used with Server side filtering as well.
+  </p>
+
+  <app-item-filtering-server-side></app-item-filtering-server-side>
+  <app-example-code [files]="itemFilteringServerSideUsage"></app-example-code>
+
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/dropdown/advanced/load-data-on-init']">Load Data On Init</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#filterable">API Doc for Data
