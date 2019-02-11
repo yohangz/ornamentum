@@ -1,0 +1,58 @@
+<ng-data-table
+  [title]="'Sales Products'"
+  [minHeight]="200"
+  [minWidth]="900"
+  [limit]="10"
+  [pageable]="true"
+  [showHeader]="true"
+  [showColumnSelector]="true"
+  [multiColumnSortable]="true"
+  [onDataBind]="onDataBind">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [sortable]="true"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'orderMethodType'"
+    [title]="'Order Method Type'"
+    [sortOrder]="'desc'"
+    [sortable]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'retailerType'"
+    [title]="'Retailer Type'"
+    [sortable]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productLine'"
+    [title]="'Product Line'"
+    [sortOrder]="'asc'"
+    [sortable]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productType'"
+    [title]="'Product Type'"
+    [sortable]="true">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'revenue'"
+    [title]="'Revenue'"
+    [sortOrder]="'asc'"
+    [sortable]="true"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'quantity'"
+    [title]="'Quantity'"
+    [sortable]="true"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'grossMargin'"
+    [title]="'Gross Margin'"
+    [sortable]="true"
+    [width]="100">
+  </ng-data-table-column>
+</ng-data-table>

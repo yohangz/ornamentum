@@ -83,6 +83,33 @@
   <app-multi-column-sortable-usage></app-multi-column-sortable-usage>
   <app-example-code [files]="multiColumnSortableUsage"></app-example-code>
 
+  <h2 id="serverSideSorting">Server-side Column Sorting</h2>
+
+  <p>
+    This feature enables to perform column data sorting in the server side. Also all the attributes mentioned in the
+    <a [routerLink]="['/feature/data-table/functionality/column/sorting']" [fragment]="'usefulProperties'"> Useful Properties</a>
+    section can be used in this nature as well.
+  </p>
+
+  <h4 id="serverSideSingleColumnSorting">Server-side Single Column Sorting</h4>
+
+  <p>
+    Server-side single column sorting can be enabled by simply setting <code>sortable</code> property in to value <b>true</b>,
+    when <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server-side Data Binding</a> technique is used.
+  </p>
+
+  <app-server-side-single-column-sorting></app-server-side-single-column-sorting>
+  <app-example-code [files]="serverSideSingleColumnSortableUsage"></app-example-code>
+
+  <h4 id="serverSideMultiColumnSorting">Server-side Multi Column Sorting</h4>
+
+  <p>
+     This feature will enable to perform the same behaviour mentioned in the <a [routerLink]="['/feature/data-table/functionality/column/sorting']" [fragment]="'multiColumnSortable'">Multi Column Sortable</a>, in the server-side.
+  </p>
+
+  <app-server-side-multi-column-sorting></app-server-side-multi-column-sorting>
+  <app-example-code [files]="serverSideMultiColumnSortableUsage"></app-example-code>
+
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/experimental/column/resizing']">Column Resizing</a><br/>
   <a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a><br/>
