@@ -74,7 +74,7 @@ export const queryDataByFieldExpression = (data: any[], offset: number = 0, limi
 };
 
 export const queryDataByFieldCollection = (data: any[], offset: number = 0, limit: number = 10,
-                                           params: DataTableQueryField[]|DropdownFilter): any => {
+                                           params: DataTableQueryField[] | DropdownFilter): any => {
   let result = data;
 
   if (Array.isArray(params)) {
@@ -140,4 +140,21 @@ export const queryDataByFieldCollection = (data: any[], offset: number = 0, limi
     items,
     count
   };
+};
+
+export const queryDropdownFilterDataByField = (data: any[], field: any = {}): any => {
+  const mappedItems = data.map((dataItem) => {
+    return dataItem[field.field];
+  });
+
+  const uniqueItems = mappedItems.filter((item: any, currentIndex: number, sourceDataArray: any[]) => {
+    return sourceDataArray.indexOf(item) === currentIndex;
+  });
+
+  return uniqueItems.map((item: any) => {
+    return {
+      key: item,
+      value: item
+    };
+  });
 };
