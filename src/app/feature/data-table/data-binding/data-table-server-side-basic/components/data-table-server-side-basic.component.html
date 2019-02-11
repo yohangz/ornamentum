@@ -12,7 +12,8 @@
   <p>
     Unlike in <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data
     Binding</a>, server side rendering will request for data on table initialize and whenever user performs filtering,
-    sorting, page change, etc. operations. Integration party has to write the logic to fetch data via a backend service
+    <a [routerLink]="['/feature/data-table/functionality/column/sorting']" [fragment]="'serverSideColumnSorting'">sorting</a>,
+    page change, etc. operations. Integration party has to write the logic to fetch data via a backend service
     depending on the request context.
   </p>
 

@@ -195,6 +195,20 @@ export class MainComponent {
                   ]
                 },
                 {
+                  title: 'Server-side Column Sorting',
+                  anchor: 'serverSideColumnSorting',
+                  subNavigation: [
+                    {
+                      title: 'Server-side Single Column Sorting',
+                      anchor: 'serverSideSingleColumnSorting'
+                    },
+                    {
+                      title: 'Server-side Multi Column Sorting',
+                      anchor: 'serverSideMultiColumnSorting'
+                    }
+                  ]
+                },
+                {
                   title: 'Suggested Links',
                   anchor: 'suggestedLinks'
                 }
