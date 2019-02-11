@@ -12,6 +12,13 @@
   //overflow: hidden;
   position: relative;
 
+  * {
+    &::before,
+    &::after {
+      box-sizing: border-box;
+    }
+  }
+
   //Scrollable table styles
   &.scrollable {
     .ng-data-table-content-header-container {
