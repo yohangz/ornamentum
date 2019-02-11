@@ -716,13 +716,15 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
       .pipe(
         debounceTime(20),
         switchMap((fetchMode: DataFetchMode) => this.mapDataBind(fetchMode)),
-        catchError(() => {
+        catchError((err) => {
+          console.log('data fetch error', err);
           return of(noop);
         })
       )
       .subscribe((queryResult: DataTableQueryResult<any>) => {
         this.onAfterDataBind(queryResult);
       }, () => {
+        console.log('data fetch failure');
         this.onAfterDataBind(noop);
       });
   }
