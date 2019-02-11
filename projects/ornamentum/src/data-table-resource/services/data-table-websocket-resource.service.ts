@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Subscription, Subject, Observable,  } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { webSocket, WebSocketSubject, WebSocketSubjectConfig } from 'rxjs/webSocket';
 
 import { DataTableRequestParams } from '../../data-table/models/data-table-request-params.model';
@@ -54,7 +54,11 @@ export class DataTableWebsocketDataFetchService<T> {
           return this.subject.pipe(map(responseMapper));
         }
 
-        return this.subject;
+        return this.subject.pipe(
+          tap((data) => {
+            console.log('data: %o', data);
+          })
+        );
       }
     };
   }
