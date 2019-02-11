@@ -3,11 +3,6 @@ import { ExampleFile, FileType } from 'helper-models';
 export const advancedUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'advanced-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/advanced-usage/advanced-usage.module.md')
-  },
-  {
-    type: FileType.TS,
     name: 'advanced-usage.component.ts',
     content: require('!!raw-loader?lang=typescript!./example/advanced-usage/advanced-usage.component.ts')
   },
@@ -15,6 +10,11 @@ export const advancedUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'advanced-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/advanced-usage/advanced-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'advanced-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/advanced-usage/advanced-usage.module.md')
   }
 ];
 

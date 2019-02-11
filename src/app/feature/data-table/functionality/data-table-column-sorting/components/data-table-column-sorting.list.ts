@@ -3,11 +3,6 @@ import { ExampleFile, FileType } from 'helper-models';
 export const columnSortingUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'column-sorting-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/column-sorting-usage/column-sorting-usage.module.md')
-  },
-  {
-    type: FileType.TS,
     name: 'column-sorting-usage.component.ts',
     content: require('!!raw-loader?lang=typescript!./example/column-sorting-usage/column-sorting-usage.component.ts')
   },
@@ -15,15 +10,15 @@ export const columnSortingUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'column-sorting-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/column-sorting-usage/column-sorting-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'column-sorting-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/column-sorting-usage/column-sorting-usage.module.md')
   }
 ];
 
 export const sortOrderUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'sort-order-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/sort-order-usage/sort-order-usage.module.md')
-  },
   {
     type: FileType.TS,
     name: 'sort-order-usage.component.ts',
@@ -33,15 +28,15 @@ export const sortOrderUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'sort-order-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/sort-order-usage/sort-order-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'sort-order-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/sort-order-usage/sort-order-usage.module.md')
   }
 ];
 
 export const sortFieldUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'sort-field-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/sort-field-usage/sort-field-usage.module.md')
-  },
   {
     type: FileType.TS,
     name: 'sort-field-usage.component.ts',
@@ -51,27 +46,29 @@ export const sortFieldUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'sort-field-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/sort-field-usage/sort-field-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'sort-field-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/sort-field-usage/sort-field-usage.module.md')
   }
 ];
 
 export const multiColumnSortableUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'multi-column-sortable-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/multi-column-sortable-usage/' +
-      'multi-column-sortable-usage.module.md')
-  },
-  {
-    type: FileType.TS,
     name: 'multi-column-sortable-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/multi-column-sortable-usage/' +
-      'multi-column-sortable-usage.component.ts')
+    content: require('!!raw-loader?lang=typescript!./example/multi-column-sortable-usage/multi-column-sortable-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'multi-column-sortable-usage.html',
-    content: require('!!raw-loader?lang=html!./example/multi-column-sortable-usage/' +
-      'multi-column-sortable-usage.component.html')
+    content: require('!!raw-loader?lang=html!./example/multi-column-sortable-usage/multi-column-sortable-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'multi-column-sortable-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/multi-column-sortable-usage/multi-column-sortable-usage.module.md')
   }
 ];
 
