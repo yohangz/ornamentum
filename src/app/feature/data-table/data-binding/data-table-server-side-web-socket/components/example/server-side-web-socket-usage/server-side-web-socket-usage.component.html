@@ -1,12 +1,12 @@
 <ng-data-table
   [title]="'Sales Products'"
-  [onDataBind]="onDataBind"
   [minHeight]="200"
   [minWidth]="900"
   [pageable]="true"
   [showHeader]="true"
   [showColumnSelector]="true"
-  [showLoadingSpinner]="true">
+  [showLoadingSpinner]="true"
+  [onDataBind]="onDataBind">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
