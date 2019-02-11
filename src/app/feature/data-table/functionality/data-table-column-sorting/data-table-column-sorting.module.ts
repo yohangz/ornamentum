@@ -2,18 +2,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { DataTableModule } from 'ornamentum';
+import { DataTableModule, DataTableResourceModule } from 'ornamentum';
 
 import { DataTableColumnSortingRoutingModule } from './data-table-column-sorting-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
 
 import {
-  DataTableColumnSortingComponent,
   ColumnSortingUsageComponent,
-  SortOrderUsageComponent,
-  SortFieldUsageComponent,
+  DataTableColumnSortingComponent,
   MultiColumnSortableUsageComponent,
+  SortFieldUsageComponent,
+  SortOrderUsageComponent,
+  ServerSideSingleColumnSortingComponent,
+  ServerSideMultiColumnSortingComponent
 } from './index';
 
 /**
@@ -25,7 +27,9 @@ import {
     ColumnSortingUsageComponent,
     SortOrderUsageComponent,
     SortFieldUsageComponent,
-    MultiColumnSortableUsageComponent
+    MultiColumnSortableUsageComponent,
+    ServerSideSingleColumnSortingComponent,
+    ServerSideMultiColumnSortingComponent
   ],
   exports: [],
   imports: [
@@ -33,6 +37,7 @@ import {
     FormsModule,
     SharedModule.forRoot(),
     DataTableModule.forRoot(),
+    DataTableResourceModule,
     DataTableColumnSortingRoutingModule
   ],
   providers: []
