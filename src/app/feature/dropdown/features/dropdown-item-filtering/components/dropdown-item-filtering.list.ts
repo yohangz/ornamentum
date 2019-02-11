@@ -72,6 +72,19 @@ export const filterTextUsage: ExampleFile[] = [
   }
 ];
 
+export const itemFilteringServerSideUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'item-filtering-server-side.component.ts',
+    content: require('!!raw-loader?lang=typescript!./example/item-filtering-server-side/item-filtering-server-side.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'item-filtering-server-side.component.html',
+    content: require('!!raw-loader?lang=html!./example/item-filtering-server-side/item-filtering-server-side.component.html')
+  }
+];
+
 export const demoSnippet: any = {
   dropdownFiltering: require('!!raw-loader?lang=typescript!./docs/filterable.md')
 };

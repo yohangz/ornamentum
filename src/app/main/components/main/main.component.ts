@@ -1114,6 +1114,10 @@ export class MainComponent {
                   ]
                 },
                 {
+                  title: 'Server-side Item Filtering',
+                  anchor: 'serverSideFiltering'
+                },
+                {
                   title: 'Suggested Links',
                   anchor: 'suggestedLinks'
                 }

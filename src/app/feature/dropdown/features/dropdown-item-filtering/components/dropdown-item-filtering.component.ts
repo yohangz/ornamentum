@@ -4,10 +4,11 @@ import { FileType } from 'helper-models';
 
 import {
   demoSnippet,
-  itemFilteringUsage,
-  filterDebounceUsage,
   filterDebounceTimeUsage,
-  filterTextUsage
+  filterDebounceUsage,
+  filterTextUsage,
+  itemFilteringUsage,
+  itemFilteringServerSideUsage
 } from './dropdown-item-filtering.list';
 
 @Component({
@@ -24,4 +25,5 @@ export class DropdownItemFilteringComponent {
   public filterDebounceUsage = filterDebounceUsage;
   public filterDebounceTimeUsage = filterDebounceTimeUsage;
   public filterTextUsage = filterTextUsage;
+  public itemFilteringServerSideUsage = itemFilteringServerSideUsage;
 }
