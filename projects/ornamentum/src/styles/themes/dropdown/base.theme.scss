@@ -9,6 +9,13 @@
 .ng-dropdown {
   position: relative;
 
+  * {
+    &::before,
+    &::after {
+      box-sizing: border-box;
+    }
+  }
+
   // Dropdown Delete Button Container Styles
   .ng-dropdown-input-group-btn {
     @include transform(translateY(-50%));
