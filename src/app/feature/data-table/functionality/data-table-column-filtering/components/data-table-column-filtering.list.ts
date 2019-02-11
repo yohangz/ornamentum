@@ -3,11 +3,6 @@ import { ExampleFile, FileType } from 'helper-models';
 export const columnFilteringUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'column-filtering-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/column-filtering-usage/column-filtering-usage.module.md')
-  },
-  {
-    type: FileType.TS,
     name: 'column-filtering-usage.component.ts',
     content: require('!!raw-loader?lang=typescript!./example/column-filtering-usage/column-filtering-usage.component.ts')
   },
@@ -15,15 +10,15 @@ export const columnFilteringUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'column-filtering-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/column-filtering-usage/column-filtering-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'column-filtering-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/column-filtering-usage/column-filtering-usage.module.md')
   }
 ];
 
 export const columnFilteringDropdownUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'column-filtering-dropdown-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/column-filtering-dropdown-usage/column-filtering-dropdown-usage.module.md')
-  },
   {
     type: FileType.TS,
     name: 'column-filtering-dropdown-usage.component.ts',
@@ -33,15 +28,15 @@ export const columnFilteringDropdownUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'column-filtering-dropdown-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/column-filtering-dropdown-usage/column-filtering-dropdown-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'column-filtering-dropdown-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/column-filtering-dropdown-usage/column-filtering-dropdown-usage.module.md')
   }
 ];
 
 export const columnFilteringTextBoxUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'column-filtering-text-box-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/column-filtering-text-box-usage/column-filtering-text-box-usage.module.md')
-  },
   {
     type: FileType.TS,
     name: 'column-filtering-text-box-usage.component.ts',
@@ -51,6 +46,11 @@ export const columnFilteringTextBoxUsage: ExampleFile[] = [
     type: FileType.HTML,
     name: 'column-filtering-text-box-usage.component.html',
     content: require('!!raw-loader?lang=html!./example/column-filtering-text-box-usage/column-filtering-text-box-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'column-filtering-text-box-usage.module.ts',
+    content: require('!!raw-loader?lang=typescript!./example/column-filtering-text-box-usage/column-filtering-text-box-usage.module.md')
   }
 ];
 

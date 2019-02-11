@@ -3,12 +3,6 @@ import { ExampleFile, FileType } from 'helper-models';
 export const clientSideStreamUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'client-side-stream-usage.module.ts',
-    content: require(
-      '!!raw-loader?lang=typescript!./example/client-side-stream-usage/client-side-stream-usage.module.md')
-  },
-  {
-    type: FileType.TS,
     name: 'client-side-stream-usage.component.ts',
     content: require(
       '!!raw-loader?lang=typescript!./example/client-side-stream-usage/client-side-stream-usage.component.ts')
@@ -18,6 +12,12 @@ export const clientSideStreamUsage: ExampleFile[] = [
     name: 'client-side-stream-usage.component.html',
     content: require(
       '!!raw-loader?lang=html!./example/client-side-stream-usage/client-side-stream-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'client-side-stream-usage.module.ts',
+    content: require(
+      '!!raw-loader?lang=typescript!./example/client-side-stream-usage/client-side-stream-usage.module.md')
   }
 ];
 
