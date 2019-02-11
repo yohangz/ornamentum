@@ -88,11 +88,16 @@
   <h2 id="serverSideFiltering">Server-side Item Filtering</h2>
 
   <p>
-    Unlike the client side data filtering, server side filtering uses the mechanism to initiate a new API request to fetch data from the server which matches to the particular action whenever a user performs a keyword search.
+    Unlike the client side data filtering, server side filtering uses the mechanism to initiate a new API request to
+    fetch data from the server which matches to the particular action whenever a user performs a keyword search.
+    In order to enable this behaviour, it is necessary to use <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">
+    Server-side Data Binding</a> technique.
   </p>
 
   <p>
-    Also all the properties described in the <a [routerLink]="['/feature/dropdown/features/item/filtering']" [fragment]="'usefulProperties'">Useful Properties</a> section, can be used with Server side filtering as well.
+    Also all the properties described in the <a [routerLink]="['/feature/dropdown/features/item/filtering']"
+                                                [fragment]="'usefulProperties'">Useful Properties</a> section,
+    can be used with Server side filtering as well.
   </p>
 
   <app-item-filtering-server-side></app-item-filtering-server-side>
