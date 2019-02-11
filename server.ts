@@ -13,7 +13,7 @@ import * as http from 'http';
 import { join } from 'path';
 import { readFileSync } from 'fs';
 
-import { queryDataByFieldExpression, queryDataByFieldCollection } from './server/query';
+import { queryDataByFieldCollection, queryDataByFieldExpression, queryDropdownFilterDataByField } from './server/query';
 
 process.on('uncaughtException', function (exception) {
   console.log('node process crashed: ', exception);
@@ -55,6 +55,12 @@ app.get('/api/data', (req: Request, res: Response) => {
   const parsedOffset = Number(offset);
   const parsedLimit = Number(limit);
   res.status(200).json(queryDataByFieldExpression(data, parsedOffset || 0, parsedLimit || 10, fields));
+});
+
+// Column filtering options
+app.get('/api/data/filter', (req: Request, res: Response) => {
+  const { ...field } = req.query;
+  res.status(200).json(queryDropdownFilterDataByField(data, field));
 });
 
 // Server static files from /browser

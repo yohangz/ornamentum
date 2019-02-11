@@ -18,7 +18,7 @@
   <h2 id="whatYouWillSee">What You Will See</h2>
 
   <app-column-filtering-usage></app-column-filtering-usage>
-  <app-example-code [files]="columnfilteringUsage"></app-example-code>
+  <app-example-code [files]="columnFilteringUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
 
@@ -43,7 +43,7 @@
   </p>
 
   <app-column-filtering-text-box-usage></app-column-filtering-text-box-usage>
-  <app-example-code [files]="columnfilteringTextBoxUsage"></app-example-code>
+  <app-example-code [files]="columnFilteringTextBoxUsage"></app-example-code>
 
   <h4 id="filterPlaceholder">Filter Place Holder</h4>
   <code>filterPlaceholder: string</code> &nbsp;
@@ -72,7 +72,7 @@
   </p>
 
   <app-column-filtering-dropdown-usage></app-column-filtering-dropdown-usage>
-  <app-example-code [files]="columnfilteringDropdownUsage"></app-example-code>
+  <app-example-code [files]="columnFilteringDropdownUsage"></app-example-code>
 
   <h4 id="dropdownFilterMenuPosition">Dropdown Filter Menu Position</h4>
   <code>dropdownFilterMenuPosition: string = 'bottom-right' | 'bottom-left' | 'top-left' | 'top-right'</code> &nbsp;
@@ -182,6 +182,36 @@
   <h5 class="badge badge-pill badge-warning">Default Value: ''</h5>
 
   <p>Used to provide a filter to see the values matched for specified criteria.</p>
+
+  <h2 id="serverSideColumnFilter">Server-side Column Filter</h2>
+
+  <p>
+    This feature enables to perform column data filtering in the server side via Text Box or Dropdown.
+  </p>
+
+  <h4 id="serverSideColumnFilterTextBox">Server-side Column Filter Text Box</h4>
+
+  <p>
+    Server-side text box filtering can be enabled by simply setting the filterable property as mentioned in the,
+    <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'basicUsage'">Basic Usage</a> section,
+    when <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server-side Data Binding</a> technique is used.
+  </p>
+
+  <p>
+    This feature will enable to perform the same behaviour mentioned in the <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'filterTextBox'">Client-side Filter Text Box</a>, in the server-side.
+  </p>
+
+  <app-server-side-text-box-filtering-usage></app-server-side-text-box-filtering-usage>
+  <app-example-code [files]="serverSideColumnFilteringTextBoxUsage"></app-example-code>
+
+  <h4 id="serverSideColumnFilterDropdown">Server-side Column Filter Dropdown</h4>
+
+  <p>
+    This feature will enable to perform the same behaviour mentioned in the <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'filterDropdown'">Client-side Filter Dropdown</a>, in the server-side.
+  </p>
+
+  <app-server-side-dropdown-filtering-usage></app-server-side-dropdown-filtering-usage>
+  <app-example-code [files]="serverSideColumnFilteringDropdownUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/advanced/events']">Events</a><br>

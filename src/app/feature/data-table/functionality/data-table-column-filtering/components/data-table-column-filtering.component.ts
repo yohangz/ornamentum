@@ -4,9 +4,11 @@ import { FileType } from 'helper-models';
 
 import {
   demoSnippet,
-  columnfilteringUsage,
-  columnfilteringTextBoxUsage,
-  columnfilteringDropdownUsage
+  columnFilteringUsage,
+  columnFilteringTextBoxUsage,
+  columnFilteringDropdownUsage,
+  serverSideColumnFilteringDropdownUsage,
+  serverSideColumnFilteringTextBoxUsage
 } from './data-table-column-filtering.list';
 
 @Component({
@@ -19,7 +21,9 @@ export class DataTableColumnFilteringComponent {
 
   public demoSnippet = demoSnippet;
 
-  public columnfilteringUsage = columnfilteringUsage;
-  public columnfilteringTextBoxUsage = columnfilteringTextBoxUsage;
-  public columnfilteringDropdownUsage = columnfilteringDropdownUsage;
+  public columnFilteringUsage = columnFilteringUsage;
+  public columnFilteringTextBoxUsage = columnFilteringTextBoxUsage;
+  public columnFilteringDropdownUsage = columnFilteringDropdownUsage;
+  public serverSideColumnFilteringTextBoxUsage = serverSideColumnFilteringTextBoxUsage;
+  public serverSideColumnFilteringDropdownUsage = serverSideColumnFilteringDropdownUsage;
 }

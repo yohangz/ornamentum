@@ -2,17 +2,19 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { DataTableModule } from 'ornamentum';
+import { DataTableModule, DataTableResourceModule } from 'ornamentum';
 
 import { DataTableColumnFilteringRoutingModule } from './data-table-column-filtering-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
 
 import {
-  DataTableColumnFilteringComponent,
   ColumnFilteringDropdownUsageComponent,
+  ColumnFilteringTextBoxUsageComponent,
   ColumnFilteringUsageComponent,
-  ColumnFilteringTextBoxUsageComponent
+  DataTableColumnFilteringComponent,
+  ServerSideDropdownFilteringUsageComponent,
+  ServerSideTextBoxFilteringUsageComponent
 } from './index';
 
 /**
@@ -23,7 +25,9 @@ import {
     DataTableColumnFilteringComponent,
     ColumnFilteringDropdownUsageComponent,
     ColumnFilteringTextBoxUsageComponent,
-    ColumnFilteringUsageComponent
+    ColumnFilteringUsageComponent,
+    ServerSideTextBoxFilteringUsageComponent,
+    ServerSideDropdownFilteringUsageComponent
   ],
   exports: [],
   imports: [
@@ -31,6 +35,7 @@ import {
     FormsModule,
     SharedModule.forRoot(),
     DataTableModule.forRoot(),
+    DataTableResourceModule,
     DataTableColumnFilteringRoutingModule
   ],
   providers: []

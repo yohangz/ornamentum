@@ -321,6 +321,20 @@ export class MainComponent {
                   ]
                 },
                 {
+                  title: 'Server-side Column Filter',
+                  anchor: 'serverSideColumnFilter',
+                  subNavigation: [
+                    {
+                      title: 'Server-side Column Filter Text Box',
+                      anchor: 'serverSideColumnFilterTextBox'
+                    },
+                    {
+                      title: 'Server-side Column Filter Dropdown',
+                      anchor: 'serverSideColumnFilterDropdown'
+                    }
+                  ]
+                },
+                {
                   title: 'Suggested Links',
                   anchor: 'suggestedLinks'
                 }
