@@ -5,7 +5,7 @@ export const serverSideWebSocketUsage: ExampleFile[] = [
     type: FileType.TS,
     name: 'server-side-web-socket-usage.component.ts',
     content: require(
-      '!!raw-loader?lang=typescript!./example/server-side-web-socket-usage/server-side-web-socket-usage.component.ts')
+      '!!raw-loader?lang=typescript!./example/server-side-web-socket-usage/server-side-web-socket-usage.component.md')
   },
   {
     type: FileType.HTML,
