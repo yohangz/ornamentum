@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
+import { interval } from 'rxjs';
+
 import { GlobalRefService, DataTableWebsocketDataFetchService, DataTableDataBindCallback } from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
-
 import { DataFetchService } from 'helper-services';
 
 /**
@@ -32,6 +33,13 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
       });
 
       this.onDataBind = this.dataTableWebSocketDataFetchService.onDataBind();
+
+      // Keep the socket connection alive with a hart beat ping
+      interval(40000).subscribe(() => {
+        this.dataTableWebSocketDataFetchService.socketStream.next({
+          type: 'keep-alive'
+        } as any);
+      });
     }
   }
 

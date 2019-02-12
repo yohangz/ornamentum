@@ -1,5 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
+import { interval } from 'rxjs';
+
 import {
   GlobalRefService,
   DropdownWebsocketDataFetchService,
@@ -7,7 +9,6 @@ import {
 } from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
-
 import { DataFetchService } from 'helper-services';
 
 /**
@@ -22,7 +23,7 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
 
   constructor(private dataFetchService: DataFetchService,
               private globalRefService: GlobalRefService,
-              private dataTableWebSocketDataFetchService: DropdownWebsocketDataFetchService<ExampleData>) {
+              private dropdownWebSocketDataFetchService: DropdownWebsocketDataFetchService<ExampleData>) {
   }
 
   /**
@@ -31,11 +32,18 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     // Create web-socket connection on browser environment only to support server side rendering.
     if (this.globalRefService.isBrowser) {
-      this.dataTableWebSocketDataFetchService.init({
+      this.dropdownWebSocketDataFetchService.init({
         url: `wss://${window.location.hostname}` // web-socket endpoint
       });
 
-      this.onDataBind = this.dataTableWebSocketDataFetchService.onDataBind();
+      this.onDataBind = this.dropdownWebSocketDataFetchService.onDataBind();
+
+      // Keep the socket connection alive with a hart beat ping
+      interval(40000).subscribe(() => {
+        this.dropdownWebSocketDataFetchService.socketStream.next({
+          type: 'keep-alive'
+        } as any);
+      });
     }
   }
 
@@ -43,6 +51,6 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
    * Component destroy lifecycle event handler.
    */
   public ngOnDestroy(): void {
-    this.dataTableWebSocketDataFetchService.dispose();
+    this.dropdownWebSocketDataFetchService.dispose();
   }
 }
