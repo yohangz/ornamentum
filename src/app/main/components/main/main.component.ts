@@ -831,6 +831,34 @@ export class MainComponent {
                   anchor: 'suggestedLinks'
                 }
               ]
+            },
+            {
+              routePath: '/feature/data-table/advanced/config-overriding',
+              title: 'Configuration Overriding',
+              navigation: [
+                {
+                  title: 'Overriding Hierarchy',
+                  anchor: 'overridingHierarchy',
+                  subNavigation: [
+                    {
+                      title: 'Default Configuration',
+                      anchor: 'defaultConfiguration'
+                    },
+                    {
+                      title: 'Mark-up Property Binding',
+                      anchor: 'markupPropertyBinding'
+                    },
+                    {
+                      title: 'Module Property Binding',
+                      anchor: 'modulePropertyBinding'
+                    }
+                  ]
+                },
+                {
+                  title: 'Suggested Links',
+                  anchor: 'suggestedLinks'
+                }
+              ]
             }
           ]
         },
@@ -1427,6 +1455,30 @@ export class MainComponent {
                 {
                   title: 'Suggested Links',
                   anchor: 'suggestedLinks'
+                }
+              ]
+            },
+            {
+              routePath: '/feature/dropdown/advanced/config-overriding',
+              title: 'Configuration Overriding',
+              navigation: [
+                {
+                  title: 'Overriding Hierarchy',
+                  anchor: 'overridingHierarchy',
+                  subNavigation: [
+                    {
+                      title: 'Default Configuration',
+                      anchor: 'defaultConfiguration'
+                    },
+                    {
+                      title: 'Mark-up Property Binding',
+                      anchor: 'markupPropertyBinding'
+                    },
+                    {
+                      title: 'Module Property Binding',
+                      anchor: 'modulePropertyBinding'
+                    }
+                  ]
                 }
               ]
             }

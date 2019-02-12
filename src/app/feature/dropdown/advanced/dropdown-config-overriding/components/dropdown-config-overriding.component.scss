@@ -1,0 +1,39 @@
+.hierarchy-main {
+  color: #7b2222;
+  font-weight: bold;
+}
+
+.config-level {
+  color: #1c797b;
+  font-weight: bold;
+}
+
+.dd-config-default {
+  background: url('../../../../../../assets/images/dropdown-config-overriding-default.png') no-repeat;
+  height: 60px;
+  width: 450px;
+  background-size: 100% 100%;
+  display: inline-block;
+  left: 0;
+  position: relative;
+}
+
+.dd-config-markup {
+  background: url('../../../../../../assets/images/dropdown-config-overriding-markup.png') no-repeat;
+  height: 75px;
+  width: 450px;
+  background-size: 100% 100%;
+  display: inline-block;
+  left: 0;
+  position: relative;
+}
+
+.dd-config-module {
+  background: url('../../../../../../assets/images/dropdown-config-overriding-module.png') no-repeat;
+  height: 210px;
+  width: 680px;
+  background-size: 100% 100%;
+  display: inline-block;
+  left: 0;
+  position: relative;
+}

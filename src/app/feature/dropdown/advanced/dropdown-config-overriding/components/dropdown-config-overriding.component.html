@@ -1,0 +1,56 @@
+<div class="feature-container">
+  <h1>Configuration Overriding</h1>
+
+  <p>In this section all available dropdown property binding techniques will be discuss with it's usages.</p>
+
+  <h2 id="overridingHierarchy">Overriding Hierarchy</h2>
+
+  <p>The below hierarchy shows order of dropdown property overriding and each level of defined properties will be
+    replace if same property was uses in next level of hierarchy.</p>
+
+  <pre>
+    |__ <span class="hierarchy-main">Dropdown Configurations</span>
+       |
+       |___ <span class="config-level">Default Configuration</span>
+       |___ <span class="config-level">Mark-up Property Binding</span>
+       |___ <span class="config-level">Module Property Binding</span>
+       |
+      \/
+  </pre>
+
+  <h2 id="defaultConfiguration">Default Configuration</h2>
+
+  <p>Ornamentum have set almost all configurations to it's default value state. the default values explicitly mention on
+    each dropdown respective property or function documentation.</p>
+
+  <div class="dd-config-default"></div>
+
+  <h2 id="markupPropertyBinding">Mark-up Property Binding</h2>
+
+  <div class="dd-config-markup"></div>
+
+  <p>This level of property definations will be overrides <a
+    [routerLink]="['/feature/dropdown/advanced/config-overriding']" [fragment]="'defaultConfiguration'">Default
+    Configuration</a>.This is the first user allowed property binding operation. you can simply bind a required type of
+    value to respective configurations on mark-up template.</p>
+
+  <h2 id="modulePropertyBinding">Module Property Binding</h2>
+
+  <p>Ornamentum supports, configuration overriding in module root configurations. you can provide a object of dropdown
+    level configurations inside <code>forRoot()</code> tag. specified properties will be overrides both <a
+      [routerLink]="['/feature/dropdown/advanced/config-overriding']" [fragment]="'defaultConfiguration'">Default
+      Configuration</a> and <a [routerLink]="['/feature/dropdown/advanced/config-overriding']"
+                               [fragment]="'markupPropertyBinding'">Mark-up Property Binding</a> property definitions.
+  </p>
+
+  <div class="dd-config-module"></div>
+
+  <p>In above example module, ornamentum will enables <a
+    [routerLink]="['/feature/dropdown/advanced/load-data-on-init']">Load Data On Init</a> and
+    <a [routerLink]="['/feature/dropdown/features/item/filtering']">Filterable</a> for all available data
+    columns.</p>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Configuration
+    Overriding</a>
+</div>
