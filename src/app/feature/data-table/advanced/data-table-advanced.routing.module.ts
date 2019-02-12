@@ -54,7 +54,7 @@ const dataTableAdvancedRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Advanced | Config Overriding',
+        title: 'Ornamentum | Data Table | Advanced | Configuration Overriding',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
