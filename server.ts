@@ -81,9 +81,11 @@ wss.on('connection', (ws: WSS) => {
   try {
     ws.on('message', (message: string) => {
       const query = JSON.parse(message);
-      const result = queryDataByFieldCollection(data, query['offset'] || 0, query['limit'] || 10,
-        query['fields'] || query['filter']);
-      ws.send(JSON.stringify(result));
+      if (query && query['type'] === 'data-fetch') {
+        const result = queryDataByFieldCollection(data, query['offset'] || 0, query['limit'] || 10,
+          query['fields'] || query['filter']);
+        ws.send(JSON.stringify(result));
+      }
     });
 
     ws.on('close', () => {

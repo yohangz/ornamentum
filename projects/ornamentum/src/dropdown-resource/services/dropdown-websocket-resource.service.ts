@@ -29,6 +29,13 @@ export class DropdownWebsocketDataFetchService<T> {
   }
 
   /**
+   * Get socket stream reference.
+   */
+  public get socketStream(): WebSocketSubject<DropdownQueryResult<T[]>> {
+    return this.socket;
+  }
+
+  /**
    * Websocket data bind event handler.
    * Must call init prior to calling this function.
    * @param mapper Response data mapper callback. map source stream format to data table expected stream or apply additional formatting.
@@ -43,7 +50,12 @@ export class DropdownWebsocketDataFetchService<T> {
 
     return (params?: DropdownRequestParams): Observable<DropdownQueryResult<T[]>> => {
       if (params) {
-        this.socket.next(params as any);
+        this.socket.next({
+          type: 'data-fetch',
+          filter: params.filter,
+          offset: params.offset,
+          limit: params.limit
+        } as any);
 
         if (mapper) {
           return mapper(this.subject);

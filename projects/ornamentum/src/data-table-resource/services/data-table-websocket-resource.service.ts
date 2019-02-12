@@ -29,6 +29,13 @@ export class DataTableWebsocketDataFetchService<T> {
   }
 
   /**
+   * Get socket stream reference.
+   */
+  public get socketStream(): WebSocketSubject<DataTableQueryResult<T[]>> {
+    return this.socket;
+  }
+
+  /**
    * Websocket data bind event handler.
    * Must call init prior to calling this function.
    * @param mapper Response data mapper callback. map source stream format to data table expected stream or apply additional formatting.
@@ -44,6 +51,7 @@ export class DataTableWebsocketDataFetchService<T> {
     return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T[]>> => {
       if (params) {
         this.socket.next({
+          type: 'data-fetch',
           offset: params.offset,
           limit: params.limit,
           fields: params.fields
