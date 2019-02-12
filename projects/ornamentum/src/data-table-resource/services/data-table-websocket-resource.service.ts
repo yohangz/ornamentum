@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Subscription, Subject, Observable,  } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
 import { webSocket, WebSocketSubject, WebSocketSubjectConfig } from 'rxjs/webSocket';
 
 import { DataTableRequestParams } from '../../data-table/models/data-table-request-params.model';
@@ -32,10 +31,10 @@ export class DataTableWebsocketDataFetchService<T> {
   /**
    * Websocket data bind event handler.
    * Must call init prior to calling this function.
-   * @param responseMapper Response data mapper callback.
+   * @param mapper Response data mapper callback. map source stream format to data table expected stream or apply additional formatting.
    * @return Data table bind event handler.
    */
-  public onDataBind(responseMapper?: <Q>(response: Q) => DataTableQueryResult<T[]>): DataTableDataBindCallback {
+  public onDataBind(mapper?: <Q>(source: Observable<Q>) => Observable<DataTableQueryResult<T[]>>): DataTableDataBindCallback {
     if (!this.socket) {
       throw Error('Initialize socket data source before data bind.');
     }
@@ -50,15 +49,11 @@ export class DataTableWebsocketDataFetchService<T> {
           fields: params.fields
         } as any);
 
-        if (responseMapper) {
-          return this.subject.pipe(map(responseMapper));
+        if (mapper) {
+          return mapper(this.subject);
         }
 
-        return this.subject.pipe(
-          tap((data) => {
-            console.log('data: %o', data);
-          })
-        );
+        return this.subject;
       }
     };
   }
