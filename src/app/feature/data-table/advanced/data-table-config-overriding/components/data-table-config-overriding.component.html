@@ -9,13 +9,15 @@
     replace if same property was uses in next level of hierarchy.</p>
 
   <pre>
-    |__ <span class="hierarchy-main">Data Table Configuration</span>
-       |
-       |___ <span class="config-level">Default Configurations</span>
-       |___ <span class="config-level">Mark-up Property Binding</span>
-       |___ <span class="config-level">Module Property Binding</span>
-       |
-      \/
+    |__ <a class="hierarchy-main" [routerLink]="['/feature/data-table/advanced/config-overriding']">Data Table Configuration</a>
+    |   |
+    |   |___ <a class="config-level" [routerLink]="['/feature/data-table/advanced/config-overriding']" [fragment]="'defaultConfiguration'">Default Configuration</a>
+    |   |___ <a class="config-level" [routerLink]="['/feature/data-table/advanced/config-overriding']" [fragment]="'markupPropertyBinding'">Mark-up Property Binding</a>
+    |   |___ <a class="config-level" [routerLink]="['/feature/data-table/advanced/config-overriding']" [fragment]="'modulePropertyBinding'">Module Property Binding</a>
+    |
+    |__ <a class="hierarchy-main" [routerLink]="['/feature/dropdown/advanced/config-overriding']">Dropdown Configuration</a>
+    |
+    \/
   </pre>
 
   <h2 id="defaultConfiguration">Default Configuration</h2>
