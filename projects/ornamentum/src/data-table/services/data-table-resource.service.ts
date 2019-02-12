@@ -69,10 +69,7 @@ export class DataTableResourceService<T> {
                 }
 
                 if (Array.isArray(filterColumn.filterValue)) {
-                  return (
-                    filterColumn.filterValue.length === 0 ||
-                    filterColumn.filterValue.includes(fieldValue)
-                  );
+                  return filterColumn.filterValue.length === 0 || filterColumn.filterValue.includes(fieldValue);
                 }
 
                 const value = String(fieldValue).toLowerCase();

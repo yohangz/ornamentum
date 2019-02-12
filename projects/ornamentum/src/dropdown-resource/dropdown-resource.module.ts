@@ -11,10 +11,9 @@ const PROVIDERS = [DropdownHttpResourceService, DropdownWebsocketDataFetchServic
  */
 @NgModule({
   imports: [HttpClientModule],
-  providers: [...PROVIDERS],
+  providers: [...PROVIDERS]
 })
-export class DropdownResourceModule {
-}
+export class DropdownResourceModule {}
 
 export { DropdownHttpResourceService } from './services/dropdown-http-resource.service';
 export { DropdownWebsocketDataFetchService } from './services/dropdown-websocket-resource.service';

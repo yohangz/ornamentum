@@ -671,11 +671,14 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
           return of(noop);
         })
       )
-      .subscribe((queryResult: DropdownQueryResult<any>) => {
-        this.onAfterDataBind(queryResult);
-      }, () => {
-        this.onAfterDataBind(noop);
-      });
+      .subscribe(
+        (queryResult: DropdownQueryResult<any>) => {
+          this.onAfterDataBind(queryResult);
+        },
+        () => {
+          this.onAfterDataBind(noop);
+        }
+      );
   }
 
   // Can be used to explicitly trigger data bind event.

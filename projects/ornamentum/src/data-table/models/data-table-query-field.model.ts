@@ -28,7 +28,7 @@ export interface DataTableQueryField {
   /**
    * Filter value
    */
-  filterValue: string|string[]|any;
+  filterValue: string | string[] | any;
 
   /**
    * Filter expression

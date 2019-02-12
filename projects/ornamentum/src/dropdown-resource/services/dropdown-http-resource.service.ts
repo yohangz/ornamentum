@@ -12,8 +12,7 @@ import { DropdownRequestParams } from '../../dropdown/models/dropdown-request-pa
  */
 @Injectable()
 export class DropdownHttpResourceService<T> {
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
 
   /**
    * Get data bind event handler.
@@ -22,8 +21,11 @@ export class DropdownHttpResourceService<T> {
    * @param requestOptions Advanced request options.
    * @return Dropdown bind event handler.
    */
-  public onDataBind(resourcePath: string, mapper?: <Q>(response: Observable<Q>) => Observable<DropdownQueryResult<T[]>>,
-                    requestOptions?: any): DropdownDataBindCallback {
+  public onDataBind(
+    resourcePath: string,
+    mapper?: <Q>(response: Observable<Q>) => Observable<DropdownQueryResult<T[]>>,
+    requestOptions?: any
+  ): DropdownDataBindCallback {
     return (params?: DropdownRequestParams): Observable<DropdownQueryResult<T[]>> => {
       let queryParams = new HttpParams();
 

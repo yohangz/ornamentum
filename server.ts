@@ -15,7 +15,7 @@ import { readFileSync } from 'fs';
 
 import { queryDataByFieldCollection, queryDataByFieldExpression, queryDropdownFilterDataByField } from './server/query';
 
-process.on('uncaughtException', function (exception) {
+process.on('uncaughtException', function(exception) {
   console.log('node process crashed: ', exception);
 });
 
@@ -82,8 +82,7 @@ wss.on('connection', (ws: WSS) => {
     ws.on('message', (message: string) => {
       const query = JSON.parse(message);
       if (query && query['type'] === 'data-fetch') {
-        const result = queryDataByFieldCollection(data, query['offset'] || 0, query['limit'] || 10,
-          query['fields'] || query['filter']);
+        const result = queryDataByFieldCollection(data, query['offset'] || 0, query['limit'] || 10, query['fields'] || query['filter']);
         ws.send(JSON.stringify(result));
       }
     });
