@@ -1,0 +1,39 @@
+.hierarchy-main {
+  color: #7b2222;
+  font-weight: bold;
+}
+
+.config-level {
+  color: #1c797b;
+  font-weight: bold;
+}
+
+.dt-config-default {
+  background: url('../../../../../../assets/images/data-table-config-overriding-default.png') no-repeat;
+  height: 60px;
+  width: 420px;
+  background-size: 100% 100%;
+  display: inline-block;
+  left: 0;
+  position: relative;
+}
+
+.dt-config-markup {
+  background: url('../../../../../../assets/images/data-table-config-overriding-markup.png') no-repeat;
+  height: 130px;
+  width: 500px;
+  background-size: 100% 100%;
+  display: inline-block;
+  left: 0;
+  position: relative;
+}
+
+.dt-config-module {
+  background: url('../../../../../../assets/images/data-table-config-overriding-module.png') no-repeat;
+  height: 240px;
+  width: 750px;
+  background-size: 100% 100%;
+  display: inline-block;
+  left: 0;
+  position: relative;
+}

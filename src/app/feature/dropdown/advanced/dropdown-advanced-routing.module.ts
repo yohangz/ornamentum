@@ -47,6 +47,18 @@ const dropdownAdvancedRoutes: Routes = [
         description: '<--add description here-->'
       }
     }
+  },
+  {
+    loadChildren: './dropdown-config-overriding/dropdown-config-overriding.module#DropdownConfigOverridingModule',
+    path: 'config-overriding',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Dropdown | Advanced | Configuration Overriding',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   }
 ];
 

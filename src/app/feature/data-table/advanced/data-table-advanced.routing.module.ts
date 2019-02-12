@@ -47,6 +47,18 @@ const dataTableAdvancedRoutes: Routes = [
         description: '<--add description here-->'
       }
     }
+  },
+  {
+    loadChildren: './data-table-config-overriding/data-table-config-overriding.module#DataTableConfigOverridingModule',
+    path: 'config-overriding',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Data Table | Advanced | Config Overriding',
+        keywords: '<--add keywords here-->',
+        description: '<--add description here-->'
+      }
+    }
   }
 ];
 
