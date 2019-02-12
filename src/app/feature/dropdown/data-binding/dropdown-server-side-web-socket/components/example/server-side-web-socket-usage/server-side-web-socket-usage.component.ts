@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { interval } from 'rxjs';
+import { interval, Subscription } from 'rxjs';
 
 import {
   GlobalRefService,
@@ -20,6 +20,7 @@ import { DataFetchService } from 'helper-services';
 })
 export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
   public onDataBind: DropdownDataBindCallback;
+  public intervalSubscription: Subscription;
 
   constructor(private dataFetchService: DataFetchService,
               private globalRefService: GlobalRefService,
@@ -39,7 +40,7 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
       this.onDataBind = this.dropdownWebSocketDataFetchService.onDataBind();
 
       // Keep the socket connection alive with a hart beat ping
-      interval(40000).subscribe(() => {
+      this.intervalSubscription = interval(40000).subscribe(() => {
         this.dropdownWebSocketDataFetchService.socketStream.next({
           type: 'keep-alive'
         } as any);
@@ -52,5 +53,9 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
    */
   public ngOnDestroy(): void {
     this.dropdownWebSocketDataFetchService.dispose();
+
+    if (this.intervalSubscription) {
+      this.intervalSubscription.unsubscribe();
+    }
   }
 }
