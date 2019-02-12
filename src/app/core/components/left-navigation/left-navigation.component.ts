@@ -29,7 +29,7 @@ export class LeftNavigationComponent implements OnDestroy {
       this.expanded = !this.expanded;
     });
 
-    this.routeEventSubscription = this.router.events.subscribe((event) => {
+    this.routeEventSubscription = this.router.events.subscribe(event => {
       if (event instanceof NavigationStart) {
         this.closeMenu();
       }

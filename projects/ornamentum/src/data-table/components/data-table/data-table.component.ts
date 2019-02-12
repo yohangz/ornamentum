@@ -720,11 +720,14 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
           return of(noop);
         })
       )
-      .subscribe((queryResult: DataTableQueryResult<any>) => {
-        this.onAfterDataBind(queryResult);
-      }, () => {
-        this.onAfterDataBind(noop);
-      });
+      .subscribe(
+        (queryResult: DataTableQueryResult<any>) => {
+          this.onAfterDataBind(queryResult);
+        },
+        () => {
+          this.onAfterDataBind(noop);
+        }
+      );
   }
 
   /**
@@ -746,14 +749,15 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     };
 
     if (this.columns) {
-      params.fields = this.columns.filter(column => {
-        return (column.sortable || column.filterable);
-      })
+      params.fields = this.columns
+        .filter(column => {
+          return column.sortable || column.filterable;
+        })
         .map((column: DataTableColumnComponent) => {
           let filter;
           if (column.showDropdownFilter) {
             if (column.dropdownFilterSelectMode === 'multi') {
-              filter = column.filter && column.filter.map((filterValue) => filterValue.key);
+              filter = column.filter && column.filter.map(filterValue => filterValue.key);
             } else {
               filter = column.filter && column.filter.key;
             }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Subscription, Subject, Observable,  } from 'rxjs';
+import { Subscription, Subject, Observable } from 'rxjs';
 import { webSocket, WebSocketSubject, WebSocketSubjectConfig } from 'rxjs/webSocket';
 
 import { DropdownDataBindCallback } from '../../dropdown/models/dropdown-data-bind-callback.model';
@@ -16,8 +16,7 @@ export class DropdownWebsocketDataFetchService<T> {
   private subject: Subject<DropdownQueryResult<T[]>>;
   private socketSubscription: Subscription;
 
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * Initialize websocket connection.
@@ -41,7 +40,7 @@ export class DropdownWebsocketDataFetchService<T> {
    * @param mapper Response data mapper callback. map source stream format to data table expected stream or apply additional formatting.
    * @return Dropdown bind event handler.
    */
-  public onDataBind(mapper?: <Q>(response: Observable<Q>) => Observable<DropdownQueryResult<T[]>>,): DropdownDataBindCallback {
+  public onDataBind(mapper?: <Q>(response: Observable<Q>) => Observable<DropdownQueryResult<T[]>>): DropdownDataBindCallback {
     if (!this.socket) {
       throw Error('Initialize socket data source before data bind.');
     }

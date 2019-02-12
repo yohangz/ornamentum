@@ -1,0 +1,6 @@
+**/*.min.js
+**/*.min.css
+coverage
+dist
+.idea
+src/app/feature/**/*

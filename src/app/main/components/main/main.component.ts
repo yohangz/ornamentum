@@ -126,7 +126,7 @@ export class MainComponent {
                   anchor: 'suggestedLinks'
                 }
               ]
-            },
+            }
           ]
         },
         {
@@ -854,7 +854,7 @@ export class MainComponent {
                   anchor: 'suggestedLinks'
                 }
               ]
-            },
+            }
           ]
         }
       ]
@@ -1027,7 +1027,7 @@ export class MainComponent {
                   anchor: 'suggestedLinks'
                 }
               ]
-            },
+            }
           ]
         },
         {
@@ -1429,7 +1429,7 @@ export class MainComponent {
                   anchor: 'suggestedLinks'
                 }
               ]
-            },
+            }
           ]
         }
       ]
@@ -1441,8 +1441,7 @@ export class MainComponent {
   @ViewChild('pageWrapper')
   public pageWrapper: ElementRef;
 
-  constructor(private router: Router, private scrollService: ScrollService, @Inject(PLATFORM_ID) private platformId: Object) {
-  }
+  constructor(private router: Router, private scrollService: ScrollService, @Inject(PLATFORM_ID) private platformId: Object) {}
 
   public onThemeChange(cssClass: string): void {
     this.themeCssClass = cssClass;

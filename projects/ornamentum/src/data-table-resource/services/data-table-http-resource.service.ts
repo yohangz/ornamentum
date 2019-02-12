@@ -25,8 +25,11 @@ export class DataTableHttpDataFetchService<T> {
    * @param requestOptions Advanced request options.
    * @return Data table bind event handler.
    */
-  public onDataBind(resourcePath: string, mapper?: <Q>(response: Observable<Q>) => Observable<DataTableQueryResult<T[]>>,
-                    requestOptions?: any): DataTableDataBindCallback {
+  public onDataBind(
+    resourcePath: string,
+    mapper?: <Q>(response: Observable<Q>) => Observable<DataTableQueryResult<T[]>>,
+    requestOptions?: any
+  ): DataTableDataBindCallback {
     return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T[]>> => {
       let queryParams = new HttpParams();
 
@@ -79,8 +82,11 @@ export class DataTableHttpDataFetchService<T> {
    * @param requestOptions Advanced request options.
    * @return Data table filter options event handler.
    */
-  public onFilterValueExtract(resourcePath: string, mapper?: <Q>(response: Observable<Q>) => Observable<DataTableFilterOption[]>,
-                              requestOptions?: any): DataTableFilterValueExtractCallback {
+  public onFilterValueExtract(
+    resourcePath: string,
+    mapper?: <Q>(response: Observable<Q>) => Observable<DataTableFilterOption[]>,
+    requestOptions?: any
+  ): DataTableFilterValueExtractCallback {
     return (column: DataTableColumnComponent): Observable<DataTableFilterOption[]> => {
       let queryParams = new HttpParams();
       const filterField = column.filterField || column.field;

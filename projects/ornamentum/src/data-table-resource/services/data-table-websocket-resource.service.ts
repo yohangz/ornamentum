@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Subscription, Subject, Observable,  } from 'rxjs';
+import { Subscription, Subject, Observable } from 'rxjs';
 import { webSocket, WebSocketSubject, WebSocketSubjectConfig } from 'rxjs/webSocket';
 
 import { DataTableRequestParams } from '../../data-table/models/data-table-request-params.model';
@@ -16,8 +16,7 @@ export class DataTableWebsocketDataFetchService<T> {
   private subject: Subject<DataTableQueryResult<T[]>>;
   private socketSubscription: Subscription;
 
-  constructor() {
-  }
+  constructor() {}
 
   /**
    * Initialize websocket connection.
