@@ -4,20 +4,20 @@ export const loadDataOnInitUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'load-data-on-init-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/load-data-on-init-usage/load-data-on-init-usage.component.ts')
+    content: require('!!raw-loader!./example/load-data-on-init-usage/load-data-on-init-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'load-data-on-init-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/load-data-on-init-usage/load-data-on-init-usage.component.html')
+    content: require('!!raw-loader!./example/load-data-on-init-usage/load-data-on-init-usage.component.html')
   },
   {
     type: FileType.TS,
     name: 'load-data-on-init-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/load-data-on-init-usage/load-data-on-init-usage.module.md')
+    content: require('!!raw-loader!./example/load-data-on-init-usage/load-data-on-init-usage.module.md')
   }
 ];
 
 export const demoSnippet: any = {
-  loadDataOnInit: require('!!raw-loader?lang=typescript!./docs/load-data-on-init.md')
+  loadDataOnInit: require('!!raw-loader!./docs/load-data-on-init.md')
 };
