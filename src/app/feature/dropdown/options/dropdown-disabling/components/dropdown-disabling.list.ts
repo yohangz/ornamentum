@@ -4,20 +4,20 @@ export const disablingUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'disabling-usage.component.ts',
-    content: require('!!raw-loader?lang=typescript!./example/disabling-usage/disabling-usage.component.ts')
+    content: require('!!raw-loader!./example/disabling-usage/disabling-usage.component.ts')
   },
   {
     type: FileType.HTML,
     name: 'disabling-usage.component.html',
-    content: require('!!raw-loader?lang=html!./example/disabling-usage/disabling-usage.component.html')
+    content: require('!!raw-loader!./example/disabling-usage/disabling-usage.component.html')
   },
   {
     type: FileType.TS,
     name: 'disabling-usage.module.ts',
-    content: require('!!raw-loader?lang=typescript!./example/disabling-usage/disabling-usage.module.md')
+    content: require('!!raw-loader!./example/disabling-usage/disabling-usage.module.md')
   }
 ];
 
 export const demoSnippet: any = {
-  dropdownDisabling: require('!!raw-loader?lang=typescript!./docs/dropdown-disabling.md')
+  dropdownDisabling: require('!!raw-loader!./docs/dropdown-disabling.md')
 };
