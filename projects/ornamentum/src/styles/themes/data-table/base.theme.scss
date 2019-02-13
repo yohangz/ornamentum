@@ -344,9 +344,12 @@
       .ng-data-table-column-header {
         span {
           @include font-size(0.7, 1);
-          display: inline-block;
-          padding-right: 0.8rem;
-          word-break: break-word;
+
+          &:first-child  {
+            display: inline-block;
+            padding-right: 0.8rem;
+            word-break: break-word;
+          }
         }
       }
 
