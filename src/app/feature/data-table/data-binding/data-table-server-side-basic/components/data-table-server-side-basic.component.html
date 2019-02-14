@@ -15,8 +15,9 @@
     Binding</a>, server side rendering will request for data on table initialization and whenever user performs
     <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'serverSideColumnFilter'">Filtering</a>,
     <a [routerLink]="['/feature/data-table/functionality/column/sorting']" [fragment]="'serverSideColumnSorting'">Sorting</a>,
-    <a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a> etc. operations. Integration party
-    has to write the logic to fetch data via a back end service depending on the request context.
+    <a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a> etc. operations. Ornamentum has
+    provided an optional opinionated service to integrate external data sources. Also, you can build a custom data provider
+    depending on your requirement.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -27,9 +28,10 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Server side data binding is handled via <code>onDataBind</code> callback function. It allow users
-    to customize the data binding logic and will be triggers on table initialization and on dynamic data
-    table operations. This function will receive <code>DataTableRequestParams</code> argument and expect to return
+    Server side data binding is handled via <code>onDataBind</code> callback function. Use this callback reference
+    to hook into data bind workflow and provide custom data source. This callback function will get triggered on
+    table initialization and on dynamic data table operations. This function will receive
+    <code>DataTableRequestParams</code> argument and expect to return
     <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
       Observable</a> query result <code>DataTableQueryResult&lt;T&gt;</code> object stream. Data returned from this
     callback function will be directly bound to table assuming that it matches the on demand request context.
