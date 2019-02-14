@@ -8,7 +8,7 @@ import { DataTableQueryResult } from '../../data-table/models/data-table-query-r
 import { DataTableDataBindCallback } from '../../data-table/models/data-table-data-bind-callback.model';
 
 /**
- * Data table websocket data fetch service.
+ * Data table web socket data fetch service.
  */
 @Injectable()
 export class DataTableWebsocketDataFetchService<T> {
@@ -19,7 +19,7 @@ export class DataTableWebsocketDataFetchService<T> {
   constructor() {}
 
   /**
-   * Initialize websocket connection.
+   * Initialize web socket connection.
    * @param config Socket configuration parameters.
    */
   public init(config?: WebSocketSubjectConfig<DataTableQueryResult<T[]>>): void {
@@ -35,7 +35,7 @@ export class DataTableWebsocketDataFetchService<T> {
   }
 
   /**
-   * Websocket data bind event handler.
+   * Web socket data bind event handler.
    * Must call init prior to calling this function.
    * @param mapper Response data mapper callback. map source stream format to data table expected stream or apply additional formatting.
    * @return Data table bind event handler.
@@ -66,7 +66,7 @@ export class DataTableWebsocketDataFetchService<T> {
   }
 
   /**
-   * Dispose websocket connection.
+   * Dispose web socket connection.
    */
   public dispose(): void {
     if (this.socket) {

@@ -1,21 +1,22 @@
 <div class="feature-container">
-  <h1>Server-side Basic Data Binding</h1>
+  <h1>Server Side Basic Data Binding</h1>
 
   <p>
     Server side data binding allow users to bind large data sets that are not directly accessible as a full collection
     in client side due to various reasons. Server side data binding can improve performance drastically for large data
-    sets but integration is fairly complex compared to client side direct data binding.
+    sets but integration is fairly complex compared to <a
+    [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a> and <a
+    [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client Side Stream Data Binding</a>
+    techniques.
   </p>
-
-  <p>Server side data binding allow users to bind a larger data stream which is available in the server side.</p>
 
   <p>
     Unlike in <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data
-    Binding</a>, server side rendering will request for data on table initialize and whenever user performs
-    <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'serverSideColumnFilter'">filtering</a>,
-    <a [routerLink]="['/feature/data-table/functionality/column/sorting']" [fragment]="'serverSideColumnSorting'">sorting</a>,
-    page change, etc. operations. Integration party has to write the logic to fetch data via a backend service
-    depending on the request context.
+    Binding</a>, server side rendering will request for data on table initialization and whenever user performs
+    <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'serverSideColumnFilter'">Filtering</a>,
+    <a [routerLink]="['/feature/data-table/functionality/column/sorting']" [fragment]="'serverSideColumnSorting'">Sorting</a>,
+    <a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a> etc. operations. Integration party
+    has to write the logic to fetch data via a back end service depending on the request context.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -26,14 +27,16 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Server side data binding is handled via <code>onDataBind</code> callback input property. This property allows users
-    to customize the data binding logic within the callback function. This callback function will be triggered on table
-    initialize and on dynamic data table operations. This function will receive <code>DataTableRequestParams</code>
-    argument and expect to return
+    Server side data binding is handled via <code>onDataBind</code> callback function. It allow users
+    to customize the data binding logic and will be triggers on table initialization and on dynamic data
+    table operations. This function will receive <code>DataTableRequestParams</code> argument and expect to return
     <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
       Observable</a> query result <code>DataTableQueryResult&lt;T&gt;</code> object stream. Data returned from this
     callback function will be directly bound to table assuming that it matches the on demand request context.
   </p>
+
+  <p>For use of Server side basic data binding operations it is mandatory to import <code>DataTableResourceModule</code> to
+    your application module.</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBinding"></app-code-snippet>
 
@@ -44,8 +47,9 @@
   <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataFetchMethod"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data Binding</a><br/>
-  <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server-side Web Socket Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web Socket Data
+    Binding</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server
     Side Data Binding</a>
 </div>
