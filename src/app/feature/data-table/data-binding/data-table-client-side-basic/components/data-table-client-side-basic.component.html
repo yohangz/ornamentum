@@ -2,7 +2,7 @@
   <h1>Client Side Basic Data Binding</h1>
 
   <p>Client side data binding allow users to bind static data sets to data table when full data collection is available
-    in the client side. It can be configure via setting an array of data objects to <code>items</code> input property or
+    in the client side. It can be configured via setting an array of data objects to <code>items</code> input property or
     via setting a <a rel="noopener" target="_blank" href="https://rxjs-dev.firebaseapp.com/">RxJS</a> Observable stream
     to <code>dataSource</code> input property.</p>
 
@@ -25,7 +25,7 @@
 
   <p>Client side data binding can be configured by using either of two approaches described below. Data emitted after
     initial data binding will re-initialize data table with the new data set and drop previously bound data items
-    collection.</p>
+    collection or stream.</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items">{{ demoSnippet.items }}</app-code-snippet>
 
