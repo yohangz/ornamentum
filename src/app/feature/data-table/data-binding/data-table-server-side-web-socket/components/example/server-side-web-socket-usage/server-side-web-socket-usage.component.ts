@@ -2,9 +2,14 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 
 import { interval, Subscription } from 'rxjs';
 
-import { GlobalRefService, DataTableWebsocketDataFetchService, DataTableDataBindCallback } from 'ornamentum';
+import {
+  GlobalRefService,
+  DataTableWebsocketDataFetchService,
+  DataTableDataBindCallback
+} from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
+
 import { DataFetchService } from 'helper-services';
 
 /**
@@ -27,15 +32,15 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
    * Component initialize lifecycle event handler.
    */
   public ngOnInit(): void {
-    // Create websocket connection on browser environment only to support server side rendering.
+    // Create web socket connection on browser environment only to support server side rendering.
     if (this.globalRefService.isBrowser) {
       this.dataTableWebSocketDataFetchService.init({
-        url: `wss://${window.location.hostname}` // websocket endpoint
+        url: `wss://${window.location.hostname}` // web socket endpoint
       });
 
       this.onDataBind = this.dataTableWebSocketDataFetchService.onDataBind();
 
-      // Keep the socket connection alive with a hart beat ping
+      // Keep the socket connection alive with a heart beat ping
       this.intervalSubscription = interval(40000).subscribe(() => {
         this.dataTableWebSocketDataFetchService.socketStream.next({
           type: 'keep-alive'

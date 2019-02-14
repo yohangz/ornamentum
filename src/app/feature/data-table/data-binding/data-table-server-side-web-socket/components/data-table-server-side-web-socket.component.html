@@ -1,17 +1,12 @@
 <div class="feature-container">
-  <h1>Server-side Web Socket Data Binding</h1>
+  <h1>Server Side Web Socket Data Binding</h1>
 
   <p>
-    <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data Binding</a> is now
+    <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a> is now
     capable of updating dynamic data without having a manual refresh in the client side. But assume, what happen if
     these dynamic data is available in the server side and time to time that server emitting a new dynamic stream of
-    data. So can we bind these kind of data to the data table. To fulfill such cases, Server-side Data Binding is
+    data, can we bind these kind of data to the data table?. In these type of situations, Server side data binding is
     introduced.
-  </p>
-
-  <p>
-    In such cases you can use this server-side real-time data binding technique to bind data, when data changes in
-    real time from the server side.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -22,35 +17,65 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    This can be configure via setting an array of data objects to <code>items</code> input property or via setting a
-    <a href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
-      Observable</a> stream to <code>dataSource</code> input property as the same way discussed in the previous data
-    binding sections.
+    Server side data binding is handled via <code>onDataBind</code> callback function. It allow users
+    to customize the data binding logic and will be triggers on table initialization and on dynamic data
+    table operations. This function will receive <code>DataTableRequestParams</code> argument and expect to return
+    <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
+      Observable</a> query result <code>DataTableQueryResult&lt;T&gt;</code> object stream. Data returned from this
+    callback function will be directly bound to table assuming that it matches the on demand request context.
   </p>
 
+  <p>For use of Server side web socket data binding operations it is mandatory to import
+    <code>DataTableResourceModule</code> to
+    your application module.</p>
+
   <p>
-    In the above example , it uses a simple socket connection to emit data in an time interval and those data will be
-    listened from the client side as shown in the example in
-    <b>server-side-web-socket-usage.component.ts</b>.
+    Let's see how it uses a simple socket connection to emit data in an time interval and how it could listened from the
+    client side in step by step.
   </p>
 
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
 
-  <p>or</p>
+  <p>In the very first of component initialization, you can creates a web socket connection for browser environment.
+    refer
+    the below code snippet for Global Ref Service <code>isBrowser()</code> method.</p>
 
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.isBrowser"></app-code-snippet>
+
+  <p>Then, if window is not <code>undefined</code>, Data Table Web Socket Data Fetch Service <code>init</code> method
+    will triggers with web socket endpoint. refer the below code snippet.</p>
+
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.init"></app-code-snippet>
+
+  <p>Then <code>DataTableDataBindCallback</code> data can be bind into <code>onDataBind</code> property.</p>
+
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.onDataBindMethod"></app-code-snippet>
+
+  <p>After all socket connection will keep alive with a <a
+    href="https://rxjs-dev.firebaseapp.com/api/index/function/interval">RxJS Interval</a> and it will emit a data set
+    for Data Table Web Socket Data Fetch Service <code>socketStream()</code> method with a object which contains <code>keep-alive</code>
+    tag in every defined interval.</p>
+
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.socketStream"></app-code-snippet>
+
+  <p>After all done, <a rel="noopener" target="_blank" href="https://angular.io/api/core/OnDestroy">OnDestroy()</a>
+    Angular life cycle hook automatically triggers and invoke Data Table Web Socket Data Fetch Service
+    <code>dispose()</code> method and unsubscribe all the subscriptions and complete the web socket connection
+    operations.
+  </p>
+
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dispose"></app-code-snippet>
 
   <p>
-    The complete set of code snippet for the server side real time data binding via <code>items</code> input
-    property can be seen in the example shown in the <a
+    The complete set of code snippet for the server side web socket data binding via <code>onDataBind</code> call back
+    function can be seen in <a
     [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']" [fragment]="'whatYouWillSee'">What
-    You Will See</a> section above.
+    You Will See</a> section example.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data Binding</a><br/>
-  <a [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client-side Stream Data Binding</a><br/>
-  <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server-side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client Side Stream Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for
     Server-side Real-time Data Binding</a>
 </div>
