@@ -26,7 +26,7 @@ export class ClientSideStreamUsageComponent implements OnInit {
     // Checks whether it is browser or not.
     if (this.globalRefService.isBrowser) {
 
-      // Code segment used to emulate the real-time data binding.
+      // Code segment used to emulate the realtime data source. Use your actual realtime datasource here.
       this.dataSource = timer(0, 2000).pipe(
         map(() => {
           offset += 20;
@@ -38,9 +38,6 @@ export class ClientSideStreamUsageComponent implements OnInit {
           return this.dataFetchService.fetchStaticData(offset, 20);
         })
       );
-    } else {
-      // Bind data in the server-side.
-      this.dataSource = of(this.dataFetchService.fetchStaticData(offset, 20));
     }
   }
 }
