@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { interval, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 import {
   GlobalRefService,
@@ -19,7 +19,6 @@ import { ExampleData } from 'helper-models';
 })
 export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
   public onDataBind: DataTableDataBindCallback;
-  public intervalSubscription: Subscription;
 
   constructor(private globalRefService: GlobalRefService,
               private dataTableWebSocketDataFetchService: DataTableWebsocketDataFetchService<ExampleData>) {
@@ -36,13 +35,6 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
       });
 
       this.onDataBind = this.dataTableWebSocketDataFetchService.onDataBind();
-
-      // Keep the socket connection alive with a heart beat ping
-      this.intervalSubscription = interval(40000).subscribe(() => {
-        this.dataTableWebSocketDataFetchService.socketStream.next({
-          type: 'keep-alive'
-        } as any);
-      });
     }
   }
 
@@ -51,9 +43,5 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
    */
   public ngOnDestroy(): void {
     this.dataTableWebSocketDataFetchService.dispose();
-
-    if (this.intervalSubscription) {
-      this.intervalSubscription.unsubscribe();
-    }
   }
 }

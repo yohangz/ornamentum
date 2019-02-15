@@ -2,11 +2,10 @@
   <h1>Server Side Web Socket Data Binding</h1>
 
   <p>
-    <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a> is now
-    capable of updating dynamic data without having a manual refresh in the client side. But assume, what happen if
-    these dynamic data is available in the server side and time to time that server emitting a new dynamic stream of
-    data, can we bind these kind of data to the data table? In these type of situations, Server side data binding is
-    introduced.
+    You can bind table data using WebSocket data source. This approach will keep a live connection with the server and
+    notify when ever data is required. You can use this functionality to bind real time data which changes rapidly. Unlike
+    <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a> this
+    approach allow you to push data from server to client.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -31,9 +30,12 @@
     the on demand request context.
   </p>
 
-  <p>For use of Server side web socket data binding operations it is mandatory to import
-    <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a>
-    to your application module.</p>
+  <p>
+    For use of Server side basic data binding operations it is required to import  <a rel="noopener" target="_blank"
+                                                                                      href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a> to
+    your application module if you want to use <code>DataTableWebsocketDataFetchService&lt;T&gt;</code> to fetch data without using a
+    custom data fetch logic.
+  </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.onDataBind"></app-code-snippet>
 
