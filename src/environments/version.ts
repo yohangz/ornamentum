@@ -1,2 +1,2 @@
 // IMPORTANT: THIS FILE IS AUTO GENERATED! DO NOT MANUALLY EDIT!
-export const VERSION = '3.0.3';
+export const VERSION = '3.0.4';
