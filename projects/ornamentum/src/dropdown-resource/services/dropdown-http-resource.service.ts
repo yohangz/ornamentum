@@ -1,33 +1,35 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
 import { DropdownDataBindCallback } from '../../dropdown/models/dropdown-data-bind-callback.model';
 import { DropdownQueryResult } from '../../dropdown/models/dropdown-query-result.model';
 import { DropdownRequestParams } from '../../dropdown/models/dropdown-request-params.model';
+import { HttpRequestOptions } from '../../resource-utility/models/http-request-options.model';
+
+import { RequestParamMapperService } from '../../resource-utility/services/request-param-mapper.service';
 
 /**
  * Dropdown HTTP data fetch service.
  */
 @Injectable()
 export class DropdownHttpResourceService<T> {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public requestParamMapperService: RequestParamMapperService) {}
 
   /**
    * Get data bind event handler.
-   * @param resourcePath Request resource path to extract dropdown data.
+   * @param options Request options or resource path.
    * @param mapper Response data mapper callback. map source stream format to data table expected stream or apply additional formatting.
-   * @param requestOptions Advanced request options.
    * @return Dropdown bind event handler.
    */
   public onDataBind(
-    resourcePath: string,
+    options: string|HttpRequestOptions,
     mapper?: <Q>(response: Observable<Q>) => Observable<DropdownQueryResult<T[]>>,
-    requestOptions?: any
   ): DropdownDataBindCallback {
     return (params?: DropdownRequestParams): Observable<DropdownQueryResult<T[]>> => {
-      let queryParams = new HttpParams();
+      const requestOptions = this.requestParamMapperService.mapRequestOptions(options);
+      let queryParams = this.requestParamMapperService.mapQueryParams(requestOptions.options);
 
       if (params) {
         if (params.limit !== undefined) {
@@ -43,7 +45,7 @@ export class DropdownHttpResourceService<T> {
           queryParams = queryParams.set('filter', params.filter.value);
         }
 
-        const resource = this.http.get<any>(resourcePath, { params: queryParams, ...requestOptions }) as Observable<any>;
+        const resource = this.http.get<any>(requestOptions.url, { params: queryParams, ...requestOptions }) as Observable<any>;
 
         if (mapper) {
           return mapper(resource);

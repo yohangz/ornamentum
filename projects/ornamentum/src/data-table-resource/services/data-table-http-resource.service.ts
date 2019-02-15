@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
 
@@ -9,29 +9,32 @@ import { DataTableQueryField } from '../../data-table/models/data-table-query-fi
 import { DataTableDataBindCallback } from '../../data-table/models/data-table-data-bind-callback.model';
 import { DataTableFilterValueExtractCallback } from '../../data-table/models/data-table-filter-value-extract-callback.model';
 import { DataTableFilterOption } from '../../data-table/models/data-table-filter-option.model';
+import { HttpRequestOptions } from '../../resource-utility/models/http-request-options.model';
+
 import { DataTableColumnComponent } from '../../data-table/components/data-table-column/data-table-column.component';
+
+import { RequestParamMapperService } from '../../resource-utility/services/request-param-mapper.service';
 
 /**
  * Data table HTTP data fetch service.
  */
 @Injectable()
 export class DataTableHttpDataFetchService<T> {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, public requestParamMapperService: RequestParamMapperService) {}
 
   /**
    * Get data bind event handler.
-   * @param resourcePath Request resource path to extract table data.
+   * @param options Request options or resource path.
    * @param mapper Response data mapper callback. map source stream format to data table expected stream or apply additional formatting.
-   * @param requestOptions Advanced request options.
    * @return Data table bind event handler.
    */
   public onDataBind(
-    resourcePath: string,
+    options: string|HttpRequestOptions,
     mapper?: <Q>(response: Observable<Q>) => Observable<DataTableQueryResult<T[]>>,
-    requestOptions?: any
   ): DataTableDataBindCallback {
     return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T[]>> => {
-      let queryParams = new HttpParams();
+      const requestOptions = this.requestParamMapperService.mapRequestOptions(options);
+      let queryParams = this.requestParamMapperService.mapQueryParams(requestOptions.options);
 
       if (params) {
         if (params.limit !== undefined) {
@@ -64,7 +67,7 @@ export class DataTableHttpDataFetchService<T> {
           }
         });
 
-        const resource = this.http.get<any>(resourcePath, { params: queryParams, ...requestOptions }) as Observable<any>;
+        const resource = this.http.get<any>(requestOptions.url, { params: queryParams, ...requestOptions }) as Observable<any>;
 
         if (mapper) {
           return mapper(resource);
@@ -77,22 +80,22 @@ export class DataTableHttpDataFetchService<T> {
 
   /**
    * Get filter value extract event handler.
-   * @param resourcePath Request resource path to extract column filter options data.
+   * @param options Request options or resource path.
    * @param mapper Response data mapper callback. map source stream format to data table expected stream or apply additional formatting.
-   * @param requestOptions Advanced request options.
    * @return Data table filter options event handler.
    */
   public onFilterValueExtract(
-    resourcePath: string,
+    options: string|HttpRequestOptions,
     mapper?: <Q>(response: Observable<Q>) => Observable<DataTableFilterOption[]>,
-    requestOptions?: any
   ): DataTableFilterValueExtractCallback {
     return (column: DataTableColumnComponent): Observable<DataTableFilterOption[]> => {
-      let queryParams = new HttpParams();
+      const requestOptions = this.requestParamMapperService.mapRequestOptions(options);
+      let queryParams = this.requestParamMapperService.mapQueryParams(requestOptions.options);
+
       const filterField = column.filterField || column.field;
       queryParams = queryParams.set('field', filterField);
 
-      const resource = this.http.get<any>(resourcePath, { params: queryParams, ...requestOptions }) as Observable<any>;
+      const resource = this.http.get<any>(requestOptions.url, { params: queryParams, ...requestOptions }) as Observable<any>;
 
       if (mapper) {
         return mapper(resource);

@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ResourceUtilityModule } from '../resource-utility/resource-utility.module';
+
 import { DataTableHttpDataFetchService } from './services/data-table-http-resource.service';
 import { DataTableWebsocketDataFetchService } from './services/data-table-websocket-resource.service';
 
@@ -10,7 +12,7 @@ const PROVIDERS = [DataTableHttpDataFetchService, DataTableWebsocketDataFetchSer
  * Data table data source module.
  */
 @NgModule({
-  imports: [HttpClientModule],
+  imports: [HttpClientModule, ResourceUtilityModule],
   providers: [...PROVIDERS]
 })
 export class DataTableResourceModule {}
