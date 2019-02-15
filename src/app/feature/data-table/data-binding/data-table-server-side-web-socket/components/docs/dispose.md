@@ -1,6 +1,3 @@
-  /**
-   * Dispose web socket connection.
-   */
   public dispose(): void {
     if (this.socket) {
       this.socket.complete();

@@ -4,15 +4,20 @@
   <p>
     Using client-side real-time data binding feature users can bind data stream to
     represent dynamic data such as traffic, weather, analytics and etc which changes in time. Ornamentum is capable of
-    handing live data sources with all available features (filtering, grouping, sorting, paging, etc.) and functionality.
+    handing live data sources with all available features (<a
+    [routerLink]="['/feature/data-table/functionality/column/filtering']">Filtering</a>, <a
+    [routerLink]="['/feature/data-table/functionality/row/grouping']">Row Grouping</a>, <a
+    [routerLink]="['/feature/data-table/functionality/column/sorting']">Sorting</a>, <a
+    [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a>
+    etc.) and functionalities.
   </p>
 
   <p>
-    You can use client-side realtime data binding technique to bind data sources which changes rapidly.
+    You can use client side stream data binding technique to bind data sources which changes rapidly.
     Data changes notified by data source will automatically get reflected while persisting the current table state
-    without having to manually trigger refresh.
-    Fond more information about data table refresh functionality in
-    <a [routerLink]="['/feature/data-table/options/header-details']" [fragment]="'showRefreshButton'">Show Refresh Button</a> section.
+    without having to manually trigger refresh. Found more information about data table refresh functionality in
+    <a [routerLink]="['/feature/data-table/options/header-details']" [fragment]="'showRefreshButton'">Show Refresh
+      Button</a> section.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -25,26 +30,26 @@
   <p>
     This can be configure via setting an array of data objects to <code>items</code> input property or via setting a
     <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
-      Observable</a> stream to<code>dataSource</code> input property as the same way discussed in the <a
+      Observable</a> stream to <code>dataSource</code> input property as the same way discussed in the <a
     [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data Binding</a> section.
   </p>
-
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
-
-  <p>or</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
   <p>
-    The complete set of code snippet for the client side real time data binding via <code>datasource</code> input
+    The complete set of code snippet for the client side real time data binding via <code>dataSource</code> input
     property can be seen in the example shown in the <a
     [routerLink]="['/feature/data-table/data-binding/client-side/stream']" [fragment]="'whatYouWillSee'">What You Will
     See</a> section above.
   </p>
 
+  <p>or</p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
+
   <p>
     Let's modify the sample code segment shown above (<b>client-side-stream-usage.component.ts</b>) to use
-    <code>items</code> property instead of dataSource.
+    <code>items</code> property instead of <code>dataSource</code>.
   </p>
 
   <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataBindingWithItems"></app-code-snippet>

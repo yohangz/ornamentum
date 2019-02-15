@@ -20,5 +20,5 @@ export const serverSideBasicUsage: ExampleFile[] = [
 
 export const demoSnippet: any = {
   serverSideDataBinding: require('!!raw-loader!./docs/server-side-data-binding.md'),
-  dataFetchMethod: require('!!raw-loader!./docs/data-fetch-method.md')
+  onDataBindMethod: require('!!raw-loader!./docs/on-data-bind-method.md')
 };
