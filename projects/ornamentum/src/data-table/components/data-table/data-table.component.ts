@@ -832,30 +832,32 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
             return col.field === column.field;
           });
 
-          if (column.filterable && field.filterable) {
-            if (column.showDropdownFilter) {
-              if (field.filterValue) {
-                if (column.dropdownFilterSelectMode === 'multi') {
-                  column.filter = field.filterValue.map((filterValue) => {
-                    return {
-                      key: filterValue,
-                      value: filterValue
+          if (field) {
+            if (column.filterable && field.filterable) {
+              if (column.showDropdownFilter) {
+                if (field.filterValue) {
+                  if (column.dropdownFilterSelectMode === 'multi') {
+                    column.filter = field.filterValue.map((filterValue) => {
+                      return {
+                        key: filterValue,
+                        value: filterValue
+                      };
+                    });
+                  } else {
+                    column.filter = {
+                      key: field.filterValue,
+                      value: field.filterValue
                     };
-                  });
-                } else {
-                  column.filter = {
-                    key: field.filterValue,
-                    value: field.filterValue
-                  };
+                  }
                 }
+              } else {
+                column.filter = field.filterValue;
               }
-            } else {
-              column.filter = field.filterValue;
             }
-          }
 
-          if (column.sortable && field.sortable) {
-            column.sortOrder = field.sortOrder;
+            if (column.sortable && field.sortable) {
+              column.sortOrder = field.sortOrder;
+            }
           }
         });
 
