@@ -806,14 +806,14 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
                 if (column.dropdownFilterSelectMode === 'multi') {
                   column.filter = field.filterValue.map((filterValue) => {
                     return {
-                      key: filterValue.key,
-                      value: filterValue.value
+                      key: filterValue,
+                      value: filterValue
                     };
                   });
                 } else {
                   column.filter = {
-                    key: field.filterValue.key,
-                    value: field.filterValue.value
+                    key: field.filterValue,
+                    value: field.filterValue
                   };
                 }
               }
