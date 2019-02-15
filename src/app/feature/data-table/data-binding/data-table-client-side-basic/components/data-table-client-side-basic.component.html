@@ -2,11 +2,16 @@
   <h1>Client Side Basic Data Binding</h1>
 
   <p>Client side data binding allow users to bind static data sets to data table when full data collection is available
-    in the client side. It can be configured via setting an array of data objects to <code>items</code> input property or
-    via setting a <a rel="noopener" target="_blank" href="https://rxjs-dev.firebaseapp.com/">RxJS</a> Observable stream
+    in the client side. It can be configured via setting an array of data objects to <code>items</code> input property
+    or
+    via setting a <a rel="noopener" target="_blank" href="https://rxjs-dev.firebaseapp.com/">RxJS Observable</a> stream
     to <code>dataSource</code> input property.</p>
 
-  <p>In this data binding technique, data table operations like filtering, sorting, page change, etc., are performed in
+  <p>In this data binding technique, data table operations such as
+    <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Filtering</a>, <a
+      [routerLink]="['/feature/data-table/functionality/row/grouping']">Row Grouping</a>, <a
+      [routerLink]="['/feature/data-table/functionality/column/sorting']">Sorting</a>, <a
+      [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a> etc. are performed in
     client side via an internal data source manager service.</p>
 
   <p>
@@ -32,8 +37,8 @@
   <p>
     The complete set of code snippet for the data binding via <code>items</code> input property can be seen in the
     example shown in the <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']"
-                            [fragment]="'whatYouWillSee'">What You Will See</a> section above. Mutations to items
-    collection will automatically get reflected in data table.
+                            [fragment]="'whatYouWillSee'">What You Will See</a> section above. Mutations of item
+    collections will automatically get reflected in data table.
   </p>
 
   <p>or</p>

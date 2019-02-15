@@ -1,5 +1,4 @@
 import { ExampleFile, FileType } from 'helper-models';
-import clientSideStreamHtml from './example/client-side-stream-usage/client-side-stream-usage.component.html';
 
 export const clientSideStreamUsage: ExampleFile[] = [
   {
@@ -23,5 +22,5 @@ export const clientSideStreamUsage: ExampleFile[] = [
 export const demoSnippet: any = {
   items: require('!!raw-loader!./docs/items.md'),
   dataSource: require('!!raw-loader!./docs/data-source.md'),
-  dataBindingWithItems: require('!!raw-loader!./docs/real-time-binding-with-items-code-snippet.md')
+  dataBindingWithItems: require('!!raw-loader!./docs/client-side-stream-with-items.md')
 };

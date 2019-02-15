@@ -19,6 +19,10 @@ export const serverSideWebSocketUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  items: require('!!raw-loader!./docs/items.md'),
-  dataSource: require('!!raw-loader!./docs/data-source.md')
+  basicUsage: require('!!raw-loader!./docs/basic-usage.md'),
+  isBrowser: require('!!raw-loader!./docs/is-browser.md'),
+  initMethod: require('!!raw-loader!./docs/init.md'),
+  onDataBindMethod: require('!!raw-loader!./docs/on-data-bind-method.md'),
+  socketStream: require('!!raw-loader!./docs/socket-stream.md'),
+  dispose: require('!!raw-loader!./docs/dispose.md')
 };

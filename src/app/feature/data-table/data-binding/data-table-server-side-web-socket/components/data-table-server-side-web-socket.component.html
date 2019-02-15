@@ -5,7 +5,7 @@
     <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a> is now
     capable of updating dynamic data without having a manual refresh in the client side. But assume, what happen if
     these dynamic data is available in the server side and time to time that server emitting a new dynamic stream of
-    data, can we bind these kind of data to the data table?. In these type of situations, Server side data binding is
+    data, can we bind these kind of data to the data table? In these type of situations, Server side data binding is
     introduced.
   </p>
 
@@ -17,17 +17,25 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Server side data binding is handled via <code>onDataBind</code> callback function. It allow users
+    Server side data binding is handled via <a rel="noopener" target="_blank"
+                                               href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+    callback function. It allow users
     to customize the data binding logic and will be triggers on table initialization and on dynamic data
-    table operations. This function will receive <code>DataTableRequestParams</code> argument and expect to return
+    table operations. This function will receive <a rel="noopener" target="_blank"
+                                                    href="https://ornamentum.app/api-docs/interfaces/DataTableRequestParams.html">DataTableRequestParams</a>
+    argument and expect to return
     <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
-      Observable</a> query result <code>DataTableQueryResult&lt;T&gt;</code> object stream. Data returned from this
-    callback function will be directly bound to table assuming that it matches the on demand request context.
+      Observable</a> query result <a rel="noopener" target="_blank"
+                                     href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
+    object stream. Data returned from this callback function will be directly bound to table assuming that it matches
+    the on demand request context.
   </p>
 
   <p>For use of Server side web socket data binding operations it is mandatory to import
-    <code>DataTableResourceModule</code> to
-    your application module.</p>
+    <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a>
+    to your application module.</p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.onDataBind"></app-code-snippet>
 
   <p>
     Let's see how it uses a simple socket connection to emit data in an time interval and how it could listened from the
@@ -36,46 +44,57 @@
 
 
   <p>In the very first of component initialization, you can creates a web socket connection for browser environment.
-    refer
-    the below code snippet for Global Ref Service <code>isBrowser()</code> method.</p>
+    refer the below code snippet for Global Ref Service <a rel="noopener" target="_blank"
+                                                           href="https://ornamentum.app/api-docs/injectables/GlobalRefService.html#isBrowser">isBrowser</a>
+    method.</p>
 
   <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.isBrowser"></app-code-snippet>
 
-  <p>Then, if window is not <code>undefined</code>, Data Table Web Socket Data Fetch Service <code>init</code> method
+  <p>Then, if window is not <code>undefined</code>, Data Table Web Socket Data Fetch Service <a rel="noopener"
+                                                                                                target="_blank"
+                                                                                                href="https://ornamentum.app/api-docs/injectables/DataTableWebsocketDataFetchService.html#init">init</a>
+    method
     will triggers with web socket endpoint. refer the below code snippet.</p>
 
   <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.init"></app-code-snippet>
 
-  <p>Then <code>DataTableDataBindCallback</code> data can be bind into <code>onDataBind</code> property.</p>
+  <p>Then <code>DataTableDataBindCallback</code> data can be bind into <a rel="noopener" target="_blank"
+                                                                          href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+    property.</p>
 
   <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.onDataBindMethod"></app-code-snippet>
 
-  <p>After all socket connection will keep alive with a <a
-    href="https://rxjs-dev.firebaseapp.com/api/index/function/interval">RxJS Interval</a> and it will emit a data set
-    for Data Table Web Socket Data Fetch Service <code>socketStream()</code> method with a object which contains <code>keep-alive</code>
+  <p>After all socket connection will keep alive with a <a rel="noopener" target="_blank"
+                                                           href="https://rxjs-dev.firebaseapp.com/api/index/function/interval">RxJS
+    Interval</a> and it will emit a data set
+    for Data Table Web Socket Data Fetch Service <a rel="noopener" target="_blank"
+                                                    href="https://ornamentum.app/api-docs/injectables/DataTableWebsocketDataFetchService.html#socketStream">socketStream</a>
+    method with a object which contains <code>keep-alive</code>
     tag in every defined interval.</p>
 
   <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.socketStream"></app-code-snippet>
 
-  <p>After all done, <a rel="noopener" target="_blank" href="https://angular.io/api/core/OnDestroy">OnDestroy()</a>
+  <p>After all done, <a rel="noopener" target="_blank" href="https://angular.io/api/core/OnDestroy">OnDestroy</a>
     Angular life cycle hook automatically triggers and invoke Data Table Web Socket Data Fetch Service
-    <code>dispose()</code> method and unsubscribe all the subscriptions and complete the web socket connection
+    <a rel="noopener" target="_blank"
+       href="https://ornamentum.app/api-docs/injectables/DataTableWebsocketDataFetchService.html#dispose">dispose</a>
+    method and unsubscribe all the subscriptions and complete the web socket connection
     operations.
   </p>
 
   <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dispose"></app-code-snippet>
 
   <p>
-    The complete set of code snippet for the server side web socket data binding via <code>onDataBind</code> call back
-    function can be seen in <a
-    [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']" [fragment]="'whatYouWillSee'">What
-    You Will See</a> section example.
+    The complete set of code snippet for the server side web socket data binding via <a rel="noopener" target="_blank"
+                                                                                        href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+    call back function can be seen in <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']"
+                                         [fragment]="'whatYouWillSee'">What You Will See</a> section example.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
   <a [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client Side Stream Data Binding</a><br/>
   <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for
-    Server-side Real-time Data Binding</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server
+    Side Web Socket Data Binding</a>
 </div>

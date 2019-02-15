@@ -1,11 +1,21 @@
 <div class="feature-container">
-  <h1>Server-side Basic Data Binding</h1>
-
-  <p>Server side data binding allow users to bind a larger data stream which is available in the server side.</p>
+  <h1>Server Side Basic Data Binding</h1>
 
   <p>
-    Unlike the client side data binding, whenever user performs a keyword search(refer <a [routerLink]="['/feature/dropdown/features/item/filtering']" [fragment]="'serverSideFiltering'">Server-side Item Filtering</a>) or user scrolls down to see more items, a new api request will be
-    initiated to fetch data from the server which matches to the particular action.
+    Server side data binding allow users to bind large data sets that are not directly accessible as a full collection
+    in client side due to various reasons. Server side data binding can improve performance drastically for large data
+    sets but integration is fairly complex compared to <a
+    [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic Data Binding</a> and <a
+    [routerLink]="['/feature/dropdown/data-binding/client-side/stream']">Client Side Stream Data Binding</a>
+    techniques.
+  </p>
+
+  <p>
+    Unlike in <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic Data
+    Binding</a>, server side rendering will request for data on dropdown initialization and whenever user performs
+    <a [routerLink]="['/feature/dropdown/features/item/filtering']" [fragment]="'serverSideFiltering'">Server Side
+      Filtering</a> operation. Ornamentum has provided an optional opinionated service to integrate external data
+    sources. Also, you can build a custom data provider depending on your requirement.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -16,35 +26,33 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Server side data binding is handled via <code>onDataBind</code> callback property which is available within the dropdown features. This property
-    allows users to customize the way of data binding inside a callback function. This call back function accepts
-    <code>DropdownRequestParams</code> parameter (optional) and returns any generic type(T) of item set as an Observable(Data stream)
-    <code>DropdownQueryResult&lt;T&gt;</code>.
+    Server side data binding is handled via <a rel="noopener" target="_blank"
+                                               href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
+    callback function. Use this callback reference to hook into data bind workflow and provide custom data source. This
+    callback function will get triggered on dropdown initialization and on dynamic dropdown operations. It
+    receives <a rel="noopener" target="_blank"
+                href="https://ornamentum.app/api-docs/interfaces/DropdownRequestParams.html">DropdownRequestParams</a>
+    argument and expect to return <a rel="noopener" target="_blank"
+                                     href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
+    Observable</a> query result <a rel="noopener" target="_blank"
+                                   href="https://ornamentum.app/api-docs/interfaces/DropdownQueryResult.html">DropdownQueryResult&lt;T&gt;</a>
+    object stream. Data returned from this callback function will be directly bound to dropdown assuming that it matches
+    the on demand request context.
   </p>
 
-  <p>
-    When the data set is huge, without getting whole lot of data at once to the client side, data will be fetched chunk by chunk when user scrolled
-    down to the last item.
-  </p>
-
-  <p>
-    Whenever user scrolls down to the last item to see more data, a new request will be sent to server. Therefore, it is mandatory to set
-    <b>true</b> for <code>loadOnScroll</code> property when server side data binding is used.
-  </p>
-
-  <p>
-    In the above example, open Network tab in the chrome developer tools and search for item or scroll down, to see the initiated request as described
-    earlier.
-  </p>
+  <p>For use of Server side basic data binding operations it is mandatory to import <a rel="noopener" target="_blank"
+                                                                                       href="https://ornamentum.app/api-docs/modules/DropdownResourceModule.html">DropdownResourceModule</a>
+    to your application module.</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBinding"></app-code-snippet>
 
   <p>
-    Following code snippet will be represent the implementation of the <code>fetchDataOnBindForDropdown</code> method that used inside the
-    <b>server-side-data-binding.component.ts</b> file to bind dynamic data stream.
+    Following code snippet represent an example implementation of <a rel="noopener" target="_blank"
+                                                                     href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
+    callback.
   </p>
 
-  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataFetchMethod"></app-code-snippet>
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.onDataBindMethod"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#dataSource">API Doc for Server Side Basic Data Binding</a>
