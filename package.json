@@ -1,6 +1,6 @@
 {
   "name": "ornamentum-demo",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Lightweight, feature rich, highly configurable, UI framework agnostic full responsive Angular data table with minimal dependencies.",
   "scripts": {
     "ng": "ng",
