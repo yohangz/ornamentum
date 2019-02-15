@@ -39,7 +39,8 @@ export class DropdownHttpResourceService<T> {
         }
 
         if (params.filter && params.filter.value) {
-          queryParams = queryParams.set('filter', `${params.filter.key}|${params.filter.value}`);
+          queryParams = queryParams.set('field', params.filter.key);
+          queryParams = queryParams.set('filter', params.filter.value);
         }
 
         const resource = this.http.get<any>(resourcePath, { params: queryParams, ...requestOptions }) as Observable<any>;

@@ -33,6 +33,7 @@ import { DataTableDynamicRowSpanExtractorCallback } from '../../models/data-tabl
 import { DataTableQueryResult } from '../../models/data-table-query-result.model';
 import { DataTableDataBindCallback } from '../../models/data-table-data-bind-callback.model';
 import { DataTableFilterOption } from '../../models/data-table-filter-option.model';
+import { DataTableUniqueField } from '../../models/data-table-unique-field.model';
 
 import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
 import { DataTableStorageMode } from '../../models/data-table-storage-mode.model';
@@ -753,25 +754,56 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
         .filter(column => {
           return column.sortable || column.filterable;
         })
-        .map((column: DataTableColumnComponent) => {
-          let filter;
-          if (column.showDropdownFilter) {
-            if (column.dropdownFilterSelectMode === 'multi') {
-              filter = column.filter && column.filter.map(filterValue => filterValue.key);
-            } else {
-              filter = column.filter && column.filter.key;
+        .reduce((acc: DataTableUniqueField[], column: DataTableColumnComponent) => {
+          if (column.sortField || column.filterField) {
+            if (column.sortField === column.filterField) {
+              acc.push({
+                field: column.sortField,
+                column: column
+              });
+            }
+
+            if (column.sortField) {
+              acc.push({
+                field: column.sortField,
+                column: column
+              });
+            }
+
+            if (column.filterField) {
+              acc.push({
+                field: column.filterField,
+                column: column
+              });
             }
           } else {
-            filter = column.filter;
+            acc.push({
+              field: column.field,
+              column: column
+            });
+          }
+
+          return acc;
+        }, [])
+        .map((uniqueField: DataTableUniqueField) => {
+          let filter;
+          if (uniqueField.column.showDropdownFilter) {
+            if (uniqueField.column.dropdownFilterSelectMode === 'multi') {
+              filter = uniqueField.column.filter && uniqueField.column.filter.map(filterValue => filterValue.key);
+            } else {
+              filter = uniqueField.column.filter && uniqueField.column.filter.key;
+            }
+          } else {
+            filter = uniqueField.column.filter;
           }
 
           return {
-            field: column.sortField || column.field,
-            sortable: column.sortable,
-            filterable: column.filterable,
-            sortOrder: column.sortOrder,
+            field: uniqueField.field,
+            sortable: uniqueField.column.sortable,
+            filterable: uniqueField.column.filterable,
+            sortOrder: uniqueField.column.sortOrder,
             filterValue: filter,
-            filterExpression: column.filterExpression
+            filterExpression: uniqueField.column.filterExpression
           };
         });
     }
@@ -802,7 +834,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
 
           if (column.filterable && field.filterable) {
             if (column.showDropdownFilter) {
-              if (column.filter) {
+              if (field.filterValue) {
                 if (column.dropdownFilterSelectMode === 'multi') {
                   column.filter = field.filterValue.map((filterValue) => {
                     return {

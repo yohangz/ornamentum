@@ -7,15 +7,12 @@ import { DataTableQueryField, DropdownFilter } from 'ornamentum';
 export const queryDataByFieldExpression = (data: any[], offset: number = 0, limit: number = 10, fields: any = {}): any => {
   let result = data;
 
-  if ('filter' in fields) {
-    const filter = fields.filter.split('|');
-    if (filter.length === 2) {
-      const value = String(filter[1]).toLowerCase();
-      result = result.filter(item => {
-        const key = String(get(item, filter[0])).toLowerCase();
-        return key.includes(value);
-      });
-    }
+  if ('filter' in fields && 'field' in fields) {
+    const value = String(fields.filter).toLowerCase();
+    result = result.filter(item => {
+      const key = String(get(item, fields.field)).toLowerCase();
+      return key.includes(value);
+    });
   } else {
     const filters = [];
     const sort = {
