@@ -6,14 +6,17 @@ import { ResourceUtilityConfigService } from './services/resource-utility-config
 
 const PROVIDERS = [RequestParamMapperService];
 
+/**
+ * Resource utility module.
+ */
 @NgModule({
   imports: [],
   providers: [...PROVIDERS]
 })
 export class ResourceUtilityModule {
   /**
-   * Set module root configuration overrides
-   * @return Module with custom providers
+   * Set module root configuration overrides.
+   * @return Module with custom providers.
    */
   public static forRoot(): ModuleWithProviders {
     return {
