@@ -1,5 +1,4 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 import { ExampleData } from '../models';
 
@@ -10,7 +9,7 @@ import fetchData from '../data/sample-data';
  */
 @Injectable()
 export class DataFetchService {
-  constructor(private http: HttpClient) {}
+  constructor() {}
 
   /**
    * Fetch data from client source for demo client side data binding with items property.

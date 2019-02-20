@@ -1,5 +1,4 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
 
 import { ResourceUtilityModule } from '../resource-utility/resource-utility.module';
 
@@ -13,7 +12,7 @@ const PROVIDERS = [DropdownHttpResourceService, DropdownWebsocketDataFetchServic
  * Dropdown data source module.
  */
 @NgModule({
-  imports: [HttpClientModule, ResourceUtilityModule],
+  imports: [ResourceUtilityModule],
   providers: [...PROVIDERS]
 })
 export class DropdownResourceModule {
