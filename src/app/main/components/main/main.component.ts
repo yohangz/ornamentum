@@ -845,8 +845,8 @@ export class MainComponent {
                       anchor: 'defaultConfiguration'
                     },
                     {
-                      title: 'Mark-up Property Binding',
-                      anchor: 'markupPropertyBinding'
+                      title: 'Template Property Binding',
+                      anchor: 'templatePropertyBinding'
                     },
                     {
                       title: 'Module Property Binding',
@@ -1471,8 +1471,8 @@ export class MainComponent {
                       anchor: 'defaultConfiguration'
                     },
                     {
-                      title: 'Mark-up Property Binding',
-                      anchor: 'markupPropertyBinding'
+                      title: 'Template Property Binding',
+                      anchor: 'templatePropertyBinding'
                     },
                     {
                       title: 'Module Property Binding',

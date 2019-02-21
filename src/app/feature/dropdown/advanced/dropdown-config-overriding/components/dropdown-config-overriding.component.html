@@ -12,7 +12,7 @@
     |__ <a class="hierarchy-main" [routerLink]="['/feature/dropdown/advanced/config-overriding']">Dropdown Configuration</a>
     |   |
     |   |___ <a class="config-level" [routerLink]="['/feature/dropdown/advanced/config-overriding']" [fragment]="'defaultConfiguration'">Default Configuration</a>
-    |   |___ <a class="config-level" [routerLink]="['/feature/dropdown/advanced/config-overriding']" [fragment]="'markupPropertyBinding'">Mark-up Property Binding</a>
+    |   |___ <a class="config-level" [routerLink]="['/feature/dropdown/advanced/config-overriding']" [fragment]="'templatePropertyBinding'">Template Property Binding</a>
     |   |___ <a class="config-level" [routerLink]="['/feature/dropdown/advanced/config-overriding']" [fragment]="'modulePropertyBinding'">Module Property Binding</a>
     |
     |__ <a class="hierarchy-main" [routerLink]="['/feature/data-table/advanced/config-overriding']">Data Table Configuration</a>
@@ -27,14 +27,14 @@
 
   <div class="dd-config-default"></div>
 
-  <h2 id="markupPropertyBinding">Mark-up Property Binding</h2>
+  <h2 id="templatePropertyBinding">Template Property Binding</h2>
 
-  <div class="dd-config-markup"></div>
+  <div class="dd-config-template"></div>
 
   <p>This level of property definations will be overrides <a
     [routerLink]="['/feature/dropdown/advanced/config-overriding']" [fragment]="'defaultConfiguration'">Default
     Configuration</a>.This is the first user allowed property binding operation. you can simply bind a required type of
-    value to respective configurations on mark-up template.</p>
+    value to respective configurations on HTML template.</p>
 
   <h2 id="modulePropertyBinding">Module Property Binding</h2>
 
@@ -42,7 +42,7 @@
     level configurations inside <code>forRoot()</code> tag. specified properties will be overrides both <a
       [routerLink]="['/feature/dropdown/advanced/config-overriding']" [fragment]="'defaultConfiguration'">Default
       Configuration</a> and <a [routerLink]="['/feature/dropdown/advanced/config-overriding']"
-                               [fragment]="'markupPropertyBinding'">Mark-up Property Binding</a> property definitions.
+                               [fragment]="'templatePropertyBinding'">Template Property Binding</a> property definitions.
   </p>
 
   <div class="dd-config-module"></div>
@@ -53,6 +53,5 @@
     columns.</p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Configuration
-    Overriding</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Configuration Overriding</a>
 </div>
