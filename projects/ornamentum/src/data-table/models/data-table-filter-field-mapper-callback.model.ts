@@ -7,4 +7,4 @@
  */
 import { DataTableFilterOption } from './data-table-filter-option.model';
 
-export type DataTableFilterFieldMapperCallback = (value: any, index: number) => DataTableFilterOption;
+export type DataTableFilterFieldMapperCallback = (value: any, index: number) => DataTableFilterOption[];

@@ -131,19 +131,21 @@ export class DataTableResourceService<T> {
     return this.itemDataStream.pipe(
       switchMap((items: T[]) => {
         const filteredItems = items
-          .map((item: T, index: number) => {
+          .reduce((acc: DataTableFilterOption[], item: T, index: number): DataTableFilterOption[] => {
             if (filterColumn.filterFieldMapper) {
-              return filterColumn.filterFieldMapper(item, index);
+              return acc.concat(filterColumn.filterFieldMapper(item, index));
             }
 
             const filterField = filterColumn.filterField || filterColumn.field;
             const filterValue = get(item, filterField);
-            return {
+            acc.push({
               key: filterValue,
               value: filterValue
-            };
-          })
-          .filter((value, index, self) => {
+            });
+
+            return acc;
+          }, [])
+          .filter((value: DataTableFilterOption, index, self) => {
             return self.findIndex(item => item.key === value.key) === index;
           });
 
