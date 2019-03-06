@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-  
+
 import { DataTableModule } from 'ornamentum';
   
 import { ServerSideHttpUsageComponent } from './server-side-basic-usage.component';
@@ -11,7 +11,7 @@ import { ServerSideHttpUsageComponent } from './server-side-basic-usage.componen
  imports: [
     BrowserModule, 
     DataTableModule.forRoot(), // Import data table module
-    DataTableResourceModule // Import data table resource module
+    DataTableResourceModule.forRoot() // Import data table resource module
   ]
 })
 export class ServerSideBasicUsageModule {
