@@ -84,7 +84,10 @@ Setup project in local development environment
 # clone project
 git clone git@github.com:yohangz/ornamentum.git && cd $_
 
-# start the app (please make sure to install yarn in your environment)
+# install dependencies
+yarn install
+
+# start the app
 yarn start
 ```
 You can read more about Ornamentum build tasks [here](https://github.com/yohangz/ornamentum/blob/master/docs/BUILD_TASK.md) and refer [Contribution Guide](https://github.com/yohangz/ornamentum/blob/master/CONTRIBUTING.md) for more details.
