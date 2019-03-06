@@ -12,6 +12,8 @@ export class ItemsUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
+    // This line of code is fetching 20 dummy data items collection from a local data service.
+    // Replace this with your own data source.
     this.items = this.dataFetchService.fetchStaticData(0, 20);
   }
 }

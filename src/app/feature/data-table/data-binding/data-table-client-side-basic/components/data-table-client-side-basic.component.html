@@ -35,9 +35,10 @@
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items">{{ demoSnippet.items }}</app-code-snippet>
 
   <p>
-    The complete set of code snippet for the data binding via <code>items</code> input property can be seen in the
+    This approach can be used to bind a static data array. The complete code snippets for the data binding
+    via <code>items</code> input property can be found in the
     example shown in the <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']"
-                            [fragment]="'whatYouWillSee'">What You Will See</a> section above. Mutations of item
+                            [fragment]="'whatYouWillSee'">What You Will See</a> section above. Mutations to the item
     collections will automatically get reflected in data table.
   </p>
 
@@ -45,8 +46,8 @@
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
-  <p>Refer following example code snippet for complete usage of the <code>dataSource</code> property in the client side
-    data
+  <p>This approach can be used to bind an Observable data stream. Refer following example code snippet for
+    complete usage of the <code>dataSource</code> property in the client side data
     binding. Latest data collection emitted via data source stream will get reflected in data table.</p>
 
   <app-data-source-usage></app-data-source-usage>
