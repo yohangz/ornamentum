@@ -10,7 +10,7 @@ import { ItemsUsageComponent } from './items-usage.component';
  declarations: [ItemsUsageComponent],
  imports: [
     BrowserModule, 
-    DataTableModule.forRoot()
+    DataTableModule.forRoot() // import data table module
   ]
 })
 export class ItemsUsageModule {

@@ -10,7 +10,7 @@ import { DataSourceUsageComponent } from './data-source-usage.component';
  declarations: [DataSourceUsageComponent],
  imports: [
     BrowserModule, 
-    DataTableModule.forRoot()
+    DataTableModule.forRoot() // import data table module
   ]
 })
 export class DataSourceUsageModule {
