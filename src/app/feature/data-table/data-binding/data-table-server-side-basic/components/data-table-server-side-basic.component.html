@@ -28,6 +28,48 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
+    Server side data bind functionality can be integrated via <a rel="noopener" target="_blank"
+            href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+    callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
+    data source agnostic. Import <a rel="noopener" target="_blank"
+       href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a> along with
+    <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
+    This module require <a rel="noopener" target="_blank"
+                           href="https://www.npmjs.com/package/@angular/http">@angular/http</a>
+    package as a dependency.
+  </p>
+
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingModule"></app-code-snippet>
+
+  <p>
+    Within the target component use <a rel="noopener" target="_blank"
+       href="https://ornamentum.app/api-docs/injectables/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a>
+    service to get the <a rel="noopener" target="_blank"
+                          href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+    callback implementation.
+  </p>
+
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingComponent"></app-code-snippet>
+
+
+  <p>
+    Set the callback function to <a rel="noopener" target="_blank"
+        href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a> input property.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBindingMarkup"></app-code-snippet>
+
+  <p>
+    Backend service requirements to use <a rel="noopener" target="_blank"
+      href="https://ornamentum.app/api-docs/injectables/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a>
+    service.
+  </p>
+
+
+
+  <h2 id="customDataProvider">Custom Data Provider</h2>
+
+  <p>
     Server side data binding is handled via <a rel="noopener" target="_blank"
                                                href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
     callback function. Use this callback reference to hook into data bind workflow and provide custom data source. This
@@ -41,16 +83,6 @@
     object stream. Data returned from this callback function will be directly bound to table assuming that it matches
     the on demand request context.
   </p>
-
-  <p>
-    For use of Server side basic data binding operations it is required to import <a rel="noopener" target="_blank"
-                                                                                     href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a>
-    to your application module if you want to use <a rel="noopener" target="_blank"
-                                                     href="https://ornamentum.app/api-docs/injectables/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a>
-    to fetch data without using a custom data fetch logic.
-  </p>
-
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBinding"></app-code-snippet>
 
   <p>
     Following code snippet represent an example implementation of <a rel="noopener" target="_blank"

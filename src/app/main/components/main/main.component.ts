@@ -104,6 +104,10 @@ export class MainComponent {
                   anchor: 'basicUsage'
                 },
                 {
+                  title: 'Custom Data Provider',
+                  anchor: 'customDataProvider'
+                },
+                {
                   title: 'Suggested Links',
                   anchor: 'suggestedLinks'
                 }
