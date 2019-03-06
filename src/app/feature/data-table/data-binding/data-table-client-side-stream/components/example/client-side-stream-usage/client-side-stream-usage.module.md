@@ -10,7 +10,7 @@ import { ClientSideStreamUsageComponent } from './client-side-stream-usage.compo
  declarations: [ClientSideStreamUsageComponent],
  imports: [
     BrowserModule, 
-    DataTableModule.forRoot()
+    DataTableModule.forRoot() // Import data table module
   ]
 })
 export class ClientSideStreamUsageModule {

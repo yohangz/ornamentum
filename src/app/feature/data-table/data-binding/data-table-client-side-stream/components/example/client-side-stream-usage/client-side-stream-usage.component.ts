@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Observable, of, timer } from 'rxjs';
+import { Observable, timer } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { GlobalRefService } from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
-
 import { DataFetchService } from 'helper-services';
 
 @Component({
@@ -22,11 +21,11 @@ export class ClientSideStreamUsageComponent implements OnInit {
   public ngOnInit(): void {
     let offset = 0;
 
-    // This is an internal service used to check the execution environment.
-    // Checks whether it is browser or not.
+    // Checks whether current execution environment is browser or not. Useful when application is SSR compliant.
     if (this.globalRefService.isBrowser) {
 
-      // Code segment used to emulate the realtime data source. Use your actual realtime datasource here.
+      // This code is used to emulate the realtime data source behavior.
+      // Replace this with your actual realtime data source (Observable stream).
       this.dataSource = timer(0, 2000).pipe(
         map(() => {
           offset += 20;
@@ -34,7 +33,8 @@ export class ClientSideStreamUsageComponent implements OnInit {
             offset = 0;
           }
 
-          // Bind data in the client-side.
+          // This line of code is fetching 20 dummy data items collection from a local data service.
+          // Replace this with your own data source.6
           return this.dataFetchService.fetchStaticData(offset, 20);
         })
       );
