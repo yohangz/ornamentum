@@ -37,7 +37,7 @@ import {
     FormsModule,
     SharedModule.forRoot(),
     DataTableModule.forRoot(),
-    DataTableResourceModule,
+    DataTableResourceModule.forRoot(),
     DataTableColumnSortingRoutingModule
   ],
   providers: []

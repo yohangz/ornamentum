@@ -11,7 +11,7 @@ import { ServerSideWebSocketUsageComponent } from './server-side-web-socket-usag
  imports: [
     BrowserModule,
     DataTableModule.forRoot(),
-    DataTableResourceModule
+    DataTableResourceModule.forRoot()
   ]
 })
 export class ServerSideWebSocketUsageModule {

@@ -22,7 +22,7 @@ import { DropdownServerSideWebSocketComponent, ServerSideWebSocketUsageComponent
     CommonModule,
     SharedModule.forRoot(),
     DropdownModule.forRoot(),
-    DropdownResourceModule,
+    DropdownResourceModule.forRoot(),
     DropdownServerSideWebSocketRoutingModule
   ],
   providers: []

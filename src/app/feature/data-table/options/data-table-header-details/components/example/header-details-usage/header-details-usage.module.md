@@ -11,7 +11,7 @@ import { HeaderDetailsUsageComponent } from './header-details-usage.component';
  imports: [
     BrowserModule, 
     DataTableModule.forRoot(),
-    DataTableResourceModule
+    DataTableResourceModule.forRoot()
   ]
 })
 export class HeaderDetailsUsageModule {

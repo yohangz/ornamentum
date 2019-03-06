@@ -22,7 +22,7 @@ import { DropdownServerSideBasicComponent, ServerSideBasicUsageComponent } from 
     CommonModule,
     SharedModule.forRoot(),
     DropdownModule.forRoot(),
-    DropdownResourceModule,
+    DropdownResourceModule.forRoot(),
     DropdownServerSideBasicRoutingModule
   ],
   providers: []

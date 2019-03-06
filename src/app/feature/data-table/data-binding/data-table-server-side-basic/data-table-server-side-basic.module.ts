@@ -21,7 +21,7 @@ import { DataTableServerSideBasicComponent, ServerSideBasicUsageComponent } from
     FormsModule,
     SharedModule.forRoot(),
     DataTableModule.forRoot(),
-    DataTableResourceModule,
+    DataTableResourceModule.forRoot(),
     DataTableServerSideBasicRoutingModule
   ],
   providers: []

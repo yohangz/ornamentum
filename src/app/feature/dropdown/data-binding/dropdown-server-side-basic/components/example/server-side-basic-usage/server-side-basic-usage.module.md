@@ -11,7 +11,7 @@ import { ServerSideDataBindingUsageComponent } from './server-side-basic-usage.c
  imports: [
     BrowserModule, 
     DropdownModule.forRoot(),
-    DropdownResourceModule
+    DropdownResourceModule.forRoot()
   ]
 })
 export class ServerSideBasicUsageModule {
