@@ -21,7 +21,8 @@ export class ClientSideStreamUsageComponent implements OnInit {
   public ngOnInit(): void {
     let offset = 0;
 
-    // Checks whether current execution environment is browser or not. Useful when application is SSR compliant.
+    // This code is used to emulate the realtime data source behavior.
+    // Replace this with your actual realtime data source (Observable stream).
     if (this.globalRefService.isBrowser) {
 
       // This code is used to emulate the realtime data source behavior.
@@ -34,7 +35,7 @@ export class ClientSideStreamUsageComponent implements OnInit {
           }
 
           // This line of code is fetching 20 dummy data items collection from a local data service.
-          // Replace this with your own data source.6
+          // Replace this with your own data source.
           return this.dataFetchService.fetchStaticData(offset, 20);
         })
       );
