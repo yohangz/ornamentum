@@ -33,7 +33,7 @@ import {
     CommonModule,
     SharedModule.forRoot(),
     DropdownModule.forRoot(),
-    DropdownResourceModule,
+    DropdownResourceModule.forRoot(),
     DropdownItemFilteringRoutingModule
   ],
   providers: []

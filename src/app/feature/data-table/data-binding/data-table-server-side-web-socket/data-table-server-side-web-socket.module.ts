@@ -21,7 +21,7 @@ import { DataTableServerSideWebSocketComponent, ServerSideWebSocketUsageComponen
     FormsModule,
     SharedModule.forRoot(),
     DataTableModule.forRoot(),
-    DataTableResourceModule,
+    DataTableResourceModule.forRoot(),
     DataTableServerSideWebSocketRoutingModule
   ],
   providers: []

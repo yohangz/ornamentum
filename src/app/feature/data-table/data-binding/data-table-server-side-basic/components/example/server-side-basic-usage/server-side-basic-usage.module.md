@@ -10,8 +10,8 @@ import { ServerSideHttpUsageComponent } from './server-side-basic-usage.componen
  declarations: [ServerSideBasicUsageComponent],
  imports: [
     BrowserModule, 
-    DataTableModule.forRoot(),
-    DataTableResourceModule
+    DataTableModule.forRoot(), // Import data table module
+    DataTableResourceModule // Import data table resource module
   ]
 })
 export class ServerSideBasicUsageModule {
