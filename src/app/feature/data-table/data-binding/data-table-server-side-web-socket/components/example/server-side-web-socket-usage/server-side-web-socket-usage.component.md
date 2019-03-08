@@ -10,9 +10,6 @@ import {
 
 import { ExampleData } from 'helper-models';
 
-/**
- * Server side web socket data binding example component.
- */
 @Component({
   selector: 'app-server-side-web-socket-usage',
   templateUrl: './server-side-web-socket-usage.component.html'
@@ -28,7 +25,7 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
    * Component initialize lifecycle event handler.
    */
   public ngOnInit(): void {
-    // Create web socket connection on browser environment only to support server side rendering.
+    // Create web socket connection on browser environment to support server side rendering.
     if (this.globalRefService.isBrowser) {
       this.dataTableWebSocketDataFetchService.init({
         url: `wss://${window.location.hostname}` // web socket endpoint
