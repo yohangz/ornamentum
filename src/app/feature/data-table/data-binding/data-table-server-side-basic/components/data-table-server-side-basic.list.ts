@@ -22,5 +22,6 @@ export const demoSnippet: any = {
   serverSideDataBindingModule: require('!!raw-loader!./docs/server-side-data-binding-module.md'),
   serverSideDataBindingComponent: require('!!raw-loader!./docs/server-side-data-binding-component.md'),
   serverSideDataBindingMarkup: require('!!raw-loader!./docs/server-side-data-binding-markup.md'),
+  serverSideRequest: require('!!raw-loader!./docs/server-side-request.md'),
   dataFetchMethod: require('!!raw-loader!./docs/data-fetch-method.md')
 };

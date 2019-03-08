@@ -59,13 +59,36 @@
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBindingMarkup"></app-code-snippet>
 
+  <p>Data fetch HTTP request (Your backend REST API should support following):</p>
+
+  <ol>
+    <li>
+      Pagination query parameters
+      <ul>
+        <li>
+          <code>limit</code> - The limit parameter controls the maximum number of items that may be returned for a single request. This parameter can be thought of as the page size. If no limit is specified, the system defaults to a limit of 15 results per request.
+        </li>
+        <li>
+          <code>offset</code> - The offset parameter controls the starting point within the collection of resource results. For example, if you have a collection of 15 items to be retrieved from a resource and you specify limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value: offset=0, offset=5, and offset=10. Note that the first item in the collection is retrieved by setting a zero offset.
+        </li>
+      </ul>
+    </li>
+    <li>
+      Sorting and Filtering query parameters - query parameter with field name will get appended when sort or filter action is triggered. Refer
+      <a [routerLink]="['/feature/data-table/functionality/column/sorting']" [fragment]="'serverSideColumnSorting'">Server Side Sorting</a> and
+      <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'serverSideColumnFilter'">Server Side Filtering</a>
+      sections for more information.
+    </li>
+  </ol>
+
   <p>
-    Backend service requirements to use <a rel="noopener" target="_blank"
-      href="https://ornamentum.app/api-docs/injectables/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a>
-    service.
+    Inspect network traffic with "<code>/api/data</code>" filter in browser developer tools to understand backend service requirements to
+    use <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/injectables/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a>
+    provider.
   </p>
 
-
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideRequest" [showLineNumbers]="false">
+  </app-code-snippet>
 
   <h2 id="customDataProvider">Custom Data Provider</h2>
 
