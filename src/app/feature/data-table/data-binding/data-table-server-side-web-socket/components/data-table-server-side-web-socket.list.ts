@@ -19,10 +19,7 @@ export const serverSideWebSocketUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  onDataBind: require('!!raw-loader!./docs/on-data-bind.md'),
-  isBrowser: require('!!raw-loader!./docs/is-browser.md'),
-  init: require('!!raw-loader!./docs/init.md'),
-  onDataBindMethod: require('!!raw-loader!./docs/on-data-bind-method.md'),
-  socketStream: require('!!raw-loader!./docs/socket-stream.md'),
-  dispose: require('!!raw-loader!./docs/dispose.md')
+  webSocketDataBindingModule: require('!!raw-loader!./docs/ws-data-binding-module.md'),
+  webSocketDataBindingComponent: require('!!raw-loader!./docs/ws-data-binding-component.md'),
+  WebSocketDataBindingMarkup: require('!!raw-loader!./docs/ws-data-binding-markup.md'),
 };
