@@ -122,12 +122,12 @@ export class MainComponent {
                   anchor: 'whatYouWillSee'
                 },
                 {
-                  title: 'Custom Data Provider',
-                  anchor: 'customDataProvider'
-                },
-                {
                   title: 'Basic Usage',
                   anchor: 'basicUsage'
+                },
+                {
+                  title: 'Custom Data Provider',
+                  anchor: 'customDataProvider'
                 },
                 {
                   title: 'Suggested Links',
