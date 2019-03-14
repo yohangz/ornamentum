@@ -80,8 +80,8 @@
       sections for more information.
     </li>
     <li>
-      Service response schema
-      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.responseSchema"></app-code-snippet>
+      Service should respond with <a rel="noopener" target="_blank"
+                                     href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a> schema.
     </li>
   </ol>
 
@@ -112,12 +112,9 @@
   </p>
 
   <p>
-    Following code snippet represent an example implementation of <a rel="noopener" target="_blank"
-                                                                     href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
-    callback.
+    Refer <a rel="noopener" target="_blank"
+             href="https://ornamentum.app/api-docs/injectables/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a> documentation for more details.
   </p>
-
-  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataFetchMethod"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
