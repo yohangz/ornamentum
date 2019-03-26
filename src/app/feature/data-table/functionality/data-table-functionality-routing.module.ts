@@ -26,12 +26,12 @@ const dataTableFunctionalityRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-column-sorting/data-table-column-sorting.module#DataTableColumnSortingModule',
+    loadChildren: './data-table-sorting/data-table-sorting.module#DataTableSortingModule',
     path: 'column/sorting',
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Column | Sorting',
+        title: 'Ornamentum | Data Table | Functionality | Sorting',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -50,12 +50,12 @@ const dataTableFunctionalityRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-column-filtering/data-table-column-filtering.module#DataTableColumnFilteringModule',
+    loadChildren: './data-table-filtering/data-table-filtering.module#DataTableFilteringModule',
     path: 'column/filtering',
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Column | Filtering',
+        title: 'Ornamentum | Data Table | Functionality | Filtering',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

@@ -4,28 +4,28 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule, DataTableResourceModule } from 'ornamentum';
 
-import { DataTableColumnFilteringRoutingModule } from './data-table-column-filtering-routing.module';
+import { DataTableFilteringRoutingModule } from './data-table-filtering-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
 
 import {
-  ColumnFilteringDropdownUsageComponent,
-  ColumnFilteringTextBoxUsageComponent,
-  ColumnFilteringUsageComponent,
-  DataTableColumnFilteringComponent,
+  FilteringDropdownUsageComponent,
+  FilteringTextBoxUsageComponent,
+  FilteringUsageComponent,
+  DataTableFilteringComponent,
   ServerSideDropdownFilteringUsageComponent,
   ServerSideTextBoxFilteringUsageComponent
 } from './index';
 
 /**
- * Module class for containing data table column filtering module.
+ * Module class for containing data table filtering module.
  */
 @NgModule({
   declarations: [
-    DataTableColumnFilteringComponent,
-    ColumnFilteringDropdownUsageComponent,
-    ColumnFilteringTextBoxUsageComponent,
-    ColumnFilteringUsageComponent,
+    DataTableFilteringComponent,
+    FilteringDropdownUsageComponent,
+    FilteringTextBoxUsageComponent,
+    FilteringUsageComponent,
     ServerSideTextBoxFilteringUsageComponent,
     ServerSideDropdownFilteringUsageComponent
   ],
@@ -36,9 +36,9 @@ import {
     SharedModule.forRoot(),
     DataTableModule.forRoot(),
     DataTableResourceModule.forRoot(),
-    DataTableColumnFilteringRoutingModule
+    DataTableFilteringRoutingModule
   ],
   providers: []
 })
-export class DataTableColumnFilteringModule {
+export class DataTableFilteringModule {
 }

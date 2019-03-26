@@ -174,7 +174,7 @@ export class MainComponent {
             },
             {
               routePath: '/feature/data-table/functionality/column/sorting',
-              title: 'Column Sorting',
+              title: 'Sorting',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -242,7 +242,7 @@ export class MainComponent {
             },
             {
               routePath: '/feature/data-table/functionality/column/filtering',
-              title: 'Column Filtering',
+              title: 'Filtering',
               navigation: [
                 {
                   title: 'What You Will See',

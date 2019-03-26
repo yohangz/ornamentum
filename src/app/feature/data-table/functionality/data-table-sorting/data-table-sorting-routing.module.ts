@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DataTableColumnSortingComponent } from './index';
+import { DataTableSortingComponent } from './index';
 
 /**
- * Represent data table column sorting routes.
+ * Represent data table sorting routes.
  */
 const dataTableSortingRoutes: Routes = [
   {
-    component: DataTableColumnSortingComponent,
+    component: DataTableSortingComponent,
     path: ''
   }
 ];
 
 /**
- * Data table column sorting routing module.
+ * Data table sorting routing module.
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableSortingRoutes)]
 })
-export class DataTableColumnSortingRoutingModule {
+export class DataTableSortingRoutingModule {
 }
