@@ -4,25 +4,25 @@ import { FileType } from 'helper-models';
 
 import {
   demoSnippet,
-  columnSortingUsage,
+  sortingUsage,
   multiColumnSortableUsage,
   sortFieldUsage,
   sortOrderUsage,
   serverSideSingleColumnSortableUsage,
   serverSideMultiColumnSortableUsage
-} from './data-table-column-sorting.list';
+} from './data-table-sorting.list';
 
 @Component({
-  selector: 'app-data-table-column-sorting-component',
-  templateUrl: './data-table-column-sorting.component.html',
-  styleUrls: ['./data-table-column-sorting.component.scss']
+  selector: 'app-data-table-sorting-component',
+  templateUrl: './data-table-sorting.component.html',
+  styleUrls: ['./data-table-sorting.component.scss']
 })
-export class DataTableColumnSortingComponent {
+export class DataTableSortingComponent {
   public FileType = FileType;
 
   public demoSnippet = demoSnippet;
 
-  public columnSortingUsage = columnSortingUsage;
+  public sortingUsage = sortingUsage;
   public sortOrderUsage = sortOrderUsage;
   public sortFieldUsage = sortFieldUsage;
   public multiColumnSortableUsage = multiColumnSortableUsage;

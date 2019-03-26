@@ -1,20 +1,20 @@
 import { ExampleFile, FileType } from 'helper-models';
 
-export const columnSortingUsage: ExampleFile[] = [
+export const sortingUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'column-sorting-usage.component.ts',
-    content: require('!!raw-loader!./example/column-sorting-usage/column-sorting-usage.component.ts')
+    name: 'sorting-usage.component.ts',
+    content: require('!!raw-loader!./example/sorting-usage/sorting-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'column-sorting-usage.component.html',
-    content: require('!!raw-loader!./example/column-sorting-usage/column-sorting-usage.component.html')
+    name: 'sorting-usage.component.html',
+    content: require('!!raw-loader!./example/sorting-usage/sorting-usage.component.html')
   },
   {
     type: FileType.TS,
-    name: 'column-sorting-usage.module.ts',
-    content: require('!!raw-loader!./example/column-sorting-usage/column-sorting-usage.module.md')
+    name: 'sorting-usage.module.ts',
+    content: require('!!raw-loader!./example/sorting-usage/sorting-usage.module.md')
   }
 ];
 

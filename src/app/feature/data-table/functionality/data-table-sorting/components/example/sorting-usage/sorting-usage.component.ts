@@ -5,13 +5,13 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-column-filtering-text-box-usage',
-  templateUrl: './column-filtering-text-box-usage.component.html'
+  selector: 'app-sorting-usage',
+  templateUrl: './sorting-usage.component.html'
 })
-export class ColumnFilteringTextBoxUsageComponent {
+export class SortingUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.items = this.dataFetchService.fetchStaticData(0, 20);
   }
 }

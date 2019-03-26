@@ -1,9 +1,9 @@
 <div class="feature-container">
-  <h1>Column Sorting</h1>
+  <h1>Sorting</h1>
 
   <p>
     This feature enables column data sorting according to the selected sorting order in specified column fields.
-    Following configuration types are available when working with data table column sorting.
+    Following configuration types are available when working with data table sorting.
   </p>
 
   <p>There are 03 types of sorting orders, which are:</p>
@@ -15,13 +15,13 @@
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
-  <app-column-sorting-usage></app-column-sorting-usage>
-  <app-example-code [files]="columnSortingUsage"></app-example-code>
+  <app-sorting-usage></app-sorting-usage>
+  <app-example-code [files]="sortingUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Column sorting can be enabled by setting the <code>sortable</code> property as <b>true</b>. By default this property
+    Sorting can be enabled by setting the <code>sortable</code> property as <b>true</b>. By default this property
     will be in <b>false</b> state. Sorting can be perform by clicking on the sorting icon placed on each column heading.
   </p>
 
@@ -40,7 +40,7 @@
   <h2 id="usefulProperties">Useful Properties</h2>
 
   <p>
-    There are other useful additional properties where the behaviour of the column sorting can be applied independently
+    There are other useful additional properties where the behaviour of the sorting can be applied independently
     except for <a [routerLink]="['/feature/data-table/functionality/column/sorting']"
                   [fragment]="'multiColumnSortable'">Multi Column Sortable</a> property.
   </p>
@@ -77,7 +77,7 @@
 
   <p>
     Multi column sortable can be used only inside the data table global level configuration. If multi column sortable
-    is been enabled, data sorting will be processed based on the previously preserved column sorting order.
+    is been enabled, data sorting will be processed based on the previously preserved sorting order.
   </p>
 
   <app-multi-column-sortable-usage></app-multi-column-sortable-usage>
@@ -94,7 +94,7 @@
   <h4 id="serverSideSingleColumnSorting">Server-side Single Column Sorting</h4>
 
   <p>
-    Server-side single column sorting can be enabled by simply setting <code>sortable</code> property in to value <b>true</b>,
+    Server-side single sorting can be enabled by simply setting <code>sortable</code> property in to value <b>true</b>,
     when <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server-side Data Binding</a> technique is used.
   </p>
 
@@ -114,5 +114,5 @@
   <a [routerLink]="['/feature/data-table/experimental/column/resizing']">Column Resizing</a><br/>
   <a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a><br/>
   <a [routerLink]="['/feature/data-table/options/header-details']">Header Details</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Column Sorting</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Sorting</a>
 </div>

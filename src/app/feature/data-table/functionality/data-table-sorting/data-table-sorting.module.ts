@@ -4,13 +4,13 @@ import { CommonModule } from '@angular/common';
 
 import { DataTableModule, DataTableResourceModule } from 'ornamentum';
 
-import { DataTableColumnSortingRoutingModule } from './data-table-column-sorting-routing.module';
+import { DataTableSortingRoutingModule } from './data-table-sorting-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
 
 import {
-  ColumnSortingUsageComponent,
-  DataTableColumnSortingComponent,
+  SortingUsageComponent,
+  DataTableSortingComponent,
   MultiColumnSortableUsageComponent,
   SortFieldUsageComponent,
   SortOrderUsageComponent,
@@ -19,12 +19,12 @@ import {
 } from './index';
 
 /**
- * Module class for containing data table column sorting module.
+ * Module class for containing data table sorting module.
  */
 @NgModule({
   declarations: [
-    DataTableColumnSortingComponent,
-    ColumnSortingUsageComponent,
+    DataTableSortingComponent,
+    SortingUsageComponent,
     SortOrderUsageComponent,
     SortFieldUsageComponent,
     MultiColumnSortableUsageComponent,
@@ -38,9 +38,9 @@ import {
     SharedModule.forRoot(),
     DataTableModule.forRoot(),
     DataTableResourceModule.forRoot(),
-    DataTableColumnSortingRoutingModule
+    DataTableSortingRoutingModule
   ],
   providers: []
 })
-export class DataTableColumnSortingModule {
+export class DataTableSortingModule {
 }

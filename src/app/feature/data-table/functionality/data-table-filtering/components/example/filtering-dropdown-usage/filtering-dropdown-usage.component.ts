@@ -5,10 +5,10 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-column-filtering-dropdown-usage',
-  templateUrl: './column-filtering-dropdown-usage.component.html'
+  selector: 'app-filtering-dropdown-usage',
+  templateUrl: './filtering-dropdown-usage.component.html'
 })
-export class ColumnFilteringDropdownUsageComponent {
+export class FilteringDropdownUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
