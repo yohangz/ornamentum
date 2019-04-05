@@ -10,6 +10,7 @@ import { DataTableDataBindCallback } from '../../data-table/models/data-table-da
 import { DataTableFilterValueExtractCallback } from '../../data-table/models/data-table-filter-value-extract-callback.model';
 import { DataTableFilterOption } from '../../data-table/models/data-table-filter-option.model';
 import { HttpRequestOptions } from '../../resource-utility/models/http-request-options.model';
+import { ResourceOptions } from '../../resource-utility/models/resource-options.model';
 
 import { DataTableColumnComponent } from '../../data-table/components/data-table-column/data-table-column.component';
 
@@ -29,7 +30,7 @@ export class DataTableHttpDataFetchService<T> {
    * @return Data table bind event handler.
    */
   public onDataBind(
-    options: string|HttpRequestOptions,
+    options: string|ResourceOptions,
     mapper?: <Q>(response: Observable<Q>) => Observable<DataTableQueryResult<T[]>>,
   ): DataTableDataBindCallback {
     return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T[]>> => {
@@ -67,7 +68,9 @@ export class DataTableHttpDataFetchService<T> {
           }
         });
 
-        const resource = this.http.get<any>(requestOptions.url, { params: queryParams, ...requestOptions }) as Observable<any>;
+        requestOptions.options.params = queryParams;
+
+        const resource = this.http.get<any>(requestOptions.url, requestOptions.options as any) as Observable<any>;
 
         if (mapper) {
           return mapper(resource);

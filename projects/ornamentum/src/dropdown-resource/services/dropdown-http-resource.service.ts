@@ -6,9 +6,9 @@ import { Observable } from 'rxjs';
 import { DropdownDataBindCallback } from '../../dropdown/models/dropdown-data-bind-callback.model';
 import { DropdownQueryResult } from '../../dropdown/models/dropdown-query-result.model';
 import { DropdownRequestParams } from '../../dropdown/models/dropdown-request-params.model';
-import { HttpRequestOptions } from '../../resource-utility/models/http-request-options.model';
 
 import { RequestParamMapperService } from '../../resource-utility/services/request-param-mapper.service';
+import { ResourceOptions } from '../../resource-utility/models/resource-options.model';
 
 /**
  * Dropdown HTTP data fetch service.
@@ -24,7 +24,7 @@ export class DropdownHttpResourceService<T> {
    * @return Dropdown bind event handler.
    */
   public onDataBind(
-    options: string|HttpRequestOptions,
+    options: string|ResourceOptions,
     mapper?: <Q>(response: Observable<Q>) => Observable<DropdownQueryResult<T[]>>,
   ): DropdownDataBindCallback {
     return (params?: DropdownRequestParams): Observable<DropdownQueryResult<T[]>> => {
@@ -45,7 +45,9 @@ export class DropdownHttpResourceService<T> {
           queryParams = queryParams.set('filter', params.filter.value);
         }
 
-        const resource = this.http.get<any>(requestOptions.url, { params: queryParams, ...requestOptions }) as Observable<any>;
+        requestOptions.options.params = queryParams;
+
+        const resource = this.http.get<any>(requestOptions.url, requestOptions.options as any) as Observable<any>;
 
         if (mapper) {
           return mapper(resource);
