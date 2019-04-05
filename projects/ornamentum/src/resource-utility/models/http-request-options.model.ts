@@ -1,11 +1,10 @@
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 
 export interface HttpRequestOptions {
-  url?: string;
   headers?: HttpHeaders | {
     [header: string]: string | string[];
   };
-  observe?: 'events';
+  observe?: 'body'|'response'|'event';
   params?: HttpParams | {
     [param: string]: string;
   };

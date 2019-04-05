@@ -2,6 +2,7 @@ import { HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { HttpRequestOptions } from '../models/http-request-options.model';
 import { RequestOptions } from '../models/request-options.model';
+import { ResourceOptions } from '../models/resource-options.model';
 
 /**
  * Request parameter mapper service.
@@ -35,7 +36,7 @@ export class RequestParamMapperService {
    * Map request options by http request data.
    * @param options Request options object reference.
    */
-  public mapRequestOptions(options: string|HttpRequestOptions): RequestOptions {
+  public mapRequestOptions(options: string|ResourceOptions): RequestOptions {
     const requestOptions: RequestOptions = {
       url: '',
       options: {}
