@@ -131,6 +131,14 @@
 // Delete Icon Styles
 
 .ng-dropdown-search {
+
+  * {
+    &::before,
+    &::after {
+      box-sizing: border-box;
+    }
+  }
+
   .ng-dropdown-input-group {
     @include display-flex;
     @include flex-wrap(wrap);
@@ -209,6 +217,14 @@
 // Dropdown Item List Selected Items styles
 
 .ng-dropdown-menu-wrapper {
+
+  * {
+    &::before,
+    &::after {
+      box-sizing: border-box;
+    }
+  }
+
   @include box-shadow($dropdown-item-wrapper-box-shadow);
   @include border-radius($dropdown-item-wrapper-border-radius-value);
   background-clip: padding-box;
