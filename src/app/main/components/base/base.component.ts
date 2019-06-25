@@ -20,7 +20,12 @@ export class BaseComponent implements AfterContentInit, OnDestroy {
 
   public showWorkerUpdateBanner = false;
 
-  constructor(private route: ActivatedRoute, private router: Router, private updates: SwUpdate, @Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private updates: SwUpdate,
+    @Inject(PLATFORM_ID) private platformId: object
+  ) {
     if (isPlatformBrowser(this.platformId)) {
       this.swSubscription = this.updates.available.subscribe(() => {
         this.showWorkerUpdateBanner = true;

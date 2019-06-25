@@ -19,7 +19,7 @@ export class TabSetComponent implements AfterContentInit {
   public lazyLoad: boolean;
 
   @Output()
-  public change = new EventEmitter<TabChangeEvent>();
+  public selectChange = new EventEmitter<TabChangeEvent>();
 
   public onTabClick(tab: TabComponent): void {
     if (!tab.disabled && !tab.active) {
@@ -27,9 +27,9 @@ export class TabSetComponent implements AfterContentInit {
       tab.initialLoad = false;
       this.setActiveTab(tab);
 
-      this.change.emit({
+      this.selectChange.emit({
         newTab: tab,
-        previousTab: previousTab
+        previousTab
       });
     }
   }

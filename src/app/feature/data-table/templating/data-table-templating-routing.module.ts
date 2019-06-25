@@ -13,7 +13,8 @@ const dataTableTemplatingRoutes: Routes = [
     redirectTo: 'cell-template'
   },
   {
-    loadChildren: './data-table-cell-template/data-table-cell-template.module#DataTableCellTemplateModule',
+    loadChildren: () => import('./data-table-cell-template/data-table-cell-template.module')
+      .then((m) => m.DataTableCellTemplateModule),
     path: 'cell-template',
     canActivate: [SeoGuard],
     data: {
@@ -25,7 +26,8 @@ const dataTableTemplatingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-row-expand-template/data-table-row-expand-template.module#DataTableRowExpandTemplateModule',
+    loadChildren: () => import('./data-table-row-expand-template/data-table-row-expand-template.module')
+      .then((m) => m.DataTableRowExpandTemplateModule),
     path: 'row-expand-template',
     canActivate: [SeoGuard],
     data: {
@@ -37,7 +39,8 @@ const dataTableTemplatingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-loading-spinner-template/data-table-loading-spinner-template.module#DataTableLoadingSpinnerTemplateModule',
+    loadChildren: () => import('./data-table-loading-spinner-template/data-table-loading-spinner-template.module')
+      .then((m) => m.DataTableLoadingSpinnerTemplateModule),
     path: 'loading-spinner-template',
     canActivate: [SeoGuard],
     data: {
@@ -49,7 +52,8 @@ const dataTableTemplatingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-no-records-template/data-table-no-records-template.module#DataTableNoRecordsTemplateModule',
+    loadChildren: () => import('./data-table-no-records-template/data-table-no-records-template.module')
+      .then((m) => m.DataTableNoRecordsTemplateModule),
     path: 'no-records-template',
     canActivate: [SeoGuard],
     data: {

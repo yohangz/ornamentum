@@ -13,7 +13,8 @@ const dataTableStylingRoutes: Routes = [
     redirectTo: 'responsive-configuration'
   },
   {
-    loadChildren: './data-table-responsive-conf/data-table-responsive-conf.module#DataTableResponsiveConfModule',
+    loadChildren: () => import('./data-table-responsive-conf/data-table-responsive-conf.module')
+      .then((m) => m.DataTableResponsiveConfModule),
     path: 'responsive-configuration',
     canActivate: [SeoGuard],
     data: {
@@ -25,7 +26,8 @@ const dataTableStylingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-themes/data-table-themes.module#DataTableThemesModule',
+    loadChildren: () => import('./data-table-themes/data-table-themes.module')
+      .then((m) => m.DataTableThemesModule),
     path: 'themes',
     canActivate: [SeoGuard],
     data: {
@@ -37,7 +39,8 @@ const dataTableStylingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-custom-theming/data-table-custom-theming.module#DataTableCustomThemingModule',
+    loadChildren: () => import('./data-table-custom-theming/data-table-custom-theming.module')
+      .then((m) => m.DataTableCustomThemingModule),
     path: 'custom-theming',
     canActivate: [SeoGuard],
     data: {

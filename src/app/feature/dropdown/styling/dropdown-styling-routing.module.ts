@@ -13,7 +13,8 @@ const dropdownStylingRoutes: Routes = [
     redirectTo: 'menu-position'
   },
   {
-    loadChildren: './dropdown-menu-position/dropdown-menu-position.module#DropdownMenuPositionModule',
+    loadChildren: () => import('./dropdown-menu-position/dropdown-menu-position.module')
+      .then((m) => m.DropdownMenuPositionModule),
     path: 'menu-position',
     canActivate: [SeoGuard],
     data: {
@@ -25,7 +26,8 @@ const dropdownStylingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-menu-width-height/dropdown-menu-width-height.module#DropdownMenuWidthHeightModule',
+    loadChildren: () => import('./dropdown-menu-width-height/dropdown-menu-width-height.module')
+      .then((m) => m.DropdownMenuWidthHeightModule),
     path: 'menu-width-height',
     canActivate: [SeoGuard],
     data: {
@@ -37,7 +39,8 @@ const dropdownStylingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-themes/dropdown-themes.module#DropdownThemesModule',
+    loadChildren: () => import('./dropdown-themes/dropdown-themes.module')
+      .then((m) => m.DropdownThemesModule),
     path: 'themes',
     canActivate: [SeoGuard],
     data: {
@@ -49,7 +52,8 @@ const dropdownStylingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-custom-theming/dropdown-custom-theming.module#DropdownCustomThemingModule',
+    loadChildren: () => import('./dropdown-custom-theming/dropdown-custom-theming.module')
+      .then((m) => m.DropdownCustomThemingModule),
     path: 'custom-theming',
     canActivate: [SeoGuard],
     data: {

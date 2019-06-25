@@ -8,7 +8,7 @@ import { VERSION } from '../../../../environments/version';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
-  public currentYear: Number;
+  public currentYear: number;
   public packageVersion: string;
 
   constructor() {
