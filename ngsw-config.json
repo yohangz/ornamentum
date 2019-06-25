@@ -1,4 +1,5 @@
 {
+  "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
   "assetGroups": [
     {
@@ -6,16 +7,26 @@
       "installMode": "prefetch",
       "updateMode": "prefetch",
       "resources": {
-        "files": ["/favicon.ico", "/index.html", "/*.js", "/*.css", "/*.(png|svg|jpeg|gif)"],
-        "urls": ["https://fonts.googleapis.com/**", "https://fonts.gstatic.com/**"]
+        "files": [
+          "/favicon.ico",
+          "/index.html",
+          "/*.js", "/*.css",
+          "/*.(png|svg|jpeg|gif)"
+        ],
+        "urls": [
+          "https://fonts.googleapis.com/**",
+          "https://fonts.gstatic.com/**"
+        ]
       }
-    },
-    {
+    }, {
       "name": "assets",
       "installMode": "lazy",
       "updateMode": "prefetch",
       "resources": {
-        "files": ["/assets/**"]
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
       }
     }
   ]
