@@ -115,8 +115,8 @@ export class DataTableBodyComponent {
   public onCellInit(column: DataTableColumnComponent, row: DataTableRow<any>): void {
     setTimeout(() => {
       this.eventStateService.cellBindStream.emit({
-        column: column,
-        row: row
+        column,
+        row
       });
     });
   }
@@ -249,7 +249,7 @@ export class DataTableBodyComponent {
    */
   public rowClicked(row: DataTableRow<any>, event: MouseEvent): void {
     if (this.config.selectOnRowClick || (this.config.expandableRows && this.config.expandOnRowClick)) {
-      const element: any = event.target || event.srcElement;
+      const element: any = event.target;
       if (element.classList.contains('ng-ignore-propagation')) {
         return;
       }

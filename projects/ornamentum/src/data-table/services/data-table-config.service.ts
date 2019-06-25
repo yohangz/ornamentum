@@ -90,7 +90,7 @@ export class DataTableConfigService implements DataTableConfig {
 
   constructor(@Inject(DATA_TABLE_CONFIG) private dataTableConfig: DataTableConfig) {
     if (dataTableConfig) {
-      Object.assign(<any>this, dataTableConfig);
+      Object.assign(this, dataTableConfig);
     }
   }
 

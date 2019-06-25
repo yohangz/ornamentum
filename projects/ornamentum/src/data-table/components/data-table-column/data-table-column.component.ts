@@ -24,20 +24,20 @@ import { ViewPosition } from '../../../utility/models/view-position.model';
 export class DataTableColumnComponent implements OnInit, OnDestroy {
   private filterValueExtractorSubscription: Subscription;
 
-  private _sortOrder: DataTableSortOrder = '';
-  private _baseSortOrder: DataTableSortOrder = '';
+  private currentSortOrder: DataTableSortOrder = '';
+  private baseSortOrder: DataTableSortOrder = '';
 
   public actualWidth: number;
 
   // Content Child Properties
 
-  @ContentChild('ngDataTableCell')
+  @ContentChild('ngDataTableCell', { static: true })
   public cellTemplate: TemplateRef<any>;
 
-  @ContentChild('ngDataTableHeader')
+  @ContentChild('ngDataTableHeader', { static: true })
   public headerTemplate: TemplateRef<any>;
 
-  @ContentChild('ngDataTableFilter')
+  @ContentChild('ngDataTableFilter', { static: true })
   public filterTemplate: TemplateRef<any>;
 
   // Callback event handlers
@@ -79,8 +79,8 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    */
   @Input()
   public set sortOrder(value: DataTableSortOrder) {
-    this._sortOrder = value;
-    this._baseSortOrder = value;
+    this.currentSortOrder = value;
+    this.baseSortOrder = value;
   }
 
   /**
@@ -88,7 +88,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * @return Data sort order
    */
   public get sortOrder(): DataTableSortOrder {
-    return this._sortOrder;
+    return this.currentSortOrder;
   }
 
   /**
@@ -283,7 +283,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   constructor(private dataTableConfigService: DataTableConfigService, private eventStateService: DataTableEventStateService) {
     // Table column config
     this.sortable = dataTableConfigService.sortable;
-    this._sortOrder = dataTableConfigService.sortOrder;
+    this.currentSortOrder = dataTableConfigService.sortOrder;
     this.filterable = dataTableConfigService.filterable;
     this.filterPlaceholder = dataTableConfigService.filterPlaceholder;
     this.resizable = dataTableConfigService.columnResizable;
@@ -314,7 +314,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * Reset data sort order
    */
   public resetSortOrder(): void {
-    this._sortOrder = this._baseSortOrder;
+    this.currentSortOrder = this.baseSortOrder;
   }
 
   /**

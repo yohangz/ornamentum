@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
  */
 @Injectable()
 export class GlobalRefService {
-  private _scrollbarWidth: number;
+  private scrollbarWidthValue: number;
 
   constructor() {
     this.setScrollbarWidth();
@@ -15,7 +15,7 @@ export class GlobalRefService {
    * Set scrollbar width of current browser environment; Ony set on browser environment to support SSR
    */
   public setScrollbarWidth(): void {
-    if (this._scrollbarWidth !== undefined) {
+    if (this.scrollbarWidthValue !== undefined) {
       return;
     }
 
@@ -41,7 +41,7 @@ export class GlobalRefService {
       // remove divs
       outer.parentNode.removeChild(outer);
 
-      this._scrollbarWidth = widthNoScroll - widthWithScroll;
+      this.scrollbarWidthValue = widthNoScroll - widthWithScroll;
     }
   }
 
@@ -50,7 +50,7 @@ export class GlobalRefService {
    * @returns Scroll bar width
    */
   public get scrollbarWidth(): number {
-    return this._scrollbarWidth;
+    return this.scrollbarWidthValue;
   }
   /**
    * Get window reference

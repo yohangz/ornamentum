@@ -55,7 +55,7 @@ export class DropdownConfigService implements DropdownConfig {
 
   constructor(@Inject(DROPDOWN_CONFIG) private dropdownConfig: DropdownConfig) {
     if (dropdownConfig) {
-      Object.assign(<any>this, dropdownConfig);
+      Object.assign(this, dropdownConfig);
     }
   }
 

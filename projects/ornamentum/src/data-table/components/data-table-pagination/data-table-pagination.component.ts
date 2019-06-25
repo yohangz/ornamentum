@@ -17,7 +17,7 @@ import { ResizeService } from '../../../utility/services/resize.service';
   templateUrl: './data-table-pagination.component.html'
 })
 export class DataTablePaginationComponent implements OnInit {
-  @ViewChild('paginationContainer')
+  @ViewChild('paginationContainer', { static: true })
   private paginationContainer: ElementRef<HTMLElement>;
 
   public isMobile = false;
