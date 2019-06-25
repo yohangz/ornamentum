@@ -17,7 +17,7 @@ export class MainMenuComponent {
   public Theme = Theme;
   public packageVersion: string;
 
-  @ViewChild('menuElement')
+  @ViewChild('menuElement', { static: true })
   public menuElement: ElementRef;
 
   @Input()
@@ -29,7 +29,7 @@ export class MainMenuComponent {
   constructor(
     private containerResponsive: NavigationService,
     private globalRefService: GlobalRefService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: object
   ) {
     this.packageVersion = VERSION;
   }

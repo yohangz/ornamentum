@@ -13,7 +13,8 @@ const dropdownAdvancedRoutes: Routes = [
     redirectTo: 'load-data-on-init'
   },
   {
-    loadChildren: './dropdown-load-data-on-init/dropdown-load-data-on-init.module#DropdownLoadDataOnInitModule',
+    loadChildren: () => import('./dropdown-load-data-on-init/dropdown-load-data-on-init.module')
+      .then((m) => m.DropdownLoadDataOnInitModule),
     path: 'load-data-on-init',
     canActivate: [SeoGuard],
     data: {
@@ -25,7 +26,8 @@ const dropdownAdvancedRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-events/dropdown-events.module#DropdownEventsModule',
+    loadChildren: () => import('./dropdown-events/dropdown-events.module')
+      .then((m) => m.DropdownEventsModule),
     path: 'events',
     canActivate: [SeoGuard],
     data: {
@@ -37,7 +39,8 @@ const dropdownAdvancedRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-translations/dropdown-translations.module#DropdownTranslationsModule',
+    loadChildren: () => import('./dropdown-translations/dropdown-translations.module')
+      .then((m) => m.DropdownTranslationsModule),
     path: 'translations',
     canActivate: [SeoGuard],
     data: {
@@ -49,7 +52,8 @@ const dropdownAdvancedRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-config-overriding/dropdown-config-overriding.module#DropdownConfigOverridingModule',
+    loadChildren: () => import('./dropdown-config-overriding/dropdown-config-overriding.module')
+      .then((m) => m.DropdownConfigOverridingModule),
     path: 'config-overriding',
     canActivate: [SeoGuard],
     data: {

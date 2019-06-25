@@ -1,4 +1,4 @@
-<app-tab-set [ngSwitch]="">
+<app-tab-set>
   <ng-container *ngFor="let file of files; index as i">
     <app-tab [ngSwitch]="file.type" [id]="'tab-' + i" [title]="file.name">
       <ng-template #tabTitle>

@@ -13,7 +13,8 @@ const dropdownFeatureRoutes: Routes = [
     redirectTo: 'client-side/basic'
   },
   {
-    loadChildren: './dropdown-client-side-basic/dropdown-client-side-basic.module#DropdownClientSideBasicModule',
+    loadChildren: () => import('./dropdown-client-side-basic/dropdown-client-side-basic.module')
+      .then((m) => m.DropdownClientSideBasicModule),
     path: 'client-side/basic',
     canActivate: [SeoGuard],
     data: {
@@ -25,7 +26,8 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-client-side-stream/dropdown-client-side-stream.module#DropdownClientSideStreamModule',
+    loadChildren: () => import('./dropdown-client-side-stream/dropdown-client-side-stream.module')
+      .then((m) => m.DropdownClientSideStreamModule),
     path: 'client-side/stream',
     canActivate: [SeoGuard],
     data: {
@@ -37,7 +39,8 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-server-side-basic/dropdown-server-side-basic.module#DropdownServerSideBasicModule',
+    loadChildren: () => import('./dropdown-server-side-basic/dropdown-server-side-basic.module')
+      .then((m) => m.DropdownServerSideBasicModule),
     path: 'server-side/basic',
     canActivate: [SeoGuard],
     data: {
@@ -49,7 +52,8 @@ const dropdownFeatureRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-server-side-web-socket/dropdown-server-side-web-socket.module#DropdownServerSideWebSocketModule',
+    loadChildren: () => import('./dropdown-server-side-web-socket/dropdown-server-side-web-socket.module')
+      .then((m) => m.DropdownServerSideWebSocketModule),
     path: 'server-side/web-socket',
     canActivate: [SeoGuard],
     data: {

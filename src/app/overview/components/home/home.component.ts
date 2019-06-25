@@ -21,7 +21,8 @@ export class HomeComponent {
     this.meta.updateTag({
       name: 'description',
       content:
-        'Lightweight, highly configurable, feature rich, UI framework agnostic full responsive Angular ' + 'data table with minimal dependencies'
+        'Lightweight, highly configurable, feature rich, UI framework agnostic full responsive Angular '
+        + 'data table with minimal dependencies'
     });
   }
 }

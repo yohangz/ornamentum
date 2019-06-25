@@ -13,7 +13,8 @@ const dataTableExperimentalRoutes: Routes = [
     redirectTo: 'column/resizing'
   },
   {
-    loadChildren: './data-table-column-resizing/data-table-column-resizing.module#DataTableColumnResizingModule',
+    loadChildren: () => import('./data-table-column-resizing/data-table-column-resizing.module')
+      .then((m) => m.DataTableColumnResizingModule),
     path: 'column/resizing',
     canActivate: [SeoGuard],
     data: {

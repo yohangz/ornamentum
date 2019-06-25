@@ -1,6 +1,7 @@
 export { DropdownTranslationsComponent } from './components/dropdown-translations.component';
 // tslint:disable-next-line
 export { TranslationsNoDataMessageUsageComponent } from './components/example/translations-no-data-message-usage/translations-no-data-message-usage.component';
+// tslint:disable-next-line
 export { AdditionalTranslationsUsageComponent } from './components/example/additional-translations-usage/additional-translations-usage.component';
 // tslint:disable-next-line
 export { TranslationsFilterPlaceholderUsageComponent } from './components/example/translations-filter-placeholder-usage/translations-filter-placeholder-usage.component';

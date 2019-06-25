@@ -8,10 +8,10 @@ export class TabComponent {
   public active = false;
   public initialLoad = true;
 
-  @ContentChild('tabContent')
+  @ContentChild('tabContent', { static: true })
   public tabContent: TemplateRef<any>;
 
-  @ContentChild('tabTitle')
+  @ContentChild('tabTitle', { static: true })
   public tabTitle: TemplateRef<any>;
 
   @Input()

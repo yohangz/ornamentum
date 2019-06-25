@@ -13,7 +13,8 @@ const dropdownFeaturesRoutes: Routes = [
     redirectTo: 'item/display'
   },
   {
-    loadChildren: './dropdown-item-display/dropdown-item-display.module#DropdownItemDisplayModule',
+    loadChildren: () => import('./dropdown-item-display/dropdown-item-display.module')
+      .then((m) => m.DropdownItemDisplayModule),
     path: 'item/display',
     canActivate: [SeoGuard],
     data: {
@@ -25,7 +26,8 @@ const dropdownFeaturesRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-item-selection/dropdown-item-selection.module#DropdownItemSelectionModule',
+    loadChildren: () => import('./dropdown-item-selection/dropdown-item-selection.module')
+      .then((m) => m.DropdownItemSelectionModule),
     path: 'item/selection',
     canActivate: [SeoGuard],
     data: {
@@ -37,7 +39,8 @@ const dropdownFeaturesRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-item-filtering/dropdown-item-filtering.module#DropdownItemFilteringModule',
+    loadChildren: () => import('./dropdown-item-filtering/dropdown-item-filtering.module')
+      .then((m) => m.DropdownItemFilteringModule),
     path: 'item/filtering',
     canActivate: [SeoGuard],
     data: {
@@ -49,7 +52,8 @@ const dropdownFeaturesRoutes: Routes = [
     }
   },
   {
-    loadChildren: './dropdown-item-grouping/dropdown-item-grouping.module#DropdownItemGroupingModule',
+    loadChildren: () => import('./dropdown-item-grouping/dropdown-item-grouping.module')
+      .then((m) => m.DropdownItemGroupingModule),
     path: 'item/grouping',
     canActivate: [SeoGuard],
     data: {

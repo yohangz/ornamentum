@@ -13,7 +13,8 @@ const dataTableFunctionalityRoutes: Routes = [
     redirectTo: 'pagination'
   },
   {
-    loadChildren: './data-table-pagination/data-table-pagination.module#DataTablePaginationModule',
+    loadChildren: () => import('./data-table-pagination/data-table-pagination.module')
+      .then((m) => m.DataTablePaginationModule),
     path: 'pagination',
     canActivate: [SeoGuard],
     data: {
@@ -26,7 +27,8 @@ const dataTableFunctionalityRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-sorting/data-table-sorting.module#DataTableSortingModule',
+    loadChildren: () => import('./data-table-sorting/data-table-sorting.module')
+      .then((m) => m.DataTableSortingModule),
     path: 'column/sorting',
     canActivate: [SeoGuard],
     data: {
@@ -38,7 +40,8 @@ const dataTableFunctionalityRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-row-grouping/data-table-row-grouping.module#DataTableRowGroupingModule',
+    loadChildren: () => import('./data-table-row-grouping/data-table-row-grouping.module')
+      .then((m) => m.DataTableRowGroupingModule),
     path: 'row/grouping',
     canActivate: [SeoGuard],
     data: {
@@ -50,7 +53,8 @@ const dataTableFunctionalityRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-filtering/data-table-filtering.module#DataTableFilteringModule',
+    loadChildren: () => import('./data-table-filtering/data-table-filtering.module')
+      .then((m) => m.DataTableFilteringModule),
     path: 'column/filtering',
     canActivate: [SeoGuard],
     data: {
@@ -62,7 +66,8 @@ const dataTableFunctionalityRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-row-selection/data-table-row-selection.module#DataTableRowSelectionModule',
+    loadChildren: () => import('./data-table-row-selection/data-table-row-selection.module')
+      .then((m) => m.DataTableRowSelectionModule),
     path: 'row/selection',
     canActivate: [SeoGuard],
     data: {

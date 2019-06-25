@@ -1498,10 +1498,14 @@ export class MainComponent {
 
   public activeMenuItem: MenuItem;
 
-  @ViewChild('pageWrapper')
+  @ViewChild('pageWrapper', { static: true })
   public pageWrapper: ElementRef;
 
-  constructor(private router: Router, private scrollService: ScrollService, @Inject(PLATFORM_ID) private platformId: Object) {}
+  constructor(
+    private router: Router,
+    private scrollService: ScrollService,
+    @Inject(PLATFORM_ID) private platformId: object
+  ) {}
 
   public onThemeChange(cssClass: string): void {
     this.themeCssClass = cssClass;
