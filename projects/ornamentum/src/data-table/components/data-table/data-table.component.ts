@@ -82,31 +82,31 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   /**
    * Template to display when data row is expanded for detail view
    */
-  @ContentChild('ngDataTableRowExpand')
+  @ContentChild('ngDataTableRowExpand', { static: true })
   public rowExpandTemplate: TemplateRef<any>;
 
   /**
    * Template to display when data set is empty
    */
-  @ContentChild('ngDataTableNoRecords')
+  @ContentChild('ngDataTableNoRecords', { static: true })
   public noRecordsTemplate: TemplateRef<any>;
 
   /**
    * Template to display while loading data
    */
-  @ContentChild('ngDataTableLoadingSpinner')
+  @ContentChild('ngDataTableLoadingSpinner', { static: true })
   public loadingSpinnerTemplate: TemplateRef<any>;
 
   /**
    * Template to display while row is expanding to load detail view
    */
-  @ContentChild('ngDataTableRowExpandLoadingSpinner')
+  @ContentChild('ngDataTableRowExpandLoadingSpinner', { static: true })
   public rowExpandLoadingSpinnerTemplate: TemplateRef<any>;
 
   /**
    * Raw data table self DOM element reference
    */
-  @ViewChild('dataTableElement')
+  @ViewChild('dataTableElement', { static: true })
   public dataTableElement: ElementRef<HTMLDivElement>;
 
   // Event handlers
@@ -684,8 +684,8 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
         color: '',
         cssClass: '',
         tooltip: '',
-        index: index,
-        item: item,
+        index,
+        item,
         selected: this.getSelectedState(item)
       };
     });
@@ -759,27 +759,27 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
             if (column.sortField === column.filterField) {
               acc.push({
                 field: column.sortField,
-                column: column
+                column
               });
             }
 
             if (column.sortField) {
               acc.push({
                 field: column.sortField,
-                column: column
+                column
               });
             }
 
             if (column.filterField) {
               acc.push({
                 field: column.filterField,
-                column: column
+                column
               });
             }
           } else {
             acc.push({
               field: column.field,
-              column: column
+              column
             });
           }
 

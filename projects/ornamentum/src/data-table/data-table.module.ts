@@ -5,7 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { DataTableConfig } from './models/data-table-config.model';
 
 import { DataTableColumnComponent } from './components/data-table-column/data-table-column.component';
+
+// tslint:disable-next-line
 import { DataTableColumnFilterHeaderComponent } from './components/data-table-column-filter-header/data-table-column-filter-header.component';
+// tslint:disable-next-line
 import { DataTableColumnFilterTemplateComponent } from './components/data-table-column-filter-template/data-table-column-filter-template.component';
 import { DataTableColumnTitleHeaderComponent } from './components/data-table-column-title-header/data-table-column-title-header.component';
 import { DataTableHeaderComponent } from './components/data-table-header/data-table-header.component';

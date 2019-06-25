@@ -61,20 +61,20 @@ import { of } from 'rxjs/internal/observable/of';
 export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccessor {
   private onSelectChangeSubscription: Subscription;
 
-  @ContentChild('ngDropdownLoadingSpinner')
+  @ContentChild('ngDropdownLoadingSpinner', { static: true })
   public loadingSpinnerTemplate: TemplateRef<any>;
 
-  @ContentChild('ngDropdownOption')
+  @ContentChild('ngDropdownOption', { static: true })
   public set dropdownOptionTemplate(value: TemplateRef<any>) {
     this.dataStateService.dropdownOptionTemplate = value;
   }
 
-  @ContentChild('ngDropdownOptionGroupHeader')
+  @ContentChild('ngDropdownOptionGroupHeader', { static: true })
   public set dropdownOptionGroupHeaderTemplate(value: TemplateRef<any>) {
     this.dataStateService.dropdownOptionGroupHeaderTemplate = value;
   }
 
-  @ViewChild('dropdownElement')
+  @ViewChild('dropdownElement', { static: true })
   public dropdownElement: ElementRef<HTMLDivElement>;
 
   // Outputs : Event Handlers
@@ -570,10 +570,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     const id = get(item, this.config.selectTrackBy);
 
     return {
-      id: id,
-      text: get(item, this.config.displayTrackBy),
       disabled: get(item, this.config.disabledTrackBy),
-      item: item
+      id,
+      item,
+      text: get(item, this.config.displayTrackBy)
     };
   }
 
@@ -638,7 +638,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     }
 
     const requestParams: DropdownRequestParams = {
-      hardReload: hardReload
+      hardReload
     };
 
     if (this.config.loadOnScroll) {

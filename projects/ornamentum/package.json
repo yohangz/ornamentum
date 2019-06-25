@@ -2,9 +2,9 @@
   "name": "ornamentum",
   "version": "3.2.1",
   "peerDependencies": {
-    "@angular/common": "^7.0.0-rc.0 || ^7.0.0",
-    "@angular/core": "^7.0.0-rc.0 || ^7.0.0",
-    "@angular/forms": "^7.0.0-rc.0 || ^7.0.0",
+    "@angular/common": "^8.0.0-rc.0 || ^8.0.0",
+    "@angular/core": "^8.0.0-rc.0 || ^8.0.0",
+    "@angular/forms": "^8.0.0-rc.0 || ^8.0.0",
     "lodash": "^4.0.0",
     "rxjs": "^6.0.0"
   },
@@ -18,7 +18,7 @@
     "Data Table",
     "Dropdown List",
     "Multi Select Dropdown",
-    "Angular 6+",
+    "Angular 8+",
     "UI Grid",
     "NG Grid",
     "NGX Grid"
