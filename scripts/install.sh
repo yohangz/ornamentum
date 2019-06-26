@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "install dependencies"
-yarn
+npm install
 
 if [ "$TRAVIS_PULL_REQUEST" = "false" ];
 then
