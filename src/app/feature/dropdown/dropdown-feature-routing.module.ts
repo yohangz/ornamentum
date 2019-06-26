@@ -11,38 +11,45 @@ const dropdownFeatureRoutes: Routes = [
     redirectTo: 'overview'
   },
   {
-    loadChildren: () => import('./overview/dropdown-overview.module')
-      .then((m) => m.DropdownOverviewModule),
+    loadChildren: './overview/dropdown-overview.module#DropdownOverviewModule',
+    // loadChildren: () => import('./overview/dropdown-overview.module')
+    //   .then((m) => m.DropdownOverviewModule),
     path: 'overview'
   },
   {
-    loadChildren: () => import('./data-binding/dropdown-data-binding.module')
-      .then((m) => m.DropdownDataBindingModule),
+    loadChildren: './data-binding/dropdown-data-binding.module#DropdownDataBindingModule',
+    // loadChildren: () => import('./data-binding/dropdown-data-binding.module')
+    //   .then((m) => m.DropdownDataBindingModule),
     path: 'data-binding'
   },
   {
-    loadChildren: () => import('./options/dropdown-options.module')
-      .then((m) => m.DropdownOptionsModule),
+    loadChildren: './options/dropdown-options.module#DropdownOptionsModule',
+    // loadChildren: () => import('./options/dropdown-options.module')
+    //   .then((m) => m.DropdownOptionsModule),
     path: 'options'
   },
   {
-    loadChildren: () => import('./features/dropdown-features.module')
-      .then((m) => m.DropdownFeaturesModule),
+    loadChildren: './features/dropdown-features.module#DropdownFeaturesModule',
+    // loadChildren: () => import('./features/dropdown-features.module')
+    //   .then((m) => m.DropdownFeaturesModule),
     path: 'features'
   },
   {
-    loadChildren: () => import('./templating/dropdown-templating.module')
-      .then((m) => m.DropdownTemplatingModule),
+    loadChildren: './templating/dropdown-templating.module#DropdownTemplatingModule',
+    // loadChildren: () => import('./templating/dropdown-templating.module')
+    //   .then((m) => m.DropdownTemplatingModule),
     path: 'templating'
   },
   {
-    loadChildren: () => import('./styling/dropdown-styling.module')
-      .then((m) => m.DropdownStylingModule),
+    loadChildren: './styling/dropdown-styling.module#DropdownStylingModule',
+    // loadChildren: () => import('./styling/dropdown-styling.module')
+    //   .then((m) => m.DropdownStylingModule),
     path: 'styling'
   },
   {
-    loadChildren: () => import('./advanced/dropdown-advanced.module')
-      .then((m) => m.DropdownAdvancedModule),
+    loadChildren: './advanced/dropdown-advanced.module#DropdownAdvancedModule',
+    // loadChildren: () => import('./advanced/dropdown-advanced.module')
+    //   .then((m) => m.DropdownAdvancedModule),
     path: 'advanced'
   }
 ];

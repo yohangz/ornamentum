@@ -9,8 +9,9 @@ import { MainComponent, PageNotFoundComponent, OverviewComponent } from './main/
 const appRoutes: Routes = [
   {
     component: OverviewComponent,
-    loadChildren: () => import('./overview/overview.module')
-      .then((m) => m.OverviewModule),
+    loadChildren: './overview/overview.module#OverviewModule',
+    // loadChildren: () => import('./overview/overview.module')
+    //   .then((m) => m.OverviewModule),
     path: ''
   },
   {
@@ -23,13 +24,15 @@ const appRoutes: Routes = [
         redirectTo: 'data-table'
       },
       {
-        loadChildren: () => import('./feature/data-table/data-table-feature.module')
-          .then((m) => m.DataTableFeatureModule),
+        loadChildren: './feature/data-table/data-table-feature.module#DataTableFeatureModule',
+        // loadChildren: () => import('./feature/data-table/data-table-feature.module')
+        //   .then((m) => m.DataTableFeatureModule),
         path: 'data-table'
       },
       {
-        loadChildren: () => import('./feature/dropdown/dropdown-feature.module')
-          .then((m) => m.DropdownFeatureModule),
+        loadChildren: './feature/dropdown/dropdown-feature.module#DropdownFeatureModule',
+        // loadChildren: () => import('./feature/dropdown/dropdown-feature.module')
+        //   .then((m) => m.DropdownFeatureModule),
         path: 'dropdown'
       }
     ]

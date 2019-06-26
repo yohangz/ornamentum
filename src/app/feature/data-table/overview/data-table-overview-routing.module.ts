@@ -13,7 +13,8 @@ const dataTableOverviewRoutes: Routes = [
     redirectTo: 'basic-usage'
   },
   {
-    loadChildren: () => import('./data-table-basic-usage/data-table-basic-usage.module').then((m) => m.DataTableBasicUsageModule),
+    loadChildren: './data-table-basic-usage/data-table-basic-usage.module#DataTableBasicUsageModule',
+    // loadChildren: () => import('./data-table-basic-usage/data-table-basic-usage.module').then((m) => m.DataTableBasicUsageModule),
     path: 'basic-usage',
     canActivate: [SeoGuard],
     data: {

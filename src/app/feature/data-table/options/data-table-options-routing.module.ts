@@ -13,8 +13,9 @@ const dataTableOptionsRoutes: Routes = [
     redirectTo: 'data-loading-spinner'
   },
   {
-    loadChildren: () => import('./data-table-data-loading-spinner/data-table-data-loading-spinner.module')
-      .then((m) => m.DataTableDataLoadingSpinnerModule),
+    loadChildren: './data-table-data-loading-spinner/data-table-data-loading-spinner.module#DataTableDataLoadingSpinnerModule',
+    // loadChildren: () => import('./data-table-data-loading-spinner/data-table-data-loading-spinner.module')
+    //   .then((m) => m.DataTableDataLoadingSpinnerModule),
     path: 'data-loading-spinner',
     canActivate: [SeoGuard],
     data: {
@@ -26,8 +27,9 @@ const dataTableOptionsRoutes: Routes = [
     }
   },
   {
-    loadChildren: () => import('./data-table-substitute-rows/data-table-substitute-rows.module')
-      .then((m) => m.DataTableSubstituteRowsModule),
+    loadChildren: './data-table-substitute-rows/data-table-substitute-rows.module#DataTableSubstituteRowsModule',
+    // loadChildren: () => import('./data-table-substitute-rows/data-table-substitute-rows.module')
+    //   .then((m) => m.DataTableSubstituteRowsModule),
     path: 'substitute-rows',
     canActivate: [SeoGuard],
     data: {
@@ -39,8 +41,9 @@ const dataTableOptionsRoutes: Routes = [
     }
   },
   {
-    loadChildren: () => import('./data-table-header-details/data-table-header-details.module')
-      .then((m) => m.DataTableHeaderDetailsModule),
+    loadChildren: './data-table-header-details/data-table-header-details.module#DataTableHeaderDetailsModule',
+    // loadChildren: () => import('./data-table-header-details/data-table-header-details.module')
+    //   .then((m) => m.DataTableHeaderDetailsModule),
     path: 'header-details',
     canActivate: [SeoGuard],
     data: {

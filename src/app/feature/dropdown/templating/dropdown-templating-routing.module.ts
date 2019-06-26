@@ -13,8 +13,9 @@ const dropdownTemplatingRoutes: Routes = [
     redirectTo: 'loading-spinner-template'
   },
   {
-    loadChildren: () => import('./dropdown-loading-spinner-template/dropdown-loading-spinner-template.module')
-      .then((m) => m.DropdownLoadingSpinnerTemplateModule),
+    loadChildren: './dropdown-loading-spinner-template/dropdown-loading-spinner-template.module#DropdownLoadingSpinnerTemplateModule',
+    // loadChildren: () => import('./dropdown-loading-spinner-template/dropdown-loading-spinner-template.module')
+    //   .then((m) => m.DropdownLoadingSpinnerTemplateModule),
     path: 'loading-spinner-template',
     canActivate: [SeoGuard],
     data: {
@@ -26,8 +27,10 @@ const dropdownTemplatingRoutes: Routes = [
     }
   },
   {
-    loadChildren: () => import('./dropdown-option-group-header-template/dropdown-option-group-header-template.module')
-      .then((m) => m.DropdownOptionGroupHeaderTemplateModule),
+    loadChildren:
+      './dropdown-option-group-header-template/dropdown-option-group-header-template.module#DropdownOptionGroupHeaderTemplateModule',
+    // loadChildren: () => import('./dropdown-option-group-header-template/dropdown-option-group-header-template.module')
+    //   .then((m) => m.DropdownOptionGroupHeaderTemplateModule),
     path: 'option-group-header-template',
     canActivate: [SeoGuard],
     data: {
@@ -39,8 +42,9 @@ const dropdownTemplatingRoutes: Routes = [
     }
   },
   {
-    loadChildren: () => import('./dropdown-option-template/dropdown-option-template.module')
-      .then((m) => m.DropdownOptionTemplateModule),
+    loadChildren: './dropdown-option-template/dropdown-option-template.module#DropdownOptionTemplateModule',
+    // loadChildren: () => import('./dropdown-option-template/dropdown-option-template.module')
+    //   .then((m) => m.DropdownOptionTemplateModule),
     path: 'option-template',
     canActivate: [SeoGuard],
     data: {
