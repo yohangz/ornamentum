@@ -146,9 +146,8 @@
     "tsickle": "^0.35.0",
     "tslint": "^5.18.0",
     "typescript": "3.4.3",
-    "webpack": "^4.29.3",
     "webpack-bundle-analyzer": "^3.0.3",
-    "webpack-cli": "^3.2.3",
+    "webpack-cli": "^3.3.5",
     "ws": "^7.0.1"
   }
 }
