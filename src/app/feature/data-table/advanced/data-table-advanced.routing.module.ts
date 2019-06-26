@@ -13,8 +13,9 @@ const dataTableAdvancedRoutes: Routes = [
     redirectTo: 'events'
   },
   {
-    loadChildren: () => import('./data-table-events/data-table-events.module')
-      .then((m) => m.DataTableEventsModule),
+    loadChildren: './data-table-events/data-table-events.module#DataTableEventsModule',
+    // loadChildren: () => import('./data-table-events/data-table-events.module')
+    //   .then((m) => m.DataTableEventsModule),
     path: 'events',
     canActivate: [SeoGuard],
     data: {
@@ -26,8 +27,9 @@ const dataTableAdvancedRoutes: Routes = [
     }
   },
   {
-    loadChildren: () => import('./data-table-state-persistence/data-table-state-persistence.module')
-      .then((m) => m.DataTableStatePersistenceModule),
+    loadChildren: './data-table-state-persistence/data-table-state-persistence.module#DataTableStatePersistenceModule',
+    // loadChildren: () => import('./data-table-state-persistence/data-table-state-persistence.module')
+    //   .then((m) => m.DataTableStatePersistenceModule),
     path: 'state-persistence',
     canActivate: [SeoGuard],
     data: {
@@ -39,8 +41,9 @@ const dataTableAdvancedRoutes: Routes = [
     }
   },
   {
-    loadChildren: () => import('./data-table-translations/data-table-translations.module')
-      .then((m) => m.DataTableTranslationsModule),
+    loadChildren: './data-table-translations/data-table-translations.module#DataTableTranslationsModule',
+    // loadChildren: () => import('./data-table-translations/data-table-translations.module')
+    //   .then((m) => m.DataTableTranslationsModule),
     path: 'translations',
     canActivate: [SeoGuard],
     data: {
@@ -52,8 +55,9 @@ const dataTableAdvancedRoutes: Routes = [
     }
   },
   {
-    loadChildren: () => import('./data-table-config-overriding/data-table-config-overriding.module')
-      .then((m) => m.DataTableConfigOverridingModule),
+    loadChildren: './data-table-config-overriding/data-table-config-overriding.module#DataTableConfigOverridingModule',
+    // loadChildren: () => import('./data-table-config-overriding/data-table-config-overriding.module')
+    //   .then((m) => m.DataTableConfigOverridingModule),
     path: 'config-overriding',
     canActivate: [SeoGuard],
     data: {

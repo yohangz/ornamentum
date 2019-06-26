@@ -12,8 +12,9 @@ const dataTableDataBindingRoutes: Routes = [
     redirectTo: 'client-side/basic'
   },
   {
-    loadChildren: () => import('./data-table-client-side-basic/data-table-client-side-basic.module')
-      .then((m) => m.DataTableClientSideBasicModule),
+    loadChildren: './data-table-client-side-basic/data-table-client-side-basic.module#DataTableClientSideBasicModule',
+    // loadChildren: () => import('./data-table-client-side-basic/data-table-client-side-basic.module')
+    //   .then((m) => m.DataTableClientSideBasicModule),
     path: 'client-side/basic',
     canActivate: [SeoGuard],
     data: {
@@ -25,8 +26,9 @@ const dataTableDataBindingRoutes: Routes = [
     }
   },
   {
-    loadChildren: () => import('./data-table-client-side-stream/data-table-client-side-stream.module')
-      .then((m) => m.DataTableClientSideStreamModule),
+    loadChildren: './data-table-client-side-stream/data-table-client-side-stream.module#DataTableClientSideStreamModule',
+    // loadChildren: () => import('./data-table-client-side-stream/data-table-client-side-stream.module')
+    //   .then((m) => m.DataTableClientSideStreamModule),
     path: 'client-side/stream',
     canActivate: [SeoGuard],
     data: {
@@ -38,8 +40,10 @@ const dataTableDataBindingRoutes: Routes = [
     }
   },
   {
-    loadChildren: () => import('./data-table-server-side-basic/data-table-server-side-basic.module')
-      .then((m) => m.DataTableServerSideBasicModule),
+    loadChildren:
+      './data-table-server-side-basic/data-table-server-side-basic.module#DataTableServerSideBasicModule',
+    // loadChildren: () => import('./data-table-server-side-basic/data-table-server-side-basic.module')
+    //   .then((m) => m.DataTableServerSideBasicModule),
     path: 'server-side/basic',
     canActivate: [SeoGuard],
     data: {
@@ -51,8 +55,10 @@ const dataTableDataBindingRoutes: Routes = [
     }
   },
   {
-    loadChildren: () => import('./data-table-server-side-web-socket/data-table-server-side-web-socket.module')
-      .then((m) => m.DataTableServerSideWebSocketModule),
+    loadChildren:
+      './data-table-server-side-web-socket/data-table-server-side-web-socket.module#DataTableServerSideWebSocketModule',
+    // loadChildren: () => import('./data-table-server-side-web-socket/data-table-server-side-web-socket.module')
+    //   .then((m) => m.DataTableServerSideWebSocketModule),
     path: 'server-side/web-socket',
     canActivate: [SeoGuard],
     data: {

@@ -13,8 +13,9 @@ const dropdownOverviewRoutes: Routes = [
     redirectTo: 'basic-usage'
   },
   {
-    loadChildren: () => import('./dropdown-basic-usage/dropdown-basic-usage.module')
-      .then((m) => m.DropdownBasicUsageModule),
+    loadChildren: './dropdown-basic-usage/dropdown-basic-usage.module#DropdownBasicUsageModule',
+    // loadChildren: () => import('./dropdown-basic-usage/dropdown-basic-usage.module')
+    //   .then((m) => m.DropdownBasicUsageModule),
     path: 'basic-usage',
     canActivate: [SeoGuard],
     data: {

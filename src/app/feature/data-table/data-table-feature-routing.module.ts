@@ -11,43 +11,51 @@ const dataTableFeatureRoutes: Routes = [
     redirectTo: 'overview'
   },
   {
-    loadChildren: () => import('./overview/data-table-overview.module')
-      .then((m) => m.DataTableOverviewModule),
+    loadChildren: './overview/data-table-overview.module#DataTableOverviewModule',
+    // loadChildren: () => import('./overview/data-table-overview.module')
+    //   .then((m) => m.DataTableOverviewModule),
     path: 'overview'
   },
   {
-    loadChildren: () => import('./data-binding/data-table-data-binding.module')
-      .then((m) => m.DataTableDataBindingModule),
+    loadChildren: './data-binding/data-table-data-binding.module#DataTableDataBindingModule',
+    // loadChildren: () => import('./data-binding/data-table-data-binding.module')
+    //   .then((m) => m.DataTableDataBindingModule),
     path: 'data-binding'
   },
   {
-    loadChildren: () => import('./functionality/data-table-functionality.module')
-      .then((m) => m.DataTableFunctionalityModule),
+    loadChildren: './functionality/data-table-functionality.module#DataTableFunctionalityModule',
+    // loadChildren: () => import('./functionality/data-table-functionality.module')
+    //   .then((m) => m.DataTableFunctionalityModule),
     path: 'functionality'
   },
   {
-    loadChildren: () => import('./templating/data-table-templating.module')
-      .then((m) => m.DataTableTemplatingModule),
+    loadChildren: './templating/data-table-templating.module#DataTableTemplatingModule',
+    // loadChildren: () => import('./templating/data-table-templating.module')
+    //   .then((m) => m.DataTableTemplatingModule),
     path: 'templating'
   },
   {
-    loadChildren: () => import('./options/data-table-options.module')
-      .then((m) => m.DataTableOptionsModule),
+    loadChildren: './options/data-table-options.module#DataTableOptionsModule',
+    // loadChildren: () => import('./options/data-table-options.module')
+    //   .then((m) => m.DataTableOptionsModule),
     path: 'options'
   },
   {
-    loadChildren: () => import('./styling/data-table-styling.module')
-      .then((m) => m.DataTableStylingModule),
+    loadChildren: './styling/data-table-styling.module#DataTableStylingModule',
+    // loadChildren: () => import('./styling/data-table-styling.module')
+    //   .then((m) => m.DataTableStylingModule),
     path: 'styling'
   },
   {
-    loadChildren: () => import('./advanced/data-table-advanced.module')
-      .then((m) => m.DataTableAdvancedModule),
+    loadChildren: './advanced/data-table-advanced.module#DataTableAdvancedModule',
+    // loadChildren: () => import('./advanced/data-table-advanced.module')
+    //   .then((m) => m.DataTableAdvancedModule),
     path: 'advanced'
   },
   {
-    loadChildren: () => import('./experimental/data-table-experimental.module')
-      .then((m) => m.DataTableExperimentalModule),
+    loadChildren: './experimental/data-table-experimental.module#DataTableExperimentalModule',
+    // loadChildren: () => import('./experimental/data-table-experimental.module')
+    //   .then((m) => m.DataTableExperimentalModule),
     path: 'experimental'
   }
 ];
