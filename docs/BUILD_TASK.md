@@ -8,22 +8,22 @@ Ornamentum demo source reside under `src` directory. This is a [Angular CLI](htt
 
 ```sh
 # run TS lint
-yarn lint:demo:ts
+npm run lint:demo:ts
 
 # run SCSS lint
-yarn lint:demo:scss
+npm run lint:demo:scss
 
 # run test stute on watch mode
-yarn test:demo
+npm run test:demo
 
 # run test suite and generate coverage report
-yarn test:demo:coverage
+npm run test:demo:coverage
 
 # serve demo app on watch mode
-yarn start
+npm run start
 
 # serve demo app with server side rendering build
-yarn start:ssr
+npm run start:ssr
 ```
 
 ## Library project tasks
@@ -32,50 +32,50 @@ Ornamentum library source reside under `projects/ornamentum/src` directory. This
 
 ```sh
 # run TS lint
-yarn lint:lib:ts
+npm run lint:lib:ts
 
 # run SCSS lint
-yarn lint:lib:scss
+npm run lint:lib:scss
 
 # run test stute on watch mode
-yarn test:lib
+npm run test:lib
 
 # run test suite and generate coverage report
-yarn test:lib:coverage
+npm run test:lib:coverage
 
 # build library project on dev mode
-yarn build:lib:dev
+npm run build:lib:dev
 
 # build library project on prod mode
-yarn build:lib:prod
+npm run build:lib:prod
 ```
 
 ## Common tasks
 
 ```sh
 # run both library and demo project linters
-yarn lint
+npm run lint
 
 # build both library and demo project on production mode
-yarn build
+npm run build
 
 # bump package version and tag
-yarn version
+npm run version
 
 # publish library ro NPM registry
-yarn release
+npm run release
 
 # explore bundle size
-yarn explorer
+npm run explorer
 ```
 
 ## Rapid development steps
 
 1. Clone Ornamentum source and move to project directory `git clone git@github.com:yohangz/ornamentum.git && $_`
-2. Install dependencies `yarn`
-3. Run serve task `yarn start` 
+2. Install dependencies `npm install`
+3. Run serve task `npm run start` 
 5. Explicitly build lib project when lib code is updated ([Read more](https://github.com/angular/angular-cli/wiki/stories-create-library#why-do-i-need-to-build-the-library-everytime-i-make-changes)).
-6. Execute linters and fix prompted `yarn lint`
-6. Run build task after changes are done `yarn build`
+6. Execute linters and fix prompted `npm run lint`
+6. Run build task after changes are done `npm run build`
 7. Commit changes with a meaningful message if build is successful with no lint issues and unit test failures.
 8. Push changes and verify travis build stats

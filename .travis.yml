@@ -12,7 +12,7 @@ before_install:
   - "./scripts/before-install.sh"
 install:
   - "./scripts/install.sh"
-script: yarn build
+script: npm run build
 deploy:
   skip_cleanup: true
   provider: script
