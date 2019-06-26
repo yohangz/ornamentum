@@ -1,13 +1,13 @@
 sudo: required
 language: node_js
-node_js: 8.11.3
+node_js: 11.5.0
 services:
   - docker
 branches:
   only:
   - master
   - "/^v.*$/"
-cache: yarn
+cache: npm
 before_install:
   - "./scripts/before-install.sh"
 install:
