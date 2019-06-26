@@ -48,10 +48,10 @@
 
 ## :zap: Peer Dependencies
 
-- [@angular/common](https://www.npmjs.com/package/@angular/common): ^7.0.0-rc.0 || ^7.0.0
-- [@angular/core](https://www.npmjs.com/package/@angular/core): ^7.0.0-rc.0 || ^7.0.0
-- [@angular/forms](https://www.npmjs.com/package/@angular/forms): ^7.0.0-rc.0 || ^7.0.0
-- [lodash-es](https://www.npmjs.com/package/lodash): ^4.0.0
+- [@angular/common](https://www.npmjs.com/package/@angular/common): ^8.0.0-rc.0 || ^8.0.0
+- [@angular/core](https://www.npmjs.com/package/@angular/core): ^8.0.0-rc.0 || ^8.0.0
+- [@angular/forms](https://www.npmjs.com/package/@angular/forms): ^8.0.0-rc.0 || ^8.0.0
+- [lodash](https://www.npmjs.com/package/lodash): ^4.0.0
 - [rxjs](https://www.npmjs.com/package/rxjs): ^6.0.0
 
 ## :rocket: Installation
