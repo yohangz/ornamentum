@@ -35,8 +35,9 @@ const dataTableDataBindingRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Data Binding | Client Side | Stream Data Binding',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'ornamentum,datatable data binding,datatable client side stream data binding,stream data binding',
+        // tslint:disable-next-line
+        description: 'The client side stream data binding technique to bind data sources which changes rapidly. Data changes notified by data source will automatically get reflected while persisting the current table state without having to manually trigger refresh'
       }
     }
   },
