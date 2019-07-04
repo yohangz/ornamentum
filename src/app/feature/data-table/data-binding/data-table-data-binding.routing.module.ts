@@ -20,8 +20,9 @@ const dataTableDataBindingRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Data Binding | Client Side | Basic Data Binding',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'ornamentum,datatable data binding,datatable client side data binding,datatable basic data binding',
+        // tslint:disable-next-line
+        description: 'Client side data binding allow users to bind static data sets to data table when full data collection is available in the client side'
       }
     }
   },
