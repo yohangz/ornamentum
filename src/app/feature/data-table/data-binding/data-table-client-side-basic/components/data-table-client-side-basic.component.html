@@ -29,8 +29,10 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>Client side data binding can be configured by using either of two approaches described below. Data emitted after
-    initial data binding will re-initialize data table with the new data set and drop previously bound data items
+    initial data binding will re-initialize data table with the new data set and drop previously bound data item
     collection or stream.</p>
+
+  <h5>- Bind via items</h5>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items">{{ demoSnippet.items }}</app-code-snippet>
 
@@ -42,13 +44,13 @@
     collections will automatically get reflected in data table.
   </p>
 
-  <p>or</p>
+  <h5>- Bind via dataSource</h5>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
   <p>This approach can be used to bind an Observable data stream. Refer following example code snippet for
     complete usage of the <code>dataSource</code> property in the client side data
-    binding. Latest data collection emitted via data source stream will get reflected in data table.</p>
+    binding. The last emitted data collection via the data source stream will get reflected in data table.</p>
 
   <app-data-source-usage></app-data-source-usage>
   <app-example-code [files]="dataSourceUsage"></app-example-code>
