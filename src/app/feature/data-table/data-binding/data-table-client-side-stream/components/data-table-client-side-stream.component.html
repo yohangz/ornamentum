@@ -27,11 +27,17 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
+  <p>Client side stream data binding can be configured by using either of two approaches described below. Note that it
+    will always re-render table with last emitted data set.</p>
+
+  <h5>- Bind via dataSource</h5>
+
   <p>
-    This can be configure via setting an array of data objects to <code>items</code> input property or via setting a
-    <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
+    Setting an<a rel="noopener" target="_blank"
+                                href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
       Observable</a> stream to <code>dataSource</code> input property with the same approach discussed in the <a
     [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data Binding</a> section.
+    The data table reflect the changes accordingly when data source stream emit data.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
@@ -43,7 +49,13 @@
     See</a> example section above.
   </p>
 
-  <p>or</p>
+  <h5>- Bind via items</h5>
+
+  <p>
+    The <code>items</code> input property also can be used to implement the same behavior instead of using an
+    <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
+      Observable</a> stream to bind realtime data.
+  </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
 
@@ -53,6 +65,12 @@
   </p>
 
   <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataBindingWithItems"></app-code-snippet>
+
+  <p>
+    Data table <code>items</code> input property setter will capture and re-render data table when ever new data
+    collection is set to <code>items</code>. We highly recommend the usage of <code>dataSource</code> over
+    <code>items</code> binding. However, you can proceed with this approach if you prefer using data arrays over streams.
+  </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data Binding</a><br/>
