@@ -24,5 +24,5 @@ export class DropdownDataStateService {
   public dropdownOptionTemplate: TemplateRef<any>;
   public dropdownOptionGroupHeaderTemplate: TemplateRef<any>;
 
-  public onDataBind: DropdownDataBindCallback;
+  public onDataBind: DropdownDataBindCallback<any>;
 }

@@ -2,9 +2,10 @@
   ...
 })
 export class ServerSideBasicUsageComponent {
-  public onDataBind: DataTableDataBindCallback;
-
-  constructor(private dataFetchService: DataTableHttpDataFetchService<ExampleData>) {
-    this.onDataBind = this.dataFetchService.onDataBind('/api/resource/path');
+  public onDataBind: DataTableDataBindCallback<ExampleData>;
+  
+  constructor(private resourceFactory: DataTableHttpResourceFactoryService) {
+    const exampleDataResource = resourceFactory.getResourceProvider<ExampleData>();
+    this.onDataBind = exampleDataResource.onDataBind('/api/resource/path');
   }
 }

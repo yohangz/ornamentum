@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
@@ -19,7 +18,6 @@ import { RequestParamMapperService } from '../../resource-utility/services/reque
 /**
  * Data table HTTP data fetch service.
  */
-@Injectable()
 export class DataTableHttpDataFetchService<T> {
   constructor(private http: HttpClient, public requestParamMapperService: RequestParamMapperService) {}
 
@@ -31,9 +29,9 @@ export class DataTableHttpDataFetchService<T> {
    */
   public onDataBind(
     options: string|ResourceOptions,
-    mapper?: <Q>(response: Observable<Q>) => Observable<DataTableQueryResult<T[]>>,
-  ): DataTableDataBindCallback {
-    return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T[]>> => {
+    mapper?: <Q>(response: Observable<Q>) => Observable<DataTableQueryResult<T>>,
+  ): DataTableDataBindCallback<T> {
+    return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T>> => {
       const requestOptions = this.requestParamMapperService.mapRequestOptions(options);
       let queryParams = this.requestParamMapperService.mapQueryParams(requestOptions.options);
 

@@ -3,8 +3,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 
 import {
-  GlobalRefService,
-  DataTableWebsocketDataFetchService,
+  DataTableWebsocketResourceFactoryService,
   DataTableDataBindCallback
 } from 'ornamentum';
 
@@ -15,10 +14,12 @@ import { ExampleData } from 'helper-models';
   templateUrl: './server-side-web-socket-usage.component.html'
 })
 export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
-  public onDataBind: DataTableDataBindCallback;
-
-  constructor(private globalRefService: GlobalRefService,
-              private dataTableWebSocketDataFetchService: DataTableWebsocketDataFetchService<ExampleData>) {
+  public onDataBind: DataTableDataBindCallback<ExampleData>;
+  
+  private webSocketProvider: DataTableWebsocketDataFetchService<ExampleData>;
+  
+  constructor(private resourceFactory: DataTableWebsocketResourceFactoryService) {
+    this.webSocketProvider = resourceFactory.getResourceProvider<ExampleData>();
   }
 
   /**
@@ -26,17 +27,17 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
    */
   public ngOnInit(): void {
     // Create web socket connection to support server side rendering.
-    this.dataTableWebSocketDataFetchService.init({
-      url: `wss://${window.location.hostname}` // web socket endpoint
+    this.webSocketProvider.init({
+      url: `wss://ornamentum.app` // web socket endpoint
     });
 
-    this.onDataBind = this.dataTableWebSocketDataFetchService.onDataBind();
+    this.onDataBind = this.webSocketProvider.onDataBind();
   }
 
   /**
    * Component destroy lifecycle event handler.
    */
   public ngOnDestroy(): void {
-    this.dataTableWebSocketDataFetchService.dispose();
+    this.webSocketProvider.dispose();
   }
 }

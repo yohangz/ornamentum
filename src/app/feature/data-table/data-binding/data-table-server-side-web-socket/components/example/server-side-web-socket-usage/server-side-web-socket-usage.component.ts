@@ -5,7 +5,8 @@ import { interval, Subscription } from 'rxjs';
 import {
   GlobalRefService,
   DataTableWebsocketDataFetchService,
-  DataTableDataBindCallback
+  DataTableDataBindCallback,
+  DataTableWebsocketResourceFactoryService
 } from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
@@ -18,11 +19,14 @@ import { ExampleData } from 'helper-models';
   templateUrl: './server-side-web-socket-usage.component.html'
 })
 export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
-  public onDataBind: DataTableDataBindCallback;
+  public onDataBind: DataTableDataBindCallback<ExampleData>;
   public intervalSubscription: Subscription;
 
+  private webSocketProvider: DataTableWebsocketDataFetchService<ExampleData>;
+
   constructor(private globalRefService: GlobalRefService,
-              private dataTableWebSocketDataFetchService: DataTableWebsocketDataFetchService<ExampleData>) {
+              private resourceFactory: DataTableWebsocketResourceFactoryService) {
+    this.webSocketProvider = resourceFactory.getResourceProvider<ExampleData>();
   }
 
   /**
@@ -31,15 +35,15 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     // Create web socket connection on browser environment only to support server side rendering.
     if (this.globalRefService.isBrowser) {
-      this.dataTableWebSocketDataFetchService.init({
+      this.webSocketProvider.init({
         url: `wss://${window.location.hostname}` // web socket endpoint
       });
 
-      this.onDataBind = this.dataTableWebSocketDataFetchService.onDataBind();
+      this.onDataBind = this.webSocketProvider.onDataBind();
 
       // Keep the socket connection alive with a heart beat ping
       this.intervalSubscription = interval(40000).subscribe(() => {
-        this.dataTableWebSocketDataFetchService.socketStream.next({
+        this.webSocketProvider.socketStream.next({
           type: 'keep-alive'
         } as any);
       });
@@ -50,7 +54,7 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
    * Component destroy lifecycle event handler.
    */
   public ngOnDestroy(): void {
-    this.dataTableWebSocketDataFetchService.dispose();
+    this.webSocketProvider.dispose();
 
     if (this.intervalSubscription) {
       this.intervalSubscription.unsubscribe();

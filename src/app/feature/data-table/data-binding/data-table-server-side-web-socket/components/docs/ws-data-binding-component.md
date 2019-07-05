@@ -2,10 +2,12 @@
   ...
 })
 export class ServerSideWebSocketBasicUsageComponent {
-  public onDataBind: DataTableDataBindCallback;
+  public onDataBind: DataTableDataBindCallback<ExampleData>;
   
-  constructor(private globalRefService: GlobalRefService,
-              private dataTableWebSocketDataFetchService: DataTableWebsocketDataFetchService<ExampleData>) {
+  private webSocketProvider: DataTableWebsocketDataFetchService<ExampleData>;
+  
+  constructor(private resourceFactory: DataTableWebsocketResourceFactoryService) {
+    this.webSocketProvider = resourceFactory.getResourceProvider<ExampleData>();
   }
 
   /**
@@ -13,17 +15,17 @@ export class ServerSideWebSocketBasicUsageComponent {
    */
   public ngOnInit(): void {
     // Create web socket connection to support server side rendering.
-    this.dataTableWebSocketDataFetchService.init({
+    this.webSocketProvider.init({
       url: `wss://ornamentum.app` // web socket endpoint
     });
 
-    this.onDataBind = this.dataTableWebSocketDataFetchService.onDataBind();
+    this.onDataBind = this.webSocketProvider.onDataBind();
   }
 
   /**
    * Component destroy lifecycle event handler.
    */
   public ngOnDestroy(): void {
-    this.dataTableWebSocketDataFetchService.dispose();
+    this.webSocketProvider.dispose();
   }
 }

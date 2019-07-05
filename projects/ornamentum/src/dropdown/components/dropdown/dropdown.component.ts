@@ -103,7 +103,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * @param value Dropdown data bind callback function reference
    */
   @Input()
-  public set onDataBind(value: DropdownDataBindCallback) {
+  public set onDataBind(value: DropdownDataBindCallback<any>) {
     this.dataStateService.onDataBind = value;
   }
 

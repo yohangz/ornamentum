@@ -8,4 +8,4 @@ import { DropdownQueryResult } from './dropdown-query-result.model';
  * @param params - Dropdown request parameters object
  * @return Dropdown query result stream
  */
-export type DropdownDataBindCallback = (params: DropdownRequestParams) => Observable<DropdownQueryResult<any>>;
+export type DropdownDataBindCallback<T> = (params: DropdownRequestParams) => Observable<DropdownQueryResult<T>>;

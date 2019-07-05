@@ -23,5 +23,5 @@ export const demoSnippet: any = {
   serverSideDataBindingComponent: require('!!raw-loader!./docs/server-side-data-binding-component.md'),
   serverSideDataBindingMarkup: require('!!raw-loader!./docs/server-side-data-binding-markup.md'),
   serverSideRequest: require('!!raw-loader!./docs/server-side-request.md'),
-  httpResourceService: require('!!raw-loader!./docs/http-resource-service.md'),
+  httpResourceService: require('!!raw-loader!projects/ornamentum/src/data-table-resource/services/data-table-http-resource.service.ts')
 };

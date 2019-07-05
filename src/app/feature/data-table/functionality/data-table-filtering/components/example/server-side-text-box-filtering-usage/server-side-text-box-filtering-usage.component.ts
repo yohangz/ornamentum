@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 
-import { DataTableDataBindCallback, DataTableHttpDataFetchService } from 'ornamentum';
+import {
+  DataTableDataBindCallback,
+  DataTableHttpResourceFactoryService
+} from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
 
@@ -9,9 +12,10 @@ import { ExampleData } from 'helper-models';
   templateUrl: './server-side-text-box-filtering-usage.component.html'
 })
 export class ServerSideTextBoxFilteringUsageComponent {
-  public onDataBind: DataTableDataBindCallback;
+  public onDataBind: DataTableDataBindCallback<ExampleData>;
 
-  constructor(private dataFetchService: DataTableHttpDataFetchService<ExampleData>) {
-    this.onDataBind = this.dataFetchService.onDataBind('/api/data');
+  constructor(private resourceFactory: DataTableHttpResourceFactoryService) {
+    const exampleDataResource = resourceFactory.getResourceProvider<ExampleData>();
+    this.onDataBind = exampleDataResource.onDataBind('/api/data');
   }
 }

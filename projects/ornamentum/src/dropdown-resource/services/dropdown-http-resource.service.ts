@@ -1,4 +1,3 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 import { Observable } from 'rxjs';
@@ -13,7 +12,6 @@ import { ResourceOptions } from '../../resource-utility/models/resource-options.
 /**
  * Dropdown HTTP data fetch service.
  */
-@Injectable()
 export class DropdownHttpResourceService<T> {
   constructor(private http: HttpClient, public requestParamMapperService: RequestParamMapperService) {}
 
@@ -25,9 +23,9 @@ export class DropdownHttpResourceService<T> {
    */
   public onDataBind(
     options: string|ResourceOptions,
-    mapper?: <Q>(response: Observable<Q>) => Observable<DropdownQueryResult<T[]>>,
-  ): DropdownDataBindCallback {
-    return (params?: DropdownRequestParams): Observable<DropdownQueryResult<T[]>> => {
+    mapper?: <Q>(response: Observable<Q>) => Observable<DropdownQueryResult<T>>,
+  ): DropdownDataBindCallback<T> {
+    return (params?: DropdownRequestParams): Observable<DropdownQueryResult<T>> => {
       const requestOptions = this.requestParamMapperService.mapRequestOptions(options);
       let queryParams = this.requestParamMapperService.mapQueryParams(requestOptions.options);
 
