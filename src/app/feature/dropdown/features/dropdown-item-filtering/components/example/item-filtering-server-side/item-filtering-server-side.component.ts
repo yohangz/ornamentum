@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DropdownDataBindCallback, DropdownHttpResourceService } from 'ornamentum';
+import { DropdownDataBindCallback, DropdownHttpResourceFactoryService } from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
 
@@ -9,9 +9,10 @@ import { ExampleData } from 'helper-models';
   templateUrl: './item-filtering-server-side.component.html'
 })
 export class ItemFilteringServerSideComponent {
-  public onDataBind: DropdownDataBindCallback;
+  public onDataBind: DropdownDataBindCallback<ExampleData>;
 
-  constructor(private dataFetchService: DropdownHttpResourceService<ExampleData>) {
-    this.onDataBind = this.dataFetchService.onDataBind('/api/data');
+  constructor(private resourceFactory: DropdownHttpResourceFactoryService) {
+    const exampleDataResource = resourceFactory.getResourceProvider<ExampleData>();
+    this.onDataBind = exampleDataResource.onDataBind('/api/data');
   }
 }

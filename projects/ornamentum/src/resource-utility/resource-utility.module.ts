@@ -25,3 +25,9 @@ export class ResourceUtilityModule {
     };
   }
 }
+
+export { ResourceOptions } from './models/resource-options.model';
+export { RequestOptions } from './models/request-options.model';
+export { HttpRequestOptions } from './models/http-request-options.model';
+
+export { RequestParamMapperService };

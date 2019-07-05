@@ -8,4 +8,4 @@ import { DataTableRequestParams } from './data-table-request-params.model';
  * @param params Data table request params
  * @return Data table query result stream
  */
-export type DataTableDataBindCallback = (params: DataTableRequestParams) => Observable<DataTableQueryResult<any>>;
+export type DataTableDataBindCallback<T> = (params: DataTableRequestParams) => Observable<DataTableQueryResult<T>>;

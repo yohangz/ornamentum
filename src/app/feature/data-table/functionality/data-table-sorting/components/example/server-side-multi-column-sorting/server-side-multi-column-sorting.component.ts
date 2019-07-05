@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { DataTableHttpDataFetchService, DataTableDataBindCallback } from 'ornamentum';
+import { DataTableHttpResourceFactoryService, DataTableDataBindCallback } from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
 
@@ -9,9 +9,10 @@ import { ExampleData } from 'helper-models';
   templateUrl: './server-side-multi-column-sorting.component.html'
 })
 export class ServerSideMultiColumnSortingComponent {
-  public onDataBind: DataTableDataBindCallback;
+  public onDataBind: DataTableDataBindCallback<ExampleData>;
 
-  constructor(private dataFetchService: DataTableHttpDataFetchService<ExampleData>) {
-    this.onDataBind = this.dataFetchService.onDataBind('/api/data');
+  constructor(private resourceFactory: DataTableHttpResourceFactoryService) {
+    const exampleDataResource = resourceFactory.getResourceProvider<ExampleData>();
+    this.onDataBind = exampleDataResource.onDataBind('/api/data');
   }
 }

@@ -21,7 +21,7 @@ export class DataTableDataStateService {
   public heardReload = false;
 
   public onFilterValueExtract: DataTableFilterValueExtractCallback;
-  public onDataBind: DataTableDataBindCallback;
+  public onDataBind: DataTableDataBindCallback<any>;
   public onDynamicRowSpanExtract: DataTableDynamicRowSpanExtractorCallback<any> = () => 1;
 
   /**

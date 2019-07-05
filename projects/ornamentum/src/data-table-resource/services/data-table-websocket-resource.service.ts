@@ -1,5 +1,3 @@
-import { Injectable } from '@angular/core';
-
 import { Subscription, Subject, Observable } from 'rxjs';
 import { webSocket, WebSocketSubject, WebSocketSubjectConfig } from 'rxjs/webSocket';
 
@@ -10,10 +8,9 @@ import { DataTableDataBindCallback } from '../../data-table/models/data-table-da
 /**
  * Data table web socket data fetch service.
  */
-@Injectable()
 export class DataTableWebsocketDataFetchService<T> {
-  private socket: WebSocketSubject<DataTableQueryResult<T[]>>;
-  private subject: Subject<DataTableQueryResult<T[]>>;
+  private socket: WebSocketSubject<DataTableQueryResult<T>>;
+  private subject: Subject<DataTableQueryResult<T>>;
   private socketSubscription: Subscription;
 
   constructor() {}
@@ -22,15 +19,15 @@ export class DataTableWebsocketDataFetchService<T> {
    * Initialize web socket connection.
    * @param config Socket configuration parameters.
    */
-  public init(config?: WebSocketSubjectConfig<DataTableQueryResult<T[]>>): void {
+  public init(config?: WebSocketSubjectConfig<DataTableQueryResult<T>>): void {
     this.socket = webSocket<any>(config);
-    this.subject = new Subject<DataTableQueryResult<T[]>>();
+    this.subject = new Subject<DataTableQueryResult<T>>();
   }
 
   /**
    * Get socket stream reference.
    */
-  public get socketStream(): WebSocketSubject<DataTableQueryResult<T[]>> {
+  public get socketStream(): WebSocketSubject<DataTableQueryResult<T>> {
     return this.socket;
   }
 
@@ -40,14 +37,14 @@ export class DataTableWebsocketDataFetchService<T> {
    * @param mapper Response data mapper callback. map source stream format to data table expected stream or apply additional formatting.
    * @return Data table bind event handler.
    */
-  public onDataBind(mapper?: <Q>(source: Observable<Q>) => Observable<DataTableQueryResult<T[]>>): DataTableDataBindCallback {
+  public onDataBind(mapper?: <Q>(source: Observable<Q>) => Observable<DataTableQueryResult<T>>): DataTableDataBindCallback<T> {
     if (!this.socket) {
       throw Error('Initialize socket data source before data bind.');
     }
 
     this.socketSubscription = this.socket.subscribe(this.subject);
 
-    return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T[]>> => {
+    return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T>> => {
       if (params) {
         this.socket.next({
           type: 'data-fetch',

@@ -20,5 +20,5 @@ export const serverSideBasicUsage: ExampleFile[] = [
 
 export const demoSnippet: any = {
   serverSideDataBinding: require('!!raw-loader!./docs/server-side-data-binding.md'),
-  onDataBindMethod: require('!!raw-loader!./docs/on-data-bind-method.md')
+  httpResourceService: require('!!raw-loader!projects/ornamentum/src/dropdown-resource/services/dropdown-http-resource.service.ts')
 };

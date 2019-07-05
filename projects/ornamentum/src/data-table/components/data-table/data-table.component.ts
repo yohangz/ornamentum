@@ -184,7 +184,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * @param value Data bind callback function reference
    */
   @Input()
-  public set onDataBind(value: DataTableDataBindCallback) {
+  public set onDataBind(value: DataTableDataBindCallback<any>) {
     this.dataStateService.onDataBind = value;
   }
 

@@ -16,7 +16,7 @@
     <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'serverSideColumnFilter'">Filtering</a>,
     <a [routerLink]="['/feature/data-table/functionality/column/sorting']" [fragment]="'serverSideColumnSorting'">Sorting</a>,
     <a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a> etc. operations. Ornamentum has
-    provided an optional opinionated service to integrate external data sources. Also, you can build a custom data
+    provided an optional opinionated service to integrate external data sources. However, you can build a custom data
     provider depending on your requirement.
   </p>
 
@@ -34,9 +34,6 @@
     data source agnostic. Import <a rel="noopener" target="_blank"
        href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a> along with
     <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
-    This module require <a rel="noopener" target="_blank"
-                           href="https://www.npmjs.com/package/@angular/http">@angular/http</a>
-    package as a dependency.
   </p>
 
   <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingModule"></app-code-snippet>

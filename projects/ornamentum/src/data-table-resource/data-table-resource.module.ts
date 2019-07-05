@@ -5,8 +5,10 @@ import { ResourceUtilityModule } from '../resource-utility/resource-utility.modu
 import { DataTableHttpDataFetchService } from './services/data-table-http-resource.service';
 import { DataTableWebsocketDataFetchService } from './services/data-table-websocket-resource.service';
 import { DataTableResourceConfigService } from './services/data-table-resource-config.service';
+import { DataTableHttpResourceFactoryService } from './services/data-table-http-resource-factory.service';
+import { DataTableWebsocketResourceFactoryService } from './services/data-table-websocket-resource-factory.service';
 
-const PROVIDERS = [DataTableHttpDataFetchService, DataTableWebsocketDataFetchService];
+const PROVIDERS = [DataTableHttpResourceFactoryService, DataTableWebsocketResourceFactoryService];
 
 /**
  * Data table data source module.
@@ -29,4 +31,7 @@ export class DataTableResourceModule {
 }
 
 export { DataTableHttpDataFetchService } from './services/data-table-http-resource.service';
+export { DataTableHttpResourceFactoryService };
+
 export { DataTableWebsocketDataFetchService } from './services/data-table-websocket-resource.service';
+export { DataTableWebsocketResourceFactoryService };

@@ -22,7 +22,7 @@ export const demoSnippet: any = {
   basicUsage: require('!!raw-loader!./docs/basic-usage.md'),
   isBrowser: require('!!raw-loader!./docs/is-browser.md'),
   initMethod: require('!!raw-loader!./docs/init.md'),
-  onDataBindMethod: require('!!raw-loader!./docs/on-data-bind-method.md'),
+  webSocketResourceService: require('!!raw-loader!projects/ornamentum/src/dropdown-resource/services/dropdown-websocket-resource.service.ts'),
   socketStream: require('!!raw-loader!./docs/socket-stream.md'),
   dispose: require('!!raw-loader!./docs/dispose.md')
 };
