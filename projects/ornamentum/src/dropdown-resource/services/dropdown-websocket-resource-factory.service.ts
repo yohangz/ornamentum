@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { DropdownWebsocketDataFetchService } from './dropdown-websocket-resource.service';
+import { DropdownWebsocketDataFetchService } from './dropdown-websocket-data-fetch.service';
 
 /**
  * Dropdown web socket data fetch service factory.

@@ -12,7 +12,7 @@ import { ResourceOptions } from '../../resource-utility/models/resource-options.
 /**
  * Dropdown HTTP data fetch service.
  */
-export class DropdownHttpResourceService<T> {
+export class DropdownHttpDataFetchService<T> {
   constructor(private http: HttpClient, public requestParamMapperService: RequestParamMapperService) {}
 
   /**

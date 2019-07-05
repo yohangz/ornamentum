@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { DataTableHttpDataFetchService } from './data-table-http-resource.service';
+import { DataTableHttpDataFetchService } from './data-table-http-data-fetch.service';
 
 import { RequestParamMapperService } from '../../resource-utility/services/request-param-mapper.service';
 

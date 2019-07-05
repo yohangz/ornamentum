@@ -44,9 +44,9 @@
        href="https://ornamentum.app/api-docs/injectables/DataTableHttpResourceFactoryService.html">DataTableHttpResourceFactoryService</a>
     to construct an instance of
     <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/injectables/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a>
-    service. Invoke <a rel="noopener" target="_blank"
-                          href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+       href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a>
+    class. Invoke <a rel="noopener" target="_blank"
+       href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
     method with the API resource path to get the data bind callback function reference.
   </p>
 
@@ -55,7 +55,8 @@
 
   <p>
     Set the obtained data bind callback function reference to <a rel="noopener" target="_blank"
-        href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a> input property of data table.
+        href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a> input
+    property of data table.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBindingMarkup"></app-code-snippet>
@@ -84,7 +85,7 @@
       Service should respond follow <a rel="noopener" target="_blank"
         href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a> schema.
       However, you can pass a custom response mapper callback function to <a rel="noopener" target="_blank"
-        href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a> and map
+        href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a> and map
       the response to <a rel="noopener" target="_blank"
        href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a> schema
       without making changes in backend API response.
@@ -103,22 +104,22 @@
 
   <p>
     Server side data binding is handled via <a rel="noopener" target="_blank"
-                                               href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+      href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
     callback function. Use this callback reference to hook into data bind workflow and provide custom data source. This
     callback function will get triggered on table initialization and on dynamic data table operations. It
     receives <a rel="noopener" target="_blank"
-                href="https://ornamentum.app/api-docs/interfaces/DataTableRequestParams.html">DataTableRequestParams</a>
+      href="https://ornamentum.app/api-docs/interfaces/DataTableRequestParams.html">DataTableRequestParams</a>
     argument and expect to return <a rel="noopener" target="_blank"
-                                     href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
+      href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
     Observable</a> query result <a rel="noopener" target="_blank"
-                                   href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
+      href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
     object stream. Data returned from this callback function will be directly bound to table assuming that it matches
     the on demand request context.
   </p>
 
   <p>
     Refer <a rel="noopener" target="_blank"
-             href="https://ornamentum.app/api-docs/injectables/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a> documentation for more details.
+             href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a> documentation for more details.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>

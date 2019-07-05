@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { DataTableWebsocketDataFetchService } from './data-table-websocket-resource.service';
+import { DataTableWebsocketDataFetchService } from './data-table-websocket-data-fetch.service';
 
 /**
  * Data table web socket data fetch service factory.
