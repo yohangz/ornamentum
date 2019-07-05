@@ -22,7 +22,7 @@ const dataTableDataBindingRoutes: Routes = [
         title: 'Ornamentum | Data Table | Data Binding | Client Side | Basic Data Binding',
         keywords: 'ornamentum,datatable data binding,datatable client side data binding,datatable basic data binding',
         // tslint:disable-next-line
-        description: 'Client side data binding allow users to bind static data sets to data table when full data collection is available in the client side'
+        description: 'Client side data binding allow users to bind static data sets to data table when full data collection is available in the client side.'
       }
     }
   },
@@ -37,7 +37,7 @@ const dataTableDataBindingRoutes: Routes = [
         title: 'Ornamentum | Data Table | Data Binding | Client Side | Stream Data Binding',
         keywords: 'ornamentum,datatable data binding,datatable client side stream data binding,stream data binding',
         // tslint:disable-next-line
-        description: 'The client side stream data binding technique to bind data sources which changes rapidly. Data changes notified by data source will automatically get reflected while persisting the current table state without having to manually trigger refresh'
+        description: 'The client side stream data binding technique to bind data sources which changes rapidly. Data changes notified by data source will automatically get reflected while persisting the current table state without having to manually trigger refresh.'
       }
     }
   },
@@ -51,8 +51,10 @@ const dataTableDataBindingRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Data Binding | Server Side | Basic Data Binding',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        // tslint:disable-next-line
+        keywords: 'ornamentum,datatable data binding,datatable server side stream data binding,custom data binding,basic server side data binding',
+        // tslint:disable-next-line
+        description: 'Server side data binding allow users to bind large data sets that are not directly accessible as a full collection in client side due to various reasons. Server side data binding can improve performance drastically for large data sets but integration is fairly complex compared to client side data binding techniques.'
       }
     }
   },
