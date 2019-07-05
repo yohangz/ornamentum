@@ -2,8 +2,8 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 
 import { ResourceUtilityModule } from '../resource-utility/resource-utility.module';
 
-import { DropdownHttpResourceService } from './services/dropdown-http-resource.service';
-import { DropdownWebsocketDataFetchService } from './services/dropdown-websocket-resource.service';
+import { DropdownHttpDataFetchService } from './services/dropdown-http-data-fetch.service';
+import { DropdownWebsocketDataFetchService } from './services/dropdown-websocket-data-fetch.service';
 import { DropdownResourceConfigService } from './services/dropdown-resource-config.service';
 import { DropdownHttpResourceFactoryService } from './services/dropdown-http-resource-factory.service';
 import { DropdownWebsocketResourceFactoryService } from './services/dropdown-websocket-resource-factory.service';
@@ -30,8 +30,8 @@ export class DropdownResourceModule {
   }
 }
 
-export { DropdownHttpResourceService } from './services/dropdown-http-resource.service';
+export { DropdownHttpDataFetchService } from './services/dropdown-http-data-fetch.service';
 export { DropdownHttpResourceFactoryService };
 
-export { DropdownWebsocketDataFetchService } from './services/dropdown-websocket-resource.service';
+export { DropdownWebsocketDataFetchService } from './services/dropdown-websocket-data-fetch.service';
 export { DropdownWebsocketResourceFactoryService };
