@@ -36,7 +36,7 @@
     "lint": "npm run lint:demo && npm run lint:lib",
     "start": "npm run clean:dist && npm run build:lib:dev && npm run start:demo",
     "start:ssr": "npm run build && DIST_FOLDER=dist/ornamentum-demo node dist/ornamentum-demo/server.js",
-    "build": "npm run clean:dist && npm run build:lib:prod && npm run build:demo:prod && npm run build:demo:server:bundle && npm run build:demo:server && npm run build:demo:copy:data && npm run docs:lib",
+    "build": "npm run clean:dist && npm run build:lib:prod && npm run docs:lib && npm run build:demo:prod && npm run build:demo:server:bundle && npm run build:demo:server && npm run build:demo:copy:data",
     "explorer": "npm run clean:dist && npm run build:lib:dev && npm run build:demo:dev && npm run explorer:demo:bundle",
     "version": "node version.js && npm run build && git add src/environments/version.ts projects/ornamentum/package.json",
     "postversion": "git push && git push --tags",
