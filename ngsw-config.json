@@ -10,12 +10,13 @@
         "files": [
           "/favicon.ico",
           "/index.html",
-          "/*.js", "/*.css",
-          "/*.(png|svg|jpeg|gif)"
+          "/*.js",
+          "!/*-es5*.js",
+          "/*.css"
         ],
         "urls": [
           "https://fonts.googleapis.com/**",
-          "https://fonts.gstatic.com/**"
+          "https://fonts.gstatic.com/s/**"
         ]
       }
     }, {
@@ -25,9 +26,20 @@
       "resources": {
         "files": [
           "/assets/**",
-          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+          "/api-docs/**",
+          "/*-es5*.js",
+          "/*.(eot|svg|cur|jpeg|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
         ]
       }
     }
+  ],
+  "navigationUrls": [
+    "/**",
+    "!/**/*.*",
+    "!/**/*__*",
+    "!/**/*__*/**",
+    "!/api-docs",
+    "!/api-docs/",
+    "!/api-docs/index.html"
   ]
 }

@@ -70,6 +70,7 @@
               "extractLicenses": true,
               "vendorChunk": true,
               "buildOptimizer": true,
+              "deleteOutputPath": false,
               "budgets": [
                 {
                   "type": "initial",
