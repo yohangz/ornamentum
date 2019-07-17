@@ -9,6 +9,7 @@ import {
   minWidthUsage,
   selectionColumnWidthUsage,
   widthUsage,
+  columnSelectorWidthUsage,
 } from './data-table-responsive-conf.list';
 
 @Component({
@@ -25,4 +26,5 @@ export class DataTableResponsiveConfComponent {
   public minWidthUsage = minWidthUsage;
   public selectionColumnWidthUsage = selectionColumnWidthUsage;
   public widthUsage = widthUsage;
+  public columnSelectorWidthUsage = columnSelectorWidthUsage;
 }

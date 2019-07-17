@@ -80,6 +80,18 @@
   <app-index-column-width-usage></app-index-column-width-usage>
   <app-example-code [files]="indexColumnWidthUsage"></app-example-code>
 
+  <h4 id="columnSelectorWidth">Column Selector Width</h4>
+  <code>columnSelectorWidth: string | number</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 240</h5>
+
+  <p>This property can be used to dynamically configure the column selector width when <code>showColumnSelector</code>
+    is enabled. Useful when column names taking more space than the available selector width. that kind of use case can
+    be adjust the default width by simply binding a value to <code>columnSelectorWidth</code> property which was
+    available at table level.</p>
+
+  <app-column-selector-width-usage></app-column-selector-width-usage>
+  <app-example-code [files]="columnSelectorWidthUsage"></app-example-code>
+
   <h4 id="selectionColumnWidth">Selection Column Width</h4>
   <code>selectionColumnWidth: string | number</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">Default Value: 30</h5>
