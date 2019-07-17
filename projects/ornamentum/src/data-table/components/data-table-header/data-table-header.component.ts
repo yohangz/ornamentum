@@ -41,12 +41,11 @@ export class DataTableHeaderComponent implements OnDestroy {
    */
   public toggleColumnSelector(element: HTMLElement): void {
     this.componentLoader.toggle(DataTableColumnSelectorComponent, element, this.injector, {
-      floatLeft: 2,
       relativeParent: this.config.relativeParentElement,
       context: {
-        columns: this.columns
+        columns: this.columns,
+        width: this.config.columnSelectorWidth
       },
-      width: this.config.columnSelectorWidth,
       position: 'bottom-right'
     });
   }

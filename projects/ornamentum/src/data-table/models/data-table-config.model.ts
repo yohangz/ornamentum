@@ -45,7 +45,7 @@ export interface DataTableConfig {
   /**
    * Column selector dropdown width can be provide using pixels; Only applicable when showColumnSelector is true
    */
-  columnSelectorWidth?: number;
+  columnSelectorWidth?: string | number;
 
   /**
    * Title to be shown in th header; Only applicable when showHeader is true
