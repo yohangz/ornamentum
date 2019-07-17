@@ -44,6 +44,7 @@ export class DataTableConfigService implements DataTableConfig {
   public filterDebounce = true;
   public showRefreshButton = false;
   public showColumnSelector = false;
+  public columnSelectorWidth = 240;
   public expanderColumnWidth: string | number = 30;
   public indexColumnWidth: string | number = 30;
   public selectionColumnWidth: string | number = 30;
