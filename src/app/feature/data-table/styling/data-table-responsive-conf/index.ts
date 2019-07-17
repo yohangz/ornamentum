@@ -8,3 +8,4 @@ export { MinWidthUsageComponent } from './components/example/min-width-usage/min
 // tslint:disable-next-line
 export { SelectionColumnWidthUsageComponent } from './components/example/selection-column-width-usage/selection-column-width-usage.component';
 export { WidthUsageComponent } from './components/example/width-usage/width-usage.component';
+export { ColumnSelectorWidthUsageComponent } from './components/example/column-selector-width-usage/column-selector-width-usage.component';

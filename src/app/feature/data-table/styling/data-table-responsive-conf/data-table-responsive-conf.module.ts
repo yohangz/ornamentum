@@ -17,7 +17,8 @@ import {
   MinHeightUsageComponent,
   MinWidthUsageComponent,
   SelectionColumnWidthUsageComponent,
-  WidthUsageComponent
+  WidthUsageComponent,
+  ColumnSelectorWidthUsageComponent
 } from './index';
 
 /**
@@ -33,7 +34,8 @@ import {
     MinHeightUsageComponent,
     MinWidthUsageComponent,
     SelectionColumnWidthUsageComponent,
-    WidthUsageComponent
+    WidthUsageComponent,
+    ColumnSelectorWidthUsageComponent
   ],
   exports: [],
   imports: [

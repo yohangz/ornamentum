@@ -128,6 +128,24 @@ export const selectionColumnWidthUsage: ExampleFile[] = [
   },
 ];
 
+export const columnSelectorWidthUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'column-selector-width-usage.component.ts',
+    content: require('!!raw-loader!./example/column-selector-width-usage/column-selector-width-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'column-selector-width-usage.component.html',
+    content: require('!!raw-loader!./example/column-selector-width-usage/column-selector-width-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'column-selector-width-usage.module.ts',
+    content: require('!!raw-loader!./example/column-selector-width-usage/column-selector-width-usage.module.md')
+  },
+];
+
 export const widthUsage: ExampleFile[] = [
   {
     type: FileType.TS,

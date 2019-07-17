@@ -642,6 +642,10 @@ export class MainComponent {
                       anchor: 'indexColumnWidth'
                     },
                     {
+                      title: 'Column Selector Width',
+                      anchor: 'columnSelectorWidth'
+                    },
+                    {
                       title: 'Selection Column Width',
                       anchor: 'selectionColumnWidth'
                     }
