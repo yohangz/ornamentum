@@ -11,5 +11,8 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 })
 export class DataTableColumnSelectorComponent {
   @Input()
-  public columns: DataTableColumnComponent;
+  public columns: DataTableColumnComponent[];
+
+  @Input()
+  public width: number|string;
 }
