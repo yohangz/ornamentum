@@ -76,12 +76,14 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     const childElement = componentElement.firstElementChild as HTMLElement;
     if (childElement) {
       if (options.position.includes('right')) {
-        childElement.style.right = '0px';
+        childElement.style.right = '2px';
       }
 
       if (options.position.includes('top')) {
         childElement.style.bottom = '0px';
       }
+
+      childElement.style.width = `${options.width}px`;
 
       childElement.style.position = 'absolute';
     }

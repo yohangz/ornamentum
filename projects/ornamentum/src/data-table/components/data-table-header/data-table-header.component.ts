@@ -46,6 +46,7 @@ export class DataTableHeaderComponent implements OnDestroy {
       context: {
         columns: this.columns
       },
+      width: this.config.columnSelectorWidth,
       position: 'bottom-right'
     });
   }
