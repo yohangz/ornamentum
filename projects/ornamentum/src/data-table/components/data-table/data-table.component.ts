@@ -501,6 +501,15 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
+   * Set display column selector width; Applicable only when show column selector is enabled.
+   * @param value column selector width
+   */
+  @Input()
+  public set columnSelectorWidth(value: number) {
+    this.config.columnSelectorWidth = value;
+  }
+
+  /**
    * Set expander icon column width in pixels; Applicable only when expandable column is enabled.
    * @param value Expandable column width
    */

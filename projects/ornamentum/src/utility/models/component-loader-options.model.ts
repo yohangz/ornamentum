@@ -10,4 +10,5 @@ export interface ComponentLoaderOptions {
   closeOnOutsideClick?: boolean;
   context?: any;
   position?: ViewPosition;
+  width?: number;
 }
