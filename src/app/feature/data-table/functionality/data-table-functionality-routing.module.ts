@@ -21,9 +21,9 @@ const dataTableFunctionalityRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Pagination',
-        keywords: 'Pagination, Pageable, Ornamentum, How to enable Pagination in Ornamentum',
-        description:
-          'How to enable pagination for the Ornamentum data table, everything to do with pagination and related properties, with examples.'
+        keywords: 'ornamentum paginaion,ornamentum pageable,data table pagination,data table paging',
+        // tslint:disable-next-line
+        description: 'Pagination feature allows you to bind render large data sets without a performance impact while reducing the unnecessarily long scrollbars.'
       }
     }
   },

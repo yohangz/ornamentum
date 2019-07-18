@@ -167,6 +167,10 @@ export class MainComponent {
                   ]
                 },
                 {
+                  title: 'Data Binding Support',
+                  anchor: 'dataBindingSupport'
+                },
+                {
                   title: 'Suggested Links',
                   anchor: 'suggestedLinks'
                 }
