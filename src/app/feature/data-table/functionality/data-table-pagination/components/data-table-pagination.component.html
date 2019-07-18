@@ -1,12 +1,10 @@
 <div class="feature-container">
   <h1 class="d-inline-block">Pagination</h1>
-
   <p>
-    Data can be paginated withing the table to avoid rendering all the data rows in a single view. Use of pagination will improve the client
-    side performance.
+    Pagination feature allows you to bind render large data sets without a performance impact while reducing the unnecessarily
+    long scrollbars. This feature can be used with all types of data binding technique described in data binding section.
+    The pagination controls are displayed in the table footer section.
   </p>
-
-  <p>The Pagination controls are displayed in the table footer section.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -15,53 +13,73 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>Depends on offset (starting index value) and limit values Pagination can be enable by binding <b>true</b> into
-    <code>pageable</code> property.</p>
+  <p>
+    Pagination is disabled by default; hence, it can be enable by setting the <code>[pageable]</code> input property
+    <code>true</code> in <code>&lt;data-table&gt;</code> component. Pagination functionality depends on
+    <code>[page]</code> and <code>[limit]</code> input property values described later in this section.
+  </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.pagination"></app-code-snippet>
-
-  <p>
-    In default, <code>pageable</code> property is configured to <b>false</b> therefore, data table doesn't paginate it’s
-    contents, even <code>pageable</code> depended properties are defined. Those properties will be discuss on next
-    section.
-  </p>
 
   <h2 id="usefulProperties">Useful Properties</h2>
 
   <p>
-    There are other useful additional properties where the behaviour of the pagination controls can be controlled. These
-    properties are applicable in global level of data table configuration when <code>pageable</code> is enabled.
+    There are other useful input properties exposed in <code>&lt;data-table&gt;</code> component which can be used to
+    change the default behaviour of the pagination functionality. These property values are applicable only when pagination
+    is enabled.
   </p>
 
   <h4 id="page">Page</h4>
-  <code>page: number</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: 1</h5>
+  <p>
+    <code>page: number</code> &nbsp; <span class="badge badge-pill badge-warning">Default Value: 1</span>
+  </p>
 
   <p>
-    Using the page property user can define the page number which the table should display/focus by default. From the
-    declared ‘page’ users can paginate into different data views with in the declared page <a
-    [routerLink]="['/feature/data-table/functionality/pagination']" [fragment]="'limit'">Limit</a>. It is recommended not
-    to set offset explicitly if the ‘page’ property is in use.
+    Page input property can be used to declare default the page to be rendered on init.
   </p>
 
   <app-page-usage></app-page-usage>
   <app-example-code [files]="pageUsage"></app-example-code>
 
   <h4 id="limit">Limit</h4>
-  <code>limit: number</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: 10</h5>
+  <p>
+    <code>limit: number</code> &nbsp; <span class="badge badge-pill badge-warning">Default Value: 10</span>
+  </p>
 
   <p>
-    Using the limit property user can define how many rows should be displayed per page. If the limit property has not
-    been provided, default value will be applied.
+    Limit input property can be used to declare how many rows should be displayed per page.
   </p>
 
   <app-limit-usage></app-limit-usage>
   <app-example-code [files]="limitUsage"></app-example-code>
 
+  <h4 id="dataBindingSupport">Data Binding Support</h4>
+
+  <p>
+    Pagination functionality works with all types of data binding techniques described in data binding section.
+  </p>
+
+  <ul>
+    <li>
+      <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a>
+      &amp;
+      <a [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client Side Stream Data Binding</a>
+      - Pagination will be handled within the data table by default.
+    </li>
+    <li>
+      <a [routerLink]="['/feature/data-table/functionality/pagination']">Server Side Basic Data Binding</a>
+      &amp;
+      <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web Socket Data Binding</a>
+      - Pagination associated parameters will be passed to the <code>[onDataBind]</code> callback input property where
+      they can be used to fetch the target page associated data accordingly. Refer relevant data binding documentation
+      for more information.
+    </li>
+  </ul>
+
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/data-table/advanced/translations']">Translations</a><br />
-  <a [routerLink]="['/feature/data-table/templating/no-records-template']">No Records Template</a><br />
-  <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Column Filtering</a><br />
+
+  <a [routerLink]="['/feature/data-table/advanced/translations']">Translations</a><br/>
+  <a [routerLink]="['/feature/data-table/templating/no-records-template']">No Records Template</a><br/>
+  <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Column Filtering</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#pageable">API Doc for Data Table Pagination</a>
 </div>
