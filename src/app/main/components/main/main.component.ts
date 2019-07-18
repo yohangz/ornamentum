@@ -223,24 +223,6 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/functionality/row/grouping',
-              title: 'Row Grouping',
-              navigation: [
-                {
-                  title: 'What You Will See',
-                  anchor: 'whatYouWillSee'
-                },
-                {
-                  title: 'Basic Usage',
-                  anchor: 'basicUsage'
-                },
-                {
-                  title: 'Suggested Links',
-                  anchor: 'suggestedLinks'
-                }
-              ]
-            },
-            {
               routePath: '/feature/data-table/functionality/column/filtering',
               title: 'Filtering',
               navigation: [
@@ -393,6 +375,24 @@ export class MainComponent {
                       anchor: 'selectedRows'
                     }
                   ]
+                },
+                {
+                  title: 'Suggested Links',
+                  anchor: 'suggestedLinks'
+                }
+              ]
+            },
+            {
+              routePath: '/feature/data-table/functionality/row/grouping',
+              title: 'Row Grouping',
+              navigation: [
+                {
+                  title: 'What You Will See',
+                  anchor: 'whatYouWillSee'
+                },
+                {
+                  title: 'Basic Usage',
+                  anchor: 'basicUsage'
                 },
                 {
                   title: 'Suggested Links',
