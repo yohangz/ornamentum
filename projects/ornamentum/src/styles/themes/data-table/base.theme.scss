@@ -249,7 +249,7 @@
           cursor: pointer;
           display: block;
 
-          input {
+          .ng-data-table-checkbox-input {
             cursor: pointer;
             margin-right: 0.5rem;
           }
@@ -340,7 +340,7 @@
         }
 
         .ng-data-table-column-header {
-          span {
+          .ng-data-table-column-header-label {
             @include font-size(0.7, 1);
 
             &:first-child {
@@ -360,7 +360,7 @@
             border: 0;
             border-right: 0.05rem solid $data-table-content-header-border;
 
-            input {
+            .ng-data-table-header-input {
               @include border-radius($data-table-input-border-radius-value);
               background: $data-table-input-background;
               border: 0.05rem solid $data-table-input-border;

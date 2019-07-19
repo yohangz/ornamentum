@@ -16,7 +16,7 @@
     [class.resizable]="column.resizable"
     [ngClass]="column.cssClass"
   >
-    <span *ngIf="!column.headerTemplate" [textContent]="column.title"></span>
+    <span *ngIf="!column.headerTemplate" [textContent]="column.title" class="ng-data-table-column-header-label"></span>
     <ng-container *ngIf="column.headerTemplate" [ngTemplateOutlet]="column.headerTemplate" [ngTemplateOutletContext]="{ column: column }">
     </ng-container>
     <span class="ng-data-table-column-sort-icon" [hidden]="!column.sortable" [ngClass]="column.getSortIconClass()"></span>
