@@ -17,9 +17,6 @@ export class MainMenuComponent {
   public Theme = Theme;
   public packageVersion: string;
 
-  @ViewChild('menuElement', { static: true })
-  public menuElement: ElementRef;
-
   @Input()
   public selectedTheme: Theme;
 

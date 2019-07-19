@@ -1,6 +1,6 @@
 <div class="ng-dropdown-search">
   <div class="ng-dropdown-input-group">
-    <span class="ng-dropdown-input-group-addon" id="sizing-addon3"></span>
+    <span class="ng-dropdown-input-group-addon"></span>
     <input
       type="text"
       class="ng-dropdown-input"
@@ -9,7 +9,7 @@
       (keyup)="filterKeyUp()"
       [(ngModel)]="dataStateService.filterText"
     />
-    <span class="ng-dropdown-input-group-btn" *ngIf="dataStateService.filterText">
+    <span class="ng-dropdown-input-group-btn" [hidden]="!dataStateService.filterText">
       <button class="ng-dropdown-delete-button" type="button" (click)="clearFilter()"></button>
     </span>
   </div>

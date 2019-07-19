@@ -37,7 +37,9 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
    */
   private registerClickOutside(...exclude: HTMLElement[]): void {
     const trackOutsideClick = (event: Event) => {
-      if (!exclude.some(el => el.contains(event.target as HTMLElement))) {
+      if (!exclude.some(el => {
+        return el.contains(event.target as HTMLElement);
+      })) {
         this.hide();
       }
     };
@@ -52,7 +54,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
    * @param options Component loader options
    */
   private setPosition(parentElement: HTMLElement, options: ComponentLoaderOptions): void {
-    const holderElement = options.relativeParent || this.globalRefService.window.document.documentElement;
+    const holderElement =  options.relativeParent || parentElement;
     const bodyClientRect = holderElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
 
@@ -132,7 +134,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     this.setPosition(parentElement, options);
 
     // 4. Append DOM element to the body
-    (options.relativeParent || this.globalRefService.window.document.body).appendChild(domElem);
+    (options.relativeParent || parentElement).appendChild(domElem);
 
     // Trigger change detection
     this.componentReference.changeDetectorRef.markForCheck();

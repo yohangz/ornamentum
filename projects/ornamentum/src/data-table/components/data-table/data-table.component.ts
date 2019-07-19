@@ -537,16 +537,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Set relative parent element; Table positioning will be handled relative to this element;
-   * Use this to render table in a dynamically positioned container
-   * @param value Relative parent DOM element
-   */
-  @Input()
-  public set relativeParentElement(value: HTMLElement) {
-    this.config.relativeParentElement = value;
-  }
-
-  /**
    * Set translation data object; Used to localize table display text labels
    * @param data Translation data object
    */
@@ -880,9 +870,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    * After component initialize lifecycle event handler
    */
   public ngAfterContentInit(): void {
-    if (!this.config.relativeParentElement) {
-      this.config.relativeParentElement = this.dataTableElement.nativeElement;
-    }
+    this.dataStateService.relativeParentElement = this.dataTableElement.nativeElement;
 
     if (!this.dataStateService.onDataBind) {
       this.dataSource = this.eventStateService.staticDataSourceStream;

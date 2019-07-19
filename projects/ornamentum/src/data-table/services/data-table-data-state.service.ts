@@ -20,6 +20,7 @@ export class DataTableDataStateService {
   public substituteRows: any[] = [];
   public heardReload = false;
 
+  public relativeParentElement: HTMLElement;
   public onFilterValueExtract: DataTableFilterValueExtractCallback;
   public onDataBind: DataTableDataBindCallback<any>;
   public onDynamicRowSpanExtract: DataTableDynamicRowSpanExtractorCallback<any> = () => 1;

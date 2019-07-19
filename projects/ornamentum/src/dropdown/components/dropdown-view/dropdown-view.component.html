@@ -1,10 +1,7 @@
-<div
-  class="ng-dropdown-menu-wrapper"
+<div class="ng-dropdown-menu-wrapper"
   [class.ng-dropdown-item-list]="!this.config.filterable"
   [style.width]="config.menuWidth | ngPx"
-  [style.height]="config.menuHeight | ngPx"
-  (click)="$event.stopPropagation()"
->
+  [style.height]="config.menuHeight | ngPx">
   <div class="ng-dropdown-filter-wrapper" *ngIf="config.filterable">
     <ng-dropdown-filter></ng-dropdown-filter>
   </div>
