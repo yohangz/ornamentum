@@ -1,7 +1,6 @@
 import {
   Component,
   ContentChild,
-  ElementRef,
   EventEmitter,
   forwardRef,
   Injector,
@@ -11,7 +10,6 @@ import {
   Output,
   Renderer2,
   TemplateRef,
-  ViewChild
 } from '@angular/core';
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -73,9 +71,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   public set dropdownOptionGroupHeaderTemplate(value: TemplateRef<any>) {
     this.dataStateService.dropdownOptionGroupHeaderTemplate = value;
   }
-
-  @ViewChild('dropdownElement', { static: true })
-  public dropdownElement: ElementRef<HTMLDivElement>;
 
   // Outputs : Event Handlers
   /**
@@ -139,14 +134,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   public set translations(value: DropdownTranslations) {
     this.config.translations = value;
   }
-
-  /**
-   * Set relative parent element; Dropdown positioning will be handled relative to this element;
-   * Use this to render dropdown in a dynamically positioned container
-   * @param value Relative parent DOM element
-   */
-  @Input()
-  public relativeParentElement: HTMLElement;
 
   /**
    * Selected option track by field; Key to tack selected options uniquely
@@ -426,9 +413,14 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    * Performs dropdown toggle event.
    * @param element Dropdown button element.
    */
-  public toggleDropdown(element: HTMLElement): void {
+  public toggleDropdown(event: MouseEvent, element: HTMLElement): void {
+    const target = event.target as HTMLElement;
+    if (target && target.classList && target.classList.contains('ng-ignore-propagation')) {
+      return;
+    }
+
     this.dataStateService.componentLoaderRef.toggle(DropdownViewComponent, element, this.injector, {
-      relativeParent: this.relativeParentElement || this.dropdownElement.nativeElement,
+      // relativeParent: element,
       position: this.config.menuPosition
     });
 
@@ -436,13 +428,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       this.config.menuWidth = element.offsetWidth * this.config.dynamicWidthRatio;
       this.config.menuHeight = element.offsetWidth * this.config.dynamicHeightRatio;
     }
-  }
-
-  /**
-   * Triggers drop down close event.
-   */
-  public closeDropdown(): void {
-    this.dataStateService.componentLoaderRef.hide();
   }
 
   public get wrapSelectedOptions(): boolean {
@@ -488,9 +473,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   /**
    * Clear selected items.
    */
-  public clearSelectedOptions(event: Event): void {
-    event.stopPropagation();
-
+  public clearSelectedOptions(): void {
     if (this.config.selectMode === 'multi') {
       this.dataStateService.selectedOptions = [];
       this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
@@ -498,8 +481,6 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       this.dataStateService.selectedOption = undefined;
       this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);
     }
-
-    this.closeDropdown();
   }
 
   /**
@@ -686,11 +667,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.eventStateService.dataFetchStream.emit(hardReload);
   }
 
-  public onSelectOptionRemove(event: Event, index: number): void {
-    event.stopPropagation();
+  public onSelectOptionRemove(index: number): void {
     this.dataStateService.selectedOptions.splice(index, 1);
     this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
-
-    this.closeDropdown();
   }
 }

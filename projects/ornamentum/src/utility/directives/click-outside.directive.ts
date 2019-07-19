@@ -1,4 +1,4 @@
-import { Directive, ElementRef, EventEmitter, HostListener, Output } from '@angular/core';
+import { Directive, ElementRef, EventEmitter, HostListener, Output, Input } from '@angular/core';
 
 /**
  * Click outside directive; Notify when clicked on a DOM element out of target DOM tree

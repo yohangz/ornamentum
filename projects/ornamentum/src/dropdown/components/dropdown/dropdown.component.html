@@ -1,19 +1,16 @@
 <div #dropdownElement class="ng-dropdown">
-  <div class="ng-dropdown-toggle" (click)="toggleDropdown(dropdownElement)" [class.disabled]="dataStateService.disabled">
+  <div class="ng-dropdown-toggle" (click)="toggleDropdown($event, dropdownElement)" [class.disabled]="dataStateService.disabled">
     <ng-container *ngIf="config.selectMode === 'multi'">
       <ng-container *ngIf="!wrapSelectedOptions">
         <span
           class="ng-dropdown-selected-value"
           *ngFor="let item of dataStateService.selectedOptions; let index = index"
           [style.max-width]="config.multiSelectOptionMaxWidth | ngPx"
-          [class.ng-dropdown-option-close-enabled]="config.showSelectedOptionRemoveButton"
-        >
+          [class.ng-dropdown-option-close-enabled]="config.showSelectedOptionRemoveButton">
           {{ config.getDisplayText(item) }}
-          <i
-            class="ng-dropdown-remove-selected-value"
+          <i class="ng-dropdown-remove-selected-value ng-ignore-propagation"
             *ngIf="config.showSelectedOptionRemoveButton"
-            (click)="onSelectOptionRemove($event, index)"
-          ></i>
+            (click)="onSelectOptionRemove(index)"></i>
         </span>
       </ng-container>
       <span class="ng-dropdown-selected-item" *ngIf="wrapSelectedOptions">
@@ -32,7 +29,7 @@
       </span>
     </ng-container>
     <span class="ng-dropdown-input-group-btn" [hidden]="!hasSelectedItems" *ngIf="config.showClearSelectionButton">
-      <div class="ng-dropdown-delete-button" (click)="clearSelectedOptions($event)"></div>
+      <div class="ng-dropdown-delete-button ng-ignore-propagation" (click)="clearSelectedOptions()"></div>
     </span>
     <span class="ng-dropdown-down-arrow" *ngIf="!dataStateService.dataLoading"></span>
     <span class="ng-dropdown-loading" [hidden]="!dataStateService.dataLoading">

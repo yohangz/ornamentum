@@ -171,11 +171,6 @@ export interface DataTableConfig {
   selectionColumnWidth?: string | number;
 
   /**
-   * Relative parent HTML element reference to render popup components
-   */
-  relativeParentElement?: HTMLElement;
-
-  /**
    * Data offset value (start offset index); Applicable only when pageable is true
    */
   offset?: number;
