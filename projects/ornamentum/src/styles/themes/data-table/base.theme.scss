@@ -146,6 +146,10 @@
 
   .ng-dropdown-menu-wrapper {
     @include font-size(0.7, 1.2);
+
+    .ng-dropdown-input-group-btn {
+      right: .3em;
+    }
   }
 
   // Top table header styles for the following elements.
