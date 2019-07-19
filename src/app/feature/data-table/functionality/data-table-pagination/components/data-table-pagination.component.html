@@ -14,24 +14,26 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Pagination is disabled by default; hence, it can be enable by setting the <code>[pageable]</code> input property
-    <code>true</code> in <code>&lt;data-table&gt;</code> component. Pagination functionality depends on
+    Pagination is disabled by default. It can be enable by setting the <code>[pageable]</code> input property
+    <code>true</code> in <code>&lt;ng-data-table&gt;</code> component. Pagination functionality depends on
     <code>[page]</code> and <code>[limit]</code> input property values described later in this section.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.pagination"></app-code-snippet>
 
   <h2 id="usefulProperties">Useful Properties</h2>
-
   <p>
-    There are other useful input properties exposed in <code>&lt;data-table&gt;</code> component which can be used to
-    change the default behaviour of the pagination functionality. These property values are applicable only when pagination
-    is enabled.
+    Below listed properties can be used to change the default behaviours of the pagination functionality. These property
+    values are applicable only when pagination is enabled.
   </p>
 
   <h4 id="page">Page</h4>
   <p>
-    <code>page: number</code> &nbsp; <span class="badge badge-pill badge-warning">Default Value: 1</span>
+    <code>page: number</code>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-warning">Default Value: 1</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
   </p>
 
   <p>
@@ -43,7 +45,11 @@
 
   <h4 id="limit">Limit</h4>
   <p>
-    <code>limit: number</code> &nbsp; <span class="badge badge-pill badge-warning">Default Value: 10</span>
+    <code>limit: number</code>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-warning">Default Value: 10</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
   </p>
 
   <p>
