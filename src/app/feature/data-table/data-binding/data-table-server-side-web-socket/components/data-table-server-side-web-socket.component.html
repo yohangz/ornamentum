@@ -21,53 +21,58 @@
     Server side data bind functionality can be integrated via <a rel="noopener" target="_blank"
        href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
     callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
-    data source agnostic. Import <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a> along with
-    <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
+    data source agnostic.
   </p>
-  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.webSocketDataBindingModule"></app-code-snippet>
+
+  <ol>
+    <li>
+      <p>
+        Import <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a> along with
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
+      </p>
+
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.webSocketDataBindingModule"></app-code-snippet>
+    </li>
+    <li>
+      <p>
+        Within the target component use
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/injectables/DataTableWebsocketResourceFactoryService.html">DataTableWebsocketResourceFactoryService</a>
+        to construct an instance of
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
+        class.
+
+        Initialize the the newly created instance of
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
+        by invoking
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#init">init</a>
+        method and call
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#onDataBind">onDataBind</a>
+        to get the data bind callback function reference within
+        <a rel="noopener" target="_blank" href="https://angular.io/api/core/OnInit">ngOnInit</a>
+        lifecycle event handler or component constructor depending on your preference.
+
+        Cleanup resources and destroy the established Web Socket connection by invoking
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#dispose">dispose</a> method on
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
+        instance within  <a rel="noopener" target="_blank" href="https://angular.io/api/core/OnDestroy">ngOnDestroy</a>
+        lifecycle event handler.
+      </p>
+
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.webSocketDataBindingComponent"></app-code-snippet>
+    </li>
+    <li>
+      <p>
+        Set the callback function reference to
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a> data table input property.
+      </p>
+
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.WebSocketDataBindingMarkup"></app-code-snippet>
+    </li>
+  </ol>
 
   <p>
-    Within the target component use
-    <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/injectables/DataTableWebsocketResourceFactoryService.html">DataTableWebsocketResourceFactoryService</a>
-    to construct an instance of
-    <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
-    class.
+    <u>WebSocket server (Your backend WebSocket API) should support following:</u>
   </p>
-  <p>
-    Initialize the the newly created instance of <a rel="noopener" target="_blank"
-     href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
-    by invoking <a rel="noopener" target="_blank"
-     href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#init">init</a>
-    method and call <a rel="noopener" target="_blank"
-     href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#onDataBind">onDataBind</a>
-    to get the data bind callback function reference within
-    <a rel="noopener" target="_blank" href="https://angular.io/api/core/OnInit">ngOnInit</a>
-    lifecycle event handler or component constructor depending on your preference.
-  </p>
-  <p>
-    Cleanup resources and destroy the established Web Socket connection by invoking <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#dispose">dispose</a> method on
-    <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
-    instance within  <a rel="noopener" target="_blank" href="https://angular.io/api/core/OnDestroy">ngOnDestroy</a>
-    lifecycle event handler.
-  </p>
-
-  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.webSocketDataBindingComponent"></app-code-snippet>
-
-
-  <p>
-    Set the callback function reference to <a rel="noopener" target="_blank"
-      href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a> data table input property.
-  </p>
-
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.WebSocketDataBindingMarkup"></app-code-snippet>
-
-  <p>WebSocket server (Your backend WebSocket API) should support following:</p>
-
 
   <ul>
     <li>

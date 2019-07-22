@@ -31,37 +31,48 @@
     Server side data bind functionality can be integrated via <a rel="noopener" target="_blank"
             href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
     callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
-    data source agnostic. Import <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a> along with
-    <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
+    data source agnostic.
   </p>
 
-  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingModule"></app-code-snippet>
+  <ol>
+    <li>
+      <p>
+        Import <a rel="noopener" target="_blank"
+                  href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a> along with
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
+      </p>
+
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingModule"></app-code-snippet>
+    </li>
+    <li>
+      <p>
+        Within the target component use
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/injectables/DataTableHttpResourceFactoryService.html">DataTableHttpResourceFactoryService</a>
+        to construct an instance of
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a>
+        class. Invoke <a rel="noopener" target="_blank"
+                         href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
+        method with the API resource path to get the data bind callback function reference.
+      </p>
+
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingComponent"></app-code-snippet>
+    </li>
+    <li>
+      <p>
+        Set the obtained data bind callback function reference to <a rel="noopener" target="_blank"
+                                                                     href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a> input
+        property of data table.
+      </p>
+
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBindingMarkup"></app-code-snippet>
+    </li>
+  </ol>
 
   <p>
-    Within the target component use
-    <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/injectables/DataTableHttpResourceFactoryService.html">DataTableHttpResourceFactoryService</a>
-    to construct an instance of
-    <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a>
-    class. Invoke <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
-    method with the API resource path to get the data bind callback function reference.
+    <u>Data fetch HTTP request (Your backend REST API)  should support following</u>
   </p>
-
-  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingComponent"></app-code-snippet>
-
-
-  <p>
-    Set the obtained data bind callback function reference to <a rel="noopener" target="_blank"
-        href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a> input
-    property of data table.
-  </p>
-
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBindingMarkup"></app-code-snippet>
-
-  <p>Data fetch HTTP request (Your backend REST API)  should support following:</p>
 
   <ol>
     <li>
