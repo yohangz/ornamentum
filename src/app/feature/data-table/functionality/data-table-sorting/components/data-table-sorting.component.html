@@ -2,18 +2,27 @@
   <h1>Sorting</h1>
 
   <p>
-    Sorting feature allows you to dynamically sort data on initial load and upon user interaction by column header click.
-
-
-    This feature enables column data sorting according to the selected sorting order in specified column fields.
-    Following configuration types are available when working with data table sorting.
+    Data table sorting feature allows the user to order data on initial load and as well as by clicking on the sortable
+    column headers (with sort indicator icon). This feature can be used with all types of data binding technique
+    described in data binding section.
   </p>
 
-  <p>There are 03 types of sorting orders, which are:</p>
+  <p>
+    Ornamentum data table also supports powerful Multi-Column Sorting and Sorting Expressions, which are demonstrated
+    below in detail.
+  </p>
+
+  <p>Three sorting directions are supported:</p>
   <ol class="main-pane-list">
-    <li><b>Ascending</b> : Column data will be sorted in ascending order</li>
-    <li><b>Descending</b> : Column data will be sorted in descending order</li>
-    <li><b>None</b> (default order) : Column data will be displayed in the order of received</li>
+    <li>
+      <b>Ascending</b>: Data rows will be sorted by target column ascending order.
+    </li>
+    <li>
+      <b>Descending</b>: Data will be sorted by target column descending order.
+    </li>
+    <li>
+      <b>None</b> (default order): Data represented in natural order without sorting.
+    </li>
   </ol>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -24,59 +33,61 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Sorting can be enabled by setting the <code>sortable</code> property as <b>true</b>. By default this property
-    will be in <b>false</b> state. Sorting can be perform by clicking on the sorting icon placed on each column heading.
+    Sorting is disabled by default. It can be enable by setting the <code>[sortable]</code> input property
+    <code>true</code> in any target <code>&lt;ng-data-table-column&gt;</code> component.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.sorting"></app-code-snippet>
 
   <p>
-    By default the table does not sort it’s contents. Also there are set of additional properties can be uses with
-    <code>sortable</code> property and those will be explain in next section.
-  </p>
-
-  <p>
-    After enabling the <code>sortable</code> users can simply change the sorting order to any above mention 3 types, by
-    clicking on icon that appears on data table column top right side corner.
+    There are additional input properties which can be used with <code>[sortable]</code> input property to override
+    default behaviors.
   </p>
 
   <h2 id="usefulProperties">Useful Properties</h2>
-
   <p>
-    There are other useful additional properties where the behaviour of the sorting can be applied independently
-    except for <a [routerLink]="['/feature/data-table/functionality/column/sorting']"
-                  [fragment]="'multiColumnSortable'">Multi Column Sortable</a> property.
+    Below listed properties can be used to change the default behaviours of the sorting functionality.
   </p>
 
   <h4 id="sortOrder">Sort Order</h4>
-  <code>sortOrder: string = 'asc' | 'desc' | ''</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: ''</h5>
+  <code>sortOrder: 'asc' | 'desc' | ''</code>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-warning">Default Value: ''</span>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
 
   <p>
-    Using the <code>sortOrder</code> property users can order the data that already fetched or being fetched from a data
-    source. If the sorting order has not been defined by the user, default sorting mechanism will be applied for <code>sortable</code>
-    enabled columns.
+    The default sort order to be applied on initial load can be overridden by setting an explicit sort direction via
+    <code>[sortOder]</code> input property. This value is applicable only when sorting is enabled.
   </p>
 
   <app-sort-order-usage></app-sort-order-usage>
   <app-example-code [files]="sortOrderUsage"></app-example-code>
 
   <h4 id="sortField">Sort Field</h4>
-  <code>sortField: string</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: 'same column field name'</h5>
+  <code>sortField: string</code>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-warning">Default Value: 'same column field name'</span>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
 
   <p>
-    Sort Field can be overridden by providing a different column field name, by default sort field value is same as the
-    column name. Providing a different column name to the <code>sortField</code>, Ornamentum will start sorting
-    according to the provided column's data.
+    Sort Field can be overridden by providing a different column field name which is available in the data source, by
+    default sort field value is same as the column name. However, there can be instances where you should use a
+    different field to sort data (i.e: Use ID field to sort). It is not required to have this field available in
+    data table column list hence, it should be available in data source. This value is applicable only when sorting
+    is enabled.
   </p>
 
   <app-sort-field-usage></app-sort-field-usage>
   <app-example-code [files]="sortFieldUsage"></app-example-code>
 
   <h4 id="multiColumnSortable">Multi Column Sortable</h4>
-  <code>multiColumnSortable: boolean</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
+  <code>multiColumnSortable: boolean</code>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-warning">Default Value: false</span>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
 
   <p>
     Multi column sortable can be used only inside the data table global level configuration. If multi column sortable
