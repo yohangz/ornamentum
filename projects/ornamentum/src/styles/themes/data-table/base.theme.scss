@@ -174,7 +174,7 @@
     border: 0;
     border-bottom: 0.05rem solid $data-table-top-header-border;
     min-height: 2rem;
-    padding: 0 0.5rem;
+    padding: 0 0 0 0.5rem;
     position: relative;
 
     .ng-data-table-top-header-title {
@@ -193,16 +193,20 @@
         &.ng-data-table-refresh-button {
           @extend %table-header-icon;
           background: inline-svg($refresh-icon-url) no-repeat;
-          background-size: contain;
-          height: 1.4em;
+          background-position: 50%;
+          background-size: 60%;
+          height: 2.5em;
           margin-right: 0.5em;
+          width: 2.5em;
         }
 
         &.ng-data-table-column-selector-button {
           @extend %table-header-icon;
           background: inline-svg($list-view-icon-url) no-repeat;
-          background-size: contain;
-          height: 1.4em;
+          background-position: 50%;
+          background-size: 60%;
+          height: 2.5em;
+          width: 2.5em;
         }
 
         &:focus,
