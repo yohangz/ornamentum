@@ -151,4 +151,9 @@ export interface DropdownConfig {
    * Dynamic dropdown options view dimensions calculation height ratio relative to dropdown selector
    */
   dynamicHeightRatio?: number;
+
+  /**
+   * Relative parent element to render dropdown view container.
+   */
+  relativeParentElement: HTMLElement;
 }

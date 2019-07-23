@@ -52,6 +52,7 @@ export class DropdownConfigService implements DropdownConfig {
   public dynamicDimensionCalculation = false;
   public dynamicWidthRatio = 1;
   public dynamicHeightRatio = 0.5;
+  public relativeParentElement = undefined;
 
   constructor(@Inject(DROPDOWN_CONFIG) private dropdownConfig: DropdownConfig) {
     if (dropdownConfig) {

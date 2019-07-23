@@ -381,6 +381,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.config.dynamicHeightRatio = value;
   }
 
+  @Input()
+  public set relativeParentElement(value: HTMLElement) {
+    this.config.relativeParentElement = value;
+  }
+
   constructor(
     private componentLoaderFactory: PopoverComponentLoaderFactoryService,
     private injector: Injector,
@@ -411,6 +416,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Performs dropdown toggle event.
+   * @param event Mouse click event args.
    * @param element Dropdown button element.
    */
   public toggleDropdown(event: MouseEvent, element: HTMLElement): void {
@@ -420,7 +426,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     }
 
     this.dataStateService.componentLoaderRef.toggle(DropdownViewComponent, element, this.injector, {
-      // relativeParent: element,
+      relativeParentElement: this.config.relativeParentElement,
       position: this.config.menuPosition
     });
 
@@ -670,5 +676,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   public onSelectOptionRemove(index: number): void {
     this.dataStateService.selectedOptions.splice(index, 1);
     this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
+  }
+
+  public close(): void {
+    this.dataStateService.componentLoaderRef.hide();
   }
 }

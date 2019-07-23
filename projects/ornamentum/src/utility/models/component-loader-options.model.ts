@@ -6,7 +6,7 @@ import { ViewPosition } from './view-position.model';
 export interface ComponentLoaderOptions {
   floatLeft?: number;
   floatTop?: number;
-  relativeParent?: HTMLElement;
+  relativeParentElement?: HTMLElement;
   closeOnOutsideClick?: boolean;
   context?: any;
   position?: ViewPosition;

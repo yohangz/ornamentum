@@ -1,9 +1,9 @@
-import { Directive, ElementRef, AfterViewInit, NgZone, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, AfterViewInit, NgZone, OnDestroy, Input } from '@angular/core';
 
-import { Subscription } from 'rxjs';
-import { fromEvent } from 'rxjs';
+import { Subscription, fromEvent, Subject } from 'rxjs';
+import { map, pairwise } from 'rxjs/operators';
 
-import { DataTableScrollPositionService } from '../services/data-table-scroll-position.service';
+import { DataTableScrollPoint } from '../models/data-table-scroll-point.model';
 
 /**
  * Scroll position directive; Track current scroll position of target element
@@ -14,19 +14,39 @@ import { DataTableScrollPositionService } from '../services/data-table-scroll-po
 export class ScrollPositionDirective implements AfterViewInit, OnDestroy {
   private scrollEventSubscription: Subscription;
 
-  constructor(private el: ElementRef, private zone: NgZone, private scrollPositionService: DataTableScrollPositionService) {}
+  @Input()
+  public ngScrollPosition: Subject<DataTableScrollPoint>;
+
+  constructor(private el: ElementRef, private zone: NgZone) {}
 
   /**
    * After component initialize lifecycle event handler
    */
   public ngAfterViewInit(): void {
     this.zone.runOutsideAngular(() => {
-      this.scrollEventSubscription = fromEvent(this.el.nativeElement, 'scroll').subscribe(() => {
-        this.scrollPositionService.scrollPositionStream.next({
-          scrollLeft: this.el.nativeElement.scrollLeft,
-          scrollTop: this.el.nativeElement.scrollTop
+      this.scrollEventSubscription = fromEvent(this.el.nativeElement, 'scroll')
+        .pipe(
+          map(() => {
+            return {
+              scrollLeft: this.el.nativeElement.scrollLeft,
+              scrollTop: this.el.nativeElement.scrollTop
+            };
+          }),
+          pairwise(),
+          map((pair: DataTableScrollPoint[]) => {
+            const [ previous, current ] = pair;
+
+            return {
+              scrollLeft: current.scrollLeft,
+              scrollTop: current.scrollTop,
+              isHorizontal: previous.scrollLeft !== current.scrollLeft,
+              isVertical: previous.scrollTop !== current.scrollTop
+            };
+          })
+        )
+        .subscribe((pos: DataTableScrollPoint) => {
+          this.ngScrollPosition.next(pos);
         });
-      });
     });
   }
 
@@ -37,5 +57,7 @@ export class ScrollPositionDirective implements AfterViewInit, OnDestroy {
     if (this.scrollEventSubscription) {
       this.scrollEventSubscription.unsubscribe();
     }
+
+    this.ngScrollPosition.complete();
   }
 }

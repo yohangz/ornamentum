@@ -54,7 +54,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
    * @param options Component loader options
    */
   private setPosition(parentElement: HTMLElement, options: ComponentLoaderOptions): void {
-    const holderElement =  options.relativeParent || parentElement;
+    const holderElement =  options.relativeParentElement || parentElement;
     const bodyClientRect = holderElement.getBoundingClientRect();
     const elementClientRect = parentElement.getBoundingClientRect();
 
@@ -134,7 +134,7 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
     this.setPosition(parentElement, options);
 
     // 4. Append DOM element to the body
-    (options.relativeParent || parentElement).appendChild(domElem);
+    (options.relativeParentElement || parentElement).appendChild(domElem);
 
     // Trigger change detection
     this.componentReference.changeDetectorRef.markForCheck();

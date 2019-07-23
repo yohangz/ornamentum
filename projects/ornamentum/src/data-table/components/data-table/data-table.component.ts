@@ -11,11 +11,12 @@ import {
   AfterContentInit,
   forwardRef,
   ElementRef,
-  ViewChild
+  ViewChild,
+  OnInit
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { Subscription, Observable, of } from 'rxjs';
+import { Subscription, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, switchMap } from 'rxjs/operators';
 
 import get from 'lodash/get';
@@ -37,6 +38,7 @@ import { DataTableUniqueField } from '../../models/data-table-unique-field.model
 
 import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
 import { DataTableStorageMode } from '../../models/data-table-storage-mode.model';
+import { DataTableScrollPoint } from '../../models/data-table-scroll-point.model';
 import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
@@ -69,9 +71,12 @@ import { DataTableResourceService } from '../../services/data-table-resource.ser
     }
   ]
 })
-export class DataTableComponent implements OnDestroy, AfterContentInit, ControlValueAccessor {
+export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, ControlValueAccessor {
   private rowSelectChangeSubscription: Subscription;
   private dataFetchStreamSubscription: Subscription;
+  private scrollPositionSubscription: Subscription;
+
+  public scrollPositionStream = new Subject<DataTableScrollPoint>();
 
   /**
    * Data table column collection
@@ -614,6 +619,7 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
     private eventStateService: DataTableEventStateService,
     private dataTableResourceService: DataTableResourceService<any>,
     public dataStateService: DataTableDataStateService,
+    public scrollPositionService: DataTableScrollPositionService,
     public config: DataTableConfigService
   ) {
     this.storageMode = config.storageMode;
@@ -888,21 +894,6 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
   }
 
   /**
-   * Component destroy lifecycle event handler
-   */
-  public ngOnDestroy(): void {
-    if (this.dataFetchStreamSubscription) {
-      this.dataFetchStreamSubscription.unsubscribe();
-    }
-
-    if (this.rowSelectChangeSubscription) {
-      this.rowSelectChangeSubscription.unsubscribe();
-    }
-
-    this.dataTableResourceService.dispose();
-  }
-
-  /**
    * Reset column sort and filter state
    */
   private clearColumnState(): void {
@@ -981,5 +972,30 @@ export class DataTableComponent implements OnDestroy, AfterContentInit, ControlV
    */
   public get tableWidth(): number {
     return this.config.width || this.dataStateService.tableWidth;
+  }
+
+  public ngOnInit(): void {
+    this.scrollPositionSubscription = this.scrollPositionStream.subscribe((pos: DataTableScrollPoint) => {
+      this.scrollPositionService.scrollPositionStream.next(pos);
+    });
+  }
+
+  /**
+   * Component destroy lifecycle event handler
+   */
+  public ngOnDestroy(): void {
+    if (this.dataFetchStreamSubscription) {
+      this.dataFetchStreamSubscription.unsubscribe();
+    }
+
+    if (this.rowSelectChangeSubscription) {
+      this.rowSelectChangeSubscription.unsubscribe();
+    }
+
+    if (this.scrollPositionSubscription) {
+      this.scrollPositionSubscription.unsubscribe();
+    }
+
+    this.dataTableResourceService.dispose();
   }
 }

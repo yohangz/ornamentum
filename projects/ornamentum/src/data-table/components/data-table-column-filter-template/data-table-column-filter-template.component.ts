@@ -1,15 +1,19 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 
 import { Observable, Subject, Subscription } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 import { DataTableFilterEventArgs } from '../../models/data-table-filter-event-args.model';
 import { DataTableFilterOption } from '../../models/data-table-filter-option.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
+import { DropdownComponent } from '../../../dropdown/components/dropdown/dropdown.component';
 
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
+import { DataTableScrollPositionService } from '../../services/data-table-scroll-position.service';
+import { DataTableScrollPoint } from '../../../data-table/models/data-table-scroll-point.model';
 
 /**
  * Column filter template component; Render column filter template via this component
@@ -30,32 +34,41 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
 
   public filterDataStream = new Subject<DataTableFilterOption[]>();
 
-  private filterValueExtractorSubscription: Subscription;
   private fetchFilterOptionsStreamSubscription: Subscription;
+  private scrollPositionStreamSubscription: Subscription;
+
+  private filterDropdown: DropdownComponent;
 
   constructor(
     public config: DataTableConfigService,
     public dataStateService: DataTableDataStateService,
-    private eventStateService: DataTableEventStateService
+    private eventStateService: DataTableEventStateService,
+    private scrollPositionService: DataTableScrollPositionService
   ) {}
 
   /**
    * Component initialize lifecycle event
    */
   public ngOnInit(): void {
-    if (this.column.showDropdownFilter && this.dataStateService.onFilterValueExtract) {
-      this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream.subscribe(() => {
-        if (this.filterValueExtractorSubscription) {
-          this.filterValueExtractorSubscription.unsubscribe();
-          this.filterValueExtractorSubscription = null;
-        }
+    if (this.column.showDropdownFilter) {
+      this.scrollPositionStreamSubscription = this.scrollPositionService.scrollPositionStream
+        .subscribe((pos: DataTableScrollPoint) => {
+          if (pos.isHorizontal) {
+            this.filterDropdown.close();
+          }
+        });
 
-        this.filterValueExtractorSubscription = this.dataStateService
-          .onFilterValueExtract(this.column)
+      if (this.dataStateService.onFilterValueExtract) {
+        this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream
+          .pipe(
+            switchMap(() => {
+              return this.dataStateService.onFilterValueExtract(this.column);
+            })
+          )
           .subscribe((options: DataTableFilterOption[]) => {
-            setTimeout(() => this.filterDataStream.next(options), 0);
+            setTimeout(() => this.filterDataStream.next(options), 0); // TODO: remove the timeout
           });
-      });
+      }
     }
   }
 
@@ -67,11 +80,15 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
       this.fetchFilterOptionsStreamSubscription.unsubscribe();
     }
 
-    if (this.filterValueExtractorSubscription) {
-      this.filterValueExtractorSubscription.unsubscribe();
+    if (this.scrollPositionStreamSubscription) {
+      this.scrollPositionStreamSubscription.unsubscribe();
     }
 
     this.filterDataStream.complete();
+  }
+
+  public onFilterDropdownInit(filterDropdown: DropdownComponent): void {
+    this.filterDropdown = filterDropdown;
   }
 
   /**
