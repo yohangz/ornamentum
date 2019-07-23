@@ -1,15 +1,16 @@
 <div class="ng-data-table-container" #dataTableElement [class.scrollable]="config.contentHeight">
   <ng-data-table-header *ngIf="config.showHeader" [columns]="columns"> </ng-data-table-header>
-  <div class="ng-data-table-content-container">
+  <div class="ng-data-table-content-container" [ngScrollPosition]="scrollPositionService.scrollPositionStream">
     <div class="ng-data-table-content-header-container" [style.paddingRight]="headerPadding | ngPx">
-      <div class="ng-data-table-content-header" ngScrollElement>
+      <div class="ng-data-table-content-header" [ngScrollElement]="scrollPositionStream">
         <table class="ng-data-table" [style.width]="tableWidth | ngPx" [style.minWidth]="config.minWidth | ngPx">
           <colgroup ngDataTableColGroup [columns]="columns"></colgroup>
           <thead ngDataTableHead [columns]="columns"></thead>
         </table>
       </div>
     </div>
-    <div class="ng-data-table-content" ngScrollPosition [style.height]="config.contentHeight | ngPx" [style.minHeight]="config.minHeight | ngPx">
+    <div class="ng-data-table-content" [ngScrollPosition]="scrollPositionStream"
+         [style.height]="config.contentHeight | ngPx" [style.minHeight]="config.minHeight | ngPx">
       <ng-data-table-loading-spinner [loadingSpinnerTemplate]="loadingSpinnerTemplate" [isLoading]="isLoading" [showOverlay]="true">
       </ng-data-table-loading-spinner>
       <table class="ng-data-table" [style.width]="tableWidth | ngPx" [style.minWidth]="config.minWidth | ngPx" [hidden]="isLoading">

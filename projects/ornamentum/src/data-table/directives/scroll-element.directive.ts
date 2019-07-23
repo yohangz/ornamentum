@@ -1,8 +1,8 @@
-import { AfterViewInit, Directive, ElementRef, OnDestroy } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, Input, OnDestroy } from '@angular/core';
 
-import { Subscription } from 'rxjs';
+import { Subscription, Subject } from 'rxjs';
 
-import { DataTableScrollPositionService } from '../services/data-table-scroll-position.service';
+import { DataTableScrollPoint } from '../models/data-table-scroll-point.model';
 
 /**
  * Scroll element directive; Set scroll position to target element
@@ -13,13 +13,16 @@ import { DataTableScrollPositionService } from '../services/data-table-scroll-po
 export class ScrollElementDirective implements AfterViewInit, OnDestroy {
   private scrollPositionSubscription: Subscription;
 
-  constructor(private el: ElementRef, private scrollPositionService: DataTableScrollPositionService) {}
+  @Input()
+  public ngScrollElement: Subject<DataTableScrollPoint>;
+
+  constructor(private el: ElementRef) {}
 
   /**
    * After component initialize lifecycle event handler
    */
   public ngAfterViewInit(): void {
-    this.scrollPositionSubscription = this.scrollPositionService.scrollPositionStream.subscribe(value => {
+    this.scrollPositionSubscription = this.ngScrollElement.subscribe(value => {
       this.el.nativeElement.scrollLeft = value.scrollLeft;
     });
   }

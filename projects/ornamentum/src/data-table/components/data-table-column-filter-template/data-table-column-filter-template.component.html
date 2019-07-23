@@ -27,6 +27,7 @@
     </div>
     <ng-dropdown
       *ngIf="column.showDropdownFilter"
+      [relativeParentElement]="dataStateService.relativeParentElement"
       [dataSource]="filterDataStream"
       [menuPosition]="column.dropdownFilterMenuPosition"
       [filterable]="column.dropdownFilterSearchable"
@@ -47,6 +48,7 @@
       [dynamicHeightRatio]="column.dropdownFilterDynamicHeightRatio"
       [(ngModel)]="column.filter"
       (selectChange)="filter.emit()"
+      (init)="onFilterDropdownInit($event)"
     >
     </ng-dropdown>
   </ng-container>
