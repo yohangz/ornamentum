@@ -102,9 +102,7 @@ export class DataTableBodyComponent {
    * @param dataRow Data table row
    */
   public onRowInit(dataRow): void {
-    setTimeout(() => {
-      this.eventStateService.rowBindStream.emit(dataRow);
-    });
+    this.eventStateService.rowBindStream.emit(dataRow);
   }
 
   /**
@@ -113,11 +111,9 @@ export class DataTableBodyComponent {
    * @param row Data table row object
    */
   public onCellInit(column: DataTableColumnComponent, row: DataTableRow<any>): void {
-    setTimeout(() => {
-      this.eventStateService.cellBindStream.emit({
-        column,
-        row
-      });
+    this.eventStateService.cellBindStream.emit({
+      column,
+      row
     });
   }
 
