@@ -296,25 +296,25 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set table min height; Used to set overlay height when paging is disabled
+   * Minimum table content height value in pixels; Can be used to set the minimum height of the table content area.
    * @param value Table min height in pixels
    */
   @Input()
-  public set minHeight(value: string | number) {
-    this.config.minHeight = value;
+  public set minContentHeight(value: string | number) {
+    this.config.minContentHeight = value;
   }
 
   /**
-   * Set table min width; Useful to build a mobile responsive grid without scattering data
+   * Minimum table content width value in pixels; Can be used to set the minimum width of the table content area.
    * @param value Table min width in pixels
    */
   @Input()
-  public set minWidth(value: string | number) {
-    this.config.minWidth = value;
+  public set minContentWidth(value: string | number) {
+    this.config.minContentWidth = value;
   }
 
   /**
-   * Set height of the table content; This will enable vertical scrolling
+   * Table content height value in pixels; This configuration can be used to enable table content vertical scrolling for responsive design.
    * @param value Table content height in pixels
    */
   @Input()
