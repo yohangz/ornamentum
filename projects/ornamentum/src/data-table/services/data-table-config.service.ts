@@ -23,8 +23,8 @@ export class DataTableConfigService implements DataTableConfig {
   public showHeader = false;
   public title = '';
   public width = undefined;
-  public minHeight = undefined;
-  public minWidth = undefined;
+  public minContentHeight: string | number = 200;
+  public minContentWidth = undefined;
   public contentHeight = undefined;
   public pageable = false;
   public showIndexColumn = false;

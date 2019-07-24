@@ -58,18 +58,17 @@ export interface DataTableConfig {
   width?: string | number;
 
   /**
-   * Minimum height value in pixels; Can be used to set the min height of the table content with a scroll-x (Horizontal scrolling)
+   * Minimum table content width value in pixels; Can be used to set the minimum width of the table content area.
    */
-  minHeight?: string | number;
+  minContentWidth?: string | number;
 
   /**
-   * Maximum height value in pixels; Can be used to set the min width of the table content with a scroll-x (Horizontal scrolling)
+   * Minimum table content height value in pixels; Can be used to set the minimum height of the table content area.
    */
-  minWidth?: string | number;
+  minContentHeight?: string | number;
 
   /**
-   * Full table content height including title bar, header and pager bar in pixel; Can be used to dynamically set table
-   * height on a full responsive none scroll-y (Vertical scrolling) design
+   * Table content height value in pixels; This configuration can be used to enable table content vertical scrolling for responsive design.
    */
   contentHeight?: string | number;
 
