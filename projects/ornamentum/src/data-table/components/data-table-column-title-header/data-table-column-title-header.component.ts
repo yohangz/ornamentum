@@ -53,6 +53,7 @@ export class DataTableColumnTitleHeaderComponent {
    */
   private sortData(column: DataTableColumnComponent): void {
     if (column.sortable) {
+      const prevSortOrder = column.sortOrder;
       if (column.sortOrder) {
         column.sortOrder = column.getNewSortOrder();
       } else {
@@ -66,6 +67,24 @@ export class DataTableColumnTitleHeaderComponent {
         }
 
         column.sortOrder = 'asc';
+      }
+
+      if (this.config.multiColumnSortable) {
+        if (column.sortOrder === '') {
+          const sortColumns = this.columns.filter(item => item.sortable);
+          sortColumns.forEach((sortColumn: DataTableColumnComponent) => {
+            if (sortColumn !== column && sortColumn.sortPriority > column.sortPriority) {
+              --sortColumn.sortPriority;
+            }
+          });
+
+          column.sortPriority = undefined;
+          --this.dataStateService.currentSortPriority;
+        } else {
+          if (!prevSortOrder) {
+            column.sortPriority = ++this.dataStateService.currentSortPriority;
+          }
+        }
       }
 
       this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);

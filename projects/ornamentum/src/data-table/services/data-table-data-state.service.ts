@@ -19,6 +19,7 @@ export class DataTableDataStateService {
   public dataLoading = true;
   public substituteRows: any[] = [];
   public heardReload = false;
+  public currentSortPriority = 0;
 
   public relativeParentElement: HTMLElement;
   public onFilterValueExtract: DataTableFilterValueExtractCallback;
