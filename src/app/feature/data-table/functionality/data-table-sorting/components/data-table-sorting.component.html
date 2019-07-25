@@ -85,16 +85,27 @@
   <app-sort-field-usage></app-sort-field-usage>
   <app-example-code [files]="sortFieldUsage"></app-example-code>
 
-  <h4 id="multiColumnSortable">Multi Column Sortable</h4>
-  <code>multiColumnSortable: boolean</code>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-warning">Default Value: false</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  <h2 id="multiColumnSortable">Multi Column Sorting</h2>
 
   <p>
-    Multi column sorting functionality can be enabled via this input property. This will change the default sort
-    behavior by allowing the user to sort data based on multiple columns at once depending on the sort priority.
+    Multi column sorting is disabled by default. It can be enabled by setting <code>[multiColumnSortable]</code>
+    input property true in <code>&lt;ng-data-table&gt;</code> component.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.multiColumnSorting"></app-code-snippet>
+
+  <p>
+    This will change the default sort behavior by allowing the user to sort data based on multiple columns at once
+    depending on the sort priority. The sort priority will appear on the column when data table is sorted by more than
+    one column.
+  </p>
+
+  <p>
+    The sort priority can be explicitly configured for sortable columns when multi column sorting mode is enabled. This
+    can be configured via <code>[sortPriority]</code> input property which accepts a positive column sort index integer.
+    Sort priority define the order which shorting should be applied and value of sort priority will appear on table
+    column header when configured. Sort priority is only applicable for sortable columns with an explicit sort order
+    of <code>'asc'</code> or <code>'desc'</code>. Descriptive errors will be thrown when sort priority is miss configured.
   </p>
 
   <app-multi-column-sortable-usage></app-multi-column-sortable-usage>
