@@ -17,7 +17,8 @@
     [field]="'orderMethodType'"
     [title]="'Order Method Type'"
     [sortOrder]="'desc'"
-    [sortable]="true">
+    [sortable]="true"
+    [sortPriority]="1">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
@@ -28,7 +29,8 @@
     [field]="'productLine'"
     [title]="'Product Line'"
     [sortOrder]="'asc'"
-    [sortable]="true">
+    [sortable]="true"
+    [sortPriority]="2">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
@@ -40,6 +42,7 @@
     [title]="'Revenue'"
     [sortOrder]="'asc'"
     [sortable]="true"
+    [sortPriority]="3"
     [width]="120">
   </ng-data-table-column>
   <ng-data-table-column

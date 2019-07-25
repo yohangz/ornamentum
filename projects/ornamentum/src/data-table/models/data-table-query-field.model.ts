@@ -16,14 +16,19 @@ export interface DataTableQueryField {
   sortable: boolean;
 
   /**
-   * Filterable state
-   */
-  filterable: boolean;
-
-  /**
    * Sort order
    */
   sortOrder: DataTableSortOrder;
+
+  /**
+   * Multi column sort priority.
+   */
+  sortPriority: number | undefined;
+
+  /**
+   * Filterable state
+   */
+  filterable: boolean;
 
   /**
    * Filter value

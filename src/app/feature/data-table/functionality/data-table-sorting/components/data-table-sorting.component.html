@@ -41,7 +41,8 @@
 
   <p>
     There are additional input properties which can be used with <code>[sortable]</code> input property to override
-    default behaviors.
+    default behaviors. Ornamentum sorting behavior persist the natural order of data source while ordering data rows
+    with equal target field values.
   </p>
 
   <h2 id="usefulProperties">Useful Properties</h2>
@@ -55,10 +56,11 @@
   <span class="badge badge-pill badge-warning">Default Value: ''</span>
   <span class="pr-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-secondary">Depends On: [sortable]</span>
 
   <p>
-    The default sort order to be applied on initial load can be overridden by setting an explicit sort direction via
-    <code>[sortOder]</code> input property. This value is applicable only when sorting is enabled.
+    The initial sort direction can be overridden via this input property.
   </p>
 
   <app-sort-order-usage></app-sort-order-usage>
@@ -67,16 +69,17 @@
   <h4 id="sortField">Sort Field</h4>
   <code>sortField: string</code>
   <span class="pr-1"></span>
-  <span class="badge badge-pill badge-warning">Default Value: 'same column field name'</span>
+  <span class="badge badge-pill badge-warning">Default Value: 'same column bound field name'</span>
   <span class="pr-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-secondary">Depends On: [sortable]</span>
 
   <p>
-    Sort Field can be overridden by providing a different column field name which is available in the data source, by
-    default sort field value is same as the column name. However, there can be instances where you should use a
-    different field to sort data (i.e: Use ID field to sort). It is not required to have this field available in
-    data table column list hence, it should be available in data source. This value is applicable only when sorting
-    is enabled.
+    The sort field path is used to order the table bound data set upon sort order change. The column bound field path is
+    considered as the default sort field path. The sort Field can be overridden by providing a different field path
+    available in data source. Override this value only when it is required to use a different field path instead of default
+    column field path.
   </p>
 
   <app-sort-field-usage></app-sort-field-usage>
@@ -87,11 +90,11 @@
   <span class="pr-1"></span>
   <span class="badge badge-pill badge-warning">Default Value: false</span>
   <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
   <p>
-    Multi column sortable can be used only inside the data table global level configuration. If multi column sortable
-    is been enabled, data sorting will be processed based on the previously preserved sorting order.
+    Multi column sorting functionality can be enabled via this input property. This will change the default sort
+    behavior by allowing the user to sort data based on multiple columns at once depending on the sort priority.
   </p>
 
   <app-multi-column-sortable-usage></app-multi-column-sortable-usage>

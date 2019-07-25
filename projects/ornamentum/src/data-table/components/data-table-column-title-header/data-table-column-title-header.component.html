@@ -17,6 +17,7 @@
     <span *ngIf="!column.headerTemplate" [textContent]="column.title" class="ng-data-table-column-header-label"></span>
     <ng-container *ngIf="column.headerTemplate" [ngTemplateOutlet]="column.headerTemplate" [ngTemplateOutletContext]="{ column: column }">
     </ng-container>
+    <span *ngIf="config.multiColumnSortable && column.sortPriority">{{column.sortPriority}}</span>
     <span class="ng-data-table-column-sort-icon" [hidden]="!column.sortable" [ngClass]="column.getSortIconClass()"></span>
     <span class="ng-data-table-column-resize-handle" *ngIf="column.resizable" (mousedown)="onColumnResize($event, column, columnHeader)"> </span>
   </th>

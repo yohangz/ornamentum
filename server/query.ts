@@ -20,6 +20,7 @@ export const queryDataByFieldExpression = (data: any[], offset: number = 0, limi
       orders: []
     };
 
+    const sortFields = [];
     forOwn(
       fields,
       (value: string, key: string): void => {
@@ -27,9 +28,8 @@ export const queryDataByFieldExpression = (data: any[], offset: number = 0, limi
           return;
         }
 
-        const fieldPair = value.split('|');
+        const [ filterValue, sortOrder, sortPriority ] = value.split('|');
 
-        const filterValue = fieldPair[0];
         if (filterValue !== '') {
           filters.push({
             field: key,
@@ -37,13 +37,24 @@ export const queryDataByFieldExpression = (data: any[], offset: number = 0, limi
           });
         }
 
-        const sortOrder = fieldPair[1];
         if (sortOrder) {
-          sort.fields.push(key);
-          sort.orders.push(sortOrder);
+          sortFields.push({
+            key,
+            sortOrder,
+            sortPriority
+          });
         }
       }
     );
+
+    if (sortFields.length) {
+      sortFields.sort((a, b) => {
+        return a.sortPriority - b.sortPriority;
+      }).map((sortField) => {
+        sort.fields.push(sortField.key);
+        sort.orders.push(sortField.sortOrder);
+      });
+    }
 
     if (filters.length) {
       result = result.filter(item => {
@@ -107,7 +118,14 @@ export const queryDataByFieldCollection = (
     });
 
     if (sortColumns.length) {
-      const orderData = sortColumns.reduce(
+      let orderedSortColumns = sortColumns;
+      if (sortColumns.length > 1) {
+        orderedSortColumns = sortColumns.sort((a, b) => {
+          return a.sortPriority - b.sortPriority;
+        });
+      }
+
+      const orderData = orderedSortColumns.reduce(
         (accumulator: any, column: DataTableQueryField) => {
           if (accumulator) {
             accumulator.fields.push(column.field);
