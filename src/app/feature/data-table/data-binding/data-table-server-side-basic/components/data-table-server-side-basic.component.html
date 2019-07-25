@@ -58,6 +58,14 @@
       </p>
 
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingComponent"></app-code-snippet>
+        <p>
+          or else you can write your own custom data provider without using getResourceProvider in DataTableHttpResourceFactoryService service .
+          <br>
+          The custom data provider needs to return a function which is supposed to be returned object as Observable.
+          <br>
+          As long as your data return as observable you can use any data sources such as Firebase Realtime Database or Cloud Firestore.
+        </p>
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideCustomDataProviderComponent"></app-code-snippet>
     </li>
     <li>
       <p>

@@ -21,6 +21,7 @@ export const serverSideBasicUsage: ExampleFile[] = [
 export const demoSnippet: any = {
   serverSideDataBindingModule: require('!!raw-loader!./docs/server-side-data-binding-module.md'),
   serverSideDataBindingComponent: require('!!raw-loader!./docs/server-side-data-binding-component.md'),
+  serverSideCustomDataProviderComponent: require('!!raw-loader!./docs/server-side-custom-data-provider.md'),
   serverSideDataBindingMarkup: require('!!raw-loader!./docs/server-side-data-binding-markup.md'),
   serverSideRequest: require('!!raw-loader!./docs/server-side-request.md'),
 };
