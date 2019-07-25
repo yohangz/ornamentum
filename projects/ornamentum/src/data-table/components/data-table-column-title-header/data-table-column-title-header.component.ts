@@ -173,4 +173,8 @@ export class DataTableColumnTitleHeaderComponent {
   public get showAllRowSelectCheckbox(): boolean {
     return this.config.selectMode === 'multi' && this.config.showRowSelectAllCheckbox;
   }
+
+  public showSortPriorityLabel(column: DataTableColumnComponent): boolean {
+    return !!(this.config.multiColumnSortable && this.dataStateService.currentSortPriority > 1 && column.sortPriority);
+  }
 }
