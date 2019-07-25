@@ -385,24 +385,6 @@ export class MainComponent {
                   anchor: 'suggestedLinks'
                 }
               ]
-            },
-            {
-              routePath: '/feature/data-table/functionality/row/grouping',
-              title: 'Row Grouping',
-              navigation: [
-                {
-                  title: 'What You Will See',
-                  anchor: 'whatYouWillSee'
-                },
-                {
-                  title: 'Basic Usage',
-                  anchor: 'basicUsage'
-                },
-                {
-                  title: 'Suggested Links',
-                  anchor: 'suggestedLinks'
-                }
-              ]
             }
           ]
         },
@@ -884,6 +866,24 @@ export class MainComponent {
             {
               routePath: '/feature/data-table/experimental/column/resizing',
               title: 'Column Resizing',
+              navigation: [
+                {
+                  title: 'What You Will See',
+                  anchor: 'whatYouWillSee'
+                },
+                {
+                  title: 'Basic Usage',
+                  anchor: 'basicUsage'
+                },
+                {
+                  title: 'Suggested Links',
+                  anchor: 'suggestedLinks'
+                }
+              ]
+            },
+            {
+              routePath: '/feature/data-table/experimental/row/grouping',
+              title: 'Row Grouping',
               navigation: [
                 {
                   title: 'What You Will See',
