@@ -103,5 +103,6 @@ export const serverSideMultiColumnSortableUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  sorting: require('!!raw-loader!./docs/sorting.md')
+  sorting: require('!!raw-loader!./docs/sorting.md'),
+  multiColumnSorting: require('!!raw-loader!./docs/multi-column-sorting.md')
 };

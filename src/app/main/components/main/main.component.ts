@@ -199,12 +199,12 @@ export class MainComponent {
                     {
                       title: 'Sort Field',
                       anchor: 'sortField'
-                    },
-                    {
-                      title: 'Multi Column Sortable',
-                      anchor: 'multiColumnSortable'
                     }
                   ]
+                },
+                {
+                  title: 'Multi Column Sortable',
+                  anchor: 'multiColumnSortable'
                 },
                 {
                   title: 'Server-side Column Sorting',
