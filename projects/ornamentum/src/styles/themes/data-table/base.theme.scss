@@ -543,6 +543,29 @@
     }
   }
 
+  // Data Table Column Sort Priority Icon
+
+  .ng-data-table-column-sort-priority {
+    @include justify-content(center);
+    @include align-items(center);
+    background: $data-table-column-priority-icon-color;
+    border-radius: 50%;
+    bottom: .5em;
+    display: inline-flex;
+    height: 1.5em;
+    position: absolute;
+    right: 1.7em;
+    width: 1.5em;
+
+    small {
+      color: $data-table-column-priority-text-color;
+    }
+
+    ~ .ng-data-table-column-header-label {
+      padding-right: 1.8rem;
+    }
+  }
+
   // Data table sorting icons styles
   // Ascending icon styles
   // Descending icon styles
