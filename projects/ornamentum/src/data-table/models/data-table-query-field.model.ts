@@ -23,7 +23,7 @@ export interface DataTableQueryField {
   /**
    * Multi column sort priority.
    */
-  sortPriority: number | undefined;
+  sortPriority: number;
 
   /**
    * Filterable state
