@@ -1,14 +1,25 @@
 <ng-data-table
   [title]="'Sales Products'"
-  [items]="items"
   [minContentWidth]="900"
+  [limit]="10"
   [pageable]="true"
   [showHeader]="true"
-  [showColumnSelector]="true">
+  [showColumnSelector]="true"
+  [onFilterValueExtract]="onFilterValueExtract"
+  [onDataBind]="onDataBind">
+<!--  <ng-data-table-column-->
+<!--    [field]="'name'"-->
+<!--    [title]="'ID'"-->
+<!--    [filterable]="true"-->
+<!--    [width]="80">-->
+<!--  </ng-data-table-column>-->
   <ng-data-table-column
-    [field]="'id'"
-    [title]="'ID'"
-    [width]="50">
+    [field]="'orderMethodType'"
+    [title]="'orderMethodType'"
+    [dropdownFilterMenuPosition]="'bottom-right'"
+    [filterable]="true"
+    [showDropdownFilter]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
@@ -24,23 +35,12 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
-    [title]="'Product Type'"
-    [width]="100">
-    <ng-template #ngDataTableCell let-row="row">
-      <td style="color: #4dc71f;font-style: oblique">
-        <span>{{row.item.productType}}</span>
-      </td>
-    </ng-template>
+    [title]="'Product Type'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'revenue'"
     [title]="'Revenue'"
     [width]="120">
-    <ng-template #ngDataTableCell let-row="row">
-        <td>
-          <span>{{row.item.revenue | number:'3.2-5'}}</span>
-        </td>
-    </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
@@ -50,6 +50,7 @@
   <ng-data-table-column
     [field]="'grossMargin'"
     [title]="'Gross Margin'"
-    [width]="120">
+    [width]="100">
   </ng-data-table-column>
+
 </ng-data-table>
