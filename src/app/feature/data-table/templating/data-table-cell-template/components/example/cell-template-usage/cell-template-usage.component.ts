@@ -14,4 +14,5 @@ export class CellTemplateUsageComponent {
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchStaticData();
   }
+
 }

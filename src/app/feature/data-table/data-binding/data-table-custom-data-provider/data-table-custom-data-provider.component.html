@@ -1,0 +1,88 @@
+<div class="feature-container">
+  <h1>Custom data provider</h1>
+
+  <p>
+    Ornamentum has provided an optional opinionated service to integrate external data sources. However, you can build a custom data provider depending on your requirement.
+    Custom data provider allow users to bind from any kind of data sources such as Firebase Realtime Database or Cloud Firestore.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-custom-data-provider></app-custom-data-provider>
+  <app-example-code [files]="serverSideBasicUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    Ornamentum provided a way to integrated server side data bind functionality via
+    <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+    callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it data source agnostic.
+    </p>
+  <p>
+    If you refer to <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']" [fragment]="'basicUsage'">Server Side Basic Data Binding</a> and <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket#basicUsage']" [fragment]="'basicUsage'">Server Side Web Socket Data Binding</a> basic usage,
+    getResourceProvider in DataTableHttpResourceFactoryService provides in build method take care of basic server data bind functionality.
+    You can build your own data provider same as <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>  internal data provider.
+  </p>
+
+  <ol>
+    <li>
+      <p>
+        Import <a rel="noopener" target="_blank"
+                  href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a> along with
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
+      </p>
+
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingModule"></app-code-snippet>
+    </li>
+    <li>
+      <p>
+        The custom data provider needs to return a function which is supposed to be returned object as Observable.
+        <br>
+        As long as your data return as observable you can use any data sources such as Firebase Realtime Database or Cloud Firestore.
+      </p>
+
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideCustomDataProviderComponent"></app-code-snippet>
+    </li>
+    <li>
+      <p>
+        Set the obtained data bind callback function reference to <a rel="noopener" target="_blank"
+                                                                     href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a> input
+        property of data table.
+      </p>
+
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.customDataProviderMarkup"></app-code-snippet>
+    </li>
+  </ol>
+
+  <p>
+    You can inspect network traffic of this page with "<code>api.github.com/repos/yohangz/ornamentum/contributors</code>" filter in browser developer tools to
+    understand backend service requests and behaviors for above example.
+  </p>
+
+  <h2 id="customDataProvider">Custom Data Provider</h2>
+
+  <p>
+    Server side data binding is handled via <a rel="noopener" target="_blank"
+                                               href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
+    callback function. Use this callback reference to hook into data bind workflow and provide custom data source. This
+    callback function will get triggered on table initialization and on dynamic data table operations. It
+    receives <a rel="noopener" target="_blank"
+                href="https://ornamentum.app/api-docs/interfaces/DataTableRequestParams.html">DataTableRequestParams</a>
+    argument and expect to return <a rel="noopener" target="_blank"
+                                     href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
+    Observable</a> query result <a rel="noopener" target="_blank"
+                                   href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
+    object stream. Data returned from this callback function will be directly bound to table assuming that it matches
+    the on demand request context.
+  </p>
+
+  <p>
+    Refer <a rel="noopener" target="_blank"
+             href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a> documentation for more details.
+  </p>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web Socket Data Binding</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server Side Basic Data Binding</a>
+</div>
