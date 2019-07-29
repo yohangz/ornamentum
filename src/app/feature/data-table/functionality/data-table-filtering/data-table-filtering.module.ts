@@ -12,9 +12,7 @@ import {
   FilteringDropdownUsageComponent,
   FilteringTextBoxUsageComponent,
   FilteringUsageComponent,
-  DataTableFilteringComponent,
-  ServerSideDropdownFilteringUsageComponent,
-  ServerSideTextBoxFilteringUsageComponent
+  DataTableFilteringComponent
 } from './index';
 
 /**
@@ -25,9 +23,7 @@ import {
     DataTableFilteringComponent,
     FilteringDropdownUsageComponent,
     FilteringTextBoxUsageComponent,
-    FilteringUsageComponent,
-    ServerSideTextBoxFilteringUsageComponent,
-    ServerSideDropdownFilteringUsageComponent
+    FilteringUsageComponent
   ],
   exports: [],
   imports: [
