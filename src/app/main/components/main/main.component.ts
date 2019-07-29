@@ -134,6 +134,28 @@ export class MainComponent {
                   anchor: 'suggestedLinks'
                 }
               ]
+            },
+            {
+              routePath: '/feature/data-table/data-binding/server-side/custom',
+              title: 'Custom data provider',
+              navigation: [
+                {
+                  title: 'What You Will See',
+                  anchor: 'whatYouWillSee'
+                },
+                {
+                  title: 'Basic Usage',
+                  anchor: 'basicUsage'
+                },
+                {
+                  title: 'Custom Data Provider',
+                  anchor: 'customDataProvider'
+                },
+                {
+                  title: 'Suggested Links',
+                  anchor: 'suggestedLinks'
+                }
+              ]
             }
           ]
         },

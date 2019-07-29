@@ -4,11 +4,11 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { DataTableModule } from 'ornamentum';
   
-import { ServerSideHttpUsageComponent } from './server-side-basic-usage.component';
+import { CustomDataProviderComponent } from './custom-data-provider.component';
 
 @NgModule({
- bootstrap: [ServerSideBasicUsageComponent],
- declarations: [ServerSideBasicUsageComponent],
+ bootstrap: [CustomDataProviderComponent],
+ declarations: [CustomDataProviderComponent],
  imports: [
     BrowserModule, 
     HttpClientModule, // Import http client module which is required for server side basic data binding
@@ -16,5 +16,5 @@ import { ServerSideHttpUsageComponent } from './server-side-basic-usage.componen
     DataTableResourceModule.forRoot() // Import data table resource module
   ]
 })
-export class ServerSideBasicUsageModule {
+export class DataTableCustomDataProviderModule {
 }
