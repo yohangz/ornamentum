@@ -6,9 +6,7 @@ import {
   demoSnippet,
   filteringUsage,
   filteringTextBoxUsage,
-  filteringDropdownUsage,
-  serverSideFilteringTextBoxUsage,
-  serverSideFilteringDropdownUsage
+  filteringDropdownUsage
 } from './data-table-filtering.list';
 
 @Component({
@@ -24,6 +22,4 @@ export class DataTableFilteringComponent {
   public filteringUsage = filteringUsage;
   public filteringTextBoxUsage = filteringTextBoxUsage;
   public filteringDropdownUsage = filteringDropdownUsage;
-  public serverSideFilteringTextBoxUsage = serverSideFilteringTextBoxUsage;
-  public serverSideFilteringDropdownUsage = serverSideFilteringDropdownUsage;
 }

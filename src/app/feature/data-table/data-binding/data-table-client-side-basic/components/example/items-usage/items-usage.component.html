@@ -1,45 +1,70 @@
 <ng-data-table
   [title]="'Sales Products'"
-  [items]="items"
   [minContentWidth]="900"
+  [limit]="10"
   [pageable]="true"
   [showHeader]="true"
-  [showColumnSelector]="true">
+  [showColumnSelector]="true"
+  [multiColumnSortable]="true"
+  [items]="items">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [width]="70">
+    [width]="80"
+    [sortable]="true"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
     [title]="'Order Method Type'"
-    [width]="120">
+    [sortable]="true"
+    [filterable]="true"
+    [showDropdownFilter]="true">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
-    [title]="'Retailer Type'">
+    [title]="'Retailer Type'"
+    [showDropdownFilter]="true"
+    [sortable]="true"
+    [filterable]="true">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
-    [title]="'Product Line'">
+    [title]="'Product Line'"
+    [sortable]="true"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
-    [title]="'Product Type'">
+    [title]="'Product Type'"
+    [sortable]="true"
+    [filterable]="true"
+    [showDropdownFilter]="true">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'revenue'"
     [title]="'Revenue'"
+    [sortable]="true"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'"
     [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
+    [sortable]="true"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'"
     [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"
     [title]="'Gross Margin'"
+    [sortable]="true"
+    [filterable]="true"
+    [filterPlaceholder]="'Search'"
     [width]="100">
   </ng-data-table-column>
 </ng-data-table>
