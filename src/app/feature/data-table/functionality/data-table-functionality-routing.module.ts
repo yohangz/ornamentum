@@ -42,20 +42,6 @@ const dataTableFunctionalityRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-row-grouping/data-table-row-grouping.module#DataTableRowGroupingModule',
-    // loadChildren: () => import('./data-table-row-grouping/data-table-row-grouping.module')
-    //   .then((m) => m.DataTableRowGroupingModule),
-    path: 'row/grouping',
-    canActivate: [SeoGuard],
-    data: {
-      seo: {
-        title: 'Ornamentum | Data Table | Functionality | Row | Grouping',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
-      }
-    }
-  },
-  {
     loadChildren: './data-table-filtering/data-table-filtering.module#DataTableFilteringModule',
     // loadChildren: () => import('./data-table-filtering/data-table-filtering.module')
     //   .then((m) => m.DataTableFilteringModule),

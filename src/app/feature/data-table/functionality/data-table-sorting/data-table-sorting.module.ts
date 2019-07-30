@@ -13,9 +13,7 @@ import {
   DataTableSortingComponent,
   MultiColumnSortableUsageComponent,
   SortFieldUsageComponent,
-  SortOrderUsageComponent,
-  ServerSideSingleColumnSortingComponent,
-  ServerSideMultiColumnSortingComponent
+  SortOrderUsageComponent
 } from './index';
 
 /**
@@ -27,9 +25,7 @@ import {
     SortingUsageComponent,
     SortOrderUsageComponent,
     SortFieldUsageComponent,
-    MultiColumnSortableUsageComponent,
-    ServerSideSingleColumnSortingComponent,
-    ServerSideMultiColumnSortingComponent
+    MultiColumnSortableUsageComponent
   ],
   exports: [],
   imports: [

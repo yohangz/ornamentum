@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 
-import { DataTableHttpResourceFactoryService, DataTableDataBindCallback } from 'ornamentum';
+import {
+  DataTableHttpResourceFactoryService,
+  DataTableDataBindCallback,
+  DataTableFilterValueExtractCallback
+} from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
 
@@ -10,9 +14,11 @@ import { ExampleData } from 'helper-models';
 })
 export class ServerSideBasicUsageComponent {
   public onDataBind: DataTableDataBindCallback<ExampleData>;
+  public onFilterValueExtract: DataTableFilterValueExtractCallback;
 
   constructor(private resourceFactory: DataTableHttpResourceFactoryService) {
     const exampleDataResource = resourceFactory.getResourceProvider<ExampleData>();
     this.onDataBind = exampleDataResource.onDataBind('/api/data');
+    this.onFilterValueExtract = exampleDataResource.onFilterValueExtract('/api/data/filter');
   }
 }

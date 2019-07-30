@@ -95,23 +95,9 @@
   <h2 id="customDataProvider">Custom Data Provider</h2>
 
   <p>
-    Server side data binding is handled via <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
-    callback function input property. Use this callback reference to hook into data bind workflow and provide custom
-    data source. This callback function will get triggered on table initialization and on dynamic data table operations. It
-    receives <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/interfaces/DataTableRequestParams.html">DataTableRequestParams</a>
-    argument and expect to return <a rel="noopener" target="_blank"
-       href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
-    Observable</a> query result <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
-    object stream. Data returned from this callback function will be directly bound to table assuming that it matches
-    the on demand request context.
-  </p>
-
-  <p>
-    Refer <a rel="noopener" target="_blank"
-             href="https://ornamentum.app/api-docs/injectables/DataTableWebsocketDataFetchService.html">DataTableWebsocketDataFetchService&lt;T&gt;</a> API documentation for more details.
+    Server side and client side data binding can be implemented via a custom data provider as Ornamentum data sources are
+    fully decoupled from component logic. Please refer
+    <a [routerLink]="['/feature/data-table/data-binding/server-side/custom']">Custom Data Binding</a> for more information.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>

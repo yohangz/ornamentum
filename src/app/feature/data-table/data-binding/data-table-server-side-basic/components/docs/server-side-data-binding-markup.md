@@ -1,4 +1,5 @@
 <ng-data-table
   ...
-  [onDataBind]="onDataBind">
+  [onDataBind]="onDataBind"
+  [onFilterValueExtract]="onFilterValueExtract">
 </ng-data-table>
