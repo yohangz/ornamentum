@@ -72,36 +72,7 @@ export const multiColumnSortableUsage: ExampleFile[] = [
   }
 ];
 
-export const serverSideSingleColumnSortableUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'server-side-single-column-sorting.component.ts',
-    content: require('!!raw-loader!./example/server-side-single-column-sorting/' +
-      'server-side-single-column-sorting.component.ts')
-  },
-  {
-    type: FileType.HTML,
-    name: 'server-side-single-column-sorting.html',
-    content: require('!!raw-loader!./example/server-side-single-column-sorting/' +
-      'server-side-single-column-sorting.component.html')
-  }
-];
-
-export const serverSideMultiColumnSortableUsage: ExampleFile[] = [
-  {
-    type: FileType.TS,
-    name: 'server-side-multi-column-sorting.component.ts',
-    content: require('!!raw-loader!./example/server-side-multi-column-sorting/' +
-      'server-side-multi-column-sorting.component.ts')
-  },
-  {
-    type: FileType.HTML,
-    name: 'server-side-multi-column-sorting.html',
-    content: require('!!raw-loader!./example/server-side-multi-column-sorting/' +
-      'server-side-multi-column-sorting.component.html')
-  }
-];
-
 export const demoSnippet: any = {
-  sorting: require('!!raw-loader!./docs/sorting.md')
+  sorting: require('!!raw-loader!./docs/sorting.md'),
+  multiColumnSorting: require('!!raw-loader!./docs/multi-column-sorting.md')
 };
