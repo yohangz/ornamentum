@@ -1,0 +1,21 @@
+<ng-data-table
+  [title]="'Sales Products'"
+  [limit]="10"
+  [showHeader]="true"
+  [showColumnSelector]="true"
+  [onDataBind]="onDataBind">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [width]="100">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'name'"
+    [title]="'Repo Name'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'owner.login'"
+    [title]="'Owner login'">
+  </ng-data-table-column>
+
+</ng-data-table>
