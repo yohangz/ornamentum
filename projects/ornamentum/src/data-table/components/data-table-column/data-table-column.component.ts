@@ -362,6 +362,22 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
+   * Get current sort state icon css class enabled state
+   * @return Sort order icon css class collection object
+   */
+  public getAriaSort(): any {
+
+    switch (this.sortOrder) {
+      case "asc":
+        return 'ascending';
+      case "desc":
+        return 'descending';
+      default:
+        return 'none';
+    }
+  }
+
+  /**
    * Component destroy lifecycle event handler
    */
   public ngOnDestroy(): void {
