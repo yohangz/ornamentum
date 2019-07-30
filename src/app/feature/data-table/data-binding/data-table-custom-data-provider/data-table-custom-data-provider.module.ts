@@ -6,10 +6,11 @@ import {CustomDataProviderComponent, DataTableCustomDataProviderComponent} from 
 import {FormsModule} from "@angular/forms";
 import {SharedModule} from "../../../../shared/shared.module";
 import {DataTableModule, DataTableResourceModule} from "../../../../../../projects/ornamentum/src";
+import {CustomDataProviderComponentWithMapper} from "./example/custom-data-provider-with-mapper/custom-data-provider.component";
 
 
 @NgModule({
-  declarations: [DataTableCustomDataProviderComponent, CustomDataProviderComponent],
+  declarations: [DataTableCustomDataProviderComponent, CustomDataProviderComponent,CustomDataProviderComponentWithMapper],
   imports: [
     CommonModule,
     DataTableCustomDataProviderRoutingModule,
