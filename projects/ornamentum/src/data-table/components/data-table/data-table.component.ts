@@ -761,26 +761,10 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
         })
         .reduce((acc: DataTableUniqueField[], column: DataTableColumnComponent) => {
           if (column.sortField || column.filterField) {
-            if (column.sortField === column.filterField) {
-              acc.push({
-                field: column.sortField,
-                column
-              });
-            }
-
-            if (column.sortField) {
-              acc.push({
-                field: column.sortField,
-                column
-              });
-            }
-
-            if (column.filterField) {
-              acc.push({
-                field: column.filterField,
-                column
-              });
-            }
+            acc.push({
+              field: column.sortField || column.filterField,
+              column
+            });
           } else {
             acc.push({
               field: column.field,
@@ -805,10 +789,11 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
           return {
             field: uniqueField.field,
             sortable: uniqueField.column.sortable,
-            filterable: uniqueField.column.filterable,
             sortOrder: uniqueField.column.sortOrder,
+            sortPriority: uniqueField.column.sortPriority || uniqueField.column.sortOrder ? 1 : 0,
+            filterable: uniqueField.column.filterable,
             filterValue: filter,
-            filterExpression: uniqueField.column.filterExpression
+            filterExpression: uniqueField.column.filterExpression,
           };
         });
     }

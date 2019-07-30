@@ -9,9 +9,9 @@ import { MultiColumnSortableUsageComponent } from './multi-column-sortable-usage
   bootstrap: [MultiColumnSortableUsageComponent],
   declarations: [MultiColumnSortableUsageComponent],
   imports: [
-      BrowserModule, 
-      DataTableModule.forRoot()
-    ]
+    BrowserModule, 
+    DataTableModule.forRoot()
+  ]
 })
 export class MultiColumnSortableUsageModule {
 }

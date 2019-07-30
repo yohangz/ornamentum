@@ -44,7 +44,7 @@ export class DataTableHttpDataFetchService<T> {
           queryParams = queryParams.set('offset', String(params.offset));
         }
 
-        params.fields.forEach((column: DataTableQueryField, index: number) => {
+        params.fields.forEach((column: DataTableQueryField) => {
           let query = '';
 
           if (column.filterable) {
@@ -58,7 +58,7 @@ export class DataTableHttpDataFetchService<T> {
           }
 
           if (column.sortable && column.sortOrder !== '') {
-            query += `|${column.sortOrder}|${index}`;
+            query += `|${column.sortOrder}|${column.sortPriority}`;
           }
 
           if (query) {
