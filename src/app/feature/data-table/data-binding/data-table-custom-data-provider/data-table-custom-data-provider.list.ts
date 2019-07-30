@@ -18,6 +18,24 @@ export const serverSideBasicUsage: ExampleFile[] = [
   }
 ];
 
+export const serverSideBasicUsageWithMap: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'custom-data-provider.component.ts',
+    content: require('!!raw-loader!./example/custom-data-provider-with-mapper/custom-data-provider.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'custom-data-provider.component.html',
+    content: require('!!raw-loader!./example/custom-data-provider-with-mapper/custom-data-provider.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'custom-data-provider.module.ts',
+    content: require('!!raw-loader!./example/custom-data-provider-with-mapper/custom-data-provider.module.md')
+  }
+];
+
 export const demoSnippet: any = {
   serverSideDataBindingModule: require('!!raw-loader!./docs/server-side-data-binding-module.md'),
   serverSideCustomDataProviderComponent: require('!!raw-loader!./docs/server-side-custom-data-provider.md'),
