@@ -13,6 +13,7 @@ import { DataTableSortOrder } from '../../models/data-table-sort-order.model';
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { ViewPosition } from '../../../utility/models/view-position.model';
+import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
  * Data table column component; Data table columns associated data is captured via this component
@@ -72,7 +73,15 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * Columns sortable if true; Show sort indicator on column title
    */
   @Input()
-  public sortable = false;
+  public sortable: boolean;
+
+  /**
+   * Multi column sort priority. Lowest number will get the height precedence. Usage of same precedence number in multiple columns may lead
+   * to unexpected behaviors. This priority number will be displayed in the column header when multi column sorting is enabled; hence,
+   * consider indexing accordingly.
+   */
+  @Input()
+  public sortPriority: number;
 
   /**
    * Set initial column sort order
@@ -95,13 +104,13 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * Column filterable if true; Show filter options on filter header row when enabled
    */
   @Input()
-  public filterable = false;
+  public filterable: boolean;
 
   /**
    * Column resizeable if true; Show column resize indicator on column right corner
    */
   @Input()
-  public resizable = false;
+  public resizable: boolean;
 
   /**
    * Data item mapping field name
@@ -137,19 +146,19 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * Render column if true; Else include in column selector but not rendered
    */
   @Input()
-  public visible = true;
+  public visible: boolean;
 
   /**
    * Show filed in column selector popup if true
    */
   @Input()
-  public showInColumnSelector = true;
+  public showInColumnSelector = true; // TODO: move to base conf
 
   /**
    * Filter placeholder value; Placeholder text to show on filter text box; Applicable only for none dropdown filter mode
    */
   @Input()
-  public filterPlaceholder = '';
+  public filterPlaceholder: string;
 
   /**
    * Applied filter value on initialize
@@ -280,7 +289,10 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   @Input()
   public dropdownFilterDynamicHeightRatio: number;
 
-  constructor(private dataTableConfigService: DataTableConfigService, private eventStateService: DataTableEventStateService) {
+  constructor(
+    private dataTableConfigService: DataTableConfigService,
+    private eventStateService: DataTableEventStateService,
+    private dataStateService: DataTableDataStateService) {
     // Table column config
     this.sortable = dataTableConfigService.sortable;
     this.currentSortOrder = dataTableConfigService.sortOrder;
@@ -399,5 +411,21 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     }
 
     this.eventStateService.columnBind.emit(this);
+
+    if (this.dataTableConfigService.multiColumnSortable && this.sortable) {
+      if (this.sortOrder === '') {
+        if (this.sortPriority !== undefined) {
+          throw Error('Sort priority should be ignored when multi column sorting is enabled with natural sort order.');
+        }
+      } else {
+        if (this.sortPriority === undefined) {
+          throw Error('Sort priority is required when multi column sorting is enabled with an explicit sort order.');
+        }
+      }
+
+      if (this.dataStateService.currentSortPriority < this.sortPriority) {
+        this.dataStateService.currentSortPriority = this.sortPriority;
+      }
+    }
   }
 }
