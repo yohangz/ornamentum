@@ -59,28 +59,15 @@
   <app-limit-usage></app-limit-usage>
   <app-example-code [files]="limitUsage"></app-example-code>
 
-  <h4 id="dataBindingSupport">Data Binding Support</h4>
+  <h4 id="serverSidePagination">Server Side Pagination</h4>
 
   <p>
-    Pagination functionality works with all types of data binding techniques described in data binding section.
+    Pagination functionality is fully supported by server side date binding approaches out of the box. Please refer
+    <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">server Side Basic Data Binding</a>
+    and
+    <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">server Side WebSocket Data Binding</a>
+    documentation for more information.
   </p>
-
-  <ul>
-    <li>
-      <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a>
-      &amp;
-      <a [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client Side Stream Data Binding</a>
-      - Pagination will be handled within the data table by default.
-    </li>
-    <li>
-      <a [routerLink]="['/feature/data-table/functionality/pagination']">Server Side Basic Data Binding</a>
-      &amp;
-      <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web Socket Data Binding</a>
-      - Pagination associated parameters will be passed to the <code>[onDataBind]</code> callback input property where
-      they can be used to fetch the target page associated data accordingly. Refer relevant data binding documentation
-      for more information.
-    </li>
-  </ul>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
 

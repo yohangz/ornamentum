@@ -85,7 +85,14 @@ export class DataTableResourceService<T> {
           });
 
           if (sortColumns.length) {
-            const orderData = sortColumns.reduce(
+            let orderedSortColumns = sortColumns;
+            if (sortColumns.length > 1) {
+              orderedSortColumns = sortColumns.sort((a, b) => {
+                return a.sortPriority - b.sortPriority;
+              });
+            }
+
+            const orderParams = orderedSortColumns.reduce(
               (accumulator: any, column: DataTableQueryField) => {
                 if (accumulator) {
                   accumulator.fields.push(column.field);
@@ -100,7 +107,7 @@ export class DataTableResourceService<T> {
               }
             );
 
-            result = orderBy(result, orderData.fields, orderData.orders);
+            result = orderBy(result, orderParams.fields, orderParams.orders);
           }
         }
 

@@ -137,7 +137,7 @@ export class MainComponent {
             },
             {
               routePath: '/feature/data-table/data-binding/server-side/custom',
-              title: 'Custom data provider',
+              title: 'Custom Data Binding',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -189,8 +189,8 @@ export class MainComponent {
                   ]
                 },
                 {
-                  title: 'Data Binding Support',
-                  anchor: 'dataBindingSupport'
+                  title: 'Server Side Pagination',
+                  anchor: 'serverSidePagination'
                 },
                 {
                   title: 'Suggested Links',
@@ -221,26 +221,16 @@ export class MainComponent {
                     {
                       title: 'Sort Field',
                       anchor: 'sortField'
-                    },
-                    {
-                      title: 'Multi Column Sortable',
-                      anchor: 'multiColumnSortable'
                     }
                   ]
                 },
                 {
-                  title: 'Server-side Column Sorting',
-                  anchor: 'serverSideColumnSorting',
-                  subNavigation: [
-                    {
-                      title: 'Server-side Single Column Sorting',
-                      anchor: 'serverSideSingleColumnSorting'
-                    },
-                    {
-                      title: 'Server-side Multi Column Sorting',
-                      anchor: 'serverSideMultiColumnSorting'
-                    }
-                  ]
+                  title: 'Multi Column Sortable',
+                  anchor: 'multiColumnSortable'
+                },
+                {
+                  title: 'Server Side Sorting',
+                  anchor: 'serverSideSorting'
                 },
                 {
                   title: 'Suggested Links',
@@ -337,18 +327,8 @@ export class MainComponent {
                   ]
                 },
                 {
-                  title: 'Server-side Column Filter',
-                  anchor: 'serverSideColumnFilter',
-                  subNavigation: [
-                    {
-                      title: 'Server-side Column Filter Text Box',
-                      anchor: 'serverSideColumnFilterTextBox'
-                    },
-                    {
-                      title: 'Server-side Column Filter Dropdown',
-                      anchor: 'serverSideColumnFilterDropdown'
-                    }
-                  ]
+                  title: 'Server Side Filtering',
+                  anchor: 'serverSideFiltering'
                 },
                 {
                   title: 'Suggested Links',
@@ -401,24 +381,6 @@ export class MainComponent {
                       anchor: 'selectedRows'
                     }
                   ]
-                },
-                {
-                  title: 'Suggested Links',
-                  anchor: 'suggestedLinks'
-                }
-              ]
-            },
-            {
-              routePath: '/feature/data-table/functionality/row/grouping',
-              title: 'Row Grouping',
-              navigation: [
-                {
-                  title: 'What You Will See',
-                  anchor: 'whatYouWillSee'
-                },
-                {
-                  title: 'Basic Usage',
-                  anchor: 'basicUsage'
                 },
                 {
                   title: 'Suggested Links',
@@ -906,6 +868,24 @@ export class MainComponent {
             {
               routePath: '/feature/data-table/experimental/column/resizing',
               title: 'Column Resizing',
+              navigation: [
+                {
+                  title: 'What You Will See',
+                  anchor: 'whatYouWillSee'
+                },
+                {
+                  title: 'Basic Usage',
+                  anchor: 'basicUsage'
+                },
+                {
+                  title: 'Suggested Links',
+                  anchor: 'suggestedLinks'
+                }
+              ]
+            },
+            {
+              routePath: '/feature/data-table/experimental/row/grouping',
+              title: 'Row Grouping',
               navigation: [
                 {
                   title: 'What You Will See',

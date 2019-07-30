@@ -183,35 +183,15 @@
 
   <p>Used to provide a filter to see the values matched for specified criteria.</p>
 
-  <h2 id="serverSideColumnFilter">Server-side Column Filter</h2>
+  <h2 id="serverSideFiltering">Server Side Filtering</h2>
 
   <p>
-    This feature enables to perform column data filtering in the server side via Text Box or Dropdown.
+    Filtering functionality is fully supported by server side date binding approaches out of the box. Please refer
+    <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">server Side Basic Data Binding</a>
+    and
+    <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">server Side WebSocket Data Binding</a>
+    documentation for more information.
   </p>
-
-  <h4 id="serverSideColumnFilterTextBox">Server-side Column Filter Text Box</h4>
-
-  <p>
-    Server-side text box filtering can be enabled by simply setting the filterable property as mentioned in the,
-    <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'basicUsage'">Basic Usage</a> section,
-    when <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server-side Data Binding</a> technique is used.
-  </p>
-
-  <p>
-    This feature will enable to perform the same behaviour mentioned in the <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'filterTextBox'">Client-side Filter Text Box</a>, in the server-side.
-  </p>
-
-  <app-server-side-text-box-filtering-usage></app-server-side-text-box-filtering-usage>
-  <app-example-code [files]="serverSideFilteringTextBoxUsage"></app-example-code>
-
-  <h4 id="serverSideColumnFilterDropdown">Server-side Column Filter Dropdown</h4>
-
-  <p>
-    This feature will enable to perform the same behaviour mentioned in the <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'filterDropdown'">Client-side Filter Dropdown</a>, in the server-side.
-  </p>
-
-  <app-server-side-dropdown-filtering-usage></app-server-side-dropdown-filtering-usage>
-  <app-example-code [files]="serverSideFilteringDropdownUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/advanced/events']">Events</a><br>

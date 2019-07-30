@@ -14,6 +14,7 @@
     [class.sortable]="column.sortable"
     [class.resizable]="column.resizable"
     [ngClass]="column.cssClass">
+    <span class="ng-data-table-column-sort-priority" *ngIf="showSortPriorityLabel(column)"><small>{{column.sortPriority}}</small></span>
     <span *ngIf="!column.headerTemplate" [textContent]="column.title" class="ng-data-table-column-header-label"></span>
     <ng-container *ngIf="column.headerTemplate" [ngTemplateOutlet]="column.headerTemplate" [ngTemplateOutletContext]="{ column: column }">
     </ng-container>

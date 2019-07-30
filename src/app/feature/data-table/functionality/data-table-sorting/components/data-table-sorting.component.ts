@@ -8,8 +8,6 @@ import {
   multiColumnSortableUsage,
   sortFieldUsage,
   sortOrderUsage,
-  serverSideSingleColumnSortableUsage,
-  serverSideMultiColumnSortableUsage
 } from './data-table-sorting.list';
 
 @Component({
@@ -26,6 +24,4 @@ export class DataTableSortingComponent {
   public sortOrderUsage = sortOrderUsage;
   public sortFieldUsage = sortFieldUsage;
   public multiColumnSortableUsage = multiColumnSortableUsage;
-  public serverSideSingleColumnSortableUsage = serverSideSingleColumnSortableUsage;
-  public serverSideMultiColumnSortableUsage = serverSideMultiColumnSortableUsage;
 }
