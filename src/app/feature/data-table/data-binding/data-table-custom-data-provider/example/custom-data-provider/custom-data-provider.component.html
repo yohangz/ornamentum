@@ -7,23 +7,18 @@
   [showColumnSelector]="true"
   [onFilterValueExtract]="onFilterValueExtract"
   [onDataBind]="onDataBind">
-<!--  <ng-data-table-column-->
-<!--    [field]="'name'"-->
-<!--    [title]="'ID'"-->
-<!--    [filterable]="true"-->
-<!--    [width]="80">-->
-<!--  </ng-data-table-column>-->
   <ng-data-table-column
-    [field]="'orderMethodType'"
-    [title]="'orderMethodType'"
-    [dropdownFilterMenuPosition]="'bottom-right'"
+    [field]="'id'"
+    [title]="'ID'"
     [filterable]="true"
-    [showDropdownFilter]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
+    [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
-    [title]="'Order Method Type'">
+    [title]="'orderMethodType'"
+    [filterable]="true"
+    [showDropdownFilter]="true"
+    [dropDownFilterShowOptionSelectCheckbox]="true">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
