@@ -15,7 +15,7 @@ import { readFileSync } from 'fs';
 
 import { queryDataByFieldCollection, queryDataByFieldExpression, queryDropdownFilterDataByField } from './server/query';
 
-process.on('uncaughtException', function(exception) {
+process.on('uncaughtException', (exception) => {
   console.log('node process crashed: ', exception);
 });
 

@@ -23,7 +23,6 @@
     [showInColumnSelector]="false"
     [sortable]="true"
     [filterable]="true"
-    [filterPlaceholder]="'Search'"
     [width]="70"
   >
     <ng-template #ngDataTableCell let-row="row">
@@ -41,7 +40,6 @@
     [dropdownFilterShowClearSelectionButton]="true"
     [dropdownFilterSearchable]="true"
     [dropDownFilterShowOptionSelectCheckbox]="true"
-    [filterPlaceholder]="'Search'"
   >
     <ng-template #ngDataTableCell let-row="row">
       <td>
@@ -54,7 +52,6 @@
     [title]="'Gross Margin'"
     [sortable]="true"
     [filterable]="true"
-    [filterPlaceholder]="'Search'"
     [width]="150"
   >
     <ng-template #ngDataTableCell let-row="row">
@@ -71,11 +68,13 @@
     [showDropdownFilter]="true"
     [dropdownFilterShowClearSelectionButton]="true"
     [dropdownFilterSearchable]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true"
-    [filterPlaceholder]="'Search'"
-  >
+    [dropDownFilterShowOptionSelectCheckbox]="true">
   </ng-data-table-column>
-  <ng-data-table-column [field]="'productLine'" [title]="'Product Line'" [sortable]="true" [filterable]="true" [filterPlaceholder]="'Search'">
+  <ng-data-table-column
+    [field]="'productLine'"
+    [title]="'Product Line'"
+    [sortable]="true"
+    [filterable]="true">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
@@ -85,16 +84,25 @@
     [showDropdownFilter]="true"
     [dropdownFilterShowClearSelectionButton]="true"
     [dropdownFilterSearchable]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true"
-  >
+    [dropDownFilterShowOptionSelectCheckbox]="true">
     <ng-template #ngDataTableCell let-row="row">
       <td>
         <span>{{ row.item.productType.toUpperCase() }}</span>
       </td>
     </ng-template>
   </ng-data-table-column>
-  <ng-data-table-column [field]="'revenue'" [title]="'Revenue'" [sortable]="true" [filterable]="true" [filterPlaceholder]="'Search'" [width]="150">
+  <ng-data-table-column
+    [field]="'revenue'"
+    [title]="'Revenue'"
+    [sortable]="true"
+    [filterable]="true"
+    [width]="150">
   </ng-data-table-column>
-  <ng-data-table-column [field]="'quantity'" [title]="'Quantity'" [sortable]="true" [filterable]="true" [filterPlaceholder]="'Search'" [width]="80">
+  <ng-data-table-column
+    [field]="'quantity'"
+    [title]="'Quantity'"
+    [sortable]="true"
+    [filterable]="true"
+    [width]="80">
   </ng-data-table-column>
 </ng-data-table>

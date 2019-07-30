@@ -64,7 +64,7 @@ export class DataTableConfigService implements DataTableConfig {
   public sortable = false;
   public sortOrder: DataTableSortOrder = '';
   public filterable = false;
-  public filterPlaceholder = '';
+  public filterPlaceholder = 'Search';
   public columnResizable = false;
   public columnVisible = true;
   public showDropdownFilter = false;
