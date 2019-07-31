@@ -3,11 +3,11 @@
 
 .home-container {
   %header-background {
-    @include display-flex;
-    @include flex-direction(column);
-    @include justify-content(center);
-    @include align-items(center);
+    align-items: center;
+    display: flex;
     height: 80vh;
+    flex-direction: column;
+    justify-content: center;
     overflow: hidden;
     padding: 2rem;
     position: absolute;
@@ -19,18 +19,18 @@
 
     .background-overlay-sub {
       @extend %header-background;
-      @include transform(skewY(-15deg));
-      @include transform-origin(-5%);
-      @include box-shadow(2px 2px 10px $primary-background);
       background: linear-gradient(-120deg, $background-overlay-gradient-3, $background-overlay-gradient-4);
       border-bottom: 20px solid $background-overlay-gradient-1;
+      box-shadow: 2px 2px 10px $primary-background;
       min-height: 100vh;
+      transform: skewY(-15deg);
+      transform-origin: -5%;
     }
 
     .intro {
-      @include display-flex;
-      @include flex-direction(row);
-      @include justify-content(center);
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
       left: 5%;
       max-width: 600px;
       position: absolute;
@@ -54,13 +54,13 @@
       }
 
       @include breakpoint(max360) {
-        @include transform(scale(0.8));
         top: 40px;
+        transform: scale(0.8);
       }
 
       @include breakpoint(max812) {
-        @include transform(scale(0.7));
         top: 20px;
+        transform: scale(0.7);
       }
 
       .ornamentum-logo {
@@ -87,12 +87,12 @@
 
       .intro-description {
         @include font-size(1.2, 1.8);
-        @include text-shadow(0 0 1px $background-overlay-gradient-4);
         color: $main-nav-bar-active-text;
         font-weight: 300;
         left: 13.5rem;
         letter-spacing: 0.05rem;
         position: absolute;
+        text-shadow: 0 0 1px $background-overlay-gradient-4;
         top: 8rem;
         width: 40rem;
 
@@ -135,27 +135,25 @@
         }
 
         @include breakpoint(max640) {
-          @include transform(scale(0.9));
           left: 2rem;
           top: 18rem;
+          transform: scale(0.9);
           width: 25rem;
         }
 
         @include breakpoint(max480) {
-          @include transform(scale(0.7));
           left: 0;
           top: 20rem;
+          transform: scale(0.7);
           width: 25rem;
         }
 
         .get-started-button {
           @include font-size(1.2, 1.6);
-          @include border-radius(25px);
-          @include box-shadow(2px 2px 5px $background-overlay-gradient-4);
-          @include transition(all 1s ease);
-          @include text-shadow(0 0 3px $background-overlay-gradient-4);
           background: $background-overlay-gradient-1;
           border: 1px solid $background-overlay-gradient-1;
+          border-radius: 25px;
+          box-shadow: 2px 2px 5px $background-overlay-gradient-4;
           color: $primary-text-color;
           cursor: pointer;
           font-weight: 300;
@@ -163,21 +161,21 @@
           outline: 0;
           padding: 0.4rem 3rem;
           text-decoration: none;
+          text-shadow: 0 0 3px $background-overlay-gradient-4;
+          transition: all 1s ease;
 
           &:hover {
-            @include box-shadow(4px 4px 8px $background-overlay-gradient-4);
             background: $background-overlay-gradient-2;
+            box-shadow: 4px 4px 8px $background-overlay-gradient-4;
           }
         }
 
         .git-hub-button {
           @include font-size(1.2, 1.6);
-          @include border-radius(25px);
-          @include box-shadow(2px 2px 5px $background-overlay-gradient-4);
-          @include transition(all 1s ease);
-          @include text-shadow(0 0 1px $side-menu-background);
           background: $primary-text-color;
           border: 1px solid $primary-text-color;
+          border-radius: 25px;
+          box-shadow: 2px 2px 5px $background-overlay-gradient-4;
           color: $background-overlay-gradient-4;
           cursor: pointer;
           font-weight: 300;
@@ -186,10 +184,12 @@
           outline: 0;
           padding: 0.4rem 3rem;
           text-decoration: none;
+          text-shadow: 0 0 1px $side-menu-background;
+          transition: all 1s ease;
 
           &:hover {
-            @include box-shadow(4px 4px 8px $background-overlay-gradient-4);
             background: darken($primary-text-color, 30%);
+            box-shadow: 4px 4px 8px $background-overlay-gradient-4;
           }
         }
       }
@@ -208,18 +208,18 @@
     }
 
     .data-table-inner-container {
-      @include box-shadow(2px 2px 30px $primary-background);
-      @include border-radius(2px);
       background: $background-overlay-gradient-3;
+      border-radius: 2px;
+      box-shadow: 2px 2px 30px $primary-background;
       padding: 1rem;
     }
   }
 
   section {
-    @include display-flex;
-    @include flex-direction(row);
-    @include flex-grow(1);
     border-bottom: 1px solid $side-menu-link-color;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
     padding: 1rem 5rem;
     position: relative;
     z-index: 3;
@@ -245,30 +245,30 @@
     }
 
     @include breakpoint(max767) {
-      @include flex-wrap(wrap);
       display: table;
+      flex-wrap: wrap;
       padding: 1rem 2rem;
     }
 
     h1 {
       @include font-size(2, 2.4);
-      @include text-shadow(0 0 1px $background-overlay-gradient-4);
       color: $background-overlay-gradient-2;
       font-weight: 400;
       margin-bottom: 0;
+      text-shadow: 0 0 1px $background-overlay-gradient-4;
     }
 
     h2 {
       @include font-size(1.2, 1.6);
-      @include text-shadow(0 0 1px $background-overlay-gradient-4);
       color: $main-nav-bar-active-text;
       font-weight: 300;
+      text-shadow: 0 0 1px $background-overlay-gradient-4;
     }
 
     .description-container {
-      @include display-flex;
-      @include flex-direction(column);
-      @include justify-content(center);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .section-image-container,
@@ -386,11 +386,11 @@
 
     .icon-list {
       @include font-size(1, 1.6);
-      @include text-shadow(0 0 1px $background-overlay-gradient-4);
       background: linear-gradient(10deg, $nav-tabs-border-color, $side-menu-link-color);
       border: 1px solid $primary-background;
       color: $main-nav-bar-active-text;
       font-weight: 300;
+      text-shadow: 0 0 1px $background-overlay-gradient-4;
 
       @include breakpoint(max575) {
         margin-bottom: 0.2rem;
@@ -400,7 +400,7 @@
         padding: 1rem;
 
         @include breakpoint(max575) {
-          @include display-flex;
+          display: flex;
         }
 
         .icon-description {
@@ -413,7 +413,7 @@
       }
 
       .data-client-icon {
-        @include text-shadow(0 0 1px $background-overlay-gradient-4);
+        text-shadow: 0 0 1px $background-overlay-gradient-4;
 
         &::before {
           @extend %icon-placement;
@@ -422,7 +422,7 @@
       }
 
       .data-server-icon {
-        @include text-shadow(0 0 1px $background-overlay-gradient-4);
+        text-shadow: 0 0 1px $background-overlay-gradient-4;
 
         &::before {
           @extend %icon-placement;
@@ -431,7 +431,7 @@
       }
 
       .data-realtime-icon {
-        @include text-shadow(0 0 1px $background-overlay-gradient-4);
+        text-shadow: 0 0 1px $background-overlay-gradient-4;
 
         &::before {
           @extend %icon-placement;
@@ -440,7 +440,7 @@
       }
 
       .data-icon {
-        @include text-shadow(0 0 1px $background-overlay-gradient-4);
+        text-shadow: 0 0 1px $background-overlay-gradient-4;
 
         &::before {
           @extend %icon-placement;
@@ -545,13 +545,13 @@
 
       .background-overlay-sub-3 {
         @extend %header-background;
-        @include transform(skewY(-15deg));
-        @include transform-origin(-1%);
         background: linear-gradient(120deg, $background-overlay-gradient-5, $background-overlay-gradient-6);
         left: 0;
         max-height: 875px;
         min-height: 750px;
         top: 90%;
+        transform: skewY(-15deg);
+        transform-origin: -1%;
         z-index: -1;
       }
     }

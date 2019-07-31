@@ -5,9 +5,9 @@
   overflow: hidden;
 
   .page-wrapper {
-    @include display-flex;
-    @include flex-direction(column);
     bottom: 0;
+    display: flex;
+    flex-direction: column;
     left: 0;
     position: fixed;
     right: 0;
@@ -29,8 +29,8 @@
       width: 100%;
 
       .page-wrapper-inner-content {
-        @include display-flex;
         background: $side-menu-background-light;
+        display: flex;
         font-family: $primary-font;
         padding-bottom: 0.2rem;
         position: relative;
