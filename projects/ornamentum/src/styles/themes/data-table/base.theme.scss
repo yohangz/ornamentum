@@ -6,9 +6,9 @@
 // Data table header styles
 // Data table content styles
 .ng-data-table-container {
-  @include border-radius($data-table-container-border-radius-value);
-  @include box-shadow($data-table-container-box-shadow-value);
   border: $data-table-container-border;
+  border-radius: $data-table-container-border-radius-value;
+  box-shadow: $data-table-container-box-shadow-value;
   //overflow: hidden;
   position: relative;
 
@@ -165,14 +165,14 @@
   }
 
   .ng-data-table-top-header-container {
-    @include border-radius($data-table-top-header-border-radius-value);
-    @include display-flex;
-    @include align-items(center);
-    @include justify-content(space-between);
     @include font-size(0.8, 1.4);
+    align-items: center;
     background-color: $data-table-top-header-background;
     border: 0;
+    border-radius:$data-table-top-header-border-radius-value;
     border-bottom: 0.05rem solid $data-table-top-header-border;
+    display: flex;
+    justify-content: space-between;
     min-height: 2rem;
     padding: 0 0 0 0.5rem;
     position: relative;
@@ -184,8 +184,8 @@
     }
 
     .ng-data-table-top-header-button-container {
-      @include display-flex;
-      @include align-items(center);
+      align-items: center;
+      display: flex;
 
       .ng-data-table-action-button {
         border: 0;
@@ -223,10 +223,10 @@
   // Data table column selector button
 
   .ng-data-table-column-selector-wrapper {
-    @include border-radius($data-table-dropdown-border-radius-value);
-    @include box-shadow($data-table-dropdown-box-shadow-value);
     @include font-size(0.8, 1.4);
     background: $data-table-dropdown-background;
+    border-radius: $data-table-dropdown-border-radius-value;
+    box-shadow: $data-table-dropdown-box-shadow-value;
     max-height: 20rem;
     overflow: hidden;
     padding: 0;
@@ -302,11 +302,11 @@
           }
 
           .ng-data-table-input-group-btn {
-            @include transform(translateY(-50%));
             height: 1.3em;
             position: absolute;
             right: 0.2rem;
             top: 50%;
+            transform: translateY(-50%);
             width: 1.3em;
             z-index: 1;
 
@@ -369,8 +369,8 @@
             border-right: 0.05rem solid $data-table-content-header-border;
 
             .ng-data-table-header-input {
-              @include border-radius($data-table-input-border-radius-value);
               background: $data-table-input-background;
+              border-radius: $data-table-input-border-radius-value;
               border: 0.05rem solid $data-table-input-border;
               box-sizing: border-box;
               color: $data-table-input-text-color;
@@ -438,17 +438,17 @@
 
             .ng-data-table-expander-collapsed-icon {
               @extend %table-expand-icon;
-              @include transform(rotate(90deg));
+              transform: rotate(90deg);
             }
 
             .ng-data-table-expander-expanded-icon {
               @extend %table-expand-icon;
-              @include transform(rotate(180deg));
+              transform: rotate(180deg);
             }
 
             .ng-data-table-loading-animation {
-              @include display-flex;
-              @include align-items(center);
+              align-items: center;
+              display: flex;
               height: 100%;
               width: 100%;
             }
@@ -546,13 +546,13 @@
   // Data Table Column Sort Priority Icon
 
   .ng-data-table-column-sort-priority {
-    @include justify-content(center);
-    @include align-items(center);
+    align-items: center;
     background: $data-table-column-priority-icon-color;
     border-radius: 50%;
     bottom: .5em;
     display: inline-flex;
     height: 1.5em;
+    justify-content: center;
     position: absolute;
     right: 1.7em;
     width: 1.5em;
@@ -600,14 +600,14 @@
   // Loading animation styles
 
   .ng-data-table-loading-cover {
-    @include display-flex;
-    @include align-items(center);
-    @include justify-content(center);
+    align-items: center;
     background: $data-table-loading-window-background;
     border: 0;
     border-top: 0.05rem solid $data-table-loading-window-border;
     bottom: 0;
+    display: flex;
     height: 100%;
+    justify-content: center;
     left: 0;
     opacity: 0.8;
     pointer-events: none;
@@ -627,21 +627,21 @@
   // Data table no records found message styles
 
   .ng-data-table-no-records-message-container {
-    @include display-flex;
-    @include align-items(center);
-    @include flex-direction(column);
-    @include justify-content(center);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     height: 100%;
+    justify-content: center;
     position: absolute;
     width: 100%;
 
     .ng-data-table-no-records-message {
-      @include display-flex;
-      @include align-items(center);
-      @include justify-content(center);
-      @include flex-wrap(wrap);
-      @include flex-direction(column);
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
       height: 100%;
+      justify-content: center;
     }
 
     h1,
@@ -659,9 +659,9 @@
 
     .ng-data-table-no-records-message-button {
       @include font-size(0.8, 1.4);
-      @include border-radius($data-table-no-records-button-border-radius-value);
       background: $data-table-no-records-button-background;
       border: 0.1rem solid $data-table-no-records-button-border;
+      border-radius: $data-table-no-records-button-border-radius-value;
       color: $data-table-no-records-button-text-color;
       cursor: pointer;
       font-weight: 700;
@@ -691,14 +691,14 @@
   }
 
   .ng-data-table-pagination-container {
-    @include display-flex;
     @include font-size(0.7, 1.4);
-    @include justify-content(space-between);
-    @include border-radius($data-table-pagination-border-radius-value);
     background: $data-table-pagination-background;
     border: 0;
-    border-top: 0.05rem solid $data-table-pagination-border;
     border-bottom: 0.05rem solid $data-table-pagination-border;
+    border-radius: $data-table-pagination-border-radius-value;
+    border-top: 0.05rem solid $data-table-pagination-border;
+    display: flex;
+    justify-content: space-between;
     margin-bottom: -0.05rem;
     margin-top: -0.05rem;
     padding: 0.5rem;
@@ -708,9 +708,9 @@
     }
 
     .ng-data-table-pagination-range {
-      @include display-flex;
-      @include align-items(center);
+      align-items: center;
       color: $data-table-pagination-range-text-color;
+      display: flex;
 
       span {
         color: $data-table-pagination-range-value-text-color;
@@ -719,9 +719,9 @@
     }
 
     .ng-data-table-pagination-controllers {
-      @include display-flex;
       @include font-size(0.7, 1.4);
-      @include justify-content(space-between);
+      display: flex;
+      justify-content: space-between;
 
       &.sm-controllers {
         width: 100%;
@@ -731,8 +731,8 @@
         margin-right: 2.5rem;
 
         .ng-data-table-pagination-input-container {
-          @include display-flex;
-          @include align-items(stretch);
+          align-items: stretch;
+          display: flex;
           height: 1.4rem;
           position: relative;
           width: 100%;
@@ -755,10 +755,10 @@
 
       .ng-data-table-pagination-input-label {
         @extend %form-styles;
-        @include display-flex;
-        @include align-items(center);
+        align-items: center;
         border: 0;
         color: $data-table-pagination-input-label-text-color;
+        display: flex;
         margin-bottom: 0;
         padding: 0.375rem 0.75rem;
         text-align: center;
@@ -770,8 +770,8 @@
       }
 
       .ng-data-table-pagination-pages {
-        @include display-flex;
-        @include justify-content(space-between);
+        display: flex;
+        justify-content: space-between;
 
         .ng-data-table-pagination-input-container {
           height: 1.4rem;
@@ -786,20 +786,20 @@
         }
 
         .ng-data-table-action-button {
-          @include align-items(center);
-          @include border-radius($data-table-pagination-action-button-border-radius-value);
           @include font-size(0.7, 0.8);
-          @include display-flex;
-          @include justify-content(center);
-          @include transition(0.5s all ease);
+          align-items: center;
           background-color: $data-table-pagination-action-button-background;
           border: 0.05rem solid $data-table-pagination-action-button-border;
+          border-radius: $data-table-pagination-action-button-border-radius-value;
           cursor: pointer;
+          display: flex;
           height: 1.4rem;
+          justify-content: center;
           margin-right: 0.5rem;
           outline: none;
           padding: 0;
           position: relative;
+          transition: all 0.5s ease ;
           width: 1.4rem;
 
           &[disabled] {
@@ -895,8 +895,8 @@
           margin-right: 0.5rem;
 
           .ng-data-table-pagination-input-container {
-            @include display-flex;
-            @include align-items(stretch);
+            align-items: stretch;
+            display: flex;
             height: 1.4rem;
             position: relative;
             width: 100%;
@@ -908,9 +908,9 @@
           }
 
           .ng-data-table-pagination-input {
-            @include display-flex;
-            @include align-items(center);
-            @include flex(1 1 auto);
+            align-items: center;
+            display: flex;
+            flex: 1 1 auto;
             margin-bottom: 0;
             min-width: 2.5rem;
             position: relative;

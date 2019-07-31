@@ -104,7 +104,6 @@
     "bootstrap": "^4.3.0",
     "code-prettify": "^0.1.0",
     "color-themes-for-google-code-prettify": "^2.0.4",
-    "compass-mixins": "^0.12.10",
     "express": "^4.16.4",
     "lodash": "^4.17.11",
     "rxjs": "^6.5.2",

@@ -19,14 +19,14 @@
     visibility: hidden;
 
     &.expanded {
-      @include transition(all 200ms ease-in);
       left: 0;
+      transition: all 200ms ease-in;
       visibility: visible;
     }
 
     &.collapsed {
-      @include transition(all 200ms ease-out);
       left: -250px;
+      transition: all 200ms ease-in;
       visibility: hidden;
     }
 
@@ -40,13 +40,13 @@
       width: 100%;
 
       &.expanded {
-        @include transition(opacity 200ms ease-in);
         opacity: 0.5;
+        transition: opacity 200ms ease-in;
       }
 
       &.collapsed {
-        @include transition(opacity 200ms ease-out);
         opacity: 0;
+        transition: opacity 200ms ease-out;
       }
     }
   }
@@ -103,8 +103,8 @@
     }
 
     &::-webkit-scrollbar-thumb {
-      @include border-radius(0);
       background-color: $scroll-bar-color;
+      border-radius: 0;
       opacity: 0.5;
     }
 
@@ -146,17 +146,17 @@
 
       .sub-menu-item-container {
         &.expanded {
-          @include transition(visibility 0.5s, opacity 0.5s, max-height 0.5s ease-in-out);
           max-height: 4000px;
           opacity: 1;
+          transition: visibility 0.5s, opacity 0.5s, max-height 0.5s ease-in-out;
           visibility: visible;
         }
 
         &.collapsed {
-          @include transition(visibility 275ms, opacity 275ms, max-height 280ms ease-out);
           max-height: 0;
           opacity: 0;
           overflow: hidden;
+          transition: visibility 275ms, opacity 275ms, max-height 280ms ease-out;
           visibility: hidden;
         }
 

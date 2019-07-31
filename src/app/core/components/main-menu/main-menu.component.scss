@@ -2,8 +2,8 @@
 @import '../../../styles/mixins';
 
 .navbar {
-  @include box-shadow(1px 2px 3px $main-menu-box-shadow);
   background: $nav-bar-background;
+  box-shadow: 1px 2px 3px $main-menu-box-shadow;
   flex-wrap: nowrap;
   font-family: $primary-font;
   height: 56px;
@@ -30,7 +30,6 @@
   }
 
   .app-name-lg {
-    @include transition(0.5s all ease);
     background: url('../../../../assets/images/ornamentum.svg') no-repeat;
     background-size: 100% 100%;
     display: inline-block;
@@ -38,6 +37,7 @@
     padding-top: 0;
     position: relative;
     top: 0;
+    transition: 0.5s all ease;
     width: 10rem;
 
     @include breakpoint(max991) {
@@ -103,10 +103,10 @@
 
           &:hover {
             > .theme-selector-container {
-              @include display-flex;
-              @include transition(all 0.3s ease);
-              @include scale(1);
+              display: flex;
+              transform: scale(1);
               height: 50px;
+              transition: all 0.3s ease;
               width: 170px;
 
               span {
@@ -169,16 +169,16 @@
       }
 
       .theme-selector-container {
-        @include box-shadow(1px 2px 3px $nav-bar-background);
-        @include justify-content(center);
-        @include transition(all 0.2s ease);
-        @include scale(0);
         background: $nav-bar-background;
+        box-shadow: 1px 2px 3px $nav-bar-background;
         height: 0;
+        justify-content: center;
         padding: 1rem 0;
         position: absolute;
         right: 0;
         top: 8px;
+        transform: scale(0);
+        transition: all 0.2s ease;
         width: 0;
         z-index: 12;
 
@@ -192,8 +192,8 @@
           }
 
           span {
-            @include border-radius(50%);
             border: 0;
+            border-radius: 50%;
             height: 0;
             position: absolute;
             width: 0;
@@ -219,9 +219,6 @@
             }
 
             &::before {
-              @include transform(rotate(45deg));
-              @include transform-origin(0);
-              @include transition(width 50ms ease 50ms);
               background: $theme-selector-background;
               border-radius: 2px;
               content: '';
@@ -229,13 +226,13 @@
               left: 4px;
               position: absolute;
               top: 10px;
+              transform: rotate(45deg);
+              transform-origin: 0;
+              transition: width 50ms ease 50ms;
               width: 0;
             }
 
             &::after {
-              @include transform(rotate(305deg));
-              @include transform-origin(0);
-              @include transition(width 50ms ease);
               background: $theme-selector-background;
               border-radius: 2px;
               content: '';
@@ -243,6 +240,9 @@
               left: 8px;
               position: absolute;
               top: 16px;
+              transform: rotate(305deg);
+              transform-origin: 0;
+              transition: width 50ms ease;
               width: 0;
             }
           }
@@ -251,12 +251,12 @@
             a {
               span {
                 &::after {
-                  @include transition(width 150ms ease 100ms);
+                  transition: width 150ms ease 100ms;
                   width: 13px;
                 }
 
                 &::before {
-                  @include transition(width 150ms ease 100ms);
+                  transition: width 150ms ease 100ms;
                   width: 8px;
                 }
               }
@@ -268,8 +268,8 @@
 
     &.active {
       .nav-link {
-        @include box-shadow(inset 0 1px 2px rgba(0, 0, 0, 0.1));
         border-bottom: 5px solid $primary-text-color;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
         color: $main-nav-bar-active-text;
         display: block;
         margin: 0;

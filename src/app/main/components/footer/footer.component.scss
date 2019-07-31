@@ -8,8 +8,8 @@ footer {
 
   h3 {
     @include font-size(1.1, 1.6);
-    @include text-shadow(0 0 1px $background-overlay-gradient-4);
     color: $background-overlay-gradient-1;
+    text-shadow: 0 0 1px $background-overlay-gradient-4;
     text-transform: uppercase;
   }
 
