@@ -10,12 +10,26 @@
     [width]="100">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'name'"
-    [title]="'Repo Name'">
+    [field]="'avatar_url'"
+    [title]="'Avatar'">
+    <ng-template #ngDataTableCell let-row="row">
+      <td>
+        <img style="width: 48px; height: 48px; border-radius: 50%" [src]="row.item.avatar_url"/>
+      </td>
+    </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'owner.login'"
-    [title]="'Owner login'">
+    [field]="'login'"
+    [title]="'login'">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'html_url'"
+    [title]="'Git Profile'">
+    <ng-template #ngDataTableCell let-row="row">
+      <td>
+        <a  [href]="row.item.html_url">{{row.item.html_url}}</a>
+      </td>
+    </ng-template>
   </ng-data-table-column>
 
 </ng-data-table>
