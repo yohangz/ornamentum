@@ -6,12 +6,25 @@ import { map } from "rxjs/operators";
 
 import { DataTableRequestParams } from 'ornamentum';
 
+export interface CustomDataTableQueryResult<T> {
+  /**
+   * Items collection
+   * @template Generic item type
+   */
+  items: T[];
+
+  /**
+   * Item count
+   */
+  count: number;
+}
+
 @Component({
   selector: 'app-cell-template-usage-avatar',
   templateUrl: './cell-template-usage-avatar.component.html',
-  styles:['.highlight { color: lightblue; font-weight: bold;}']
+  styles: ['.highlight { color: lightblue; font-weight: bold;}']
 })
-export class CellTemplateUsageAvatarComponent implements OnInit {
+export class CellTemplateUsageAvatarComponent {
 
 
   constructor(public http: HttpClient) {
@@ -25,14 +38,14 @@ export class CellTemplateUsageAvatarComponent implements OnInit {
    */
   public onDataBind = (params: DataTableRequestParams): Observable<CustomDataTableQueryResult<any>> => {
 
-    const page = (params.offset+params.limit)/params.limit;
+    const page = (params.offset + params.limit) / params.limit;
     const per_page = params.limit;
-    debugger
+    debugger;
     let httpParams = new HttpParams();
-    httpParams = httpParams.append('page', ''+page);
-    httpParams = httpParams.append('per_page', ''+per_page);
+    httpParams = httpParams.append('page', '' + page);
+    httpParams = httpParams.append('per_page', '' + per_page);
 
-    return this.http.get('https://api.github.com/repos/yohangz/ornamentum/contributors', {params: httpParams})
+    return this.http.get('https://api.github.com/repos/yohangz/ornamentum/contributors', { params: httpParams })
       .pipe(
         map((res: any) => {
 
@@ -48,6 +61,6 @@ export class CellTemplateUsageAvatarComponent implements OnInit {
           };
         })
       ) as Observable<any>;
-  }
+  };
 
 }
