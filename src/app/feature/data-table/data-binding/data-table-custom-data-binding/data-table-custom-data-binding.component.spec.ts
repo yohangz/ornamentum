@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DataTableCustomDataProviderComponent } from './data-table-custom-data-provider.component';
+import { DataTableCustomDataBindingComponent } from './data-table-custom-data-binding.component';
 
 describe('DataTableCustomDataProviderComponent', () => {
-  let component: DataTableCustomDataProviderComponent;
-  let fixture: ComponentFixture<DataTableCustomDataProviderComponent>;
+  let component: DataTableCustomDataBindingComponent;
+  let fixture: ComponentFixture<DataTableCustomDataBindingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataTableCustomDataProviderComponent ]
+      declarations: [ DataTableCustomDataBindingComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DataTableCustomDataProviderComponent);
+    fixture = TestBed.createComponent(DataTableCustomDataBindingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
