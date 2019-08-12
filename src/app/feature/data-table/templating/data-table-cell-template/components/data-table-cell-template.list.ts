@@ -18,6 +18,24 @@ export const cellTemplateUsage: ExampleFile[] = [
   }
 ];
 
+export const cellTemplateUsageAvatar: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'cell-template-usage-avatar.component.ts',
+    content: require('!!raw-loader!./example/cell-template-usage-avatar/cell-template-usage-avatar.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'cell-template-usage-avatar.component.html',
+    content: require('!!raw-loader!./example/cell-template-usage-avatar/cell-template-usage-avatar.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'cell-template-usage-avatar.module.ts',
+    content: require('!!raw-loader!./example/cell-template-usage-avatar/cell-template-usage-avatar.module.md')
+  }
+];
+
 export const demoSnippet: any = {
   base_template: require('!!raw-loader!./docs/base-template.md'),
   cell_template: require('!!raw-loader!./docs/cell-template.md'),
