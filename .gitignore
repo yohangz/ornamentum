@@ -6,6 +6,9 @@
 /out-tsc
 /lib
 /stats
+/ornamentum-server
+server/data.json
+
 # Only exists if Bazel was run
 /bazel-out
 
@@ -24,6 +27,7 @@ speed-measure-plugin.json
 *.launch
 .settings/
 *.sublime-workspace
+ornamentum.iml
 
 # IDE - VSCode
 .vscode/*
