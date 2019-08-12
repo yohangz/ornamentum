@@ -1,8 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {DataTableCustomDataProviderRoutingModule} from "./data-table-custom-data-provider-routing.module";
+import {DataTableCustomDataBindingRoutingModule} from "./data-table-custom-data-binding-routing.module";
 
-import {CustomDataProviderComponent, DataTableCustomDataProviderComponent} from './index';
+import {CustomDataProviderComponent, DataTableCustomDataBindingComponent} from './index';
 import {FormsModule} from "@angular/forms";
 import {SharedModule} from "../../../../shared/shared.module";
 import {DataTableModule, DataTableResourceModule} from "../../../../../../projects/ornamentum/src";
@@ -10,14 +10,14 @@ import {CustomDataProviderComponentWithMapper} from "./example/custom-data-provi
 
 
 @NgModule({
-  declarations: [DataTableCustomDataProviderComponent, CustomDataProviderComponent,CustomDataProviderComponentWithMapper],
+  declarations: [DataTableCustomDataBindingComponent, CustomDataProviderComponent,CustomDataProviderComponentWithMapper],
   imports: [
     CommonModule,
-    DataTableCustomDataProviderRoutingModule,
+    DataTableCustomDataBindingRoutingModule,
     FormsModule,
     SharedModule.forRoot(),
     DataTableModule.forRoot(),
     DataTableResourceModule.forRoot(),
   ],
 })
-export class DataTableCustomDataProviderModule { }
+export class DataTableCustomDataBindingModule { }

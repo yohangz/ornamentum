@@ -74,7 +74,7 @@ const dataTableDataBindingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-custom-data-provider/data-table-custom-data-provider.module#DataTableCustomDataProviderModule',
+    loadChildren: './data-table-custom-data-binding/data-table-custom-data-binding.module#DataTableCustomDataBindingModule',
     path: 'server-side/custom',
     canActivate: [SeoGuard],
     data: {
