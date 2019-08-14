@@ -136,8 +136,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/data-binding/server-side/custom',
-              title: 'Custom Data Binding',
+              routePath: '/feature/data-table/data-binding/server-side/custom-provider',
+              title: 'Custom Data Provider',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -146,10 +146,6 @@ export class MainComponent {
                 {
                   title: 'Basic Usage',
                   anchor: 'basicUsage'
-                },
-                {
-                  title: 'Custom Data Provider',
-                  anchor: 'customDataProvider'
                 },
                 {
                   title: 'Suggested Links',

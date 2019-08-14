@@ -1,14 +1,14 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
-import {DataTableCustomDataBindingComponent} from "./data-table-custom-data-binding.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
+import { DataTableCustomDataProviderComponent } from './components/data-table-custom-data-provider.component';
 
 /**
  * Represent data table server side basic data binding routes.
  */
 const dataTableCustomDataBindingRoutes: Routes = [
   {
-    component: DataTableCustomDataBindingComponent,
+    component: DataTableCustomDataProviderComponent,
     path: ''
   }
 ];
@@ -20,5 +20,4 @@ const dataTableCustomDataBindingRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dataTableCustomDataBindingRoutes)]
 })
-export class DataTableCustomDataBindingRoutingModule {
-}
+export class DataTableCustomDataProviderRoutingModule {}
