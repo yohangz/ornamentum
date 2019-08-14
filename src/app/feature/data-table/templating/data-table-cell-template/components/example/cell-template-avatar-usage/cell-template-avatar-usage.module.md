@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DataTableModule } from 'ornamentum';
   
-import { CellTemplateUsageAvatarComponent } from './cell-template-usage-avatar.component';
+import { CellTemplateAvatarUsageComponent } from './cell-template-usage-avatar.component';
 
 @NgModule({
- bootstrap: [CellTemplateUsageAvatarComponent],
- declarations: [CellTemplateUsageAvatarComponent],
+ bootstrap: [CellTemplateAvatarUsageComponent],
+ declarations: [CellTemplateAvatarUsageComponent],
  imports: [
     BrowserModule, 
     DataTableModule.forRoot()
