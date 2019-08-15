@@ -21,26 +21,26 @@ export const cellTemplateUsage: ExampleFile[] = [
 export const cellTemplateUsageAvatar: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'cell-template-usage-avatar.component.ts',
-    content: require('!!raw-loader!./example/cell-template-usage-avatar/cell-template-usage-avatar.component.ts')
+    name: 'cell-template-avatar-usage.component.ts',
+    content: require('!!raw-loader!./example/cell-template-avatar-usage/cell-template-avatar-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'cell-template-usage-avatar.component.html',
-    content: require('!!raw-loader!./example/cell-template-usage-avatar/cell-template-usage-avatar.component.html')
+    name: 'cell-template-avatar-usage.component.html',
+    content: require('!!raw-loader!./example/cell-template-avatar-usage/cell-template-avatar-usage.component.html')
   },
   {
     type: FileType.TS,
-    name: 'cell-template-usage-avatar.module.ts',
-    content: require('!!raw-loader!./example/cell-template-usage-avatar/cell-template-usage-avatar.module.md')
+    name: 'cell-template-avatar-usage.module.ts',
+    content: require('!!raw-loader!./example/cell-template-avatar-usage/cell-template-avatar-usage.module.md')
   }
 ];
 
 export const demoSnippet: any = {
-  base_template: require('!!raw-loader!./docs/base-template.md'),
-  cell_template: require('!!raw-loader!./docs/cell-template.md'),
-  column_property_template: require('!!raw-loader!./docs/column-property-template.md'),
-  row_property_template: require('!!raw-loader!./docs/row-property-template.md'),
-  row_span_property_template: require('!!raw-loader!./docs/row-span-property-template.md'),
-  span_index_property_template: require('!!raw-loader!./docs/span-index-property-template.md')
+  baseTemplate: require('!!raw-loader!./docs/base-template.md'),
+  cellTemplate: require('!!raw-loader!./docs/cell-template.md'),
+  columnPropertyTemplate: require('!!raw-loader!./docs/column-property-template.md'),
+  rowPropertyTemplate: require('!!raw-loader!./docs/row-property-template.md'),
+  rowSpanPropertyTemplate: require('!!raw-loader!./docs/row-span-property-template.md'),
+  spanIndexPropertyTemplate: require('!!raw-loader!./docs/span-index-property-template.md')
 };

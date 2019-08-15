@@ -74,12 +74,12 @@ const dataTableDataBindingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-custom-data-binding/data-table-custom-data-binding.module#DataTableCustomDataBindingModule',
-    path: 'server-side/custom',
+    loadChildren: './data-table-custom-data-provider/data-table-custom-data-provider.module#DataTableCustomDataProviderModule',
+    path: 'server-side/custom-provider',
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Data Binding | Server Side | Custom data provider',
+        title: 'Ornamentum | Data Table | Data Binding | Server Side | Custom Data Provider',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
