@@ -1,0 +1,9 @@
+<ng-dropdown
+  [selectTrackBy]="'id'"
+  [loadOnScroll]="true"
+  [onDataBind]="onDataBind">
+  <ng-template #ngDropdownOption let-option="option">
+      <img style="width: 48px; height: 48px; border-radius: 50%" [src]="option.item.avatar_url"/> &nbsp;
+      <h5 style="font-size:150%; color: #9eff93; display: inline;">{{ option.item.login }}</h5>
+    </ng-template>
+</ng-dropdown>

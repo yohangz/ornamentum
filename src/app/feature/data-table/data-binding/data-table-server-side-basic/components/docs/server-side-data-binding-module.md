@@ -1,4 +1,6 @@
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule} from '@angular/common/http';
+
+import { DataTableModule, DataTableResourceModule } from 'ornamentum';
 
 @NgModule({
  ...

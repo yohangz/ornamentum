@@ -1010,6 +1010,24 @@ export class MainComponent {
                   anchor: 'suggestedLinks'
                 }
               ]
+            },
+            {
+              routePath: '/feature/dropdown/data-binding/server-side/custom-provider',
+              title: 'Custom Data Provider',
+              navigation: [
+                {
+                  title: 'What You Will See',
+                  anchor: 'whatYouWillSee'
+                },
+                {
+                  title: 'Basic Usage',
+                  anchor: 'basicUsage'
+                },
+                {
+                  title: 'Suggested Links',
+                  anchor: 'suggestedLinks'
+                }
+              ]
             }
           ]
         },
