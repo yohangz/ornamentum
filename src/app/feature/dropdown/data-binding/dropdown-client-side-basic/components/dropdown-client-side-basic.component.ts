@@ -8,7 +8,6 @@ import {
   dataSourceUsage,
 } from './dropdown-client-side-basic.list';
 
-
 @Component({
   selector: 'app-dropdown-client-side-basic-component',
   templateUrl: './dropdown-client-side-basic.component.html',
