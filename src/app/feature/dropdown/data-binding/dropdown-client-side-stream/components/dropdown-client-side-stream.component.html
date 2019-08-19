@@ -22,6 +22,11 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
+  <p>Client side stream data binding can be configured by using either of the approaches described below. Note that it
+      will always re-render dropdown with last emitted data set.</p>
+
+  <h5>Bind via dataSource</h5>
+
   <p>
     This can be configure via setting an array of data objects to <code>items</code> input property or through setting a
     <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
@@ -38,7 +43,7 @@
     See</a> section above.
   </p>
 
-  <p>or</p>
+  <h5>Bind via items</h5>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
 
@@ -47,7 +52,13 @@
     <code>items</code> property instead of <code>dataSource</code>.
   </p>
 
-  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.items"></app-code-snippet>
+  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataBindingWithItems"></app-code-snippet>
+
+  <p>
+    Dropdown <code>items</code> input property setter will capture and re-render dropdown when ever new data
+    collection is set to <code>items</code>. We highly recommend the usage of <code>dataSource</code> over
+    <code>items</code> binding. However, you can proceed with this approach if you prefer using data arrays over streams.
+  </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client-side Basic Data Binding</a><br/>

@@ -14,6 +14,9 @@ import {
   DataTableClientSideBasicComponent
 } from './index';
 
+/**
+ * Module class for containing data table client side basic data binding module.
+ */
 @NgModule({
   declarations: [
     ItemsUsageComponent,

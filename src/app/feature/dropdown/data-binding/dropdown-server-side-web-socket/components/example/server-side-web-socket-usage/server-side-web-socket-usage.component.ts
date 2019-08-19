@@ -22,11 +22,11 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
   public onDataBind: DropdownDataBindCallback<ExampleData>;
   public intervalSubscription: Subscription;
 
-  private exampleResourceProvider: DropdownWebsocketDataFetchService<ExampleData>;
+  private webSocketProvider: DropdownWebsocketDataFetchService<ExampleData>;
 
   constructor(private globalRefService: GlobalRefService,
               private resourceFactory: DropdownWebsocketResourceFactoryService) {
-    this.exampleResourceProvider = resourceFactory.getResourceProvider<ExampleData>();
+    this.webSocketProvider = resourceFactory.getResourceProvider<ExampleData>();
   }
 
   /**
@@ -35,15 +35,15 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     // Create web-socket connection on browser environment only to support server side rendering.
     if (this.globalRefService.isBrowser) {
-      this.exampleResourceProvider.init({
+      this.webSocketProvider.init({
         url: `wss://${window.location.hostname}` // web-socket endpoint
       });
 
-      this.onDataBind = this.exampleResourceProvider.onDataBind();
+      this.onDataBind = this.webSocketProvider.onDataBind();
 
       // Keep the socket connection alive with a hart beat ping
       this.intervalSubscription = interval(40000).subscribe(() => {
-        this.exampleResourceProvider.socketStream.next({
+        this.webSocketProvider.socketStream.next({
           type: 'keep-alive'
         } as any);
       });
@@ -54,7 +54,7 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
    * Component destroy lifecycle event handler.
    */
   public ngOnDestroy(): void {
-    this.exampleResourceProvider.dispose();
+    this.webSocketProvider.dispose();
 
     if (this.intervalSubscription) {
       this.intervalSubscription.unsubscribe();

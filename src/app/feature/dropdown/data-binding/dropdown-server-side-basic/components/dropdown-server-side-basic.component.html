@@ -7,15 +7,15 @@
     sets but integration is fairly complex compared to <a
     [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic Data Binding</a> and <a
     [routerLink]="['/feature/dropdown/data-binding/client-side/stream']">Client Side Stream Data Binding</a>
-    techniques.
+    techniques. This data binding technique can be used to fetch data via HTTP GET requests on demand.
   </p>
 
   <p>
-    Unlike in <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic Data
+    Unlike in <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client-side Basic Data
     Binding</a>, server side rendering will request for data on dropdown initialization and whenever user performs
     <a [routerLink]="['/feature/dropdown/features/item/filtering']" [fragment]="'serverSideFiltering'">Server Side
-      Filtering</a> operation. Ornamentum has provided an optional opinionated service to integrate external data
-    sources. Also, you can build a custom data provider depending on your requirement.
+    Filtering</a> operation. Ornamentum has provided an optional opinionated service to integrate external data sources.
+    However, you can build a custom data provider depending on your requirement.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -26,32 +26,173 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Server side data binding is handled via <a rel="noopener" target="_blank"
-                                               href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
-    callback function. Use this callback reference to hook into data bind workflow and provide custom data source. This
-    callback function will get triggered on dropdown initialization and on dynamic dropdown operations. It
-    receives <a rel="noopener" target="_blank"
-                href="https://ornamentum.app/api-docs/interfaces/DropdownRequestParams.html">DropdownRequestParams</a>
-    argument and expect to return <a rel="noopener" target="_blank"
-                                     href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
-    Observable</a> query result <a rel="noopener" target="_blank"
-                                   href="https://ornamentum.app/api-docs/interfaces/DropdownQueryResult.html">DropdownQueryResult&lt;T&gt;</a>
-    object stream. Data returned from this callback function will be directly bound to dropdown assuming that it matches
-    the on demand request context.
+    Server side data bind functionality can be integrated via <a rel="noopener" target="_blank"
+            href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
+    callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
+    data source agnostic.
   </p>
 
-  <p>For use of Server side basic data binding operations it is mandatory to import <a rel="noopener" target="_blank"
-                                                                                       href="https://ornamentum.app/api-docs/modules/DropdownResourceModule.html">DropdownResourceModule</a>
-    to your application module.</p>
+  <ol>
+    <li>
+      <p>
+        Import <a rel="noopener" target="_blank"
+                  href="https://ornamentum.app/api-docs/modules/DropdownResourceModule.html">DropdownResourceModule</a> along with
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DropdownModule.html">DropdownModule</a>.
+      </p>
 
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBinding"></app-code-snippet>
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingModule"></app-code-snippet>
+    </li>
+    <li>
+      <p>
+        Within the target component use
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/injectables/DropdownHttpResourceFactoryService.html">DropdownHttpResourceFactoryService</a>
+        to construct an instance of
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html">DropdownHttpDataFetchService&lt;T&gt;</a>
+        class. Invoke <a rel="noopener" target="_blank"
+                         href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html#onDataBind">onDataBind</a>
+        method with the API resource path to get the data bind callback function reference.
+      </p>
+
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingComponent"></app-code-snippet>
+        <p>
+          or else you can write your own custom data provider without using getResourceProvider in
+          <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/injectables/DropdownHttpResourceFactoryService.html">DropdownHttpResourceFactoryService</a>
+          service. The custom data provider needs to return a function which is supposed to be returned object as Observable.
+          As long as your data return as observable you can use any data sources such as Firebase Realtime Database or Cloud Firestore.
+          Please refer <a [routerLink]="['/feature/dropdown/data-binding/server-side/custom-provider']">Custom Data Provider</a>
+          documentation for more information.
+        </p>
+    </li>
+    <li>
+      <p>
+        Set the obtained data bind function reference and load data on scroll boolean
+        to <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
+        and <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DropdownComponent.html#loadOnScroll">loadOnScroll</a>
+        input properties of dropdown accordingly.
+      </p>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBindingMarkup"></app-code-snippet>
+    </li>
+  </ol>
 
   <p>
-    Following code snippet represent an example implementation of <a rel="noopener" target="_blank"
-                                                                     href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
-    callback.
+    <u>Data fetch HTTP request (Your backend REST API) should support following</u>
+  </p>
+
+  <ol>
+      <li>
+        <p>Data loading query parameters</p>
+        <ul>
+          <li>
+            <p>
+              <code>limit</code> - The limit parameter controls the maximum number of items that may be returned for a
+              single request. If limit is not specified, it will default to 30.
+            </p>
+          </li>
+          <li>
+            <p>
+              <code>offset</code> - The offset parameter controls the starting point within the collection of resource
+              results. For example, if you have a collection of 15 items to be retrieved from a resource and you specify
+              limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value:
+              offset=0, offset=5, and offset=10. Note that the first item in the collection is retrieved by setting a
+              zero offset.
+            </p>
+          </li>
+        </ul>
+        <p>
+          i.e: data GET request URL generated when scrolling down to see more items.
+        </p>
+        <p>
+          https://ornamentum.app/api/data?<code>limit=30&offset=30</code>
+        </p>
+      </li>
+      <li>
+        <p>
+          Filtering query parameters - query parameters with field name and filter value will get appended when
+          filtering is applied. The format of these query parameters are as follows.
+        </p>
+
+        <p>
+          <code>&lt;field name&gt;=</code>[<code>&lt;name of the field&gt;</code>]&<code>&lt;filter value&gt;=</code>[<code>&lt;filter keyword&gt;</code>]
+        </p>
+
+        <ul>
+          <li>
+            <p>
+              <code>field name</code> - Dropdown filter field. Target field is appended as a query parameter only when
+              filtering is applied on dropdown by enabling filterable.
+            </p>
+          </li>
+          <li>
+            <p>
+              <code>filter value</code> - Filter value is passed when filterable property is enabled. Filter value is passed as string.
+            </p>
+          </li>
+        </ul>
+
+        <p>Usage scenarios and examples</p>
+
+        <ol>
+          <li>
+            <p>
+              <code>filtering applied</code> - filter and sort order values are appended to the
+              request URL via a query parameter with target field name.
+            </p>
+            <p>
+              i.e: data GET request URL generated when Product Type filed is filtered by 'cook' keyword.
+            </p>
+            <p>
+              https://ornamentum.app/api/data?limit=30&offset=0&<code>field=productType&filter=cook</code>
+            </p>
+          </li>
+          <li>
+            <p>
+              <code>filtering <u>not</u> applied</code> - field name and filter value is not appended to the
+              request URL as a query parameter.
+            </p>
+            <p>
+              i.e: data GET request URL generated when Product Type field is not filtered.
+            </p>
+            <p>
+              https://ornamentum.app/api/data?limit=30&offset=0
+            </p>
+          </li>
+        </ol>
+
+        <p>
+          Refer <a [routerLink]="['/feature/dropdown/features/item/filtering']">Item Filtering</a> documentation for more
+          information and how to filtering.
+        </p>
+      </li>
+      <li>
+        Service should respond follow <a rel="noopener" target="_blank"
+          href="https://ornamentum.app/api-docs/interfaces/DropdownQueryResult.html">DropdownQueryResult&lt;T&gt;</a> schema.
+        However, you can pass a custom response mapper callback function to <a rel="noopener" target="_blank"
+          href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html#onDataBind">onDataBind</a> and map
+        the response to <a rel="noopener" target="_blank"
+         href="https://ornamentum.app/api-docs/interfaces/DropdownQueryResult.html">DropdownQueryResult&lt;T&gt;</a> schema
+        without making changes in backend API response.
+      </li>
+  </ol>
+
+  <p>
+    You can inspect network traffic of this page with "<code>/api/data</code>" filter in browser developer tools to
+    understand backend service requests and behaviors for above example.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideRequest" [showLineNumbers]="false">
+  </app-code-snippet>
+
+  <h2 id="customDataProvider">Custom Data Provider</h2>
+
+  <p>
+    Server side and client side data binding can be implemented via a custom data provider as Ornamentum data sources are
+    fully decoupled from component logic. Please refer
+    <a [routerLink]="['/feature/dropdown/data-binding/server-side/custom-provider']">Custom Data Provider</a> for more information.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']">Server Side Web Socket Data Binding</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#dataSource">API Doc for Server Side Basic Data Binding</a>
 </div>

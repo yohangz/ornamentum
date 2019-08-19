@@ -6,13 +6,13 @@
     or via setting a <a rel="noopener" target="_blank" href="https://rxjs-dev.firebaseapp.com/">RxJS Observable</a>
     stream to <code>dataSource</code> input property.</p>
 
-  <p>In this data binding technique, data set will be fetched at once and column <a
-    href="/feature/dropdown/features/filtering">Filtering</a> and <a
-    href="/feature/dropdown/features/item/selection">Item Selection</a> operations are perform in client side. If the
-    data stream is very large and struggle to perform <a href="/feature/data-table/functionality/column/filtering">Filtering</a>
-    and <a href="/feature/data-table/functionality/column/filtering">Item Selection</a> operations
+  <p>In this data binding technique, data set will be fetched at once and column
+    <a [routerLink]="['/feature/dropdown/features/filtering']">Filtering</a> and
+    <a [routerLink]="['/feature/dropdown/features/item/selection']">Item Selection</a> operations are perform in client side.
+    If the data stream is very large and struggle to perform <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Filtering</a>
+    and <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Item Selection</a> operations
     in the client side, <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server Side Basic Data
-      Binding</a> can be uses instead of using this technique.
+    Binding</a> can be uses instead of using this technique.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -26,7 +26,9 @@
     initial data binding will re-initialize dropdown with the new data set and drop previously bound data items
     collection or stream.</p>
 
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
+  <h5>Bind via items</h5>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items">{{ demoSnippet.items }}</app-code-snippet>
 
   <p>
     The complete set of code snippet for the data binding via <code>items</code> input property can be seen in the
@@ -35,7 +37,7 @@
     collections will automatically get reflected in dropdown.
   </p>
 
-  <p>or</p>
+  <h5>Bind via dataSource</h5>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
