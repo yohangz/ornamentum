@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
+import { Component } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { DataTableRequestParams, DataTableQueryResult } from 'ornamentum';
+import { DataTableQueryResult, DataTableRequestParams } from 'ornamentum';
 
 @Component({
   selector: 'app-custom-data-provider-mapper-usage',
-  templateUrl: './custom-data-provider-mapper-usage.component.html'
+  templateUrl: './custom-data-provider-mapper-usage.component.html',
+  styles: ['.highlight { font-weight: bold; color: #4fc1e9}', '.link { color: #ffce54}']
 })
 export class CustomDataProviderMapperUsageComponent {
 
@@ -20,15 +21,17 @@ export class CustomDataProviderMapperUsageComponent {
    * example : Firebase Realtime Database or Cloud Firestore
    */
   public onDataBind = (params: DataTableRequestParams): Observable<DataTableQueryResult<any>> => {
+    debugger
     const page = (params.offset + params.limit) / params.limit;
     const perPage = params.limit;
 
     let httpParams = new HttpParams();
     httpParams = httpParams
+      .append('q', 'univers')
       .append('page', '' + page)
-      .append('perPage', '' + perPage);
+      .append('per_page', '' + perPage);
 
-    return this.http.get('https://api.github.com/repos/yohangz/ornamentum/contributors', { params: httpParams })
+    return this.http.get('https://api.github.com/search/repositories', { params: httpParams })
       .pipe(
         map((res: any) => {
           /**
@@ -37,9 +40,10 @@ export class CustomDataProviderMapperUsageComponent {
            * Item count
            * count: number;
            */
+          console.log(res.items);
           return {
-            items: res,
-            count: res.length
+            items: res.items,
+            count: res.total_count
           };
         })
       ) as Observable<any>;

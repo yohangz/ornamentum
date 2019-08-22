@@ -1,5 +1,5 @@
 <ng-data-table
-  [title]="'Contributor Details'"
+  [title]="'Git repositories'"
   [limit]="10"
   [showHeader]="true"
   [showColumnSelector]="true"
@@ -9,40 +9,35 @@
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [sortable]="true"
-    [filterable]="true"
     [width]="100">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'avatar_url'"
-    [title]="'Contributor'"
-    [sortable]="true"
-    [filterable]="true"
-    [width]="180">
+  [field]="'name'"
+  [title]="'Name'">
+  <ng-template #ngDataTableCell let-row="row">
+    <td style="vertical-align: middle">
+      <span [ngClass]="{'highlight': row.item.score > 100}">{{row.item.name}}</span>
+    </td>
+  </ng-template>
+</ng-data-table-column>
+  <ng-data-table-column
+    [field]="'login'"
+    [title]="'Avatar'">
     <ng-template #ngDataTableCell let-row="row">
-      <td>
-        <img style="width: 48px; height: 48px; border-radius: 50%" [src]="row.item.avatar_url"/> &nbsp;
-        <span>{{row.item.login}}</span>
+      <td style="vertical-align: middle">
+        <img style="width: 48px; height: 48px; border-radius: 50%; margin-right: 50px;" [src]="row.item.owner.avatar_url"/>
+        <span>{{row.item.owner.login}}</span>
       </td>
     </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'html_url'"
-    [title]="'Profile URL'"
-    [sortable]="true"
-    [filterable]="true"
-    [width]="240">
+    [title]="'Git Profile'">
     <ng-template #ngDataTableCell let-row="row">
-      <td>
-        <a [href]="row.item.html_url">{{row.item.html_url}}</a>
+      <td style="vertical-align: middle">
+        <a class="link" [href]="row.item.html_url">{{row.item.html_url}}</a>
       </td>
     </ng-template>
   </ng-data-table-column>
-  <ng-data-table-column
-    [field]="'contributions'"
-    [title]="'Contributions Count'"
-    [sortable]="true"
-    [filterable]="true"
-    [width]="120">
-  </ng-data-table-column>
+
 </ng-data-table>
