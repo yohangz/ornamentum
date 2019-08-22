@@ -11,7 +11,7 @@ import { CustomDataProviderMapperUsageComponent } from './custom-data-provider-m
  declarations: [CustomDataProviderMapperUsageComponent],
  imports: [
     BrowserModule, 
-    HttpClientModule, // Import http client module which is required for server side basic data binding
+    HttpClientModule, // Import http client module which is required for server side basic data binding.
     DataTableModule.forRoot(), // Import data table module
     DataTableResourceModule.forRoot() // Import data table resource module
   ]
