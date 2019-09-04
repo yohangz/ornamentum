@@ -102,9 +102,10 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
   }
 
   /**
-   * Get data table column combined unique identifier
+   * Get data table id column field combined unique identifier
    */
-  public get getIdName(): string {
-    return `${this.dataStateService.id}-${startCase(this.column.field).split(' ').join('-')}`;
+  public get getDropdownIdentifier(): string {
+    return `${this.dataStateService.id}-${startCase(this.column.field).split(' ')
+      .join('-').toLowerCase()}`;
   }
 }

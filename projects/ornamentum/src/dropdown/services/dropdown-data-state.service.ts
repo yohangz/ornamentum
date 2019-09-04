@@ -1,5 +1,7 @@
 import { Injectable, TemplateRef } from '@angular/core';
 
+import startCase from 'lodash/startCase';
+
 import { DropdownItem } from '../models/dropdown-item.model';
 import { DropdownDataBindCallback } from '../models/dropdown-data-bind-callback.model';
 import { DropdownItemGroup } from '../models/dropdown-Item-group.model';
@@ -33,12 +35,12 @@ export class DropdownDataStateService {
    * @param index Current iteration
    */
   public getIdName(append: string, index: number): string {
-    if (this.id !== undefined) {
       if (index > -1) {
-        return `${this.id.toLowerCase()}-${append}-dw-checkbox-${++index}`;
+        return `${startCase(this.id).split(' ')
+          .join('-').toLowerCase()}-${append}-checkbox-${++index}`;
       }
 
-      return `${this.id.toLowerCase()}-${append}-dw-checkbox`;
-    }
+      return `${startCase(this.id).split(' ')
+        .join('-').toLowerCase()}-${append}-checkbox`;
   }
 }
