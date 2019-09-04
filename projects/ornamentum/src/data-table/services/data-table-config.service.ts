@@ -31,7 +31,7 @@ export class DataTableConfigService implements DataTableConfig {
   public indexColumnTitle = '#';
   public rowSelectable = false;
   public selectMode: DataTableSelectMode = 'single';
-  public showRowSelectCheckbox = false;
+  public showRowSelectCheckbox = true;
   public showRowSelectAllCheckbox = false;
   public showSubstituteRows = false;
   public expandableRows = false;
