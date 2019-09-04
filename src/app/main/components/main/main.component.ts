@@ -349,6 +349,10 @@ export class MainComponent {
                   anchor: 'usefulProperties',
                   subNavigation: [
                     {
+                      title: 'Identifier(ID)',
+                      anchor: 'identifier'
+                    },
+                    {
                       title: 'Row Selection Mode',
                       anchor: 'selectMode'
                     },
@@ -769,10 +773,6 @@ export class MainComponent {
                     {
                       title: 'Storage Mode',
                       anchor: 'storageMode'
-                    },
-                    {
-                      title: 'State Saving ID',
-                      anchor: 'stateId'
                     }
                   ]
                 },
@@ -1127,6 +1127,10 @@ export class MainComponent {
                   title: 'Useful Properties',
                   anchor: 'usefulProperties',
                   subNavigation: [
+                    {
+                      title: 'Identifier(ID)',
+                      anchor: 'identifier'
+                    },
                     {
                       title: 'Set First Option Selected',
                       anchor: 'setFirstOptionSelected'

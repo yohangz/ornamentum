@@ -25,6 +25,19 @@
   <h2 id="usefulProperties">Useful Properties</h2>
   <p>As mention in earlier, there are some additional configurations which helps users to control the row selection.</p>
 
+  <h4 id="identifier">Identifier(ID)</h4>
+
+  <code>id: string</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+
+  <p>
+    The id is a <b>mandatory</b> data table property that requires a unique string which should not clash with other data
+    tables Ids in your application. When you are making your grid, don't forget to add an identifier for your data table or otherwise
+    ornamentum will throw an error silently in developer console.
+  </p>
+
   <h4 id="selectMode">Row Selection Mode</h4>
 
   <code>selectMode: string = 'single' | 'single_toggle' | 'multi'</code> &nbsp;
@@ -151,7 +164,8 @@
 
   <p>
     This property let user to set specific rows to be selected in the data table by automatically right after the data
-    table <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'init'">Initialization</a>. This can only be use
+    table <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'init'">Initialization</a>. This can
+    only be use
     when selection mode is <b>multi</b>.
   </p>
 

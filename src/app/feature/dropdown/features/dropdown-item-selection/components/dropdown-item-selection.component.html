@@ -29,6 +29,19 @@
 
 <p>There are set of useful properties that can be uses when on item select on dropdown.</p>
 
+<h4 id="identifier">Identifier(ID)</h4>
+
+<code>id: string</code> &nbsp;
+<h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+<span class="pr-1"></span>
+<span class="badge badge-pill badge-info">Target Component: &lt;ng-dropdown&gt;</span>
+
+<p>
+  The id is a <b>mandatory</b> dropdown property that requires a unique string which should not clash with other
+  dropdown Ids in your application. When you are making your grid, don't forget to add an identifier for your dropdown
+  or otherwise ornamentum will throw an error in developer console in order to hold the execution.
+</p>
+
 <h4 id="setFirstOptionSelected">Set First Option Selected</h4>
 <code>setFirstOptionSelected: boolean</code> &nbsp;
 <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
@@ -189,4 +202,5 @@
 <h2 id="suggestedLinks">Suggested Links</h2>
 <a [routerLink]="['/feature/dropdown/advanced/events']">Events</a><br/>
 <a [routerLink]="['/feature/dropdown/advanced/translations']">Translations</a><br/>
-<a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Item Selection</a>
+<a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Dropdown Item
+  Selection</a>
