@@ -10,6 +10,7 @@ import { ComponentLoader } from '../../utility/utility.module';
  */
 @Injectable()
 export class DropdownDataStateService {
+  public id: string;
   public dataLoading = false;
   public selectedOption: any;
   public selectedOptions: any[] = [];
@@ -25,4 +26,19 @@ export class DropdownDataStateService {
   public dropdownOptionGroupHeaderTemplate: TemplateRef<any>;
 
   public onDataBind: DropdownDataBindCallback<any>;
+
+  /**
+   * Manipulate and returns data table checkbox unique identifier.
+   * @param append Respective checkbox common identifier
+   * @param index Current iteration
+   */
+  public getIdName(append: string, index: number): string {
+    if (this.id !== undefined) {
+      if (index > -1) {
+        return `${this.id.toLowerCase()}-${append}-dw-checkbox-${++index}`;
+      }
+
+      return `${this.id.toLowerCase()}-${append}-dw-checkbox`;
+    }
+  }
 }

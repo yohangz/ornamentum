@@ -10,12 +10,13 @@
         [ngTemplateOutletContext]="{ groupedItem: groupedItem }"
       >
       </ng-container>
-      <ng-container *ngFor="let option of groupedItem.items">
+      <ng-container *ngFor="let option of groupedItem.items; index as i;">
         <li (click)="toggleOptionSelectedState(option)" [class.disabled]="option.disabled" [class.ng-item-selected]="getSelectedState(option.id)">
           <ng-container *ngIf="!dataStateService.dropdownOptionTemplate">
             <a>
               <input
                 type="checkbox"
+                [id]="dataStateService.getIdName('grouped-options',i)"
                 class="ng-dropdown-checkbox-input"
                 [checked]="getSelectedState(option.id)"
                 [disabled]="option.disabled"
@@ -35,12 +36,13 @@
     </ng-container>
   </ng-container>
   <ng-container *ngIf="!config.groupByField">
-    <ng-container *ngFor="let option of dataStateService.dropdownItems">
+    <ng-container *ngFor="let option of dataStateService.dropdownItems; index as i;">
       <li (click)="toggleOptionSelectedState(option)" [class.disabled]="option.disabled" [class.ng-item-selected]="getSelectedState(option.id)">
         <ng-container *ngIf="!dataStateService.dropdownOptionTemplate">
           <a>
             <input
               type="checkbox"
+              [id]="dataStateService.getIdName('single-options',i)"
               class="ng-dropdown-checkbox-input"
               [checked]="getSelectedState(option.id)"
               [disabled]="option.disabled"

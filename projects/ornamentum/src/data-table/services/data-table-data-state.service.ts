@@ -10,6 +10,7 @@ import { DataTableDataBindCallback } from '../models/data-table-data-bind-callba
  */
 @Injectable()
 export class DataTableDataStateService {
+  public id: string;
   public allRowSelected = false;
   public selectedRow: any;
   public selectedRows: any[] = [];
@@ -32,5 +33,18 @@ export class DataTableDataStateService {
    */
   public get showNoDataOverlay(): boolean {
     return !this.dataRows.length && !this.dataLoading;
+  }
+
+  /**
+   * Manipulate and returns data table checkbox unique identifier.
+   * @param append Respective checkbox common identifier
+   * @param index Current iteration
+   */
+  public getIdName(append: string, index?: number): string {
+    if (index > -1) {
+      return `${this.id}-${append}-dt-checkbox-${++index}`;
+    }
+
+    return `${this.id}-${append}-dt-checkbox`;
   }
 }

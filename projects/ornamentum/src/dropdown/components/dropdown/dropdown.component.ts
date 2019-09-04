@@ -127,6 +127,14 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
+   * Set dropdown unique identifier
+   */
+  @Input()
+  public set id(value: string) {
+    this.dataStateService.id = value;
+  }
+
+  /**
    * Set translation data object; Used to localize table display text labels
    * @param value Translation data object
    */
@@ -536,6 +544,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   public ngOnInit(): void {
+    if (!this.dataStateService.id) {
+      throw Error('Dropdown unique identifier is required.');
+    }
+
     if (!this.dataStateService.onDataBind) {
       this.dataSource = this.eventStateService.staticDataSourceStream;
     }

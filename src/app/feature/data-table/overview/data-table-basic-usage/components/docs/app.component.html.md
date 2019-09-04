@@ -1,5 +1,5 @@
 <ng-data-table
-  [id]="'sales_products_detail_summery'"
+  [id]="'sales_products_overview_03'"
   [title]="'Sales Products'"
   [items]="data"
   [indexColumnTitle]="'#'"

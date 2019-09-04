@@ -21,7 +21,6 @@ export class CustomDataProviderMapperUsageComponent {
    * example : Firebase Realtime Database or Cloud Firestore
    */
   public onDataBind = (params: DataTableRequestParams): Observable<DataTableQueryResult<any>> => {
-    debugger
     const page = (params.offset + params.limit) / params.limit;
     const perPage = params.limit;
 

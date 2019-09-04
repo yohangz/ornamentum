@@ -236,10 +236,12 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set data table identifier; Required if persist table state is enabled
+   * Set data table unique identifier
    */
   @Input()
-  public id: string;
+  public set id(value: string) {
+    this.dataStateService.id = value;
+  }
 
   /**
    * Set persist state; Persist table state if true
@@ -804,7 +806,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
     }
 
     if (this.config.persistTableState) {
-      this.dataTableStateService.setState(this.id, params);
+      this.dataTableStateService.setState(this.dataStateService.id, params);
     }
 
     return this.dataStateService.onDataBind(params);
@@ -815,7 +817,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
    */
   private initDataTableState(): void {
     if (this.config.persistTableState) {
-      const dataTableState = this.dataTableStateService.getState(this.id);
+      const dataTableState = this.dataTableStateService.getState(this.dataStateService.id);
       if (dataTableState) {
         this.columns.forEach(column => {
           const field = dataTableState.fields.find(col => {
@@ -960,6 +962,10 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   public ngOnInit(): void {
+    if (!this.dataStateService.id) {
+      throw Error('Data table unique identifier is required.');
+    }
+
     this.scrollPositionSubscription = this.scrollPositionStream.subscribe((pos: DataTableScrollPoint) => {
       this.scrollPositionService.scrollPositionStream.next(pos);
     });

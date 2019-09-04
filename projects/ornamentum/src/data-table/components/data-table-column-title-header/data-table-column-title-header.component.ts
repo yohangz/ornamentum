@@ -29,7 +29,7 @@ export class DataTableColumnTitleHeaderComponent {
   constructor(
     private dragAndDropService: DragAndDropService,
     private eventStateService: DataTableEventStateService,
-    private dataStateService: DataTableDataStateService,
+    public dataStateService: DataTableDataStateService,
     public config: DataTableConfigService
   ) {}
 

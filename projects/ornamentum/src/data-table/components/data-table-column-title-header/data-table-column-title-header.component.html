@@ -3,7 +3,7 @@
   <span [textContent]="config.indexColumnTitle"></span>
 </th>
 <th class="ng-data-table-select-column-header" *ngIf="config.showRowSelectCheckboxColumn">
-  <input class="ng-data-table-checkbox-input" type="checkbox" *ngIf="showAllRowSelectCheckbox" [(ngModel)]="allRowSelected" />
+  <input *ngIf="showAllRowSelectCheckbox" class="ng-data-table-checkbox-input" type="checkbox" [id]="dataStateService.getIdName('row-select-all')" [(ngModel)]="allRowSelected"/>
 </th>
 <ng-container *ngFor="let column of columns">
   <th class="ng-data-table-column-header"
