@@ -1,9 +1,18 @@
 <div class="feature-container">
   <h1>Row Selection</h1>
+  <!--  <p>Row selection allows you to select single or multiple rows when rows have been selected rowSelectChange event will fire and emit <code>row: DataTableRow</code> data which is facilitated user to perform further operations based on <code>row: DataTableRow</code> data</p>-->
+  <p>
+    Data table row selection functionality allows the end user to select data rows which can be used process data from
+    them or make calculations based on this selection. Ornamentum data table support 3 main row selection modes &
+    additional options
+  </p>
 
-  <p>Row selection will add an additional column which contains checkboxes when user need to select specific data or
-    data set from the data table to perform their select operations. In these types of situations you might want to turn
-    on the row selectable checkboxes.</p>
+  <p>Three row selection modes are supported:</p>
+  <ol class="main-pane-list">
+    <li><b>Single</b>: Single selection support</li>
+    <li><b>Single Toggle</b>: Single row selection support with row de-select capability</li>
+    <li><b>Multi</b>: Multiple row selection support</li>
+  </ol>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -29,6 +38,7 @@
 
   <code>selectMode: string = 'single' | 'single_toggle' | 'multi'</code> &nbsp;
   <span class="badge badge-pill badge-warning">Default Value: 'single'</span>
+  <span class="p-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
   <p>
@@ -43,9 +53,11 @@
 
     <p>
       The user will be allowed to select only one row at a time and did not allow to deselect the selected option by
-      click
-      same row.
-      If second row is been selected, firstly selected row will be automatically de-selected.
+      clicking the same row. If another row is being selected, previously selected row will be will be automatically
+      deselected.
+    </p>
+    <p>
+      If you click/uncheck the selected row, it will not be deselected.
     </p>
 
     <app-single-row-selection-usage></app-single-row-selection-usage>
@@ -58,7 +70,7 @@
     <p>
       The user will be allowed to select only one row at a time and allow to deselect the selected option by click same
       row.
-      If another row is being selected, previously selected row will be automatically de-selected.
+      If another row is being selected, previously selected row will be automatically deselected.
       Additionally, Users will be Facilitated to remove the row selection by clicking same row.
     </p>
 
@@ -80,6 +92,7 @@
 
   <code>showRowSelectCheckbox: boolean</code> &nbsp;
   <span class="badge badge-pill badge-warning">Default Value: true</span>
+  <span class="p-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
 
@@ -96,6 +109,7 @@
 
   <code>showRowSelectAllCheckbox: boolean</code> &nbsp;
   <span class="badge badge-pill badge-warning">Default Value: false</span>
+  <span class="p-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
   <p>This property allows user to select/deselect all the rows at once by selecting/deselecting checkbox which is in the
@@ -124,6 +138,7 @@
 
   <code>selectTrackBy: string</code> &nbsp;
   <span class="badge badge-pill badge-warning">Default Value: 'id'</span>
+  <span class="p-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
   <p>
