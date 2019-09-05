@@ -45,6 +45,7 @@
         *ngIf="showRowSelectCheckbox && !rowSpanIndex"
         [attr.rowspan]="rowSpanCount"
       >
+        <div class="ng-data-table-checkbox-container">
         <input
           class="ng-data-table-checkbox-input ng-ignore-propagation"
           type="checkbox"
@@ -53,6 +54,8 @@
           (click)="onRowSelectClick(row, $event)"
           (change)="onRowSelectChange(row)"
         />
+        <label for="dataStateService.getIdName('row-select',i)"></label>
+        </div>
       </td>
       <ng-container *ngFor="let column of columns">
         <ng-container *ngIf="column.visible">
