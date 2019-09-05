@@ -14,10 +14,28 @@ li {
 
 .filtering-types {
   background: url('../../../../../../assets/images/filtering-types.png') no-repeat;
-  height: 65px;
-  width: 805px;
-  background-size: 100% 100%;
+  height: 100px;
+  width: 100%;
+  background-size: 100%;
   display: inline-block;
-  left: 0;
-  position: relative;
+
+  @media only screen and (max-width: 1600px){
+    height: 75px;
+  }
+
+  @media only screen and (max-width: 1199px){
+    height: 55px;
+  }
+
+  @media only screen and (max-width: 991px){
+    height: 75px;
+  }
+
+  @media only screen and (max-width: 680px){
+    height: 55px;
+  }
+
+  @media only screen and (max-width: 480px){
+    height: 35px;
+  }
 }

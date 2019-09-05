@@ -6,6 +6,11 @@
   display: inline-block;
   left: 0;
   position: relative;
+
+  @media only screen and (max-width: 480px){
+    height: 8rem;
+    width: 20rem;
+  }
 }
 
 .dt-theme-common {
@@ -14,11 +19,37 @@
   position: relative;
   height: 26rem;
   width: 56rem;
+
+  @media only screen and (max-width: 1440px){
+    height: 17rem;
+    width: 38rem;
+  }
+
+  @media only screen and (max-width: 1090px){
+    height: 13rem;
+    width: 31rem;
+  }
+
+  @media only screen and (max-width: 992px){
+    height: 20rem;
+    width: 45rem;
+  }
+
+  @media only screen and (max-width: 767px){
+    height: 13rem;
+    width: 28rem;
+  }
+
+  @media only screen and (max-width: 480px){
+    height: 10rem;
+    width: 22rem;
+  }
 }
 
 .dt-base-theme {
   background: url('../../../../../../assets/images/dt-base-theme.png') no-repeat;
   background-size: 100% 100%;
+
 }
 
 .dt-dark-theme {
@@ -34,9 +65,11 @@
 .dt-ornamentum-theme {
   background: url('../../../../../../assets/images/dt-ornamentum-theme.png') no-repeat;
   background-size: 100% 100%;
+
 }
 
 .dt-aegean-theme {
   background: url('../../../../../../assets/images/dt-aegean-theme.png') no-repeat;
   background-size: 100% 100%;
+
 }
