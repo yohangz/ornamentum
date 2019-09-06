@@ -725,6 +725,14 @@
 
       &.sm-controllers {
         width: 100%;
+
+        .ng-data-table-pagination-limit {
+          margin-right: 1.5rem;
+        }
+
+        .ng-data-table-pagination-input-label {
+          padding: 0.375rem 0.15rem;
+        }
       }
 
       .ng-data-table-pagination-limit {

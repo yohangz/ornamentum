@@ -205,7 +205,7 @@ export class DataTablePaginationComponent implements OnInit {
    */
   public ngOnInit(): void {
     this.resizeService.resize.pipe(debounceTime(200)).subscribe(() => {
-      this.isMobile = this.paginationContainer.nativeElement.clientWidth < 450;
+      this.isMobile = this.paginationContainer.nativeElement.clientWidth < 767;
     });
   }
 }
