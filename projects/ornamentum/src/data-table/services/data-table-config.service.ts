@@ -38,7 +38,7 @@ export class DataTableConfigService implements DataTableConfig {
   public selectOnRowClick = false;
   public expandOnRowClick = false;
   public autoFetch = true;
-  public showLoadingSpinner = false;
+  public showLoadingSpinner = true;
   public selectTrackBy = 'id';
   public filterDebounceTime = 500;
   public filterDebounce = true;
