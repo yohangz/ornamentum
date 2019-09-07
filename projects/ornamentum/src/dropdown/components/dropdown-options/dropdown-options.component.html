@@ -11,19 +11,21 @@
       >
       </ng-container>
       <ng-container *ngFor="let option of groupedItem.items; index as i;">
-        <li (click)="toggleOptionSelectedState(option)" [class.disabled]="option.disabled" [class.ng-item-selected]="getSelectedState(option.id)">
+        <li (click)="onOptionClick(option, $event)" [class.disabled]="option.disabled" [class.ng-item-selected]="getSelectedState(option.id)">
           <ng-container *ngIf="!dataStateService.dropdownOptionTemplate">
-            <a class="ng-dropdown-checkbox-container">
-              <input
-                type="checkbox"
-                [id]="dataStateService.getIdName('grouped-options',i)"
-                class="ng-dropdown-checkbox-input"
-                [checked]="getSelectedState(option.id)"
-                [disabled]="option.disabled"
-                *ngIf="config.showOptionSelectCheckbox"
+            <a class="ng-dropdown-checkbox-container" *ngIf="config.showOptionSelectCheckbox">
+              <input type="checkbox" class="ng-dropdown-checkbox-input ng-ignore-propagation"
+                     [id]="dataStateService.getUniqueId('gop', i)"
+                     [checked]="getSelectedState(option.id)"
+                     [disabled]="option.disabled"
+                     (change)="toggleOptionSelectedState(option)"
+                     (click)="onOptionCheckboxClick(option, $event)"
               />
-              <label [for]="dataStateService.getIdName('single-options',i)"><span [title]="option.text">{{ option.text }}</span></label>
+              <label class="ng-ignore-propagation" [for]="dataStateService.getUniqueId('gop', i)">
+                <span class="ng-ignore-propagation" [title]="option.text">{{ option.text }}</span>
+              </label>
             </a>
+            <span *ngIf="!config.showOptionSelectCheckbox" [title]="option.text">{{ option.text }}</span>
           </ng-container>
           <ng-container
             *ngIf="dataStateService.dropdownOptionTemplate"
@@ -37,19 +39,21 @@
   </ng-container>
   <ng-container *ngIf="!config.groupByField">
     <ng-container *ngFor="let option of dataStateService.dropdownItems; index as i;">
-      <li (click)="toggleOptionSelectedState(option)" [class.disabled]="option.disabled" [class.ng-item-selected]="getSelectedState(option.id)">
+      <li (click)="onOptionClick(option, $event)" [class.disabled]="option.disabled" [class.ng-item-selected]="getSelectedState(option.id)">
         <ng-container *ngIf="!dataStateService.dropdownOptionTemplate">
-          <a class="ng-dropdown-checkbox-container">
-            <input
-              type="checkbox"
-              [id]="dataStateService.getIdName('single-options',i)"
-              class="ng-dropdown-checkbox-input"
-              [checked]="getSelectedState(option.id)"
-              [disabled]="option.disabled"
-              *ngIf="config.showOptionSelectCheckbox"
+          <a class="ng-dropdown-checkbox-container" *ngIf="config.showOptionSelectCheckbox">
+            <input type="checkbox" class="ng-dropdown-checkbox-input ng-ignore-propagation"
+                   [id]="dataStateService.getUniqueId('sop', i)"
+                   [checked]="getSelectedState(option.id)"
+                   [disabled]="option.disabled"
+                   (change)="toggleOptionSelectedState(option)"
+                   (click)="onOptionCheckboxClick(option, $event)"
             />
-            <label [for]="dataStateService.getIdName('single-options',i)"><span [title]="option.text">{{ option.text }}</span></label>
+            <label class="ng-ignore-propagation" [for]="dataStateService.getUniqueId('sop', i)">
+              <span class="ng-ignore-propagation" [title]="option.text">{{ option.text }}</span>
+            </label>
           </a>
+          <span *ngIf="!config.showOptionSelectCheckbox" [title]="option.text">{{ option.text }}</span>
         </ng-container>
         <ng-container
           *ngIf="dataStateService.dropdownOptionTemplate"

@@ -1,7 +1,5 @@
 import { Injectable, TemplateRef } from '@angular/core';
 
-import startCase from 'lodash/startCase';
-
 import { DropdownItem } from '../models/dropdown-item.model';
 import { DropdownDataBindCallback } from '../models/dropdown-data-bind-callback.model';
 import { DropdownItemGroup } from '../models/dropdown-Item-group.model';
@@ -30,17 +28,11 @@ export class DropdownDataStateService {
   public onDataBind: DropdownDataBindCallback<any>;
 
   /**
-   * Manipulate and returns data table checkbox unique identifier.
-   * @param append Respective checkbox common identifier
-   * @param index Current iteration
+   * Get dropdown option unique id
+   * @param append Target identifier
+   * @param index Target index
    */
-  public getIdName(append: string, index: number): string {
-      if (index > -1) {
-        return `${startCase(this.id).split(' ')
-          .join('-').toLowerCase()}-${append}-checkbox-${++index}`;
-      }
-
-      return `${startCase(this.id).split(' ')
-        .join('-').toLowerCase()}-${append}-checkbox`;
+  public getUniqueId(append: string, index: number): string {
+    return `${this.id}-chk-${append}-${index}`;
   }
 }

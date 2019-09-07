@@ -1,9 +1,12 @@
 <th *ngIf="config.expandableRows" class="ng-data-table-expand-column-header"></th>
 <th *ngIf="config.showIndexColumn" class="ng-data-table-index-column-header"></th>
 <th *ngIf="config.showRowSelectCheckboxColumn" class="ng-data-table-select-column-header"></th>
-<ng-container *ngFor="let column of columns">
+<ng-container *ngFor="let column of columns; index as i;">
   <th *ngIf="column.visible">
-    <ng-data-table-column-filter-template [column]="column" [customFilterStream]="customFilterStream" (filter)="onFilter()">
+    <ng-data-table-column-filter-template [column]="column"
+                                          [customFilterStream]="customFilterStream"
+                                          [index]="i"
+                                          (filter)="onFilter()">
     </ng-data-table-column-filter-template>
   </th>
 </ng-container>

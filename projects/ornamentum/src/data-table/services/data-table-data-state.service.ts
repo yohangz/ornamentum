@@ -1,7 +1,5 @@
 import { Injectable } from '@angular/core';
 
-import startCase from 'lodash/startCase';
-
 import { DataTableRow } from '../models/data-table-row.model';
 import { DataTableDynamicRowSpanExtractorCallback } from '../models/data-table-group-field-extractor-callback.model';
 import { DataTableFilterValueExtractCallback } from '../models/data-table-filter-value-extract-callback.model';
@@ -38,17 +36,11 @@ export class DataTableDataStateService {
   }
 
   /**
-   * Manipulate and returns data table checkbox unique identifier.
-   * @param append Respective checkbox common identifier
-   * @param index Current iteration
+   * Get data table row unique id
+   * @param append Target identifier
+   * @param index Target index
    */
-  public getIdName(append: string, index?: number): string {
-    if (index > -1) {
-      return `${startCase(this.id).split(' ')
-        .join('-').toLowerCase()}-${append}-checkbox-${++index}`;
-    }
-
-    return `${startCase(this.id).split(' ')
-      .join('-').toLowerCase()}-${append}-checkbox`;
+  public getUniqueId(append: string, index: number): string {
+    return `${this.id}-dt-${append}-${index}`;
   }
 }

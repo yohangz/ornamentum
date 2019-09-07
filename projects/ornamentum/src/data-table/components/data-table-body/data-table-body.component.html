@@ -38,23 +38,22 @@
         *ngIf="config.showIndexColumn && !rowSpanIndex"
         [textContent]="getDisplayIndex(row)"
         [attr.rowspan]="rowSpanCount"
-      ></td>
+      >
+      </td>
       <td
-        class="ng-data-table-select-column ng-ignore-propagation"
+        class="ng-data-table-select-column"
         [style.background-color]="row.color"
         *ngIf="showRowSelectCheckbox && !rowSpanIndex"
         [attr.rowspan]="rowSpanCount"
       >
-        <div class="ng-data-table-checkbox-container">
-        <input
-          class="ng-data-table-checkbox-input ng-ignore-propagation"
-          type="checkbox"
-          [id]="dataStateService.getIdName('row-select',i)"
-          [(ngModel)]="row.selected"
-          (click)="onRowSelectClick(row, $event)"
-          (change)="onRowSelectChange(row)"
-        />
-        <label for="dataStateService.getIdName('row-select',i)"></label>
+        <div class="ng-data-table-checkbox-container ng-ignore-propagation">
+          <input class="ng-data-table-checkbox-input ng-ignore-propagation" type="checkbox"
+            [id]="dataStateService.getUniqueId('dr', i)"
+            [(ngModel)]="row.selected"
+            (click)="onRowSelectClick(row, $event)"
+            (change)="onRowSelectChange(row)"
+          />
+          <label class="ng-ignore-propagation" [for]="dataStateService.getUniqueId('dr', i)"></label>
         </div>
       </td>
       <ng-container *ngFor="let column of columns">

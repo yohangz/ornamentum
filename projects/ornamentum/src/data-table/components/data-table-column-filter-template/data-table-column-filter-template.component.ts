@@ -3,8 +3,6 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { Observable, Subject, Subscription } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import startCase from 'lodash/startCase';
-
 import { DataTableFilterEventArgs } from '../../models/data-table-filter-event-args.model';
 import { DataTableFilterOption } from '../../models/data-table-filter-option.model';
 
@@ -30,6 +28,9 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
 
   @Input()
   public customFilterStream: Observable<DataTableFilterEventArgs>;
+
+  @Input()
+  public index: number;
 
   @Output()
   public filter = new EventEmitter();
@@ -99,13 +100,5 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
   public clearFilter(): void {
     this.column.filter = '';
     this.filter.emit();
-  }
-
-  /**
-   * Get data table id column field combined unique identifier
-   */
-  public get getDropdownIdentifier(): string {
-    return `${this.dataStateService.id}-${startCase(this.column.field).split(' ')
-      .join('-').toLowerCase()}`;
   }
 }

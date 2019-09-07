@@ -4,11 +4,9 @@
     <ng-container *ngFor="let column of columns; index as i;">
       <div class="ng-data-table-column-selector-column ng-data-table-column-selector-checkbox" *ngIf="column.showInColumnSelector">
         <div class="ng-data-table-checkbox-container">
-          <input class="ng-data-table-checkbox-input"
-                 type="checkbox"
-                 [id]="dataStateService.getIdName('column-selector',i-1)"
-                 [(ngModel)]="column.visible"/>
-          <label [for]="dataStateService.getIdName('column-selector',i-1)"><span [textContent]="column.title"></span></label>
+          <input class="ng-data-table-checkbox-input" type="checkbox"
+                 [id]="dataStateService.getUniqueId('cs', i)" [(ngModel)]="column.visible"/>
+          <label [for]="dataStateService.getUniqueId('cs', i)"><span [textContent]="column.title"></span></label>
         </div>
       </div>
     </ng-container>
