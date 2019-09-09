@@ -306,65 +306,7 @@ export class MainComponent {
                 },
                 {
                   title: 'Filter Dropdown',
-                  anchor: 'filterDropdown',
-                  subNavigation: [
-                    {
-                      title: 'Dropdown Filter Menu Position',
-                      anchor: 'dropdownFilterMenuPosition'
-                    },
-                    {
-                      title: 'Dropdown Filter Show Option Select Check Box',
-                      anchor: 'dropdownFilterShowOptionSelectCheckbox'
-                    },
-                    {
-                      title: 'Dropdown Filter Close Menu OnSelect',
-                      anchor: 'dropdownFilterCloseMenuOnSelect'
-                    },
-                    {
-                      title: 'Dropdown Filter Select Mode',
-                      anchor: 'dropdownFilterSelectMode'
-                    },
-                    {
-                      title: 'Dropdown Filter Wrap Display Select Limit',
-                      anchor: 'dropdownFilterWrapDisplaySelectLimit'
-                    },
-                    {
-                      title: 'Dropdown Filter Show Selected Option Remove Button',
-                      anchor: 'dropdownFilterShowSelectedOptionRemoveButton'
-                    },
-                    {
-                      title: 'Dropdown Filter Group By Field',
-                      anchor: 'dropdownFilterGroupByField'
-                    },
-                    {
-                      title: 'Dropdown Filter Menu Height',
-                      anchor: 'dropdownFilterMenuHeight'
-                    },
-                    {
-                      title: 'Dropdown Filter Menu Width',
-                      anchor: 'dropdownFilterMenuWidth'
-                    },
-                    {
-                      title: 'Dropdown Filter Multi Select Option Max Width',
-                      anchor: 'dropdownFilterMultiSelectOptionMaxWidth'
-                    },
-                    {
-                      title: 'Dropdown Filter Searchable',
-                      anchor: 'dropdownFilterSearchable'
-                    },
-                    {
-                      title: 'Dropdown Filter Search Debounce',
-                      anchor: 'dropdownFilterSearchDebounce'
-                    },
-                    {
-                      title: 'Dropdown Filter Search Debounce Time',
-                      anchor: 'dropdownFilterSearchDebounceTime'
-                    },
-                    {
-                      title: 'Column Value Filter',
-                      anchor: 'filter'
-                    }
-                  ]
+                  anchor: 'filterDropdown'
                 },
                 {
                   title: 'Server Side Filtering',

@@ -39,3 +39,20 @@ li {
     height: 35px;
   }
 }
+
+table {
+  border: 1px solid #ddd;
+  font-size: 13px;
+  tr {
+    th {
+      background-color: #333;
+      color: #fff;
+      padding: 0.5rem;
+    }
+
+    td {
+      border: 1px solid #ddd;
+      padding: 0.3rem;
+    }
+  }
+}

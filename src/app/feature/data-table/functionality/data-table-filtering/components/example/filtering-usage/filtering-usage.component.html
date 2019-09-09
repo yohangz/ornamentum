@@ -9,7 +9,7 @@
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [width]="60">
+    [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
@@ -30,8 +30,7 @@
     [field]="'productLine'"
     [title]="'Product Line'"
     [filterable]="true"
-    [filterPlaceholder]="'Product Line Filter'"
-    [showFilterClearButton]="true">
+    [filterPlaceholder]="'PL Filter'">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
@@ -45,18 +44,19 @@
     [field]="'revenue'"
     [title]="'Revenue'"
     [filterable]="true"
-    [filterPlaceholder]="'Revenue Filter'"
-    [showFilterClearButton]="true"
+    [filterPlaceholder]="'R Filter'"
     [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
+    [filterPlaceholder]="'Q Filter'"
     [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"
     [title]="'Gross Margin'"
+    [filterPlaceholder]="'GM Filter'"
     [width]="100">
   </ng-data-table-column>
 </ng-data-table>

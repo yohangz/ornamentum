@@ -10,11 +10,13 @@
     [field]="'id'"
     [title]="'ID'"
     [filterable]="true"
-    [width]="70">
+    [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
     [title]="'Order Method Type'"
+    [showFilterClearButton]="false"
+    [filterPlaceholder]="'OMT Filter'"
     [filterable]="true">
   </ng-data-table-column>
   <ng-data-table-column
