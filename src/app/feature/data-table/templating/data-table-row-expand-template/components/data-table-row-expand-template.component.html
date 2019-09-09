@@ -2,23 +2,24 @@
   <h1>Row Expand Template</h1>
 
   <p>
-    Assume, if you want to show additional view in data table each row in these kind of situations you can use
-    expandable view templates and ornamentum will allow to customize the data table row expandable section by
-    your own templates.
+    The row expand template of the Grid enables you to provide additional details about a particular row of table data,
+    through expanding or collapsing its content.
   </p>
-
   <h2 id="whatYouWillSee">What You Will See</h2>
 
   <app-row-expand-template-usage></app-row-expand-template-usage>
   <app-example-code [files]="rowExpandTemplateUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-
   <p>
     This feature can be enabled by setting the <code>expandableRows</code> as <b>true</b>. The default status of this
     property is
     <b>false</b>.
-  </p>Target Component:
+  </p>
+  <p>
+    To define the detail template, nest an <code>&lt;ng-template&gt;</code> tag with the <code>ngDataTableRowExpand</code> directive
+    inside the <code>&lt;ng-data-table&gt;</code> tag. The template context is set to the current <code>row</code>.
+  </p>
 
   <p>
     Data table will not show anything, although it has been set as <b>true</b> for <code>expandableRows</code> property
@@ -29,7 +30,8 @@
   <p>Following code snippet depicts how to set a custom template.</p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.baseTemplate"></app-code-snippet>
 
-  <p>In <a [routerLink]="['/feature/data-table/templating/row-expand-template']" [fragment]="'whatYouWillSee'">What You Will
+  <p>In <a [routerLink]="['/feature/data-table/templating/row-expand-template']" [fragment]="'whatYouWillSee'">What You
+    Will
     See</a> section , Following code snippet depicts how to setup expandable row for as expandable customer template.
   </p>
 
@@ -47,7 +49,7 @@
   <h4 id="row">Row</h4>
   <code>row: DataTableRow</code>
   <span class="p-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; within &lt;ng-data-table&gt; </span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; inside &lt;ng-data-table&gt; </span>
 
 
   <p>This property can be accessed as shown in the above <a
@@ -94,5 +96,6 @@
   <a [routerLink]="['/feature/data-table/styling/responsive-configurations']">Responsive Configuration</a><br>
   <a [routerLink]="['/feature/data-table/advanced/events']">Events</a><br>
   <a [routerLink]="['/feature/data-table/options/data-loading-spinner']">Data Loading Spinner</a><br>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#rowExpandTemplate">API Doc for Data Table Row Expand Template</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#rowExpandTemplate">API Doc for
+    Data Table Row Expand Template</a>
 </div>
