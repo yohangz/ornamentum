@@ -29,6 +29,26 @@ export class DropdownOptionsComponent {
     return get(this.dataStateService.selectedOption, this.config.selectTrackBy) === id;
   }
 
+  public onOptionClick(option: DropdownItem, event: MouseEvent): void {
+    const target = event.target as HTMLElement;
+    if (target && target.classList && target.classList.contains('ng-ignore-propagation')) {
+      return;
+    }
+
+    this.toggleOptionSelectedState(option);
+  }
+
+  public onOptionCheckboxClick(option: DropdownItem, event: MouseEvent): void {
+    // Prevent single mode checkbox getting unchecked on tapping already selected.
+    if (this.config.selectMode === 'single') {
+      const selectedId = get(this.dataStateService.selectedOption, this.config.selectTrackBy);
+      const id = get(option.item, this.config.selectTrackBy);
+      if (selectedId === id) {
+        event.preventDefault();
+      }
+    }
+  }
+
   public toggleOptionSelectedState(option: DropdownItem): void {
     const id = get(option.item, this.config.selectTrackBy);
 

@@ -44,6 +44,7 @@ import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
 import { DragAndDropService, GlobalRefService } from '../../../utility/utility.module';
+import { ValidatorService } from '../../../utility/services/validator.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 import { DataTablePersistenceService } from '../../services/data-table-persistence.service';
@@ -236,10 +237,16 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set data table identifier; Required if persist table state is enabled
+   * Set data table unique identifier
    */
   @Input()
-  public id: string;
+  public set id(value: string) {
+    if (!ValidatorService.idPatternValidatorExpression.test(value)) {
+      throw Error('Invalid [id] input value. Unique identifier parameter only accept string begin with a letter ([A-Za-z]) and may be followed by any number of letters, digits ([0-9]), hyphens ("-"), underscores ("_").');
+    }
+
+    this.dataStateService.id = value;
+  }
 
   /**
    * Set persist state; Persist table state if true
@@ -804,7 +811,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
     }
 
     if (this.config.persistTableState) {
-      this.dataTableStateService.setState(this.id, params);
+      this.dataTableStateService.setState(this.dataStateService.id, params);
     }
 
     return this.dataStateService.onDataBind(params);
@@ -815,7 +822,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
    */
   private initDataTableState(): void {
     if (this.config.persistTableState) {
-      const dataTableState = this.dataTableStateService.getState(this.id);
+      const dataTableState = this.dataTableStateService.getState(this.dataStateService.id);
       if (dataTableState) {
         this.columns.forEach(column => {
           const field = dataTableState.fields.find(col => {
@@ -960,6 +967,10 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   public ngOnInit(): void {
+    if (!this.dataStateService.id) {
+      throw Error('Missing required parameter value for [id] input.');
+    }
+
     this.scrollPositionSubscription = this.scrollPositionStream.subscribe((pos: DataTableScrollPoint) => {
       this.scrollPositionService.scrollPositionStream.next(pos);
     });

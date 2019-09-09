@@ -29,6 +29,9 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
   @Input()
   public customFilterStream: Observable<DataTableFilterEventArgs>;
 
+  @Input()
+  public index: number;
+
   @Output()
   public filter = new EventEmitter();
 

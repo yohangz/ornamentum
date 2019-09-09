@@ -10,6 +10,7 @@ import { DataTableDataBindCallback } from '../models/data-table-data-bind-callba
  */
 @Injectable()
 export class DataTableDataStateService {
+  public id: string;
   public allRowSelected = false;
   public selectedRow: any;
   public selectedRows: any[] = [];
@@ -32,5 +33,14 @@ export class DataTableDataStateService {
    */
   public get showNoDataOverlay(): boolean {
     return !this.dataRows.length && !this.dataLoading;
+  }
+
+  /**
+   * Get data table row unique id
+   * @param append Target identifier
+   * @param index Target index
+   */
+  public getUniqueId(append: string, index: number): string {
+    return `${this.id}-dt-${append}-${index}`;
   }
 }

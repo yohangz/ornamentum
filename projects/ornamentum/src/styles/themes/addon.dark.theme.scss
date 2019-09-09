@@ -1,5 +1,21 @@
-$checkbox-outer-border: #333 !default;
-$checkbox-background: #ccc !default;
-$checkbox-check-color: #333 !default;
+// Check Box Styles
+$check-box-background-color: #ccc !default;
+$check-box-box-shadow: none !default;
+$check-box-border-radius-value: 0 !default;
+$check-box-border-color: #333 !default;
+$check-box-border-width: 1px !default;
+$check-box-width: 15px !default;
+$check-box-height: 15px !default;
+$check-box-label-left-padding: 0 !default;
+$check-box-label-vertical-align: center !default;
+
+// Selected Styles (Tick)
+$check-box-tick-color: #333 !default;
+$check-box-selected-background-color: #ccc !default;
+$check-box-selected-border-color: #333 !default;
+
+// Selected Styles (Box)
+$check-box-box-background: #333 !default;
+$check-box-box-border-color: #333 !default;
 
 @import 'addon.base.theme';

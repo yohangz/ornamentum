@@ -27,6 +27,7 @@
     </div>
     <ng-dropdown
       *ngIf="column.showDropdownFilter"
+      [id]="dataStateService.getUniqueId('col', index)"
       [relativeParentElement]="dataStateService.relativeParentElement"
       [dataSource]="filterDataStream"
       [menuPosition]="column.dropdownFilterMenuPosition"

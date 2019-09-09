@@ -1,45 +1,138 @@
-$checkbox-outer-border: #ccc !default;
-$checkbox-background: #fff !default;
-$checkbox-check-color: #ccc !default;
+// Check Box Styles
+$check-box-background-color: transparent !default;
+$check-box-box-shadow: none !default;
+$check-box-border-radius-value: 0 !default;
+$check-box-border-color: #ccc !default;
+$check-box-border-width: 1px !default;
+$check-box-width: 15px !default;
+$check-box-height: 15px !default;
+$check-box-label-left-padding: 0 !default;
+$check-box-label-vertical-align: center !default;
 
-.ng-dropdown-checkbox-input,
-.ng-data-table-checkbox-input {
-  cursor: pointer;
-  margin: 0 0.5rem 0 0;
+// Selected Styles (Tick)
+$check-box-tick-color: #344 !default;
+$check-box-selected-background-color: #fff !default;
+$check-box-selected-border-color: #344 !default;
+
+// Selected Styles (Box)
+$check-box-box-background: #344 !default;
+$check-box-box-border-color: #344 !default;
+
+.ng-data-table-checkbox-container,
+.ng-dropdown-checkbox-container {
   position: relative;
+  top: .2rem;
 
-  &::before {
-    border: 0.1rem solid;
-    border-color: $checkbox-check-color;
-    border-right-style: none;
-    border-top-style: none;
-    content: '';
-    height: 0.3rem;
-    left: 0.1rem;
-    position: absolute;
-    top: 0.2rem;
-    transform: rotate(-45deg) scale(0, 0);
-    transition: transform 0.4s cubic-bezier(0.45, 1.8, 0.5, 0.75);
-    width: 0.55rem;
-    z-index: 1;
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
   }
 
-  &:checked {
+  label {
+    align-items: $check-box-label-vertical-align;
+    cursor: pointer;
+    display: inline-flex;
+    height: $check-box-height;
+    margin: 0;
+    padding-left: ($check-box-width + $check-box-label-left-padding);
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+    }
+
     &::before {
-      transform: rotate(-45deg) scale(1, 1);
+      background: $check-box-background-color;
+      border: $check-box-border-width solid $check-box-border-color;
+      border-radius: $check-box-border-radius-value;
+      box-shadow: $check-box-box-shadow;
+      display: inline-block;
+      height: $check-box-height;
+      left: 0;
+      transition: background 1s cubic-bezier(0.45, 2, 0.5, 0.75);
+      top: 0;
+      width: $check-box-width;
+    }
+
+    &::after {
+      border-left: $check-box-border-width solid $check-box-tick-color;
+      border-bottom: $check-box-border-width solid $check-box-tick-color;
+      height: ($check-box-height / 4);
+      left: ($check-box-width / 4);
+      top: (($check-box-height / 4) + $check-box-border-width);
+      transform: rotate(-45deg) scale(0, 0);
+      transition: transform 0.2s cubic-bezier(0.45, 2, 0.5, 0.75);
+      width: ($check-box-width / 2);
     }
   }
 
-  &::after {
-    background: $checkbox-background;
-    border: 0.1rem solid;
-    border-color: $checkbox-outer-border;
-    content: '';
-    cursor: pointer;
-    height: 1.05rem;
-    left: -0.1rem;
+  input[type="checkbox"] {
+    height: $check-box-height;
+    left: 0;
+    margin: 0;
+    opacity: 0;
     position: absolute;
-    top: -0.1rem;
-    width: 1.05rem;
+    top: 0;
+    width: $check-box-width;
+
+    &:checked {
+      + label {
+        &::before {
+          background: $check-box-selected-background-color;
+          border-color: $check-box-selected-border-color;
+          transition: background 0.2s cubic-bezier(0.45, 2, 0.5, 0.75);
+        }
+
+        &::after {
+          transform: rotate(-45deg) scale(1, 1);
+          transition: transform 0.4s cubic-bezier(0.45, 2, 0.5, 0.75);
+        }
+      }
+    }
+  }
+
+  &.box {
+    label {
+      &::before {
+        transition: background 0.2s cubic-bezier(0.45, 2, 0.5, 0.75);
+      }
+
+      &::after {
+        background: $check-box-selected-background-color;
+        border: none;
+        height: ($check-box-height / 2.25);
+        left: ($check-box-width / 3.6);
+        top: ($check-box-height / 3.6);
+        transform: scale(0, 0);
+        transition: transform 0.2s cubic-bezier(0.45, 2, 0.5, 0.75);
+        width: ($check-box-height / 2.25);
+      }
+    }
+
+    input[type="checkbox"] {
+      &:checked {
+        + label {
+          &::before {
+            background: $check-box-box-background;
+            border: $check-box-border-width solid $check-box-box-border-color;
+            transition: background 0.2s cubic-bezier(0.45, 2, 0.5, 0.75);
+          }
+
+          &::after {
+            transform: scale(1, 1);
+            transition: transform 0.2s cubic-bezier(0.45, 2, 0.5, 0.75);
+          }
+        }
+      }
+    }
   }
 }
+
+.ng-dropdown-checkbox-container {
+  display: block;
+  top: 0;
+}
+

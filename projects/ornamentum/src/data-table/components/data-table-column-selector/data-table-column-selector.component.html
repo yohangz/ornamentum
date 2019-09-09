@@ -1,12 +1,13 @@
 <div class="ng-data-table-column-selector-wrapper" [style.width]="width | ngPx">
   <div class="ng-data-table-column-selector-box-heading">Show/Hide Column</div>
   <div class="ng-data-table-column-selector-box">
-    <ng-container *ngFor="let column of columns">
+    <ng-container *ngFor="let column of columns; index as i;">
       <div class="ng-data-table-column-selector-column ng-data-table-column-selector-checkbox" *ngIf="column.showInColumnSelector">
-        <label>
-          <input class="ng-data-table-checkbox-input" type="checkbox" [(ngModel)]="column.visible" />
-          <span [textContent]="column.title"></span>
-        </label>
+        <div class="ng-data-table-checkbox-container">
+          <input class="ng-data-table-checkbox-input" type="checkbox"
+                 [id]="dataStateService.getUniqueId('cs', i)" [(ngModel)]="column.visible"/>
+          <label [for]="dataStateService.getUniqueId('cs', i)"><span [textContent]="column.title"></span></label>
+        </div>
       </div>
     </ng-container>
   </div>

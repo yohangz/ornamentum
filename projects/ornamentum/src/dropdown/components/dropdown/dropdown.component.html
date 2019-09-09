@@ -2,8 +2,7 @@
   <div class="ng-dropdown-toggle" (click)="toggleDropdown($event, dropdownElement)" [class.disabled]="dataStateService.disabled">
     <ng-container *ngIf="config.selectMode === 'multi'">
       <ng-container *ngIf="!wrapSelectedOptions">
-        <span
-          class="ng-dropdown-selected-value"
+        <span class="ng-dropdown-selected-value"
           *ngFor="let item of dataStateService.selectedOptions; let index = index"
           [style.max-width]="config.multiSelectOptionMaxWidth | ngPx"
           [class.ng-dropdown-option-close-enabled]="config.showSelectedOptionRemoveButton">

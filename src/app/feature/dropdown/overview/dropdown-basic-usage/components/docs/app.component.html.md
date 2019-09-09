@@ -1,4 +1,5 @@
 <ng-dropdown
+  [id]="'products_overview_02'"
   [selectTrackBy]="'id'"
   [displayTrackBy]="'productType'"
   [items]="items"

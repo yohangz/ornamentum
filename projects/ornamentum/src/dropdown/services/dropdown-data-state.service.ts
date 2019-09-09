@@ -10,6 +10,7 @@ import { ComponentLoader } from '../../utility/utility.module';
  */
 @Injectable()
 export class DropdownDataStateService {
+  public id: string;
   public dataLoading = false;
   public selectedOption: any;
   public selectedOptions: any[] = [];
@@ -25,4 +26,13 @@ export class DropdownDataStateService {
   public dropdownOptionGroupHeaderTemplate: TemplateRef<any>;
 
   public onDataBind: DropdownDataBindCallback<any>;
+
+  /**
+   * Get dropdown option unique id
+   * @param append Target identifier
+   * @param index Target index
+   */
+  public getUniqueId(append: string, index: number): string {
+    return `${this.id}-chk-${append}-${index}`;
+  }
 }
