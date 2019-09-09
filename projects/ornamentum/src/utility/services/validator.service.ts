@@ -10,5 +10,5 @@ export class ValidatorService {
   /**
    * Unique id value validation patten expression.
    */
-  public static readonly idPatternValidatorExpression: RegExp = /^[A-Za-z]+[\w\-]*$/;
+  public static readonly idPatternValidatorExpression = new RegExp('^[A-Za-z]+[\\w\\-]*$');
 }
