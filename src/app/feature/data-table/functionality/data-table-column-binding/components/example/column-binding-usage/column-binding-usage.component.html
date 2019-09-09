@@ -1,0 +1,51 @@
+<ng-data-table
+  [id]="'sales_products_functionality_19'"
+  [title]="'Sales Products'"
+  [items]="items"
+  [minContentWidth]="900"
+  [pageable]="true"
+  [showHeader]="true"
+  [showColumnSelector]="true">
+  <ng-data-table-column
+    [field]="'id'"
+    [title]="'ID'"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'orderMethodType'"
+    [title]="'Order Method Type'"
+    [visible]="false">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'retailerType'"
+    [title]="'Retailer Type'"
+    [width]="120"
+    [visible]="false">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productLine'"
+    [title]="'Product Line'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'productType'"
+    [title]="'Product Type'"
+    [cssClass]="'product-type'"
+    [width]="150">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'revenue'"
+    [title]="'Revenue'"
+    [width]="120">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'quantity'"
+    [title]="'Quantity'"
+    [width]="80">
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'grossMargin'"
+    [title]="'Gross Margin'"
+    [width]="100">
+  </ng-data-table-column>
+</ng-data-table>

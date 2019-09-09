@@ -10,7 +10,22 @@ const dataTableFunctionalityRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'pagination'
+    redirectTo: 'column/binding'
+  },
+  {
+    loadChildren: './data-table-column-binding/data-table-column-binding.module#DataTableColumnBindingModule',
+    // loadChildren: () => import('./data-table-column-binding/data-table-column-binding.module')
+    //   .then((m) => m.DataTableColumnBindingModule),
+    path: 'column/binding',
+    canActivate: [SeoGuard],
+    data: {
+      seo: {
+        title: 'Ornamentum | Data Table | Functionality | Column Binding',
+        keywords: 'ornamentum column binding,ornamentum column data,data table column,data table column data binding',
+        // tslint:disable-next-line
+        description: 'Column binding is useful for binding data sets for each data table column with different manipulation techniques.'
+      }
+    }
   },
   {
     loadChildren: './data-table-pagination/data-table-pagination.module#DataTablePaginationModule',

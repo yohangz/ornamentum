@@ -1,0 +1,96 @@
+<div class="feature-container">
+  <h1>Column Binding</h1>
+
+  <p>Column binding section is consists of set of basic properties which will describes how we can use them for data
+    table column data binding and manipulate data inside the column. The grid can facilitate a column for every item of
+    the data array.</p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-column-binding-usage></app-column-binding-usage>
+  <app-example-code [files]="columnBindingUsage"></app-example-code>
+
+  The following code snippet will depict the basic usage of column data binding. For use all it's associated properties
+  it is
+  mandatory to define <code>field</code> property, otherwise functionality may differ.
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.resizable"></app-code-snippet>
+
+  <h2 id="usefulProperties">Useful Properties</h2>
+
+  <h4 id="field">Field</h4>
+
+  <code>field: string</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+
+  <p>Field property is a <b>mandatory</b> property that bound to a column. This property will act as a
+    identifier for access specific data set in your data array. The field name should be a valid Javascript identifier
+    and should only contains <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Alphanumeric">Alphanumeric
+      Characters</a>.</p>
+
+  <h4 id="title">Title</h4>
+
+  <code>title: string</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+
+  <p>Useful to set a name for the field that column is bounded. If the property is not provided ornamentum will render
+    column title as blank.</p>
+
+  <h4 id="cssClass">CSS Class</h4>
+
+  <code>cssClass: string</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+
+  <p>This property is useful if you want to inject a CSS class into your data table column cells. you can
+    provide a string or a function which returns a CSS class or classes which space delimiter separated without dot
+    selector.</p>
+
+  <h4 id="width">Width</h4>
+
+  <code>width: number | string</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+
+  <p>The width can be used to set a static width for grid column. It accepts number which automatically converts it's
+    unit to pixels or you can manually define a string with respective CSS units (px, cm, mm etc).</p>
+
+  <h4 id="visible">Visible</h4>
+
+  <code>visible: boolean</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: true</h5>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+
+  <p>This property is useful if you want to show your column in the data table. If it is set to false, ornamentum will
+    not renders the column and it's content but include it in <a
+      [routerLink]="['/feature/data-table/options/header-details']" [fragment]="'showColumnSelector'">Show Column
+      Selector</a> dropdown as not selected.</p>
+
+  <h4 id="showInColumnSelector">Show In Column Selector</h4>
+
+  <code>showInColumnSelector: boolean</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: true</h5>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+
+  <p>If this property is set to true, the column will be displayed on <a
+    [routerLink]="['/feature/data-table/options/header-details']" [fragment]="'showColumnSelector'">Show Column
+    Selector</a> dropdown with field title and selected state, By enabling this functionality end users able to
+    customize what they want to see.</p>
+
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/data-table/functionality/column/sorting']">Sorting</a><br>
+  <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Filtering</a><br>
+  <a [routerLink]="['/feature/data-table/options/header-details']">Header Details</a><br>
+  <a [routerLink]="['/feature/data-table/styling/responsive-configuration']">Responsive Configuration</a><br>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Column
+    Sorting</a>
+</div>

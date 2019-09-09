@@ -159,6 +159,50 @@ export class MainComponent {
           name: 'Functionality',
           menuItems: [
             {
+              routePath: '/feature/data-table/functionality/column/binding',
+              title: 'Column Binding',
+              navigation: [
+                {
+                  title: 'What You Will See',
+                  anchor: 'whatYouWillSee'
+                },
+                {
+                  title: 'Useful Properties',
+                  anchor: 'usefulProperties',
+                  subNavigation: [
+                    {
+                      title: 'Field',
+                      anchor: 'field'
+                    },
+                    {
+                      title: 'Title',
+                      anchor: 'title'
+                    },
+                    {
+                      title: 'CSS Class',
+                      anchor: 'cssClass'
+                    },
+                    {
+                      title: 'Width',
+                      anchor: 'width'
+                    },
+                    {
+                      title: 'Visible',
+                      anchor: 'visible'
+                    },
+                    {
+                      title: 'Show In Column Selector',
+                      anchor: 'showInColumnSelector'
+                    }
+                  ]
+                },
+                {
+                  title: 'Suggested Links',
+                  anchor: 'suggestedLinks'
+                }
+              ]
+            },
+            {
               routePath: '/feature/data-table/functionality/pagination',
               title: 'Pagination',
               navigation: [
