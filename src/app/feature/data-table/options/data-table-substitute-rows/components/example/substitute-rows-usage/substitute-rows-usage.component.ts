@@ -12,6 +12,6 @@ export class SubstituteRowsUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.items = this.dataFetchService.fetchStaticData(0, 5);
   }
 }

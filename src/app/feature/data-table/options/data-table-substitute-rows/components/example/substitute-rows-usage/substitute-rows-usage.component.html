@@ -2,7 +2,7 @@
   [id]="'sales_products_options_03'"
   [title]="'Sales Products'"
   [items]="items"
-  [limit]="15"
+  [limit]="10"
   [minContentWidth]="900"
   [pageable]="true"
   [showHeader]="true"
@@ -15,7 +15,8 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
-    [title]="'Order Method Type'">
+    [title]="'Order Method Type'"
+    [width]="130">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
@@ -24,7 +25,8 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
-    [title]="'Product Line'">
+    [title]="'Product Line'"
+    [width]="160">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"

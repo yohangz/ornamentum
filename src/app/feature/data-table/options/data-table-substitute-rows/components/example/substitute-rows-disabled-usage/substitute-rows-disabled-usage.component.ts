@@ -5,13 +5,13 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-without-substitute-rows-usage',
-  templateUrl: './without-substitute-rows-usage.component.html'
+  selector: 'app-substitute-rows-disabled-usage',
+  templateUrl: './substitute-rows-disabled-usage.component.html'
 })
-export class WithoutSubstituteRowsUsageComponent {
+export class SubstituteRowsDisabledUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.items = this.dataFetchService.fetchStaticData(0, 5);
   }
 }

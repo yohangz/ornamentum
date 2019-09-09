@@ -10,7 +10,7 @@ import { SharedModule } from '../../../../shared/shared.module';
 
 import {
   DataTableSubstituteRowsComponent,
-  WithoutSubstituteRowsUsageComponent,
+  SubstituteRowsDisabledUsageComponent,
   SubstituteRowsUsageComponent
 } from './index';
 
@@ -20,7 +20,7 @@ import {
 @NgModule({
   declarations: [
     DataTableSubstituteRowsComponent,
-    WithoutSubstituteRowsUsageComponent,
+    SubstituteRowsDisabledUsageComponent,
     SubstituteRowsUsageComponent],
   exports: [],
   imports: [

@@ -523,8 +523,12 @@ export class MainComponent {
                   anchor: 'basicUsage',
                   subNavigation: [
                     {
-                      title: 'Without Substitute Rows',
-                      anchor: 'withoutSubstituteRows'
+                      title: 'Substitute Rows Enabled',
+                      anchor: 'substituteRowsEnabled'
+                    },
+                    {
+                      title: 'Substitute Rows Disabled',
+                      anchor: 'substituteRowsDisabled'
                     }
                   ]
                 },

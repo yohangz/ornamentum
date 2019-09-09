@@ -3,17 +3,17 @@ import { ExampleFile, FileType } from 'helper-models';
 export const substituteRowsUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'with-substitute-rows-usage.component.ts',
+    name: 'substitute-rows-usage.component.ts',
     content: require('!!raw-loader!./example/substitute-rows-usage/substitute-rows-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'with-substitute-rows-usage.component.html',
+    name: 'substitute-rows-usage.component.html',
     content: require('!!raw-loader!./example/substitute-rows-usage/substitute-rows-usage.component.html')
   },
   {
     type: FileType.TS,
-    name: 'with-substitute-rows-usage.module.ts',
+    name: 'substitute-rows-usage.module.ts',
     content: require('!!raw-loader!./example/substitute-rows-usage/substitute-rows-usage.module.md')
   }
 ];
@@ -21,21 +21,22 @@ export const substituteRowsUsage: ExampleFile[] = [
 export const withoutSubstituteRowsUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'without-substitute-rows-usage.component.ts',
-    content: require('!!raw-loader!./example/without-substitute-rows-usage/without-substitute-rows-usage.component.ts')
+    name: 'substitute-rows-disabled-usage.component.ts',
+    content: require('!!raw-loader!./example/substitute-rows-disabled-usage/substitute-rows-disabled-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'without-substitute-rows-usage.component.html',
-    content: require('!!raw-loader!./example/without-substitute-rows-usage/without-substitute-rows-usage.component.html')
+    name: 'substitute-rows-disabled-usage.component.html',
+    content: require('!!raw-loader!./example/substitute-rows-disabled-usage/substitute-rows-disabled-usage.component.html')
   },
   {
     type: FileType.TS,
-    name: 'without-substitute-rows-usage.module.ts',
-    content: require('!!raw-loader!./example/without-substitute-rows-usage/without-substitute-rows-usage.module.md')
+    name: 'substitute-rows-disabled-usage.module.ts',
+    content: require('!!raw-loader!./example/substitute-rows-disabled-usage/substitute-rows-disabled-usage.module.md')
   }
 ];
 
 export const demoSnippet: any = {
-  showSubstituteRows: require('!!raw-loader!./docs/show-substitute-rows.md')
+  showSubstituteRowsEnabled: require('!!raw-loader!./docs/show-substitute-rows-enabled.md'),
+  showSubstituteRowsDisabled: require('!!raw-loader!./docs/show-substitute-rows-disabled.md')
 };

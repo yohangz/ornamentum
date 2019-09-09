@@ -1,37 +1,55 @@
 <div class="feature-container">
   <h1>Substitute Rows</h1>
   <p>
-    Substitute rows are useful when you want to show empty rows in data table, if there are less amount of data is
-    available than the specified limit. In such cases, you might need to turn <code>showSubstituteRows</code>
-    enable to show empty rows for the display defined data table limit.
+    Substitute rows are useful to show empty rows if there is less amount of data is available than the declared <a
+    [routerLink]="['/feature/data-table/functionality/pagination']" [fragment]="'limit'">limit</a>.
+    In such cases, ornamentum will leave the rest of the data rows as empty instead of showing an empty area. However,
+    substitute rows will not displays if the data set is equally divided by <code>limit</code> whether the substitute
+    rows are <b>enabled</b>.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
   <app-substitute-rows-usage></app-substitute-rows-usage>
-  <app-example-code [files]="substituteRowsUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>To enable substitute rows, simply set <code>showSubstituteRows</code> to <b>true</b> and by default the property
-    is in <b>false</b> state. In <a [routerLink]="['/feature/data-table/options/substitute-rows']"
-                                    [fragment]="'whatYouWillSee'">What You Will See</a> section example limit is
-    specified as 15, but it is showing 5 additional rows due to unavailability of last 5 data items.</p>
+  <ol class="main-pane-list">
+    <li id="substituteRowsEnabled">
+      <h6><b>Substitute Rows Enabled</b></h6>
+    </li>
 
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.showSubstituteRows"></app-code-snippet>
+    <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.showSubstituteRowsEnabled"></app-code-snippet>
 
-  <h4 id="withoutSubstituteRows">Without Substitute Rows</h4>
+    <p>For enable substitute rows, set <code>showSubstituteRows</code> to <b>true</b> and by default, the property
+      is in <b>false</b> state. In <a [routerLink]="['/feature/data-table/options/substitute-rows']"
+                                      [fragment]="'whatYouWillSee'">What You Will See</a> section example, data
+      <code>limit</code> is declared as 10 items. But due to the lack of data availability table is showing 5 data
+      rows with additional 5 empty rows to fill the gap of data table limit.</p>
 
-  <p>
-    Substitute rows will not be shown although data limit is less than the specified limit, if
-    <code>showSubstituteRows</code> property is set to false. In the following example limit is specified as 15, but it
-    is not showing 5 additional rows because showing substitute rows is not defined and therefore property was in
-    default configuration state (false) or else can be explicitly define as false in table level configuration.
-  </p>
 
-  <app-without-substitute-rows-usage></app-without-substitute-rows-usage>
-  <app-example-code [files]="withoutSubstituteRowsUsage"></app-example-code>
+    <app-example-code [files]="substituteRowsUsage"></app-example-code>
+
+    <li id="substituteRowsDisabled">
+      <h6><b>Substitute Rows Disabled</b></h6>
+    </li>
+
+    <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.showSubstituteRowsDisabled"></app-code-snippet>
+
+    <p>
+      In the following example <code>limit</code> is specified as 10 items, But due to the lack of data availability
+      table is showing
+      5 data rows and instead of showing additional empty data rows it shows an empty area. That because substitute rows
+      are not defined.
+    </p>
+
+    <app-substitute-rows-disabled-usage></app-substitute-rows-disabled-usage>
+    <app-example-code [files]="withoutSubstituteRowsUsage"></app-example-code>
+  </ol>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#showSubstituteRows">API Doc for Data Table Substitute Rows</a>
+  <a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a><br>
+  <a [routerLink]="['/feature/data-table/functionality/column/binding']">Column Binding</a><br>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#showSubstituteRows">API Doc for
+    Data Table Substitute Rows</a>
 </div>
