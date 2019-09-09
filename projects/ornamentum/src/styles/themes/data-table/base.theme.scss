@@ -251,21 +251,14 @@
 
       .ng-data-table-column-selector-checkbox {
         @include font-size(0.8, 1.4);
+        margin-bottom: .5rem;
 
         label {
           color: $data-table-dropdown-text-color;
           cursor: pointer;
-          display: block;
 
-          .ng-data-table-checkbox-input {
-            cursor: pointer;
-            margin-right: 0.5rem;
-          }
-        }
-
-        &:last-child {
-          label {
-            margin-bottom: 0;
+          span {
+            padding-left: .5rem;
           }
         }
       }
