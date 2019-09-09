@@ -12,12 +12,13 @@ import { DragAndDropService } from './services/drag-and-drop.service';
 import { GlobalRefService } from './services/global-ref.service';
 import { PopoverComponentLoaderFactoryService } from './services/popover-component-loader-factory.service';
 import { ResizeService } from './services/resize.service';
+import { ValidatorService } from './services/validator.service';
 
 const DIRECTIVES = [ClickOutsideDirective, InitDirective, FocusDirective];
 
 const PIPES = [PixelConverterPipe];
 
-const PROVIDERS = [DragAndDropService, GlobalRefService, PopoverComponentLoaderFactoryService, ResizeService];
+const PROVIDERS = [DragAndDropService, GlobalRefService, PopoverComponentLoaderFactoryService, ResizeService, ValidatorService];
 
 /**
  * Module representing utility providers, directives and pipes

@@ -44,6 +44,7 @@ import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 
 import { DragAndDropService, GlobalRefService } from '../../../utility/utility.module';
+import { ValidatorService } from '../../../utility/services/validator.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 import { DataTablePersistenceService } from '../../services/data-table-persistence.service';
@@ -240,6 +241,10 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
    */
   @Input()
   public set id(value: string) {
+    if (!ValidatorService.idPatternValidatorExpression.test(value)) {
+      throw Error('Invalid [id] input value. Unique identifier parameter only accept string begin with a letter ([A-Za-z]) and may be followed by any number of letters, digits ([0-9]), hyphens ("-"), underscores ("_").');
+    }
+
     this.dataStateService.id = value;
   }
 
@@ -963,7 +968,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
 
   public ngOnInit(): void {
     if (!this.dataStateService.id) {
-      throw Error('Data table unique identifier is required.');
+      throw Error('Missing required parameter value for [id] input.');
     }
 
     this.scrollPositionSubscription = this.scrollPositionStream.subscribe((pos: DataTableScrollPoint) => {

@@ -37,6 +37,7 @@ import { DropdownEventStateService } from '../../services/dropdown-event-state.s
 import { DropdownResourceService } from '../../services/dropdown-resource.service';
 import { ViewPosition } from '../../../utility/models/view-position.model';
 import { of } from 'rxjs/internal/observable/of';
+import {ValidatorService} from "../../../utility/services/validator.service";
 
 /**
  * Dropdown main component.
@@ -131,6 +132,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
    */
   @Input()
   public set id(value: string) {
+    if (!ValidatorService.idPatternValidatorExpression.test(value)) {
+      throw Error('Invalid [id] input value. Unique identifier parameter only accept string begin with a letter ([A-Za-z]) and may be followed by any number of letters, digits ([0-9]), hyphens ("-"), underscores ("_").');
+    }
+
     this.dataStateService.id = value;
   }
 
@@ -545,7 +550,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   public ngOnInit(): void {
     if (!this.dataStateService.id) {
-      throw Error('Dropdown unique identifier is required.');
+      throw Error('Missing required parameter value for [id] input.');
     }
 
     if (!this.dataStateService.onDataBind) {
