@@ -1,7 +1,10 @@
 <div class="feature-container">
   <h1>Cell Template</h1>
 
-  <p>Cell template will allow users to customize table cells based on their personalized and detailed preference.</p>
+  <p>
+    Ornamentum allows flexible customization of the table cells of the Grid (excluding the header
+    and footer section) or to format the data the table cells display.
+  </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -10,13 +13,19 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>Initially you can set your own cell template all configuration as follows.</p>
+
+  <p>Following code snippet depicts the integration of cell template.
+
+    To define the cell template, nest an <code>&lt;ng-template&gt;</code> tag with the ngDataTableCell directive inside a
+    <code>&lt;ng-data-table-column&gt;</code> tag.
+
+    The template context is set to the current data item and the following additional fields are passed:<br>
+
+    <code>let-column="column" let-row="row" let-spanIndex="spanIndex" let-rowSpan="rowSpan"</code>
+  </p>
+
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.baseTemplate"></app-code-snippet>
 
-  <p>
-    Once the template configuring is done, You can apply one or more columns In the above data table, the following
-    template is applied values in <b>Retailer Type</b> column.
-  </p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.cellTemplate"></app-code-snippet>
 
 
@@ -25,17 +34,21 @@
 
   <h4 id="column">Column</h4>
   <code>column: DataTableColumnComponent</code>
-
-  <p>Cell responsible column can be accessed as follows and Data table column component contains all column properties
-    that required.</p>
+  <span class="p-1"></span>
+  <span    class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; within &lt;ng-data-table-column&gt;</span>
+  <p>
+    The current column instance which contains all column properties. Use it as an alias for a template variable by utilizing the <code>let-column="column"</code> syntax.
+  </p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.columnPropertyTemplate"></app-code-snippet>
 
   <h4 id="row">Row</h4>
   <code>row: DataTableRow</code>
   <span class="p-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; within &lt;ng-data-table-column&gt;</span>
-
-  <p>Cell responsible specific data table row field can be accessed as follows.</p>
+  <span
+    class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; within &lt;ng-data-table-column&gt;</span>
+  <p>
+    The current row instance which contains all row data. Use it as an alias for a template variable by utilizing the <code>let-row="row"</code> syntax.
+  </p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.rowPropertyTemplate"></app-code-snippet>
 
   <h5>Usage of <code>row</code> property</h5>
@@ -44,14 +57,23 @@
 
   <h4 id="spanIndex">Span Index</h4>
   <code>spanIndex: number</code>
+  <span class="p-1"></span>
+  <span    class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; within &lt;ng-data-table-column&gt;</span>
   <br/>
-  <p>Cell responsible specific data table row span index can be accessed as follows.</p>
+  <p>
+    Span index of the current row which is useful when using row grouping. Use it as an alias for a template variable by utilizing the <code>let-spanIndex="spanIndex"</code> syntax.
+  </p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.spanIndexPropertyTemplate"></app-code-snippet>
 
   <h4 id="rowSpan">Row Span</h4>
   <code>rowSpan: number</code>
+  <span class="p-1"></span>
+  <span    class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; within &lt;ng-data-table-column&gt;</span>
   <br/>
-  <p>Row span count can be accessed as follows.</p>
+  <p>
+    Row Span of the current row which is useful when using row grouping.
+    Use it as an alias for a template variable by utilizing the <code>let-rowSpan="rowSpan"</code> syntax.
+  </p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.rowSpanPropertyTemplate"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
