@@ -1,5 +1,5 @@
 <ng-data-table
-  [title]="'Git Repositories'"
+  [title]="'Github Global Repositories'"
   [id]="'git_repositories_data_binding_01'"
   [limit]="5"
   [showHeader]="true"
@@ -26,14 +26,14 @@
     [title]="'Avatar'">
     <ng-template #ngDataTableCell let-row="row">
       <td style="vertical-align: middle">
-        <img style="width: 48px; height: 48px; border-radius: 50%; margin-right: 50px;" [src]="row.item.owner.avatar_url"/>
+        <img style="width: 48px; height: 48px; border-radius: 50%; margin-right: 10px;" [src]="row.item.owner.avatar_url"/>
         <span>{{row.item.owner.login}}</span>
       </td>
     </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'html_url'"
-    [title]="'Git Profile'">
+    [title]="'Git Repository URL'">
     <ng-template #ngDataTableCell let-row="row">
       <td style="vertical-align: middle">
         <a class="link" [href]="row.item.html_url">{{row.item.html_url}}</a>

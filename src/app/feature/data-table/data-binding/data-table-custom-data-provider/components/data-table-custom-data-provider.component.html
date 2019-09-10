@@ -5,7 +5,7 @@
     Ornamentum data binding is handled via <a rel="noopener" target="_blank"
                                               href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
     callback function. Use this callback reference to hook into data bind workflow and provide custom data source. This
-    callback function will get triggered on table initialization and on dynamic data table operations. It
+    callback function will get triggered upon the table initialization and on dynamic data table operations. It
     receives <a rel="noopener" target="_blank"
                 href="https://ornamentum.app/api-docs/interfaces/DataTableRequestParams.html">DataTableRequestParams</a>
     argument and expect to return <a rel="noopener" target="_blank"
@@ -24,18 +24,18 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Ornamentum provided a way to integrated server side data bind functionality via
+    Ornamentum provides the capability to integrated server side data bind functionality via
     <a rel="noopener" target="_blank"
        href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
-    callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
-    data source agnostic.
+    callback function input property. Data source associated logic is decoupled from the Ornamentum core module to make
+    the data source agnostic.
   </p>
   <p>
     If you refer to <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']" [fragment]="'basicUsage'">Server
-    Side Basic Data Binding</a> and <a
+    Side Basic</a> and <a
     [routerLink]="['/feature/data-table/data-binding/server-side/web-socket#basicUsage']" [fragment]="'basicUsage'">Server
-    Side Web Socket Data Binding</a> basic usage, getResourceProvider in DataTableHttpResourceFactoryService provides in
-    build method take care of basic server data bind functionality.
+    Side Web Socket</a> Data Binding basic usages, <code>getResourceProvider</code> in
+    DataTableHttpResourceFactoryService provides an inbuilt method to take care of basic server data bind functionality.
     You can build your own data provider same as <a rel="noopener" target="_blank"
                                                     href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
     internal data provider.
@@ -54,9 +54,11 @@
     </li>
     <li>
       <p>
-        The custom data provider needs to return a function which is supposed to be returned object as Observable.
-        <br>
-        As long as your data return as observable you can use any data sources such as Firebase Realtime Database or
+        The custom data provider needs to return a function which is supposed to be returned object as an Observable.
+      </p>
+
+      <p>
+        As long as your data returns as observable, you can use any data source, such as Firebase Realtime Database or
         Cloud Fire store.
       </p>
       <app-custom-data-provider-mapper-usage></app-custom-data-provider-mapper-usage>
@@ -76,8 +78,8 @@
 
   <p>
     You can inspect network traffic of this page (<a href="https://api.github.com/search/repositories">Github
-    Repositories</a>) in browser developer tools to understand how backend service request/response and behaviors for the above
-    example.
+    Repositories</a>) in browser developer tools to understand how backend service request/response and behaviors for
+    the above example.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
@@ -85,5 +87,5 @@
   <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web Socket Data
     Binding</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API
-  Doc for Server Side Basic Data Binding</a>
+    Doc for Server Side Basic Data Binding</a>
 </div>

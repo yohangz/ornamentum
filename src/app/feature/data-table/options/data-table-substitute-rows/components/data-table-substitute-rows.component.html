@@ -1,10 +1,10 @@
 <div class="feature-container">
   <h1>Substitute Rows</h1>
   <p>
-    Substitute rows are useful to show empty rows if there is less amount of data is available than the declared <a
+    Substitute rows are used to show empty rows when there is a lesser amount of data is available than the declared <a
     [routerLink]="['/feature/data-table/functionality/pagination']" [fragment]="'limit'">limit</a>.
-    In such cases, ornamentum will leave the rest of the data rows as empty instead of showing an empty area. However,
-    substitute rows will not displays if the data set is equally divided by <code>limit</code> whether the substitute
+    In such cases, ornamentum will leave the rest of the data rows empty instead of showing a blank area. If the data
+    set is equally divided by the declared limit the substitute rows will not be displayed even though the substitute
     rows are <b>enabled</b>.
   </p>
 
@@ -21,11 +21,11 @@
 
     <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.showSubstituteRowsEnabled"></app-code-snippet>
 
-    <p>For enable substitute rows, set <code>showSubstituteRows</code> to <b>true</b> and by default, the property
-      is in <b>false</b> state. In <a [routerLink]="['/feature/data-table/options/substitute-rows']"
-                                      [fragment]="'whatYouWillSee'">What You Will See</a> section example, data
-      <code>limit</code> is declared as 10 items. But due to the lack of data availability table is showing 5 data
-      rows with additional 5 empty rows to fill the gap of data table limit.</p>
+    <p>To enable substitute rows, set <code>showSubstituteRows</code> to <b>true</b>, and by default, the property
+      is in <b>false</b> state. In the example in <a [routerLink]="['/feature/data-table/options/substitute-rows']"
+                                                     [fragment]="'whatYouWillSee'">What You Will See</a> section, the
+      data <code>limit</code> is declared as 10 items. Still, due to the lack of data availability the table shows 05
+      data rows with additional 05 empty rows to fill the gap of data table limit.</p>
 
 
     <app-example-code [files]="substituteRowsUsage"></app-example-code>
@@ -38,9 +38,8 @@
 
     <p>
       In the following example <code>limit</code> is specified as 10 items, But due to the lack of data availability
-      table is showing
-      5 data rows and instead of showing additional empty data rows it shows an empty area. That because substitute rows
-      are not defined.
+      table is showing 05 data rows and instead of showing additional empty data rows it shows an empty area. That is
+      because the substitute rows are not defined.
     </p>
 
     <app-substitute-rows-disabled-usage></app-substitute-rows-disabled-usage>
