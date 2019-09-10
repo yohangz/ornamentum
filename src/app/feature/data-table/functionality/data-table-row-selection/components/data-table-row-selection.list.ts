@@ -147,36 +147,36 @@ export const selectTrackByUsage: ExampleFile[] = [
 export const setSelectedRowUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'set-selected-row-usage.component.ts',
-    content: require('!!raw-loader!./example/set-selected-row-usage/set-selected-row-usage.component.ts')
+    name: 'selected-row-usage.component.ts',
+    content: require('!!raw-loader!./example/selected-row-usage/selected-row-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'set-selected-row-usage.component.html',
-    content: require('!!raw-loader!./example/set-selected-row-usage/set-selected-row-usage.component.html')
+    name: 'selected-row-usage.component.html',
+    content: require('!!raw-loader!./example/selected-row-usage/selected-row-usage.component.html')
   },
   {
     type: FileType.TS,
-    name: 'set-selected-row-usage.module.ts',
-    content: require('!!raw-loader!./example/set-selected-row-usage/set-selected-row-usage.module.md')
+    name: 'selected-row-usage.module.ts',
+    content: require('!!raw-loader!./example/selected-row-usage/selected-row-usage.module.md')
   }
 ];
 
 export const setSelectedRowsUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'set-selected-rows-usage.component.ts',
-    content: require('!!raw-loader!./example/set-selected-rows-usage/set-selected-rows-usage.component.ts')
+    name: 'selected-rows-usage.component.ts',
+    content: require('!!raw-loader!./example/selected-rows-usage/selected-rows-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'set-selected-rows-usage.component.html',
-    content: require('!!raw-loader!./example/set-selected-rows-usage/set-selected-rows-usage.component.html')
+    name: 'selected-rows-usage.component.html',
+    content: require('!!raw-loader!./example/selected-rows-usage/selected-rows-usage.component.html')
   },
   {
     type: FileType.TS,
-    name: 'set-selected-rows-usage.module.ts',
-    content: require('!!raw-loader!./example/set-selected-rows-usage/set-selected-rows-usage.module.md')
+    name: 'selected-rows-usage.module.ts',
+    content: require('!!raw-loader!./example/selected-rows-usage/selected-rows-usage.module.md')
   }
 ];
 

@@ -5,6 +5,7 @@
   [minContentWidth]="900"
   [pageable]="true"
   [showHeader]="true"
+  [showColumnSelector]="true"
   [rowSelectable]="true">
   <ng-data-table-column
     [field]="'id'"
@@ -14,7 +15,7 @@
   <ng-data-table-column
     [field]="'orderMethodType'"
     [title]="'Order Method Type'"
-    [width]="120">
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"

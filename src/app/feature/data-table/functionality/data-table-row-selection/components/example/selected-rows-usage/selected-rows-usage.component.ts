@@ -1,14 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { ExampleData } from 'helper-models';
 
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-set-selected-rows-usage',
-  templateUrl: './set-selected-rows-usage.component.html'
+  selector: 'app-selected-rows-usage',
+  templateUrl: './selected-rows-usage.component.html'
 })
-export class SetSelectedRowsUsageComponent implements OnInit {
+export class SelectedRowsUsageComponent {
   public items: ExampleData[];
   public selectedRows: any[];
 
@@ -16,7 +16,7 @@ export class SetSelectedRowsUsageComponent implements OnInit {
     this.items = this.dataFetchService.fetchStaticData();
   }
 
-  public ngOnInit() {
+  public onDataTableInit(): void {
     this.selectedRows = [10, 20, 25];
   }
 }

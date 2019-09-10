@@ -1,17 +1,25 @@
 <div class="feature-container">
   <h1>Row Selection</h1>
-  <!--  <p>Row selection allows you to select single or multiple rows when rows have been selected rowSelectChange event will fire and emit <code>row: DataTableRow</code> data which is facilitated user to perform further operations based on <code>row: DataTableRow</code> data</p>-->
+
   <p>
-    Data table row selection functionality allows the end user to select data rows which can be used process data from
-    them or make calculations based on this selection. Ornamentum data table support 3 main row selection modes &
-    additional options
+    The Grid enables the users to select a single row or multiple rows by enabling Row Selection. Once the Data table
+    row selection functionality is enabled, end-user able to select data rows. For more convenience, Ornamentum data
+    table supports 03 main row selection modes.
   </p>
 
-  <p>Three row selection modes are supported:</p>
   <ol class="main-pane-list">
-    <li><b>Single</b>: Single selection support</li>
-    <li><b>Single Toggle</b>: Single row selection support with row de-select capability</li>
-    <li><b>Multi</b>: Multiple row selection support</li>
+    <li>
+      <mark><b>Single</b></mark>
+      : Single data row selection
+    </li>
+    <li>
+      <mark><b>Single Toggle</b></mark>
+      : Single row selection with row de-select capability
+    </li>
+    <li>
+      <mark><b>Multi</b></mark>
+      : Multiple row selection
+    </li>
   </ol>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -20,21 +28,17 @@
   <app-example-code [files]="rowSelectionUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>Enable row selectable option, simply set <code>rowSelectable</code> to <b>true</b> and by default row selection
-    is in <b>false</b> state.</p>
+  <p>For Enable row selection, configure the <code>rowSelectable</code> to <b>true</b> and by default, the table does
+    not display row selectable option, which means the property is disabled.</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.row_selectable"></app-code-snippet>
 
-  <p>
-    By default, the table does not display to selectable rows. But if you enabled selection row(s), there are some
-    additional configurations available to do the row selection more easily. Those properties will be discussed in the
-    next section.
-  </p>
-
   <h2 id="usefulProperties">Useful Properties</h2>
-  <p>As mention in earlier, there are some additional configurations which helps users to control the row selection.</p>
 
-  <h4 id="selectMode">Row Selection Mode</h4>
+  <p>Furthermore, There are some additional configurations available to customize the functionality. Those
+    properties will be discussed in the below section.</p>
+
+  <h4 id="selectMode">Select Mode</h4>
 
   <code>selectMode: string = 'single' | 'single_toggle' | 'multi'</code> &nbsp;
   <span class="badge badge-pill badge-warning">Default Value: 'single'</span>
@@ -42,47 +46,45 @@
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
   <p>
-    This control allows you to configure the row selection type. There are 3 types of row selections are
+    This control allows you to configure the row selection mode. There are 03 types of row selections are
     available in the data table.
   </p>
 
   <ol class="main-pane-list">
     <li>
-      <h6><b>Single Row Selection: "single"</b></h6>
+      <h6><b>Single Row Selection: 'single'</b></h6>
     </li>
 
     <p>
-      The user will be allowed to select only one row at a time and did not allow to deselect the selected option by
-      clicking the same row. If another row is being selected, previously selected row will be will be automatically
-      deselected.
-    </p>
-    <p>
-      If you click/uncheck the selected row, it will not be deselected.
+      The user allows to select only a one row at a time and did not allow to deselect the selected option by
+      clicking the same row. If another row is being selected, the previously selected row will be deselected
+      automatically.
     </p>
 
     <app-single-row-selection-usage></app-single-row-selection-usage>
     <app-example-code [files]="singleRowSelectionUsage"></app-example-code>
 
     <li>
-      <h6><b>Single Toggle Row Selection: "single_toggle"</b></h6>
+      <h6><b>Single Toggle Row Selection: 'single_toggle'</b></h6>
     </li>
 
     <p>
-      The user will be allowed to select only one row at a time and allow to deselect the selected option by click same
-      row.
-      If another row is being selected, previously selected row will be automatically deselected.
-      Additionally, Users will be Facilitated to remove the row selection by clicking same row.
+      The user will be allowed to select only one row at a time and not like <b>Single Row Selection</b>, It allows to
+      de-select the selected option by clicking the same row. If another row is being selected, previously selected row
+      will be deselected automatically.
     </p>
 
     <app-single-toggle-row-selection-usage></app-single-toggle-row-selection-usage>
     <app-example-code [files]="singleToggleRowSelectionUsage"></app-example-code>
 
     <li>
-      <h6><b>Multi Row Selection: "multi"</b></h6>
+      <h6><b>Multi Row Selection: 'multi'</b></h6>
     </li>
 
-    <p>User can select multiple rows one by one and facilitated to remove the selected rows by deselect individual
-      row.</p>
+    <p>This selection technique facilitates, to select multiple rows one by one and it can de-select the row by
+      clicking on top of selected checkbox or anywhere in the row if <a
+        [routerLink]="['/feature/data-table/functionality/row/selection']" [fragment]="'selectOnRowClick'">Select on Row
+        Row Click</a> functionality is enabled.</p>
 
     <app-multi-row-selection-usage></app-multi-row-selection-usage>
     <app-example-code [files]="multiRowSelectionUsage"></app-example-code>
@@ -97,9 +99,9 @@
 
 
   <p>
-    This property allows users to enable/disable individual row selection checkboxes for all available rows in the data
-    table and triggers the <code>rowSelectChange</code> event for each row by automatically when the user changes row
-    checkboxes state.
+    By configuring This property, It's display row selection checkboxes for all available rows in the data table and
+    triggers the <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'rowSelectChange'">Row Select
+    Change</a> event for each row implicitly, when the user changes row checkboxes state.
   </p>
 
   <app-show-row-select-checkbox-usage></app-show-row-select-checkbox-usage>
@@ -112,10 +114,10 @@
   <span class="p-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
-  <p>This property allows user to select/deselect all the rows at once by selecting/deselecting checkbox which is in the
-    top of the row selection checkbox column. and triggers the<code>rowSelectChange</code>
-    event by automatically when user changes select all checkbox state. Selecting all available checkboxes in a current
-    table view will also triggers <code>rowSelectChange</code> automatically.</p>
+  <p>This property allows the user to mark the preference for all the rows at once by selecting a single checkbox which
+    is in the top of the row selection checkbox column. and triggers the <a
+      [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'rowSelectChange'">Row Select Change</a>
+    event by automatically when the user changes select all checkbox state.</p>
 
   <app-show-row-select-all-checkbox-usage></app-show-row-select-all-checkbox-usage>
   <app-example-code [files]="showRowSelectAllCheckboxUsage"></app-example-code>
@@ -124,11 +126,16 @@
 
   <code>selectOnRowClick: boolean</code> &nbsp;
   <span class="badge badge-pill badge-warning">Default Value: false</span>
+  <span class="p-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
   <p>
-    This property will allow users to select specific row(s) based on <code>selectMode</code> by clicking on
-    anywhere on the row or clicks on row selectable checkboxes.
+    This property will allow users to perform row click operation on top of anywhere of a row. It will trigger the <a
+    [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'rowSelectChange'">Row Select Change</a> for each
+    row click event implicitly, based on the provided <a
+    [routerLink]="'/feature/data-table/functionality/row/selection'"
+    [fragment]="'selectMode'">Select
+    Mode</a>.
   </p>
 
   <app-select-on-row-click-usage></app-select-on-row-click-usage>
@@ -141,56 +148,64 @@
   <span class="p-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
-  <p>
-    This property let users to identify selected row(s) uniquely. When selecting row(s), data table will emit the
-    value of the column specified by the user. Please refer <a [routerLink]="['/feature/data-table/advanced/events']"
-                                                               [fragment]="'rowSelectChange'">Row Select
-    Change</a> section for about event binding details. All the examples shown in <a
-    [routerLink]="['/feature/data-table/functionality/row/selection']" [fragment]="'selectMode'">Row Selection Mode</a>
-    section have set <code>selectTrackBy</code> property as <b>id</b>.
+  <p>Provide a field name to identifies a selection item schema and it might be uniquely identifiable all over the data
+    set. When a user selecting a row, the data table <a [routerLink]="'/feature/data-table/advanced/event'"
+                                                        [fragment]="'rowSelectChange'">Row Select Change</a> will emit
+    the selected row selection id for each row selection operation.
   </p>
 
   <app-select-track-by-usage></app-select-track-by-usage>
   <app-example-code [files]="selectTrackByUsage"></app-example-code>
 
-  <h4 id="selectedRow">Set Selected Row</h4>
+  <h4 id="selectedRow">Selected Row</h4>
 
-  <code>selectedRow: any</code>
+  <code>selectedRow: any</code> &nbsp;
+  <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+  <span class="p-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-secondary">Depends On: [selectTrackBy]</span>
+
 
   <p>
-    This property let user to set a specific selected row in the data table by automatically right after the
-    data table <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'init'">Initialization</a>. This
-    can only be uses when selection mode is <b>single</b> or <b>single_toggle</b> as mentioned in the <a
-    [routerLink]="['/feature/data-table/functionality/row/selection']" [fragment]="'selectMode'">Row Selection Mode</a>
-    section.
+    This property allows to set a specifically selected row to display after the data table <a
+    [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'init'">Initialization</a> or
+    component initialization fired and it accepts a <a [routerLink]="'/feature/data-table/functionality/row/selection'"
+                                                       [fragment]="'selectTrackBy'">Select Track By</a> column any
+    unique
+    field value. Can <b>only</b> be used when <a [routerLink]="'/feature/data-table/functionality/row/selection'"
+                                                 [fragment]="'selectMode'">Select Mode</a> is <b>'single'</b> or <b>'single_toggle'</b>.
   </p>
-  <p>
-    Note: <code>selectedRow</code> value should be equal to the value in <code>selectTrackBy</code> column, see more <a
-    [routerLink]="['/feature/data-table/functionality/row/selection']">Select Track By</a>
-  </p>
-  <app-set-selected-row-usage></app-set-selected-row-usage>
+
+  <app-selected-row-usage></app-selected-row-usage>
   <app-example-code [files]="setSelectedRowUsage"></app-example-code>
 
-  <h4 id="selectedRows">Set Selected Rows</h4>
+  <h4 id="selectedRows">Selected Rows</h4>
 
-  <code>selectedRows: any[]</code>
+  <code>selectedRows: any[]</code> &nbsp;
+  <span class="badge badge-pill badge-warning">Default Value: []</span>
+  <span class="p-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-secondary">Depends On: [selectTrackBy]</span>
 
   <p>
-    This property let user to set specific rows to be selected in the data table by automatically right after the data
-    table <a [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'init'">Initialization</a>. This can
-    only be use
-    when selection mode is <b>multi</b>.
+    This property allows to set specifically selected rows to display after the data table <a
+    [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'init'">Initialization</a> or
+    component initialization fired and it accepts <a [routerLink]="'/feature/data-table/functionality/row/selection'"
+                                                     [fragment]="'selectTrackBy'">Select Track By</a> column any unique
+    field values array. Can <b>only</b> be used when <a [routerLink]="'/feature/data-table/functionality/row/selection'"
+                                                        [fragment]="'selectMode'">Select Mode</a> is <b>'multi'</b>.
   </p>
-  <p>
-    Note: <code>selectedRows</code> array values should be equal to the values in <code>selectTrackBy</code> column, see
-    more <a [routerLink]="['/feature/data-table/functionality/row/selection']">Select Track By</a>
-  </p>
-  <app-set-selected-rows-usage></app-set-selected-rows-usage>
+
+
+  <app-selected-rows-usage></app-selected-rows-usage>
   <app-example-code [files]="setSelectedRowsUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/templating/expand-template']">Row Expand Template</a><br>
   <a [routerLink]="['/feature/data-table/advanced/state-persistence']">State Persistence</a><br>
+  <a [routerLink]="['/feature/data-table/functionality/column/binding']">Column Binding</a><br>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Row
     Selection</a>
 </div>

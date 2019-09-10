@@ -1,14 +1,14 @@
 <ng-data-table
-  [id]="'sales_products_functionality_08'"
+  [id]="'sales_products_functionality_07'"
   [title]="'Sales Products'"
   [items]="items"
   [minContentWidth]="900"
   [pageable]="true"
   [showHeader]="true"
-  [showColumnSelector]="true"
   [rowSelectable]="true"
-  [selectMode]="'single_toggle'"
-  [selectedRow]="selectedRow">
+  [selectMode]="'multi'"
+  [selectedRows]="selectedRows"
+  (init)="onDataTableInit()">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
@@ -17,7 +17,7 @@
   <ng-data-table-column
     [field]="'orderMethodType'"
     [title]="'Order Method Type'"
-    [width]="120">
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"

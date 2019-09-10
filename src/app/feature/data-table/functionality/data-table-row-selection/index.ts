@@ -10,5 +10,5 @@ export { ShowRowSelectCheckboxUsageComponent } from './components/example/show-r
 export { ShowRowSelectAllCheckboxUsageComponent } from './components/example/show-row-select-all-checkbox-usage/show-row-select-all-checkbox-usage.component';
 export { SelectOnRowClickUsageComponent } from './components/example/select-on-row-click-usage/select-on-row-click-usage.component';
 export { SelectTrackByUsageComponent } from './components/example/select-track-by-usage/select-track-by-usage.component';
-export { SetSelectedRowUsageComponent } from './components/example/set-selected-row-usage/set-selected-row-usage.component';
-export { SetSelectedRowsUsageComponent } from './components/example/set-selected-rows-usage/set-selected-rows-usage.component';
+export { SelectedRowUsageComponent } from './components/example/selected-row-usage/selected-row-usage.component';
+export { SelectedRowsUsageComponent } from './components/example/selected-rows-usage/selected-rows-usage.component';

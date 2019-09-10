@@ -335,7 +335,7 @@ export class MainComponent {
                   anchor: 'usefulProperties',
                   subNavigation: [
                     {
-                      title: 'Row Selection Mode',
+                      title: 'Select Mode',
                       anchor: 'selectMode'
                     },
                     {
@@ -355,11 +355,11 @@ export class MainComponent {
                       anchor: 'selectTrackBy'
                     },
                     {
-                      title: 'Set Selected Row',
+                      title: 'Selected Row',
                       anchor: 'selectedRow'
                     },
                     {
-                      title: 'Set Selected Rows',
+                      title: 'Selected Rows',
                       anchor: 'selectedRows'
                     }
                   ]

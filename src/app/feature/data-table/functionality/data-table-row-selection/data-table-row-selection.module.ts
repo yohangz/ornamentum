@@ -18,8 +18,8 @@ import {
   ShowRowSelectAllCheckboxUsageComponent,
   SelectOnRowClickUsageComponent,
   SelectTrackByUsageComponent,
-  SetSelectedRowUsageComponent,
-  SetSelectedRowsUsageComponent
+  SelectedRowUsageComponent,
+  SelectedRowsUsageComponent
 } from './index';
 
 /**
@@ -36,8 +36,8 @@ import {
     ShowRowSelectAllCheckboxUsageComponent,
     SelectOnRowClickUsageComponent,
     SelectTrackByUsageComponent,
-    SetSelectedRowUsageComponent,
-    SetSelectedRowsUsageComponent
+    SelectedRowUsageComponent,
+    SelectedRowsUsageComponent
   ],
   exports: [],
   imports: [

@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DataTableModule } from 'ornamentum';
   
-import { SetSelectedRowsUsageComponent } from './set-selected-rows-usage.component';
+import { SelectedRowsUsageComponent } from './selected-rows-usage.component';
 
 @NgModule({
- bootstrap: [SetSelectedRowsUsageComponent],
- declarations: [SetSelectedRowsUsageComponent],
+ bootstrap: [SelectedRowsUsageComponent],
+ declarations: [SelectedRowsUsageComponent],
  imports: [
     BrowserModule, 
     DataTableModule.forRoot()
   ]
 })
-export class SetSelectedRowsUsageModule {
+export class SelectedRowsUsageModule {
 }
