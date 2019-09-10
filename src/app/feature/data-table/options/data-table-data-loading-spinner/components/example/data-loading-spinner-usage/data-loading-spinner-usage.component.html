@@ -5,15 +5,16 @@
   [minContentWidth]="900"
   [pageable]="true"
   [showHeader]="true"
-  [showLoadingSpinner]="true">
+  [showColumnSelector]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [width]="70">
+    [width]="50">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
-    [title]="'Order Method Type'">
+    [title]="'Order Method Type'"
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
@@ -35,7 +36,7 @@
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
-    [width]="70">
+    [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"

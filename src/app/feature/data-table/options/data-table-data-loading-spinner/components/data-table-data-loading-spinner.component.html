@@ -1,16 +1,15 @@
 <div class="feature-container">
   <h1>Data Loading Spinner</h1>
 
-  <p>
-    Data loading spinner is responsible to display a spinner on data table body while on data fetch operation, once
-    after the success data retrieval process it will disappear and data will be displayed on the table body.
-  </p>
+  <p>In some cases, the loading of the data might take longer time than user expects. For such cases you can
+    configure Data loading spinner to show data fetch operation is in progress. Once after the success data retrieval
+    process it will automatically disappears and fetched data will be displayed on the grid.</p>
 
   <p>
-    Loading spinner is very useful when on <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server
-    Side Basic Data Binding</a> and <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server
-    Side Web Socket Data Binding</a> operations. by default loading spinner is enabled and ornamentum will keep indicate the end
-    user that the data retrieval process is still going on and improving user experience.
+    Loading spinner is most useful if you used <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server
+    Side Basic</a> or <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server
+    Side Web Socket</a> Data Binding as your data retrieval technique, because we can't guranteed about how long will take
+    to complete the data fetch operation.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -20,27 +19,28 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>
-    By default loading spinner is enabled, Loading spinner can me disabled by set <code>false</code> value to <code>showLoadingSpinner</code> property in table level in the data table configuration.
-  </p>
-
   <code>showLoadingSpinner: boolean</code> &nbsp;
   <span class="badge badge-pill badge-warning">Default Value: true</span>
   <span class="p-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
   <p>
-    Following example depicts the disabling of loading spinner.
+    Loading spinner can be enabled by binding <b>true</b> to <code>showLoadingSpinner</code> property and by default
+    Loading spinner is enabled.
   </p>
+
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.showLoadingSpinner"></app-code-snippet>
+
   <p>
-    You can bind a custom template into the data loading scenario if you prefer. for
-    loading spinner templates please refer <a [routerLink]="['/feature/data-table/templating/loading-spinner-template']">Loading Spinner Template</a> section.
-    Note that loading spinner template want work if <code>showLoadingSpinner</code> configuration set to be <code>false</code>.
+    Furthermore, you can customize data loading spinner by binding a custom template as you prefer. For
+    refer the <a [routerLink]="['/feature/data-table/templating/loading-spinner-template']">Loading Spinner Template</a>
+    section.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
 
+  <a [routerLink]="['/feature/data-table/templating/loading-spinner-template']">Loading Spinner Template</a><br/>
   <a [routerLink]="['/feature/data-table/templating/no-records-template']">No Records Template</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#showLoadingSpinner">API Doc for Data Table Loading Spinner</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#showLoadingSpinner">API Doc for
+    Data Table Loading Spinner</a>
 </div>
