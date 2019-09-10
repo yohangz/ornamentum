@@ -21,6 +21,11 @@
   width: 56rem;
 
   @media only screen and (max-width: 1440px){
+    height: 21rem;
+    width: 44rem;
+  }
+
+  @media only screen and (max-width: 1199px){
     height: 17rem;
     width: 38rem;
   }
@@ -30,46 +35,96 @@
     width: 31rem;
   }
 
-  @media only screen and (max-width: 992px){
+  @media only screen and (max-width: 991px){
     height: 20rem;
     width: 45rem;
   }
 
   @media only screen and (max-width: 767px){
-    height: 13rem;
-    width: 28rem;
+    height: 32rem;
+    width: 100%;
   }
 
-  @media only screen and (max-width: 480px){
-    height: 10rem;
-    width: 22rem;
+  @media only screen and (max-width: 640px){
+    height: 26rem;
+    width: 100%;
   }
+
 }
 
 .dt-base-theme {
   background: url('../../../../../../assets/images/dt-base-theme.png') no-repeat;
   background-size: 100% 100%;
 
+  @media only screen and (max-width: 767px){
+    background: url('../../../../../../assets/images/dt-base-theme-tab.png') no-repeat;
+    background-size: 100%;
+  }
+
+  @media only screen and (max-width: 640px){
+    background: url('../../../../../../assets/images/dt-base-theme-mobile.png') no-repeat;
+    background-size: 100%;
+  }
 }
 
 .dt-dark-theme {
   background: url('../../../../../../assets/images/dt-dark-theme.png') no-repeat;
   background-size: 100% 100%;
+
+  @media only screen and (max-width: 767px){
+    background: url('../../../../../../assets/images/dt-dark-theme-tab.png') no-repeat;
+    background-size: 100%;
+  }
+
+  @media only screen and (max-width: 640px){
+    background: url('../../../../../../assets/images/dt-dark-theme-mobile.png') no-repeat;
+    background-size: 100%;
+  }
 }
 
 .dt-flat-theme {
   background: url('../../../../../../assets/images/dt-flat-theme.png') no-repeat;
   background-size: 100% 100%;
+
+  @media only screen and (max-width: 767px){
+    background: url('../../../../../../assets/images/dt-flat-theme-tab.png') no-repeat;
+    background-size: 100%;
+  }
+
+  @media only screen and (max-width: 640px){
+    background: url('../../../../../../assets/images/dt-flat-theme-mobile.png') no-repeat;
+    background-size: 100%;
+  }
 }
 
 .dt-ornamentum-theme {
   background: url('../../../../../../assets/images/dt-ornamentum-theme.png') no-repeat;
   background-size: 100% 100%;
 
+  @media only screen and (max-width: 767px){
+    background: url('../../../../../../assets/images/dt-ornamentum-theme-tab.png') no-repeat;
+    background-size: 100%;
+  }
+
+  @media only screen and (max-width: 640px){
+    background: url('../../../../../../assets/images/dt-ornamentum-theme-mobile.png') no-repeat;
+    background-size: 100%;
+  }
+
 }
 
 .dt-aegean-theme {
   background: url('../../../../../../assets/images/dt-aegean-theme.png') no-repeat;
   background-size: 100% 100%;
+
+  @media only screen and (max-width: 767px){
+    background: url('../../../../../../assets/images/dt-aegean-theme-tab.png') no-repeat;
+    background-size: 100%;
+  }
+
+  @media only screen and (max-width: 640px){
+    background: url('../../../../../../assets/images/dt-aegean-theme-mobile.png') no-repeat;
+    background-size: 100%;
+  }
 
 }

@@ -14,25 +14,29 @@ li {
 
 .filtering-types {
   background: url('../../../../../../assets/images/filtering-types.png') no-repeat;
-  height: 100px;
+  height: 165px;
   width: 100%;
   background-size: 100%;
   display: inline-block;
 
   @media only screen and (max-width: 1600px){
-    height: 75px;
+    height: 110px;
   }
 
   @media only screen and (max-width: 1199px){
-    height: 55px;
+    height: 85px;
   }
 
   @media only screen and (max-width: 991px){
-    height: 75px;
+    background: url('../../../../../../assets/images/filtering-types-tablets.png') no-repeat;
+    background-size: 70%;
+    height: 115px;
   }
 
   @media only screen and (max-width: 680px){
-    height: 55px;
+    background: url('../../../../../../assets/images/filtering-types-mobile.png') no-repeat;
+    background-size: 55%;
+    height: 120px;
   }
 
   @media only screen and (max-width: 480px){
