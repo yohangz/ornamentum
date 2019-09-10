@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { DataTableDataBindCallback, DataTableHttpResourceFactoryService } from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
-
-import { DataFetchService } from 'helper-services';
 
 @Component({
   selector: 'app-header-details-usage',
   templateUrl: './header-details-usage.component.html'
 })
 export class HeaderDetailsUsageComponent {
-  public dataSource: Observable<ExampleData[]>;
 
-  constructor(private dataFetchService: DataFetchService) {
-    const data: ExampleData[] = this.dataFetchService.fetchStaticData();
-    this.dataSource = of(data);
+  public onDataBind: DataTableDataBindCallback<ExampleData>;
+
+  constructor(private resourceFactory: DataTableHttpResourceFactoryService) {
+    const exampleDataResource = resourceFactory.getResourceProvider<ExampleData>();
+    this.onDataBind = exampleDataResource.onDataBind('/api/data');
   }
 }

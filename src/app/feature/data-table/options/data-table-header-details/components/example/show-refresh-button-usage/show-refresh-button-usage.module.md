@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { DataTableModule } from 'ornamentum';
+import { DataTableModule, DataTableResourceModule } from 'ornamentum';
 
 import { ShowRefreshButtonUsageComponent } from './table-header-details-show-refresh-btn-usage.component';
 
@@ -10,7 +10,8 @@ import { ShowRefreshButtonUsageComponent } from './table-header-details-show-ref
   declarations: [ShowRefreshButtonUsageComponent],
   imports: [
       BrowserModule, 
-      DataTableModule.forRoot()
+      DataTableModule.forRoot(),
+      DataTableResourceModule.forRoot()
     ]
 })
 export class ShowRefreshButtonUsageModule {

@@ -1,12 +1,12 @@
 <ng-data-table
   [id]="'sales_products_options_07'"
   [title]="'Sales Products'"
-  [dataSource]="dataSource"
   [minContentWidth]="900"
   [pageable]="true"
   [showHeader]="true"
   [showColumnSelector]="true"
-  [showRefreshButton]="true">
+  [showRefreshButton]="true"
+  [onDataBind]="onDataBind">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
@@ -14,7 +14,8 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
-    [title]="'Order Method Type'">
+    [title]="'Order Method Type'"
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
@@ -22,7 +23,8 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
-    [title]="'Product Line'">
+    [title]="'Product Line'"
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
@@ -36,7 +38,7 @@
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
-    [width]="70">
+    [width]="90">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"

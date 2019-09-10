@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { DataTableModule } from 'ornamentum';
+import { DataTableModule, DataTableResourceModule } from 'ornamentum';
 
 import { DataTableHeaderDetailsRoutingModule } from './data-table-header-details-routing.module';
 
@@ -33,6 +33,7 @@ import {
     FormsModule,
     SharedModule.forRoot(),
     DataTableModule.forRoot(),
+    DataTableResourceModule.forRoot(),
     DataTableHeaderDetailsRoutingModule],
   providers: []
 })
