@@ -3,29 +3,30 @@
 
   <p>
     Translations can be uses to override data table visible properties in two special cases. those translatable
-    properties are required to binding into <code>translations</code> property in table level configuration, in any
-    developer preferred language. the properties that can be configure in translations are:
+    properties are required to binding into <code>translations</code> property in <code>&lt;ng-data-table&gt;</code> configuration. the properties that can be configure in translations are:
   </p>
 
   <ul class="main-pane-list">
     <li>
-      Translations for No Data
+      <a [routerLink]="['/feature/data-table/advanced/translations']"
+         [fragment]="'translationsForNoData'">Translations for No Data</a>
       <ul>
-        <li>No Data Message Header</li>
-        <li>No Data Message Body</li>
+        <li><code>noDataMessageHeader</code>: Customized No Data Message Header</li>
+        <li><code>noDataMessageBody</code>: Customized No Data Message Body</li>
       </ul>
     </li>
     <li>
-      Translations for Pagination
+      <a [routerLink]="['/feature/data-table/advanced/translations']"
+         [fragment]="'translationsForPagination'">Translations for Pagination</a>
       <ul>
-        <li>Pagination Limit</li>
-        <li>Pagination Range</li>
+        <li><code>paginationLimit</code>: Pagination Limit</li>
+        <li><code>paginationRange</code>: Pagination Range</li>
       </ul>
     </li>
   </ul>
 
   <p>
-    Please note the below data table didn't show the full translations implementation, hence for Data table translations
+    Please note the below example doesn't show the full translations implementation, hence for Data table translations
     for pagination usage refer <a [routerLink]="['/feature/data-table/advanced/translations']"
                                   [fragment]="'translationsForPagination'">Translations for Pagination</a> section.
   </p>
@@ -37,15 +38,14 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
   <p>
-    As mention in the above translations can be override in data table global level configuration. by default
+    As mention in the above translations can be override in <code>&lt;ng-data-table&gt;</code> configuration. by default
     translations are initialize to it's default pre-set values.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.translations"></app-code-snippet>
 
-  <p>Simply bind <code>DataTableTranslations</code> type of object into <b>translations</b> property is enough to take
+  <p>Simply bind <code>DataTableTranslations</code> type of object into <code>translations</code> property is enough to take
     the the control over translations.</p>
-
   <p>
     As mention in the above there are two scenarios that translations are useful. Let's see how we can configure each
     demonstrated properties as we want.
@@ -88,13 +88,13 @@
   <code>paginationLimit: DataTableTranslations</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">Default Value: 'Limit'</h5>
 
-  <p>This is used to customize the pagination limit naming. The default value for this config is 'Limit'.</p>
+  <p>This is used to customize the pagination limit label. The default value for this config is 'Limit'.</p>
 
   <h4 id="paginationRange">Pagination Range</h4>
   <code>paginationRange: DataTableTranslations</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">Default Value: 'Results'</h5>
 
-  <p>This is used to customize the pagination range naming. The default value for this config is 'Results'.</p>
+  <p>This is used to customize the pagination range label. The default value for this config is 'Results'.</p>
 
   <app-translations-pagination-usage></app-translations-pagination-usage>
   <app-example-code [files]="translationsPaginationUsage"></app-example-code>
