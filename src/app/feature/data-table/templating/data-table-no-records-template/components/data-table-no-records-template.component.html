@@ -2,13 +2,14 @@
   <h1>No Records Template</h1>
 
   <p>
-    No Records Template, provides an option to customize the appearance of the item that is displayed when no data is present.
-    To define the no-records template, nest an <code>&lt;ng-template&gt;</code> tag with the <code>ngDataTableNoRecords</code> directive inside
+    No Records Template, provides the capability to customize the appearance of the Ornamentum grid when there is no
+    data to be displayed. To define the no records template, nest an <code>&lt;ng-template&gt;</code> tag with the
+    <code>ngDataTableNoRecords</code> directive inside.
   </p>
 
   <p>
-    No records template can be integrated into expandable rows. For about row expanding template configurations, please
-    refer <a [routerLink]="['/feature/data-table/templating/expand-template']"> Row Expand Template</a> section.
+    No records template can be integrated into expandable rows. Please refer <a
+    [routerLink]="['/feature/data-table/templating/expand-template']"> Row Expand Template</a> for further details.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -17,16 +18,15 @@
   <app-example-code [files]="noRecordsTemplateUsage"></app-example-code>
 
   <p>
-    The above demo snippet will demonstrate a sample no data scenario. until a success data response, we have enabled
-    <a [routerLink]="['/feature/data-table/templating/data-loading-spinner']">Data Loading Spinner</a> for purpose of
-    visible the process of data retrieval and make the data table more attractive.
+    The above demo snippet depicts a sample no data scenario. A Data Loading Spinner will be displayed until the data is
+    being loaded into the grid.
   </p>
 
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
     Similar to the other templates, it is possible to bind a specific directive <code>#ngDataTableNoRecords</code> into
-    <code>&lt;ng-template&gt;</code> to indicate that there is no data available.
+    <code>&lt;ng-template&gt;</code> to indicate unavailability of data.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.template"></app-code-snippet>
@@ -39,5 +39,6 @@
   <a [routerLink]="['/feature/data-table/advanced/translations']">Translations</a><br/>
   <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
   <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#noRecordsTemplate">API Doc for Data Table No Records Template</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#noRecordsTemplate">API Doc for
+    Data Table No Records Template</a>
 </div>

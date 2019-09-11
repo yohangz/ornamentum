@@ -1,15 +1,16 @@
 <div class="feature-container">
   <h1>Data Loading Spinner</h1>
 
-  <p>In some cases, the loading of the data might take longer time than user expects. For such cases you can
-    configure Data loading spinner to show data fetch operation is in progress. Once after the success data retrieval
-    process it will automatically disappears and fetched data will be displayed on the grid.</p>
+  <p>
+    Data Loading Spinner can be used to indicate the data fetch operation and once the data is successfully fetched
+    spinner will get disappear from the grid.
+  </p>
 
   <p>
-    Loading spinner is most useful if you used <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server
+    Loading spinner is very useful, when <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server
     Side Basic</a> or <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server
-    Side Web Socket</a> Data Binding as your data retrieval technique, because we can't guaranteed about how long will
-    take to complete the data fetch operation.
+    Side Web Socket</a> Data Binding operations are being executed. By default loading spinner is <b>enabled</b> and the
+    Ornamentum will keep indicating the end user that the data retrieval process in progress.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -27,16 +28,18 @@
   </p>
 
   <p>
-    Loading spinner can be enabled by binding <b>true</b> to <code>showLoadingSpinner</code> property and by default
-    Loading spinner is enabled.
+    By default the Loading Spinner is <b>enabled</b>. Loading spinner can be displayed by setting <b>true</b> value to
+    <code>showLoadingSpinner</code> property in table level in the data table configuration.
   </p>
+
+  <p>Following example depicts how to disable the Data Loading Spinner.</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.showLoadingSpinner"></app-code-snippet>
 
   <p>
-    Furthermore, you can customize data loading spinner by binding a custom template as you prefer. For
-    refer the <a [routerLink]="['/feature/data-table/templating/loading-spinner-template']">Loading Spinner Template</a>
-    section.
+    User can bind a custom template into the data loading scenario as desired. For additional Loading Spinner templates
+    please refer <a [routerLink]="['/feature/data-table/templating/loading-spinner-template']">Loading Spinner
+    Template</a> section.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
