@@ -35,10 +35,10 @@ export const cellTemplateUsageAvatar: ExampleFile[] = [
     content: require('!!raw-loader!./example/cell-template-avatar-usage/cell-template-avatar-usage.module.md')
   }
 ];
-export const cellTemplateRowspan: ExampleFile[] = [
+export const cellTemplateRowSpanUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'cell-template-rowspan.component.ts',
+    name: 'cell-template-row-span-usage.component.ts',
     content: require('!!raw-loader!./example/cell-template-rowspan/cell-template-rowspan.component.ts')
   },
   {

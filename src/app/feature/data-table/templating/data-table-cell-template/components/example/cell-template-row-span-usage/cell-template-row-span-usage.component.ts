@@ -1,20 +1,22 @@
 import { Component } from '@angular/core';
 
+import { DataTableRow } from 'ornamentum';
+
 import { ExampleData } from 'helper-models';
 
 import { DataFetchService } from 'helper-services';
-import { DataTableRow } from 'ornamentum';
+
 
 @Component({
-  selector: 'app-cell-template-rowspan',
-  templateUrl: './cell-template-rowspan.component.html'
+  selector: 'app-cell-template-row-span-usage',
+  templateUrl: './cell-template-row-span-usage.component.html'
 })
-export class CellTemplateRowspanComponent {
+export class CellTemplateRowSpanUsageComponent {
   public items: ExampleData[];
 
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.items = dataFetchService.fetchStaticData();
   }
 
   public onDynamicRowSpanExtract(row: DataTableRow<ExampleData>): number {
