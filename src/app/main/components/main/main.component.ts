@@ -664,8 +664,8 @@ export class MainComponent {
               title: 'Themes',
               navigation: [
                 {
-                  title: 'Including Theme Support',
-                  anchor: 'includingThemeSupport',
+                  title: 'Built-in Themes',
+                  anchor: 'builtInThemes',
                   subNavigation: [
                     {
                       title: 'Base Theme',
@@ -688,6 +688,10 @@ export class MainComponent {
                       anchor: 'aegeanTheme'
                     }
                   ]
+                },
+                {
+                  title: 'Custom Themes',
+                  anchor: 'customThemes'
                 }
               ]
             },
