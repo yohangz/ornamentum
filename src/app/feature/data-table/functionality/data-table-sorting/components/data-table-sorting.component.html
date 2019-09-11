@@ -33,6 +33,13 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
+    <code>sortable: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: false</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  </p>
+
+  <p>
     Sorting is disabled by default. It can be enable by setting the <code>[sortable]</code> input property
     <code>true</code> in any target <code>&lt;ng-data-table-column&gt;</code> component.
   </p>
@@ -51,13 +58,16 @@
   </p>
 
   <h4 id="sortOrder">Sort Order</h4>
-  <code>sortOrder: 'asc' | 'desc' | ''</code>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-warning">Default Value: ''</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-secondary">Depends On: [sortable]</span>
+
+  <p>
+    <code>sortOrder: 'asc' | 'desc' | ''</code>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-warning">Default Value: ''</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-secondary">Depends On: [sortable]</span>
+  </p>
 
   <p>
     The initial sort direction can be overridden via this input property.
@@ -67,18 +77,22 @@
   <app-example-code [files]="sortOrderUsage"></app-example-code>
 
   <h4 id="sortField">Sort Field</h4>
-  <code>sortField: string</code>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-warning">Default Value: 'same column bound field name'</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-secondary">Depends On: [sortable]</span>
+
+  <p>
+    <code>sortField: string</code>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-warning">Default Value: 'same column bound field name'</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-secondary">Depends On: [sortable]</span>
+  </p>
 
   <p>
     The sort field path is used to order the table bound data set upon sort order change. The column bound field path is
     considered as the default sort field path. The sort Field can be overridden by providing a different field path
-    available in data source. Override this value only when it is required to use a different field path instead of default
+    available in data source. Override this value only when it is required to use a different field path instead of
+    default
     column field path.
   </p>
 
@@ -86,6 +100,13 @@
   <app-example-code [files]="sortFieldUsage"></app-example-code>
 
   <h2 id="multiColumnSortable">Multi Column Sorting</h2>
+
+  <p>
+    <code>multiColumnSortable: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: false</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
 
   <p>
     Multi column sorting is disabled by default. It can be enabled by setting <code>[multiColumnSortable]</code>
@@ -105,7 +126,8 @@
     can be configured via <code>[sortPriority]</code> input property which accepts a positive column sort index integer.
     Sort priority define the order which shorting should be applied and value of sort priority will appear on table
     column header when configured. Sort priority is only applicable for sortable columns with an explicit sort order
-    of <code>'asc'</code> or <code>'desc'</code>. Descriptive errors will be thrown when sort priority is miss configured.
+    of <code>'asc'</code> or <code>'desc'</code>. Descriptive errors will be thrown when sort priority is miss
+    configured.
   </p>
 
   <app-multi-column-sortable-usage></app-multi-column-sortable-usage>
@@ -115,15 +137,16 @@
 
   <p>
     Sorting functionality is fully supported by server side date binding approaches out of the box. Please refer
-    <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">server Side Basic Data Binding</a>
-     and
-    <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">server Side WebSocket Data Binding</a>
-    documentation for more information.
+    <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic</a>
+    and
+    <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side WebSocket</a> Data Binding
+    documentations for more information.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/experimental/column/resizing']">Column Resizing</a><br/>
   <a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a><br/>
   <a [routerLink]="['/feature/data-table/options/header-details']">Header Details</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Sorting</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table
+    Sorting</a>
 </div>

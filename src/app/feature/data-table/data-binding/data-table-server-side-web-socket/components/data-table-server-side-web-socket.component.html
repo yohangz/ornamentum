@@ -3,10 +3,11 @@
 
   <p>
     This data binding technique creates a live connection with the backend and notify when ever data is required.
-    Unlike <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a>
+    Unlike <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic</a> Data Binding
     this approach allow you to push data from server to client. This can be used to bind dynamic data streams such as
     traffic, weather, analytics and etc which changes over time. This data binding approach internally use
-    <a rel="noopener" target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a>
+    <a rel="noopener" target="_blank"
+       href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets</a>
     to fetch data from server.
   </p>
 
@@ -18,8 +19,16 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
+    <code>onDataBind: DataTableDataBindCallback&lt;any&gt;</code> &nbsp;
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
+
+  <p>
     Server side data bind functionality can be integrated via <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+                                                                 href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
     callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
     data source agnostic.
   </p>
@@ -27,7 +36,9 @@
   <ol>
     <li>
       <p>
-        Import <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a> along with
+        Import <a rel="noopener" target="_blank"
+                  href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a>
+        along with
         <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
       </p>
 
@@ -36,25 +47,33 @@
     <li>
       <p>
         Within the target component use
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/injectables/DataTableWebsocketResourceFactoryService.html">DataTableWebsocketResourceFactoryService</a>
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/injectables/DataTableWebsocketResourceFactoryService.html">DataTableWebsocketResourceFactoryService</a>
         to construct an instance of
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
         class.
 
         Initialize the the newly created instance of
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
         by invoking
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#init">init</a>
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#init">init</a>
         method and call
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#onDataBind">onDataBind</a>
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#onDataBind">onDataBind</a>
         to get the data bind callback function reference within
         <a rel="noopener" target="_blank" href="https://angular.io/api/core/OnInit">ngOnInit</a>
         lifecycle event handler or component constructor depending on your preference.
 
         Cleanup resources and destroy the established Web Socket connection by invoking
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#dispose">dispose</a> method on
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
-        instance within  <a rel="noopener" target="_blank" href="https://angular.io/api/core/OnDestroy">ngOnDestroy</a>
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#dispose">dispose</a>
+        method on
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html">DataTableWebSocketDataFetchService&lt;T&gt;</a>
+        instance within <a rel="noopener" target="_blank" href="https://angular.io/api/core/OnDestroy">ngOnDestroy</a>
         lifecycle event handler.
       </p>
 
@@ -63,7 +82,9 @@
     <li>
       <p>
         Set the callback function reference to
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a> data table input property.
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a> data
+        table input property.
       </p>
 
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.WebSocketDataBindingMarkup"></app-code-snippet>
@@ -77,16 +98,20 @@
   <ul>
     <li>
       Service will receive data fetch request messages with <a rel="noopener" target="_blank"
-      href="https://ornamentum.app/api-docs/interfaces/DataTableRequestParams.html">DataTableRequestParams</a>
-      object containing request parameters upon pagination, filtering, sorting and any dynamic operation which require data re-fetch.
+                                                               href="https://ornamentum.app/api-docs/interfaces/DataTableRequestParams.html">DataTableRequestParams</a>
+      object containing request parameters upon pagination, filtering, sorting and any dynamic operation which require
+      data re-fetch.
     </li>
     <li>
       Service should respond follow <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a> schema.
+                                       href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
+      schema.
       However, you can pass a custom response mapper callback function to <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#onDataBind">onDataBind</a> and map
+                                                                             href="https://ornamentum.app/api-docs/classes/DataTableWebsocketDataFetchService.html#onDataBind">onDataBind</a>
+      and map
       the response to <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a> schema
+                         href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
+      schema
       without making changes in backend API response.
     </li>
   </ul>
@@ -95,14 +120,17 @@
   <h2 id="customDataProvider">Custom Data Provider</h2>
 
   <p>
-    Server side and client side data binding can be implemented via a custom data provider as Ornamentum data sources are
+    Server side and client side data binding can be implemented via a custom data provider as Ornamentum data sources
+    are
     fully decoupled from component logic. Please refer
-    <a [routerLink]="['/feature/data-table/data-binding/server-side/custom-provider']">Custom Data Provider</a> for more information.
+    <a [routerLink]="['/feature/data-table/data-binding/server-side/custom-provider']">Custom Data Provider</a> for more
+    information.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
   <a [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client Side Stream Data Binding</a><br/>
   <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server Side Web Socket Data Binding</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server
+    Side Web Socket Data Binding</a>
 </div>

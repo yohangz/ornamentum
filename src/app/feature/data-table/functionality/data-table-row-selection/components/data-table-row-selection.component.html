@@ -28,6 +28,15 @@
   <app-example-code [files]="rowSelectionUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    <code>rowSelectable: boolean</code> &nbsp;
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-warning">Default Value: false</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
+
   <p>For Enable row selection, configure the <code>rowSelectable</code> to <b>true</b> and by default, the table does
     not display row selectable option, which means the property is disabled.</p>
 
@@ -40,10 +49,12 @@
 
   <h4 id="selectMode">Select Mode</h4>
 
-  <code>selectMode: string = 'single' | 'single_toggle' | 'multi'</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: 'single'</span>
-  <span class="p-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  <p>
+    <code>selectMode: string = 'single' | 'single_toggle' | 'multi'</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: 'single'</span>
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
 
   <p>
     This control allows you to configure the row selection mode. There are 03 types of row selections are
@@ -92,10 +103,12 @@
 
   <h4 id="showRowSelectCheckbox">Show Row Select Checkbox</h4>
 
-  <code>showRowSelectCheckbox: boolean</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: true</span>
-  <span class="p-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  <p>
+    <code>showRowSelectCheckbox: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: true</span>
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
 
 
   <p>
@@ -109,10 +122,12 @@
 
   <h4 id="showRowSelectAllCheckbox">Show Row Select All Checkbox</h4>
 
-  <code>showRowSelectAllCheckbox: boolean</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: false</span>
-  <span class="p-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  <p>
+    <code>showRowSelectAllCheckbox: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: false</span>
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
 
   <p>This property allows the user to mark the preference for all the rows at once by selecting a single checkbox which
     is in the top of the row selection checkbox column. and triggers the <a
@@ -124,10 +139,12 @@
 
   <h4 id="selectOnRowClick">Select On Row Click</h4>
 
-  <code>selectOnRowClick: boolean</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: false</span>
-  <span class="p-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  <p>
+    <code>selectOnRowClick: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: false</span>
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
 
   <p>
     This property will allow users to perform row click operation on top of anywhere of a row. It will trigger the <a
@@ -143,10 +160,12 @@
 
   <h4 id="selectTrackBy">Select Track By</h4>
 
-  <code>selectTrackBy: string</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: 'id'</span>
-  <span class="p-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  <p>
+    <code>selectTrackBy: string</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: 'id'</span>
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
 
   <p>Provide a field name to identifies a selection item schema and it might be uniquely identifiable all over the data
     set. When a user selecting a row, the data table <a [routerLink]="'/feature/data-table/advanced/event'"
@@ -159,12 +178,14 @@
 
   <h4 id="selectedRow">Selected Row</h4>
 
-  <code>selectedRow: any</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: undefined</span>
-  <span class="p-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-secondary">Depends On: [selectTrackBy]</span>
+  <p>
+    <code>selectedRow: any</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-secondary">Depends On: [selectTrackBy]</span>
+  </p>
 
 
   <p>
@@ -182,12 +203,14 @@
 
   <h4 id="selectedRows">Selected Rows</h4>
 
-  <code>selectedRows: any[]</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: []</span>
-  <span class="p-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-secondary">Depends On: [selectTrackBy]</span>
+  <p>
+    <code>selectedRows: any[]</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: []</span>
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-secondary">Depends On: [selectTrackBy]</span>
+  </p>
 
   <p>
     This property allows to set specifically selected rows to display after the data table <a

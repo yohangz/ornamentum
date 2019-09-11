@@ -65,7 +65,17 @@ export class MainComponent {
                 },
                 {
                   title: 'Basic Usage',
-                  anchor: 'basicUsage'
+                  anchor: 'basicUsage',
+                  subNavigation: [
+                    {
+                      title: 'Bind via Items',
+                      anchor: 'bindViaItems'
+                    },
+                    {
+                      title: 'Bind via Data Source',
+                      anchor: 'bindViaDataSource'
+                    }
+                  ]
                 },
                 {
                   title: 'Suggested Links',
@@ -83,7 +93,17 @@ export class MainComponent {
                 },
                 {
                   title: 'Basic Usage',
-                  anchor: 'basicUsage'
+                  anchor: 'basicUsage',
+                  subNavigation: [
+                    {
+                      title: 'Bind via Data Source',
+                      anchor: 'bindViaDataSource'
+                    },
+                    {
+                      title: 'Bind via Items',
+                      anchor: 'bindViaItems'
+                    }
+                  ]
                 },
                 {
                   title: 'Suggested Links',
@@ -165,6 +185,10 @@ export class MainComponent {
                 {
                   title: 'What You Will See',
                   anchor: 'whatYouWillSee'
+                },
+                {
+                  title: 'Basic Usage',
+                  anchor: 'basicUsage'
                 },
                 {
                   title: 'Useful Properties',

@@ -2,10 +2,9 @@
   <h1>Client Side Stream Data Binding</h1>
 
   <p>
-    Client-side real-time data binding feature can be used to bind data stream to
-    represent dynamic data such as traffic, weather, analytics and etc which changes over time. Ornamentum is capable of
-    handing live data sources with all available features (<a
-    [routerLink]="['/feature/data-table/functionality/column/filtering']">Filtering</a>, <a
+    This data binding technique can be used to bind data stream to represent dynamic data such as traffic, weather,
+    analytics and etc which changes over time. Ornamentum is capable of handing live data sources with all available
+    features (<a [routerLink]="['/feature/data-table/functionality/column/filtering']">Filtering</a>, <a
     [routerLink]="['/feature/data-table/functionality/row/grouping']">Row Grouping</a>, <a
     [routerLink]="['/feature/data-table/functionality/column/sorting']">Sorting</a>, <a
     [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a>
@@ -30,51 +29,75 @@
   <p>Client side stream data binding can be configured by using either of the approaches described below. Note that it
     will always re-render table with last emitted data set.</p>
 
-  <h5>Bind via dataSource</h5>
+  <ol class="main-pane-list">
+    <li>
+      <h5 id="bindViaDataSource">Bind via Data Source</h5>
+      <p>
+        <code>dataSource: Observable&lt;any[]&gt;</code> &nbsp;
+        <span class="pr-1"></span>
+        <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+        <span class="pr-1"></span>
+        <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+      </p>
 
-  <p>
-    Setting an <a rel="noopener" target="_blank"
-                                href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
-      Observable</a> stream to <code>dataSource</code> input property with the same approach discussed in the <a
-    [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data Binding</a> section.
-    The data table reflect the changes accordingly when data source stream emit data.
-  </p>
+      <p>
+        Setting an <a rel="noopener" target="_blank"
+                      href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
+        Observable</a> stream to <code>dataSource</code> input property with the same approach discussed in the <a
+        [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic</a> Data Binding
+        section.
+        The data table reflect the changes accordingly when data source stream emit data.
+      </p>
 
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
-  <p>
-    The complete code snippet for client side real time data binding via <code>dataSource</code> input
-    property can be found in <a
-    [routerLink]="['/feature/data-table/data-binding/client-side/stream']" [fragment]="'whatYouWillSee'">What You Will
-    See</a> example section above.
-  </p>
+      <p>
+        The complete code snippet for client side real time data binding via <code>dataSource</code> input
+        property can be found in <a
+        [routerLink]="['/feature/data-table/data-binding/client-side/stream']" [fragment]="'whatYouWillSee'">What You
+        Will
+        See</a> example section above.
+      </p>
+    </li>
 
-  <h5>Bind via items</h5>
+    <li>
+      <h5 id="bindViaItems">Bind via Items</h5>
+      <p>
+        <code>items: any[]</code> &nbsp;
+        <span class="pr-1"></span>
+        <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+        <span class="pr-1"></span>
+        <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+      </p>
 
-  <p>
-    The <code>items</code> input property also can be used to implement the same behavior instead of using an
-    <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
-      Observable</a> stream to bind realtime data.
-  </p>
+      <p>
+        The <code>items</code> input property also can be used to implement the same behavior instead of using an
+        <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
+          Observable</a> stream to bind real time data.
+      </p>
 
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
 
-  <p>
-    Let's modify the controller code snippet in above example (<b>client-side-stream-usage.component.ts</b>) to use
-    <code>items</code> property instead of <code>dataSource</code>.
-  </p>
+      <p>
+        Let's modify the controller code snippet in above example (<b>client-side-stream-usage.component.ts</b>) to use
+        <code>items</code> property instead of <code>dataSource</code>.
+      </p>
 
-  <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataBindingWithItems"></app-code-snippet>
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataBindingWithItems"></app-code-snippet>
 
-  <p>
-    Data table <code>items</code> input property setter will capture and re-render data table when ever new data
-    collection is set to <code>items</code>. We highly recommend the usage of <code>dataSource</code> over
-    <code>items</code> binding. However, you can proceed with this approach if you prefer using data arrays over streams.
-  </p>
+      <p>
+        Data table <code>items</code> input property setter will capture and re-render data table when ever new data
+        collection is set to <code>items</code>. We highly recommend the usage of <code>dataSource</code> over
+        <code>items</code> binding. However, you can proceed with this approach if you prefer using data arrays over
+        streams.
+      </p>
+    </li>
+
+  </ol>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data Binding</a><br/>
-  <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server-side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Real-time
     Data Binding</a>
 </div>

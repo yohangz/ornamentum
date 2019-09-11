@@ -25,9 +25,18 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
+  <p>
+    <code>filterable: boolean</code> &nbsp;
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-warning">Default Value: false</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  </p>
+
   <p>Once Enabling the filtering functionality, ornamentum starts to support <a
     [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'filterTextBox'">Text Box
-    Filtering</a> for the specified column by default. Please note that <code>filterable</code> does not support default.
+    Filtering</a> for the specified column by default. Please note that <code>filterable</code> does not support
+    default.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.filterable"></app-code-snippet>
@@ -43,10 +52,13 @@
   <app-example-code [files]="filteringTextBoxUsage"></app-example-code>
 
   <h4 id="filterPlaceholder">Filter Place Holder</h4>
-  <code>filterPlaceholder: string</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: 'Search'</h5>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+
+  <p>
+    <code>filterPlaceholder: string</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: 'Search'</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  </p>
 
   <p>
     The filter place holder property facilitates the user to specify the placeholder name for the column filtering text
@@ -54,10 +66,13 @@
   </p>
 
   <h4 id="showFilterClearButton">Show Filter Clear Button</h4>
-  <code>showFilterClearButton: boolean</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: true</h5>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+
+  <p>
+    <code>showFilterClearButton: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: true</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  </p>
 
   <p>This property can be used to enable a button for clear filter keywords and applicable only when Text Box Filtering
     mode is enabled.</p>
@@ -189,7 +204,7 @@
     <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic</a> Data Binding
     and
     <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side WebSocket</a> Data Binding
-    documentation for more information.
+    documentations for more information.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>

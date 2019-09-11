@@ -5,14 +5,14 @@
     Server side data binding allow users to bind large data sets that are not directly accessible as a full collection
     in client side due to various reasons. Server side data binding can improve performance drastically for large data
     sets but integration is fairly complex compared to <a
-    [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a> and <a
-    [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client Side Stream Data Binding</a>
+    [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic</a> and <a
+    [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client Side Stream</a> Data Binding
     techniques. This data binding technique can be used to fetch data via HTTP GET requests on demand.
   </p>
 
   <p>
-    Unlike in <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data
-    Binding</a>, server side rendering will request for data on table initialization and whenever user performs
+    Unlike in <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic</a> Data
+    Binding, Server Side rendering will request for data on table initialization and whenever user performs
     <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'serverSideColumnFilter'">Filtering</a>,
     <a [routerLink]="['/feature/data-table/functionality/column/sorting']" [fragment]="'serverSideColumnSorting'">Sorting</a>,
     <a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a> etc. operations. Ornamentum has
@@ -28,8 +28,16 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
+    <code>onDataBind: DataTableDataBindCallback&lt;any&gt;</code> &nbsp;
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
+
+  <p>
     Server side data bind functionality can be integrated via <a rel="noopener" target="_blank"
-            href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+                                                                 href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
     callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
     data source agnostic.
   </p>
@@ -38,8 +46,9 @@
     <li>
       <p>
         Import <a rel="noopener" target="_blank"
-                  href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a> along with
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
+                  href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a>
+        along with <a rel="noopener" target="_blank"
+                      href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
       </p>
 
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingModule"></app-code-snippet>
@@ -47,7 +56,8 @@
     <li>
       <p>
         Within the target component use
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/injectables/DataTableHttpResourceFactoryService.html">DataTableHttpResourceFactoryService</a>
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/injectables/DataTableHttpResourceFactoryService.html">DataTableHttpResourceFactoryService</a>
         to construct an instance of
         <a rel="noopener" target="_blank"
            href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a>
@@ -57,20 +67,26 @@
       </p>
 
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingComponent"></app-code-snippet>
-        <p>
-          or else you can write your own custom data provider without using getResourceProvider in
-          <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/injectables/DataTableHttpResourceFactoryService.html">DataTableHttpResourceFactoryService</a>
-          service. The custom data provider needs to return a function which is supposed to be returned object as Observable.
-          As long as your data return as observable you can use any data sources such as Firebase Realtime Database or Cloud Firestore.
-          Please refer <a [routerLink]="['/feature/data-table/data-binding/server-side/custom-provider']">Custom Data Provider</a>
-          documentation for more information.
-        </p>
+      <p>
+        or else you can write your own custom data provider without using getResourceProvider in
+        <a rel="noopener" target="_blank"
+           href="https://ornamentum.app/api-docs/injectables/DataTableHttpResourceFactoryService.html">DataTableHttpResourceFactoryService</a>
+        service. The custom data provider needs to return a function which is supposed to be returned object as
+        Observable.
+        As long as your data return as observable you can use any data sources such as Firebase Realtime Database or
+        Cloud Firestore.
+        Please refer <a [routerLink]="['/feature/data-table/data-binding/server-side/custom-provider']">Custom Data
+        Provider</a>
+        documentation for more information.
+      </p>
     </li>
     <li>
       <p>
         Set the obtained data bind and filter value extract callback function references
-        to <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
-        and <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onFilterValueExtract">onFilterValueExtract</a>
+        to <a rel="noopener" target="_blank"
+              href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+        and <a rel="noopener" target="_blank"
+               href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onFilterValueExtract">onFilterValueExtract</a>
         input properties of data table accordingly.
       </p>
 
@@ -129,7 +145,8 @@
         </li>
         <li>
           <p>
-            <code>filter value</code> - Filter value is passed when filter is applied. Filter value of multi column filterable
+            <code>filter value</code> - Filter value is passed when filter is applied. Filter value of multi column
+            filterable
             fields are passed as a comma separated string.
           </p>
         </li>
@@ -140,7 +157,8 @@
         </li>
         <li>
           <p>
-            <code>sort priority</code> - Sort priority is passed as an index incrementer starting from value 1. This property
+            <code>sort priority</code> - Sort priority is passed as an index incrementer starting from value 1. This
+            property
             is useful when multi column sorting is enabled to identify the sort field order.
           </p>
         </li>
@@ -149,7 +167,8 @@
       <p>
         The target field is ignored if no filtering or sorting is applied on the target column to reduce the data fetch
         request URL length by avoiding appendage of empty valued query param. The filter and sort field values are
-        separated by pipe <code>|</code> character when both sorting and filtering is applied on the same field. The sort
+        separated by pipe <code>|</code> character when both sorting and filtering is applied on the same field. The
+        sort
         order and sort priority properties and also separated by pipe character.
       </p>
 
@@ -215,11 +234,14 @@
     </li>
     <li>
       Service should respond follow <a rel="noopener" target="_blank"
-        href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a> schema.
+                                       href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
+      schema.
       However, you can pass a custom response mapper callback function to <a rel="noopener" target="_blank"
-        href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a> and map
+                                                                             href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
+      and map
       the response to <a rel="noopener" target="_blank"
-       href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a> schema
+                         href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
+      schema
       without making changes in backend API response.
     </li>
   </ol>
@@ -235,13 +257,17 @@
   <h2 id="customDataProvider">Custom Data Provider</h2>
 
   <p>
-    Server side and client side data binding can be implemented via a custom data provider as Ornamentum data sources are
+    Server side and client side data binding can be implemented via a custom data provider as Ornamentum data sources
+    are
     fully decoupled from component logic. Please refer
-    <a [routerLink]="['/feature/data-table/data-binding/server-side/custom-provider']">Custom Data Provider</a> for more information.
+    <a [routerLink]="['/feature/data-table/data-binding/server-side/custom-provider']">Custom Data Provider</a> for more
+    information.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
-  <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web Socket Data Binding</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server Side Basic Data Binding</a>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web Socket Data
+    Binding</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server
+    Side Basic Data Binding</a>
 </div>

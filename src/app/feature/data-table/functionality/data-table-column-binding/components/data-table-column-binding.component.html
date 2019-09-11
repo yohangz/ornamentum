@@ -10,42 +10,53 @@
   <app-column-binding-usage></app-column-binding-usage>
   <app-example-code [files]="columnBindingUsage"></app-example-code>
 
-  The following code snippet will depict the basic usage of column data binding. For use all it's associated properties
-  it is
-  mandatory to define <code>field</code> property, otherwise functionality may differ.
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+  <code>field: string</code> &nbsp;
+  <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  </p>
+
+  <p>
+    The following code snippet will depict the basic usage of column data binding. For use all it's associated
+    properties it is <b>mandatory</b> to define <code>field</code> property that bound to a column, otherwise, the
+    functionality may not work as expected.
+  </p>
+
+  <p>This property will act as a identifier for access specific data set in your data array. The field name should be a
+    valid Javascript identifier and should only contains <a rel="noopener" target="_blank"
+                                                            href="https://en.wikipedia.org/wiki/Alphanumeric">Alphanumeric
+      Characters</a>.</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.resizable"></app-code-snippet>
 
   <h2 id="usefulProperties">Useful Properties</h2>
 
-  <h4 id="field">Field</h4>
-
-  <code>field: string</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
-
-  <p>Field property is a <b>mandatory</b> property that bound to a column. This property will act as a
-    identifier for access specific data set in your data array. The field name should be a valid Javascript identifier
-    and should only contains <a rel="noopener" target="_blank" href="https://en.wikipedia.org/wiki/Alphanumeric">Alphanumeric
-      Characters</a>.</p>
+  <p>There are several more properties that support for column binding functionality when <code>field</code> property
+    is defined.</p>
 
   <h4 id="title">Title</h4>
 
+  <p>
   <code>title: string</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+  <span class="badge badge-pill badge-warning">Default Value: undefined</span>
   <span class="pr-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  </p>
 
   <p>Useful to set a name for the field that column is bounded. If the property is not provided ornamentum will render
     column title as blank.</p>
 
   <h4 id="cssClass">CSS Class</h4>
 
+  <p>
   <code>cssClass: string</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+  <span class="badge badge-pill badge-warning">Default Value: undefined</span>
   <span class="pr-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  </p>
 
   <p>This property is useful if you want to inject a CSS class into your data table column cells. you can
     provide a string or a function which returns a CSS class or classes which space delimiter separated without dot
@@ -53,20 +64,24 @@
 
   <h4 id="width">Width</h4>
 
+  <p>
   <code>width: number | string</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: undefined</h5>
+  <span class="badge badge-pill badge-warning">Default Value: undefined</span>
   <span class="pr-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  </p>
 
   <p>The width can be used to set a static width for grid column. It accepts number which automatically converts it's
     unit to pixels or you can manually define a string with respective CSS units (px, cm, mm etc).</p>
 
   <h4 id="visible">Visible</h4>
 
+  <p>
   <code>visible: boolean</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: true</h5>
+  <span class="badge badge-pill badge-warning">Default Value: true</span>
   <span class="pr-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  </p>
 
   <p>This property is useful if you want to show your column in the data table. If it is set to false, ornamentum will
     not renders the column and it's content but include it in <a
@@ -75,10 +90,12 @@
 
   <h4 id="showInColumnSelector">Show In Column Selector</h4>
 
+  <p>
   <code>showInColumnSelector: boolean</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: true</h5>
+  <span class="badge badge-pill badge-warning">Default Value: true</span>
   <span class="pr-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  </p>
 
   <p>If this property is set to true, the column will be displayed on <a
     [routerLink]="['/feature/data-table/options/header-details']" [fragment]="'showColumnSelector'">Show Column
