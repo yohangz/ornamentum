@@ -71,7 +71,7 @@
   <p>To define the cell template, nest an <code>&lt;ng-template&gt;</code> tag with the ngDataTableCell directive inside a
     <code>&lt;ng-data-table-column&gt;</code> tag.</p>
   <p>
-    Span index of the current row which is useful when using row grouping. Use it as an alias for a template variable by utilizing the <code>let-spanIndex="spanIndex"</code> syntax.
+    Span index of the current row which is useful when using row spanning. Use it as an alias for a template variable by utilizing the <code>let-spanIndex="spanIndex"</code> syntax.
   </p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.spanIndexPropertyTemplate"></app-code-snippet>
   <p>
@@ -84,7 +84,7 @@
   <p>To define the cell template, nest an <code>&lt;ng-template&gt;</code> tag with the ngDataTableCell directive inside a
     <code>&lt;ng-data-table-column&gt;</code> tag.</p>
   <p>
-    Row Span of the current row which is useful when using row grouping.
+    Row Span of the current row which is useful when using row spanning.
     Use it as an alias for a template variable by utilizing the <code>let-rowSpan="rowSpan"</code> syntax.
   </p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.rowSpanPropertyTemplate"></app-code-snippet>
@@ -97,5 +97,5 @@
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Cell
     Template</a><br/>
-  <a [routerLink]="['/feature/data-table/experimental/row/grouping']">Row Grouping</a><br/>
+  <a [routerLink]="['/feature/data-table/experimental/row/grouping']">Row Spanning</a><br/>
 </div>

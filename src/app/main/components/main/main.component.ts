@@ -895,7 +895,7 @@ export class MainComponent {
             },
             {
               routePath: '/feature/data-table/experimental/row/grouping',
-              title: 'Row Grouping',
+              title: 'Row Spanning',
               navigation: [
                 {
                   title: 'What You Will See',
