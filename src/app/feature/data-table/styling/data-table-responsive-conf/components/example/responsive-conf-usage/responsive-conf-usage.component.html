@@ -2,7 +2,7 @@
   [id]="'sales_products_styling_05'"
   [title]="'Sales Products'"
   [items]="items"
-  [minContentWidth]="1500"
+  [minContentWidth]="900"
   [contentHeight]="300"
   [pageable]="true"
   [showHeader]="true"
@@ -25,7 +25,7 @@
   <ng-data-table-column
     [field]="'orderMethodType'"
     [title]="'Order Method Type'"
-    [width]="120">
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
@@ -54,4 +54,8 @@
     [title]="'Gross Margin'"
     [width]="100">
   </ng-data-table-column>
+  <ng-template #ngDataTableRowExpand let-row="row">
+    <app-responsive-conf-detail-view *ngIf="row.expanded || row.dataLoaded"
+                                         [row]="row"></app-responsive-conf-detail-view>
+  </ng-template>
 </ng-data-table>

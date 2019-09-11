@@ -2,14 +2,12 @@
   [id]="'sales_products_styling_01'"
   [title]="'Sales Products'"
   [items]="items"
-  [minContentWidth]="650"
+  [minContentWidth]="900"
   [pageable]="true"
   [showHeader]="true"
   [showColumnSelector]="true"
   [rowSelectable]="true"
-  [selectMode]="'multi'"
-  [showRowSelectAllCheckbox]="true"
-  [showRowSelectCheckbox]="true"
+  [selectMode]="'single'"
   [selectionColumnWidth]="35">
   <ng-data-table-column
     [field]="'id'"
@@ -18,7 +16,8 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
-    [title]="'Order Method Type'">
+    [title]="'Order Method Type'"
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"

@@ -5,10 +5,10 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-min-height-usage',
-  templateUrl: './min-height-usage.component.html'
+  selector: 'app-min-content-height-usage',
+  templateUrl: './min-content-height-usage.component.html'
 })
-export class MinHeightUsageComponent {
+export class MinContentHeightUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

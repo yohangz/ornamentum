@@ -8,13 +8,17 @@ import { DataTableColumnBindingRoutingModule } from './data-table-column-binding
 
 import { SharedModule } from '../../../../shared/shared.module';
 
-import { ColumnBindingUsageComponent, DataTableColumnBindingComponent } from './index';
+import { ColumnBindingUsageComponent, DataTableColumnBindingComponent, ShowIndexColumnUsageComponent } from './index';
 
 /**
  * Module class for containing data table resizable module.
  */
 @NgModule({
-  declarations: [ColumnBindingUsageComponent, DataTableColumnBindingComponent],
+  declarations: [
+    ColumnBindingUsageComponent,
+    DataTableColumnBindingComponent,
+    ShowIndexColumnUsageComponent
+  ],
   exports: [],
   imports: [
     CommonModule,

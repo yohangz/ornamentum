@@ -8,7 +8,7 @@ import { DataTableCellTemplateRoutingModule } from './data-table-cell-template-r
 
 import { SharedModule } from '../../../../shared/shared.module';
 
-import { CellTemplateRowspanComponent, CellTemplateUsageComponent, DataTableCellTemplateComponent } from './index';
+import { CellTemplateRowSpanUsageComponent, CellTemplateUsageComponent, DataTableCellTemplateComponent } from './index';
 import { CellTemplateAvatarUsageComponent } from './components/example/cell-template-avatar-usage/cell-template-avatar-usage.component';
 
 /**
@@ -19,7 +19,7 @@ import { CellTemplateAvatarUsageComponent } from './components/example/cell-temp
     CellTemplateUsageComponent,
     DataTableCellTemplateComponent,
     CellTemplateAvatarUsageComponent,
-    CellTemplateRowspanComponent
+    CellTemplateRowSpanUsageComponent
   ],
   exports: [],
   imports: [

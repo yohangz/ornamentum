@@ -5,10 +5,10 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-min-width-usage',
-  templateUrl: './min-width-usage.component.html'
+  selector: 'app-min-content-width-usage',
+  templateUrl: './min-content-width-usage.component.html'
 })
-export class MinWidthUsageComponent {
+export class MinContentWidthUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

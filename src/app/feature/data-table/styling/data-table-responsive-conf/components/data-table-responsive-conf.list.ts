@@ -74,39 +74,39 @@ export const indexColumnWidthUsage: ExampleFile[] = [
   },
 ];
 
-export const minHeightUsage: ExampleFile[] = [
+export const minContentHeightUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'min-height-usage.component.ts',
-    content: require('!!raw-loader!./example/min-height-usage/min-height-usage.component.ts')
+    name: 'min-content-height-usage.component.ts',
+    content: require('!!raw-loader!./example/min-content-height-usage/min-content-height-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'min-height-usage.component.html',
-    content: require('!!raw-loader!./example/min-height-usage/min-height-usage.component.html')
+    name: 'min-content-height-usage.component.html',
+    content: require('!!raw-loader!./example/min-content-height-usage/min-content-height-usage.component.html')
   },
   {
     type: FileType.TS,
-    name: 'min-height-usage.module.ts',
-    content: require('!!raw-loader!./example/min-height-usage/min-height-usage.module.md')
+    name: 'min-content-height-usage.module.ts',
+    content: require('!!raw-loader!./example/min-content-height-usage/min-content-height-usage.module.md')
   }
 ];
 
-export const minWidthUsage: ExampleFile[] = [
+export const minContentWidthUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'min-width-usage.component.ts',
-    content: require('!!raw-loader!./example/min-width-usage/min-width-usage.component.ts')
+    name: 'min-content-width-usage.component.ts',
+    content: require('!!raw-loader!./example/min-content-width-usage/min-content-width-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'min-width-usage.component.html',
-    content: require('!!raw-loader!./example/min-width-usage/min-width-usage.component.html')
+    name: 'min-content-width-usage.component.html',
+    content: require('!!raw-loader!./example/min-content-width-usage/min-content-width-usage.component.html')
   },
   {
     type: FileType.TS,
-    name: 'min-width-usage.module.ts',
-    content: require('!!raw-loader!./example/min-width-usage/min-width-usage.module.md')
+    name: 'min-content-width-usage.module.ts',
+    content: require('!!raw-loader!./example/min-content-width-usage/min-content-width-usage.module.md')
   }
 ];
 

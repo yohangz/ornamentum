@@ -18,6 +18,24 @@ export const columnBindingUsage: ExampleFile[] = [
   }
 ];
 
+export const showIndexColumnUsage: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'show-index-column-usage.component.ts',
+    content: require('!!raw-loader!./example/show-index-column-usage/show-index-column-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'show-index-column-usage.component.html',
+    content: require('!!raw-loader!./example/show-index-column-usage/show-index-column-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'show-index-column-usage.module.ts',
+    content: require('!!raw-loader!./example/show-index-column-usage/show-index-column-usage.module.md')
+  }
+];
+
 export const demoSnippet: any = {
   resizable: require('!!raw-loader!./docs/columnBinding.md')
 };

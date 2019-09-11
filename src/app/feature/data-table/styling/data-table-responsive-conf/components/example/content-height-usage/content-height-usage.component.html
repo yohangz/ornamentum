@@ -2,8 +2,8 @@
   [id]="'sales_products_styling_06'"
   [title]="'Sales Products'"
   [items]="items"
-  [minContentWidth]="650"
-  [contentHeight]="200"
+  [minContentWidth]="900"
+  [contentHeight]="300"
   [pageable]="true"
   [showHeader]="true"
   [showColumnSelector]="true">
@@ -14,7 +14,8 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
-    [title]="'Order Method Type'">
+    [title]="'Order Method Type'"
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"

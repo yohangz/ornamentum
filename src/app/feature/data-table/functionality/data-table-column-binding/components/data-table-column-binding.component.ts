@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { FileType } from 'helper-models';
 
-import { demoSnippet, columnBindingUsage } from './data-table-resizing.list';
+import { demoSnippet, columnBindingUsage, showIndexColumnUsage } from './data-table-resizing.list';
 
 @Component({
   selector: 'app-data-table-column-binding-component',
@@ -15,4 +15,5 @@ export class DataTableColumnBindingComponent {
   public demoSnippet = demoSnippet;
 
   public columnBindingUsage = columnBindingUsage;
+  public showIndexColumnUsage = showIndexColumnUsage;
 }

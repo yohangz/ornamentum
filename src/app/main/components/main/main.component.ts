@@ -217,6 +217,10 @@ export class MainComponent {
                     {
                       title: 'Show In Column Selector',
                       anchor: 'showInColumnSelector'
+                    },
+                    {
+                      title: 'Show Index Column',
+                      anchor: 'showIndexColumn'
                     }
                   ]
                 },
@@ -624,12 +628,12 @@ export class MainComponent {
                       anchor: 'width'
                     },
                     {
-                      title: 'Min Height',
-                      anchor: 'minHeight'
+                      title: 'Min Content Height',
+                      anchor: 'minContentHeight'
                     },
                     {
-                      title: 'Min Width',
-                      anchor: 'minWidth'
+                      title: 'Min Content Width',
+                      anchor: 'minContentWidth'
                     },
                     {
                       title: 'Expander Column Width',

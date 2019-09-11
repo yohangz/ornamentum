@@ -5,10 +5,10 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-expander-column-width-usage',
-  templateUrl: './expander-column-width-usage.component.html'
+  selector: 'app-show-index-column-usage',
+  templateUrl: './show-index-column-usage.component.html'
 })
-export class ExpanderColumnWidthUsageComponent {
+export class ShowIndexColumnUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

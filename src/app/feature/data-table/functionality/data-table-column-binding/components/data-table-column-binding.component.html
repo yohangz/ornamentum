@@ -13,10 +13,10 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-  <code>field: string</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: undefined</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+    <code>field: string</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
   </p>
 
   <p>
@@ -40,10 +40,10 @@
   <h4 id="title">Title</h4>
 
   <p>
-  <code>title: string</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: undefined</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+    <code>title: string</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
   </p>
 
   <p>Useful to set a name for the field that column is bounded. If the property is not provided ornamentum will render
@@ -52,10 +52,10 @@
   <h4 id="cssClass">CSS Class</h4>
 
   <p>
-  <code>cssClass: string</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: undefined</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+    <code>cssClass: string</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
   </p>
 
   <p>This property is useful if you want to inject a CSS class into your data table column cells. you can
@@ -65,10 +65,10 @@
   <h4 id="width">Width</h4>
 
   <p>
-  <code>width: number | string</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: undefined</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+    <code>width: number | string</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
   </p>
 
   <p>The width can be used to set a static width for grid column. It accepts number which automatically converts it's
@@ -77,10 +77,10 @@
   <h4 id="visible">Visible</h4>
 
   <p>
-  <code>visible: boolean</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: true</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+    <code>visible: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: true</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
   </p>
 
   <p>This property is useful if you want to show your column in the data table. If it is set to false, ornamentum will
@@ -91,10 +91,10 @@
   <h4 id="showInColumnSelector">Show In Column Selector</h4>
 
   <p>
-  <code>showInColumnSelector: boolean</code> &nbsp;
-  <span class="badge badge-pill badge-warning">Default Value: true</span>
-  <span class="pr-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+    <code>showInColumnSelector: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: true</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
   </p>
 
   <p>If this property is set to true, the column will be displayed on <a
@@ -102,6 +102,21 @@
     Selector</a> dropdown with field title and selected state, By enabling this functionality end users able to
     customize what they want to see.</p>
 
+  <h4 id="showIndexColumn">Show Index Column</h4>
+
+  <p>
+    <code>showIndexColumn: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: false</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
+
+  <p>This property can be uses to display a additional index column and appears on left side as first column. It will
+    start from 1 and keep incrementing by 1 for each data row to maintain a unique numerical id for all over the data
+    table.</p>
+
+  <app-show-index-column-usage></app-show-index-column-usage>
+  <app-example-code [files]="showIndexColumnUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/functionality/column/sorting']">Sorting</a><br>

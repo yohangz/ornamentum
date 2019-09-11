@@ -5,8 +5,8 @@ import {
   contentHeightUsage,
   expanderColumnWidthUsage,
   indexColumnWidthUsage,
-  minHeightUsage,
-  minWidthUsage,
+  minContentHeightUsage,
+  minContentWidthUsage,
   selectionColumnWidthUsage,
   widthUsage,
   columnSelectorWidthUsage,
@@ -22,8 +22,8 @@ export class DataTableResponsiveConfComponent {
   public contentHeightUsage = contentHeightUsage;
   public expanderColumnWidthUsage = expanderColumnWidthUsage;
   public indexColumnWidthUsage = indexColumnWidthUsage;
-  public minHeightUsage = minHeightUsage;
-  public minWidthUsage = minWidthUsage;
+  public minContentHeightUsage = minContentHeightUsage;
+  public minContentWidthUsage = minContentWidthUsage;
   public selectionColumnWidthUsage = selectionColumnWidthUsage;
   public widthUsage = widthUsage;
   public columnSelectorWidthUsage = columnSelectorWidthUsage;

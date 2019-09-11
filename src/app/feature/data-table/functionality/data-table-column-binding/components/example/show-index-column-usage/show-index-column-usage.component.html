@@ -1,16 +1,16 @@
 <ng-data-table
-  [id]="'sales_products_styling_03'"
+  [id]="'sales_products_functionality_19'"
   [title]="'Sales Products'"
   [items]="items"
   [minContentWidth]="900"
+  [showIndexColumn]="true"
   [pageable]="true"
   [showHeader]="true"
-  [showColumnSelector]="true"
-  [columnSelectorWidth]="350">
+  [showColumnSelector]="true">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [width]="70">
+    [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
@@ -19,15 +19,19 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
-    [title]="'Retailer Type'">
+    [title]="'Retailer Type'"
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
-    [title]="'Product Line'">
+    [title]="'Product Line'"
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
-    [title]="'Product Type'">
+    [title]="'Product Type'"
+    [cssClass]="'product-type'"
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'revenue'"

@@ -11,11 +11,12 @@ import { SharedModule } from '../../../../shared/shared.module';
 import {
   DataTableResponsiveConfComponent,
   ResponsiveConfUsageComponent,
+  ResponsiveConfDetailViewComponent,
   ContentHeightUsageComponent,
   ExpanderColumnWidthUsageComponent,
   IndexColumnWidthUsageComponent,
-  MinHeightUsageComponent,
-  MinWidthUsageComponent,
+  MinContentHeightUsageComponent,
+  MinContentWidthUsageComponent,
   SelectionColumnWidthUsageComponent,
   WidthUsageComponent,
   ColumnSelectorWidthUsageComponent
@@ -28,11 +29,12 @@ import {
   declarations: [
     DataTableResponsiveConfComponent,
     ResponsiveConfUsageComponent,
+    ResponsiveConfDetailViewComponent,
     ContentHeightUsageComponent,
     ExpanderColumnWidthUsageComponent,
     IndexColumnWidthUsageComponent,
-    MinHeightUsageComponent,
-    MinWidthUsageComponent,
+    MinContentHeightUsageComponent,
+    MinContentWidthUsageComponent,
     SelectionColumnWidthUsageComponent,
     WidthUsageComponent,
     ColumnSelectorWidthUsageComponent

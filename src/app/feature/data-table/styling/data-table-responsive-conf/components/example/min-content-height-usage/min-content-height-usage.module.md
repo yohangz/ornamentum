@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DataTableModule } from 'ornamentum';
   
-import { MinHeightUsageComponent } from './min-height-usage.component';
+import { MinContentHeightUsageComponent } from './min-content-height-usage.component';
 
 @NgModule({
- bootstrap: [MinHeightUsageComponent],
- declarations: [MinHeightUsageComponent],
+ bootstrap: [MinContentHeightUsageComponent],
+ declarations: [MinContentHeightUsageComponent],
  imports: [
     BrowserModule, 
     DataTableModule.forRoot()
   ]
 })
-export class MinHeightUsageModule {
+export class MinContentHeightUsageModule {
 }

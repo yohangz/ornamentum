@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DataTableModule } from 'ornamentum';
   
-import { MinWidthUsageComponent } from './min-width-usage.component';
+import { MinContentWidthUsageComponent } from './min-content-width-usage.component';
 
 @NgModule({
- bootstrap: [MinWidthUsageComponent],
- declarations: [MinWidthUsageComponent],
+ bootstrap: [MinContentWidthUsageComponent],
+ declarations: [MinContentWidthUsageComponent],
  imports: [
     BrowserModule, 
     DataTableModule.forRoot()
   ]
 })
-export class MinWidthUsageModule {
+export class MinContentWidthUsageModule {
 }

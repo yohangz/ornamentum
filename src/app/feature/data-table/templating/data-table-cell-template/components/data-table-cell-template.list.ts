@@ -39,17 +39,17 @@ export const cellTemplateRowSpanUsage: ExampleFile[] = [
   {
     type: FileType.TS,
     name: 'cell-template-row-span-usage.component.ts',
-    content: require('!!raw-loader!./example/cell-template-rowspan/cell-template-rowspan.component.ts')
+    content: require('!!raw-loader!./example/cell-template-row-span-usage/cell-template-row-span-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'cell-template-rowspan.component.html',
-    content: require('!!raw-loader!./example/cell-template-rowspan/cell-template-rowspan.component.html')
+    name: 'cell-template-row-span-usage.component.html',
+    content: require('!!raw-loader!./example/cell-template-row-span-usage/cell-template-row-span-usage.component.html')
   },
   {
     type: FileType.TS,
-    name: 'cell-template-rowspan.module.ts',
-    content: require('!!raw-loader!./example/cell-template-rowspan/cell-template-rowspan.module.md')
+    name: 'cell-template-row-span-usage.module.ts',
+    content: require('!!raw-loader!./example/cell-template-row-span-usage/cell-template-row-span-usage.module.md')
   }
 ];
 export const demoSnippet: any = {
