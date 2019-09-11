@@ -22,9 +22,9 @@
   </p>
 
   <p>
-    Data table will not show anything, although it has been set as <b>true</b> for <code>expandableRows</code> property
+    Data table will not show anything, although it has been set as <code>true</code> for <code>expandableRows</code> property
     due to unavailability of a custom template. Therefore, it is <b>essential</b> to provide a custom template if this
-    property is set to true.
+    property is set to <code>true</code>.
   </p>
 
   <p>Following code snippet depicts how to set a custom template.</p>
@@ -62,8 +62,10 @@
   <span class="p-1"></span>
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
-  <p>Enable/disable ability to expand the table row on user row click or row expand button click event when <code>expandableRows</code>
-    is enabled.</p>
+  <p>
+    This property allows to enable/disable expand the detail row, on row click or row expand button click when <code>expandableRows</code>
+    is set to <code>true</code>
+  </p>
 
   <app-expand-on-row-click-usage></app-expand-on-row-click-usage>
   <app-example-code [files]="expandOnRowClickUsage"></app-example-code>
@@ -93,6 +95,7 @@
   <app-example-code [files]="showRowExpandLoadingSpinnerDetailView"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/data-table/templating/cell-template']">Cell Template</a><br>
   <a [routerLink]="['/feature/data-table/styling/responsive-configurations']">Responsive Configuration</a><br>
   <a [routerLink]="['/feature/data-table/advanced/events']">Events</a><br>
   <a [routerLink]="['/feature/data-table/options/data-loading-spinner']">Data Loading Spinner</a><br>
