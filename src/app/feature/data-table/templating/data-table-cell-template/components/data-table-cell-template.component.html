@@ -6,6 +6,10 @@
     and footer section) or to format the data the table cells display.
   </p>
 
+  <p>
+    If your going to use cell templating for more than one column you have to handel <code>rospan</code> on that cell manually,
+    Please refer to Product Type & Revenue column in <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'whatYouWillSee'">What You Will See</a> example.
+  </p>
   <h2 id="whatYouWillSee">What You Will See</h2>
 
   <app-cell-template-usage></app-cell-template-usage>
@@ -68,7 +72,7 @@
   <h4 id="rowSpan">Row Span</h4>
   <code>rowSpan: number</code>
   <span class="p-1"></span>
-  <span    class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; inside &lt;ng-data-table-column&gt;</span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; inside &lt;ng-data-table-column&gt;</span>
   <br/>
   <p>
     Row Span of the current row which is useful when using row grouping.
@@ -78,5 +82,6 @@
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Cell
-    Template</a>
+    Template</a><br/>
+  <a [routerLink]="['/feature/data-table/experimental/row/grouping']">Row Grouping</a><br/>
 </div>
