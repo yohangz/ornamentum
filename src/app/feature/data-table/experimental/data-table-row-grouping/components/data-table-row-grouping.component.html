@@ -1,8 +1,8 @@
 <div class="feature-container">
-  <h1>Row Grouping</h1>
+  <h1>Row Spanning </h1>
 
   <p>
-    Row Grouping can be used to show array of data under one specific single cell. in such situations, you can use row
+    Row Spanning can be used to show array of data under one specific single cell. in such situations, you can use row
     grouping functionality.
   </p>
 
@@ -14,7 +14,7 @@
 
   <p>
     if your going to use cell templating for more than one column you have to handel <code>rospan</code> on that cell manually,
-    Please refer to <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'whatYouWillSee'">What You Will See example</a>  in <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'whatYouWillSee'">Cell Template</a> section.
+    Please refer to <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'rowSpan'">Row Span example</a>  in <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'rowSpan'">Cell Template</a> section.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -30,15 +30,15 @@
   </p>
 
   <p>
-    Row grouping can be enabled by binding a <code>DataTableDynamicRowSpanExtractorCallback&lt;any&gt;</code> type of
+    Row Spanning can be enabled by binding a <code>DataTableDynamicRowSpanExtractorCallback&lt;any&gt;</code> type of
     callback function to <code>onDynamicRowSpanExtract</code> event handler.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.onDynamicRowSpanExtract"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'whatYouWillSee'">Cell Template</a><br>
+  <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'rowSpan'">Cell Template</a><br>
   <a [routerLink]="['/feature/data-table/experimental/column/resizing']">Column Resizing</a><br>
   <a [routerLink]="['/feature/data-table/styling/responsive-configuration']">Responsive Configuration</a><br>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Row Grouping</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Row Spanning</a>
 </div>

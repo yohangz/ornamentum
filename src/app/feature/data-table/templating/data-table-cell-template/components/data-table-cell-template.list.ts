@@ -35,7 +35,23 @@ export const cellTemplateUsageAvatar: ExampleFile[] = [
     content: require('!!raw-loader!./example/cell-template-avatar-usage/cell-template-avatar-usage.module.md')
   }
 ];
-
+export const cellTemplateRowspan: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'cell-template-rowspan.component.ts',
+    content: require('!!raw-loader!./example/cell-template-rowspan/cell-template-rowspan.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'cell-template-rowspan.component.html',
+    content: require('!!raw-loader!./example/cell-template-rowspan/cell-template-rowspan.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'cell-template-rowspan.module.ts',
+    content: require('!!raw-loader!./example/cell-template-rowspan/cell-template-rowspan.module.md')
+  }
+];
 export const demoSnippet: any = {
   baseTemplate: require('!!raw-loader!./docs/base-template.md'),
   cellTemplate: require('!!raw-loader!./docs/cell-template.md'),

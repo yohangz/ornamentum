@@ -28,9 +28,9 @@
     [field]="'productType'"
     [title]="'Product Type'"
     [width]="100">
-    <ng-template #ngDataTableCell  let-row="row" >
-      <td style="color: #4dc71f;font-style: oblique">
-        <span>{{row.item.productType }}</span>
+    <ng-template #ngDataTableCell  let-row="row" let-rowSpan="rowSpan" let-spanIndex="spanIndex">
+      <td style="color: #4dc71f;font-style: oblique" [attr.rowspan]="rowSpan" *ngIf="!spanIndex" >
+        <span>{{row.item.productType }} #{{spanIndex}}</span>
       </td>
     </ng-template>
   </ng-data-table-column>
@@ -38,10 +38,19 @@
     [field]="'revenue'"
     [title]="'Revenue'"
     [width]="120">
-    <ng-template #ngDataTableCell  let-row="row" >
-        <td>
+    <ng-template #ngDataTableCell  let-row="row" let-rowSpan="rowSpan" let-spanIndex="spanIndex">
+        <td [attr.rowspan]="rowSpan" *ngIf="!spanIndex" >
           <span>{{row.item.revenue | number:'3.2-5'}}</span>
         </td>
+    </ng-template>
+  </ng-data-table-column>
+  <ng-data-table-column
+    [field]="'availableStores'"
+    [title]="'Available Stores'">
+    <ng-template #ngDataTableCell let-row="row" let-spanIndex="spanIndex">
+      <td>
+        <span>{{(spanIndex + 1)}}) {{ getStoreName(row.item, spanIndex, 'storeName') }} </span>
+      </td>
     </ng-template>
   </ng-data-table-column>
   <ng-data-table-column

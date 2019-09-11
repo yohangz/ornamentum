@@ -5,10 +5,9 @@
     Ornamentum allows flexible customization of the table cells of the Grid (excluding the header
     and footer section) or to format the data the table cells display.
   </p>
-
   <p>
-    If your going to use cell templating for more than one column you have to handel <code>rospan</code> on that cell manually,
-    Please refer to Product Type & Revenue column in <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'whatYouWillSee'">What You Will See</a> example.
+    If your going to use cell templating for more than one column you have to handel <code>rospan</code> on that cell manually, with involving both <code>rowSpan</code> & <code>spanIndex</code>
+    Please refer to Product Type & Revenue column in <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'rowSpan'">Row Span</a> example.
   </p>
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -39,7 +38,11 @@
   <h4 id="column">Column</h4>
   <code>column: DataTableColumnComponent</code>
   <span class="p-1"></span>
-  <span    class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; inside &lt;ng-data-table-column&gt;</span>
+  <span    class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  <p>
+    To define the cell template, nest an <code>&lt;ng-template&gt;</code> tag with the ngDataTableCell directive inside a
+    <code>&lt;ng-data-table-column&gt;</code> tag.
+  </p>
   <p>
     The current column instance which contains all column properties. Use it as an alias for a template variable by utilizing the <code>let-column="column"</code> syntax.
   </p>
@@ -49,7 +52,9 @@
   <code>row: DataTableRow</code>
   <span class="p-1"></span>
   <span
-    class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; inside &lt;ng-data-table-column&gt;</span>
+    class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  <p>To define the cell template, nest an <code>&lt;ng-template&gt;</code> tag with the ngDataTableCell directive inside a
+    <code>&lt;ng-data-table-column&gt;</code> tag.</p>
   <p>
     The current row instance which contains all row data. Use it as an alias for a template variable by utilizing the <code>let-row="row"</code> syntax.
   </p>
@@ -62,23 +67,32 @@
   <h4 id="spanIndex">Span Index</h4>
   <code>spanIndex: number</code>
   <span class="p-1"></span>
-  <span    class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; inside &lt;ng-data-table-column&gt;</span>
-  <br/>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  <p>To define the cell template, nest an <code>&lt;ng-template&gt;</code> tag with the ngDataTableCell directive inside a
+    <code>&lt;ng-data-table-column&gt;</code> tag.</p>
   <p>
     Span index of the current row which is useful when using row grouping. Use it as an alias for a template variable by utilizing the <code>let-spanIndex="spanIndex"</code> syntax.
   </p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.spanIndexPropertyTemplate"></app-code-snippet>
-
+  <p>
+    You will need this when you're going to use Cell Templating for more than one column with Row Spanning. You can find such a scenario in <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'rowSpan'">Row Span</a> example for usage of span index.
+  </p>
   <h4 id="rowSpan">Row Span</h4>
   <code>rowSpan: number</code>
   <span class="p-1"></span>
-  <span class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; inside &lt;ng-data-table-column&gt;</span>
-  <br/>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+  <p>To define the cell template, nest an <code>&lt;ng-template&gt;</code> tag with the ngDataTableCell directive inside a
+    <code>&lt;ng-data-table-column&gt;</code> tag.</p>
   <p>
     Row Span of the current row which is useful when using row grouping.
     Use it as an alias for a template variable by utilizing the <code>let-rowSpan="rowSpan"</code> syntax.
   </p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.rowSpanPropertyTemplate"></app-code-snippet>
+
+  <p>
+    If your going to use cell templating for more than one column you have to handel <code>rospan</code> on that cell manually, with involving both <code>rowSpan</code> & <code>spanIndex</code>
+  </p>
+  <app-example-code [files]="cellTemplateRowspan"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Cell

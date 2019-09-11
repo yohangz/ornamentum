@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { FileType } from 'helper-models';
 
-import { demoSnippet, cellTemplateUsage, cellTemplateUsageAvatar } from './data-table-cell-template.list';
+import { demoSnippet, cellTemplateUsage, cellTemplateUsageAvatar,  cellTemplateRowspan } from './data-table-cell-template.list';
 
 @Component({
   selector: 'app-data-table-cell-template-component',
@@ -16,4 +16,5 @@ export class DataTableCellTemplateComponent {
 
   public cellTemplateUsage = cellTemplateUsage;
   public cellTemplateUsageAvatar = cellTemplateUsageAvatar;
+  public cellTemplateRowspan = cellTemplateRowspan;
 }
