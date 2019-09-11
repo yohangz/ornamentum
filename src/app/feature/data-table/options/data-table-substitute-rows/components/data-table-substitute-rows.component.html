@@ -14,36 +14,43 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
+  <p>
+    <code>showSubstituteRows: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: false</span>
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
+
   <ol class="main-pane-list">
-    <li id="substituteRowsEnabled">
-      <h6><b>Substitute Rows Enabled</b></h6>
+    <li>
+      <h6 id="substituteRowsEnabled"><b>Substitute Rows Enabled</b></h6>
+
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.showSubstituteRowsEnabled"></app-code-snippet>
+
+      <p>To enable substitute rows, set <code>showSubstituteRows</code> to <b>true</b>, and by default, the property
+        is in <b>false</b> state. In the example in <a [routerLink]="['/feature/data-table/options/substitute-rows']"
+                                                       [fragment]="'whatYouWillSee'">What You Will See</a> section, the
+        data <code>limit</code> is declared as 10 items. Still, due to the lack of data availability the table shows 05
+        data rows with additional 05 empty rows to fill the gap of data table limit.</p>
+
+      <app-example-code [files]="substituteRowsUsage"></app-example-code>
+
     </li>
 
-    <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.showSubstituteRowsEnabled"></app-code-snippet>
+    <li>
+      <h6 id="substituteRowsDisabled"><b>Substitute Rows Disabled</b></h6>
 
-    <p>To enable substitute rows, set <code>showSubstituteRows</code> to <b>true</b>, and by default, the property
-      is in <b>false</b> state. In the example in <a [routerLink]="['/feature/data-table/options/substitute-rows']"
-                                                     [fragment]="'whatYouWillSee'">What You Will See</a> section, the
-      data <code>limit</code> is declared as 10 items. Still, due to the lack of data availability the table shows 05
-      data rows with additional 05 empty rows to fill the gap of data table limit.</p>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.showSubstituteRowsDisabled"></app-code-snippet>
 
+      <p>
+        In the following example <code>limit</code> is specified as 10 items, But due to the lack of data availability
+        table is showing 05 data rows and instead of showing additional empty data rows it shows an empty area. That is
+        because the substitute rows are not defined.
+      </p>
 
-    <app-example-code [files]="substituteRowsUsage"></app-example-code>
-
-    <li id="substituteRowsDisabled">
-      <h6><b>Substitute Rows Disabled</b></h6>
+      <app-substitute-rows-disabled-usage></app-substitute-rows-disabled-usage>
+      <app-example-code [files]="withoutSubstituteRowsUsage"></app-example-code>
     </li>
-
-    <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.showSubstituteRowsDisabled"></app-code-snippet>
-
-    <p>
-      In the following example <code>limit</code> is specified as 10 items, But due to the lack of data availability
-      table is showing 05 data rows and instead of showing additional empty data rows it shows an empty area. That is
-      because the substitute rows are not defined.
-    </p>
-
-    <app-substitute-rows-disabled-usage></app-substitute-rows-disabled-usage>
-    <app-example-code [files]="withoutSubstituteRowsUsage"></app-example-code>
   </ol>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
