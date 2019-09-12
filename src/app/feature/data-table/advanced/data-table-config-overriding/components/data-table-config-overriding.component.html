@@ -11,25 +11,49 @@
   <pre>
     |__ <a class="hierarchy-main" [routerLink]="['/feature/data-table/advanced/config-overriding']">Data Table Configuration</a>
     |   |
-    |   |___ <a class="config-level" [routerLink]="['/feature/data-table/advanced/config-overriding']" [fragment]="'defaultConfiguration'">Default Configuration</a>
-    |   |___ <a class="config-level" [routerLink]="['/feature/data-table/advanced/config-overriding']" [fragment]="'templatePropertyBinding'">Template Property Binding</a>
-    |   |___ <a class="config-level" [routerLink]="['/feature/data-table/advanced/config-overriding']" [fragment]="'modulePropertyBinding'">Module Property Binding</a>
+    |   |___ <a class="config-level" [routerLink]="['/feature/data-table/advanced/config-overriding']"
+                [fragment]="'defaultConfiguration'">Default Configuration</a>
+    |   |___ <a class="config-level" [routerLink]="['/feature/data-table/advanced/config-overriding']"
+                [fragment]="'templatePropertyBinding'">Template Property Binding</a>
+    |   |___ <a class="config-level" [routerLink]="['/feature/data-table/advanced/config-overriding']"
+                [fragment]="'modulePropertyBinding'">Module Property Binding</a>
     |
-    |__ <a class="hierarchy-main" [routerLink]="['/feature/dropdown/advanced/config-overriding']">Dropdown Configuration</a>
+    |__ <a class="hierarchy-main"
+           [routerLink]="['/feature/dropdown/advanced/config-overriding']">Dropdown Configuration</a>
     |
     \/
   </pre>
-
   <h2 id="defaultConfiguration">Default Configuration</h2>
 
   <p>Ornamentum have set almost all configurations to it's default value state. the default values explicitly mention
     on each respective data table property or function documentation.</p>
 
-  <div class="dt-config-default"></div>
+  <div class="p-5">
+    <h4 id="multiColumnSortable">Multi Column Sorting</h4>
+
+    <p>
+      <code>multiColumnSortable: boolean</code> &nbsp;
+      <span class="badge badge-pill badge-warning">Default Value: false</span>
+      <span class="pr-1"></span>
+      <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+    </p>
+    <h4 id="sortOrder">Sort Order</h4>
+    <p>
+      <code>sortOrder: 'asc' | 'desc' | ''</code>
+      <span class="pr-1"></span>
+      <span class="badge badge-pill badge-warning">Default Value: ''</span>
+      <span class="pr-1"></span>
+      <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
+      <span class="pr-1"></span>
+      <span class="badge badge-pill badge-secondary">Depends On: [sortable]</span>
+    </p>
+
+  </div>
+
 
   <h2 id="templatePropertyBinding">Template Property Binding</h2>
 
-  <div class="dt-config-template"></div>
+  <app-code-snippet [type]="FileType.HTML" [content]="configOverriding.configOverriding"></app-code-snippet>
 
   <p>This level of property definations will be overrides <a
     [routerLink]="['/feature/data-table/advanced/config-overriding']" [fragment]="'defaultConfiguration'">Default
@@ -41,11 +65,10 @@
   <p>Ornamentum supports, configuration overriding in module root configurations. you can provide a object of data table
     level configurations or column level properties (comparable) inside <code>forRoot()</code> tag. specified properties
     will be overrides both <a [routerLink]="['/feature/data-table/advanced/config-overriding']"
-                             [fragment]="'defaultConfiguration'">Default Configuration</a> and <a
+                              [fragment]="'defaultConfiguration'">Default Configuration</a> and <a
       [routerLink]="['/feature/data-table/advanced/config-overriding']" [fragment]="'templatePropertyBinding'">Template
       Property Binding</a> property definitions.</p>
-
-  <div class="dt-config-module"></div>
+  <app-code-snippet [type]="FileType.TS" [content]="configOverriding.moduleConfigOverriding"></app-code-snippet>
 
   <p>In above example module, ornamentum will enables <a
     [routerLink]="['/feature/data-table/functionality/column/sorting']">Sortable</a> and
@@ -53,5 +76,6 @@
     columns.</p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Configuration Overriding</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table
+    Configuration Overriding</a>
 </div>

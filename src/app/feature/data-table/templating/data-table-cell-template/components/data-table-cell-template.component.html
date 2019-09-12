@@ -6,7 +6,7 @@
     and footer section) or to format the data the table cells display.
   </p>
   <p>
-    If your going to use cell templating for more than one column you have to handel <code>rowSpan</code> on that cell manually, with involving both <code>rowSpan</code> & <code>spanIndex</code>
+    If your going to use cell templating for more than one column you have to handel <code>rowspan</code> on that cell manually, with involving both <code>rowSpan</code> & <code>spanIndex</code>
     Please refer to Product Type & Revenue column in <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'rowSpan'">Row Span</a> example.
   </p>
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -75,7 +75,7 @@
   </p>
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.spanIndexPropertyTemplate"></app-code-snippet>
   <p>
-    You will need this when you're going to use Cell Templating for more than one column with Row Spanning. You can find such a scenario in <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'rowSpan'">Row Span</a> example for usage of span index.
+    You will need this when you're going to use Cell Templating for more than one column with Dynamic Row Spanning. You can find such a scenario in <a [routerLink]="['/feature/data-table/templating/cell-template']" [fragment]="'rowSpan'">Row Span</a> example for usage of span index.
   </p>
   <h4 id="rowSpan">Row Span</h4>
   <code>rowSpan: number</code>
@@ -90,12 +90,12 @@
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.rowSpanPropertyTemplate"></app-code-snippet>
 
   <p>
-    If your going to use cell templating for more than one column you have to handel <code>rowSpan</code> on that cell manually, with involving both <code>rowSpan</code> & <code>spanIndex</code>
+    If your going to use cell templating for more than one column you have to handel <code>rowspan</code> on that cell manually, with involving both <code>rowSpan</code> & <code>spanIndex</code>
   </p>
   <app-example-code [files]="cellTemplateRowSpanUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/data-table/experimental/row/grouping']">Row Spanning</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Cell
     Template</a><br/>
+  <a [routerLink]="['/feature/data-table/experimental/row/grouping']">Row Spanning</a><br/>
 </div>
