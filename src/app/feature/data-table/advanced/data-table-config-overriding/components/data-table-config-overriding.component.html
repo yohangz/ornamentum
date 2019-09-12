@@ -56,10 +56,11 @@
   </div>
 
   <h2 id="modulePropertyBinding">Module Level Configuration</h2>
-  <p>Ornamentum supports, configuration overriding in module root configurations. you can provide a object of data table level configurations and some of column level configurations (for all columns) inside <code>forRoot()</code> tag.
+  <p>Ornamentum supports, configuration overriding in module root configurations.
+    You can provide a <a href="api-docs/interfaces/DataTableConfig.html#source">DataTableConfig</a> type of object inside <code>forRoot()</code> tag.
+    This is the place where you can override the default configurations for the entire module at once for all the data tables in a given module.
   </p>
   <p>
-    This is the place where you can override the default configurations for the entire module at once for all the data tables in a given module.
     Module level configuration can be overridden by
     <a [fragment]="'templatePropertyBinding'" [routerLink]="['/feature/data-table/advanced/config-overriding']">Template Level Configuration</a>.
   </p>
@@ -71,6 +72,7 @@
     <a [fragment]="'defaultConfiguration'"[routerLink]="['/feature/data-table/advanced/config-overriding']">Default Configuration</a> and
     <a [fragment]="'modulePropertyBinding'" [routerLink]="['/feature/data-table/advanced/config-overriding']">Module Level Configuration</a>.
     You can simply bind a required type of value to respective configurations on HTML template.</p>
+  <p>In other word this is the place where you can override the default & module level configurations for individual data table in given module.</p>
   <app-code-snippet [content]="configOverriding.configOverriding" [type]="FileType.HTML"></app-code-snippet>
 
 <!--  <p>In above example module, ornamentum will enables <a-->
