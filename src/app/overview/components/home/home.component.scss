@@ -94,7 +94,7 @@
         position: absolute;
         text-shadow: 0 0 1px $background-overlay-gradient-4;
         top: 8rem;
-        width: 40rem;
+        width: 43rem;
 
         @include breakpoint(max991) {
           left: 8rem;
@@ -225,7 +225,7 @@
     z-index: 3;
 
     &:first-of-type {
-      padding-top: 25rem;
+      padding-top: 27rem;
 
       @include breakpoint(max480) {
         padding-top: 25rem;
