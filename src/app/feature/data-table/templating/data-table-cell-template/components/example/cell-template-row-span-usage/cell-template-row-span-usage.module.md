@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DataTableModule } from 'ornamentum';
   
-import { CellTemplateRowspanComponent } from './cell-template-rowspan.component';
+import { CellTemplateRowSpanUsageComponent } from './cell-template-row-span-usage.component';
 
 @NgModule({
- bootstrap: [CellTemplateRowspanComponent],
- declarations: [CellTemplateRowspanComponent],
+ bootstrap: [CellTemplateRowSpanUsageComponent],
+ declarations: [CellTemplateRowSpanUsageComponent],
  imports: [
     BrowserModule, 
     DataTableModule.forRoot()
   ]
 })
-export class CellTemplateUsageModule {
+export class CellTemplateRowSpanUsageModule {
 }
