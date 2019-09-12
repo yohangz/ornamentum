@@ -27,14 +27,14 @@ const dataTableExperimentalRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-row-grouping/data-table-row-grouping.module#DataTableRowGroupingModule',
-    // loadChildren: () => import('./data-table-row-grouping/data-table-row-grouping.module')
-    //   .then((m) => m.DataTableRowGroupingModule),
-    path: 'row/grouping',
+    loadChildren: './data-table-dynamic-row-span/data-table-dynamic-row-span.module#DataTableDynamicRowSpanModule',
+    // loadChildren: () => import('./data-table-dynamic-row-span/data-table-dynamic-row-span.module')
+    //   .then((m) => m.DataTableDynamicRowSpanModule),
+    path: 'row/span',
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Row | Grouping',
+        title: 'Ornamentum | Data Table | Functionality | Row | Span',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

@@ -7,10 +7,10 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-row-grouping-usage',
-  templateUrl: './row-grouping-usage.component.html'
+  selector: 'app-dynamic-row-span-usage',
+  templateUrl: './dynamic-row-span-usage.component.html'
 })
-export class RowGroupingUsageComponent {
+export class DynamicRowSpanUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

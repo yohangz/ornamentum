@@ -3,17 +3,17 @@
 
   <p>
     Ornamentum Dropdown is a highly configurable <a rel="noopener" target="_blank" href="https://angular.io">Angular</a>
-    component which supports
-    table view data representation. Ornamentum supports client/server/real-time data binding along with data
-    filtering, sorting, grouping, pagination, selection, templating, state persistence, theming and much more.
+    component which supports table view data representation. Ornamentum supports client/server/real-time data binding
+    along with data filtering, sorting, grouping, pagination, selection, templating, state persistence, theming and much
+    more.
   </p>
 
   <p>
     Ornamentum can be integrated with any of the UI frameworks that are currently available.
-    The fully responsive, dynamic and mobile friendly design of the user interface will deliver the best user experience in any device resolution.
-    The Dropdown is built with pure angular components and minimal peer dependencies to minimize overall bundle size.
-    Seamless integration via developer friendly API along with a rich sample code based documentation.
-    The Dropdown supports all angular supported browsers out of the box.
+    The fully responsive, dynamic and mobile friendly design of the user interface will deliver the best user experience
+    in any device resolution. The Dropdown is built with pure angular components and minimal peer dependencies to
+    minimize overall bundle size. Seamless integration via developer friendly API along with a rich sample code based
+    documentation. The Dropdown supports all angular supported browsers out of the box.
   </p>
 
   <h2 id="advancedUsage">Usage Demo</h2>
@@ -33,7 +33,8 @@
 
   <ol class="main-pane-list">
     <li>
-      <p>Install Ornamentum packages and it's peer dependencies using either of following command depending on your package manager.</p>
+      <p>Install Ornamentum packages and it's peer dependencies using either of following command depending on your
+        package manager.</p>
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npm" [showLineNumbers]="false"></app-code-snippet>
       <p>or</p>
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarn"
@@ -52,12 +53,14 @@
       <ul class="main-pane-list">
         <li>
           <p>
-            <b>SCSS</b> (recommended approach): Include Ornamentum theme SCSS style sheets in
-            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+            <b>SCSS Usage</b> (recommended approach): Include Ornamentum theme SCSS style sheets in
+            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
+            array.
           </p>
           <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
           <p>
-            You must install <a rel="noopener" target="_blank" href="https://www.npmjs.com/package/compass-mixins">compass mixins</a> if you are using scss style sheets. Install using either
+            You must install <a rel="noopener" target="_blank" href="https://www.npmjs.com/package/compass-mixins">compass
+            mixins</a> if you are using scss style sheets. Install using either
             of following command depending on your package manager.
           </p>
           <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npmCompassImport"
@@ -68,8 +71,9 @@
         </li>
         <li>
           <p>
-            <b>CSS</b>: Include Ornamentum prebuilt CSS theme style sheets in
-            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+            <b>CSS Usage</b>: Include Ornamentum prebuilt CSS theme style sheets in
+            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
+            array.
           </p>
           <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.cssImport"></app-code-snippet>
         </li>
@@ -99,60 +103,55 @@
   <p>Refer below sections for available feature/functionality usage in detail.</p>
 
   <ul class="main-pane-list">
-    <li><b>Data Binding & Events</b></li>
+    <li><b>Data Binding</b></li>
     <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client-side Basic Data binding</a></li>
-      <li><a [routerLink]="['/feature/dropdown/data-binding/client-side/stream']">Client-side Stream Data binding</a></li>
-      <li><a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server-side Basic Data binding</a></li>
-      <li><a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']">Server-side Web Socket Data binding</a></li>
-      <li><a [routerLink]="['/feature/dropdown/advanced/events']">Events</a></li>
+      <li><a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic Data binding</a></li>
+      <li><a [routerLink]="['/feature/dropdown/data-binding/client-side/stream']">Client Side Stream Data binding</a>
+      </li>
+      <li><a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server Side Basic Data binding</a></li>
+      <li><a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']">Server Side Web Socket Data
+        binding</a></li>
     </ul>
 
-    <li><b>Responsive Configurations</b></li>
+    <li><b>Options</b></li>
     <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/dropdown/styling/menu-position']">Menu Position</a></li>
-      <li><a [routerLink]="['/feature/dropdown/styling/menu-width-height']">Menu Width & Height</a></li>
-    </ul>
-
-    <li><b>Disabling</b></li>
-    <ul class="main-pane-list">
+      <li><a [routerLink]="['/feature/dropdown/options/data-limit']">Data Limit</a></li>
       <li><a [routerLink]="['/feature/dropdown/options/disabling']">Dropdown Disabling</a></li>
       <li><a [routerLink]="['/feature/dropdown/features/item/disabling']">Item Disabling</a></li>
     </ul>
 
-    <li><b>Data Ordering</b></li>
+    <li><b>Features</b></li>
     <ul class="main-pane-list">
+      <li><a [routerLink]="['/feature/dropdown/features/item/display']">Item Display</a></li>
+      <li><a [routerLink]="['/feature/dropdown/features/item/selection']">Item Selection</a></li>
       <li><a [routerLink]="['/feature/dropdown/features/item/filtering']">Item Filtering</a></li>
       <li><a [routerLink]="['/feature/dropdown/features/item/grouping']">Item Grouping</a></li>
     </ul>
 
-    <li><b>Data Loading</b></li>
-    <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/dropdown/advanced/load-data-on-init']">Load Data On Init</a></li>
-      <li><a [routerLink]="['/feature/dropdown/features/item/display']">Item Display</a></li>
-    </ul>
-
-    <li><b>Customizations</b></li>
-    <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/dropdown/features/item/selection']">Item Selection</a></li>
-      <li><a [routerLink]="['/feature/dropdown/options/data-limit']">Data Limit</a></li>
-      <li><a [routerLink]="['/feature/dropdown/advanced/translations']">Translations</a></li>
-    </ul>
-
-    <li><b>Templates</b></li>
+    <li><b>Templating</b></li>
     <ul class="main-pane-list">
       <li><a [routerLink]="['/feature/dropdown/templating/option-template']">Option Template</a></li>
       <li>
-        <a [routerLink]="['/feature/dropdown/templating/option-group-header-template']">Group Header
+        <a [routerLink]="['/feature/dropdown/templating/option-group-header-template']">Option Group Header
           Template</a>
       </li>
       <li><a [routerLink]="['/feature/dropdown/templating/loading-spinner-template']">Loading Spinner Template</a></li>
     </ul>
 
-    <li><b>Styling & Themes</b></li>
+    <li><b>Styling</b></li>
     <ul class="main-pane-list">
+      <li><a [routerLink]="['/feature/dropdown/styling/menu-position']">Menu Position</a></li>
+      <li><a [routerLink]="['/feature/dropdown/styling/menu-width-height']">Menu Width & Height</a></li>
       <li><a [routerLink]="['/feature/dropdown/styling/themes']">Themes</a></li>
       <li><a [routerLink]="['/feature/dropdown/styling/custom-theming']">Custom Theming</a></li>
+    </ul>
+
+    <li><b>Advanced</b></li>
+    <ul class="main-pane-list">
+      <li><a [routerLink]="['/feature/dropdown/advanced/load-data-on-init']">Load Data On Init</a></li>
+      <li><a [routerLink]="['/feature/dropdown/advanced/events']">Events</a></li>
+      <li><a [routerLink]="['/feature/dropdown/advanced/translations']">Translations</a></li>
+      <li><a [routerLink]="['/feature/dropdown/advanced/config-overriding']">Configuration Overriding</a></li>
     </ul>
   </ul>
 

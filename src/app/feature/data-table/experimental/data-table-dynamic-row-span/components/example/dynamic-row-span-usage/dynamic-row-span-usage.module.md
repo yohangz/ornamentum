@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DataTableModule } from 'ornamentum';
   
-import { RowGroupingUsageComponent } from './row-grouping-usage.component';
+import { DynamicRowSpanUsageComponent } from './dynamic-row-span-usage.component';
 
 @NgModule({
- bootstrap: [RowGroupingUsageComponent],
- declarations: [RowGroupingUsageComponent],
+ bootstrap: [DynamicRowSpanUsageComponent],
+ declarations: [DynamicRowSpanUsageComponent],
  imports: [
     BrowserModule, 
     DataTableModule.forRoot()
   ]
 })
-export class RowGroupingUsageModule {
+export class DynamicRowSpanUsageModule {
 }

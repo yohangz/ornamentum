@@ -902,7 +902,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/experimental/row/grouping',
+              routePath: '/feature/data-table/experimental/row/span',
               title: 'Dynamic Row Span',
               navigation: [
                 {

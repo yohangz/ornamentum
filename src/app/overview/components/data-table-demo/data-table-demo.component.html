@@ -23,7 +23,7 @@
     [showInColumnSelector]="false"
     [sortable]="true"
     [filterable]="true"
-    [width]="80"
+    [width]="90"
   >
     <ng-template #ngDataTableCell let-row="row">
       <td>
@@ -72,13 +72,15 @@
     [field]="'productLine'"
     [title]="'Product Line'"
     [sortable]="true"
-    [filterable]="true">
+    [filterable]="true"
+    [width]="200">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
     [title]="'Product Type'"
     [sortable]="true"
     [filterable]="true"
+    [width]="160"
     [showDropdownFilter]="true"
     [dropdownFilterShowClearSelectionButton]="true"
     [dropDownFilterShowOptionSelectCheckbox]="true">
@@ -100,6 +102,6 @@
     [title]="'Quantity'"
     [sortable]="true"
     [filterable]="true"
-    [width]="80">
+    [width]="90">
   </ng-data-table-column>
 </ng-data-table>
