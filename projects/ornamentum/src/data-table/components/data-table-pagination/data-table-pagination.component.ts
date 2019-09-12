@@ -30,6 +30,13 @@ export class DataTablePaginationComponent implements OnInit {
   ) {}
 
   /**
+   * Set mobile mode state
+   */
+  private setMobileModeState(): void {
+    this.isMobile = this.paginationContainer.nativeElement.clientWidth < 767;
+  }
+
+  /**
    * First page click event handler
    */
   public firstPageClick(): void {
@@ -204,8 +211,10 @@ export class DataTablePaginationComponent implements OnInit {
    * component init lifecycle event handler
    */
   public ngOnInit(): void {
+    this.setMobileModeState();
+
     this.resizeService.resize.pipe(debounceTime(200)).subscribe(() => {
-      this.isMobile = this.paginationContainer.nativeElement.clientWidth < 767;
+      this.setMobileModeState();
     });
   }
 }
