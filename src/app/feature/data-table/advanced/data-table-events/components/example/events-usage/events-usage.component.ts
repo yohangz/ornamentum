@@ -1,9 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component } from '@angular/core';
 
-import { ExampleData } from 'helper-models';
-
-import { DataFetchService } from 'helper-services';
-
 import {
   DataTableCellBindEventArgs,
   DataTableCellClickEventArgs,
@@ -14,6 +10,10 @@ import {
   DataTableRow,
   DataTableRowClickEventArgs
 } from 'ornamentum';
+
+import { ExampleData } from 'helper-models';
+
+import { DataFetchService } from 'helper-services';
 
 @Component({
   selector: 'app-events-usage',

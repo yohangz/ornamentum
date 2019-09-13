@@ -709,12 +709,12 @@ export class MainComponent {
               title: 'Events',
               navigation: [
                 {
-                  title: 'Events Hierarchy',
-                  anchor: 'eventsHierarchy'
+                  title: 'What You Will See',
+                  anchor: 'whatYouWillSee'
                 },
                 {
-                  title: 'Basic Usage',
-                  anchor: 'basicUsage'
+                  title: 'Events Hierarchy',
+                  anchor: 'eventsHierarchy'
                 },
                 {
                   title: 'Useful Events',

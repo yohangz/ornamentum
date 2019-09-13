@@ -9,6 +9,7 @@
   [showHeader]="true"
   [showColumnSelector]="true"
   [rowSelectable]="true"
+  [showSubstituteRows]="true"
   [showRowSelectCheckbox]="true"
   [showRowSelectAllCheckbox]="true"
   [selectMode]="'multi'"
@@ -31,7 +32,7 @@
   <ng-data-table-column
     [field]="'orderMethodType'"
     [title]="'Order Method Type'"
-    [width]="120">
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
@@ -54,12 +55,12 @@
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
-    [width]="70">
+    [width]="80">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"
     [title]="'Gross Margin'"
-    [width]="100">
+    [width]="120">
   </ng-data-table-column>
 </ng-data-table>
 

@@ -59,45 +59,47 @@
   </p>
 
   <ol class="main-pane-list">
-  <li>
-    <h6><b>Single Row Selection: 'single'</b></h6>
+    <li>
+      <h6><b>Single Row Selection: 'single'</b></h6>
 
-    <p>
-      The user will be allowed to select only one row at a time and not allowed to deselect the selected option by
-      clicking the same row. If another row is being selected, the previously selected row will be deselected
-      automatically.
-    </p>
+      <p>
+        The user will be allowed to select only one row at a time and not allowed to deselect the selected option by
+        clicking the same row. If another row is being selected, the previously selected row will be deselected
+        automatically.
+      </p>
 
-    <app-single-row-selection-usage></app-single-row-selection-usage>
-    <app-example-code [files]="singleRowSelectionUsage"></app-example-code>
-  </li>
+      <app-single-row-selection-usage></app-single-row-selection-usage>
+      <app-example-code [files]="singleRowSelectionUsage"></app-example-code>
+    </li>
 
-  <li>
-    <h6><b>Single Toggle Row Selection: 'single_toggle'</b></h6>
+    <li>
+      <h6><b>Single Toggle Row Selection: 'single_toggle'</b></h6>
 
-    <p>
-      The user will be allowed to select only one row at a time and lets to deselect the selected option by clicking the
-      same row. If another row is being selected, previously selected row will be automatically deselected.
-      Additionally, users are facilitated with to remove the row selection by clicking the same row.
-    </p>
+      <p>
+        The user will be allowed to select only one row at a time and lets to deselect the selected option by clicking
+        the
+        same row. If another row is being selected, previously selected row will be automatically deselected.
+        Additionally, users are facilitated with to remove the row selection by clicking the same row.
+      </p>
 
-    <app-single-toggle-row-selection-usage></app-single-toggle-row-selection-usage>
-    <app-example-code [files]="singleToggleRowSelectionUsage"></app-example-code>
-  </li>
+      <app-single-toggle-row-selection-usage></app-single-toggle-row-selection-usage>
+      <app-example-code [files]="singleToggleRowSelectionUsage"></app-example-code>
+    </li>
 
-  <li>
-    <h6><b>Multi Row Selection: 'multi'</b></h6>
+    <li>
+      <h6><b>Multi Row Selection: 'multi'</b></h6>
 
-    <p>This selection technique facilitated with to select deselect single/multiple row selection checkboxes as desired
-      or by
-      clicking anywhere in the row if <a [routerLink]="['/feature/data-table/functionality/row/selection']"
-                                         [fragment]="'selectOnRowClick'">Select on Row Click</a> functionality is
-      <b>enabled</b>.
-    </p>
+      <p>This selection technique facilitated with to select deselect single/multiple row selection checkboxes as
+        desired
+        or by
+        clicking anywhere in the row if <a [routerLink]="['/feature/data-table/functionality/row/selection']"
+                                           [fragment]="'selectOnRowClick'">Select on Row Click</a> functionality is
+        <b>enabled</b>.
+      </p>
 
-    <app-multi-row-selection-usage></app-multi-row-selection-usage>
-    <app-example-code [files]="multiRowSelectionUsage"></app-example-code>
-  </li>
+      <app-multi-row-selection-usage></app-multi-row-selection-usage>
+      <app-example-code [files]="multiRowSelectionUsage"></app-example-code>
+    </li>
   </ol>
 
   <h4 id="showRowSelectCheckbox">Show Row Select Checkbox</h4>
@@ -128,10 +130,11 @@
     <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
   </p>
 
-  <p>This property allows the users to select all the rows at once by clicking a single checkbox which
-    is in the top of the row selection checkbox column. It triggers the <a
-      [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'rowSelectChange'">Row Select Change</a>
-    event automatically when the user changes the state of the select all checkbox.</p>
+  <p>This property allows the users to select all the rows in current view at once by clicking on a single checkbox or else
+    selecting all the rows one by one will trigger the checkbox. It was located in the top of the row selection checkbox
+    column and for each page, view have separate row select all checkbox. It triggers the <a
+      [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'rowSelectChange'">Row
+      Select Change</a> event automatically when the user changes the state of the select all checkbox.</p>
 
   <app-show-row-select-all-checkbox-usage></app-show-row-select-all-checkbox-usage>
   <app-example-code [files]="showRowSelectAllCheckboxUsage"></app-example-code>
@@ -189,10 +192,12 @@
   <p>
     This property allows to set a specifically selected row to display after the data table <a
     [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'init'">Initialization</a> or
-    component initialization events fired. It accepts a <a [routerLink]="'/feature/data-table/functionality/row/selection'"
-                                                       [fragment]="'selectTrackBy'">Select Track By</a> column any
-    unique field value and can <b>only</b> be used when <a [routerLink]="'/feature/data-table/functionality/row/selection'"
-                                                 [fragment]="'selectMode'">Select Mode</a> is <b>'single'</b> or <b>'single_toggle'</b>.
+    component initialization events fired. It accepts a <a
+    [routerLink]="'/feature/data-table/functionality/row/selection'"
+    [fragment]="'selectTrackBy'">Select Track By</a> column any
+    unique field value and can <b>only</b> be used when <a
+    [routerLink]="'/feature/data-table/functionality/row/selection'"
+    [fragment]="'selectMode'">Select Mode</a> is <b>'single'</b> or <b>'single_toggle'</b>.
   </p>
 
   <app-selected-row-usage></app-selected-row-usage>
@@ -212,10 +217,12 @@
   <p>
     This property allows to set specifically selected rows to display after the data table <a
     [routerLink]="['/feature/data-table/advanced/events']" [fragment]="'init'">Initialization</a> or
-    component initialization events fired. It accepts <a [routerLink]="'/feature/data-table/functionality/row/selection'"
-                                                     [fragment]="'selectTrackBy'">Select Track By</a> column any unique
-    field values array and can <b>only</b> be used when <a [routerLink]="'/feature/data-table/functionality/row/selection'"
-                                                        [fragment]="'selectMode'">Select Mode</a> is <b>'multi'</b>.
+    component initialization events fired. It accepts <a
+    [routerLink]="'/feature/data-table/functionality/row/selection'"
+    [fragment]="'selectTrackBy'">Select Track By</a> column any unique
+    field values array and can <b>only</b> be used when <a
+    [routerLink]="'/feature/data-table/functionality/row/selection'"
+    [fragment]="'selectMode'">Select Mode</a> is <b>'multi'</b>.
   </p>
 
 
