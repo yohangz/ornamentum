@@ -15,6 +15,14 @@
     Binding</a> can be uses instead of using this technique.
   </p>
 
+  <p>
+    However, it might affect the overall site performance if the data set is significantly larger. Consider using <a
+    [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a> in such
+    cases where all the computation heavy operations are handled in server side and only page level data is sent to
+    client side for on demand data binding.
+  </p>
+
+
   <h2 id="whatYouWillSee">What You Will See</h2>
 
   <app-items-usage></app-items-usage>
@@ -31,18 +39,19 @@
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items">{{ demoSnippet.items }}</app-code-snippet>
 
   <p>
-    The complete set of code snippet for the data binding via <code>items</code> input property can be seen in the
-    example shown in the <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']"
-                            [fragment]="'whatYouWillSee'">What You Will See</a> section above. Mutations of item
-    collections will automatically get reflected in dropdown.
-  </p>
+    This approach can be used to bind a static data array. The complete set of code snippet for the data binding via <code>items</code> input property
+    can be found in  <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']"
+                        [fragment]="'whatYouWillSee'">What You Will See</a> example section above. Mutations to the item collections
+     will automatically get reflected in dropdown.
+   </p>
 
   <h5>Bind via dataSource</h5>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
-  <p>Refer following example code snippet for complete usage of the <code>dataSource</code> property in the client side
-    data binding. Latest data collection emitted via data source stream will get reflected in dropdown.</p>
+  <p>This approach can be used to bind an Observable data stream. Refer following example code snippet for complete usage of the <code>dataSource</code>
+    property in the client side data binding. Latest data collection emitted via data source stream will get reflected in dropdown.</p>
+
 
   <app-data-source-usage></app-data-source-usage>
   <app-example-code [files]="dataSourceUsage"></app-example-code>
