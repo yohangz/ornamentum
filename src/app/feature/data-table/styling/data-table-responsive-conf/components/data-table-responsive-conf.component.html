@@ -2,9 +2,9 @@
 <div class="feature-container">
   <h1>Responsive Configuration</h1>
 
-  <p>Ornamentum allows you to set-up data table responsive configurations in few ways, by overriding available
-    default configurations you can customize data table responsiveness and make the data table supports for different
-    device resolutions and viewports.</p>
+  <p>Ornamentum allows you to set-up data table responsive configurations in a couple of methods such as by overriding
+    available default configurations and make the data table supports for different device resolutions and
+    viewports.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -21,9 +21,9 @@
     <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
   </p>
 
-  <p>This property was responsible to enable static content height and vertical scrolling in data table. provide height
-    in pixels as number or string to override the default content height and if content height is not defined by
-    explicitly, ornamentum will takes parent container height as the data table content height.</p>
+  <p>This property was responsible to enable static-content height and vertical scrolling in the data table. By
+    providing the height in pixels to override the default content height and if the content height is not defined
+    explicitly, Ornamentum will take parent container height as the data table content height.</p>
 
   <app-content-height-usage></app-content-height-usage>
   <app-example-code [files]="contentHeightUsage"></app-example-code>
@@ -37,9 +37,9 @@
     <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
   </p>
 
-  <p>This property can be uses to define a static data table content width. it was accepts pixels in any number or
-    string and if width is not defined by explicitly, ornamentum will takes the parent container width as the data table
-    width.</p>
+  <p>This property can be used to define a static data table content width. It accepts pixels as any number or
+    string, and if the width is not defined by explicitly, Ornamentum will take the parent container width as the data
+    table width.</p>
 
   <app-width-usage></app-width-usage>
   <app-example-code [files]="widthUsage"></app-example-code>
@@ -53,9 +53,9 @@
     <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
   </p>
 
-  <p>This property was uses to set minimum height which act as a overlay height when <a
+  <p>This property was uses to set minimum height which act as an overlay height when <a
     [routerLink]="'/feature/data-table/functionality/pagination'">Pagination</a> is <b>disabled</b>.
-    provide pixels in number or string to see the property in action.
+    provide the pixels as a number or string to see the property in action.
   </p>
 
   <app-min-content-height-usage></app-min-content-height-usage>
@@ -70,9 +70,9 @@
     <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
   </p>
 
-  <p>This property was uses to enable horizontal scroll bar when container area width meet defined minimum
-    width. this was useful when building mobile responsive grid without scattering data on data table. provide pixels in
-    number or string to see the property in action.</p>
+  <p>This property is used to enable a horizontal scroll bar when the container width meet defined minimum
+    width. This becomes useful when building mobile responsive grid without scattering data on data table. Provide
+    pixels as number or string to see the property in action.</p>
 
   <app-min-content-width-usage></app-min-content-width-usage>
   <app-example-code [files]="minContentWidthUsage"></app-example-code>
@@ -88,8 +88,9 @@
     <span class="badge badge-pill badge-secondary">Depends On: [expandableRows]</span>
   </p>
 
-  <p>This property was allowed to set an expander column width, by providing a string or number in pixels you can
-    customize the width of the expander column. this property can be used when <a
+  <p>This property is used to set the width of the expander icon column. By providing a string or number in pixels you
+    can
+    customize the responsiveness of the expander column. This property can be used while <a
       [routerLink]="'/feature/data-table/templating/row-expand-template'">Expandable Rows</a> is
     <b>enabled</b>. for more details about expander column details refer <a
       [routerLink]="['/feature/data-table/templating/row-expand-template']">Row Expand Template</a> section.</p>
@@ -109,8 +110,9 @@
   </p>
 
   <p>
-    This property can be uses adjust index column width. It can configure by providing a number or string as pixels,
-    when <a [routerLink]="['/feature/data-table/functionality/column/binding']">Show Index Column</a> is enabled.
+    Using the index column width, you can set static data row auto-incrementing number column width manually. It accepts
+    pixels as a type of number or string and this property can be used while <a
+    [routerLink]="['/feature/data-table/functionality/column/binding']">Show Index Column</a> is <b>enabled</b>.
   </p>
 
   <app-index-column-width-usage></app-index-column-width-usage>
@@ -129,8 +131,9 @@
 
   <p>This property can be used to dynamically configure the column selector width when <a
     [routerLink]="'/feature/data-table/options/header-details'" [fragment]="'showColumnSelector'">Show Column
-    Selector</a> is <b>enabled</b>. Useful if column names are taking more space than the available column selector
-    width.
+    Selector</a> is <b>enabled</b>. This property become handier when column names taking
+    more space than the available selector width. Such a scenario can be handled by adjusting the default width by
+    binding a value to <code>columnSelectorWidth</code> property.
   </p>
 
   <app-column-selector-width-usage></app-column-selector-width-usage>
@@ -147,10 +150,9 @@
     <span class="badge badge-pill badge-secondary">Depends On: [rowSelectable]</span>
   </p>
 
-  <p>This property can be uses to set row selector checkbox column width. it can be uses when only
-    <a [routerLink]="'/feature/data-table/functionality/row/selection'">Row Selectable</a> is <b>enabled</b>. For more
-    details about row selection techniques refer <a [routerLink]="['/feature/data-table/functionality/row/selection']">Row
-      Selection</a> section.
+  <p>This property can be used to set the row selector checkbox column width. It can be used only when the <a
+    [routerLink]="'/feature/data-table/functionality/row/selection'">Row Selectable</a> and <a
+    [routerLink]="['/feature/data-table/functionality/row/selection']">Row Selection</a> properties <b>enabled</b>.
   </p>
 
   <app-selection-column-width-usage></app-selection-column-width-usage>

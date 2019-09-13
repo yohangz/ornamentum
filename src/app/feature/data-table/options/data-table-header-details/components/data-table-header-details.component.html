@@ -2,8 +2,9 @@
   <h1>Header Details</h1>
 
   <p>
-    Showing header details will help users to get a better understanding about what kind of data is shown and allow to
-    configure set of properties which useful for enhance usability and experience of data table.
+    Showing header details along with the header menu will help users to get a better understanding of what kind of
+    data is shown and allow them to customize the overall grid table by providing a several rich data table
+    configurations.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -21,16 +22,22 @@
   </p>
 
   <p>
-    To configure header, set the <code>showHeader</code> property to <b>true</b>. The default
-    value for show header is <b>false</b>
+    To show the header in the data table users need to set the <code>showHeader</code> property to <b>true</b>. The
+    default value for showing header is <b>false</b>.
+  </p>
+
+  <p>
+    By enabling <code>showHeader</code> the header section will be enabled and there will be few additional properties
+    that can be configured after enabling the header section. Those details will be explained in detail in following
+    sections.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.headerDetails"></app-code-snippet>
 
   <h2 id="usefulProperties">Useful Properties</h2>
-  <p>
-    By enabling <code>showHeader</code> the header section facilitates few additional properties that can be configure.
-  </p>
+
+  <p>There are a few more properties that affect the behaviour of table header. All the available properties can be
+    applied in the global level of grid configuration.</p>
 
   <h4 id="title">Title</h4>
 
@@ -44,9 +51,9 @@
   </p>
 
   <p>
-    Title property will allow to define a name for the grid table. Bind a string to the title property will be
-    displays on header section. We recommend to provide a meaningful name to get better understanding about the content
-    of showing to the users from the first impression.
+    Title property will allow defining a name for the grid table. By binding, a string value to the title property will
+    be display on header section. Providing a meaningful name is mandatory to get a better understanding of showing the
+    data for the users from the first impression.
   </p>
 
   <app-title-usage></app-title-usage>
@@ -64,17 +71,22 @@
   </p>
 
   <p>
-    This configuration can be uses to show/hide data refresh button. by enabling the refresh button users can perform
-    data refresh operation by their self.
+    This configuration can be used to enable/disable data refresh button. By enabling the refresh button users will be
+    able to update the grid with the latest data by clicking on the refresh icon that appears in the header details bar.
   </p>
 
   <p>
-    When dealing with <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic</a> or
+    This will become much handy while dealing with <a
+    [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic</a> or
     <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web
-      Socket</a> Data Binding this property is very useful. In this example, After invoking refresh button ornamentum
-    will re-fetch data from the source and load them after resetting table state or displaying <a
-    [routerLink]="['/feature/data-table/templating/no-records-template']">No Records Template</a> on top of data table
-    body when on a data retrieval failed scenario.
+      Socket</a> Data Binding operations. When users click on the refresh button, it will trigger the particular event
+    and Ornamentum will re-send a request by invoking the respective service call and render the data with the newly
+    received response.
+  </p>
+
+  <p>
+    Also this property is useful in no data retrieval scenario, Please refer <a
+    [routerLink]="['/feature/data-table/templating/no-records-template']">No Records Template</a> for further details.
   </p>
 
   <app-show-refresh-button-usage></app-show-refresh-button-usage>
@@ -93,9 +105,13 @@
 
 
   <p>
-    This property is uses to show/hide the column selector button. by enabling the column selector property,
-    ornamentum displays all the <a [routerLink]="'/feature/data-table/functionality/column/binding'"
-                                   [fragment]="'showInColumnSelector'">Show In Column Selector</a> enabled properties.
+    This property is used to show or hide the column selector button. By enabling the column selector property,
+    Ornamentum display all the <a [routerLink]="'/feature/data-table/functionality/column/binding'"
+                                  [fragment]="'showInColumnSelector'">Show In Column Selector </a> <b>enabled</b>
+    properties. Users can select/deselect the available columns that need to be shown in the grid table. Selected
+    columns will be displayed with provided <a [routerLink]="'/feature/data-table/styling/responsive-configuration'"
+                                               [fragment]="'columnSelectorWidth'">Column Selector Width</a> or default
+    column width.
   </p>
 
   <app-show-column-selector-usage></app-show-column-selector-usage>

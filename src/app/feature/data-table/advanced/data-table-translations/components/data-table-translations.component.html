@@ -2,9 +2,9 @@
   <h1>Translations</h1>
 
   <p>
-    Translations can be uses to override data table visible properties in two special cases. those translatable
-    properties are required to binding into <code>translations</code> property in <code>&lt;ng-data-table&gt;</code>
-    selector. Properties that can be configure in translations are:
+    Translations can be used to override the data table visible properties in two special cases. Those translatable
+    properties are required to bound into <code>translations</code> property in table level configuration, in any
+    developer preferred language. The properties that can be configured in translations are,
   </p>
 
   <ul class="main-pane-list">
@@ -29,9 +29,10 @@
   </ul>
 
   <p>
-    Please note the below example doesn't show the full translations implementation, hence for Data table translations
-    for pagination usage refer <a [routerLink]="['/feature/data-table/advanced/translations']"
-                                  [fragment]="'translationsForPagination'">Translations for Pagination</a> section.
+    Please note the below example does not show the implementation of the full translation, hence for Data table
+    translations for pagination usage refer <a [routerLink]="['/feature/data-table/advanced/translations']"
+                                               [fragment]="'translationsForPagination'">Translations for Pagination</a>
+    section.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -48,23 +49,23 @@
   </p>
 
   <p>
-    As mention in the above translations can be override in <code>&lt;ng-data-table&gt;</code> configuration. by default
-    translations are initialize to it's default pre-set values.
+    As mention in the above translation sections, It can be overridden in the data table template level configuration.
+    By default, translations are initialized to their default pre-set values.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.translations"></app-code-snippet>
 
-  <p>Bind <code>DataTableTranslations</code> type of object into <code>translations</code> property will take the the
-    control over translations.</p>
+  <p>Binding the <code>DataTableTranslations</code> type of object into <code>translations</code> property is enough to
+    take control over translations.</p>
   <p>
     As mention in the above there are two scenarios that translations are useful. Let's see how we can configure each
-    demonstrated properties as we want.
+    demonstrated properties as we required.
   </p>
 
   <h2 id="translationsForNoData">Translations for No Data</h2>
   <p>
     The default template will be shown when data is not available by mentioning a header and the message body. In no
-    data scenario, users can customize the message needs to be appear using translations property.
+    data scenario, users can customize the message that needs to be appear using translations property.
   </p>
 
   <h4 id="noDataMessageHeader">No Data Message Header</h4>
@@ -72,7 +73,7 @@
   <h5 class="badge badge-pill badge-warning">Default Value: 'Whoops!'</h5>
 
   <p>
-    This configuration is used to set the message header to be shown in the table body, when there are no data to
+    This configuration is used to set the message header to be shown in the table body when there are no data to
     display. The default value for this property is 'Whoops!'
   </p>
 
@@ -81,8 +82,8 @@
   <h5 class="badge badge-pill badge-warning">Default Value: 'No data to display. Added data will appear here.'</h5>
 
   <p>
-    This configuration is used to set the message body on the message to be shown in the table body, when there are no
-    data to display. The default value for this property is 'No data to display. Added data will appear here.
+    This configuration is used to set the message body on the message to be shown in the table body when there are no
+    data to display. The default value for this property is 'No data to display. Added data will appear here'.
   </p>
 
   <app-translations-no-data-usage></app-translations-no-data-usage>
@@ -90,21 +91,21 @@
 
   <h2 id="translationsForPagination">Translations for Pagination</h2>
   <p>
-    Pagination translations property can be used to customize the pagination naming, which allow user to override the
-    pagination limit and range namings.
+    Pagination translations property can be used to customize the pagination naming, which allows the user to override
+    the pagination limit and range namings.
   </p>
 
   <h4 id="paginationLimit">Pagination Limit</h4>
   <code>paginationLimit: DataTableTranslations</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">Default Value: 'Limit'</h5>
 
-  <p>This is used to customize the pagination limit label. The default value for this config is 'Limit'.</p>
+  <p>This is used to customize the pagination limit naming. The default value for this config is 'Limit'.</p>
 
   <h4 id="paginationRange">Pagination Range</h4>
   <code>paginationRange: DataTableTranslations</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">Default Value: 'Results'</h5>
 
-  <p>This is used to customize the pagination range label. The default value for this config is 'Results'.</p>
+  <p>This is used to customize the pagination range naming. The default value for this config is 'Results'.</p>
 
   <app-translations-pagination-usage></app-translations-pagination-usage>
   <app-example-code [files]="translationsPaginationUsage"></app-example-code>

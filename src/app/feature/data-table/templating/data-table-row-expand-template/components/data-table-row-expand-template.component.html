@@ -2,8 +2,8 @@
   <h1>Row Expand Template</h1>
 
   <p>
-    The row expand template of the Grid enables you to provide additional details about a particular row of table data,
-    through expanding or collapsing its content.
+    The row expand template of the Grid enables the user to provide additional details about a particular row of the
+    table data, through expanding or collapsing its content.
   </p>
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -11,40 +11,46 @@
   <app-example-code [files]="rowExpandTemplateUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    <code>expandableRows: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: false</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
+
   <p>
     This feature can be enabled by setting the <code>expandableRows</code> as <b>true</b>. The default status of this
-    property is
-    <b>false</b>.
+    property is <b>false</b>.
   </p>
   <p>
-    To define the detail template, nest an <code>&lt;ng-template&gt;</code> tag with the <code>ngDataTableRowExpand</code> directive
-    inside the <code>&lt;ng-data-table&gt;</code> tag. The template context is set to the current <code>row</code>.
+    To define the detail template, nest an <code>&lt;ng-template&gt;</code> tag with the
+    <code>ngDataTableRowExpand</code> directive inside the <code>&lt;ng-data-table&gt;</code> tag. The template context
+    is set to the current <code>row</code>.
   </p>
 
   <p>
-    Data table will not show anything, although it has been set as <code>true</code> for <code>expandableRows</code> property
-    due to unavailability of a custom template. Therefore, it is <b>essential</b> to provide a custom template if this
-    property is set to <code>true</code>.
+    The Data table will not show anything, although it has been set as <code>true</code> for <code>expandableRows</code>
+    property due to the unavailability of a custom template. Therefore, it is <b>essential</b> to provide a custom
+    template if this property is set to <code>true</code>.
   </p>
 
-  <p>Following code snippet depicts how to set a custom template.</p>
+  <p>The following code snippet depicts how to set a custom template.</p>
+
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.baseTemplate"></app-code-snippet>
 
   <p>In <a [routerLink]="['/feature/data-table/templating/row-expand-template']" [fragment]="'whatYouWillSee'">What You
-    Will
-    See</a> section , Following code snippet depicts how to setup expandable row for as expandable customer template.
+    Will See</a> section used the following code snippets to show expandable row functionality, for as
+    expandable custom template.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.expandTemplate"></app-code-snippet>
-
-  <p>Following code snippet will show the respective code segments for row expanding detail view
-    (app-row-expand-template-detail-view).</p>
 
   <app-example-code [files]="rowExpandTemplateDetailView"></app-example-code>
 
   <h2 id="usefulProperties">Useful Properties</h2>
 
-  <p>There are few more properties available that can be use after enabling <code>expandableRows</code> property.</p>
+  <p>There are few more properties available that can be used after enabling <code>expandableRows</code> property.</p>
 
   <h4 id="row">Row</h4>
   <code>row: DataTableRow</code>
@@ -52,9 +58,9 @@
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-template&gt; inside &lt;ng-data-table&gt; </span>
 
 
-  <p>This property can be accessed as shown in the above <a
+  <p>This property can be used to access data rows, as shown in the above <a
     [routerLink]="['/feature/data-table/templating/row-expand-template']" [fragment]="'whatYouWillSee'">What You Will
-    See</a> sections's example.</p>
+    See</a> section example.</p>
 
   <h4 id="expandOnRowClick">Expand On Row Click</h4>
   <code>expandOnRowClick: boolean</code> &nbsp;
@@ -64,7 +70,7 @@
 
   <p>
     This property allows to enable/disable expand the detail row, on row click or row expand button click when <code>expandableRows</code>
-    is set to <code>true</code>
+    is set to <code>true</code>.
   </p>
 
   <app-expand-on-row-click-usage></app-expand-on-row-click-usage>
@@ -77,8 +83,8 @@
   <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
 
   <p>
-    Enables loading spinner when data is fetching to the table row expandable section. This can be clear seen when there
-    is scenario to show data by calling a REST API to a expandable row in a slow network.
+    Enables loading spinner when data is fetching to the table row expandable section. This can be clearly seen when there
+    is a scenario to show data by calling a REST API to a expandable row in a slow network.
   </p>
 
   <app-show-row-expand-loading-spinner-usage></app-show-row-expand-loading-spinner-usage>
