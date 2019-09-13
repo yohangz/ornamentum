@@ -6,7 +6,6 @@ import { map } from 'rxjs/operators';
 import { GlobalRefService } from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
-
 import { DataFetchService } from 'helper-services';
 
 @Component({
@@ -16,18 +15,17 @@ import { DataFetchService } from 'helper-services';
 export class ClientSideStreamUsageComponent implements OnInit {
   public dataSource: Observable<ExampleData[]>;
 
-  constructor(private dataFetchService: DataFetchService,
-              private globalRefService: GlobalRefService) {
-  }
+  constructor(private dataFetchService: DataFetchService, private globalRefService: GlobalRefService) {}
 
   public ngOnInit(): void {
     let offset = 0;
 
-    // This is an internal service used to check the execution environment.
-    // Checks whether it is browser or not.
+    // This code is used to emulate the real time data source behavior.
+    // Replace this with your actual realtime data source (Observable stream).
     if (this.globalRefService.isBrowser) {
 
-      // Code segment used to emulate the  client side stream data binding.
+      // This code is used to emulate the real time data source behavior.
+      // Replace this with your actual realtime data source (Observable stream).
       this.dataSource = timer(0, 2000).pipe(
         map(() => {
           offset += 20;
@@ -35,7 +33,8 @@ export class ClientSideStreamUsageComponent implements OnInit {
             offset = 0;
           }
 
-          // Bind data in the client-side.
+          // This line of code is fetching 20 dummy data items collection from a local data service.
+          // Replace this with your own data source.
           return this.dataFetchService.fetchStaticData(offset, 20);
         })
       );

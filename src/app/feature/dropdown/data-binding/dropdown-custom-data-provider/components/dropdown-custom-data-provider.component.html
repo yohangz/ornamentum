@@ -3,7 +3,7 @@
 
   <p>
     Ornamentum data binding is handled via <a rel="noopener" target="_blank"
-                                               href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html#onDataBind">onDataBind</a>
+                                              href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html#onDataBind">onDataBind</a>
     callback function. Use this callback reference to hook into data bind workflow and provide custom data source. This
     callback function will get triggered on table initialization and on dynamic dropdown operations. It
     receives <a rel="noopener" target="_blank"
@@ -24,21 +24,38 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>
-    Ornamentum provided a way to integrated server side data bind functionality via
-    <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
-    callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it data source agnostic.
-    </p>
+    <code>onDataBind: DropdownDataBindCallback&lt;any&gt;</code> &nbsp;
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-dropdown&gt;</span>
+  </p>
+
   <p>
-    If you refer to <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']" [fragment]="'basicUsage'">Server Side Basic Data Binding</a> and <a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket#basicUsage']" [fragment]="'basicUsage'">Server Side Web Socket Data Binding</a> basic usage,
-    getResourceProvider in DropdownHttpResourceFactoryService provides in build method take care of basic server data bind functionality.
-    You can build your own data provider same as <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html#onDataBind">onDataBind</a>  internal data provider.
+    Ornamentum provided a way to integrated server side data bind functionality via
+    <a rel="noopener" target="_blank"
+       href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
+    callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
+    data source agnostic.
+  </p>
+  <p>
+    If you refer to <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']" [fragment]="'basicUsage'">Server
+    Side Basic Data Binding</a> and <a
+    [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket#basicUsage']" [fragment]="'basicUsage'">Server
+    Side Web Socket Data Binding</a> basic usage,
+    getResourceProvider in DropdownHttpResourceFactoryService provides in build method take care of basic server data
+    bind functionality.
+    You can build your own data provider same as <a rel="noopener" target="_blank"
+                                                    href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html#onDataBind">onDataBind</a>
+    internal data provider.
   </p>
 
   <ol>
     <li>
       <p>
         Import <a rel="noopener" target="_blank"
-                  href="https://ornamentum.app/api-docs/modules/DropdownResourceModule.html">DropdownResourceModule</a> along with
+                  href="https://ornamentum.app/api-docs/modules/DropdownResourceModule.html">DropdownResourceModule</a>
+        along with
         <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DropdownModule.html">DropdownModule</a>.
       </p>
 
@@ -48,7 +65,8 @@
       <p>
         The custom data provider needs to return a function which is supposed to be returned object as Observable.
         <br>
-        As long as your data return as observable you can use any data sources such as Firebase Realtime Database or Cloud Firestore.
+        As long as your data return as observable you can use any data sources such as Firebase Realtime Database or
+        Cloud Firestore.
       </p>
       <app-custom-data-provider-mapper-usage></app-custom-data-provider-mapper-usage>
       <app-example-code [files]="serverSideBasicUsageWithMap"></app-example-code>
@@ -57,8 +75,9 @@
     <li>
       <p>
         Set the obtained data bind callback function reference to <a rel="noopener" target="_blank"
-                                                                     href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a> input
-        property of data table.
+                                                                     href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
+        input
+        property of dropdown.
       </p>
 
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.customDataProviderMarkup"></app-code-snippet>
@@ -66,12 +85,16 @@
   </ol>
 
   <p>
-    You can inspect network traffic of this page with "<code>api.github.com/repos/yohangz/ornamentum/contributors</code>" filter in browser developer tools to
-    understand backend service requests and behaviors for above example.
+    You can inspect network traffic of this page (<a rel="noopener" target="_blank"
+                                                     href="https://api.github.com/repos/yohangz/ornamentum/contributors">Ornamentum
+    Contributors</a>) in browser developer tools to understand how backend service requests/response and behaviors for
+    the above example.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
-  <a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']">Server Side Web Socket Data Binding</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Server Side Basic Data Binding</a>
+  <a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']">Server Side Web Socket Data
+    Binding</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#dataSource">API Doc for Server Side
+    Basic Data Binding</a>
 </div>

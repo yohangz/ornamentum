@@ -977,7 +977,17 @@ export class MainComponent {
                 },
                 {
                   title: 'Basic Usage',
-                  anchor: 'basicUsage'
+                  anchor: 'basicUsage',
+                  subNavigation: [
+                    {
+                      title: 'Bind via Items',
+                      anchor: 'bindViaItems'
+                    },
+                    {
+                      title: 'Bind via Data Source',
+                      anchor: 'bindViaDataSource'
+                    }
+                  ]
                 },
                 {
                   title: 'Suggested Links',
@@ -995,7 +1005,17 @@ export class MainComponent {
                 },
                 {
                   title: 'Basic Usage',
-                  anchor: 'basicUsage'
+                  anchor: 'basicUsage',
+                  subNavigation: [
+                    {
+                      title: 'Bind via Data Source',
+                      anchor: 'bindViaDataSource'
+                    },
+                    {
+                      title: 'Bind via Items',
+                      anchor: 'bindViaItems'
+                    }
+                  ]
                 },
                 {
                   title: 'Suggested Links',
@@ -1016,6 +1036,10 @@ export class MainComponent {
                   anchor: 'basicUsage'
                 },
                 {
+                  title: 'Custom Data Provider',
+                  anchor: 'customDataProvider'
+                },
+                {
                   title: 'Suggested Links',
                   anchor: 'suggestedLinks'
                 }
@@ -1032,6 +1056,10 @@ export class MainComponent {
                 {
                   title: 'Basic Usage',
                   anchor: 'basicUsage'
+                },
+                {
+                  title: 'Custom Data Provider',
+                  anchor: 'customDataProvider'
                 },
                 {
                   title: 'Suggested Links',
