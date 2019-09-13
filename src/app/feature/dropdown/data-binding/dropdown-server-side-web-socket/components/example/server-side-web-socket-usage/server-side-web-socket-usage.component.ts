@@ -36,6 +36,7 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
     // Create web-socket connection on browser environment only to support server side rendering.
     if (this.globalRefService.isBrowser) {
       this.webSocketProvider.init({
+        // use this for local testing `ws://${window.location.hostname}:${window.location.port}`
         url: `wss://${window.location.hostname}` // web-socket endpoint
       });
 
