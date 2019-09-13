@@ -3,24 +3,27 @@
 
   <p>
     Translations can be uses to override data table visible properties in two special cases. those translatable
-    properties are required to binding into <code>translations</code> property in <code>&lt;ng-data-table&gt;</code> configuration. the properties that can be configure in translations are:
+    properties are required to binding into <code>translations</code> property in <code>&lt;ng-data-table&gt;</code>
+    selector. Properties that can be configure in translations are:
   </p>
 
   <ul class="main-pane-list">
     <li>
-      <a [routerLink]="['/feature/data-table/advanced/translations']"
-         [fragment]="'translationsForNoData'">Translations for No Data</a>
+      Translations for No Data
       <ul>
-        <li><code>noDataMessageHeader</code>: Customized No Data Message Header</li>
-        <li><code>noDataMessageBody</code>: Customized No Data Message Body</li>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'noDataMessageBody'">No Data
+          Message Body</a></li>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'noDataMessageHeader'">No Data
+          Message Header</a></li>
       </ul>
     </li>
     <li>
-      <a [routerLink]="['/feature/data-table/advanced/translations']"
-         [fragment]="'translationsForPagination'">Translations for Pagination</a>
+      Translations for Pagination
       <ul>
-        <li><code>paginationLimit</code>: Pagination Limit</li>
-        <li><code>paginationRange</code>: Pagination Range</li>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'paginationLimit'">Pagination
+          Limit</a></li>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'paginationRange'">Pagination
+          Range</a></li>
       </ul>
     </li>
   </ul>
@@ -37,6 +40,13 @@
   <app-example-code [files]="translationsUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    <code>translations: DataTableTranslations</code> &nbsp;
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
+
   <p>
     As mention in the above translations can be override in <code>&lt;ng-data-table&gt;</code> configuration. by default
     translations are initialize to it's default pre-set values.
@@ -44,8 +54,8 @@
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.translations"></app-code-snippet>
 
-  <p>Simply bind <code>DataTableTranslations</code> type of object into <code>translations</code> property is enough to take
-    the the control over translations.</p>
+  <p>Bind <code>DataTableTranslations</code> type of object into <code>translations</code> property will take the the
+    control over translations.</p>
   <p>
     As mention in the above there are two scenarios that translations are useful. Let's see how we can configure each
     demonstrated properties as we want.

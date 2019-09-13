@@ -12,8 +12,8 @@ import { DataFetchService } from 'helper-services';
 })
 export class TranslationsPaginationUsageComponent {
   public DataTableTranslations: DataTableTranslations = {
-    paginationLimit: 'This is the message for paginationLimit',
-    paginationRange: 'This is the message for paginationRange'
+    paginationLimit: 'Sample Pagination Limit',
+    paginationRange: 'Sample Pagination Rage'
   };
 
   public paginationItems: ExampleData[];

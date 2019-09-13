@@ -8,8 +8,8 @@ import { DataTableTranslations } from 'ornamentum';
 })
 export class TranslationsNoDataUsageComponent {
   public DataTableTranslations: DataTableTranslations = {
-    noDataMessageHeader: 'Customized No Data Message Header',
-    noDataMessageBody: 'Customized No Data Message Body'
+    noDataMessageHeader: 'Sample No Data Message Header',
+    noDataMessageBody: 'Sample No Data Message Body'
   };
 
   public emptyItemSet: any;
