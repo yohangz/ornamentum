@@ -20,6 +20,13 @@
   <app-example-code [files]="statePersistenceUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
+  <p>
+    <code>persistTableState: boolean</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: false</span>
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
+
   <p>To enable state persistence, simply set <code>persistTableState</code> to <b>true</b> and by default
     persistTableState is <b>false</b>.</p>
 
@@ -35,8 +42,12 @@
 
   <h4 id="storageMode">Storage Mode</h4>
 
-  <code>storageMode: string = 'session' or 'local'</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: 'session'</h5>
+  <p>
+    <code>storageMode: string = 'session' or 'local'</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: 'session'</span>
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
 
   <p>
     This property let you to control the browser storage type that you want to use to save the data table state. There
@@ -55,18 +66,22 @@
 
   <h4 id="stateId">State Saving ID</h4>
 
-  <code>id: string</code> &nbsp;
-  <h5 class="badge badge-pill badge-warning">Default Value: ''</h5>
-
   <p>
-    The page property lets you to assign a name for the state that you are saving in the browser storage. Please note
-    that, the provided id value will be added with the prefix of <b>"grid_state_"</b>. Assume that you provided id as
-    "table_details". Then the state will be saved with the key name of <b>"grid_state_table_details"</b>.
+    <code>id: string</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: ''</span>
+    <span class="p-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
   </p>
 
   <p>
-    In the previous section example has id named "sales_products_detail_summery". So that will be saved in the storage
-    as "grid_state_sales_products_detail_summery"
+    The page property lets you to assign a name for the state that you are saving in the browser storage. Please note
+    that, the provided id value will be added with the prefix of <b>'grid_state_'</b>. Assume that you provided id as
+    <b>'table_details'</b>. Then the state will be saved with the key name of <b>'grid_state_table_details'</b>.
+  </p>
+
+  <p>
+    In the previous section example has id named <b>'sales_products_advanced_02'</b>. So that will be saved in the storage
+    as <b>'grid_state_sales_products_advanced_02'</b>.
   </p>
 
   <h2 id="suggestedLinks">Suggested Links</h2>

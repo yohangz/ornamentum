@@ -195,6 +195,10 @@ export class MainComponent {
                   anchor: 'usefulProperties',
                   subNavigation: [
                     {
+                      title: 'ID (Identifier)',
+                      anchor: 'id'
+                    },
+                    {
                       title: 'Field',
                       anchor: 'field'
                     },

@@ -26,9 +26,7 @@
   </p>
 
   <p>This property will act as a identifier for access specific data set in your data array. The field name should be a
-    valid Javascript identifier and should only contains <a rel="noopener" target="_blank"
-                                                            href="https://en.wikipedia.org/wiki/Alphanumeric">Alphanumeric
-      Characters</a>.</p>
+    valid Javascript identifier.</p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.resizable"></app-code-snippet>
 
@@ -36,6 +34,21 @@
 
   <p>There are several more properties that support for column binding functionality when <code>field</code> property
     is defined.</p>
+
+  <h4 id="id">ID (Identifier)</h4>
+
+  <p>
+    <code>id: string</code> &nbsp;
+    <span class="badge badge-pill badge-warning">Default Value: undefined</span>
+    <span class="pr-1"></span>
+    <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
+  </p>
+
+  <p>
+    This property is a <b>mandatory</b> property which required a unique and valid Javascript identifier for
+    each and every data table in your application. Failed to define this property caused to throw an error and halt the
+    execution.
+  </p>
 
   <h4 id="title">Title</h4>
 
