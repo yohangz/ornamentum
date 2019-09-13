@@ -33,7 +33,7 @@ export const queryDataByFieldExpression = (data: any[], offset: number = 0, limi
         if (filterValue !== '') {
           filters.push({
             field: key,
-            values: String(filterValue).split(',')
+            values: String(filterValue).split(',').map(filter => String(filter).toLowerCase())
           });
         }
 
@@ -60,12 +60,9 @@ export const queryDataByFieldExpression = (data: any[], offset: number = 0, limi
       result = result.filter(item => {
         return filters.every(filter => {
           const value = get(item, filter.field);
+          const fieldValue = String(value).toLowerCase();
 
-          return filter.values.some(filterItem => {
-            const filterValue = String(filterItem).toLowerCase();
-            const fieldValue = String(value).toLowerCase();
-            return fieldValue.includes(filterValue);
-          });
+          return filter.values.some(filterItem => fieldValue.includes(filterItem));
         });
       });
     }
@@ -93,22 +90,26 @@ export const queryDataByFieldCollection = (
   let result = data;
 
   if (Array.isArray(params)) {
-    const filterFields = params.filter(field => field.filterable);
+    const filterFields = params.filter(field => {
+      return field.filterable && field.filterValue !== undefined
+      && (Array.isArray(field.filterValue) ? !!field.filterValue.length : field.filterValue !== '');
+    }).map(field => {
+      if (Array.isArray(field.filterValue)) {
+        field.filterValue = field.filterValue.map(filter => String(filter).toLowerCase());
+      } else {
+        field.filterValue = [ String(field.filterValue).toLowerCase() ];
+      }
+
+      return field;
+    });
+
     if (filterFields.length) {
       result = data.filter(item => {
         return filterFields.every((filterColumn: DataTableQueryField) => {
-          const fieldValue = get(item, filterColumn.field);
-          if (fieldValue === undefined) {
-            return true;
-          }
+          const value = get(item, filterColumn.field);
+          const fieldValue = String(value === undefined ? '' : value).toLowerCase();
 
-          if (Array.isArray(filterColumn.filterValue)) {
-            return filterColumn.filterValue.length === 0 || filterColumn.filterValue.includes(fieldValue);
-          }
-
-          const value = String(fieldValue).toLowerCase();
-          const filterValue = String(filterColumn.filterValue).toLowerCase();
-          return value.includes(filterValue);
+          return filterColumn.filterValue.some(filterItem => fieldValue.includes(filterItem));
         });
       });
     }
