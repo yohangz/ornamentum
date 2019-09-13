@@ -3,18 +3,18 @@
 
   <p>
     This feature will allow end-users to filter specific field set by searching them on Dropdown filter bar. After
-    enabling filtering it will filter data on every <a [routerLink]="['/feature/dropdown/features/item-filtering']"
+    enabling filtering it will filter data on every <a [routerLink]="['/feature/dropdown/functionality/item-filtering']"
                                                        [fragment]="'filterDebounceTime'">Filter Debounce Time</a> when
     on idle after user's every keystroke.
   </p>
 
   <p>
     Once after enable filtering by default ornamentum will activate <a
-    [routerLink]="'/feature/dropdown/features/item/filtering'"
+    [routerLink]="'/feature/dropdown/functionality/item/filtering'"
     [fragment]="'filterDebounce'">Filter Debounce</a>
-    and set specific <a [routerLink]="['/feature/dropdown/features/item/filtering']" [fragment]="'filterDebounceTime'">Filter
+    and set specific <a [routerLink]="['/feature/dropdown/functionality/item/filtering']" [fragment]="'filterDebounceTime'">Filter
     Debounce Time</a> in to dropdown. for more details about debouncing please refer
-    <a [routerLink]="['/feature/dropdown/features/item/filtering']" [fragment]="'usefulProperties'">Useful
+    <a [routerLink]="['/feature/dropdown/functionality/item/filtering']" [fragment]="'usefulProperties'">Useful
       Properties</a> from below.
   </p>
 
@@ -45,7 +45,7 @@
 
   <p>
     Filter Debounce is responsible for listening more user inputs on user every keystroke on dropdown filter bar and
-    search them as a bundle on every <a [routerLink]="['/feature/dropdown/features/item/filtering']"
+    search them as a bundle on every <a [routerLink]="['/feature/dropdown/functionality/item/filtering']"
                                         [fragment]="'filterDebounceTime'">Filter Debounce Time</a>. this
     will be happen recursively if user has continuously providing inputs.
   </p>
@@ -55,7 +55,7 @@
 
   <p>
     The key advantage is using debounce is reduce client-side operations. because filtering is perform on every
-    <a [routerLink]="['/feature/dropdown/features/item/filtering']" [fragment]="'filterDebounceTime'">Filter Debounce
+    <a [routerLink]="['/feature/dropdown/functionality/item/filtering']" [fragment]="'filterDebounceTime'">Filter Debounce
       Time</a> rather than filter every keystroke that user enters.
   </p>
 
@@ -65,7 +65,7 @@
 
   <p>
     This property is uses for defining the debounce time for perform debounce operation and property was depend on
-    <a [routerLink]="['/feature/dropdown/features/item/filtering']" [fragment]="'filterDebounce'">Filter Debounce</a>,
+    <a [routerLink]="['/feature/dropdown/functionality/item/filtering']" [fragment]="'filterDebounce'">Filter Debounce</a>,
     therefore can't be uses <b>independently</b> on dropdown operations.
   </p>
 
@@ -95,7 +95,7 @@
   </p>
 
   <p>
-    Also all the properties described in the <a [routerLink]="['/feature/dropdown/features/item/filtering']"
+    Also all the properties described in the <a [routerLink]="['/feature/dropdown/functionality/item/filtering']"
                                                 [fragment]="'usefulProperties'">Useful Properties</a> section,
     can be used with Server side filtering as well.
   </p>

@@ -8,8 +8,8 @@
     stream to <code>dataSource</code> input property.</p>
 
   <p>In this data binding technique, data set will be fetched at once and column
-    <a [routerLink]="['/feature/dropdown/features/filtering']">Filtering</a> and
-    <a [routerLink]="['/feature/dropdown/features/item/selection']">Item Selection</a> operations are perform in client
+    <a [routerLink]="['/feature/dropdown/functionality/filtering']">Filtering</a> and
+    <a [routerLink]="['/feature/dropdown/functionality/item/selection']">Item Selection</a> operations are perform in client
     side via an internal data source manager service.
   </p>
 
@@ -17,13 +17,13 @@
     If the data stream is very large and difficult to perform <a
     [routerLink]="['/feature/data-table/functionality/column/filtering']">Filtering</a>
     and <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Item Selection</a> operations
-    in the client side, <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server Side Basic Data
-    Binding</a> can be use instead of using this technique.
+    in the client side, <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server Side Basic</a>
+    Data Binding can be use instead of using this technique.
   </p>
 
   <p>
     However, it might affect the overall site performance if the data set is significantly larger. Consider using <a
-    [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a> in such
+    [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic</a> Data Binding in such
     cases where all the computation heavy operations are handled in server side and only page level data is sent to
     client side for on demand data binding.
   </p>

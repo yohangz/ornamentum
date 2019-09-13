@@ -4,9 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { SeoGuard } from '../../../core/seo.guard';
 
 /**
- * Represent application dropdown features module routes.
+ * Represent application dropdown functionality module routes.
  */
-const dropdownFeaturesRoutes: Routes = [
+const dropdownFunctionalityRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
@@ -71,11 +71,11 @@ const dropdownFeaturesRoutes: Routes = [
 ];
 
 /**
- * Application dropdown features routing module.
+ * Application dropdown functionality routing module.
  */
 @NgModule({
   exports: [RouterModule],
-  imports: [RouterModule.forChild(dropdownFeaturesRoutes)]
+  imports: [RouterModule.forChild(dropdownFunctionalityRoutes)]
 })
-export class DropdownFeaturesRoutingModule {
+export class DropdownFunctionalityRoutingModule {
 }

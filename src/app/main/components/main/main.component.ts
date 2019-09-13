@@ -1147,10 +1147,10 @@ export class MainComponent {
           ]
         },
         {
-          name: 'Features',
+          name: 'Functionality',
           menuItems: [
             {
-              routePath: '/feature/dropdown/features/item/display',
+              routePath: '/feature/dropdown/functionality/item/display',
               title: 'Item Display',
               navigation: [
                 {
@@ -1168,7 +1168,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/features/item/selection',
+              routePath: '/feature/dropdown/functionality/item/selection',
               title: 'Item Selection',
               navigation: [
                 {
@@ -1228,7 +1228,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/features/item/filtering',
+              routePath: '/feature/dropdown/functionality/item/filtering',
               title: 'Item Filtering',
               navigation: [
                 {
@@ -1268,7 +1268,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/features/item/grouping',
+              routePath: '/feature/dropdown/functionality/item/grouping',
               title: 'Item Grouping',
               navigation: [
                 {

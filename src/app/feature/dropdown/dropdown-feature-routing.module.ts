@@ -29,10 +29,10 @@ const dropdownFeatureRoutes: Routes = [
     path: 'options'
   },
   {
-    loadChildren: './features/dropdown-features.module#DropdownFeaturesModule',
-    // loadChildren: () => import('./features/dropdown-features.module')
-    //   .then((m) => m.DropdownFeaturesModule),
-    path: 'features'
+    loadChildren: './functionality/dropdown-functionality.module#DropdownFunctionalityModule',
+    // loadChildren: () => import('./functionality/dropdown-functionality.module')
+    //   .then((m) => m.DropdownFunctionalityModule),
+    path: 'functionality'
   },
   {
     loadChildren: './templating/dropdown-templating.module#DropdownTemplatingModule',
