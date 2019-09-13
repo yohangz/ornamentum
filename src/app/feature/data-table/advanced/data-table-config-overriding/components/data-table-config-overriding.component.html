@@ -11,8 +11,8 @@
   <pre>
     |__ <a [routerLink]="['/feature/data-table/advanced/config-overriding']" class="hierarchy-main">Data Table Configuration</a>
     |   |
-    |   |___ <a [fragment]="'defaultConfiguration'" [routerLink]="['/feature/data-table/advanced/config-overriding']"
-                class="config-level">Default Configuration</a>
+    |   |___ <a [fragment]="'defaultConfigurations'" [routerLink]="['/feature/data-table/advanced/config-overriding']"
+                class="config-level">Default Configurations</a>
     |   |___ <a [fragment]="'modulePropertyBinding'" [routerLink]="['/feature/data-table/advanced/config-overriding']"
                 class="config-level">Module Level Configuration</a>
     |   |___ <a [fragment]="'templatePropertyBinding'" [routerLink]="['/feature/data-table/advanced/config-overriding']"
@@ -23,62 +23,51 @@
     |
     \/
   </pre>
-  <h2 id="defaultConfiguration">Default Configuration</h2>
+  <h2 id="defaultConfigurations">Default Configurations</h2>
 
   <p>
     Ornamentum has given default values for all most all configurations. the default values explicitly mention
     on each respective data table property or function documentation.</p>
   <p>
     Default configurations can be override by
-    <a [fragment]="'modulePropertyBinding'"[routerLink]="['/feature/data-table/advanced/config-overriding']">Module Level Configuration</a> and
-    <a [fragment]="'templatePropertyBinding'" [routerLink]="['/feature/data-table/advanced/config-overriding']">Template Level Configuration</a>.
+    <a [fragment]="'modulePropertyBinding'" [routerLink]="['/feature/data-table/advanced/config-overriding']">Module
+      Level Configuration</a> and
+    <a [fragment]="'templatePropertyBinding'" [routerLink]="['/feature/data-table/advanced/config-overriding']">Template
+      Level Configuration</a>.
   </p>
-  <div class="p-5 mb-4" style="background: whitesmoke">
-    <h4 id="multiColumnSortable">Multi Column Sorting</h4>
 
-    <p>
-      <code>multiColumnSortable: boolean</code> &nbsp;
-      <span class="badge badge-pill badge-warning">Default Value: false</span>
-      <span class="pr-1"></span>
-      <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table&gt;</span>
-    </p>
-    <h4 id="sortOrder">Sort Order</h4>
-    <p>
-      <code>sortOrder: 'asc' | 'desc' | ''</code>
-      <span class="pr-1"></span>
-      <span class="badge badge-pill badge-warning">Default Value: ''</span>
-      <span class="pr-1"></span>
-      <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
-      <span class="pr-1"></span>
-      <span class="badge badge-pill badge-secondary">Depends On: [sortable]</span>
-    </p>
-
-  </div>
+  <app-code-snippet [content]="configOverriding.defaultConfig" [type]="FileType.TS"></app-code-snippet>
 
   <h2 id="modulePropertyBinding">Module Level Configuration</h2>
   <p>Ornamentum supports, configuration overriding in module root configurations.
-    You can provide a <a href="api-docs/interfaces/DataTableConfig.html#source">DataTableConfig</a> type of object inside <code>forRoot()</code> tag.
-    This is the place where you can override the default configurations for the entire module at once for all the data tables in a given module.
+    You can provide a <a href="api-docs/interfaces/DataTableConfig.html#source">DataTableConfig</a> type of object
+    inside <code>forRoot()</code> tag.
+    This is the place where you can override the default configurations for the entire module at once for all the data
+    tables in a given module.
   </p>
   <p>
     Module level configuration can be overridden by
-    <a [fragment]="'templatePropertyBinding'" [routerLink]="['/feature/data-table/advanced/config-overriding']">Template Level Configuration</a>.
+    <a [fragment]="'templatePropertyBinding'" [routerLink]="['/feature/data-table/advanced/config-overriding']">Template
+      Level Configuration</a>.
   </p>
   <app-code-snippet [content]="configOverriding.moduleConfigOverriding" [type]="FileType.TS"></app-code-snippet>
 
 
   <h2 id="templatePropertyBinding">Template Level Configuration</h2>
   <p>Template level configuration can be overridden by both
-    <a [fragment]="'defaultConfiguration'"[routerLink]="['/feature/data-table/advanced/config-overriding']">Default Configuration</a> and
-    <a [fragment]="'modulePropertyBinding'" [routerLink]="['/feature/data-table/advanced/config-overriding']">Module Level Configuration</a>.
+    <a [fragment]="'defaultConfigurations'" [routerLink]="['/feature/data-table/advanced/config-overriding']">Default
+      Configurations</a> and
+    <a [fragment]="'modulePropertyBinding'" [routerLink]="['/feature/data-table/advanced/config-overriding']">Module
+      Level Configuration</a>.
     You can simply bind a required type of value to respective configurations on HTML template.</p>
-  <p>In other word this is the place where you can override the default & module level configurations for individual data table in given module.</p>
-  <app-code-snippet [content]="configOverriding.configOverriding" [type]="FileType.HTML"></app-code-snippet>
+  <p>In other word this is the place where you can override the default & module level configurations for individual
+    data table in given module.</p>
+  <app-code-snippet [content]="configOverriding.templatePropertyBinding" [type]="FileType.HTML"></app-code-snippet>
 
-<!--  <p>In above example module, ornamentum will enables <a-->
-<!--    [routerLink]="['/feature/data-table/functionality/column/sorting']">Sortable</a> and-->
-<!--    <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Filterable</a> for all available data-->
-<!--    columns.</p>-->
+  <!--  <p>In above example module, ornamentum will enables <a-->
+  <!--    [routerLink]="['/feature/data-table/functionality/column/sorting']">Sortable</a> and-->
+  <!--    <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Filterable</a> for all available data-->
+  <!--    columns.</p>-->
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a href="api-docs/components/DataTableComponent.html" rel="noopener" target="_blank">API Doc for Data Table

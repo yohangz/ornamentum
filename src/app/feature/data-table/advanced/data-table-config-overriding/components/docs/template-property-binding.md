@@ -1,7 +1,5 @@
  <ng-data-table
-   /** 
-    * Table level property binding goes here 
-   **/
+   // Table level property binding goes here 
    [id]="'sales_products_demo_01'"
    [title]="'Sales Products'"
    [selectTrackBy]="'key'"
@@ -22,17 +20,13 @@
    [persistTableState]="false"
    [expandableRows]="false"
    [showRowExpandLoadingSpinner]="false"
-   [selectMode]="'multi'"
- >
+   [selectMode]="'multi'">
    <ng-data-table-column
-      /** 
-       * Column level property binding goes here 
-      **/
+     // Column level property binding goes here 
      [field]="'key'"
      [title]="'Key'"
      [showInColumnSelector]="false"
      [sortable]="true"
      [filterable]="true"
-     [width]="70"
-   >
+     [width]="70">
  </ng-data-table>

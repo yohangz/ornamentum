@@ -1,7 +1,8 @@
 <div class="feature-container">
   <h1>Column Resizing</h1>
 
-  <p>Column resizing property facilitates the users to manually resize the columns as per their desire.</p>
+  <p>Column resizing property facilitates the users to manually resize the columns as they want. This feature
+    is currently on an experimental level and functionality will <b>not</b> still fully guaranteed.</p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
@@ -9,25 +10,24 @@
   <app-example-code [files]="columnResizingUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
-  <p>
-    In order to enable column resizing property the <code>resizable</code> property should mark as <b>true</b> and the
-    default value of the property is <b>false</b>. As per the above example the <code>resizable</code> property is
-    enabled for all the columns.
-  </p>
-
-  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.resizable"></app-code-snippet>
-
-  <h4 id="sortOrder">Sortable</h4>
 
   <p>
-    <code>sortable</code>
+    <code>resizable: boolean</code> &nbsp;
     <span class="pr-1"></span>
     <span class="badge badge-pill badge-warning">Default Value: false</span>
     <span class="pr-1"></span>
     <span class="badge badge-pill badge-info">Target Component: &lt;ng-data-table-column&gt;</span>
   </p>
 
+  <p>
+    In order to enable column resizing property the <code>resizable</code> property should mark as <b>true</b> and the
+    default value of the property is <b>false</b>.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.resizable"></app-code-snippet>
+
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/functionality/column/sorting']">Sorting</a><br>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Column Resizable</a>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html">API Doc for Data Table Column
+    Resizable</a>
 </div>

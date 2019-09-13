@@ -207,6 +207,10 @@ export class MainComponent {
                       anchor: 'title'
                     },
                     {
+                      title: 'Index Column Title',
+                      anchor: 'indexColumnTitle'
+                    },
+                    {
                       title: 'CSS Class',
                       anchor: 'cssClass'
                     },
@@ -860,21 +864,19 @@ export class MainComponent {
               navigation: [
                 {
                   title: 'Overriding Hierarchy',
-                  anchor: 'overridingHierarchy',
-                  subNavigation: [
-                    {
-                      title: 'Default Configuration',
-                      anchor: 'defaultConfiguration'
-                    },
-                    {
-                      title: 'Template Property Binding',
-                      anchor: 'templatePropertyBinding'
-                    },
-                    {
-                      title: 'Module Property Binding',
-                      anchor: 'modulePropertyBinding'
-                    }
-                  ]
+                  anchor: 'overridingHierarchy'
+                },
+                {
+                  title: 'Default Configurations',
+                  anchor: 'defaultConfigurations'
+                },
+                {
+                  title: 'Module Property Binding',
+                  anchor: 'modulePropertyBinding'
+                },
+                {
+                  title: 'Template Property Binding',
+                  anchor: 'templatePropertyBinding'
                 },
                 {
                   title: 'Suggested Links',
