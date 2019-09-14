@@ -2,34 +2,38 @@
   [id]="'sales_products_experimental_02'"
   [title]="'Sales Products'"
   [items]="items"
-  [minContentWidth]="900"
+  [minContentWidth]="1280"
   [showColumnSelector]="true"
   [onDynamicRowSpanExtract]="onDynamicRowSpanExtract">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [width]="70">
+    [width]="90">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
     [title]="'Order Method Type'"
-    [width]="120">
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
-    [title]="'Retailer Type'">
+    [title]="'Retailer Type'"
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
-    [title]="'Product Line'">
+    [title]="'Product Line'"
+    [width]="180">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
-    [title]="'Product Type'">
+    [title]="'Product Type'"
+    [width]="160">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'availableStores'"
-    [title]="'Available Stores'">
+    [title]="'Available Stores'"
+    [width]="120">
     <ng-template #ngDataTableCell let-row="row" let-spanIndex="spanIndex">
       <td>
         <span>{{ getStoreName(row.item, spanIndex, 'storeName') }}</span>
@@ -39,11 +43,11 @@
   <ng-data-table-column
     [field]="'revenue'"
     [title]="'Revenue'"
-    [width]="80">
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
-    [width]="80">
+    [width]="120">
   </ng-data-table-column>
 </ng-data-table>

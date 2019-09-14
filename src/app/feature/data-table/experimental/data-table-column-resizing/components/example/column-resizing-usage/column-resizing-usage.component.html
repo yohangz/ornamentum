@@ -2,7 +2,7 @@
   [id]="'sales_products_experimental_01'"
   [title]="'Sales Products'"
   [items]="items"
-  [minContentWidth]="900"
+  [minContentWidth]="1280"
   [pageable]="true"
   [showHeader]="true"
   [showColumnSelector]="true">
@@ -10,44 +10,48 @@
     [field]="'id'"
     [title]="'ID'"
     [resizable]="true"
-    [width]="70">
+    [width]="90">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
     [title]="'Order Method Type'"
-    [resizable]="true">
+    [resizable]="true"
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
     [title]="'Retailer Type'"
-    [resizable]="true">
+    [resizable]="true"
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
     [title]="'Product Line'"
-    [resizable]="true">
+    [resizable]="true"
+    [width]="180">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
     [title]="'Product Type'"
-    [resizable]="true">
+    [resizable]="true"
+    [width]="160">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'revenue'"
     [title]="'Revenue'"
     [resizable]="true"
-    [width]="120">
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
     [resizable]="true"
-    [width]="70">
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"
     [title]="'Gross Margin'"
     [resizable]="true"
-    [width]="100">
+    [width]="150">
   </ng-data-table-column>
 </ng-data-table>
