@@ -2,7 +2,7 @@
   [id]="'hall_of_fame_templating_01'"
   [title]="'Hall of Fame'"
   [limit]="10"
-  [minContentWidth]="900"
+  [minContentWidth]="1280"
   [showHeader]="true"
   [pageable]="true"
   [showColumnSelector]="true"
@@ -10,7 +10,7 @@
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [width]="100">
+    [width]="90">
     <ng-template #ngDataTableCell let-row="row">
       <td style="vertical-align: middle">
         <span [ngClass]="{'highlight': row.item.contributions > 500}">{{row.item.id}}</span>
@@ -19,7 +19,8 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'login'"
-    [title]="'Name'">
+    [title]="'Name'"
+    [width]="200">
     <ng-template #ngDataTableCell let-row="row">
       <td style="vertical-align: middle">
         <img style="width: 48px; height: 48px; border-radius: 50%; margin-right: 10px;" [src]="row.item.avatar_url"/>
@@ -29,7 +30,8 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'html_url'"
-    [title]="'Git Profile URL'">
+    [title]="'Git Profile URL'"
+    [width]="200">
     <ng-template #ngDataTableCell let-row="row">
       <td style="vertical-align: middle">
         <a [ngClass]="{'highlight': row.item.contributions > 500}" [href]="row.item.html_url">{{row.item.html_url}}</a>

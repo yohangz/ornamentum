@@ -2,7 +2,7 @@
   [id]="'sales_products_styling_05'"
   [title]="'Sales Products'"
   [items]="items"
-  [minContentWidth]="900"
+  [minContentWidth]="1280"
   [contentHeight]="300"
   [pageable]="true"
   [showHeader]="true"
@@ -20,7 +20,7 @@
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
-    [width]="70">
+    [width]="90">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'orderMethodType'"
@@ -29,30 +29,33 @@
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'retailerType'"
-    [title]="'Retailer Type'">
+    [title]="'Retailer Type'"
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
-    [title]="'Product Line'">
+    [title]="'Product Line'"
+    [width]="180">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
-    [title]="'Product Type'">
+    [title]="'Product Type'"
+    [width]="160">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'revenue'"
     [title]="'Revenue'"
-    [width]="100">
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
-    [width]="80">
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"
     [title]="'Gross Margin'"
-    [width]="100">
+    [width]="150">
   </ng-data-table-column>
   <ng-template #ngDataTableRowExpand let-row="row">
     <app-responsive-conf-detail-view *ngIf="row.expanded || row.dataLoaded"
