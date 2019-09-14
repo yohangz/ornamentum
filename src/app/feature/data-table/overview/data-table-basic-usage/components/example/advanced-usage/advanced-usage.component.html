@@ -2,7 +2,7 @@
   [id]="'sales_products_overview_02'"
   [title]="'Sales Products'"
   [items]="data"
-  [minContentWidth]="1024"
+  [minContentWidth]="900"
   [pageable]="true"
   [showHeader]="true"
   [showColumnSelector]="true"
@@ -48,14 +48,16 @@
     [showDropdownFilter]="true"
     [dropdownFilterShowClearSelectionButton]="true"
     [dropdownFilterSearchable]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
     [title]="'Product Line'"
     [sortable]="true"
     [filterable]="true"
-    [visible]="false">
+    [visible]="false"
+    [width]="180">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
@@ -65,7 +67,8 @@
     [showDropdownFilter]="true"
     [dropdownFilterShowClearSelectionButton]="true"
     [dropdownFilterSearchable]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [width]="160">
     <ng-template #ngDataTableCell let-row="row">
       <td>
         <span>{{ row.item.productType.toUpperCase() }}</span>
@@ -77,21 +80,21 @@
     [title]="'Revenue'"
     [sortable]="true"
     [filterable]="true"
-    [width]="90">
+    [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'quantity'"
     [title]="'Quantity'"
     [sortable]="true"
     [filterable]="true"
-    [width]="85">
+    [width]="90">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'grossMargin'"
     [title]="'Gross Margin'"
     [sortable]="true"
     [filterable]="true"
-    [width]="120">
+    [width]="150">
   </ng-data-table-column>
   <ng-template #ngDataTableRowExpand let-row="row">
     <app-advanced-usage-expandable-detail-view *ngIf="row.expanded || row.dataLoaded"

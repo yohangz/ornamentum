@@ -9,22 +9,21 @@
   [pageable]="true"
   [showRefreshButton]="true"
   [showRowSelectCheckbox]="true"
+  [showRowSelectAllCheckbox]="true"
   [rowSelectable]="true"
   [selectOnRowClick]="true"
   [showSubstituteRows]="true"
   [persistTableState]="false"
   [expandableRows]="false"
   [showRowExpandLoadingSpinner]="false"
-  [selectMode]="'multi'"
->
+  [selectMode]="'multi'">
   <ng-data-table-column
     [field]="'id'"
     [title]="'ID'"
     [showInColumnSelector]="false"
     [sortable]="true"
     [filterable]="true"
-    [width]="90"
-  >
+    [width]="90">
     <ng-template #ngDataTableCell let-row="row">
       <td>
         <span>{{ row.item.id }}</span>
@@ -39,7 +38,7 @@
     [showDropdownFilter]="true"
     [dropdownFilterShowClearSelectionButton]="true"
     [dropDownFilterShowOptionSelectCheckbox]="true"
-  >
+    [width]="140">
     <ng-template #ngDataTableCell let-row="row">
       <td>
         <span [class]="orderMethodType(row)">{{ row.item.orderMethodType }}</span>
@@ -51,8 +50,7 @@
     [title]="'Gross Margin'"
     [sortable]="true"
     [filterable]="true"
-    [width]="150"
-  >
+    [width]="150">
     <ng-template #ngDataTableCell let-row="row">
       <td>
         <span [class.low-margin]="!isHighMargin(row)" [class.high-margin]="isHighMargin(row)">{{ row.item.grossMargin.toFixed(5) }}</span>
@@ -66,24 +64,25 @@
     [filterable]="true"
     [showDropdownFilter]="true"
     [dropdownFilterShowClearSelectionButton]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productLine'"
     [title]="'Product Line'"
     [sortable]="true"
     [filterable]="true"
-    [width]="200">
+    [width]="180">
   </ng-data-table-column>
   <ng-data-table-column
     [field]="'productType'"
     [title]="'Product Type'"
     [sortable]="true"
     [filterable]="true"
-    [width]="160"
     [showDropdownFilter]="true"
     [dropdownFilterShowClearSelectionButton]="true"
-    [dropDownFilterShowOptionSelectCheckbox]="true">
+    [dropDownFilterShowOptionSelectCheckbox]="true"
+    [width]="160">
     <ng-template #ngDataTableCell let-row="row">
       <td>
         <span>{{ row.item.productType.toUpperCase() }}</span>
