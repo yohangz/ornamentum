@@ -4,7 +4,7 @@
   [dataSource]="dataSource"
   [limit]="14"
   [minContentHeight]="400"
-  [minContentWidth]="1110"
+  [minContentWidth]="1280"
   [showHeader]="true"
   [pageable]="true"
   [showRefreshButton]="true"
@@ -38,7 +38,7 @@
     [showDropdownFilter]="true"
     [dropdownFilterShowClearSelectionButton]="true"
     [dropDownFilterShowOptionSelectCheckbox]="true"
-    [width]="140">
+    [width]="150">
     <ng-template #ngDataTableCell let-row="row">
       <td>
         <span [class]="orderMethodType(row)">{{ row.item.orderMethodType }}</span>
