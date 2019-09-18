@@ -41,14 +41,14 @@ const dataTableTemplatingRoutes: Routes = [
     }
   },
   {
-    loadChildren: './data-table-loading-spinner-template/data-table-loading-spinner-template.module#DataTableLoadingSpinnerTemplateModule',
-    // loadChildren: () => import('./data-table-loading-spinner-template/data-table-loading-spinner-template.module')
-    //   .then((m) => m.DataTableLoadingSpinnerTemplateModule),
-    path: 'loading-spinner-template',
+    loadChildren: './data-table-data-loading-template/data-table-data-loading-template.module#DataTableDataLoadingTemplateModule',
+    // loadChildren: () => import('./data-table-data-loading-template/data-table-data-loading-template.module')
+    //   .then((m) => m.DataTableDataLoadingTemplateModule),
+    path: 'data-loading-template',
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Templating | Loading Spinner Template',
+        title: 'Ornamentum | Data Table | Templating | Data Loading Template',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

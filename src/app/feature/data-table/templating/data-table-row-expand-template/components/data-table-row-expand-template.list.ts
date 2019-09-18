@@ -88,5 +88,5 @@ export const showRowExpandLoadingSpinnerDetailView: ExampleFile[] = [
 export const demoSnippet: any = {
   baseTemplate: require('!!raw-loader!./docs/base-template.md'),
   expandTemplate: require('!!raw-loader!./docs/expand-template.md'),
-  dataLoadingSpinnerTemplate: require('!!raw-loader!./docs/loading-spinner-template.md')
+  dataLoadingTemplate: require('!!raw-loader!./docs/data-loading-template.md')
 };

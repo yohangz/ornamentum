@@ -5,10 +5,10 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-loading-spinner-template-usage',
-  templateUrl: './loading-spinner-template-usage.component.html'
+  selector: 'app-data-loading-template-usage',
+  templateUrl: './data-loading-template-usage.component.html'
 })
-export class LoadingSpinnerTemplateUsageComponent {
+export class DataLoadingTemplateUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

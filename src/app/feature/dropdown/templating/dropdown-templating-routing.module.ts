@@ -10,17 +10,17 @@ const dropdownTemplatingRoutes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'loading-spinner-template'
+    redirectTo: 'data-loading-template'
   },
   {
-    loadChildren: './dropdown-loading-spinner-template/dropdown-loading-spinner-template.module#DropdownLoadingSpinnerTemplateModule',
-    // loadChildren: () => import('./dropdown-loading-spinner-template/dropdown-loading-spinner-template.module')
-    //   .then((m) => m.DropdownLoadingSpinnerTemplateModule),
-    path: 'loading-spinner-template',
+    loadChildren: './dropdown-data-loading-template/dropdown-data-loading-template.module#DropdownDataLoadingTemplateModule',
+    // loadChildren: () => import('./dropdown-data-loading-template/dropdown-data-loading-template.module')
+    //   .then((m) => m.DropdownDataLoadingTemplateModule),
+    path: 'data-loading-template',
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Templating | Loading Spinner Template',
+        title: 'Ornamentum | Dropdown | Templating | Data Loading Template',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

@@ -488,8 +488,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/templating/loading-spinner-template',
-              title: 'Loading Spinner Template',
+              routePath: '/feature/data-table/templating/data-loading-template',
+              title: 'Data Loading Template',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -1327,8 +1327,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/templating/loading-spinner-template',
-              title: 'Loading Spinner Template',
+              routePath: '/feature/dropdown/templating/data-loading-template',
+              title: 'Data Loading Template',
               navigation: [
                 {
                   title: 'What You Will See',
