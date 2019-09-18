@@ -39,7 +39,6 @@
 <img src="https://ornamentum.app/assets/docs/paging.svg" alt="Paging"/> Client and Server-side pagination </br>
 <img src="https://ornamentum.app/assets/docs/select.svg" alt="Selection"/> Single, Multi and Single toggle row selection modes </br>
 <img src="https://ornamentum.app/assets/docs/palette.svg" alt="Theming"/> UI Theme support </br>
-<img src="https://ornamentum.app/assets/docs/column-filter.svg" alt="Column FIlter"/> Column filter support </br>
 <img src="https://ornamentum.app/assets/docs/row-expand.svg" alt="Detail row"/> Detail row expand support </br>
 <img src="https://ornamentum.app/assets/docs/resize.svg" alt="Resizing"/> Experimental column resizing </br>
 <img src="https://ornamentum.app/assets/docs/group.svg" alt="Grouping"/> Experimental row grouping support </br>
