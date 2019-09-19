@@ -87,11 +87,11 @@ npm install
 # start the app
 npm run start
 ```
-You can read more about Ornamentum build tasks [here](https://github.com/yohangz/ornamentum/blob/master/docs/BUILD_TASK.md) and refer [Contribution Guide](https://github.com/yohangz/ornamentum/blob/master/CONTRIBUTING.md) for more details.
+You can read more about Ornamentum build tasks [here](https://github.com/yohangz/ornamentum/blob/master/docs/BUILD_TASK.md) and refer [Contribution Guide](https://github.com/yohangz/ornamentum/blob/master/docs/CONTRIBUTING.md) for more details.
 
 ## :warning: Changelog
 
-Recent changes can be viewed on [CHANGELOG.md](https://github.com/yohangz/ornamentum/blob/master/CHANGELOG.md)
+Recent changes can be viewed on [CHANGELOG.md](https://github.com/yohangz/ornamentum/blob/master/docs/CHANGELOG.md)
 
 ## :copyright: License
 
