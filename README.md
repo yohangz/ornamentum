@@ -63,6 +63,9 @@ or
 
 ```yarn add ornamentum lodash```
 
+Ornamentum major versions are aligned with Angular Major versions. 
+i.e: You can ony use Ornamentum 8.x.x versions with Angular 8.x.x.
+
 ## :palm_tree: Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
