@@ -20,9 +20,9 @@ const dataTableDataBindingRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Data Binding | Client Side | Basic Data Binding',
-        keywords: 'ornamentum,datatable data binding,datatable client side data binding,datatable basic data binding',
+        keywords: 'client side basic data binding,basic data binding,client side data binding,table client side data binding,grid client data binding,client side data binding,rxjs observable',
         // tslint:disable-next-line
-        description: 'Client side data binding allow users to bind static data sets to data table when full data collection is available in the client side.'
+        description: 'Client side data binding allows the users to bind static data sets to the data table when the full data collection is available in the client side.'
       }
     }
   },
@@ -35,7 +35,7 @@ const dataTableDataBindingRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Data Binding | Client Side | Stream Data Binding',
-        keywords: 'ornamentum,datatable data binding,datatable client side stream data binding,stream data binding',
+        keywords: 'client side stream data binding,reactive stream binding,stream data binding,client stream data binding,table stream client data binding,grid stream data binding,realtime data binding',
         // tslint:disable-next-line
         description: 'The client side stream data binding technique to bind data sources which changes rapidly. Data changes notified by data source will automatically get reflected while persisting the current table state without having to manually trigger refresh.'
       }
@@ -52,7 +52,7 @@ const dataTableDataBindingRoutes: Routes = [
       seo: {
         title: 'Ornamentum | Data Table | Data Binding | Server Side | Basic Data Binding',
         // tslint:disable-next-line
-        keywords: 'ornamentum,datatable data binding,datatable server side stream data binding,custom data binding,basic server side data binding',
+        keywords: 'servers side basic data binding,basic data binding,server side data binding,server side table data binding,server side grid data binding,server side data binding',
         // tslint:disable-next-line
         description: 'Server side data binding allow users to bind large data sets that are not directly accessible as a full collection in client side due to various reasons. Server side data binding can improve performance drastically for large data sets but integration is fairly complex compared to client side data binding techniques.'
       }
@@ -68,8 +68,8 @@ const dataTableDataBindingRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Data Binding | Server Side | Web Socket Data Binding',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'servers side web socket data binding,web socket data binding,server web socket data binding,server socket data binding,server socket data binding',
+        description: 'Servers side web socket data binding allow users to create a live connection with the backend and fetch data changes in realtime.'
       }
     }
   },
@@ -80,8 +80,8 @@ const dataTableDataBindingRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Data Binding | Server Side | Custom Data Provider',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'custom data provider,customized data provider,data provider,custom data source provider,custom data binding',
+        description: 'Custom data source integration is supported via data bind hooks. This can be used to bind any data source, such as Firebase Realtime Database or Cloud Fire store.'
       }
     }
   }
