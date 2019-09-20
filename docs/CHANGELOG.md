@@ -118,9 +118,10 @@ Added Support for,
 - Row edit support
 - Remove LoDash
 - Fix raised issues
-- Documentation updates
-- Complete unit testing support.
-- Code coverage support.
+- Build documentation search functionality
+- Data Table dropdown filter custom template support
+- Complete unit test spec
+- Code coverage
 
 
 
