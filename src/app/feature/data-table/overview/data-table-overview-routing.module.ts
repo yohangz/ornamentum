@@ -20,9 +20,9 @@ const dataTableOverviewRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table Basic Usage',
-        keywords: 'Ornamentum,Angular Datatable,Angular Grid,Data Table,Datatable Usage,NGX Datatable,Datatable',
+        keywords: 'Data Table,Data Grid,Angular Grids,Angular Tables,Angular Data Grids,Angular Data Tables',
         // tslint:disable-next-line
-        description: 'Ornamentum Data Table is a highly configurable Angular component which support table view data representation. This component supports client/server/real-time data binding along with data filtering, sorting, grouping, pagination, selection, templating, state persistence, theming and much more.'
+        description: 'Ornamentum Data Table is a highly configurable Angular component which supports table view data representation. Ornamentum data table supports client/server/real-time data binding along with data filtering, sorting, grouping, pagination, selection, templating, state persistence, theming and much more.'
       }
     }
   }
