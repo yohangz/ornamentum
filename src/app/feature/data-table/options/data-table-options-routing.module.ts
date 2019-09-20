@@ -21,8 +21,10 @@ const dataTableOptionsRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Data Loading Spinner',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        // tslint:disable-next-line
+        keywords: 'data loading spinner,loading indicator,loading spinner,data loading spinner for grid,data loading spinner for table',
+        // tslint:disable-next-line
+        description: 'Data Loading Spinner can be used to visual indicate the data fetch operation is in-progress.'
       }
     }
   },
@@ -35,8 +37,10 @@ const dataTableOptionsRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Substitute Rows',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        // tslint:disable-next-line
+        keywords: 'substitute rows,alternative rows,fillup rows,null rows,empty rows,empty records,null records,dummy rows',
+        // tslint:disable-next-line
+        description: 'Substitute rows are used to show empty rows when there is a lesser amount of data is available than the declared limit.'
       }
     }
   },
@@ -49,8 +53,10 @@ const dataTableOptionsRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Header Details',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        // tslint:disable-next-line
+        keywords: 'header details,header,header details for data grid,header details for data table,grid header,table header',
+        // tslint:disable-next-line
+        description: 'Header details are fully configurable to enable/disable displaying refresh button, column selector and table title.'
       }
     }
   }
