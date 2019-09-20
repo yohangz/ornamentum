@@ -21,8 +21,10 @@ const dataTableStylingRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Responsive Configurations',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        // tslint:disable-next-line
+        keywords: 'responsive configuration,responsive data grids,responsive data tables,mobile friendly data tables,mobile friendly data grids,tablet-friendly data tables,tablet friendly data grids',
+        // tslint:disable-next-line
+        description: 'Responsiveness configurations enabled the capability of supporting full spectrum of device resolutions.'
       }
     }
   },
@@ -35,8 +37,10 @@ const dataTableStylingRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Styling | Themes | User Experience',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        // tslint:disable-next-line
+        keywords: 'themes,themes for data table,themes for data grid,customizable themes for data grids,customizable themes for data tables,data table look and feel,data grid look and feel,user experience',
+        // tslint:disable-next-line
+        description: 'Data table supports several themes out of the box that can be selected depending on application UI/UX requirements.'
       }
     }
   },
@@ -49,8 +53,8 @@ const dataTableStylingRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Customize | Themes | User Experience',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'custom theming,customized themes,customize table ux,custom table styles,custom grid colours',
+        description: 'Data table support customizing and building your own theme via SASS variables.'
       }
     }
   }
