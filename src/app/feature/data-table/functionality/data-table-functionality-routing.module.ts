@@ -21,9 +21,9 @@ const dataTableFunctionalityRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Column Binding',
-        keywords: 'ornamentum column binding,ornamentum column data,data table column,data table column data binding',
+        keywords: 'column binding,data table column binding, data grid column binding,grid column binding, table column binding',
         // tslint:disable-next-line
-        description: 'Column binding is useful for binding data sets for each data table column with different manipulation techniques.'
+        description: 'Column binding allows the users to manipulate column associated bindings and behaviors.'
       }
     }
   },
@@ -36,9 +36,9 @@ const dataTableFunctionalityRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Pagination',
-        keywords: 'ornamentum paginaion,ornamentum pageable,data table pagination,data table paging',
+        keywords: 'pagination,data paging,paginate,data table pagination,data grid pages',
         // tslint:disable-next-line
-        description: 'Pagination feature allows you to bind render large data sets without a performance impact while reducing the unnecessarily long scrollbars.'
+        description: 'Pagination allows the users to bind large data sets without a performance impact and avoid unnecessarily long scrollbars.'
       }
     }
   },
@@ -51,8 +51,9 @@ const dataTableFunctionalityRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Sorting',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'sorting,sort records,sort data tables,sort data grids,sort data rows,ascending sort,descending sort,ordering data grids rows,ordering data tables rows',
+        // tslint:disable-next-line
+        description: 'Sorting  allows the users to order data on initial load and as well as by clicking on the sortable column headers to arrange the columns ascending or descending orders.'
       }
     }
   },
@@ -65,8 +66,9 @@ const dataTableFunctionalityRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Filtering',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'filtering,filter data table records,filter data grid records,filter records,filter grid content,filter table content',
+        // tslint:disable-next-line
+        description: 'Filtering option facilitates the users to filter out data based on a specific criteria. Filtering would help the users to view and analyze data within a few seconds.'
       }
     }
   },
@@ -79,8 +81,9 @@ const dataTableFunctionalityRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Data Table | Functionality | Row | Selection',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'row selection,select rows,select multiple rows,select single row,toggle row selection,selection state track',
+        // tslint:disable-next-line
+        description: 'Row selection allows the users to select a single row or multiple rows in different methods such as single selection, multiple selection, single toggle selections.'
       }
     }
   },
