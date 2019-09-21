@@ -69,7 +69,9 @@ const dropdownFeatureRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Dropdown | Data Binding | Server Side | Web Socket Data Binding',
+        // tslint:disable-next-line
         keywords: 'dropdown socket,web socket data binding,web socket data binding,server web socket data binding,server socket data binding',
+        // tslint:disable-next-line
         description: 'Dropdown servers side web socket data binding allow users to create a live connection with the backend and fetch data changes in realtime.'
       }
     }
@@ -81,6 +83,7 @@ const dropdownFeatureRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Dropdown| Data Binding | Server Side | Custom Data Provider',
+        // tslint:disable-next-line
         keywords: 'dropdown custom data source,custom data provider,customized data provider,data provider,custom data source provider,custom data binding',
         // tslint:disable-next-line
         description: 'Dropdown custom data source integration is supported via data bind hooks. This can be used to bind any data source, such as Firebase Realtime Database or Cloud Fire store.'
