@@ -21,9 +21,10 @@ const dropdownFeatureRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Dropdown | Data Binding | Client Side | Basic Data Binding',
-        keywords: 'ornamentum,dropdown data binding,dropdown client side data binding,dropdown basic data binding',
         // tslint:disable-next-line
-        description: 'Client side data binding allow users to bind static data sets to dropdown when full data collection is available in the client side.'
+        keywords: 'client side basic data binding,basic data binding,client side data binding,dropdown client data binding,client side data binding,rxjs observable',
+        // tslint:disable-next-line
+        description: 'Dropdown client side data binding allows the users to bind static data collections when the full data collection is available in the client side.'
       }
     }
   },
@@ -36,9 +37,10 @@ const dropdownFeatureRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Dropdown | Data Binding | Client Side | Stream Data Binding',
-        keywords: 'ornamentum,dropdown data binding,dropdown client side stream data binding,stream data binding',
         // tslint:disable-next-line
-        description: 'The client side stream data binding technique to bind data sources which changes rapidly. Data changes notified by data source will automatically get reflected while persisting the current dropdown state without having to manually trigger refresh.'
+        keywords: 'client side stream data binding,reactive stream binding,stream data binding,client stream data binding,dropdown stream client data binding,realtime data binding',
+        // tslint:disable-next-line
+        description: 'Dropdown client side stream data binding technique to bind data sources which changes rapidly. Data changes notified by data source will automatically get reflected while persisting the current dropdown state without having to manually trigger refresh.'
       }
     }
   },
@@ -52,9 +54,9 @@ const dropdownFeatureRoutes: Routes = [
       seo: {
         title: 'Ornamentum | Dropdown | Data Binding | Server Side | Basic Data Binding',
         // tslint:disable-next-line
-        keywords: 'ornamentum,dropdown data binding,dropdown server side stream data binding,custom data binding,basic server side data binding',
+        keywords: 'servers side basic data binding,basic data binding,server side data binding,server side dropdown data binding',
         // tslint:disable-next-line
-        description: 'Server side data binding allow users to bind large data sets that are not directly accessible as a full collection in client side due to various reasons. Server side data binding can improve performance drastically for large data sets but integration is fairly complex compared to client side data binding techniques.'
+        description: 'Dropdown server side data binding allow users to bind large data sets that are not directly accessible as a full collection in client side due to various reasons. Server side data binding can improve performance drastically for large data sets but integration is fairly complex compared to client side data binding techniques.'
       }
     }
   },
@@ -67,8 +69,8 @@ const dropdownFeatureRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Dropdown | Data Binding | Server Side | Web Socket Data Binding',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'dropdown socket,web socket data binding,web socket data binding,server web socket data binding,server socket data binding',
+        description: 'Dropdown servers side web socket data binding allow users to create a live connection with the backend and fetch data changes in realtime.'
       }
     }
   },
@@ -79,8 +81,9 @@ const dropdownFeatureRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum | Dropdown| Data Binding | Server Side | Custom Data Provider',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'dropdown custom data source,custom data provider,customized data provider,data provider,custom data source provider,custom data binding',
+        // tslint:disable-next-line
+        description: 'Dropdown custom data source integration is supported via data bind hooks. This can be used to bind any data source, such as Firebase Realtime Database or Cloud Fire store.'
       }
     }
   }
