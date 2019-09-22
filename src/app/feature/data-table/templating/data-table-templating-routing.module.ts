@@ -20,7 +20,7 @@ const dataTableTemplatingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Templating | Cell Template',
+        title: 'Ornamentum - Data Table | Templating | Cell Template',
         // tslint:disable-next-line
         keywords: 'cell templating,cell templates,data grid cell templates,data table cell templates,table cell formatting,grid cell formatting',
         // tslint:disable-next-line
@@ -36,7 +36,7 @@ const dataTableTemplatingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Templating | Row Expand Template',
+        title: 'Ornamentum - Data Table | Templating | Row Expand Template',
         // tslint:disable-next-line
         keywords: 'data grid row expand template,data grid row expansion,data grid row shrinking,data table row expand template,data table row expansion,data grid row shrinking,data grid record expansion,data table record expansion,collapse data grid row,collapse data table row',
         // tslint:disable-next-line
@@ -52,7 +52,7 @@ const dataTableTemplatingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Templating | Data Loading Template',
+        title: 'Ornamentum - Data Table | Templating | Data Loading Template',
         // tslint:disable-next-line
         keywords: 'data Loading template,loading template,data loading template for grid,data loading template for table,data loading',
         // tslint:disable-next-line
@@ -68,7 +68,7 @@ const dataTableTemplatingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Templating | No Records Template',
+        title: 'Ornamentum - Data Table | Templating | No Records Template',
         // tslint:disable-next-line
         keywords: 'no records template,null records template,no records for data table,no records for data grid,unavailability of data records,unavailability of data for grid,unavailability of data for table',
         // tslint:disable-next-line
