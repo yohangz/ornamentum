@@ -2,7 +2,7 @@
   [id]="'products_overview_02'"
   [selectTrackBy]="'id'"
   [displayTrackBy]="'productType'"
-  [items]="items"
+  [options]="options"
   [filterable]="true"
   [showClearSelectionButton]="true"
   [showSelectedOptionRemoveButton]="true"

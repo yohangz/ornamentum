@@ -20,10 +20,10 @@ const dropdownOverviewRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown Basic Usage',
-        keywords: 'dropdown,angular dropdown,angular select option,angular multi select,multi select dropdown',
+        title: 'Ornamentum - Dropdown Basic Usage',
+        keywords: 'dropdown,angular dropdown,dropdown list,select options list,angular multi select,multi select dropdown',
         // tslint:disable-next-line
-        description: 'Ornamentum Dropdown is a highly configurable Angular component which supports option selector view data representation. Ornamentum dropdown supports client/server/real-time data binding along with data filtering, grouping, load on scroll mode, selection, templating, state persistence, theming and much more.'
+        description: 'Ornamentum dropdown component is a highly configurable lightweight data dropdown list Angular component with multi and single selection modes. Additionally, it supports client/server/real-time data binding along with data filtering, grouping, load on scroll mode, selection, templating, state persistence, theming and much more.'
       }
     }
   }

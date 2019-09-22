@@ -1,9 +1,10 @@
 <div class="feature-container">
-  <h1>Dropdown Overview</h1>
+  <h1>Dropdown List Overview</h1>
 
   <p>
-    Ornamentum Dropdown is a highly configurable <a rel="noopener" target="_blank" href="https://angular.io">Angular</a>
-    component which supports option selector view data representation. Ornamentum dropdown supports client/server/real-time
+    Ornamentum dropdown component is a highly configurable lightweight data dropdown list
+    <a rel="noopener" target="_blank" href="https://angular.io">Angular</a>
+    component with multi and single selection modes. Additionally, it supports client/server/real-time
     data binding along with data filtering, grouping, load on scroll mode, selection, templating, state persistence,
     theming and much more.
   </p>
@@ -11,66 +12,63 @@
   <p>
     Ornamentum dropdown can be integrated with any of the UI frameworks that are currently available.
     The fully responsive, dynamic and mobile friendly design of the user interface will deliver the best user experience
-    in any device resolution. The Dropdown is built with pure angular components and minimal peer dependencies to
+    in any device resolution. It's built with pure angular components and minimal peer dependencies to
     minimize overall bundle size. Seamless integration via developer friendly API along with a rich sample code based
-    documentation. The Dropdown supports all angular supported browsers out of the box.
+    documentation. Ornamentum works with all angular supported browsers out of the box.
   </p>
 
   <h2 id="advancedUsage">Usage Demo</h2>
   <p>
-    Following example depicts the outer appearance of the Ornamentum Dropdown. Try out yourself in
-    <a rel="noopener" target="_blank" href="https://stackblitz.com/edit/ornametum-basic-usage-dropdown">Stack Blitz
-      Demo</a>.
+    Following example depicts the basic usage of the Ornamentum dropdown list component. Try out yourself in
+    <a rel="noopener" target="_blank" href="https://stackblitz.com/edit/ornametum-basic-usage-dropdown">Stack Blitz Demo</a>.
   </p>
 
   <app-advanced-usage></app-advanced-usage>
 
   <h2 id="basicInstallation">Basic Installation</h2>
   <p>
-    Ornamentum major versions are aligned with Angular Major versions hence, You can ony use Ornamentum 8.x.x versions
+    Ornamentum major versions are aligned with Angular Major versions hence, You can <u>ONLY</u> use Ornamentum 8.x.x versions
     with Angular 8.x.x version. Latest Ornamentum version ({{packageVersion}}) require Angular 8.x.x version.
   </p>
 
   <ol class="main-pane-list">
     <li>
       <p>Install Ornamentum packages and it's peer dependencies using either of following command depending on your
-        package manager.</p>
+        dependency manager.</p>
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npm" [showLineNumbers]="false"></app-code-snippet>
       <p>or</p>
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.yarn"
                         [showLineNumbers]="false"></app-code-snippet>
     </li>
     <li>
-      <p>Once the installation is successful, add the Ornamentum Dropdown component to your application Root Module as
-        depicted below.</p>
+      <p>Once the installation is successful, add the Ornamentum dropdown list component to your application root module as
+        shown below.</p>
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.moduleImport"></app-code-snippet>
     </li>
     <li>
       <p>
-        Import the Ornamentum theme style sheet reference to apply theming of your preference. Refer
-        <a [routerLink]="['/feature/dropdown/styling/themes']">Themes</a> section for more details.
+        Import the Ornamentum theme style sheet reference to apply theming of your preference. Follow
+        <a rel="noopener" target="_blank" href="https://github.com/angular/angular-cli/wiki/stories-global-styles">Angular CLI: Global Styles</a>
+        documentation for more information on how to integrate third party style sheets.
+        Refer <a [routerLink]="['/feature/dropdown/styling/themes']">Ornamentum Themes</a> documentation for more details
+        about theme style sheet references.
       </p>
-      <ul class="main-pane-list">
-        <li>
-          <p>
-            <b>SCSS Usage</b> (recommended approach): Include Ornamentum theme SCSS style sheets in
-            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-            array.
-          </p>
-          <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
-        </li>
-        <li>
-          <p>
-            <b>CSS Usage</b>: Include Ornamentum prebuilt CSS theme style sheets in
-            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-            array.
-          </p>
-          <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.cssImport"></app-code-snippet>
-        </li>
-      </ul>
+      <p>
+        <b>SCSS</b> (recommended): Include Ornamentum theme source
+        <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
+      </p>
+
+      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
+
+      <p>or</p>
+
+      <p>
+        <b>CSS</b>: Include Ornamentum prebuilt CSS references.
+      </p>
+      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.cssImport"></app-code-snippet>
     </li>
     <li>
-      <p>Finally, use Ornamentum dropdown component.</p>
+      <p>Finally, use Ornamentum dropdown list component.</p>
       <b>Example usage component controller class</b>
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.componentController"></app-code-snippet>
       <b>Example usage component markup file</b>
@@ -103,19 +101,15 @@
         binding</a></li>
     </ul>
 
-    <li><b>Options</b></li>
-    <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/dropdown/options/data-limit']">Data Limit</a></li>
-      <li><a [routerLink]="['/feature/dropdown/options/disabling']">Dropdown Disabling</a></li>
-      <li><a [routerLink]="['/feature/dropdown/functionality/item/disabling']">Item Disabling</a></li>
-    </ul>
-
     <li><b>Features</b></li>
     <ul class="main-pane-list">
-      <li><a [routerLink]="['/feature/dropdown/functionality/item/display']">Item Display</a></li>
-      <li><a [routerLink]="['/feature/dropdown/functionality/item/selection']">Item Selection</a></li>
-      <li><a [routerLink]="['/feature/dropdown/functionality/item/filtering']">Item Filtering</a></li>
-      <li><a [routerLink]="['/feature/dropdown/functionality/item/grouping']">Item Grouping</a></li>
+      <li><a [routerLink]="['/feature/dropdown/functionality/data-limit']">Data Limit</a></li>
+      <li><a [routerLink]="['/feature/dropdown/functionality/disabling']">Disabling</a></li>
+      <li><a [routerLink]="['/feature/dropdown/functionality/option/disabling']">Option Disabling</a></li>
+      <li><a [routerLink]="['/feature/dropdown/functionality/option/display']">Option Display</a></li>
+      <li><a [routerLink]="['/feature/dropdown/functionality/option/selection']">Option Selection</a></li>
+      <li><a [routerLink]="['/feature/dropdown/functionality/option/filtering']">Option Filtering</a></li>
+      <li><a [routerLink]="['/feature/dropdown/functionality/option/grouping']">Option Grouping</a></li>
     </ul>
 
     <li><b>Templating</b></li>
@@ -146,6 +140,6 @@
   </ul>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/data-table/overview/basic-usage']">Data Table Basic Usage</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/modules/DropdownModule.html">API Doc for Dropdown Module</a>
+  <a rel="noopener" target="_blank" href="api-docs/modules/DropdownModule.html">API Doc for Dropdown Module</a><br/>
+  <a [routerLink]="['/feature/data-table/overview/basic-usage']">Data Table Basic Usage</a>
 </div>
