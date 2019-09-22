@@ -20,7 +20,7 @@ const dataTableExperimentalRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Column | Resizing',
+        title: 'Ornamentum - Data Table | Functionality | Column | Resizing',
         // tslint:disable-next-line
         keywords: 'column resizing,dynamic column resizing,adjust column width,expand columns,shrink columns,data table column resizing,data grid column resizing',
         description: 'Column resizing functionality facilitates the users to manually resize the columns. '
@@ -35,7 +35,7 @@ const dataTableExperimentalRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Row | Span',
+        title: 'Ornamentum - Data Table | Functionality | Row | Span',
         keywords: 'rowspan,dynamic row span,row span,row grouping,rowspan,data grid rowspan,data table rowspan',
         description: 'Dynamic Row span can be used to render an complex data sets.'
       }
