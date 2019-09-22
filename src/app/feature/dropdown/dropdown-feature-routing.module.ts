@@ -23,12 +23,6 @@ const dropdownFeatureRoutes: Routes = [
     path: 'data-binding'
   },
   {
-    loadChildren: './options/dropdown-options.module#DropdownOptionsModule',
-    // loadChildren: () => import('./options/dropdown-options.module')
-    //   .then((m) => m.DropdownOptionsModule),
-    path: 'options'
-  },
-  {
     loadChildren: './functionality/dropdown-functionality.module#DropdownFunctionalityModule',
     // loadChildren: () => import('./functionality/dropdown-functionality.module')
     //   .then((m) => m.DropdownFunctionalityModule),
