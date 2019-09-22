@@ -672,8 +672,8 @@ export class MainComponent {
               title: 'Themes',
               navigation: [
                 {
-                  title: 'Built-in Themes',
-                  anchor: 'builtInThemes',
+                  title: 'Predefined Themes',
+                  anchor: 'predefinedThemes',
                   subNavigation: [
                     {
                       title: 'Base Theme',
@@ -696,10 +696,6 @@ export class MainComponent {
                       anchor: 'aegeanTheme'
                     }
                   ]
-                },
-                {
-                  title: 'Custom Themes',
-                  anchor: 'customThemes'
                 }
               ]
             },
@@ -1088,10 +1084,10 @@ export class MainComponent {
           ]
         },
         {
-          name: 'Options',
+          name: 'Functionality',
           menuItems: [
             {
-              routePath: '/feature/dropdown/options/data-limit',
+              routePath: '/feature/dropdown/functionality/data-limit',
               title: 'Data Limit',
               navigation: [
                 {
@@ -1109,7 +1105,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/options/disabling',
+              routePath: '/feature/dropdown/functionality/disabling',
               title: 'Dropdown Disabling',
               navigation: [
                 {
@@ -1127,31 +1123,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/options/item/disabling',
-              title: 'Item Disabling',
-              navigation: [
-                {
-                  title: 'What You Will See',
-                  anchor: 'whatYouWillSee'
-                },
-                {
-                  title: 'Basic Usage',
-                  anchor: 'basicUsage'
-                },
-                {
-                  title: 'Suggested Links',
-                  anchor: 'suggestedLinks'
-                }
-              ]
-            }
-          ]
-        },
-        {
-          name: 'Functionality',
-          menuItems: [
-            {
-              routePath: '/feature/dropdown/functionality/item/display',
-              title: 'Item Display',
+              routePath: '/feature/dropdown/functionality/option/disabling',
+              title: 'Option Disabling',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -1168,8 +1141,26 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/functionality/item/selection',
-              title: 'Item Selection',
+              routePath: '/feature/dropdown/functionality/option/display-value',
+              title: 'Option Display Value',
+              navigation: [
+                {
+                  title: 'What You Will See',
+                  anchor: 'whatYouWillSee'
+                },
+                {
+                  title: 'Basic Usage',
+                  anchor: 'basicUsage'
+                },
+                {
+                  title: 'Suggested Links',
+                  anchor: 'suggestedLinks'
+                }
+              ]
+            },
+            {
+              routePath: '/feature/dropdown/functionality/option/selection',
+              title: 'Option Selection',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -1228,8 +1219,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/functionality/item/filtering',
-              title: 'Item Filtering',
+              routePath: '/feature/dropdown/functionality/option/filtering',
+              title: 'Option Filtering',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -1258,7 +1249,7 @@ export class MainComponent {
                   ]
                 },
                 {
-                  title: 'Server-side Item Filtering',
+                  title: 'Server-side Option Filtering',
                   anchor: 'serverSideFiltering'
                 },
                 {
@@ -1268,8 +1259,8 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/functionality/item/grouping',
-              title: 'Item Grouping',
+              routePath: '/feature/dropdown/functionality/option/grouping',
+              title: 'Option Grouping',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -1404,8 +1395,8 @@ export class MainComponent {
               title: 'Themes',
               navigation: [
                 {
-                  title: 'Including Theme Support',
-                  anchor: 'includingThemeSupport',
+                  title: 'Predefined Themes',
+                  anchor: 'predefinedThemes',
                   subNavigation: [
                     {
                       title: 'Base Theme',
@@ -1535,8 +1526,8 @@ export class MainComponent {
                       anchor: 'selectPlaceholder'
                     },
                     {
-                      title: 'Selected Item Wrap Placeholder',
-                      anchor: 'selectedItemWrapPlaceholder'
+                      title: 'Selected Option Wrap Placeholder',
+                      anchor: 'selectedOptionWrapPlaceholder'
                     }
                   ]
                 },
