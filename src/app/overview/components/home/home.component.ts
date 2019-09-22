@@ -11,7 +11,7 @@ import { Meta, Title } from '@angular/platform-browser';
 })
 export class HomeComponent {
   constructor(private meta: Meta, private title: Title) {
-    this.title.setTitle('Ornamentum | Angular Data Table');
+    this.title.setTitle('Ornamentum - Angular Data Table');
 
     this.meta.updateTag({
       name: 'keywords',
