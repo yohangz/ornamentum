@@ -1,7 +1,7 @@
 <div class="feature-container">
   <h1>Data Table Overview</h1>
   <p>
-    Ornamentum Data Table is a highly configurable <a rel="noopener" target="_blank"
+    Ornamentum data table component is a highly configurable lightweight <a rel="noopener" target="_blank"
                                                       href="https://angular.io">Angular</a> component which supports
     table view data representation. Ornamentum data table supports client/server/real-time data binding along with data
     filtering, sorting, grouping, pagination, selection, templating, state persistence, theming and much more.
@@ -10,17 +10,15 @@
   <p>
     Ornamentum data table can be integrated with any of the UI frameworks that are currently available.
     The fully responsive, dynamic and mobile friendly design of the user interface will deliver the best user experience
-    in any device resolution. The grid is built with pure angular components and minimal peer dependencies to minimize
+    in any device resolution. It's built with pure angular components and minimal peer dependencies to minimize
     overall bundle size. Seamless integration via developer friendly API along with a rich sample code based
-    documentation. The grid supports all angular supported browsers out of the box.
+    documentation. Ornamentum works with all angular supported browsers out of the box.
   </p>
 
   <h2 id="advancedUsage">Usage Demo</h2>
   <p>
-    Following example depicts the outer appearance of the Ornamentum Data Table. Try out yourself in <a rel="noopener"
-                                                                                                        target="_blank"
-                                                                                                        href="https://stackblitz.com/edit/ornametum-basic-usage-data-table">Stack
-    Blitz Demo</a>.
+    Following example depicts the basic usage of the Ornamentum Data Table. Try out yourself in
+    <a rel="noopener" target="_blank" href="https://stackblitz.com/edit/ornametum-basic-usage-data-table">Stack Blitz Demo</a>.
   </p>
 
   <app-advanced-usage></app-advanced-usage>
@@ -35,7 +33,7 @@
     <li>
       <p>
         Install Ornamentum packages and it's peer dependencies using either of following command depending on your
-        package manager.
+        dependency manager.
       </p>
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.npm" [showLineNumbers]="false"></app-code-snippet>
       <p>or</p>
@@ -44,33 +42,29 @@
     </li>
     <li>
       <p>Once the installation is successful, add the Ornamentum Data Table component to your application Root Module as
-        depicted below.
+        shown below.
       </p>
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.moduleImport"></app-code-snippet>
     </li>
     <li>
       <p>
-        Import the Ornamentum theme style sheet reference to apply theming of your preference. Refer
-        <a [routerLink]="['/feature/data-table/styling/themes']">Themes</a> section for more details.
+        Import the Ornamentum theme style sheet reference to apply theming of your preference. Follow
+        <a rel="noopener" target="_blank" href="https://github.com/angular/angular-cli/wiki/stories-global-styles">Angular CLI: Global Styles</a>
+        documentation for more information on how to integrate third party style sheets.
+        Refer <a [routerLink]="['/feature/data-table/styling/themes']">Ornamentum Themes</a> documentation for more details
+        about theme style sheet references.
       </p>
-      <ul class="main-pane-list">
-        <li>
-          <p>
-            <b>SCSS Usage</b> (recommended approach): Include Ornamentum theme SCSS style sheets in
-            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-            array.
-          </p>
-          <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
-        </li>
-        <li>
-          <p>
-            <b>CSS Usage</b>: Include Ornamentum prebuilt CSS theme style sheets in
-            <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-            array.
-          </p>
-          <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.cssImport"></app-code-snippet>
-        </li>
-      </ul>
+      <p>
+        <b>SCSS</b> (recommended approach): Include Ornamentum theme source
+        <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
+        array.
+      </p>
+      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.scssImport"></app-code-snippet>
+      <p>or</p>
+      <p>
+        <b>CSS</b>: Include Ornamentum prebuilt CSS references.
+      </p>
+      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.cssImport"></app-code-snippet>
     </li>
     <li>
       <p>Finally, use Ornamentum data table component.</p>
