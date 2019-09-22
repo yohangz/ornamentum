@@ -1,8 +1,8 @@
 import { Injectable, TemplateRef } from '@angular/core';
 
-import { DropdownItem } from '../models/dropdown-item.model';
+import { DropdownOption } from '../models/dropdown-option.model';
 import { DropdownDataBindCallback } from '../models/dropdown-data-bind-callback.model';
-import { DropdownItemGroup } from '../models/dropdown-Item-group.model';
+import { DropdownOptionGroup } from '../models/dropdown-option-group.model';
 import { ComponentLoader } from '../../utility/utility.module';
 
 /**
@@ -16,9 +16,9 @@ export class DropdownDataStateService {
   public selectedOptions: any[] = [];
   public offset = 0;
   public totalOptionCount: number;
-  public currentItemCount = 0;
-  public dropdownItems: DropdownItem[] = [];
-  public dropdownItemGroups: DropdownItemGroup[] = [];
+  public currentOptionCount = 0;
+  public dropdownOptions: DropdownOption[] = [];
+  public dropdownOptionGroups: DropdownOptionGroup[] = [];
   public filterText = '';
   public disabled = false;
   public componentLoaderRef: ComponentLoader<any>;

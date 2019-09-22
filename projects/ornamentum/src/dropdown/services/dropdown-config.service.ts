@@ -20,7 +20,7 @@ export class DropdownConfigService implements DropdownConfig {
   public baseTranslations: DropdownTranslations = {
     noDataMessage: 'No Results Available',
     filterPlaceholder: 'Search',
-    selectedItemWrapPlaceholder: 'Items',
+    selectedOptionWrapPlaceholder: 'Options',
     selectPlaceholder: 'Select'
   };
 
@@ -77,11 +77,11 @@ export class DropdownConfigService implements DropdownConfig {
   }
 
   /**
-   * Get display text by source item
-   * @param item Source item object
+   * Get display text by source option
+   * @param option Source option object
    * @return Display text
    */
-  public getDisplayText(item: any): string {
-    return get(item, this.displayTrackBy);
+  public getDisplayText(option: any): string {
+    return get(option, this.displayTrackBy);
   }
 }

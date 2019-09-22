@@ -44,7 +44,7 @@ export class DropdownModule {
 }
 
 export { DropdownTranslations } from './models/dropdown-translations.model';
-export { DropdownItem } from './models/dropdown-item.model';
+export { DropdownOption } from './models/dropdown-option.model';
 export { DropdownRequestParams } from './models/dropdown-request-params.model';
 export { DropdownFilter } from './models/dropdown-filter.model';
 export { DropdownDataBindCallback } from './models/dropdown-data-bind-callback.model';

@@ -18,12 +18,12 @@ export interface DropdownConfig {
   selectTrackBy?: string;
 
   /**
-   * Name of the attribute used to show the selected item's display text
+   * Name of the attribute used to show the selected options display text
    */
   displayTrackBy?: string;
 
   /**
-   * Name of the attribute used to disable the selection of dropdown item
+   * Name of the attribute used to disable the selection of dropdown option
    */
   disabledTrackBy?: string;
 
@@ -53,12 +53,12 @@ export interface DropdownConfig {
   filterDebounceTime?: number;
 
   /**
-   * Group by field name in item schema
+   * Group by field name in option schema
    */
   groupByField?: string;
 
   /**
-   * Wrap display selected limit; Wrap selected items when limit exceeded
+   * Wrap display selected limit; Wrap selected options when limit exceeded
    */
   wrapDisplaySelectLimit?: number;
 
@@ -113,7 +113,7 @@ export interface DropdownConfig {
   showOptionSelectCheckbox?: boolean;
 
   /**
-   * Multi select option selected item maximum width; Wrap the selected option display text if exceeding the max width
+   * Multi select option selected option maximum width; Wrap the selected option display text if exceeding the max width
    */
   multiSelectOptionMaxWidth?: number;
 
@@ -123,7 +123,7 @@ export interface DropdownConfig {
   setFirstOptionSelected?: boolean;
 
   /**
-   * Trigger select change event on init if true; Can be used to enable selectedItems or selectedItem associated change trigger
+   * Trigger select change event on init if true; Can be used to enable selectedOptions or selectedOption associated change trigger
    */
   triggerSelectChangeOnInit?: boolean;
 

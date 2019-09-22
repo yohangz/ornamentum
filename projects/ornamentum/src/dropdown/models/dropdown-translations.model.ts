@@ -23,7 +23,7 @@ export interface DropdownTranslations {
   selectAllPlaceholder?: string;
 
   /**
-   * Selected items wrap placeholder; Used when item count > wrapDisplaySelectLimit
+   * Selected options wrap placeholder; Used when option count > wrapDisplaySelectLimit
    */
-  selectedItemWrapPlaceholder?: string;
+  selectedOptionWrapPlaceholder?: string;
 }

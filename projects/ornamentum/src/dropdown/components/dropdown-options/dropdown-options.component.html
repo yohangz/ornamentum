@@ -1,17 +1,17 @@
-<ul class="ng-dropdown-item-container" [class.ng-milti-selectable]="config.selectMode === 'multi'">
+<ul class="ng-dropdown-option-container" [class.ng-milti-selectable]="config.selectMode === 'multi'">
   <ng-container *ngIf="config.groupByField">
-    <ng-container *ngFor="let groupedItem of dataStateService.dropdownItemGroups">
+    <ng-container *ngFor="let groupedOption of dataStateService.dropdownOptionGroups">
       <li *ngIf="!dataStateService.dropdownOptionGroupHeaderTemplate" class="ng-dropdown-group-heading">
-        {{ groupedItem.groupName }}
+        {{ groupedOption.groupName }}
       </li>
       <ng-container
         *ngIf="dataStateService.dropdownOptionGroupHeaderTemplate"
         [ngTemplateOutlet]="dataStateService.dropdownOptionGroupHeaderTemplate"
-        [ngTemplateOutletContext]="{ groupedItem: groupedItem }"
+        [ngTemplateOutletContext]="{ groupedOption: groupedOption }"
       >
       </ng-container>
-      <ng-container *ngFor="let option of groupedItem.items; index as i;">
-        <li (click)="onOptionClick(option, $event)" [class.disabled]="option.disabled" [class.ng-item-selected]="getSelectedState(option.id)">
+      <ng-container *ngFor="let option of groupedOption.options; index as i;">
+        <li (click)="onOptionClick(option, $event)" [class.disabled]="option.disabled" [class.ng-option-selected]="getSelectedState(option.id)">
           <ng-container *ngIf="!dataStateService.dropdownOptionTemplate">
             <a class="ng-dropdown-checkbox-container" *ngIf="config.showOptionSelectCheckbox">
               <input type="checkbox" class="ng-dropdown-checkbox-input ng-ignore-propagation"
@@ -38,8 +38,8 @@
     </ng-container>
   </ng-container>
   <ng-container *ngIf="!config.groupByField">
-    <ng-container *ngFor="let option of dataStateService.dropdownItems; index as i;">
-      <li (click)="onOptionClick(option, $event)" [class.disabled]="option.disabled" [class.ng-item-selected]="getSelectedState(option.id)">
+    <ng-container *ngFor="let option of dataStateService.dropdownOptions; index as i;">
+      <li (click)="onOptionClick(option, $event)" [class.disabled]="option.disabled" [class.ng-option-selected]="getSelectedState(option.id)">
         <ng-container *ngIf="!dataStateService.dropdownOptionTemplate">
           <a class="ng-dropdown-checkbox-container" *ngIf="config.showOptionSelectCheckbox">
             <input type="checkbox" class="ng-dropdown-checkbox-input ng-ignore-propagation"

@@ -1,11 +1,11 @@
 export interface DropdownQueryResult<T> {
   /**
-   * Items collection
+   * Options collection
    */
-  items: T[];
+  options: T[];
 
   /**
-   * Item count
+   * Option count
    */
   count: number;
 }

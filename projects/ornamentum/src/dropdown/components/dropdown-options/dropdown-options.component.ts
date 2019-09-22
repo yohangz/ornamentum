@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import get from 'lodash/get';
 
-import { DropdownItem } from '../../models/dropdown-item.model';
+import { DropdownOption } from '../../models/dropdown-option.model';
 
 import { DropdownDataStateService } from '../../services/dropdown-data-state.service';
 import { DropdownConfigService } from '../../services/dropdown-config.service';
@@ -21,15 +21,15 @@ export class DropdownOptionsComponent {
 
   public getSelectedState(id: any): boolean {
     if (this.config.selectMode === 'multi') {
-      return this.dataStateService.selectedOptions.some((item: any) => {
-        return get(item, this.config.selectTrackBy) === id;
+      return this.dataStateService.selectedOptions.some((option: any) => {
+        return get(option, this.config.selectTrackBy) === id;
       });
     }
 
     return get(this.dataStateService.selectedOption, this.config.selectTrackBy) === id;
   }
 
-  public onOptionClick(option: DropdownItem, event: MouseEvent): void {
+  public onOptionClick(option: DropdownOption, event: MouseEvent): void {
     const target = event.target as HTMLElement;
     if (target && target.classList && target.classList.contains('ng-ignore-propagation')) {
       return;
@@ -38,28 +38,28 @@ export class DropdownOptionsComponent {
     this.toggleOptionSelectedState(option);
   }
 
-  public onOptionCheckboxClick(option: DropdownItem, event: MouseEvent): void {
+  public onOptionCheckboxClick(option: DropdownOption, event: MouseEvent): void {
     // Prevent single mode checkbox getting unchecked on tapping already selected.
     if (this.config.selectMode === 'single') {
       const selectedId = get(this.dataStateService.selectedOption, this.config.selectTrackBy);
-      const id = get(option.item, this.config.selectTrackBy);
+      const id = get(option.option, this.config.selectTrackBy);
       if (selectedId === id) {
         event.preventDefault();
       }
     }
   }
 
-  public toggleOptionSelectedState(option: DropdownItem): void {
-    const id = get(option.item, this.config.selectTrackBy);
+  public toggleOptionSelectedState(option: DropdownOption): void {
+    const id = get(option.option, this.config.selectTrackBy);
 
     switch (this.config.selectMode) {
       case 'multi': {
-        const selectedIndex = this.dataStateService.selectedOptions.findIndex((item: any) => {
-          return get(item, this.config.selectTrackBy) === id;
+        const selectedIndex = this.dataStateService.selectedOptions.findIndex((option: any) => {
+          return get(option, this.config.selectTrackBy) === id;
         });
 
         if (selectedIndex < 0) {
-          this.dataStateService.selectedOptions.push(option.item);
+          this.dataStateService.selectedOptions.push(option.option);
         } else {
           this.dataStateService.selectedOptions.splice(selectedIndex, 1);
         }
@@ -71,7 +71,7 @@ export class DropdownOptionsComponent {
         if (get(this.dataStateService.selectedOption, this.config.selectTrackBy) === id) {
           this.dataStateService.selectedOption = undefined;
         } else {
-          this.dataStateService.selectedOption = option.item;
+          this.dataStateService.selectedOption = option.option;
         }
 
         this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);
@@ -79,7 +79,7 @@ export class DropdownOptionsComponent {
       }
       case 'single': {
         const selectedId = get(this.dataStateService.selectedOption, this.config.selectTrackBy);
-        this.dataStateService.selectedOption = option.item;
+        this.dataStateService.selectedOption = option.option;
 
         if (selectedId !== id) {
           this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOption);

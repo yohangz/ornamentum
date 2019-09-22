@@ -2,7 +2,7 @@ import { Injector, ComponentFactoryResolver, EmbeddedViewRef, ApplicationRef, Co
 
 import { take } from 'rxjs/operators';
 
-import { Subscription } from 'rxjs/internal/Subscription';
+import { Subscription } from 'rxjs';
 
 import { ComponentLoader } from './component-loader.interface';
 

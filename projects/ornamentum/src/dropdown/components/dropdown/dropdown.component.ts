@@ -14,14 +14,14 @@ import {
 
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-import { Subscription, Observable } from 'rxjs';
+import { Subscription, Observable, of } from 'rxjs';
 import { catchError, debounceTime, switchMap } from 'rxjs/operators';
 
 import get from 'lodash/get';
 
 import { DropdownTranslations } from '../../models/dropdown-translations.model';
-import { DropdownItem } from '../../models/dropdown-item.model';
-import { DropdownItemGroup } from '../../models/dropdown-Item-group.model';
+import { DropdownOption } from '../../models/dropdown-option.model';
+import { DropdownOptionGroup } from '../../models/dropdown-option-group.model';
 import { DropdownRequestParams } from '../../models/dropdown-request-params.model';
 import { DropdownDataBindCallback } from '../../models/dropdown-data-bind-callback.model';
 import { DropdownQueryResult } from '../../models/dropdown-query-result.model';
@@ -36,8 +36,7 @@ import { DropdownDataStateService } from '../../services/dropdown-data-state.ser
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
 import { DropdownResourceService } from '../../services/dropdown-resource.service';
 import { ViewPosition } from '../../../utility/models/view-position.model';
-import { of } from 'rxjs/internal/observable/of';
-import {ValidatorService} from "../../../utility/services/validator.service";
+import { ValidatorService } from '../../../utility/services/validator.service';
 
 /**
  * Dropdown main component.
@@ -106,11 +105,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   // Inputs
 
   /**
-   * Set static data item collection; No need to set data source when static items collection is provided
+   * Set static data option collection; No need to set data source when static options collection is provided
    * @param value Any array of objects containing dropdown data
    */
   @Input()
-  public set items(value: any[]) {
+  public set options(value: any[]) {
     if (!value) {
       return;
     }
@@ -187,7 +186,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   /**
    * Selected options collection; These options will be set selected by default on initial load;
    * Applicable only when multi select mode is enabled
-   * @param value The selected dropdown item value collection
+   * @param value The selected dropdown option value collection
    */
   @Input()
   public set selectedOptions(value: any[]) {
@@ -196,7 +195,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   /**
    * Selected option; These option will be set selected by default on initial load; Applicable for single select mode only
-   * @param value The selected dropdown option item value
+   * @param value The selected dropdown option option value
    */
   @Input()
   public set selectedOption(value: any) {
@@ -244,8 +243,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   /**
    * Dropdown option select mode.
    * - 'multi' : Support selecting multiple options.
-   * - 'single' : Support selecting a single item from options collection.
-   * - 'single-toggle' : Support selecting a single item from options collection.
+   * - 'single' : Support selecting a single option from options collection.
+   * - 'single-toggle' : Support selecting a single option from options collection.
    * Selection can not be removed but only toggled by tapping on another option.
    */
   @Input()
@@ -296,7 +295,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Enable/Disable show selected items remove icon.
+   * Enable/Disable show selected options remove icon.
    */
   @Input()
   public set showSelectedOptionRemoveButton(value: boolean) {
@@ -458,7 +457,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   public get wrappedSelectedOptions(): string {
-    return `(${this.dataStateService.selectedOptions.length}) ${this.config.translations.selectedItemWrapPlaceholder}`;
+    return `(${this.dataStateService.selectedOptions.length}) ${this.config.translations.selectedOptionWrapPlaceholder}`;
   }
 
   /**
@@ -473,7 +472,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.dataStateService.componentLoaderRef.dispose();
   }
 
-  public get hasSelectedItems(): boolean {
+  public get hasSelectedOptions(): boolean {
     if (this.config.selectMode === 'multi') {
       return !!this.dataStateService.selectedOptions.length;
     }
@@ -490,7 +489,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Clear selected items.
+   * Clear selected options.
    */
   public clearSelectedOptions(): void {
     if (this.config.selectMode === 'multi') {
@@ -570,52 +569,52 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.eventStateService.initStream.emit(this);
   }
 
-  private extractDropdownItem(item: any): DropdownItem {
-    const id = get(item, this.config.selectTrackBy);
+  private extractDropdownOption(option: any): DropdownOption {
+    const id = get(option, this.config.selectTrackBy);
 
     return {
-      disabled: get(item, this.config.disabledTrackBy),
+      disabled: get(option, this.config.disabledTrackBy),
       id,
-      item,
-      text: get(item, this.config.displayTrackBy)
+      option,
+      text: get(option, this.config.displayTrackBy)
     };
   }
 
   private setDropdownOptions(queryResult: DropdownQueryResult<any>) {
     if (this.config.groupByField) {
-      this.dataStateService.dropdownItemGroups = queryResult.items.reduce(
-        (accumulator: DropdownItemGroup[], item: any) => {
-          const groupFieldValue = get(item, this.config.groupByField);
-          const currentGroup = accumulator.find((group: DropdownItemGroup) => group.groupName === groupFieldValue);
+      this.dataStateService.dropdownOptionGroups = queryResult.options.reduce(
+        (accumulator: DropdownOptionGroup[], option: any) => {
+          const groupFieldValue = get(option, this.config.groupByField);
+          const currentGroup = accumulator.find((group: DropdownOptionGroup) => group.groupName === groupFieldValue);
 
           if (currentGroup) {
-            currentGroup.items.push(this.extractDropdownItem(item));
+            currentGroup.options.push(this.extractDropdownOption(option));
           } else {
             accumulator.push({
               groupName: groupFieldValue,
-              items: [this.extractDropdownItem(item)]
+              options: [this.extractDropdownOption(option)]
             });
           }
 
           return accumulator;
         },
-        this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownItemGroups : []
+        this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownOptionGroups : []
       );
     } else {
-      this.dataStateService.dropdownItems = queryResult.items.reduce(
-        (accumulator: DropdownItem[], item: any) => {
-          accumulator.push(this.extractDropdownItem(item));
+      this.dataStateService.dropdownOptions = queryResult.options.reduce(
+        (accumulator: DropdownOption[], option: any) => {
+          accumulator.push(this.extractDropdownOption(option));
           return accumulator;
         },
-        this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownItems : []
+        this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownOptions : []
       );
     }
 
-    if (this.config.setFirstOptionSelected && queryResult.items.length) {
+    if (this.config.setFirstOptionSelected && queryResult.options.length) {
       if (this.config.selectMode === 'multi') {
-        this.dataStateService.selectedOptions = [queryResult.items[0]];
+        this.dataStateService.selectedOptions = [queryResult.options[0]];
       } else {
-        this.dataStateService.selectedOption = queryResult.items[0];
+        this.dataStateService.selectedOption = queryResult.options[0];
       }
 
       if (this.config.triggerSelectChangeOnFirstOptionSelect) {
@@ -624,7 +623,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     }
 
     this.dataStateService.totalOptionCount = queryResult.count;
-    this.dataStateService.currentItemCount += queryResult.items.length;
+    this.dataStateService.currentOptionCount += queryResult.options.length;
   }
 
   private onAfterDataBind(queryResult: DropdownQueryResult<any>): void {
@@ -663,7 +662,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   // Do not emit dataFetchStream true unless it is required to hard reload the dropdown options.
   private initDataFetchEvent(): void {
     const noop = {
-      items: [],
+      options: [],
       count: 0
     };
 

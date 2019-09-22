@@ -86,7 +86,7 @@
       pointer-events: none;
     }
 
-    .ng-dropdown-selected-item,
+    .ng-dropdown-selected-option,
     .ng-dropdown-selected-placeholder {
       font-family: inherit;
       overflow: hidden;
@@ -210,9 +210,9 @@
   }
 }
 
-// Dropdown Item List Styles
-// Dropdown Item List Group Heading Styles
-// Dropdown Item List Selected Items styles
+// Dropdown Option List Styles
+// Dropdown Option List Group Heading Styles
+// Dropdown Option List Selected Options styles
 
 .ng-dropdown-menu-wrapper {
 
@@ -224,11 +224,11 @@
   }
 
   background-clip: padding-box;
-  background-color: $dropdown-item-wrapper-background;
-  border: 0.05rem solid $dropdown-item-wrapper-border;
-  border-radius: $dropdown-item-wrapper-border-radius-value;
-  box-shadow: $dropdown-item-wrapper-box-shadow;
-  color: $dropdown-item-wrapper-text-color;
+  background-color: $dropdown-option-wrapper-background;
+  border: 0.05rem solid $dropdown-option-wrapper-border;
+  border-radius: $dropdown-option-wrapper-border-radius-value;
+  box-shadow: $dropdown-option-wrapper-box-shadow;
+  color: $dropdown-option-wrapper-text-color;
   display: block;
   height: 250px;
   list-style: none;
@@ -240,21 +240,21 @@
   z-index: 10001;
 
   .ng-dropdown-divider {
-    border-top: 1px solid $dropdown-item-wrapper-divider-border;
+    border-top: 1px solid $dropdown-option-wrapper-divider-border;
     height: 0;
     margin: 0.5rem 0;
     overflow: hidden;
     padding: 0;
   }
 
-  .ng-dropdown-item-container-wrapper {
+  .ng-dropdown-option-container-wrapper {
     -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
-    border: 0.07rem solid $dropdown-item-container-wrapper-border;
-    border-radius: $dropdown-item-container-border-radius-value;
+    border: 0.07rem solid $dropdown-option-container-wrapper-border;
+    border-radius: $dropdown-option-container-border-radius-value;
     height: 100%;
     overflow-y: auto;
 
-    .ng-dropdown-item-container {
+    .ng-dropdown-option-container {
       height: 100%;
       list-style-type: none;
       margin: 0;
@@ -273,8 +273,8 @@
       }
 
       li {
-        background: $dropdown-item-container-item-background;
-        border-bottom: 0.05rem solid $dropdown-item-container-item-border;
+        background: $dropdown-option-container-option-background;
+        border-bottom: 0.05rem solid $dropdown-option-container-option-border;
         cursor: pointer;
         overflow: hidden;
         padding: 0.25rem 0.5rem;
@@ -282,14 +282,14 @@
         white-space: nowrap;
 
         a {
-          color: $dropdown-item-container-item-text-color;
+          color: $dropdown-option-container-option-text-color;
         }
 
         &:hover {
-          background: $dropdown-item-container-item-hover-background;
+          background: $dropdown-option-container-option-hover-background;
 
           a {
-            color: $dropdown-item-container-item-hover-text-color;
+            color: $dropdown-option-container-option-hover-text-color;
           }
         }
 
@@ -298,30 +298,30 @@
           pointer-events: none;
         }
 
-        &.ng-item-selected {
-          background: $dropdown-item-container-selected-item-background;
+        &.ng-option-selected {
+          background: $dropdown-option-container-selected-option-background;
 
           a {
-            color: $dropdown-item-container-selected-item-text-color;
+            color: $dropdown-option-container-selected-option-text-color;
           }
 
           &:hover {
-            background: $dropdown-item-container-selected-item-hover-background;
+            background: $dropdown-option-container-selected-option-hover-background;
           }
         }
 
         &.ng-dropdown-group-heading {
-          background: $dropdown-item-container-group-heading-background;
+          background: $dropdown-option-container-group-heading-background;
           border-bottom: 0.05rem solid;
-          border-color: $dropdown-item-container-group-heading-border;
-          color: $dropdown-item-container-group-heading-color;
+          border-color: $dropdown-option-container-group-heading-border;
+          color: $dropdown-option-container-group-heading-color;
           cursor: default;
           padding: 0.3rem;
 
           &:hover {
-            background: $dropdown-item-container-group-heading-hover-background;
-            border-color: $dropdown-item-container-group-heading-hover-border;
-            color: $dropdown-item-container-group-heading-hover-color;
+            background: $dropdown-option-container-group-heading-hover-background;
+            border-color: $dropdown-option-container-group-heading-hover-border;
+            color: $dropdown-option-container-group-heading-hover-color;
           }
         }
 
@@ -335,7 +335,7 @@
   .ng-dropdown-filter-wrapper {
     height: 3rem;
 
-    + .ng-dropdown-item-container-wrapper {
+    + .ng-dropdown-option-container-wrapper {
       height: calc(100% - 3rem);
     }
   }
