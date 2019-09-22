@@ -13,10 +13,6 @@ import { DataFetchService } from 'helper-services';
 export class LazyLoadingLimitUsageComponent {
   public options: ExampleData[];
 
-  public translations: DropdownTranslations = {
-    noDataMessage: 'No Data Available.'
-  };
-
   constructor(private dataFetchService: DataFetchService) {
     this.options = this.dataFetchService.fetchStaticData(0, 100);
   }

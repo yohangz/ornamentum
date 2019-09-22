@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { demoSnippet, dataLimitUsage, pageUsage } from './dropdown-lazy-loading.list';
+import { demoSnippet, dataLimitUsage, pageUsage, loadViewDistance } from './dropdown-lazy-loading.list';
 
 import { FileType } from 'helper-models';
 
@@ -17,4 +17,6 @@ export class DropdownLazyLoadingComponent {
   public dataLimitUsage = dataLimitUsage;
 
   public pageUsage = pageUsage;
+
+  public loadViewDistance = loadViewDistance;
 }

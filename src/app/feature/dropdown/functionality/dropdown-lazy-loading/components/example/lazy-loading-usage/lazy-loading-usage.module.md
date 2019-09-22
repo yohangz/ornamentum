@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DropdownModule } from 'ornamentum';
   
-import { LazyLoadingUsageComponent } from './dropdown-lazy-loading-usage.component';
+import { LazyLoadingUsageComponent } from './lazy-loading-usage.component';
 
 @NgModule({
  bootstrap: [LazyLoadingUsageComponent],

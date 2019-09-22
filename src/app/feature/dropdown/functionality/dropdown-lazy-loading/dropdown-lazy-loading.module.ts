@@ -10,7 +10,8 @@ import { SharedModule } from '../../../../shared/shared.module';
 import {
   DropdownLazyLoadingComponent,
   LazyLoadingUsageComponent,
-  LazyLoadingLimitUsageComponent
+  LazyLoadingLimitUsageComponent,
+  LazyLoadingLoadViewDistanceUsageComponent
 } from './index';
 
 /**
@@ -19,8 +20,9 @@ import {
 @NgModule({
   declarations: [
     DropdownLazyLoadingComponent,
-    LazyLoadingUsageComponent,
-    LazyLoadingLimitUsageComponent
+    LazyLoadingLimitUsageComponent,
+    LazyLoadingLoadViewDistanceUsageComponent,
+    LazyLoadingUsageComponent
   ],
   exports: [],
   imports: [

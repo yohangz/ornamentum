@@ -18,10 +18,6 @@ export const dataLimitUsage: ExampleFile[] = [
   }
 ];
 
-export const demoSnippet: any = {
-  limit: require('!!raw-loader!./docs/limit.md')
-};
-
 export const pageUsage: ExampleFile[] = [
   {
     type: FileType.TS,
@@ -39,3 +35,25 @@ export const pageUsage: ExampleFile[] = [
     content: require('!!raw-loader!./example/lazy-loading-limit-usage/lazy-loading-limit-usage.module.md')
   }
 ];
+
+export const loadViewDistance: ExampleFile[] = [
+  {
+    type: FileType.TS,
+    name: 'lazy-loading-load-view-distance-usage.component.ts',
+    content: require('!!raw-loader!./example/lazy-loading-load-view-distance-usage/lazy-loading-load-view-distance-usage.component.ts')
+  },
+  {
+    type: FileType.HTML,
+    name: 'lazy-loading-load-view-distance-usage.component.html',
+    content: require('!!raw-loader!./example/lazy-loading-load-view-distance-usage/lazy-loading-load-view-distance-usage.component.html')
+  },
+  {
+    type: FileType.TS,
+    name: 'lazy-loading-load-view-distance-usage.module.ts',
+    content: require('!!raw-loader!./example/lazy-loading-load-view-distance-usage/lazy-loading-load-view-distance-usage.module.md')
+  }
+];
+
+export const demoSnippet: any = {
+  limit: require('!!raw-loader!./docs/limit.md')
+};

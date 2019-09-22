@@ -3,11 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DropdownModule } from 'ornamentum';
   
-import { LazyLoadingLimitUsageComponent } from './lazy-loading-limit-usage.component';
+import { LazyLoadingLoadViewDistanceUsageComponent } from './lazy-loading-load-view-distance-usage.component';
 
 @NgModule({
- bootstrap: [LazyLoadingLimitUsageComponent],
- declarations: [LazyLoadingLimitUsageComponent],
+ bootstrap: [LazyLoadingLoadViewDistanceUsageComponent],
+ declarations: [LazyLoadingLoadViewDistanceUsageComponent],
  imports: [
     BrowserModule, 
     DropdownModule.forRoot()

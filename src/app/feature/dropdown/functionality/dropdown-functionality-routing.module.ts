@@ -21,8 +21,8 @@ const dropdownFunctionalityRoutes: Routes = [
     data: {
       seo: {
         title: 'Ornamentum - Dropdown | Functionality | Data Limit',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        keywords: 'dropdown lazy loading,dropdown list lazy loading,dropdown lazy data fetch,dropdown on demand loading,dropdown load on scroll',
+        description: 'Lazy loading functionality can boost performance, when working with large data sets. Dropdown will fetch the upcoming data on demand upon user scroll. Data limit and scroll sensitivity are configurable to accommodate custom application requirements. This functionality is supported by all data binding modes.'
       }
     }
   },

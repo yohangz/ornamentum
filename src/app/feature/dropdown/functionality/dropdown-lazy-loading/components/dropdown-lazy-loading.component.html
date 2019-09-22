@@ -45,12 +45,30 @@
 </p>
 
 <p>
-  Limit input property can be used to declare how many dropdown list options should be fetched per scroll boundary hit until
+  Limit input property can be used to declare number of dropdown list options to be fetched per scroll boundary hit until
   data source exhaust.
 </p>
 
 <app-lazy-loading-limit-usage></app-lazy-loading-limit-usage>
 <app-example-code [files]="pageUsage"></app-example-code>
+
+<h4 id="loadViewDistance">Load View Distance</h4>
+<p>
+  <code>loadViewDistance: number</code> &nbsp;
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-warning">Default Value: 1</span>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-dropdown&gt;</span>
+</p>
+
+<p>
+  Scroll sensitivity threshold to trigger data fetch action. This value is a ratio of dropdown option container height.
+  i.e: 1 load view distance unit is equal to 1 dropdown options view height. It will trigger the data fetch action before
+  hitting the edge when this value is higher.
+</p>
+
+<app-lazy-loading-load-view-distance-usage></app-lazy-loading-load-view-distance-usage>
+<app-example-code [files]="loadViewDistance"></app-example-code>
 
 <h2>Suggested Links</h2>
 <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#limit">Dropdown API Documentation</a>
