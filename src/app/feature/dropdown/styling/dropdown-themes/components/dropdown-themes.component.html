@@ -1,114 +1,116 @@
 <div class="feature-container">
-  <h1>Themes</h1>
+  <h1>Dropdown List Themes</h1>
 
   <p>
-    As mentioned in the
-    <a [routerLink]="['/feature/data-table/styling/themes']">Data Table Themes</a> section, Ornamentum dropdown also
-    comes with the same theming support.
+    Ornamentum dropdown list has a variety of predefined themes which you can apply to your application.
+    Greater selection of themes are available with different colour variations to chose from.
+  </p>
+  <p>
+    You can check the user experience of these themes via toggling the predefined themes via theme selector as follows.
   </p>
 
-  <h2 id="includingThemeSupport">Including Theme Support</h2>
+  <div class="theme-color-palette"></div>
 
   <p>
-    Currently ornamentum has different CSS/SCSS files to represent the available themes. Therefore, in order to include
-    these themes into your project you have to import its CSS/SCSS source references into your style files.
+    <app-advanced-usage></app-advanced-usage>
+  </p>
+
+  <h2 id="predefinedThemes">Predefined Themes</h2>
+
+  <p>
+    Ornamentum bundles prebuilt CSS and source <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a>
+    theme files. However, we recommend you to use the source SCSS files for best browser support with the use of
+    <a rel="noopener" target="_blank" href="https://github.com/browserslist/browserslist/">browserlist</a> configuration.
+  </p>
+  <p>
+    Import the Ornamentum theme style sheet reference to apply theming of your preference. Follow
+    <a rel="noopener" target="_blank" href="https://github.com/angular/angular-cli/wiki/stories-global-styles">Angular CLI: Global Styles</a>
+    documentation for more information on how to integrate third party style sheets.
   </p>
 
   <p>
-    Also in the page header you can see the user experience of the available themes by clicking on the given color
-    palette as shown in the Data Table <a [routerLink]="['/feature/data-table/styling/themes']"
-                                          [fragment]="'includingThemeSupport'">Including Theme Support</a> section.
+    Below images illustrate the list of available themes and a glimpse of their appearance.
   </p>
-
-  <p>Let's see how the user experience changes in the dropdown when different themes are applied.</p>
 
   <h4 id="baseTheme">Base Theme</h4>
 
-  <p>
-    The following image shows how Ornamentum Dropdown looks like with the Base theme. This is the user experience that
-    you can get if you choose to stay with the base theme styling provided without using any of the themes available.
-  </p>
+  <p>Minimalistic theme with white colour based variations.</p>
 
   <div class="dd-theme-common dd-base-theme"></div>
 
   <p>
-    <b>CSS</b>: Include Ornamentum pre-built CSS <b>Base</b> theme style sheets in
-    <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
-  </p>
-  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.baseCssThemeImport"></app-code-snippet>
-  <p>
-    <b>SCSS</b>: Include Ornamentum theme <b>Base</b> SCSS style sheets in
-    <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+    <b>SCSS</b> (recommended): Include Ornamentum theme source
+    <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
   </p>
   <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.baseScssThemeImport"></app-code-snippet>
+  <p>
+    <b>CSS</b>: Include Ornamentum prebuilt CSS references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.baseCssThemeImport"></app-code-snippet>
 
   <h4 id="darkTheme">Dark Theme</h4>
 
-  <p>The following image shows how Ornamentum Dropdown looks like with the Dark theme.</p>
+  <p>Dark theme with black colour based variations which can be used with dark mode applications.</p>
 
   <div class="dd-theme-common dd-dark-theme"></div>
 
   <p>
-    <b>CSS</b>: Include Ornamentum pre-built CSS <b>Dark</b> theme style sheets in
-    <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
-  </p>
-  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.darkThemeCssThemeImport"></app-code-snippet>
-  <p>
-    <b>SCSS</b>: Include Ornamentum theme <b>Dark</b> SCSS style sheets in
-    <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+    <b>SCSS</b> (recommended): Include Ornamentum theme source
+    <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
   </p>
   <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.darkThemeScssThemeImport"></app-code-snippet>
+  <p>
+    <b>CSS</b>: Include Ornamentum prebuilt CSS references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.darkThemeCssThemeImport"></app-code-snippet>
 
   <h4 id="flatTheme">Flat Theme</h4>
 
-  <p>The following image shows how Ornamentum Dropdown looks like with the Flat theme.</p>
+  <p>Light colour based theme with blue and white base colour variations.</p>
 
   <div class="dd-theme-common dd-flat-theme"></div>
 
   <p>
-    <b>CSS</b>: Include Ornamentum pre-built CSS <b>Flat</b> theme style sheets in
-    <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
-  </p>
-  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.flatThemeCssThemeImport"></app-code-snippet>
-  <p>
-    <b>SCSS</b>: Include Ornamentum theme <b>Flat</b> SCSS style sheets in
-    <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+    <b>SCSS</b> (recommended): Include Ornamentum theme source
+    <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
   </p>
   <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.flatThemeScssThemeImport"></app-code-snippet>
+  <p>
+    <b>CSS</b>: Include Ornamentum prebuilt CSS references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.flatThemeCssThemeImport"></app-code-snippet>
 
   <h4 id="ornamentumTheme">Ornamentum Theme</h4>
 
-  <p>The following image shows how Ornamentum Dropdown looks like with the Ornamentum theme.</p>
+  <p>Dark theme with black and red base colour variations.</p>
 
   <div class="dd-theme-common dd-ornamentum-theme"></div>
 
   <p>
-    <b>CSS</b>: Include Ornamentum pre-built CSS <b>Ornamentum</b> theme style sheets in
-    <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+    <b>SCSS</b> (recommended): Include Ornamentum theme source
+    <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.ornamentumThemeScssThemeImport"></app-code-snippet>
+  <p>
+    <b>CSS</b>: Include Ornamentum prebuilt CSS references.
   </p>
   <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.ornamentumThemeCssThemeImport"></app-code-snippet>
-  <p>
-    <b>SCSS</b>: Include Ornamentum theme <b>Ornamentum</b> SCSS style sheets in
-    <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
-  </p>
-  <pre class="prettyprint linenums lang-json">{{ demoSnippet.ornamentumThemeScssThemeImport }}</pre>
 
   <h4 id="aegeanTheme">Aegean Theme</h4>
 
-  <p>The following image shows how Ornamentum Dropdown looks like with the Aegean theme.</p>
+  <p>Mat light colour based theme with blue and white base colour variations.</p>
 
   <div class="dd-theme-common dd-aegean-theme"></div>
 
   <p>
-    <b>CSS</b>: Include Ornamentum prebuilt CSS <b>Aegean</b> theme style sheets in
-    <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
-  </p>
-  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.aegeanThemeCssThemeImport"></app-code-snippet>
-  <p>
-    <b>SCSS</b>: Include Ornamentum theme <b>Aegean</b> SCSS style sheets in
-    <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config "<b>styles</b>".
+    <b>SCSS</b> (recommended): Include Ornamentum theme source
+    <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
   </p>
   <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.aegeanThemeScssThemeImport"></app-code-snippet>
+  <p>
+    <b>CSS</b>:  Include Ornamentum prebuilt CSS references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.aegeanThemeCssThemeImport"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a rel="noopener" target="_blank" href="api-docs/modules/DropdownModule.html">API Doc for Dropdown Themes</a>

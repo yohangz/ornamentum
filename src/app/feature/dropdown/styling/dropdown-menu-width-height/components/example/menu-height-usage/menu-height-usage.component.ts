@@ -9,9 +9,9 @@ import { DataFetchService } from 'helper-services';
   templateUrl: './menu-height-usage.component.html'
 })
 export class MenuHeightUsageComponent {
-  public items: ExampleData[];
+  public options: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 }

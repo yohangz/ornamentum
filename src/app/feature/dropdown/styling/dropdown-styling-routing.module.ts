@@ -20,7 +20,7 @@ const dropdownStylingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Functionality | Menu Position',
+        title: 'Ornamentum - Dropdown | Functionality | Menu Position',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -34,7 +34,7 @@ const dropdownStylingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Functionality | Menu Width & Height',
+        title: 'Ornamentum - Dropdown | Functionality | Menu Width & Height',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -48,9 +48,11 @@ const dropdownStylingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Styling | Themes | User Experience',
-        keywords: '<--add keywords here-->',
-        description: '<--add description here-->'
+        title: 'Ornamentum - Dropdown | Styling | Themes | User Experience',
+        // tslint:disable-next-line
+        keywords: 'ornamentum dropdown themes,dropdown themes,dropdown list themes,dropdown base theme,dropdown dark theme,dropdown flat theme,dropdown ornamentum theme,dropdown list aegean theme',
+        // tslint:disable-next-line
+        description: 'Ornamentum dropdown list has a variety of predefined themes which you can apply to your application. Greater selection of themes are available with different colour variations to chose from.'
       }
     }
   },
@@ -62,7 +64,7 @@ const dropdownStylingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum |Dropdown | Customization | Themes | User Experience',
+        title: 'Ornamentum -Dropdown | Customization | Themes | User Experience',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

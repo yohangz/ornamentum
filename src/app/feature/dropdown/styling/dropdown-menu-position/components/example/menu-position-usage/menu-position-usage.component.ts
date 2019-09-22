@@ -9,9 +9,9 @@ import { DataFetchService } from 'helper-services';
   templateUrl: './menu-position-usage.component.html'
 })
 export class MenuPositionUsageComponent {
-  public items: ExampleData[];
+  public options: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 }

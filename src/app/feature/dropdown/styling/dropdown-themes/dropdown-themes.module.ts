@@ -7,13 +7,16 @@ import { DropdownThemesRoutingModule } from './dropdown-themes-routing.module';
 
 import { SharedModule } from '../../../../shared/shared.module';
 
-import { DropdownThemesComponent } from './index';
+import { DropdownThemesComponent, AdvancedUsageComponent } from './index';
 
 /**
  * Module class for containing dropdown themes module.
  */
 @NgModule({
-  declarations: [DropdownThemesComponent],
+  declarations: [
+    DropdownThemesComponent,
+    AdvancedUsageComponent
+  ],
   exports: [],
   imports: [
     CommonModule,
