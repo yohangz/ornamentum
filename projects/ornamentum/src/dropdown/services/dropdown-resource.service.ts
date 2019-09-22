@@ -42,9 +42,19 @@ export class DropdownResourceService<T> {
           });
         }
 
+        if (params.offset !== undefined) {
+          const offset = params.offset + 1 > result.length ? 0 : params.offset;
+
+          if (params.limit === undefined) {
+            result = result.slice(offset, result.length);
+          } else {
+            result = result.slice(offset, offset + params.limit);
+          }
+        }
+
         return of({
           options: result,
-          count: result.length
+          count: options.length
         });
       })
     );
