@@ -1,56 +1,52 @@
 <div class="feature-container">
-  <h1>Themes</h1>
-
-  <p>Ornamentum data table now comes with several themes that can be selected depending on application UI/UX
-    requirements.</p>
-
-  <h2 id="builtInThemes">Built-in Themes</h2>
+  <h1>Data Table Themes</h1>
 
   <p>
-    Ornamentum supports, including style sheets via SCSS or prebuilt CSS depending on your requirement. You can include
-    library style sheets within Angular CLI configuration <code>styles</code> array or import directly to stylesheet if
-    you are using SCSS and planing to customize the theme.
+    Ornamentum data table list has a variety of predefined themes which you can apply to your application.
+    Greater selection of themes are available with different colour variations to chose from.
   </p>
-
   <p>
-    Any theme style sheet has its own optional addon style sheet which can be used to customize the appearance of HTML
-    controls such as checkboxes, scroll bars and etc.
-  </p>
-
-  <p>
-    You can check the user experience with these themes via toggling the default themes through theme selector as
-    followed.
+    You can check the user experience of these themes via toggling the predefined themes via theme selector as follows.
   </p>
 
   <div class="theme-color-palette"></div>
 
-  <h4 id="baseTheme">Base Theme</h4>
+  <p>
+    <app-advanced-usage></app-advanced-usage>
+  </p>
+
+  <h2 id="predefinedThemes">Predefined Themes</h2>
 
   <p>
-    The following image illustrate the ornamentum Data Table look and feel with its <b>Base theme</b>.
+    Ornamentum bundles prebuilt CSS and source <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a>
+    theme files. However, we recommend you to use the source SCSS files for best browser support with the use of
+    <a rel="noopener" target="_blank" href="https://github.com/browserslist/browserslist/">browserlist</a> configuration.
   </p>
+  <p>
+    Import the Ornamentum theme style sheet reference to apply theming of your preference. Follow
+    <a rel="noopener" target="_blank" href="https://github.com/angular/angular-cli/wiki/stories-global-styles">Angular CLI: Global Styles</a>
+    documentation for more information on how to integrate third party style sheets.
+  </p>
+
+  <p>
+    Below images illustrate the list of available themes and a glimpse of their appearance.
+  </p>
+
+  <h4 id="baseTheme">Base Theme</h4>
+
+  <p>Minimalistic theme with white colour based variations.</p>
 
   <div class="dt-theme-common dt-base-theme"></div>
 
-  <ul class="main-pane-list">
-    <li>
-      <p>
-        <b>CSS Usage</b>: Include Ornamentum pre-built CSS <b>Base theme</b> style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-        array.
-      </p>
-      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.baseCssThemeImport"></app-code-snippet>
-    </li>
-
-    <li>
-      <p>
-        <b>SCSS Usage</b>: Include Ornamentum <b>Base theme</b> SCSS style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-        array.
-      </p>
-      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.baseScssThemeImport"></app-code-snippet>
-    </li>
-  </ul>
+  <p>
+    <b>SCSS</b> (recommended): Include Ornamentum theme source
+    <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.baseScssThemeImport"></app-code-snippet>
+  <p>
+    <b>CSS</b>: Include Ornamentum prebuilt CSS references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.baseCssThemeImport"></app-code-snippet>
 
   <h4 id="darkTheme">Dark Theme</h4>
 
@@ -58,24 +54,15 @@
 
   <div class="dt-theme-common dt-dark-theme"></div>
 
-  <ul class="main-pane-list">
-    <li>
-      <p>
-        <b>CSS Usage</b>: Include Ornamentum pre-built CSS <b>Dark theme</b> style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-        array.
-      </p>
-      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.darkThemeCssThemeImport"></app-code-snippet>
-    </li>
-    <li>
-      <p>
-        <b>SCSS Usage</b>: Include Ornamentum <b>Dark theme</b> SCSS style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-        array.
-      </p>
-      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.darkThemeScssThemeImport"></app-code-snippet>
-    </li>
-  </ul>
+  <p>
+    <b>SCSS</b> (recommended): Include Ornamentum theme source
+    <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.darkThemeScssThemeImport"></app-code-snippet>
+  <p>
+    <b>CSS</b>: Include Ornamentum prebuilt CSS references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.darkThemeCssThemeImport"></app-code-snippet>
 
   <h4 id="flatTheme">Flat Theme</h4>
 
@@ -83,24 +70,15 @@
 
   <div class="dt-theme-common dt-flat-theme"></div>
 
-  <ul class="main-pane-list">
-    <li>
-      <p>
-        <b>CSS Usage</b>: Include Ornamentum pre-built CSS <b>Flat theme</b> style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-        array.
-      </p>
-      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.flatThemeCssThemeImport"></app-code-snippet>
-    </li>
-    <li>
-      <p>
-        <b>SCSS Usage</b>: Include Ornamentum <b>Flat theme</b> SCSS style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-        array.
-      </p>
-      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.flatThemeScssThemeImport"></app-code-snippet>
-    </li>
-  </ul>
+  <p>
+    <b>SCSS</b> (recommended): Include Ornamentum theme source
+    <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.flatThemeScssThemeImport"></app-code-snippet>
+  <p>
+    <b>CSS</b>: Include Ornamentum prebuilt CSS references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.flatThemeCssThemeImport"></app-code-snippet>
 
   <h4 id="ornamentumTheme">Ornamentum Theme</h4>
 
@@ -108,25 +86,15 @@
 
   <div class="dt-theme-common dt-ornamentum-theme"></div>
 
-  <ul class="main-pane-list">
-    <li>
-      <p>
-        <b>CSS Usage</b>: Include pre-built CSS <b>Ornamentum theme</b> style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-        array.
-      </p>
-      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.ornamentumThemeCssThemeImport"></app-code-snippet>
-    </li>
-    <li>
-      <p>
-        <b>SCSS Usage</b>: Include <b>Ornamentum theme</b> SCSS style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-        array.
-      </p>
-      <app-code-snippet [type]="FileType.JSON"
-                        [content]="demoSnippet.ornamentumThemeScssThemeImport"></app-code-snippet>
-    </li>
-  </ul>
+  <p>
+    <b>SCSS</b> (recommended): Include Ornamentum theme source
+    <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.ornamentumThemeScssThemeImport"></app-code-snippet>
+  <p>
+    <b>CSS</b>: Include Ornamentum prebuilt CSS references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.ornamentumThemeCssThemeImport"></app-code-snippet>
 
   <h4 id="aegeanTheme">Aegean Theme</h4>
 
@@ -134,30 +102,15 @@
 
   <div class="dt-theme-common dt-aegean-theme"></div>
 
-  <ul class="main-pane-list">
-    <li>
-      <p>
-        <b>CSS Usage</b>: Include Ornamentum pre-built CSS <b>Aegean theme</b> style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-        array.
-      </p>
-      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.aegeanThemeCssThemeImport"></app-code-snippet>
-    </li>
-    <li>
-      <p>
-        <b>SCSS Usage</b>: Include Ornamentum <b>Aegean theme</b> SCSS style sheets in
-        <a rel="noopener" target="_blank" href="https://cli.angular.io">Angular CLI</a> config <code>styles</code>
-        array.
-      </p>
-      <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.aegeanThemeScssThemeImport"></app-code-snippet>
-    </li>
-  </ul>
-
-  <h2 id="customThemes">Custom Themes</h2>
-
-  <p>Without using built-in data table themes you can create your own theme by overriding SCSS variables that
-    ornamentum publicly exposed. Refer <a [routerLink]="['/feature/data-table/styling/custom-theming']">Custom
-      Theming</a> section for further details.</p>
+  <p>
+    <b>SCSS</b> (recommended): Include Ornamentum theme source
+    <a rel="noopener" target="_blank" href="https://sass-lang.com/">SCSS</a> references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.aegeanThemeScssThemeImport"></app-code-snippet>
+  <p>
+    <b>CSS</b>: Include Ornamentum prebuilt CSS references.
+  </p>
+  <app-code-snippet [type]="FileType.JSON" [content]="demoSnippet.aegeanThemeCssThemeImport"></app-code-snippet>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/styling/custom-theming']">Custom Theming</a><br>

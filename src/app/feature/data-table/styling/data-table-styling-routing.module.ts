@@ -20,7 +20,7 @@ const dataTableStylingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Responsive Configurations',
+        title: 'Ornamentum - Data Table | Functionality | Responsive Configurations',
         // tslint:disable-next-line
         keywords: 'responsive configuration,responsive data grids,responsive data tables,mobile friendly data tables,mobile friendly data grids,tablet-friendly data tables,tablet friendly data grids',
         // tslint:disable-next-line
@@ -36,7 +36,7 @@ const dataTableStylingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Styling | Themes | User Experience',
+        title: 'Ornamentum - Data Table | Styling | Themes | User Experience',
         // tslint:disable-next-line
         keywords: 'themes,themes for data table,themes for data grid,customizable themes for data grids,customizable themes for data tables,data table look and feel,data grid look and feel,user experience',
         // tslint:disable-next-line
@@ -52,7 +52,7 @@ const dataTableStylingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Customize | Themes | User Experience',
+        title: 'Ornamentum - Data Table | Customize | Themes | User Experience',
         keywords: 'custom theming,customized themes,customize table ux,custom table styles,custom grid colours',
         description: 'Data table support customizing and building your own theme via SASS variables.'
       }

@@ -8,13 +8,17 @@ import { DataTableThemesRoutingModule } from './data-table-themes-routing.module
 
 import { SharedModule } from '../../../../shared/shared.module';
 
-import { DataTableThemesComponent } from './index';
+import { DataTableThemesComponent, AdvancedUsageComponent, AdvancedUsageExpandableDetailViewComponent } from './index';
 
 /**
  * Module class for containing data table themes module.
  */
 @NgModule({
-  declarations: [DataTableThemesComponent],
+  declarations: [
+    DataTableThemesComponent,
+    AdvancedUsageComponent,
+    AdvancedUsageExpandableDetailViewComponent
+  ],
   exports: [],
   imports: [
     CommonModule,
