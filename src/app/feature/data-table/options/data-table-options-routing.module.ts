@@ -20,7 +20,7 @@ const dataTableOptionsRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Data Loading Spinner',
+        title: 'Ornamentum - Data Table | Functionality | Data Loading Spinner',
         // tslint:disable-next-line
         keywords: 'data loading spinner,loading indicator,loading spinner,data loading spinner for grid,data loading spinner for table',
         // tslint:disable-next-line
@@ -36,7 +36,7 @@ const dataTableOptionsRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Substitute Rows',
+        title: 'Ornamentum - Data Table | Functionality | Substitute Rows',
         // tslint:disable-next-line
         keywords: 'substitute rows,alternative rows,fillup rows,null rows,empty rows,empty records,null records,dummy rows',
         // tslint:disable-next-line
@@ -52,7 +52,7 @@ const dataTableOptionsRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Header Details',
+        title: 'Ornamentum - Data Table | Functionality | Header Details',
         // tslint:disable-next-line
         keywords: 'header details,header,header details for data grid,header details for data table,grid header,table header',
         // tslint:disable-next-line
