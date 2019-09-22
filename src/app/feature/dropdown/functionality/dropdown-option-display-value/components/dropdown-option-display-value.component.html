@@ -1,0 +1,36 @@
+<div class="feature-container">
+  <h1>Dropdown List Option Display Value</h1>
+
+  <p>
+    Dropdown options are rendered by iterating through the inbound data collection and extracting <code>displayTrackBy</code>
+    field associated property value. By default dropdown will use <code>selectTrackBy</code> field value as
+    <code>displayTrackBy</code>. Please refer dropdown option select track field documentation
+    <a [routerLink]="['/feature/dropdown/functionality/option/selection']" [fragment]="'selectTrackBy'">Select Track By</a>
+    section for more information.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <p>Below example demonstrates the usages of configuring dropdown option display value field.</p>
+
+  <app-option-display-usage></app-option-display-usage>
+  <app-example-code [files]="optionDisplayUsage"></app-example-code>
+
+  <p>
+    According to the above example, <code>displayTrackBy</code> field is set to <b>productType</b> which is used to
+    render dropdown options.
+  </p>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    Use <code>displayTrackBy</code> field to set the dropdown option display value field explicitly.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.displayTrackBy"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/dropdown/options/option/disabling']">Option Disabling</a><br/>
+  <a [routerLink]="['/feature/dropdown/advanced/load-data-on-init']">Load Data On Init</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#displayTrackBy">API Doc for Option Display</a>
+</div>

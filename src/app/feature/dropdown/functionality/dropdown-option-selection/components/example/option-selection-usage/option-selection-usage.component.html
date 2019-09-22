@@ -1,0 +1,23 @@
+<ng-dropdown
+  [id]="'products_features_12'"
+  [selectTrackBy]="'id'"
+  [displayTrackBy]="'productType'"
+  [selectMode]="'multi'"
+  [options]="options"
+  [selectedOptions]="selectedOptions"
+  [multiSelectOptionMaxWidth]="200"
+  [showOptionSelectCheckbox]="true"
+  [showSelectedOptionRemoveButton]="true"
+  [showClearSelectionButton]="true"
+  [triggerSelectChangeOnInit]="true"
+  (selectChange)="onSelectChange($event)">
+</ng-dropdown>
+
+<!-- selected option ids view on Bootstrap labels. -->
+<br/>
+<div *ngIf="selectedItems.length">
+  <h5>Selected Option(s)</h5>
+  <p class="event-output">
+    <span *ngFor="let selectedOption of selectedItems.slice().reverse()">{{ selectedOption }}<br/></span>
+  </p>
+</div>

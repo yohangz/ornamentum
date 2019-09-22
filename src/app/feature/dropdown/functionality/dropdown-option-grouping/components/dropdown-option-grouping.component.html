@@ -1,0 +1,28 @@
+<div class="feature-container">
+  <h1>Dropdown List Option Grouping</h1>
+
+  <p>
+    This feature allow users to group data into separate categories and show them in the same Dropdown. please note option grouping is possible when
+    only one or more data is available.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <app-option-grouping-usage></app-option-grouping-usage>
+  <app-example-code [files]="optionGroupingUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    For enable multiple option grouping, it is required to bind a specific string <b>field name</b> into <code>groupByField</code> property. by default
+    it is set to <b>undefined</b>.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.optionGrouping"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/dropdown/functionality/filtering']">Option Filtering</a><br />
+  <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client-side Basic Data Binding</a><br />
+  <a [routerLink]="['/feature/dropdown/advanced/translations']">Translations</a><br />
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#groupByField">API Doc for Dropdown Option Grouping</a>
+</div>

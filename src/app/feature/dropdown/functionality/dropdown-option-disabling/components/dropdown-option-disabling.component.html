@@ -1,0 +1,34 @@
+<div class="feature-container">
+  <h1>Dropdown List Option Disabling</h1>
+
+  <p>
+    This feature can be uses to disable dropdown options by individually and after disabling a specific field ornamentum
+    will disabled the particular field by UI level and restricting to perform any events on disabled fields.
+  </p>
+
+  <h2 id="whatYouWillSee">What You Will See</h2>
+
+  <p>
+    The below example will demonstrates a dropdown option disabling functionality by using
+    <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client-side Basic Data Binding</a>
+    operations and hard coded sample data set.
+  </p>
+
+  <app-option-disabling-usage></app-option-disabling-usage>
+  <app-example-code [files]="optionDisablingUsage"></app-example-code>
+
+  <h2 id="basicUsage">Basic Usage</h2>
+
+  <p>
+    For disable dropdown option, it is required to provide a <b>true</b> or <b>not empty string</b> field for <code>disabledTrackBy</code>
+    attribute on particular field whether to indicate an option needs to be disabled. by default
+    <code>disabledTrackBy</code> field is set it's field name to <b>disabled</b>.
+  </p>
+
+  <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.disabledTrackBy"></app-code-snippet>
+
+  <h2 id="suggestedLinks">Suggested Links</h2>
+  <a [routerLink]="['/feature/dropdown/advanced/events']">Events</a><br/>
+  <a [routerLink]="['/feature/dropdown/options/disabling']">Dropdown Disabling</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#disabledTrackBy">API Doc for Dropdown Option Disabling</a>
+</div>
