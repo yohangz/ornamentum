@@ -20,7 +20,7 @@ const dataTableAdvancedRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Events',
+        title: 'Ornamentum - Data Table | Functionality | Events',
         keywords: 'events,data table events,data grid events,data table interaction tracker,data table lifecycle',
         // tslint:disable-next-line
         description: 'Data table exposed events allow you to hook in to table rendering lifecycle, change behaviors, and capture user interactions.'
@@ -35,7 +35,7 @@ const dataTableAdvancedRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | State Persistence',
+        title: 'Ornamentum - Data Table | Functionality | State Persistence',
         keywords: 'state persistence,persistence state,save table state,save grid state,maintain table state,maintain grid state',
         description: 'Persist data table state across route navigations and browser sessions depending on state persistence mode.'
       }
@@ -49,7 +49,7 @@ const dataTableAdvancedRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Translations',
+        title: 'Ornamentum - Data Table | Functionality | Translations',
         keywords: 'translations,localization,translation,localize table content,localize grid content',
         description: 'Translations feature exposes the capability of localizing the data table control labels and static contents.'
       }
@@ -63,7 +63,7 @@ const dataTableAdvancedRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Advanced | Configuration Overriding',
+        title: 'Ornamentum - Data Table | Advanced | Configuration Overriding',
         // tslint:disable-next-line
         keywords: 'configuration,config,configuration override,data table configuration,data table config,root configuration,global configuration',
         description: 'Data table default behaviors or configurations can be customized in component usage and module root.'
