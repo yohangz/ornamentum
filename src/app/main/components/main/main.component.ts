@@ -1087,24 +1087,6 @@ export class MainComponent {
           name: 'Functionality',
           menuItems: [
             {
-              routePath: '/feature/dropdown/functionality/lazy-loading',
-              title: 'Lazy Loading',
-              navigation: [
-                {
-                  title: 'What You Will See',
-                  anchor: 'whatYouWillSee'
-                },
-                {
-                  title: 'Basic Usage',
-                  anchor: 'basicUsage'
-                },
-                {
-                  title: 'Suggested Links',
-                  anchor: 'suggestedLinks'
-                }
-              ]
-            },
-            {
               routePath: '/feature/dropdown/functionality/disabling',
               title: 'Disabling',
               navigation: [
@@ -1269,6 +1251,34 @@ export class MainComponent {
                 {
                   title: 'Basic Usage',
                   anchor: 'basicUsage'
+                },
+                {
+                  title: 'Suggested Links',
+                  anchor: 'suggestedLinks'
+                }
+              ]
+            },
+            {
+              routePath: '/feature/dropdown/functionality/lazy-loading',
+              title: 'Lazy Loading',
+              navigation: [
+                {
+                  title: 'What You Will See',
+                  anchor: 'whatYouWillSee'
+                },
+                {
+                  title: 'Basic Usage',
+                  anchor: 'basicUsage',
+                  subNavigation: [
+                    {
+                      title: 'Limit',
+                      anchor: 'limit'
+                    },
+                    {
+                      title: 'Load View Distance',
+                      anchor: 'loadViewDistance'
+                    }
+                  ]
                 },
                 {
                   title: 'Suggested Links',
