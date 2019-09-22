@@ -22,7 +22,7 @@ export const clientSideStreamUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  items: require('!!raw-loader!./docs/items.md'),
+  options: require('!!raw-loader!./docs/options.md'),
   dataSource: require('!!raw-loader!./docs/data-source.md'),
-  dataBindingWithItems: require('!!raw-loader!./docs/client-side-stream-with-items.md')
+  dataBindingWithOptions: require('!!raw-loader!./docs/client-side-stream-with-options.md')
 };

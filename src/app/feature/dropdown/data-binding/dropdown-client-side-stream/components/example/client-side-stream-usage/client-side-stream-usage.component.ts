@@ -33,7 +33,7 @@ export class ClientSideStreamUsageComponent implements OnInit {
             offset = 0;
           }
 
-          // This line of code is fetching 20 dummy data items collection from a local data service.
+          // This line of code is fetching 20 dummy data options collection from a local data service.
           // Replace this with your own data source.
           return this.dataFetchService.fetchStaticData(offset, 20);
         })

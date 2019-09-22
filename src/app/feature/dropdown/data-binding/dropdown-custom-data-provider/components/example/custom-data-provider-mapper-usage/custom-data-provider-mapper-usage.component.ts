@@ -32,13 +32,13 @@ export class CustomDataProviderMapperUsageComponent {
       .pipe(
         map((res: any) => {
           /**
-           * Items collection
-           * items: T[];
-           * Item count
+           * Options collection
+           * options: T[];
+           * Option count
            * count: number;
            */
           return {
-            items: res,
+            options: res,
             count: res.length
           };
         })

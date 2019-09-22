@@ -1,4 +1,4 @@
   <ng-dropdown
     ...
-    [items]="items">
+    [options]="options">
   </ng-dropdown>

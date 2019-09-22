@@ -9,7 +9,7 @@ import { SharedModule } from '../../../../shared/shared.module';
 
 import {
   DropdownClientSideBasicComponent,
-  ItemsUsageComponent,
+  OptionsUsageComponent,
   DataSourceUsageComponent,
 } from './index';
 
@@ -19,7 +19,7 @@ import {
 @NgModule({
   declarations: [
     DropdownClientSideBasicComponent,
-    ItemsUsageComponent,
+    OptionsUsageComponent,
     DataSourceUsageComponent
   ],
   exports: [],

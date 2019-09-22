@@ -1,12 +1,12 @@
 <div class="feature-container">
-  <h1>Client Side Stream Data Binding</h1>
+  <h1>Dropdown List Client Side Stream Data Binding</h1>
 
   <p>
     This data binding technique can be used to bind data stream to represent dynamic data such as traffic, weather,
     analytics and etc which changes over time. Ornamentum is capable of handling live data sources with all available
     features such as <a
-    [routerLink]="['/feature/dropdown/functionality/item/filtering']">Filtering</a>, <a
-    [routerLink]="['/feature/dropdown/functionality/item/selection']">Item Selection</a> etc.
+    [routerLink]="['/feature/dropdown/functionality/option/filtering']">Filtering</a>, <a
+    [routerLink]="['/feature/dropdown/functionality/option/selection']">Option Selection</a> etc.
   </p>
 
   <p>
@@ -53,27 +53,27 @@
     </li>
 
     <li>
-      <h5 id="bindViaItems">Bind via items</h5>
+      <h5 id="bindViaOptions">Bind via options</h5>
       <p>
-        <code>items: any[]</code> &nbsp;
+        <code>options: any[]</code> &nbsp;
         <span class="pr-1"></span>
         <span class="badge badge-pill badge-warning">Default Value: undefined</span>
         <span class="pr-1"></span>
         <span class="badge badge-pill badge-info">Target Component: &lt;ng-dropdown&gt;</span>
       </p>
 
-      <p>The <code>items</code> input property also can be used to implement the same behaviour instead of using an <a
+      <p>The <code>options</code> input property also can be used to implement the same behaviour instead of using an <a
         rel="noopener" target="_blank"
         href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS Observable</a> stream to bind real
         time data.</p>
 
-      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.options"></app-code-snippet>
 
-      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataBindingWithItems"></app-code-snippet>
+      <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataBindingWithOptions"></app-code-snippet>
 
       <p>
         Let's modify the controller code snippet in above example (<b>client-side-stream-usage.component.ts</b>) to use
-        <code>items</code> property instead of <code>dataSource</code>.
+        <code>options</code> property instead of <code>dataSource</code>.
       </p>
     </li>
   </ol>

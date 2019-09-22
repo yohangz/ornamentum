@@ -1,5 +1,5 @@
 <div class="feature-container">
-  <h1>Server Side Basic Data Binding</h1>
+  <h1>Dropdown List Server Side Basic Data Binding</h1>
 
   <p>
     Server side data binding allow users to bind large data sets that are not directly accessible as a full collection
@@ -13,7 +13,7 @@
   <p>
     Unlike in <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic</a>, Server Side
     rendering will request for data on dropdown initialization and whenever user performs
-    <a [routerLink]="['/feature/dropdown/functionality/item/filtering']" [fragment]="'serverSideFiltering'">Server Side
+    <a [routerLink]="['/feature/dropdown/functionality/option/filtering']" [fragment]="'serverSideFiltering'">Server Side
       Filtering</a> operation. Ornamentum has provided an optional opinionated service to integrate external data
     sources. However, you can build a custom data provider depending on your requirement.
   </p>
@@ -99,22 +99,22 @@
       <ul>
         <li>
           <p>
-            <code>limit</code> - The limit parameter controls the maximum number of items that may be returned for a
+            <code>limit</code> - The limit parameter controls the maximum number of options that may be returned for a
             single request. If limit is not specified, it will default to 30.
           </p>
         </li>
         <li>
           <p>
             <code>offset</code> - The offset parameter controls the starting point within the collection of resource
-            results. For example, if you have a collection of 15 items to be retrieved from a resource and you specify
+            results. For example, if you have a collection of 15 options to be retrieved from a resource and you specify
             limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value:
-            offset=0, offset=5, and offset=10. Note that the first item in the collection is retrieved by setting a
+            offset=0, offset=5, and offset=10. Note that the first option in the collection is retrieved by setting a
             zero offset.
           </p>
         </li>
       </ul>
       <p>
-        i.e: data GET request URL generated when scrolling down to see more items.
+        i.e: data GET request URL generated when scrolling down to see more options.
       </p>
       <p>
         https://ornamentum.app/api/data?<code>limit=30&offset=30</code>
@@ -176,7 +176,7 @@
       </ol>
 
       <p>
-        Refer <a [routerLink]="['/feature/dropdown/functionality/item/filtering']">Item Filtering</a> documentation for more
+        Refer <a [routerLink]="['/feature/dropdown/functionality/option/filtering']">Option Filtering</a> documentation for more
         information and how to filtering.
       </p>
     </li>

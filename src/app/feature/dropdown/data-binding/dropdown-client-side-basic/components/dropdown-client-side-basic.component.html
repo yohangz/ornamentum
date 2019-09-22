@@ -1,22 +1,22 @@
 <div class="feature-container">
-  <h1>Client Side Basic Data Binding</h1>
+  <h1>Dropdown List Client Side Basic Data Binding</h1>
 
   <p>Client side data binding allow the users to bind static data sets to the dropdown when the full data collection is
-    available in the client side. It can be configured via setting an array of data objects to <code>items</code> input
+    available in the client side. It can be configured via setting an array of data objects to <code>options</code> input
     property
     or via setting a <a rel="noopener" target="_blank" href="https://rxjs-dev.firebaseapp.com/">RxJS Observable</a>
     stream to <code>dataSource</code> input property.</p>
 
   <p>In this data binding technique, data set will be fetched at once.
     <a [routerLink]="['/feature/dropdown/functionality/filtering']">Filtering</a> and
-    <a [routerLink]="['/feature/dropdown/functionality/item/selection']">Item Selection</a> operations are performed in client
+    <a [routerLink]="['/feature/dropdown/functionality/option/selection']">Option Selection</a> operations are performed in client
     side via an internal data source manager service.
   </p>
 
   <p>
     If the data stream is very large and difficult to perform <a
     [routerLink]="['/feature/data-table/functionality/column/filtering']">Filtering</a>
-    and <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Item Selection</a> operations
+    and <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Option Selection</a> operations
     in the client side, <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server Side Basic</a>
     Data Binding can be use instead of using this technique.
   </p>
@@ -31,34 +31,34 @@
 
   <h2 id="whatYouWillSee">What You Will See</h2>
 
-  <app-items-usage></app-items-usage>
-  <app-example-code [files]="itemsUsage"></app-example-code>
+  <app-options-usage></app-options-usage>
+  <app-example-code [files]="optionsUsage"></app-example-code>
 
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>Client side data binding can be configured by using either of two approaches described below. Data emitted after
-    initial data binding will re-initialize the dropdown with the new data set and drop previously bound data items
+    initial data binding will re-initialize the dropdown with the new data set and drop previously bound data options
     collection or stream.</p>
 
   <ol class="main-pane-list">
     <li>
-      <h5 id="bindViaItems">Bind via Items</h5>
+      <h5 id="bindViaOptions">Bind via Options</h5>
       <p>
-        <code>items: any[]</code> &nbsp;
+        <code>options: any[]</code> &nbsp;
         <span class="pr-1"></span>
         <span class="badge badge-pill badge-warning">Default Value: undefined</span>
         <span class="pr-1"></span>
         <span class="badge badge-pill badge-info">Target Component: &lt;ng-dropdown&gt;</span>
       </p>
 
-      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items">{{ demoSnippet.items }}</app-code-snippet>
+      <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.options">{{ demoSnippet.options }}</app-code-snippet>
 
       <p>
         This approach can be used to bind a static data array. The complete set of code snippets for the data binding
-        via <code>items</code> input property can be found in <a
+        via <code>options</code> input property can be found in <a
         [routerLink]="['/feature/dropdown/data-binding/client-side/basic']"
         [fragment]="'whatYouWillSee'">What You Will See</a> section example. Mutations to the
-        item collections will automatically get reflected in dropdown.
+        option collections will automatically get reflected in dropdown.
       </p>
     </li>
 
@@ -88,6 +88,6 @@
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/dropdown/data-binding/client-side/stream']">Client Side Stream Binding</a><br/>
   <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#items">API Doc for Client Side
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#options">API Doc for Client Side
     Basic Data Binding</a>
 </div>

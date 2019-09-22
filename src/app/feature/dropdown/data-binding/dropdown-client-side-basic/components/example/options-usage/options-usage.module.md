@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DropdownModule } from 'ornamentum';
   
-import { ItemsUsageComponent } from './items-usage.component';
+import { OptionsUsageComponent } from './options-usage.component';
 
 @NgModule({
- bootstrap: [ItemsUsageComponent],
- declarations: [ItemsUsageComponent],
+ bootstrap: [OptionsUsageComponent],
+ declarations: [OptionsUsageComponent],
  imports: [
     BrowserModule, 
     DropdownModule.forRoot()
   ]
 })
-export class ItemsUsageModule {
+export class OptionsUsageModule {
 }

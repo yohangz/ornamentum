@@ -4,7 +4,7 @@ import { FileType } from 'helper-models';
 
 import {
   demoSnippet,
-  itemsUsage,
+  optionsUsage,
   dataSourceUsage,
 } from './dropdown-client-side-basic.list';
 
@@ -18,6 +18,6 @@ export class DropdownClientSideBasicComponent {
 
   public demoSnippet = demoSnippet;
 
-  public itemsUsage = itemsUsage;
+  public optionsUsage = optionsUsage;
   public dataSourceUsage = dataSourceUsage;
 }

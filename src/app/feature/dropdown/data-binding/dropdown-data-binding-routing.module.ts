@@ -20,7 +20,7 @@ const dropdownFeatureRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Data Binding | Client Side | Basic Data Binding',
+        title: 'Ornamentum - Dropdown | Data Binding | Client Side | Basic Data Binding',
         // tslint:disable-next-line
         keywords: 'client side basic data binding,basic data binding,client side data binding,dropdown client data binding,client side data binding,rxjs observable',
         // tslint:disable-next-line
@@ -36,7 +36,7 @@ const dropdownFeatureRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Data Binding | Client Side | Stream Data Binding',
+        title: 'Ornamentum - Dropdown | Data Binding | Client Side | Stream Data Binding',
         // tslint:disable-next-line
         keywords: 'client side stream data binding,reactive stream binding,stream data binding,client stream data binding,dropdown stream client data binding,realtime data binding',
         // tslint:disable-next-line
@@ -52,7 +52,7 @@ const dropdownFeatureRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Data Binding | Server Side | Basic Data Binding',
+        title: 'Ornamentum - Dropdown | Data Binding | Server Side | Basic Data Binding',
         // tslint:disable-next-line
         keywords: 'servers side basic data binding,basic data binding,server side data binding,server side dropdown data binding',
         // tslint:disable-next-line
@@ -68,7 +68,7 @@ const dropdownFeatureRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Data Binding | Server Side | Web Socket Data Binding',
+        title: 'Ornamentum - Dropdown | Data Binding | Server Side | Web Socket Data Binding',
         // tslint:disable-next-line
         keywords: 'dropdown socket,web socket data binding,web socket data binding,server web socket data binding,server socket data binding',
         // tslint:disable-next-line
@@ -82,7 +82,7 @@ const dropdownFeatureRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown| Data Binding | Server Side | Custom Data Provider',
+        title: 'Ornamentum - Dropdown| Data Binding | Server Side | Custom Data Provider',
         // tslint:disable-next-line
         keywords: 'dropdown custom data source,custom data provider,customized data provider,data provider,custom data source provider,custom data binding',
         // tslint:disable-next-line

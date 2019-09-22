@@ -5,13 +5,13 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-items-usage',
-  templateUrl: './items-usage.component.html'
+  selector: 'app-options-usage',
+  templateUrl: './options-usage.component.html'
 })
-export class ItemsUsageComponent {
-  public items: ExampleData[];
+export class OptionsUsageComponent {
+  public options: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 }

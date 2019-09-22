@@ -1,20 +1,20 @@
 import { ExampleFile, FileType } from 'helper-models';
 
-export const itemsUsage: ExampleFile[] = [
+export const optionsUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'items-usage.component.ts',
-    content: require('!!raw-loader!./example/items-usage/items-usage.component.ts')
+    name: 'options-usage.component.ts',
+    content: require('!!raw-loader!./example/options-usage/options-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'items-usage.component.html',
-    content: require('!!raw-loader!./example/items-usage/items-usage.component.html')
+    name: 'options-usage.component.html',
+    content: require('!!raw-loader!./example/options-usage/options-usage.component.html')
   },
   {
     type: FileType.TS,
-    name: 'items-usage.module.ts',
-    content: require('!!raw-loader!./example/items-usage/items-usage.module.md')
+    name: 'options-usage.module.ts',
+    content: require('!!raw-loader!./example/options-usage/options-usage.module.md')
   }
 ];
 
@@ -38,6 +38,6 @@ export const dataSourceUsage: ExampleFile[] = [
 ];
 
 export const demoSnippet: any = {
-  items: require('!!raw-loader!./docs/items.md'),
+  options: require('!!raw-loader!./docs/options.md'),
   dataSource: require('!!raw-loader!./docs/data-source.md')
 };
