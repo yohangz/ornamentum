@@ -1,24 +1,24 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DropdownDataLimitComponent } from './index';
+import { DropdownLazyLoadingComponent } from './index';
 
 /**
- * Represent dropdown data limit routes.
+ * Represent dropdown lazy loading routes.
  */
 const dropdownDataLimitRoutes: Routes = [
   {
-    component: DropdownDataLimitComponent,
+    component: DropdownLazyLoadingComponent,
     path: ''
   }
 ];
 
 /**
- * Dropdown data limit routing module.
+ * Dropdown lazy loading routing module.
  */
 @NgModule({
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownDataLimitRoutes)]
 })
-export class DropdownDataLimitRoutingModule {
+export class DropdownLazyLoadingRoutingModule {
 }

@@ -1087,8 +1087,8 @@ export class MainComponent {
           name: 'Functionality',
           menuItems: [
             {
-              routePath: '/feature/dropdown/functionality/data-limit',
-              title: 'Data Limit',
+              routePath: '/feature/dropdown/functionality/lazy-loading',
+              title: 'Lazy Loading',
               navigation: [
                 {
                   title: 'What You Will See',
@@ -1106,7 +1106,7 @@ export class MainComponent {
             },
             {
               routePath: '/feature/dropdown/functionality/disabling',
-              title: 'Dropdown Disabling',
+              title: 'Disabling',
               navigation: [
                 {
                   title: 'What You Will See',

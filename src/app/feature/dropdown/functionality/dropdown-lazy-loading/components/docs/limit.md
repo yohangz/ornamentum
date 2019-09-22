@@ -1,4 +1,4 @@
   <ng-dropdown
     ...
-    [limit]="10">
+    [loadOnScroll]="true">
   </ng-dropdown>

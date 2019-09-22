@@ -3,15 +3,15 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DropdownModule } from 'ornamentum';
   
-import { DataLimitUsageComponent } from './data-limit-usage.component';
+import { LazyLoadingUsageComponent } from './dropdown-lazy-loading-usage.component';
 
 @NgModule({
- bootstrap: [DataLimitUsageComponent],
- declarations: [DataLimitUsageComponent],
+ bootstrap: [LazyLoadingUsageComponent],
+ declarations: [LazyLoadingUsageComponent],
  imports: [
     BrowserModule, 
     DropdownModule.forRoot()
   ]
 })
-export class DataLimitUsageModule {
+export class DropdownLazyLoadingUsageModule {
 }

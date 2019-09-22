@@ -1,0 +1,56 @@
+<h1>Dropdown List Lazy Loading</h1>
+
+<p>
+  Lazy loading functionality can boost performance, when working with large data sets. Dropdown will fetch the upcoming data
+  on demand upon user scroll. Data limit and scroll sensitivity are configurable to accommodate custom application requirements.
+  This functionality is supported by all data binding modes.
+</p>
+
+<h2 id="whatYouWillSee">What You Will See</h2>
+
+<app-lazy-loading-usage></app-lazy-loading-usage>
+<app-example-code [files]="dataLimitUsage"></app-example-code>
+
+<h2 id="basicUsage">Basic Usage</h2>
+
+<p>
+  <code>loadOnScroll: boolean</code> &nbsp;
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-warning">Default Value: false</span>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-dropdown&gt;</span>
+</p>
+
+<p>
+  Lazy loading is disabled by default. It can be enable by setting the <code>[loadOnScroll]</code> input property
+  <code>true</code> in <code>&lt;ng-dropdown&gt;</code> component. Pagination functionality depends on
+  <code>[limit]</code> input property value described later in this section.
+</p>
+
+<app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.limit"></app-code-snippet>
+
+<h2 id="usefulProperties">Useful Properties</h2>
+<p>
+  Below listed properties can be used to change the default behaviours of the lazy loading functionality. These property
+  values are applicable only when lazy loading is enabled.
+</p>
+
+<h4 id="limit">Limit</h4>
+<p>
+  <code>limit: number</code> &nbsp;
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-warning">Default Value: 15</span>
+  <span class="pr-1"></span>
+  <span class="badge badge-pill badge-info">Target Component: &lt;ng-dropdown&gt;</span>
+</p>
+
+<p>
+  Limit input property can be used to declare how many dropdown list options should be fetched per scroll boundary hit until
+  data source exhaust.
+</p>
+
+<app-lazy-loading-limit-usage></app-lazy-loading-limit-usage>
+<app-example-code [files]="pageUsage"></app-example-code>
+
+<h2>Suggested Links</h2>
+<a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#limit">Dropdown API Documentation</a>

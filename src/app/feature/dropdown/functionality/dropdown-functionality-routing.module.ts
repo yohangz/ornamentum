@@ -13,10 +13,10 @@ const dropdownFunctionalityRoutes: Routes = [
     redirectTo: 'option/display-value'
   },
   {
-    loadChildren: './dropdown-data-limit/dropdown-data-limit.module#DropdownDataLimitModule',
+    loadChildren: './dropdown-lazy-loading/dropdown-lazy-loading.module#DropdownLazyLoadingModule',
     // loadChildren: () => import('./dropdown-data-limit/dropdown-data-limit.module')
-    //   .then((m) => m.DropdownDataLimitModule),
-    path: 'data-limit',
+    //   .then((m) => m.DropdownLazyLoadingModule),
+    path: 'lazy-loading',
     canActivate: [SeoGuard],
     data: {
       seo: {

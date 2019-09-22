@@ -7,10 +7,10 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-data-limit-usage',
-  templateUrl: './data-limit-usage.component.html'
+  selector: 'app-lazy-loading-limit-usage',
+  templateUrl: './lazy-loading-limit-usage.component.html'
 })
-export class DataLimitUsageComponent {
+export class LazyLoadingLimitUsageComponent {
   public options: ExampleData[];
 
   public translations: DropdownTranslations = {
@@ -18,6 +18,6 @@ export class DataLimitUsageComponent {
   };
 
   constructor(private dataFetchService: DataFetchService) {
-    this.options = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData(0, 100);
   }
 }
