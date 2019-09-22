@@ -20,8 +20,8 @@ const dataTableFunctionalityRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Column Binding',
-        keywords: 'column binding,data table column binding, data grid column binding,grid column binding, table column binding',
+        title: 'Ornamentum - Data Table | Functionality | Column Binding',
+        keywords: 'column binding,data table column binding,data grid column binding,grid column binding,table column binding',
         // tslint:disable-next-line
         description: 'Column binding allows the users to manipulate column associated bindings and behaviors.'
       }
@@ -35,7 +35,7 @@ const dataTableFunctionalityRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Pagination',
+        title: 'Ornamentum - Data Table | Functionality | Pagination',
         keywords: 'pagination,data paging,paginate,data table pagination,data grid pages',
         // tslint:disable-next-line
         description: 'Pagination allows the users to bind large data sets without a performance impact and avoid unnecessarily long scrollbars.'
@@ -50,7 +50,7 @@ const dataTableFunctionalityRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Sorting',
+        title: 'Ornamentum - Data Table | Functionality | Sorting',
         keywords: 'sorting,sort records,sort data tables,sort data grids,sort data rows,ascending sort,descending sort,ordering data grids rows,ordering data tables rows',
         // tslint:disable-next-line
         description: 'Sorting  allows the users to order data on initial load and as well as by clicking on the sortable column headers to arrange the columns ascending or descending orders.'
@@ -65,7 +65,7 @@ const dataTableFunctionalityRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Filtering',
+        title: 'Ornamentum - Data Table | Functionality | Filtering',
         keywords: 'filtering,filter data table records,filter data grid records,filter records,filter grid content,filter table content',
         // tslint:disable-next-line
         description: 'Filtering option facilitates the users to filter out data based on a specific criteria. Filtering would help the users to view and analyze data within a few seconds.'
@@ -80,7 +80,7 @@ const dataTableFunctionalityRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Functionality | Row | Selection',
+        title: 'Ornamentum - Data Table | Functionality | Row | Selection',
         keywords: 'row selection,select rows,select multiple rows,select single row,toggle row selection,selection state track',
         // tslint:disable-next-line
         description: 'Row selection allows the users to select a single row or multiple rows in different methods such as single selection, multiple selection, single toggle selections.'
