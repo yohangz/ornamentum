@@ -50,7 +50,7 @@ const dropdownStylingRoutes: Routes = [
       seo: {
         title: 'Ornamentum - Dropdown | Styling | Themes | User Experience',
         // tslint:disable-next-line
-        keywords: 'ornamentum dropdown themes,dropdown themes,dropdown list themes,dropdown base theme,dropdown dark theme,dropdown flat theme,dropdown ornamentum theme,dropdown list aegean theme',
+        keywords: 'ornamentum dropdown themes,dropdown themes,dropdown list themes,dropdown base theme,dropdown dark theme,dropdown flat theme,dropdown ornamentum theme,dropdown aegean theme',
         // tslint:disable-next-line
         description: 'Ornamentum dropdown list has a variety of predefined themes which you can apply to your application. Greater selection of themes are available with different colour variations to chose from.'
       }
