@@ -74,24 +74,24 @@ export const translationsSelectPlaceholderUsage: ExampleFile[] = [
   }
 ];
 
-export const translationsSelectedItemWrapPlaceholderUsage: ExampleFile[] = [
+export const translationsSelectedOptionWrapPlaceholderUsage: ExampleFile[] = [
   {
     type: FileType.TS,
-    name: 'translations-selected-item-wrap-placeholder-usage.component.ts',
-    content: require('!!raw-loader!./example/translations-selected-item-wrap-placeholder-usage/' +
-      'translations-selected-item-wrap-placeholder-usage.component.ts')
+    name: 'translations-selected-option-wrap-placeholder-usage.component.ts',
+    content: require('!!raw-loader!./example/translations-selected-option-wrap-placeholder-usage/' +
+      'translations-selected-option-wrap-placeholder-usage.component.ts')
   },
   {
     type: FileType.HTML,
-    name: 'translations-selected-item-wrap-placeholder-usage.component.html',
-    content: require('!!raw-loader!./example/translations-selected-item-wrap-placeholder-usage/' +
-      'translations-selected-item-wrap-placeholder-usage.component.html')
+    name: 'translations-selected-option-wrap-placeholder-usage.component.html',
+    content: require('!!raw-loader!./example/translations-selected-option-wrap-placeholder-usage/' +
+      'translations-selected-option-wrap-placeholder-usage.component.html')
   },
   {
     type: FileType.TS,
-    name: 'translations-selected-item-wrap-placeholder-usage.module.ts',
-    content: require('!!raw-loader!./example/translations-selected-item-wrap-placeholder-usage/' +
-      'translations-selected-item-wrap-placeholder-usage.module.md')
+    name: 'translations-selected-option-wrap-placeholder-usage.module.ts',
+    content: require('!!raw-loader!./example/translations-selected-option-wrap-placeholder-usage/' +
+      'translations-selected-option-wrap-placeholder-usage.module.md')
   }
 ];
 

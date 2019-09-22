@@ -2,15 +2,15 @@
   [id]="'products_advanced_10'"
   [selectTrackBy]="'id'"
   [displayTrackBy]="'productType'"
-  [items]="items"
+  [options]="options"
   [selectMode]="'multi'"
   (selectChange)="onSelectChange($event)">
 </ng-dropdown>
 
 <br/>
 <p class="event-output" *ngIf="selectChangeEventData.length; else noDataAvailable">
-  <span *ngFor="let item of selectChangeEventData.slice().reverse()">{{ item }}<br/></span>
+  <span *ngFor="let option of selectChangeEventData.slice().reverse()">{{ option }}<br/></span>
 </p>
 <ng-template #noDataAvailable>
-  <p class="event-output">Select on any dropdown item to see the output</p>
+  <p class="event-output">Select on any dropdown option to see the output</p>
 </ng-template>

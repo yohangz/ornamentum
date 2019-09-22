@@ -10,11 +10,11 @@ import { DataFetchService } from 'helper-services';
   styleUrls: ['../../dropdown-events.component.scss']
 })
 export class TriggerSelectChangeOnInitUsageComponent {
-  public items: ExampleData[];
+  public options: ExampleData[];
   public selectChangeEventData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 
   public onSelectChange(selectedData: ExampleData | ExampleData[]) {

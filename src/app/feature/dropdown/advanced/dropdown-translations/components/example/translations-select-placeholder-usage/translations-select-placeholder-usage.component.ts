@@ -11,10 +11,10 @@ import { DataFetchService } from 'helper-services';
   templateUrl: './translations-select-placeholder-usage.component.html'
 })
 export class TranslationsSelectPlaceholderUsageComponent {
-  public items: ExampleData[];
+  public options: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 
   public dropdownTranslations: DropdownTranslations = {

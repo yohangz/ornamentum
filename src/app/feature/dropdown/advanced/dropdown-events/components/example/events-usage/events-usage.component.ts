@@ -12,11 +12,11 @@ import { DataFetchService } from 'helper-services';
   styleUrls: ['../../dropdown-events.component.scss']
 })
 export class EventsUsageComponent implements AfterViewInit {
-  public items: ExampleData[];
+  public options: ExampleData[];
   public allEventsData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService, private cdRef: ChangeDetectorRef) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 
   public ngAfterViewInit(): void {
@@ -32,7 +32,7 @@ export class EventsUsageComponent implements AfterViewInit {
   }
 
   public onSelectChange(selectedData: ExampleData | ExampleData[]): void {
-    // if selectTrackBy property is specified, the selected item id or ids will be passed as a parameter to this method.
+    // if selectTrackBy property is specified, the selected option id or ids will be passed as a parameter to this method.
     this.allEventsData.push(JSON.stringify(selectedData));
   }
 

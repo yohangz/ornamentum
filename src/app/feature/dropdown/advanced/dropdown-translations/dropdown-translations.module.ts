@@ -13,7 +13,7 @@ import {
   TranslationsNoDataMessageUsageComponent,
   TranslationsFilterPlaceholderUsageComponent,
   TranslationsSelectPlaceholderUsageComponent,
-  TranslationsSelectedItemWrapPlaceholderUsageComponent
+  TranslationsSelectedOptionWrapPlaceholderUsageComponent
 } from './index';
 
 /**
@@ -26,7 +26,7 @@ import {
     TranslationsNoDataMessageUsageComponent,
     TranslationsFilterPlaceholderUsageComponent,
     TranslationsSelectPlaceholderUsageComponent,
-    TranslationsSelectedItemWrapPlaceholderUsageComponent
+    TranslationsSelectedOptionWrapPlaceholderUsageComponent
   ],
   exports: [],
   imports: [

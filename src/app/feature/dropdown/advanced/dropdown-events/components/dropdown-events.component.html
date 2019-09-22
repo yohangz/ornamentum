@@ -1,5 +1,5 @@
 <div class="feature-container">
-  <h1>Events</h1>
+  <h1>Dropdown List Events</h1>
 
   <p>
     There are set of events have introduced for the dropdown to serve & fulfill different user requirements to manage
@@ -23,13 +23,13 @@
        |     |     |-- <a [routerLink]="['/feature/dropdown/advanced/events']" [fragment]="'init'">Init</a> // triggers dropdown initialization.
        |     |     |-- <a [routerLink]="['/feature/dropdown/advanced/events']" [fragment]="'dataBound'">Data Bound</a> // triggers after the data binding completion.
        |     |     |-- <a [routerLink]="['/feature/dropdown/advanced/events']"
-                          [fragment]="'selectChange'">Select Change</a> // triggers dropdown item select change.
+                          [fragment]="'selectChange'">Select Change</a> // triggers dropdown option select change.
        |     |
        |     |___ <strong>Manually Triggers</strong>
        |           |
        |           |-- <a [routerLink]="['/feature/dropdown/advanced/events']" [fragment]="'triggerSelectChangeOnInit'">Trigger Select Change On Init</a> // triggers select change event on dropdown init.
        |           |-- <a [routerLink]="['/feature/dropdown/advanced/events']"
-                          [fragment]="'triggerSelectChangeOnFirstOptionSelect'">Trigger Select Change On First Option Select</a> // triggers select change when dropdown first item is selected.
+                          [fragment]="'triggerSelectChangeOnFirstOptionSelect'">Trigger Select Change On First Option Select</a> // triggers select change when dropdown first option is selected.
        |           |-- <a [routerLink]="['/feature/dropdown/advanced/events']"
                           [fragment]="'triggerSelectChangeOnModelUpdate'">Trigger Select Change On Model Update</a> // triggers select change on model update.
        |
@@ -74,9 +74,9 @@
   <code>selectChange: EventEmitter&lt;any[] | any&gt;</code>
 
   <p>
-    Triggers when dropdown item select state changes based on defined dropdown <a
-    [routerLink]="['/feature/dropdown/functionality/item/selection']" [fragment]="'selectMode'">Select Mode</a>. To identify
-    selected items uniquely it is necessary to specify <a [routerLink]="['/feature/dropdown/functionality/item/selection']"
+    Triggers when dropdown option select state changes based on defined dropdown <a
+    [routerLink]="['/feature/dropdown/functionality/option/selection']" [fragment]="'selectMode'">Select Mode</a>. To identify
+    selected options uniquely it is necessary to specify <a [routerLink]="['/feature/dropdown/functionality/option/selection']"
                                                           [fragment]="'selectTrackBy'">selectTrackBy</a>
     property. Therefore, a unique value key name should be set as the value for this attribute. According to this
     example it is <b>'id'</b>. There are set of configuration are introduced in the dropdown to work smoothly with the
@@ -84,8 +84,8 @@
   </p>
 
   <p>
-    Dropdown item use selection can be select according to the defined dropdown <a
-    [routerLink]="['/feature/dropdown/functionality/item/selection']" [fragment]="'selectMode'">Select Mode</a>. for trigger
+    Dropdown option use selection can be select according to the defined dropdown <a
+    [routerLink]="['/feature/dropdown/functionality/option/selection']" [fragment]="'selectMode'">Select Mode</a>. for trigger
     select change event that perform by end-user and returns the unique data object.
   </p>
 
@@ -106,8 +106,8 @@
   <h5 class="badge badge-pill badge-warning">Default Value: false</h5>
 
   <p>
-    Triggers select change event when first item is selected by default. for use this property it is <b>mandatory</b> to
-    define dropdown <a [routerLink]="['/feature/dropdown/functionality/item/selection']"
+    Triggers select change event when first option is selected by default. for use this property it is <b>mandatory</b> to
+    define dropdown <a [routerLink]="['/feature/dropdown/functionality/option/selection']"
                        [fragment]="'setFirstOptionSelected'">Set First Option Selected</a> to <code>true</code>.
   </p>
 

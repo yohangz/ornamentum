@@ -20,7 +20,7 @@ const dropdownAdvancedRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Functionality | Load Data On Init',
+        title: 'Ornamentum - Dropdown | Functionality | Load Data On Init',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -34,7 +34,7 @@ const dropdownAdvancedRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Functionality | Events',
+        title: 'Ornamentum - Dropdown | Functionality | Events',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -48,7 +48,7 @@ const dropdownAdvancedRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Functionality | Translations',
+        title: 'Ornamentum - Dropdown | Functionality | Translations',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -62,7 +62,7 @@ const dropdownAdvancedRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Advanced | Configuration Overriding',
+        title: 'Ornamentum - Dropdown | Advanced | Configuration Overriding',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

@@ -9,9 +9,9 @@ import { DataFetchService } from 'helper-services';
   templateUrl: './load-data-on-init-usage.component.html'
 })
 export class LoadDataOnInitUsageComponent {
-  public items: ExampleData[];
+  public options: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 }

@@ -8,7 +8,7 @@ import {
   translationsNoDataMessageUsage,
   translationsFilterPlaceholderUsage,
   translationsSelectPlaceholderUsage,
-  translationsSelectedItemWrapPlaceholderUsage
+  translationsSelectedOptionWrapPlaceholderUsage
 } from './dropdown-translations.list';
 
 @Component({
@@ -25,5 +25,5 @@ export class DropdownTranslationsComponent {
   public additionalTranslationsUsage = additionalTranslationsUsage;
   public translationsFilterPlaceholderUsage = translationsFilterPlaceholderUsage;
   public translationsSelectPlaceholderUsage = translationsSelectPlaceholderUsage;
-  public translationsSelectedItemWrapPlaceholderUsage = translationsSelectedItemWrapPlaceholderUsage;
+  public translationsSelectedOptionWrapPlaceholderUsage = translationsSelectedOptionWrapPlaceholderUsage;
 }

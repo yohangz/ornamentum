@@ -10,15 +10,15 @@ import { DataFetchService } from 'helper-services';
   styleUrls: ['../../dropdown-events.component.scss']
 })
 export class SelectChangeUsageComponent {
-  public items: ExampleData[];
+  public options: ExampleData[];
   public selectChangeEventData: string[] = [];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 
   public onSelectChange(selectedData: ExampleData | ExampleData[]): void {
-    // if selectTrackBy property is specified, the selected item id or ids will be passed as a parameter to this method.
+    // if selectTrackBy property is specified, the selected option id or ids will be passed as a parameter to this method.
     this.selectChangeEventData.push(JSON.stringify(selectedData));
   }
 }

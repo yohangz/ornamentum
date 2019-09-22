@@ -1,5 +1,5 @@
 <div class="feature-container">
-  <h1>Translations</h1>
+  <h1>Dropdown List Translations</h1>
 
   <p>
     Translations can be uses to override dropdown native property labels. those translatable properties are required to
@@ -14,7 +14,7 @@
     </ul>
     <li><b>Additional Translations</b></li>
     <ul>
-      <li>Selected Item Wrap Placeholder</li>
+      <li>Selected Option Wrap Placeholder</li>
       <li>Select Placeholder</li>
       <li>Filter Placeholder</li>
     </ul>
@@ -92,32 +92,32 @@
   <app-translations-select-placeholder-usage></app-translations-select-placeholder-usage>
   <app-example-code [files]="translationsSelectPlaceholderUsage"></app-example-code>
 
-  <h4 id="selectedItemWrapPlaceholder">Selected Item Wrap Placeholder</h4>
-  <code>selectedItemWrapPlaceholder: DropdownTranslations</code> &nbsp;
+  <h4 id="selectedOptionWrapPlaceholder">Selected Option Wrap Placeholder</h4>
+  <code>selectedOptionWrapPlaceholder: DropdownTranslations</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">
-    Default Value: 'Items'
+    Default Value: 'Options'
   </h5>
 
   <p>
-    This configuration is uses to customize text which shows to indicate the selected wrapped items count. it can be
+    This configuration is uses to customize text which shows to indicate the selected wrapped options count. it can be
     configure by binding a <code>filterPlaceholder</code> string into <code>DropdownTranslations</code> type of object.
   </p>
 
   <p>
-    For enable selected items wrapping, it is <b>mandatory</b> to set <code>selectMode</code> to <b>'multi'</b> and
-    <code>wrapDisplaySelectLimit</code> should be less than the available item count. for more details about wrap
-    display selection limit please refer Item Selection <a [routerLink]="['/feature/dropdown/functionality/item/selection']"
+    For enable selected options wrapping, it is <b>mandatory</b> to set <code>selectMode</code> to <b>'multi'</b> and
+    <code>wrapDisplaySelectLimit</code> should be less than the available option count. for more details about wrap
+    display selection limit please refer Option Selection <a [routerLink]="['/feature/dropdown/functionality/option/selection']"
                                                            [fragment]="'wrapDisplaySelectLimit'">Wrap Display Select
     Limit</a> section.
   </p>
 
-  <p>Please select two or more items from the dropdown to manipulate it's usages.</p>
+  <p>Please select two or more options from the dropdown to manipulate it's usages.</p>
 
-  <app-translations-selected-item-wrap-placeholder-usage></app-translations-selected-item-wrap-placeholder-usage>
-  <app-example-code [files]="translationsSelectedItemWrapPlaceholderUsage"></app-example-code>
+  <app-translations-selected-option-wrap-placeholder-usage></app-translations-selected-option-wrap-placeholder-usage>
+  <app-example-code [files]="translationsSelectedOptionWrapPlaceholderUsage"></app-example-code>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/dropdown/functionality/item/selection']">Item Selection</a><br/>
+  <a [routerLink]="['/feature/dropdown/functionality/option/selection']">Option Selection</a><br/>
   <a [routerLink]="['/feature/dropdown/templating/option-template']">Option Template</a><br/>
   <a [routerLink]="['/feature/dropdown/advanced/events']">Events</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#translations">API Doc for Dropdown Translations</a>

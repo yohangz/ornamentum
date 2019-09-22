@@ -7,17 +7,17 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-translations-filter-placeholder-usage',
-  templateUrl: './translations-filter-placeholder-usage.component.html'
+  selector: 'app-translations-selected-option-wrap-placeholder-usage',
+  templateUrl: './translations-selected-option-wrap-placeholder-usage.component.html'
 })
-export class TranslationsFilterPlaceholderUsageComponent {
+export class TranslationsSelectedOptionWrapPlaceholderUsageComponent {
   public options: ExampleData[];
-
-  public dropdownTranslations: DropdownTranslations = {
-    filterPlaceholder: 'This is filter place holder'
-  };
 
   constructor(private dataFetchService: DataFetchService) {
     this.options = this.dataFetchService.fetchStaticData();
   }
+
+  public dropdownTranslations: DropdownTranslations = {
+    selectedOptionWrapPlaceholder: 'Wrapped Options'
+  };
 }

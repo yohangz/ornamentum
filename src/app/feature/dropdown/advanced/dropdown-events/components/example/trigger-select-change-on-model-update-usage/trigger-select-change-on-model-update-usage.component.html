@@ -2,7 +2,7 @@
   [id]="'products_advanced_08'"
   [selectTrackBy]="'id'"
   [displayTrackBy]="'productType'"
-  [items]="items"
+  [options]="options"
   [triggerSelectChangeOnModelUpdate]="true"
   [(ngModel)]="selectChangeOnModelUpdateEventData">
 </ng-dropdown>
@@ -12,5 +12,5 @@
   <span>{{ selectChangeOnModelUpdateEventData | json }}</span>
 </p>
 <ng-template #noDataAvailable>
-  <p class="event-output">Click on any dropdown item</p>
+  <p class="event-output">Click on any dropdown option</p>
 </ng-template>

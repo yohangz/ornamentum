@@ -11,15 +11,15 @@ import { DataFetchService } from 'helper-services';
   templateUrl: './additional-translations-usage.component.html'
 })
 export class AdditionalTranslationsUsageComponent {
-  public items: ExampleData[];
+  public options: ExampleData[];
 
   public dropdownTranslations: DropdownTranslations = {
     filterPlaceholder: 'This is filter place holder',
-    selectedItemWrapPlaceholder: 'Wrapped Items',
+    selectedOptionWrapPlaceholder: 'Wrapped Options',
     selectPlaceholder: 'This is select place holder'
   };
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 }

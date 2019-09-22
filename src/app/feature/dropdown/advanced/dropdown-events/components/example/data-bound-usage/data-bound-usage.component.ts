@@ -10,11 +10,11 @@ import { DataFetchService } from 'helper-services';
   styleUrls: ['../../dropdown-events.component.scss']
 })
 export class DataBoundUsageComponent {
-  public items: ExampleData[];
+  public options: ExampleData[];
   public dataBoundEventData: string = null;
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 
   public onDataBound(): void {

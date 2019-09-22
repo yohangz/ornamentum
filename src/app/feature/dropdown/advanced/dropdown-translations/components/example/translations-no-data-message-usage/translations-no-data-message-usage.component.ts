@@ -7,13 +7,13 @@ import { DropdownTranslations } from 'ornamentum';
   templateUrl: './translations-no-data-message-usage.component.html'
 })
 export class TranslationsNoDataMessageUsageComponent {
-  public items: any[];
+  public options: any[];
 
   public dropdownTranslations: DropdownTranslations = {
     noDataMessage: 'Customized No Data Message'
   };
 
   constructor() {
-    this.items = [];
+    this.options = [];
   }
 }

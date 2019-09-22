@@ -8,4 +8,4 @@ export { TranslationsFilterPlaceholderUsageComponent } from './components/exampl
 // tslint:disable-next-line
 export { TranslationsSelectPlaceholderUsageComponent } from './components/example/translations-select-placeholder-usage/translations-select-placeholder-usage.component';
 // tslint:disable-next-line
-export { TranslationsSelectedItemWrapPlaceholderUsageComponent } from './components/example/translations-selected-item-wrap-placeholder-usage/translations-selected-item-wrap-placeholder-usage.component';
+export { TranslationsSelectedOptionWrapPlaceholderUsageComponent } from './components/example/translations-selected-option-wrap-placeholder-usage/translations-selected-option-wrap-placeholder-usage.component';
