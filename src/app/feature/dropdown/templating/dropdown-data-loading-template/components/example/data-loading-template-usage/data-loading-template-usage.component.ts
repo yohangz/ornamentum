@@ -9,11 +9,11 @@ import { DataFetchService } from 'helper-services';
   templateUrl: './data-loading-template-usage.component.html'
 })
 export class DataLoadingTemplateUsageComponent {
-  public items: ExampleData[];
+  public options: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
     setTimeout(() => {
-      this.items = this.dataFetchService.fetchStaticData();
+      this.options = this.dataFetchService.fetchStaticData();
     }, 5000);
   }
 }

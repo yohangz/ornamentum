@@ -20,7 +20,7 @@ const dropdownTemplatingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Templating | Data Loading Template',
+        title: 'Ornamentum - Dropdown | Templating | Data Loading Template',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -35,7 +35,7 @@ const dropdownTemplatingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Templating | Dropdown Option Group Header Template',
+        title: 'Ornamentum - Dropdown | Templating | Dropdown Option Group Header Template',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }
@@ -49,7 +49,7 @@ const dropdownTemplatingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Dropdown | Templating | Dropdown Option Template',
+        title: 'Ornamentum - Dropdown | Templating | Dropdown Option Template',
         keywords: '<--add keywords here-->',
         description: '<--add description here-->'
       }

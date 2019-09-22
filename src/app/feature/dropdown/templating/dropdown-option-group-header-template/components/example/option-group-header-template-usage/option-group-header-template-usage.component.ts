@@ -9,9 +9,9 @@ import { DataFetchService } from 'helper-services';
   templateUrl: './option-group-header-template-usage.component.html'
 })
 export class OptionGroupHeaderTemplateUsageComponent {
-  public items: ExampleData[];
+  public options: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 }

@@ -9,9 +9,9 @@ import { DataFetchService } from 'helper-services';
   templateUrl: './option-template-usage.component.html'
 })
 export class OptionTemplateUsageComponent {
-  public items: ExampleData[];
+  public options: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.options = this.dataFetchService.fetchStaticData();
   }
 }
