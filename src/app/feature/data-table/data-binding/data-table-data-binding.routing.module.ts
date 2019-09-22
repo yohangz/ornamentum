@@ -19,7 +19,7 @@ const dataTableDataBindingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Data Binding | Client Side | Basic Data Binding',
+        title: 'Ornamentum - Data Table | Data Binding | Client Side | Basic Data Binding',
         // tslint:disable-next-line
         keywords: 'client side basic data binding,basic data binding,client side data binding,table client side data binding,grid client data binding,client side data binding,rxjs observable',
         // tslint:disable-next-line
@@ -35,7 +35,7 @@ const dataTableDataBindingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Data Binding | Client Side | Stream Data Binding',
+        title: 'Ornamentum - Data Table | Data Binding | Client Side | Stream Data Binding',
         // tslint:disable-next-line
         keywords: 'client side stream data binding,reactive stream binding,stream data binding,client stream data binding,table stream client data binding,grid stream data binding,realtime data binding',
         // tslint:disable-next-line
@@ -52,7 +52,7 @@ const dataTableDataBindingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Data Binding | Server Side | Basic Data Binding',
+        title: 'Ornamentum - Data Table | Data Binding | Server Side | Basic Data Binding',
         // tslint:disable-next-line
         keywords: 'servers side basic data binding,basic data binding,server side data binding,server side table data binding,server side grid data binding',
         // tslint:disable-next-line
@@ -69,7 +69,7 @@ const dataTableDataBindingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Data Binding | Server Side | Web Socket Data Binding',
+        title: 'Ornamentum - Data Table | Data Binding | Server Side | Web Socket Data Binding',
         // tslint:disable-next-line
         keywords: 'data table web socket,servers side web socket data binding,web socket data binding,server web socket data binding,server socket data binding',
         // tslint:disable-next-line
@@ -83,7 +83,7 @@ const dataTableDataBindingRoutes: Routes = [
     canActivate: [SeoGuard],
     data: {
       seo: {
-        title: 'Ornamentum | Data Table | Data Binding | Server Side | Custom Data Provider',
+        title: 'Ornamentum - Data Table | Data Binding | Server Side | Custom Data Provider',
         keywords: 'custom data provider,customized data provider,data provider,custom data source provider,custom data binding',
         // tslint:disable-next-line
         description: 'Data table custom data source integration is supported via data bind hooks. This can be used to bind any data source, such as Firebase Realtime Database or Cloud Fire store.'
