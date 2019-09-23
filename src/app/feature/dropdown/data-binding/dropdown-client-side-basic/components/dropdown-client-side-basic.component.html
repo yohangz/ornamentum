@@ -10,21 +10,13 @@
   <p>In this data binding technique, data set will be fetched at once.
     <a [routerLink]="['/feature/dropdown/functionality/filtering']">Filtering</a> and
     <a [routerLink]="['/feature/dropdown/functionality/option/selection']">Option Selection</a> operations are performed in client
-    side via an internal data source manager service.
-  </p>
-
-  <p>
-    If the data stream is very large and difficult to perform <a
-    [routerLink]="['/feature/data-table/functionality/column/filtering']">Filtering</a>
-    and <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Option Selection</a> operations
-    in the client side, <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server Side Basic</a>
-    Data Binding can be use instead of using this technique.
+    side via a built-in data source manager service.
   </p>
 
   <p>
     However, it might affect the overall site performance if the data set is significantly larger. Consider using <a
     [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic</a> Data Binding in such
-    cases where all the computation heavy operations are handled in server side and only page level data is sent to
+    cases where all the computation heavy operations are handled in server side and only current view data is sent to
     client side for on demand data binding.
   </p>
 
@@ -36,9 +28,11 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>Client side data binding can be configured by using either of two approaches described below. Data emitted after
-    initial data binding will re-initialize the dropdown with the new data set and drop previously bound data options
-    collection or stream.</p>
+  <p>
+    Client side data binding can be configured by using either of two approaches described below. Data emitted/bound after
+    initial data binding will re-initialize the dropdown list with the new options data set and drop previously bound options
+    data collection or stream.
+  </p>
 
   <ol class="main-pane-list">
     <li>
@@ -54,12 +48,11 @@
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.options">{{ demoSnippet.options }}</app-code-snippet>
 
       <p>
-        This approach can be used to bind a static data array. The complete set of code snippets for the data binding
+        This approach can be used to bind a static options data collection. The complete set of code snippets for the data binding
         via <code>options</code> input property can be found in <a
         [routerLink]="['/feature/dropdown/data-binding/client-side/basic']"
-        [fragment]="'whatYouWillSee'">What You Will See</a> section example. Mutations to the
-        option collections will automatically get reflected in dropdown.
-      </p>
+        [fragment]="'whatYouWillSee'">What You Will See</a> section example. Dropdown list component reflect the data changes when
+        <code>options</code> reference is updated hence, it is not sensitive to data source mutations.
     </li>
 
     <li>
@@ -74,11 +67,12 @@
 
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
-      <p>This approach can be used to bind an Observable data stream. Refer following example code snippet for complete
+      <p>
+        This approach can be used to bind an Observable data stream. Refer following example code snippet for complete
         usage of the <code>dataSource</code>
-        property in the client side data binding. The last emitted data collection via the data source stream will get
-        reflected in dropdown.</p>
-
+        property in the client side data binding. The last emitted data collection via the data source stream is
+        reflected in dropdown list.
+      </p>
 
       <app-data-source-usage></app-data-source-usage>
       <app-example-code [files]="dataSourceUsage"></app-example-code>
@@ -88,6 +82,7 @@
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/dropdown/data-binding/client-side/stream']">Client Side Stream Binding</a><br/>
   <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#options">API Doc for Client Side
-    Basic Data Binding</a>
+  <a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']">Server Side Web Socket</a><br/>
+  <a [routerLink]="['/feature/dropdown/data-binding/custom-provider']">Custom Data Provider</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#options">Options Input API Doc</a>
 </div>

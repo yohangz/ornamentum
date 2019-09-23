@@ -22,9 +22,9 @@ const dropdownFeatureRoutes: Routes = [
       seo: {
         title: 'Ornamentum - Dropdown | Data Binding | Client Side | Basic Data Binding',
         // tslint:disable-next-line
-        keywords: 'client side basic data binding,basic data binding,client side data binding,dropdown client data binding,client side data binding,rxjs observable',
+        keywords: 'dropdown client side basic data binding,dropdown client side data binding,dropdown basic data binding,dropdown list data binding',
         // tslint:disable-next-line
-        description: 'Dropdown client side data binding allows the users to bind static data collections when the full data collection is available in the client side.'
+        description: 'Client side data binding allow the users to bind static data sets to the dropdown when the full data collection is available in client side. It can be configured via setting an array of data objects to options input property or by setting a RxJS Observable stream to dataSource input property.'
       }
     }
   },
