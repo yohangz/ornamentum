@@ -78,7 +78,7 @@ const dropdownFeatureRoutes: Routes = [
   },
   {
     loadChildren: './dropdown-custom-data-provider/dropdown-custom-data-provider.module#DropdownCustomDataProviderModule',
-    path: 'server-side/custom-provider',
+    path: 'custom-provider',
     canActivate: [SeoGuard],
     data: {
       seo: {

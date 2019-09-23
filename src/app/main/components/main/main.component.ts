@@ -156,7 +156,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/data-table/data-binding/server-side/custom-provider',
+              routePath: '/feature/data-table/data-binding/custom-provider',
               title: 'Custom Data Provider',
               navigation: [
                 {
@@ -1064,7 +1064,7 @@ export class MainComponent {
               ]
             },
             {
-              routePath: '/feature/dropdown/data-binding/server-side/custom-provider',
+              routePath: '/feature/dropdown/data-binding/custom-provider',
               title: 'Custom Data Provider',
               navigation: [
                 {
