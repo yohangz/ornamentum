@@ -281,14 +281,14 @@
         text-overflow: ellipsis;
         white-space: nowrap;
 
-        a {
+        span {
           color: $dropdown-option-container-option-text-color;
         }
 
         &:hover {
           background: $dropdown-option-container-option-hover-background;
 
-          a {
+          span {
             color: $dropdown-option-container-option-hover-text-color;
           }
         }
@@ -301,7 +301,7 @@
         &.ng-option-selected {
           background: $dropdown-option-container-selected-option-background;
 
-          a {
+          span {
             color: $dropdown-option-container-selected-option-text-color;
           }
 
