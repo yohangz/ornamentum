@@ -10,8 +10,8 @@
   </p>
 
   <p>
-    You can use client side stream data binding technique to bind data sources which changes rapidly.
-    Data changes notified by data source will automatically get reflected while persisting the current dropdown state.
+    Client side stream data binding technique can be used to bind data sources which changes rapidly. Data changes
+    notified by data source will automatically get reflected while persisting the current dropdown state.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -21,8 +21,10 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>Client side stream data binding can be configured by using either of the approaches described below. Note that it
-    will always re-render dropdown with last emitted data set.</p>
+  <p>
+    Client side stream data binding can be configured by using either of the approaches described below. Note that it
+    will always re-render dropdown with last emitted data set.
+  </p>
 
   <ol class="main-pane-list">
     <li>
@@ -36,17 +38,18 @@
         <span class="badge badge-pill badge-info">Target Component: &lt;ng-dropdown&gt;</span>
       </p>
 
-      <p>Setting an <a rel="noopener" target="_blank"
-                       href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS Observable</a>
-        stream to <code>dataSource</code> input property with the same approach discussed in the <a
-          [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic</a> Data Binding
-        section. The data table reflect the changes accordingly when data source stream emits data.</p>
+      <p>
+        Setting an <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS Observable</a>
+        stream to <code>dataSource</code> input property with the same approach discussed in the
+        <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic</a> Data Binding
+        section. The data table reflect the changes accordingly when data source stream emits latest data set to be bound.
+      </p>
 
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
 
       <p>
         The complete set of code snippet for the client side stream data binding via <code>dataSource</code> input
-        property can be seen in the example shown in the <a
+        property can be seen in the example shown in <a
         [routerLink]="['/feature/dropdown/data-binding/client-side/stream']" [fragment]="'whatYouWillSee'">What You Will
         See</a> section example.
       </p>
@@ -62,26 +65,34 @@
         <span class="badge badge-pill badge-info">Target Component: &lt;ng-dropdown&gt;</span>
       </p>
 
-      <p>The <code>options</code> input property also can be used to implement the same behaviour instead of using an <a
-        rel="noopener" target="_blank"
-        href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS Observable</a> stream to bind real
-        time data.</p>
+      <p>
+        The <code>options</code> input property also can be used to implement the same behaviour instead of using an
+        <a rel="noopener" target="_blank" href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS Observable</a>
+        stream to bind real time data.
+      </p>
 
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.options"></app-code-snippet>
+
+      <p>
+        Let's modify the controller code snippet in above example (<b>client-side-stream-usage.component.ts</b>) to
+        emulate the real time data binding behavior by using <code>options</code> property instead of <code>dataSource</code>.
+      </p>
 
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataBindingWithOptions"></app-code-snippet>
 
       <p>
-        Let's modify the controller code snippet in above example (<b>client-side-stream-usage.component.ts</b>) to use
-        <code>options</code> property instead of <code>dataSource</code>.
+        Dropdown list <code>options</code> input property setter will capture and re-render dropdown list view when ever new data
+        collection reference is set to <code>items</code>. We highly recommend the usage of <code>dataSource</code> over
+        <code>items</code> binding. However, you can proceed with this approach if you prefer using data arrays over
+        streams.
       </p>
     </li>
   </ol>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client-side Basic Data Binding</a><br/>
-  <a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']">Server-side Web Socket Data
-    Binding</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Client Side Stream
-    Data Binding</a>
+  <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']">Server Side Web Socket Data Binding</a><br/>
+  <a [routerLink]="['/feature/dropdown/data-binding/custom-provider']">Custom Data Provider</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#dataSource">API Doc - Data Source Input</a>
 </div>

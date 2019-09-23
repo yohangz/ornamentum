@@ -38,9 +38,9 @@ const dropdownFeatureRoutes: Routes = [
       seo: {
         title: 'Ornamentum - Dropdown | Data Binding | Client Side | Stream Data Binding',
         // tslint:disable-next-line
-        keywords: 'client side stream data binding,reactive stream binding,stream data binding,client stream data binding,dropdown stream client data binding,realtime data binding',
+        keywords: 'dropdown client side stream data binding,dropdown reactive stream binding,dropdown stream data binding,dropdown client stream data binding',
         // tslint:disable-next-line
-        description: 'Dropdown client side stream data binding technique to bind data sources which changes rapidly. Data changes notified by data source will automatically get reflected while persisting the current dropdown state without having to manually trigger refresh.'
+        description: 'Client side stream data binding technique can be used to bind data sources which changes rapidly. Data changes notified by data source will automatically get reflected while persisting the current dropdown state.'
       }
     }
   },

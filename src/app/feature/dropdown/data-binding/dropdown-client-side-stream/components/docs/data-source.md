@@ -1,4 +1,4 @@
-  <ng-dropdown
-    ...
-    [dataSource]="dataSource">
-  </ng-dropdown>
+<ng-dropdown
+  ...
+  [dataSource]="dataSource">
+</ng-dropdown>
