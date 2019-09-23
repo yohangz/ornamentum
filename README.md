@@ -12,7 +12,7 @@
   </a>
 </p>
 
-> Ornamentum data table is a lightweight, feature rich, highly configurable, UI framework agnostic, full responsive Angular data table with minimal dependencies. 
+> Ornamentum data table is a lightweight, feature rich, highly configurable, UI framework agnostic, fully responsive, reactive Angular data table with minimal dependencies. 
 
 > Check out [demos](https://ornamentum.app) & [docs](https://ornamentum.app/api-docs/) for more information!
 
