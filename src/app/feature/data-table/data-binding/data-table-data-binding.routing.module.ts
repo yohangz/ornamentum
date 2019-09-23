@@ -21,9 +21,9 @@ const dataTableDataBindingRoutes: Routes = [
       seo: {
         title: 'Ornamentum - Data Table | Data Binding | Client Side | Basic Data Binding',
         // tslint:disable-next-line
-        keywords: 'client side basic data binding,basic data binding,client side data binding,table client side data binding,grid client data binding,client side data binding,rxjs observable',
+        keywords: 'data table client side basic data binding,data table client side data binding,data table basic data binding,grid client data binding',
         // tslint:disable-next-line
-        description: 'Data table client side data binding allows the users to bind static data collections when the full data collection is available in the client side.'
+        description: 'Client side data binding allows the users to bind static data sets to the data table when the full data collection is available in the client side. It can be configured via setting an array of data objects to items input property or by setting a RxJS Observable stream to dataSource input property.'
       }
     }
   },

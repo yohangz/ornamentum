@@ -4,7 +4,7 @@
   <p>Client side data binding allows the users to bind static data sets to the data table when the full data collection
     is available in the client side.
     It can be configured via setting an array of data objects to <code>items</code> input property
-    or via setting a <a rel="noopener" target="_blank" href="https://rxjs-dev.firebaseapp.com/">RxJS Observable</a>
+    or by setting a <a rel="noopener" target="_blank" href="https://rxjs-dev.firebaseapp.com/">RxJS Observable</a>
     stream
     to <code>dataSource</code> input property.</p>
 
@@ -13,10 +13,10 @@
       [routerLink]="['/feature/data-table/experimental/row/span']">Dynamic Row Span</a>, <a
       [routerLink]="['/feature/data-table/functionality/column/sorting']">Sorting</a>, <a
       [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a> etc. are performed in
-    client side via an internal data source manager service.</p>
-
+    client side via a built-in data source manager service.
+  </p>
   <p>
-    However, it might affect the overall site performance, if the data set is significantly larger. Consider using <a
+    However, it might affect the overall site performance, if the data set is significantly large. Consider using <a
     [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic</a> Data Binding in such
     cases where all the computation heavy operations are handled in server side and only page level data is sent to
     the client side for on demand data binding.
@@ -29,9 +29,11 @@
 
   <h2 id="basicUsage">Basic Usage</h2>
 
-  <p>Client side data binding can be configured by using either of the approaches described below. Data emitted after
+  <p>
+    Client side data binding can be configured by using either of the approaches described below. Data emitted/bound after
     initial data binding will re-initialize the data table with the new data set and drop previously bound data item
-    collection or stream.</p>
+    collection or stream.
+  </p>
 
   <ol class="main-pane-list">
     <li>
@@ -51,8 +53,8 @@
         via <code>items</code> input property can be found in
         <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']" [fragment]="'whatYouWillSee'">What You
           Will See</a>
-        section example. Mutations to the item
-        collections will automatically get reflected in data table.
+        section example. Data table component reflect the data changes when
+        <code>items</code> reference is updated hence, it is not sensitive to data source mutations.
       </p>
     </li>
 
@@ -71,7 +73,7 @@
 
       <p>This approach can be used to bind an Observable data stream. Refer following example code snippet for
         complete usage of the <code>dataSource</code> property in the client side data
-        binding. The last emitted data collection via the data source stream will get reflected in data table.</p>
+        binding. The last emitted data collection via the data source stream is reflected in data table.</p>
 
       <app-data-source-usage></app-data-source-usage>
       <app-example-code [files]="dataSourceUsage"></app-example-code>
@@ -80,8 +82,9 @@
   </ol>
 
   <h2 id="suggestedLinks">Suggested Links</h2>
-  <a [routerLink]="['/feature/data-table/functionality/row/selection']">Row Selection</a><br/>
-  <a [routerLink]="['/feature/data-table/functionality/column/filtering']">Column Filtering</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#items">API Doc for Client Side
-    Data Binding</a>
+  <a [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client Site Stream Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web Socket Data Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/custom-provider']">Custom Data Provider</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#items">API Doc for Client Side Data Binding</a>
 </div>
