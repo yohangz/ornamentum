@@ -37,9 +37,9 @@ const dataTableDataBindingRoutes: Routes = [
       seo: {
         title: 'Ornamentum - Data Table | Data Binding | Client Side | Stream Data Binding',
         // tslint:disable-next-line
-        keywords: 'client side stream data binding,reactive stream binding,stream data binding,client stream data binding,table stream client data binding,grid stream data binding,realtime data binding',
+        keywords: 'data table client side stream data binding,data table reactive stream binding,data table stream data binding,grid stream data binding',
         // tslint:disable-next-line
-        description: 'Data table client side stream data binding technique to bind data sources which changes rapidly. Data changes notified by data source will automatically get reflected while persisting the current table state without having to manually trigger refresh.'
+        description: 'Client side stream data binding technique can be used to bind data sources which changes rapidly. Data changes notified by data source will automatically get reflected while persisting the current table state without having to manually trigger refresh.'
       }
     }
   },

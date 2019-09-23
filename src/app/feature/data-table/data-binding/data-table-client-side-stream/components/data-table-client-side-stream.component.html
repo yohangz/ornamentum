@@ -12,11 +12,11 @@
   </p>
 
   <p>
-    You can use client side stream data binding technique to bind data sources which changes rapidly.
+    Client side stream data binding technique can be used to bind data sources which changes rapidly.
     Data changes notified by data source will automatically get reflected while persisting the current table state
-    without having to manually trigger refresh. You may find more information about data table refresh functionality in
-    <a [routerLink]="['/feature/data-table/options/header-details']" [fragment]="'showRefreshButton'">Show Refresh
-      Button</a> section.
+    without having to manually trigger refresh. You can find more information about data refresh functionality in
+    <a [routerLink]="['/feature/data-table/options/header-details']" [fragment]="'showRefreshButton'">Header Details
+      - Show Refresh Button</a> section.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -27,7 +27,7 @@
   <h2 id="basicUsage">Basic Usage</h2>
 
   <p>Client side stream data binding can be configured by using either of the approaches described below. Note that it
-    will always re-render table with last emitted data set.</p>
+    will always re-render table body with last emitted data set.</p>
 
   <ol class="main-pane-list">
     <li>
@@ -46,7 +46,7 @@
         Observable</a> stream to <code>dataSource</code> input property with the same approach discussed in the <a
         [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic</a> Data Binding
         section.
-        The data table reflect the changes accordingly when data source stream emit data.
+        The data table reflect the changes accordingly when data source stream emit latest data set to be bound.
       </p>
 
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.dataSource"></app-code-snippet>
@@ -78,15 +78,15 @@
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.items"></app-code-snippet>
 
       <p>
-        Let's modify the controller code snippet in above example (<b>client-side-stream-usage.component.ts</b>) to use
-        <code>items</code> property instead of <code>dataSource</code>.
+        Let's modify the controller code snippet in above example (<b>client-side-stream-usage.component.ts</b>) to
+        emulate the real time data binding behavior by using <code>items</code> property instead of <code>dataSource</code>.
       </p>
 
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.dataBindingWithItems"></app-code-snippet>
 
       <p>
-        Data table <code>items</code> input property setter will capture and re-render data table when ever new data
-        collection is set to <code>items</code>. We highly recommend the usage of <code>dataSource</code> over
+        Data table <code>items</code> input property setter will capture and re-render data table body when ever new data
+        collection reference is set to <code>items</code>. We highly recommend the usage of <code>dataSource</code> over
         <code>items</code> binding. However, you can proceed with this approach if you prefer using data arrays over
         streams.
       </p>
@@ -97,6 +97,7 @@
   <h2 id="suggestedLinks">Suggested Links</h2>
   <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
   <a [routerLink]="['/feature/data-table/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc for Real-time
-    Data Binding</a>
+  <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web Socket Binding</a><br/>
+  <a [routerLink]="['/feature/data-table/data-binding/custom-provider']">Custom Data Provider</a><br/>
+  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc - Data Source Input</a>
 </div>

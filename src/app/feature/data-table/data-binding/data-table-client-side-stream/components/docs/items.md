@@ -1,4 +1,4 @@
-  <ng-data-table
-    ...
-    [items]="items">
-  </ng-data-table>
+<ng-data-table
+  ...
+  [items]="items">
+</ng-data-table>
