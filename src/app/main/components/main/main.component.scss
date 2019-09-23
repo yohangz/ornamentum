@@ -44,6 +44,13 @@
           @include breakpoint(max991) {
             width: 100%;
           }
+
+          .main-pane-list {
+
+            .badge-pill {
+              padding-right: 1.25rem;
+            }
+          }
         }
       }
     }
