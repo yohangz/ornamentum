@@ -41,6 +41,15 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   @ContentChild('ngDataTableFilter', { static: true })
   public filterTemplate: TemplateRef<any>;
 
+  @ContentChild('ngFilterDropdownLoadingSpinner', { static: true })
+  public dropdownFilterLoadingSpinnerTemplate: TemplateRef<any>;
+
+  @ContentChild('ngFilterDropdownOption', { static: true })
+  public dropdownFilterOptionTemplate: TemplateRef<any>;
+
+  @ContentChild('ngFilterDropdownOptionGroupHeader', { static: true })
+  public dropdownFilterOptionGroupHeaderTemplate: TemplateRef<any>;
+
   // Callback event handlers
 
   /**

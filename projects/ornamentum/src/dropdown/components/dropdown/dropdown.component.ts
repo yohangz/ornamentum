@@ -63,12 +63,12 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   public loadingSpinnerTemplate: TemplateRef<any>;
 
   @ContentChild('ngDropdownOption', { static: true })
-  public set dropdownOptionTemplate(value: TemplateRef<any>) {
+  public set optionTemplate(value: TemplateRef<any>) {
     this.dataStateService.dropdownOptionTemplate = value;
   }
 
   @ContentChild('ngDropdownOptionGroupHeader', { static: true })
-  public set dropdownOptionGroupHeaderTemplate(value: TemplateRef<any>) {
+  public set optionGroupHeaderTemplate(value: TemplateRef<any>) {
     this.dataStateService.dropdownOptionGroupHeaderTemplate = value;
   }
 
@@ -103,6 +103,33 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   // Inputs
+
+  /**
+   * Set dropdown loading spinner template reference object; Used by data table component to explicitly pass the template reference.
+   * @param value Template reference object.
+   */
+  @Input()
+  public set loadingSpinnerTemplateRef(value: TemplateRef<any>) {
+    this.loadingSpinnerTemplate = value;
+  }
+
+  /**
+   * Set dropdown option template reference; Used by data table component to explicitly pass the template reference.
+   * @param value Template reference object.
+   */
+  @Input()
+  public set optionTemplateRef(value: TemplateRef<any>) {
+    this.optionTemplate = value;
+  }
+
+  /**
+   * Set dropdown options group header template reference; Used by data table component to explicitly pass the template reference.
+   * @param value Template reference object.
+   */
+  @Input()
+  public set optionGroupHeaderTemplateRef(value: TemplateRef<any>) {
+    this.optionGroupHeaderTemplate = value;
+  }
 
   /**
    * Set static data option collection; No need to set data source when static options collection is provided

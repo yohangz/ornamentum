@@ -90,110 +90,121 @@
   <app-filtering-dropdown-usage></app-filtering-dropdown-usage>
   <app-example-code [files]="filteringDropdownUsage"></app-example-code>
 
-  <p>The following Property mapping table depicts how each Data table dropdown filtering properties are connected with
-    Ornamentum Dropdown properties by implicitly.</p>
+  <p>
+    The following Property mapping table depicts how each Data Table component dropdown filtering input properties are mapped with
+    Dropdown component.
+  </p>
 
   <table>
     <tr>
-      <th>Dropdown Filtering Property Name</th>
-      <th>Similar Dropdown Property Name</th>
+      <th>Data Table Property</th>
+      <th>Mapping Dropdown Property</th>
       <th>Default Value</th>
     </tr>
     <tr>
-      <td>Dropdown Filter Menu Position</td>
-      <td><a [routerLink]="'/feature/dropdown/styling/menu-position'">Menu Position</a></td>
+      <td>dropdownFilterMenuPosition</td>
+      <td><a [routerLink]="'/feature/dropdown/styling/menu-position'">menuPosition</a></td>
       <td><code>'bottom-left'</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Show Option Select Check Box</td>
-      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'showOptionSelectCheckbox'">Show
-        Option Select Check Box</a></td>
+      <td>dropdownFilterShowOptionSelectCheckBox</td>
+      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'showOptionSelectCheckbox'">showOptionSelectCheckBox</a></td>
       <td><code>undefined</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Close Menu On Select</td>
-      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'closeMenuOnSelect'">Close Menu On
-        Select</a></td>
+      <td>dropdownFilterCloseMenuOnSelect</td>
+      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'closeMenuOnSelect'">closeMenuOnSelect</a></td>
       <td><code>true</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Select Mode</td>
-      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'selectMode'">Select Mode</a></td>
+      <td>dropdownFilterSelectMode</td>
+      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'selectMode'">selectMode</a></td>
       <td><code>'multi'</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Wrap Display Select Limit</td>
-      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'wrapDisplaySelectLimit'">Wrap
-        Display Select Limit</a></td>
+      <td>dropdownFilterWrapDisplaySelectLimit</td>
+      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'wrapDisplaySelectLimit'">wrapDisplaySelectLimit</a></td>
       <td><code>1</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Show Selected Option Remove Button</td>
-      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'showSelectedOptionRemoveButton'">Show
-        Selected Option Remove Button</a></td>
+      <td>dropdownFilterShowSelectedOptionRemoveButton</td>
+      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'showSelectedOptionRemoveButton'">showSelectedOptionRemoveButton</a></td>
       <td><code>false</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Group By Field</td>
-      <td><a [routerLink]="'/feature/dropdown/functionality/item/grouping'">Group By Field</a></td>
+      <td>dropdownFilterGroupByField</td>
+      <td><a [routerLink]="'/feature/dropdown/functionality/item/grouping'">groupByField</a></td>
       <td><code>undefined</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Menu Height</td>
-      <td><a [routerLink]="'/feature/dropdown/styling/menu-width-height'" [fragment]="'menuHeight'">Menu Height</a></td>
+      <td>dropdownFilterMenuHeight</td>
+      <td><a [routerLink]="'/feature/dropdown/styling/menu-width-height'" [fragment]="'menuHeight'">menuHeight</a></td>
       <td><code>250</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Menu Width</td>
-      <td><a [routerLink]="'/feature/dropdown/styling/menu-width-height'" [fragment]="'menuWidth'">Menu Width</a></td>
+      <td>dropdownFilterMenuWidth</td>
+      <td><a [routerLink]="'/feature/dropdown/styling/menu-width-height'" [fragment]="'menuWidth'">menuWidth</a></td>
       <td><code>320</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Multi Select Option Max Width</td>
-      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'multiSelectOptionMaxWidth'">Multi
-        Select Option Max Width</a></td>
+      <td>dropdownFilterMultiSelectOptionMaxWidth</td>
+      <td><a [routerLink]="'/feature/dropdown/functionality/item/selection'" [fragment]="'multiSelectOptionMaxWidth'">multiSelectOptionMaxWidth</a></td>
       <td><code>135</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Searchable</td>
-      <td><a [routerLink]="'/feature/dropdown/functionality/item/filtering'">Filterable</a>
+      <td>DropdownFilterSearchable</td>
+      <td><a [routerLink]="'/feature/dropdown/functionality/item/filtering'">filterable</a>
       </td>
       <td><code>true</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Search Debounce</td>
-      <td><a [routerLink]="'/feature/dropdown/functionality/item/filtering'" [fragment]="'filterDebounce'">Filter
-        Debounce</a></td>
+      <td>dropdownFilterSearchDebounce</td>
+      <td><a [routerLink]="'/feature/dropdown/functionality/item/filtering'" [fragment]="'filterDebounce'">filterDebounce</a></td>
       <td><code>true</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Search Debounce Time</td>
-      <td><a [routerLink]="'/feature/dropdown/functionality/item/filtering'" [fragment]="'filterDebounceTime'">Filter
-        Debounce Time</a></td>
+      <td>dropdownFilterSearchDebounceTime</td>
+      <td><a [routerLink]="'/feature/dropdown/functionality/item/filtering'" [fragment]="'filterDebounceTime'">filterDebounceTime</a></td>
       <td><code>500</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Dynamic Dimension Calculation</td>
-      <td><a [routerLink]="'/feature/dropdown/styling/menu-width-height'" [fragment]="'dynamicDimensionCalculation'">Dynamic
-        Dimension Calculation</a></td>
+      <td>dropdownFilterDynamicDimensionCalculation</td>
+      <td><a [routerLink]="'/feature/dropdown/styling/menu-width-height'" [fragment]="'dynamicDimensionCalculation'">dynamicDimensionCalculation</a></td>
       <td><code>true</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Dynamic Width Ratio</td>
-      <td><a [routerLink]="'/feature/dropdown/styling/menu-width-height'" [fragment]="'dynamicWidthRatio'">Dynamic Width
-        Ratio</a></td>
+      <td>dropdownFilterDynamicWidthRatio</td>
+      <td><a [routerLink]="'/feature/dropdown/styling/menu-width-height'" [fragment]="'dynamicWidthRatio'">dynamicWidthRatio</a></td>
       <td><code>1.25</code></td>
     </tr>
     <tr>
-      <td>Dropdown Filter Dynamic Height Ratio</td>
-      <td><a [routerLink]="'/feature/dropdown/styling/menu-width-height'" [fragment]="'dynamicHeightRatio'">Dynamic
-        Height Ratio</a></td>
+      <td>dropdownFilterDynamicHeightRatio</td>
+      <td><a [routerLink]="'/feature/dropdown/styling/menu-width-height'" [fragment]="'dynamicHeightRatio'">dynamicHeightRatio</a></td>
       <td><code>1.25</code></td>
     </tr>
+  </table>
+
+  <p class="mt-3">
+    The following Property mapping table depicts how each Data Table component dropdown filtering template references are mapped with
+    Dropdown component.
+  </p>
+
+  <table>
     <tr>
-      <td>Filter</td>
-      <td><a [routerLink]="'/feature/dropdown/functionality/item/filtering'" [fragment]="'filterText'">Filter Text</a></td>
-      <td><code>''</code></td>
+      <th>Data Table Template Reference</th>
+      <th>Mapping Dropdown Template Reference</th>
+    </tr>
+    <tr>
+      <td>#dropdownFilterLoadingSpinnerTemplate</td>
+      <td><a [routerLink]="'/feature/dropdown/templating/data-loading-template'">#loadingSpinnerTemplate</a></td>
+    </tr>
+    <tr>
+      <td>#dropdownFilterOptionTemplate</td>
+      <td><a [routerLink]="'/feature/dropdown/templating/option-template'">#optionTemplate</a></td>
+    </tr>
+    <tr>
+      <td>#dropdownFilterOptionGroupHeaderTemplate</td>
+      <td><a [routerLink]="'/feature/dropdown/templating/option-group-header-template'">#optionGroupHeaderTemplate</a></td>
     </tr>
   </table>
 
