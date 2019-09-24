@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 
-import { interval, Subscription } from 'rxjs';
+import { interval, Observable, Subscription } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 import {
   GlobalRefService,
@@ -40,7 +41,14 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
         url: `wss://${window.location.hostname}` // web-socket endpoint
       });
 
-      this.onDataBind = this.webSocketProvider.onDataBind();
+      this.onDataBind = this.webSocketProvider.onDataBind((response: Observable<any>) => {
+        return response.pipe(map((source: any) => {
+          return {
+            options: source.items,
+            count: source.count
+          };
+        }));
+      });
 
       // Keep the socket connection alive with a hart beat ping
       this.intervalSubscription = interval(40000).subscribe(() => {
