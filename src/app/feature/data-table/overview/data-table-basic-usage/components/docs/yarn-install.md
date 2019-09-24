@@ -1,1 +1,1 @@
- yarn add ornamentum lodash
+ yarn add ornamentum

@@ -416,6 +416,10 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
         }
       }
 
+      if (this.sortPriority < 1) {
+        throw Error('Input [sortPriority] must be greater than 1.');
+      }
+
       if (this.dataStateService.currentSortPriority < this.sortPriority) {
         this.dataStateService.currentSortPriority = this.sortPriority;
       }

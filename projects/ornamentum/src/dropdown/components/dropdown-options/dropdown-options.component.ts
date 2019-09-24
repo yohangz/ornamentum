@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import get from 'lodash/get';
+import { get } from '../../../utility/services/object-utility.service';
 
 import { DropdownOption } from '../../models/dropdown-option.model';
 

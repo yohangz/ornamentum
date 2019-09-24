@@ -1,5 +1,8 @@
 # Change Log
 
+## [8.1.1]
+- Remove lodash external dependency.
+
 ## [8.1.0]
 - Change dropdown list 'items' input property to 'options' (Breaking Change).
 - Support filter dropdown template via data table (fix #42).
@@ -94,7 +97,6 @@ i.e: You can ony use Ornamentum 8.x.x versions with Angular 8.x.x.
 - Update version history documentation
 - ARIA attribution
 - Row edit support
-- Remove LoDash
 - Fix raised issues
 - Build documentation search functionality
 - Documentation scroll selected menu item to view

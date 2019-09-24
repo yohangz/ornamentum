@@ -50,18 +50,17 @@
 - [@angular/common](https://www.npmjs.com/package/@angular/common): ^8.0.0-rc.0 || ^8.0.0
 - [@angular/core](https://www.npmjs.com/package/@angular/core): ^8.0.0-rc.0 || ^8.0.0
 - [@angular/forms](https://www.npmjs.com/package/@angular/forms): ^8.0.0-rc.0 || ^8.0.0
-- [lodash](https://www.npmjs.com/package/lodash): ^4.0.0
 - [rxjs](https://www.npmjs.com/package/rxjs): ^6.0.0
 
 ## :rocket: Installation
 
-Install the Ornamentum packages and it's peer dependencies using either of following command depending on your package manager.
+Install the Ornamentum node module using either of following command depending on your package manager.
 
-```npm install ornamentum lodash --save```
+```npm install ornamentum --save```
 
 or
 
-```yarn add ornamentum lodash```
+```yarn add ornamentum```
 
 Ornamentum major versions are aligned with Angular Major versions hence, You can ony use Ornamentum 8.x.x versions with Angular 8.x.x version.
 

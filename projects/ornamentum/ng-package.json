@@ -7,8 +7,6 @@
     "languageLevel": ["dom", "es2018"],
     "cssUrl": "inline",
     "umdModuleIds": {
-      "lodash/get": "_.get",
-      "lodash/orderBy": "_.orderBy",
       "rxjs": "Rx"
     }
   }

@@ -19,7 +19,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subscription, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, switchMap } from 'rxjs/operators';
 
-import get from 'lodash/get';
+import { get } from '../../../utility/services/object-utility.service';
 
 import { DataTableFilterValueExtractCallback } from '../../models/data-table-filter-value-extract-callback.model';
 import { DataTableCellBindEventArgs } from '../../models/data-table-cell-bind-event-args.model';
@@ -797,7 +797,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
             field: uniqueField.field,
             sortable: uniqueField.column.sortable,
             sortOrder: uniqueField.column.sortOrder,
-            sortPriority: uniqueField.column.sortPriority || uniqueField.column.sortOrder ? 1 : 0,
+            sortPriority: uniqueField.column.sortPriority || (uniqueField.column.sortOrder ? 1 : 0),
             filterable: uniqueField.column.filterable,
             filterValue: filter,
             filterExpression: uniqueField.column.filterExpression,

@@ -17,7 +17,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subscription, Observable, of } from 'rxjs';
 import { catchError, debounceTime, switchMap } from 'rxjs/operators';
 
-import get from 'lodash/get';
+import { get } from '../../../utility/services/object-utility.service';
 
 import { DropdownTranslations } from '../../models/dropdown-translations.model';
 import { DropdownOption } from '../../models/dropdown-option.model';

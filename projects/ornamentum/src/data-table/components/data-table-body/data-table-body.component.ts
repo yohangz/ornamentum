@@ -1,7 +1,5 @@
 import { Component, Input, TemplateRef } from '@angular/core';
 
-import get from 'lodash/get';
-
 import { DataTableRow } from '../../models/data-table-row.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
@@ -9,6 +7,8 @@ import { DataTableColumnComponent } from '../data-table-column/data-table-column
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
+
+import { get } from '../../../utility/services/object-utility.service';
 
 /**
  * Data table body component; Data table body table definition rendering is handled by this component

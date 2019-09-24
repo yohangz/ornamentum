@@ -3,8 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject, Subscription, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import orderBy from 'lodash/orderBy';
-import get from 'lodash/get';
+import { orderBy, get } from '../../utility/services/object-utility.service';
 
 import { DataTableRequestParams } from '../models/data-table-request-params.model';
 import { DataTableQueryResult } from '../models/data-table-query-result.model';
@@ -87,13 +86,12 @@ export class DataTableResourceService<T> {
           if (sortColumns.length) {
             let orderedSortColumns = sortColumns;
             if (sortColumns.length > 1) {
-              orderedSortColumns = sortColumns.sort((a, b) => {
+              orderedSortColumns = sortColumns.concat().sort((a, b) => {
                 return a.sortPriority - b.sortPriority;
               });
             }
 
-            const orderParams = orderedSortColumns.reduce(
-              (accumulator: any, column: DataTableQueryField) => {
+            const orderParams = orderedSortColumns.reduce((accumulator: any, column: DataTableQueryField) => {
                 if (accumulator) {
                   accumulator.fields.push(column.field);
                   accumulator.orders.push(column.sortOrder);
