@@ -22,7 +22,7 @@ export class HomeComponent {
     this.meta.updateTag({
       name: 'description',
       // tslint:disable-next-line
-      content: 'Lightweight, highly configurable, feature rich, UI framework agnostic fully responsive, reactive Angular data table with minimal dependencies'
+      content: 'Lightweight, highly configurable, feature rich, UI framework agnostic fully responsive, reactive Angular data table with no external dependencies'
     });
   }
 }

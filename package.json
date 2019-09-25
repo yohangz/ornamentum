@@ -1,7 +1,7 @@
 {
   "name": "ornamentum-demo",
   "version": "8.1.1",
-  "description": "Lightweight, feature rich, highly configurable, UI framework agnostic full responsive Angular data table with minimal dependencies.",
+  "description": "Ornamentum data table is a lightweight, feature rich, highly configurable, UI framework agnostic, fully responsive, reactive Angular data table with no external dependencies.",
   "scripts": {
     "ng": "ng",
     "test:demo": "ng test ornamentum-demo --watch=true",
