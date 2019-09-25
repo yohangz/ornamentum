@@ -4,8 +4,12 @@
   [items]="items"
   [minContentWidth]="1280"
   [contentHeight]="300"
-  [pageable]="true"
+  [limit]="15"
+  [loadViewDistanceRatio]="1"
+  [pageable]="false"
+  [loadOnScroll]="true"
   [showHeader]="true"
+  [showIndexColumn]="true"
   [showColumnSelector]="true">
   <ng-data-table-column
     [field]="'id'"

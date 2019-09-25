@@ -12,6 +12,6 @@ export class ResponsiveConfUsageComponent {
   public items: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {
-    this.items = this.dataFetchService.fetchStaticData();
+    this.items = this.dataFetchService.fetchStaticData(0, 20);
   }
 }

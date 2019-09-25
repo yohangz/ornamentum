@@ -8,6 +8,11 @@ export interface DropdownOption {
   id: any;
 
   /**
+   * Option index.
+   */
+  index: number;
+
+  /**
    * Option text
    */
   text: string;

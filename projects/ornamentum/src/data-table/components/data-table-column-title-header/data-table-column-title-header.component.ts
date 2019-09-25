@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-import { get } from '../../../utility/services/object-utility.service';
+import { get } from '../../../utility/services/object-utility.class';
 
 import { DataFetchMode } from '../../models/data-fetch-mode.enum';
 

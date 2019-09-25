@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject, Subscription, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 
-import { orderBy, get } from '../../utility/services/object-utility.service';
+import { orderBy, get } from '../../utility/services/object-utility.class';
 
 import { DataTableRequestParams } from '../models/data-table-request-params.model';
 import { DataTableQueryResult } from '../models/data-table-query-result.model';

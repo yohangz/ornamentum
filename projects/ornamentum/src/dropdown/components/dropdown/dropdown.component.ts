@@ -17,7 +17,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subscription, Observable, of } from 'rxjs';
 import { catchError, debounceTime, switchMap } from 'rxjs/operators';
 
-import { get } from '../../../utility/services/object-utility.service';
+import { get } from '../../../utility/services/object-utility.class';
 
 import { DropdownTranslations } from '../../models/dropdown-translations.model';
 import { DropdownOption } from '../../models/dropdown-option.model';
@@ -595,12 +595,13 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.eventStateService.initStream.emit(this);
   }
 
-  private extractDropdownOption(option: any): DropdownOption {
+  private extractDropdownOption(option: any, index: number): DropdownOption {
     const id = get(option, this.config.selectTrackBy);
 
     return {
       disabled: get(option, this.config.disabledTrackBy),
       id,
+      index: index + this.dataStateService.offset + 1,
       option,
       text: get(option, this.config.displayTrackBy)
     };
@@ -609,16 +610,16 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   private setDropdownOptions(queryResult: DropdownQueryResult<any>) {
     if (this.config.groupByField) {
       this.dataStateService.dropdownOptionGroups = queryResult.options.reduce(
-        (accumulator: DropdownOptionGroup[], option: any) => {
+        (accumulator: DropdownOptionGroup[], option: any, index: number) => {
           const groupFieldValue = get(option, this.config.groupByField);
           const currentGroup = accumulator.find((group: DropdownOptionGroup) => group.groupName === groupFieldValue);
 
           if (currentGroup) {
-            currentGroup.options.push(this.extractDropdownOption(option));
+            currentGroup.options.push(this.extractDropdownOption(option, index));
           } else {
             accumulator.push({
               groupName: groupFieldValue,
-              options: [this.extractDropdownOption(option)]
+              options: [this.extractDropdownOption(option, index)]
             });
           }
 
@@ -628,8 +629,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       );
     } else {
       this.dataStateService.dropdownOptions = queryResult.options.reduce(
-        (accumulator: DropdownOption[], option: any) => {
-          accumulator.push(this.extractDropdownOption(option));
+        (accumulator: DropdownOption[], option: any, index: number) => {
+          accumulator.push(this.extractDropdownOption(option, index));
           return accumulator;
         },
         this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownOptions : []

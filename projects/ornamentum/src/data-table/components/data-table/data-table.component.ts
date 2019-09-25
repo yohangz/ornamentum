@@ -20,7 +20,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Subscription, Observable, of, Subject } from 'rxjs';
 import { catchError, debounceTime, switchMap } from 'rxjs/operators';
 
-import { get } from '../../../utility/services/object-utility.service';
+import { get } from '../../../utility/services/object-utility.class';
 
 import { DataTableFilterValueExtractCallback } from '../../models/data-table-filter-value-extract-callback.model';
 import { DataTableCellBindEventArgs } from '../../models/data-table-cell-bind-event-args.model';

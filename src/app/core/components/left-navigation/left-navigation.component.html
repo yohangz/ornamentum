@@ -1,5 +1,5 @@
 <div class="left-navigation" [ngClass]="getExpandedClass(expanded)">
-  <div class="left-navigation-container" (ngClickOutside)="closeMenu()">
+  <div class="left-navigation-container" (appClickOutside)="closeMenu()">
     <div class="side-menu">
       <div class="side-menu-navigation">
         <nav *ngFor="let group of menuGroups">

@@ -1,6 +1,6 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
 
-import { get } from '../../utility/services/object-utility.service';
+import { get } from '../../utility/services/object-utility.class';
 
 import { DropdownConfig } from '../models/dropdown-config.model';
 import { DropdownTranslations } from '../models/dropdown-translations.model';

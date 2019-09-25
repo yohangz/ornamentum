@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { get } from '../../../utility/services/object-utility.service';
+import { get } from '../../../utility/services/object-utility.class';
 
 import { DropdownOption } from '../../models/dropdown-option.model';
 
@@ -18,6 +18,15 @@ export class DropdownOptionsComponent {
     public dataStateService: DropdownDataStateService,
     private eventStateService: DropdownEventStateService
   ) {}
+
+  /**
+   * Unique data row tracking callback
+   * @param index Current index
+   * @param option Dropdown option reference
+   */
+  public optionTrackBy(index: number, option: DropdownOption): number {
+    return option.index;
+  }
 
   public getSelectedState(id: any): boolean {
     if (this.config.selectMode === 'multi') {

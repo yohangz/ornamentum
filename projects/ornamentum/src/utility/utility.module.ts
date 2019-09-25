@@ -1,7 +1,6 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { ClickOutsideDirective } from './directives/click-outside.directive';
 import { InitDirective } from './directives/init.directive';
 import { FocusDirective } from './directives/focus.directive';
 
@@ -14,7 +13,7 @@ import { PopoverComponentLoaderFactoryService } from './services/popover-compone
 import { ResizeService } from './services/resize.service';
 import { ValidatorService } from './services/validator.service';
 
-const DIRECTIVES = [ClickOutsideDirective, InitDirective, FocusDirective];
+const DIRECTIVES = [InitDirective, FocusDirective];
 
 const PIPES = [PixelConverterPipe];
 

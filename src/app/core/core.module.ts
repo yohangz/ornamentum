@@ -9,13 +9,13 @@ import { throwIfAlreadyLoaded } from './module-import.guard';
 
 import { SeoGuard } from './seo.guard';
 
-import { COMPONENTS, SERVICES } from './index';
+import { COMPONENTS, SERVICES, DIRECTIVES } from './index';
 
 /**
  * Module class for containing core module.
  */
 @NgModule({
-  declarations: [...COMPONENTS],
+  declarations: [...COMPONENTS, ...DIRECTIVES],
   exports: [...COMPONENTS],
   imports: [CommonModule, RouterModule, HttpClientModule, UtilityModule.forRoot()],
   providers: [...SERVICES, SeoGuard]

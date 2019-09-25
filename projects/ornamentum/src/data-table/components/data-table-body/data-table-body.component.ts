@@ -8,7 +8,7 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 
-import { get } from '../../../utility/services/object-utility.service';
+import { get } from '../../../utility/services/object-utility.class';
 
 /**
  * Data table body component; Data table body table definition rendering is handled by this component

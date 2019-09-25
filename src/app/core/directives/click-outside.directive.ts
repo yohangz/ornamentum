@@ -4,7 +4,7 @@ import { Directive, ElementRef, EventEmitter, HostListener, Output, Input } from
  * Click outside directive; Notify when clicked on a DOM element out of target DOM tree
  */
 @Directive({
-  selector: '[ngClickOutside]'
+  selector: '[appClickOutside]'
 })
 export class ClickOutsideDirective {
   /**

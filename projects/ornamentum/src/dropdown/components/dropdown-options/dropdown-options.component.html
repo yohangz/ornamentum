@@ -10,7 +10,7 @@
         [ngTemplateOutletContext]="{ groupedOption: groupedOption }"
       >
       </ng-container>
-      <ng-container *ngFor="let option of groupedOption.options; index as i;">
+      <ng-container *ngFor="let option of groupedOption.options; trackBy: optionTrackBy; let i = index;">
         <li (click)="onOptionClick(option, $event)" [class.disabled]="option.disabled" [class.ng-option-selected]="getSelectedState(option.id)">
           <ng-container *ngIf="!dataStateService.dropdownOptionTemplate">
             <a class="ng-dropdown-checkbox-container" *ngIf="config.showOptionSelectCheckbox">
@@ -25,7 +25,7 @@
                 <span class="ng-ignore-propagation" [title]="option.text">{{ option.text }}</span>
               </label>
             </a>
-            <span *ngIf="!config.showOptionSelectCheckbox" [title]="option.text">{{ option.text }}</span>
+            <span *ngIf="!config.showOptionSelectCheckbox" [title]="option.text">{{option.index}} - {{ option.text }}</span>
           </ng-container>
           <ng-container
             *ngIf="dataStateService.dropdownOptionTemplate"
@@ -38,7 +38,7 @@
     </ng-container>
   </ng-container>
   <ng-container *ngIf="!config.groupByField">
-    <ng-container *ngFor="let option of dataStateService.dropdownOptions; index as i;">
+    <ng-container *ngFor="let option of dataStateService.dropdownOptions; trackBy: optionTrackBy; index as i;">
       <li (click)="onOptionClick(option, $event)" [class.disabled]="option.disabled" [class.ng-option-selected]="getSelectedState(option.id)">
         <ng-container *ngIf="!dataStateService.dropdownOptionTemplate">
           <a class="ng-dropdown-checkbox-container" *ngIf="config.showOptionSelectCheckbox">
@@ -53,7 +53,7 @@
               <span class="ng-ignore-propagation" [title]="option.text">{{ option.text }}</span>
             </label>
           </a>
-          <span *ngIf="!config.showOptionSelectCheckbox" [title]="option.text">{{ option.text }}</span>
+          <span *ngIf="!config.showOptionSelectCheckbox" [title]="option.text">{{option.index}} - {{ option.text }}</span>
         </ng-container>
         <ng-container
           *ngIf="dataStateService.dropdownOptionTemplate"

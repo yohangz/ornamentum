@@ -68,7 +68,7 @@ export interface DataTableConfig {
   minContentHeight?: string | number;
 
   /**
-   * Table content height value in pixels; This configuration can be used to enable table content vertical scrolling for responsive design.
+   * Table content height value in pixels; This configuration can be used to enable table content vertical scrolling for responsive design
    */
   contentHeight?: string | number;
 
@@ -76,6 +76,17 @@ export interface DataTableConfig {
    * Show pagination bar if true; Depends on offset and limit values. Trigger dataLoad event with offset and limit values
    */
   pageable?: boolean;
+
+  /**
+   * Scrolling based on demand data loading functionality if true. Trigger dataLoad event with offset
+   * and limit values when scroll to bottom until data source exhaust
+   */
+  loadOnScroll?: boolean;
+
+  /**
+   * View height distance ratio to trigger data fetch on scroll
+   */
+  loadViewDistanceRatio?: number;
 
   /**
    * Show auto generated index column with row numbering if true
