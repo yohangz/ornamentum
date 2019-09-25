@@ -1,4 +1,4 @@
-<ng-container *ngFor="let row of dataStateService.dataRows; index as i;">
+<ng-container *ngFor="let row of dataStateService.dataRows; trackBy: dataRowTrackBy; let i = index;">
   <ng-container *ngFor="let ignored of getRowSpanCollection(row); let rowSpanIndex = index; let rowSpanCount = count">
     <tr
       class="ng-data-table-row"
@@ -17,7 +17,7 @@
         class="ng-data-table-row-expand-button ng-ignore-propagation"
         [style.background-color]="row.color"
         *ngIf="config.expandableRows && !rowSpanIndex"
-        (click)="onRowExpand($event, row)"
+        (click)="row.index"
         [attr.rowspan]="rowSpanCount"
       >
         <div [hidden]="config.showRowExpandLoadingSpinner && isRowExpanderLoading(row)">
@@ -36,7 +36,7 @@
         class="index-column"
         [style.background-color]="row.color"
         *ngIf="config.showIndexColumn && !rowSpanIndex"
-        [textContent]="getDisplayIndex(row)"
+        [textContent]="row.index"
         [attr.rowspan]="rowSpanCount"
       >
       </td>

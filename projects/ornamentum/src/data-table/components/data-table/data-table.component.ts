@@ -12,7 +12,8 @@ import {
   forwardRef,
   ElementRef,
   ViewChild,
-  OnInit
+  OnInit,
+  NgZone
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -76,8 +77,6 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   private rowSelectChangeSubscription: Subscription;
   private dataFetchStreamSubscription: Subscription;
   private scrollPositionSubscription: Subscription;
-
-  public scrollPositionStream = new Subject<DataTableScrollPoint>();
 
   /**
    * Data table column collection
@@ -336,6 +335,24 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   @Input()
   public set pageable(value: boolean) {
     this.config.pageable = value;
+  }
+
+  /**
+   * Set load data on scroll state. Additional data table options fetch call is initiated when user scroll to bottom
+   * @param value Load data on scroll state
+   */
+  @Input()
+  public set loadOnScroll(value: boolean) {
+    this.config.loadOnScroll = value;
+  }
+
+  /**
+   * View height ratio to trigger data fetch on with infinite scrollable mode
+   * @param value Load view distance ratio
+   */
+  @Input()
+  public set loadViewDistanceRatio(value: number) {
+    this.config.loadViewDistanceRatio = value;
   }
 
   /**
@@ -616,7 +633,8 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
    * @return True of data is loading
    */
   public get isLoading(): boolean {
-    return this.config.showLoadingSpinner && this.dataStateService.dataLoading;
+    return !(this.config.loadOnScroll && this.dataStateService.dataRows.length)
+      && this.config.showLoadingSpinner && this.dataStateService.dataLoading;
   }
 
   constructor(
@@ -625,6 +643,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
     private globalRefService: GlobalRefService,
     private eventStateService: DataTableEventStateService,
     private dataTableResourceService: DataTableResourceService<any>,
+    private zone: NgZone,
     public dataStateService: DataTableDataStateService,
     public scrollPositionService: DataTableScrollPositionService,
     public config: DataTableConfigService
@@ -651,10 +670,6 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   private onAfterDataBind(queryResult: DataTableQueryResult<any>): void {
     this.dataStateService.itemCount = queryResult.count;
     this.setDataRows(queryResult.items);
-
-    if (this.config.offset > this.dataStateService.itemCount) {
-      this.config.offset = 0;
-    }
 
     if (this.dataStateService.heardReload) {
       this.eventStateService.fetchFilterOptionsStream.next(false);
@@ -688,7 +703,14 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
    * @param items Data table item collection
    */
   private setDataRows(items: any[]): void {
-    this.dataStateService.dataRows = items.map((item: any, index: number) => {
+    const mappedItems = items.map((item: any, index: number) => {
+      let currentIndex;
+      if (this.config.loadOnScroll || this.config.pageable) {
+        currentIndex = this.config.offset + index + 1;
+      } else {
+        currentIndex = index + 1;
+      }
+
       return {
         dataLoaded: false,
         expanded: false,
@@ -696,11 +718,17 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
         color: '',
         cssClass: '',
         tooltip: '',
-        index,
+        index: currentIndex,
         item,
         selected: this.getSelectedState(item)
       };
     });
+
+    if (this.config.loadOnScroll) {
+      this.dataStateService.dataRows = [ ...this.dataStateService.dataRows, ...mappedItems ];
+    } else {
+      this.dataStateService.dataRows = mappedItems;
+    }
 
     if (this.config.selectMode === 'multi') {
       this.dataStateService.allRowSelected =
@@ -710,10 +738,12 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
         });
     }
 
-    const substituteRowCount = this.config.limit - this.dataStateService.dataRows.length;
-    this.dataStateService.substituteRows = Array.from({
-      length: substituteRowCount
-    });
+    if (!this.config.loadOnScroll) {
+      const substituteRowCount = this.config.limit - this.dataStateService.dataRows.length;
+      this.dataStateService.substituteRows = Array.from({
+        length: substituteRowCount
+      });
+    }
   }
 
   /**
@@ -805,7 +835,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
         });
     }
 
-    if (this.config.pageable) {
+    if (this.config.pageable || this.config.loadOnScroll) {
       params.offset = this.config.offset;
       params.limit = this.config.limit;
     }
@@ -883,6 +913,25 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
 
     this.eventStateService.fetchFilterOptionsStream.next(true);
     this.eventStateService.initStream.emit(this);
+
+    if (this.config.loadOnScroll) {
+      this.scrollPositionSubscription = this.scrollPositionService.scrollPositionStream.subscribe((pos: DataTableScrollPoint) => {
+        const roundingPixel = 1;
+        const gutterPixel = 1;
+
+        if (
+          pos.isVertical
+          && pos.scrollTop >= pos.scrollHeight - (1 + this.config.loadViewDistanceRatio) * pos.clientHeight - roundingPixel - gutterPixel
+          && (this.config.offset + this.config.limit) < this.dataStateService.itemCount
+          && !this.dataStateService.dataLoading
+        ) {
+          this.dataStateService.dataLoading = true;
+          this.zone.run(() => {
+            this.offset = this.config.offset + this.config.limit;
+          });
+        }
+      });
+    }
   }
 
   /**
@@ -971,9 +1020,15 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
       throw Error('Missing required parameter value for [id] input.');
     }
 
-    this.scrollPositionSubscription = this.scrollPositionStream.subscribe((pos: DataTableScrollPoint) => {
-      this.scrollPositionService.scrollPositionStream.next(pos);
-    });
+    if (this.config.loadOnScroll) {
+      if (!this.config.minContentHeight) {
+        throw Error('[minContentHeight] is required when [infiniteScrollable] is enabled.');
+      }
+
+      if (this.config.pageable) {
+        throw Error('[pageable] and [infiniteScrollable] cannot be enabled at the same time.');
+      }
+    }
   }
 
   /**

@@ -88,9 +88,9 @@ export interface DropdownConfig {
   loadOnScroll?: boolean;
 
   /**
-   * Distance in pixels from bottom which needs to trigger additional data loading functionality on scroll
+   * View height distance ratio to trigger data fetch on scroll
    */
-  loadViewDistance?: number;
+  loadViewDistanceRatio?: number;
 
   /**
    * Number of options to fetch on a single load when loadOnScroll is true

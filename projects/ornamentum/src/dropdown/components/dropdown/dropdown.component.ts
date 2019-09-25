@@ -249,8 +249,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Load additional dropdown options on scroll if true
-   * @param value Load on scroll state.
+   * Set infinite scrollable state. Additional data table options fetch call is initiated when user scroll to bottom
+   * @param value Infinite scrollable state
    */
   @Input()
   public set loadOnScroll(value: boolean) {
@@ -258,13 +258,12 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Additional dropdown options fetch call is initiated when user scroll to this point.
-   * Distance is calculated from bottom of the options list. Applicable only when load on scroll mode is enabled.
-   * @param value Load view distance value in pixels.
+   * View height ratio to trigger data fetch on with infinite scrollable mode
+   * @param value Load view distance ratio
    */
   @Input()
-  public set loadViewDistance(value: number) {
-    this.config.loadViewDistance = value;
+  public set loadViewDistanceRatio(value: number) {
+    this.config.loadViewDistanceRatio = value;
   }
 
   /**

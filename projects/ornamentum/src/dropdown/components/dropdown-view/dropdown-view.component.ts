@@ -55,10 +55,11 @@ export class DropdownViewComponent implements OnInit, OnDestroy {
     const gutterPixel = 1;
 
     if (
-      scrollTop >= scrollHeight - (1 + this.config.loadViewDistance) * scrollElementHeight - roundingPixel - gutterPixel &&
+      scrollTop >= scrollHeight - (1 + this.config.loadViewDistanceRatio) * scrollElementHeight - roundingPixel - gutterPixel &&
       this.dataStateService.currentOptionCount < this.dataStateService.totalOptionCount &&
       !this.dataStateService.dataLoading
     ) {
+      this.dataStateService.dataLoading = true;
       this.dataStateService.offset = this.dataStateService.offset + this.config.limit;
       this.eventStateService.dataFetchStream.emit(false);
     }

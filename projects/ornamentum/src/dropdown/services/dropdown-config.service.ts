@@ -39,7 +39,7 @@ export class DropdownConfigService implements DropdownConfig {
   public menuWidth = 320;
   public menuHeight = 250;
   public loadOnScroll = false;
-  public loadViewDistance = 1;
+  public loadViewDistanceRatio = 1;
   public limit = 15;
   public loadDataOnInit = true;
   public closeMenuOnSelect = false;

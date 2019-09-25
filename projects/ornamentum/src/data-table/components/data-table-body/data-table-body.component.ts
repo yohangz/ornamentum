@@ -36,16 +36,12 @@ export class DataTableBodyComponent {
   ) {}
 
   /**
-   * Get row index identifier by data row
-   * @param dataRow Data row object
-   * @return Dat row index identifier
+   * Unique data row tracking callback
+   * @param index Current index
+   * @param dataRow Data row object reference
    */
-  public getDisplayIndex(dataRow: DataTableRow<any>): number {
-    if (this.config.pageable) {
-      return this.config.offset + dataRow.index + 1;
-    } else {
-      return dataRow.index + 1;
-    }
+  public dataRowTrackBy(index: number, dataRow: DataTableRow<any>): number {
+    return dataRow.index;
   }
 
   /**
@@ -277,7 +273,10 @@ export class DataTableBodyComponent {
    * @return True if substitute rows are available
    */
   public get hasSubstituteRows(): boolean {
-    return this.config.showSubstituteRows && this.dataStateService.dataRows.length && !this.dataStateService.showNoDataOverlay;
+    return !this.config.loadOnScroll
+      && this.config.showSubstituteRows
+      && this.dataStateService.dataRows.length
+      && !this.dataStateService.showNoDataOverlay;
   }
 
   /**

@@ -408,16 +408,16 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     if (this.dataTableConfigService.multiColumnSortable && this.sortable) {
       if (this.sortOrder === '') {
         if (this.sortPriority !== undefined) {
-          throw Error('Input [sortPriority] should be ignored when multi column sorting is enabled with natural sort order.');
+          throw Error('[sortPriority] should be ignored when multi column sorting is enabled with natural sort order.');
         }
       } else {
         if (this.sortPriority === undefined) {
-          throw Error('Input [sortPriority] is required when multi column sorting is enabled with an explicit sort order.');
+          throw Error('[sortPriority] is required when multi column sorting is enabled with an explicit sort order.');
         }
       }
 
       if (this.sortPriority < 1) {
-        throw Error('Input [sortPriority] must be greater than 1.');
+        throw Error('[sortPriority] must be greater than 1.');
       }
 
       if (this.dataStateService.currentSortPriority < this.sortPriority) {

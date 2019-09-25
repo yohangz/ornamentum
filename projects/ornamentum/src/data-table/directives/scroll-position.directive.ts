@@ -29,7 +29,11 @@ export class ScrollPositionDirective implements AfterViewInit, OnDestroy {
           map(() => {
             return {
               scrollLeft: this.el.nativeElement.scrollLeft,
-              scrollTop: this.el.nativeElement.scrollTop
+              scrollTop: this.el.nativeElement.scrollTop,
+              scrollHeight: this.el.nativeElement.scrollHeight,
+              scrollWidth: this.el.nativeElement.scrollWidth,
+              clientHeight: this.el.nativeElement.clientHeight,
+              clientWidth: this.el.nativeElement.clientWidth,
             };
           }),
           pairwise(),
@@ -37,8 +41,7 @@ export class ScrollPositionDirective implements AfterViewInit, OnDestroy {
             const [ previous, current ] = pair;
 
             return {
-              scrollLeft: current.scrollLeft,
-              scrollTop: current.scrollTop,
+              ...current,
               isHorizontal: previous.scrollLeft !== current.scrollLeft,
               isVertical: previous.scrollTop !== current.scrollTop
             };

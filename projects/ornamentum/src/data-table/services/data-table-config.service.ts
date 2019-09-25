@@ -27,6 +27,8 @@ export class DataTableConfigService implements DataTableConfig {
   public minContentWidth = undefined;
   public contentHeight = undefined;
   public pageable = false;
+  public loadOnScroll = false;
+  public loadViewDistanceRatio = 1;
   public showIndexColumn = false;
   public indexColumnTitle = '#';
   public rowSelectable = false;

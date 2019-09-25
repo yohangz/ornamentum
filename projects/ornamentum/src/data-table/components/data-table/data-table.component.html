@@ -2,14 +2,14 @@
   <ng-data-table-header *ngIf="config.showHeader" [columns]="columns"> </ng-data-table-header>
   <div class="ng-data-table-content-container" [ngScrollPosition]="scrollPositionService.scrollPositionStream">
     <div class="ng-data-table-content-header-container" [style.paddingRight]="headerPadding | ngPx">
-      <div class="ng-data-table-content-header" [ngScrollElement]="scrollPositionStream">
+      <div class="ng-data-table-content-header" [ngScrollElement]="scrollPositionService.scrollPositionStream">
         <table class="ng-data-table" [style.width]="tableWidth | ngPx" [style.minWidth]="config.minContentWidth | ngPx">
           <colgroup ngDataTableColGroup [columns]="columns"></colgroup>
           <thead ngDataTableHead [columns]="columns"></thead>
         </table>
       </div>
     </div>
-    <div class="ng-data-table-content" [ngScrollPosition]="scrollPositionStream"
+    <div class="ng-data-table-content" [ngScrollPosition]="scrollPositionService.scrollPositionStream"
          [style.height]="config.contentHeight | ngPx" [style.minHeight]="config.minContentHeight | ngPx">
       <ng-data-table-loading-spinner [loadingSpinnerTemplate]="loadingSpinnerTemplate" [isLoading]="isLoading" [showOverlay]="true">
       </ng-data-table-loading-spinner>

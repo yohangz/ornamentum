@@ -13,6 +13,26 @@ export interface DataTableScrollPoint {
   scrollTop: number;
 
   /**
+   * Scroll height pixel count
+   */
+  scrollHeight: number;
+
+  /**
+   * Scroll width pixel count
+   */
+  scrollWidth: number;
+
+  /**
+   * Scroll element height pixel count
+   */
+  clientHeight: number;
+
+  /**
+   * Scroll element width pixel count
+   */
+  clientWidth: number;
+
+  /**
    * True if scroll direction is horizontal.
    */
   isHorizontal?: boolean;
