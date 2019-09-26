@@ -17,7 +17,7 @@
         class="ng-data-table-row-expand-button ng-ignore-propagation"
         [style.background-color]="row.color"
         *ngIf="config.expandableRows && !rowSpanIndex"
-        (click)="row.index"
+        (click)="onRowExpand($event, row)"
         [attr.rowspan]="rowSpanCount"
       >
         <div [hidden]="config.showRowExpandLoadingSpinner && isRowExpanderLoading(row)">
