@@ -6,7 +6,7 @@ import { DropdownOptionGroup } from '../models/dropdown-option-group.model';
 import { ComponentLoader } from '../../utility/utility.module';
 
 /**
- * Dropdown data state service; Manage dropdown state data
+ * Dropdown data state service; Manage dropdown state data.
  */
 @Injectable()
 export class DropdownDataStateService {
@@ -28,9 +28,9 @@ export class DropdownDataStateService {
   public onDataBind: DropdownDataBindCallback<any>;
 
   /**
-   * Get dropdown option unique id
-   * @param append Target identifier
-   * @param index Target index
+   * Get dropdown option unique id.
+   * @param append Target identifier.
+   * @param index Target index.
    */
   public getUniqueId(append: string, index: number): string {
     return `${this.id}-chk-${append}-${index}`;

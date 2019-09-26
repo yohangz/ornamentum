@@ -1,9 +1,9 @@
 /**
- * Dropdown option
+ * Dropdown option.
  */
 export interface DropdownOption {
   /**
-   * Option identifier
+   * Option identifier.
    */
   id: any;
 
@@ -13,17 +13,17 @@ export interface DropdownOption {
   index: number;
 
   /**
-   * Option text
+   * Option text.
    */
   text: string;
 
   /**
-   * Disabled state
+   * Disabled state.
    */
   disabled: boolean;
 
   /**
-   * Source option data reference
+   * Source option data reference.
    */
   option: any;
 }

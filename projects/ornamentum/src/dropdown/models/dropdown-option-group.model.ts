@@ -1,16 +1,16 @@
 import { DropdownOption } from './dropdown-option.model';
 
 /**
- * Dropdown option group
+ * Dropdown option group.
  */
 export interface DropdownOptionGroup {
   /**
-   * Group name
+   * Group name.
    */
   groupName: string;
 
   /**
-   * Group options
+   * Group options.
    */
   options: DropdownOption[];
 }

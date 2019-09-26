@@ -1,29 +1,29 @@
 /**
- * Dropdown translations
+ * Dropdown translations.
  */
 export interface DropdownTranslations {
   /**
-   * Select placeholder
+   * Select placeholder.
    */
   selectPlaceholder?: string;
 
   /**
-   * Search placeholder
+   * Search placeholder.
    */
   filterPlaceholder?: string;
 
   /**
-   * Search empty result text
+   * Search empty result text.
    */
   noDataMessage?: string;
 
   /**
-   * Select all checkbox placeholder
+   * Select all checkbox placeholder.
    */
   selectAllPlaceholder?: string;
 
   /**
-   * Selected options wrap placeholder; Used when option count > wrapDisplaySelectLimit
+   * Selected options wrap placeholder; Used when option count > wrapDisplaySelectLimit.
    */
   selectedOptionWrapPlaceholder?: string;
 }

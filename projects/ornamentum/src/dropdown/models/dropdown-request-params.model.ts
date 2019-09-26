@@ -5,22 +5,22 @@ import { DropdownFilter } from './dropdown-filter.model';
  */
 export interface DropdownRequestParams {
   /**
-   * Hard re-fetch data from source if true (used with client data source: dataBind)
+   * Hard re-fetch data from source if true (used with client data source: dataBind).
    */
   hardReload: boolean;
 
   /**
-   * Filter text
+   * Filter text.
    */
   filter?: DropdownFilter;
 
   /**
-   * Offset value (Start index)
+   * Offset value (Start index).
    */
   offset?: number;
 
   /**
-   * Data limit (Page size)
+   * Data limit (Page size).
    */
   limit?: number;
 }

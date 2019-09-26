@@ -16,7 +16,7 @@ import { UtilityModule } from '../utility/utility.module';
 const COMPONENTS = [DropdownComponent, DropdownViewComponent, DropdownFilterComponent, DropdownOptionsComponent];
 
 /**
- * Module representing dropdown component
+ * Module representing dropdown component.
  */
 @NgModule({
   imports: [CommonModule, FormsModule, UtilityModule.forRoot()],
@@ -26,9 +26,9 @@ const COMPONENTS = [DropdownComponent, DropdownViewComponent, DropdownFilterComp
 })
 export class DropdownModule {
   /**
-   * Set module root configuration overrides
-   * @param dropdownConfig Dropdown configuration object
-   * @return Module with custom providers
+   * Set module root configuration overrides.
+   * @param dropdownConfig Dropdown configuration object.
+   * @return Module with custom providers.
    */
   static forRoot(dropdownConfig?: DropdownConfig): ModuleWithProviders {
     return {
