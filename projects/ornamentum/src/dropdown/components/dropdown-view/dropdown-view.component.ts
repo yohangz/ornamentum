@@ -8,7 +8,7 @@ import { DropdownDataStateService } from '../../services/dropdown-data-state.ser
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
 
 /**
- * Dropdown view component; Render dropdown options list popup
+ * Dropdown options list view component
  */
 @Component({
   selector: 'ng-dropdown-view',
@@ -25,7 +25,7 @@ export class DropdownViewComponent implements OnInit, OnDestroy {
   ) {}
 
   /**
-   * Component initialize lifecycle event handler
+   * Lifecycle hook that is called when component is initialized.
    */
   public ngOnInit(): void {
     this.scrollEventSubscription = this.scrollEvent.pipe(debounceTime(100)).subscribe((event: any) => {
@@ -34,7 +34,7 @@ export class DropdownViewComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Component destroy lifecycle event handler
+   * Lifecycle hook that is called when component is destroyed.
    */
   public ngOnDestroy(): void {
     if (this.scrollEventSubscription) {
@@ -43,8 +43,8 @@ export class DropdownViewComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Performs data loading when scrolling by checking the scroll position; This will be trigger only when loadOnScroll is true
-   * @param event Target event arguments reference
+   * Performs data loading when scrolling when scroll threshold is met. This will be trigger only when load on scroll is enabled.
+   * @param event Target event arguments reference.
    */
   public checkScrollPosition(event: any) {
     const scrollTop = event.target.scrollTop;

@@ -8,6 +8,9 @@ import { DropdownDataStateService } from '../../services/dropdown-data-state.ser
 import { DropdownConfigService } from '../../services/dropdown-config.service';
 import { DropdownEventStateService } from '../../services/dropdown-event-state.service';
 
+/**
+ * Dropdown options list component.
+ */
 @Component({
   selector: 'ng-dropdown-options',
   templateUrl: './dropdown-options.component.html'
@@ -20,14 +23,18 @@ export class DropdownOptionsComponent {
   ) {}
 
   /**
-   * Unique data row tracking callback
-   * @param index Current index
-   * @param option Dropdown option reference
+   * Unique data row tracking callback.
+   * @param index Current index.
+   * @param option Dropdown option reference.
    */
   public optionTrackBy(index: number, option: DropdownOption): number {
     return option.index;
   }
 
+  /**
+   * Get selected state by option identifier.
+   * @param id Option select track by identifier.
+   */
   public getSelectedState(id: any): boolean {
     if (this.config.selectMode === 'multi') {
       return this.dataStateService.selectedOptions.some((option: any) => {
@@ -38,6 +45,11 @@ export class DropdownOptionsComponent {
     return get(this.dataStateService.selectedOption, this.config.selectTrackBy) === id;
   }
 
+  /**
+   * Option click event handler.
+   * @param option Option object reference.
+   * @param event Click event arguments object.
+   */
   public onOptionClick(option: DropdownOption, event: MouseEvent): void {
     const target = event.target as HTMLElement;
     if (target && target.classList && target.classList.contains('ng-ignore-propagation')) {
@@ -47,6 +59,11 @@ export class DropdownOptionsComponent {
     this.toggleOptionSelectedState(option);
   }
 
+  /**
+   * Option checkbox click event handler.
+   * @param option Option object reference.
+   * @param event Click event arguments object.
+   */
   public onOptionCheckboxClick(option: DropdownOption, event: MouseEvent): void {
     // Prevent single mode checkbox getting unchecked on tapping already selected.
     if (this.config.selectMode === 'single') {
@@ -58,13 +75,17 @@ export class DropdownOptionsComponent {
     }
   }
 
+  /**
+   * Toggle option select state and update selected items depending on select mode.
+   * @param option Option object reference.
+   */
   public toggleOptionSelectedState(option: DropdownOption): void {
     const id = get(option.option, this.config.selectTrackBy);
 
     switch (this.config.selectMode) {
       case 'multi': {
-        const selectedIndex = this.dataStateService.selectedOptions.findIndex((option: any) => {
-          return get(option, this.config.selectTrackBy) === id;
+        const selectedIndex = this.dataStateService.selectedOptions.findIndex((value: any) => {
+          return get(value, this.config.selectTrackBy) === id;
         });
 
         if (selectedIndex < 0) {

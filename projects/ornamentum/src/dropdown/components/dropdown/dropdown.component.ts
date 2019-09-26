@@ -74,19 +74,19 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
 
   // Outputs : Event Handlers
   /**
-   * Dropdown initialize event handler.
+   * Dropdown initialize event handler
    */
   @Output()
   public init: EventEmitter<DropdownComponent>;
 
   /**
-   * Dropdown option select change event handler.
+   * Dropdown option select change event handler
    */
   @Output()
   public selectChange: EventEmitter<any[] | any>;
 
   /**
-   * Dropdown data bind event handler.
+   * Dropdown data bind event handler
    */
   @Output()
   public dataBound: EventEmitter<void>;
@@ -94,8 +94,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   // Input - Event handlers
 
   /**
-   * Set data bind callback; This handler is fired on each data fetch request
-   * @param value Dropdown data bind callback function reference
+   * Set data bind callback. This handler is fired on each data fetch request.
    */
   @Input()
   public set onDataBind(value: DropdownDataBindCallback<any>) {
@@ -105,8 +104,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   // Inputs
 
   /**
-   * Set dropdown loading spinner template reference object; Used by data table component to explicitly pass the template reference.
-   * @param value Template reference object.
+   * Set dropdown loading spinner template reference object. Used by data table component to explicitly pass the template reference.
    */
   @Input()
   public set loadingSpinnerTemplateRef(value: TemplateRef<any>) {
@@ -114,8 +112,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Set dropdown option template reference; Used by data table component to explicitly pass the template reference.
-   * @param value Template reference object.
+   * Set dropdown option template reference. Used by data table component to explicitly pass the template reference.
    */
   @Input()
   public set optionTemplateRef(value: TemplateRef<any>) {
@@ -123,8 +120,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Set dropdown options group header template reference; Used by data table component to explicitly pass the template reference.
-   * @param value Template reference object.
+   * Set dropdown options group header template reference. Used by data table component to explicitly pass the template reference.
    */
   @Input()
   public set optionGroupHeaderTemplateRef(value: TemplateRef<any>) {
@@ -132,8 +128,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Set static data option collection; No need to set data source when static options collection is provided
-   * @param value Any array of objects containing dropdown data
+   * Set static dropdown options collection. No need to set data source when static options collection is provided.
    */
   @Input()
   public set options(value: any[]) {
@@ -145,8 +140,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Set data source observable; This stream is used to retrieve dropdown binding data
-   * @param source Any object collecting of observable
+   * Set data source observable. This observable is used to retrieve dropdown options for data binding.
    */
   @Input()
   public set dataSource(source: Observable<any[]>) {
@@ -154,7 +148,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Set dropdown unique identifier
+   * Set dropdown unique identifier.
    */
   @Input()
   public set id(value: string) {
@@ -166,8 +160,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Set translation data object; Used to localize table display text labels
-   * @param value Translation data object
+   * Set translation data object. Used to localize table static label text.
    */
   @Input()
   public set translations(value: DropdownTranslations) {
@@ -175,8 +168,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Selected option track by field; Key to tack selected options uniquely
-   * @param value Select track by field key
+   * Set select option track by field path which is used to uniquely identify options for selection tracking.
+   * This field support object paths expressions 'root[0].nest'.
    */
   @Input()
   public set selectTrackBy(value: string) {
@@ -184,8 +177,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Display value track by field; Key to track display value of a given dropdown option
-   * @param value Display track by field key
+   * Set display value track by field path which is used to extract dropdown option display value.
+   * This field support object paths expressions 'root[0].nest'.
    */
   @Input()
   public set displayTrackBy(value: string) {
@@ -193,8 +186,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Group data by field; This key will be used to group the options list
-   * @param value Group by field key
+   * Set options group field path which is used to group the dropdown options.
+   * This field support object paths expressions 'root[0].nest'.
    */
   @Input()
   public set groupByField(value: string) {
@@ -202,8 +195,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Represents the name of the attribute used to disable the select options
-   * @param value Disabled state track by field key
+   * Set dropdown option disable state field path which is used to disabled state dropdown options.
+   * This field support object paths expressions 'root[0].nest'.
    */
   @Input()
   public set disabledTrackBy(value: string) {
@@ -211,9 +204,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Selected options collection; These options will be set selected by default on initial load;
-   * Applicable only when multi select mode is enabled
-   * @param value The selected dropdown option value collection
+   * Set selected options collection. These options will be set selected by default on initial load.
+   * Applicable only when multi select mode is enabled.
    */
   @Input()
   public set selectedOptions(value: any[]) {
@@ -221,8 +213,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Selected option; These option will be set selected by default on initial load; Applicable for single select mode only
-   * @param value The selected dropdown option option value
+   * Set selected option. This option is selected by default on initial load.
+   * Applicable only when single select mode is enabled.
    */
   @Input()
   public set selectedOption(value: any) {
@@ -230,8 +222,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Number of options to fetch on a single load when loadOnScroll is true
-   * @param value Data fetch limit
+   * Set number of options to fetch on scroll to bottom action when load on scroll mode is enabled.
    */
   @Input()
   public set limit(value: number) {
@@ -239,9 +230,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Wrap selected options and show the number of options selected instead when this limit is met or exceeded.
-   * Applicable only when multi select mode is enabled.
-   * @param value Wrap display selected options limit
+   * Set wrap selected options in dropdown view and show the number of options selected instead when
+   * limit is met or exceeded. Applicable only when multi select mode is enabled.
    */
   @Input()
   public set wrapDisplaySelectLimit(value: number) {
@@ -249,8 +239,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Set infinite scrollable state. Additional data table options fetch call is initiated when user scroll to bottom
-   * @param value Infinite scrollable state
+   * Set infinite scrollable state to load data on demand with scroll motion. Dropdown data fetch call is
+   * initiated with limit and offset when user scroll to bottom hence loading the full data set on init.
    */
   @Input()
   public set loadOnScroll(value: boolean) {
@@ -258,8 +248,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * View height ratio to trigger data fetch on with infinite scrollable mode
-   * @param value Load view distance ratio
+   * Set view height ratio to trigger data fetch with infinite scrollable mode.
+   * Higher ratio will will increase the scroll sensitivity.
    */
   @Input()
   public set loadViewDistanceRatio(value: number) {
@@ -267,11 +257,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Dropdown option select mode.
+   * Set option select mode.
    * - 'multi' : Support selecting multiple options.
    * - 'single' : Support selecting a single option from options collection.
-   * - 'single-toggle' : Support selecting a single option from options collection.
-   * Selection can not be removed but only toggled by tapping on another option.
+   * - 'single-toggle' : Support selecting a single option from options collection. Selection can not be removed but
+   * only toggled by tapping on another option.
    */
   @Input()
   public set selectMode(value: DropdownSelectMode) {
@@ -279,8 +269,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Display dropdown options filter search input if true. This will filter dropdown options by display text field.
-   * @param value Dropdown options filterable state.
+   * Show dropdown option search filter text-box if true.
    */
   @Input()
   public set filterable(value: boolean) {
@@ -288,8 +277,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Default options filter applied on initial load. All options are displayed when filter text value is empty.
-   * @param value Filter text value.
+   * Set default filter value to be applied on initial load. All options are displayed when filter text value is
+   * empty string. Applicable only when dropdown is filterable.
    */
   @Input()
   public set filterText(value: string) {
@@ -297,7 +286,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Filter de-bounce enabled state.v
+   * Set time based filter debounce to optimize performance and avoid request flooding by reducing the filter
+   * request frequency if true. Applicable only when dropdown filterable state is enabled.
    */
   @Input()
   public set filterDebounce(value: boolean) {
@@ -305,7 +295,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Filter de-bounce time milliseconds.
+   * Set filter debounce time in milliseconds. Applicable only when searchDebounce is true.
    */
   @Input()
   public set filterDebounceTime(value: number) {
@@ -313,7 +303,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   *
+   * Set load data on component initialize if true.
    */
   @Input()
   public set loadDataOnInit(value: boolean) {
@@ -321,7 +311,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Enable/Disable show selected options remove icon.
+   * Show selected option remove button if true.
+   * Applicable only when multi select mode ios enabled.
    */
   @Input()
   public set showSelectedOptionRemoveButton(value: boolean) {
@@ -329,7 +320,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Show all select options clear button if true.
+   * Set show all select options clear button if true.
+   * Applicable only when multi select mode ios enabled.
    */
   @Input()
   public set showClearSelectionButton(value: boolean) {
@@ -337,7 +329,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Dropdown menu width.
+   * Set options menu width in pixels.
    */
   @Input()
   public set menuWidth(value: number) {
@@ -345,7 +337,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Dropdown menu height.
+   * Set options menu height in pixels.
    */
   @Input()
   public set menuHeight(value: number) {
@@ -353,7 +345,8 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Menu open position.
+   * Set popup options menu display position relative to dropdown component.
+   * Support 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right' values.
    */
   @Input()
   public set menuPosition(value: ViewPosition) {
@@ -361,64 +354,101 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
-   * Control disabled state
-   * @param value Disabled if true.
+   * Set dropdown view disabled state.
    */
   @Input()
   public set disabled(value: boolean) {
     this.dataStateService.disabled = value;
   }
 
+  /**
+   * Set Close dropdown menu on option select if true.
+   */
   @Input()
   public set closeMenuOnSelect(value: boolean) {
     this.config.closeMenuOnSelect = value;
   }
 
+  /**
+   * Set show dropdown option select checkbox if true.
+   */
   @Input()
   public set showOptionSelectCheckbox(value: boolean) {
     this.config.showOptionSelectCheckbox = value;
   }
 
+  /**
+   * Multi select option selected item maximum width. Apply ellipsis when selected option display text
+   * exceed the max width.
+   */
   @Input()
   public set multiSelectOptionMaxWidth(value: number) {
     this.config.multiSelectOptionMaxWidth = value;
   }
 
+  /**
+   * Set first dropdown option selected on data fetch if true.
+   */
   @Input()
   public set setFirstOptionSelected(value: boolean) {
     this.config.setFirstOptionSelected = value;
   }
 
+  /**
+   * Trigger select change event on init if true.
+   * Can be used to enable selectedOptions or selectedOption associated change trigger.
+   */
   @Input()
   public set triggerSelectChangeOnInit(value: boolean) {
     this.config.triggerSelectChangeOnInit = value;
   }
 
+  /**
+   * Set trigger select change on explicit model update if true.
+   * Applicable only when form binding is used.
+   */
   @Input()
   public set triggerSelectChangeOnModelUpdate(value: boolean) {
     this.config.triggerSelectChangeOnModelUpdate = value;
   }
 
+  /**
+   * Set trigger select change on first option select change if true.
+   * Applicable only when setFirstOptionSelected is true.
+   */
   @Input()
   public set triggerSelectChangeOnFirstOptionSelect(value: boolean) {
     this.config.triggerSelectChangeOnFirstOptionSelect = value;
   }
 
+  /**
+   * Set dynamically calculate dropdown view dimensions relative to dropdown button width.
+   * MenuWith and menuHeight values are ignored when true.
+   */
   @Input()
   public set dynamicDimensionCalculation(value: boolean) {
     this.config.dynamicDimensionCalculation = value;
   }
 
+  /**
+   * Set dynamic dropdown options view dimensions calculation width ratio relative to dropdown selector.
+   */
   @Input()
   public set dynamicWidthRatio(value: number) {
     this.config.dynamicWidthRatio = value;
   }
 
+  /**
+   * Set dynamic dropdown options view dimensions calculation height ratio relative to dropdown selector.
+   */
   @Input()
   public set dynamicHeightRatio(value: number) {
     this.config.dynamicHeightRatio = value;
   }
 
+  /**
+   * Set relative parent element to render dropdown view container.
+   */
   @Input()
   public set relativeParentElement(value: HTMLElement) {
     this.config.relativeParentElement = value;
@@ -440,6 +470,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.init = this.eventStateService.initStream;
   }
 
+  /**
+   * Initialize data source.
+   * @param source Data source stream.
+   */
   private initDataSource(source: Observable<any>): void {
     this.dropdownResourceService.setDataSource(source);
 
@@ -474,6 +508,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     }
   }
 
+  /**
+   * Get options wrapped state.
+   */
   public get wrapSelectedOptions(): boolean {
     if (this.config.wrapDisplaySelectLimit !== undefined) {
       return this.dataStateService.selectedOptions.length > this.config.wrapDisplaySelectLimit;
@@ -482,12 +519,14 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     return false;
   }
 
-  public get wrappedSelectedOptions(): string {
+  /**
+   * Get wrapped option display text.
+   */
+  public get wrappedOptionDisplayText(): string {
     return `(${this.dataStateService.selectedOptions.length}) ${this.config.translations.selectedOptionWrapPlaceholder}`;
   }
 
   /**
-   * ngOnDestroy handler.
    * Lifecycle hook that is called when component is destroyed.
    */
   public ngOnDestroy(): void {
@@ -498,6 +537,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.dataStateService.componentLoaderRef.dispose();
   }
 
+  /**
+   * Get selected options availability state.
+   */
   public get hasSelectedOptions(): boolean {
     if (this.config.selectMode === 'multi') {
       return !!this.dataStateService.selectedOptions.length;
@@ -506,6 +548,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     return !!this.dataStateService.selectedOption;
   }
 
+  /**
+   * Trigger select change.
+   */
   public triggerSelectChange(): void {
     if (this.config.selectMode === 'multi') {
       this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
@@ -573,6 +618,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     // TODO: Implement touch event handler
   }
 
+  /**
+   * Lifecycle hook that is called when component is initialized.
+   */
   public ngOnInit(): void {
     if (!this.dataStateService.id) {
       throw Error('Missing required parameter value for [id] input.');
@@ -595,7 +643,12 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.eventStateService.initStream.emit(this);
   }
 
-  private extractDropdownOption(option: any, index: number): DropdownOption {
+  /**
+   * Map source data object to dropdown option model.
+   * @param option Source dropdown option.
+   * @param index Current index.
+   */
+  private mapDropdownOption(option: any, index: number): DropdownOption {
     const id = get(option, this.config.selectTrackBy);
 
     return {
@@ -607,6 +660,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     };
   }
 
+  /**
+   *
+   * Set dropdown options data.
+   * @param queryResult Query result object reference.
+   */
   private setDropdownOptions(queryResult: DropdownQueryResult<any>) {
     if (this.config.groupByField) {
       this.dataStateService.dropdownOptionGroups = queryResult.options.reduce(
@@ -615,11 +673,11 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
           const currentGroup = accumulator.find((group: DropdownOptionGroup) => group.groupName === groupFieldValue);
 
           if (currentGroup) {
-            currentGroup.options.push(this.extractDropdownOption(option, index));
+            currentGroup.options.push(this.mapDropdownOption(option, index));
           } else {
             accumulator.push({
               groupName: groupFieldValue,
-              options: [this.extractDropdownOption(option, index)]
+              options: [this.mapDropdownOption(option, index)]
             });
           }
 
@@ -630,7 +688,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     } else {
       this.dataStateService.dropdownOptions = queryResult.options.reduce(
         (accumulator: DropdownOption[], option: any, index: number) => {
-          accumulator.push(this.extractDropdownOption(option, index));
+          accumulator.push(this.mapDropdownOption(option, index));
           return accumulator;
         },
         this.config.loadOnScroll && this.dataStateService.offset > 0 ? this.dataStateService.dropdownOptions : []
@@ -653,13 +711,21 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.dataStateService.currentOptionCount += queryResult.options.length;
   }
 
+  /**
+   * On after data bind event handler.
+   * @param queryResult Query result object reference.
+   */
   private onAfterDataBind(queryResult: DropdownQueryResult<any>): void {
     this.setDropdownOptions(queryResult);
     this.dataStateService.dataLoading = false;
     this.eventStateService.dataBoundStream.emit();
   }
 
-  private mapToDataBindRequest(hardReload: boolean): Observable<DropdownQueryResult<any>> {
+  /**
+   * Fetch query results.
+   * @param hardReload Hard reload state.
+   */
+  private fetchQueryResults(hardReload: boolean): Observable<DropdownQueryResult<any>> {
     this.dataStateService.dataLoading = true;
 
     if (hardReload) {
@@ -686,7 +752,9 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     return this.dataStateService.onDataBind(requestParams);
   }
 
-  // Do not emit dataFetchStream true unless it is required to hard reload the dropdown options.
+  /**
+   * Initialize data fetch event.
+   */
   private initDataFetchEvent(): void {
     const noop = {
       options: [],
@@ -696,7 +764,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     this.eventStateService.dataFetchStream
       .pipe(
         debounceTime(20),
-        switchMap((hardReload: boolean) => this.mapToDataBindRequest(hardReload)),
+        switchMap((hardReload: boolean) => this.fetchQueryResults(hardReload)),
         catchError(() => {
           return of(noop);
         })
@@ -711,16 +779,26 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
       );
   }
 
-  // Can be used to explicitly trigger data bind event.
+  /**
+   * Trigger explicit data fetch.
+   * @param hardReload Hard reload state.
+   */
   public fetchData(hardReload: boolean = false): void {
     this.eventStateService.dataFetchStream.emit(hardReload);
   }
 
+  /**
+   * On select option remove event handler.
+   * @param index Selected option index.
+   */
   public onSelectOptionRemove(index: number): void {
     this.dataStateService.selectedOptions.splice(index, 1);
     this.eventStateService.selectChangeStream.emit(this.dataStateService.selectedOptions);
   }
 
+  /**
+   * Close dropdown options menu.
+   */
   public close(): void {
     this.dataStateService.componentLoaderRef.hide();
   }

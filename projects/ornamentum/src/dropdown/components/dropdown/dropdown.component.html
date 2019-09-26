@@ -13,7 +13,7 @@
         </span>
       </ng-container>
       <span class="ng-dropdown-selected-option" *ngIf="wrapSelectedOptions">
-        {{ wrappedSelectedOptions }}
+        {{ wrappedOptionDisplayText }}
       </span>
       <span class="ng-dropdown-selected-placeholder" *ngIf="!dataStateService.selectedOptions.length">
         {{ config.translations.selectPlaceholder }}
