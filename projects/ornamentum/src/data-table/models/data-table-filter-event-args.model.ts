@@ -1,16 +1,16 @@
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
 /**
- * Filter event arguments
+ * Filter event arguments model.
  */
 export interface DataTableFilterEventArgs {
   /**
-   * Target column
+   * Target column.
    */
   column: DataTableColumnComponent;
 
   /**
-   * Filter value
+   * Filter value.
    */
   filter: any;
 }

@@ -4,7 +4,7 @@ import { DropdownRequestParams } from './dropdown-request-params.model';
 import { DropdownQueryResult } from './dropdown-query-result.model';
 
 /**
- * Dropdown data bind event callback.
+ * Dropdown data bind event callback model.
  * @param params - Dropdown request parameters object.
  * @return Dropdown query result stream.
  */

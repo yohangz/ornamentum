@@ -1,5 +1,5 @@
 /**
- * Dropdown query result.
+ * Dropdown query result model.
  */
 export interface DropdownQueryResult<T> {
   /**

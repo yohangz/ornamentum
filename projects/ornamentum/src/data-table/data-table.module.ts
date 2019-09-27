@@ -51,7 +51,7 @@ const DIRECTIVES = [ScrollPositionDirective, ScrollElementDirective, ElementWidt
 const PROVIDERS = [];
 
 /**
- * Module representing data table component
+ * Module representing data table component.
  */
 @NgModule({
   imports: [CommonModule, FormsModule, UtilityModule.forRoot(), DropdownModule.forRoot()],
@@ -62,9 +62,9 @@ const PROVIDERS = [];
 })
 export class DataTableModule {
   /**
-   * Set module root configuration overrides
-   * @param dataTableConfig Data table configuration object
-   * @return Module with custom providers
+   * Set module root configuration overrides.
+   * @param dataTableConfig Data table configuration object.
+   * @return Module with custom providers.
    */
   public static forRoot(dataTableConfig?: DataTableConfig): ModuleWithProviders {
     return {

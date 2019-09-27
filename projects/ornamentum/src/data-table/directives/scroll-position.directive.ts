@@ -6,7 +6,8 @@ import { map, pairwise } from 'rxjs/operators';
 import { DataTableScrollPoint } from '../models/data-table-scroll-point.model';
 
 /**
- * Scroll position directive; Track current scroll position of target element
+ * Scroll position directive.
+ * Track current scroll position of target element.
  */
 @Directive({
   selector: '[ngScrollPosition]'
@@ -20,7 +21,7 @@ export class ScrollPositionDirective implements AfterViewInit, OnDestroy {
   constructor(private el: ElementRef, private zone: NgZone) {}
 
   /**
-   * After component initialize lifecycle event handler
+   * After component initialize lifecycle event handler.
    */
   public ngAfterViewInit(): void {
     this.zone.runOutsideAngular(() => {
@@ -54,7 +55,7 @@ export class ScrollPositionDirective implements AfterViewInit, OnDestroy {
   }
 
   /**
-   * Component destroy lifecycle event handler
+   * Component destroy lifecycle event handler.
    */
   public ngOnDestroy(): void {
     if (this.scrollEventSubscription) {

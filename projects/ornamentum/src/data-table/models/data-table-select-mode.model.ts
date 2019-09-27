@@ -1,4 +1,4 @@
 /**
- * Data table row select modes
+ * Data table row select mode model model.
  */
 export type DataTableSelectMode = 'multi' | 'single' | 'single_toggle';

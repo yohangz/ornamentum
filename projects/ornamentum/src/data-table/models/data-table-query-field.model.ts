@@ -2,21 +2,21 @@ import { DataTableSortOrder } from './data-table-sort-order.model';
 import { DataTableFilterExpressionCallback } from './data-table-filter-expression-callback.model';
 
 /**
- * Data table query field
+ * Data table query field model.
  */
 export interface DataTableQueryField {
   /**
-   * Target column filed name
+   * Target column filed name.
    */
   field: string;
 
   /**
-   * Sortable state
+   * Sortable state.
    */
   sortable: boolean;
 
   /**
-   * Sort order
+   * Sort order.
    */
   sortOrder: DataTableSortOrder;
 
@@ -26,17 +26,17 @@ export interface DataTableQueryField {
   sortPriority: number;
 
   /**
-   * Filterable state
+   * Filterable state.
    */
   filterable: boolean;
 
   /**
-   * Filter value
+   * Filter value.
    */
   filterValue: string | string[] | any;
 
   /**
-   * Filter expression
+   * Filter expression.
    */
   filterExpression: DataTableFilterExpressionCallback;
 }

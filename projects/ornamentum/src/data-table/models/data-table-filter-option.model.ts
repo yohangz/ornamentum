@@ -1,14 +1,14 @@
 /**
- * Filter options
+ * Filter options model.
  */
 export interface DataTableFilterOption {
   /**
-   * Filter item key
+   * Filter item key.
    */
   key: any;
 
   /**
-   * Display filter value
+   * Display filter value.
    */
   value: string;
 }

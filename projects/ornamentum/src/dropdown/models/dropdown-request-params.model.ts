@@ -1,7 +1,7 @@
 import { DropdownFilter } from './dropdown-filter.model';
 
 /**
- * Dropdown data requesting parameters.
+ * Dropdown data requesting parameters model.
  */
 export interface DropdownRequestParams {
   /**

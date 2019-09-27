@@ -5,7 +5,8 @@ import { Subscription, Subject } from 'rxjs';
 import { DataTableScrollPoint } from '../models/data-table-scroll-point.model';
 
 /**
- * Scroll element directive; Set scroll position to target element
+ * Scroll element directive.
+ * Used to set scroll position to target element.
  */
 @Directive({
   selector: '[ngScrollElement]'
@@ -19,7 +20,7 @@ export class ScrollElementDirective implements AfterViewInit, OnDestroy {
   constructor(private el: ElementRef) {}
 
   /**
-   * After component initialize lifecycle event handler
+   * After component initialize lifecycle event handler.
    */
   public ngAfterViewInit(): void {
     this.scrollPositionSubscription = this.ngScrollElement.subscribe(value => {
@@ -28,7 +29,7 @@ export class ScrollElementDirective implements AfterViewInit, OnDestroy {
   }
 
   /**
-   * Component destroy lifecycle event handler
+   * Component destroy lifecycle event handler.
    */
   public ngOnDestroy(): void {
     if (this.scrollPositionSubscription) {

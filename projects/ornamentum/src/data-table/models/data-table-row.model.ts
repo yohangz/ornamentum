@@ -1,49 +1,49 @@
 /**
- * Data table row
+ * Data table row model.
  */
 export interface DataTableRow<T> {
   /**
-   * Source data item reference
+   * Source data item reference.
    */
   item: T;
 
   /**
-   * Row selected state
+   * Row selected state.
    */
   selected: boolean;
 
   /**
-   * Row disabled state
+   * Row disabled state.
    */
   disabled: boolean;
 
   /**
-   * Row color hex
+   * Row color hex.
    */
   color: string;
 
   /**
-   * Row CSS class name
+   * Row CSS class name.
    */
   cssClass: string;
 
   /**
-   * Row tooltip text
+   * Row tooltip text.
    */
   tooltip: string;
 
   /**
-   * Row auto generated index
+   * Row auto generated index.
    */
   index: number;
 
   /**
-   * Row expanded state
+   * Row expanded state.
    */
   expanded: boolean;
 
   /**
-   * Row data loaded state
+   * Row data loaded state.
    */
   dataLoaded: boolean;
 }

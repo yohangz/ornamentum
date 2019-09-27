@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 /**
- * Global reference service; List all global javascript references here
+ * Global reference service; List all global javascript references here.
  */
 @Injectable()
 export class GlobalRefService {
@@ -12,7 +12,7 @@ export class GlobalRefService {
   }
 
   /**
-   * Set scrollbar width of current browser environment; Ony set on browser environment to support SSR
+   * Set scrollbar width of current browser environment; Ony set on browser environment to support SSR.
    */
   public setScrollbarWidth(): void {
     if (this.scrollbarWidthValue !== undefined) {
@@ -46,23 +46,23 @@ export class GlobalRefService {
   }
 
   /**
-   * Get scrollbar width
-   * @returns Scroll bar width
+   * Get scrollbar width.
+   * @returns Scroll bar width.
    */
   public get scrollbarWidth(): number {
     return this.scrollbarWidthValue;
   }
   /**
-   * Get window reference
-   * @return Window reference
+   * Get window reference.
+   * @return Window reference.
    */
   public get window(): Window {
     return window;
   }
 
   /**
-   * Is browser environment
-   * @return True if current environment is browser
+   * Is browser environment.
+   * @return True if current environment is browser.
    */
   public get isBrowser(): boolean {
     return typeof window !== 'undefined';

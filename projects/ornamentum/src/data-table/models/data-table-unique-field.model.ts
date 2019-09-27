@@ -1,7 +1,7 @@
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
 /**
- * Data table unique field.
+ * Data table unique field model model.
  */
 export interface DataTableUniqueField {
   /**

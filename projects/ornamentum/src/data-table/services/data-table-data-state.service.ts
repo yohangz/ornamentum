@@ -6,7 +6,7 @@ import { DataTableFilterValueExtractCallback } from '../models/data-table-filter
 import { DataTableDataBindCallback } from '../models/data-table-data-bind-callback.model';
 
 /**
- * Data table state manager service; Manage current data table state snapshot
+ * Data table state manager service; Manage current data table state snapshot.
  */
 @Injectable()
 export class DataTableDataStateService {
@@ -28,17 +28,17 @@ export class DataTableDataStateService {
   public onDynamicRowSpanExtract: DataTableDynamicRowSpanExtractorCallback<any> = () => 1;
 
   /**
-   * Get show no data overlay status
-   * @return True if no data overlay should be shown
+   * Get show no data overlay status.
+   * @return True if no data overlay should be shown.
    */
   public get showNoDataOverlay(): boolean {
     return !this.dataRows.length && !this.dataLoading;
   }
 
   /**
-   * Get data table row unique id
-   * @param append Target identifier
-   * @param index Target index
+   * Get data table row unique id.
+   * @param append Target identifier.
+   * @param index Target index.
    */
   public getUniqueId(append: string, index: number): string {
     return `${this.id}-dt-${append}-${index}`;

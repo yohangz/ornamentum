@@ -1,7 +1,7 @@
 import { DropdownOption } from './dropdown-option.model';
 
 /**
- * Dropdown option group.
+ * Dropdown option group model.
  */
 export interface DropdownOptionGroup {
   /**

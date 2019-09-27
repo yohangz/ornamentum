@@ -13,7 +13,7 @@ import { DataTableQueryField } from '../models/data-table-query-field.model';
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
 /**
- * Data table resource service; Manage data table client side data querying
+ * Data table resource service; Manage data table client side data querying.
  */
 @Injectable()
 export class DataTableResourceService<T> {
@@ -21,8 +21,8 @@ export class DataTableResourceService<T> {
   private dataSourceSubscription: Subscription;
 
   /**
-   * Set data source stream to query
-   * @param dataSource Data source stream
+   * Set data source stream to query.
+   * @param dataSource Data source stream.
    */
   public setDataSource(dataSource: Observable<T[]>): void {
     this.dispose();
@@ -38,9 +38,9 @@ export class DataTableResourceService<T> {
   }
 
   /**
-   * Query items by data table request params
-   * @param params Data table parameters object
-   * @return Query result stream
+   * Query items by data table request params.
+   * @param params Data table parameters object.
+   * @return Query result stream.
    */
   public query(params: DataTableRequestParams): Observable<DataTableQueryResult<T>> {
     return this.itemDataStream.pipe(
@@ -128,9 +128,9 @@ export class DataTableResourceService<T> {
   }
 
   /**
-   * Extract data table filter options
-   * @param filterColumn Data table column component
-   * @return Filter options collection stream
+   * Extract data table filter options.
+   * @param filterColumn Data table column component.
+   * @return Filter options collection stream.
    */
   public extractFilterOptions(filterColumn: DataTableColumnComponent): Observable<DataTableFilterOption[]> {
     return this.itemDataStream.pipe(
@@ -160,7 +160,7 @@ export class DataTableResourceService<T> {
   }
 
   /**
-   * Dispose client data source streams
+   * Dispose client data source streams.
    */
   public dispose(): void {
     if (this.dataSourceSubscription) {

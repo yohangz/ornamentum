@@ -15,7 +15,7 @@ import { DataTableComponent } from '../components/data-table/data-table.componen
 import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
 
 /**
- * Data table event state service; Manage all internal data tale event streams
+ * Data table event state service; Manage all internal data tale event streams.
  */
 @Injectable()
 export class DataTableEventStateService {

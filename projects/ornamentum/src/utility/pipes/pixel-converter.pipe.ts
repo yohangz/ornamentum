@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 /**
- * Pixel converter pipe; Append 'px' if value is number type, else return the same.
+ * Pixel converter pipe.
+ * Append 'px' if value is number type, else return the same.
  */
 @Pipe({
   name: 'ngPx'

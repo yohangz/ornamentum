@@ -8,7 +8,7 @@ import { GlobalRefService } from '../../utility/utility.module';
 import { DataTableConfigService } from './data-table-config.service';
 
 /**
- * Data table persistence service; Manage data table state when persist state options is enabled
+ * Data table persistence service; Manage data table state when persist state options is enabled.
  */
 @Injectable()
 export class DataTablePersistenceService {
@@ -17,8 +17,8 @@ export class DataTablePersistenceService {
   constructor(private globalRefService: GlobalRefService, private config: DataTableConfigService) {}
 
   /**
-   * Set table state storage mode
-   * @param value Storage mode
+   * Set table state storage mode.
+   * @param value Storage mode.
    */
   public set storageMode(value: DataTableStorageMode) {
     if (this.globalRefService.isBrowser) {
@@ -31,10 +31,10 @@ export class DataTablePersistenceService {
   }
 
   /**
-   * Set table state by identifier
-   * @param id Table identifier
-   * @param version Data version
-   * @param value Data table request parameters object
+   * Set table state by identifier.
+   * @param id Table identifier.
+   * @param version Data version.
+   * @param value Data table request parameters object.
    */
   public setState(id: string, value: DataTableRequestParams, version: string = 'v1'): void {
     if (this.globalRefService.isBrowser) {
@@ -47,10 +47,10 @@ export class DataTablePersistenceService {
   }
 
   /**
-   * Get table state by identifier
-   * @param id Table identifier
-   * @param version Data version
-   * @return Data table request params object
+   * Get table state by identifier.
+   * @param id Table identifier.
+   * @param version Data version.
+   * @return Data table request params object.
    */
   public getState(id: string, version: string = 'v1'): DataTableRequestParams {
     if (this.globalRefService.isBrowser) {

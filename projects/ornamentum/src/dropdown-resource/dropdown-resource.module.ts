@@ -19,8 +19,8 @@ const PROVIDERS = [DropdownHttpResourceFactoryService, DropdownWebsocketResource
 })
 export class DropdownResourceModule {
   /**
-   * Set module root configuration overrides
-   * @return Module with custom providers
+   * Set module root configuration overrides.
+   * @return Module with custom providers.
    */
   public static forRoot(): ModuleWithProviders {
     return {

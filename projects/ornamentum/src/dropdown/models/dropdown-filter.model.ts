@@ -1,5 +1,5 @@
 /**
- * Dropdown filter.
+ * Dropdown filter model.
  */
 export interface DropdownFilter {
   /**

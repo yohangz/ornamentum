@@ -4,7 +4,7 @@ import { DropdownSelectMode } from './dropdown-select-mode.model';
 import { ViewPosition } from '../../utility/models/view-position.model';
 
 /**
- * Dropdown list base configuration.
+ * Dropdown list base configuration model.
  */
 export interface DropdownConfig {
   /**

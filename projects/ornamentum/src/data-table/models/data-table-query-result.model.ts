@@ -1,15 +1,15 @@
 /**
- * Query result
+ * Query result model.
  */
 export interface DataTableQueryResult<T> {
   /**
-   * Items collection
-   * @template Generic item type
+   * Items collection.
+   * @template Generic item type.
    */
   items: T[];
 
   /**
-   * Item count
+   * Item count.
    */
   count: number;
 }

@@ -1,5 +1,5 @@
 /**
- * Dropdown option.
+ * Dropdown option model.
  */
 export interface DropdownOption {
   /**

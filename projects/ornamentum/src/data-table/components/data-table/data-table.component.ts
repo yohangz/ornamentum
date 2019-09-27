@@ -54,7 +54,7 @@ import { DataTableScrollPositionService } from '../../services/data-table-scroll
 import { DataTableResourceService } from '../../services/data-table-resource.service';
 
 /**
- * Data table component; Data table entry component
+ * Data table component; Data table entry component.
  */
 @Component({
   selector: 'ng-data-table',
@@ -79,37 +79,37 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   private scrollPositionSubscription: Subscription;
 
   /**
-   * Data table column collection
+   * Data table column component collection.
    */
   @ContentChildren(DataTableColumnComponent)
   public columns: QueryList<DataTableColumnComponent>;
 
   /**
-   * Template to display when data row is expanded for detail view
+   * Template to display when data row is expanded for detail view.
    */
   @ContentChild('ngDataTableRowExpand', { static: true })
   public rowExpandTemplate: TemplateRef<any>;
 
   /**
-   * Template to display when data set is empty
+   * Template to display when data set is empty.
    */
   @ContentChild('ngDataTableNoRecords', { static: true })
   public noRecordsTemplate: TemplateRef<any>;
 
   /**
-   * Template to display while loading data
+   * Template to display while loading data.
    */
   @ContentChild('ngDataTableLoadingSpinner', { static: true })
   public loadingSpinnerTemplate: TemplateRef<any>;
 
   /**
-   * Template to display while row is expanding to load detail view
+   * Template to display while row is expanding to load detail view.
    */
   @ContentChild('ngDataTableRowExpandLoadingSpinner', { static: true })
   public rowExpandLoadingSpinnerTemplate: TemplateRef<any>;
 
   /**
-   * Raw data table self DOM element reference
+   * Data table self DOM element reference.
    */
   @ViewChild('dataTableElement', { static: true })
   public dataTableElement: ElementRef<HTMLDivElement>;
@@ -117,67 +117,78 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   // Event handlers
 
   /**
-   * On data table initialize event handler; Triggered after data table initialize
+   * Data table initialize event handler.
+   * Triggered after data table initialize.
    */
   @Output()
   public init: EventEmitter<DataTableComponent>;
 
   /**
-   * On row selected state change event handler; Triggered when table row selected state change
+   * Row selected state change event handler.
+   * Triggered when table row selected state change.
    */
   @Output()
   public rowSelectChange: EventEmitter<any | any[]>;
 
   /**
-   * On row click event handler; Triggered when data row is clicked
+   * Row click event handler.
+   * Triggered when data row is clicked.
    */
   @Output()
   public rowClick: EventEmitter<DataTableRowClickEventArgs<any>>;
 
   /**
-   * On row double click event handler; Triggered when data row is double clicked
+   * Row double click event handler.
+   * Triggered when data row is double clicked.
    */
   @Output()
   public rowDoubleClick: EventEmitter<DataTableDoubleClickEventArgs<any>>;
 
   /**
-   * On header click event handler; Triggered when header column clicked
+   * Header click event handler.
+   * Triggered when header column clicked.
    */
   @Output()
   public headerClick: EventEmitter<DataTableHeaderClickEventArgs>;
 
   /**
-   * On all row select change event handler; Triggered when all row select state changed
+   * All row select change event handler.
+   * Triggered when all row select state changed.
    */
   @Output()
   public allRowSelectChange: EventEmitter<boolean>;
 
   /**
-   * On cell click event handler; Triggered when clicked on a cell
+   * Cell click event handler.
+   * Triggered when clicked on a cell.
    */
   @Output()
   public cellClick: EventEmitter<DataTableCellClickEventArgs<any>>;
 
   /**
-   * Data bound event handler; Triggered after data bind
+   * Data bound event handler.
+   * Triggered after data bind.
    */
   @Output()
   public dataBound: EventEmitter<void>;
 
   /**
-   * On row bind event handler; Trigger on each row data bind
+   * Row bind event handler.
+   * Trigger on each row data bind.
    */
   @Output()
   public rowBind: EventEmitter<DataTableRow<any>>;
 
   /**
-   * On column bind event handler; Triggered after column data bind
+   * Column bind event handler.
+   * Triggered after column data bind.
    */
   @Output()
   public columnBind: EventEmitter<DataTableColumnComponent>;
 
   /**
-   * On cell bind event handler; Triggered after data table cell data bind
+   * Cell bind event handler.
+   * Triggered after data table cell data bind.
    */
   @Output()
   public cellBind: EventEmitter<DataTableCellBindEventArgs<any>>;
@@ -185,8 +196,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   // Input Events
 
   /**
-   * Set on data load event handler; This handler is fired on each data fetch request
-   * @param value Data bind callback function reference
+   * Set on data load event handler. This handler is fired on each data fetch request
    */
   @Input()
   public set onDataBind(value: DataTableDataBindCallback<any>) {

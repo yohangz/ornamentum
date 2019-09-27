@@ -1,9 +1,9 @@
 /**
- * Filter field mapper callback
- * @param value Data item
- * @param index Item index
- * @param array Data items
- * @return Mapped filter value
+ * Filter field mapper callback model.
+ * @param value Data item.
+ * @param index Item index.
+ * @param array Data items.
+ * @return Mapped filter value.
  */
 import { DataTableFilterOption } from './data-table-filter-option.model';
 

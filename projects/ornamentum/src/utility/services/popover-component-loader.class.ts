@@ -12,7 +12,7 @@ import { ResizeService } from './resize.service';
 import { ComponentLoaderOptions } from '../models/component-loader-options.model';
 
 /**
- * Popover dynamic component loader; Responsible of dynamically rendering angular components to show popover layout
+ * Popover dynamic component loader; Responsible of dynamically rendering angular components to show popover layout.
  */
 export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   private componentReference: ComponentRef<T>;
@@ -32,8 +32,9 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   }
 
   /**
-   * Register close on click outside event; Hide event is triggered only if click target is not included in exclusion elements collection
-   * @param exclude - Exclude DOM element reference collection
+   * Register close on click outside event; Hide event is triggered only if click target is not included in
+   * exclusion elements collection.
+   * @param exclude - Exclude DOM element reference collection.
    */
   private registerClickOutside(...exclude: HTMLElement[]): void {
     const trackOutsideClick = (event: Event) => {
@@ -49,9 +50,9 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   }
 
   /**
-   * Set dynamic popover position relative to parent
-   * @param parentElement Parent element reference
-   * @param options Component loader options
+   * Set dynamic popover position relative to parent.
+   * @param parentElement Parent element reference.
+   * @param options Component loader options.
    */
   private setPosition(parentElement: HTMLElement, options: ComponentLoaderOptions): void {
     const holderElement =  options.relativeParentElement || parentElement;
@@ -94,12 +95,12 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   }
 
   /**
-   * Render component if not available, else display hidden component
-   * @param component Component class type
-   * @param parentElement Parent element to append the target component
-   * @param injector Component injector reference
-   * @param options Component loader options object
-   * @return Rendered component reference
+   * Render component if not available, else display hidden component.
+   * @param component Component class type.
+   * @param parentElement Parent element to append the target component.
+   * @param injector Component injector reference.
+   * @param options Component loader options object.
+   * @return Rendered component reference.
    */
   public show(component: Type<T>, parentElement: HTMLElement, injector: Injector, options: ComponentLoaderOptions): T {
     options = Object.assign(
@@ -150,8 +151,8 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   }
 
   /**
-   * Hide component if visible
-   * @return Rendered component reference
+   * Hide component if visible.
+   * @return Rendered component reference.
    */
   public hide(): T {
     if (this.componentReference) {
@@ -162,19 +163,19 @@ export class PopoverComponentLoader<T> implements ComponentLoader<T> {
   }
 
   /**
-   * Toggle component display state or render if not available
-   * @param component Component class type
-   * @param parentElement Parent element to append the target component
-   * @param injector Component injector reference
-   * @param options Component loader options object
-   * @return Rendered component reference
+   * Toggle component display state or render if not available.
+   * @param component Component class type.
+   * @param parentElement Parent element to append the target component.
+   * @param injector Component injector reference.
+   * @param options Component loader options object.
+   * @return Rendered component reference.
    */
   public toggle(component: Type<T>, parentElement: HTMLElement, injector: Injector, options?: ComponentLoaderOptions): T {
     return this.isVisible ? this.hide() : this.show(component, parentElement, injector, options);
   }
 
   /**
-   * Dispose rendered component reference and bindings
+   * Dispose rendered component reference and bindings.
    */
   public dispose(): void {
     if (this.resizeEventSubscription) {

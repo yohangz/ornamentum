@@ -20,7 +20,7 @@ const PIPES = [PixelConverterPipe];
 const PROVIDERS = [DragAndDropService, GlobalRefService, PopoverComponentLoaderFactoryService, ResizeService, ValidatorService];
 
 /**
- * Module representing utility providers, directives and pipes
+ * Module representing utility providers, directives and pipes.
  */
 @NgModule({
   imports: [CommonModule],
@@ -30,8 +30,8 @@ const PROVIDERS = [DragAndDropService, GlobalRefService, PopoverComponentLoaderF
 })
 export class UtilityModule {
   /**
-   * Set module root configuration overrides
-   * @return Module with custom providers
+   * Set module root configuration overrides.
+   * @return Module with custom providers.
    */
   public static forRoot(): ModuleWithProviders {
     return {

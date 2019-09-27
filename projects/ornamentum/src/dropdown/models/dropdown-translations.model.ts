@@ -1,5 +1,5 @@
 /**
- * Dropdown translations.
+ * Dropdown translations model.
  */
 export interface DropdownTranslations {
   /**

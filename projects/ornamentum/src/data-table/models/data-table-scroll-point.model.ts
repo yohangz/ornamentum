@@ -1,34 +1,34 @@
 /**
- * Scroll position point
+ * Scroll position point model.
  */
 export interface DataTableScrollPoint {
   /**
-   * Scroll left pixel count
+   * Scroll left pixel count.
    */
   scrollLeft: number;
 
   /**
-   * Scroll top pixel count
+   * Scroll top pixel count.
    */
   scrollTop: number;
 
   /**
-   * Scroll height pixel count
+   * Scroll height pixel count.
    */
   scrollHeight: number;
 
   /**
-   * Scroll width pixel count
+   * Scroll width pixel count.
    */
   scrollWidth: number;
 
   /**
-   * Scroll element height pixel count
+   * Scroll element height pixel count.
    */
   clientHeight: number;
 
   /**
-   * Scroll element width pixel count
+   * Scroll element width pixel count.
    */
   clientWidth: number;
 
