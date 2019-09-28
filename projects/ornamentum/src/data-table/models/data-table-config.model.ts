@@ -13,17 +13,17 @@ export interface DataTableConfig {
   // Table base config
 
   /**
-   * Persist table state on provided storage mode if true; Depends on storageMode property.
+   * Persist table state on provided storage mode if true. Depends on storageMode property.
    */
   persistTableState?: boolean;
 
   /**
-   * Storage mode to persist table state; Only applicable when persistTableState is true.
+   * Storage mode to persist table state. Only applicable when persistTableState is true.
    */
   storageMode?: DataTableStorageMode;
 
   /**
-   * Multiple column sortable if true; Only applicable for sortable true columns.
+   * Set multiple column sortable if true. Only applicable for sortable true columns.
    */
   multiColumnSortable?: boolean;
 
@@ -33,7 +33,7 @@ export interface DataTableConfig {
   showHeader?: boolean;
 
   /**
-   * Show refresh button if true; Only applicable when showHeader is true.
+   * Show refresh button if true. Only applicable when showHeader is true.
    */
   showRefreshButton?: boolean;
 
@@ -43,37 +43,37 @@ export interface DataTableConfig {
   showColumnSelector?: boolean;
 
   /**
-   * Column selector dropdown width can be provide using pixels; Only applicable when showColumnSelector is true.
+   * Column selector dropdown width in pixels. Only applicable when showColumnSelector is true.
    */
   columnSelectorWidth?: string | number;
 
   /**.
-   * Title to be shown in th header; Only applicable when showHeader is true.
+   * Title to be shown in the header. Only applicable when showHeader is true.
    */
   title?: string;
 
   /**
-   * Width value in pixels; Can be used to set the width of teh table (responsive if not set).
+   * Width value in pixels. Can be used to set the width of teh table (responsive if not set).
    */
   width?: string | number;
 
   /**
-   * Minimum table content width value in pixels; Can be used to set the minimum width of the table content area.
+   * Minimum table content width value in pixels. Can be used to set the minimum width of the table content area.
    */
   minContentWidth?: string | number;
 
   /**
-   * Minimum table content height value in pixels; Can be used to set the minimum height of the table content area.
+   * Minimum table content height value in pixels. Can be used to set the minimum height of the table content area.
    */
   minContentHeight?: string | number;
 
   /**
-   * Table content height value in pixels; This configuration can be used to enable table content vertical scrolling for responsive design.
+   * Table content height value in pixels. This configuration can be used to enable table content vertical scrolling for responsive design.
    */
   contentHeight?: string | number;
 
   /**
-   * Show pagination bar if true; Depends on offset and limit values. Trigger dataLoad event with offset and limit values.
+   * Show pagination bar if true. Depends on offset and limit values. Trigger dataLoad event with offset and limit values.
    */
   pageable?: boolean;
 
@@ -85,6 +85,7 @@ export interface DataTableConfig {
 
   /**
    * View height distance ratio to trigger data fetch on scroll.
+   * Applicable only when load on scroll mode is enabled.
    */
   loadViewDistanceRatio?: number;
 
@@ -104,12 +105,12 @@ export interface DataTableConfig {
   rowSelectable?: boolean;
 
   /**
-   * Trigger row select on click event if true; Applicable only when rowSelectable is true.
+   * Trigger row select on click event if true. Applicable only when rowSelectable is true.
    */
   selectOnRowClick?: boolean;
 
   /**
-   * Data table row select mode; Applicable only when rowSelectable is true.
+   * Data table row select mode. Applicable only when rowSelectable is true.
    */
   selectMode?: DataTableSelectMode;
 
@@ -125,17 +126,17 @@ export interface DataTableConfig {
   showRowSelectAllCheckbox?: boolean;
 
   /**
-   * Show substitute rows if true; Fill with empty rows when row count < limit.
+   * Show substitute rows if true;=. Fill with empty rows when row count < limit.
    */
   showSubstituteRows?: boolean;
 
   /**
-   * Show row expander if true; Render ngDataTableExpand template on expand click.
+   * Show row expander if true. Render ngDataTableExpand template on expand click.
    */
   expandableRows?: boolean;
 
   /**
-   * Expand and render expand template on row click if true; Only applicable when expandableRows is true.
+   * Expand and render expand template on row click if true. Only applicable when expandableRows is true.
    */
   expandOnRowClick?: boolean;
 
@@ -150,7 +151,8 @@ export interface DataTableConfig {
   showLoadingSpinner?: boolean;
 
   /**
-   * Select track by field name in item schema.
+   * Set select option track by field path which is used to uniquely identify row for selection tracking.
+   * This field support object paths expressions 'root[0].nest'.
    */
   selectTrackBy?: string;
 
@@ -160,23 +162,22 @@ export interface DataTableConfig {
   filterDebounce?: boolean;
 
   /**
-   * Filter debounce time in milliseconds; Applicable only when filterDebounce is true.
+   * Filter debounce time in milliseconds. Applicable only when filterDebounce is true.
    */
   filterDebounceTime?: number;
 
   /**
-   * Expander column width in pixels.
-   * Applicable only when expandableRows is true.
+   * Expander column width in pixels. Applicable only when expandableRows is true.
    */
   expanderColumnWidth?: string | number;
 
   /**
-   * Index column width in pixels; Applicable only when showIndexColumn is true.
+   * Index column width in pixels. Applicable only when showIndexColumn is true.
    */
   indexColumnWidth?: string | number;
 
   /**
-   * Selection column width in pixels; Applicable only when showColumnSelector is true.
+   * Row selector column width in pixels. Applicable only when showColumnSelector is true.
    */
   selectionColumnWidth?: string | number;
 
@@ -186,7 +187,7 @@ export interface DataTableConfig {
   offset?: number;
 
   /**
-   * Data limit value (page size); Applicable only when pageable is true.
+   * Data limit value (page size). Applicable only when pageable is true.
    */
   limit?: number;
 
@@ -196,7 +197,7 @@ export interface DataTableConfig {
   maxLimit?: number;
 
   /**
-   * Base display text translations; Used to localize label default text values.
+   * Base translation data object. Used to localize table static label text.
    */
   baseTranslations?: DataTableTranslations;
 
@@ -206,7 +207,7 @@ export interface DataTableConfig {
   stateKeyPrefix?: string;
 
   /**
-   * Show row expand loading spinner if true; Applicable only when row expand is enabled.
+   * Show row expand loading spinner if true. Applicable only when row expand is enabled.
    */
   showRowExpandLoadingSpinner?: boolean;
 

@@ -196,7 +196,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   // Input Events
 
   /**
-   * Set on data load event handler. This handler is fired on each data fetch request
+   * Set data bind event handler callback. This handler is fired on each data fetch request.
    */
   @Input()
   public set onDataBind(value: DataTableDataBindCallback<any>) {
@@ -204,8 +204,8 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set on filter value extract event handler callback; Used to extract filter value collection dynamically
-   * @param value Data table filter value callback function reference
+   * Set filter value extract event handler callback. Used to extract filter value collection dynamically when
+   * explicit data bind functionality is used with onDataBind callback.
    */
   @Input()
   public set onFilterValueExtract(value: DataTableFilterValueExtractCallback) {
@@ -213,8 +213,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set on dynamic row span extract event handler callback
-   * @param value Data table dynamic row extractor callback function reference
+   * Set on dynamic row span extract event handler callback.
    */
   @Input()
   public set onDynamicRowSpanExtract(value: DataTableDynamicRowSpanExtractorCallback<any>) {
@@ -224,8 +223,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   // Input parameters
 
   /**
-   * Set static data item collection; No need to set data source when static items collection is provided
-   * @param value Any array of objects containing table data
+   * Set static data items collection. No need to set data source when static items collection is provided.
    */
   @Input()
   public set items(value: any[]) {
@@ -237,8 +235,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set data source observable; This stream is used to retrieve table binding data
-   * @param source Any object collecting of observable
+   * Set data source observable. This observable is used to retrieve row data for binding.
    */
   @Input()
   public set dataSource(source: Observable<any[]>) {
@@ -246,7 +243,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set data table unique identifier
+   * Set data table unique identifier.
    */
   @Input()
   public set id(value: string) {
@@ -258,8 +255,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set persist state; Persist table state if true
-   * @param value Persistent state
+   * Set persist table state on provided storage mode if true. Depends on storageMode property.
    */
   @Input()
   public set persistTableState(value: boolean) {
@@ -267,8 +263,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set storage mode; Storage mode to persist table state
-   * @param value Data storage mode
+   * Set storage mode to persist table state. Only applicable when persistTableState is true.
    */
   @Input()
   public set storageMode(value: DataTableStorageMode) {
@@ -276,8 +271,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set multi column sortable state; Enable multi column sorting support if true
-   * @param value Multi column enabled state
+   * Set multiple column sortable if true. Only applicable for sortable true columns.
    */
   @Input()
   public set multiColumnSortable(value: boolean) {
@@ -285,8 +279,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set show header state; Display header if true
-   * @param value Show header state
+   * Set table header bar visible if true.
    */
   @Input()
   public set showHeader(value: boolean) {
@@ -294,8 +287,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set table header title text
-   * @param value Header title
+   * Set title to be shown in the header. Only applicable when showHeader is true.
    */
   @Input()
   public set title(value: string) {
@@ -303,8 +295,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set data table static width
-   * @param value Width value in pixels
+   * Set width value in pixels. Can be used to set the width of teh table (responsive if not set).
    */
   @Input()
   public set width(value: string | number) {
@@ -312,8 +303,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Minimum table content height value in pixels; Can be used to set the minimum height of the table content area.
-   * @param value Table min height in pixels
+   * Set minimum table content height value in pixels. Can be used to set the minimum height of the table content area.
    */
   @Input()
   public set minContentHeight(value: string | number) {
@@ -321,8 +311,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Minimum table content width value in pixels; Can be used to set the minimum width of the table content area.
-   * @param value Table min width in pixels
+   * Minimum table content width value in pixels. Can be used to set the minimum width of the table content area.
    */
   @Input()
   public set minContentWidth(value: string | number) {
@@ -330,8 +319,8 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Table content height value in pixels; This configuration can be used to enable table content vertical scrolling for responsive design.
-   * @param value Table content height in pixels
+   * Table content height value in pixels. This configuration can be used to enable table content vertical
+   * scrolling for responsive design.
    */
   @Input()
   public set contentHeight(value: string | number) {
@@ -339,8 +328,8 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set pageable state; Show pagination if true
-   * @param value Pageable state
+   * Show pagination bar if true. Depends on offset and limit values. Trigger dataLoad event with offset
+   * and limit values.
    */
   @Input()
   public set pageable(value: boolean) {
@@ -348,8 +337,8 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set load data on scroll state. Additional data table options fetch call is initiated when user scroll to bottom
-   * @param value Load data on scroll state
+   * Enable scrolling based on-demand data loading functionality if true. Trigger dataLoad event with offset
+   * and limit values when scroll to bottom until data source exhaust.
    */
   @Input()
   public set loadOnScroll(value: boolean) {
@@ -357,8 +346,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * View height ratio to trigger data fetch on with infinite scrollable mode
-   * @param value Load view distance ratio
+   * Set view height distance ratio to trigger data fetch on scroll. Applicable only when load on scroll mode is enabled.
    */
   @Input()
   public set loadViewDistanceRatio(value: number) {
@@ -366,8 +354,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set show index column state; Show auto generated index counter column if true
-   * @param value Show index column state
+   * Set auto generated index column with row numbering if true.
    */
   @Input()
   public set showIndexColumn(value: boolean) {
@@ -375,8 +362,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set index column title; Index column title text
-   * @param value Index column title
+   * Set index column header title. Applicable when showIndexColumn is true.
    */
   @Input()
   public set indexColumnTitle(value: string) {
@@ -384,8 +370,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set row selectable state; Row selectable if true (Show row select checkbox).
-   * @param value Row selectable state
+   * Set row select checkbox and select state if true.
    */
   @Input()
   public set rowSelectable(value: boolean) {
@@ -393,8 +378,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set row select mode
-   * @param value Row select mode
+   * Data table row select mode. Applicable only when rowSelectable is true.
    */
   @Input()
   public set selectMode(value: DataTableSelectMode) {
@@ -402,8 +386,8 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set display row select checkbox status; display row select checkbox if true
-   * @param value Show row select checkbox status
+   * Set select all row checkbox on column header visible if true.
+   * Only applicable when showRowSelectCheckbox, rowSelectable is true & item selectMode is  multi.
    */
   @Input()
   public set showRowSelectCheckbox(value: boolean) {
@@ -411,8 +395,8 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set all row select checkbox status; display all row select checkbox if true
-   * @param value Show all row select checkbox status
+   * Set select all row checkbox on column header visible if true.
+   * Only applicable when showRowSelectCheckbox, rowSelectable is true & item selectMode is  multi.
    */
   @Input()
   public set showRowSelectAllCheckbox(value: boolean) {
@@ -420,8 +404,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set show substitute rows status; Show substitute rows depending on the data limit if true
-   * @param value Show substitute rows status
+   * Set substitute rows visible if true. Fill with empty rows when row count < limit.
    */
   @Input()
   public set showSubstituteRows(value: boolean) {
@@ -429,8 +412,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set enable expandable rows; Enable expandable rows if true.
-   * @param value Expandable row display status
+   * Set row expander visible if true. Render ngDataTableExpand template on expand click.
    */
   @Input()
   public set expandableRows(value: boolean) {
@@ -438,8 +420,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set select checkbox on row click status; Select row on click of any associated cell if true
-   * @param value Select on row click status
+   * Set trigger row select on click event if true. Applicable only when rowSelectable is true.
    */
   @Input()
   public set selectOnRowClick(value: boolean) {
@@ -447,8 +428,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set expand detail row on row click status; Expand detail view on row associated any cell click if true
-   * @param value Expand on row click status
+   * Set expand and render expand template on row click if true. Only applicable when expandableRows is true.
    */
   @Input()
   public set expandOnRowClick(value: boolean) {
@@ -456,8 +436,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set auto fetch status; Automatically data bind on table initialize
-   * @param value Auto fetch status
+   * Auto trigger dataLoad event on initialization if true.
    */
   @Input()
   public set autoFetch(value: boolean) {
@@ -465,8 +444,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set show loading spinner status; Show loading spinner while loading data if true
-   * @param value Show loading spinner status
+   * Set loading spinner visible if true. Show loading spinner when data fetch operation is triggered.
    */
   @Input()
   public set showLoadingSpinner(value: boolean) {
@@ -474,8 +452,8 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set select tracked by field; Identifier field in table data to track selected items uniquely
-   * @param value Select track by field
+   * Set select option track by field path which is used to uniquely identify row for selection tracking.
+   * This field support object paths expressions 'root[0].nest'.
    */
   @Input()
   public set selectTrackBy(value: string) {
@@ -483,8 +461,8 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set selected row identifier; Select specified row on initial load; Applicable when row select mode is SINGLE or SINGLE_TOGGLE
-   * @param value Selected row identifier.
+   * Set selected row identifier. Select specified row on initial load.
+   * Applicable when row select mode is SINGLE or SINGLE_TOGGLE.
    */
   @Input()
   public set selectedRow(value: any) {
@@ -493,9 +471,8 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set selected row identifiers collection; Select specified rows on initial load;
+   * Set selected row identifiers collection. Select specified rows on initial load.
    * Applicable when selectMode is SINGLE or SINGLE_TOGGLE true.
-   * @param value Selected row identifiers collection.
    */
   @Input()
   public set selectedRows(value: any[]) {
@@ -504,8 +481,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set filter de-bounce time interval milliseconds
-   * @param value Filter debounce time
+   * Set filter debounce time in milliseconds. Applicable only when filterDebounce is true.
    */
   @Input()
   public set filterDebounceTime(value: number) {
@@ -513,8 +489,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set filter de-bounce enabled state; De-bounce filter request to improve filter query performance
-   * @param value Filter debounce enable status
+   * Set filter data debounce enabled state with provided filterDebounceTime if true.
    */
   @Input()
   public set filterDebounce(value: boolean) {
@@ -522,8 +497,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set show data reload button display status; Show refresh button if true
-   * @param value Display data reload button enable status
+   * Set refresh button visible if true. Only applicable when showHeader is true.
    */
   @Input()
   public set showRefreshButton(value: boolean) {
@@ -531,8 +505,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set display column selector status; Display column selector checkbox if true
-   * @param value Display column selector status
+   * Row selector column width in pixels. Applicable only when showColumnSelector is true.
    */
   @Input()
   public set showColumnSelector(value: boolean) {
@@ -540,8 +513,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set display column selector width; Applicable only when show column selector is enabled.
-   * @param value column selector width
+   * Set column selector dropdown width in pixels. Only applicable when showColumnSelector is true.
    */
   @Input()
   public set columnSelectorWidth(value: number) {
@@ -549,8 +521,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set expander icon column width in pixels; Applicable only when expandable column is enabled.
-   * @param value Expandable column width
+   * Set expander column width in pixels. Applicable only when expandableRows is true.
    */
   @Input()
   public set expanderColumnWidth(value: number | string) {
@@ -558,8 +529,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set index auto increment number column width in pixels; Applicable only when index column is enabled
-   * @param value Index column width
+   * Set index column width in pixels. Applicable only when showIndexColumn is true.
    */
   @Input()
   public set indexColumnWidth(value: number | string) {
@@ -567,8 +537,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set row selector checkbox column width in pixels; Applicable only when row selection is enabled
-   * @param value Row selector column width
+   * Set row selector column width in pixels. Applicable only when showColumnSelector is true.
    */
   @Input()
   public set selectionColumnWidth(value: number | string) {
@@ -576,8 +545,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set translation data object; Used to localize table display text labels
-   * @param data Translation data object
+   * Set translation data object. Used to localize table static label text.
    */
   @Input()
   public set translations(data: DataTableTranslations) {
@@ -585,8 +553,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set show row expander loading spinner state; Display row expanding loading spinner while detail row is loading if true
-   * @param value Display row expand loading spinner if true
+   * Set row expand loading spinner visible if true. Applicable only when row expand is enabled.
    */
   @Input()
   public set showRowExpandLoadingSpinner(value: boolean) {
@@ -594,8 +561,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set data fetch offset; Start fetching data from provided offset onwards
-   * @param value Data fetch offset
+   * Set data offset value (start offset index). Applicable only when pageable is true.
    */
   @Input()
   public set offset(value: number) {
@@ -604,8 +570,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set data limit to fetch per page; Applicable only when pagination is enabled
-   * @param value Data limit
+   * Set data limit value (page size). Applicable only when pageable is true.
    */
   @Input()
   public set limit(value: number) {
@@ -614,8 +579,8 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Set current page number; Auto calculate offset depending on page number, do not explicitly set offset when page is used
-   * @param value Current page
+   * Set current page number. Auto calculate offset depending on page number,
+   * do not explicitly set offset when page is used.
    */
   @Input()
   public set page(value: number) {
@@ -623,24 +588,21 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
   }
 
   /**
-   * Get current page number
-   * @return Current page number
+   * Get current page number.
    */
   public get page(): number {
     return Math.floor(this.config.offset / this.config.limit) + 1;
   }
 
   /**
-   * Get data table header padding in pixels
-   * @return Header padding size
+   * Get data table header padding in pixels.
    */
   public get headerPadding(): number {
     return this.config.contentHeight ? this.globalRefService.scrollbarWidth : 0;
   }
 
   /**
-   * Get data loading status
-   * @return True of data is loading
+   * Get data loading status.
    */
   public get isLoading(): boolean {
     return !(this.config.loadOnScroll && this.dataStateService.dataRows.length)
