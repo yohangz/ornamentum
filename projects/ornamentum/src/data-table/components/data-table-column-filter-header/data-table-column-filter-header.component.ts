@@ -13,7 +13,7 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 
 /**
- * Data table column filter header component; Apply columns associated data filtering
+ * Data table column filter header component. Apply columns associated data filtering.
  */
 @Component({
   exportAs: 'ngDataTableColumnFilterHeader',
@@ -35,7 +35,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
   constructor(public config: DataTableConfigService, private eventStateService: DataTableEventStateService) {}
 
   /**
-   * Component initialize lifecycle event handler
+   * Component initialize lifecycle event handler.
    */
   public ngOnInit(): void {
     this.initCustomFilterEvent();
@@ -43,7 +43,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Component destroy lifecycle event handler
+   * Component destroy lifecycle event handler.
    */
   public ngOnDestroy(): void {
     if (this.customFilterSubscription) {
@@ -56,7 +56,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Initialize custom filter event
+   * Initialize custom filter event.
    */
   private initCustomFilterEvent(): void {
     this.customFilterSubscription = this.customFilterStream.subscribe((filterEventArgs: DataTableFilterEventArgs) => {
@@ -66,7 +66,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Initialize debounce default filtering logic
+   * Initialize debounce default filtering logic.
    */
   private initDebounceDefaultFilterEvent(): void {
     this.columnFilterSubscription = this.columnFilterStream.pipe(debounceTime(this.config.filterDebounceTime)).subscribe(() => {
@@ -75,7 +75,7 @@ export class DataTableColumnFilterHeaderComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Filter event handler
+   * Filter event handler.
    */
   public onFilter(): void {
     if (this.config.filterDebounce) {

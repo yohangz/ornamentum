@@ -16,7 +16,7 @@ import { ViewPosition } from '../../../utility/models/view-position.model';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
- * Data table column component; Data table columns associated data is captured via this component
+ * Data table column component. Data table columns associated data is captured via this component.
  */
 @Component({
   selector: 'ng-data-table-column',
@@ -53,19 +53,19 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   // Callback event handlers
 
   /**
-   * Filter expression callback function; Used to apply custom data filter expression logic
+   * Filter expression event handler callback. Used to apply custom data filter expression logic.
    */
   @Input()
   public filterExpression: DataTableFilterExpressionCallback;
 
   /**
-   * Custom filter field mapper; Used to extract filter field when showDropdownFilter option is true
+   * Custom filter field map event handler callback. Used to extract filter field when showDropdownFilter option is true.
    */
   @Input()
   public filterFieldMapper: DataTableFilterFieldMapperCallback;
 
   /**
-   * Cell color render event handler callback function
+   * Cell color render event handler callback.
    */
   @Input()
   public onCellColorRender: DataTableCellColorRenderCallback<any>;
@@ -73,27 +73,27 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   // Inputs
 
   /**
-   * Column title
+   * Column display title.
    */
   @Input()
   public title: string;
 
   /**
-   * Columns sortable if true; Show sort indicator on column title
+   * Columns sortable if true. Show sort indicator on column title.
    */
   @Input()
   public sortable: boolean;
 
   /**
-   * Multi column sort priority. Lowest number will get the height precedence. Usage of same precedence number in multiple columns may lead
-   * to unexpected behaviors. This priority number will be displayed in the column header when multi column sorting is enabled; hence,
-   * consider indexing accordingly.
+   * Multi column sort priority. Lowest number will get the height precedence. Usage of same precedence number in
+   * multiple columns may lead to unexpected behaviors. This priority number will be displayed in the column header
+   * when multi column sorting is enabled hence, consider indexing accordingly.
    */
   @Input()
   public sortPriority: number;
 
   /**
-   * Set initial column sort order
+   * Set initial column sort order.
    */
   @Input()
   public set sortOrder(value: DataTableSortOrder) {
@@ -102,87 +102,86 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Get initial column sort order
-   * @return Data sort order
+   * Get initial column sort order.
    */
   public get sortOrder(): DataTableSortOrder {
     return this.currentSortOrder;
   }
 
   /**
-   * Column filterable if true; Show filter options on filter header row when enabled
+   * Column filterable if true. Show filter options on filter header row when enabled.
    */
   @Input()
   public filterable: boolean;
 
   /**
-   * Column resizeable if true; Show column resize indicator on column right corner
+   * Column resizeable if true. Show column resize indicator on column right corner.
    */
   @Input()
   public resizable: boolean;
 
   /**
-   * Data item mapping field name
+   * Data item mapping field name.
    */
   @Input()
   public field: string;
 
   /**
-   * Filter field identifier; Fallback to field if not provided
+   * Filter field identifier. Fallback to field if not provided.
    */
   @Input()
   public filterField: string;
 
   /**
-   * Sort field identifier; Fallback to field if not provided
+   * Sort field identifier. Fallback to field if not provided.
    */
   @Input()
   public sortField: string;
 
   /**
-   * Column title CSS class names; Use space delimiter to separate class names
+   * Column title CSS class names. Use space delimiter to separate class names.
    */
   @Input()
   public cssClass: string;
 
   /**
-   * Column width
+   * Static column width in pixels or percentage.
    */
   @Input()
   public width: number | string;
 
   /**
-   * Render column if true; Else include in column selector but not rendered
+   * Render column if true. Else include in column selector but not rendered.
    */
   @Input()
   public visible: boolean;
 
   /**
-   * Show filed in column selector popup if true
+   * Show filed in column selector popup if true.
    */
   @Input()
   public showInColumnSelector = true; // TODO: move to base conf
 
   /**
-   * Filter placeholder value; Placeholder text to show on filter text box; Applicable only for none dropdown filter mode
+   * Filter placeholder value. Placeholder text to show on filter text box. Applicable only for none dropdown filter mode.
    */
   @Input()
   public filterPlaceholder: string;
 
   /**
-   * Applied filter value on initialize
+   * Applied filter value on initialize.
    */
   @Input()
   public filter: any;
 
   /**
-   * Show filter clear button if true; Applicable only for none dropdown filter mode
+   * Show filter clear button if true. Applicable only for none dropdown filter mode.
    */
   @Input()
   public showFilterClearButton: any;
 
   /**
-   * Resize minimum limit; Column cannot be resized to fit less than the number of pixels specified here
+   * Resize minimum limit. Column cannot be resized to fit less than the number of pixels specified here.
    */
   @Input()
   public resizeMinLimit: number;
@@ -190,110 +189,110 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   // Dropdown filter properties
 
   /**
-   * Show dropdown filter if true; Filter data using dropdown filter
+   * Show dropdown filter if true. Filter data using dropdown filter.
    */
   @Input()
   public showDropdownFilter: boolean;
 
   /**
-   * Dropdown filter menu position; Placement of filter popup menu
+   * Dropdown filter menu position. Placement of filter popup menu.
    */
   @Input()
   public dropdownFilterMenuPosition: ViewPosition;
 
   /**
-   * Dropdown select mode; Filter option select mode
+   * Dropdown select mode. Filter option select mode.
    */
   @Input()
   public dropdownFilterSelectMode: DropdownSelectMode;
 
   /**
-   * Dropdown filter searchable if true; Display search box within filter option menu
+   * Dropdown filter searchable if true. Display search box within filter option menu.
    */
   @Input()
   public dropdownFilterSearchable: boolean;
 
   /**
-   * Dropdown filter search debounce time in milliseconds; Applicable only when dropdownFilterSearchDebounce is true
+   * Dropdown filter search debounce time in milliseconds. Applicable only when dropdownFilterSearchDebounce is true.
    */
   @Input()
   public dropdownFilterSearchDebounceTime: number;
 
   /**
-   * Enable dropdown filter data search debounce with provided dropdownFilterSearchDebounceTime if true
+   * Enable dropdown filter data search debounce with provided dropdownFilterSearchDebounceTime if true.
    */
   @Input()
   public dropdownFilterSearchDebounce: boolean;
 
   /**
-   * Dropdown filter show option select checkbox
+   * Dropdown filter show option select checkbox.
    */
   @Input()
   public dropDownFilterShowOptionSelectCheckbox: boolean;
 
   /**
-   * Dropdown filter selected items display limit
+   * Dropdown filter selected items display limit.
    */
   @Input()
   public dropdownFilterWrapDisplaySelectLimit: number;
 
   /**
-   * Dropdown filter group by field name in item schema
+   * Dropdown filter group by field name in item schema.
    */
   @Input()
   public dropdownFilterGroupByField: string;
 
   /**
-   * Dropdown filter show selected option remove button if true
+   * Dropdown filter show selected option remove button if true.
    */
   @Input()
   public dropdownFilterShowSelectedOptionRemoveButton: boolean;
 
   /**
-   * Dropdown filter show all select options clear button if true
+   * Dropdown filter show all select options clear button if true.
    */
   @Input()
   public dropdownFilterShowClearSelectionButton: boolean;
 
   /**
-   * Dropdown filter menu width in pixels
+   * Dropdown filter menu width in pixels.
    */
   @Input()
   public dropdownFilterMenuWidth: number;
 
   /**
-   * Dropdown filter menu height in pixels
+   * Dropdown filter menu height in pixels.
    */
   @Input()
   public dropdownFilterMenuHeight: number;
 
   /**
-   * Dropdown filter multi select option max width
+   * Dropdown filter multi select option max width.
    */
   @Input()
   public dropdownFilterMultiSelectOptionMaxWidth: number;
 
   /**
-   * Dropdown filter close menu on select if true
+   * Dropdown filter close menu on select if true.
    */
   @Input()
   public dropdownFilterCloseMenuOnSelect: boolean;
 
   /**
    * Dynamically calculate Dropdown filter menu dimensions relative to column width; dropdownFilterMenuWidth and
-   * dropdownFilterMenuHeight configuration are ignored when true
+   * dropdownFilterMenuHeight configuration are ignored when true.
    */
   @Input()
   public dropdownFilterDynamicDimensionCalculation: boolean;
 
   /**
-   * Dynamic dropdown view width ratio; Used for dynamic dimension calculation
+   * Dynamic dropdown view width ratio. Used for dynamic dimension calculation.
    */
   @Input()
   public dropdownFilterDynamicWidthRatio: number;
 
   /**
-   * Dynamic dropdown view height ratio; Used for dynamic dimension calculation
+   * Dynamic dropdown view height ratio. Used for dynamic dimension calculation.
    */
   @Input()
   public dropdownFilterDynamicHeightRatio: number;
@@ -332,16 +331,16 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Reset data sort order
+   * Reset data sort order.
    */
   public resetSortOrder(): void {
     this.currentSortOrder = this.baseSortOrder;
   }
 
   /**
-   * Get dynamic cell color
-   * @param row Data row object
-   * @return Cell color string
+   * Get dynamic cell color.
+   * @param row Data row object.
+   * @return Cell color string.
    */
   public getCellColor(row: DataTableRow<any>) {
     if (this.onCellColorRender !== undefined) {
@@ -350,8 +349,8 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Get new sort order upon sort click
-   * @return New sort order enum value
+   * Get new sort order upon sort click.
+   * @return New sort order enum value.
    */
   public getNewSortOrder(): DataTableSortOrder {
     let newSortOrder: DataTableSortOrder;
@@ -371,8 +370,8 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Get current sort state icon css class enabled state
-   * @return Sort order icon css class collection object
+   * Get current sort state icon css class enabled state.
+   * @return Sort order icon css class collection object.
    */
   public getSortIconClass(): any {
     return {
@@ -383,7 +382,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Component destroy lifecycle event handler
+   * Component destroy lifecycle event handler.
    */
   public ngOnDestroy(): void {
     if (this.filterValueExtractorSubscription) {
@@ -392,7 +391,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Component initialize lifecycle event handler
+   * Component initialize lifecycle event handler.
    */
   public ngOnInit(): void {
     if (!this.cssClass && this.field) {

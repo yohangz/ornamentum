@@ -12,7 +12,7 @@ import { DataTableEventStateService } from '../../services/data-table-event.serv
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
 
 /**
- * Column title header component; Render data table column headers
+ * Column title header component. Render data table column headers.
  */
 @Component({
   exportAs: 'ngDataTableColumnTitleHeader',
@@ -34,9 +34,9 @@ export class DataTableColumnTitleHeaderComponent {
   ) {}
 
   /**
-   * Header click event handler
-   * @param column Data table column component reference
-   * @param event Mouse event arguments object
+   * Header click event handler.
+   * @param column Data table column component reference.
+   * @param event Mouse event arguments object.
    */
   public onHeaderClick(column: DataTableColumnComponent, event: MouseEvent): void {
     if (!this.resizeInProgress) {
@@ -48,8 +48,8 @@ export class DataTableColumnTitleHeaderComponent {
   }
 
   /**
-   * Sort data event handler
-   * @param column Data table column component reference
+   * Sort data event handler.
+   * @param column Data table column component reference.
    */
   private sortData(column: DataTableColumnComponent): void {
     if (column.sortable) {
@@ -92,19 +92,19 @@ export class DataTableColumnTitleHeaderComponent {
   }
 
   /**
-   * Set column width
-   * @param width Width value in pixels
-   * @param column Data table column component reference
+   * Set column width.
+   * @param width Width value in pixels.
+   * @param column Data table column component reference.
    */
   public setColumnWidth(width: number, column: DataTableColumnComponent): void {
     column.actualWidth = width;
   }
 
   /**
-   * Column resize event handler
-   * @param event Resize mouse event
-   * @param column Data table column component
-   * @param columnElement Table header cell element DOM reference
+   * Column resize event handler.
+   * @param event Resize mouse event.
+   * @param column Data table column component.
+   * @param columnElement Table header cell element DOM reference.
    */
   public onColumnResize(event: MouseEvent, column: DataTableColumnComponent, columnElement: HTMLTableHeaderCellElement): void {
     this.resizeInProgress = true;
@@ -130,8 +130,8 @@ export class DataTableColumnTitleHeaderComponent {
   }
 
   /**
-   * Set all row selected state
-   * @param value All row selected status
+   * Set all row selected state.
+   * @param value All row selected status.
    */
   public set allRowSelected(value: boolean) {
     this.dataStateService.allRowSelected = value;
@@ -147,8 +147,8 @@ export class DataTableColumnTitleHeaderComponent {
   }
 
   /**
-   * All row select change event handler
-   * @param selectedState Row selected status
+   * All row select change event handler.
+   * @param selectedState Row selected status.
    */
   private allRowSelectedChanged(selectedState: boolean): void {
     this.dataStateService.dataRows.forEach(row => {
@@ -168,7 +168,7 @@ export class DataTableColumnTitleHeaderComponent {
 
   /**
    * Get all row select checkbox display status.
-   * @return True if all row select checkbox should be displayed
+   * @return True if all row select checkbox should be displayed.
    */
   public get showAllRowSelectCheckbox(): boolean {
     return this.config.selectMode === 'multi' && this.config.showRowSelectAllCheckbox;

@@ -16,7 +16,7 @@ import { DataTableScrollPositionService } from '../../services/data-table-scroll
 import { DataTableScrollPoint } from '../../../data-table/models/data-table-scroll-point.model';
 
 /**
- * Column filter template component; Render column filter template via this component
+ * Column filter template component. Render column filter template via this component.
  */
 @Component({
   selector: 'ng-data-table-column-filter-template',
@@ -50,7 +50,7 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
   ) {}
 
   /**
-   * Component initialize lifecycle event
+   * Component initialize lifecycle event.
    */
   public ngOnInit(): void {
     if (this.column.showDropdownFilter) {
@@ -76,7 +76,7 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
   }
 
   /**
-   * Component destroy lifecycle event
+   * Component destroy lifecycle event.
    */
   public ngOnDestroy(): void {
     if (this.fetchFilterOptionsStreamSubscription) {
@@ -95,7 +95,7 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
   }
 
   /**
-   * Clear current column filter value
+   * Clear current column filter value.
    */
   public clearFilter(): void {
     this.column.filter = '';
