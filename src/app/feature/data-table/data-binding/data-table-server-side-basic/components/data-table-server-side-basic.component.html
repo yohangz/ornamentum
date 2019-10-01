@@ -107,25 +107,36 @@
         </li>
         <li>
           <p>
-            <code>offset</code> - The offset parameter controls the starting point within the collection of resource
-            results. For example, if you have a collection of 15 items to be retrieved from a resource and you specify
-            limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value:
-            offset=0, offset=5, and offset=10. Note that the first item in the collection is retrieved by setting a
-            zero offset.
+            <code>offset</code> - Number of records you wish to skip before selecting records with specified limit.
+            For example, if offset is 10 and limit is 5 it should return 5 items starting from 10th index.
+            Note that offset is zero index based.
           </p>
         </li>
       </ul>
-      <p>
-        i.e: data GET request URL generated when navigated to 2nd page of the data table.
-      </p>
-      <p>
-        https://ornamentum.app/api/data?<code>limit=10&offset=10</code>
-      </p>
+      <p><u>Usage scenarios and examples</u></p>
+      <ol>
+        <li>
+          <p>
+            Page 1 request when limit is 5:
+          </p>
+          <p>
+            https://yourapi/resource/path?<code>limit=5&offset=0</code>
+          </p>
+        </li>
+        <li>
+          <p>
+            Page 2 request when limit is 10:
+          </p>
+          <p>
+            https://yourapi/resource/path?<code>limit=10&offset=10</code>
+          </p>
+        </li>
+      </ol>
     </li>
     <li>
       <p>
-        Sorting and Filtering query parameters - query parameters with field names will get appended when sorting or
-        filtering is applied on a column. The format of these field query parameters are as follows.
+        Sorting and Filtering query parameters - Sortable and/or filterable columns field names will
+        get appended as query parameters. The format of these field query parameters are as follows.
       </p>
 
       <p>
@@ -135,27 +146,26 @@
       <ul>
         <li>
           <p>
-            <code>field name</code> - Target column field name. Target fields are appended as query parameters only when
-            filtering or sorting is applied on target column which is sortable or filterable.
+            <code>field name</code> - Sortable and/or filterable column field name. These fields are appended as query
+            parameters only when filtering and/or sorting is applied on target column which is sortable or filterable.
           </p>
         </li>
         <li>
           <p>
-            <code>filter value</code> - Filter value is passed when filter is applied. Filter value of multi column
-            filterable
-            fields are passed as a comma separated string.
+            <code>filter value</code> - Filter value is available only when filter is applied. Multi filter values are
+            passed as a comma separated value.
           </p>
         </li>
         <li>
           <p>
-            <code>sort order</code> - Sort order is appended when field sort order is <code>'asc' | 'desc'</code>
+            <code>sort order</code> - Sort order is appended only when field sort order is <code>'asc'</code> or
+            <code>'desc'</code>
           </p>
         </li>
         <li>
           <p>
             <code>sort priority</code> - Sort priority is passed as an index incrementer starting from value 1. This
-            property
-            is useful when multi column sorting is enabled to identify the sort field order.
+            property is useful when multi column sorting is enabled to identify the sortable field order.
           </p>
         </li>
       </ul>
@@ -164,8 +174,7 @@
         The target field is ignored if no filtering or sorting is applied on the target column to reduce the data fetch
         request URL length by avoiding appendage of empty valued query param. The filter and sort field values are
         separated by pipe <code>|</code> character when both sorting and filtering is applied on the same field. The
-        sort
-        order and sort priority properties and also separated by pipe character.
+        sort order and sort priority properties are also separated by pipe character.
       </p>
 
       <p>Usage scenarios and examples</p>
@@ -181,7 +190,7 @@
             'equipment' keyword.
           </p>
           <p>
-            https://ornamentum.app/api/data?limit=10&offset=0&<code>productLine=equipment|asc|1</code>
+            https://yourapi/resource/path?limit=10&offset=0&<code>productLine=equipment|asc|1</code>
           </p>
         </li>
         <li>
@@ -193,7 +202,7 @@
             i.e: data GET request URL generated when Product Line column is filtered by 'equipment' keyword.
           </p>
           <p>
-            https://ornamentum.app/api/data?limit=10&offset=0&<code>productLine=equipment</code>
+            https://yourapi/resource/path?limit=10&offset=0&<code>productLine=equipment</code>
           </p>
         </li>
         <li>
@@ -205,7 +214,7 @@
             i.e: data GET request URL generated when Product Line column is sorted in ascending order.
           </p>
           <p>
-            https://ornamentum.app/api/data?limit=10&offset=0&<code>productLine=|asc|1</code>
+            https://yourapi/resource/path?limit=10&offset=0&<code>productLine=|asc|1</code>
           </p>
         </li>
         <li>
@@ -217,7 +226,7 @@
             i.e: data GET request URL generated when Product Line column is not sorted or filtered.
           </p>
           <p>
-            https://ornamentum.app/api/data?limit=10&offset=0
+            https://yourapi/resource/path?limit=10&offset=0
           </p>
         </li>
       </ol>
