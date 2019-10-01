@@ -13,8 +13,10 @@
   <p>
     Unlike in <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic</a>, Server Side
     rendering will request for data on dropdown initialization and whenever user performs
-    <a [routerLink]="['/feature/dropdown/functionality/option/filtering']" [fragment]="'serverSideFiltering'">Server Side
-      Filtering</a> operation. Ornamentum has provided an optional opinionated service to integrate external data
+    <a [routerLink]="['/feature/dropdown/functionality/option/filtering']" [fragment]="'serverSideFiltering'">Filtering</a>
+    or
+    <a [routerLink]="['/feature/dropdown/functionality/lazy-loading']">Lazy Loading</a>
+    operations. Ornamentum has provided an optional opinionated service to integrate external data
     sources. However, you can build a custom data provider depending on your requirement.
   </p>
 
@@ -37,7 +39,7 @@
     Server side data bind functionality can be integrated via <a rel="noopener" target="_blank"
                                                                  href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
     callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
-    data source agnostic.
+    data source agnostic adm easy to customize.
   </p>
 
   <ol>
@@ -69,21 +71,17 @@
         or else you can write your own custom data provider without using getResourceProvider in
         <a rel="noopener" target="_blank"
            href="https://ornamentum.app/api-docs/injectables/DropdownHttpResourceFactoryService.html">DropdownHttpResourceFactoryService</a>
-        service. The custom data provider needs to return a function which is supposed to be returned object as
-        Observable. As long as your data return as observable you can use any data sources such as Firebase Realtime
-        Database or Cloud Firestore. Please refer <a
-        [routerLink]="['/feature/dropdown/data-binding/custom-provider']">Custom Data Provider</a>
+        service. Please refer <a [routerLink]="['/feature/dropdown/data-binding/custom-provider']">Custom Data Provider</a>
         documentation for more information.
       </p>
     </li>
     <li>
       <p>
-        Set the obtained data bind function reference and load data on scroll boolean
-        to <a rel="noopener" target="_blank"
-              href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
-        and <a rel="noopener" target="_blank"
-               href="https://ornamentum.app/api-docs/components/DropdownComponent.html#loadOnScroll">loadOnScroll</a>
-        input properties of dropdown accordingly.
+        Set the obtained
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
+        function reference and
+        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DropdownComponent.html#loadOnScroll">loadOnScroll</a>
+        input properties of dropdown component.
       </p>
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBindingMarkup"></app-code-snippet>
     </li>
@@ -95,7 +93,7 @@
 
   <ol>
     <li>
-      <p>Data loading query parameters</p>
+      <p>On demand data loading query parameters</p>
       <ul>
         <li>
           <p>
@@ -105,19 +103,34 @@
         </li>
         <li>
           <p>
-            <code>offset</code> - The offset parameter controls the starting point within the collection of resource
-            results. For example, if you have a collection of 15 options to be retrieved from a resource and you specify
-            limit=5, you can retrieve the entire set of results in 3 successive requests by varying the offset value:
-            offset=0, offset=5, and offset=10. Note that the first option in the collection is retrieved by setting a
-            zero offset.
+            <code>offset</code> - Number of records you wish to skip before selecting records with specified limit.
+            For example, if offset is 10 and limit is 5 it should return 5 items starting from 10th index.
+            Note that offset is zero index based.
           </p>
         </li>
       </ul>
+      <p><u>Usage scenarios and examples</u></p>
+      <ol>
+        <li>
+          <p>
+            Page 1 request when limit is 10:
+          </p>
+          <p>
+            https://yourapi/resource/path?<code>limit=10&offset=0</code>
+          </p>
+        </li>
+        <li>
+          <p>
+            Page 2 request when limit is 30:
+          </p>
+          <p>
+            https://yourapi/resource/path?<code>limit=30&offset=30</code>
+          </p>
+        </li>
+      </ol>
       <p>
-        i.e: data GET request URL generated when scrolling down to see more options.
-      </p>
-      <p>
-        https://ornamentum.app/api/data?<code>limit=30&offset=30</code>
+        Refer <a [routerLink]="['/feature/dropdown/functionality/lazy-loading']">Lazy Loading</a> documentation for more
+        information.
       </p>
     </li>
     <li>
@@ -128,7 +141,7 @@
 
       <p>
         <code>&lt;field name&gt;=</code>[<code>&lt;name of the field&gt;</code>]&<code>&lt;filter
-        value&gt;=</code>[<code>&lt;filter keyword&gt;</code>]
+        value&gt;=</code>[<code>&lt;applied filter value&gt;</code>]
       </p>
 
       <ul>
@@ -140,7 +153,7 @@
         </li>
         <li>
           <p>
-            <code>filter value</code> - Filter value is passed when filterable property is enabled. Filter value is
+            <code>filter value</code> - Filter value is passed when filterable input is true. Filter value is
             passed as string.
           </p>
         </li>
@@ -158,7 +171,7 @@
             i.e: data GET request URL generated when Product Type filed is filtered by 'cook' keyword.
           </p>
           <p>
-            https://ornamentum.app/api/data?limit=30&offset=0&<code>field=productType&filter=cook</code>
+            https://yourapi/resource/path?limit=30&offset=0&<code>field=productType&filter=cook</code>
           </p>
         </li>
         <li>
@@ -170,14 +183,14 @@
             i.e: data GET request URL generated when Product Type field is not filtered.
           </p>
           <p>
-            https://ornamentum.app/api/data?limit=30&offset=0
+            https://yourapi/resource/path?limit=30&offset=0
           </p>
         </li>
       </ol>
 
       <p>
         Refer <a [routerLink]="['/feature/dropdown/functionality/option/filtering']">Option Filtering</a> documentation for more
-        information and how to filtering.
+        information.
       </p>
     </li>
     <li>
@@ -196,7 +209,7 @@
 
   <p>
     You can inspect network traffic of this page with "<code>/api/data</code>" filter in browser developer tools to
-    understand backend service requests and behaviors for above example.
+    understand backend service requests and behaviors of above example.
   </p>
 
   <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideRequest" [showLineNumbers]="false">
@@ -206,8 +219,7 @@
 
   <p>
     Server side and client side data binding can be implemented via a custom data provider as Ornamentum data sources
-    are
-    fully decoupled from component logic. Please refer
+    are fully decoupled from component logic. Please refer
     <a [routerLink]="['/feature/dropdown/data-binding/custom-provider']">Custom Data Provider</a> for more
     information.
   </p>

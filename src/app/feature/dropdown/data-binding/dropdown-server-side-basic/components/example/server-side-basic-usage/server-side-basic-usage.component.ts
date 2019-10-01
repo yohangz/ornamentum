@@ -16,6 +16,7 @@ export class ServerSideBasicUsageComponent {
 
   constructor(private resourceFactory: DropdownHttpResourceFactoryService) {
     const exampleDataResource = resourceFactory.getResourceProvider<ExampleData>();
+    // 2nd argument is optional. It is used to remap the response schema to dropdown data source interface.
     this.onDataBind = exampleDataResource.onDataBind('/api/data', (response: Observable<any>) => {
       return response.pipe(map((source: any) => {
         return {

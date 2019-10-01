@@ -54,9 +54,9 @@ const dropdownFeatureRoutes: Routes = [
       seo: {
         title: 'Ornamentum - Dropdown | Data Binding | Server Side | Basic Data Binding',
         // tslint:disable-next-line
-        keywords: 'servers side basic data binding,basic data binding,server side data binding,server side dropdown data binding',
+        keywords: 'dropdown servers side basic data binding,dropdown server basic data binding,dropdown server side data binding,server side dropdown data binding',
         // tslint:disable-next-line
-        description: 'Dropdown server side data binding allow users to bind large data sets that are not directly accessible as a full collection in client side due to various reasons. Server side data binding can improve performance drastically for large data sets but integration is fairly complex compared to client side data binding techniques.'
+        description: 'Server side data binding allow users to bind large data sets that are not directly accessible as a full collection in client side due to various reasons. Server side data binding can improve performance drastically for large data sets but integration is fairly complex compared to Client Side Basic and Client Side Stream Data Binding techniques.'
       }
     }
   },
