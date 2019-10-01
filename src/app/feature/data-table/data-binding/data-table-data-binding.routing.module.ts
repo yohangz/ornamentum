@@ -54,9 +54,9 @@ const dataTableDataBindingRoutes: Routes = [
       seo: {
         title: 'Ornamentum - Data Table | Data Binding | Server Side | Basic Data Binding',
         // tslint:disable-next-line
-        keywords: 'servers side basic data binding,basic data binding,server side data binding,server side table data binding,server side grid data binding',
+        keywords: 'data table server side data binding,data table server binding,data table ajax,data table http,grid server side data binding',
         // tslint:disable-next-line
-        description: 'Data table server side data binding allow users to bind large data sets that are not directly accessible as a full collection in client side due to various reasons. Server side data binding can improve performance drastically for large data sets but integration is fairly complex compared to client side data binding techniques.'
+        description: 'Server side data binding allow users to bind large data sets that are not directly accessible as a full collection in client side due to various reasons. Server side data binding can improve performance drastically for large data sets but integration is fairly complex compared to Client Side Basic and Client Side Stream Data Binding techniques.'
       }
     }
   },

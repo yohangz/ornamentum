@@ -102,8 +102,11 @@ i.e: You can ony use Ornamentum 8.x.x versions with Angular 8.x.x.
 - Documentation scroll selected menu item to view
 - Data Table dropdown filter custom template support
 - Column pinning support.
-- Complete unit test spec
-- Code coverage
+- Column re-order.
+- Stabilize column resize functionality.
+- Complete unit test spec.
+- Code coverage.
+
 
 
 

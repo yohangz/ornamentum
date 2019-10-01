@@ -12,12 +12,13 @@
 
   <p>
     Unlike in <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic</a> Data
-    Binding, Server Side rendering will request for data on table initialization and whenever user performs
+    Binding, Server Side data binding will request for data on table initialization and whenever user performs
     <a [routerLink]="['/feature/data-table/functionality/column/filtering']" [fragment]="'serverSideColumnFilter'">Filtering</a>,
     <a [routerLink]="['/feature/data-table/functionality/column/sorting']" [fragment]="'serverSideColumnSorting'">Sorting</a>,
     <a [routerLink]="['/feature/data-table/functionality/pagination']">Pagination</a> etc. operations. Ornamentum has
-    provided an optional opinionated service to integrate external data sources. However, you can build a custom data
-    provider depending on your requirement.
+    provided an optional opinionated service to integrate external data sources. However, you can build a
+    <a [routerLink]="['/feature/data-table/data-binding/custom-provider']">custom data provider</a>
+    depending on your requirement.
   </p>
 
   <h2 id="whatYouWillSee">What You Will See</h2>
@@ -36,10 +37,10 @@
   </p>
 
   <p>
-    Server side data bind functionality can be integrated via <a rel="noopener" target="_blank"
-                                                                 href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+    Server side data bind functionality can be integrated via
+    <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
     callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
-    data source agnostic.
+    data source agnostic and easy to customize.
   </p>
 
   <ol>
@@ -71,12 +72,7 @@
         or else you can write your own custom data provider without using getResourceProvider in
         <a rel="noopener" target="_blank"
            href="https://ornamentum.app/api-docs/injectables/DataTableHttpResourceFactoryService.html">DataTableHttpResourceFactoryService</a>
-        service. The custom data provider needs to return a function which is supposed to be returned object as
-        Observable.
-        As long as your data return as observable you can use any data sources such as Firebase Realtime Database or
-        Cloud Firestore.
-        Please refer <a [routerLink]="['/feature/data-table/data-binding/custom-provider']">Custom Data
-        Provider</a>
+        service. Please refer <a [routerLink]="['/feature/data-table/data-binding/custom-provider']">Custom Data Provider</a>
         documentation for more information.
       </p>
     </li>
