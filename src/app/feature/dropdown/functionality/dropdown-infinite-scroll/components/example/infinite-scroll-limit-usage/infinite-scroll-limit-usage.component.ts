@@ -8,9 +8,9 @@ import { DataFetchService } from 'helper-services';
 
 @Component({
   selector: 'app-lazy-loading-limit-usage',
-  templateUrl: './lazy-loading-limit-usage.component.html'
+  templateUrl: './infinite-scroll-limit-usage.component.html'
 })
-export class LazyLoadingLimitUsageComponent {
+export class InfiniteScrollLimitUsageComponent {
   public options: ExampleData[];
 
   constructor(private dataFetchService: DataFetchService) {

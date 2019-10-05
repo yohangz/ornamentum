@@ -1260,7 +1260,7 @@ export class MainComponent {
             },
             {
               routePath: '/feature/dropdown/functionality/lazy-loading',
-              title: 'Lazy Loading',
+              title: 'Infinite Scroll',
               navigation: [
                 {
                   title: 'What You Will See',

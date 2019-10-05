@@ -13,7 +13,7 @@ const dropdownFunctionalityRoutes: Routes = [
     redirectTo: 'option/display-value'
   },
   {
-    loadChildren: './dropdown-lazy-loading/dropdown-lazy-loading.module#DropdownLazyLoadingModule',
+    loadChildren: './dropdown-infinite-scroll/dropdown-infinite-scroll.module#DropdownInfiniteScrollModule',
     // loadChildren: () => import('./dropdown-data-limit/dropdown-data-limit.module')
     //   .then((m) => m.DropdownLazyLoadingModule),
     path: 'lazy-loading',

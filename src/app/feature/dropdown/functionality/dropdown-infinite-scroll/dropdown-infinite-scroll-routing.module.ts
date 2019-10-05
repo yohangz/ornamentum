@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { DropdownLazyLoadingComponent } from './index';
+import { DropdownInfiniteScrollComponent } from './index';
 
 /**
  * Represent dropdown lazy loading routes.
  */
 const dropdownDataLimitRoutes: Routes = [
   {
-    component: DropdownLazyLoadingComponent,
+    component: DropdownInfiniteScrollComponent,
     path: ''
   }
 ];
@@ -20,5 +20,5 @@ const dropdownDataLimitRoutes: Routes = [
   exports: [RouterModule],
   imports: [RouterModule.forChild(dropdownDataLimitRoutes)]
 })
-export class DropdownLazyLoadingRoutingModule {
+export class DropdownInfiniteScrollRoutingModule {
 }
