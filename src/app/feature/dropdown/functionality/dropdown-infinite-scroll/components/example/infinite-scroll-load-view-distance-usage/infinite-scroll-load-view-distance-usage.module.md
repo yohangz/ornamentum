@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DropdownModule } from 'ornamentum';
   
-import { LazyLoadingLoadViewDistanceUsageComponent } from './lazy-loading-load-view-distance-usage.component';
+import { LazyLoadingLoadViewDistanceUsageComponent } from './infinite-scroll-load-view-distance-usage.component';
 
 @NgModule({
  bootstrap: [LazyLoadingLoadViewDistanceUsageComponent],

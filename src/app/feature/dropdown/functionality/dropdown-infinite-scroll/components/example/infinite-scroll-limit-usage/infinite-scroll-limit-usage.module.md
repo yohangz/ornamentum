@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
   
 import { DropdownModule } from 'ornamentum';
   
-import { LazyLoadingLimitUsageComponent } from './lazy-loading-limit-usage.component';
+import { LazyLoadingLimitUsageComponent } from './infinite-scroll-limit-usage.component';
 
 @NgModule({
  bootstrap: [LazyLoadingLimitUsageComponent],

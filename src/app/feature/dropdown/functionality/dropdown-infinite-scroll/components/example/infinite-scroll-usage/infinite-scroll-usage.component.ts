@@ -7,7 +7,7 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-lazy-loading-usage',
+  selector: 'app-infinite-scroll-usage',
   templateUrl: './infinite-scroll-usage.component.html'
 })
 export class InfiniteScrollUsageComponent {

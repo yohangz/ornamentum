@@ -7,7 +7,7 @@ import { ExampleData } from 'helper-models';
 import { DataFetchService } from 'helper-services';
 
 @Component({
-  selector: 'app-lazy-loading-load-view-distance-usage',
+  selector: 'app-infinite-scroll-load-view-distance-usage',
   templateUrl: './infinite-scroll-load-view-distance-usage.component.html'
 })
 export class InfiniteScrollLoadViewDistanceUsageComponent {
