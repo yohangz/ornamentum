@@ -57,14 +57,10 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
     if (this.column.showDropdownFilter) {
       this.scrollPositionStreamSubscription = this.scrollPositionService.scrollPositionStream
         .subscribe((pos: DataTableScrollPoint) => {
-          if (pos.isHorizontal) {
+          if (this.filterDropdown && pos.isHorizontal) {
             this.filterDropdown.close();
           }
         });
-
-      this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream.subscribe(() => {
-        this.filterDropdown.fetchData(true);
-      });
 
       this.filterDataBind = (params: DropdownRequestParams): Observable<DropdownQueryResult<any>> => {
         return this.dataStateService.onFilterValueExtract({
@@ -90,6 +86,9 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
 
   public onFilterDropdownInit(filterDropdown: DropdownComponent): void {
     this.filterDropdown = filterDropdown;
+    this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream.subscribe(() => {
+      this.filterDropdown.fetchData(true);
+    });
   }
 
   /**
