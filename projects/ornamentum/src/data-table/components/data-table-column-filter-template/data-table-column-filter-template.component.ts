@@ -86,8 +86,8 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
 
   public onFilterDropdownInit(filterDropdown: DropdownComponent): void {
     this.filterDropdown = filterDropdown;
-    this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream.subscribe(() => {
-      this.filterDropdown.fetchData(true);
+    this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream.subscribe((hardFetch: boolean) => {
+      this.filterDropdown.fetchData(hardFetch);
     });
   }
 

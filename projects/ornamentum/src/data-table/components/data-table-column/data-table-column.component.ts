@@ -28,7 +28,6 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   private currentSortOrder: DataTableSortOrder = '';
   private baseSortOrder: DataTableSortOrder = '';
-  private baseSortPriority = 0;
 
   public actualWidth: number;
   public id: string;
@@ -88,16 +87,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * when multi column sorting is enabled hence, consider indexing accordingly.
    */
   @Input()
-  public set sortPriority(value: number) {
-    this.baseSortPriority = value;
-  }
-
-  /**
-   * Get sort priority value.
-   */
-  public get sortPriority(): number {
-    return this.baseSortPriority || (this.baseSortPriority ? 1 : 0);
-  }
+  public sortPriority = 0;
 
   /**
    * Set initial column sort order.
@@ -373,7 +363,7 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
       if (this.dropdownFilterSelectMode === 'multi') {
         return this.filter && this.filter.map(value => get(value, this.dropdownFilterSelectTrackBy));
       } else {
-        return this.filter && get(this.filter, this.dropdownFilterSelectTrackBy); // fix this
+        return this.filter && get(this.filter, this.dropdownFilterSelectTrackBy);
       }
     } else {
       return this.filter;
@@ -455,22 +445,18 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     this.eventStateService.columnBind.emit(this);
 
     if (this.config.multiColumnSortable && this.sortable) {
-      if (this.sortOrder === '') {
-        if (this.sortPriority !== undefined) {
-          throw Error('[sortPriority] should be ignored when multi column sorting is enabled with natural sort order.');
+      if (this.sortPriority < 1) {
+        if (this.sortOrder !== '') {
+          throw Error('[sortPriority] is required when multi column sorting is enabled with an explicit sort order. It must be a positive index value.');
         }
       } else {
-        if (this.sortPriority === undefined) {
-          throw Error('[sortPriority] is required when multi column sorting is enabled with an explicit sort order.');
+        if (this.sortOrder === '') {
+          throw Error('[sortPriority] should be ignored when multi column sorting is enabled with natural sort order.');
         }
-      }
 
-      if (this.sortPriority < 1) {
-        throw Error('[sortPriority] must be greater than 1.');
-      }
-
-      if (this.dataStateService.currentSortPriority < this.sortPriority) {
-        this.dataStateService.currentSortPriority = this.sortPriority;
+        if (this.dataStateService.currentSortPriority < this.sortPriority) {
+          this.dataStateService.currentSortPriority = this.sortPriority;
+        }
       }
     }
   }

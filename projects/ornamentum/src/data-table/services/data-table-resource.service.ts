@@ -160,8 +160,9 @@ export class DataTableResourceService<T> {
         let result = field.options;
         if (params.filter) {
           const filterValue = String(params.filter).toLowerCase();
-          result = result.filter((value: DataTableFilterOption) => {
-            return value.value.includes(filterValue);
+          result = result.filter((option: DataTableFilterOption) => {
+            const optionValue = String(option.value).toLowerCase();
+            return optionValue.includes(filterValue);
           });
         }
 

@@ -643,7 +643,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
     this.setDataRows(queryResult.items);
 
     if (!this.dataStateService.dataLoading || this.dataStateService.heardReload) {
-      this.eventStateService.fetchFilterOptionsStream.next();
+      this.eventStateService.fetchFilterOptionsStream.next(this.dataStateService.heardReload);
     }
 
     this.dataStateService.heardReload = false;
@@ -858,7 +858,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
       this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);
     }
 
-    this.eventStateService.fetchFilterOptionsStream.next();
+    this.eventStateService.fetchFilterOptionsStream.next(true);
     this.eventStateService.initStream.emit(this);
 
     if (this.config.loadOnScroll) {
