@@ -4,7 +4,6 @@ import { Subscription } from 'rxjs';
 
 import { DataTableCellColorRenderCallback } from '../../models/data-table-cell-color-render-callback.model';
 import { DataTableRow } from '../../models/data-table-row.model';
-import { DataTableFilterFieldMapperCallback } from '../../models/data-table-filter-field-mapper-callback.model';
 import { DataTableFilterExpressionCallback } from '../../models/data-table-filter-expression-callback.model';
 
 import { DropdownSelectMode } from '../../../dropdown/dropdown.module';
@@ -14,6 +13,7 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { ViewPosition } from '../../../utility/models/view-position.model';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
+import {get} from "../../../utility/services/object-utility.class";
 
 /**
  * Data table column component. Data table columns associated data is captured via this component.
@@ -27,8 +27,11 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
 
   private currentSortOrder: DataTableSortOrder = '';
   private baseSortOrder: DataTableSortOrder = '';
+  private baseSortPriority = 0;
 
   public actualWidth: number;
+  public id: string;
+  public selectorId: string;
 
   // Content Child Properties
 
@@ -59,12 +62,6 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   public filterExpression: DataTableFilterExpressionCallback;
 
   /**
-   * Custom filter field map event handler callback. Used to extract filter field when showDropdownFilter option is true.
-   */
-  @Input()
-  public filterFieldMapper: DataTableFilterFieldMapperCallback;
-
-  /**
    * Cell color render event handler callback.
    */
   @Input()
@@ -90,7 +87,16 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * when multi column sorting is enabled hence, consider indexing accordingly.
    */
   @Input()
-  public sortPriority: number;
+  public set sortPriority(value: number) {
+    this.baseSortPriority = value;
+  }
+
+  /**
+   * Get sort priority value.
+   */
+  public get sortPriority(): number {
+    return this.baseSortPriority || (this.baseSortPriority ? 1 : 0);
+  }
 
   /**
    * Set initial column sort order.
@@ -121,22 +127,25 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   public resizable: boolean;
 
   /**
-   * Data item mapping field name.
+   * Display track by field path used to extract cell text.
+   * This field support object paths expressions 'root[0].nest'.
    */
   @Input()
-  public field: string;
+  public displayTrackBy: string;
 
   /**
-   * Filter field identifier. Fallback to field if not provided.
+   * Filter track by field path used to run filter value match.
+   * This field support object paths expressions 'root[0].nest'.
    */
   @Input()
-  public filterField: string;
+  public filterTrackBy: string;
 
   /**
-   * Sort field identifier. Fallback to field if not provided.
+   * Sort track by field path used to run sort value compare.
+   * This field support object paths expressions 'root[0].nest'.
    */
   @Input()
-  public sortField: string;
+  public sortTrackBy: string;
 
   /**
    * Column title CSS class names. Use space delimiter to separate class names.
@@ -297,37 +306,73 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
   @Input()
   public dropdownFilterDynamicHeightRatio: number;
 
+  /**
+   * Dropdown filter Set select option track by field path which is used to uniquely identify options for selection tracking.
+   * This field support object paths expressions 'root[0].nest'.
+   */
+  @Input()
+  public dropdownFilterSelectTrackBy: string;
+
+  /**
+   * Dropdown filter display value track by field path which is used to extract dropdown option display value.
+   * This field support object paths expressions 'root[0].nest'.
+   */
+  @Input()
+  public dropdownFilterDisplayTrackBy: string;
+
+  /**
+   * Dropdown filter option disable state field path which is used to disabled state dropdown options.
+   * This field support object paths expressions 'root[0].nest'.
+   */
+  @Input()
+  public dropdownFilterDisabledTrackBy: string;
+
   constructor(
-    private dataTableConfigService: DataTableConfigService,
+    private config: DataTableConfigService,
     private eventStateService: DataTableEventStateService,
     private dataStateService: DataTableDataStateService) {
     // Table column config
-    this.sortable = dataTableConfigService.sortable;
-    this.currentSortOrder = dataTableConfigService.sortOrder;
-    this.filterable = dataTableConfigService.filterable;
-    this.filterPlaceholder = dataTableConfigService.filterPlaceholder;
-    this.resizable = dataTableConfigService.columnResizable;
-    this.visible = dataTableConfigService.columnVisible;
-    this.showDropdownFilter = dataTableConfigService.showDropdownFilter;
-    this.showFilterClearButton = dataTableConfigService.showFilterClearButton;
+    this.sortable = config.sortable;
+    this.currentSortOrder = config.sortOrder;
+    this.filterable = config.filterable;
+    this.filterPlaceholder = config.filterPlaceholder;
+    this.resizable = config.columnResizable;
+    this.visible = config.columnVisible;
+    this.showDropdownFilter = config.showDropdownFilter;
+    this.showFilterClearButton = config.showFilterClearButton;
 
     // Dropdown filter config
-    this.dropdownFilterMenuPosition = dataTableConfigService.dropdownFilterMenuPosition;
-    this.dropdownFilterSelectMode = dataTableConfigService.dropdownFilterSelectMode;
-    this.dropdownFilterSearchable = dataTableConfigService.dropdownFilterSearchable;
-    this.dropdownFilterSearchDebounceTime = dataTableConfigService.dropdownFilterSearchDebounceTime;
-    this.dropdownFilterSearchDebounce = dataTableConfigService.dropdownFilterSearchDebounce;
-    this.dropdownFilterWrapDisplaySelectLimit = dataTableConfigService.dropdownFilterWrapDisplaySelectLimit;
-    this.dropdownFilterGroupByField = dataTableConfigService.dropdownFilterGroupByField;
-    this.dropdownFilterShowSelectedOptionRemoveButton = dataTableConfigService.dropdownFilterShowSelectedOptionRemoveButton;
-    this.dropdownFilterShowClearSelectionButton = dataTableConfigService.dropdownFilterShowClearSelectionButton;
-    this.dropdownFilterMenuWidth = dataTableConfigService.dropdownFilterMenuWidth;
-    this.dropdownFilterMenuHeight = dataTableConfigService.dropdownFilterMenuHeight;
-    this.dropdownFilterMultiSelectOptionMaxWidth = dataTableConfigService.dropdownFilterMultiSelectOptionMaxWidth;
-    this.dropdownFilterCloseMenuOnSelect = dataTableConfigService.dropdownFilterCloseMenuOnSelect;
-    this.dropdownFilterDynamicDimensionCalculation = dataTableConfigService.dropdownFilterDynamicDimensionCalculation;
-    this.dropdownFilterDynamicWidthRatio = dataTableConfigService.dropdownFilterDynamicWidthRatio;
-    this.dropdownFilterDynamicHeightRatio = dataTableConfigService.dropdownFilterDynamicHeightRatio;
+    this.dropdownFilterMenuPosition = config.dropdownFilterMenuPosition;
+    this.dropdownFilterSelectMode = config.dropdownFilterSelectMode;
+    this.dropdownFilterSearchable = config.dropdownFilterSearchable;
+    this.dropdownFilterSearchDebounceTime = config.dropdownFilterSearchDebounceTime;
+    this.dropdownFilterSearchDebounce = config.dropdownFilterSearchDebounce;
+    this.dropdownFilterWrapDisplaySelectLimit = config.dropdownFilterWrapDisplaySelectLimit;
+    this.dropdownFilterGroupByField = config.dropdownFilterGroupByField;
+    this.dropdownFilterShowSelectedOptionRemoveButton = config.dropdownFilterShowSelectedOptionRemoveButton;
+    this.dropdownFilterShowClearSelectionButton = config.dropdownFilterShowClearSelectionButton;
+    this.dropdownFilterMenuWidth = config.dropdownFilterMenuWidth;
+    this.dropdownFilterMenuHeight = config.dropdownFilterMenuHeight;
+    this.dropdownFilterMultiSelectOptionMaxWidth = config.dropdownFilterMultiSelectOptionMaxWidth;
+    this.dropdownFilterCloseMenuOnSelect = config.dropdownFilterCloseMenuOnSelect;
+    this.dropdownFilterDynamicDimensionCalculation = config.dropdownFilterDynamicDimensionCalculation;
+    this.dropdownFilterDynamicWidthRatio = config.dropdownFilterDynamicWidthRatio;
+    this.dropdownFilterDynamicHeightRatio = config.dropdownFilterDynamicHeightRatio;
+    this.dropdownFilterDisabledTrackBy = config.dropdownFilterDisabledTrackBy;
+    this.dropdownFilterSelectTrackBy = config.dropdownFilterSelectTrackBy;
+    this.dropdownFilterDisplayTrackBy = config.dropdownFilterDisplayTrackBy;
+  }
+
+  public getFilterValue(): string|string[] {
+    if (this.showDropdownFilter) {
+      if (this.dropdownFilterSelectMode === 'multi') {
+        return this.filter && this.filter.map(value => get(value, this.dropdownFilterSelectTrackBy));
+      } else {
+        return this.filter && get(this.filter, this.dropdownFilterSelectTrackBy); // fix this
+      }
+    } else {
+      return this.filter;
+    }
   }
 
   /**
@@ -394,17 +439,17 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
    * Component initialize lifecycle event handler.
    */
   public ngOnInit(): void {
-    if (!this.cssClass && this.field) {
-      if (/^[a-zA-Z0-9_]+$/.test(this.field)) {
-        this.cssClass = 'column-' + this.field;
+    if (!this.cssClass && this.displayTrackBy) {
+      if (/^[a-zA-Z0-9_]+$/.test(this.displayTrackBy)) {
+        this.cssClass = 'column-' + this.displayTrackBy;
       } else {
-        this.cssClass = 'column-' + this.field.replace(/[^a-zA-Z0-9_]/g, '');
+        this.cssClass = 'column-' + this.displayTrackBy.replace(/[^a-zA-Z0-9_]/g, '');
       }
     }
 
     this.eventStateService.columnBind.emit(this);
 
-    if (this.dataTableConfigService.multiColumnSortable && this.sortable) {
+    if (this.config.multiColumnSortable && this.sortable) {
       if (this.sortOrder === '') {
         if (this.sortPriority !== undefined) {
           throw Error('[sortPriority] should be ignored when multi column sorting is enabled with natural sort order.');

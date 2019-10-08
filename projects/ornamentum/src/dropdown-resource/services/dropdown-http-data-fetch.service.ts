@@ -38,9 +38,9 @@ export class DropdownHttpDataFetchService<T> {
           queryParams = queryParams.set('offset', String(params.offset));
         }
 
-        if (params.filter && params.filter.value) {
-          queryParams = queryParams.set('field', params.filter.key);
-          queryParams = queryParams.set('filter', params.filter.value);
+        if (params.filter) {
+          queryParams = queryParams.set('field', params.displayTrackBy);
+          queryParams = queryParams.set('filter', params.filter);
         }
 
         requestOptions.options.params = queryParams;

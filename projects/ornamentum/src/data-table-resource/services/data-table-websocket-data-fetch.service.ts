@@ -1,17 +1,21 @@
-import { Subscription, Subject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { webSocket, WebSocketSubject, WebSocketSubjectConfig } from 'rxjs/webSocket';
+import { filter, map, take } from 'rxjs/operators';
 
 import { DataTableRequestParams } from '../../data-table/models/data-table-request-params.model';
 import { DataTableQueryResult } from '../../data-table/models/data-table-query-result.model';
 import { DataTableDataBindCallback } from '../../data-table/models/data-table-data-bind-callback.model';
+import { DataTablesSocketPayload } from '../models/data-table-socket-payload.model';
+import { DataTableFilterValueExtractCallback } from '../../data-table/models/data-table-filter-value-extract-callback.model';
+import { DataTableSocketFilterOptions } from '../models/data-table-socket-filter-options.model';
+import { DropdownQueryResult } from '../../dropdown/models/dropdown-query-result.model';
+import { DropdownRequestParams } from '../../dropdown/models/dropdown-request-params.model';
 
 /**
  * Data table web socket data fetch service.
  */
-export class DataTableWebsocketDataFetchService<T> {
-  private socket: WebSocketSubject<DataTableQueryResult<T>>;
-  private subject: Subject<DataTableQueryResult<T>>;
-  private socketSubscription: Subscription;
+export class DataTableWebsocketDataFetchService {
+  private socket: WebSocketSubject<DataTablesSocketPayload>;
 
   constructor() {}
 
@@ -19,15 +23,14 @@ export class DataTableWebsocketDataFetchService<T> {
    * Initialize web socket connection.
    * @param config Socket configuration parameters.
    */
-  public init(config?: WebSocketSubjectConfig<DataTableQueryResult<T>>): void {
-    this.socket = webSocket<any>(config);
-    this.subject = new Subject<DataTableQueryResult<T>>();
+  public init(config?: WebSocketSubjectConfig<DataTablesSocketPayload>): void {
+    this.socket = webSocket(config);
   }
 
   /**
-   * Get socket stream reference.
+   * Get source socket stream reference.
    */
-  public get socketStream(): WebSocketSubject<DataTableQueryResult<T>> {
+  public get socketStream(): WebSocketSubject<DataTablesSocketPayload> {
     return this.socket;
   }
 
@@ -37,28 +40,86 @@ export class DataTableWebsocketDataFetchService<T> {
    * @param mapper Response data mapper callback. map source stream format to data table expected stream or apply additional formatting.
    * @return Data table bind event handler.
    */
-  public onDataBind(mapper?: <Q>(source: Observable<Q>) => Observable<DataTableQueryResult<T>>): DataTableDataBindCallback<T> {
+  public onDataBind<T>(mapper?: <Q>(source: Observable<Q>) => Observable<DataTableQueryResult<T>>): DataTableDataBindCallback<T> {
     if (!this.socket) {
       throw Error('Initialize socket data source before data bind.');
     }
 
-    this.socketSubscription = this.socket.subscribe(this.subject);
+    return (params: DataTableRequestParams): Observable<DataTableQueryResult<T>> => {
+      const dataStream = this.socket.pipe(
+        filter((event: DataTablesSocketPayload) => {
+          return event.type === 'data';
+        }),
+        map((result: DataTablesSocketPayload) => {
+          return result.payload as DataTableQueryResult<T>;
+        })
+      );
 
-    return (params?: DataTableRequestParams): Observable<DataTableQueryResult<T>> => {
-      if (params) {
-        this.socket.next({
-          type: 'data-fetch',
+      this.socket.next({
+        type: 'data-query',
+        payload: {
+          ...params
+        }
+      });
+
+      if (mapper) {
+        return mapper(dataStream);
+      }
+
+      return dataStream;
+    };
+  }
+
+  /**
+   * Filter value extract event handler.
+   *  Must call init prior to calling this function.
+   * @param mapper Response data mapper callback. map source stream format to data table filter options
+   * expected stream or apply additional formatting.
+   */
+  public onFilterValueExtract<R>(mapper?: <Q>(response: Observable<Q>) => Observable<DropdownQueryResult<R>>)
+    : DataTableFilterValueExtractCallback<R> {
+    if (!this.socket) {
+      throw Error('Initialize socket data source before data bind.');
+    }
+
+    const sourceStream = this.socket.pipe(
+      filter((event: DataTablesSocketPayload) => {
+        return event.type === 'filter-options';
+      }),
+      map((result: DataTablesSocketPayload) => {
+        return result.payload;
+      })
+    );
+
+    return (params: DropdownRequestParams): Observable<DropdownQueryResult<R>> => {
+      const timestamp = Date.now();
+
+      const filteredStream = sourceStream.pipe(
+        filter((filterData: DataTableSocketFilterOptions) => {
+          return filterData.id === timestamp;
+        }),
+        take(1),
+        map((filterData: DataTableSocketFilterOptions) => {
+          return filterData.data;
+        })
+      );
+
+      this.socket.next({
+        type: 'filter-options-query',
+        payload: {
+          id: timestamp,
+          field: params.selectTrackBy,
           offset: params.offset,
           limit: params.limit,
-          fields: params.fields
-        } as any);
-
-        if (mapper) {
-          return mapper(this.subject);
+          filter: params.filter
         }
+      });
 
-        return this.subject;
+      if (mapper) {
+        return mapper(filteredStream);
       }
+
+      return filteredStream;
     };
   }
 
@@ -68,14 +129,6 @@ export class DataTableWebsocketDataFetchService<T> {
   public dispose(): void {
     if (this.socket) {
       this.socket.complete();
-    }
-
-    if (this.socketSubscription) {
-      this.socketSubscription.unsubscribe();
-    }
-
-    if (this.subject) {
-      this.subject.unsubscribe();
     }
   }
 }

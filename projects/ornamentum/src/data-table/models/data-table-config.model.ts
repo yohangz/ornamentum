@@ -335,4 +335,22 @@ export interface DataTableConfig {
    * Dynamic dropdown view height ratio; Used for dynamic dimension calculation.
    */
   dropdownFilterDynamicHeightRatio?: number;
+
+  /**
+   * Dropdown filter Set select option track by field path which is used to uniquely identify options for selection tracking.
+   * This field support object paths expressions 'root[0].nest'.
+   */
+  dropdownFilterSelectTrackBy?: string;
+
+  /**
+   * Dropdown filter display value track by field path which is used to extract dropdown option display value.
+   * This field support object paths expressions 'root[0].nest'.
+   */
+  dropdownFilterDisplayTrackBy?: string;
+
+  /**
+   * Dropdown filter option disable state field path which is used to disabled state dropdown options.
+   * This field support object paths expressions 'root[0].nest'.
+   */
+  dropdownFilterDisabledTrackBy?: string;
 }

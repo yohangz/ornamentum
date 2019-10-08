@@ -92,10 +92,10 @@
     <li>
       Service will receive data fetch request messages with <a rel="noopener" target="_blank"
                                                                href="https://ornamentum.app/api-docs/interfaces/DropdownRequestParams.html">DropdownRequestParams</a>
-      object containing request parameters filtering and any dynamic operation which require data re-fetch.
+      object containing request parameters upon filtering, scroll to fetch data and any dynamic operation which require data re-fetch.
     </li>
     <li>
-      Service should respond follow <a rel="noopener" target="_blank"
+      Service response should follow <a rel="noopener" target="_blank"
                                        href="https://ornamentum.app/api-docs/interfaces/DropdownQueryResult.html">DropdownQueryResult&lt;T&gt;</a>
       schema. However, you can pass a custom response mapper callback function to <a rel="noopener" target="_blank"
                                                                                      href="https://ornamentum.app/api-docs/classes/DropdownWebsocketDataFetchService.html#onDataBind">onDataBind</a>
@@ -109,8 +109,8 @@
 
   <p>
     Server side and client side data binding can be implemented via a custom data provider as Ornamentum data sources
-    are fully decoupled from component logic. Please refer <a
-    [routerLink]="['/feature/dropdown/data-binding/custom-provider']">Custom Data Provider</a> for more
+    are fully decoupled from component logic. Please refer
+    <a [routerLink]="['/feature/dropdown/data-binding/custom-provider']">Custom Data Provider</a> for more
     information.
   </p>
 
@@ -118,6 +118,7 @@
   <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
   <a [routerLink]="['/feature/dropdown/data-binding/client-side/stream']">Client Side Stream Data Binding</a><br/>
   <a [routerLink]="['/feature/dropdown/data-binding/server-side/basic']">Server Side Basic Data Binding</a><br/>
+  <a [routerLink]="['/feature/dropdown/data-binding/custom-provider']">Custom Data Provider</a><br/>
   <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html">API Doc for Server Side Web Socket
     Data Binding</a>
 </div>

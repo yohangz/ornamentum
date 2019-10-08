@@ -5,8 +5,8 @@
 <th class="ng-data-table-select-column-header" *ngIf="config.showRowSelectCheckboxColumn">
   <div class="ng-data-table-checkbox-container" *ngIf="showAllRowSelectCheckbox">
     <input class="ng-data-table-checkbox-input" type="checkbox"
-           [id]="dataStateService.getUniqueId('rsa', 0)" [(ngModel)]="allRowSelected"/>
-    <label [for]="dataStateService.getUniqueId('rsa', 0)"></label>
+           [id]="rowSelectAllId" [(ngModel)]="allRowSelected"/>
+    <label [for]="rowSelectAllId"></label>
   </div>
 </th>
 <ng-container *ngFor="let column of columns">

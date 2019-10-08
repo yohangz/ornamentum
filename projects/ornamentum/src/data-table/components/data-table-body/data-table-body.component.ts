@@ -285,7 +285,7 @@ export class DataTableBodyComponent {
    * @param column Data table column component reference.
    */
   public getFieldValue(row: DataTableRow<any>, column: DataTableColumnComponent) {
-    return get(row.item, column.field);
+    return get(row.item, column.displayTrackBy);
   }
 
   /**

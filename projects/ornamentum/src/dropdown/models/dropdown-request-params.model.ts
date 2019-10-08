@@ -1,5 +1,3 @@
-import { DropdownFilter } from './dropdown-filter.model';
-
 /**
  * Dropdown data requesting parameters model.
  */
@@ -10,9 +8,24 @@ export interface DropdownRequestParams {
   hardReload: boolean;
 
   /**
+   * Display track by field path.
+   */
+  displayTrackBy: string;
+
+  /**
+   * Select track by field path.
+   */
+  selectTrackBy: string;
+
+  /**
+   * Disabled track by field path.
+   */
+  disabledTrackBy: string;
+
+  /**
    * Filter text.
    */
-  filter?: DropdownFilter;
+  filter?: string;
 
   /**
    * Offset value (Start index).

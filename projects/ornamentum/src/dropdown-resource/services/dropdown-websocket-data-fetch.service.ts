@@ -1,17 +1,17 @@
-import { Subscription, Subject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { webSocket, WebSocketSubject, WebSocketSubjectConfig } from 'rxjs/webSocket';
+import { filter, map } from 'rxjs/operators';
 
 import { DropdownDataBindCallback } from '../../dropdown/models/dropdown-data-bind-callback.model';
 import { DropdownQueryResult } from '../../dropdown/models/dropdown-query-result.model';
 import { DropdownRequestParams } from '../../dropdown/models/dropdown-request-params.model';
+import { DropdownSocketPayload } from '../models/dropdown-socket-payload.model';
 
 /**
  * Dropdown websocket data fetch service.
  */
 export class DropdownWebsocketDataFetchService<T> {
-  private socket: WebSocketSubject<DropdownQueryResult<T>>;
-  private subject: Subject<DropdownQueryResult<T>>;
-  private socketSubscription: Subscription;
+  private socket: WebSocketSubject<DropdownSocketPayload>;
 
   constructor() {}
 
@@ -19,15 +19,14 @@ export class DropdownWebsocketDataFetchService<T> {
    * Initialize websocket connection.
    * @param config Websocket configuration object reference.
    */
-  public init(config?: WebSocketSubjectConfig<DropdownQueryResult<T>>): void {
-    this.socket = webSocket<any>(config);
-    this.subject = new Subject<DropdownQueryResult<T>>();
+  public init(config?: WebSocketSubjectConfig<DropdownSocketPayload>): void {
+    this.socket = webSocket(config);
   }
 
   /**
    * Get socket stream reference.
    */
-  public get socketStream(): WebSocketSubject<DropdownQueryResult<T>> {
+  public get socketStream(): WebSocketSubject<DropdownSocketPayload> {
     return this.socket;
   }
 
@@ -42,22 +41,30 @@ export class DropdownWebsocketDataFetchService<T> {
       throw Error('Initialize socket data source before data bind.');
     }
 
-    this.socketSubscription = this.socket.subscribe(this.subject);
-
     return (params?: DropdownRequestParams): Observable<DropdownQueryResult<T>> => {
       if (params) {
+        const dataStream = this.socket.pipe(
+          filter((event: DropdownSocketPayload) => {
+            return event.type === 'data';
+          }),
+          map((result: DropdownSocketPayload) => {
+            return result.payload as DropdownQueryResult<T>;
+          })
+        );
+
+
         this.socket.next({
           type: 'data-fetch',
-          filter: params.filter,
-          offset: params.offset,
-          limit: params.limit
+          payload: {
+            ...params
+          }
         } as any);
 
         if (mapper) {
-          return mapper(this.subject);
+          return mapper(dataStream);
         }
 
-        return this.subject;
+        return dataStream;
       }
     };
   }
@@ -68,14 +75,6 @@ export class DropdownWebsocketDataFetchService<T> {
   public dispose(): void {
     if (this.socket) {
       this.socket.complete();
-    }
-
-    if (this.socketSubscription) {
-      this.socketSubscription.unsubscribe();
-    }
-
-    if (this.subject) {
-      this.subject.unsubscribe();
     }
   }
 }

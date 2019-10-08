@@ -20,7 +20,7 @@ export interface DataTableRequestParams {
   limit?: number;
 
   /**
-   * Sort columns.
+   * Sort and filter columns.
    */
   fields?: DataTableQueryField[];
 }

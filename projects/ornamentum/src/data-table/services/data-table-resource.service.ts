@@ -1,24 +1,27 @@
 import { Injectable } from '@angular/core';
 
 import { Observable, ReplaySubject, Subscription, of } from 'rxjs';
-import { switchMap } from 'rxjs/operators';
+import { switchMap, map, take } from 'rxjs/operators';
 
 import { orderBy, get } from '../../utility/services/object-utility.class';
 
 import { DataTableRequestParams } from '../models/data-table-request-params.model';
 import { DataTableQueryResult } from '../models/data-table-query-result.model';
-import { DataTableFilterOption } from '../models/data-table-filter-option.model';
 import { DataTableQueryField } from '../models/data-table-query-field.model';
-
-import { DataTableColumnComponent } from '../components/data-table-column/data-table-column.component';
+import { DropdownQueryResult } from '../../dropdown/models/dropdown-query-result.model';
+import { DropdownRequestParams } from '../../dropdown/models/dropdown-request-params.model';
+import { DataTableFilterOption } from '../models/data-table-filter-option.model';
+import { DataTableFilterFieldOptions } from '../models/data-table-filter-field-options.model';
 
 /**
  * Data table resource service; Manage data table client side data querying.
  */
 @Injectable()
 export class DataTableResourceService<T> {
-  private itemDataStream: ReplaySubject<T[]>;
-  private dataSourceSubscription: Subscription;
+  private itemDataReplayStream: ReplaySubject<T[]>;
+  private filterOptionReplayStream: ReplaySubject<DataTableFilterFieldOptions[]>;
+
+  private dataSourceReplaySubscription: Subscription;
 
   /**
    * Set data source stream to query.
@@ -27,14 +30,9 @@ export class DataTableResourceService<T> {
   public setDataSource(dataSource: Observable<T[]>): void {
     this.dispose();
 
-    if (this.itemDataStream && !this.itemDataStream.closed) {
-      this.itemDataStream.complete();
-    }
-
-    this.itemDataStream = new ReplaySubject<T[]>(1);
-    this.dataSourceSubscription = dataSource.subscribe((items: T[]) => {
-      this.itemDataStream.next(items);
-    });
+    this.itemDataReplayStream = new ReplaySubject(1);
+    this.filterOptionReplayStream = new ReplaySubject(1);
+    this.dataSourceReplaySubscription = dataSource.subscribe(this.itemDataReplayStream);
   }
 
   /**
@@ -43,7 +41,7 @@ export class DataTableResourceService<T> {
    * @return Query result stream.
    */
   public query(params: DataTableRequestParams): Observable<DataTableQueryResult<T>> {
-    return this.itemDataStream.pipe(
+    return this.itemDataReplayStream.pipe(
       switchMap((items: T[]) => {
         let itemCount = items.length;
         let result: T[] = items.slice();
@@ -52,27 +50,52 @@ export class DataTableResourceService<T> {
           const filterFields = params.fields.filter(field => field.filterable);
 
           if (filterFields.length) {
-            result = items.filter(item => {
-              return filterFields.every((filterColumn: DataTableQueryField) => {
-                if (filterColumn.filterExpression) {
-                  return filterColumn.filterExpression(item, filterColumn.field, filterColumn.filterValue);
+            const filterOptions = filterFields.filter((field: DataTableQueryField) => {
+                return Array.isArray(field.filterValue);
+              }).reduce((accOptions: DataTableFilterFieldOptions[], field: DataTableQueryField) => {
+                const uniqueOptions = result.map((item: T): DataTableFilterOption => {
+                  const value = get(item, field.displayTrackBy);
+                  return {
+                    key: value,
+                    value
+                  };
+                })
+                .filter((value: DataTableFilterOption, index, self: DataTableFilterOption[]) => {
+                  return self.findIndex(item => item.key === value.key) === index;
+                });
+
+                return [
+                  ...accOptions,
+                  {
+                    id: field.id,
+                    options: uniqueOptions
+                  }
+                ];
+              }, []);
+
+            this.filterOptionReplayStream.next(filterOptions);
+
+            result = result.filter(item => {
+              return filterFields.every((filterField: DataTableQueryField) => {
+                if (filterField.filterExpression) {
+                  return filterField.filterExpression(item, filterField.displayTrackBy, filterField.filterValue);
                 }
 
-                if (filterColumn.filterValue === undefined || filterColumn.filterValue === '') {
+                if (filterField.filterValue === undefined || filterField.filterValue === '') {
                   return true;
                 }
 
-                const fieldValue = get(item, filterColumn.field);
+                const fieldValue = get(item, filterField.displayTrackBy);
                 if (fieldValue === undefined) {
                   return true;
                 }
 
-                if (Array.isArray(filterColumn.filterValue)) {
-                  return filterColumn.filterValue.length === 0 || filterColumn.filterValue.includes(fieldValue);
+                if (Array.isArray(filterField.filterValue)) {
+                  return filterField.filterValue.length === 0 || filterField.filterValue.includes(fieldValue);
                 }
 
                 const value = String(fieldValue).toLowerCase();
-                const filterValue = String(filterColumn.filterValue).toLowerCase();
+                const filterValue = String(filterField.filterValue).toLowerCase();
                 return value.includes(filterValue);
               });
             });
@@ -93,7 +116,7 @@ export class DataTableResourceService<T> {
 
             const orderParams = orderedSortColumns.reduce((accumulator: any, column: DataTableQueryField) => {
                 if (accumulator) {
-                  accumulator.fields.push(column.field);
+                  accumulator.fields.push(column.displayTrackBy);
                   accumulator.orders.push(column.sortOrder);
                 }
 
@@ -109,18 +132,8 @@ export class DataTableResourceService<T> {
           }
         }
 
-        if (params.offset !== undefined) {
-          const offset = params.offset + 1 > result.length ? 0 : params.offset;
-
-          if (params.limit === undefined) {
-            result = result.slice(offset, result.length);
-          } else {
-            result = result.slice(offset, offset + params.limit);
-          }
-        }
-
         return of({
-          items: result,
+          items: this.sliceResults(params.offset, params.limit, result),
           count: itemCount
         });
       })
@@ -129,32 +142,31 @@ export class DataTableResourceService<T> {
 
   /**
    * Extract data table filter options.
-   * @param filterColumn Data table column component.
-   * @return Filter options collection stream.
    */
-  public extractFilterOptions(filterColumn: DataTableColumnComponent): Observable<DataTableFilterOption[]> {
-    return this.itemDataStream.pipe(
-      switchMap((items: T[]) => {
-        const filteredItems = items
-          .reduce((acc: DataTableFilterOption[], item: T, index: number): DataTableFilterOption[] => {
-            if (filterColumn.filterFieldMapper) {
-              return acc.concat(filterColumn.filterFieldMapper(item, index));
-            }
+  public extractFilterOptions(params: DropdownRequestParams): Observable<DropdownQueryResult<DataTableFilterOption>> {
+    return this.filterOptionReplayStream.pipe(
+      take(1),
+      map((fields: DataTableFilterFieldOptions[]): DropdownQueryResult<DataTableFilterOption> => {
+        const field = fields.find((filed: DataTableFilterFieldOptions) => filed.id === 'params.id');
+        if (!field) {
+          return {
+            count: 0,
+            options: []
+          };
+        }
 
-            const filterField = filterColumn.filterField || filterColumn.field;
-            const filterValue = get(item, filterField);
-            acc.push({
-              key: filterValue,
-              value: filterValue
-            });
-
-            return acc;
-          }, [])
-          .filter((value: DataTableFilterOption, index, self) => {
-            return self.findIndex(item => item.key === value.key) === index;
+        let result = field.options;
+        if (params.filter) {
+          const filterValue = String(params.filter).toLowerCase();
+          result = result.filter((value: DataTableFilterOption) => {
+            return value.value.includes(filterValue);
           });
+        }
 
-        return of(filteredItems);
+        return {
+          count: result.length,
+          options: this.sliceResults(params.offset, params.limit, result)
+        };
       })
     );
   }
@@ -163,13 +175,31 @@ export class DataTableResourceService<T> {
    * Dispose client data source streams.
    */
   public dispose(): void {
-    if (this.dataSourceSubscription) {
-      this.dataSourceSubscription.unsubscribe();
-      this.dataSourceSubscription = null;
+    if (this.dataSourceReplaySubscription) {
+      this.dataSourceReplaySubscription.unsubscribe();
     }
 
-    if (this.itemDataStream && !this.itemDataStream.closed) {
-      this.itemDataStream.complete();
+    if (this.itemDataReplayStream) {
+      this.itemDataReplayStream.complete();
+    }
+
+    if (this.filterOptionReplayStream) {
+      this.filterOptionReplayStream.complete();
+    }
+
+    this.dataSourceReplaySubscription = null;
+    this.itemDataReplayStream = null;
+  }
+
+  private sliceResults(offset: number, limit: number, result: any[]): any {
+    if (offset !== undefined) {
+      const targetOffset = offset + 1 > result.length ? 0 : offset;
+
+      if (limit === undefined) {
+        return result.slice(targetOffset, result.length);
+      } else {
+        return result.slice(targetOffset, targetOffset + limit);
+      }
     }
   }
 }

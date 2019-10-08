@@ -23,7 +23,7 @@ export class DataTableDataStateService {
   public currentSortPriority = 0;
 
   public relativeParentElement: HTMLElement;
-  public onFilterValueExtract: DataTableFilterValueExtractCallback;
+  public onFilterValueExtract: DataTableFilterValueExtractCallback<any>;
   public onDataBind: DataTableDataBindCallback<any>;
   public onDynamicRowSpanExtract: DataTableDynamicRowSpanExtractorCallback<any> = () => 1;
 

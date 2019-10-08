@@ -11,4 +11,9 @@ export interface DataTableFilterOption {
    * Display filter value.
    */
   value: string;
+
+  /**
+   * Disabled state.
+   */
+  disabled?: boolean;
 }

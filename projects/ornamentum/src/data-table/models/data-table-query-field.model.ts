@@ -6,9 +6,27 @@ import { DataTableFilterExpressionCallback } from './data-table-filter-expressio
  */
 export interface DataTableQueryField {
   /**
-   * Target column filed name.
+   * Column identifier.
    */
-  field: string;
+  id: string;
+
+  /**
+   * Target column display track by path.
+   * This field support object paths expressions 'root[0].nest'.
+   */
+  displayTrackBy: string;
+
+  /**
+   * Target column sorting track by path.
+   * This field support object paths expressions 'root[0].nest'.
+   */
+  sortTrackBy: string;
+
+  /**
+   * Target column filter track by path.
+   * This field support object paths expressions 'root[0].nest'.
+   */
+  filterTrackBy: string;
 
   /**
    * Sortable state.
@@ -33,7 +51,7 @@ export interface DataTableQueryField {
   /**
    * Filter value.
    */
-  filterValue: string | string[] | any;
+  filterValue: string | string[];
 
   /**
    * Filter expression.

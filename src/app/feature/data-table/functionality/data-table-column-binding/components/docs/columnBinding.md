@@ -2,6 +2,6 @@
     ... >
     <ng-data-table-column
        ...
-      [field]="'sampleField'">
+      [displayTrackBy]="'sampleField'">
     </ng-data-table-column>
   </ng-data-table>

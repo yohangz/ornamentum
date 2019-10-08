@@ -90,6 +90,10 @@ export class DataTableConfigService implements DataTableConfig {
   public dropdownFilterDynamicDimensionCalculation = true;
   public dropdownFilterDynamicWidthRatio = 1.25;
   public dropdownFilterDynamicHeightRatio = 1.25;
+  public dropdownFilterSelectTrackBy = 'key';
+  public dropdownFilterDisplayTrackBy = 'value';
+  public dropdownFilterDisabledTrackBy = 'disabled';
+
 
   constructor(@Inject(DATA_TABLE_CONFIG) private dataTableConfig: DataTableConfig) {
     if (dataTableConfig) {

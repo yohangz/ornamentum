@@ -34,8 +34,6 @@ import { DataTableTranslations } from '../../models/data-table-translations.mode
 import { DataTableDynamicRowSpanExtractorCallback } from '../../models/data-table-group-field-extractor-callback.model';
 import { DataTableQueryResult } from '../../models/data-table-query-result.model';
 import { DataTableDataBindCallback } from '../../models/data-table-data-bind-callback.model';
-import { DataTableFilterOption } from '../../models/data-table-filter-option.model';
-import { DataTableUniqueField } from '../../models/data-table-unique-field.model';
 
 import { DataTableSelectMode } from '../../models/data-table-select-mode.model';
 import { DataTableStorageMode } from '../../models/data-table-storage-mode.model';
@@ -52,6 +50,7 @@ import { DataTablePersistenceService } from '../../services/data-table-persisten
 import { DataTableConfigService } from '../../services/data-table-config.service';
 import { DataTableScrollPositionService } from '../../services/data-table-scroll-position.service';
 import { DataTableResourceService } from '../../services/data-table-resource.service';
+import { DataTableQueryField } from '../../models/data-table-query-field.model';
 
 /**
  * Data table component; Data table entry component.
@@ -208,7 +207,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
    * explicit data bind functionality is used with onDataBind callback.
    */
   @Input()
-  public set onFilterValueExtract(value: DataTableFilterValueExtractCallback) {
+  public set onFilterValueExtract(value: DataTableFilterValueExtractCallback<any>) {
     this.dataStateService.onFilterValueExtract = value;
   }
 
@@ -644,7 +643,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
     this.setDataRows(queryResult.items);
 
     if (this.dataStateService.heardReload) {
-      this.eventStateService.fetchFilterOptionsStream.next(false);
+      this.eventStateService.fetchFilterOptionsStream.next();
       this.dataStateService.heardReload = false;
     }
 
@@ -684,6 +683,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
       }
 
       return {
+        id: this.dataStateService.getUniqueId('dr', currentIndex),
         dataLoaded: false,
         expanded: false,
         disabled: false,
@@ -764,45 +764,20 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
     };
 
     if (this.columns) {
-      params.fields = this.columns
-        .filter(column => {
+      params.fields = this.columns.filter(column => {
           return column.sortable || column.filterable;
-        })
-        .reduce((acc: DataTableUniqueField[], column: DataTableColumnComponent) => {
-          if (column.sortField || column.filterField) {
-            acc.push({
-              field: column.sortField || column.filterField,
-              column
-            });
-          } else {
-            acc.push({
-              field: column.field,
-              column
-            });
-          }
-
-          return acc;
-        }, [])
-        .map((uniqueField: DataTableUniqueField) => {
-          let filter;
-          if (uniqueField.column.showDropdownFilter) {
-            if (uniqueField.column.dropdownFilterSelectMode === 'multi') {
-              filter = uniqueField.column.filter && uniqueField.column.filter.map(filterValue => filterValue.key);
-            } else {
-              filter = uniqueField.column.filter && uniqueField.column.filter.key;
-            }
-          } else {
-            filter = uniqueField.column.filter;
-          }
-
+        }).map((column: DataTableColumnComponent): DataTableQueryField => {
           return {
-            field: uniqueField.field,
-            sortable: uniqueField.column.sortable,
-            sortOrder: uniqueField.column.sortOrder,
-            sortPriority: uniqueField.column.sortPriority || (uniqueField.column.sortOrder ? 1 : 0),
-            filterable: uniqueField.column.filterable,
-            filterValue: filter,
-            filterExpression: uniqueField.column.filterExpression,
+            id: column.id,
+            displayTrackBy: column.displayTrackBy,
+            sortTrackBy: column.sortTrackBy || column.displayTrackBy,
+            filterTrackBy: column.filterTrackBy || column.displayTrackBy,
+            sortable: column.sortable,
+            sortOrder: column.sortOrder,
+            sortPriority: column.sortPriority || (column.sortOrder ? 1 : 0),
+            filterable: column.filterable,
+            filterValue: column.getFilterValue(),
+            filterExpression: column.filterExpression,
           };
         });
     }
@@ -826,20 +801,23 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
     if (this.config.persistTableState) {
       const dataTableState = this.dataTableStateService.getState(this.dataStateService.id);
       if (dataTableState) {
-        this.columns.forEach(column => {
+        this.columns.forEach((column: DataTableColumnComponent, index: number) => {
+          column.id = this.dataStateService.getUniqueId('col', index);
+          column.selectorId = this.dataStateService.getUniqueId('cs', index);
+
           const field = dataTableState.fields.find(col => {
-            return col.field === column.field;
+            return col.displayTrackBy === column.displayTrackBy;
           });
 
           if (field) {
             if (column.filterable && field.filterable) {
               if (column.showDropdownFilter) {
                 if (field.filterValue) {
-                  if (column.dropdownFilterSelectMode === 'multi') {
-                    column.filter = field.filterValue.map((filterValue) => {
+                  if (Array.isArray(field.filterValue)) {
+                    column.filter = field.filterValue.map((value) => {
                       return {
-                        key: filterValue,
-                        value: filterValue
+                        key: value,
+                        value
                       };
                     });
                   } else {
@@ -883,7 +861,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
       this.eventStateService.dataFetchStream.next(DataFetchMode.SOFT_LOAD);
     }
 
-    this.eventStateService.fetchFilterOptionsStream.next(true);
+    this.eventStateService.fetchFilterOptionsStream.next();
     this.eventStateService.initStream.emit(this);
 
     if (this.config.loadOnScroll) {
@@ -948,9 +926,9 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
       return this.dataTableResourceService.query(params);
     };
 
-    this.onFilterValueExtract = (column: DataTableColumnComponent): Observable<DataTableFilterOption[]> => {
-      return this.dataTableResourceService.extractFilterOptions(column);
-    };
+    if (!this.onFilterValueExtract) {
+      this.onFilterValueExtract = this.dataTableResourceService.extractFilterOptions.bind(this.dataTableResourceService);
+    }
   }
 
   /**

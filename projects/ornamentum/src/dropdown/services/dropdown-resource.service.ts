@@ -23,14 +23,8 @@ export class DropdownResourceService<T> {
   public setDataSource(dataSource: Observable<T[]>): void {
     this.dispose();
 
-    if (this.optionDataStream && !this.optionDataStream.closed) {
-      this.optionDataStream.complete();
-    }
-
     this.optionDataStream = new ReplaySubject<T[]>(1);
-    this.dataSourceSubscription = dataSource.subscribe((options: T[]) => {
-      this.optionDataStream.next(options);
-    });
+    this.dataSourceSubscription = dataSource.subscribe(this.optionDataStream);
   }
 
   /**
@@ -42,11 +36,11 @@ export class DropdownResourceService<T> {
       switchMap((options: T[]) => {
         let result: T[] = options.slice();
 
-        if (params.filter && params.filter.value) {
-          const value = String(params.filter.value).toLowerCase();
+        if (params.filter) {
+          const filterValue = String(params.filter).toLowerCase();
           result = result.filter((option: T) => {
-            const key = String(get(option, params.filter.key)).toLowerCase();
-            return key.includes(value);
+            const optionValue = String(get(option, params.displayTrackBy)).toLowerCase();
+            return optionValue.includes(filterValue);
           });
         }
 
@@ -74,11 +68,13 @@ export class DropdownResourceService<T> {
   public dispose(): void {
     if (this.dataSourceSubscription) {
       this.dataSourceSubscription.unsubscribe();
-      this.dataSourceSubscription = null;
     }
 
     if (this.optionDataStream && !this.optionDataStream.closed) {
       this.optionDataStream.complete();
     }
+
+    this.dataSourceSubscription = null;
+    this.optionDataStream = null;
   }
 }

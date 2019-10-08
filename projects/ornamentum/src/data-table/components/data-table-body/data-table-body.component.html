@@ -1,4 +1,4 @@
-<ng-container *ngFor="let row of dataStateService.dataRows; trackBy: dataRowTrackBy; let i = index;">
+<ng-container *ngFor="let row of dataStateService.dataRows; trackBy: dataRowTrackBy;">
   <ng-container *ngFor="let ignored of getRowSpanCollection(row); let rowSpanIndex = index; let rowSpanCount = count">
     <tr
       class="ng-data-table-row"
@@ -48,12 +48,12 @@
       >
         <div class="ng-data-table-checkbox-container ng-ignore-propagation">
           <input class="ng-data-table-checkbox-input ng-ignore-propagation" type="checkbox"
-            [id]="dataStateService.getUniqueId('dr', i)"
+            [id]="row.id"
             [(ngModel)]="row.selected"
             (click)="onRowSelectClick(row, $event)"
             (change)="onRowSelectChange(row)"
           />
-          <label class="ng-ignore-propagation" [for]="dataStateService.getUniqueId('dr', i)"></label>
+          <label class="ng-ignore-propagation" [for]="row.id"></label>
         </div>
       </td>
       <ng-container *ngFor="let column of columns">

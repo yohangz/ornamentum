@@ -734,7 +734,10 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     }
 
     const requestParams: DropdownRequestParams = {
-      hardReload
+      hardReload,
+      disabledTrackBy: this.config.displayTrackBy,
+      selectTrackBy: this.config.selectTrackBy,
+      displayTrackBy: this.config.displayTrackBy
     };
 
     if (this.config.loadOnScroll) {
@@ -743,10 +746,7 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
     }
 
     if (this.config.filterable) {
-      requestParams.filter = {
-        key: this.config.displayTrackBy,
-        value: this.dataStateService.filterText
-      };
+      requestParams.filter =  this.dataStateService.filterText;
     }
 
     return this.dataStateService.onDataBind(requestParams);

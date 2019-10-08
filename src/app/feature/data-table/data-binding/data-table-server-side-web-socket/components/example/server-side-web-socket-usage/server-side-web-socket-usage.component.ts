@@ -6,7 +6,9 @@ import {
   GlobalRefService,
   DataTableWebsocketDataFetchService,
   DataTableDataBindCallback,
-  DataTableWebsocketResourceFactoryService
+  DataTableWebsocketResourceFactoryService,
+  DataTableFilterValueExtractCallback,
+  DataTableFilterOption
 } from 'ornamentum';
 
 import { ExampleData } from 'helper-models';
@@ -20,13 +22,14 @@ import { ExampleData } from 'helper-models';
 })
 export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
   public onDataBind: DataTableDataBindCallback<ExampleData>;
+  public onFilterValueExtract: DataTableFilterValueExtractCallback<DataTableFilterOption>;
   public intervalSubscription: Subscription;
 
-  private webSocketProvider: DataTableWebsocketDataFetchService<ExampleData>;
+  private webSocketProvider: DataTableWebsocketDataFetchService;
 
   constructor(private globalRefService: GlobalRefService,
               private resourceFactory: DataTableWebsocketResourceFactoryService) {
-    this.webSocketProvider = resourceFactory.getResourceProvider<ExampleData>();
+    this.webSocketProvider = resourceFactory.getResourceProvider();
   }
 
   /**
@@ -40,7 +43,8 @@ export class ServerSideWebSocketUsageComponent implements OnInit, OnDestroy {
         url: `wss://${window.location.hostname}` // web socket endpoint
       });
 
-      this.onDataBind = this.webSocketProvider.onDataBind();
+      this.onDataBind = this.webSocketProvider.onDataBind<ExampleData>();
+      this.onFilterValueExtract = this.webSocketProvider.onFilterValueExtract();
 
       // Keep the socket connection alive with a heart beat ping
       this.intervalSubscription = interval(40000).subscribe(() => {

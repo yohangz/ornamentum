@@ -27,9 +27,9 @@
     </div>
     <ng-dropdown
       *ngIf="column.showDropdownFilter"
-      [id]="dataStateService.getUniqueId('col', index)"
+      [id]="column.id"
       [relativeParentElement]="dataStateService.relativeParentElement"
-      [dataSource]="filterDataStream"
+      [onDataBind]="filterDataBind"
       [menuPosition]="column.dropdownFilterMenuPosition"
       [filterable]="column.dropdownFilterSearchable"
       [filterDebounceTime]="column.dropdownFilterSearchDebounceTime"
@@ -50,6 +50,9 @@
       [loadingSpinnerTemplateRef]="column.dropdownFilterLoadingSpinnerTemplate"
       [optionTemplateRef]="column.dropdownFilterOptionTemplate"
       [optionGroupHeaderTemplateRef]="column.dropdownFilterOptionGroupHeaderTemplate"
+      [disabledTrackBy]="column.dropdownFilterDisabledTrackBy"
+      [displayTrackBy]="column.dropdownFilterDisplayTrackBy"
+      [selectTrackBy]="column.dropdownFilterSelectTrackBy"
       [(ngModel)]="column.filter"
       (selectChange)="filter.emit()"
       (init)="onFilterDropdownInit($event)"

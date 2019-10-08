@@ -9,14 +9,14 @@
   [multiColumnSortable]="true"
   [dataSource]="dataSource">
   <ng-data-table-column
-    [field]="'id'"
+    [displayTrackBy]="'id'"
     [title]="'ID'"
     [sortable]="true"
     [filterable]="true"
     [width]="90">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'orderMethodType'"
+    [displayTrackBy]="'orderMethodType'"
     [title]="'Order Method Type'"
     [sortable]="true"
     [filterable]="true"
@@ -24,7 +24,7 @@
     [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'retailerType'"
+    [displayTrackBy]="'retailerType'"
     [title]="'Retailer Type'"
     [showDropdownFilter]="true"
     [sortable]="true"
@@ -32,14 +32,14 @@
     [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'productLine'"
+    [displayTrackBy]="'productLine'"
     [title]="'Product Line'"
     [sortable]="true"
     [filterable]="true"
     [width]="180">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'productType'"
+    [displayTrackBy]="'productType'"
     [title]="'Product Type'"
     [sortable]="true"
     [filterable]="true"
@@ -47,21 +47,21 @@
     [width]="160">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'revenue'"
+    [displayTrackBy]="'revenue'"
     [title]="'Revenue'"
     [sortable]="true"
     [filterable]="true"
     [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'quantity'"
+    [displayTrackBy]="'quantity'"
     [title]="'Quantity'"
     [sortable]="true"
     [filterable]="true"
     [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'grossMargin'"
+    [displayTrackBy]="'grossMargin'"
     [title]="'Gross Margin'"
     [sortable]="true"
     [filterable]="true"

@@ -6,32 +6,32 @@
   [showColumnSelector]="true"
   [onDynamicRowSpanExtract]="onDynamicRowSpanExtract">
   <ng-data-table-column
-    [field]="'id'"
+    [displayTrackBy]="'id'"
     [title]="'ID'"
     [width]="90">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'orderMethodType'"
+    [displayTrackBy]="'orderMethodType'"
     [title]="'Order Method Type'"
     [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'retailerType'"
+    [displayTrackBy]="'retailerType'"
     [title]="'Retailer Type'"
     [width]="120">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'productLine'"
+    [displayTrackBy]="'productLine'"
     [title]="'Product Line'"
     [width]="180">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'productType'"
+    [displayTrackBy]="'productType'"
     [title]="'Product Type'"
     [width]="160">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'availableStores'"
+    [displayTrackBy]="'availableStores'"
     [title]="'Available Stores'"
     [width]="120">
     <ng-template #ngDataTableCell let-row="row" let-spanIndex="spanIndex">
@@ -41,12 +41,12 @@
     </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'revenue'"
+    [displayTrackBy]="'revenue'"
     [title]="'Revenue'"
     [width]="150">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'quantity'"
+    [displayTrackBy]="'quantity'"
     [title]="'Quantity'"
     [width]="120">
   </ng-data-table-column>

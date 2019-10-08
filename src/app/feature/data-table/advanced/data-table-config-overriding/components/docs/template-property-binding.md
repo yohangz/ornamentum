@@ -23,7 +23,7 @@
    [selectMode]="'multi'">
    <ng-data-table-column
      // Column level property binding goes here 
-     [field]="'key'"
+     [displayTrackBy]="'key'"
      [title]="'Key'"
      [showInColumnSelector]="false"
      [sortable]="true"

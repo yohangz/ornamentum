@@ -3,6 +3,10 @@
  */
 export interface DataTableRow<T> {
   /**
+   * Data row identifier.
+   */
+  id: string;
+  /**
    * Source data item reference.
    */
   item: T;

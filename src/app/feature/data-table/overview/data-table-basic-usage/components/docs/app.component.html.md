@@ -6,18 +6,18 @@
   [showIndexColumn]="true"
   [indexColumnWidth]="10">
   <ng-data-table-column
-    [field]="'id'"
+    [displayTrackBy]="'id'"
     [title]="'ID'"
     [width]="20">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'orderMethodType'"
+    [displayTrackBy]="'orderMethodType'"
     [title]="'Order Method Type'"
     [sortable]="true"
     [width]="130">
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'grossMargin'"
+    [displayTrackBy]="'grossMargin'"
     [title]="'Gross Margin'"
     [filterable]="true"
     [width]="100">

@@ -8,12 +8,12 @@
   [minContentWidth]="1280"
   [onDataBind]="onDataBind">
   <ng-data-table-column
-    [field]="'id'"
+    [displayTrackBy]="'id'"
     [title]="'ID'"
     [width]="90">
   </ng-data-table-column>
   <ng-data-table-column
-  [field]="'name'"
+  [displayTrackBy]="'name'"
   [title]="'Name'"
   [width]="200">
   <ng-template #ngDataTableCell let-row="row">
@@ -23,7 +23,7 @@
   </ng-template>
 </ng-data-table-column>
   <ng-data-table-column
-    [field]="'login'"
+    [displayTrackBy]="'login'"
     [title]="'Avatar'"
     [width]="200">
     <ng-template #ngDataTableCell let-row="row">
@@ -34,7 +34,7 @@
     </ng-template>
   </ng-data-table-column>
   <ng-data-table-column
-    [field]="'html_url'"
+    [displayTrackBy]="'html_url'"
     [title]="'Git Repository URL'"
     [width]="200">
     <ng-template #ngDataTableCell let-row="row">

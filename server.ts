@@ -51,16 +51,16 @@ app.set('views', join(DIST_FOLDER, 'browser'));
 
 // Example data route
 app.get('/api/data', (req: Request, res: Response) => {
-  const { offset = 0, limit = 10, ...fields } = req.query;
+  const { offset, limit, ...fields } = req.query;
   const parsedOffset = Number(offset);
   const parsedLimit = Number(limit);
   res.status(200).json(queryDataByFieldExpression(data, parsedOffset || 0, parsedLimit || 10, fields));
 });
 
 // Column filtering options
-app.get('/api/data/filter', (req: Request, res: Response) => {
-  const { ...field } = req.query;
-  res.status(200).json(queryDropdownFilterDataByField(data, field));
+app.get('/api/data/filter/options', (req: Request, res: Response) => {
+  const { offset, limit, field, filter } = req.query;
+  res.status(200).json(queryDropdownFilterDataByField(data, offset, limit, field, filter));
 });
 
 // Server static files from /browser
@@ -81,9 +81,29 @@ wss.on('connection', (ws: WSS) => {
   try {
     ws.on('message', (message: string) => {
       const query = JSON.parse(message);
-      if (query && query['type'] === 'data-fetch') {
-        const result = queryDataByFieldCollection(data, query['offset'] || 0, query['limit'] || 10, query['fields'] || query['filter']);
-        ws.send(JSON.stringify(result));
+      if (!query) {
+        return;
+      }
+      const { type } = query;
+      if (type === 'data-query') {
+        const { offset, limit, fields, filter } = query;
+        const result = queryDataByFieldCollection(data, offset, limit, fields || filter);
+        ws.send(JSON.stringify({
+          type: 'data',
+          payload: result
+        }));
+      }
+
+      if (type === 'filter-options-query') {
+        const { offset, limit, field, id, filter } = query;
+        const result = queryDropdownFilterDataByField(data, offset, limit, field, filter);
+        ws.send(JSON.stringify({
+          type: 'filter-options',
+          payload: {
+            id,
+            data: result
+          }
+        }));
       }
     });
 

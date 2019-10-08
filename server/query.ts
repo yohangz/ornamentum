@@ -4,7 +4,22 @@ import orderBy from 'lodash/orderBy';
 
 import { DataTableQueryField, DropdownFilter } from 'ornamentum';
 
-export const queryDataByFieldExpression = (data: any[], offset: number = 0, limit: number = 10, fields: any = {}): any => {
+const sliceResults = (offset: number, limit: number, result: any[]): any => {
+  if (offset !== undefined) {
+    const targetOffset = offset + 1 > result.length ? 0 : offset;
+
+    if (limit === undefined) {
+      return result.slice(targetOffset, result.length);
+    } else {
+      return result.slice(targetOffset, targetOffset + limit);
+    }
+  }
+};
+
+export const queryDataByFieldExpression = (data: any[],
+                                           offset: number,
+                                           limit: number,
+                                           fields: any = {}): any => {
   let result = data;
 
   if ('filter' in fields && 'field' in fields) {
@@ -72,21 +87,16 @@ export const queryDataByFieldExpression = (data: any[], offset: number = 0, limi
     }
   }
 
-  const items = result.slice(offset, offset + limit);
-  const count = result.length;
-
   return {
-    items,
-    count
+    items: sliceResults(offset, limit, result),
+    count: result.length
   };
 };
 
-export const queryDataByFieldCollection = (
-  data: any[],
-  offset: number = 0,
-  limit: number = 10,
-  params: DataTableQueryField[] | DropdownFilter
-): any => {
+export const queryDataByFieldCollection = (data: any[],
+                                           offset: number,
+                                           limit: number,
+                                           params: DataTableQueryField[] | DropdownFilter): any => {
   let result = data;
 
   if (Array.isArray(params)) {
@@ -106,10 +116,10 @@ export const queryDataByFieldCollection = (
     if (filterFields.length) {
       result = data.filter(item => {
         return filterFields.every((filterColumn: DataTableQueryField) => {
-          const value = get(item, filterColumn.field);
+          const value = get(item, filterColumn.displayTrackBy);
           const fieldValue = String(value === undefined ? '' : value).toLowerCase();
 
-          return filterColumn.filterValue.some(filterItem => fieldValue.includes(filterItem));
+          return (filterColumn.filterValue as string[]).some(filterItem => fieldValue.includes(filterItem));
         });
       });
     }
@@ -129,7 +139,7 @@ export const queryDataByFieldCollection = (
       const orderData = orderedSortColumns.reduce(
         (accumulator: any, column: DataTableQueryField) => {
           if (accumulator) {
-            accumulator.fields.push(column.field);
+            accumulator.fields.push(column.displayTrackBy);
             accumulator.orders.push(column.sortOrder);
           }
 
@@ -162,19 +172,25 @@ export const queryDataByFieldCollection = (
   };
 };
 
-export const queryDropdownFilterDataByField = (data: any[], field: any = {}): any => {
+export const queryDropdownFilterDataByField = (data: any[], offset: number, limit: number, field: string, filter: any): any => {
   const mappedItems = data.map(dataItem => {
-    return dataItem[field.field];
+    return dataItem[field];
   });
 
-  const uniqueItems = mappedItems.filter((item: any, currentIndex: number, sourceDataArray: any[]) => {
-    return sourceDataArray.indexOf(item) === currentIndex;
+  const uniqueItems = mappedItems.filter((item: string, currentIndex: number, sourceDataArray: any[]) => {
+    const filterValue = String(filter).toLowerCase();
+    return item.includes(filterValue) && sourceDataArray.indexOf(item) === currentIndex;
   });
 
-  return uniqueItems.map((item: any) => {
+  const result = uniqueItems.map((item: any) => {
     return {
       key: item,
       value: item
     };
   });
+
+  return {
+    items: sliceResults(offset, limit, result),
+    count: result.length
+  };
 };

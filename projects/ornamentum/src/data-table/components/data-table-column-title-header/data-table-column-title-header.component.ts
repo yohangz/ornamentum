@@ -22,6 +22,7 @@ import { DataTableDataStateService } from '../../services/data-table-data-state.
 })
 export class DataTableColumnTitleHeaderComponent {
   private resizeInProgress = false;
+  public rowSelectAllId: string;
 
   @Input()
   public columns: DataTableColumnComponent[];
@@ -31,7 +32,9 @@ export class DataTableColumnTitleHeaderComponent {
     private eventStateService: DataTableEventStateService,
     public dataStateService: DataTableDataStateService,
     public config: DataTableConfigService
-  ) {}
+  ) {
+    this.rowSelectAllId = dataStateService.getUniqueId('rsa', 0);
+  }
 
   /**
    * Header click event handler.

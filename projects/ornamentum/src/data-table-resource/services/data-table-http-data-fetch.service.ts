@@ -7,13 +7,12 @@ import { DataTableQueryResult } from '../../data-table/models/data-table-query-r
 import { DataTableQueryField } from '../../data-table/models/data-table-query-field.model';
 import { DataTableDataBindCallback } from '../../data-table/models/data-table-data-bind-callback.model';
 import { DataTableFilterValueExtractCallback } from '../../data-table/models/data-table-filter-value-extract-callback.model';
-import { DataTableFilterOption } from '../../data-table/models/data-table-filter-option.model';
 import { HttpRequestOptions } from '../../resource-utility/models/http-request-options.model';
 import { ResourceOptions } from '../../resource-utility/models/resource-options.model';
 
-import { DataTableColumnComponent } from '../../data-table/components/data-table-column/data-table-column.component';
-
 import { RequestParamMapperService } from '../../resource-utility/services/request-param-mapper.service';
+import { DropdownQueryResult } from '../../dropdown/models/dropdown-query-result.model';
+import { DropdownRequestParams } from '../../dropdown/models/dropdown-request-params.model';
 
 /**
  * Data table HTTP data fetch service.
@@ -45,24 +44,34 @@ export class DataTableHttpDataFetchService<T> {
         }
 
         params.fields.forEach((column: DataTableQueryField) => {
-          let query = '';
+          let filterValue = '';
+          let sortValue = '';
 
           if (column.filterable) {
             if (typeof column.filterValue === 'string') {
               if (column.filterValue !== '') {
-                query += column.filterValue;
+                filterValue = column.filterValue;
               }
             } else if (Array.isArray(column.filterValue) && column.filterValue.length) {
-              query += column.filterValue.join(',');
+              filterValue = column.filterValue.join(',');
             }
           }
 
           if (column.sortable && column.sortOrder !== '') {
-            query += `|${column.sortOrder}|${column.sortPriority}`;
+            sortValue = `|${column.sortOrder}|${column.sortPriority}`;
           }
 
-          if (query) {
-            queryParams = queryParams.set(column.field, query);
+          if (filterValue && sortValue) {
+            if (column.filterTrackBy !== column.sortTrackBy) {
+              queryParams = queryParams.set(column.filterTrackBy, filterValue);
+              queryParams = queryParams.set(column.sortTrackBy, sortValue);
+            } else {
+              queryParams = queryParams.set(column.filterTrackBy, filterValue + sortValue);
+            }
+          } else if (filterValue) {
+            queryParams = queryParams.set(column.filterTrackBy, filterValue);
+          } else if (sortValue) {
+            queryParams = queryParams.set(column.sortTrackBy, sortValue);
           }
         });
 
@@ -85,16 +94,23 @@ export class DataTableHttpDataFetchService<T> {
    * @param mapper Response data mapper callback. map source stream format to data table expected stream or apply additional formatting.
    * @return Data table filter options event handler.
    */
-  public onFilterValueExtract(
+  public onFilterValueExtract<R>(
     options: string|HttpRequestOptions,
-    mapper?: <Q>(response: Observable<Q>) => Observable<DataTableFilterOption[]>,
-  ): DataTableFilterValueExtractCallback {
-    return (column: DataTableColumnComponent): Observable<DataTableFilterOption[]> => {
+    mapper?: <Q>(response: Observable<Q>) => Observable<DropdownQueryResult<R>>,
+  ): DataTableFilterValueExtractCallback<R> {
+    return (params: DropdownRequestParams): Observable<DropdownQueryResult<R>> => {
       const requestOptions = this.requestParamMapperService.mapRequestOptions(options);
       let queryParams = this.requestParamMapperService.mapQueryParams(requestOptions.options);
 
-      const filterField = column.filterField || column.field;
-      queryParams = queryParams.set('field', filterField);
+      if (params.offset !== undefined && params.limit !== undefined) {
+        queryParams = queryParams.set('offset', String(params.offset));
+        queryParams = queryParams.set('limit', String(params.limit));
+      }
+
+      if (params.filter) {
+        queryParams = queryParams.set('field', params.displayTrackBy);
+        queryParams = queryParams.set('filter', params.filter);
+      }
 
       const resource = this.http.get<any>(requestOptions.url, { params: queryParams, ...requestOptions }) as Observable<any>;
 
