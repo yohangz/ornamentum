@@ -642,11 +642,9 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
     this.dataStateService.itemCount = queryResult.count;
     this.setDataRows(queryResult.items);
 
-    if (this.dataStateService.heardReload) {
-      this.eventStateService.fetchFilterOptionsStream.next();
-      this.dataStateService.heardReload = false;
-    }
+    this.eventStateService.fetchFilterOptionsStream.next();
 
+    this.dataStateService.heardReload = false;
     this.dataStateService.dataLoading = false;
     this.eventStateService.dataBoundStream.emit();
   }

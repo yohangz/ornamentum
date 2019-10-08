@@ -53,7 +53,7 @@ export class DataTableResourceService<T> {
             const filterOptions = filterFields
               // .filter((field: DataTableQueryField) => {
               //   return field.filterValue;
-              // })
+            // }) // TODO: filter only dropdown filter columns
               .reduce((accOptions: DataTableFilterFieldOptions[], field: DataTableQueryField) => {
                 const uniqueOptions = result.map((item: T): DataTableFilterOption => {
                   const value = get(item, field.displayTrackBy);
