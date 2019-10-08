@@ -21,6 +21,7 @@ export class DataTableDataStateService {
   public substituteRows: any[] = [];
   public heardReload = false;
   public currentSortPriority = 0;
+  public currentColumnId = 0;
 
   public relativeParentElement: HTMLElement;
   public onFilterValueExtract: DataTableFilterValueExtractCallback<any>;

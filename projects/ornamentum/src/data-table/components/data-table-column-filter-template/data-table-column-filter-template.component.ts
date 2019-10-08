@@ -3,7 +3,6 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { Observable, Subscription } from 'rxjs';
 
 import { DataTableFilterEventArgs } from '../../models/data-table-filter-event-args.model';
-import { DataTableFilterOption } from '../../models/data-table-filter-option.model';
 
 import { DataTableColumnComponent } from '../data-table-column/data-table-column.component';
 import { DropdownComponent } from '../../../dropdown/components/dropdown/dropdown.component';
@@ -63,15 +62,16 @@ export class DataTableColumnFilterTemplateComponent implements OnInit, OnDestroy
           }
         });
 
-      if (this.config.showDropdownFilter) {
-        this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream.subscribe(() => {
-          this.filterDropdown.fetchData(true);
-        });
+      this.fetchFilterOptionsStreamSubscription = this.eventStateService.fetchFilterOptionsStream.subscribe(() => {
+        this.filterDropdown.fetchData(true);
+      });
 
-        this.filterDataBind = (params: DropdownRequestParams): Observable<DropdownQueryResult<any>> => {
-          return this.dataStateService.onFilterValueExtract(params);
-        };
-      }
+      this.filterDataBind = (params: DropdownRequestParams): Observable<DropdownQueryResult<any>> => {
+        return this.dataStateService.onFilterValueExtract({
+          ...params,
+          id: this.column.id
+        });
+      };
     }
   }
 

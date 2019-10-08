@@ -9,9 +9,9 @@ import { DataTableRequestParams } from '../models/data-table-request-params.mode
 import { DataTableQueryResult } from '../models/data-table-query-result.model';
 import { DataTableQueryField } from '../models/data-table-query-field.model';
 import { DropdownQueryResult } from '../../dropdown/models/dropdown-query-result.model';
-import { DropdownRequestParams } from '../../dropdown/models/dropdown-request-params.model';
 import { DataTableFilterOption } from '../models/data-table-filter-option.model';
 import { DataTableFilterFieldOptions } from '../models/data-table-filter-field-options.model';
+import { DataTableFilterParams } from '../models/data-table-filter-params.model';
 
 /**
  * Data table resource service; Manage data table client side data querying.
@@ -50,9 +50,11 @@ export class DataTableResourceService<T> {
           const filterFields = params.fields.filter(field => field.filterable);
 
           if (filterFields.length) {
-            const filterOptions = filterFields.filter((field: DataTableQueryField) => {
-                return Array.isArray(field.filterValue);
-              }).reduce((accOptions: DataTableFilterFieldOptions[], field: DataTableQueryField) => {
+            const filterOptions = filterFields
+              // .filter((field: DataTableQueryField) => {
+              //   return field.filterValue;
+              // })
+              .reduce((accOptions: DataTableFilterFieldOptions[], field: DataTableQueryField) => {
                 const uniqueOptions = result.map((item: T): DataTableFilterOption => {
                   const value = get(item, field.displayTrackBy);
                   return {
@@ -143,11 +145,11 @@ export class DataTableResourceService<T> {
   /**
    * Extract data table filter options.
    */
-  public extractFilterOptions(params: DropdownRequestParams): Observable<DropdownQueryResult<DataTableFilterOption>> {
+  public extractFilterOptions(params: DataTableFilterParams): Observable<DropdownQueryResult<DataTableFilterOption>> {
     return this.filterOptionReplayStream.pipe(
       take(1),
       map((fields: DataTableFilterFieldOptions[]): DropdownQueryResult<DataTableFilterOption> => {
-        const field = fields.find((filed: DataTableFilterFieldOptions) => filed.id === 'params.id');
+        const field = fields.find((filed: DataTableFilterFieldOptions) => filed.id === params.id);
         if (!field) {
           return {
             count: 0,
@@ -201,5 +203,7 @@ export class DataTableResourceService<T> {
         return result.slice(targetOffset, targetOffset + limit);
       }
     }
+
+    return result.slice();
   }
 }

@@ -801,10 +801,7 @@ export class DataTableComponent implements OnDestroy, OnInit, AfterContentInit, 
     if (this.config.persistTableState) {
       const dataTableState = this.dataTableStateService.getState(this.dataStateService.id);
       if (dataTableState) {
-        this.columns.forEach((column: DataTableColumnComponent, index: number) => {
-          column.id = this.dataStateService.getUniqueId('col', index);
-          column.selectorId = this.dataStateService.getUniqueId('cs', index);
-
+        this.columns.forEach((column: DataTableColumnComponent) => {
           const field = dataTableState.fields.find(col => {
             return col.displayTrackBy === column.displayTrackBy;
           });

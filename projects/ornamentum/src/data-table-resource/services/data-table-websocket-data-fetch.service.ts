@@ -9,7 +9,7 @@ import { DataTablesSocketPayload } from '../models/data-table-socket-payload.mod
 import { DataTableFilterValueExtractCallback } from '../../data-table/models/data-table-filter-value-extract-callback.model';
 import { DataTableSocketFilterOptions } from '../models/data-table-socket-filter-options.model';
 import { DropdownQueryResult } from '../../dropdown/models/dropdown-query-result.model';
-import { DropdownRequestParams } from '../../dropdown/models/dropdown-request-params.model';
+import { DataTableFilterParams } from '../../data-table/models/data-table-filter-params.model';
 
 /**
  * Data table web socket data fetch service.
@@ -91,7 +91,7 @@ export class DataTableWebsocketDataFetchService {
       })
     );
 
-    return (params: DropdownRequestParams): Observable<DropdownQueryResult<R>> => {
+    return (params: DataTableFilterParams): Observable<DropdownQueryResult<R>> => {
       const timestamp = Date.now();
 
       const filteredStream = sourceStream.pipe(

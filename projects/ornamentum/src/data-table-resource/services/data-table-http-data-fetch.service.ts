@@ -12,7 +12,7 @@ import { ResourceOptions } from '../../resource-utility/models/resource-options.
 
 import { RequestParamMapperService } from '../../resource-utility/services/request-param-mapper.service';
 import { DropdownQueryResult } from '../../dropdown/models/dropdown-query-result.model';
-import { DropdownRequestParams } from '../../dropdown/models/dropdown-request-params.model';
+import { DataTableFilterParams } from '../../data-table/models/data-table-filter-params.model';
 
 /**
  * Data table HTTP data fetch service.
@@ -98,7 +98,7 @@ export class DataTableHttpDataFetchService<T> {
     options: string|HttpRequestOptions,
     mapper?: <Q>(response: Observable<Q>) => Observable<DropdownQueryResult<R>>,
   ): DataTableFilterValueExtractCallback<R> {
-    return (params: DropdownRequestParams): Observable<DropdownQueryResult<R>> => {
+    return (params: DataTableFilterParams): Observable<DropdownQueryResult<R>> => {
       const requestOptions = this.requestParamMapperService.mapRequestOptions(options);
       let queryParams = this.requestParamMapperService.mapQueryParams(requestOptions.options);
 

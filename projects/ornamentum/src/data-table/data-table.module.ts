@@ -98,6 +98,7 @@ export { DataTableCellColorRenderCallback } from './models/data-table-cell-color
 export { DataTableSelectMode } from './models/data-table-select-mode.model';
 export { DataTableDataBindCallback } from './models/data-table-data-bind-callback.model';
 export { DataTableFilterOption } from './models/data-table-filter-option.model';
+export { DataTableFilterParams } from './models/data-table-filter-params.model';
 
 export { DataTableSortOrder } from './models/data-table-sort-order.model';
 export { DataTableStorageMode } from './models/data-table-storage-mode.model';

@@ -2,6 +2,8 @@ import { Component, ContentChild, Input, OnDestroy, OnInit, TemplateRef } from '
 
 import { Subscription } from 'rxjs';
 
+import { get } from '../../../utility/services/object-utility.class';
+
 import { DataTableCellColorRenderCallback } from '../../models/data-table-cell-color-render-callback.model';
 import { DataTableRow } from '../../models/data-table-row.model';
 import { DataTableFilterExpressionCallback } from '../../models/data-table-filter-expression-callback.model';
@@ -13,7 +15,6 @@ import { DataTableConfigService } from '../../services/data-table-config.service
 import { DataTableEventStateService } from '../../services/data-table-event.service';
 import { ViewPosition } from '../../../utility/models/view-position.model';
 import { DataTableDataStateService } from '../../services/data-table-data-state.service';
-import {get} from "../../../utility/services/object-utility.class";
 
 /**
  * Data table column component. Data table columns associated data is captured via this component.
@@ -361,6 +362,10 @@ export class DataTableColumnComponent implements OnInit, OnDestroy {
     this.dropdownFilterDisabledTrackBy = config.dropdownFilterDisabledTrackBy;
     this.dropdownFilterSelectTrackBy = config.dropdownFilterSelectTrackBy;
     this.dropdownFilterDisplayTrackBy = config.dropdownFilterDisplayTrackBy;
+
+    ++this.dataStateService.currentColumnId;
+    this.id = this.dataStateService.getUniqueId('col', this.dataStateService.currentColumnId); // TODO: validate and fix id extract logic
+    this.selectorId = this.dataStateService.getUniqueId('cs', this.dataStateService.currentColumnId);
   }
 
   public getFilterValue(): string|string[] {
