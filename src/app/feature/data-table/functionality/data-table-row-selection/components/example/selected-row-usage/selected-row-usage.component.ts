@@ -15,9 +15,6 @@ export class SelectedRowUsageComponent {
 
   constructor(private dataFetchService: DataFetchService) {
     this.items = this.dataFetchService.fetchStaticData();
-  }
-
-  public onDataTableInit(): void {
     this.selectedRow = 10;
   }
 }
