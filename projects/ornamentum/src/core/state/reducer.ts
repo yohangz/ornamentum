@@ -13,7 +13,7 @@ export function createReducer<S extends object, A extends Action<any>>(state: S,
       flatMap((action: A) => {
         return isObservable(action) ? action : of(action);
       }),
-      startWith(state),
+      startWith(state as object),
       scan(reducer)
     );
   };
@@ -27,12 +27,12 @@ export function combineReducers<S extends object, A extends Action<any>>(reducer
   const values = Object.values(reducers);
 
   return ($action: Observable<A>): Observable<S> => {
-    return combineLatest(
+    return combineLatest([
       ...values.map((reducer: CallableActionReducer<any, A>): Observable<any> => {
         const $state = reducer.call(null, $action) as Observable<any>;
         return $state.pipe(distinctUntilChanged());
       })
-    ).pipe(
+    ]).pipe(
       map((state: Array<S[keyof S]>) => {
         const obj = {} as S;
         keys.map((key, index) => {
