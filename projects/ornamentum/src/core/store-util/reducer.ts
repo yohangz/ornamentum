@@ -5,6 +5,7 @@ import { ReducersMapObject } from './models/reducers-map-object.model';
 
 import { combineLatest, isObservable, Observable, of } from 'rxjs';
 import { distinctUntilChanged, flatMap, map, scan, startWith } from 'rxjs/operators';
+import { CallableCombinedReducer } from './models/callable-combined-reducer.model';
 
 export function createReducer<S extends object, A extends Action<any>>(state: S, reducer: CallableReducer<S, A>)
   : CallableActionReducer<S, A> {
@@ -19,10 +20,7 @@ export function createReducer<S extends object, A extends Action<any>>(state: S,
   };
 }
 
-class CallableCombinedReduced<T, U> {
-}
-
-export function combineReducers<S extends object, A extends Action<any>>(reducers: ReducersMapObject<S, A>): CallableCombinedReduced<A, S> {
+export function combineReducers<S extends object, A extends Action<any>>(reducers: ReducersMapObject<S, A>): CallableCombinedReducer<A, S> {
   const keys = Object.keys(reducers);
   const values = Object.values(reducers);
 

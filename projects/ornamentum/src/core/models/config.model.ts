@@ -1,0 +1,43 @@
+export interface Config {
+  id: string;
+  title: string;
+  width: string;
+  minContentWidth: string;
+  minContentHeight: string;
+  contentHeight: string;
+  multiColumnSortable: boolean;
+  showRefreshButton: boolean;
+  showSpinner: boolean;
+  statePersist: boolean;
+  statePersistMode: 'local-storage' | 'session-storage';
+  filterDebounce: boolean;
+  filterDebounceTime: number;
+  paginate: boolean;
+  showSubstituteRows: boolean;
+  infiniteScrollable: boolean;
+  scrollViewDistanceRatio: number;
+  showAutoIndex: boolean;
+  autoIndexColumnTitle: string;
+  autoIndexColumnWidth: string;
+  showColumnSelector: boolean;
+  columnSelectorWidth: string;
+  translations: {
+    paginationLimit: string;
+    paginationRange: string;
+    noDataMessageBody: string;
+    noDataMessageHeader: string;
+  };
+  rowSelectable: boolean;
+  rowSelectMode: 'single' | 'multi' | 'single-toggle';
+  showRowSelectCheckbox: boolean;
+  showRowSelectAllCheckbox: boolean;
+  selectOnClick: boolean;
+  rowSelectorColumnWidth: string;
+  selectedRows: any[];
+  selectTrackBy: string;
+  showExpandableRows: boolean;
+  expandOnClick: boolean;
+  expanderColumnWidth: string;
+  showExpanderLoadingSpinner: boolean;
+  loadOnInit: boolean;
+}

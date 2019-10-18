@@ -6,7 +6,7 @@ import { Store } from './models/store.model';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 
-function createStore<S extends object, A extends Action<any>>(
+export function createStore<S extends object, A extends Action<any>>(
   reducers: CallableActionReducer<S, A>,
   effects?: CallableActionEffect<A>): Store<S, A> {
   const $action = new Subject<A>();
@@ -28,7 +28,7 @@ function createStore<S extends object, A extends Action<any>>(
   };
 }
 
-function createSelector<S extends object, R>($store: Observable<S>, selector: (state: S) => R): Observable<R> {
+export function createSelector<S extends object, R>($store: Observable<S>, selector: (state: S) => R): Observable<R> {
   return $store.pipe(
     map(selector),
     distinctUntilChanged()
