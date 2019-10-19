@@ -1,6 +1,4 @@
-import { Observable } from 'rxjs';
-
-export interface Action<T extends object> {
+export interface Action<T extends any = undefined> {
   type: string;
-  payload?: T | Observable<T>;
+  payload?: T;
 }

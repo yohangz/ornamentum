@@ -3,24 +3,53 @@ import { CallableReducer } from './models/callable-reducer.model';
 import { CallableActionReducer } from './models/callable-action-reducer.model';
 import { ReducersMapObject } from './models/reducers-map-object.model';
 
-import { combineLatest, isObservable, Observable, of } from 'rxjs';
-import { distinctUntilChanged, flatMap, map, scan, startWith } from 'rxjs/operators';
+import { combineLatest, Observable } from 'rxjs';
+import { distinctUntilChanged, map, scan, startWith } from 'rxjs/operators';
 import { CallableCombinedReducer } from './models/callable-combined-reducer.model';
+import { CallableAction } from './models/callable-action.model';
 
-export function createReducer<S extends object, A extends Action<any>>(state: S, reducer: CallableReducer<S, A>)
-  : CallableActionReducer<S, A> {
-  return ($action: Observable<A>): Observable<S> => {
+interface MicroReducer<S extends object, P extends any> {
+  type: string;
+  reducer: CallableReducer<S, P>;
+}
+
+type PayloadType<T extends Action> = T extends Action<infer U> ? U : never;
+type ActionPayloadType<T extends CallableAction> = PayloadType<ReturnType<T>>;
+
+export function on<
+  S extends object,
+  A extends CallableAction,
+  P extends ActionPayloadType<A>>(
+    callableAction: A,
+    reducer: CallableReducer<S, P>)
+  : MicroReducer<S, A> {
+  return {
+    type: (callableAction as any).type,
+    reducer
+  };
+}
+
+export function createReducer<S extends object>(
+    state: S,
+    ...reducers: Array<MicroReducer<S, any>>)
+  : CallableActionReducer<S, Action> {
+  const reducerMap = new Map<string, CallableReducer<S, any>>();
+  reducers.forEach((reducer) => {
+    reducerMap.set(reducer.type, reducer.reducer);
+  });
+
+  return ($action: Observable<Action>): Observable<S> => {
     return $action.pipe(
-      flatMap((action: A) => {
-        return isObservable(action) ? action : of(action);
-      }),
       startWith(state as object),
-      scan(reducer)
+      scan((reducerState: S, action: Action) => {
+        const reducer = reducerMap.get(action.type);
+        return reducer ? reducer(reducerState, action.payload) : reducerState;
+      })
     );
   };
 }
 
-export function combineReducers<S extends object, A extends Action<any>>(reducers: ReducersMapObject<S, A>): CallableCombinedReducer<A, S> {
+export function combineReducers<S extends object, A extends Action>(reducers: ReducersMapObject<S, A>): CallableCombinedReducer<A, S> {
   const keys = Object.keys(reducers);
   const values = Object.values(reducers);
 

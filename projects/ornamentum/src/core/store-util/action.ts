@@ -1,10 +1,15 @@
 import { Action } from './models/action.model';
 import { CallableAction } from './models/callable-action.model';
 
-import { Observable } from 'rxjs';
+function defineType<A extends any>(type: string, creator: CallableAction<A>): CallableAction<A> {
+  return Object.defineProperty(creator, 'type', {
+    value: type,
+    writable: false,
+  });
+}
 
-export function createAction<T extends object>(type: string): CallableAction<T> {
-  return (payload: T | Observable<T>): Action<T> => {
+export function createAction<A extends any = void>(type: string): CallableAction<A> {
+  return defineType(type, (payload: A): Action<A> => {
     return { type, payload };
-  };
+  });
 }

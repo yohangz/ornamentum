@@ -3,21 +3,27 @@ import { CallableActionReducer } from './models/callable-action-reducer.model';
 import { CallableActionEffect } from './models/callable-action-effect.model';
 import { Store } from './models/store.model';
 
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { distinctUntilChanged, map } from 'rxjs/operators';
+import {BehaviorSubject, isObservable, Observable, of, Subject} from 'rxjs';
+import {distinctUntilChanged, flatMap, map} from 'rxjs/operators';
 
-export function createStore<S extends object, A extends Action<any>>(
+export function createStore<S extends object, A extends Action>(
   reducers: CallableActionReducer<S, A>,
   effects?: CallableActionEffect<A>): Store<S, A> {
-  const $action = new Subject<A>();
+  const $action = new Subject<A | Observable<A>>();
   const $state = new BehaviorSubject<S>(undefined);
-  const $actionObservable: Observable<A> = $action.asObservable();
-  const $dispatcher = effects ? effects($actionObservable) : $actionObservable;
-  const stateSubscription = reducers($dispatcher).subscribe($state);
+
+  const $flattenedAction = $action.asObservable().pipe(
+    flatMap((action: A | Observable<A>): Observable<A> => {
+      const $actionStream: Observable<A> = isObservable(action) ? action : of(action);
+      return effects ? effects($actionStream) : $actionStream;
+    })
+  );
+
+  const stateSubscription = reducers($flattenedAction).subscribe($state);
 
   return {
     state: $state.asObservable(),
-    dispatch: (action: A): void => {
+    dispatch: (action: A | Observable<A>): void => {
       $action.next(action);
     },
     dispose: (): void => {
