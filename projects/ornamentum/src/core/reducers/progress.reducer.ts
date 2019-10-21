@@ -8,7 +8,7 @@ const initialState: Progress = {
   isInitialized: false
 };
 
-export const progressReducer = createReducer<Progress>(initialState,
+export default createReducer<Progress>(initialState,
   on(showLoadingSpinner, (state: Progress): Progress => {
     return {
       ...state,

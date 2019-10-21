@@ -7,14 +7,8 @@ import { combineLatest, Observable } from 'rxjs';
 import { distinctUntilChanged, map, scan, startWith } from 'rxjs/operators';
 import { CallableCombinedReducer } from './models/callable-combined-reducer.model';
 import { CallableAction } from './models/callable-action.model';
-
-interface MicroReducer<S extends object, P extends any> {
-  type: string;
-  reducer: CallableReducer<S, P>;
-}
-
-type PayloadType<T extends Action> = T extends Action<infer U> ? U : never;
-type ActionPayloadType<T extends CallableAction> = PayloadType<ReturnType<T>>;
+import { MicroReducer } from './models/micro-reducer.model';
+import { ActionPayloadType } from './models/action-payload-type.model';
 
 export function on<
   S extends object,

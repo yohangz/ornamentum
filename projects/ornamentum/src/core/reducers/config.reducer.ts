@@ -47,7 +47,7 @@ const initialState: Config = {
   loadOnInit: true
 };
 
-export const configReducer = createReducer<Config>(initialState,
+export default createReducer<Config>(initialState,
   on(setInitialState, (state: Config, payload: Partial<Config>): Config => {
     return {
       ...state,
