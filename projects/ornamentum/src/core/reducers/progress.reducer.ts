@@ -1,7 +1,7 @@
 import { Progress } from '../models/progress.model';
 
 import { createReducer, on } from '../store-util/reducer';
-import {hideLoadingSpinner, initializeTable, showLoadingSpinner} from '../actions/progress.action';
+import { hideLoadingSpinner, initializeTable, showLoadingSpinner } from '../actions/progress.action';
 
 const initialState: Progress = {
   isLoading: true,

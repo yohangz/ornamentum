@@ -1,54 +1,38 @@
 import { createReducer, on } from '../store-util/reducer';
 import { Column } from '../models/column.model';
-import { setInitialState } from '../actions/column.action';
+import { setColumns } from '../actions/column.action';
 
 const columnState: Column = {
   id: undefined,
   title: '',
-  sortable: false,
-  sortPriority: 0,
-  sortOrder: 'asc',
-  filterable: false,
-  resizeable: false,
-  resizeMinLimit: 100,
-  displayTrackBy: undefined,
-  filterTrackBy: undefined,
-  sortTrackBy: undefined,
-  cssClass: undefined,
+  displayTrackBy: 'value',
+
+  cssClass: 'string',
   width: undefined,
   visible: true,
-  showInColumnSelector: true,
-  filterMode: 'text',
-  textFilterPlaceholder: 'Filter',
-  textFilterShowClearButton: true,
-  textFilterValue: '',
-  showDropdownFilter: false,
-  dfMenuPosition: 'bottom-left',
-  dfSelectMode: 'multi',
-  dfSearchable: true,
-  dfSearchDebounce: true,
-  dfSearchDebounceTime: 500,
-  dfShowOptionSelectCheckbox: true,
-  dfWrapDisplaySelectLimit: 1,
-  dfGroupByField: undefined,
-  dfShowSelectedOptionRemoveButton: false,
-  dfShowClearSelectionButton: true,
-  dfMenuWidth: 320,
-  dfMenuHeight: 250,
-  dfMultiSelectOptionMaxWidth: 135,
-  dfCloseMenuOnSelect: true,
-  dfDynamicDimensionCalculation: true,
-  dfDynamicWidthRatio: 1.25,
-  dfDynamicHeightRatio: 1.25,
-  dfSelectTrackBy: 'key',
-  dfDisplayTrackBy: 'value',
-  dfDisabledTrackBy: 'disabled'
+  showInContextMenu: true,
+
+  sortable: true,
+  sortTrackBy: undefined,
+  sortPriority: 0,
+  sortOrder: '',
+
+  resizeable: false,
+  resizeMinLimit: 100,
+
+  filterable: false,
+  filterTrackBy: undefined,
+  filterType: 'string',
+  filterOperator: 'contains',
+  filterLogic: 'and',
+  filterIgnoreCase: true,
+  filterValue: undefined
 };
 
 const initialState: Column[] = [];
 
 export default createReducer<Column[]>(initialState,
-  on(setInitialState, (state: Column[], payload: Array<Partial<Column>>): Column[] => {
+  on(setColumns, (state: Column[], payload: Array<Partial<Column>>): Column[] => {
     return payload.map((column: Partial<Column>) => {
       return {
         ...columnState,

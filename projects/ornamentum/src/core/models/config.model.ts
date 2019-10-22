@@ -1,43 +1,46 @@
 export interface Config {
   id: string;
   title: string;
+
+  dataBindOnInit: boolean;
+
   width: string;
+  contentHeight: string;
   minContentWidth: string;
   minContentHeight: string;
-  contentHeight: string;
+
   multiColumnSortable: boolean;
-  showRefreshButton: boolean;
-  showSpinner: boolean;
-  statePersist: boolean;
-  statePersistMode: 'local-storage' | 'session-storage';
-  filterDebounce: boolean;
-  filterDebounceTime: number;
-  paginate: boolean;
-  showSubstituteRows: boolean;
+
+  refreshButton: boolean;
+  loadingSpinner: boolean;
+
+  persistState: 'local' | 'session' | '';
+
+  filterDebounce: number;
+
+  pageable: boolean;
+  substituteRows: boolean;
+
   infiniteScrollable: boolean;
-  scrollViewDistanceRatio: number;
-  showAutoIndex: boolean;
-  autoIndexColumnTitle: string;
-  autoIndexColumnWidth: string;
-  showColumnSelector: boolean;
-  columnSelectorWidth: string;
-  translations: {
-    paginationLimit: string;
-    paginationRange: string;
-    noDataMessageBody: string;
-    noDataMessageHeader: string;
-  };
-  rowSelectable: boolean;
-  rowSelectMode: 'single' | 'multi' | 'single-toggle';
-  showRowSelectCheckbox: boolean;
-  showRowSelectAllCheckbox: boolean;
-  selectOnClick: boolean;
-  rowSelectorColumnWidth: string;
-  selectedRows: any[];
+  infiniteScrollViewDistanceRatio: number;
+
+  indexColumn: boolean;
+  indexColumnWidth: string;
+
+  columnMenu: boolean;
+  columnMenuWidth: string;
+
+  selectable: boolean;
   selectTrackBy: string;
-  showExpandableRows: boolean;
+  selectedValue: any[];
+  selectOnClick: boolean;
+  selectMode: 'single' | 'multi' | 'single-toggle';
+  selectCheckbox: boolean;
+  selectCheckboxColumnWidth: string;
+  selectAllCheckbox: boolean;
+
+  expandable: boolean;
   expandOnClick: boolean;
-  expanderColumnWidth: string;
-  showExpanderLoadingSpinner: boolean;
-  loadOnInit: boolean;
+  expandColumnWidth: string;
+  expandLoadingSpinner: boolean;
 }

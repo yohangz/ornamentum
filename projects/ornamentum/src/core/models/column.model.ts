@@ -1,42 +1,32 @@
+import { FilterStringOperator } from './filter-string-operator.model';
+import { FilterOperator } from './filter-operator.model';
+import { FilterLogic } from './filter-logic.model';
+import { FilterType } from './filter-type.model';
+import { SortOrder } from './sort-order.model';
+
 export interface Column {
   id: string;
   title: string;
-  sortable: boolean;
-  sortPriority: number;
-  sortOrder: 'asc'| 'desc' | '';
-  filterable: boolean;
-  resizeable: boolean;
-  resizeMinLimit: number;
   displayTrackBy: string;
-  filterTrackBy: string;
-  sortTrackBy: string;
+
   cssClass: string;
   width: string;
   visible: boolean;
-  showInColumnSelector: boolean;
-  filterMode: 'text' | 'dropdown';
-  textFilterPlaceholder: string;
-  textFilterShowClearButton: boolean;
-  textFilterValue: any;
-  showDropdownFilter: boolean;
-  dfMenuPosition: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
-  dfSelectMode: 'multi' | 'single' | 'single-toggle';
-  dfSearchable: boolean;
-  dfSearchDebounceTime: number;
-  dfSearchDebounce: boolean;
-  dfShowOptionSelectCheckbox: boolean;
-  dfWrapDisplaySelectLimit: number;
-  dfGroupByField: string;
-  dfShowSelectedOptionRemoveButton: boolean;
-  dfShowClearSelectionButton: boolean;
-  dfMenuWidth: number;
-  dfMenuHeight: number;
-  dfMultiSelectOptionMaxWidth: number;
-  dfCloseMenuOnSelect: boolean;
-  dfDynamicDimensionCalculation: boolean;
-  dfDynamicWidthRatio: number;
-  dfDynamicHeightRatio: number;
-  dfSelectTrackBy: string;
-  dfDisplayTrackBy: string;
-  dfDisabledTrackBy: string;
+  showInContextMenu: boolean;
+
+  sortable: boolean;
+  sortTrackBy: string;
+  sortPriority: number;
+  sortOrder: SortOrder;
+
+  resizeable: boolean;
+  resizeMinLimit: number;
+
+  filterable: boolean;
+  filterTrackBy: string;
+  filterType: FilterType;
+  filterOperator: FilterOperator | FilterStringOperator;
+  filterLogic: FilterLogic;
+  filterIgnoreCase: boolean;
+  filterValue: any;
 }

@@ -1,12 +1,12 @@
 export interface Row {
   id: string;
+  index: number;
   item: any;
-  selected: boolean;
-  disabled: boolean;
   color: string;
   cssClass: string;
   tooltip: string;
-  index: number;
+  selected: boolean;
+  disabled: boolean;
   expanded: boolean;
-  dataLoaded: boolean;
+  expanderLoaded: boolean;
 }

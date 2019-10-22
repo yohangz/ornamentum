@@ -1,54 +1,57 @@
 import { Config } from '../models/config.model';
 import { createReducer, on } from '../store-util/reducer';
 
-import { setInitialState } from '../actions/config.action';
+import { setConfig } from '../actions/config.action';
 
 const initialState: Config = {
   id: undefined,
   title: '',
+
+  dataBindOnInit: true,
+
   width: '',
+  contentHeight: '',
   minContentWidth: '',
   minContentHeight: '',
-  contentHeight: '',
+
   multiColumnSortable: false,
-  showRefreshButton: true,
-  showSpinner: true,
-  statePersist: false,
-  statePersistMode: 'local-storage',
-  filterDebounce: true,
-  filterDebounceTime: 500,
-  paginate: false,
-  showSubstituteRows: false,
+
+  refreshButton: true,
+  loadingSpinner: true,
+
+  persistState: '',
+
+  filterDebounce: 500,
+
+  pageable: false,
+  substituteRows: true,
+
   infiniteScrollable: false,
-  scrollViewDistanceRatio: 1,
-  showAutoIndex: false,
-  autoIndexColumnTitle: 'id',
-  autoIndexColumnWidth: '100px',
-  showColumnSelector: false,
-  columnSelectorWidth: '100px',
-  translations: {
-    noDataMessageHeader: 'Whoops!',
-    noDataMessageBody: 'No data to display. Added data will appear here.',
-    paginationLimit: 'Limit',
-    paginationRange: 'Results'
-  },
-  rowSelectable: false,
-  rowSelectMode: 'single',
-  showRowSelectCheckbox: true,
-  showRowSelectAllCheckbox: false,
+  infiniteScrollViewDistanceRatio: 1,
+
+  indexColumn: false,
+  indexColumnWidth: '100px',
+
+  columnMenu: false,
+  columnMenuWidth: '200px',
+
+  selectable: false,
+  selectTrackBy: undefined,
+  selectedValue: [],
   selectOnClick: false,
-  rowSelectorColumnWidth: '100px',
-  selectedRows: [],
-  selectTrackBy: 'key',
-  showExpandableRows: false,
+  selectMode: 'single-toggle',
+  selectCheckbox: true,
+  selectCheckboxColumnWidth: '100px',
+  selectAllCheckbox: false,
+
+  expandable: false,
   expandOnClick: false,
-  expanderColumnWidth: '100px',
-  showExpanderLoadingSpinner: false,
-  loadOnInit: true
+  expandColumnWidth: '100px',
+  expandLoadingSpinner: true
 };
 
 export default createReducer<Config>(initialState,
-  on(setInitialState, (state: Config, payload: Partial<Config>): Config => {
+  on(setConfig, (state: Config, payload: Partial<Config>): Config => {
     return {
       ...state,
       ...payload
