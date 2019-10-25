@@ -36,7 +36,7 @@
   </p>
 
   <p>
-    Server side data bind functionality can be integrated via <a rel="noopener" target="_blank"
+    Server side data bind functionality can be integrated via <a rel="noopener noreferrer" target="_blank"
                                                                  href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
     callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
     data source agnostic adm easy to customize.
@@ -45,10 +45,10 @@
   <ol>
     <li>
       <p>
-        Import <a rel="noopener" target="_blank"
+        Import <a rel="noopener noreferrer" target="_blank"
                   href="https://ornamentum.app/api-docs/modules/DropdownResourceModule.html">DropdownResourceModule</a>
         along with
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DropdownModule.html">DropdownModule</a>.
+        <a rel="noopener noreferrer" target="_blank" href="https://ornamentum.app/api-docs/modules/DropdownModule.html">DropdownModule</a>.
       </p>
 
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingModule"></app-code-snippet>
@@ -56,12 +56,12 @@
     <li>
       <p>
         Within the target component use
-        <a rel="noopener" target="_blank"
+        <a rel="noopener noreferrer" target="_blank"
            href="https://ornamentum.app/api-docs/injectables/DropdownHttpResourceFactoryService.html">DropdownHttpResourceFactoryService</a>
         to construct an instance of
-        <a rel="noopener" target="_blank"
+        <a rel="noopener noreferrer" target="_blank"
            href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html">DropdownHttpDataFetchService&lt;T&gt;</a>
-        class. Invoke <a rel="noopener" target="_blank"
+        class. Invoke <a rel="noopener noreferrer" target="_blank"
                          href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html#onDataBind">onDataBind</a>
         method with the API resource path to get the data bind callback function reference.
       </p>
@@ -69,7 +69,7 @@
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingComponent"></app-code-snippet>
       <p>
         or else you can write your own custom data provider without using getResourceProvider in
-        <a rel="noopener" target="_blank"
+        <a rel="noopener noreferrer" target="_blank"
            href="https://ornamentum.app/api-docs/injectables/DropdownHttpResourceFactoryService.html">DropdownHttpResourceFactoryService</a>
         service. Please refer <a [routerLink]="['/feature/dropdown/data-binding/custom-provider']">Custom Data Provider</a>
         documentation for more information.
@@ -78,9 +78,9 @@
     <li>
       <p>
         Set the obtained
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
+        <a rel="noopener noreferrer" target="_blank" href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
         function reference and
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DropdownComponent.html#loadOnScroll">loadOnScroll</a>
+        <a rel="noopener noreferrer" target="_blank" href="https://ornamentum.app/api-docs/components/DropdownComponent.html#loadOnScroll">loadOnScroll</a>
         input properties of dropdown component.
       </p>
       <app-code-snippet [type]="FileType.HTML" [content]="demoSnippet.serverSideDataBindingMarkup"></app-code-snippet>
@@ -194,13 +194,13 @@
       </p>
     </li>
     <li>
-      Service should respond follow <a rel="noopener" target="_blank"
+      Service should respond follow <a rel="noopener noreferrer" target="_blank"
                                        href="https://ornamentum.app/api-docs/interfaces/DropdownQueryResult.html">DropdownQueryResult&lt;T&gt;</a>
       schema.
-      However, you can pass a custom response mapper callback function to <a rel="noopener" target="_blank"
+      However, you can pass a custom response mapper callback function to <a rel="noopener noreferrer" target="_blank"
                                                                              href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html#onDataBind">onDataBind</a>
       and map
-      the response to <a rel="noopener" target="_blank"
+      the response to <a rel="noopener noreferrer" target="_blank"
                          href="https://ornamentum.app/api-docs/interfaces/DropdownQueryResult.html">DropdownQueryResult&lt;T&gt;</a>
       schema
       without making changes in backend API response.
@@ -229,5 +229,5 @@
   <a [routerLink]="['/feature/dropdown/data-binding/client-side/stream']">Client Side Stream Binding</a><br/>
   <a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']">Server Side Web Socket Data Binding</a><br/>
   <a [routerLink]="['/feature/dropdown/data-binding/custom-provider']">Custom Data Provider</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#dataSource">API Doc - Data Source Input</a>
+  <a rel="noopener noreferrer" target="_blank" href="api-docs/components/DropdownComponent.html#dataSource">API Doc - Data Source Input</a>
 </div>

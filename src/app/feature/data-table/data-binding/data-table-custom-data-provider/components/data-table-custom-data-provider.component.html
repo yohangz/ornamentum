@@ -2,15 +2,15 @@
   <h1>Data Table Custom Data Provider</h1>
 
   <p>
-    Ornamentum data binding is handled via <a rel="noopener" target="_blank"
+    Ornamentum data binding is handled via <a rel="noopener noreferrer" target="_blank"
                                               href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
     callback function. Use this callback reference to hook into data bind workflow and provide custom data source. This
     callback function will get triggered upon the table initialization and on dynamic data table operations. It
-    receives <a rel="noopener" target="_blank"
+    receives <a rel="noopener noreferrer" target="_blank"
                 href="https://ornamentum.app/api-docs/interfaces/DataTableRequestParams.html">DataTableRequestParams</a>
-    argument and expect to return <a rel="noopener" target="_blank"
+    argument and expect to return <a rel="noopener noreferrer" target="_blank"
                                      href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
-    Observable</a> query result <a rel="noopener" target="_blank"
+    Observable</a> query result <a rel="noopener noreferrer" target="_blank"
                                    href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
     object stream. Data returned from this callback function will be directly bound to table assuming that it matches
     the on demand request context.
@@ -33,7 +33,7 @@
 
   <p>
     Ornamentum provides the capability to integrated server side data bind functionality via
-    <a rel="noopener" target="_blank"
+    <a rel="noopener noreferrer" target="_blank"
        href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
     callback function input property. Data source associated logic is decoupled from the Ornamentum core module to make
     the data source agnostic.
@@ -44,7 +44,7 @@
     [routerLink]="['/feature/data-table/data-binding/server-side/web-socket#basicUsage']" [fragment]="'basicUsage'">Server
     Side Web Socket</a> Data Binding basic usages, <code>getResourceProvider</code> in
     DataTableHttpResourceFactoryService provides an inbuilt method to take care of basic server data bind functionality.
-    You can build your own data provider same as <a rel="noopener" target="_blank"
+    You can build your own data provider same as <a rel="noopener noreferrer" target="_blank"
                                                     href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
     internal data provider.
   </p>
@@ -52,10 +52,10 @@
   <ol>
     <li>
       <p>
-        Import <a rel="noopener" target="_blank"
+        Import <a rel="noopener noreferrer" target="_blank"
                   href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a>
         along with
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
+        <a rel="noopener noreferrer" target="_blank" href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
       </p>
 
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingModule"></app-code-snippet>
@@ -75,7 +75,7 @@
     </li>
     <li>
       <p>
-        Set the obtained data bind callback function reference to <a rel="noopener" target="_blank"
+        Set the obtained data bind callback function reference to <a rel="noopener noreferrer" target="_blank"
                                                                      href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
         input property of data table.
       </p>
@@ -94,6 +94,6 @@
   <a [routerLink]="['/feature/data-table/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
   <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web Socket Data
     Binding</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API
+  <a rel="noopener noreferrer" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API
     Doc for Server Side Basic Data Binding</a>
 </div>

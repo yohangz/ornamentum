@@ -38,7 +38,7 @@
 
   <p>
     Server side data bind functionality can be integrated via
-    <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
+    <a rel="noopener noreferrer" target="_blank" href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
     callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
     data source agnostic and easy to customize.
   </p>
@@ -46,9 +46,9 @@
   <ol>
     <li>
       <p>
-        Import <a rel="noopener" target="_blank"
+        Import <a rel="noopener noreferrer" target="_blank"
                   href="https://ornamentum.app/api-docs/modules/DataTableResourceModule.html">DataTableResourceModule</a>
-        along with <a rel="noopener" target="_blank"
+        along with <a rel="noopener noreferrer" target="_blank"
                       href="https://ornamentum.app/api-docs/modules/DataTableModule.html">DataTableModule</a>.
       </p>
 
@@ -57,12 +57,12 @@
     <li>
       <p>
         Within the target component use
-        <a rel="noopener" target="_blank"
+        <a rel="noopener noreferrer" target="_blank"
            href="https://ornamentum.app/api-docs/injectables/DataTableHttpResourceFactoryService.html">DataTableHttpResourceFactoryService</a>
         to construct an instance of
-        <a rel="noopener" target="_blank"
+        <a rel="noopener noreferrer" target="_blank"
            href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html">DataTableHttpDataFetchService&lt;T&gt;</a>
-        class. Invoke <a rel="noopener" target="_blank"
+        class. Invoke <a rel="noopener noreferrer" target="_blank"
                          href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
         method with the API resource path to get the data bind callback function reference.
       </p>
@@ -70,7 +70,7 @@
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingComponent"></app-code-snippet>
       <p>
         or else you can write your own custom data provider without using getResourceProvider in
-        <a rel="noopener" target="_blank"
+        <a rel="noopener noreferrer" target="_blank"
            href="https://ornamentum.app/api-docs/injectables/DataTableHttpResourceFactoryService.html">DataTableHttpResourceFactoryService</a>
         service. Please refer <a [routerLink]="['/feature/data-table/data-binding/custom-provider']">Custom Data Provider</a>
         documentation for more information.
@@ -79,9 +79,9 @@
     <li>
       <p>
         Set the obtained data bind and filter value extract callback function references
-        to <a rel="noopener" target="_blank"
+        to <a rel="noopener noreferrer" target="_blank"
               href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onDataBind">onDataBind</a>
-        and <a rel="noopener" target="_blank"
+        and <a rel="noopener noreferrer" target="_blank"
                href="https://ornamentum.app/api-docs/components/DataTableComponent.html#onFilterValueExtract">onFilterValueExtract</a>
         input properties of data table accordingly.
       </p>
@@ -238,13 +238,13 @@
       </p>
     </li>
     <li>
-      Service should respond follow <a rel="noopener" target="_blank"
+      Service should respond follow <a rel="noopener noreferrer" target="_blank"
                                        href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
       schema.
-      However, you can pass a custom response mapper callback function to <a rel="noopener" target="_blank"
+      However, you can pass a custom response mapper callback function to <a rel="noopener noreferrer" target="_blank"
                                                                              href="https://ornamentum.app/api-docs/classes/DataTableHttpDataFetchService.html#onDataBind">onDataBind</a>
       and map
-      the response to <a rel="noopener" target="_blank"
+      the response to <a rel="noopener noreferrer" target="_blank"
                          href="https://ornamentum.app/api-docs/interfaces/DataTableQueryResult.html">DataTableQueryResult&lt;T&gt;</a>
       schema
       without making changes in backend API response.
@@ -274,5 +274,5 @@
   <a [routerLink]="['/feature/data-table/data-binding/client-side/stream']">Client Side Stream Data Binding</a><br/>
   <a [routerLink]="['/feature/data-table/data-binding/server-side/web-socket']">Server Side Web Socket Data Binding</a><br/>
   <a [routerLink]="['/feature/data-table/data-binding/custom-provider']">Custom Data Provider</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc - Data Source Input</a>
+  <a rel="noopener noreferrer" target="_blank" href="api-docs/components/DataTableComponent.html#dataSource">API Doc - Data Source Input</a>
 </div>

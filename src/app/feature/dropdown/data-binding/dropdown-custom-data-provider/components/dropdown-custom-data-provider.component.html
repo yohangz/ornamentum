@@ -2,15 +2,15 @@
   <h1>Dropdown List Custom Data Provider</h1>
 
   <p>
-    Ornamentum data binding is handled via <a rel="noopener" target="_blank"
+    Ornamentum data binding is handled via <a rel="noopener noreferrer" target="_blank"
                                               href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html#onDataBind">onDataBind</a>
     callback function. Use this callback reference to hook into data bind workflow and provide custom data source. This
     callback function will get triggered on table initialization and on dynamic dropdown operations. It
-    receives <a rel="noopener" target="_blank"
+    receives <a rel="noopener noreferrer" target="_blank"
                 href="https://ornamentum.app/api-docs/interfaces/DropdownRequestParams.html">DropdownRequestParams</a>
-    argument and expect to return <a rel="noopener" target="_blank"
+    argument and expect to return <a rel="noopener noreferrer" target="_blank"
                                      href="http://reactivex.io/rxjs/class/es6/Observable.js~Observable.html">RxJS
-    Observable</a> query result <a rel="noopener" target="_blank"
+    Observable</a> query result <a rel="noopener noreferrer" target="_blank"
                                    href="https://ornamentum.app/api-docs/interfaces/DropdownQueryResult.html">DropdownQueryResult&lt;T&gt;</a>
     object stream. Data returned from this callback function will be directly bound to dropdown assuming that it matches
     the on demand request context.
@@ -33,7 +33,7 @@
 
   <p>
     Ornamentum provided a way to integrated server side data bind functionality via
-    <a rel="noopener" target="_blank"
+    <a rel="noopener noreferrer" target="_blank"
        href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
     callback function input property. Data source associated logic is decoupled from Ornamentum core module to make it
     data source agnostic.
@@ -45,7 +45,7 @@
     Side Web Socket Data Binding</a> basic usage,
     getResourceProvider in DropdownHttpResourceFactoryService provides in build method take care of basic server data
     bind functionality.
-    You can build your own data provider same as <a rel="noopener" target="_blank"
+    You can build your own data provider same as <a rel="noopener noreferrer" target="_blank"
                                                     href="https://ornamentum.app/api-docs/classes/DropdownHttpDataFetchService.html#onDataBind">onDataBind</a>
     internal data provider.
   </p>
@@ -53,10 +53,10 @@
   <ol>
     <li>
       <p>
-        Import <a rel="noopener" target="_blank"
+        Import <a rel="noopener noreferrer" target="_blank"
                   href="https://ornamentum.app/api-docs/modules/DropdownResourceModule.html">DropdownResourceModule</a>
         along with
-        <a rel="noopener" target="_blank" href="https://ornamentum.app/api-docs/modules/DropdownModule.html">DropdownModule</a>.
+        <a rel="noopener noreferrer" target="_blank" href="https://ornamentum.app/api-docs/modules/DropdownModule.html">DropdownModule</a>.
       </p>
 
       <app-code-snippet [type]="FileType.TS" [content]="demoSnippet.serverSideDataBindingModule"></app-code-snippet>
@@ -74,7 +74,7 @@
     </li>
     <li>
       <p>
-        Set the obtained data bind callback function reference to <a rel="noopener" target="_blank"
+        Set the obtained data bind callback function reference to <a rel="noopener noreferrer" target="_blank"
                                                                      href="https://ornamentum.app/api-docs/components/DropdownComponent.html#onDataBind">onDataBind</a>
         input
         property of dropdown.
@@ -85,7 +85,7 @@
   </ol>
 
   <p>
-    You can inspect network traffic of this page (<a rel="noopener" target="_blank"
+    You can inspect network traffic of this page (<a rel="noopener noreferrer" target="_blank"
                                                      href="https://api.github.com/repos/yohangz/ornamentum/contributors">Ornamentum
     Contributors</a>) in browser developer tools to understand how backend service requests/response and behaviors for
     the above example.
@@ -95,6 +95,6 @@
   <a [routerLink]="['/feature/dropdown/data-binding/client-side/basic']">Client Side Basic Data Binding</a><br/>
   <a [routerLink]="['/feature/dropdown/data-binding/server-side/web-socket']">Server Side Web Socket Data
     Binding</a><br/>
-  <a rel="noopener" target="_blank" href="api-docs/components/DropdownComponent.html#dataSource">API Doc for Server Side
+  <a rel="noopener noreferrer" target="_blank" href="api-docs/components/DropdownComponent.html#dataSource">API Doc for Server Side
     Basic Data Binding</a>
 </div>
