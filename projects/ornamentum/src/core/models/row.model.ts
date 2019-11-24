@@ -1,12 +1,9 @@
 export interface Row {
-  id: string;
+  id: any;
   index: number;
   item: any;
-  color: string;
   cssClass: string;
-  tooltip: string;
   selected: boolean;
   disabled: boolean;
-  expanded: boolean;
-  expanderLoaded: boolean;
+  detailView: 'collapsed' | 'expanding' | 'expanded';
 }

@@ -1,46 +1,47 @@
-export interface Config {
+import { FilterLogic } from './filter-logic.model';
+import { StatePersistMode } from './state-persist-mode.model';
+import { SelectMode } from './select-mode.model';
+import { TableDimensionConfig } from './table-dimension-config.model';
+
+export interface Config extends TableDimensionConfig {
   id: string;
   title: string;
 
   dataBindOnInit: boolean;
 
-  width: string;
-  contentHeight: string;
-  minContentWidth: string;
-  minContentHeight: string;
-
   multiColumnSortable: boolean;
 
-  refreshButton: boolean;
-  loadingSpinner: boolean;
+  suppressRefreshButton: boolean;
+  suppressLoadingSpinner: boolean;
 
-  persistState: 'local' | 'session' | '';
+  statePersistMode: StatePersistMode;
 
   filterDebounce: number;
+  filterLogic: FilterLogic;
 
   pageable: boolean;
-  substituteRows: boolean;
+  suppressPaginationPanel: boolean;
+  suppressSubstituteRows: boolean;
 
   infiniteScrollable: boolean;
   infiniteScrollViewDistanceRatio: number;
 
-  indexColumn: boolean;
-  indexColumnWidth: string;
+  autoIndexColumn: boolean;
+  autoIndexColumnWidth: string;
 
-  columnMenu: boolean;
-  columnMenuWidth: string;
+  suppressContextMenu: boolean;
+  contextMenuWidth: string;
 
   selectable: boolean;
   selectTrackBy: string;
-  selectedValue: any[];
   selectOnClick: boolean;
-  selectMode: 'single' | 'multi' | 'single-toggle';
-  selectCheckbox: boolean;
+  selectMode: SelectMode;
   selectCheckboxColumnWidth: string;
-  selectAllCheckbox: boolean;
+  suppressSelectCheckbox: boolean;
+  suppressSelectAllCheckbox: boolean;
 
   expandable: boolean;
   expandOnClick: boolean;
-  expandColumnWidth: string;
-  expandLoadingSpinner: boolean;
+  expandIconColumnWidth: string;
+  suppressExpandLoadingSpinner: boolean;
 }

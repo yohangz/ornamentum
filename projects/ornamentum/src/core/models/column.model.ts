@@ -1,23 +1,18 @@
 import { FilterStringOperator } from './filter-string-operator.model';
-import { FilterOperator } from './filter-operator.model';
-import { FilterLogic } from './filter-logic.model';
+import { FilterNumberOperator } from './filter-number-operator.model';
 import { FilterType } from './filter-type.model';
-import { SortOrder } from './sort-order.model';
 
 export interface Column {
-  id: string;
   title: string;
-  displayTrackBy: string;
+  field: string;
 
   cssClass: string;
   width: string;
   visible: boolean;
-  showInContextMenu: boolean;
+  suppressInContextMenu: boolean;
 
   sortable: boolean;
   sortTrackBy: string;
-  sortPriority: number;
-  sortOrder: SortOrder;
 
   resizeable: boolean;
   resizeMinLimit: number;
@@ -25,8 +20,7 @@ export interface Column {
   filterable: boolean;
   filterTrackBy: string;
   filterType: FilterType;
-  filterOperator: FilterOperator | FilterStringOperator;
-  filterLogic: FilterLogic;
+  filterOperator: FilterNumberOperator | FilterStringOperator;
   filterIgnoreCase: boolean;
   filterValue: any;
 }

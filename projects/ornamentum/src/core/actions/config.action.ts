@@ -1,5 +1,4 @@
 import { createAction } from '../store-util/action';
+import { TableDimensionConfig } from '../models/table-dimension-config.model';
 
-import { Config } from '../models/config.model';
-
-export const setConfig = createAction<Partial<Config>>('set-config-initial-state');
+export const setTableDimensions = createAction<TableDimensionConfig>('set-table-dimensions');

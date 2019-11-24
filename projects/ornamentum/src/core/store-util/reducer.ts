@@ -3,8 +3,8 @@ import { CallableReducer } from './models/callable-reducer.model';
 import { CallableActionReducer } from './models/callable-action-reducer.model';
 import { ReducersMapObject } from './models/reducers-map-object.model';
 
-import { combineLatest, Observable } from 'rxjs';
-import { distinctUntilChanged, map, scan, startWith } from 'rxjs/operators';
+import { zip, Observable } from 'rxjs';
+import { map, scan, startWith } from 'rxjs/operators';
 import { CallableCombinedReducer } from './models/callable-combined-reducer.model';
 import { CallableAction } from './models/callable-action.model';
 import { MicroReducer } from './models/micro-reducer.model';
@@ -48,12 +48,11 @@ export function combineReducers<S extends object, A extends Action>(reducers: Re
   const values = Object.values(reducers);
 
   return ($action: Observable<A>): Observable<S> => {
-    return combineLatest([
+    return zip(
       ...values.map((reducer: CallableActionReducer<any, A>): Observable<any> => {
-        const $state = reducer.call(null, $action) as Observable<any>;
-        return $state.pipe(distinctUntilChanged());
+        return reducer.call(null, $action);
       })
-    ]).pipe(
+    ).pipe(
       map((state: Array<S[keyof S]>) => {
         const obj = {} as S;
         keys.map((key, index) => {

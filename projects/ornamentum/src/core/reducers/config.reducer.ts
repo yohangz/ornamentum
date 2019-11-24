@@ -1,7 +1,11 @@
 import { Config } from '../models/config.model';
 import { createReducer, on } from '../store-util/reducer';
 
-import { setConfig } from '../actions/config.action';
+import { InitialState } from '../models/initial-state.model';
+
+import * as actions from '../actions/config.action';
+import { setInitialState } from '../actions/root.action';
+import { TableDimensionConfig } from '../models/table-dimension-config.model';
 
 const initialState: Config = {
   id: undefined,
@@ -16,45 +20,52 @@ const initialState: Config = {
 
   multiColumnSortable: false,
 
-  refreshButton: true,
-  loadingSpinner: true,
+  suppressRefreshButton: false,
+  suppressLoadingSpinner: false,
 
-  persistState: '',
+  statePersistMode: '',
 
   filterDebounce: 500,
+  filterLogic: 'and',
 
   pageable: false,
-  substituteRows: true,
+  suppressPaginationPanel: false,
+  suppressSubstituteRows: false,
 
   infiniteScrollable: false,
   infiniteScrollViewDistanceRatio: 1,
 
-  indexColumn: false,
-  indexColumnWidth: '100px',
+  autoIndexColumn: false,
+  autoIndexColumnWidth: '100px',
 
-  columnMenu: false,
-  columnMenuWidth: '200px',
+  suppressContextMenu: true,
+  contextMenuWidth: '200px',
 
   selectable: false,
   selectTrackBy: undefined,
-  selectedValue: [],
   selectOnClick: false,
   selectMode: 'single-toggle',
-  selectCheckbox: true,
+  suppressSelectCheckbox: false,
   selectCheckboxColumnWidth: '100px',
-  selectAllCheckbox: false,
+  suppressSelectAllCheckbox: true,
 
   expandable: false,
   expandOnClick: false,
-  expandColumnWidth: '100px',
-  expandLoadingSpinner: true
+  expandIconColumnWidth: '100px',
+  suppressExpandLoadingSpinner: false
 };
 
 export default createReducer<Config>(initialState,
-  on(setConfig, (state: Config, payload: Partial<Config>): Config => {
+  on(setInitialState, (state: Config, { config }: InitialState): Config => {
     return {
       ...state,
-      ...payload
+      ...config
+    };
+  }),
+  on(actions.setTableDimensions, (state: Config, dimensions: TableDimensionConfig): Config => {
+    return {
+      ...state,
+      ...dimensions
     };
   }),
 );

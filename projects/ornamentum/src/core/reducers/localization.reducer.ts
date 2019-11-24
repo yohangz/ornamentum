@@ -1,6 +1,8 @@
 import { Localization } from '../models/localization.model';
-import { createReducer, on } from '../store-util/reducer';;
-import { setLocalization } from '../actions/localization.model';
+import { createReducer, on } from '../store-util/reducer';
+import { setInitialState } from '../actions/root.action';
+import { InitialState } from '../models/initial-state.model';
+import { updateLocalization } from '../actions/localization.model';
 
 const initialState: Localization = {
   indexColumnTitle: 'id',
@@ -11,10 +13,16 @@ const initialState: Localization = {
 };
 
 export default createReducer<Localization>(initialState,
-  on(setLocalization, (state: Localization, payload: Partial<Localization>): Localization => {
+  on(setInitialState, (state: Localization, { localization }: InitialState): Localization => {
     return {
       ...state,
-      ...payload
+      ...localization
+    };
+  }),
+  on(updateLocalization, (state: Localization, localization: Localization): Localization => {
+    return {
+      ...state,
+      ...localization
     };
   }),
 );
