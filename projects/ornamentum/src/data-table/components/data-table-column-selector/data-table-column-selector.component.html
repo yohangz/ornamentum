@@ -1,5 +1,5 @@
 <div class="ng-data-table-column-selector-wrapper" [style.width]="width | ngPx">
-  <div class="ng-data-table-column-selector-box-heading">Show/Hide Column</div>
+  <div class="ng-data-table-column-selector-box-heading">{{ config.translations.columnSelector.header }}</div>
   <div class="ng-data-table-column-selector-box">
     <ng-container *ngFor="let column of columns; index as i;">
       <div class="ng-data-table-column-selector-column ng-data-table-column-selector-checkbox" *ngIf="column.showInColumnSelector">

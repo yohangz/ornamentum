@@ -57,10 +57,28 @@ export class DataTableConfigService implements DataTableConfig {
   public maxLimit = 100;
   public stateKeyPrefix = 'grid_state_';
   public baseTranslations: DataTableTranslations = {
-    noDataMessageHeader: 'Whoops!',
-    noDataMessageBody: 'No data to display. Added data will appear here.',
-    paginationLimit: 'Limit',
-    paginationRange: 'Results'
+    noDataMessage: {
+      header: 'Whoops!',
+      body: 'No data to display. Added data will appear here.',
+    },
+    pagination: {
+      limit: 'Limit:',
+      rangeKey: 'Results:',
+      rangeSeparator: 'of',
+      nextTooltip: 'Next',
+      previousTooltip: 'Previous',
+      lastTooltip: 'Last',
+      firstTooltip: 'First'
+    },
+    columnSelector: {
+      header: 'Show/Hide Column'
+    },
+    dropdownFilter: {
+      noDataMessage: 'No Results Available',
+      filterPlaceholder: 'Search',
+      selectedOptionWrapPlaceholder: 'Options',
+      selectPlaceholder: 'Select'
+    }
   };
 
   // Table column config
@@ -98,7 +116,14 @@ export class DataTableConfigService implements DataTableConfig {
   }
 
   public set translations(value: DataTableTranslations) {
-    this.baseTranslations = { ...this.baseTranslations, ...value };
+    if (!value) {
+      return;
+    }
+
+    // all keys are object type.
+    for (const [key, val] of Object.entries(value)) {
+      this.baseTranslations[key] = { ...this.baseTranslations[key], ...val };
+    }
   }
 
   /**
@@ -115,3 +140,4 @@ export class DataTableConfigService implements DataTableConfig {
     return this.rowSelectable && this.showRowSelectCheckbox;
   }
 }
+

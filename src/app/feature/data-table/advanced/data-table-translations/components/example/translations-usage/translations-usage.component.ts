@@ -10,9 +10,13 @@ export class TranslationsUsageComponent {
   public emptyItemSet: any = [];
 
   public DataTableTranslations: DataTableTranslations = {
-    paginationLimit: 'Sample Pagination Limit',
-    paginationRange: 'Sample Pagination Range',
-    noDataMessageHeader: 'Sample No Data Message Header',
-    noDataMessageBody: 'Sample No Data Message Body'
+    pagination: {
+      limit: 'Sample Pagination Limit:',
+      rangeKey: 'Sample Pagination Rage:'
+    },
+    noDataMessage: {
+      header: 'Sample No Data Message Header',
+      body: 'Sample No Data Message Body'
+    }
   };
 }
