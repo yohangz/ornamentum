@@ -1,24 +1,39 @@
+import { DropdownTranslations } from '../../dropdown/models/dropdown-translations.model';
+
 /**
  * Data table translations model model.
  */
 export interface DataTableTranslations {
   /**
-   * Pagination limit label title.
+   * Pagination.
    */
-  paginationLimit?: string;
-
-  /**
-   * Pagination range label title.
-   */
-  paginationRange?: string;
+  pagination?: {
+    limit?: string;
+    rangeKey?: string;
+    rangeSeparator?: string;
+    firstTooltip?: string;
+    previousTooltip?: string;
+    nextTooltip?: string;
+    lastTooltip?: string;
+  };
 
   /**
    * No data message body.
    */
-  noDataMessageBody?: string;
+  noDataMessage?: {
+    body?: string;
+    header?: string;
+  };
 
   /**
-   * No data message header.
+   * Column selector.
    */
-  noDataMessageHeader?: string;
+  columnSelector?: {
+    header?: string
+  };
+
+  /**
+   * Dropdown filter translations.
+   */
+  dropdownFilter?: DropdownTranslations;
 }

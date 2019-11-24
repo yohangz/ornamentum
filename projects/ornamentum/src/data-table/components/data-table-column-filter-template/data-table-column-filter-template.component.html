@@ -50,6 +50,7 @@
       [loadingSpinnerTemplateRef]="column.dropdownFilterLoadingSpinnerTemplate"
       [optionTemplateRef]="column.dropdownFilterOptionTemplate"
       [optionGroupHeaderTemplateRef]="column.dropdownFilterOptionGroupHeaderTemplate"
+      [translations]="config.translations.dropdownFilter"
       [(ngModel)]="column.filter"
       (selectChange)="filter.emit()"
       (init)="onFilterDropdownInit($event)"

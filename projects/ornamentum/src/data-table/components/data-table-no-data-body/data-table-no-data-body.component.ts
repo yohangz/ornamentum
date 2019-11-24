@@ -30,6 +30,6 @@ export class DataTableNoDataBodyComponent {
    * @return True if default no data template should be displayed.
    */
   public get showDefaultNoDataTemplate(): boolean {
-    return !!(!this.noRecordsTemplate && this.config.translations.noDataMessageHeader && this.config.translations.noDataMessageBody);
+    return !!(!this.noRecordsTemplate && this.config.translations.noDataMessage);
   }
 }
