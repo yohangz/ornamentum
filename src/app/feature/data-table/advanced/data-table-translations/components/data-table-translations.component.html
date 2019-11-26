@@ -9,6 +9,12 @@
 
   <ul class="main-pane-list">
     <li>
+      Translations for Column Selector
+      <ul>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'columnSelector.header'">Column Selector Header</a></li>
+      </ul>
+    </li>
+    <li>
       Translations for No Data
       <ul>
         <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'noDataMessageBody'">No Data
@@ -20,10 +26,14 @@
     <li>
       Translations for Pagination
       <ul>
-        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'paginationLimit'">Pagination
-          Limit</a></li>
-        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'paginationRange'">Pagination
-          Range</a></li>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'pagination.rangeKey'">Pagination Range Key</a></li>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'pagination.rangeSeparator'">Pagination Range Separator</a></li>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'pagination.limit'">Pagination Limit</a></li>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'pagination.firstTooltip'">Pagination First Tooltip</a></li>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'pagination.previousTooltip'">Pagination Previous Tooltip</a></li>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'pagination.nextTooltip'">Pagination Next Tooltip</a></li>
+        <li><a [routerLink]="'/feature/data-table/advanced/translations'" [fragment]="'pagination.lastTooltip'">Pagination Last Tooltip</a></li>
+
       </ul>
     </li>
   </ul>
@@ -58,8 +68,21 @@
   <p>Binding the <code>DataTableTranslations</code> type of object into <code>translations</code> property is enough to
     take control over translations.</p>
   <p>
-    As mention in the above there are two scenarios that translations are useful. Let's see how we can configure each
+    As mention in the above there are three scenarios that translations are useful. Let's see how we can configure each
     demonstrated properties as we required.
+  </p>
+
+  <h2 id="columnSelector">Translations for Column Selector</h2>
+  <p>
+    Users can customize the title of the column selector that needs to be appear using translations property.
+  </p>
+
+  <h4 id="columnSelector.header">Column Selector Header</h4>
+  <code>columnSelector.header: DataTableTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'Show/Hide Column'</h5>
+
+  <p>
+    This configuration is used to set the title of column selector when the column selector expanded. The default value for this property is 'Show/Hide Column'
   </p>
 
   <h2 id="translationsForNoData">Translations for No Data</h2>
@@ -92,20 +115,55 @@
   <h2 id="translationsForPagination">Translations for Pagination</h2>
   <p>
     Pagination translations property can be used to customize the pagination naming, which allows the user to override
-    the pagination limit and range namings.
+    the pagination range label, range separator, limit, first tooltip, previous tooltip, next tooltip, last tooltip
   </p>
 
-  <h4 id="paginationLimit">Pagination Limit</h4>
-  <code>paginationLimit: DataTableTranslations</code> &nbsp;
+  <h4 id="pagination.limit">Pagination Limit</h4>
+  <code>pagination.limit: DataTableTranslations</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">Default Value: 'Limit'</h5>
 
-  <p>This is used to customize the pagination limit naming. The default value for this config is 'Limit'.</p>
+  <p>This is used to customize the pagination limit label. The default value for this config is 'Limit'.</p>
 
-  <h4 id="paginationRange">Pagination Range</h4>
-  <code>paginationRange: DataTableTranslations</code> &nbsp;
+  <h4 id="pagination.rangeKey">Pagination Range Key</h4>
+  <code>pagination.rangeKey: DataTableTranslations</code> &nbsp;
   <h5 class="badge badge-pill badge-warning">Default Value: 'Results'</h5>
 
-  <p>This is used to customize the pagination range naming. The default value for this config is 'Results'.</p>
+  <p>This is used to customize the pagination range label. The default value for this config is 'Results'.</p>
+
+  <h4 id="pagination.rangeSeparator">Pagination Range Separator</h4>
+  <code>pagination.rangeSeparator: DataTableTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'of'</h5>
+
+  <p>This is used to customize the pagination range separator label. The default value for this config is 'of'.</p>
+
+
+  <h4 id="pagination.firstTooltip">Pagination First Tooltip</h4>
+  <code>pagination.firstTooltip: DataTableTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'First'</h5>
+
+  <p>This is used to customize the pagination first tooltip label. The default value for this config is 'First'.</p>
+
+
+  <h4 id="pagination.previousTooltip">Pagination Previous Tooltip</h4>
+  <code>pagination.previousTooltip: DataTableTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'Previous'</h5>
+
+  <p>This is used to customize the pagination previous tooltip. The default value for this config is 'Previous'.</p>
+
+
+  <h4 id="pagination.nextTooltip">Pagination Next Tooltip</h4>
+  <code>pagination.nextTooltip: DataTableTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'Next'</h5>
+
+  <p>This is used to customize the pagination next tooltip label. The default value for this config is 'Next'.</p>
+
+
+  <h4 id="pagination.lastTooltip">Pagination Last Tooltip</h4>
+  <code>pagination.lastTooltip: DataTableTranslations</code> &nbsp;
+  <h5 class="badge badge-pill badge-warning">Default Value: 'Last'</h5>
+
+  <p>This is used to customize the pagination last tooltip label. The default value for this config is 'Last'.</p>
+
 
   <app-translations-pagination-usage></app-translations-pagination-usage>
   <app-example-code [files]="translationsPaginationUsage"></app-example-code>
