@@ -14,7 +14,12 @@ export class TranslationsPaginationUsageComponent {
   public DataTableTranslations: DataTableTranslations = {
     pagination: {
       limit: 'Sample Pagination Limit:',
-      rangeKey: 'Sample Pagination Rage:'
+      rangeKey: 'Sample Pagination Rage:',
+      rangeSeparator: 'Sample of',
+      nextTooltip: 'Sample Next',
+      previousTooltip: 'Sample Previous',
+      lastTooltip: 'Sample Last',
+      firstTooltip: 'Sample First'
     }
   };
 
