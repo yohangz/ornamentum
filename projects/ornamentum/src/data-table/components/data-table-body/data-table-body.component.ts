@@ -160,7 +160,6 @@ export class DataTableBodyComponent {
     if (this.config.selectMode === 'single') {
       const id = get(row.item, this.config.selectTrackBy);
       const previousSelection = this.dataStateService.selectedRow;
-      this.dataStateService.selectedRow = id;
 
       if (previousSelection === id) {
         event.preventDefault();
