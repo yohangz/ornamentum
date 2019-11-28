@@ -1,2 +1,2 @@
 // IMPORTANT: THIS FILE IS AUTO GENERATED! DO NOT MANUALLY EDIT!
-export const VERSION = '8.1.2';
+export const VERSION = '8.1.3';

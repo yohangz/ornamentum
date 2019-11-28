@@ -1,6 +1,6 @@
 {
   "name": "ornamentum-demo",
-  "version": "8.1.2",
+  "version": "8.1.3",
   "description": "Ornamentum data table is a lightweight, feature rich, highly configurable, UI framework agnostic, fully responsive, reactive Angular data table with no external dependencies.",
   "scripts": {
     "ng": "ng",
