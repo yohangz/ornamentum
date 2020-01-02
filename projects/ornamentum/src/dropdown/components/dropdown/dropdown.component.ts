@@ -378,6 +378,22 @@ export class DropdownComponent implements OnInit, OnDestroy, ControlValueAccesso
   }
 
   /**
+   * Set show dropdown option index checkbox if true.
+   */
+  @Input()
+  public set showOptionIndex(value: boolean) {
+    this.config.showOptionIndex = value;
+  }
+
+  /**
+   * Set show dropdown option TrackBy id checkbox if true.
+   */
+  @Input()
+  public set showOptionTrackBy(value: boolean) {
+    this.config.showOptionTrackBy = value;
+  }
+
+  /**
    * Multi select option selected item maximum width. Apply ellipsis when selected option display text
    * exceed the max width.
    */

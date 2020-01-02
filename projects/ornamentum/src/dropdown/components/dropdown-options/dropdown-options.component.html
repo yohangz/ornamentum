@@ -25,7 +25,10 @@
                 <span class="ng-ignore-propagation" [title]="option.text">{{ option.text }}</span>
               </label>
             </a>
-            <span *ngIf="!config.showOptionSelectCheckbox" [title]="option.text">{{option.index}} - {{ option.text }}</span>
+            <span *ngIf="!config.showOptionSelectCheckbox" [title]="option.text">
+              <span *ngIf="config.showOptionIndex">{{option.index}} -</span>
+              <span *ngIf="config.showOptionTrackBy">{{option.id}} - </span>{{ option.text }}
+            </span>
           </ng-container>
           <ng-container
             *ngIf="dataStateService.dropdownOptionTemplate"
@@ -53,7 +56,10 @@
               <span class="ng-ignore-propagation" [title]="option.text">{{ option.text }}</span>
             </label>
           </a>
-          <span *ngIf="!config.showOptionSelectCheckbox" [title]="option.text">{{option.index}} - {{ option.text }}</span>
+          <span *ngIf="!config.showOptionSelectCheckbox" [title]="option.text">
+              <span *ngIf="config.showOptionIndex">{{option.index}} -</span>
+              <span *ngIf="config.showOptionTrackBy">{{option.id}} - </span>{{ option.text }}
+            </span>
         </ng-container>
         <ng-container
           *ngIf="dataStateService.dropdownOptionTemplate"

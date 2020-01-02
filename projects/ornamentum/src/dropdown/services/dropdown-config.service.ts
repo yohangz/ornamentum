@@ -44,6 +44,8 @@ export class DropdownConfigService implements DropdownConfig {
   public loadDataOnInit = true;
   public closeMenuOnSelect = false;
   public showOptionSelectCheckbox = false;
+  public showOptionIndex = false;
+  public showOptionTrackBy = false;
   public multiSelectOptionMaxWidth = 135;
   public setFirstOptionSelected = false;
   public triggerSelectChangeOnInit = false;
